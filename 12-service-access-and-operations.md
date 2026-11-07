@@ -7,7 +7,7 @@
 | PVE | https://192.168.21.22:8006/ | 管理SSH22保留 |
 | 虚拟网关190 | WAN192.168.21.23 / LAN192.168.19.1 | 路由、19DNS/DHCP，无NAT |
 | Penpot | http://192.168.19.50:9001/ | Git定制版、3设计/973媒体、11服务 |
-| Nexus | http://192.168.19.31:8081/ | 原49GAV/234primary内容保持 |
+| Nexus | http://192.168.19.31:8081/ | 目前归221；合并目标归220同NIC服务alias，URL不改 |
 | OMV | http://192.168.19.60/ | 家庭NAS管理 |
 | Jellyfin | http://192.168.19.60:8096/ | 媒体库、DirectPlay协议已验 |
 | SMB | `smb://192.168.19.60/media`、`/games`、`/incoming` | writer/reader分离，匿名拒绝；使用固定IP连接 |
@@ -18,7 +18,9 @@
 
 HTTP入口是用户同意的LAN阶段；公网域名/HTTPS/SMTP尚未配置。跨子网的发现广播不作为已验能力，电视/播放器请手动填写19.60。NAS用于文件保存/整理/传输，不承诺主机直接从NAS运行游戏。
 
-| VMID | 角色 | IP |
+合并目标为一台VM220 `publish-service`同时承载发布与Nexus，主IP30+服务alias31；`artifact-service`不再是独立目标VM，见[17合并架构](17-publish-artifact-consolidation.md)。**下表是迁移尚未执行的最后验收归属**：
+
+| VMID | 最后验收角色 | IP |
 | --- | --- | --- |
 | 100 | cf-tunnel CT | 192.168.19.5 |
 | 200 / 201 | 正式MySQL / Redis+Rabbit+Nacos | 192.168.19.10 / .11 |
@@ -41,7 +43,7 @@ SSH使用ub和`~/.ssh/yang_local_rsa`，严格已核host key；受控目标见`e
 | --- | --- |
 | 数据组件 | Mac `private/data/bundles/<角色>/secrets/` 与各guest受控安装包 |
 | Java合成管理员/测试client | Mac `private/java/secrets/`；测试账号FNTEST0001 |
-| Nexus新admin/reader/test publisher | Mac `private/nexus/new-secrets/` 与221 `/root/dell-nexus-secrets/` |
+| Nexus新admin/reader/test publisher | Mac `private/nexus/new-secrets/` 与原221 `/root/dell-nexus-secrets/`；合并验收后由220承接同一身份目录 |
 | Penpot新owner | 250 `/etc/penpot/new-identities.json`，owner@dell.local |
 | Penpot新worker/MCP | 250 `/etc/penpot/worker-credentials.json`及ID映射文件 |
 | NAS新账号 | Mac `private/nas/credentials-metadata.json`索引到600文件 |

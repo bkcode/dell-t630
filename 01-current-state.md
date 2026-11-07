@@ -16,6 +16,8 @@
 
 ## 2. 最后验收时的保留角色
 
+目标架构已确定为一台VM220 `publish-service`同时承担发布与Nexus，6vCPU/8GiB、主IP19.30+Nexus服务alias19.31；旧`artifact-service` VM221验收后退役。目标共11实例/14监控目标，详见[17合并架构](17-publish-artifact-consolidation.md)。**下面保留12实例的实机快照，因为迁移尚未执行，不能改写为已合并。**
+
 以下12角色为**02:35最后观察到运行**的清单：11个VM和1个LXC。当前实际运行情况待硬件恢复后重新读取。
 
 | ID | 角色 | 地址 | vCPU / GiB | 已交付职责与边界 |

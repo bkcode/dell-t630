@@ -163,6 +163,8 @@ qmrestore <已核归档路径> <新QA_VMID> --storage <批准存储> --unique 1
 
 ## 7. Nexus手动合并：授权已满足，当前硬件暂停
 
+名称与归属以[17合并架构](17-publish-artifact-consolidation.md)为准：最终只保留VM220 `publish-service`，发布与Nexus是该VM的两项职责，31是服务alias；原VM221 `artifact-service`核验后退役。合并验收后须重新核启停清单并移除221，不能继续按旧双机清单启动两个31所有者。
+
 目标已选：220管理primary19.30，Nexus服务alias19.31:8081，OS hostname继续publish-service；220计划6CPU/8GiB，原100GiB数据卷/srv/nexus UUID239dc…保留。服务URL/新账号/EULA/原数据保持；不是新建空仓库。当前仅Docker/两镜像/13项root600 standby准备完成，**221仍是配置归属，220未装active Nexus、未绑定31或迁盘**，故障后的可用性需重新查。
 
 ### A. 恢复与fresh基线

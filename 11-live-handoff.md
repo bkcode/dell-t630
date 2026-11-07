@@ -27,6 +27,8 @@
 
 ## Nexus 合并的准确进度
 
+服务目标以[17合并架构](17-publish-artifact-consolidation.md)为准：只保留VM220 `publish-service`承担发布与Nexus，原artifact-service VM221是待退役来源。31为220服务地址，不再计为另一台服务器。
+
 短时停机维护**已获用户明确授权**，无需重复确认同项许可；原拒绝记录保留作历史。本轮因硬件与用户暂停而未执行，不再把授权写成pending。
 
 | 项目 | 已完成 | 尚未执行 |

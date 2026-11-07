@@ -702,7 +702,28 @@
     "current_source_runtime": "not currently verified; last boot console halted before PVE; source221 service was not stopped by migration",
     "hardware_gate": "cleanup/hardware/DIMM_B1-incident.json",
     "source_not_stopped_by_assistant": true,
-    "migration_started": false
+    "migration_started": false,
+    "target_hostname": "publish-service",
+    "target_components": [
+      "build-and-restricted-publisher",
+      "Nexus-artifact-repository"
+    ],
+    "target_independent_VM_names": [
+      "publish-service"
+    ],
+    "artifact_service_name_policy": "retire VM221 as an independent server; existing artifact-service DNS may remain a logical Nexus alias on VM220 serviceIP31",
+    "target_inventory": {
+      "instances": 11,
+      "virtual_machines": 10,
+      "lxc": 1,
+      "templates": 3,
+      "configured_vCPU": 43,
+      "configured_memory_GiB": 85,
+      "monitoring_node_targets": 9,
+      "monitoring_total_targets": 14
+    },
+    "architecture_document": "17-publish-artifact-consolidation.md",
+    "target_not_applied_to_roles": true
   },
   "cleanup": {
     "completed_retired_ids": [

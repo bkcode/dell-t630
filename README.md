@@ -14,9 +14,16 @@
 | 查服务网址、SSH 与凭据保管位置 | [服务访问与日常操作](12-service-access-and-operations.md) |
 | 理解路由、虚拟机、Docker 与隔离 | [架构](02-architecture.md)、[网络交付](15-network19-delivery.md)、[WireGuard](16-wireguard-access.md) |
 | 查模板与家庭 NAS | [模板](03-templates-and-access.md)、[NAS](05-home-nas.md) |
+| 看发布与Nexus合并后的目标架构 | **[17合并架构](17-publish-artifact-consolidation.md)**，目标只保留VM220 publish-service |
 | 查已完成清理和未完成的 Nexus 合并 | [整理结果](18-cleanup-and-consolidation.md)、[合并恢复检查](cleanup/nexus/resume-preflight.md) |
 | 查验收边界和结果 | [验收总览](06-acceptance.md)、[本轮整理验收](cleanup/acceptance.md) |
 | 将仓库交给另一台电脑或下一位管理员 | [Git 与资料交接](20-git-and-handoff.md) |
+
+## 服务目标：发布与制品仓库同机
+
+目标中只保留一台 **VM220 `publish-service`（6vCPU / 8GiB）**：主IP19.30用于管理、构建和受限发布，同NIC的19.31:8081用于Nexus。`artifact-service`不再是目标中的独立VM；旧221验收后退役，既有服务DNS可作为逻辑兼容名保留。目标11实例/14监控目标，总43vCPU/85GiB不变。
+
+**这是目标说明，迁移尚未执行。** 下方12实例表为最后实机快照，两者不能混算。详见[合并架构](17-publish-artifact-consolidation.md)。
 
 ## 最后一次成功验收的部署
 
@@ -65,9 +72,9 @@ python3 scripts/check_git_safety.py
 | 状态与方案 | [01状态](01-current-state.md)、[02架构](02-architecture.md)、[03模板](03-templates-and-access.md)、[04应用迁移](04-services-and-migration.md)、[05NAS](05-home-nas.md) |
 | 验收与实施 | [06验收](06-acceptance.md)、[07任务](07-implementation-and-tasks.md)、[08硬件](08-hardware-findings.md)、[09进展](09-implementation-progress.md)、[10恢复门禁](10-resume-after-approval.md) |
 | 交接与交付 | [11当前交接](11-live-handoff.md)、[12访问](12-service-access-and-operations.md)、[13阶段范围](13-phase-scope.md)、[14交付报告](14-delivery-report.md) |
-| 现网与运维 | [15网络](15-network19-delivery.md)、[16VPN](16-wireguard-access.md)、[18清理结果](18-cleanup-and-consolidation.md)、[19人工手册](19-manual-operations.md)、[20Git交接](20-git-and-handoff.md) |
+| 现网与运维 | [15网络](15-network19-delivery.md)、[16VPN](16-wireguard-access.md)、[17发布与制品合并](17-publish-artifact-consolidation.md)、[18清理结果](18-cleanup-and-consolidation.md)、[19人工手册](19-manual-operations.md)、[20Git交接](20-git-and-handoff.md) |
 | 详细技术记录 | [应用备份](infra/backup/README.md)、[数据](infra/data/README.md)、[Nexus](infra/nexus/README.md)、[Penpot](infra/penpot/README.md)、[NAS](infra/nas/README.md)、[Ops](infra/ops/README.md)、[发布链](infra/publisher/README.md)、[19网实施](network19/README.md)、[本轮清理](cleanup/README.md) |
 
-编号17未使用，不是缺失的操作步骤。详细技术记录中的旧网段、旧数量与旧审批状态均属于对应历史阶段；新一轮操作必须从当前交接和人工手册进入。
+17号文档统一定义发布与制品合并后的服务归属。详细技术记录中的旧网段、旧数量与旧审批状态均属于对应历史阶段；新一轮操作必须从当前交接和人工手册进入。
 
 本轮本地整理与检查范围见[文档交付记录](evidence/documentation-closeout-20261107.json)。该记录只证明文档与Git候选检查，不是硬件恢复或远程服务验收。

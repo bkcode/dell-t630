@@ -57,6 +57,8 @@ VM190仅更新DNS静态host-record，删除批准的11条旧记录。11个保留
 
 ## Nexus合并：准备完成、已有授权、等待硬件处理
 
+[17合并架构](17-publish-artifact-consolidation.md)统一目标：VM220 `publish-service`包含发布与Nexus职责；`artifact-service`不再作为独立目标VM，下方技术步骤仍未执行。
+
 技术方案已具体化：220由4CPU/4GiB调为6CPU/8GiB，保持hostname publish-service、管理主IP19.30；Nexus继续用19.31:8081作为同NIC服务alias，客户端URL不改。原100GiB专用Nexus数据盘及UUID239dc45a-b1f3-408b-a8ef-7afa77b52204保持，官方跨VM move-disk不传storage，源/目标同时停止后唯一移交；不把数据盘并挂两VM。
 
 当前220已装匹配Docker/Compose/classic-overlay2，原两镜像按实际SHA-ID离线导入。最小代码/env/marker和三现役Nexus凭据已在同ownerSSH管道送到root700/600待机目录，没有本地秘密归档，没有运行态DB复制，也没有读取或复制发布私钥。最后准备核验时source221运行，target没有Nexus容器或31地址，资源仍4CPU/4GiB；当前在线状态无法复验。
