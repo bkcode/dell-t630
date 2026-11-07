@@ -74,5 +74,18 @@
     "original_unique_media_protected": 971,
     "last_verified_total_asset_hashes": 973,
     "Git_HEAD": "ff1783e7865af7aae571c985f03e057631b7af63"
+  },
+  "source_code": {
+    "repository": "bkcode/penpot",
+    "https_url": "https://github.com/bkcode/penpot.git",
+    "ssh_url": "git@github.com:bkcode/penpot.git",
+    "branch": "main",
+    "follow_remote_default_branch": false,
+    "permission": "read-only",
+    "last_verified_deployed_commit": "ff1783e7865af7aae571c985f03e057631b7af63",
+    "current_remote_main_head_verified": false,
+    "update_policy": "reviewed immutable commit reachable from origin/main; preserve customizations",
+    "contract_path": "machines/vm250-penpot-service/git-source.json",
+    "authentication_setup": "deferred; no PAT/SSH configuration changed"
   }
 }

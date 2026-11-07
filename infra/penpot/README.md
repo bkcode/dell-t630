@@ -4,7 +4,9 @@
 
 # Penpot：Git 改造版与应用级迁移
 
-当前状态：**VM250 已运行完整 11 服务，3 个活动设计已通过官方 `.penpot` 包导出/导入，新身份、素材与结构验证通过。** Mac 源保持运行，未改源设计；没有复制旧部署密钥、密码、cookie、session 或 MCP key。
+> 当前源码合同：使用 **[bkcode/penpot](https://github.com/bkcode/penpot) 的 main 分支**，固定仓库`git@github.com:bkcode/penpot.git`或`https://github.com/bkcode/penpot.git`。后续直接从该仓库显式取main并锁定审核commit，不跟随默认分支。详见[VM250源码与更新](../../machines/vm250-penpot-service/SOURCE-AND-UPDATES.md)。本页初次迁移的bundle、旧IP及版本数字保留历史意义；当前服务器硬件暂停，未执行程序更新，PAT自动认证另行处理。
+
+最后验收状态：**VM250 的完整11服务、3个活动设计官方`.penpot`包导出/导入、新身份、素材与结构均已有通过记录；当前硬件暂停，在线状态未复验。** Mac 源保持运行，未改源设计；没有复制旧部署密钥、密码、cookie、session 或 MCP key。
 
 这是当前执行入口。旧准备流程保存在 [HISTORY-preparation.md](HISTORY-preparation.md)，其中源身份复制、PG 全库恢复、旧安全 frontend 归档仅作历史审核，不再作为本次迁移路线。
 
@@ -23,7 +25,7 @@
 
 ## 目标与身份
 
-- 来宾：VM250 `penpot-service` / `10.63.30.30`，LAN入口 `http://192.168.21.22:9001/`。
+- 当前配置：VM250 `penpot-service` / `192.168.19.50`，LAN入口 `http://192.168.19.50:9001/`；故障后在线状态未复验。旧10.63.30.30与21.22:9001仅属初装阶段，已不作为访问入口。
 - 管理登录：ub + 客户端密钥，使用主AI已验证的控制通道；不关闭host key验证。
 - 应用包：`/opt/dell/penpot`；Git源码单独在 `source/`，部署适配不修改tracked源码。
 - 新 owner：`owner@dell.local`；新 worker：`mcp-worker@dell.local`。密码由目标本机随机生成，保存在 `/etc/penpot/new-identities.json`（root/0600），不写普通文档或聊天。
@@ -31,7 +33,7 @@
 - 数据根：`/srv/penpot/docker`，classic overlay2；独立 `/srv/penpot` UUID `ccccda03-bffd-4054-afd3-e0e22f0c607e`。
 - `dell-penpot.service` 与 Docker daemon 都有数据mount依赖；容器restart=no，避免磁盘未挂载时Docker自行启动写根盘。
 
-`compose.fresh.core.yaml` 为新身份引导的9核心服务，`compose.fresh.yaml` 为最终11服务。当前由 `application/fresh-target.py` 和systemd控制，不使用旧restore receipt，也不伪造恢复成功标记。
+`compose.fresh.core.yaml` 为新身份引导的9核心服务，`compose.fresh.yaml` 为最终11服务。初次初始化由`application/fresh-target.py`完成；持续运行通过`dell-penpot.service`及`runtime/health-supervision`的notify监督管理，不重跑fresh初始化，不使用旧restore receipt或伪造恢复成功标记。
 
 ## 已完成的官方数据迁移
 
@@ -64,7 +66,7 @@
 ## 后续运维与限制
 
 - 停/启通过 `systemctl stop/start/restart dell-penpot`，不绕过mount门禁裸启动Compose。
-- 代码后续经原repo受控fetch和Git bundle更新，不在源擅自push，不复制客户端私钥/agent；必要改动记录commit或明确patch SHA。
+- 后续代码从`bkcode/penpot`显式取`main`并锁定审核commit；Git bundle只解释初次历史移交，不作为后续默认更新来源。先确认历史两条本地改造在选定远端main中可达，不在源擅自push，不复制客户端私钥/agent。
 - 数据继续走官方包和应用级导入；不能重启旧.env/worker身份传输或整库迁移路线。
 - 暂无域名，HTTP LAN是已选阶段；HTTPS/正式SMTP仍pending。Mailpit只内部接邮件，无公开管理端口。
 - 独立设备备份目的地仍待主AI统一处理；本机源保留是当前回退现场，不等于已完成长期灾备。

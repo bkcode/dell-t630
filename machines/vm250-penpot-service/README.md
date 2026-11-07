@@ -2,6 +2,12 @@
 
 本目录是每机公开合同与来源索引，**不提供秘密或可直接重放的完整部署包**。source of truth为[plan.json](../../plan.json)；最后成功验收为2026-11-07 02:35:01+08:00。当前服务器因UEFI0058/DIMM_B1问题由用户暂停，current_runtime_verified=false，以下均不是live在线声明。
 
+## 源码仓库：bkcode/penpot · main
+
+使用 **[bkcode/penpot](https://github.com/bkcode/penpot) 的 `main` 分支**，HTTPS为`https://github.com/bkcode/penpot.git`，SSH为`git@github.com:bkcode/penpot.git`。服务器只读取码；显式指定main，不跟随默认分支或改用官方上游。最后验收commit为`ff1783e7865af7aae571c985f03e057631b7af63`，不代表远端main最新位置。
+
+详细更新与版本保留流程见[源码与更新说明](SOURCE-AND-UPDATES.md)，机器可读合同见[git-source.json](git-source.json)。PAT自动认证后续单独处理，本轮未取码、构建或部署。
+
 ## 职责与实际合同
 
 Git改造Penpot与常驻worker/import/MCP服务，保存3活动设计和原素材；源Mac/Git保留。

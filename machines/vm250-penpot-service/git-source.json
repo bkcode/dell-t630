@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "repository": {
+    "owner": "bkcode",
+    "name": "penpot",
+    "web_url": "https://github.com/bkcode/penpot",
+    "ssh_url": "git@github.com:bkcode/penpot.git",
+    "https_url": "https://github.com/bkcode/penpot.git",
+    "required_branch": "main",
+    "branch_source": "user explicitly confirmed main",
+    "follow_remote_default_branch": false
+  },
+  "last_verified_deployment": {
+    "branch": "main",
+    "commit": "ff1783e7865af7aae571c985f03e057631b7af63",
+    "local_source_root": "/Users/yangzhaohui/work/www/harness/penpot",
+    "guest_source_root": "/opt/dell/penpot/source",
+    "source_evidence": "infra/penpot/git-source-facts.json",
+    "runtime_evidence": "infra/penpot/application/git-runtime-provenance.json",
+    "verification_scope": "historical deployment, not fresh runtime or current remote main HEAD",
+    "original_remote_main_observed": "9aedbb011cd803eb615225ca21f7f47cb8c2fa09",
+    "custom_commit_preservation": "historical deployment included two local commits beyond then-observed remote main; verify chosen main commit preserves modifications before future update"
+  },
+  "future_source_policy": {
+    "repository": "bkcode/penpot",
+    "branch": "main",
+    "method": "explicit single-branch clone/fetch from bkcode origin; deploy reviewed immutable commit",
+    "requires_commit_reachable_from_origin_main": true,
+    "automatic_upgrade_on_pull": false,
+    "official_upstream_is_not_deployment_origin": true,
+    "historical_bundle_is_not_default_update_source": true,
+    "source_update_is_not_data_migration": true
+  },
+  "authentication": {
+    "permission": "read-only repository contents",
+    "server_credential_setup": "deferred by user; no credential deployed or changed in this documentation task",
+    "credential_values_in_git": false
+  },
+  "operational_state": {
+    "status": "paused-awaiting-hardware-repair",
+    "current_runtime_verified": false,
+    "source_fetch_checkout_build_or_deploy_performed": false
+  }
+}

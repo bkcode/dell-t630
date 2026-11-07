@@ -67,6 +67,36 @@
       "type": "current-contract",
       "purpose": "MCP query-safe日志规则与不削弱认证的限制。",
       "sha256": "df0c21f0380e88c7bb132aa36e626f983c3b23c356eec190343019b7f9a3f702"
+    },
+    {
+      "path": "machines/vm250-penpot-service/git-source.json",
+      "type": "current-contract",
+      "purpose": "用户确认的bkcode/penpot main源码与更新合同；不证明远端最新或现场已更新",
+      "sha256": "75dd47c8e49d06c4f7c725ecec5e592a87ffd018ef7cbc32a6a36563dad7038a"
+    },
+    {
+      "path": "machines/vm250-penpot-service/SOURCE-AND-UPDATES.md",
+      "type": "current-contract",
+      "purpose": "源码获取、固定main、版本保留、构建切换与数据边界",
+      "sha256": "a1e81debaa637ebc550fef52b00cff920ba87cc23d3370e0481443462728c611"
+    },
+    {
+      "path": "infra/penpot/README.md",
+      "type": "current-contract",
+      "purpose": "Penpot源码主入口；其中初装bundle和旧网配置仍须按历史解释",
+      "sha256": "5557a43d83185f882daf6e6fba7c1eb0165f32c10864f15f0da5f92d3c3bf80c"
+    },
+    {
+      "path": "infra/penpot/git-source-facts.json",
+      "type": "historical-evidence",
+      "purpose": "初次来源main/ff1783e与当时远端main及两本地改造事实",
+      "sha256": "c82e94c63df3eb3bd106924e384cf7eaab8302405534fbf72844dd8f544c4335"
+    },
+    {
+      "path": "infra/penpot/application/git-runtime-provenance.json",
+      "type": "historical-evidence",
+      "purpose": "已验收运行代码/构建来源，非本轮更新结果",
+      "sha256": "97d3c289516681b83b18e3e7b14d90e88447661cffa39ea6023741a2cb949373"
     }
   ],
   "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."
