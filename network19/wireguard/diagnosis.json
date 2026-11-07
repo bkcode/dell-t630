@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-07T00:09:45.151587+08:00",
+  "observed_client": "10.66.66.3",
+  "user_authorized_source_CIDR": "10.66.66.0/24",
+  "destination": "192.168.19.0/24",
+  "client_test": "2 curlTCPconnect timeouts HTTP000",
+  "WAN_capture_observed": [
+    {
+      "src": "10.66.66.3",
+      "sport": 56423,
+      "dst": "192.168.19.50",
+      "dport": 9001,
+      "SYN": true
+    },
+    {
+      "src": "10.66.66.3",
+      "sport": 56279,
+      "dst": "192.168.19.50",
+      "dport": 9001,
+      "SYN": true
+    },
+    {
+      "src": "10.66.66.3",
+      "sport": 64383,
+      "dst": "192.168.19.50",
+      "dport": 9001,
+      "SYN": true
+    }
+  ],
+  "gateway_existing_rule": "only192.168.21.0/24 ->19.50:9001 TCP;defaultdrop",
+  "L2_existing_rule": "onlyWAN21 appmatrix; noVPNsource",
+  "kernel_forward_route": "src10.66.66.3 iifeth0 to19.50 deveth1",
+  "kernel_return_route": "10.66.66.3 via192.168.21.1 deveth0",
+  "LAN_HTTP200": true,
+  "synchronized_no_traffic_windows": "30s and60s no new flow, no packet/counterexclusive attribution claimed",
+  "no_changes_before_latest_user_authorization": true,
+  "source_NAT_required_by_current_evidence": false,
+  "current_change": "EntireVPNsource10.66.66.0/24 toPenpot19.50:9001 TCP only; allotherVM/ports unchanged",
+  "broad_scope_auto_review_rejected_before_execution": true,
+  "no_broad_rule_applied": true
+}

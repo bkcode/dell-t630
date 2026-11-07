@@ -1,0 +1,252 @@
+{
+  "captured_at": "2026-11-06T00:07:28.592408+08:00",
+  "application_release": "2.18.5",
+  "docker_context": "orbstack",
+  "docker_daemon_id": "35be6be2-ceb8-469e-a220-5a38b02ec673",
+  "index_images": {
+    "frontend": {
+      "source_index": "penpotapp/frontend@sha256:9bc0c288985d2d18a2c3e7b849d8edda317e1bfd99ec6dd494e5bfdcfe411f06",
+      "observed": {
+        "id": "sha256:a5b042c17a1e95fe35a0a112c93d26df6ebbacd7451c7e823afb30269bf001c6",
+        "repo_digests": [
+          "penpotapp/frontend@sha256:9bc0c288985d2d18a2c3e7b849d8edda317e1bfd99ec6dd494e5bfdcfe411f06",
+          "registry-1.docker.io/penpotapp/frontend@sha256:9bc0c288985d2d18a2c3e7b849d8edda317e1bfd99ec6dd494e5bfdcfe411f06"
+        ],
+        "architecture": "arm64",
+        "versions": {
+          "bundle_version": "2.18.5-RC1",
+          "org.opencontainers.image.version": "2.18.5-RC1"
+        },
+        "postgres_package_version": null
+      }
+    },
+    "backend": {
+      "source_index": "penpotapp/backend@sha256:20d2325ec8e00f4be5f65e543d5618b585598facff404cf06446e91b5ead9036",
+      "observed": {
+        "id": "sha256:28dd4e06b33a70d9ace1b3589def985cddd3f5b49b4964d06a5093381356ee7c",
+        "repo_digests": [
+          "penpotapp/backend@sha256:20d2325ec8e00f4be5f65e543d5618b585598facff404cf06446e91b5ead9036"
+        ],
+        "architecture": "arm64",
+        "versions": {
+          "bundle_version": "2.18.5-RC1",
+          "org.opencontainers.image.version": "2.18.5-RC1"
+        },
+        "postgres_package_version": null
+      }
+    },
+    "exporter": {
+      "source_index": "penpotapp/exporter@sha256:8c341d6d40f234d33e4272f87c6f53fdde839546e4c758872cebf175bddb8c71",
+      "observed": {
+        "id": "sha256:9918a73bb7c720252df3124bf674ade2493f970e8f63e711a442432d810c2e58",
+        "repo_digests": [
+          "penpotapp/exporter@sha256:8c341d6d40f234d33e4272f87c6f53fdde839546e4c758872cebf175bddb8c71"
+        ],
+        "architecture": "arm64",
+        "versions": {
+          "bundle_version": "2.18.5-RC1",
+          "org.opencontainers.image.version": "2.18.5-RC1"
+        },
+        "postgres_package_version": null
+      }
+    },
+    "admin-console": {
+      "source_index": "penpotapp/admin-console@sha256:5935b5adbf33eb7abaabfab657fe8f5d465cac08e62e340f932ddb35ce0f311f",
+      "observed": {
+        "id": "sha256:cdd0cddbd829b9aa3ce55b8622f9884c12b094bdcbdc6f1036f0f260a954570d",
+        "repo_digests": [
+          "penpotapp/admin-console@sha256:5935b5adbf33eb7abaabfab657fe8f5d465cac08e62e340f932ddb35ce0f311f"
+        ],
+        "architecture": "arm64",
+        "versions": {
+          "bundle_version": "2.18.0-RC4-1-gd8dd1b8",
+          "org.opencontainers.image.version": "develop"
+        },
+        "postgres_package_version": null
+      }
+    },
+    "mcp": {
+      "source_index": "penpotapp/mcp@sha256:61fc7b2b727593670159966998fb197b2d282330ec7dbffc09a3e6374e0ce39d",
+      "observed": {
+        "id": "sha256:f6c48cf9e9923ac1a30bc46393bf94b78c9970be66469650ac576f26e05ac36f",
+        "repo_digests": [
+          "penpotapp/mcp@sha256:61fc7b2b727593670159966998fb197b2d282330ec7dbffc09a3e6374e0ce39d"
+        ],
+        "architecture": "arm64",
+        "versions": {
+          "bundle_version": "2.18.5-RC1",
+          "org.opencontainers.image.version": "2.18.5-RC1"
+        },
+        "postgres_package_version": null
+      }
+    },
+    "postgres": {
+      "source_index": "postgres@sha256:40e8c839f86c404f9bd1c456bb83f11b205f2cd95d753b34c2d074e89ecee786",
+      "observed": {
+        "id": "sha256:04fba66fe1804636acd8ce729a27cb6f0a5dbe591c8898433aeb6444d7267bfd",
+        "repo_digests": [
+          "postgres@sha256:40e8c839f86c404f9bd1c456bb83f11b205f2cd95d753b34c2d074e89ecee786"
+        ],
+        "architecture": "arm64",
+        "versions": {},
+        "postgres_package_version": "15.19-1.pgdg13+2"
+      }
+    },
+    "valkey": {
+      "source_index": "valkey/valkey@sha256:8f836008e0986c36adf50da714c7060cf689dbb335f61fe077939d90fa650809",
+      "observed": {
+        "id": "sha256:76ec93b657e31d13a44a4a26daef4d50b5efa3ace97d07b37a2c771a3f5409bf",
+        "repo_digests": [
+          "valkey/valkey@sha256:8f836008e0986c36adf50da714c7060cf689dbb335f61fe077939d90fa650809"
+        ],
+        "architecture": "arm64",
+        "versions": {},
+        "postgres_package_version": null
+      }
+    },
+    "dns": {
+      "source_index": "adguard/dnsproxy@sha256:4d65bafbf246b206a1af35d4263a86c35451d957458c7836304199f1cd2c1535",
+      "observed": {
+        "id": "sha256:00d31b9fc97c28510895f64a5139e16d93df5eaa2c2f9a776eacea7a3125abaa",
+        "repo_digests": [
+          "adguard/dnsproxy@sha256:4d65bafbf246b206a1af35d4263a86c35451d957458c7836304199f1cd2c1535"
+        ],
+        "architecture": "arm64",
+        "versions": {
+          "org.opencontainers.image.version": "v0.86.0"
+        },
+        "postgres_package_version": null
+      }
+    },
+    "mailpit": {
+      "source_index": "axllent/mailpit@sha256:9b3a463be15354c0f0eba91697d80e3e0d8a5623ef0e627cacc836bc17fd5231",
+      "observed": {
+        "id": "sha256:245e558b2e440962f2d646b6415fbb99b38761dc8a170e6646edf1113779965f",
+        "repo_digests": [
+          "axllent/mailpit@sha256:9b3a463be15354c0f0eba91697d80e3e0d8a5623ef0e627cacc836bc17fd5231"
+        ],
+        "architecture": "arm64",
+        "versions": {},
+        "postgres_package_version": null
+      }
+    }
+  },
+  "containers": {
+    "penpot-penpot-frontend-1": {
+      "id": "sha256:a1a9c9bb90b93f3cff334448648be90fc3ca7e315840298772f43b24306f5c82",
+      "repo_digests": [],
+      "architecture": "arm64",
+      "versions": {
+        "bundle_version": "2.18.5-RC1",
+        "org.opencontainers.image.version": "2.18.5-RC1"
+      },
+      "postgres_package_version": null
+    },
+    "penpot-penpot-backend-1": {
+      "id": "sha256:28dd4e06b33a70d9ace1b3589def985cddd3f5b49b4964d06a5093381356ee7c",
+      "repo_digests": [
+        "penpotapp/backend@sha256:20d2325ec8e00f4be5f65e543d5618b585598facff404cf06446e91b5ead9036"
+      ],
+      "architecture": "arm64",
+      "versions": {
+        "bundle_version": "2.18.5-RC1",
+        "org.opencontainers.image.version": "2.18.5-RC1"
+      },
+      "postgres_package_version": null
+    },
+    "penpot-penpot-worker-1": {
+      "id": "sha256:289d99c39712b9bbcb12ee4343571233421523f471c05c9f4fb8e6f3b26b9bb0",
+      "repo_digests": [],
+      "architecture": "arm64",
+      "versions": {
+        "bundle_version": "2.18.5-RC1",
+        "org.opencontainers.image.version": "2.18.5-RC1"
+      },
+      "postgres_package_version": null
+    },
+    "penpot-penpot-import-1": {
+      "id": "sha256:2ee54c62207d15e6f063db95870c76442b1ba757b47ebaf72863051b86238294",
+      "repo_digests": [],
+      "architecture": "arm64",
+      "versions": {
+        "bundle_version": "2.18.5-RC1",
+        "org.opencontainers.image.version": "2.18.5-RC1"
+      },
+      "postgres_package_version": null
+    },
+    "penpot-penpot-postgres-1": {
+      "id": "sha256:04fba66fe1804636acd8ce729a27cb6f0a5dbe591c8898433aeb6444d7267bfd",
+      "repo_digests": [
+        "postgres@sha256:40e8c839f86c404f9bd1c456bb83f11b205f2cd95d753b34c2d074e89ecee786"
+      ],
+      "architecture": "arm64",
+      "versions": {},
+      "postgres_package_version": "15.19-1.pgdg13+2"
+    },
+    "penpot-penpot-exporter-1": {
+      "id": "sha256:9918a73bb7c720252df3124bf674ade2493f970e8f63e711a442432d810c2e58",
+      "repo_digests": [
+        "penpotapp/exporter@sha256:8c341d6d40f234d33e4272f87c6f53fdde839546e4c758872cebf175bddb8c71"
+      ],
+      "architecture": "arm64",
+      "versions": {
+        "bundle_version": "2.18.5-RC1",
+        "org.opencontainers.image.version": "2.18.5-RC1"
+      },
+      "postgres_package_version": null
+    },
+    "penpot-penpot-mcp-1": {
+      "id": "sha256:f6c48cf9e9923ac1a30bc46393bf94b78c9970be66469650ac576f26e05ac36f",
+      "repo_digests": [
+        "penpotapp/mcp@sha256:61fc7b2b727593670159966998fb197b2d282330ec7dbffc09a3e6374e0ce39d"
+      ],
+      "architecture": "arm64",
+      "versions": {
+        "bundle_version": "2.18.5-RC1",
+        "org.opencontainers.image.version": "2.18.5-RC1"
+      },
+      "postgres_package_version": null
+    },
+    "penpot-penpot-admin-console-1": {
+      "id": "sha256:cdd0cddbd829b9aa3ce55b8622f9884c12b094bdcbdc6f1036f0f260a954570d",
+      "repo_digests": [
+        "penpotapp/admin-console@sha256:5935b5adbf33eb7abaabfab657fe8f5d465cac08e62e340f932ddb35ce0f311f"
+      ],
+      "architecture": "arm64",
+      "versions": {
+        "bundle_version": "2.18.0-RC4-1-gd8dd1b8",
+        "org.opencontainers.image.version": "develop"
+      },
+      "postgres_package_version": null
+    },
+    "penpot-penpot-valkey-1": {
+      "id": "sha256:76ec93b657e31d13a44a4a26daef4d50b5efa3ace97d07b37a2c771a3f5409bf",
+      "repo_digests": [
+        "valkey/valkey@sha256:8f836008e0986c36adf50da714c7060cf689dbb335f61fe077939d90fa650809"
+      ],
+      "architecture": "arm64",
+      "versions": {},
+      "postgres_package_version": null
+    },
+    "penpot-penpot-mailpit-1": {
+      "id": "sha256:245e558b2e440962f2d646b6415fbb99b38761dc8a170e6646edf1113779965f",
+      "repo_digests": [
+        "axllent/mailpit@sha256:9b3a463be15354c0f0eba91697d80e3e0d8a5623ef0e627cacc836bc17fd5231"
+      ],
+      "architecture": "arm64",
+      "versions": {},
+      "postgres_package_version": null
+    },
+    "penpot-penpot-dns-1": {
+      "id": "sha256:00d31b9fc97c28510895f64a5139e16d93df5eaa2c2f9a776eacea7a3125abaa",
+      "repo_digests": [
+        "adguard/dnsproxy@sha256:4d65bafbf246b206a1af35d4263a86c35451d957458c7836304199f1cd2c1535"
+      ],
+      "architecture": "arm64",
+      "versions": {
+        "org.opencontainers.image.version": "v0.86.0"
+      },
+      "postgres_package_version": null
+    }
+  }
+}

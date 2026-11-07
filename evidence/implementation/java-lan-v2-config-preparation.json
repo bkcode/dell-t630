@@ -1,0 +1,60 @@
+{
+  "at": "2026-11-06T12:09:31.763447",
+  "data_id": "finger-gateway-mobile-lan-v2.yaml",
+  "sha256": "ce46d462fc82c527e0afd18d41c91664e8785d8cb726546cf8e0236ae7244c51",
+  "routes": [
+    {
+      "id": "dell-test-files",
+      "uri": "lb://finger-service-coms",
+      "predicates": [
+        "Path=/finger-bff-system/dell-test-files/**",
+        "Method=GET"
+      ],
+      "filters": [
+        "StripPrefix=2"
+      ]
+    },
+    {
+      "id": "dell-test-captcha",
+      "uri": "lb://finger-auth",
+      "predicates": [
+        "Path=/api/v1/auth/captcha",
+        "Method=GET"
+      ]
+    },
+    {
+      "id": "dell-test-oauth",
+      "uri": "lb://finger-auth",
+      "predicates": [
+        "Path=/oauth2/token,/oauth2/jwks,/.well-known/openid-configuration",
+        "Method=GET,POST"
+      ]
+    },
+    {
+      "id": "dell-test-system-read",
+      "uri": "lb://finger-bff-system",
+      "predicates": [
+        "Path=/finger-bff-system/sys-api/v1/role/get-list,/finger-bff-system/sys-api/v1/role/get-role-permissions,/finger-bff-system/sys-api/v1/employee/get-list",
+        "Method=POST"
+      ],
+      "filters": [
+        "StripPrefix=1"
+      ]
+    },
+    {
+      "id": "dell-test-auth-prefix",
+      "uri": "lb://finger-auth",
+      "predicates": [
+        "Path=/finger-auth/api/v1/auth/captcha,/finger-auth/oauth2/token,/finger-auth/oauth2/jwks",
+        "Method=GET,POST"
+      ],
+      "filters": [
+        "StripPrefix=1"
+      ]
+    }
+  ],
+  "security_change": "only aliases for existing public captcha/OAuth; default client-route map and JWT checks preserved",
+  "old_nacos_data_id_preserved": true,
+  "SQL_or_secrets_rotated": false,
+  "new_upload_domain": "http://192.168.21.22:19999/finger-bff-system/dell-test-files"
+}

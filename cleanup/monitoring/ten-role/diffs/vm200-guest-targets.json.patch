@@ -1,0 +1,39 @@
+--- guest-targets.json-actual-before
++++ guest-targets.json-ten-role-candidate
+@@ -1,6 +1,6 @@
+ {
+   "generated_at": "2026-11-06T06:23:46.069219+08:00",
+-  "scope": "12-new-Debian13-guests-only",
++  "scope": "10 active Debian13 exporter guests;221 retained,no Nexusmerge;CF100/GW190 use PVE/QGA",
+   "excluded": [
+     "PVE host",
+     "cf-tunnel CT100",
+@@ -50,20 +50,6 @@
+       "prefixlen": 24
+     },
+     {
+-      "role": "java-prod-02",
+-      "hostname": "java-prod-02",
+-      "vmid": 231,
+-      "private_ip": "192.168.19.41",
+-      "prefixlen": 24
+-    },
+-    {
+-      "role": "java-prod-03",
+-      "hostname": "java-prod-03",
+-      "vmid": 232,
+-      "private_ip": "192.168.19.42",
+-      "prefixlen": 24
+-    },
+-    {
+       "role": "java-test-01",
+       "hostname": "java-test-01",
+       "vmid": 240,
+@@ -92,5 +78,6 @@
+       "prefixlen": 24
+     }
+   ],
+-  "network_revision": "network19"
++  "network_revision": "network19",
++  "topology_revision": "cleanup-Java-only-10-exporters-15-targets"
+ }

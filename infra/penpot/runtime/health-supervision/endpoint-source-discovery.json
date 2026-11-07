@@ -1,0 +1,73 @@
+[
+  {
+    "service": "mcp",
+    "public_code": [
+      {
+        "path": "opt/penpot/mcp/index.js",
+        "route_literals": [
+          [
+            "get",
+            "/"
+          ],
+          [
+            "post",
+            "/execute"
+          ],
+          [
+            "all",
+            "/mcp"
+          ],
+          [
+            "get",
+            "/sse"
+          ],
+          [
+            "post",
+            "/messages"
+          ]
+        ],
+        "has_readyz": false,
+        "has_healthz": false,
+        "has_health": false,
+        "port_literals_near_port_configuration": [
+          "4401"
+        ]
+      }
+    ]
+  },
+  {
+    "service": "admin-console",
+    "public_code": [
+      {
+        "path": "nitrate/docker-start-admin-console.mjs",
+        "route_literals": [],
+        "has_readyz": false,
+        "has_healthz": false,
+        "has_health": false,
+        "port_literals_near_port_configuration": []
+      },
+      {
+        "path": "nitrate/apps/admin-console/.output/server/index.mjs",
+        "route_literals": [],
+        "has_readyz": false,
+        "has_healthz": false,
+        "has_health": false,
+        "port_literals_near_port_configuration": [
+          "3000"
+        ]
+      },
+      {
+        "path": "nitrate/apps/admin-console/.output/server/_runtime.mjs",
+        "route_literals": [],
+        "has_readyz": false,
+        "has_healthz": false,
+        "has_health": false,
+        "port_literals_near_port_configuration": []
+      }
+    ],
+    "health_related_filenames": [
+      "node_modules/pino/test/fixtures/transport-exit-on-ready.js",
+      "node_modules/pino/test/fixtures/ts/transport-exit-on-ready.ts"
+    ]
+  }
+]

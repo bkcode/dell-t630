@@ -1,0 +1,54 @@
+{
+  "unit": {
+    "MainPID": "505",
+    "Result": "success",
+    "ActiveState": "active",
+    "SubState": "running"
+  },
+  "recent_registered_connection_events": 1,
+  "IPv4": [
+    {
+      "ifindex": 2,
+      "link_index": 62,
+      "ifname": "eth0",
+      "flags": [
+        "BROADCAST",
+        "MULTICAST",
+        "UP",
+        "LOWER_UP"
+      ],
+      "mtu": 1500,
+      "qdisc": "noqueue",
+      "operstate": "UP",
+      "group": "default",
+      "txqlen": 1000,
+      "link_netnsid": 0,
+      "addr_info": [
+        {
+          "family": "inet",
+          "local": "192.168.19.5",
+          "prefixlen": 24,
+          "broadcast": "192.168.19.255",
+          "scope": "global",
+          "label": "eth0",
+          "valid_life_time": 4294967295,
+          "preferred_life_time": 4294967295
+        }
+      ]
+    }
+  ],
+  "default": [
+    {
+      "dst": "default",
+      "gateway": "192.168.19.1",
+      "dev": "eth0",
+      "flags": [
+        "onlink"
+      ]
+    }
+  ],
+  "IPv6_persistence_exit": 0,
+  "cloudflared7844_sockets": 0,
+  "token_or_raw_journal_emitted": false,
+  "at": "2026-11-06T17:12:59.671891"
+}

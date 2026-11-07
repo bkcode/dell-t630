@@ -1,0 +1,48 @@
+{
+  "at": "2026-11-06T11:44:25.485397",
+  "credentials_sent": false,
+  "results": [
+    {
+      "name": "ssh",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Connection to 192.168.21.22 port 22 [tcp/ssh] succeeded!\n"
+    },
+    {
+      "name": "pve",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Connection to 192.168.21.22 port 8006 [tcp/*] succeeded!\n"
+    },
+    {
+      "name": "nas-web",
+      "exit_code": 0,
+      "stdout": "200 192.168.21.22",
+      "stderr": ""
+    },
+    {
+      "name": "jellyfin",
+      "exit_code": 0,
+      "stdout": "200 192.168.21.22",
+      "stderr": ""
+    },
+    {
+      "name": "smb",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Connection to 192.168.21.22 port 445 [tcp/microsoft-ds] succeeded!\n"
+    },
+    {
+      "name": "nexus",
+      "exit_code": 0,
+      "stdout": "200 192.168.21.22",
+      "stderr": ""
+    },
+    {
+      "name": "penpot",
+      "exit_code": 0,
+      "stdout": "200 192.168.21.22",
+      "stderr": ""
+    }
+  ]
+}

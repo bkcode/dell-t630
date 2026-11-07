@@ -1,0 +1,5131 @@
+{
+  "schema_version": 1,
+  "collected_at": "2026-11-06T00:05:51.511998+08:00",
+  "timezone": "Asia/Shanghai",
+  "scope": "read-only-local-java-predeployment-inventory",
+  "status": "analysis-complete-deployment-not-executed",
+  "source_root": "/Users/yangzhaohui/work/www/finger/finger-master",
+  "target_state": "Target guest/IP allocation and effective runtime profiles remain manager-owned; no target Java service was started by this task.",
+  "sources": [
+    "AGENTS.md",
+    "docs/api-map.yml",
+    "projects/deploy/config.toml",
+    "projects/deploy/common.bash",
+    "projects/deploy/build.bash",
+    "projects/deploy/deploy.bash",
+    "projects/deploy/deploy-select.bash",
+    "per-project current source/config/Gradle/JAR metadata"
+  ],
+  "release_config": {
+    "dev_target_count": 39,
+    "prod_target_count": 38,
+    "dev_groups": {
+      "dev1": [
+        "fundamentals-service",
+        "finger-service-broker",
+        "finger-gateway-trascan",
+        "finger-bff-trascan",
+        "finger-service-trascan",
+        "finger-service-cms",
+        "finger-bff-merapp",
+        "finger-service-exs",
+        "finger-service-system",
+        "finger-service-subs",
+        "finger-service-mds",
+        "finger-gateway-mobile",
+        "finger-auth",
+        "finger-service-ums",
+        "finger-service-mkts",
+        "finger-service-bcs",
+        "finger-service-fds",
+        "finger-bff-web",
+        "finger-service-stas",
+        "finger-bff-socket",
+        "finger-service-msgs",
+        "finger-service-scs",
+        "finger-bff-system",
+        "finger-bff-trade",
+        "finger-bff-app",
+        "finger-service-auds",
+        "finger-service-coms",
+        "finger-service-cus",
+        "finger-bff-merchant",
+        "finger-bff-sargia",
+        "finger-service-mtfs",
+        "finger-bff-developer",
+        "bridge-gateway",
+        "finger-bff-bridge",
+        "finger-service-bridge",
+        "finger-bff-mt4",
+        "finger-bff-mt5",
+        "kyc-gateway",
+        "finger-service-stock"
+      ]
+    },
+    "prod_groups": {
+      "dev1": [
+        "finger-service-exs",
+        "finger-service-system",
+        "finger-service-subs",
+        "finger-service-mds",
+        "finger-gateway-mobile",
+        "finger-auth"
+      ],
+      "dev2": [
+        "finger-service-ums",
+        "finger-service-mkts",
+        "finger-service-bcs",
+        "finger-service-fds",
+        "finger-bff-web",
+        "finger-service-stas"
+      ],
+      "dev3": [
+        "finger-bff-socket",
+        "finger-service-msgs",
+        "finger-service-scs",
+        "finger-bff-system",
+        "finger-bff-trade",
+        "finger-service-mtfs"
+      ],
+      "dev4": [
+        "finger-bff-merapp",
+        "finger-bff-app",
+        "finger-service-auds",
+        "finger-service-coms",
+        "finger-bff-merchant"
+      ],
+      "dev5": [
+        "finger-service-cus",
+        "finger-bff-sargia",
+        "finger-bff-developer",
+        "finger-service-cms",
+        "finger-bff-mt4",
+        "finger-bff-mt5",
+        "kyc-gateway",
+        "bridge-gateway"
+      ],
+      "dev6": [
+        "fundamentals-service",
+        "finger-service-broker",
+        "finger-gateway-trascan",
+        "finger-bff-trascan",
+        "finger-service-trascan",
+        "finger-bff-bridge",
+        "finger-service-bridge"
+      ]
+    },
+    "dev_defaults": {
+      "java_bin": "/root/.local/share/mise/installs/java/temurin-21.0.10+7.0.LTS/bin/java",
+      "java_opts": "-Xms128m -Xmx512m -XX:MaxMetaspaceSize=256m -XX:+UseG1GC -XX:+UseStringDeduplication -Dfile.encoding=UTF-8",
+      "spring_profile": "dev"
+    },
+    "prod_defaults": {
+      "java_bin": "/root/.local/share/mise/installs/java/temurin-21/bin/java",
+      "java_opts": "-Xms2g -Xmx2g -XX:MaxMetaspaceSize=512m -XX:+UseG1GC -XX:+UseStringDeduplication -Dfile.encoding=UTF-8",
+      "spring_profile": "prod"
+    },
+    "build_repo_root": "projects/deploy/repos",
+    "source_projects_root": "projects",
+    "default_skip_tests": true,
+    "selector_publishes_api_before_boot_build": true,
+    "default_branch_mapping": {
+      "dev": "dev",
+      "prod": "main"
+    },
+    "configured_target_names_without_matching_source": [
+      "bridge-gateway",
+      "kyc-gateway"
+    ],
+    "source_plugin_project_present": false,
+    "prod_missing_compared_with_dev": [
+      "finger-service-stock"
+    ]
+  },
+  "java21": {
+    "local_java_executable": "/Users/yangzhaohui/.local/share/mise/installs/java/temurin-21/bin/java",
+    "local_verified_version": "Temurin 21.0.10+7 LTS",
+    "existing_minimal_boot_jars_class_major": 65,
+    "existing_minimal_boot_jars_spring_boot": "3.5.4",
+    "target_java_verified": false,
+    "plugin_cached": true,
+    "plugin_marker_cached": true,
+    "gradle_wrapper_cache_8_14_3_present": true
+  },
+  "first_test_batch": {
+    "strict_admin_login_read_core": [
+      "finger-gateway-mobile",
+      "finger-auth",
+      "finger-service-system",
+      "finger-bff-system"
+    ],
+    "recommended_permission_and_file_batch": [
+      "finger-gateway-mobile",
+      "finger-auth",
+      "finger-service-system",
+      "finger-service-coms",
+      "finger-bff-system"
+    ],
+    "optional_settings_provider": "finger-service-bcs",
+    "xms_mib_per_service": 128,
+    "xmx_mib": {
+      "finger-gateway-mobile": 512,
+      "finger-auth": 768,
+      "finger-service-system": 512,
+      "finger-service-coms": 768,
+      "finger-bff-system": 768
+    },
+    "sum_xmx_mib": 3328,
+    "metaspace_cap_mib_per_service": 256,
+    "test_guest_memory_gib": 8,
+    "start_status": "pending-schema-config-artifact-review",
+    "permitted_endpoints": [
+      "admin captcha and authentication in dedicated test environment",
+      "read-only system role/employee list using existing seeded test user",
+      "COMS menu/permission read and small synthetic file upload"
+    ],
+    "excluded_endpoints": [
+      "employee creation/email verification delivery",
+      "merchant/KYC/subscription/payment/trading pages",
+      "real Broker/payment/SMS/email calls"
+    ],
+    "dependencies_may_exist_as_contracts_without_running_providers": true
+  },
+  "proposed_prod_groups": [
+    {
+      "node": "java-prod-01",
+      "memory_gib": 16,
+      "vcpu": 6,
+      "candidate_services": [
+        "finger-gateway-mobile",
+        "finger-auth",
+        "finger-service-system",
+        "finger-service-coms",
+        "finger-service-bcs",
+        "finger-service-cms",
+        "finger-bff-system",
+        "finger-bff-merchant",
+        "finger-bff-merapp",
+        "finger-bff-app",
+        "finger-bff-web",
+        "finger-bff-developer",
+        "finger-bff-sargia"
+      ],
+      "sum_heap_admission_cap_mib": 8192,
+      "system_reserve_mib": 2048,
+      "native_metaspace_threads_budget_mib": 4096,
+      "unallocated_margin_mib": 2048
+    },
+    {
+      "node": "java-prod-02",
+      "memory_gib": 16,
+      "vcpu": 6,
+      "candidate_services": [
+        "finger-service-ums",
+        "finger-service-fds",
+        "finger-service-subs",
+        "finger-service-auds",
+        "finger-service-exs",
+        "finger-service-stock",
+        "finger-service-broker",
+        "finger-service-mtfs"
+      ],
+      "sum_heap_admission_cap_mib": 9216,
+      "system_reserve_mib": 2048,
+      "native_metaspace_threads_budget_mib": 4096,
+      "unallocated_margin_mib": 1024
+    },
+    {
+      "node": "java-prod-03",
+      "memory_gib": 16,
+      "vcpu": 6,
+      "candidate_services": [
+        "fundamentals-service",
+        "finger-gateway-trascan",
+        "finger-bff-trascan",
+        "finger-service-trascan",
+        "finger-service-mds",
+        "finger-service-mkts",
+        "finger-service-stas",
+        "finger-bff-socket",
+        "finger-service-msgs",
+        "finger-service-scs",
+        "finger-bff-trade",
+        "finger-service-cus",
+        "bridge-gateway",
+        "finger-bff-bridge",
+        "finger-service-bridge",
+        "finger-bff-mt4",
+        "finger-bff-mt5",
+        "kyc-gateway"
+      ],
+      "sum_heap_admission_cap_mib": 8192,
+      "system_reserve_mib": 2048,
+      "native_metaspace_threads_budget_mib": 5120,
+      "unallocated_margin_mib": 1024
+    }
+  ],
+  "capacity_limitations": [
+    "Groups are candidate placement, not an admission decision to start all 39 targets.",
+    "CUS is deprecated, bridge-gateway/kyc-gateway lack matching source directories, and some targets require separate runtimes.",
+    "Actual combined RSS, thread counts, caches, connection pools and workloads must pass admission measurements.",
+    "Default prod 38*2GiB Xmx is 76GiB heap, exceeding the three-Java-VM 48GiB budget before native/system memory.",
+    "Test all39*512MiB is 19.5GiB heap, exceeding the 8GiB test guest."
+  ],
+  "cache_coverage": [
+    {
+      "coordinate": "com.sargia.finger:auds-api:1.0.0",
+      "cache": "gradle",
+      "path": "/Users/yangzhaohui/.gradle/caches/modules-2/files-2.1/com.sargia.finger/auds-api/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "auds-api-1.0.0.jar",
+          "bytes": 194344,
+          "sha256": "9750789f3adeaabd0ab7f82c10b838e6846920e891befb36e28756b4ad022069"
+        },
+        {
+          "name": "auds-api-1.0.0.jar",
+          "bytes": 199846,
+          "sha256": "2f98fb2bed0973f8606ecca1c34ef8a7d8bbbc1cf3efd79285dcfc7ef9b8c327"
+        },
+        {
+          "name": "auds-api-1.0.0.jar",
+          "bytes": 208509,
+          "sha256": "7b67051d76dd3351deb19ff15556ee5c780fc1bedbbb28f642fe72218998f14e"
+        },
+        {
+          "name": "auds-api-1.0.0.jar",
+          "bytes": 199873,
+          "sha256": "d0a25dc03ad4e45e437a883db19ce697d1acc5627a4de6ad3908c4e5345dd44d"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:auds-api:1.0.0",
+      "cache": "maven-local",
+      "path": "/Users/yangzhaohui/.m2/repository/com/sargia/finger/auds-api/1.0.0",
+      "exists": false,
+      "binary_jars": [],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:bcs-api:1.0.0",
+      "cache": "gradle",
+      "path": "/Users/yangzhaohui/.gradle/caches/modules-2/files-2.1/com.sargia.finger/bcs-api/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "bcs-api-1.0.0.jar",
+          "bytes": 72558,
+          "sha256": "d88230283c55ac8f82ae487c4a71644226336e66ea59fc33cad5bfae5533a2d5"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:bcs-api:1.0.0",
+      "cache": "maven-local",
+      "path": "/Users/yangzhaohui/.m2/repository/com/sargia/finger/bcs-api/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "bcs-api-1.0.0.jar",
+          "bytes": 75473,
+          "sha256": "7c142a28576c2eb650da0a650b231aa3931b343e1abf126cdbd4d0f6cf53a17e"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:cms-api:1.0.0",
+      "cache": "gradle",
+      "path": "/Users/yangzhaohui/.gradle/caches/modules-2/files-2.1/com.sargia.finger/cms-api/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "cms-api-1.0.0.jar",
+          "bytes": 176375,
+          "sha256": "dc94589c48968cb4633441afe0f7f5598ca4167aa1184e17393a4fac4b393614"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:cms-api:1.0.0",
+      "cache": "maven-local",
+      "path": "/Users/yangzhaohui/.m2/repository/com/sargia/finger/cms-api/1.0.0",
+      "exists": false,
+      "binary_jars": [],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:common-apidoc:1.0.0",
+      "cache": "gradle",
+      "path": "/Users/yangzhaohui/.gradle/caches/modules-2/files-2.1/com.sargia.finger/common-apidoc/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "common-apidoc-1.0.0.jar",
+          "bytes": 39088,
+          "sha256": "e4a6559fa7471c79e51f7b6ed6cb03609c54af1c002db2e4edb7b599e2ec0f2f"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:common-apidoc:1.0.0",
+      "cache": "maven-local",
+      "path": "/Users/yangzhaohui/.m2/repository/com/sargia/finger/common-apidoc/1.0.0",
+      "exists": false,
+      "binary_jars": [],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:common-core:1.0.0",
+      "cache": "gradle",
+      "path": "/Users/yangzhaohui/.gradle/caches/modules-2/files-2.1/com.sargia.finger/common-core/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "common-core-1.0.0-plain.jar",
+          "bytes": 197739,
+          "sha256": "3994cdaf3de60009c6205d219ecc3ad9eae1988011aea08d816e083e0050b447"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:common-core:1.0.0",
+      "cache": "maven-local",
+      "path": "/Users/yangzhaohui/.m2/repository/com/sargia/finger/common-core/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "common-core-1.0.0-plain.jar",
+          "bytes": 197380,
+          "sha256": "6fb6be14945d314e2b2f80efa4413f6fbe28e59731ae0f838a138e17d7e02141"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:common-easyquery:1.0.0",
+      "cache": "gradle",
+      "path": "/Users/yangzhaohui/.gradle/caches/modules-2/files-2.1/com.sargia.finger/common-easyquery/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "common-easyquery-1.0.0-plain.jar",
+          "bytes": 20417,
+          "sha256": "0e0772d4ce7f63c542e3fbd992f1e3b6d1be2800edb52565322b16a622e1abdc"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:common-easyquery:1.0.0",
+      "cache": "maven-local",
+      "path": "/Users/yangzhaohui/.m2/repository/com/sargia/finger/common-easyquery/1.0.0",
+      "exists": false,
+      "binary_jars": [],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:common-redis:1.0.0",
+      "cache": "gradle",
+      "path": "/Users/yangzhaohui/.gradle/caches/modules-2/files-2.1/com.sargia.finger/common-redis/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "common-redis-1.0.0.jar",
+          "bytes": 7236,
+          "sha256": "0285f1638de714dffdb14f8d6adb038963b8d8d2ffb868632e12866e97a67182"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:common-redis:1.0.0",
+      "cache": "maven-local",
+      "path": "/Users/yangzhaohui/.m2/repository/com/sargia/finger/common-redis/1.0.0",
+      "exists": false,
+      "binary_jars": [],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:common-security:1.0.0",
+      "cache": "gradle",
+      "path": "/Users/yangzhaohui/.gradle/caches/modules-2/files-2.1/com.sargia.finger/common-security/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "common-security-1.0.0-plain.jar",
+          "bytes": 28376,
+          "sha256": "8ac3000e0b164ebf39c91a45e4abca43bce3b58e203d082201ab9bc4aadd9411"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:common-security:1.0.0",
+      "cache": "maven-local",
+      "path": "/Users/yangzhaohui/.m2/repository/com/sargia/finger/common-security/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "common-security-1.0.0-plain.jar",
+          "bytes": 28376,
+          "sha256": "8ac3000e0b164ebf39c91a45e4abca43bce3b58e203d082201ab9bc4aadd9411"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:common-sms:1.0.0",
+      "cache": "gradle",
+      "path": "/Users/yangzhaohui/.gradle/caches/modules-2/files-2.1/com.sargia.finger/common-sms/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "common-sms-1.0.0.jar",
+          "bytes": 22255,
+          "sha256": "c4df7f399e2f5a12ba75b9887695c848945a57ecf103b06403230eca26535ce5"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:common-sms:1.0.0",
+      "cache": "maven-local",
+      "path": "/Users/yangzhaohui/.m2/repository/com/sargia/finger/common-sms/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "common-sms-1.0.0.jar",
+          "bytes": 22260,
+          "sha256": "050399c535d8823fdced0f33de295963161ec8c552d8b397cf0c75b860986a04"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:common-snowflake:1.0.0",
+      "cache": "gradle",
+      "path": "/Users/yangzhaohui/.gradle/caches/modules-2/files-2.1/com.sargia.finger/common-snowflake/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "common-snowflake-1.0.0-plain.jar",
+          "bytes": 4403,
+          "sha256": "2590d78524c98c2bed9b9e5bd1a55147bcab0ba6de10671df2aadbb4369b0590"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:common-snowflake:1.0.0",
+      "cache": "maven-local",
+      "path": "/Users/yangzhaohui/.m2/repository/com/sargia/finger/common-snowflake/1.0.0",
+      "exists": false,
+      "binary_jars": [],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:common-voucher:1.0.0",
+      "cache": "gradle",
+      "path": "/Users/yangzhaohui/.gradle/caches/modules-2/files-2.1/com.sargia.finger/common-voucher/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "common-voucher-1.0.0.jar",
+          "bytes": 13625,
+          "sha256": "a18d6ec38d013cdf07015625f559f674b6ad589b93ded06ce5107ddf37b6a5b7"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:common-voucher:1.0.0",
+      "cache": "maven-local",
+      "path": "/Users/yangzhaohui/.m2/repository/com/sargia/finger/common-voucher/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "common-voucher-1.0.0.jar",
+          "bytes": 13625,
+          "sha256": "a18d6ec38d013cdf07015625f559f674b6ad589b93ded06ce5107ddf37b6a5b7"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:common-web:1.0.0",
+      "cache": "gradle",
+      "path": "/Users/yangzhaohui/.gradle/caches/modules-2/files-2.1/com.sargia.finger/common-web/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "common-web-1.0.0-plain.jar",
+          "bytes": 48289,
+          "sha256": "24165165b27a3c1938b07d3182cfdb8e7099b9b8c104747504c099988e604c09"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:common-web:1.0.0",
+      "cache": "maven-local",
+      "path": "/Users/yangzhaohui/.m2/repository/com/sargia/finger/common-web/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "common-web-1.0.0-plain.jar",
+          "bytes": 48762,
+          "sha256": "c1fe8d1269d4c22ace54994f6c79931f408b6400e0fa4f49a245cf0251f4c5bf"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:coms-api:1.0.0",
+      "cache": "gradle",
+      "path": "/Users/yangzhaohui/.gradle/caches/modules-2/files-2.1/com.sargia.finger/coms-api/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "coms-api-1.0.0.jar",
+          "bytes": 73810,
+          "sha256": "217522da1d47e471b0f00ef97a9642eea877be710a314763b83249544f7ab76d"
+        },
+        {
+          "name": "coms-api-1.0.0.jar",
+          "bytes": 79058,
+          "sha256": "8a20d7b7d7c39dbce31069afe8b973bd7b17a78d4983e837f4525d56245e400b"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:coms-api:1.0.0",
+      "cache": "maven-local",
+      "path": "/Users/yangzhaohui/.m2/repository/com/sargia/finger/coms-api/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "coms-api-1.0.0.jar",
+          "bytes": 73810,
+          "sha256": "217522da1d47e471b0f00ef97a9642eea877be710a314763b83249544f7ab76d"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:exs-api:1.0.0",
+      "cache": "gradle",
+      "path": "/Users/yangzhaohui/.gradle/caches/modules-2/files-2.1/com.sargia.finger/exs-api/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "exs-api-1.0.0.jar",
+          "bytes": 666658,
+          "sha256": "13315fa6253374a6de0402232bf6b94118e66df60ad8d733446b26110218e895"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:exs-api:1.0.0",
+      "cache": "maven-local",
+      "path": "/Users/yangzhaohui/.m2/repository/com/sargia/finger/exs-api/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "exs-api-1.0.0.jar",
+          "bytes": 629629,
+          "sha256": "1bd4b821c1a187b5ae9f73908425ccdbfef2ad96a524bf682a2e9e3e58ee63f2"
+        },
+        {
+          "name": "exs-api-1.0.0-plain.jar",
+          "bytes": 629629,
+          "sha256": "1bd4b821c1a187b5ae9f73908425ccdbfef2ad96a524bf682a2e9e3e58ee63f2"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:mkts-api:1.0.0",
+      "cache": "gradle",
+      "path": "/Users/yangzhaohui/.gradle/caches/modules-2/files-2.1/com.sargia.finger/mkts-api/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "mkts-api-1.0.0.jar",
+          "bytes": 111587,
+          "sha256": "d8f6a64d3cdb2fb652148256a9ceaf0582f15ccd9be794edcbaf909b296314b2"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:mkts-api:1.0.0",
+      "cache": "maven-local",
+      "path": "/Users/yangzhaohui/.m2/repository/com/sargia/finger/mkts-api/1.0.0",
+      "exists": false,
+      "binary_jars": [],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:msgs-api:1.0.0",
+      "cache": "gradle",
+      "path": "/Users/yangzhaohui/.gradle/caches/modules-2/files-2.1/com.sargia.finger/msgs-api/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "msgs-api-1.0.0.jar",
+          "bytes": 201404,
+          "sha256": "c83329f35a33e60619e71d6dad63e319130615c112a45bac119b80cb139feb78"
+        },
+        {
+          "name": "msgs-api-1.0.0.jar",
+          "bytes": 201277,
+          "sha256": "7fe3b943feb2f4162975f8e2103254e821196547c1ea14c343b32191b465b425"
+        },
+        {
+          "name": "msgs-api-1.0.0.jar",
+          "bytes": 197245,
+          "sha256": "734935dd25c538ee4085f183d93e60bbe18d769bf0f7846e7853ab60f36aaef8"
+        },
+        {
+          "name": "msgs-api-1.0.0.jar",
+          "bytes": 201299,
+          "sha256": "c2c3f64dcd046f41dd8d865b0db1cb542c04d2041d0a9431ed26b4e8b2b49512"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:msgs-api:1.0.0",
+      "cache": "maven-local",
+      "path": "/Users/yangzhaohui/.m2/repository/com/sargia/finger/msgs-api/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "msgs-api-1.0.0.jar",
+          "bytes": 188269,
+          "sha256": "7bf2cbd2f89eb203292b7063b6e6eaf1f3e08a7e46a4a562e242d8a026b7ecf5"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:subs-api:1.0.0",
+      "cache": "gradle",
+      "path": "/Users/yangzhaohui/.gradle/caches/modules-2/files-2.1/com.sargia.finger/subs-api/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "subs-api-1.0.0.jar",
+          "bytes": 172501,
+          "sha256": "52322461a2b4c7b60f0231e50d5af2d569c3b81610baaf0831c2492e1d33b235"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:subs-api:1.0.0",
+      "cache": "maven-local",
+      "path": "/Users/yangzhaohui/.m2/repository/com/sargia/finger/subs-api/1.0.0",
+      "exists": false,
+      "binary_jars": [],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:system-api:1.0.0",
+      "cache": "gradle",
+      "path": "/Users/yangzhaohui/.gradle/caches/modules-2/files-2.1/com.sargia.finger/system-api/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "system-api-1.0.0.jar",
+          "bytes": 74065,
+          "sha256": "ee9fef9261cc40ae3db7291eaca2446fd788d2fb50ccefe5f98ecb1f7c3dd746"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:system-api:1.0.0",
+      "cache": "maven-local",
+      "path": "/Users/yangzhaohui/.m2/repository/com/sargia/finger/system-api/1.0.0",
+      "exists": false,
+      "binary_jars": [],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:ums-api:1.0.0",
+      "cache": "gradle",
+      "path": "/Users/yangzhaohui/.gradle/caches/modules-2/files-2.1/com.sargia.finger/ums-api/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "ums-api-1.0.0.jar",
+          "bytes": 266142,
+          "sha256": "5cf5090fd2610cb6079f515bdbb8a7b7835e94244ee3a872e99aac07120a9a00"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    },
+    {
+      "coordinate": "com.sargia.finger:ums-api:1.0.0",
+      "cache": "maven-local",
+      "path": "/Users/yangzhaohui/.m2/repository/com/sargia/finger/ums-api/1.0.0",
+      "exists": true,
+      "binary_jars": [
+        {
+          "name": "ums-api-1.0.0.jar",
+          "bytes": 265890,
+          "sha256": "dc08d6df9f5e053574f6d9b32d1a309762d10499572b0ad8ed1f27c7e55c5d39"
+        }
+      ],
+      "semantic_compatibility_verified": false
+    }
+  ],
+  "nexus": {
+    "source_default_repository": "https://nexus.imnull.com/repository/maven-public/",
+    "local_status_probe": {
+      "endpoint": "http://127.0.0.1:8081/service/rest/v1/status",
+      "method": "GET",
+      "authentication_supplied": false,
+      "http_status": 200,
+      "observed_in_this_task": true
+    },
+    "source_default_anonymous_probes": [
+      {
+        "coordinate": "com.sargia.finger:system-api:1.0.0",
+        "method": "HEAD",
+        "authentication_supplied": false,
+        "http_status": 403
+      },
+      {
+        "coordinate": "com.sargia.finger:common-web:1.0.0",
+        "method": "HEAD",
+        "authentication_supplied": false,
+        "http_status": 403
+      }
+    ],
+    "authenticated_artifact_access": "unverified",
+    "authenticated_probe": "not-executed-auto-review-rejected",
+    "reason": "External destination and credential use require explicit trust; no credentials sent. No proxy or local Nexus artifact request was used to bypass the rejection.",
+    "target_nexus_artifact_access": "unverified"
+  },
+  "database_initialization": "pending-user-decision-and-manager-schema-plan",
+  "secrets_policy": "No credential values, private keys, tokens, complete config rendering, SQL rows or authenticated response bodies stored.",
+  "repos": [
+    {
+      "name": "deploy",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/deploy",
+      "build_system": "shell",
+      "branch": "main",
+      "head": "81148e8614ee5c49e6f9e4d1b85aebef8adfb33d",
+      "head_commit_time": "2026-11-03T00:14:00+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [],
+      "included_modules": [],
+      "default_port": null,
+      "base_profile_default": null,
+      "profile_configs": [],
+      "main_source_provider_import_domains": [],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [],
+      "artifacts": [],
+      "in_dev_deployment": false,
+      "in_prod_deployment": false,
+      "proposed_prod_node": null,
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "optional-review-before-start"
+    },
+    {
+      "name": "finger-auth",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-auth",
+      "build_system": "gradle",
+      "branch": "codex/feat-omva",
+      "head": "ecb67536e43280ae02685a615e1ac74f742ac3c3",
+      "head_commit_time": "2026-07-30T23:22:17+08:00",
+      "dirty_entries": 1,
+      "dirty_paths": [
+        "docs/"
+      ],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-redis:1.0.0",
+        "com.sargia.finger:common-security:1.0.0",
+        "com.sargia.finger:common-sms:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:system-api:1.0.0",
+        "com.sargia.finger:ums-api:1.0.0"
+      ],
+      "included_modules": [],
+      "default_port": 10000,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-auth.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-auth.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "system",
+        "ums"
+      ],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "build/libs/finger-auth-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 111542538,
+          "mtime": "2026-03-19T23:00:41.438800+08:00",
+          "start_class": "com.sargia.finger.gateway.auth.AuthGatewayApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false,
+          "sha256": "34facb269729b87e863b7ee8d7de7839cfdddfe6ff48ea9f6c90badb2749bbbd",
+          "selected_embedded_contracts": [
+            {
+              "name": "common-web-1.0.0-plain.jar",
+              "sha256": "75fe2b44c86146b39cbb1e27ffe44fa6aedb46f827ade47a50f81b2987b67c87"
+            },
+            {
+              "name": "common-security-1.0.0-plain.jar",
+              "sha256": "9c12c418e6146c1243ca4b63d79c727872aa89cbf30e30e6f5682e46b98ca978"
+            },
+            {
+              "name": "ums-api-1.0.0.jar",
+              "sha256": "b70f4e919005aadf9c4ef1890f9ab1c3200c430a48a0173448eaa0941d621d8f"
+            },
+            {
+              "name": "system-api-1.0.0.jar",
+              "sha256": "620c2b3f6bc20951735b526f5fb50f8f15a703c159ab2602bec75af5121b4b41"
+            }
+          ]
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-01",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "minimal-test-candidate-with-explicit-endpoint-scope",
+      "build_prerequisites": {
+        "gradle_wrapper": "8.14.3",
+        "declared_gradle_heap_mib": 2048,
+        "declared_gradle_metaspace_mib": 512,
+        "offline_build_executed": false
+      }
+    },
+    {
+      "name": "finger-bff-app",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-bff-app",
+      "build_system": "gradle",
+      "branch": "codex/feat-omva",
+      "head": "97dfec188bab49402cef41571fc4acc3d8c0c8d8",
+      "head_commit_time": "2026-11-05T15:46:35+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:auds-api:1.0.0",
+        "com.sargia.finger:bcs-api:1.0.0",
+        "com.sargia.finger:broker-api:1.0.0",
+        "com.sargia.finger:cms-api:1.0.0",
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-coroutine:1.0.0",
+        "com.sargia.finger:common-rabbitmq:1.0.0",
+        "com.sargia.finger:common-redis:1.0.0",
+        "com.sargia.finger:common-security:1.0.0",
+        "com.sargia.finger:common-voucher:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:coms-api:1.0.0",
+        "com.sargia.finger:exs-api:1.0.0",
+        "com.sargia.finger:fds-api:1.0.0",
+        "com.sargia.finger:mds-api:1.0.0",
+        "com.sargia.finger:mkts-api:1.0.0",
+        "com.sargia.finger:msgs-api:1.0.0",
+        "com.sargia.finger:scs-api:1.0.0",
+        "com.sargia.finger:stas-api:1.0.0",
+        "com.sargia.finger:stock-api:0.26.0",
+        "com.sargia.finger:ums-api:1.0.0"
+      ],
+      "included_modules": [],
+      "default_port": 10100,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-app.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-app.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "auds",
+        "bcs",
+        "broker",
+        "cms",
+        "coms",
+        "exs",
+        "fds",
+        "mds",
+        "mkts",
+        "msgs",
+        "scs",
+        "stas",
+        "ums"
+      ],
+      "scheduled_source_files": [
+        "src/main/kotlin/com/sargia/finger/bff/app/service/TickerConfigService.kt"
+      ],
+      "startup_callback_source_files": [
+        "src/main/kotlin/com/sargia/finger/bff/app/service/TickerConfigService.kt"
+      ],
+      "artifacts": [
+        {
+          "path": "build/libs/finger-bff-app-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 103545363,
+          "mtime": "2026-11-04T12:41:25.466888+08:00",
+          "start_class": "com.sargia.finger.bff.app.AppBffApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        },
+        {
+          "path": "build/libs/finger-bff-app-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 1515449,
+          "mtime": "2026-11-05T14:29:17.683643+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-01",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "optional-review-before-start"
+    },
+    {
+      "name": "finger-bff-bridge",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-bff-bridge",
+      "build_system": "gradle",
+      "branch": "main",
+      "head": "2883b2577cd51cc479eb7fed2c1258c92668ea46",
+      "head_commit_time": "2026-10-19T22:52:08+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:bridge-api:1.2.5",
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:coms-api:1.0.0"
+      ],
+      "included_modules": [],
+      "default_port": 11001,
+      "base_profile_default": null,
+      "profile_configs": [
+        {
+          "path": "src/main/resources/application.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-bridge.yaml"
+          ],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "bridge",
+        "coms"
+      ],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "build/libs/finger-bff-bridge-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 59423421,
+          "mtime": "2026-10-19T22:50:25.549315+08:00",
+          "start_class": "com.sargia.finger.bff.bridge.BridgeBffApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        },
+        {
+          "path": "build/libs/finger-bff-bridge-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 205007,
+          "mtime": "2026-10-19T22:50:25.674918+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-03",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "optional-review-before-start"
+    },
+    {
+      "name": "finger-bff-developer",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-bff-developer",
+      "build_system": "gradle",
+      "branch": "codex/bitgo-broker",
+      "head": "bfa3a25a7f18308b3799b3c844bc2ae2fc7fa814",
+      "head_commit_time": "2026-10-15T20:22:51+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:bcs-api:1.0.0",
+        "com.sargia.finger:broker-api:1.0.0",
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-security:1.0.0",
+        "com.sargia.finger:common-voucher:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:coms-api:1.0.0",
+        "com.sargia.finger:exs-api:1.0.0",
+        "com.sargia.finger:fds-api:1.0.0",
+        "com.sargia.finger:msgs-api:1.0.0",
+        "com.sargia.finger:subs-api:1.0.0",
+        "com.sargia.finger:ums-api:1.0.0"
+      ],
+      "included_modules": [],
+      "default_port": 10101,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-developer.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-developer.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "bcs",
+        "broker",
+        "coms",
+        "exs",
+        "fds",
+        "msgs",
+        "subs",
+        "ums"
+      ],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "build/libs/finger-bff-developer-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 102248,
+          "mtime": "2026-10-16T15:38:45.757869+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "build/libs/finger-bff-developer-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 96758480,
+          "mtime": "2026-10-17T20:56:51.017964+08:00",
+          "start_class": "com.sargia.finger.bff.developer.DeveloperBffApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-01",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "optional-review-before-start"
+    },
+    {
+      "name": "finger-bff-merapp",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-bff-merapp",
+      "build_system": "gradle",
+      "branch": "main",
+      "head": "bfa6165a961c91f9799a86241edbebb88986accf",
+      "head_commit_time": "2026-10-30T13:04:53+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:auds-api:1.0.0",
+        "com.sargia.finger:bcs-api:1.0.0",
+        "com.sargia.finger:cms-api:1.0.0",
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-coroutine:1.0.0",
+        "com.sargia.finger:common-security:1.0.0",
+        "com.sargia.finger:common-snowflake:1.0.0",
+        "com.sargia.finger:common-voucher:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:coms-api:1.0.0",
+        "com.sargia.finger:exs-api:1.0.0",
+        "com.sargia.finger:fds-api:1.0.0",
+        "com.sargia.finger:mds-api:1.0.0",
+        "com.sargia.finger:mkts-api:1.0.0",
+        "com.sargia.finger:msgs-api:1.0.0",
+        "com.sargia.finger:mtfs-api:1.0.0",
+        "com.sargia.finger:scs-api:1.0.0",
+        "com.sargia.finger:stas-api:1.0.0",
+        "com.sargia.finger:subs-api:1.0.0",
+        "com.sargia.finger:ums-api:1.0.0"
+      ],
+      "included_modules": [],
+      "default_port": 10107,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-merapp.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-merchant.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "auds",
+        "bcs",
+        "cms",
+        "coms",
+        "exs",
+        "fds",
+        "mds",
+        "mkts",
+        "msgs",
+        "mtfs",
+        "scs",
+        "stas",
+        "subs",
+        "ums"
+      ],
+      "scheduled_source_files": [
+        "src/main/kotlin/com/sargia/finger/bff/merapp/service/TickerConfigService.kt"
+      ],
+      "startup_callback_source_files": [
+        "src/main/kotlin/com/sargia/finger/bff/merapp/service/TickerConfigService.kt"
+      ],
+      "artifacts": [
+        {
+          "path": "build/libs/finger-bff-merapp-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 1708754,
+          "mtime": "2026-10-30T13:00:49.481624+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-01",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "optional-review-before-start"
+    },
+    {
+      "name": "finger-bff-merchant",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-bff-merchant",
+      "build_system": "gradle",
+      "branch": "codex/feat-omva",
+      "head": "63a59a6f14bc205d42397c9a41bb2adba6ad4f80",
+      "head_commit_time": "2026-11-04T19:36:36+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:auds-api:1.0.0",
+        "com.sargia.finger:bcs-api:1.0.0",
+        "com.sargia.finger:broker-api:1.0.0",
+        "com.sargia.finger:cms-api:1.0.0",
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-coroutine:1.0.0",
+        "com.sargia.finger:common-security:1.0.0",
+        "com.sargia.finger:common-snowflake:1.0.0",
+        "com.sargia.finger:common-voucher:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:coms-api:1.0.0",
+        "com.sargia.finger:exs-api:1.0.0",
+        "com.sargia.finger:fds-api:1.0.0",
+        "com.sargia.finger:mds-api:1.0.0",
+        "com.sargia.finger:mkts-api:1.0.0",
+        "com.sargia.finger:msgs-api:1.0.0",
+        "com.sargia.finger:mtfs-api:1.0.0",
+        "com.sargia.finger:scs-api:1.0.0",
+        "com.sargia.finger:stas-api:1.0.0",
+        "com.sargia.finger:stock-api:0.26.0",
+        "com.sargia.finger:subs-api:1.0.0",
+        "com.sargia.finger:ums-api:1.0.0"
+      ],
+      "included_modules": [],
+      "default_port": 10102,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-merchant.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-merchant.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "auds",
+        "bcs",
+        "broker",
+        "cms",
+        "coms",
+        "exs",
+        "fds",
+        "mds",
+        "mkts",
+        "msgs",
+        "mtfs",
+        "scs",
+        "stas",
+        "subs",
+        "ums"
+      ],
+      "scheduled_source_files": [
+        "src/main/kotlin/com/sargia/finger/bff/merchant/service/TickerConfigService.kt"
+      ],
+      "startup_callback_source_files": [
+        "src/main/kotlin/com/sargia/finger/bff/merchant/service/TickerConfigService.kt"
+      ],
+      "artifacts": [
+        {
+          "path": "build/libs/finger-bff-merchant-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 105516563,
+          "mtime": "2026-11-03T20:38:43.551511+08:00",
+          "start_class": "com.sargia.finger.bff.merchant.MerchantBffApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        },
+        {
+          "path": "build/libs/finger-bff-merchant-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 2186332,
+          "mtime": "2026-11-02T19:17:28.175545+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-01",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "optional-review-before-start"
+    },
+    {
+      "name": "finger-bff-mt4",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-bff-mt4",
+      "build_system": "gradle",
+      "branch": "dev",
+      "head": "190b960a2c528b865167cdba768d134406e10c2c",
+      "head_commit_time": "2026-08-14T16:14:58+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:bcs-api:1.0.0",
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-coroutine:1.0.0",
+        "com.sargia.finger:common-security:1.0.0",
+        "com.sargia.finger:common-snowflake:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:coms-api:1.0.0",
+        "com.sargia.finger:exs-api:1.0.0",
+        "com.sargia.finger:msgs-api:1.0.0",
+        "com.sargia.finger:stas-api:1.0.0",
+        "com.sargia.finger:subs-api:1.0.0",
+        "com.sargia.finger:ums-api:1.0.0"
+      ],
+      "included_modules": [],
+      "default_port": 10218,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-mt4.yaml"
+          ],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        },
+        {
+          "path": "src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-mt4.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "bcs",
+        "coms",
+        "exs",
+        "msgs",
+        "stas",
+        "subs",
+        "ums"
+      ],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [],
+      "artifacts": [],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-03",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "optional-review-before-start"
+    },
+    {
+      "name": "finger-bff-mt5",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-bff-mt5",
+      "build_system": "gradle",
+      "branch": "dev",
+      "head": "0a6b654b5a24c1046b8d8a1aab0075ea00798936",
+      "head_commit_time": "2026-08-17T16:44:33+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:bcs-api:1.0.0",
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-coroutine:1.0.0",
+        "com.sargia.finger:common-security:1.0.0",
+        "com.sargia.finger:common-snowflake:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:coms-api:1.0.0",
+        "com.sargia.finger:exs-api:1.0.0",
+        "com.sargia.finger:msgs-api:1.0.0",
+        "com.sargia.finger:stas-api:1.0.0",
+        "com.sargia.finger:subs-api:1.0.0",
+        "com.sargia.finger:ums-api:1.0.0"
+      ],
+      "included_modules": [],
+      "default_port": 10219,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-mt5.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-mt5.yaml"
+          ],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        },
+        {
+          "path": "src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "bcs",
+        "coms",
+        "exs",
+        "msgs",
+        "stas",
+        "subs",
+        "ums"
+      ],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [],
+      "artifacts": [],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-03",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "optional-review-before-start"
+    },
+    {
+      "name": "finger-bff-sargia",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-bff-sargia",
+      "build_system": "gradle",
+      "branch": "main",
+      "head": "4c73fb5de0075296ac5de4b87bf2828b443a1f4b",
+      "head_commit_time": "2026-07-25T12:21:07+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:auds-api:1.0.0",
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-security:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:coms-api:1.0.0",
+        "com.sargia.finger:cus-api:1.0.0",
+        "com.sargia.finger:fds-api:1.0.0",
+        "com.sargia.finger:subs-api:1.0.0",
+        "com.sargia.finger:ums-api:1.0.0"
+      ],
+      "included_modules": [],
+      "default_port": 10215,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-sargia.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-sargia.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "auds",
+        "coms",
+        "cus",
+        "fds",
+        "subs",
+        "ums"
+      ],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "build/libs/finger-bff-merchant-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 147110,
+          "mtime": "2026-07-23T22:42:05.607316+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-01",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "optional-review-before-start"
+    },
+    {
+      "name": "finger-bff-socket",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-bff-socket",
+      "build_system": "gradle",
+      "branch": "codex/feat-omva",
+      "head": "0f984ba0f2bf8a266b4efa2f34ec2ebe08d428cd",
+      "head_commit_time": "2026-11-03T20:49:13+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:auds-api:1.0.0",
+        "com.sargia.finger:bcs-api:1.0.0",
+        "com.sargia.finger:broker-api:1.0.0",
+        "com.sargia.finger:cms-api:1.0.0",
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-coroutine:1.0.0",
+        "com.sargia.finger:common-rabbitmq:1.0.0",
+        "com.sargia.finger:common-redis:1.0.0",
+        "com.sargia.finger:common-security:1.0.0",
+        "com.sargia.finger:common-voucher:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:exs-api:1.0.0",
+        "com.sargia.finger:mds-api:1.0.0",
+        "com.sargia.finger:msgs-api:1.0.0",
+        "com.sargia.finger:stock-api:0.26.0",
+        "com.sargia.finger:subs-api:1.0.0",
+        "com.sargia.finger:system-api:1.0.0",
+        "com.sargia.finger:ums-api:1.0.0"
+      ],
+      "included_modules": [],
+      "default_port": 10103,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-socket.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-socket.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "auds",
+        "bcs",
+        "broker",
+        "cms",
+        "exs",
+        "mds",
+        "msgs",
+        "ums"
+      ],
+      "scheduled_source_files": [
+        "src/main/kotlin/com/sargia/finger/bff/socket/manager/ReactiveLocalWSSessionManager.kt",
+        "src/main/kotlin/com/sargia/finger/bff/socket/manager/ReactiveDistributedWSSessionManager.kt",
+        "src/main/kotlin/com/sargia/finger/bff/socket/service/TickerConfigService.kt"
+      ],
+      "startup_callback_source_files": [
+        "src/main/kotlin/com/sargia/finger/bff/socket/config/ReactiveWebSocketConfig.kt",
+        "src/main/kotlin/com/sargia/finger/bff/socket/config/TraScanWebSocketConfig.kt",
+        "src/main/kotlin/com/sargia/finger/bff/socket/config/ProtocolRegistryConfig.kt",
+        "src/main/kotlin/com/sargia/finger/bff/socket/service/TickerConfigService.kt"
+      ],
+      "artifacts": [
+        {
+          "path": "build/libs/finger-bff-socket-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 522757,
+          "mtime": "2026-11-03T20:32:47.056188+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "build/libs/finger-bff-socket-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 93285009,
+          "mtime": "2026-11-03T20:38:29.842073+08:00",
+          "start_class": "com.sargia.finger.bff.socket.SocketBffApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-03",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "optional-review-before-start"
+    },
+    {
+      "name": "finger-bff-system",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-bff-system",
+      "build_system": "gradle",
+      "branch": "codex/bridge-kyc-review",
+      "head": "37896647fa27cd038662574d93f0cd12f86ea32c",
+      "head_commit_time": "2026-09-27T14:33:06+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:auds-api:1.0.0",
+        "com.sargia.finger:bcs-api:1.0.0",
+        "com.sargia.finger:cms-api:1.0.0",
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-security:1.0.0",
+        "com.sargia.finger:common-voucher:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:coms-api:1.0.0",
+        "com.sargia.finger:exs-api:1.0.0",
+        "com.sargia.finger:mkts-api:1.0.0",
+        "com.sargia.finger:msgs-api:1.0.0",
+        "com.sargia.finger:subs-api:1.0.0",
+        "com.sargia.finger:system-api:1.0.0",
+        "com.sargia.finger:ums-api:1.0.0"
+      ],
+      "included_modules": [],
+      "default_port": 10104,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-system.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-system.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "auds",
+        "bcs",
+        "cms",
+        "coms",
+        "exs",
+        "mkts",
+        "msgs",
+        "subs",
+        "system",
+        "ums"
+      ],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "build/libs/finger-bff-system-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 299548,
+          "mtime": "2026-09-26T16:45:15.183842+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "build/libs/finger-bff-system-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 96803134,
+          "mtime": "2026-09-23T21:29:09.415807+08:00",
+          "start_class": "com.sargia.finger.bff.system.SystemBffApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false,
+          "sha256": "636902b781b1f5da545a49721342f84bd11bf7e23167deb40ae8bb30695cea70",
+          "selected_embedded_contracts": [
+            {
+              "name": "system-api-1.0.0.jar",
+              "sha256": "ee9fef9261cc40ae3db7291eaca2446fd788d2fb50ccefe5f98ecb1f7c3dd746"
+            },
+            {
+              "name": "ums-api-1.0.0.jar",
+              "sha256": "dc08d6df9f5e053574f6d9b32d1a309762d10499572b0ad8ed1f27c7e55c5d39"
+            },
+            {
+              "name": "coms-api-1.0.0.jar",
+              "sha256": "217522da1d47e471b0f00ef97a9642eea877be710a314763b83249544f7ab76d"
+            },
+            {
+              "name": "common-security-1.0.0-plain.jar",
+              "sha256": "8ac3000e0b164ebf39c91a45e4abca43bce3b58e203d082201ab9bc4aadd9411"
+            },
+            {
+              "name": "common-web-1.0.0-plain.jar",
+              "sha256": "24165165b27a3c1938b07d3182cfdb8e7099b9b8c104747504c099988e604c09"
+            }
+          ]
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-01",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "minimal-test-candidate-with-explicit-endpoint-scope",
+      "build_prerequisites": {
+        "gradle_wrapper": "8.14.3",
+        "declared_gradle_heap_mib": 2048,
+        "declared_gradle_metaspace_mib": 512,
+        "offline_build_executed": false
+      }
+    },
+    {
+      "name": "finger-bff-trade",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-bff-trade",
+      "build_system": "gradle",
+      "branch": "codex/feat-omva",
+      "head": "33693155f2acefc2d61f000aa6a18b8efd7709ce",
+      "head_commit_time": "2026-11-03T20:49:08+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:bcs-api:1.0.0",
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-security:1.0.0",
+        "com.sargia.finger:common-voucher:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:coms-api:1.0.0",
+        "com.sargia.finger:exs-api:1.0.0",
+        "com.sargia.finger:fds-api:1.0.0",
+        "com.sargia.finger:msgs-api:1.0.0",
+        "com.sargia.finger:stock-api:0.26.0",
+        "com.sargia.finger:subs-api:1.0.0",
+        "com.sargia.finger:ums-api:1.0.0"
+      ],
+      "included_modules": [],
+      "default_port": 10105,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-trade.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-trade.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "bcs",
+        "coms",
+        "exs",
+        "fds",
+        "msgs",
+        "subs",
+        "ums"
+      ],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "build/libs/finger-bff-trade-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 96839704,
+          "mtime": "2026-11-03T20:31:38.280754+08:00",
+          "start_class": "com.sargia.finger.bff.trade.TradeBffApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        },
+        {
+          "path": "build/libs/finger-bff-trade-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 128125,
+          "mtime": "2026-10-29T19:14:44.741637+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-03",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "optional-review-before-start"
+    },
+    {
+      "name": "finger-bff-trascan",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-bff-trascan",
+      "build_system": "gradle",
+      "branch": "main",
+      "head": "756c26f26d2b54eccb1b1cdc8168191f7c97547f",
+      "head_commit_time": "2026-08-31T22:40:35+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-security:1.0.0",
+        "com.sargia.finger:trascan-api:1.0.0"
+      ],
+      "included_modules": [],
+      "default_port": 11003,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-trascan.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-trascan.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "trascan"
+      ],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "build/libs/finger-bff-trascan-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 89400941,
+          "mtime": "2026-08-30T15:53:03.822224+08:00",
+          "start_class": "com.sargia.finger.bff.trascan.TraScanBffApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        },
+        {
+          "path": "build/libs/finger-bff-trascan-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 308826,
+          "mtime": "2026-08-31T22:09:31.969916+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-03",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "optional-review-before-start"
+    },
+    {
+      "name": "finger-bff-web",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-bff-web",
+      "build_system": "gradle",
+      "branch": "codex/feat-omva",
+      "head": "7b8ecc2e82bfaf126d18f78ba4e198cd7f78389e",
+      "head_commit_time": "2026-11-04T14:01:43+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:auds-api:1.0.0",
+        "com.sargia.finger:bcs-api:1.0.0",
+        "com.sargia.finger:broker-api:1.0.0",
+        "com.sargia.finger:cms-api:1.0.0",
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-security:1.0.0",
+        "com.sargia.finger:common-voucher:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:coms-api:1.0.0",
+        "com.sargia.finger:fds-api:1.0.0",
+        "com.sargia.finger:mkts-api:1.0.0",
+        "com.sargia.finger:msgs-api:1.0.0",
+        "com.sargia.finger:stas-api:1.0.0",
+        "com.sargia.finger:subs-api:1.0.0",
+        "com.sargia.finger:ums-api:1.0.0"
+      ],
+      "included_modules": [],
+      "default_port": null,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-web.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-bff-web.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "auds",
+        "bcs",
+        "broker",
+        "cms",
+        "coms",
+        "fds",
+        "mkts",
+        "msgs",
+        "stas",
+        "subs",
+        "ums"
+      ],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "build/libs/finger-bff-web-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 201477,
+          "mtime": "2026-11-02T13:43:48.970862+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "build/libs/finger-bff-web-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 96762302,
+          "mtime": "2026-10-06T21:42:02.671617+08:00",
+          "start_class": "com.sargia.finger.bff.web.WebBffApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-01",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "optional-review-before-start"
+    },
+    {
+      "name": "finger-common-lib",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-common-lib",
+      "build_system": "gradle",
+      "branch": "main",
+      "head": "ffba5364b379558e627dccf6e43acf2aea9b1fcd",
+      "head_commit_time": "2026-09-21T16:18:10+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-easyquery:1.0.0",
+        "com.sargia.finger:common-redis:1.0.0"
+      ],
+      "included_modules": [
+        ":common-apidoc",
+        ":common-core",
+        ":common-web",
+        ":common-redis",
+        ":common-security",
+        ":common-rabbitmq",
+        ":common-sms",
+        ":common-easyquery",
+        ":common-snowflake",
+        ":common-voucher",
+        ":common-coroutine",
+        ":common-outbox"
+      ],
+      "default_port": null,
+      "base_profile_default": null,
+      "profile_configs": [],
+      "main_source_provider_import_domains": [],
+      "scheduled_source_files": [
+        "common-outbox/src/main/kotlin/com/sargia/finger/common/outbox/scheduler/OutboxPublisherScheduler.kt",
+        "common-outbox/src/main/kotlin/com/sargia/finger/common/outbox/scheduler/OutboxCleanerScheduler.kt"
+      ],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "common-redis/build/libs/common-redis-1.0.0.jar",
+          "kind": "library",
+          "bytes": 7340,
+          "mtime": "2026-05-02T08:33:58.675631+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "common-web/build/libs/common-web-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 48289,
+          "mtime": "2026-03-14T14:32:48.941687+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "common-easyquery/build/libs/common-easyquery-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 20417,
+          "mtime": "2026-03-14T14:32:10.503442+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "common-outbox/build/libs/common-outbox-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 64656,
+          "mtime": "2026-03-14T14:33:04.348736+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "common-apidoc/build/libs/common-apidoc-1.0.0.jar",
+          "kind": "library",
+          "bytes": 39088,
+          "mtime": "2026-03-14T14:32:02.084300+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "common-sms/build/libs/common-sms-1.0.0.jar",
+          "kind": "library",
+          "bytes": 22255,
+          "mtime": "2026-03-16T15:32:57.389606+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "common-snowflake/build/libs/common-snowflake-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 4403,
+          "mtime": "2026-03-14T14:32:38.984001+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "common-rabbitmq/build/libs/common-rabbitmq-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 12767,
+          "mtime": "2026-03-14T16:22:29.534409+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "common-coroutine/build/libs/common-coroutine-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 59288,
+          "mtime": "2026-07-03T23:10:28.098638+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "common-core/build/libs/common-core-1.0.1-omva-plain.jar",
+          "kind": "library",
+          "bytes": 197794,
+          "mtime": "2026-09-21T09:59:33.597898+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "common-core/build/libs/common-core-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 197794,
+          "mtime": "2026-09-21T15:46:55.447657+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "common-security/build/libs/common-security-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 28376,
+          "mtime": "2026-07-06T20:19:51.580828+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "common-voucher/build/libs/common-voucher-1.0.0.jar",
+          "kind": "library",
+          "bytes": 13625,
+          "mtime": "2026-06-22T21:31:53.704471+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": false,
+      "in_prod_deployment": false,
+      "proposed_prod_node": null,
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "optional-review-before-start"
+    },
+    {
+      "name": "finger-gateway-mobile",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-gateway-mobile",
+      "build_system": "gradle",
+      "branch": "codex/fix-fund-session",
+      "head": "5718f44d8ce2dd6074122cef4a4a7c922a16a444",
+      "head_commit_time": "2026-10-29T19:11:10+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-redis:1.0.0"
+      ],
+      "included_modules": [],
+      "default_port": 9999,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-gateway-mobile.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-gateway-mobile.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [
+        "src/main/kotlin/com/sargia/finger/gateway/mobile/config/SentinelConfig.kt"
+      ],
+      "artifacts": [
+        {
+          "path": "build/libs/finger-gateway-mobile-0.0.1-plain.jar",
+          "kind": "library",
+          "bytes": 58166,
+          "mtime": "2026-10-28T08:03:35.253643+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "build/libs/finger-gateway-mobile-0.0.1.jar",
+          "kind": "boot",
+          "bytes": 91188042,
+          "mtime": "2026-03-19T11:38:55.626093+08:00",
+          "start_class": "com.sargia.finger.gateway.mobile.MobileGatewayApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false,
+          "sha256": "262e4115aa3c0dc7ba8910d1a1e62bc978dde0fef48a452be6e32db9a6f7fc90",
+          "selected_embedded_contracts": []
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-01",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "minimal-test-candidate-with-explicit-endpoint-scope",
+      "build_prerequisites": {
+        "gradle_wrapper": "8.14.3",
+        "declared_gradle_heap_mib": 2048,
+        "declared_gradle_metaspace_mib": 512,
+        "offline_build_executed": false
+      }
+    },
+    {
+      "name": "finger-gateway-trascan",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-gateway-trascan",
+      "build_system": "gradle",
+      "branch": "main",
+      "head": "1df22d7df79ef465fdb6d8c5a050a44e25ea4bd8",
+      "head_commit_time": "2026-08-31T21:03:15+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-redis:1.0.0"
+      ],
+      "included_modules": [],
+      "default_port": 9996,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-gateway-trascan.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [
+        "src/main/kotlin/com/sargia/finger/gateway/trascan/config/SentinelConfig.kt"
+      ],
+      "artifacts": [
+        {
+          "path": "build/libs/finger-gateway-trascan-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 56978,
+          "mtime": "2026-08-31T20:58:53.793391+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-03",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "optional-review-before-start"
+    },
+    {
+      "name": "finger-service-auds",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-auds",
+      "build_system": "gradle",
+      "branch": "codex/omva",
+      "head": "a13bef2c484a9c3e84176e1ba6c912a54f80b36b",
+      "head_commit_time": "2026-10-30T21:17:57+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-easyquery:1.0.0",
+        "com.sargia.finger:common-outbox:1.0.0",
+        "com.sargia.finger:common-rabbitmq:1.0.0",
+        "com.sargia.finger:common-snowflake:1.0.0",
+        "com.sargia.finger:common-voucher:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:coms-api:1.0.0",
+        "com.sargia.finger:fds-api:1.0.0",
+        "com.sargia.finger:msgs-api:1.0.0",
+        "com.sargia.finger:subs-api:1.0.0",
+        "com.sargia.finger:ums-api:1.0.0"
+      ],
+      "included_modules": [
+        ":auds-api",
+        ":auds-boot"
+      ],
+      "default_port": 10200,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "auds-boot/src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-auds.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "auds-boot/src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-auds.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "auds-boot/src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "coms",
+        "fds",
+        "msgs",
+        "subs",
+        "ums"
+      ],
+      "scheduled_source_files": [
+        "auds-boot/src/main/kotlin/com/sargia/finger/service/auds/scheduler/KycStatusScanScheduler.kt",
+        "auds-boot/src/main/kotlin/com/sargia/finger/service/auds/scheduler/StageAutoApproveScheduler.kt"
+      ],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "auds-boot/build/libs/auds-boot-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 107208125,
+          "mtime": "2026-10-14T16:30:57.812358+08:00",
+          "start_class": "com.sargia.finger.service.auds.AudsServiceApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        },
+        {
+          "path": "auds-boot/build/libs/auds-boot-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 567140,
+          "mtime": "2026-10-30T20:36:57.127778+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "auds-api/build/libs/auds-api-1.0.2-omva.jar",
+          "kind": "library",
+          "bytes": 198893,
+          "mtime": "2026-09-21T10:32:11.739968+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "auds-api/build/libs/auds-api-1.0.0.jar",
+          "kind": "library",
+          "bytes": 208827,
+          "mtime": "2026-10-19T21:02:10.789433+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-02",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "notifications-or-workflow-or-outbox-review-required"
+    },
+    {
+      "name": "finger-service-bcs",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-bcs",
+      "build_system": "gradle",
+      "branch": "main",
+      "head": "b1d6ecb48ba6a53d8a759169d103b6e561d7c53a",
+      "head_commit_time": "2026-10-30T13:04:52+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-easyquery:1.0.0",
+        "com.sargia.finger:common-redis:1.0.0",
+        "com.sargia.finger:common-snowflake:1.0.0",
+        "com.sargia.finger:common-web:1.0.0"
+      ],
+      "included_modules": [
+        ":bcs-api",
+        ":bcs-boot"
+      ],
+      "default_port": 10201,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "bcs-boot/src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-bcs.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "bcs-boot/src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-bcs.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "bcs-boot/src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "bcs-api/build/libs/bcs-api-1.0.0.jar",
+          "kind": "library",
+          "bytes": 75473,
+          "mtime": "2026-10-30T12:59:35.875478+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "bcs-boot/build/libs/bcs-boot-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 99955472,
+          "mtime": "2026-03-19T12:31:14.953661+08:00",
+          "start_class": "com.sargia.finger.service.bcs.BcsServiceApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        },
+        {
+          "path": "bcs-boot/build/libs/bcs-boot-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 191997,
+          "mtime": "2026-10-30T12:59:41.603634+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-01",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "optional-review-before-start"
+    },
+    {
+      "name": "finger-service-bridge",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-bridge",
+      "build_system": "gradle",
+      "branch": "main",
+      "head": "94e8fdca1c5864f2e034ed4950109c6acf0d76bb",
+      "head_commit_time": "2026-10-19T22:52:08+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-easyquery:1.0.0",
+        "com.sargia.finger:common-web:1.0.0"
+      ],
+      "included_modules": [
+        ":bridge-api",
+        ":bridge-boot"
+      ],
+      "default_port": 11000,
+      "base_profile_default": null,
+      "profile_configs": [
+        {
+          "path": "bridge-boot/src/main/resources/application.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-bridge.yaml",
+            "finger-bff-bridge.yaml"
+          ],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [
+        "bridge-boot/src/main/kotlin/com/sargia/finger/service/bridge/application/config/BridgeDatabaseTargetValidator.kt"
+      ],
+      "artifacts": [
+        {
+          "path": "bridge-api/build/libs/bridge-api-1.2.5.jar",
+          "kind": "library",
+          "bytes": 101689,
+          "mtime": "2026-10-19T20:37:19.742466+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "bridge-api/build/libs/bridge-api-1.2.4.jar",
+          "kind": "library",
+          "bytes": 92053,
+          "mtime": "2026-09-28T15:56:39.131067+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "bridge-boot/build/libs/bridge-boot-1.2.4.jar",
+          "kind": "boot",
+          "bytes": 96007877,
+          "mtime": "2026-10-13T13:07:00.045850+08:00",
+          "start_class": "com.sargia.finger.service.bridge.BridgeServiceApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        },
+        {
+          "path": "bridge-boot/build/libs/bridge-boot-1.2.4-plain.jar",
+          "kind": "library",
+          "bytes": 312667,
+          "mtime": "2026-10-13T13:05:52.719902+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "bridge-boot/build/libs/bridge-boot-1.2.5.jar",
+          "kind": "boot",
+          "bytes": 96063130,
+          "mtime": "2026-10-19T22:37:57.800775+08:00",
+          "start_class": "com.sargia.finger.service.bridge.BridgeServiceApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        },
+        {
+          "path": "bridge-boot/build/libs/bridge-boot-1.2.5-plain.jar",
+          "kind": "library",
+          "bytes": 356934,
+          "mtime": "2026-10-19T22:37:58.006697+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-03",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "notifications-or-workflow-or-outbox-review-required"
+    },
+    {
+      "name": "finger-service-broker",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-broker",
+      "build_system": "gradle",
+      "branch": "codex/feat-omva",
+      "head": "fde66760c7c9654cb704a306f887f5f32ac219d0",
+      "head_commit_time": "2026-11-04T16:57:18+08:00",
+      "dirty_entries": 6,
+      "dirty_paths": [
+        "ocs/contracts/stock-fds-withdrawal-operation-id-requirements.md",
+        "docs/testing/README.md",
+        "docs/testing/stock-chain-full-after-reset-20261104.md",
+        "docs/testing/frontend-chain-reset-20261104.md",
+        "docs/testing/merchant-frontend-goal-acceptance-20261104.md",
+        "docs/testing/stock-sync-withdrawal-20261104.md"
+      ],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-easyquery:1.0.0",
+        "com.sargia.finger:common-outbox:1.0.0",
+        "com.sargia.finger:common-rabbitmq:1.0.0",
+        "com.sargia.finger:common-security:1.0.0",
+        "com.sargia.finger:common-snowflake:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:exs-api:1.0.0",
+        "com.sargia.finger:msgs-api:1.0.0",
+        "com.sargia.finger:stock-api:0.26.0",
+        "com.sargia.finger:ums-api:1.0.0"
+      ],
+      "included_modules": [
+        ":broker-api",
+        ":broker-boot"
+      ],
+      "default_port": 11006,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "broker-boot/src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-broker.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "broker-boot/src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-broker.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "broker-boot/src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "exs",
+        "msgs",
+        "ums"
+      ],
+      "scheduled_source_files": [
+        "broker-boot/src/main/kotlin/com/sargia/finger/service/broker/bitgo/BitGoWebhookRegistrationTask.kt",
+        "broker-boot/src/main/kotlin/com/sargia/finger/service/broker/stock/StockAccountTaskWorker.kt",
+        "broker-boot/src/main/kotlin/com/sargia/finger/service/broker/pnl/BrokerPnlSyncScheduler.kt",
+        "broker-boot/src/main/kotlin/com/sargia/finger/service/broker/dividend/localexs/TemporaryLocalExsDividendRuntime.kt",
+        "broker-boot/src/main/kotlin/com/sargia/finger/service/broker/adapter/webull/WebullBrokerEventPushSupervisor.kt",
+        "broker-boot/src/main/kotlin/com/sargia/finger/service/broker/order/execution/BrokerExecutionSync.kt"
+      ],
+      "startup_callback_source_files": [
+        "broker-boot/src/main/kotlin/com/sargia/finger/service/broker/pnl/BrokerPnlSubscriptionLifecycle.kt"
+      ],
+      "artifacts": [
+        {
+          "path": "broker-api/build/libs/broker-api-1.0.1-omva.jar",
+          "kind": "library",
+          "bytes": 338494,
+          "mtime": "2026-09-21T10:01:07.909309+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "broker-api/build/libs/broker-api-1.0.2-omva.jar",
+          "kind": "library",
+          "bytes": 352900,
+          "mtime": "2026-09-21T14:37:34.321872+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "broker-api/build/libs/broker-api-1.0.3-omva.jar",
+          "kind": "library",
+          "bytes": 372629,
+          "mtime": "2026-09-21T15:13:40.527564+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "broker-api/build/libs/broker-api-1.0.0.jar",
+          "kind": "library",
+          "bytes": 646650,
+          "mtime": "2026-11-04T13:47:41.342597+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "broker-api/build/libs/broker-api-1.1.0.jar",
+          "kind": "library",
+          "bytes": 620928,
+          "mtime": "2026-11-03T21:58:58.903055+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "broker-boot/build/libs/broker-boot-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 1336591,
+          "mtime": "2026-11-04T13:49:13.799068+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "broker-boot/build/libs/broker-boot-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 157691950,
+          "mtime": "2026-11-04T13:49:13.460653+08:00",
+          "start_class": "com.sargia.finger.service.broker.BrokerServiceApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-02",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "financial-or-broker-external-execution-restricted"
+    },
+    {
+      "name": "finger-service-cms",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-cms",
+      "build_system": "gradle",
+      "branch": "main",
+      "head": "90ab2ee9d38bac7a02a1955a377279e7141cfa03",
+      "head_commit_time": "2026-07-25T12:21:07+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-easyquery:1.0.0",
+        "com.sargia.finger:common-security:1.0.0",
+        "com.sargia.finger:common-snowflake:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:msgs-api:1.0.0",
+        "com.sargia.finger:subs-api:1.0.0",
+        "com.sargia.finger:ums-api:1.0.0"
+      ],
+      "included_modules": [
+        ":cms-api",
+        ":cms-boot"
+      ],
+      "default_port": 10217,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "cms-boot/src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-cms.yaml"
+          ],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "cms-boot/src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "msgs",
+        "subs",
+        "ums"
+      ],
+      "scheduled_source_files": [
+        "cms-boot/src/main/kotlin/com/sargia/finger/service/cms/containers/announcement/tasks/AnnouncementDeliveryScheduler.kt"
+      ],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "cms-boot/build/libs/cms-boot-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 390062,
+          "mtime": "2026-07-23T22:06:52.654127+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "cms-api/build/libs/cms-api-1.0.0.jar",
+          "kind": "library",
+          "bytes": 176375,
+          "mtime": "2026-07-23T20:34:28.929962+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-01",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "notifications-or-workflow-or-outbox-review-required"
+    },
+    {
+      "name": "finger-service-coms",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-coms",
+      "build_system": "gradle",
+      "branch": "codex/fix-traditional-city-names",
+      "head": "53c831d1763ed94459865b37a3bb79ad243789ff",
+      "head_commit_time": "2026-10-14T14:04:56+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-easyquery:1.0.0",
+        "com.sargia.finger:common-snowflake:1.0.0",
+        "com.sargia.finger:common-web:1.0.0"
+      ],
+      "included_modules": [
+        ":coms-api",
+        ":coms-boot"
+      ],
+      "default_port": 10202,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "coms-boot/src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-coms.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "coms-boot/src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-coms.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "coms-boot/src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "coms-api/build/libs/coms-api-0.0.1-SNAPSHOT.jar",
+          "kind": "library",
+          "bytes": 18355,
+          "mtime": "2025-12-08T21:41:10.128397+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "coms-api/build/libs/coms-api-1.0.0.jar",
+          "kind": "library",
+          "bytes": 79058,
+          "mtime": "2026-10-13T22:39:03.900918+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "coms-api/build/libs/coms-api-0.0.1.jar",
+          "kind": "library",
+          "bytes": 18355,
+          "mtime": "2025-12-10T16:22:47.061162+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "coms-boot/build/libs/coms-boot-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 35331302,
+          "mtime": "2026-10-14T15:46:29.277693+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "coms-boot/build/libs/coms-boot-0.0.1-SNAPSHOT-plain.jar",
+          "kind": "library",
+          "bytes": 62375,
+          "mtime": "2025-12-08T17:01:21.494354+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "coms-boot/build/libs/coms-boot-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 135015757,
+          "mtime": "2026-03-20T12:20:29.770972+08:00",
+          "start_class": "com.sargia.finger.service.coms.ComsServiceApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false,
+          "sha256": "4ed7f1d7290ee4d1d61b9a8111f7fe0c10e0c4523e3eca55672472f9ae0792e3",
+          "selected_embedded_contracts": [
+            {
+              "name": "coms-api-1.0.0.jar",
+              "sha256": "7eee19862aef3deb2c875b9e7cd118bff31ce59cd6946064581ad12b3ae50592"
+            },
+            {
+              "name": "common-web-1.0.0-plain.jar",
+              "sha256": "24165165b27a3c1938b07d3182cfdb8e7099b9b8c104747504c099988e604c09"
+            }
+          ]
+        },
+        {
+          "path": "coms-boot/build/libs/coms-boot-0.0.1-plain.jar",
+          "kind": "library",
+          "bytes": 62078,
+          "mtime": "2025-12-10T16:23:04.733950+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-01",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "minimal-test-candidate-with-explicit-endpoint-scope",
+      "build_prerequisites": {
+        "gradle_wrapper": "8.14.3",
+        "declared_gradle_heap_mib": 2048,
+        "declared_gradle_metaspace_mib": 512,
+        "offline_build_executed": false
+      }
+    },
+    {
+      "name": "finger-service-cus",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-cus",
+      "build_system": "gradle",
+      "branch": "main",
+      "head": "ef4a8a5bb199107d840ce69e9da81ef43301abe2",
+      "head_commit_time": "2026-06-11T21:16:23+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-easyquery:1.0.0",
+        "com.sargia.finger:common-snowflake:1.0.0",
+        "com.sargia.finger:common-web:1.0.0"
+      ],
+      "included_modules": [
+        ":cus-api",
+        ":cus-boot"
+      ],
+      "default_port": 10203,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "cus-boot/src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-cus.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "cus-boot/src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-cus.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "cus-boot/src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "cus-boot/build/libs/cus-boot-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 100078425,
+          "mtime": "2026-03-20T14:38:43.130617+08:00",
+          "start_class": "com.sargia.finger.service.cus.CusServiceApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        },
+        {
+          "path": "cus-api/build/libs/cus-api-1.0.0.jar",
+          "kind": "library",
+          "bytes": 24809,
+          "mtime": "2026-07-25T13:17:25.535094+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-03",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "deprecated-do-not-start"
+    },
+    {
+      "name": "finger-service-exs",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-exs",
+      "build_system": "gradle",
+      "branch": "dev",
+      "head": "8c6c8a5dcd11c7e26d64586765bc09afa9f97cb5",
+      "head_commit_time": "2026-10-14T00:53:22+09:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-easyquery:1.0.0",
+        "com.sargia.finger:common-rabbitmq:1.0.0",
+        "com.sargia.finger:common-snowflake:1.0.0",
+        "com.sargia.finger:common-web:1.0.0"
+      ],
+      "included_modules": [
+        ":exs-api",
+        ":exs-boot"
+      ],
+      "default_port": 10213,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "exs-boot/src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-exs.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "exs-boot/src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-exs.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "exs-boot/src/main/resources/application-test.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        },
+        {
+          "path": "exs-boot/src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [],
+      "scheduled_source_files": [
+        "exs-boot/src/main/kotlin/com/sargia/finger/service/exs/infrastructure/outbox/EventOutboxPublisher.kt",
+        "exs-boot/src/main/kotlin/com/sargia/finger/service/exs/infrastructure/reconciliation/WithdrawalStatusReconciliationTask.kt",
+        "exs-boot/src/main/kotlin/com/sargia/finger/service/exs/infrastructure/snapshot/SnapshotScheduler.kt",
+        "exs-boot/src/main/kotlin/com/sargia/finger/service/exs/infrastructure/financing/FinancingInterestScheduler.kt",
+        "exs-boot/src/main/kotlin/com/sargia/finger/service/exs/infrastructure/conditional/ConditionalOrderCleanupScheduler.kt",
+        "exs-boot/src/main/kotlin/com/sargia/finger/service/exs/infrastructure/funding/FundingFeeScheduler.kt",
+        "exs-boot/src/main/kotlin/com/sargia/finger/service/exs/infrastructure/query/recovery/PendingStateRecoveryScheduler.kt"
+      ],
+      "startup_callback_source_files": [
+        "exs-boot/src/main/kotlin/com/sargia/finger/service/exs/engine/interest/MakerTickerInterestManager.kt",
+        "exs-boot/src/main/kotlin/com/sargia/finger/service/exs/engine/config/GlobalConfigManager.kt",
+        "exs-boot/src/main/kotlin/com/sargia/finger/service/exs/engine/precision/SymbolPrecisionManager.kt",
+        "exs-boot/src/main/kotlin/com/sargia/finger/service/exs/infrastructure/market/MarketScheduleManager.kt",
+        "exs-boot/src/main/kotlin/com/sargia/finger/service/exs/infrastructure/funding/FundingFeeScheduler.kt",
+        "exs-boot/src/main/kotlin/com/sargia/finger/service/exs/infrastructure/query/consumer/QueryServiceEventConsumer.kt",
+        "exs-boot/src/main/kotlin/com/sargia/finger/service/exs/application/config/EngineInitializer.kt"
+      ],
+      "artifacts": [
+        {
+          "path": "exs-api/build/libs/exs-api-1.0.0.jar",
+          "kind": "library",
+          "bytes": 666658,
+          "mtime": "2026-10-17T13:52:56.399555+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "exs-boot/build/libs/exs-boot-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 129689777,
+          "mtime": "2026-03-19T19:03:06.706057+08:00",
+          "start_class": "com.sargia.finger.service.exs.ExsServiceApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        },
+        {
+          "path": "exs-boot/build/libs/exs-boot-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 4053901,
+          "mtime": "2026-10-04T16:25:08.380428+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-02",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "financial-or-broker-external-execution-restricted"
+    },
+    {
+      "name": "finger-service-fds",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-fds",
+      "build_system": "gradle",
+      "branch": "codex/feat-omva",
+      "head": "4b578b5b4bda374e33af0f589bf06d73bb84f2dc",
+      "head_commit_time": "2026-11-04T19:36:35+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:auds-api:1.0.0",
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-easyquery:1.0.0",
+        "com.sargia.finger:common-outbox:1.0.0",
+        "com.sargia.finger:common-rabbitmq:1.0.0",
+        "com.sargia.finger:common-redis:1.0.0",
+        "com.sargia.finger:common-snowflake:1.0.0",
+        "com.sargia.finger:common-voucher:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:exs-api:1.0.0",
+        "com.sargia.finger:msgs-api:1.0.0",
+        "com.sargia.finger:stock-api:0.28.0",
+        "com.sargia.finger:subs-api:1.0.0",
+        "com.sargia.finger:ums-api:1.0.0"
+      ],
+      "included_modules": [
+        ":fds-api",
+        ":fds-boot"
+      ],
+      "default_port": 10204,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "fds-boot/src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-fds.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "fds-boot/src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-fds.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "fds-boot/src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "auds",
+        "exs",
+        "msgs",
+        "subs",
+        "ums"
+      ],
+      "scheduled_source_files": [
+        "fds-boot/src/main/kotlin/com/sargia/finger/service/fds/customcurrency/CustomFundingWorker.kt",
+        "fds-boot/src/main/kotlin/com/sargia/finger/service/fds/internaltransfer/InternalTransferWorker.kt",
+        "fds-boot/src/main/kotlin/com/sargia/finger/service/fds/fundingnotice/FundingNoticeWorker.kt"
+      ],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "fds-boot/build/libs/fds-boot-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 960364,
+          "mtime": "2026-11-04T19:31:56.985072+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "fds-boot/build/libs/fds-boot-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 106959128,
+          "mtime": "2026-11-03T20:31:58.723975+08:00",
+          "start_class": "com.sargia.finger.service.fds.FdsServiceApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        },
+        {
+          "path": "fds-boot/build/libs/fds-boot-0.0.1-SNAPSHOT-plain.jar",
+          "kind": "library",
+          "bytes": 214190,
+          "mtime": "2025-12-12T14:55:17.325669+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "fds-api/build/libs/fds-api-1.0.0.jar",
+          "kind": "library",
+          "bytes": 361446,
+          "mtime": "2026-10-22T17:41:11.423260+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "fds-api/build/libs/fds-api-0.0.1.jar",
+          "kind": "library",
+          "bytes": 93790,
+          "mtime": "2025-12-12T15:19:02.493142+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "fds-api/build/libs/fds-api-0.0.1-SNAPSHOT.jar",
+          "kind": "library",
+          "bytes": 93790,
+          "mtime": "2025-12-12T14:51:14.134312+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-02",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "financial-or-broker-external-execution-restricted"
+    },
+    {
+      "name": "finger-service-kyc",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-kyc",
+      "build_system": "maven",
+      "branch": "main",
+      "head": "fdc786718779e16789e51efea87ef46c6d11aecc",
+      "head_commit_time": "2026-10-18T16:33:06+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [],
+      "included_modules": [],
+      "default_port": null,
+      "base_profile_default": null,
+      "profile_configs": [
+        {
+          "path": "src/main/resources/application.yml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [],
+      "artifacts": [],
+      "in_dev_deployment": false,
+      "in_prod_deployment": false,
+      "proposed_prod_node": null,
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "optional-review-before-start"
+    },
+    {
+      "name": "finger-service-mds",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-mds",
+      "build_system": "gradle",
+      "branch": "codex/feat-omva",
+      "head": "b51632ad0891ba9de0db477590b0d07a8d5d5842",
+      "head_commit_time": "2026-11-05T20:00:32+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-easyquery:1.0.0",
+        "com.sargia.finger:common-redis:1.0.0",
+        "com.sargia.finger:common-snowflake:1.0.0",
+        "com.sargia.finger:common-web:1.0.0"
+      ],
+      "included_modules": [
+        ":mds-api",
+        ":mds-boot"
+      ],
+      "default_port": 10205,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "mds-boot/src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-mds.yaml"
+          ],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "mds-boot/src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-mds.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "mds-boot/src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [],
+      "scheduled_source_files": [
+        "mds-boot/src/main/kotlin/com/sargia/finger/service/mds/service/TickerService.kt"
+      ],
+      "startup_callback_source_files": [
+        "mds-boot/src/main/kotlin/com/sargia/finger/service/mds/service/TickerService.kt"
+      ],
+      "artifacts": [
+        {
+          "path": "mds-api/build/libs/mds-api-1.0.0.jar",
+          "kind": "library",
+          "bytes": 62646,
+          "mtime": "2026-11-05T16:57:11.679243+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "mds-boot/build/libs/mds-boot-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 100229330,
+          "mtime": "2026-03-20T14:44:06.908999+08:00",
+          "start_class": "com.sargia.finger.service.mds.MdsServiceApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        },
+        {
+          "path": "mds-boot/build/libs/mds-boot-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 195870,
+          "mtime": "2026-11-05T16:57:18.748260+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-03",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "optional-review-before-start"
+    },
+    {
+      "name": "finger-service-mkts",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-mkts",
+      "build_system": "gradle",
+      "branch": "main",
+      "head": "f9a0d105cbceb8e4d5284e0294564e8f716fa35a",
+      "head_commit_time": "2026-07-17T20:45:57+09:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-easyquery:1.0.0",
+        "com.sargia.finger:common-snowflake:1.0.0",
+        "com.sargia.finger:common-web:1.0.0"
+      ],
+      "included_modules": [
+        ":mkts-api",
+        ":mkts-boot"
+      ],
+      "default_port": 10206,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "mkts-boot/src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-mkts.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "mkts-boot/src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-mkts.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "mkts-boot/src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "mkts-boot/build/libs/mkts-boot-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 100194711,
+          "mtime": "2026-03-20T14:38:35.791656+08:00",
+          "start_class": "com.sargia.finger.service.mkts.MktsServiceApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        },
+        {
+          "path": "mkts-boot/build/libs/mkts-boot-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 126079,
+          "mtime": "2026-02-23T19:05:38.284681+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "mkts-api/build/libs/mkts-api-1.0.0.jar",
+          "kind": "library",
+          "bytes": 111587,
+          "mtime": "2026-07-25T13:17:06.635955+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "mkts-api/build/libs/mkts-api-1.0.1.jar",
+          "kind": "library",
+          "bytes": 80961,
+          "mtime": "2025-12-14T14:45:16.935570+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-03",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "notifications-or-workflow-or-outbox-review-required"
+    },
+    {
+      "name": "finger-service-msgs",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-msgs",
+      "build_system": "gradle",
+      "branch": "codex/feat-omva",
+      "head": "1365309ff5ead39bc705b699a5ae98349d2ef1d3",
+      "head_commit_time": "2026-11-02T12:25:32+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:auds-api:1.0.0",
+        "com.sargia.finger:bcs-api:1.0.0",
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-coroutine:1.0.0",
+        "com.sargia.finger:common-easyquery:1.0.0",
+        "com.sargia.finger:common-rabbitmq:1.0.0",
+        "com.sargia.finger:common-redis:1.0.0",
+        "com.sargia.finger:common-sms:1.0.0",
+        "com.sargia.finger:common-snowflake:1.0.0",
+        "com.sargia.finger:common-voucher:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:exs-api:1.0.0",
+        "com.sargia.finger:ums-api:1.0.0"
+      ],
+      "included_modules": [
+        ":msgs-api",
+        ":msgs-boot"
+      ],
+      "default_port": 10207,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "msgs-boot/src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-msgs.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "msgs-boot/src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-msgs.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "msgs-boot/src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "bcs",
+        "exs",
+        "ums"
+      ],
+      "scheduled_source_files": [
+        "msgs-boot/src/main/kotlin/com/sargia/finger/service/msgs/task/MailSendFailureCleanupTask.kt"
+      ],
+      "startup_callback_source_files": [
+        "msgs-boot/src/main/kotlin/com/sargia/finger/service/msgs/service/EmailService.kt"
+      ],
+      "artifacts": [
+        {
+          "path": "msgs-api/build/libs/msgs-api-1.0.0.jar",
+          "kind": "library",
+          "bytes": 201481,
+          "mtime": "2026-11-02T11:44:44.276794+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "msgs-boot/build/libs/msgs-boot-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 510119,
+          "mtime": "2026-11-02T11:28:40.139091+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "msgs-boot/build/libs/msgs-boot-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 117466588,
+          "mtime": "2026-10-10T00:15:48.780391+08:00",
+          "start_class": "com.sargia.finger.service.msgs.MsgsServiceApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-03",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "notifications-or-workflow-or-outbox-review-required"
+    },
+    {
+      "name": "finger-service-mtfs",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-mtfs",
+      "build_system": "gradle",
+      "branch": "main",
+      "head": "44bee7d9b14fcae3f3846abd755df78017aaf87d",
+      "head_commit_time": "2026-07-12T01:42:46+09:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-easyquery:1.0.0",
+        "com.sargia.finger:common-security:1.0.0",
+        "com.sargia.finger:common-snowflake:1.0.0",
+        "com.sargia.finger:common-web:1.0.0"
+      ],
+      "included_modules": [
+        ":mtfs-api",
+        ":mtfs-boot"
+      ],
+      "default_port": 10216,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "mtfs-boot/src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-mtfs.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "mtfs-boot/src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-mtfs.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "mtfs-boot/src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "mtfs-boot/build/libs/mtfs-boot-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 100764,
+          "mtime": "2026-05-25T16:41:20.085641+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "mtfs-api/build/libs/mtfs-api-1.0.0.jar",
+          "kind": "library",
+          "bytes": 74422,
+          "mtime": "2026-07-12T22:25:31.526016+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "mtfs-api/build/libs/mtfs-api-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 62913,
+          "mtime": "2026-05-27T05:37:03.688792+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-02",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "financial-or-broker-external-execution-restricted"
+    },
+    {
+      "name": "finger-service-scs",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-scs",
+      "build_system": "gradle",
+      "branch": "main",
+      "head": "67629b669a93f2483d5b820a5d7c0c20ac2713b9",
+      "head_commit_time": "2026-07-12T01:16:12+09:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:bcs-api:1.0.0",
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-easyquery:1.0.0",
+        "com.sargia.finger:common-snowflake:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:msgs-api:1.0.0",
+        "com.sargia.finger:ums-api:1.0.0"
+      ],
+      "included_modules": [
+        ":scs-api",
+        ":scs-boot"
+      ],
+      "default_port": 10208,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "scs-boot/src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-scs.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "scs-boot/src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-scs.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "scs-boot/src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "bcs",
+        "msgs",
+        "ums"
+      ],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "scs-api/build/libs/scs-api-1.0.0.jar",
+          "kind": "library",
+          "bytes": 82092,
+          "mtime": "2026-07-25T13:16:59.247318+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "scs-boot/build/libs/scs-boot-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 144409,
+          "mtime": "2026-02-24T22:12:11.193185+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "scs-boot/build/libs/scs-boot-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 100208395,
+          "mtime": "2026-03-20T14:38:11.446632+08:00",
+          "start_class": "com.sargia.finger.service.scs.ScsServiceApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-03",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "optional-review-before-start"
+    },
+    {
+      "name": "finger-service-stas",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-stas",
+      "build_system": "gradle",
+      "branch": "main",
+      "head": "40064d0076d708da99419bb9a266623c5c72c0a6",
+      "head_commit_time": "2026-09-05T11:03:10+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-coroutine:1.0.0",
+        "com.sargia.finger:common-easyquery:1.0.0",
+        "com.sargia.finger:common-redis:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:coms-api:1.0.0",
+        "com.sargia.finger:exs-api:1.0.0",
+        "com.sargia.finger:fds-api:1.0.0",
+        "com.sargia.finger:msgs-api:1.0.0",
+        "com.sargia.finger:ums-api:1.0.0"
+      ],
+      "included_modules": [
+        ":stas-api",
+        ":stas-boot"
+      ],
+      "default_port": 10214,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "stas-boot/src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-stas.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "stas-boot/src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-stas.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "stas-boot/src/main/resources/application-test.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        },
+        {
+          "path": "stas-boot/src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "coms",
+        "exs",
+        "fds",
+        "msgs",
+        "ums"
+      ],
+      "scheduled_source_files": [
+        "stas-boot/src/main/kotlin/com/sargia/finger/service/stas/infrastructure/scheduler/UserFundStatsScheduler.kt",
+        "stas-boot/src/main/kotlin/com/sargia/finger/service/stas/infrastructure/scheduler/MakerMonthlyStatementScheduler.kt",
+        "stas-boot/src/main/kotlin/com/sargia/finger/service/stas/infrastructure/scheduler/UmsSubjectTotalStatsScheduler.kt",
+        "stas-boot/src/main/kotlin/com/sargia/finger/service/stas/infrastructure/scheduler/FundTransferStatsScheduler.kt",
+        "stas-boot/src/main/kotlin/com/sargia/finger/service/stas/infrastructure/scheduler/UserRankScheduler.kt",
+        "stas-boot/src/main/kotlin/com/sargia/finger/service/stas/infrastructure/scheduler/ExsStatsTodayRefreshScheduler.kt",
+        "stas-boot/src/main/kotlin/com/sargia/finger/service/stas/infrastructure/scheduler/UserRankAllTimeSourceScheduler.kt",
+        "stas-boot/src/main/kotlin/com/sargia/finger/service/stas/infrastructure/scheduler/TickerStatsSnapshotScheduler.kt",
+        "stas-boot/src/main/kotlin/com/sargia/finger/service/stas/infrastructure/scheduler/FundTransferTodayRefreshScheduler.kt",
+        "stas-boot/src/main/kotlin/com/sargia/finger/service/stas/infrastructure/scheduler/UserRankAllTimeScheduler.kt",
+        "stas-boot/src/main/kotlin/com/sargia/finger/service/stas/infrastructure/scheduler/UmsSubjectTotalStatsTodayRefreshScheduler.kt",
+        "stas-boot/src/main/kotlin/com/sargia/finger/service/stas/infrastructure/scheduler/UserTickerRankScheduler.kt",
+        "stas-boot/src/main/kotlin/com/sargia/finger/service/stas/infrastructure/scheduler/ExsStatsDailySyncScheduler.kt",
+        "stas-boot/src/main/kotlin/com/sargia/finger/service/stas/infrastructure/scheduler/CustomerDailyBalanceSnapshotScheduler.kt",
+        "stas-boot/src/main/kotlin/com/sargia/finger/service/stas/infrastructure/scheduler/PopularLeaderRankScheduler.kt"
+      ],
+      "startup_callback_source_files": [
+        "stas-boot/src/main/kotlin/com/sargia/finger/service/stas/infrastructure/scheduler/PopularLeaderRankStartupRefresher.kt"
+      ],
+      "artifacts": [
+        {
+          "path": "stas-boot/build/libs/stas-boot-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 1186164,
+          "mtime": "2026-08-05T23:59:39.928468+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "stas-boot/build/libs/stas-boot-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 99998237,
+          "mtime": "2026-04-02T16:53:32.003019+08:00",
+          "start_class": "com.sargia.finger.service.stas.StasServiceApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        },
+        {
+          "path": "stas-api/build/libs/stas-api-1.0.0.jar",
+          "kind": "library",
+          "bytes": 313379,
+          "mtime": "2026-08-06T00:06:03.818441+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "stas-api/build/libs/stas-api-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 212638,
+          "mtime": "2026-06-13T20:38:15.007087+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-03",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "notifications-or-workflow-or-outbox-review-required"
+    },
+    {
+      "name": "finger-service-stock",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-stock",
+      "build_system": "gradle",
+      "branch": "dev",
+      "head": "67627b531ae3b46e6ec25004154ff314c13bd4a4",
+      "head_commit_time": "2026-11-04T20:04:43+09:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:broker-api:1.0.0",
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-web:1.0.0"
+      ],
+      "included_modules": [],
+      "default_port": null,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "stock-boot/src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-stock.yaml"
+          ],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        },
+        {
+          "path": "stock-boot/src/main/resources/application-local.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        },
+        {
+          "path": "stock-boot/src/main/resources/application-prod.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-stock.yaml"
+          ],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        },
+        {
+          "path": "stock-boot/src/main/resources/application-test.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-stock.yaml"
+          ],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        },
+        {
+          "path": "stock-boot/src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "broker"
+      ],
+      "scheduled_source_files": [
+        "stock-boot/src/main/kotlin/com/sargia/finger/stock/boot/infrastructure/adapters/outbound/messaging/PnlPublisher.kt",
+        "stock-boot/src/main/kotlin/com/sargia/finger/stock/boot/infrastructure/adapters/inbound/scheduling/ExpiredOrderScheduler.kt",
+        "stock-boot/src/main/kotlin/com/sargia/finger/stock/boot/infrastructure/adapters/inbound/scheduling/OutboxWorker.kt",
+        "stock-boot/src/main/kotlin/com/sargia/finger/stock/boot/infrastructure/adapters/inbound/scheduling/BrokerOrderEvidenceWorker.kt",
+        "stock-boot/src/main/kotlin/com/sargia/finger/stock/boot/infrastructure/adapters/inbound/scheduling/BrokerInboxWorker.kt",
+        "stock-boot/src/main/kotlin/com/sargia/finger/stock/boot/infrastructure/adapters/inbound/scheduling/MerchantQuotePolicyScheduler.kt",
+        "stock-boot/src/main/kotlin/com/sargia/finger/stock/boot/infrastructure/adapters/inbound/scheduling/WalletRecoveryScheduler.kt"
+      ],
+      "startup_callback_source_files": [
+        "stock-boot/src/main/kotlin/com/sargia/finger/stock/boot/infrastructure/adapters/inbound/scheduling/MerchantQuotePolicyScheduler.kt",
+        "stock-boot/src/main/kotlin/com/sargia/finger/stock/boot/infrastructure/adapters/inbound/scheduling/WalletRecoveryScheduler.kt",
+        "stock-boot/src/main/kotlin/com/sargia/finger/stock/boot/infrastructure/adapters/inbound/http/AdminValuationStreams.kt"
+      ],
+      "artifacts": [
+        {
+          "path": "build/libs/finger-service-stock-0.14.0.jar",
+          "kind": "library",
+          "bytes": 261,
+          "mtime": "2026-10-18T17:16:51.757503+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "build/libs/finger-service-stock-0.13.0.jar",
+          "kind": "library",
+          "bytes": 261,
+          "mtime": "2026-10-16T16:42:44.240500+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "stock-api/build/libs/stock-api-0.22.0.jar",
+          "kind": "library",
+          "bytes": 544337,
+          "mtime": "2026-11-02T11:35:58.359086+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "stock-api/build/libs/stock-api-0.24.0.jar",
+          "kind": "library",
+          "bytes": 571828,
+          "mtime": "2026-11-02T17:36:16.156357+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "stock-api/build/libs/stock-api-0.26.0.jar",
+          "kind": "library",
+          "bytes": 606157,
+          "mtime": "2026-11-03T20:19:08.276458+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "stock-api/build/libs/stock-api-0.21.0.jar",
+          "kind": "library",
+          "bytes": 465430,
+          "mtime": "2026-10-22T08:05:44.803259+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "stock-api/build/libs/stock-api-0.21.1.jar",
+          "kind": "library",
+          "bytes": 467157,
+          "mtime": "2026-10-23T21:57:39.485890+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "stock-api/build/libs/stock-api-0.23.0.jar",
+          "kind": "library",
+          "bytes": 570633,
+          "mtime": "2026-11-02T15:03:28.554078+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "stock-api/build/libs/stock-api-0.27.0.jar",
+          "kind": "library",
+          "bytes": 611214,
+          "mtime": "2026-11-04T13:44:52.826142+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "stock-api/build/libs/stock-api-0.14.0.jar",
+          "kind": "library",
+          "bytes": 453357,
+          "mtime": "2026-10-19T21:20:54.872242+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "stock-api/build/libs/stock-api-0.13.0.jar",
+          "kind": "library",
+          "bytes": 458864,
+          "mtime": "2026-10-18T17:09:03.416534+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "stock-boot/build/libs/finger-service-stock-0.14.0.jar",
+          "kind": "boot",
+          "bytes": 84588596,
+          "mtime": "2026-10-19T21:56:28.361354+08:00",
+          "start_class": "com.sargia.finger.stock.boot.application.StockApplicationKt",
+          "spring_boot": "3.5.16",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        },
+        {
+          "path": "stock-boot/build/libs/finger-service-stock-0.13.0.jar",
+          "kind": "boot",
+          "bytes": 84485186,
+          "mtime": "2026-10-16T16:45:19.874441+08:00",
+          "start_class": "com.sargia.finger.stock.boot.application.StockApplicationKt",
+          "spring_boot": "3.5.16",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        },
+        {
+          "path": "stock-boot/build/libs/finger-service-stock-0.14.0-plain.jar",
+          "kind": "library",
+          "bytes": 2162440,
+          "mtime": "2026-10-19T21:56:28.649801+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "stock-boot/build/libs/finger-service-stock-0.13.0-plain.jar",
+          "kind": "library",
+          "bytes": 2085070,
+          "mtime": "2026-10-18T17:09:04.683113+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "stock-boot/build/libs/finger-service-stock-0.21.0-plain.jar",
+          "kind": "library",
+          "bytes": 2156686,
+          "mtime": "2026-10-22T08:07:09.052368+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "stock-boot/build/libs/stock-boot-0.27.0-plain.jar",
+          "kind": "library",
+          "bytes": 2794835,
+          "mtime": "2026-11-04T13:51:49.155844+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": false,
+      "proposed_prod_node": "java-prod-02",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "financial-or-broker-external-execution-restricted"
+    },
+    {
+      "name": "finger-service-subs",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-subs",
+      "build_system": "gradle",
+      "branch": "main",
+      "head": "77b75c54fdba7c005f670c1d30c2a71b772df6e6",
+      "head_commit_time": "2026-07-25T12:21:06+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:auds-api:1.0.0",
+        "com.sargia.finger:bcs-api:1.0.0",
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-easyquery:1.0.0",
+        "com.sargia.finger:common-outbox:1.0.0",
+        "com.sargia.finger:common-rabbitmq:1.0.0",
+        "com.sargia.finger:common-snowflake:1.0.0",
+        "com.sargia.finger:common-voucher:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:coms-api:1.0.0",
+        "com.sargia.finger:fds-api:1.0.0",
+        "com.sargia.finger:ums-api:1.0.0"
+      ],
+      "included_modules": [
+        ":subs-api",
+        ":subs-boot"
+      ],
+      "default_port": 10209,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "subs-boot/src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-subs.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "subs-boot/src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-subs.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "subs-boot/src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "auds",
+        "bcs",
+        "coms",
+        "fds",
+        "ums"
+      ],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "subs-api/build/libs/subs-api-1.0.0.jar",
+          "kind": "library",
+          "bytes": 172501,
+          "mtime": "2026-07-10T15:12:12.377435+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "subs-boot/build/libs/subs-boot-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 119278289,
+          "mtime": "2026-03-19T22:27:09.585258+08:00",
+          "start_class": "com.sargia.finger.service.subs.SubsServiceApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        },
+        {
+          "path": "subs-boot/build/libs/subs-boot-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 452628,
+          "mtime": "2026-04-30T01:21:23.118249+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-02",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "financial-or-broker-external-execution-restricted"
+    },
+    {
+      "name": "finger-service-system",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-system",
+      "build_system": "gradle",
+      "branch": "dev",
+      "head": "9ec3a82dedb165cd7d764f0335dd1de37cc541f4",
+      "head_commit_time": "2026-07-15T17:50:26+09:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-easyquery:1.0.0",
+        "com.sargia.finger:common-snowflake:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:msgs-api:1.0.0"
+      ],
+      "included_modules": [
+        ":system-api",
+        ":system-boot"
+      ],
+      "default_port": 10210,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "system-boot/src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-system.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "system-boot/src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-system.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "system-boot/src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "msgs"
+      ],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "system-api/build/libs/system-api-1.0.0.jar",
+          "kind": "library",
+          "bytes": 74065,
+          "mtime": "2026-07-10T17:34:34.096434+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "system-boot/build/libs/system-boot-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 99007,
+          "mtime": "2025-12-29T16:45:27.948737+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-01",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "minimal-test-candidate-with-explicit-endpoint-scope",
+      "build_prerequisites": {
+        "gradle_wrapper": "8.14.3",
+        "declared_gradle_heap_mib": 2048,
+        "declared_gradle_metaspace_mib": 512,
+        "offline_build_executed": false
+      }
+    },
+    {
+      "name": "finger-service-trascan",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-trascan",
+      "build_system": "gradle",
+      "branch": "main",
+      "head": "6266a780ce7b2104233248571809fdcc4a6b3cf9",
+      "head_commit_time": "2026-09-30T18:50:06+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-easyquery:1.0.0",
+        "com.sargia.finger:common-web:1.0.0"
+      ],
+      "included_modules": [
+        ":trascan-api",
+        ":trascan-boot"
+      ],
+      "default_port": 11004,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "trascan-boot/src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-trascan.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "trascan-boot/src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-trascan.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "trascan-boot/src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [],
+      "scheduled_source_files": [
+        "trascan-boot/src/main/kotlin/com/sargia/finger/service/trascan/containers/explorer/tasks/RefreshExplorerProjectionTask.kt",
+        "trascan-boot/src/main/kotlin/com/sargia/finger/service/trascan/containers/explorer/tasks/RefreshExplorerStatisticsTask.kt"
+      ],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "trascan-api/build/libs/trascan-api-1.1.0.jar",
+          "kind": "library",
+          "bytes": 22034,
+          "mtime": "2026-08-07T20:08:03.213395+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "trascan-api/build/libs/trascan-api-1.3.0.jar",
+          "kind": "library",
+          "bytes": 91921,
+          "mtime": "2026-08-13T16:20:01.504153+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "trascan-api/build/libs/trascan-api-1.3.1.jar",
+          "kind": "library",
+          "bytes": 127816,
+          "mtime": "2026-08-18T12:09:14.496446+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "trascan-api/build/libs/trascan-api-1.2.0.jar",
+          "kind": "library",
+          "bytes": 22036,
+          "mtime": "2026-08-07T20:22:14.706945+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "trascan-api/build/libs/trascan-api-1.0.0.jar",
+          "kind": "library",
+          "bytes": 154638,
+          "mtime": "2026-08-31T22:07:55.600945+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "trascan-boot/build/libs/trascan-boot-1.1.0-plain.jar",
+          "kind": "library",
+          "bytes": 75453,
+          "mtime": "2026-08-07T17:24:11.630846+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "trascan-boot/build/libs/trascan-boot-1.2.0-plain.jar",
+          "kind": "library",
+          "bytes": 94166,
+          "mtime": "2026-08-07T22:01:12.993589+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "trascan-boot/build/libs/trascan-boot-1.3.1-plain.jar",
+          "kind": "library",
+          "bytes": 403672,
+          "mtime": "2026-08-18T16:12:45.375248+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "trascan-boot/build/libs/trascan-boot-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 96423032,
+          "mtime": "2026-08-30T16:50:12.609703+08:00",
+          "start_class": "com.sargia.finger.service.trascan.TraScanServiceApplication",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        },
+        {
+          "path": "trascan-boot/build/libs/trascan-boot-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 446900,
+          "mtime": "2026-09-30T18:35:18.724077+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "trascan-boot/build/libs/trascan-boot-1.2.0.jar",
+          "kind": "boot",
+          "bytes": 95989571,
+          "mtime": "2026-08-07T22:04:35.266324+08:00",
+          "start_class": "com.sargia.finger.service.trascan.TraScanServiceApplication",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        },
+        {
+          "path": "trascan-boot/build/libs/trascan-boot-1.3.0-plain.jar",
+          "kind": "library",
+          "bytes": 217187,
+          "mtime": "2026-08-11T13:11:13.894570+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-03",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "optional-review-before-start"
+    },
+    {
+      "name": "finger-service-ums",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-ums",
+      "build_system": "gradle",
+      "branch": "main",
+      "head": "ada7bfb2f5aeb5101f5c6931ab62edddd55ba9c8",
+      "head_commit_time": "2026-10-10T13:52:06+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [
+        "com.sargia.finger:auds-api:1.0.0",
+        "com.sargia.finger:common-apidoc:1.0.0",
+        "com.sargia.finger:common-core:1.0.0",
+        "com.sargia.finger:common-coroutine:1.0.0",
+        "com.sargia.finger:common-easyquery:1.0.0",
+        "com.sargia.finger:common-outbox:1.0.0",
+        "com.sargia.finger:common-rabbitmq:1.0.0",
+        "com.sargia.finger:common-snowflake:1.0.0",
+        "com.sargia.finger:common-voucher:1.0.0",
+        "com.sargia.finger:common-web:1.0.0",
+        "com.sargia.finger:exs-api:1.0.0",
+        "com.sargia.finger:fds-api:1.0.0",
+        "com.sargia.finger:msgs-api:1.0.0",
+        "com.sargia.finger:stas-api:1.0.0",
+        "com.sargia.finger:subs-api:1.0.0"
+      ],
+      "included_modules": [
+        ":ums-api",
+        ":ums-boot"
+      ],
+      "default_port": 10212,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "ums-boot/src/main/resources/application-dev.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-ums.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "ums-boot/src/main/resources/application-local.yaml",
+          "nacos_imports": [
+            "finger-common.yaml",
+            "finger-service-ums.yaml"
+          ],
+          "contains_hardcoded_nacos_address": true,
+          "contains_hardcoded_nacos_namespace": true
+        },
+        {
+          "path": "ums-boot/src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [
+        "auds",
+        "exs",
+        "fds",
+        "msgs",
+        "stas",
+        "subs"
+      ],
+      "scheduled_source_files": [],
+      "startup_callback_source_files": [],
+      "artifacts": [
+        {
+          "path": "ums-api/build/libs/ums-api-1.0.1-omva.jar",
+          "kind": "library",
+          "bytes": 270377,
+          "mtime": "2026-09-21T10:01:03.365919+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "ums-api/build/libs/ums-api-1.0.0.jar",
+          "kind": "library",
+          "bytes": 266142,
+          "mtime": "2026-10-06T10:33:45.842005+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "ums-boot/build/libs/ums-boot-1.0.0-plain.jar",
+          "kind": "library",
+          "bytes": 601129,
+          "mtime": "2026-09-21T10:54:11.273277+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "ums-boot/build/libs/ums-boot-1.0.0.jar",
+          "kind": "boot",
+          "bytes": 106528781,
+          "mtime": "2026-09-21T10:54:11.062649+08:00",
+          "start_class": "com.sargia.finger.service.ums.UmsServiceApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-02",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "notifications-or-workflow-or-outbox-review-required"
+    },
+    {
+      "name": "fundamentals-service",
+      "source_root": "/Users/yangzhaohui/work/www/finger/finger-master/projects/fundamentals-service",
+      "build_system": "gradle",
+      "branch": "main",
+      "head": "9aecdd1a011496b80719414b94bc6940d6a308b2",
+      "head_commit_time": "2026-11-04T14:06:25+08:00",
+      "dirty_entries": 0,
+      "dirty_paths": [],
+      "declared_internal_dependencies": [],
+      "included_modules": [],
+      "default_port": 11007,
+      "base_profile_default": "local",
+      "profile_configs": [
+        {
+          "path": "src/main/resources/application.yaml",
+          "nacos_imports": [],
+          "contains_hardcoded_nacos_address": false,
+          "contains_hardcoded_nacos_namespace": false
+        }
+      ],
+      "main_source_provider_import_domains": [],
+      "scheduled_source_files": [
+        "src/main/kotlin/com/sargia/fundamentals/operations/HistoricalBackfill.kt",
+        "src/main/kotlin/com/sargia/fundamentals/operations/FilingOperations.kt",
+        "src/main/kotlin/com/sargia/fundamentals/operations/ExistingFilingReprocessing.kt"
+      ],
+      "startup_callback_source_files": [
+        "src/main/kotlin/com/sargia/migrationtask/ControlledSchemaMigrator.kt",
+        "src/main/kotlin/com/sargia/fundamentals/operations/FundamentalsCoverageDryRun.kt",
+        "src/main/kotlin/com/sargia/fundamentals/operations/FundamentalsBoundedExecution.kt",
+        "src/main/kotlin/com/sargia/fundamentals/operations/ExistingFilingReprocessing.kt",
+        "src/main/kotlin/com/sargia/fundamentals/operations/HistoricalBackfillOperator.kt",
+        "src/main/kotlin/com/sargia/fundamentals/safety/ResearchRunnerSafety.kt"
+      ],
+      "artifacts": [
+        {
+          "path": "build/libs/fundamentals-service-0.1.0-SNAPSHOT-plain.jar",
+          "kind": "library",
+          "bytes": 1379923,
+          "mtime": "2026-10-11T17:14:46.544164+08:00",
+          "start_class": null,
+          "spring_boot": null,
+          "build_jdk_spec": null,
+          "entry_class_major": null,
+          "git_revision_verified": false
+        },
+        {
+          "path": "build/libs/fundamentals-service-0.1.0-SNAPSHOT.jar",
+          "kind": "boot",
+          "bytes": 58115055,
+          "mtime": "2026-10-11T17:14:46.381999+08:00",
+          "start_class": "com.sargia.fundamentals.FundamentalsApplicationKt",
+          "spring_boot": "3.5.4",
+          "build_jdk_spec": "21",
+          "entry_class_major": 65,
+          "git_revision_verified": false
+        }
+      ],
+      "in_dev_deployment": true,
+      "in_prod_deployment": true,
+      "proposed_prod_node": "java-prod-03",
+      "deployment_status": "not-executed-by-this-task",
+      "risk_class": "optional-review-before-start"
+    }
+  ],
+  "existing_jar_cross_contract_consistency": {
+    "checked": true,
+    "same_filename_different_content": {
+      "common-web-1.0.0-plain.jar": {
+        "75fe2b44c86146b39cbb1e27ffe44fa6aedb46f827ade47a50f81b2987b67c87": [
+          "finger-auth"
+        ],
+        "24165165b27a3c1938b07d3182cfdb8e7099b9b8c104747504c099988e604c09": [
+          "finger-bff-system",
+          "finger-service-coms"
+        ]
+      },
+      "common-security-1.0.0-plain.jar": {
+        "9c12c418e6146c1243ca4b63d79c727872aa89cbf30e30e6f5682e46b98ca978": [
+          "finger-auth"
+        ],
+        "8ac3000e0b164ebf39c91a45e4abca43bce3b58e203d082201ab9bc4aadd9411": [
+          "finger-bff-system"
+        ]
+      },
+      "ums-api-1.0.0.jar": {
+        "b70f4e919005aadf9c4ef1890f9ab1c3200c430a48a0173448eaa0941d621d8f": [
+          "finger-auth"
+        ],
+        "dc08d6df9f5e053574f6d9b32d1a309762d10499572b0ad8ed1f27c7e55c5d39": [
+          "finger-bff-system"
+        ]
+      },
+      "system-api-1.0.0.jar": {
+        "620c2b3f6bc20951735b526f5fb50f8f15a703c159ab2602bec75af5121b4b41": [
+          "finger-auth"
+        ],
+        "ee9fef9261cc40ae3db7291eaca2446fd788d2fb50ccefe5f98ecb1f7c3dd746": [
+          "finger-bff-system"
+        ]
+      },
+      "coms-api-1.0.0.jar": {
+        "217522da1d47e471b0f00ef97a9642eea877be710a314763b83249544f7ab76d": [
+          "finger-bff-system"
+        ],
+        "7eee19862aef3deb2c875b9e7cd118bff31ce59cd6946064581ad12b3ae50592": [
+          "finger-service-coms"
+        ]
+      }
+    },
+    "source_contract_abi_verified": false
+  },
+  "annotation_scan_limitation": "Textual @Scheduled/startup callback candidate files; comments may match. Not an authoritative count of active tasks. Critical examples were read separately."
+}

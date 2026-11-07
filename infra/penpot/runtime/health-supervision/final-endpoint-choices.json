@@ -1,0 +1,33 @@
+[
+  {
+    "service": "admin-console",
+    "path": "/admin-console/",
+    "status": 307,
+    "redirect_path": "http://192.168.21.22:9001/#/auth/login",
+    "body_bytes": 0,
+    "doctype": false,
+    "title_contains_penpot": false,
+    "content_type": null
+  },
+  {
+    "service": "admin-console",
+    "path": "/admin-console/login",
+    "status": 307,
+    "redirect_path": "http://192.168.21.22:9001/#/auth/login",
+    "body_bytes": 0,
+    "doctype": false,
+    "title_contains_penpot": false,
+    "content_type": null
+  },
+  {
+    "service": "mcp",
+    "path": "/mcp",
+    "method": "POST initialize only; no tools or notifications",
+    "status": 200,
+    "session_header_present": true,
+    "initialization_result_has_serverInfo": true,
+    "initialization_result_has_protocolVersion": true,
+    "body_or_session_emitted": false,
+    "session_delete_status": 200
+  }
+]

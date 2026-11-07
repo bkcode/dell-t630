@@ -1,0 +1,13 @@
+{
+  "role": 221,
+  "status": "read-only-local-new-admin-GET-completed",
+  "documented_base_url_GET_routes": [],
+  "proxy_config_or_auth_requested": false,
+  "credential_value_or_hash_emitted": false,
+  "base_url_setting_observations": [],
+  "hosted_asset_download_origins": [
+    "http://127.0.0.1:8081"
+  ],
+  "observed_download_urls_follow_local_request_origin": true,
+  "forced_base_url_configuration_directly_observed": false
+}

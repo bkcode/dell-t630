@@ -1,0 +1,181 @@
+{
+  "captured_at": "2026-11-06T16:28:54.798788+08:00",
+  "guests": [
+    {
+      "resolved_global_files": [
+        {
+          "path": "/usr/lib/systemd/resolved.conf.d/00-disable-mdns.conf",
+          "settings": [
+            "MulticastDNS=no"
+          ]
+        }
+      ],
+      "networkd_global_keep_configuration": [],
+      "resolved_global_runtime": [
+        "Protocols: +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+        "resolv.conf mode: stub"
+      ],
+      "vmid": 200
+    },
+    {
+      "resolved_global_files": [
+        {
+          "path": "/usr/lib/systemd/resolved.conf.d/00-disable-mdns.conf",
+          "settings": [
+            "MulticastDNS=no"
+          ]
+        }
+      ],
+      "networkd_global_keep_configuration": [],
+      "resolved_global_runtime": [
+        "Protocols: +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+        "resolv.conf mode: stub"
+      ],
+      "vmid": 201
+    },
+    {
+      "resolved_global_files": [
+        {
+          "path": "/usr/lib/systemd/resolved.conf.d/00-disable-mdns.conf",
+          "settings": [
+            "MulticastDNS=no"
+          ]
+        }
+      ],
+      "networkd_global_keep_configuration": [],
+      "resolved_global_runtime": [
+        "Protocols: +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+        "resolv.conf mode: stub"
+      ],
+      "vmid": 210
+    },
+    {
+      "resolved_global_files": [
+        {
+          "path": "/usr/lib/systemd/resolved.conf.d/00-disable-mdns.conf",
+          "settings": [
+            "MulticastDNS=no"
+          ]
+        }
+      ],
+      "networkd_global_keep_configuration": [],
+      "resolved_global_runtime": [
+        "Protocols: +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+        "resolv.conf mode: stub"
+      ],
+      "vmid": 220
+    },
+    {
+      "resolved_global_files": [
+        {
+          "path": "/usr/lib/systemd/resolved.conf.d/00-disable-mdns.conf",
+          "settings": [
+            "MulticastDNS=no"
+          ]
+        }
+      ],
+      "networkd_global_keep_configuration": [],
+      "resolved_global_runtime": [
+        "Protocols: +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+        "resolv.conf mode: stub"
+      ],
+      "vmid": 221
+    },
+    {
+      "resolved_global_files": [
+        {
+          "path": "/usr/lib/systemd/resolved.conf.d/00-disable-mdns.conf",
+          "settings": [
+            "MulticastDNS=no"
+          ]
+        }
+      ],
+      "networkd_global_keep_configuration": [],
+      "resolved_global_runtime": [
+        "Protocols: +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+        "resolv.conf mode: stub"
+      ],
+      "vmid": 230
+    },
+    {
+      "resolved_global_files": [
+        {
+          "path": "/usr/lib/systemd/resolved.conf.d/00-disable-mdns.conf",
+          "settings": [
+            "MulticastDNS=no"
+          ]
+        }
+      ],
+      "networkd_global_keep_configuration": [],
+      "resolved_global_runtime": [
+        "Protocols: +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+        "resolv.conf mode: stub"
+      ],
+      "vmid": 231
+    },
+    {
+      "resolved_global_files": [
+        {
+          "path": "/usr/lib/systemd/resolved.conf.d/00-disable-mdns.conf",
+          "settings": [
+            "MulticastDNS=no"
+          ]
+        }
+      ],
+      "networkd_global_keep_configuration": [],
+      "resolved_global_runtime": [
+        "Protocols: +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+        "resolv.conf mode: stub"
+      ],
+      "vmid": 232
+    },
+    {
+      "resolved_global_files": [
+        {
+          "path": "/usr/lib/systemd/resolved.conf.d/00-disable-mdns.conf",
+          "settings": [
+            "MulticastDNS=no"
+          ]
+        }
+      ],
+      "networkd_global_keep_configuration": [],
+      "resolved_global_runtime": [
+        "Protocols: +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+        "resolv.conf mode: stub"
+      ],
+      "vmid": 240
+    },
+    {
+      "resolved_global_files": [
+        {
+          "path": "/usr/lib/systemd/resolved.conf.d/00-disable-mdns.conf",
+          "settings": [
+            "MulticastDNS=no"
+          ]
+        }
+      ],
+      "networkd_global_keep_configuration": [],
+      "resolved_global_runtime": [
+        "Protocols: +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+        "resolv.conf mode: stub"
+      ],
+      "vmid": 250
+    },
+    {
+      "resolved_global_files": [
+        {
+          "path": "/usr/lib/systemd/resolved.conf.d/00-disable-mdns.conf",
+          "settings": [
+            "MulticastDNS=no"
+          ]
+        }
+      ],
+      "networkd_global_keep_configuration": [],
+      "resolved_global_runtime": [
+        "Protocols: +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+        "resolv.conf mode: stub"
+      ],
+      "vmid": 270
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ACC-SSH-002",
+  "status": "passed",
+  "executed_at": "2026-11-06T11:14:14.707468+08:00",
+  "timezone": "Asia/Shanghai",
+  "operator": "root-task-manager",
+  "plan_sha256": "c5c487985880b9ed9f191221ef8c553116cd8d8c04e6564edccefb2b947eef26",
+  "preconditions_checked": true,
+  "target": {
+    "host": "192.168.21.22",
+    "environment": "managed-PVE-implementation",
+    "vmid": null
+  },
+  "commands_or_steps": [
+    "See linked execution artifact and operator observations"
+  ],
+  "exit_codes": [
+    0
+  ],
+  "observations": [
+    "12台目标Linux VM含OMV均严格host key、指定密钥登录为ub非root，hostname及最终IP逐台匹配",
+    "逐台记录ub groups与sudo实际授权；ub为新建来宾管理员，业务finger及publisher权限分项验收；不推断CF来宾登录状态"
+  ],
+  "artifacts": [
+    "evidence/implementation/guest-final-ssh-audit.json"
+  ],
+  "limitations": [
+    "仅验证当前指定管理密钥和ub管理权限，未代表业务/发布授权通过"
+  ],
+  "reviewed_by": "root-task-manager",
+  "plan_snapshot": "evidence/plans/plan-c5c487985880b9ed.json"
+}

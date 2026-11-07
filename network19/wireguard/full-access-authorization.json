@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-07T00:25:02.341987+08:00",
+  "user_statements": [
+    "需要把10.66.66.0/24在23的网关上都放行",
+    "保证能访问服务器上所有服务"
+  ],
+  "prior_risk_disclosed": "fullVPNsubnet to all19servers allIPv4protocols broader than earlier Penpotonly; earlierbroadattempt rejected beforeexecution",
+  "new_authorized_scope": "trustedVPN10.66.66.0/24 to server19/24 allIPv4protocols plus gatewayown21.23/19.1",
+  "preserved": "service authentication,guest-to-guestroleACL,MAC/IPbinding,hostL3forward0,noNAT",
+  "NAS_extra_source_filters": "add trustedVPN CIDR only, no accountpermissionchange"
+}

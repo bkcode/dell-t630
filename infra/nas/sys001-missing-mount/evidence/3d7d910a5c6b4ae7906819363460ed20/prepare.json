@@ -1,0 +1,13 @@
+{
+  "collected_at": "2026-11-06T06:32:21.605655+00:00",
+  "exit_code": 1,
+  "result": {
+    "status": "failed",
+    "phase": "prepare",
+    "nonce": "3d7d910a5c6b4ae7906819363460ed20",
+    "error_category": "Failure",
+    "safe_reason": "QA-ready-deadline-no-resource-increase",
+    "cleanup_may_be_required": true,
+    "real_services_not_restarted": true
+  }
+}

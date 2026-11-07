@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-06T11:08:50.836230",
+  "result": {
+    "exit_code": 1,
+    "stdout": "{\"status\": \"failed\", \"error_category\": \"RuntimeError\", \"message\": \"Nacos HTTP status 404\"}\n",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+    "target": {
+      "vmid": 210,
+      "ip": "10.63.20.10",
+      "host_key_alias": "dell-vm210",
+      "host_key_fingerprint": "SHA256:8bBCQbBKGmZAw5q2AgT2vXHsyr2aFJktLqs/tDZ9SiA",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  }
+}

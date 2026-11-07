@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-06T09:21:21.518964+00:00",
+  "exit_code": 0,
+  "target": {
+    "vmid": 210,
+    "ip": "192.168.19.20",
+    "host_key_alias": "dell-vm210",
+    "host_key_fingerprint": "SHA256:8bBCQbBKGmZAw5q2AgT2vXHsyr2aFJktLqs/tDZ9SiA",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "result": {
+    "status": "role-restored-healthy",
+    "vmid": 210,
+    "unit": "dell-data-test-data.service",
+    "all_containers_healthy": 4,
+    "service_endpoint_new_network": true,
+    "Nacos_password_namespace_vhost_or_percent_accounts_modified": false,
+    "formal_business_apps_started": false,
+    "bootstrap_Nacos_run": false,
+    "notifications_sent": false,
+    "OS_PVE_or_other_guests_changed": false,
+    "existing_app_backups_checked_before_quiesce": [],
+    "MySQL_persisted_server_identity_unchanged": true
+  }
+}

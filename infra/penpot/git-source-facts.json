@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-11-06T10:50:31.222095+08:00",
+  "source_root": "/Users/yangzhaohui/work/www/harness/penpot",
+  "origin": "git@github.com:bkcode/penpot.git",
+  "worktree_before": {
+    "head": "ff1783e7865af7aae571c985f03e057631b7af63",
+    "branch": "main",
+    "dirty": ""
+  },
+  "worktree_after": {
+    "head": "ff1783e7865af7aae571c985f03e057631b7af63",
+    "branch": "main",
+    "dirty": ""
+  },
+  "fetch_exit_code": 0,
+  "remote_main": "9aedbb011cd803eb615225ca21f7f47cb8c2fa09",
+  "shallow": true,
+  "fetch_policy": "original origin only; no tags/submodules; no agent forwarding; no checkout/pull/commit/push"
+}

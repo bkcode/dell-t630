@@ -1,0 +1,945 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-11-06T05:21:44.654817+08:00",
+  "timezone": "Asia/Shanghai",
+  "scope": "local-public-amd64-image-cache-only",
+  "docker_context": "orbstack",
+  "target_platform": "linux/amd64",
+  "lock_files": {
+    "data": {
+      "file": "/Users/yangzhaohui/work/www/harness/dell/infra/data/images.lock.json",
+      "sha256": "456f23eec8dcc07df42aa9c10ecfe91a4263eb148138ba45fa9de42f3dc5fed3"
+    },
+    "penpot": {
+      "file": "/Users/yangzhaohui/work/www/harness/dell/infra/penpot/images.lock.json",
+      "sha256": "6a64ba9439458469f620e5a7bd41bb0435a38aafbb4bd9e5c65d4491a28d43de"
+    },
+    "nexus": {
+      "file": "/Users/yangzhaohui/work/www/harness/dell/infra/nexus/images.lock.json",
+      "sha256": "51887f8975cad5b386e92897455b869487c448aa677c25220c0023a96a208973"
+    }
+  },
+  "source_before": {
+    "collected_at": "2026-11-06T05:21:44.782042+08:00",
+    "containers": [
+      {
+        "id": "08dc2c229b7e733e4e72fc3fa979ac02936c9612f8d3730fb0dcaf0276f2ca24",
+        "name": "/finger-bitgo-express-test-express-1",
+        "image_id": "sha256:4390224e59dca080e4046db51c113a62cf8027429dd01638bd6e937e8cbf629d",
+        "state": "exited",
+        "started_at": "2026-10-14T05:12:35.239159205Z"
+      },
+      {
+        "id": "0baef97331827c824e89ff303c1e700f4b6f36afa101e39a85c063956d862623",
+        "name": "/penpot-penpot-frontend-1",
+        "image_id": "sha256:a1a9c9bb90b93f3cff334448648be90fc3ca7e315840298772f43b24306f5c82",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.234179422Z"
+      },
+      {
+        "id": "183a8b9f0096f49851caf952f7d5c52575779c6b3a15d66a173b2ba702a0e7ea",
+        "name": "/penpot-penpot-worker-1",
+        "image_id": "sha256:289d99c39712b9bbcb12ee4343571233421523f471c05c9f4fb8e6f3b26b9bb0",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:13.320524546Z"
+      },
+      {
+        "id": "19755277cfa7774a1de50bf4c4f50127a5d5eb8e0954d2b94f4f835957a2c33d",
+        "name": "/redis",
+        "image_id": "sha256:b8bbd8ea40e06ac580453a51bac3341e29a492b75ea7cd1b517e82a421a0b926",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.7686016Z"
+      },
+      {
+        "id": "1cabd374862fb4a26ca1fd6de6d96c9b79ba2a5295ebc2801f163cafc2ffad68",
+        "name": "/penpot-penpot-postgres-1",
+        "image_id": "sha256:04fba66fe1804636acd8ce729a27cb6f0a5dbe591c8898433aeb6444d7267bfd",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:14.54120588Z"
+      },
+      {
+        "id": "1fee5c4074fac7f6fe309a7ecd24ef882a1b038c1890f13aef5fa04453105788",
+        "name": "/mysql",
+        "image_id": "sha256:b2f81adb2f3335ee77c6a74a6099bea0c5dca5b51ed01cd84c7966d826992764",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.765822244Z"
+      },
+      {
+        "id": "26fe6a3fc9cfa9a03f0e6c4dce519278cc5c58c3c1b35c72fe983d5562092fac",
+        "name": "/penpot-penpot-admin-console-1",
+        "image_id": "sha256:cdd0cddbd829b9aa3ce55b8622f9884c12b094bdcbdc6f1036f0f260a954570d",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.358799797Z"
+      },
+      {
+        "id": "2ee2ba25a906bffde3ba606789637ab66e59672570836186ed6765fdf5487f25",
+        "name": "/penpot-penpot-import-1",
+        "image_id": "sha256:2ee54c62207d15e6f063db95870c76442b1ba757b47ebaf72863051b86238294",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.473813922Z"
+      },
+      {
+        "id": "409d564f9de683079f048572d86a9fd41859a5cc70367a0716f7b9b86adf278f",
+        "name": "/penpot-penpot-backend-1",
+        "image_id": "sha256:28dd4e06b33a70d9ace1b3589def985cddd3f5b49b4964d06a5093381356ee7c",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:14.106480088Z"
+      },
+      {
+        "id": "45194c5c15ccaf3f16c70aa7ad170f4d0832009e8ba4b2f2adf28345da1ad868",
+        "name": "/kafka-docker-zookeeper-1",
+        "image_id": "sha256:3f43f72cb2832e7a5fbed7f7dbcd0c43004357974d8f32555d101bd53e81e74f",
+        "state": "exited",
+        "started_at": "2026-05-18T05:23:20.188993466Z"
+      },
+      {
+        "id": "4ee8299f444554c33b2a2dc7d6c53eb4e23df7586476dc53e6abf5cc83e8424f",
+        "name": "/nexus3",
+        "image_id": "sha256:e90bcee9a286ce698455ba1524f811390b9f77d18e893986ac20b65346cb81d4",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.754667194Z"
+      },
+      {
+        "id": "50dcad169d95e62250723f97ebf240ec3d5591b2228ab08ad5ca5c1ce7b6741f",
+        "name": "/penpot-penpot-exporter-1",
+        "image_id": "sha256:9918a73bb7c720252df3124bf674ade2493f970e8f63e711a442432d810c2e58",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.304331589Z"
+      },
+      {
+        "id": "61cfa904c75240b900e5ec2b443f58ff05f5e906d29d3638b3656f422d4aed49",
+        "name": "/nacos",
+        "image_id": "sha256:e7e48cb036c4e72bbb37b2fa04557e1fca192392eb954120e7b0b785fa08ae6f",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.757028255Z"
+      },
+      {
+        "id": "64d4d31fffff4d18cbaec25719825a469613c52d294f8d680d901bde95eca507",
+        "name": "/penpot-penpot-valkey-1",
+        "image_id": "sha256:76ec93b657e31d13a44a4a26daef4d50b5efa3ace97d07b37a2c771a3f5409bf",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.022630922Z"
+      },
+      {
+        "id": "676fa938c3eba6cfe2045970a7405c22e7ec4b304686812deb58f40eaac6e7ef",
+        "name": "/rabbitmq",
+        "image_id": "sha256:7c0ce624561b1eba19a1fc35008450a0b6bd2c08fa8088ce46d7bc39415130a8",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.760844328Z"
+      },
+      {
+        "id": "679684698f40ed30f94834e43d516b94174e3b6afdd23ae9da88c3c654a57eb6",
+        "name": "/kafka-docker-kafka-1",
+        "image_id": "sha256:ba9de0a3777766688c3a0d0a119117cf110ddf318df11c403e29ddb3b4198fa3",
+        "state": "exited",
+        "started_at": "2026-05-18T05:23:20.183155894Z"
+      },
+      {
+        "id": "8ac008d312c3fabf8b8e6dc67a6a5e1ee9129ca8daec9959c896b22fdf4e2ec4",
+        "name": "/penpot-penpot-dns-1",
+        "image_id": "sha256:00d31b9fc97c28510895f64a5139e16d93df5eaa2c2f9a776eacea7a3125abaa",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.462119089Z"
+      },
+      {
+        "id": "a7668262e9b9d773dc0cb317f08b6328ec4b89cdd5d8c2b692c6fbc62cac584e",
+        "name": "/wonderful_agnesi",
+        "image_id": "sha256:0c3a7dc4e9a44dbc40861816315a04dfcbcca9ccf0b84743b34efd268be82567",
+        "state": "exited",
+        "started_at": "2026-06-24T02:24:09.82593007Z"
+      },
+      {
+        "id": "ac619100a461903de6535bac69e7ef14f81b16d933e488a64b56f18eade5280f",
+        "name": "/penpot-penpot-mcp-1",
+        "image_id": "sha256:f6c48cf9e9923ac1a30bc46393bf94b78c9970be66469650ac576f26e05ac36f",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:13.301979671Z"
+      },
+      {
+        "id": "c137da25e9fc1799235ee5e3ec35cf22933d0d2ab136aaef4ee497179d997621",
+        "name": "/penpot-penpot-mailpit-1",
+        "image_id": "sha256:245e558b2e440962f2d646b6415fbb99b38761dc8a170e6646edf1113779965f",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:14.760573755Z"
+      },
+      {
+        "id": "f52a8a22e7b04535253c4379e63a096146aae20b5b2e48a07802dcc00adb4963",
+        "name": "/nginx",
+        "image_id": "sha256:f46d9988131118c112be07525503d4a7cda698d90c7e39d62be70ea202a9a0f2",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.71366823Z"
+      }
+    ],
+    "tagged_images": {
+      "penpot-frontend-selfhost:local": "sha256:a1a9c9bb90b93f3cff334448648be90fc3ca7e315840298772f43b24306f5c82",
+      "penpot-mcp-file-import:local": "sha256:2ee54c62207d15e6f063db95870c76442b1ba757b47ebaf72863051b86238294",
+      "penpot-resident-worker:local": "sha256:289d99c39712b9bbcb12ee4343571233421523f471c05c9f4fb8e6f3b26b9bb0",
+      "axllent/mailpit:v1": "sha256:245e558b2e440962f2d646b6415fbb99b38761dc8a170e6646edf1113779965f",
+      "postgres:15": "sha256:04fba66fe1804636acd8ce729a27cb6f0a5dbe591c8898433aeb6444d7267bfd",
+      "valkey/valkey:8.1": "sha256:76ec93b657e31d13a44a4a26daef4d50b5efa3ace97d07b37a2c771a3f5409bf",
+      "penpotapp/mcp:2.18.5": "sha256:f6c48cf9e9923ac1a30bc46393bf94b78c9970be66469650ac576f26e05ac36f",
+      "penpotapp/exporter:2.18.5": "sha256:9918a73bb7c720252df3124bf674ade2493f970e8f63e711a442432d810c2e58",
+      "penpotapp/frontend:2.18.5": "sha256:a5b042c17a1e95fe35a0a112c93d26df6ebbacd7451c7e823afb30269bf001c6",
+      "registry-1.docker.io/penpotapp/frontend:2.18.5": "sha256:a5b042c17a1e95fe35a0a112c93d26df6ebbacd7451c7e823afb30269bf001c6",
+      "penpotapp/backend:2.18.5": "sha256:28dd4e06b33a70d9ace1b3589def985cddd3f5b49b4964d06a5093381356ee7c",
+      "adguard/dnsproxy:v0.86.0": "sha256:00d31b9fc97c28510895f64a5139e16d93df5eaa2c2f9a776eacea7a3125abaa",
+      "penpotapp/admin-console:2.18.5": "sha256:cdd0cddbd829b9aa3ce55b8622f9884c12b094bdcbdc6f1036f0f260a954570d",
+      "nginx:latest": "sha256:f46d9988131118c112be07525503d4a7cda698d90c7e39d62be70ea202a9a0f2",
+      "cloudflare/cloudflared:latest": "sha256:0c3a7dc4e9a44dbc40861816315a04dfcbcca9ccf0b84743b34efd268be82567",
+      "sonatype/nexus3:latest": "sha256:e90bcee9a286ce698455ba1524f811390b9f77d18e893986ac20b65346cb81d4",
+      "redis:7.4.4": "sha256:b8bbd8ea40e06ac580453a51bac3341e29a492b75ea7cd1b517e82a421a0b926",
+      "mysql:8.4.5": "sha256:b2f81adb2f3335ee77c6a74a6099bea0c5dca5b51ed01cd84c7966d826992764",
+      "kafka-docker-kafka:latest": "sha256:ba9de0a3777766688c3a0d0a119117cf110ddf318df11c403e29ddb3b4198fa3",
+      "nacos/nacos-server:v2.4.3": "sha256:e7e48cb036c4e72bbb37b2fa04557e1fca192392eb954120e7b0b785fa08ae6f",
+      "jerryin/cloudflare-warp:latest": "sha256:438b5e95c668b3753d0792d9f7273ffd563ac47dc91ee25f4a0fff8c9a9c5f72",
+      "rabbitmq:3-management": "sha256:7c0ce624561b1eba19a1fc35008450a0b6bd2c08fa8088ce46d7bc39415130a8",
+      "wurstmeister/zookeeper:latest": "sha256:3f43f72cb2832e7a5fbed7f7dbcd0c43004357974d8f32555d101bd53e81e74f"
+    }
+  },
+  "images": [
+    {
+      "group": "data",
+      "name": "mysql",
+      "reference": "mysql@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 18.77,
+          "stdout_tail": "docker.io/library/mysql@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840: Pulling from library/mysql\n62efe2b176c9: Pulling fs layer\n5fd36d319123: Pulling fs layer\n8ac732699494: Pulling fs layer\n90b46229c5bf: Pulling fs layer\n545a9f15158f: Pulling fs layer\nf36bd9490f0e: Pulling fs layer\n7370c86f593a: Pulling fs layer\nde7edaa32eb6: Pulling fs layer\ne96981fb5853: Pulling fs layer\n245fb04a3d6f: Pulling fs layer\nf36bd9490f0e: Waiting\ne96981fb5853: Waiting\n90b46229c5bf: Waiting\n245fb04a3d6f: Waiting\n545a9f15158f: Waiting\n7370c86f593a: Waiting\nde7edaa32eb6: Waiting\n5fd36d319123: Verifying Checksum\n5fd36d319123: Download complete\n8ac732699494: Verifying Checksum\n8ac732699494: Download complete\n90b46229c5bf: Verifying Checksum\n90b46229c5bf: Download complete\n545a9f15158f: Verifying Checksum\n545a9f15158f: Download complete\nf36bd9490f0e: Verifying Checksum\nf36bd9490f0e: Download complete\nde7edaa32eb6: Verifying Checksum\nde7edaa32eb6: Download complete\n62efe2b176c9: Verifying Checksum\n62efe2b176c9: Download complete\n245fb04a3d6f: Verifying Checksum\n245fb04a3d6f: Download complete\n62efe2b176c9: Pull complete\n5fd36d319123: Pull complete\n7370c86f593a: Verifying Checksum\n7370c86f593a: Download complete\n8ac732699494: Pull complete\n90b46229c5bf: Pull complete\n545a9f15158f: Pull complete\nf36bd9490f0e: Pull complete\n7370c86f593a: Pull complete\nde7edaa32eb6: Pull complete\ne96981fb5853: Verifying Checksum\ne96981fb5853: Download complete\ne96981fb5853: Pull complete\n245fb04a3d6f: Pull complete\nDigest: sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840\nStatus: Downloaded newer image for mysql@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840\ndocker.io/library/mysql@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840\n",
+          "stderr_tail": ""
+        }
+      ],
+      "status": "verified-amd64",
+      "inspect_exit_code": 0,
+      "inspect": {
+        "id": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+        "architecture": "amd64",
+        "os": "linux",
+        "repo_digests": [
+          "mysql@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840"
+        ],
+        "repo_tags": [],
+        "size": 776618168
+      }
+    },
+    {
+      "group": "data",
+      "name": "redis",
+      "reference": "redis@sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 7.57,
+          "stdout_tail": "docker.io/library/redis@sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a: Pulling from library/redis\n3da95a905ed5: Pulling fs layer\n0df11ed0b2bf: Pulling fs layer\n9a387d836249: Pulling fs layer\n6fc6c2c1ad81: Pulling fs layer\n65b220d078db: Pulling fs layer\n073fc2b3060b: Pulling fs layer\n4f4fb700ef54: Pulling fs layer\n33865ebac1a9: Pulling fs layer\n6fc6c2c1ad81: Waiting\n65b220d078db: Waiting\n073fc2b3060b: Waiting\n4f4fb700ef54: Waiting\n33865ebac1a9: Waiting\n9a387d836249: Verifying Checksum\n9a387d836249: Download complete\n0df11ed0b2bf: Verifying Checksum\n0df11ed0b2bf: Download complete\n6fc6c2c1ad81: Verifying Checksum\n6fc6c2c1ad81: Download complete\n073fc2b3060b: Verifying Checksum\n073fc2b3060b: Download complete\n4f4fb700ef54: Verifying Checksum\n4f4fb700ef54: Download complete\n65b220d078db: Verifying Checksum\n65b220d078db: Download complete\n3da95a905ed5: Verifying Checksum\n3da95a905ed5: Download complete\n33865ebac1a9: Verifying Checksum\n33865ebac1a9: Download complete\n3da95a905ed5: Pull complete\n0df11ed0b2bf: Pull complete\n9a387d836249: Pull complete\n6fc6c2c1ad81: Pull complete\n65b220d078db: Pull complete\n073fc2b3060b: Pull complete\n4f4fb700ef54: Pull complete\n33865ebac1a9: Pull complete\nDigest: sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a\nStatus: Downloaded newer image for redis@sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a\ndocker.io/library/redis@sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a\n",
+          "stderr_tail": ""
+        }
+      ],
+      "status": "verified-amd64",
+      "inspect_exit_code": 0,
+      "inspect": {
+        "id": "sha256:17c1c1b96fd1685968790c7fcab311e5bc49c809efe9744af262640a559c4cf2",
+        "architecture": "amd64",
+        "os": "linux",
+        "repo_digests": [
+          "redis@sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a"
+        ],
+        "repo_tags": [],
+        "size": 117036000
+      }
+    },
+    {
+      "group": "data",
+      "name": "rabbitmq",
+      "reference": "rabbitmq@sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 8.61,
+          "stdout_tail": "docker.io/library/rabbitmq@sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920: Pulling from library/rabbitmq\n20043066d3d5: Pulling fs layer\n3fadc669ef11: Pulling fs layer\n7084ac8f4ab6: Pulling fs layer\nbeb0d870d438: Pulling fs layer\nd63c4408fdb7: Pulling fs layer\nefa05c660812: Pulling fs layer\nf4e7f62f4b80: Pulling fs layer\n5e1c03b67a78: Pulling fs layer\n14e6209d5fa8: Pulling fs layer\nd686b50ce172: Pulling fs layer\nefa05c660812: Waiting\nf4e7f62f4b80: Waiting\n5e1c03b67a78: Waiting\n14e6209d5fa8: Waiting\nd686b50ce172: Waiting\nbeb0d870d438: Waiting\nd63c4408fdb7: Waiting\n20043066d3d5: Verifying Checksum\n20043066d3d5: Download complete\n7084ac8f4ab6: Verifying Checksum\n7084ac8f4ab6: Download complete\nbeb0d870d438: Verifying Checksum\nbeb0d870d438: Download complete\nefa05c660812: Verifying Checksum\nefa05c660812: Download complete\n20043066d3d5: Pull complete\nf4e7f62f4b80: Verifying Checksum\nf4e7f62f4b80: Download complete\n5e1c03b67a78: Verifying Checksum\n5e1c03b67a78: Download complete\n3fadc669ef11: Verifying Checksum\n3fadc669ef11: Download complete\nd63c4408fdb7: Verifying Checksum\nd63c4408fdb7: Download complete\n14e6209d5fa8: Verifying Checksum\n14e6209d5fa8: Download complete\n3fadc669ef11: Pull complete\n7084ac8f4ab6: Pull complete\nbeb0d870d438: Pull complete\nd63c4408fdb7: Pull complete\nefa05c660812: Pull complete\nf4e7f62f4b80: Pull complete\n5e1c03b67a78: Pull complete\n14e6209d5fa8: Pull complete\nd686b50ce172: Verifying Checksum\nd686b50ce172: Download complete\nd686b50ce172: Pull complete\nDigest: sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920\nStatus: Downloaded newer image for rabbitmq@sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920\ndocker.io/library/rabbitmq@sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920\n",
+          "stderr_tail": ""
+        }
+      ],
+      "status": "verified-amd64",
+      "inspect_exit_code": 0,
+      "inspect": {
+        "id": "sha256:de912cbbf07f938bb8aaa5682464a73a00c6a996efdf0880423aeb4eae006c34",
+        "architecture": "amd64",
+        "os": "linux",
+        "repo_digests": [
+          "rabbitmq@sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920"
+        ],
+        "repo_tags": [],
+        "size": 251501716
+      }
+    },
+    {
+      "group": "data",
+      "name": "nacos",
+      "reference": "nacos/nacos-server@sha256:c8dc1db0ac6a345b62bad4e76963d25237a90bf45704795e7cb4d1d972b024a3",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 14.25,
+          "stdout_tail": "docker.io/nacos/nacos-server@sha256:c8dc1db0ac6a345b62bad4e76963d25237a90bf45704795e7cb4d1d972b024a3: Pulling from nacos/nacos-server\n43c4264eed91: Pulling fs layer\n527df18771ec: Pulling fs layer\n50a97b6cfe52: Pulling fs layer\n8ac0cba1d310: Pulling fs layer\n8e0e0a97c832: Pulling fs layer\n9449a798fd1b: Pulling fs layer\n7f7a1cc731b2: Pulling fs layer\n8ac0cba1d310: Waiting\n8e0e0a97c832: Waiting\n9449a798fd1b: Waiting\n7f7a1cc731b2: Waiting\n50a97b6cfe52: Verifying Checksum\n50a97b6cfe52: Download complete\n43c4264eed91: Verifying Checksum\n43c4264eed91: Download complete\n43c4264eed91: Pull complete\n8e0e0a97c832: Verifying Checksum\n8e0e0a97c832: Download complete\n9449a798fd1b: Verifying Checksum\n9449a798fd1b: Download complete\n7f7a1cc731b2: Verifying Checksum\n7f7a1cc731b2: Download complete\n527df18771ec: Verifying Checksum\n527df18771ec: Download complete\n527df18771ec: Pull complete\n50a97b6cfe52: Pull complete\n8ac0cba1d310: Verifying Checksum\n8ac0cba1d310: Download complete\n8ac0cba1d310: Pull complete\n8e0e0a97c832: Pull complete\n9449a798fd1b: Pull complete\n7f7a1cc731b2: Pull complete\nDigest: sha256:c8dc1db0ac6a345b62bad4e76963d25237a90bf45704795e7cb4d1d972b024a3\nStatus: Downloaded newer image for nacos/nacos-server@sha256:c8dc1db0ac6a345b62bad4e76963d25237a90bf45704795e7cb4d1d972b024a3\ndocker.io/nacos/nacos-server@sha256:c8dc1db0ac6a345b62bad4e76963d25237a90bf45704795e7cb4d1d972b024a3\n",
+          "stderr_tail": ""
+        }
+      ],
+      "status": "verified-amd64",
+      "inspect_exit_code": 0,
+      "inspect": {
+        "id": "sha256:fc86d4833afb7abc64006f04c715946303f6b15d694c2f05c2895a27d967ed88",
+        "architecture": "amd64",
+        "os": "linux",
+        "repo_digests": [
+          "nacos/nacos-server@sha256:c8dc1db0ac6a345b62bad4e76963d25237a90bf45704795e7cb4d1d972b024a3"
+        ],
+        "repo_tags": [],
+        "size": 285885162
+      }
+    },
+    {
+      "group": "penpot",
+      "name": "frontend",
+      "reference": "penpotapp/frontend@sha256:d5bec7ab86328a2bce02b331291eab5833dcb56e403428ad07ccd6740be73735",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 22.86,
+          "stdout_tail": "fying Checksum\n7ab3546549ee: Download complete\n334cb3c232da: Verifying Checksum\n334cb3c232da: Download complete\n7fd5b8cc571c: Verifying Checksum\n7fd5b8cc571c: Download complete\n1946ae5e9542: Verifying Checksum\n1946ae5e9542: Download complete\n4d284962faad: Verifying Checksum\n4d284962faad: Download complete\n2de30ce7ee5a: Verifying Checksum\n2de30ce7ee5a: Download complete\n1946ae5e9542: Pull complete\n4ed700136e9e: Pull complete\n6561c7ccab23: Pull complete\nd8d00bd02aac: Pull complete\ne15a04768912: Pull complete\nf41f667356ae: Pull complete\na29ea88011cd: Pull complete\n0021ca155703: Pull complete\n7ab3546549ee: Pull complete\n334cb3c232da: Pull complete\n7fd5b8cc571c: Pull complete\n9845a8b192db: Verifying Checksum\n9845a8b192db: Download complete\n2de30ce7ee5a: Pull complete\n3ea2c9053552: Verifying Checksum\n3ea2c9053552: Download complete\n4455214467e1: Download complete\n00197709b182: Verifying Checksum\n00197709b182: Download complete\n52bb3b4fcd5b: Verifying Checksum\n52bb3b4fcd5b: Download complete\n6e898005f225: Verifying Checksum\n6e898005f225: Download complete\nb495c04911ce: Download complete\n68937f15fc3b: Verifying Checksum\n68937f15fc3b: Download complete\n4f4fb700ef54: Verifying Checksum\n4f4fb700ef54: Download complete\ne025624b62bf: Verifying Checksum\ne025624b62bf: Download complete\ne025624b62bf: Pull complete\n4d284962faad: Pull complete\n9845a8b192db: Pull complete\n3ea2c9053552: Pull complete\n4455214467e1: Pull complete\n52bb3b4fcd5b: Pull complete\n00197709b182: Pull complete\n6e898005f225: Pull complete\nb495c04911ce: Pull complete\n68937f15fc3b: Pull complete\n4f4fb700ef54: Pull complete\n5bd1816b0aab: Verifying Checksum\n5bd1816b0aab: Download complete\n5bd1816b0aab: Pull complete\nDigest: sha256:d5bec7ab86328a2bce02b331291eab5833dcb56e403428ad07ccd6740be73735\nStatus: Downloaded newer image for penpotapp/frontend@sha256:d5bec7ab86328a2bce02b331291eab5833dcb56e403428ad07ccd6740be73735\ndocker.io/penpotapp/frontend@sha256:d5bec7ab86328a2bce02b331291eab5833dcb56e403428ad07ccd6740be73735\n",
+          "stderr_tail": ""
+        }
+      ],
+      "status": "verified-amd64",
+      "inspect_exit_code": 0,
+      "inspect": {
+        "id": "sha256:8a9691a7ca4c7c0870345368f701e6c04970a908307d0a75e0c323bfccff986c",
+        "architecture": "amd64",
+        "os": "linux",
+        "repo_digests": [
+          "penpotapp/frontend@sha256:d5bec7ab86328a2bce02b331291eab5833dcb56e403428ad07ccd6740be73735"
+        ],
+        "repo_tags": [],
+        "size": 590097359
+      }
+    },
+    {
+      "group": "penpot",
+      "name": "backend",
+      "reference": "penpotapp/backend@sha256:3d3d1eeb5a488efd31ec22038374eb6b52dccc21532047c2e508a18193f3e71f",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 22.35,
+          "stdout_tail": "92bfc: Pulling fs layer\n143301abadc3: Pulling fs layer\n4f4fb700ef54: Pulling fs layer\n55553334c776: Waiting\n7641fd18e5eb: Waiting\nce6d4277272c: Waiting\n07592212432e: Waiting\n6eeee4cf0374: Waiting\n501245992bfc: Waiting\n143301abadc3: Waiting\n4f4fb700ef54: Waiting\ncd85d2c9d702: Waiting\nd638308a96f4: Waiting\nbdb21d8b0b7b: Waiting\na2773881a824: Waiting\n2d3ce1443dba: Waiting\nb78d9ee2f15d: Verifying Checksum\nb78d9ee2f15d: Download complete\nb78d9ee2f15d: Pull complete\nd6756f62e2b4: Verifying Checksum\nd6756f62e2b4: Download complete\ncd85d2c9d702: Verifying Checksum\ncd85d2c9d702: Download complete\nd638308a96f4: Verifying Checksum\nd638308a96f4: Download complete\na2773881a824: Verifying Checksum\na2773881a824: Download complete\nbdb21d8b0b7b: Download complete\n2d3ce1443dba: Verifying Checksum\n2d3ce1443dba: Download complete\n55553334c776: Download complete\n7641fd18e5eb: Verifying Checksum\n7641fd18e5eb: Download complete\n07b57b793d20: Download complete\n07b57b793d20: Pull complete\nd6756f62e2b4: Pull complete\ncd85d2c9d702: Pull complete\nd638308a96f4: Pull complete\na2773881a824: Pull complete\nbdb21d8b0b7b: Pull complete\n2d3ce1443dba: Pull complete\n55553334c776: Pull complete\n7641fd18e5eb: Pull complete\n07592212432e: Verifying Checksum\n07592212432e: Download complete\n501245992bfc: Download complete\nce6d4277272c: Verifying Checksum\nce6d4277272c: Download complete\n4f4fb700ef54: Download complete\nce6d4277272c: Pull complete\n07592212432e: Pull complete\n6eeee4cf0374: Verifying Checksum\n6eeee4cf0374: Download complete\n6eeee4cf0374: Pull complete\n501245992bfc: Pull complete\n143301abadc3: Verifying Checksum\n143301abadc3: Download complete\n143301abadc3: Pull complete\n4f4fb700ef54: Pull complete\nDigest: sha256:3d3d1eeb5a488efd31ec22038374eb6b52dccc21532047c2e508a18193f3e71f\nStatus: Downloaded newer image for penpotapp/backend@sha256:3d3d1eeb5a488efd31ec22038374eb6b52dccc21532047c2e508a18193f3e71f\ndocker.io/penpotapp/backend@sha256:3d3d1eeb5a488efd31ec22038374eb6b52dccc21532047c2e508a18193f3e71f\n",
+          "stderr_tail": ""
+        }
+      ],
+      "status": "verified-amd64",
+      "inspect_exit_code": 0,
+      "inspect": {
+        "id": "sha256:c54c38204393018c4009b7161b9ee3a04ccc0daab657b820d5de86a0d3013630",
+        "architecture": "amd64",
+        "os": "linux",
+        "repo_digests": [
+          "penpotapp/backend@sha256:3d3d1eeb5a488efd31ec22038374eb6b52dccc21532047c2e508a18193f3e71f"
+        ],
+        "repo_tags": [],
+        "size": 762210840
+      }
+    },
+    {
+      "group": "penpot",
+      "name": "exporter",
+      "reference": "penpotapp/exporter@sha256:48b66f774d338f0ed25d58c6d42f9f107a99170f67bf75ce76361d3dc9e6e27b",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 36.68,
+          "stdout_tail": " fs layer\n795d304f3122: Pulling fs layer\n2e8499adfb3b: Pulling fs layer\n6b2837adf251: Pulling fs layer\n584cef197355: Pulling fs layer\n2b0b190a4e34: Pulling fs layer\n4f4fb700ef54: Pulling fs layer\n5c4a63e1f220: Pulling fs layer\nf365e84d1042: Pulling fs layer\n7e1afafbbc2a: Waiting\n795d304f3122: Waiting\n2e8499adfb3b: Waiting\n6b2837adf251: Waiting\n584cef197355: Waiting\n2b0b190a4e34: Waiting\n4f4fb700ef54: Waiting\n5c4a63e1f220: Waiting\nf365e84d1042: Waiting\ne48a22f01e41: Verifying Checksum\ne48a22f01e41: Download complete\ne48a22f01e41: Pull complete\n469790f3b271: Verifying Checksum\n469790f3b271: Download complete\n8cc5f7d79e68: Download complete\n4907f4f6eb4a: Verifying Checksum\n4907f4f6eb4a: Download complete\n7e1afafbbc2a: Verifying Checksum\n7e1afafbbc2a: Download complete\n795d304f3122: Verifying Checksum\n795d304f3122: Download complete\n2e8499adfb3b: Verifying Checksum\n2e8499adfb3b: Download complete\n584cef197355: Verifying Checksum\n584cef197355: Download complete\n2b0b190a4e34: Verifying Checksum\n2b0b190a4e34: Download complete\nd064ebc5bde2: Verifying Checksum\nd064ebc5bde2: Download complete\n4f4fb700ef54: Verifying Checksum\nd064ebc5bde2: Pull complete\n8cc5f7d79e68: Pull complete\n469790f3b271: Pull complete\n4907f4f6eb4a: Pull complete\n7e1afafbbc2a: Pull complete\n795d304f3122: Pull complete\n2e8499adfb3b: Pull complete\n5c4a63e1f220: Verifying Checksum\n5c4a63e1f220: Download complete\n6b2837adf251: Verifying Checksum\n6b2837adf251: Download complete\n6b2837adf251: Pull complete\n584cef197355: Pull complete\n2b0b190a4e34: Pull complete\n4f4fb700ef54: Pull complete\n5c4a63e1f220: Pull complete\nf365e84d1042: Verifying Checksum\nf365e84d1042: Download complete\nf365e84d1042: Pull complete\nDigest: sha256:48b66f774d338f0ed25d58c6d42f9f107a99170f67bf75ce76361d3dc9e6e27b\nStatus: Downloaded newer image for penpotapp/exporter@sha256:48b66f774d338f0ed25d58c6d42f9f107a99170f67bf75ce76361d3dc9e6e27b\ndocker.io/penpotapp/exporter@sha256:48b66f774d338f0ed25d58c6d42f9f107a99170f67bf75ce76361d3dc9e6e27b\n",
+          "stderr_tail": ""
+        }
+      ],
+      "status": "verified-amd64",
+      "inspect_exit_code": 0,
+      "inspect": {
+        "id": "sha256:6173b08e25850cda792cd75261e741649c0febd48326e68e8711ba44b5c9af42",
+        "architecture": "amd64",
+        "os": "linux",
+        "repo_digests": [
+          "penpotapp/exporter@sha256:48b66f774d338f0ed25d58c6d42f9f107a99170f67bf75ce76361d3dc9e6e27b"
+        ],
+        "repo_tags": [],
+        "size": 1766228784
+      }
+    },
+    {
+      "group": "penpot",
+      "name": "admin-console",
+      "reference": "penpotapp/admin-console@sha256:679bada92344ad5ebd1ee68b5067d63592383a050e3e5da63d106b259e1b0ac9",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 13.82,
+          "stdout_tail": "ng fs layer\n3ee66560cf01: Pulling fs layer\n3892f5b37e09: Pulling fs layer\n82ca9e6c6f36: Pulling fs layer\n3892f5b37e09: Waiting\n73c05ae6b6c1: Pulling fs layer\n79c67233d9df: Pulling fs layer\n7e9d20a46bba: Pulling fs layer\nbd7ea51aa2ea: Pulling fs layer\n0eba0be9ff6e: Pulling fs layer\n82ca9e6c6f36: Waiting\n73c05ae6b6c1: Waiting\n79c67233d9df: Waiting\n7e9d20a46bba: Waiting\nbd7ea51aa2ea: Waiting\n88aa38c5ae08: Pulling fs layer\n86d932a003e0: Pulling fs layer\nda72e9e24e64: Pulling fs layer\n0eba0be9ff6e: Waiting\n86d932a003e0: Waiting\nda72e9e24e64: Waiting\n88aa38c5ae08: Waiting\n6071e5cb86b3: Verifying Checksum\n6071e5cb86b3: Download complete\n3ee66560cf01: Verifying Checksum\n3ee66560cf01: Download complete\n3892f5b37e09: Verifying Checksum\n3892f5b37e09: Download complete\n82ca9e6c6f36: Download complete\n73c05ae6b6c1: Verifying Checksum\n73c05ae6b6c1: Download complete\n7e9d20a46bba: Verifying Checksum\n7e9d20a46bba: Download complete\nbd7ea51aa2ea: Verifying Checksum\nbd7ea51aa2ea: Download complete\n0eba0be9ff6e: Download complete\n88aa38c5ae08: Verifying Checksum\n88aa38c5ae08: Download complete\n509bb83e0d81: Verifying Checksum\n509bb83e0d81: Download complete\n86d932a003e0: Download complete\nda72e9e24e64: Verifying Checksum\nda72e9e24e64: Download complete\n509bb83e0d81: Pull complete\n6071e5cb86b3: Pull complete\n3ee66560cf01: Pull complete\n3892f5b37e09: Pull complete\n82ca9e6c6f36: Pull complete\n73c05ae6b6c1: Pull complete\n79c67233d9df: Verifying Checksum\n79c67233d9df: Download complete\n79c67233d9df: Pull complete\n7e9d20a46bba: Pull complete\nbd7ea51aa2ea: Pull complete\n0eba0be9ff6e: Pull complete\n88aa38c5ae08: Pull complete\n86d932a003e0: Pull complete\nda72e9e24e64: Pull complete\nDigest: sha256:679bada92344ad5ebd1ee68b5067d63592383a050e3e5da63d106b259e1b0ac9\nStatus: Downloaded newer image for penpotapp/admin-console@sha256:679bada92344ad5ebd1ee68b5067d63592383a050e3e5da63d106b259e1b0ac9\ndocker.io/penpotapp/admin-console@sha256:679bada92344ad5ebd1ee68b5067d63592383a050e3e5da63d106b259e1b0ac9\n",
+          "stderr_tail": ""
+        }
+      ],
+      "status": "verified-amd64",
+      "inspect_exit_code": 0,
+      "inspect": {
+        "id": "sha256:29c13326e854fd63e18a7231cb1ca26d60f728692bd1207ded003b94aba79390",
+        "architecture": "amd64",
+        "os": "linux",
+        "repo_digests": [
+          "penpotapp/admin-console@sha256:679bada92344ad5ebd1ee68b5067d63592383a050e3e5da63d106b259e1b0ac9"
+        ],
+        "repo_tags": [],
+        "size": 368396566
+      }
+    },
+    {
+      "group": "penpot",
+      "name": "mcp",
+      "reference": "penpotapp/mcp@sha256:6b39db0ca73d0a50a8afa264676d8ab9f455e87d426cff276d31b2a84a0447c5",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 8.31,
+          "stdout_tail": "docker.io/penpotapp/mcp@sha256:6b39db0ca73d0a50a8afa264676d8ab9f455e87d426cff276d31b2a84a0447c5: Pulling from penpotapp/mcp\ne48a22f01e41: Already exists\ndb0cc3193b8d: Pulling fs layer\n896ec6d41781: Pulling fs layer\n4907f4f6eb4a: Pulling fs layer\nbd7c4736828d: Pulling fs layer\na659bd654eaf: Pulling fs layer\n39031efd0ff8: Pulling fs layer\n4f4fb700ef54: Pulling fs layer\nbd7c4736828d: Waiting\na659bd654eaf: Waiting\n39031efd0ff8: Waiting\n4f4fb700ef54: Waiting\n896ec6d41781: Download complete\n4907f4f6eb4a: Verifying Checksum\n4907f4f6eb4a: Download complete\nbd7c4736828d: Verifying Checksum\nbd7c4736828d: Download complete\na659bd654eaf: Verifying Checksum\na659bd654eaf: Download complete\n4f4fb700ef54: Verifying Checksum\n4f4fb700ef54: Download complete\n39031efd0ff8: Verifying Checksum\n39031efd0ff8: Download complete\ndb0cc3193b8d: Verifying Checksum\ndb0cc3193b8d: Download complete\ndb0cc3193b8d: Pull complete\n896ec6d41781: Pull complete\n4907f4f6eb4a: Pull complete\nbd7c4736828d: Pull complete\na659bd654eaf: Pull complete\n39031efd0ff8: Pull complete\n4f4fb700ef54: Pull complete\nDigest: sha256:6b39db0ca73d0a50a8afa264676d8ab9f455e87d426cff276d31b2a84a0447c5\nStatus: Downloaded newer image for penpotapp/mcp@sha256:6b39db0ca73d0a50a8afa264676d8ab9f455e87d426cff276d31b2a84a0447c5\ndocker.io/penpotapp/mcp@sha256:6b39db0ca73d0a50a8afa264676d8ab9f455e87d426cff276d31b2a84a0447c5\n",
+          "stderr_tail": ""
+        }
+      ],
+      "status": "verified-amd64",
+      "inspect_exit_code": 0,
+      "inspect": {
+        "id": "sha256:e95070617f49eacc00f136061d9c6b4bad957319046e9e65e7cee14b9e77577c",
+        "architecture": "amd64",
+        "os": "linux",
+        "repo_digests": [
+          "penpotapp/mcp@sha256:6b39db0ca73d0a50a8afa264676d8ab9f455e87d426cff276d31b2a84a0447c5"
+        ],
+        "repo_tags": [],
+        "size": 195338592
+      }
+    },
+    {
+      "group": "penpot",
+      "name": "postgres",
+      "reference": "postgres@sha256:7da5d534f1ffcdb2f69efa6e466a7a29ff89eefd611c7b50c4d69aa77fd4a822",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 15.07,
+          "stdout_tail": "layer\n67e0e916d76a: Pulling fs layer\n41d3d376b829: Pulling fs layer\nc7f30921ec71: Pulling fs layer\n84dcf8b9156e: Pulling fs layer\nd5ccc52daaac: Pulling fs layer\n2415a67bee68: Waiting\n0fe60e2083af: Waiting\n47cb8b1bde46: Waiting\nea11baf598e9: Waiting\n67e0e916d76a: Waiting\n41d3d376b829: Waiting\nc7f30921ec71: Waiting\n84dcf8b9156e: Waiting\nd5ccc52daaac: Waiting\n2118fdf162e1: Waiting\n4ee3f724543a: Waiting\n4fc49c123a0d: Verifying Checksum\n4fc49c123a0d: Download complete\n2c0a9e44f96c: Verifying Checksum\n2c0a9e44f96c: Download complete\n2118fdf162e1: Verifying Checksum\n2118fdf162e1: Download complete\n6fc242d221a6: Verifying Checksum\n6fc242d221a6: Download complete\n4ee3f724543a: Verifying Checksum\n4ee3f724543a: Download complete\n2415a67bee68: Verifying Checksum\n2415a67bee68: Download complete\n0fe60e2083af: Verifying Checksum\n0fe60e2083af: Download complete\n47cb8b1bde46: Verifying Checksum\n47cb8b1bde46: Download complete\n67e0e916d76a: Verifying Checksum\n67e0e916d76a: Download complete\n41d3d376b829: Verifying Checksum\n41d3d376b829: Download complete\n6fc242d221a6: Pull complete\nc7f30921ec71: Verifying Checksum\nc7f30921ec71: Download complete\n2c0a9e44f96c: Pull complete\n84dcf8b9156e: Verifying Checksum\n84dcf8b9156e: Download complete\n4fc49c123a0d: Pull complete\n2118fdf162e1: Pull complete\n4ee3f724543a: Pull complete\n2415a67bee68: Pull complete\n0fe60e2083af: Pull complete\n47cb8b1bde46: Pull complete\nd5ccc52daaac: Verifying Checksum\nd5ccc52daaac: Download complete\nea11baf598e9: Verifying Checksum\nea11baf598e9: Download complete\nea11baf598e9: Pull complete\n67e0e916d76a: Pull complete\n41d3d376b829: Pull complete\nc7f30921ec71: Pull complete\n84dcf8b9156e: Pull complete\nd5ccc52daaac: Pull complete\nDigest: sha256:7da5d534f1ffcdb2f69efa6e466a7a29ff89eefd611c7b50c4d69aa77fd4a822\nStatus: Downloaded newer image for postgres@sha256:7da5d534f1ffcdb2f69efa6e466a7a29ff89eefd611c7b50c4d69aa77fd4a822\ndocker.io/library/postgres@sha256:7da5d534f1ffcdb2f69efa6e466a7a29ff89eefd611c7b50c4d69aa77fd4a822\n",
+          "stderr_tail": ""
+        }
+      ],
+      "status": "verified-amd64",
+      "inspect_exit_code": 0,
+      "inspect": {
+        "id": "sha256:245fc027b7f3755bbd21b4375c2a0ebc7fa5d16c4573da497be9850a823973c8",
+        "architecture": "amd64",
+        "os": "linux",
+        "repo_digests": [
+          "postgres@sha256:7da5d534f1ffcdb2f69efa6e466a7a29ff89eefd611c7b50c4d69aa77fd4a822"
+        ],
+        "repo_tags": [],
+        "size": 444964481
+      }
+    },
+    {
+      "group": "penpot",
+      "name": "valkey",
+      "reference": "valkey/valkey@sha256:757b7e559b14512bcc252949b13b717385d9381ed42e6b325982d03f4a5c8e8e",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 6.57,
+          "stdout_tail": "docker.io/valkey/valkey@sha256:757b7e559b14512bcc252949b13b717385d9381ed42e6b325982d03f4a5c8e8e: Pulling from valkey/valkey\nf2be67225471: Pulling fs layer\n850c61815eda: Pulling fs layer\n83f7dcb10b82: Pulling fs layer\nb8a90441d7aa: Pulling fs layer\n30fa63870bdf: Pulling fs layer\n4f4fb700ef54: Pulling fs layer\n124012cfa1b2: Pulling fs layer\nb8a90441d7aa: Waiting\n30fa63870bdf: Waiting\n4f4fb700ef54: Waiting\n124012cfa1b2: Waiting\n850c61815eda: Verifying Checksum\n83f7dcb10b82: Verifying Checksum\n83f7dcb10b82: Download complete\n30fa63870bdf: Verifying Checksum\n30fa63870bdf: Download complete\nf2be67225471: Verifying Checksum\nf2be67225471: Download complete\n4f4fb700ef54: Download complete\n124012cfa1b2: Verifying Checksum\n124012cfa1b2: Download complete\nf2be67225471: Pull complete\n850c61815eda: Pull complete\n83f7dcb10b82: Pull complete\nb8a90441d7aa: Verifying Checksum\nb8a90441d7aa: Download complete\nb8a90441d7aa: Pull complete\n30fa63870bdf: Pull complete\n4f4fb700ef54: Pull complete\n124012cfa1b2: Pull complete\nDigest: sha256:757b7e559b14512bcc252949b13b717385d9381ed42e6b325982d03f4a5c8e8e\nStatus: Downloaded newer image for valkey/valkey@sha256:757b7e559b14512bcc252949b13b717385d9381ed42e6b325982d03f4a5c8e8e\ndocker.io/valkey/valkey@sha256:757b7e559b14512bcc252949b13b717385d9381ed42e6b325982d03f4a5c8e8e\n",
+          "stderr_tail": ""
+        }
+      ],
+      "status": "verified-amd64",
+      "inspect_exit_code": 0,
+      "inspect": {
+        "id": "sha256:ca662989648f173e01fb1a1768e7d84ddcaf8b7de135070b59271b0918104eb3",
+        "architecture": "amd64",
+        "os": "linux",
+        "repo_digests": [
+          "valkey/valkey@sha256:757b7e559b14512bcc252949b13b717385d9381ed42e6b325982d03f4a5c8e8e"
+        ],
+        "repo_tags": [],
+        "size": 114976495
+      }
+    },
+    {
+      "group": "penpot",
+      "name": "dns",
+      "reference": "adguard/dnsproxy@sha256:29a27f0a695fa0ae97c56e61343bb7fb820b555e7069b87562a0d5b6fabaea6f",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 5.1,
+          "stdout_tail": "docker.io/adguard/dnsproxy@sha256:29a27f0a695fa0ae97c56e61343bb7fb820b555e7069b87562a0d5b6fabaea6f: Pulling from adguard/dnsproxy\ne2de96513ba9: Pulling fs layer\n2b38c1f35c69: Pulling fs layer\n249e6da34593: Pulling fs layer\nf4e5146535a2: Pulling fs layer\nefe322469dbd: Pulling fs layer\n4f4fb700ef54: Pulling fs layer\nf4e5146535a2: Waiting\nefe322469dbd: Waiting\n4f4fb700ef54: Waiting\n249e6da34593: Verifying Checksum\n249e6da34593: Download complete\n2b38c1f35c69: Verifying Checksum\n2b38c1f35c69: Download complete\ne2de96513ba9: Verifying Checksum\ne2de96513ba9: Download complete\ne2de96513ba9: Pull complete\nf4e5146535a2: Verifying Checksum\nf4e5146535a2: Download complete\n2b38c1f35c69: Pull complete\n249e6da34593: Pull complete\nf4e5146535a2: Pull complete\nefe322469dbd: Verifying Checksum\nefe322469dbd: Download complete\nefe322469dbd: Pull complete\n4f4fb700ef54: Verifying Checksum\n4f4fb700ef54: Download complete\n4f4fb700ef54: Pull complete\nDigest: sha256:29a27f0a695fa0ae97c56e61343bb7fb820b555e7069b87562a0d5b6fabaea6f\nStatus: Downloaded newer image for adguard/dnsproxy@sha256:29a27f0a695fa0ae97c56e61343bb7fb820b555e7069b87562a0d5b6fabaea6f\ndocker.io/adguard/dnsproxy@sha256:29a27f0a695fa0ae97c56e61343bb7fb820b555e7069b87562a0d5b6fabaea6f\n",
+          "stderr_tail": ""
+        }
+      ],
+      "status": "verified-amd64",
+      "inspect_exit_code": 0,
+      "inspect": {
+        "id": "sha256:7ed84fca86579b7bee90ec5c9750457cd9450729d2dd01fb2070f00f6cd7fb14",
+        "architecture": "amd64",
+        "os": "linux",
+        "repo_digests": [
+          "adguard/dnsproxy@sha256:29a27f0a695fa0ae97c56e61343bb7fb820b555e7069b87562a0d5b6fabaea6f"
+        ],
+        "repo_tags": [],
+        "size": 33375583
+      }
+    },
+    {
+      "group": "penpot",
+      "name": "mailpit",
+      "reference": "axllent/mailpit@sha256:18156f9ee243aa339170ac33d09d6d5a80b10d9e06b265f90f223a777a8f4b73",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 5.53,
+          "stdout_tail": "docker.io/axllent/mailpit@sha256:18156f9ee243aa339170ac33d09d6d5a80b10d9e06b265f90f223a777a8f4b73: Pulling from axllent/mailpit\n7b229517ed22: Pulling fs layer\n5d9afc867194: Pulling fs layer\ne1656acc19fd: Pulling fs layer\ne1656acc19fd: Download complete\n7b229517ed22: Verifying Checksum\n7b229517ed22: Download complete\n7b229517ed22: Pull complete\n5d9afc867194: Verifying Checksum\n5d9afc867194: Download complete\n5d9afc867194: Pull complete\ne1656acc19fd: Pull complete\nDigest: sha256:18156f9ee243aa339170ac33d09d6d5a80b10d9e06b265f90f223a777a8f4b73\nStatus: Downloaded newer image for axllent/mailpit@sha256:18156f9ee243aa339170ac33d09d6d5a80b10d9e06b265f90f223a777a8f4b73\ndocker.io/axllent/mailpit@sha256:18156f9ee243aa339170ac33d09d6d5a80b10d9e06b265f90f223a777a8f4b73\n",
+          "stderr_tail": ""
+        }
+      ],
+      "status": "verified-amd64",
+      "inspect_exit_code": 0,
+      "inspect": {
+        "id": "sha256:580a202b5088e9c651a8e8b4e461e3213fbd3a3aacaa3d2251892a546a734116",
+        "architecture": "amd64",
+        "os": "linux",
+        "repo_digests": [
+          "axllent/mailpit@sha256:18156f9ee243aa339170ac33d09d6d5a80b10d9e06b265f90f223a777a8f4b73"
+        ],
+        "repo_tags": [],
+        "size": 35929243
+      }
+    },
+    {
+      "group": "nexus",
+      "name": "nexus",
+      "reference": "sonatype/nexus3@sha256:e190be450888ec912b941579bac90767d73debc3307a26326c8a71132b02951f",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 26.63,
+          "stdout_tail": "docker.io/sonatype/nexus3@sha256:e190be450888ec912b941579bac90767d73debc3307a26326c8a71132b02951f: Pulling from sonatype/nexus3\n1e02d32990ad: Pulling fs layer\nd477ccef4e5a: Pulling fs layer\nbb9c4d5fb1d5: Pulling fs layer\nc74bb0d12c8a: Pulling fs layer\nd6461633a9aa: Pulling fs layer\nf84e3fb9822a: Pulling fs layer\nc74bb0d12c8a: Waiting\nd6461633a9aa: Waiting\nf84e3fb9822a: Waiting\nbb9c4d5fb1d5: Verifying Checksum\nbb9c4d5fb1d5: Download complete\n1e02d32990ad: Verifying Checksum\n1e02d32990ad: Download complete\n1e02d32990ad: Pull complete\nd6461633a9aa: Verifying Checksum\nd6461633a9aa: Download complete\nf84e3fb9822a: Verifying Checksum\nf84e3fb9822a: Download complete\nd477ccef4e5a: Verifying Checksum\nd477ccef4e5a: Download complete\nd477ccef4e5a: Pull complete\nbb9c4d5fb1d5: Pull complete\nc74bb0d12c8a: Verifying Checksum\nc74bb0d12c8a: Download complete\nc74bb0d12c8a: Pull complete\nd6461633a9aa: Pull complete\nf84e3fb9822a: Pull complete\nDigest: sha256:e190be450888ec912b941579bac90767d73debc3307a26326c8a71132b02951f\nStatus: Downloaded newer image for sonatype/nexus3@sha256:e190be450888ec912b941579bac90767d73debc3307a26326c8a71132b02951f\ndocker.io/sonatype/nexus3@sha256:e190be450888ec912b941579bac90767d73debc3307a26326c8a71132b02951f\n",
+          "stderr_tail": ""
+        }
+      ],
+      "status": "verified-amd64",
+      "inspect_exit_code": 0,
+      "inspect": {
+        "id": "sha256:2ae4fee2eed85f42c982aa2fc16746a8453c7f79faf2a7ea236855ca8652e001",
+        "architecture": "amd64",
+        "os": "linux",
+        "repo_digests": [
+          "sonatype/nexus3@sha256:e190be450888ec912b941579bac90767d73debc3307a26326c8a71132b02951f"
+        ],
+        "repo_tags": [],
+        "size": 683421871
+      }
+    }
+  ],
+  "archives": [
+    {
+      "group": "data",
+      "references": [
+        "mysql@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840",
+        "redis@sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a",
+        "rabbitmq@sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920",
+        "nacos/nacos-server@sha256:c8dc1db0ac6a345b62bad4e76963d25237a90bf45704795e7cb4d1d972b024a3"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "status": "saved",
+      "file": "/Users/yangzhaohui/work/www/harness/dell/private/images/target-amd64-data-images.tar",
+      "bytes": 1460631040,
+      "sha256": "c85e0df24676577118b9d058451140a311713b65bb2234528dd18a4a7726b0ba",
+      "has_oci_index": true,
+      "manifest_images": [
+        {
+          "config_path": "blobs/sha256/a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+          "repo_tags": null,
+          "architecture": "amd64",
+          "os": "linux",
+          "layer_count": 10
+        },
+        {
+          "config_path": "blobs/sha256/17c1c1b96fd1685968790c7fcab311e5bc49c809efe9744af262640a559c4cf2",
+          "repo_tags": null,
+          "architecture": "amd64",
+          "os": "linux",
+          "layer_count": 8
+        },
+        {
+          "config_path": "blobs/sha256/de912cbbf07f938bb8aaa5682464a73a00c6a996efdf0880423aeb4eae006c34",
+          "repo_tags": null,
+          "architecture": "amd64",
+          "os": "linux",
+          "layer_count": 10
+        },
+        {
+          "config_path": "blobs/sha256/fc86d4833afb7abc64006f04c715946303f6b15d694c2f05c2895a27d967ed88",
+          "repo_tags": null,
+          "architecture": "amd64",
+          "os": "linux",
+          "layer_count": 7
+        }
+      ],
+      "archive_all_amd64": true,
+      "oci_manifest_descriptors": [
+        {
+          "digest": "sha256:20cb47cdd6a0a3c8c6b0c1668cc911f4b0622e1a1794ef077374791ccaee75bf",
+          "platform": null,
+          "annotations": null
+        }
+      ],
+      "repo_tags_present": false
+    },
+    {
+      "group": "penpot",
+      "references": [
+        "penpotapp/frontend@sha256:d5bec7ab86328a2bce02b331291eab5833dcb56e403428ad07ccd6740be73735",
+        "penpotapp/backend@sha256:3d3d1eeb5a488efd31ec22038374eb6b52dccc21532047c2e508a18193f3e71f",
+        "penpotapp/exporter@sha256:48b66f774d338f0ed25d58c6d42f9f107a99170f67bf75ce76361d3dc9e6e27b",
+        "penpotapp/admin-console@sha256:679bada92344ad5ebd1ee68b5067d63592383a050e3e5da63d106b259e1b0ac9",
+        "penpotapp/mcp@sha256:6b39db0ca73d0a50a8afa264676d8ab9f455e87d426cff276d31b2a84a0447c5",
+        "postgres@sha256:7da5d534f1ffcdb2f69efa6e466a7a29ff89eefd611c7b50c4d69aa77fd4a822",
+        "valkey/valkey@sha256:757b7e559b14512bcc252949b13b717385d9381ed42e6b325982d03f4a5c8e8e",
+        "adguard/dnsproxy@sha256:29a27f0a695fa0ae97c56e61343bb7fb820b555e7069b87562a0d5b6fabaea6f",
+        "axllent/mailpit@sha256:18156f9ee243aa339170ac33d09d6d5a80b10d9e06b265f90f223a777a8f4b73"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "status": "saved",
+      "file": "/Users/yangzhaohui/work/www/harness/dell/private/images/target-amd64-penpot-images.tar",
+      "bytes": 4430068224,
+      "sha256": "a2ae6671af20ee7c970d0c367ffeb51c828b666eec3580b16105d733c9d3390e",
+      "has_oci_index": true,
+      "manifest_images": [
+        {
+          "config_path": "blobs/sha256/8a9691a7ca4c7c0870345368f701e6c04970a908307d0a75e0c323bfccff986c",
+          "repo_tags": null,
+          "architecture": "amd64",
+          "os": "linux",
+          "layer_count": 25
+        },
+        {
+          "config_path": "blobs/sha256/6173b08e25850cda792cd75261e741649c0febd48326e68e8711ba44b5c9af42",
+          "repo_tags": null,
+          "architecture": "amd64",
+          "os": "linux",
+          "layer_count": 14
+        },
+        {
+          "config_path": "blobs/sha256/e95070617f49eacc00f136061d9c6b4bad957319046e9e65e7cee14b9e77577c",
+          "repo_tags": null,
+          "architecture": "amd64",
+          "os": "linux",
+          "layer_count": 8
+        },
+        {
+          "config_path": "blobs/sha256/245fc027b7f3755bbd21b4375c2a0ebc7fa5d16c4573da497be9850a823973c8",
+          "repo_tags": null,
+          "architecture": "amd64",
+          "os": "linux",
+          "layer_count": 14
+        },
+        {
+          "config_path": "blobs/sha256/7ed84fca86579b7bee90ec5c9750457cd9450729d2dd01fb2070f00f6cd7fb14",
+          "repo_tags": null,
+          "architecture": "amd64",
+          "os": "linux",
+          "layer_count": 6
+        },
+        {
+          "config_path": "blobs/sha256/580a202b5088e9c651a8e8b4e461e3213fbd3a3aacaa3d2251892a546a734116",
+          "repo_tags": null,
+          "architecture": "amd64",
+          "os": "linux",
+          "layer_count": 3
+        },
+        {
+          "config_path": "blobs/sha256/c54c38204393018c4009b7161b9ee3a04ccc0daab657b820d5de86a0d3013630",
+          "repo_tags": null,
+          "architecture": "amd64",
+          "os": "linux",
+          "layer_count": 16
+        },
+        {
+          "config_path": "blobs/sha256/29c13326e854fd63e18a7231cb1ca26d60f728692bd1207ded003b94aba79390",
+          "repo_tags": null,
+          "architecture": "amd64",
+          "os": "linux",
+          "layer_count": 14
+        },
+        {
+          "config_path": "blobs/sha256/ca662989648f173e01fb1a1768e7d84ddcaf8b7de135070b59271b0918104eb3",
+          "repo_tags": null,
+          "architecture": "amd64",
+          "os": "linux",
+          "layer_count": 7
+        }
+      ],
+      "archive_all_amd64": true,
+      "oci_manifest_descriptors": [
+        {
+          "digest": "sha256:16727ec08f28590a2e87c54d8b66985f9a1cbdc82853ecfcebbe20c8ba02a2b9",
+          "platform": null,
+          "annotations": null
+        }
+      ],
+      "repo_tags_present": false
+    },
+    {
+      "group": "nexus",
+      "references": [
+        "sonatype/nexus3@sha256:e190be450888ec912b941579bac90767d73debc3307a26326c8a71132b02951f"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "status": "saved",
+      "file": "/Users/yangzhaohui/work/www/harness/dell/private/images/target-amd64-nexus-images.tar",
+      "bytes": 688315392,
+      "sha256": "6a0b1cd013c69acf67ded46e3fa0913b36302395269ffc48315ec0406e624033",
+      "has_oci_index": true,
+      "manifest_images": [
+        {
+          "config_path": "blobs/sha256/2ae4fee2eed85f42c982aa2fc16746a8453c7f79faf2a7ea236855ca8652e001",
+          "repo_tags": null,
+          "architecture": "amd64",
+          "os": "linux",
+          "layer_count": 6
+        }
+      ],
+      "archive_all_amd64": true,
+      "oci_manifest_descriptors": [
+        {
+          "digest": "sha256:1ffc3cd9cae5deca53a4826662141637954e9c4336bd6fe2fecba50477529484",
+          "platform": null,
+          "annotations": null
+        }
+      ],
+      "repo_tags_present": false
+    }
+  ],
+  "status": "verified-cache",
+  "prohibited_operations_performed": {
+    "container_start_stop": false,
+    "build": false,
+    "push": false,
+    "pve_write": false,
+    "credential_read": false,
+    "source_tag_update": false
+  },
+  "source_after": {
+    "collected_at": "2026-11-06T05:25:55.528461+08:00",
+    "containers": [
+      {
+        "id": "08dc2c229b7e733e4e72fc3fa979ac02936c9612f8d3730fb0dcaf0276f2ca24",
+        "name": "/finger-bitgo-express-test-express-1",
+        "image_id": "sha256:4390224e59dca080e4046db51c113a62cf8027429dd01638bd6e937e8cbf629d",
+        "state": "exited",
+        "started_at": "2026-10-14T05:12:35.239159205Z"
+      },
+      {
+        "id": "0baef97331827c824e89ff303c1e700f4b6f36afa101e39a85c063956d862623",
+        "name": "/penpot-penpot-frontend-1",
+        "image_id": "sha256:a1a9c9bb90b93f3cff334448648be90fc3ca7e315840298772f43b24306f5c82",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.234179422Z"
+      },
+      {
+        "id": "183a8b9f0096f49851caf952f7d5c52575779c6b3a15d66a173b2ba702a0e7ea",
+        "name": "/penpot-penpot-worker-1",
+        "image_id": "sha256:289d99c39712b9bbcb12ee4343571233421523f471c05c9f4fb8e6f3b26b9bb0",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:13.320524546Z"
+      },
+      {
+        "id": "19755277cfa7774a1de50bf4c4f50127a5d5eb8e0954d2b94f4f835957a2c33d",
+        "name": "/redis",
+        "image_id": "sha256:b8bbd8ea40e06ac580453a51bac3341e29a492b75ea7cd1b517e82a421a0b926",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.7686016Z"
+      },
+      {
+        "id": "1cabd374862fb4a26ca1fd6de6d96c9b79ba2a5295ebc2801f163cafc2ffad68",
+        "name": "/penpot-penpot-postgres-1",
+        "image_id": "sha256:04fba66fe1804636acd8ce729a27cb6f0a5dbe591c8898433aeb6444d7267bfd",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:14.54120588Z"
+      },
+      {
+        "id": "1fee5c4074fac7f6fe309a7ecd24ef882a1b038c1890f13aef5fa04453105788",
+        "name": "/mysql",
+        "image_id": "sha256:b2f81adb2f3335ee77c6a74a6099bea0c5dca5b51ed01cd84c7966d826992764",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.765822244Z"
+      },
+      {
+        "id": "26fe6a3fc9cfa9a03f0e6c4dce519278cc5c58c3c1b35c72fe983d5562092fac",
+        "name": "/penpot-penpot-admin-console-1",
+        "image_id": "sha256:cdd0cddbd829b9aa3ce55b8622f9884c12b094bdcbdc6f1036f0f260a954570d",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.358799797Z"
+      },
+      {
+        "id": "2ee2ba25a906bffde3ba606789637ab66e59672570836186ed6765fdf5487f25",
+        "name": "/penpot-penpot-import-1",
+        "image_id": "sha256:2ee54c62207d15e6f063db95870c76442b1ba757b47ebaf72863051b86238294",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.473813922Z"
+      },
+      {
+        "id": "409d564f9de683079f048572d86a9fd41859a5cc70367a0716f7b9b86adf278f",
+        "name": "/penpot-penpot-backend-1",
+        "image_id": "sha256:28dd4e06b33a70d9ace1b3589def985cddd3f5b49b4964d06a5093381356ee7c",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:14.106480088Z"
+      },
+      {
+        "id": "45194c5c15ccaf3f16c70aa7ad170f4d0832009e8ba4b2f2adf28345da1ad868",
+        "name": "/kafka-docker-zookeeper-1",
+        "image_id": "sha256:3f43f72cb2832e7a5fbed7f7dbcd0c43004357974d8f32555d101bd53e81e74f",
+        "state": "exited",
+        "started_at": "2026-05-18T05:23:20.188993466Z"
+      },
+      {
+        "id": "4ee8299f444554c33b2a2dc7d6c53eb4e23df7586476dc53e6abf5cc83e8424f",
+        "name": "/nexus3",
+        "image_id": "sha256:e90bcee9a286ce698455ba1524f811390b9f77d18e893986ac20b65346cb81d4",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.754667194Z"
+      },
+      {
+        "id": "50dcad169d95e62250723f97ebf240ec3d5591b2228ab08ad5ca5c1ce7b6741f",
+        "name": "/penpot-penpot-exporter-1",
+        "image_id": "sha256:9918a73bb7c720252df3124bf674ade2493f970e8f63e711a442432d810c2e58",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.304331589Z"
+      },
+      {
+        "id": "61cfa904c75240b900e5ec2b443f58ff05f5e906d29d3638b3656f422d4aed49",
+        "name": "/nacos",
+        "image_id": "sha256:e7e48cb036c4e72bbb37b2fa04557e1fca192392eb954120e7b0b785fa08ae6f",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.757028255Z"
+      },
+      {
+        "id": "64d4d31fffff4d18cbaec25719825a469613c52d294f8d680d901bde95eca507",
+        "name": "/penpot-penpot-valkey-1",
+        "image_id": "sha256:76ec93b657e31d13a44a4a26daef4d50b5efa3ace97d07b37a2c771a3f5409bf",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.022630922Z"
+      },
+      {
+        "id": "676fa938c3eba6cfe2045970a7405c22e7ec4b304686812deb58f40eaac6e7ef",
+        "name": "/rabbitmq",
+        "image_id": "sha256:7c0ce624561b1eba19a1fc35008450a0b6bd2c08fa8088ce46d7bc39415130a8",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.760844328Z"
+      },
+      {
+        "id": "679684698f40ed30f94834e43d516b94174e3b6afdd23ae9da88c3c654a57eb6",
+        "name": "/kafka-docker-kafka-1",
+        "image_id": "sha256:ba9de0a3777766688c3a0d0a119117cf110ddf318df11c403e29ddb3b4198fa3",
+        "state": "exited",
+        "started_at": "2026-05-18T05:23:20.183155894Z"
+      },
+      {
+        "id": "8ac008d312c3fabf8b8e6dc67a6a5e1ee9129ca8daec9959c896b22fdf4e2ec4",
+        "name": "/penpot-penpot-dns-1",
+        "image_id": "sha256:00d31b9fc97c28510895f64a5139e16d93df5eaa2c2f9a776eacea7a3125abaa",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.462119089Z"
+      },
+      {
+        "id": "a7668262e9b9d773dc0cb317f08b6328ec4b89cdd5d8c2b692c6fbc62cac584e",
+        "name": "/wonderful_agnesi",
+        "image_id": "sha256:0c3a7dc4e9a44dbc40861816315a04dfcbcca9ccf0b84743b34efd268be82567",
+        "state": "exited",
+        "started_at": "2026-06-24T02:24:09.82593007Z"
+      },
+      {
+        "id": "ac619100a461903de6535bac69e7ef14f81b16d933e488a64b56f18eade5280f",
+        "name": "/penpot-penpot-mcp-1",
+        "image_id": "sha256:f6c48cf9e9923ac1a30bc46393bf94b78c9970be66469650ac576f26e05ac36f",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:13.301979671Z"
+      },
+      {
+        "id": "c137da25e9fc1799235ee5e3ec35cf22933d0d2ab136aaef4ee497179d997621",
+        "name": "/penpot-penpot-mailpit-1",
+        "image_id": "sha256:245e558b2e440962f2d646b6415fbb99b38761dc8a170e6646edf1113779965f",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:14.760573755Z"
+      },
+      {
+        "id": "f52a8a22e7b04535253c4379e63a096146aae20b5b2e48a07802dcc00adb4963",
+        "name": "/nginx",
+        "image_id": "sha256:f46d9988131118c112be07525503d4a7cda698d90c7e39d62be70ea202a9a0f2",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.71366823Z"
+      }
+    ],
+    "tagged_images": {
+      "penpot-frontend-selfhost:local": "sha256:a1a9c9bb90b93f3cff334448648be90fc3ca7e315840298772f43b24306f5c82",
+      "penpot-mcp-file-import:local": "sha256:2ee54c62207d15e6f063db95870c76442b1ba757b47ebaf72863051b86238294",
+      "penpot-resident-worker:local": "sha256:289d99c39712b9bbcb12ee4343571233421523f471c05c9f4fb8e6f3b26b9bb0",
+      "axllent/mailpit:v1": "sha256:245e558b2e440962f2d646b6415fbb99b38761dc8a170e6646edf1113779965f",
+      "postgres:15": "sha256:04fba66fe1804636acd8ce729a27cb6f0a5dbe591c8898433aeb6444d7267bfd",
+      "valkey/valkey:8.1": "sha256:76ec93b657e31d13a44a4a26daef4d50b5efa3ace97d07b37a2c771a3f5409bf",
+      "penpotapp/mcp:2.18.5": "sha256:f6c48cf9e9923ac1a30bc46393bf94b78c9970be66469650ac576f26e05ac36f",
+      "penpotapp/exporter:2.18.5": "sha256:9918a73bb7c720252df3124bf674ade2493f970e8f63e711a442432d810c2e58",
+      "penpotapp/frontend:2.18.5": "sha256:a5b042c17a1e95fe35a0a112c93d26df6ebbacd7451c7e823afb30269bf001c6",
+      "registry-1.docker.io/penpotapp/frontend:2.18.5": "sha256:a5b042c17a1e95fe35a0a112c93d26df6ebbacd7451c7e823afb30269bf001c6",
+      "penpotapp/backend:2.18.5": "sha256:28dd4e06b33a70d9ace1b3589def985cddd3f5b49b4964d06a5093381356ee7c",
+      "adguard/dnsproxy:v0.86.0": "sha256:00d31b9fc97c28510895f64a5139e16d93df5eaa2c2f9a776eacea7a3125abaa",
+      "penpotapp/admin-console:2.18.5": "sha256:cdd0cddbd829b9aa3ce55b8622f9884c12b094bdcbdc6f1036f0f260a954570d",
+      "nginx:latest": "sha256:f46d9988131118c112be07525503d4a7cda698d90c7e39d62be70ea202a9a0f2",
+      "cloudflare/cloudflared:latest": "sha256:0c3a7dc4e9a44dbc40861816315a04dfcbcca9ccf0b84743b34efd268be82567",
+      "sonatype/nexus3:latest": "sha256:e90bcee9a286ce698455ba1524f811390b9f77d18e893986ac20b65346cb81d4",
+      "redis:7.4.4": "sha256:b8bbd8ea40e06ac580453a51bac3341e29a492b75ea7cd1b517e82a421a0b926",
+      "mysql:8.4.5": "sha256:b2f81adb2f3335ee77c6a74a6099bea0c5dca5b51ed01cd84c7966d826992764",
+      "kafka-docker-kafka:latest": "sha256:ba9de0a3777766688c3a0d0a119117cf110ddf318df11c403e29ddb3b4198fa3",
+      "nacos/nacos-server:v2.4.3": "sha256:e7e48cb036c4e72bbb37b2fa04557e1fca192392eb954120e7b0b785fa08ae6f",
+      "jerryin/cloudflare-warp:latest": "sha256:438b5e95c668b3753d0792d9f7273ffd563ac47dc91ee25f4a0fff8c9a9c5f72",
+      "rabbitmq:3-management": "sha256:7c0ce624561b1eba19a1fc35008450a0b6bd2c08fa8088ce46d7bc39415130a8",
+      "wurstmeister/zookeeper:latest": "sha256:3f43f72cb2832e7a5fbed7f7dbcd0c43004357974d8f32555d101bd53e81e74f"
+    }
+  },
+  "source_safety": {
+    "containers_unchanged": true,
+    "preexisting_tags_unchanged": true,
+    "note": "No container operations, tag operations, builds, pushes, credential reads or PVE writes were invoked."
+  },
+  "completed_at": "2026-11-06T05:25:55.528531+08:00",
+  "export_limitations": [
+    "Archives were exported using digest-only references and contain no RepoTags; no source tag was added or changed.",
+    "Offline import has not been executed in a separate target Docker engine. Validate image IDs/architecture after target load and do not assume the original repo@digest aliases are restored automatically.",
+    "Only public locked images are included; custom Penpot frontend/worker/import builds remain separate work."
+  ]
+}

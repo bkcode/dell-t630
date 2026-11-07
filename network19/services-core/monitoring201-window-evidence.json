@@ -1,0 +1,49 @@
+{
+  "at": "2026-11-06T09:11:03.186219+00:00",
+  "exit_code": 0,
+  "new_target": {
+    "vmid": 201,
+    "ip": "192.168.19.11",
+    "host_key_alias": "dell-vm201",
+    "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "result": {
+    "status": "applied-sampled-local-pass",
+    "vmid": 201,
+    "stage_path": "/root/dell-network19/staged/core-monitoring201",
+    "inspect": {
+      "status": "stage-inspected-no-write",
+      "vmid": 201,
+      "role": "data-prod-infra",
+      "files": 6,
+      "old_and_staged_SHAs_match": true,
+      "paired_new_map_valid": true,
+      "services_changed": false
+    },
+    "apply": {
+      "status": "applied-and-local-monitoring-verified",
+      "vmid": 201,
+      "at": "2026-11-06T09:10:56.605093+00:00",
+      "listener": [
+        "192.168.19.11:9100"
+      ],
+      "timer_original_activation_restored": true,
+      "collector_access_checked_no_notification": true,
+      "apps_started_or_restarted": false,
+      "prometheus_targetUP_and_textfile_freshness": "root coordinator must verify after scheduled collection",
+      "old_files_backup": "/root/dell-network19/monitoring/201",
+      "OS_not_changed_by_helper": true
+    },
+    "sample_checks": {
+      "sample_exit0": true,
+      "fresh_textfile": true,
+      "collection_success1": true,
+      "new_exporter200_and_serves_role_textfile": true,
+      "formal_apps_not_started": true
+    },
+    "textfile_age_seconds": 0.384,
+    "Ops_remote_targetUP_not_checked": true,
+    "OS_or_business_apps_changed": false
+  }
+}

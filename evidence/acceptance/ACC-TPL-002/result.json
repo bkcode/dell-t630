@@ -1,0 +1,41 @@
+{
+  "id": "ACC-TPL-002",
+  "status": "passed",
+  "executed_at": "2026-11-06T05:17:37.670806+08:00",
+  "timezone": "Asia/Shanghai",
+  "operator": "root-task-manager",
+  "plan_sha256": "42a0a8cfb2d418a97defa6b96c81501a8b5a7b7b92a0d589a03ef2401404ad3b",
+  "preconditions_checked": true,
+  "observations": [
+    "Two full clones per template independently booted and authenticated as ub.",
+    "All four machine IDs, hostnames and SSH host fingerprints unique; LVM origins empty.",
+    "Cloud-Init completed without errors and NTP synchronized on all four."
+  ],
+  "artifacts": [
+    "evidence/implementation/template-clone-validation.json"
+  ],
+  "limitations": [
+    "No business application identities installed; Snowflake and MQ instance behavior remain separate pending cases."
+  ],
+  "reviewed_by": "root-task-manager",
+  "plan_snapshot": "evidence/plans/plan-42a0a8cfb2d418a9.json",
+  "target": {
+    "host": "192.168.21.22",
+    "environment": "managed-PVE-implementation",
+    "vmid": null,
+    "vmids": [
+      9001,
+      9010,
+      9002,
+      9004,
+      9005,
+      9006
+    ]
+  },
+  "commands_or_steps": [
+    "See linked execution artifact and operator observations"
+  ],
+  "exit_codes": [
+    0
+  ]
+}

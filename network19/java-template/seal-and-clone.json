@@ -1,0 +1,11 @@
+{
+  "template_vmid": 9011,
+  "template_name": "tpl-java-acceptance",
+  "state": "sealed-stopped",
+  "CI": "generic Linux user,19 DHCP when assigned",
+  "QA_vmid": 9012,
+  "QA_state": "stopped-await-L2-registry",
+  "QA_net0": "virtio=BC:24:11:A3:11:DC,bridge=vmbr19,firewall=0",
+  "QA_IP": "192.168.19.198",
+  "business_apps": false
+}

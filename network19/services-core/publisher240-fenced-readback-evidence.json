@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-06T09:24:28.299926+00:00",
+  "result": {
+    "status": "readback-verified-fenced",
+    "checks": {
+      "/usr/local/libexec/dell-publish-test240": true,
+      "/usr/local/libexec/dell-publisher-dispatch": true,
+      "/usr/local/libexec/dell-publisher/publisher_protocol.py": true,
+      "/usr/local/libexec/dell/deploy-test-chain.py": true,
+      "policy_new_target": true,
+      "policy_fixed_SHA": true,
+      "baselinefalse": true,
+      "only_from_changed_same_public_key": true,
+      "native_checks": true
+    },
+    "native": [
+      {
+        "tool": "sshd",
+        "exit_code": 0
+      },
+      {
+        "tool": "visudo",
+        "exit_code": 0
+      }
+    ],
+    "actual_sudoers_filename": [
+      "dell-publisher-test240"
+    ],
+    "permission_or_key_material_changed_by_readback": false,
+    "business_requests_issued": 0
+  }
+}

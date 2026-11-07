@@ -1,0 +1,26 @@
+{
+  "frontend": {
+    "http_success": true,
+    "bytes": 283404,
+    "sha256": "a03e85c4ba82536333a67951dde6b9fc5aded497d918ff3d3c48b7eaf799793e"
+  },
+  "git_login_helper": {
+    "http_success": true,
+    "bytes": 2474,
+    "sha256": "feb3ff7542b366c5d0670272a7e12d108debcaf79b9184340668f875dc30d162",
+    "matches_exact_git_head": true
+  },
+  "git_sidebar": {
+    "http_success": true,
+    "bytes": 215,
+    "sha256": "5c1c8342295982507e3a273d1b54ad3d05555bf57099c1a8ad33823806e82953",
+    "matches_exact_git_head": true
+  },
+  "browser_defaults": {
+    "http_success": true,
+    "bytes": 27,
+    "sha256": "267d12ab4d1b3931ee181730d77cc711d5acf0856f360da5acbe8bf85a578334",
+    "password_empty": true
+  },
+  "transport": "native curl --noproxy; Python socket execution-surface difference is not a host routing fault"
+}

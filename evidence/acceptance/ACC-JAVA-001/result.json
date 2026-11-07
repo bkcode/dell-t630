@@ -1,0 +1,33 @@
+{
+  "id": "ACC-JAVA-001",
+  "status": "passed",
+  "executed_at": "2026-11-06T12:47:57.383076+08:00",
+  "timezone": "Asia/Shanghai",
+  "operator": "root-task-manager",
+  "plan_sha256": "4da2b208f17e14d048b86b5453abae58a829b0989a90f09a8ff54e8334318380",
+  "preconditions_checked": true,
+  "target": {
+    "host": "192.168.21.22",
+    "environment": "managed-PVE-implementation",
+    "vmid": null
+  },
+  "commands_or_steps": [
+    "See linked execution artifact and operator observations"
+  ],
+  "exit_codes": [
+    0
+  ],
+  "observations": [
+    "已批准的五服务测试链121030完成正常图形captcha登录，RS256/kid/issuer及合成身份正确；无Bearer和伪造签名401",
+    "真实服务前缀下角色/权限只读请求成功；COMS合成169B PNG写入后私网及Mac LAN带Bearer读取SHA一致，未认证读取401",
+    "仅COMS一次受控重启后磁盘/HTTP SHA及重复上传fileId保持，其他四PID不变，五服务finger非root最终UP，无新秘密日志匹配"
+  ],
+  "artifacts": [
+    "evidence/implementation/java-test-business-acceptance.json"
+  ],
+  "limitations": [
+    "仅本期登录/角色/文件有限链；金融、通知、Outbox异步业务、完整UI与WebSocket不在此通过范围；生产业务按用户决定未启动"
+  ],
+  "reviewed_by": "root-task-manager",
+  "plan_snapshot": "evidence/plans/plan-4da2b208f17e14d0.json"
+}

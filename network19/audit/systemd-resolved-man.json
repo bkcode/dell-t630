@@ -1,0 +1,11 @@
+{
+  "url": "https://manpages.debian.org/trixie/systemd-resolved/systemd-resolved.service.8.en.html",
+  "purpose": "read-only network transaction review",
+  "search_terms_located": [
+    "first",
+    "DNS="
+  ],
+  "facts_used": [
+    "The local stub can retain127.0.0.53 while upstream per-link DNS changes; global/per-link routing configuration must be distinguished."
+  ]
+}

@@ -1,0 +1,15 @@
+services:
+  penpot-frontend:
+    volumes:
+    - type: bind
+      source: ./runtime/logging/templates/nginx.conf.template
+      target: /tmp/nginx.conf.template
+      read_only: true
+      bind:
+        create_host_path: false
+    - type: bind
+      source: ./runtime/logging/templates/nginx-mcp-locations.conf.template
+      target: /tmp/nginx-mcp-locations.conf.template
+      read_only: true
+      bind:
+        create_host_path: false

@@ -1,0 +1,13 @@
+{
+  "authenticated_mcp": true,
+  "missing_key_http": 200,
+  "unauthenticated_design_read_denied": true,
+  "first_tool": "high_level_overview",
+  "readonly_context": {
+    "fileId": "13a31dab-5204-818d-8008-e7004b9343a1",
+    "pageId": "13a31dab-5204-818d-8008-e7004b9343a2"
+  },
+  "design_mutations": 0,
+  "key_emitted": false,
+  "expected_file_matches": true
+}

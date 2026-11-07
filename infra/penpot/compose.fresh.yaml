@@ -1,0 +1,364 @@
+name: penpot
+networks:
+  penpot: null
+  penpot-dns:
+    ipam:
+      config:
+      - subnet: ${PENPOT_DNS_SUBNET:-172.30.250.0/24}
+secrets:
+  login-defaults:
+    file: /opt/dell/penpot/source/frontend/selfhost/login-defaults.example.json
+  worker-credentials:
+    file: /etc/penpot/worker-credentials.uid1001.json
+  import-credentials:
+    file: /etc/penpot/worker-credentials.uid1000.json
+services:
+  penpot-admin-console:
+    cpus: 1
+    depends_on:
+      penpot-postgres:
+        condition: service_healthy
+        required: true
+    environment:
+      PENPOT_DATABASE_PASSWORD: ${PENPOT_DATABASE_PASSWORD:?Set PENPOT_DATABASE_PASSWORD
+        in .env}
+      PENPOT_DATABASE_URI: postgresql://penpot-postgres/penpot
+      PENPOT_DATABASE_USERNAME: penpot
+      PENPOT_INTERNAL_URI: http://penpot-frontend:8080
+      PENPOT_PUBLIC_URI: ${PENPOT_PUBLIC_URI:?Fresh target URI required}
+      PENPOT_SECRET_KEY: ${PENPOT_SECRET_KEY:?Set PENPOT_SECRET_KEY in .env}
+    image: penpotapp/admin-console@sha256:679bada92344ad5ebd1ee68b5067d63592383a050e3e5da63d106b259e1b0ac9
+    mem_limit: 512m
+    networks:
+      penpot: null
+    restart: 'no'
+    platform: linux/amd64
+    logging:
+      driver: local
+      options:
+        max-size: 10m
+        max-file: '3'
+  penpot-backend:
+    cpus: 2
+    depends_on:
+      penpot-dns:
+        condition: service_started
+        required: true
+      penpot-postgres:
+        condition: service_healthy
+        required: true
+      penpot-valkey:
+        condition: service_healthy
+        required: true
+    dns:
+    - ${PENPOT_DNS_ADDRESS:-172.30.250.53}
+    environment:
+      PENPOT_ADMIN_CONSOLE_URI: http://penpot-admin-console:3000
+      PENPOT_DATABASE_PASSWORD: ${PENPOT_DATABASE_PASSWORD:?Set PENPOT_DATABASE_PASSWORD
+        in .env}
+      PENPOT_DATABASE_URI: postgresql://penpot-postgres/penpot
+      PENPOT_DATABASE_USERNAME: penpot
+      PENPOT_FLAGS: ${PENPOT_FLAGS:?Fresh flags required}
+      PENPOT_HTTP_SERVER_MAX_BODY_SIZE: '367001600'
+      PENPOT_HTTP_SERVER_MAX_MULTIPART_BODY_SIZE: '367001600'
+      PENPOT_OBJECTS_STORAGE_BACKEND: fs
+      PENPOT_OBJECTS_STORAGE_FS_DIRECTORY: /opt/data/assets
+      PENPOT_PUBLIC_URI: ${PENPOT_PUBLIC_URI:?Fresh target URI required}
+      PENPOT_REDIS_URI: redis://penpot-valkey/0
+      PENPOT_SECRET_KEY: ${PENPOT_SECRET_KEY:?Set PENPOT_SECRET_KEY in .env}
+      PENPOT_SMTP_DEFAULT_FROM: no-reply@example.com
+      PENPOT_SMTP_DEFAULT_REPLY_TO: no-reply@example.com
+      PENPOT_SMTP_HOST: penpot-mailpit
+      PENPOT_SMTP_PASSWORD: ''
+      PENPOT_SMTP_PORT: '1025'
+      PENPOT_SMTP_SSL: 'false'
+      PENPOT_SMTP_TLS: 'false'
+      PENPOT_SMTP_USERNAME: ''
+      PENPOT_TELEMETRY_ENABLED: 'false'
+      PENPOT_TELEMETRY_REFERER: compose
+      JVM_OPTS: -Xms256m -Xmx1536m -XX:MaxDirectMemorySize=256m
+    image: penpotapp/backend@sha256:3d3d1eeb5a488efd31ec22038374eb6b52dccc21532047c2e508a18193f3e71f
+    mem_limit: 3g
+    networks:
+      penpot: null
+      penpot-dns: null
+    restart: 'no'
+    volumes:
+    - source: penpot_assets
+      target: /opt/data/assets
+      type: volume
+      volume: {}
+    platform: linux/amd64
+    logging:
+      driver: local
+      options:
+        max-size: 10m
+        max-file: '3'
+  penpot-dns:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - ALL
+    command:
+    - --listen=0.0.0.0
+    - --port=53
+    - --upstream=https://1.1.1.1/dns-query
+    - --upstream=https://1.0.0.1/dns-query
+    - --cache
+    - --cache-max-ttl=300
+    - --timeout=8s
+    cpus: 0.5
+    image: adguard/dnsproxy@sha256:29a27f0a695fa0ae97c56e61343bb7fb820b555e7069b87562a0d5b6fabaea6f
+    mem_limit: 128m
+    networks:
+      penpot-dns:
+        ipv4_address: ${PENPOT_DNS_ADDRESS:-172.30.250.53}
+    read_only: true
+    restart: 'no'
+    security_opt:
+    - no-new-privileges:true
+    platform: linux/amd64
+    logging:
+      driver: local
+      options:
+        max-size: 10m
+        max-file: '3'
+  penpot-exporter:
+    cpus: 2
+    depends_on:
+      penpot-valkey:
+        condition: service_healthy
+        required: true
+    environment:
+      PENPOT_FLAGS: ${PENPOT_FLAGS:?Fresh flags required}
+      PENPOT_INTERNAL_URI: http://penpot-frontend:8080
+      PENPOT_PUBLIC_URI: ${PENPOT_PUBLIC_URI:?Fresh target URI required}
+      PENPOT_REDIS_URI: redis://penpot-valkey/0
+      PENPOT_SECRET_KEY: ${PENPOT_SECRET_KEY:?Set PENPOT_SECRET_KEY in .env}
+      PENPOT_BROWSER_POOL_MAX: '1'
+      PENPOT_BROWSER_POOL_MIN: '0'
+    image: penpotapp/exporter@sha256:48b66f774d338f0ed25d58c6d42f9f107a99170f67bf75ce76361d3dc9e6e27b
+    mem_limit: 1536m
+    networks:
+      penpot: null
+    restart: 'no'
+    platform: linux/amd64
+    logging:
+      driver: local
+      options:
+        max-size: 10m
+        max-file: '3'
+  penpot-frontend:
+    cpus: 1
+    depends_on:
+      penpot-admin-console:
+        condition: service_started
+        required: true
+      penpot-backend:
+        condition: service_started
+        required: true
+      penpot-exporter:
+        condition: service_started
+        required: true
+      penpot-mcp:
+        condition: service_started
+        required: true
+    environment:
+      PENPOT_ADMIN_CONSOLE_URI: http://penpot-admin-console:3000
+      PENPOT_FLAGS: ${PENPOT_FLAGS:?Fresh flags required} disable-dashboard-templates-section
+      PENPOT_HTTP_SERVER_MAX_BODY_SIZE: 367001600
+      PENPOT_HTTP_SERVER_MAX_MULTIPART_BODY_SIZE: 367001600
+      PENPOT_PUBLIC_URI: ${PENPOT_PUBLIC_URI:?Fresh target URI required}
+    image: dell-penpot-frontend:2.18.5-ff1783e-amd64
+    mem_limit: 256m
+    networks:
+      penpot: null
+    ports:
+    - 0.0.0.0:9001:8080
+    restart: 'no'
+    secrets:
+    - source: login-defaults
+      target: /run/secrets/login-defaults
+    volumes:
+    - source: penpot_assets
+      target: /opt/data/assets
+      type: volume
+      volume: {}
+    - type: bind
+      source: ./runtime/logging/templates/nginx.conf.template
+      target: /tmp/nginx.conf.template
+      read_only: true
+      bind:
+        create_host_path: false
+    - type: bind
+      source: ./runtime/logging/templates/nginx-mcp-locations.conf.template
+      target: /tmp/nginx-mcp-locations.conf.template
+      read_only: true
+      bind:
+        create_host_path: false
+    platform: linux/amd64
+    logging:
+      driver: local
+      options:
+        max-size: 10m
+        max-file: '3'
+  penpot-mailpit:
+    cpus: 0.5
+    expose:
+    - '1025'
+    image: axllent/mailpit@sha256:18156f9ee243aa339170ac33d09d6d5a80b10d9e06b265f90f223a777a8f4b73
+    mem_limit: 128m
+    networks:
+      penpot: null
+    restart: 'no'
+    platform: linux/amd64
+    logging:
+      driver: local
+      options:
+        max-size: 10m
+        max-file: '3'
+  penpot-mcp:
+    cpus: 1
+    image: penpotapp/mcp@sha256:6b39db0ca73d0a50a8afa264676d8ab9f455e87d426cff276d31b2a84a0447c5
+    mem_limit: 512m
+    networks:
+      penpot: null
+    restart: 'no'
+    platform: linux/amd64
+    logging:
+      driver: local
+      options:
+        max-size: 10m
+        max-file: '3'
+  penpot-import:
+    image: dell-penpot-import:2.18.5-amd64
+    restart: 'no'
+    init: true
+    mem_limit: 1g
+    cpus: 1
+    read_only: true
+    tmpfs:
+    - /tmp:size=224m,mode=1777
+    environment:
+      PENPOT_IMPORT_BASE_URL: http://penpot-frontend:8080
+      PENPOT_IMPORT_TEAM_ID: ${PENPOT_WORKER_TEAM_ID:-}
+      PENPOT_IMPORT_CREDENTIALS_FILE: /run/secrets/worker-credentials
+      PENPOT_IMPORT_JOBS_DIR: /data/jobs
+    dns:
+    - ${PENPOT_DNS_ADDRESS:-172.30.250.53}
+    networks:
+      penpot: null
+      penpot-dns: null
+    depends_on:
+      penpot-frontend:
+        condition: service_started
+      penpot-dns:
+        condition: service_started
+    ports:
+    - 127.0.0.1:9002:4405
+    secrets:
+    - source: import-credentials
+      target: /run/secrets/worker-credentials
+    volumes:
+    - penpot_import_jobs:/data/jobs
+    platform: linux/amd64
+    logging:
+      driver: local
+      options:
+        max-size: 10m
+        max-file: '3'
+  penpot-postgres:
+    cpus: 1
+    environment:
+      POSTGRES_INITDB_ARGS: --data-checksums
+      POSTGRES_DB: penpot
+      POSTGRES_USER: penpot
+      POSTGRES_PASSWORD: ${PENPOT_DATABASE_PASSWORD:?Set PENPOT_DATABASE_PASSWORD
+        in .env}
+    healthcheck:
+      interval: 2s
+      retries: 5
+      start_period: 2s
+      test:
+      - CMD-SHELL
+      - pg_isready -U penpot
+      timeout: 10s
+    image: postgres@sha256:7da5d534f1ffcdb2f69efa6e466a7a29ff89eefd611c7b50c4d69aa77fd4a822
+    mem_limit: 768m
+    networks:
+      penpot: null
+    restart: 'no'
+    stop_signal: SIGINT
+    volumes:
+    - source: penpot_postgres_v15
+      target: /var/lib/postgresql/data
+      type: volume
+      volume: {}
+    platform: linux/amd64
+    logging:
+      driver: local
+      options:
+        max-size: 10m
+        max-file: '3'
+  penpot-valkey:
+    cpus: 0.5
+    environment:
+      VALKEY_EXTRA_FLAGS: --maxmemory 128mb --maxmemory-policy volatile-lfu
+    healthcheck:
+      interval: 1s
+      retries: 5
+      start_period: 3s
+      test:
+      - CMD-SHELL
+      - valkey-cli ping | grep PONG
+      timeout: 3s
+    image: valkey/valkey@sha256:757b7e559b14512bcc252949b13b717385d9381ed42e6b325982d03f4a5c8e8e
+    mem_limit: 192m
+    networks:
+      penpot: null
+    restart: 'no'
+    platform: linux/amd64
+    logging:
+      driver: local
+      options:
+        max-size: 10m
+        max-file: '3'
+  penpot-worker:
+    cpus: 2
+    depends_on:
+      penpot-frontend:
+        condition: service_started
+        required: true
+    environment:
+      PENPOT_WORKER_BASE_URL: http://penpot-frontend:8080
+      PENPOT_WORKER_CREDENTIALS_FILE: /run/secrets/worker-credentials
+      PENPOT_WORKER_FAILURE_THRESHOLD: ${PENPOT_WORKER_FAILURE_THRESHOLD:-3}
+      PENPOT_WORKER_FILE_ID: ${PENPOT_WORKER_FILE_ID:-}
+      PENPOT_WORKER_PAGE_ID: ${PENPOT_WORKER_PAGE_ID:-}
+      PENPOT_WORKER_RECOVERY_GRACE_MS: ${PENPOT_WORKER_RECOVERY_GRACE_MS:-150000}
+      PENPOT_WORKER_TASK_BUDGET_MS: ${PENPOT_WORKER_TASK_BUDGET_MS:-150000}
+      PENPOT_WORKER_TEAM_ID: ${PENPOT_WORKER_TEAM_ID:-}
+    image: dell-penpot-worker:2.18.5-amd64
+    init: true
+    mem_limit: 4g
+    networks:
+      penpot: null
+    restart: 'no'
+    secrets:
+    - source: worker-credentials
+      target: /run/secrets/worker-credentials
+    shm_size: 256m
+    stop_grace_period: 20s
+    platform: linux/amd64
+    logging:
+      driver: local
+      options:
+        max-size: 10m
+        max-file: '3'
+volumes:
+  penpot_import_jobs:
+    name: penpot_penpot_import_jobs
+  penpot_assets:
+    name: penpot_penpot_assets
+  penpot_postgres_v15:
+    name: penpot_penpot_postgres_v15

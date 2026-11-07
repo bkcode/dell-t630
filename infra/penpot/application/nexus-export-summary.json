@@ -1,0 +1,18 @@
+{
+  "source_repository": "imnull-releases",
+  "source_origin": "Mac localhost:8081 hosted-only",
+  "components": 49,
+  "assets": 1345,
+  "bytes": 13586516,
+  "classification": {
+    "primary": 234,
+    "checksum": 1076,
+    "maven-metadata": 35
+  },
+  "manifest_sha256": "1157b5a425d1ec0a35bbca8ca3fe65413473a00db7d3bd4eaa6da6e7326679cc",
+  "api_and_actual_hashes_per_asset": true,
+  "target_import": "waiting target EULA/manager",
+  "old_credentials_or_H2_exported": false,
+  "proxy_or_group_requests": 0,
+  "metadata_strategy": "primary bytes comparable; target-generated maven metadata/checksums may differ and require separate ledger"
+}

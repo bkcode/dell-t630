@@ -1,0 +1,16 @@
+{
+  "version": "3.13.7",
+  "references": [
+    {
+      "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-server/v3.13.7/deps/rabbit/src/rabbit_definitions.erl",
+      "sha256": "3754a5a443b05dc4bf1505028c878142deed97c73a682b83eafbed14bd138e49",
+      "purpose": "read-only official implementation reference; not executed"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-server/v3.13.7/deps/rabbit/src/rabbit_runtime_parameters.erl",
+      "sha256": "3d2ac6e5a4b3095f898f8b2b961187db7b54f230847484cb5fbddb3487feac15",
+      "purpose": "read-only official implementation reference; not executed"
+    }
+  ],
+  "finding": "CLI export filters internal* global parameters; runtime list_global_parameters formats value as JSON string; exact internal identity must be privately compared separately"
+}

@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-06T09:43:50.796600+00:00",
+  "exit_code": 0,
+  "target": {
+    "vmid": 270,
+    "ip": "10.63.30.40",
+    "host_key_alias": "dell-vm270",
+    "host_key_fingerprint": "SHA256:OjP5q9f3WXxGcoOHs23VlnOf258C6T+nNAxTiYoyf0g",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "result": {
+    "status": "quiesced",
+    "vmid": 270,
+    "unit": "dell-ops.service",
+    "expected_containers_stopped": 4,
+    "data_deleted_or_OS_changed": false,
+    "Nacos_bootstrap_or_notifications_run": false,
+    "existing_app_backups_checked_before_quiesce": [],
+    "long_lived_Lark_17218_public_config_secret_metadata_preserved": true
+  }
+}

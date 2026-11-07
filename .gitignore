@@ -1,0 +1,36 @@
+private/
+__pycache__/
+*.pyc
+*.dump
+*.tar
+*.tar.gz
+*.qcow2
+*.iso
+# Public vendor schemas are intentional inputs; generated SQL remains under private/.
+
+# Machine-local credentials, caches and backup payloads never belong in Git.
+.DS_Store
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+known_hosts*
+*.vma
+*.vma.*
+*.zst
+*.gz
+*.zip
+*.7z
+*.vhd*
+*.vmdk
+*.img
+*.bak
+*.log
+*.sqlite
+*.sqlite3
+*.db
+node_modules/
+.gradle/

@@ -1,0 +1,226 @@
+{
+  "at": "2026-11-06T15:05:51.119695",
+  "status": "final26-production-containers-and-LAN-entrypoints-healthy-after-QA-cleanup",
+  "container_count": 26,
+  "guests": [
+    {
+      "vmid": 200,
+      "observation": {
+        "containers": [
+          {
+            "name": "/dell-data-prod-db-mysql-1",
+            "status": "running",
+            "health": "healthy"
+          }
+        ],
+        "OS": "running",
+        "failed_units": ""
+      }
+    },
+    {
+      "vmid": 201,
+      "observation": {
+        "containers": [
+          {
+            "name": "/dell-data-prod-infra-nacos-1",
+            "status": "running",
+            "health": "healthy"
+          },
+          {
+            "name": "/dell-data-prod-infra-rabbitmq-1",
+            "status": "running",
+            "health": "healthy"
+          },
+          {
+            "name": "/dell-data-prod-infra-redis-1",
+            "status": "running",
+            "health": "healthy"
+          }
+        ],
+        "OS": "running",
+        "failed_units": ""
+      }
+    },
+    {
+      "vmid": 210,
+      "observation": {
+        "containers": [
+          {
+            "name": "/dell-data-test-data-nacos-1",
+            "status": "running",
+            "health": "healthy"
+          },
+          {
+            "name": "/dell-data-test-data-mysql-1",
+            "status": "running",
+            "health": "healthy"
+          },
+          {
+            "name": "/dell-data-test-data-rabbitmq-1",
+            "status": "running",
+            "health": "healthy"
+          },
+          {
+            "name": "/dell-data-test-data-redis-1",
+            "status": "running",
+            "health": "healthy"
+          }
+        ],
+        "OS": "running",
+        "failed_units": ""
+      }
+    },
+    {
+      "vmid": 221,
+      "observation": {
+        "containers": [
+          {
+            "name": "/nexus-gateway-1",
+            "status": "running",
+            "health": "healthy"
+          },
+          {
+            "name": "/nexus-nexus-1",
+            "status": "running",
+            "health": "healthy"
+          }
+        ],
+        "OS": "running",
+        "failed_units": ""
+      }
+    },
+    {
+      "vmid": 250,
+      "observation": {
+        "containers": [
+          {
+            "name": "/penpot-penpot-import-1",
+            "status": "running",
+            "health": "healthy"
+          },
+          {
+            "name": "/penpot-penpot-worker-1",
+            "status": "running",
+            "health": "healthy"
+          },
+          {
+            "name": "/penpot-penpot-frontend-1",
+            "status": "running",
+            "health": "healthy"
+          },
+          {
+            "name": "/penpot-penpot-backend-1",
+            "status": "running",
+            "health": "healthy"
+          },
+          {
+            "name": "/penpot-penpot-admin-console-1",
+            "status": "running",
+            "health": "healthy"
+          },
+          {
+            "name": "/penpot-penpot-exporter-1",
+            "status": "running",
+            "health": "healthy"
+          },
+          {
+            "name": "/penpot-penpot-mcp-1",
+            "status": "running",
+            "health": "healthy"
+          },
+          {
+            "name": "/penpot-penpot-postgres-1",
+            "status": "running",
+            "health": "healthy"
+          },
+          {
+            "name": "/penpot-penpot-dns-1",
+            "status": "running",
+            "health": "healthy"
+          },
+          {
+            "name": "/penpot-penpot-valkey-1",
+            "status": "running",
+            "health": "healthy"
+          },
+          {
+            "name": "/penpot-penpot-mailpit-1",
+            "status": "running",
+            "health": "healthy"
+          }
+        ],
+        "OS": "running",
+        "failed_units": ""
+      }
+    },
+    {
+      "vmid": 260,
+      "observation": {
+        "containers": [
+          {
+            "name": "/dell-nas-jellyfin-1",
+            "status": "running",
+            "health": "healthy"
+          }
+        ],
+        "OS": "running",
+        "failed_units": ""
+      }
+    },
+    {
+      "vmid": 270,
+      "observation": {
+        "containers": [
+          {
+            "name": "/dell-ops-blackbox-1",
+            "status": "running",
+            "health": "healthy"
+          },
+          {
+            "name": "/dell-ops-prometheus-1",
+            "status": "running",
+            "health": "healthy"
+          },
+          {
+            "name": "/dell-ops-alertmanager-1",
+            "status": "running",
+            "health": "healthy"
+          },
+          {
+            "name": "/dell-ops-grafana-1",
+            "status": "running",
+            "health": "healthy"
+          }
+        ],
+        "OS": "running",
+        "failed_units": ""
+      }
+    }
+  ],
+  "LAN_http": [
+    {
+      "name": "Penpot",
+      "HTTP": 200
+    },
+    {
+      "name": "Nexus",
+      "HTTP": 200
+    },
+    {
+      "name": "OMV",
+      "HTTP": 200
+    },
+    {
+      "name": "Jellyfin",
+      "HTTP": 200
+    },
+    {
+      "name": "Java-test-OIDC",
+      "HTTP": 200
+    }
+  ],
+  "all7guestOS_running_failed_empty": true,
+  "QA_containers_remaining": false,
+  "notification_message_sent": false,
+  "raw_credentials_or_response_body_collected": false
+}

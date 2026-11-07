@@ -1,0 +1,18 @@
+{
+  "at": "2026-11-06T11:51:12.761465+08:00",
+  "simulation_exit": 0,
+  "plan_package_names": [
+    "libgraphite2-3",
+    "libharfbuzz0b"
+  ],
+  "planned_existing_package_upgrades": [],
+  "planned_removals": [],
+  "architecture_bracket_present": true,
+  "harfbuzz_status": "not-installed",
+  "auth_unit_state": {
+    "MainPID": "4756",
+    "ExecMainStartTimestamp": "Fri 2026-11-06 03:37:17 UTC",
+    "ActiveState": "active"
+  },
+  "mutation_performed": false
+}

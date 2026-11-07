@@ -1,0 +1,45 @@
+{
+  "role": "java-test-01",
+  "private_ip": "192.168.19.45",
+  "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+  "services": [
+    "ssh.service",
+    "qemu-guest-agent.service",
+    "prometheus-node-exporter.service"
+  ],
+  "http_checks": [],
+  "candidate_service_units": [
+    "dell-finger-finger-gateway-mobile.service",
+    "dell-finger-finger-bff-system.service",
+    "dell-finger-finger-auth.service",
+    "dell-finger-finger-service-coms.service",
+    "dell-finger-finger-service-system.service"
+  ],
+  "candidate_http_checks": [
+    {
+      "name": "actuator-example-not-enabled",
+      "url": "http://127.0.0.1:9999/actuator/health/readiness"
+    },
+    {
+      "name": "finger-service-system-health",
+      "url": "http://192.168.19.45:10210/actuator/health"
+    },
+    {
+      "name": "finger-service-coms-health",
+      "url": "http://192.168.19.45:10202/actuator/health"
+    },
+    {
+      "name": "finger-auth-health",
+      "url": "http://192.168.19.45:10000/actuator/health"
+    },
+    {
+      "name": "finger-bff-system-health",
+      "url": "http://192.168.19.45:10104/actuator/health"
+    },
+    {
+      "name": "finger-gateway-mobile-health",
+      "url": "http://192.168.19.45:9999/actuator/health"
+    }
+  ],
+  "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+}

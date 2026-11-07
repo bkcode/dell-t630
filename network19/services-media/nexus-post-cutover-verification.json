@@ -1,0 +1,44 @@
+{
+  "role": 221,
+  "status": "new-network-GET-only-data-identity-roles-verified",
+  "public_uri": "http://192.168.19.31:8081",
+  "components": 49,
+  "primary_SHA_verified": 234,
+  "metadata_semantics_verified": 35,
+  "checksums_verified": 1076,
+  "source_GAV_sets_equal": true,
+  "all_primary_SHA_equal": true,
+  "metadata_regenerated_now": false,
+  "EULA_accepted": true,
+  "new_identity_secret_bytes_unchanged": true,
+  "local_hosted_reader_and_publisher_read": {
+    "dell-reader": true,
+    "dell-publisher": true
+  },
+  "legacy_and_formal_write_delete_denied_by_unchanged_roles": true,
+  "negative_write_requests_executed": false,
+  "group_members_preserved": true,
+  "group_hosted_SHA_read": true,
+  "unrelated_publish_canary_SHA_preserved": true,
+  "anonymous_status": 401,
+  "only_HTTP_method_executed": "GET",
+  "GET_request_count": 1641,
+  "proxy_config_or_upstream_requests": false,
+  "containers": [
+    {
+      "name": "/nexus-nexus-1",
+      "id": "70d4bec45b73e68dee425c6962ba0ec2d1448b03187dfa0dc8369bdc44eb65bb",
+      "image": "sha256:2ae4fee2eed85f42c982aa2fc16746a8453c7f79faf2a7ea236855ca8652e001",
+      "running": true,
+      "health": "healthy"
+    },
+    {
+      "name": "/nexus-gateway-1",
+      "id": "bb273c7b5b309671bd34f56c04dc6ae96dc7451105b8f1f19f890968fb4ce69a",
+      "image": "sha256:4e5db4761e0ff445f7fd29aad680ad28e8abf7d204895557f145d65535abcc1c",
+      "running": true,
+      "health": "healthy"
+    }
+  ],
+  "data_uuid": "239dc45a-b1f3-408b-a8ef-7afa77b52204"
+}

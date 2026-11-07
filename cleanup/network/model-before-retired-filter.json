@@ -1,0 +1,491 @@
+{
+  "recorded_at": "2026-11-06T15:55:44.859748",
+  "status": "network19-current-infrastructure-verified-Java-business-disabled",
+  "source": "user explicitly requested execution of routing VM21.23+all internal guests19; old104 moves19",
+  "old_plan_sha256": "6f82f4ad9201e6a4c6b19fd7cde4bd34c661e3017098d1b84c55dc884107295b",
+  "PVE_management": {
+    "ip": "192.168.21.22",
+    "bridge": "vmbr0",
+    "L3_forwarding_final": false,
+    "NAT_final": false,
+    "client_route": "192.168.19.0/24 via192.168.21.23 only for host-originated management"
+  },
+  "router": {
+    "vmid": 190,
+    "hostname": "network-gateway",
+    "template": 9010,
+    "vcpu": 2,
+    "memory_mib": 512,
+    "disk_gib": 32,
+    "WAN": {
+      "ip": "192.168.21.23/24",
+      "gateway": "192.168.21.1",
+      "bridge": "vmbr0"
+    },
+    "LAN": {
+      "ip": "192.168.19.1/24",
+      "bridge": "vmbr19"
+    },
+    "no_NAT_between_LAN_subnets": true,
+    "DHCP_dynamic_pool": "192.168.19.200-239",
+    "DNS": "192.168.19.1 with upstream192.168.21.1",
+    "OW_route": "192.168.19.0/24 via192.168.21.23",
+    "disk_provisioning": "full clone9010,32GiB sparse qcow2,no shrink",
+    "onboot": true
+  },
+  "target_budget": {
+    "permanent_roles": 14,
+    "vcpu": 55,
+    "guest_memory_gib": 117,
+    "host_reserve_planned_gib": 8,
+    "minimum_reserve_gib": 8
+  },
+  "guest_addresses": [
+    {
+      "vmid": 100,
+      "name": "cf-tunnel",
+      "old_ip": "DHCP-or-offline",
+      "new_ip": "192.168.19.5",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "lxc"
+    },
+    {
+      "vmid": 101,
+      "name": "data-docker-base-tpl",
+      "old_ip": "DHCP-or-offline",
+      "new_ip": "192.168.19.101",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    },
+    {
+      "vmid": 104,
+      "name": "publish-legacy",
+      "old_ip": "192.168.21.23",
+      "new_ip": "192.168.19.104",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    },
+    {
+      "vmid": 190,
+      "name": "network-gateway",
+      "old_ip": "DHCP-or-offline",
+      "new_ip": "192.168.19.1",
+      "prefix": 24,
+      "gateway": "192.168.21.1",
+      "bridge": "vmbr19",
+      "kind": "gateway"
+    },
+    {
+      "vmid": 200,
+      "name": "data-prod-db",
+      "old_ip": "10.63.10.10",
+      "new_ip": "192.168.19.10",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    },
+    {
+      "vmid": 201,
+      "name": "data-prod-infra",
+      "old_ip": "10.63.10.11",
+      "new_ip": "192.168.19.11",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    },
+    {
+      "vmid": 210,
+      "name": "data-test",
+      "old_ip": "10.63.20.10",
+      "new_ip": "192.168.19.20",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    },
+    {
+      "vmid": 220,
+      "name": "publish-service",
+      "old_ip": "10.63.30.10",
+      "new_ip": "192.168.19.30",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    },
+    {
+      "vmid": 221,
+      "name": "artifact-service",
+      "old_ip": "10.63.30.20",
+      "new_ip": "192.168.19.31",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    },
+    {
+      "vmid": 230,
+      "name": "java-prod-01",
+      "old_ip": "10.63.10.20",
+      "new_ip": "192.168.19.40",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    },
+    {
+      "vmid": 231,
+      "name": "java-prod-02",
+      "old_ip": "10.63.10.21",
+      "new_ip": "192.168.19.41",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    },
+    {
+      "vmid": 232,
+      "name": "java-prod-03",
+      "old_ip": "10.63.10.22",
+      "new_ip": "192.168.19.42",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    },
+    {
+      "vmid": 240,
+      "name": "java-test-01",
+      "old_ip": "10.63.20.20",
+      "new_ip": "192.168.19.45",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    },
+    {
+      "vmid": 250,
+      "name": "penpot-service",
+      "old_ip": "10.63.30.30",
+      "new_ip": "192.168.19.50",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    },
+    {
+      "vmid": 260,
+      "name": "nas-media",
+      "old_ip": "10.63.40.10",
+      "new_ip": "192.168.19.60",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    },
+    {
+      "vmid": 270,
+      "name": "ops-service",
+      "old_ip": "10.63.30.40",
+      "new_ip": "192.168.19.70",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    },
+    {
+      "vmid": 9000,
+      "name": "dell-template-inspect",
+      "old_ip": "DHCP-or-offline",
+      "new_ip": "192.168.19.190",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    },
+    {
+      "vmid": 9002,
+      "name": "dell-linux-clone-test",
+      "old_ip": "DHCP-or-offline",
+      "new_ip": "192.168.19.191",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    },
+    {
+      "vmid": 9003,
+      "name": "dell-docker-clone-test",
+      "old_ip": "DHCP-or-offline",
+      "new_ip": "192.168.19.192",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    },
+    {
+      "vmid": 9004,
+      "name": "dell-docker-clone-a",
+      "old_ip": "DHCP-or-offline",
+      "new_ip": "192.168.19.193",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    },
+    {
+      "vmid": 9005,
+      "name": "dell-linux-clone-b",
+      "old_ip": "DHCP-or-offline",
+      "new_ip": "192.168.19.194",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    },
+    {
+      "vmid": 9006,
+      "name": "dell-docker-clone-b",
+      "old_ip": "DHCP-or-offline",
+      "new_ip": "192.168.19.195",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    },
+    {
+      "vmid": 9020,
+      "name": "dell-restore-baseline",
+      "old_ip": "DHCP-or-offline",
+      "new_ip": "192.168.19.196",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    }
+  ],
+  "template_VMIDs": [
+    102,
+    103,
+    105,
+    106,
+    9001,
+    9010,
+    9011
+  ],
+  "template_NIC_target": "vmbr19; CloudInit/DHCP reset to server19 as applicable, no21 uplink",
+  "policy": [
+    "Only gateway WAN may use21 subnet among guests; PVE management21.22 unchanged",
+    "Same19/24 east-west needs bridge/guest filtering; do not claim router alone isolates prod/test",
+    "CF secret-bearing backups stayPVE; preserve token/no export",
+    "All original data/identities/mount UUIDs/keys preserved; no new real business/notification workload",
+    "Application private/public URLs and strict deployment guards migrate as controlled config revision, not blanket replacement of history/code",
+    "Do not invalidate old rollback before new routes/health verified; immutable old releases preserved but new-network rollback baseline must be compatible"
+  ],
+  "required_order": [
+    "readonly full inventory/router access",
+    "free old10421.23 on stopped guest",
+    "create bridge19 nohostIP and stopped gateway190",
+    "gateway boot+strictkey+route/DNS/firewall checks",
+    "OW static route and host client-only route verified",
+    "stage guards/app configs, add new DBHost privileges before switching data clients",
+    "per-role stop supervisor→guest network commit→config apply→health+data validation",
+    "move CF/legacy/stoppedQA/template NICs and validate no21 guests exceptGW WAN",
+    "remove old host bridges/NAT/forward after network19 complete",
+    "final end-to-end and negative隔离 tests; updateactiveplan/docs/acceptance"
+  ],
+  "OW_user_route": {
+    "recorded_at": "2026-11-06T15:56:52.392303",
+    "evidence": "evidence/Mac-final-management-and-services.json",
+    "status": "user-configured-and-actual-Mac-real-service-route-verified",
+    "OW_login_required_for_current_step": false
+  },
+  "gateway_management_sources": [
+    "192.168.21.22",
+    "192.168.21.116"
+  ],
+  "gateway_policy": {
+    "WAN_to_LAN": [
+      {
+        "src": "192.168.21.0/24",
+        "dst": "192.168.19.50",
+        "tcp": [
+          9001
+        ]
+      },
+      {
+        "src": "192.168.21.0/24",
+        "dst": "192.168.19.31",
+        "tcp": [
+          8081
+        ]
+      },
+      {
+        "src": "192.168.21.0/24",
+        "dst": "192.168.19.60",
+        "tcp": [
+          80,
+          445,
+          8096
+        ]
+      },
+      {
+        "src": "192.168.21.0/24",
+        "dst": "192.168.19.45",
+        "tcp": [
+          9999
+        ]
+      },
+      {
+        "src": "192.168.21.0/24",
+        "dst": "192.168.19.40",
+        "tcp": [
+          9999
+        ]
+      },
+      {
+        "src": "192.168.21.0/24",
+        "dst": "192.168.19.70",
+        "tcp": [
+          3000
+        ]
+      },
+      {
+        "src": [
+          "192.168.21.22",
+          "192.168.21.116"
+        ],
+        "dst": "192.168.19.0/24",
+        "tcp": [
+          22,
+          3306,
+          6379,
+          5672,
+          15672,
+          8848,
+          9848,
+          9849,
+          9090,
+          9093,
+          9100
+        ]
+      }
+    ],
+    "LAN_to_public_internet": {
+      "src": "192.168.19.0/24",
+      "tcp": [
+        53,
+        80,
+        443
+      ],
+      "udp": [
+        53,
+        123
+      ],
+      "icmp": true,
+      "exclude_private_destinations": true
+    },
+    "CF_extra_public": {
+      "src": "192.168.19.5",
+      "tcp": [
+        7844
+      ],
+      "udp": [
+        7844
+      ]
+    },
+    "publisher_optional_public_ssh": {
+      "src": "192.168.19.30",
+      "tcp": [
+        22
+      ]
+    },
+    "CF_legacy_LAN_origin_compatibility": {
+      "src": "192.168.19.5",
+      "dst": "192.168.21.0/24",
+      "tcp": [
+        80,
+        443,
+        8081,
+        9001,
+        8096,
+        9999
+      ],
+      "comment": "known homeapp ports only; remote Cloudflare origins still require read-only inventory, no token export"
+    },
+    "default_forward": "drop",
+    "established_related": true,
+    "invalid": "drop",
+    "NAT": "none",
+    "LAN_DNS_DHCP": "only ownLAN interface19.1 UDP67/DNS53",
+    "gateway_ssh": "WAN only management sources, pubkey-only, no19guest SSH to router",
+    "IPv6": "disabled WAN+LAN per-interface,no lo/global-kernel disable",
+    "same_subnet_routed_attempts": "drop unless explicit east-west matrix from bridge ACL; not an alternate path around prod/test isolation",
+    "OW_fake_IP_proxy_compatibility": {
+      "source": "192.168.19.0/24",
+      "destination": "198.18.0.0/15",
+      "tcp": [
+        53,
+        80,
+        443
+      ],
+      "udp": [
+        53,
+        123
+      ],
+      "icmp": true,
+      "reason": "actual19.40 DNS viaGW/OW returns198.18.5.245 fordeb.debian.org and198.18.6.97 forone.one.one.one; directpublicTCP443 works, these are OW-managed synthetic public destinations",
+      "evidence": "network19/evidence/canary230-WAN-diagnostic.json",
+      "no_NAT_or_private_subnet_expansion": true
+    },
+    "CF_fake_IP_proxy_compatibility": {
+      "source": "192.168.19.5",
+      "destination": "198.18.0.0/15",
+      "tcp": [
+        7844
+      ],
+      "udp": [
+        7844
+      ],
+      "reason": "Actual CF edge region1/region2 DNS via GW+OW are198.18.5.144/145 and cloudflared times out dialling7844; preserve OW proxy DNS",
+      "evidence": "network19/evidence/CF-connectivity-diagnostic.json",
+      "no_NAT_or_other_role_scope_expansion": true
+    },
+    "WireGuard_client_access": {
+      "source": "10.66.66.0/24",
+      "destination": "192.168.19.0/24",
+      "protocols": "all",
+      "gateway_local_addresses": [
+        "192.168.21.23",
+        "192.168.19.1"
+      ],
+      "reason": "After being told full-server/all-protocol scope risk, user explicitly requested this trustedVPN CIDR allowed on23gateway and access to allserver services",
+      "evidence": "network19/wireguard/full-access-authorization.json",
+      "no_NAT": true
+    }
+  },
+  "Java_scope_revision": {
+    "business_programs": "not deployed or started in any environment",
+    "existing_test_five_services": "stop and disable; immutable private backups preserved",
+    "acceptance_template": "single clean cloneable Java runtime acceptance template; JDK21/nonroot/monitoring/check scripts, no business configuration or credentials",
+    "fresh_Nacos_configs_and_Java_release": "prepared candidates not published or activated",
+    "publisher": "fenced; business publish disabled"
+  },
+  "single_Java_acceptance_template": {
+    "vmid": 9011,
+    "name": "tpl-java-acceptance",
+    "status": "sealed-clone-verified",
+    "QA9012": "destroyed after JDK/identity/DHCP tests",
+    "no_business_programs_or_credentials": true
+  },
+  "completed_at": "2026-11-06T18:13:28.367562+08:00",
+  "temporary_bootstrap_vmids": []
+}

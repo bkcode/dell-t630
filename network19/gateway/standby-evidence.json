@@ -1,0 +1,50 @@
+{
+  "at": "2026-11-06T16:08:31.620868+08:00",
+  "scope": "reviewed190-only-packages-standby",
+  "exit_code": 0,
+  "result": {
+    "at": "2026-11-06T08:08:31.561293+00:00",
+    "status": "packages-installed-standby-no-activation",
+    "interfaces_matched_by_MAC": {
+      "WAN": "eth0",
+      "LAN": "eth1"
+    },
+    "packages": [
+      "dnsmasq 2.91-1+deb13u2",
+      "dnsmasq-base 2.91-1+deb13u2",
+      "nftables 1.1.3-1"
+    ],
+    "forward_before": "0",
+    "forward_after": "0",
+    "default_units": {
+      "dnsmasq.service": {
+        "active": false,
+        "masked": true
+      },
+      "nftables.service": {
+        "active": false,
+        "masked": true
+      }
+    },
+    "unsafe_DNS_DHCP_listeners": [],
+    "policy_hook_restored": true,
+    "gateway_firewall_or_DNS_DHCP_activated": false,
+    "no_PVE_OW_or_other_guests_modified": true,
+    "network_owners": {
+      "networking.service": "inactive",
+      "systemd-networkd.service": "active",
+      "NetworkManager.service": "inactive",
+      "systemd-resolved.service": "active"
+    },
+    "UTC": "2026-11-06T08:08:31Z",
+    "IPv6_kernel_parameters": [
+      "BOOT_IMAGE=/boot/vmlinuz-6.12.115+deb13.1-cloud-amd64",
+      "root=PARTUUID=3612a9bf-c7cf-40cb-9789-6117e94b7db6",
+      "ro",
+      "console=tty0",
+      "console=ttyS0,115200",
+      "earlyprintk=ttyS0,115200",
+      "consoleblank=0"
+    ]
+  }
+}

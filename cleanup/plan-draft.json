@@ -1,0 +1,61 @@
+{
+  "at": "2026-11-07T01:14:18.616726+08:00",
+  "status": "readonly-audit-and-safe-preparation",
+  "proposed_keep_role_vmids": [
+    100,
+    190,
+    200,
+    201,
+    210,
+    220,
+    230,
+    240,
+    250,
+    260,
+    270
+  ],
+  "Java_keep": "230prod and240test each1;optional clarification pending,231232redundant under eitherchoice",
+  "Nexus": "merge221 application to220 preserving31 servicealias anddataUUID;2206CPU8GiB",
+  "preserve_templates": [
+    9001,
+    9010,
+    9011
+  ],
+  "cleanup_candidates": [
+    101,
+    104,
+    102,
+    103,
+    105,
+    106,
+    9000,
+    9002,
+    9003,
+    9004,
+    9005,
+    9006,
+    9020,
+    231,
+    232
+  ],
+  "retire221_only_after_merge": true,
+  "fish_current_install_window": [
+    190,
+    200,
+    201,
+    210,
+    230,
+    240,
+    260
+  ],
+  "fish_later220": true,
+  "fish_excluded": [
+    100,
+    250,
+    270
+  ],
+  "fish_login_shell": "unchanged pending optional user preference",
+  "PVE_fish": "not in current window",
+  "private_key_boundary": "never wholebackup220;publisherprivatekeyonly220;CF100untouched",
+  "backup_destination": "PVE-protected cleanup archives only;no autoexpiredelete"
+}

@@ -1,0 +1,20 @@
+{
+  "local_record": "dell-penpot-health.invalid",
+  "expected_A": "192.0.2.53",
+  "public_upstream_used": false,
+  "existing_11_touched": false,
+  "isolation": {
+    "network": "none",
+    "ports": {},
+    "user": "65532:65532",
+    "readonly": true,
+    "privileged": false
+  },
+  "positive_record_answer": true,
+  "exact_health_helper_passed": true,
+  "unconfigured_name_not_accepted": true,
+  "status": "passed",
+  "temporary_container_removed": true,
+  "temporary_scratch_removed": true,
+  "existing_11_identity_and_start_state_unchanged": true
+}

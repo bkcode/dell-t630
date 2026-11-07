@@ -1,0 +1,27 @@
+--- a/dell/network19/gateway/policy.py
++++ b/dell/network19/gateway/policy.py
+@@ -38,12 +38,22 @@
+  if '192.168.21.22' not in mgmt or any('/' in x for x in mgmt):raise Rejected('explicit management hosts including PVE required')
+  required={'WAN_to_LAN','LAN_to_public_internet','CF_extra_public','publisher_optional_public_ssh','CF_legacy_LAN_origin_compatibility','default_forward','established_related','invalid','NAT','LAN_DNS_DHCP','gateway_ssh','IPv6','same_subnet_routed_attempts'}
+  if (not required.issubset(policy) or set(policy)-required-{'OW_fake_IP_proxy_compatibility','CF_fake_IP_proxy_compatibility','WireGuard_client_access'}) or policy['NAT']!='none' or policy['default_forward']!='drop' or policy['invalid']!='drop' or policy['established_related'] is not True:raise Rejected('approved deny/return-state/noNAT policy required')
+- records=[];seen=set()
+- for row in plan['guest_addresses']:
++ records=[];seen=set();retired=set(plan.get('retired_vmids',[]));temporary=set(plan.get('temporary_bootstrap_vmids',[]))|{int(row['vmid']) for row in plan['guest_addresses'] if row.get('temporary_build_only') is True}
++ if not temporary.issubset({9040,9041,9042,9043,9044,9045}) or temporary.intersection(retired):raise Rejected('only approved Fish temporary bootstrap identity list')
++ active={int(row['vmid']):row for row in plan['guest_addresses'] if int(row['vmid']) not in retired|temporary}
++ for row in active.values():
+   if row['vmid']==190:continue
+   address=ip(row['new_ip'],LAN);role=row['name']
+   if '/' in address or int(ipaddress.IPv4Address(address))&255 not in range(2,200) or address in seen or not re.fullmatch('[a-z0-9][a-z0-9-]{0,62}',role):raise Rejected('unique static role below DHCP pool required')
+   seen.add(address);records.append({'role':role,'address':address})
++ logical_endpoints=plan.get('service_endpoints',{})
++ if 'artifact-service'in logical_endpoints:
++  item=logical_endpoints['artifact-service']
++  if set(item)!={'vmid','ip','tcp'} or item['vmid'] not in active or item['vmid'] in retired or item['ip']!='192.168.19.31' or item['tcp']!=[8081]:raise Rejected('owned Nexus service endpoint required')
++  owner=active[item['vmid']]
++  if item['ip'] not in [owner['new_ip'],*owner.get('additional_ips',[])]:raise Rejected('logical DNS endpoint not owned by physical role')
++  if item['ip'] in seen:raise Rejected('logical alias conflicts with another hostname/IP record')
++  records.append({'role':'artifact-service','address':item['ip']});seen.add(item['ip'])
+  if not any(x=={'role':'cf-tunnel','address':'192.168.19.5'} for x in records):raise Rejected('existing CF fixed identity required')
+  matrix=[]
+  for row in policy['WAN_to_LAN']:

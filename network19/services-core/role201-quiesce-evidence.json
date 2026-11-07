@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-06T09:04:19.724497+00:00",
+  "exit_code": 0,
+  "target": {
+    "vmid": 201,
+    "ip": "10.63.10.11",
+    "host_key_alias": "dell-vm201",
+    "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "result": {
+    "status": "quiesced",
+    "vmid": 201,
+    "unit": "dell-data-prod-infra.service",
+    "expected_containers_stopped": 3,
+    "data_deleted_or_OS_changed": false,
+    "Nacos_bootstrap_or_notifications_run": false,
+    "existing_app_backups_checked_before_quiesce": [
+      {
+        "component": "redis",
+        "file": "redis.rdb",
+        "SHA_matches": true,
+        "retained_in_place_not_exported": true
+      },
+      {
+        "component": "rabbit-topology",
+        "file": "rabbit-definitions.json",
+        "SHA_matches": true,
+        "retained_in_place_not_exported": true
+      }
+    ]
+  }
+}

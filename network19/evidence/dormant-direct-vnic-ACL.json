@@ -1,0 +1,126 @@
+{
+  "at": "2026-11-06T16:41:04.546527",
+  "objects": [
+    {
+      "vmid": 101,
+      "NIC": "net0",
+      "bridge": "vmbr19",
+      "custom_bridge_ACL_enforced": true,
+      "PVE_legacy_firewall_flag": 0,
+      "not_started": true
+    },
+    {
+      "vmid": 102,
+      "NIC": "net0",
+      "bridge": "vmbr19",
+      "custom_bridge_ACL_enforced": true,
+      "PVE_legacy_firewall_flag": 0,
+      "not_started": true
+    },
+    {
+      "vmid": 103,
+      "NIC": "net0",
+      "bridge": "vmbr19",
+      "custom_bridge_ACL_enforced": true,
+      "PVE_legacy_firewall_flag": 0,
+      "not_started": true
+    },
+    {
+      "vmid": 104,
+      "NIC": "net0",
+      "bridge": "vmbr19",
+      "custom_bridge_ACL_enforced": true,
+      "PVE_legacy_firewall_flag": 0,
+      "not_started": true
+    },
+    {
+      "vmid": 105,
+      "NIC": "net0",
+      "bridge": "vmbr19",
+      "custom_bridge_ACL_enforced": true,
+      "PVE_legacy_firewall_flag": 0,
+      "not_started": true
+    },
+    {
+      "vmid": 106,
+      "NIC": "net0",
+      "bridge": "vmbr19",
+      "custom_bridge_ACL_enforced": true,
+      "PVE_legacy_firewall_flag": 0,
+      "not_started": true
+    },
+    {
+      "vmid": 9000,
+      "NIC": "net0",
+      "bridge": "vmbr19",
+      "custom_bridge_ACL_enforced": true,
+      "PVE_legacy_firewall_flag": 0,
+      "not_started": true
+    },
+    {
+      "vmid": 9001,
+      "NIC": "net0",
+      "bridge": "vmbr19",
+      "custom_bridge_ACL_enforced": true,
+      "PVE_legacy_firewall_flag": 0,
+      "not_started": true
+    },
+    {
+      "vmid": 9002,
+      "NIC": "net0",
+      "bridge": "vmbr19",
+      "custom_bridge_ACL_enforced": true,
+      "PVE_legacy_firewall_flag": 0,
+      "not_started": true
+    },
+    {
+      "vmid": 9003,
+      "NIC": "net0",
+      "bridge": "vmbr19",
+      "custom_bridge_ACL_enforced": true,
+      "PVE_legacy_firewall_flag": 0,
+      "not_started": true
+    },
+    {
+      "vmid": 9004,
+      "NIC": "net0",
+      "bridge": "vmbr19",
+      "custom_bridge_ACL_enforced": true,
+      "PVE_legacy_firewall_flag": 0,
+      "not_started": true
+    },
+    {
+      "vmid": 9005,
+      "NIC": "net0",
+      "bridge": "vmbr19",
+      "custom_bridge_ACL_enforced": true,
+      "PVE_legacy_firewall_flag": 0,
+      "not_started": true
+    },
+    {
+      "vmid": 9006,
+      "NIC": "net0",
+      "bridge": "vmbr19",
+      "custom_bridge_ACL_enforced": true,
+      "PVE_legacy_firewall_flag": 0,
+      "not_started": true
+    },
+    {
+      "vmid": 9010,
+      "NIC": "net0",
+      "bridge": "vmbr19",
+      "custom_bridge_ACL_enforced": true,
+      "PVE_legacy_firewall_flag": 0,
+      "not_started": true
+    },
+    {
+      "vmid": 9020,
+      "NIC": "net0",
+      "bridge": "vmbr19",
+      "custom_bridge_ACL_enforced": true,
+      "PVE_legacy_firewall_flag": 0,
+      "not_started": true
+    }
+  ],
+  "reason": "PVE firewall actualdisabled; direct tap enforces reviewed bridge ACL without weak-host fwbr bypass"
+}

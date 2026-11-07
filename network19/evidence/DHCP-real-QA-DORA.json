@@ -1,0 +1,35 @@
+{
+  "client": {
+    "new_IP": "192.168.19.229",
+    "lease_address": {
+      "family": "inet",
+      "local": "192.168.19.229",
+      "prefixlen": 24,
+      "metric": 100,
+      "broadcast": "192.168.19.255",
+      "scope": "global",
+      "dynamic": true,
+      "label": "eth0",
+      "valid_life_time": 3600,
+      "preferred_life_time": 3600
+    },
+    "default": [
+      {
+        "dst": "default",
+        "gateway": "192.168.19.1",
+        "dev": "eth0",
+        "protocol": "dhcp",
+        "prefsrc": "192.168.19.229",
+        "metric": 100,
+        "flags": []
+      }
+    ],
+    "per_link_DNS": "Link 2 (eth0): 192.168.19.1",
+    "network_file": "run-only temporary dedicated QA DHCP client; no image persistence changed"
+  },
+  "passive_PVE_capture": [],
+  "full_DORA_seen": false,
+  "no_ethernet_or_IP_spoofing": true,
+  "template_image_unchanged": true,
+  "at": "2026-11-06T17:46:33.341563"
+}

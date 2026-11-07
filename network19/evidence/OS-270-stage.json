@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-06T16:58:05.879599",
+  "vmid": 270,
+  "old_ip": "10.63.30.40",
+  "new_ip": "192.168.19.70",
+  "action": "stage",
+  "stage": {
+    "status": "staged-old-network-active",
+    "interface": "eth0",
+    "nonce": "fb40362ad6a248d680f3c6172dbc6789",
+    "network_changed": false
+  },
+  "status": "OS-staged-old-network-active"
+}

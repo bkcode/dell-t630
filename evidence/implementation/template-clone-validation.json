@@ -1,0 +1,291 @@
+{
+  "collected_at": "2026-11-06T05:15:08.070174+08:00",
+  "scope": "template-clone-validation",
+  "cases": [
+    {
+      "target": {
+        "vmid": 9002,
+        "ip": "192.168.21.213",
+        "host_key_alias": "dell-vm9002",
+        "host_key_fingerprint": "SHA256:Ic74ndni+38TBLSiYxQIj4AkfaRnyaQbnxKW6smII3w",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "result": {
+        "hostname": "dell-linux-clone-test",
+        "user": "ub",
+        "machine_id": "d5ec0ad4357d44e69e4cf3702de72d5a",
+        "cloud_init": {
+          "boot_status_code": "enabled-by-generator",
+          "datasource": "nocloud",
+          "detail": "DataSourceNoCloud [seed=/dev/sr0]",
+          "errors": [],
+          "extended_status": "done",
+          "init": {
+            "errors": [],
+            "finished": 15.69,
+            "recoverable_errors": {},
+            "start": 10.31
+          },
+          "init-local": {
+            "errors": [],
+            "finished": 6.51,
+            "recoverable_errors": {},
+            "start": 5.62
+          },
+          "last_update": "Thu, 01 Jan 1970 00:00:17 +0000",
+          "modules-config": {
+            "errors": [],
+            "finished": 16.3,
+            "recoverable_errors": {},
+            "start": 15.82
+          },
+          "modules-final": {
+            "errors": [],
+            "finished": 17.81,
+            "recoverable_errors": {},
+            "start": 16.36
+          },
+          "recoverable_errors": {},
+          "stage": null,
+          "status": "done"
+        },
+        "guest_agent": {
+          "exit_code": 0,
+          "stdout": "active"
+        },
+        "ntp": {
+          "exit_code": 0,
+          "stdout": "yes"
+        },
+        "template_release": "template=tpl-linux-base\nos=debian13\narchitecture=amd64\n",
+        "docker_installed": false,
+        "pve_directory_present": false
+      }
+    },
+    {
+      "target": {
+        "vmid": 9004,
+        "ip": "192.168.21.211",
+        "host_key_alias": "dell-vm9004",
+        "host_key_fingerprint": "SHA256:ZbV2JVL0PN3rrk3L8eFxg+78+bxWFH2QhpcbgCd44u0",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "result": {
+        "hostname": "dell-docker-clone-a",
+        "user": "ub",
+        "machine_id": "51e9f07b678242a799cc9050e191ba4e",
+        "cloud_init": {
+          "boot_status_code": "enabled-by-generator",
+          "datasource": "nocloud",
+          "detail": "DataSourceNoCloud [seed=/dev/sr0]",
+          "errors": [],
+          "extended_status": "done",
+          "init": {
+            "errors": [],
+            "finished": 13.1,
+            "recoverable_errors": {},
+            "start": 10.61
+          },
+          "init-local": {
+            "errors": [],
+            "finished": 6.93,
+            "recoverable_errors": {},
+            "start": 5.87
+          },
+          "last_update": "Thu, 01 Jan 1970 00:00:18 +0000",
+          "modules-config": {
+            "errors": [],
+            "finished": 13.8,
+            "recoverable_errors": {},
+            "start": 13.34
+          },
+          "modules-final": {
+            "errors": [],
+            "finished": 18.05,
+            "recoverable_errors": {},
+            "start": 16.23
+          },
+          "recoverable_errors": {},
+          "stage": null,
+          "status": "done"
+        },
+        "guest_agent": {
+          "exit_code": 0,
+          "stdout": "active"
+        },
+        "ntp": {
+          "exit_code": 0,
+          "stdout": "yes"
+        },
+        "template_release": "template=tpl-docker-base\nos=debian13\narchitecture=amd64\n29.9.3\nDocker Compose version v5.7.0\n",
+        "docker_installed": true,
+        "pve_directory_present": false,
+        "docker_version": {
+          "exit_code": 0,
+          "stdout": "29.9.3"
+        },
+        "docker_compose": {
+          "exit_code": 0,
+          "stdout": "Docker Compose version v5.7.0"
+        },
+        "containers": {
+          "exit_code": 0,
+          "stdout": ""
+        },
+        "docker_logging": {
+          "log-driver": "local",
+          "log-opts": {
+            "max-size": "10m",
+            "max-file": "3"
+          },
+          "live-restore": true
+        }
+      }
+    },
+    {
+      "target": {
+        "vmid": 9005,
+        "ip": "192.168.21.170",
+        "host_key_alias": "dell-vm9005",
+        "host_key_fingerprint": "SHA256:hXvxEPdk5xma2xCmEJC72U7ZamW3/ZFcZ6FOd1i4iPI",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "result": {
+        "hostname": "dell-linux-clone-b",
+        "user": "ub",
+        "machine_id": "2f0846edb02047279778d293041aca69",
+        "cloud_init": {
+          "boot_status_code": "enabled-by-generator",
+          "datasource": "nocloud",
+          "detail": "DataSourceNoCloud [seed=/dev/sr0]",
+          "errors": [],
+          "extended_status": "done",
+          "init": {
+            "errors": [],
+            "finished": 19.08,
+            "recoverable_errors": {},
+            "start": 11.19
+          },
+          "init-local": {
+            "errors": [],
+            "finished": 7.83,
+            "recoverable_errors": {},
+            "start": 6.61
+          },
+          "last_update": "Thu, 01 Jan 1970 00:00:22 +0000",
+          "modules-config": {
+            "errors": [],
+            "finished": 19.71,
+            "recoverable_errors": {},
+            "start": 19.28
+          },
+          "modules-final": {
+            "errors": [],
+            "finished": 22.26,
+            "recoverable_errors": {},
+            "start": 19.88
+          },
+          "recoverable_errors": {},
+          "stage": null,
+          "status": "done"
+        },
+        "guest_agent": {
+          "exit_code": 0,
+          "stdout": "active"
+        },
+        "ntp": {
+          "exit_code": 0,
+          "stdout": "yes"
+        },
+        "template_release": "template=tpl-linux-base\nos=debian13\narchitecture=amd64\n",
+        "docker_installed": false,
+        "pve_directory_present": false
+      }
+    },
+    {
+      "target": {
+        "vmid": 9006,
+        "ip": "192.168.21.139",
+        "host_key_alias": "dell-vm9006",
+        "host_key_fingerprint": "SHA256:kd95FXiUH896nvx2RgBz6i8CanP7vNLHOAdYRs8TjQw",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "result": {
+        "hostname": "dell-docker-clone-b",
+        "user": "ub",
+        "machine_id": "ffb82a7036344751ac7d24c76e144183",
+        "cloud_init": {
+          "boot_status_code": "enabled-by-generator",
+          "datasource": "nocloud",
+          "detail": "DataSourceNoCloud [seed=/dev/sr0]",
+          "errors": [],
+          "extended_status": "done",
+          "init": {
+            "errors": [],
+            "finished": 17.34,
+            "recoverable_errors": {},
+            "start": 16.58
+          },
+          "init-local": {
+            "errors": [],
+            "finished": 13.12,
+            "recoverable_errors": {},
+            "start": 11.81
+          },
+          "last_update": "Thu, 01 Jan 1970 00:00:22 +0000",
+          "modules-config": {
+            "errors": [],
+            "finished": 18.24,
+            "recoverable_errors": {},
+            "start": 17.64
+          },
+          "modules-final": {
+            "errors": [],
+            "finished": 22.75,
+            "recoverable_errors": {},
+            "start": 20.9
+          },
+          "recoverable_errors": {},
+          "stage": null,
+          "status": "done"
+        },
+        "guest_agent": {
+          "exit_code": 0,
+          "stdout": "active"
+        },
+        "ntp": {
+          "exit_code": 0,
+          "stdout": "yes"
+        },
+        "template_release": "template=tpl-docker-base\nos=debian13\narchitecture=amd64\n29.9.3\nDocker Compose version v5.7.0\n",
+        "docker_installed": true,
+        "pve_directory_present": false,
+        "docker_version": {
+          "exit_code": 0,
+          "stdout": "29.9.3"
+        },
+        "docker_compose": {
+          "exit_code": 0,
+          "stdout": "Docker Compose version v5.7.0"
+        },
+        "containers": {
+          "exit_code": 0,
+          "stdout": ""
+        },
+        "docker_logging": {
+          "log-driver": "local",
+          "log-opts": {
+            "max-size": "10m",
+            "max-file": "3"
+          },
+          "live-restore": true
+        }
+      }
+    }
+  ],
+  "lvm_origins": "  vm-9002-cloudinit|\n  vm-9002-disk-0|\n  vm-9004-cloudinit|\n  vm-9004-disk-0|\n  vm-9005-cloudinit|\n  vm-9005-disk-0|\n  vm-9006-cloudinit|\n  vm-9006-disk-0|\n",
+  "all_four_ready": true,
+  "identity_unique": true,
+  "cloud_init_clean": true,
+  "ntp_synchronized": true
+}

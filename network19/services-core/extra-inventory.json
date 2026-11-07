@@ -1,0 +1,305 @@
+{
+  "at": "2026-11-06T08:12:16.893068+00:00",
+  "roles": [
+    {
+      "vmid": 200,
+      "actual_DB_connection_sources": [
+        {
+          "user": "nacos_prod",
+          "host_with_ephemeral_port": "10.63.10.11:33902",
+          "database": "nacos_prod"
+        },
+        {
+          "user": "nacos_prod",
+          "host_with_ephemeral_port": "10.63.10.11:59314",
+          "database": "nacos_prod"
+        }
+      ],
+      "active_guest_monitoring": {
+        "role": "data-prod-db",
+        "private_ip": "10.63.10.10",
+        "services": [
+          "dell-data-prod-db.service",
+          "prometheus-node-exporter.service",
+          "qemu-guest-agent.service",
+          "ssh.service"
+        ],
+        "http_checks": [],
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile"
+      },
+      "candidate_checks_not_activated": true
+    },
+    {
+      "vmid": 201,
+      "active_guest_monitoring": {
+        "role": "data-prod-infra",
+        "private_ip": "10.63.10.11",
+        "services": [
+          "dell-data-prod-infra.service",
+          "prometheus-node-exporter.service",
+          "qemu-guest-agent.service",
+          "ssh.service"
+        ],
+        "http_checks": [
+          {
+            "name": "nacos-readiness",
+            "url": "http://10.63.10.11:8848/nacos/v1/console/health/readiness"
+          }
+        ],
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile"
+      },
+      "candidate_checks_not_activated": true
+    },
+    {
+      "vmid": 210,
+      "actual_DB_connection_sources": [
+        {
+          "user": "finger_auth_test",
+          "host_with_ephemeral_port": "10.63.20.20:51860",
+          "database": "finger_auth_test"
+        },
+        {
+          "user": "finger_coms_test",
+          "host_with_ephemeral_port": "10.63.20.20:33484",
+          "database": "finger_coms_test"
+        },
+        {
+          "user": "finger_system_test",
+          "host_with_ephemeral_port": "10.63.20.20:37924",
+          "database": "finger_system_test"
+        },
+        {
+          "user": "nacos_test",
+          "host_with_ephemeral_port": "172.18.0.5:58074",
+          "database": "nacos_test"
+        },
+        {
+          "user": "nacos_test",
+          "host_with_ephemeral_port": "172.18.0.5:59950",
+          "database": "nacos_test"
+        }
+      ],
+      "test_data_network": [
+        {
+          "Subnet": "172.18.0.0/16",
+          "Gateway": "172.18.0.1"
+        }
+      ],
+      "test_Nacos_container_address": {
+        "dell-data-test-data_default": {
+          "IPAMConfig": null,
+          "Links": null,
+          "Aliases": [
+            "dell-data-test-data-nacos-1",
+            "nacos"
+          ],
+          "DriverOpts": null,
+          "GwPriority": 0,
+          "NetworkID": "a92ce9a209273dae520f885e81d22d0d38219c882f7c2e90355e560bdddd54d6",
+          "EndpointID": "8cf7a52631e26df151073eb00ee230671af3f4f6cfe4d8f82427939ab579ccde",
+          "Gateway": "172.18.0.1",
+          "IPAddress": "172.18.0.5",
+          "MacAddress": "42:be:a7:47:d6:ed",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "DNSNames": [
+            "dell-data-test-data-nacos-1",
+            "nacos",
+            "6227b8ca05dc"
+          ]
+        }
+      },
+      "active_guest_monitoring": {
+        "role": "data-test",
+        "private_ip": "10.63.20.10",
+        "services": [
+          "dell-data-test-data.service",
+          "prometheus-node-exporter.service",
+          "qemu-guest-agent.service",
+          "ssh.service"
+        ],
+        "http_checks": [
+          {
+            "name": "nacos-readiness",
+            "url": "http://10.63.20.10:8848/nacos/v1/console/health/readiness"
+          }
+        ],
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile"
+      },
+      "candidate_checks_not_activated": true
+    },
+    {
+      "vmid": 220,
+      "active_guest_monitoring": {
+        "role": "publish-service",
+        "private_ip": "10.63.30.10",
+        "services": [
+          "ssh.service",
+          "qemu-guest-agent.service",
+          "prometheus-node-exporter.service"
+        ],
+        "http_checks": [],
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile"
+      },
+      "candidate_checks_not_activated": true
+    },
+    {
+      "vmid": 230,
+      "active_guest_monitoring": {
+        "role": "java-prod-01",
+        "private_ip": "10.63.10.20",
+        "services": [
+          "ssh.service",
+          "qemu-guest-agent.service",
+          "prometheus-node-exporter.service"
+        ],
+        "http_checks": [],
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile"
+      },
+      "candidate_checks_not_activated": true
+    },
+    {
+      "vmid": 231,
+      "active_guest_monitoring": {
+        "role": "java-prod-02",
+        "private_ip": "10.63.10.21",
+        "services": [
+          "ssh.service",
+          "qemu-guest-agent.service",
+          "prometheus-node-exporter.service"
+        ],
+        "http_checks": [],
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile"
+      },
+      "candidate_checks_not_activated": true
+    },
+    {
+      "vmid": 232,
+      "active_guest_monitoring": {
+        "role": "java-prod-03",
+        "private_ip": "10.63.10.22",
+        "services": [
+          "ssh.service",
+          "qemu-guest-agent.service",
+          "prometheus-node-exporter.service"
+        ],
+        "http_checks": [],
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile"
+      },
+      "candidate_checks_not_activated": true
+    },
+    {
+      "vmid": 240,
+      "active_guest_monitoring": {
+        "role": "java-test-01",
+        "private_ip": "10.63.20.20",
+        "services": [
+          "ssh.service",
+          "qemu-guest-agent.service",
+          "prometheus-node-exporter.service",
+          "dell-finger-finger-service-system.service",
+          "dell-finger-finger-service-coms.service",
+          "dell-finger-finger-auth.service",
+          "dell-finger-finger-bff-system.service",
+          "dell-finger-finger-gateway-mobile.service"
+        ],
+        "http_checks": [
+          {
+            "name": "finger-service-system-health",
+            "url": "http://10.63.20.20:10210/actuator/health"
+          },
+          {
+            "name": "finger-service-coms-health",
+            "url": "http://10.63.20.20:10202/actuator/health"
+          },
+          {
+            "name": "finger-auth-health",
+            "url": "http://10.63.20.20:10000/actuator/health"
+          },
+          {
+            "name": "finger-bff-system-health",
+            "url": "http://10.63.20.20:10104/actuator/health"
+          },
+          {
+            "name": "finger-gateway-mobile-health",
+            "url": "http://10.63.20.20:9999/actuator/health"
+          }
+        ],
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile"
+      },
+      "candidate_checks_not_activated": true
+    },
+    {
+      "vmid": 270,
+      "ops_network_IPAM": [
+        {
+          "Subnet": "172.18.0.0/16",
+          "Gateway": "172.18.0.1"
+        }
+      ],
+      "AM_address": {
+        "dell-ops_default": {
+          "IPAMConfig": {
+            "IPv4Address": "172.18.0.3"
+          },
+          "Links": null,
+          "Aliases": [
+            "dell-ops-alertmanager-1",
+            "alertmanager"
+          ],
+          "DriverOpts": null,
+          "GwPriority": 0,
+          "NetworkID": "417d79bfd70b2f62eac9366cc35126642f066bb8e9c6a53ddc8bc8849f7c6af8",
+          "EndpointID": "3a81e819049a56d9d5e83649753058243468da4451f4a936bad2ad15b724f762",
+          "Gateway": "172.18.0.1",
+          "IPAddress": "172.18.0.3",
+          "MacAddress": "ee:3d:ef:60:de:d5",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "DNSNames": [
+            "dell-ops-alertmanager-1",
+            "alertmanager",
+            "ed909e82cb16"
+          ]
+        }
+      },
+      "Lark_nonsecret_policy": {
+        "mode": "active",
+        "bind_host": "172.18.0.1",
+        "bind_port": 19093,
+        "allowed_source": "172.18.0.3"
+      },
+      "active_guest_monitoring": {
+        "role": "ops-service",
+        "private_ip": "10.63.30.40",
+        "services": [
+          "dell-ops.service",
+          "prometheus-node-exporter.service",
+          "qemu-guest-agent.service",
+          "ssh.service",
+          "dell-lark-notify.service"
+        ],
+        "http_checks": [
+          {
+            "name": "prometheus-readiness",
+            "url": "http://10.63.30.40:9090/-/ready"
+          },
+          {
+            "name": "alertmanager-readiness",
+            "url": "http://10.63.30.40:9093/-/ready"
+          },
+          {
+            "name": "grafana-health",
+            "url": "http://10.63.30.40:3000/api/health"
+          }
+        ],
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile"
+      },
+      "candidate_checks_not_activated": true
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-06T16:32:28.036416+08:00",
+  "action": "stage",
+  "target": {
+    "vmid": 190,
+    "ip": "192.168.21.23",
+    "host_key_alias": "dell-gw190",
+    "host_key_fingerprint": "SHA256:i2MOCPizZ+sOeM1Hxe76A0Qrz6Tlcis0IStJPBNX96E",
+    "trust_source": "trusted PVE QGA;both gateway IPs and hostname verified"
+  },
+  "independent_strict_SSH": true,
+  "client_key_copied": false,
+  "code_sha256": {
+    "manage.py": "d33586cc7e40fd603b45cc3534a5317e1083df6ab0d2e74e0346b9a7a73a8631",
+    "policy.py": "a50b65e80da961fc50f4749952c02dc9f34ac6712e166237a691b1d5aa2efbdc"
+  },
+  "exit_code": 0,
+  "result": {
+    "status": "activation-scheduled-requires-new-strict-SSH-confirm",
+    "nonce": "09bdf8103e25458ca43c73172718d8b0",
+    "deadline_utc": "2026-11-06T08:35:30.812085+00:00",
+    "rollback_armed": true,
+    "packet_validation": "not-yet-proved"
+  }
+}

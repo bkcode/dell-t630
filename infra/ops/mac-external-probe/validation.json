@@ -1,0 +1,68 @@
+{
+  "at": "2026-11-06T05:43:07.155037+00:00",
+  "stage": "disabled-by-user-current-phase-internal-Lark-only",
+  "mock_tests": {
+    "count": 23,
+    "passed": true,
+    "command": "/opt/homebrew/opt/python@3.14/bin/python3.14 -I test_probe.py"
+  },
+  "launchagent_source_valid": true,
+  "launchagent_installed_by_this_task": false,
+  "same_label_plist_exists": false,
+  "source_or_target_services_changed": false,
+  "state_storage_production_created": false,
+  "private_test_storage": "temporary local unittest directories only",
+  "interpreter": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+  "interpreter_version": "3.14.7",
+  "interval_seconds": 60,
+  "run_at_load": true,
+  "pending": [
+    "user-controlled regular Local Network permission or reviewed own App responsibility design",
+    "two consecutive background full healthy cycles 60s apart",
+    "root review before re-enabling live notifications"
+  ],
+  "limits": [
+    "Mac sleep/offline/logout prevents monitoring",
+    "host aggregate is Mac-to-PVE reachability, not definitive hardware attribution",
+    "Lark acknowledgement uncertainty may duplicate same event up to three attempts",
+    "root/login UI and OIDC discovery checks do not prove all application functions"
+  ],
+  "post_maintenance_baseline": {
+    "at": "2026-11-06T05:44:24.164485+00:00",
+    "all_seven_passed": true,
+    "credentials_sent": false
+  },
+  "review_remediation": "sleep/clock gap resets stable=None and gates pending until check+host restabilize; attempt budgets preserved",
+  "updated_at": "2026-11-06T06:05:09.020361+00:00",
+  "preparation_agent_external_requests": 0,
+  "diagnostic_agent_hook_value_read": false,
+  "runtime_history": {
+    "root_installed_previously": true,
+    "root_automatic_false_host_firing_acknowledged": true,
+    "root_corrective_notice_code": 0,
+    "root_disabled_and_removed_login_plist": true,
+    "private_production_state_preserved": true
+  },
+  "background_diagnosis": {
+    "label": "com.dell.t630.external-probe-diagnosis",
+    "pid": 50099,
+    "two_rounds_passes": [
+      0,
+      0
+    ],
+    "same_time_direct_passes": 7,
+    "local_network_blocked_confirmed": true,
+    "responsible_bundle": "org.python.python",
+    "user_denied_vs_undetermined": "not inferred",
+    "cleanup_bootout_exit": 0,
+    "diagnostic_label_loaded": false,
+    "diagnostic_plist_removed": true,
+    "hook_or_sender_or_production_state_access": false
+  },
+  "user_scope_decision": {
+    "at": "2026-11-06T14:06:10.834449",
+    "decision": "server-internal Lark only this phase; Mac external probe remains disabled",
+    "resume_this_phase": false,
+    "permissions_or_app_remediation_authorized": false
+  }
+}

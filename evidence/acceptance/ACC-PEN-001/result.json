@@ -1,0 +1,33 @@
+{
+  "id": "ACC-PEN-001",
+  "status": "passed",
+  "executed_at": "2026-11-06T12:47:57.493354+08:00",
+  "timezone": "Asia/Shanghai",
+  "operator": "root-task-manager",
+  "plan_sha256": "4da2b208f17e14d048b86b5453abae58a829b0989a90f09a8ff54e8334318380",
+  "preconditions_checked": true,
+  "target": {
+    "host": "192.168.21.22",
+    "environment": "managed-PVE-implementation",
+    "vmid": null
+  },
+  "commands_or_steps": [
+    "See linked execution artifact and operator observations"
+  ],
+  "exit_codes": [
+    0
+  ],
+  "observations": [
+    "目标11服务采用已验证AMD64，核心2.18.5-RC1兼容基线，改造Git精确ff1783e及两本地提交保留，新frontend从该Git构建",
+    "frontend/sidebar/helper HTTP字节已核对，helper空密码；worker/import/DNS/MCP采用目标路径及新身份，未拷旧env或Mac路径",
+    "PUBLIC_URI为已批准LAN9001，源保持，目标guest重启后UUID/DockerRootDir/身份/文件恢复"
+  ],
+  "artifacts": [
+    "infra/penpot/application/acceptance-summary.json"
+  ],
+  "limitations": [
+    "镜像/迁移兼容通过；Docker健康检查/持续监督新审计整改由独立任务推进，HTTPS/SMTP仍待后续域名/provider"
+  ],
+  "reviewed_by": "root-task-manager",
+  "plan_snapshot": "evidence/plans/plan-4da2b208f17e14d0.json"
+}

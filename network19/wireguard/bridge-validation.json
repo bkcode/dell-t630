@@ -1,0 +1,14 @@
+{
+  "status": "narrow-VPN-source-subnet-to-single-Penpot-port-validated",
+  "added_rule": "+    ip saddr 10.66.66.0/24 ip daddr 192.168.19.50 tcp dport 9001 counter accept comment \"WireGuard-Penpot-only\"",
+  "deleted_rules": 0,
+  "unsafe_contracts_rejected": {
+    "source=0.0.0.0/0": true,
+    "source=10.66.0.0/16": true,
+    "destination=192.168.19.0/24": true,
+    "tcp=[22, 9001]": true,
+    "tcp=[9001, 3306]": true,
+    "no_NAT=False": true
+  },
+  "other_roles_MAC_IP_guards_and_host_L3_unchanged": true
+}

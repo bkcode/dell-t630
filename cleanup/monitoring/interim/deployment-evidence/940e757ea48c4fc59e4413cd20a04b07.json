@@ -1,0 +1,21 @@
+{
+  "action": "apply",
+  "nonce": "940e757ea48c4fc59e4413cd20a04b07",
+  "scope": "onlyfileSDremoves231232;221preserved",
+  "Nexus_or_VM_or220_or_catalog_installer_changes": false,
+  "Prom_restart_reload_or_service_stop": false,
+  "maintenance_silence_changed": false,
+  "actual_targets": {
+    "total": 15,
+    "nodes": 10,
+    "own": 5,
+    "all_UP": true,
+    "221_kept_UP": true,
+    "231232_alerts_remaining": 0
+  },
+  "status": "committed-10nodes15UP",
+  "backup_path": "/root/dell-monitor-interim-java/940e757ea48c4fc59e4413cd20a04b07/guest-node.before.json",
+  "fileSD_SHA256": "dc7cf106ebb42021191018c7eda121cf1deb7128308fee7a75beff9a5bf3c9f0",
+  "parent_may_review_ending_own_maintenance": true,
+  "Prometheus_main_identity_health_unchanged": true
+}

@@ -1,0 +1,39 @@
+{
+  "status": "source-minimal-merge-synced",
+  "at": "2026-11-06T09:59:34.293912+00:00",
+  "files": [
+    {
+      "path": "infra/ops/guest-baseline/guest-targets.json",
+      "beforeSHA256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+      "afterSHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+      "changed": true,
+      "backup": "network19/services-core/source-sync-backups/20261106T095934/guest-targets.json",
+      "diff": "network19/services-core/source-sync-backups/20261106T095934/guest-targets.json.diff"
+    },
+    {
+      "path": "infra/ops/guest-baseline/install-guest-baseline.py",
+      "beforeSHA256": "3031278f55018321a83c9c2f70f23557e33e5d9586da83edaa2c624f3fa5bfa8",
+      "afterSHA256": "3936bfbf913bb55b5785e0484c7bc93c2a320d67036c2a31e2dec9aa108f6798",
+      "changed": true,
+      "backup": "network19/services-core/source-sync-backups/20261106T095934/install-guest-baseline.py",
+      "diff": "network19/services-core/source-sync-backups/20261106T095934/install-guest-baseline.py.diff"
+    },
+    {
+      "path": "infra/ops/guest-baseline/collect-guest-health.py",
+      "beforeSHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+      "afterSHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+      "changed": false,
+      "backup": "network19/services-core/source-sync-backups/20261106T095934/collect-guest-health.py",
+      "diff": "network19/services-core/source-sync-backups/20261106T095934/collect-guest-health.py.diff"
+    }
+  ],
+  "fixtures": {
+    "12role_hostname_map_IP24": true,
+    "12role_install_default_base3_HTTPempty": true,
+    "Java_test_business_profile_empty": true,
+    "full_Nexus_OMV_Lark_role_logic_preserved": true,
+    "collector_same_SHA": true
+  },
+  "source_future_logic_not_claimed_as_live": true,
+  "guest_or_plan_access_main_docs_changed": false
+}

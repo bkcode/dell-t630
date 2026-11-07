@@ -1,0 +1,24 @@
+{
+  "files": [
+    {
+      "path": "/root/dell-bootstrap/pve-push-metrics.py",
+      "sha256": "1bd07d63f59b7af1d19f2d3881b7a1c592295c003d39e9d33634f21c7e0f5804",
+      "allVMenumeration": true,
+      "QGA270delivery": true,
+      "not_executed": true,
+      "local_baseline": "dell/cleanup/monitoring/baselines/pve/pve-push-metrics.py"
+    }
+  ],
+  "host_forward": "0",
+  "unit": "dell-pve-metrics.service",
+  "source_script_paths_found": 1,
+  "no_host_changes": true,
+  "semantic_review": {
+    "inventory": "pvesh /cluster/resources --typevm automatically enumerated",
+    "target": "fixedQGA270 textfile delivery is intentional",
+    "CF100": "dedicatedCF active metadata query intentionally preserved",
+    "obsolete221231232_selection_list": false,
+    "no_candidate_patch_or_execution": true
+  },
+  "local_source_same_SHA_as_live": true
+}

@@ -1,0 +1,12 @@
+{
+  "archive": "dell/private/nexus/application-export/hosted-assets-export.tar.gz",
+  "bytes": 11955089,
+  "sha256": "51489673546e903e6af02b28c93d1e370c32252d1e70f7a9265c8bc9751c416d",
+  "assets": 1345,
+  "primary_assets": 234,
+  "metadata_assets": 35,
+  "checksum_assets": 1076,
+  "old_credentials_or_H2_included": false,
+  "target_upload": "not-run",
+  "strategy": "primary-byte-verified; regenerated metadata/checksum differences separately recorded"
+}

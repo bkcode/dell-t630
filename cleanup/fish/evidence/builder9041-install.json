@@ -1,0 +1,39 @@
+{
+  "at": "2026-11-06T17:43:09.391462+00:00",
+  "vmid": 9041,
+  "phase": "install-only",
+  "exit_code": 1,
+  "target": {
+    "vmid": 9041,
+    "ip": "192.168.19.198",
+    "host_key_alias": "dell-vm9041",
+    "host_key_fingerprint": "SHA256:uXQUq3GP+pOk0Wua9wC6l7KrbehHE5B5zCZFeoGYfS8",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "contract": {
+    "schema_version": 1,
+    "vmid": 9041,
+    "source_template": 9001,
+    "hostname": "fish-build-docker",
+    "ip": "192.168.19.198",
+    "mac": "bc:24:11:a6:72:55",
+    "fish_version": "4.0.2-1",
+    "no_chsh": true
+  },
+  "result": {
+    "stage": "/root/dell-fish-template-stage-9041",
+    "vmid": 9041,
+    "phases": {
+      "check": {
+        "exit_code": 1,
+        "receipt": {
+          "status": "refused-or-failed",
+          "category": "Refused",
+          "reason": "classic-root-Docker-profile-required",
+          "no_PVE_operations": true
+        }
+      }
+    }
+  },
+  "no_seal_no_PVE": true
+}

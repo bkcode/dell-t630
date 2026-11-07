@@ -1,0 +1,50 @@
+{
+  "status": "not-proven",
+  "checks": {
+    "same_A_container_id": true,
+    "old_StartedAt_before_C_request": false,
+    "old_FinishedAt_before_C_request": false,
+    "OOM_false": true,
+    "no_container_restart": true,
+    "C_unit_start_after_old_container_stop": true,
+    "C_execpre_guard_pass_record": true,
+    "same_QA_UUID_current_guard_exit0": true,
+    "same_volume_canary": true,
+    "real_unit_PIDs_unchanged": true
+  },
+  "QA_container": {
+    "id": "9ee98c39d7aa216086571b52715e20328c0ae535ebaf68120ae98db315cb8ef1",
+    "status": "exited",
+    "StartedAt": "2026-11-06T06:50:07.625866955Z",
+    "FinishedAt": "2026-11-06T06:50:08.047940956Z",
+    "exit_code": "143",
+    "OOM": "false",
+    "restart_count": "0"
+  },
+  "QA_unit": {
+    "Result": "exit-code",
+    "ExecMainStartTimestamp": "Fri 2026-11-06 06:50:07 UTC",
+    "ExecMainExitTimestamp": "Fri 2026-11-06 06:50:08 UTC",
+    "ExecMainStatus": "130",
+    "ActiveState": "failed",
+    "SubState": "failed"
+  },
+  "C_guard_records": [
+    {
+      "timestamp": "1793947807200271",
+      "guard_passed_same_QA_UUID": true
+    }
+  ],
+  "current_guard_exit": 0,
+  "current_guard": {
+    "status": "passed",
+    "mountpoint": "/srv/dell-nas-sys001/b5b52c6b0565410ba9c510728ba13f54/mount",
+    "filesystem_uuid": "498b2c5a-d912-4884-a9f9-9a460cd2b264",
+    "filesystem": "ext4",
+    "total_bytes": 4143677440,
+    "available_bytes": 3910094848
+  },
+  "nonce": "b5b52c6b0565410ba9c510728ba13f54",
+  "cleanup_not_started": true,
+  "source_logs_or_random_keys_emitted": false
+}

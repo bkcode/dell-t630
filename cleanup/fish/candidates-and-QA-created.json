@@ -1,0 +1,29 @@
+[
+  {
+    "vmid": 9043,
+    "candidate_vmid": 9040,
+    "source_template": 9010,
+    "name": "fish-qa-linux",
+    "IP": "192.168.19.197",
+    "net0": "virtio=BC:24:11:41:E5:21,bridge=vmbr19,firewall=0",
+    "state": "stopped-await-L2-registry"
+  },
+  {
+    "vmid": 9044,
+    "candidate_vmid": 9041,
+    "source_template": 9001,
+    "name": "fish-qa-docker",
+    "IP": "192.168.19.198",
+    "net0": "virtio=BC:24:11:FD:21:E5,bridge=vmbr19,firewall=0",
+    "state": "stopped-await-L2-registry"
+  },
+  {
+    "vmid": 9045,
+    "candidate_vmid": 9042,
+    "source_template": 9011,
+    "name": "fish-qa-java",
+    "IP": "192.168.19.199",
+    "net0": "virtio=BC:24:11:99:06:A5,bridge=vmbr19,firewall=0",
+    "state": "stopped-await-L2-registry"
+  }
+]

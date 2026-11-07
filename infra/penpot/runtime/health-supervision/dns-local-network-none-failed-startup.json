@@ -1,0 +1,22 @@
+{
+  "local_record": "dell-penpot-health.invalid",
+  "expected_A": "192.0.2.53",
+  "public_upstream_used": false,
+  "existing_11_touched": false,
+  "status": "failed",
+  "safe_reason": "local positive record not returned",
+  "temporary_daemon_state": {
+    "running": false,
+    "status": "exited",
+    "exit_code": 255,
+    "OOM": false
+  },
+  "temporary_static_test_error_lines": [
+    "exec /opt/dnsproxy/dnsproxy: operation not permitted"
+  ],
+  "temporary_known_config_error": [],
+  "only_isolated_no_secret_daemon_diagnostics_read": true,
+  "temporary_container_removed": true,
+  "temporary_scratch_removed": true,
+  "existing_11_identity_and_start_state_unchanged": true
+}

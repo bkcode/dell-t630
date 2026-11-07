@@ -1,0 +1,204 @@
+{
+  "at": "2026-11-06T17:14:23.533282+00:00",
+  "exit_code": 0,
+  "result": {
+    "status": "installed-verified",
+    "vmid": 260,
+    "at": "2026-11-06T17:14:23.506955+00:00",
+    "checks": {
+      "fish_exact_version": true,
+      "fish_common_exact_version": true,
+      "binary_version_command": true,
+      "ub_nonconfig_private_smoke": true,
+      "ub_root_login_shells_unchanged": true,
+      "core_services_and_containers_PIDs_start_health_unchanged": true
+    },
+    "before_shells": {
+      "ub": "/bin/bash",
+      "root": "/bin/bash"
+    },
+    "after_shells": {
+      "ub": "/bin/bash",
+      "root": "/bin/bash"
+    },
+    "fish_binary_version": "fish, version 4.0.2",
+    "new_packages": [
+      "fish-common",
+      "libpcre2-32-0",
+      "fish"
+    ],
+    "NEEDRESTART_MODE": "l",
+    "no_install_recommends": true,
+    "existing_packages_upgraded_or_removed": false,
+    "apt_update_fullupgrade_autoremove_chsh_or_shellconfig_run": false,
+    "service_restart_requested_by_tool": false,
+    "core_before": {
+      "services": {
+        "containerd.service": {
+          "MainPID": "745",
+          "ExecMainStartTimestampMonotonic": "12005297",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-nas-jellyfin.service": {
+          "MainPID": "53071",
+          "ExecMainStartTimestampMonotonic": "39423722431",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "docker.service": {
+          "MainPID": "869",
+          "ExecMainStartTimestampMonotonic": "16948139",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "nginx.service": {
+          "MainPID": "762",
+          "ExecMainStartTimestampMonotonic": "12380000",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "openmediavault-engined.service": {
+          "MainPID": "824",
+          "ExecMainStartTimestampMonotonic": "15190001",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "692",
+          "ExecMainStartTimestampMonotonic": "11311965",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "smbd.service": {
+          "MainPID": "52945",
+          "ExecMainStartTimestampMonotonic": "39420098513",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "ssh.service": {
+          "MainPID": "756",
+          "ExecMainStartTimestampMonotonic": "12128479",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-networkd.service": {
+          "MainPID": "411",
+          "ExecMainStartTimestampMonotonic": "9836385",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "MainPID": "396",
+          "ExecMainStartTimestampMonotonic": "9415217",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "containers": {
+        "c7db70188968": {
+          "name": "/dell-nas-jellyfin-1",
+          "pid": 53139,
+          "running": true,
+          "started_at": "2026-11-06T16:39:03.613171998Z",
+          "health": "healthy"
+        }
+      }
+    },
+    "core_after": {
+      "services": {
+        "containerd.service": {
+          "MainPID": "745",
+          "ExecMainStartTimestampMonotonic": "12005297",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-nas-jellyfin.service": {
+          "MainPID": "53071",
+          "ExecMainStartTimestampMonotonic": "39423722431",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "docker.service": {
+          "MainPID": "869",
+          "ExecMainStartTimestampMonotonic": "16948139",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "nginx.service": {
+          "MainPID": "762",
+          "ExecMainStartTimestampMonotonic": "12380000",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "openmediavault-engined.service": {
+          "MainPID": "824",
+          "ExecMainStartTimestampMonotonic": "15190001",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "692",
+          "ExecMainStartTimestampMonotonic": "11311965",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "smbd.service": {
+          "MainPID": "52945",
+          "ExecMainStartTimestampMonotonic": "39420098513",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "ssh.service": {
+          "MainPID": "756",
+          "ExecMainStartTimestampMonotonic": "12128479",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-networkd.service": {
+          "MainPID": "411",
+          "ExecMainStartTimestampMonotonic": "9836385",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "MainPID": "396",
+          "ExecMainStartTimestampMonotonic": "9415217",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "containers": {
+        "c7db70188968": {
+          "name": "/dell-nas-jellyfin-1",
+          "pid": 53139,
+          "running": true,
+          "started_at": "2026-11-06T16:39:03.613171998Z",
+          "health": "healthy"
+        }
+      }
+    },
+    "user_config_temporary_smoke_cleaned": true
+  },
+  "new_strict_SSH_connection_verified": true
+}

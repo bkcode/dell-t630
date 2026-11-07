@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-07T00:30:12.127709+08:00",
+  "scope": "read-only-full-stage-diagnostic",
+  "result": {
+    "pending": false,
+    "check_error": {
+      "class": "UnboundLocalError",
+      "message": "cannot access local variable 'guard' where it is not associated with a value"
+    },
+    "hot_delta": "passed",
+    "snapshot": "passed",
+    "last_status": "confirmed-after-independent-SSH"
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "at": "2026-11-06T09:33:33.482871+00:00",
+  "exit_code": 0,
+  "result": {
+    "status": "ops-public-stage-and-native-nosend-checks",
+    "active_configs": {
+      "/opt/dell/ops/.env": {
+        "sha256": "81109b6856c4d44a7d93f4d8b421dca6bd8ab9ef265b8217dfac9d0e3fbe8bcc",
+        "old_private_IP_literal_present": true,
+        "IPv4_values": [
+          "10.63.30.40"
+        ]
+      },
+      "/opt/dell/ops/compose.yaml": {
+        "sha256": "c0d1783ae4d393355d5beb3d4dd0587917eb7d2b5d386ac915ec70185f467f80",
+        "old_private_IP_literal_present": false,
+        "IPv4_values": [
+          "127.0.0.1",
+          "172.18.0.0",
+          "172.18.0.1",
+          "172.18.0.2",
+          "172.18.0.3",
+          "172.18.0.4",
+          "172.18.0.5"
+        ]
+      },
+      "/opt/dell/ops/scripts/manage.py": {
+        "sha256": "a5de4cb7013fe56c5df9b2b30148f43e470438df4ecb3754429ab0cbe3575ed9",
+        "old_private_IP_literal_present": false,
+        "IPv4_values": []
+      },
+      "/opt/dell/ops/config/prometheus/prometheus.yml": {
+        "sha256": "35b0a682e8cef2802cd871982e442614e67ae3313f39945ace2591879f508c04",
+        "old_private_IP_literal_present": false,
+        "IPv4_values": []
+      },
+      "/opt/dell/ops/config/prometheus/rules/infra.yml": {
+        "sha256": "4d1eee3973d41739a673bb097ec965af31c2f339122654db24a63195f1e90ae9",
+        "old_private_IP_literal_present": false,
+        "IPv4_values": []
+      },
+      "/opt/dell/ops/config/prometheus/targets/guest-node.json": {
+        "sha256": "ee3980ee68f72ce1b10c97b71d92e3060cf7c9550099ca605fdb7b1dd921dab6",
+        "old_private_IP_literal_present": true,
+        "IPv4_values": [
+          "10.63.10.10",
+          "10.63.10.11",
+          "10.63.10.20",
+          "10.63.10.21",
+          "10.63.10.22",
+          "10.63.20.10",
+          "10.63.20.20",
+          "10.63.30.10",
+          "10.63.30.20",
+          "10.63.30.30",
+          "10.63.30.40",
+          "10.63.40.10"
+        ]
+      },
+      "/opt/dell/ops/config/prometheus/targets/http-services.json": {
+        "sha256": "736b5f1d7c6d376fd8a8c7305ec5b41b1dd81910a8329febc67259067eb03cb1",
+        "old_private_IP_literal_present": false,
+        "IPv4_values": []
+      },
+      "/opt/dell/ops/config/alertmanager/alertmanager.yml": {
+        "sha256": "ace6e36ff16e86b487523d141859f0bd150883d9e73e05a86c06d0d38a38cd53",
+        "old_private_IP_literal_present": false,
+        "IPv4_values": [
+          "172.18.0.1"
+        ]
+      },
+      "/opt/dell/ops/lark-notify-state.json": {
+        "sha256": "dfff742a011201e7379ca6d1d108b6062fea6364f4ea636c73893fdb55ffc840",
+        "old_private_IP_literal_present": false,
+        "IPv4_values": []
+      },
+      "/etc/dell-lark-notify/policy.json": {
+        "sha256": "d419e2d86d1975f8b0a64ee73fa824f66f3a3b73b5268f32630bcb44940c2733",
+        "old_private_IP_literal_present": false,
+        "IPv4_values": [
+          "172.18.0.1",
+          "172.18.0.3"
+        ]
+      },
+      "/usr/local/libexec/dell-lark-notify/bridge.py": {
+        "sha256": "e4b251653d0ae9822351928d3f04b6d4a0833edbe50ce3e6057edc7de7182f80",
+        "old_private_IP_literal_present": false,
+        "IPv4_values": [
+          "172.18.0.1",
+          "172.18.0.3"
+        ]
+      },
+      "/etc/systemd/system/dell-lark-notify.service": {
+        "sha256": "682831587cd2d624aec40efb2651e0020a3c64b2630f5b6df88200aae0fc6fbf",
+        "old_private_IP_literal_present": false,
+        "IPv4_values": []
+      }
+    },
+    "native_checks": [
+      {
+        "tool": "amtool-active-config",
+        "exit_code": 0,
+        "no_send": true
+      },
+      {
+        "tool": "promtool-active-config",
+        "exit_code": 0,
+        "no_send": true
+      },
+      {
+        "tool": "actual-bridge-config-check-with-synthetic-credentials-only",
+        "exit_code": 0,
+        "ok": true,
+        "mode": "active",
+        "real_Webhook_or_token_read": false,
+        "no_send": true
+      }
+    ],
+    "network_secrets_or_mode_changed": false,
+    "outbound_probe_or_message_sent": false,
+    "installed_bridge_public_file_names": [
+      "bridge.py"
+    ],
+    "bridge_state": {
+      "MainPID": "40894",
+      "NRestarts": "0",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "all_native_checks_pass": true
+  }
+}

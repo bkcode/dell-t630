@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-07T02:22:35.068704+08:00",
+  "status": "prepare-complete-not-applied",
+  "captured_guests": 10,
+  "paired_files": 20,
+  "collector_health_changed": false,
+  "unrelated_runtime_functions_changed": false,
+  "newer_source_role_profiles_changed": false,
+  "Nexus221_retained": true,
+  "Nexus220_profile_added": false,
+  "actualSD15UP_receipt_already_parent_applied": true,
+  "mutation_modes_not_executed": true,
+  "mainplan_not_written": true
+}

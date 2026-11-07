@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-06T16:57:56.085884",
+  "vmid": 101,
+  "network_readback": {
+    "exitcode": 0,
+    "exited": 1,
+    "out-data": "data-docker-base-tpl\n[{\"ifindex\":1,\"ifname\":\"lo\",\"flags\":[\"LOOPBACK\",\"UP\",\"LOWER_UP\"],\"mtu\":65536,\"qdisc\":\"noqueue\",\"operstate\":\"UNKNOWN\",\"group\":\"default\",\"txqlen\":1000,\"addr_info\":[{\"family\":\"inet\",\"local\":\"127.0.0.1\",\"prefixlen\":8,\"scope\":\"host\",\"label\":\"lo\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]},{\"ifindex\":2,\"ifname\":\"eth0\",\"flags\":[\"BROADCAST\",\"MULTICAST\",\"UP\",\"LOWER_UP\"],\"mtu\":1500,\"qdisc\":\"fq_codel\",\"operstate\":\"UP\",\"group\":\"default\",\"txqlen\":1000,\"altnames\":[\"enp0s18\"],\"addr_info\":[{\"family\":\"inet\",\"local\":\"192.168.19.101\",\"prefixlen\":24,\"broadcast\":\"192.168.19.255\",\"scope\":\"global\",\"label\":\"eth0\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]},{\"ifindex\":3,\"ifname\":\"docker0\",\"flags\":[\"NO-CARRIER\",\"BROADCAST\",\"MULTICAST\",\"UP\"],\"mtu\":1500,\"qdisc\":\"noqueue\",\"operstate\":\"DOWN\",\"group\":\"default\",\"addr_info\":[{\"family\":\"inet\",\"local\":\"172.17.0.1\",\"prefixlen\":16,\"broadcast\":\"172.17.255.255\",\"scope\":\"global\",\"label\":\"docker0\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]}]\n[{\"dst\":\"default\",\"gateway\":\"192.168.19.1\",\"dev\":\"eth0\",\"protocol\":\"static\",\"flags\":[]},{\"dst\":\"172.17.0.0/16\",\"dev\":\"docker0\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"172.17.0.1\",\"flags\":[\"linkdown\"]},{\"dst\":\"192.168.19.0/24\",\"dev\":\"eth0\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"192.168.19.101\",\"flags\":[]}]\nactive\nactive\n"
+  },
+  "SSH": {
+    "exit_code": 0,
+    "stdout": "ub\ndata-docker-base-tpl\n",
+    "stderr": "",
+    "target": {
+      "vmid": 101,
+      "ip": "192.168.19.101",
+      "host_key_alias": "dell-vm101",
+      "host_key_fingerprint": "SHA256:uEvoroY3xSb/aTPb8mZRVLa4FNhECPZJOWRptT78Lpo",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  },
+  "final_state": "status: stopped"
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "targets": [
+      "http://10.63.10.11:8848/nacos/v1/console/health/readiness"
+    ],
+    "labels": {
+      "role": "data-prod-infra",
+      "zone": "prod",
+      "vmid": "201",
+      "check": "nacos-readiness",
+      "scope": "endpoint-only"
+    }
+  },
+  {
+    "targets": [
+      "http://10.63.20.10:8848/nacos/v1/console/health/readiness"
+    ],
+    "labels": {
+      "role": "data-test",
+      "zone": "test",
+      "vmid": "210",
+      "check": "nacos-readiness",
+      "scope": "endpoint-only"
+    }
+  },
+  {
+    "targets": [
+      "http://10.63.30.20:8081/service/rest/v1/status"
+    ],
+    "labels": {
+      "role": "artifact-service",
+      "zone": "tools",
+      "vmid": "221",
+      "check": "nexus-status",
+      "scope": "endpoint-only"
+    }
+  },
+  {
+    "targets": [
+      "http://10.63.30.30:9001/"
+    ],
+    "labels": {
+      "role": "penpot-service",
+      "zone": "tools",
+      "vmid": "250",
+      "check": "penpot-frontend-only",
+      "scope": "endpoint-only"
+    }
+  },
+  {
+    "targets": [
+      "http://10.63.40.10:8096/health"
+    ],
+    "labels": {
+      "role": "nas-media",
+      "zone": "home",
+      "vmid": "260",
+      "check": "jellyfin-health",
+      "scope": "endpoint-only"
+    }
+  },
+  {
+    "targets": [
+      "http://10.63.30.40:3000/api/health"
+    ],
+    "labels": {
+      "role": "ops-service",
+      "zone": "management",
+      "vmid": "270",
+      "check": "grafana-health",
+      "scope": "endpoint-only"
+    }
+  }
+]

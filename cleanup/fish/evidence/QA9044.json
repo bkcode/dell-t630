@@ -1,0 +1,84 @@
+{
+  "at": "2026-11-06T18:02:22.056322+00:00",
+  "vmid": 9044,
+  "candidate_source": 9041,
+  "logical_final_template": 9001,
+  "contract": {
+    "purpose": "fish-template-independent-QA",
+    "vmid": 9044,
+    "source_template": 9001,
+    "candidate_vmid": 9041,
+    "hostname": "fish-qa-docker",
+    "ip": "192.168.19.198",
+    "mac": "bc:24:11:fd:21:e5",
+    "expected_shells": {
+      "root": "/bin/bash",
+      "ub": "/bin/bash"
+    },
+    "protected_files": {
+      "/etc/docker/daemon.json": "2c1c9ff5b7a09c2a49f196beebe463c83ca12380a6a34b899296c7d6c0b8cb6b"
+    },
+    "trusted_hostkey_fingerprint": "SHA256:w7Bc0QFnJdhQrM4sBz99ElNvovxpZZ/NEvYhyFCL9/o",
+    "forbidden_machine_id_sha256": [
+      "893ee112348c5a31fe54446f46d2abb6a4b27ede70b2bbfd90fd376c9fdf8d6f",
+      "a086a1a1926da6a8e18c347ad4ce6d9433cbb20841e1f3ca15a62d0cb4966ce6",
+      "fb76cea0896cd4b9605770807c6aca94fdde0a20fe9d0b80e4f30c516c863e81",
+      "e8f832d4aeca41369d9f5e6dd0f230ef799d8684bb00785cf3b551ecd21de382"
+    ],
+    "forbidden_hostkey_fingerprints": [
+      "SHA256:rfZijnheE0nA1iRSsQhFxg7kBAfn5IJFW1B6bsEXmQA",
+      "SHA256:uXQUq3GP+pOk0Wua9wC6l7KrbehHE5B5zCZFeoGYfS8",
+      "SHA256:Z0gjHtV/HL2eVj7rEYGId0Q9F4rIXoQ7UrBEdiS1klo",
+      "SHA256:h7IxCTYEATlQs74EUlVzKvyzERuAHSrQ05r/2BzbI5w"
+    ],
+    "forbidden_engine_id_sha256": [
+      "f807698bb4b69b603a9c2618ca8681618e4060bdbe372298d18072230b7a2ea9"
+    ]
+  },
+  "target": {
+    "vmid": 9044,
+    "ip": "192.168.19.198",
+    "host_key_alias": "dell-vm9044",
+    "host_key_fingerprint": "SHA256:w7Bc0QFnJdhQrM4sBz99ElNvovxpZZ/NEvYhyFCL9/o",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "exit_code": 0,
+  "result": {
+    "exit_code": 0,
+    "receipt": {
+      "at": "2026-11-06T18:02:22.020717+00:00",
+      "vmid": 9044,
+      "logical_final_template": 9001,
+      "actual_candidate_source_vmid": 9041,
+      "status": "QA-checks-passed",
+      "machine_id_sha256": "66b4861e2c1c18fe46b28c83ba860d02ad30c743e8425a522a0c809362828835",
+      "hostkey_fingerprint": "SHA256:w7Bc0QFnJdhQrM4sBz99ElNvovxpZZ/NEvYhyFCL9/o",
+      "shells": {
+        "ub": "/bin/bash",
+        "root": "/bin/bash"
+      },
+      "cloud_init": "done",
+      "fish": "4.0.2-1",
+      "extra": {
+        "engine_id_sha256": "dfba0141070c05fa39237cce907a30f0a2f9a50533b42e0aebf95e64b8f18c5e",
+        "driver": "overlayfs",
+        "live_restore": true,
+        "original_profile_preserved": true,
+        "zero_containers_volumes_images_default_networks_inactive_swarm": true
+      },
+      "no_network_package_service_config_writes": true,
+      "temporary_nonroot_smoke_removed": true,
+      "new_strict_SSH_connection_still_required_by_caller": true
+    },
+    "own_QA_stage_removed": true
+  },
+  "no_PVE_package_configuration_or_service_actions": true,
+  "new_strict_SSH": {
+    "user": "ub",
+    "shell": "/bin/bash",
+    "fish_newSSH_noconfig_private": true,
+    "temporary_smoke_cleaned": true
+  },
+  "new_strict_SSH_exit": 0,
+  "released_after_verification": true
+}

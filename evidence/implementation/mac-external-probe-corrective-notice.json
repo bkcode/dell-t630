@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-06T05:57:11.701859+00:00",
+  "status": "corrective-notice-acknowledged",
+  "upstream_code": 0,
+  "payload_sha256": "8f8200c48e831342e95f4794543d72e18e7d77463aaa4a8dc043b150b27eb22f",
+  "webhook_value_emitted": false,
+  "production_probe_state_rewritten": false
+}

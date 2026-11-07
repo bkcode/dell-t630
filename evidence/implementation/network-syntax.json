@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-06T00:17:36.197371+08:00",
+  "command": "nft -c -f -",
+  "exit_code": 0,
+  "rules_applied": false,
+  "scope": "syntax-only-no-network-changes",
+  "stdout": ""
+}

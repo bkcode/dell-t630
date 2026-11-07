@@ -1,0 +1,144 @@
+{
+  "at": "2026-11-06T14:35:23.517573+08:00",
+  "mode": "metadata-code-only-plus-one-health-no-restart",
+  "target": "ops270",
+  "exit_code": 0,
+  "result": {
+    "status": "metadata-refreshed-no-service-restarts",
+    "before": {
+      "containers": [
+        {
+          "service": "alertmanager",
+          "id": "ed909e82cb16958943315aa222423b7628edc5ea221c815124c0cbb543d0b8a5",
+          "pid": 34656,
+          "started_at": "2026-11-06T06:18:26.078295276Z",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "blackbox",
+          "id": "b13dec160fe0b3239a41f701c782b0f2b26b9476a397f0e6929d43e22b1490ab",
+          "pid": 34739,
+          "started_at": "2026-11-06T06:18:26.382272145Z",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "grafana",
+          "id": "b74fff2196676d3ed51d994669bc4591c67453c195bfeb258a01be85b98e57b1",
+          "pid": 34804,
+          "started_at": "2026-11-06T06:18:26.709007626Z",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "prometheus",
+          "id": "7a7027cbe8965a73da6b7500c0020e7f47218df58abf66dde332ae6bd3a28f42",
+          "pid": 34583,
+          "started_at": "2026-11-06T06:18:25.816632841Z",
+          "state": "running",
+          "health": "healthy"
+        }
+      ],
+      "units": {
+        "dell-ops.service": [
+          "MainPID=34405",
+          "ExecMainStartTimestampMonotonic=2676660038",
+          "ActiveState=active",
+          "SubState=running"
+        ],
+        "dell-lark-notify.service": [
+          "MainPID=40894",
+          "ExecMainStartTimestampMonotonic=3031600278",
+          "ActiveState=active",
+          "SubState=running"
+        ],
+        "prometheus-node-exporter.service": [
+          "MainPID=717",
+          "ExecMainStartTimestampMonotonic=14320740",
+          "ActiveState=active",
+          "SubState=running"
+        ]
+      }
+    },
+    "after": {
+      "containers": [
+        {
+          "service": "alertmanager",
+          "id": "ed909e82cb16958943315aa222423b7628edc5ea221c815124c0cbb543d0b8a5",
+          "pid": 34656,
+          "started_at": "2026-11-06T06:18:26.078295276Z",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "blackbox",
+          "id": "b13dec160fe0b3239a41f701c782b0f2b26b9476a397f0e6929d43e22b1490ab",
+          "pid": 34739,
+          "started_at": "2026-11-06T06:18:26.382272145Z",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "grafana",
+          "id": "b74fff2196676d3ed51d994669bc4591c67453c195bfeb258a01be85b98e57b1",
+          "pid": 34804,
+          "started_at": "2026-11-06T06:18:26.709007626Z",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "prometheus",
+          "id": "7a7027cbe8965a73da6b7500c0020e7f47218df58abf66dde332ae6bd3a28f42",
+          "pid": 34583,
+          "started_at": "2026-11-06T06:18:25.816632841Z",
+          "state": "running",
+          "health": "healthy"
+        }
+      ],
+      "units": {
+        "dell-ops.service": [
+          "MainPID=34405",
+          "ExecMainStartTimestampMonotonic=2676660038",
+          "ActiveState=active",
+          "SubState=running"
+        ],
+        "dell-lark-notify.service": [
+          "MainPID=40894",
+          "ExecMainStartTimestampMonotonic=3031600278",
+          "ActiveState=active",
+          "SubState=running"
+        ],
+        "prometheus-node-exporter.service": [
+          "MainPID=717",
+          "ExecMainStartTimestampMonotonic=14320740",
+          "ActiveState=active",
+          "SubState=running"
+        ]
+      }
+    },
+    "service_identites_PIDs_unchanged": true,
+    "external_notifications": "lark-active",
+    "notification_metadata": {
+      "health_check_sends_notifications": false,
+      "supplier_reachability": "not-probed-by-this-health-check",
+      "status": "lark-active",
+      "mode": "active",
+      "unit_active": true
+    },
+    "pve_host_metrics": {
+      "status": "fresh",
+      "fresh": true,
+      "age_seconds": 43.599,
+      "initial_threshold_seconds": 180,
+      "query_scope": "read-only-current-Prometheus-vector"
+    },
+    "reported_up": 17,
+    "reported_targets": 17,
+    "grafana_admin_login": "passed",
+    "manage_code_sha256": "a5de4cb7013fe56c5df9b2b30148f43e470438df4ecb3754429ab0cbe3575ed9",
+    "historical_health_archived": true,
+    "webhook_read": false,
+    "notifications_sent_by_health": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "checks": {
+    "exact_QA_project": true,
+    "exact_one_service": true,
+    "exact_zero_publish_mappings": true,
+    "only_exact_QA_bind_sources": true,
+    "internal_network": true,
+    "CPU025": true,
+    "memory512": true,
+    "pids128": true
+  },
+  "numeric_raw_values": {
+    "mem_limit": "536870912",
+    "memswap_limit": "536870912",
+    "cpus": 0.25,
+    "pids_limit": 128
+  },
+  "numeric_JSON_types": {
+    "mem_limit": "str",
+    "memswap_limit": "str",
+    "cpus": "float",
+    "pids_limit": "int"
+  },
+  "nonce": "b5b52c6b0565410ba9c510728ba13f54",
+  "new_target_objects_or_services_changed": false,
+  "native_command_exit_code": 0
+}

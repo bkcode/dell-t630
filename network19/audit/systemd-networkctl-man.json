@@ -1,0 +1,11 @@
+{
+  "url": "https://manpages.debian.org/trixie/systemd/networkctl.1.en.html",
+  "purpose": "read-only network transaction review",
+  "search_terms_located": [
+    "first",
+    "reconfigure"
+  ],
+  "facts_used": [
+    "reload/reconfigure are separate network-management actions; successful command completion alone does not prove final link address/routes/DNS."
+  ]
+}

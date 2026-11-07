@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-06T17:49:12.125989+00:00",
+  "vmid": 9040,
+  "phase": "seal-only-explicit-root-window",
+  "exit_code": 0,
+  "result": {
+    "exit_code": 0,
+    "receipt": {
+      "at": "2026-11-06T17:49:12.111571+00:00",
+      "vmid": 9040,
+      "phase": "seal",
+      "status": "passed",
+      "result": {
+        "sealed": true,
+        "runtime_network_left_until_root_shutdown": true,
+        "next_clone_generic_userdata_required": true,
+        "machine_id_reset": true,
+        "hostkeys_authorized_keys_instances_removed": true,
+        "Docker_engine_id_reset": false,
+        "no_power_or_PVE_action": true,
+        "own_ephemeral_stage_removed": true
+      }
+    }
+  },
+  "no_power_or_PVE_action": true
+}

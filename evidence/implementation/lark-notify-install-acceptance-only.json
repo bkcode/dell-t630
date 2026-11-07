@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-06T14:19:41.138442+08:00",
+  "action": "install-acceptance-only",
+  "target": "ops270",
+  "status": "passed",
+  "secret_values_emitted": false,
+  "private_webhook_on_argv_or_env": false,
+  "code_sha256": {
+    "bridge.py": "e4b251653d0ae9822351928d3f04b6d4a0833edbe50ce3e6057edc7de7182f80",
+    "configuration.py": "18217358ee2c81f0f3a6404ebd95c6e6a4d5a982587175596f73b698e493fb20",
+    "install270.py": "8f3b544116e049cc76bbe778a806b87ce00cbe1ae3521e842d83497629b4d726",
+    "acceptance270.py": "e3b4229612c54962ba76d83ca5188eb237fcfa481f9985671d541abef7f033fc",
+    "rebuild270-network.py": "058193b00439bdaaaf4e5d30cc1f2f2e2df0db69b9ce22d7a5b0c4e60f68edea",
+    "dell-lark-notify.service": "682831587cd2d624aec40efb2651e0020a3c64b2630f5b6df88200aae0fc6fbf"
+  },
+  "copy": {
+    "tools_copied": 6,
+    "secret_material_in_tool_archive": false
+  },
+  "exit_code": 0,
+  "result": {
+    "status": "acceptance-only-installed",
+    "mode": "acceptance",
+    "only_bind": "172.18.0.1:19093",
+    "alertmanager_container_unchanged": true,
+    "lark_message_sent_by_installer": false,
+    "secrets_in_argv_env_or_output": false,
+    "bridge_code_sha256": "e4b251653d0ae9822351928d3f04b6d4a0833edbe50ce3e6057edc7de7182f80"
+  }
+}

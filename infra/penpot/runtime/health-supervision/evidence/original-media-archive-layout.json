@@ -1,0 +1,51 @@
+{
+  "collected_at": "2026-11-06T05:18:12.534841+00:00",
+  "phase": "original-media-archive-layout",
+  "exit_code": 0,
+  "result": {
+    "status": "read-only-archive-metadata",
+    "archives": [
+      {
+        "source_file_id": "9eb8678d-764d-810b-8008-e237712e9048",
+        "entry_root_counts": {
+          "files": 30563,
+          "manifest.json": 1,
+          "objects": 1520
+        },
+        "sample_binary_entry_paths": [
+          "objects/2b222de2-3d11-47d5-acab-44384699860f.png",
+          "objects/2f499e96-2c5a-466d-b2cd-5ba6e0e48f7d.png",
+          "objects/2bab867c-555e-405b-8456-275cba1b793b.png",
+          "objects/fa4208c5-8b20-42ab-a23d-626c661e6862.png"
+        ]
+      },
+      {
+        "source_file_id": "e519ae78-b5c8-81fe-8008-e32aa3221908",
+        "entry_root_counts": {
+          "files": 22470,
+          "manifest.json": 1,
+          "objects": 418
+        },
+        "sample_binary_entry_paths": [
+          "objects/76fbdbf8-2da9-4d81-853d-f116239bf36f.png",
+          "objects/dd4752a3-7ce3-43eb-bc6a-c0b2b72ec8ba.jpg",
+          "objects/01468d9e-9432-4aaa-800e-8a8ae51fcc7e.jpg",
+          "objects/493bbfe6-6256-4efc-a973-f5977b68600c.jpg"
+        ]
+      },
+      {
+        "source_file_id": "e519ae78-b5c8-81fe-8008-e32a81af5e27",
+        "entry_root_counts": {
+          "files": 1415,
+          "manifest.json": 1,
+          "objects": 4
+        },
+        "sample_binary_entry_paths": [
+          "objects/a871504e-d2af-4322-9f30-f36879343ff6.png",
+          "objects/1708ef83-284c-4557-a175-f74b07c35600.png"
+        ]
+      }
+    ],
+    "source_values_read_or_modified": false
+  }
+}

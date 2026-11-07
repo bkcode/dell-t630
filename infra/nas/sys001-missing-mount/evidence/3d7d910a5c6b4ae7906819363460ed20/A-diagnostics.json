@@ -1,0 +1,67 @@
+{
+  "QA_container": {
+    "running": false,
+    "exit_code": 0,
+    "OOM": false,
+    "health": "unhealthy",
+    "ports_requested": {
+      "8096/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "18097"
+        }
+      ]
+    },
+    "ports_effective": {},
+    "memory": 536870912,
+    "CPU": 250000000,
+    "pids": 128,
+    "health_exit_metadata": [
+      {
+        "start": "2026-11-06T06:30:02.988305666Z",
+        "end": "2026-11-06T06:30:04.088259246Z",
+        "exit_code": 0
+      },
+      {
+        "start": "2026-11-06T06:30:34.090340044Z",
+        "end": "2026-11-06T06:30:34.896355456Z",
+        "exit_code": 7
+      },
+      {
+        "start": "2026-11-06T06:31:04.897409221Z",
+        "end": "2026-11-06T06:31:08.490627982Z",
+        "exit_code": 0
+      },
+      {
+        "start": "2026-11-06T06:31:38.492120393Z",
+        "end": "2026-11-06T06:31:39.091771649Z",
+        "exit_code": 0
+      },
+      {
+        "start": "2026-11-06T06:32:09.093594915Z",
+        "end": "2026-11-06T06:32:09.786078821Z",
+        "exit_code": 0
+      }
+    ]
+  },
+  "QA_network": {
+    "name": "dell-nas-sys001-3d7d910a5c6b4ae7906819363460ed20_default",
+    "internal": true,
+    "ipam": [
+      {
+        "Subnet": "172.19.0.0/16",
+        "Gateway": "172.19.0.1"
+      }
+    ]
+  },
+  "QA_unit": {
+    "Result": "exit-code",
+    "ExecMainCode": "1",
+    "ExecMainStatus": "130",
+    "ActiveState": "failed",
+    "SubState": "failed"
+  },
+  "status": "failed-A-diagnostics-only",
+  "health_log_Output_not_read": true,
+  "production_monitoring_or_notifications_changed": false
+}

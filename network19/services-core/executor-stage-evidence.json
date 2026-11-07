@@ -1,0 +1,29 @@
+{
+  "at": "2026-11-06T09:02:35.686784+00:00",
+  "roles": [
+    {
+      "vmid": 200,
+      "executor_staged": true,
+      "sha256": "0b7f98023ea8086ed6427aeb0f7972d7e8f9446cd1824f0c1d088a674a47efe6",
+      "active_state_changed": false
+    },
+    {
+      "vmid": 201,
+      "executor_staged": true,
+      "sha256": "0b7f98023ea8086ed6427aeb0f7972d7e8f9446cd1824f0c1d088a674a47efe6",
+      "active_state_changed": false
+    },
+    {
+      "vmid": 210,
+      "executor_staged": true,
+      "sha256": "0b7f98023ea8086ed6427aeb0f7972d7e8f9446cd1824f0c1d088a674a47efe6",
+      "active_state_changed": false
+    },
+    {
+      "vmid": 270,
+      "executor_staged": true,
+      "sha256": "0b7f98023ea8086ed6427aeb0f7972d7e8f9446cd1824f0c1d088a674a47efe6",
+      "active_state_changed": false
+    }
+  ]
+}

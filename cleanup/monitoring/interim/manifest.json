@@ -1,0 +1,93 @@
+{
+  "status": "prepared-not-applied",
+  "scope": "onlyJava231232SDremoval; noNexusstop/retirement/220changes",
+  "target_guest": 270,
+  "target_path": "/opt/dell/ops/config/prometheus/targets/guest-node.json",
+  "source_state_at_capture": "original12-pinned",
+  "current12_SHA256": "b2d2898c56523d3e06af1af130e2068c7346d5e546a54e23c8d5d9be02a03612",
+  "interim10_SHA256": "dc7cf106ebb42021191018c7eda121cf1deb7128308fee7a75beff9a5bf3c9f0",
+  "expected12_IDs": [
+    200,
+    201,
+    210,
+    220,
+    221,
+    230,
+    231,
+    232,
+    240,
+    250,
+    260,
+    270
+  ],
+  "expected10_IDs": [
+    200,
+    201,
+    210,
+    220,
+    221,
+    230,
+    240,
+    250,
+    260,
+    270
+  ],
+  "removed_only_IDs": [
+    231,
+    232
+  ],
+  "protected221_target_unchanged": {
+    "targets": [
+      "192.168.19.31:9100"
+    ],
+    "labels": {
+      "role": "artifact-service",
+      "zone": "tools",
+      "vmid": "221"
+    }
+  },
+  "candidate": "guest-node.interim.json",
+  "target_mode": 420,
+  "target_uid": 0,
+  "target_gid": 0,
+  "prom_SHA256": "35b0a682e8cef2802cd871982e442614e67ae3313f39945ace2591879f508c04",
+  "rules_SHA256": "4d1eee3973d41739a673bb097ec965af31c2f339122654db24a63195f1e90ae9",
+  "expected_Ops_own_labels": [
+    {
+      "instance": "blackbox:9115",
+      "job": "blackbox-exporter",
+      "role": "ops-service"
+    },
+    {
+      "check": "prometheus-ready",
+      "instance": "http://prometheus:9090/-/ready",
+      "job": "http-health",
+      "role": "ops-service",
+      "scope": "service-http"
+    },
+    {
+      "check": "grafana-health",
+      "instance": "http://grafana:3000/api/health",
+      "job": "http-health",
+      "role": "ops-service",
+      "scope": "service-http"
+    },
+    {
+      "check": "alertmanager-ready",
+      "instance": "http://alertmanager:9093/-/ready",
+      "job": "http-health",
+      "role": "ops-service",
+      "scope": "service-http"
+    },
+    {
+      "instance": "localhost:9090",
+      "job": "prometheus",
+      "role": "ops-service"
+    }
+  ],
+  "future_total_targets": 15,
+  "ops_own_target_count": 5,
+  "no_Promrestart": true,
+  "live_mutation_performed": false,
+  "Nexus_stop_authorization": "pending; automaticreview rejected priorfeasibility-only instruction"
+}

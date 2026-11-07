@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-06T12:41:24.634215+08:00",
+  "rejected_action": "combined command to delete uninstalled local cgroup-quiescence candidate and three tests then run release exercise",
+  "process_started": false,
+  "review_reason": "removing newly added cgroup-quiescence checks/regression tests considered weakening control without specific authorization",
+  "safer_alternative": "preserve candidate unchanged and run approved B release exercise using existing installed reviewed RPC only; no remote code update",
+  "candidate_deployed": false,
+  "publisher_release_exercise_separate_command_approved": true
+}

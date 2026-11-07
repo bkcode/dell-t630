@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-06T17:22:44.031930+08:00",
+  "mode": "read-only-postboot-NTP",
+  "state": [
+    "NTP=yes",
+    "NTPSynchronized=yes"
+  ],
+  "timesync_status_output": [
+    "NTP=yes",
+    "NTPSynchronized=yes",
+    "       Server: 198.18.5.143 (2.debian.pool.ntp.org)",
+    "Poll interval: 4min 16s (min: 32s; max 34min 8s)",
+    "         Leap: normal",
+    "      Version: 4",
+    "      Stratum: 2",
+    "    Reference: 647A24C4",
+    "    Precision: 1us (-23)",
+    "Root distance: 21.323ms (max: 5s)",
+    "       Offset: -11.845ms",
+    "        Delay: 60.663ms",
+    "       Jitter: 33.101ms",
+    " Packet count: 3",
+    "    Frequency: +98.537ppm"
+  ],
+  "no_clock_or_service_changes": true
+}

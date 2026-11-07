@@ -1,0 +1,77 @@
+{
+  "at": "2026-11-06T17:11:51.069347+08:00",
+  "action": "confirm",
+  "target": {
+    "vmid": 190,
+    "ip": "192.168.21.23",
+    "host_key_alias": "dell-gw190",
+    "host_key_fingerprint": "SHA256:i2MOCPizZ+sOeM1Hxe76A0Qrz6Tlcis0IStJPBNX96E",
+    "trust_source": "trusted PVE QGA;both gateway IPs and hostname verified"
+  },
+  "independent_strict_SSH": true,
+  "client_key_copied": false,
+  "code_sha256": {
+    "manage.py": "3971c7abfabc01ccbdbcbbfcd15f9c800451b911564655b9f331a4f7fba0c9b6",
+    "policy.py": "82b0676fcfaac3a0bd6abeffb88c4f5cd20163fe6f9fbd3f2527aa82b884a61a"
+  },
+  "fresh_ub_SSH_verified": true,
+  "exit_code": 0,
+  "result": {
+    "status": "confirmed-after-independent-SSH",
+    "MAC_interfaces": {
+      "WAN": "eth0",
+      "LAN": "eth1"
+    },
+    "forward": "1",
+    "forwarding_all_WAN_LAN": {
+      "all": "1",
+      "WAN": "1",
+      "LAN": "1"
+    },
+    "NAT": "none",
+    "DHCP_pool": "192.168.19.200-239",
+    "packet_tests": "external positive/negative checks still required",
+    "units": {
+      "dell-gateway19-firewall.service": "active",
+      "dell-gateway19-ready.service": "active",
+      "dell-gateway19-dnsmasq.service": "active"
+    },
+    "IPv6": {
+      "WAN": "1",
+      "LAN": "1"
+    },
+    "lo_IPv6_disable": "0",
+    "listeners": {
+      "DNS": "v4 TCP/UDP19.1 only",
+      "DHCP_socket_present": true,
+      "DHCP_WAN_negative_packet_test": "pending"
+    },
+    "OW_fake_IP_proxy": {
+      "source": "192.168.19.0/24",
+      "destination": "198.18.0.0/15",
+      "tcp": [
+        53,
+        80,
+        443
+      ],
+      "udp": [
+        53,
+        123
+      ],
+      "icmp": true
+    },
+    "CF_fake_IP_proxy": {
+      "source": "192.168.19.5",
+      "destination": "198.18.0.0/15",
+      "tcp": [
+        7844
+      ],
+      "udp": [
+        7844
+      ]
+    },
+    "transaction_kind": "hot-policy-only",
+    "persistent_service_PIDs_unchanged": true,
+    "nonce": "10c24105ac9a4dbb87db9f209529c054"
+  }
+}

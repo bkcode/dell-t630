@@ -1,0 +1,8 @@
+{
+  "PID": 28326,
+  "old_task_Grafana_tunnel_exact_match": false,
+  "new_direct_Grafana": "http://192.168.19.70:3000/",
+  "other_tunnels_touched": false,
+  "process_already_absent": false,
+  "terminated_old_only": false
+}

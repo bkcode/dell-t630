@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-06T09:21:46.062617+00:00",
+  "exit_code": 1,
+  "result": {
+    "status": "refused-or-failed",
+    "error_category": "Refused",
+    "reason": "native-check-failed:visudo",
+    "rollback_requires_root_coordinated_network_contract": true,
+    "baseline_remains_false": true,
+    "business_deploy_requests_issued": 0,
+    "Java_apps_started": false
+  }
+}

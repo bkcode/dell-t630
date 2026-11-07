@@ -1,0 +1,11 @@
+[Unit]
+Description=Periodic local guest health textfile (disabled until explicit activation)
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=60s
+RandomizedDelaySec=10s
+Unit=dell-guest-health.service
+
+[Install]
+WantedBy=timers.target

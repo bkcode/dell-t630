@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-06T13:56:21.628372",
+  "status": "LaunchAgent-stopped-after-background-probe-environment-mismatch",
+  "label": "com.dell.t630.external-probe",
+  "bootout_exit": 0,
+  "still_loaded": false,
+  "private_state_preserved": true,
+  "cycles_before_stop": 7,
+  "observed": "background all7 unreachable while identical native probe under task command7/7 healthy",
+  "automatic_false_host_firing_previously_acknowledged": true,
+  "service_or_host_outage_not_observed": true,
+  "gateway_stop_start_not_executed": true,
+  "next": "diagnose exact background execution/local-network environment; do not alter PVE network or forge healthy state"
+}

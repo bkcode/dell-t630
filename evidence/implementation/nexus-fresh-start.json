@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-06T11:16:25.681142",
+  "result": {
+    "exit_code": 0,
+    "stdout": "{\"status\": \"fresh-initialization-armed\", \"migration_mode\": \"new-instance-application-export-import\", \"source_data_imported\": false}\nMount-gated Nexus unit installed and enabled, not started.\n",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nCreated symlink '/etc/systemd/system/multi-user.target.wants/dell-nexus.service' \u2192 '/etc/systemd/system/dell-nexus.service'.\n",
+    "target": {
+      "vmid": 221,
+      "ip": "10.63.30.20",
+      "host_key_alias": "dell-vm221",
+      "host_key_fingerprint": "SHA256:ky2Wn7M2CKgUqHaj65c4KnqphO6d3zh6sGEoYYzomWo",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-06T08:40:19.048266+00:00",
+  "exit_code": 0,
+  "result": {
+    "status": "applied-under-explicit-receipt",
+    "exit_code": 0,
+    "accounts_completed": 3,
+    "exact_DML_tables": 18,
+    "auth_private_comparison": true,
+    "old_Hosts_retained": true,
+    "Nacos_percent_unchanged": true,
+    "parser_corrected_once": true,
+    "auth_hash_or_SQL_body_stored_or_emitted": false,
+    "IP_or_services_changed": false
+  }
+}

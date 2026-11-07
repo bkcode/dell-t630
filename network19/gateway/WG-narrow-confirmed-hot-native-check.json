@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-07T00:28:19.562081+08:00",
+  "code_sha256": {
+    "policy.py": "bd237ff8c6417306af7cf0a9e3106d0426f5ca6bb54f072984dd9e89638708da",
+    "manage.py": "3f8ddf3aa65c1643ea7a9da6ebe7363d58756787d6b28a437ec0f61cf60bf2b2"
+  },
+  "result": {
+    "status": "hot-delta-and-native-nft-check-passed",
+    "nft_check_exit_code": 0,
+    "only_change": [
+      "WireGuard_client_access"
+    ],
+    "persistent_services_unchanged": true,
+    "forward_before": {
+      "all": "1",
+      "WAN": "1",
+      "LAN": "1"
+    },
+    "forward_after": {
+      "all": "1",
+      "WAN": "1",
+      "LAN": "1"
+    },
+    "rule_load_performed": false,
+    "addresses_or_sysctls_changed": false
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-11-06T04:16:44.329541+00:00",
+  "status": "passed-existing-local-snapshot-restore",
+  "results": [
+    {
+      "component": "nacos",
+      "vmid": 200,
+      "evidence": "evidence/implementation/full-snapshot-nacos-restore.json",
+      "status": "passed",
+      "started_at": "2026-11-06T04:06:15.436749+00:00",
+      "finished_at": "2026-11-06T04:06:51.240478+00:00",
+      "elapsed_seconds": 35.804,
+      "verification": {
+        "complete_nacos_metadata_restored": true,
+        "tables": {
+          "config_info": {
+            "rows": 0,
+            "all_columns_digest_match": true
+          },
+          "config_info_aggr": {
+            "rows": 0,
+            "all_columns_digest_match": true
+          },
+          "config_info_beta": {
+            "rows": 0,
+            "all_columns_digest_match": true
+          },
+          "config_info_tag": {
+            "rows": 0,
+            "all_columns_digest_match": true
+          },
+          "config_tags_relation": {
+            "rows": 0,
+            "all_columns_digest_match": true
+          },
+          "group_capacity": {
+            "rows": 0,
+            "all_columns_digest_match": true
+          },
+          "his_config_info": {
+            "rows": 4,
+            "all_columns_digest_match": true
+          },
+          "permissions": {
+            "rows": 1,
+            "all_columns_digest_match": true
+          },
+          "roles": {
+            "rows": 2,
+            "all_columns_digest_match": true
+          },
+          "tenant_capacity": {
+            "rows": 0,
+            "all_columns_digest_match": true
+          },
+          "tenant_info": {
+            "rows": 1,
+            "all_columns_digest_match": true
+          },
+          "users": {
+            "rows": 2,
+            "all_columns_digest_match": true
+          }
+        },
+        "table_count": 12,
+        "restored_row_count": 10,
+        "users_password_hash_roles_permissions_compared": true,
+        "event_scheduler": "OFF",
+        "nacos_jvm_started": false,
+        "restart_persistence_verified": true,
+        "source_secrets_used": false
+      },
+      "actual_isolation": {
+        "network_none": true,
+        "no_published_ports": true,
+        "nonroot": true,
+        "read_only_root": true,
+        "not_privileged": true,
+        "cap_drop_all": true,
+        "only_own_scratch_mounts": true,
+        "no_host_network": true
+      },
+      "original_snapshot_unchanged": true,
+      "live_containers_unchanged": true,
+      "temporary_objects_removed": true,
+      "internal_cluster_id_private_digest_match": null
+    },
+    {
+      "component": "redis",
+      "vmid": 201,
+      "evidence": "evidence/implementation/full-snapshot-redis-restore.json",
+      "status": "passed",
+      "started_at": "2026-11-06T04:07:53.352583+00:00",
+      "finished_at": "2026-11-06T04:07:56.848230+00:00",
+      "elapsed_seconds": 3.496,
+      "verification": {
+        "full_RDB_checksum_passed": true,
+        "snapshot_keys_read": 0,
+        "keys_restored": 0,
+        "keys_after_restart": 0,
+        "expired_or_elapsed_keys": 0,
+        "database_count": 0,
+        "all_persistent_key_type_value_digests_match": true,
+        "restart_RDB_reload_verified": true,
+        "ACL_password_config_restored": false,
+        "source_snapshot_or_BGSAVE_requested": false
+      },
+      "actual_isolation": {
+        "network_none": true,
+        "no_published_ports": true,
+        "nonroot": true,
+        "read_only_root": true,
+        "not_privileged": true,
+        "cap_drop_all": true,
+        "only_own_scratch_mounts": true,
+        "no_host_network": true
+      },
+      "original_snapshot_unchanged": true,
+      "live_containers_unchanged": true,
+      "temporary_objects_removed": true,
+      "internal_cluster_id_private_digest_match": null
+    },
+    {
+      "component": "rabbit-topology",
+      "vmid": 201,
+      "evidence": "evidence/implementation/full-snapshot-rabbit-topology-restore.json",
+      "status": "passed",
+      "started_at": "2026-11-06T04:14:37.506275+00:00",
+      "finished_at": "2026-11-06T04:15:49.607716+00:00",
+      "elapsed_seconds": 72.101,
+      "verification": {
+        "complete_definitions_restored": true,
+        "counts": {
+          "users": 2,
+          "vhosts": 1,
+          "permissions": 2,
+          "topic_permissions": 0,
+          "queues": 0,
+          "exchanges": 0,
+          "bindings": 0,
+          "policies": 0,
+          "parameters": 0,
+          "global_parameters": 1
+        },
+        "user_password_hash_and_permissions_compared": true,
+        "queue_messages": 0,
+        "messages_in_backup": false,
+        "messages_published": 0,
+        "external_runtime_parameters": false,
+        "restart_persistence_verified": true
+      },
+      "actual_isolation": {
+        "network_none": true,
+        "no_published_ports": true,
+        "nonroot": true,
+        "read_only_root": true,
+        "not_privileged": true,
+        "cap_drop_all": true,
+        "only_own_scratch_mounts": true,
+        "no_host_network": true
+      },
+      "original_snapshot_unchanged": true,
+      "live_containers_unchanged": true,
+      "temporary_objects_removed": true,
+      "internal_cluster_id_private_digest_match": true
+    }
+  ],
+  "local_unit_tests": {
+    "passed": 10,
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s dell/infra/backup/full-snapshot-restore -p 'test_*.py'"
+  },
+  "limitations": [
+    "Nacos snapshot active config_info is empty; 12 tables/10 total rows including user password hashes verified",
+    "Redis snapshot is empty (0 keys): no nonempty production key/value/TTL proof",
+    "Rabbit snapshot has no queues or messages: definitions/users/permissions only",
+    "No Nacos JVM/HTTP login or external service secret/config archive proof in this restore case",
+    "Local same-guest recovery only; no independent-device disaster recovery or approved RPO/RTO"
+  ],
+  "source_application_data_queried_again": false,
+  "source_containers_stopped": false,
+  "snapshot_content_exported": false,
+  "CF_accessed": false,
+  "messages_published": 0,
+  "prior_failed_attempts_retained": true
+}

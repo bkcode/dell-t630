@@ -1,0 +1,1 @@
+{"scope":"publisher-base-pre-service","status":"failed-before-pnpm","reason":"npm rejects same /dev/null path for both user and global config","source_or_business_affected":false,"correction":"distinct empty 0600 configuration files"}

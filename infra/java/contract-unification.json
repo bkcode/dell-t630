@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-06",
+  "status": "applied-in-isolated-five-service-build-not-runtime-accepted",
+  "scope": "isolated-workspace-only",
+  "known_binary_conflicts": [
+    "common-web-1.0.0-plain.jar",
+    "common-security-1.0.0-plain.jar",
+    "ums-api-1.0.0.jar",
+    "system-api-1.0.0.jar",
+    "coms-api-1.0.0.jar"
+  ],
+  "blocking_conditions": [
+    {
+      "kind": "test-runtime-configuration",
+      "detail": "Spring context tests blocked until isolated target configuration, schema and accounts are available; no test skip flags used"
+    },
+    {
+      "kind": "target-runtime-not-verified",
+      "detail": "No Java service started; Linux AMD64 runtime and business acceptance remain pending"
+    },
+    {
+      "kind": "original-exs-publication-metadata",
+      "detail": "Source EXS publication omits Java component/dependencies; isolated BFF uses source composite build instead"
+    }
+  ],
+  "options": [
+    {
+      "name": "locked-local-maven-files",
+      "modifies_source_repositories": false,
+      "publishes_artifacts": false,
+      "requirements": [
+        "one approved SHA256 JAR and POM for each coordinate",
+        "private local repository only",
+        "preserve transitive dependency metadata",
+        "record resolved artifacts and compare runtime contracts",
+        "separate tests with isolated configuration"
+      ],
+      "not_done": false
+    },
+    {
+      "name": "composite-source-snapshots",
+      "modifies_source_repositories": false,
+      "publishes_artifacts": false,
+      "additional_snapshots": [
+        "finger-common-lib",
+        "finger-service-system",
+        "finger-service-coms",
+        "finger-service-ums",
+        "finger-service-msgs",
+        "finger-service-bcs",
+        "finger-service-auds",
+        "finger-service-subs",
+        "finger-service-exs",
+        "finger-service-cms",
+        "finger-service-mkts"
+      ],
+      "mechanism": "includeBuild and explicit dependencySubstitution in isolated copies",
+      "requirements": [
+        "provider task graph and compile dependencies inspected",
+        "offline plugin and compiler caches available",
+        "precise API and common-library project mappings",
+        "no runtime boot or test side effects",
+        "separate unit/integration test evidence"
+      ],
+      "not_done": false
+    }
+  ],
+  "never": [
+    "publish existing 1.0.0 to production Nexus",
+    "wipe original Gradle cache",
+    "select newest mtime as authoritative contract",
+    "change original branches or dirty files",
+    "send stored credentials to external repositories",
+    "skip required tests to report success"
+  ],
+  "plugin_cache_files": [
+    {
+      "group": "com.sargia.finger.gradle-conventions",
+      "artifact": "com.sargia.finger.gradle-conventions.gradle.plugin",
+      "version": "1.0.0",
+      "filename": "com.sargia.finger.gradle-conventions.gradle.plugin-1.0.0.pom",
+      "bytes": 679,
+      "sha256": "85dc0f3bd5fea4bc3733f6ec96b8613149d4e5e766ce30e29e365b91955ba0ee",
+      "dependencies": [
+        {
+          "groupId": "com.sargia.finger",
+          "artifactId": "gradle-conventions",
+          "version": "1.0.0",
+          "scope": null
+        }
+      ]
+    },
+    {
+      "group": "com.sargia.finger.gradle-conventions",
+      "artifact": "com.sargia.finger.gradle-conventions.gradle.plugin",
+      "version": "1.0.0",
+      "filename": "com.sargia.finger.gradle-conventions.gradle.plugin-1.0.0.pom",
+      "bytes": 50209,
+      "sha256": "e4ebb65f992a045864e7df3b11385f771e0d8c53a4459a1d04739d22a3f4a2e5",
+      "pom_parse_failed": true
+    },
+    {
+      "group": "com.sargia.finger",
+      "artifact": "gradle-conventions",
+      "version": "1.0.0",
+      "filename": "gradle-conventions-1.0.0.module",
+      "bytes": 2744,
+      "sha256": "84fed9688965a23b6c872fe2f53feaacfb202990ca615a8ed1cbabae2676e8bc"
+    },
+    {
+      "group": "com.sargia.finger",
+      "artifact": "gradle-conventions",
+      "version": "1.0.0",
+      "filename": "gradle-conventions-1.0.0.pom",
+      "bytes": 1388,
+      "sha256": "d8bc852cbe5761d5536929ef3c997092b6075456086061cb356e4ba7539ef76e",
+      "dependencies": [
+        {
+          "groupId": "org.jetbrains.kotlin",
+          "artifactId": "kotlin-gradle-plugin",
+          "version": "2.0.21",
+          "scope": "runtime"
+        },
+        {
+          "groupId": "io.gitlab.arturbosch.detekt",
+          "artifactId": "detekt-gradle-plugin",
+          "version": "1.23.8",
+          "scope": "runtime"
+        },
+        {
+          "groupId": "com.diffplug.spotless",
+          "artifactId": "spotless-plugin-gradle",
+          "version": "7.2.1",
+          "scope": "runtime"
+        }
+      ]
+    },
+    {
+      "group": "com.sargia.finger",
+      "artifact": "gradle-conventions",
+      "version": "1.0.0",
+      "filename": "gradle-conventions-1.0.0.jar",
+      "bytes": 27048,
+      "sha256": "cc250ec97f882161c7f51cb1522300e98446452235a087c0815add77f49c0247"
+    }
+  ],
+  "latest_offline_attempt": {
+    "service": "finger-bff-system",
+    "action": "bootjar",
+    "run_id": "bootjar-01",
+    "status": "passed",
+    "exit_code": 0,
+    "network": "external denied, loopback allowed",
+    "tests_executed": false
+  },
+  "plugin_resolution": {
+    "status": "passed-offline-tasks",
+    "selected_marker_sha256": "85dc0f3bd5fea4bc3733f6ec96b8613149d4e5e766ce30e29e365b91955ba0ee",
+    "rejected_html_marker_sha256": "e4ebb65f992a045864e7df3b11385f771e0d8c53a4459a1d04739d22a3f4a2e5",
+    "implementation_sha256": "cc250ec97f882161c7f51cb1522300e98446452235a087c0815add77f49c0247",
+    "implementation_matches_module_sha256_sha512": true,
+    "repository": "private/java-build/plugin-file-repo",
+    "source_repositories_modified": false
+  },
+  "implementation_summary": {
+    "first_batch_bootjars_built": 5,
+    "same_internal_filename_hashes_consistent": true,
+    "source_repositories_unchanged": true,
+    "publish_executed": false,
+    "public_dependency_downloads": "approved official Jackson2.19.0 only, unauthenticated with checksums",
+    "tests_status": "blocked-missing-isolated-test-config",
+    "build_status_file": "build-status.json"
+  }
+}

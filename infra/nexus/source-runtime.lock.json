@@ -1,0 +1,35 @@
+{
+  "captured_at": "2026-11-06T00:07:29.696739+08:00",
+  "application_release": "3.84.0-03",
+  "docker_context": "orbstack",
+  "docker_daemon_id": "35be6be2-ceb8-469e-a220-5a38b02ec673",
+  "index_images": {
+    "nexus": {
+      "source_index": "sonatype/nexus3@sha256:ab0f63137038a0f40321f33c56da17d6e0579b3e7eaa6369fb147a59fbd9d6fa",
+      "observed": {
+        "id": "sha256:e90bcee9a286ce698455ba1524f811390b9f77d18e893986ac20b65346cb81d4",
+        "repo_digests": [
+          "sonatype/nexus3@sha256:ab0f63137038a0f40321f33c56da17d6e0579b3e7eaa6369fb147a59fbd9d6fa"
+        ],
+        "architecture": "arm64",
+        "versions": {
+          "version": "3.84.0-03"
+        },
+        "postgres_package_version": null
+      }
+    }
+  },
+  "containers": {
+    "nexus3": {
+      "id": "sha256:e90bcee9a286ce698455ba1524f811390b9f77d18e893986ac20b65346cb81d4",
+      "repo_digests": [
+        "sonatype/nexus3@sha256:ab0f63137038a0f40321f33c56da17d6e0579b3e7eaa6369fb147a59fbd9d6fa"
+      ],
+      "architecture": "arm64",
+      "versions": {
+        "version": "3.84.0-03"
+      },
+      "postgres_package_version": null
+    }
+  }
+}

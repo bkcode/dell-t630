@@ -1,0 +1,32 @@
+{
+  "status": "scripts-prepared-offline-tested-not-installed",
+  "date": "2026-11-06T06:36:02.956504+08:00",
+  "target_count": 12,
+  "excluded": [
+    "PVE",
+    "CT100",
+    "source Mac"
+  ],
+  "guest_or_host_commands_executed": false,
+  "collector_started": false,
+  "exporter_started": false,
+  "source_services_modified": false,
+  "offline_tests": 33,
+  "checks": [
+    "role/hostname/OS/virtualization gates",
+    "install-only mask before APT and no monitoring start",
+    "guest-local policy restore including exception and symlink preservation",
+    "APT lock wait without deleting locks/killing processes",
+    "private-IP gate before unmask",
+    "exact 9100 listener metadata",
+    "local-only credential-free health GET",
+    "systemd properties allowlist and no Env/log/body metrics"
+  ],
+  "files_sha256": {
+    "install-guest-baseline.py": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+    "collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1"
+  },
+  "snapshot_scope": "preparation-as-of-capture-before-authorized-install",
+  "later_authorized_install_evidence": "evidence/implementation/guest-monitoring-install.json",
+  "later_install_as_of": "2026-11-06T07:05:31.920668+08:00"
+}

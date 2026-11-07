@@ -1,0 +1,34 @@
+{
+  "collected_at": "2026-11-06T05:29:42.715121+00:00",
+  "phase": "frontend-fault-issued",
+  "exit_code": 0,
+  "result": {
+    "phase": "fault-issued",
+    "fault_object": "penpot-penpot-frontend-1",
+    "exact_container_id": "96eb86ab81047ab108b1cb698b5a4f64c44e2bd9c75a8b1ab0175ade2c5de100",
+    "unit_before": {
+      "NRestarts": "0",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "a82c2664e53c4aa68ad52179aefa7a12"
+    },
+    "before_container_ids": {
+      "penpot-import": "90aacbc3b78e9b1c07771b55013e3b62c5634df8c777545c4229558f974b01ed",
+      "penpot-worker": "bdd8e421ad746ddecc7950b390c21c046f6622914eed89cf3fc9e5f52fca31cb",
+      "penpot-frontend": "96eb86ab81047ab108b1cb698b5a4f64c44e2bd9c75a8b1ab0175ade2c5de100",
+      "penpot-backend": "c35064923ae5d0ef1c29108e6e4d355d5f494d7829a9665ec10652d62e8fa9a3",
+      "penpot-admin-console": "2613151017b978ac7ec997033889076f94b9033a60177e65245a00b6bfc14782",
+      "penpot-exporter": "5680b9587467045c8d1b8538a4b4708ab474cdca067ce2af7f6b33d1185facb9",
+      "penpot-mcp": "aa9c599b0dd027b4f8056f8adf283d6ebb07f861569af13478c68305d53ccbaf",
+      "penpot-postgres": "b6ac0e7fd316f8b53df1d8853d5614049fa5d180f8f9b5f84e3baa448f481c17",
+      "penpot-dns": "896b4b365781d4ce0922b7a250fc277fcb1de2b34cdb5cca76578352de76239b",
+      "penpot-valkey": "d08ee10d5b4ce72de16ca148218a85edda276963b6e0d665517a763801a9616e",
+      "penpot-mailpit": "b223cafa5cb2450dc520513f71e999ba6550c0cf894a514c4d520e72c33f39d9"
+    },
+    "fault_commands_issued": 1,
+    "prepared_at": "2026-11-06T05:29:42Z",
+    "worker_import_idle": true,
+    "kill_exit_code": 0,
+    "issued_at": "2026-11-06T05:29:42Z"
+  }
+}

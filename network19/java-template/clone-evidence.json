@@ -1,0 +1,61 @@
+{
+  "at": "2026-11-06T17:44:18.666216+08:00",
+  "scope": "only9012-readonly-plus-temporary-nonroot-smoke",
+  "status": "QA9012-identity-and-JDK-cleanliness-passed",
+  "target": {
+    "vmid": 9012,
+    "ip": "192.168.19.198",
+    "host_key_alias": "dell-vm9012",
+    "host_key_fingerprint": "SHA256:wSfndEAvQsEHu7FAJuiwY+gtVo/EHSQqD/Fvc7vQ/nQ",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "checks": {
+    "exit0": true,
+    "hostname_from_explicit_instance_profile": true,
+    "unique_machine_id_vs_builder": true,
+    "unique_hostkey_vs_builder": true,
+    "hostkey_matches_root_QGA_trust": true,
+    "generic_verify_sha_preserved": true,
+    "java21_nonroot_smoke": true,
+    "no_business_units": true,
+    "no_business_or_exporter_listeners": true,
+    "exporter_parked": true
+  },
+  "result": {
+    "hostname": "java-acceptance-clone-check",
+    "expected_IP": "192.168.19.198",
+    "cloud_init_status": "done",
+    "cloud_init_errors": [],
+    "machine_id_sha256": "6b9806eb4b178b335c8b41fd502622672199291382ed541c5b3528e13c27ba62",
+    "host_ED25519_fingerprint": "SHA256:wSfndEAvQsEHu7FAJuiwY+gtVo/EHSQqD/Fvc7vQ/nQ",
+    "verify_code_sha256": "20bc24ce5ceb8258149a11ec28059d2d0b2f3f9b1e58178e9d6e6f8b26736814",
+    "nonroot_acceptance": {
+      "status": "java21-clean-nonroot-acceptance-passed",
+      "uid": 999,
+      "user": "java",
+      "versions": {
+        "java": "openjdk version \"21.0.13\" 2026-10-20\nOpenJDK Runtime Environment (build 21.0.13+9-1-deb13u2-Debian)\nOpenJDK 64-Bit Server VM (build 21.0.13+9-1-deb13u2-Debian, mixed mode, sharing)",
+        "javac": "javac 21.0.13"
+      },
+      "business_artifacts_present": false,
+      "business_or_exporter_listeners": [],
+      "exporter_parked": true,
+      "CPU_count": 2,
+      "loadavg": [
+        0.18798828125,
+        0.11279296875,
+        0.04638671875
+      ],
+      "filesystem_free_bytes": 31031521280,
+      "MemTotal_kib": 2021540,
+      "machine_id_sha256": "6b9806eb4b178b335c8b41fd502622672199291382ed541c5b3528e13c27ba62",
+      "boot_id_sha256": "321306156e072c486f2d1821beefd425d24a2735b77728342f53412e81b8f826",
+      "network_or_external_messages_sent": false,
+      "temporary_compile_and_run": "passed; source/class automatically removed"
+    },
+    "business_units": [],
+    "no_PVE_or_network_or_service_config_writes": true,
+    "temporary_smoke_files_removed_by_tool": true
+  },
+  "released_after_this_action": true
+}

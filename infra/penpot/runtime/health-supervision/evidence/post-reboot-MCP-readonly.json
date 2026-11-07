@@ -1,0 +1,13 @@
+{
+  "collected_at": "2026-11-06T05:48:15.711547+00:00",
+  "phase": "post-reboot-MCP-readonly",
+  "exit_code": 0,
+  "result": {
+    "status": "passed",
+    "first_tool": "high_level_overview",
+    "authenticated_readonly_context_matches": true,
+    "unauthenticated_design_read_denied": true,
+    "design_writes": 0,
+    "HTTP_body_session_or_credentials_emitted": false
+  }
+}

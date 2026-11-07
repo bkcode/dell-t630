@@ -1,0 +1,11 @@
+{
+  "role": 220,
+  "status": "minimal-Nexus-standby-package-received",
+  "nonce": "cb01b8582f544381b0461001dfa3ccb4",
+  "files": 13,
+  "secret_and_marker_files_root600": true,
+  "runtime_data_copied": false,
+  "publisher_key_or_SSH_identity_included": false,
+  "Nexus_started_or_service_alias_bound": false,
+  "credential_values_or_private_hashes_emitted": false
+}

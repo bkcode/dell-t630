@@ -1,0 +1,89 @@
+{
+  "at": "2026-11-06T12:32:48.079717+08:00",
+  "scope": "read-only test runtime discovery/DNS evidence",
+  "secret_values_emitted": false,
+  "business_payload_sent": false,
+  "dns_strict_tls_egress": {
+    "status": "passed",
+    "domain": "deb.debian.org",
+    "ipv4_address_count": 1,
+    "strict_certificate_verification": true,
+    "tls_version": "TLSv1.3",
+    "http_request_sent": false
+  },
+  "nacos_own_runtime_identity_discovery": {
+    "status": "passed",
+    "source_identity": "private-java-new-test-nacos-client",
+    "namespace": "10719261-2641-590a-b821-c8484ca955ac",
+    "group": "DELL_TEST",
+    "rows": [
+      {
+        "service": "finger-service-system",
+        "http_status": 200,
+        "expected_private_instance_present": true,
+        "instances": [
+          {
+            "ip": "10.63.20.20",
+            "port": 10210,
+            "healthy": true,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "service": "finger-service-coms",
+        "http_status": 200,
+        "expected_private_instance_present": true,
+        "instances": [
+          {
+            "ip": "10.63.20.20",
+            "port": 10202,
+            "healthy": true,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "service": "finger-auth",
+        "http_status": 200,
+        "expected_private_instance_present": true,
+        "instances": [
+          {
+            "ip": "10.63.20.20",
+            "port": 10000,
+            "healthy": true,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "service": "finger-bff-system",
+        "http_status": 200,
+        "expected_private_instance_present": true,
+        "instances": [
+          {
+            "ip": "10.63.20.20",
+            "port": 10104,
+            "healthy": true,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "service": "finger-gateway-mobile",
+        "http_status": 200,
+        "expected_private_instance_present": true,
+        "instances": [
+          {
+            "ip": "10.63.20.20",
+            "port": 9999,
+            "healthy": true,
+            "enabled": true
+          }
+        ]
+      }
+    ],
+    "token_in_query_or_output": false,
+    "configuration_or_permissions_changed": false
+  }
+}

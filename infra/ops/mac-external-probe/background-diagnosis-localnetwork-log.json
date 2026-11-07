@@ -1,0 +1,310 @@
+{
+  "at": "2026-11-06T06:02:01.118910+00:00",
+  "diagnostic_pid": 50099,
+  "scope": "only own fixed diagnostic responsibility identity and PID after14:01:20",
+  "exit_code": 0,
+  "rows": [
+    {
+      "at": "2026-11-06 14:01:22.531124+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Got local network blocked notification: pid: 50099, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.531141+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "at": "2026-11-06 14:01:22.531187+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "at": "2026-11-06 14:01:22.531188+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Found bundle ID: org.python.python"
+    },
+    {
+      "at": "2026-11-06 14:01:22.533033+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "No team ID found for (bundleID: org.python.python, name: Python)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.533684+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Got local network blocked notification: pid: 50099, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.533697+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "at": "2026-11-06 14:01:22.533737+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "at": "2026-11-06 14:01:22.533738+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Found bundle ID: org.python.python"
+    },
+    {
+      "at": "2026-11-06 14:01:22.535066+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "No team ID found for (bundleID: org.python.python, name: Python)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.550654+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Got local network blocked notification: pid: 50099, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.550666+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "at": "2026-11-06 14:01:22.550713+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "at": "2026-11-06 14:01:22.550714+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Found bundle ID: org.python.python"
+    },
+    {
+      "at": "2026-11-06 14:01:22.552225+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "No team ID found for (bundleID: org.python.python, name: Python)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.552437+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Got local network blocked notification: pid: 50099, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.552446+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "at": "2026-11-06 14:01:22.552479+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "at": "2026-11-06 14:01:22.552480+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Found bundle ID: org.python.python"
+    },
+    {
+      "at": "2026-11-06 14:01:22.553695+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "No team ID found for (bundleID: org.python.python, name: Python)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.560320+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Got local network blocked notification: pid: 50099, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.560331+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "at": "2026-11-06 14:01:22.560373+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "at": "2026-11-06 14:01:22.560374+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Found bundle ID: org.python.python"
+    },
+    {
+      "at": "2026-11-06 14:01:22.561705+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "No team ID found for (bundleID: org.python.python, name: Python)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.562246+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Got local network blocked notification: pid: 50099, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.562256+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "at": "2026-11-06 14:01:22.562299+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "at": "2026-11-06 14:01:22.562301+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Found bundle ID: org.python.python"
+    },
+    {
+      "at": "2026-11-06 14:01:22.562333+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Got local network blocked notification: pid: 50099, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.562338+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "at": "2026-11-06 14:01:22.562364+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "at": "2026-11-06 14:01:22.562365+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Found bundle ID: org.python.python"
+    },
+    {
+      "at": "2026-11-06 14:01:22.563798+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "No team ID found for (bundleID: org.python.python, name: Python)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.565002+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "No team ID found for (bundleID: org.python.python, name: Python)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.565502+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Got local network blocked notification: pid: 50099, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.565511+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "at": "2026-11-06 14:01:22.565555+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "at": "2026-11-06 14:01:22.565557+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Found bundle ID: org.python.python"
+    },
+    {
+      "at": "2026-11-06 14:01:22.566898+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "No team ID found for (bundleID: org.python.python, name: Python)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.576190+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Got local network blocked notification: pid: 50099, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.576201+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "at": "2026-11-06 14:01:22.576239+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "at": "2026-11-06 14:01:22.576241+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Found bundle ID: org.python.python"
+    },
+    {
+      "at": "2026-11-06 14:01:22.577613+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "No team ID found for (bundleID: org.python.python, name: Python)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.577706+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Got local network blocked notification: pid: 50099, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.577715+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "at": "2026-11-06 14:01:22.577748+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "at": "2026-11-06 14:01:22.577749+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Found bundle ID: org.python.python"
+    },
+    {
+      "at": "2026-11-06 14:01:22.579051+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "No team ID found for (bundleID: org.python.python, name: Python)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.591221+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Got local network blocked notification: pid: 50099, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.591234+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "at": "2026-11-06 14:01:22.591282+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "at": "2026-11-06 14:01:22.591284+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Found bundle ID: org.python.python"
+    },
+    {
+      "at": "2026-11-06 14:01:22.592849+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "No team ID found for (bundleID: org.python.python, name: Python)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.593069+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Got local network blocked notification: pid: 50099, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "at": "2026-11-06 14:01:22.593079+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "at": "2026-11-06 14:01:22.593115+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "at": "2026-11-06 14:01:22.593117+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "Found bundle ID: org.python.python"
+    },
+    {
+      "at": "2026-11-06 14:01:22.594360+0800",
+      "subsystem": "com.apple.networkextension",
+      "message": "No team ID found for (bundleID: org.python.python, name: Python)"
+    }
+  ],
+  "matching_rows": 60,
+  "hook_read": false
+}

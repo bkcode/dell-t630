@@ -1,0 +1,144 @@
+{
+  "at": "2026-11-06T13:24:12.711214",
+  "status": "12-assigned-IP-MAC-unique",
+  "roles": [
+    {
+      "vmid": 200,
+      "role": "data-prod-db",
+      "MAC": "BC:24:11:1C:62:00",
+      "IP": "10.63.10.10",
+      "bridge": "vmbr10",
+      "gateway": "10.63.10.1",
+      "DNS": "1.1.1.1",
+      "allocation": "static-on-new-owned-bridge",
+      "source_config": "virtio=BC:24:11:1C:62:00,bridge=vmbr10"
+    },
+    {
+      "vmid": 201,
+      "role": "data-prod-infra",
+      "MAC": "BC:24:11:1C:BB:93",
+      "IP": "10.63.10.11",
+      "bridge": "vmbr10",
+      "gateway": "10.63.10.1",
+      "DNS": "1.1.1.1",
+      "allocation": "static-on-new-owned-bridge",
+      "source_config": "virtio=BC:24:11:1C:BB:93,bridge=vmbr10"
+    },
+    {
+      "vmid": 210,
+      "role": "data-test",
+      "MAC": "BC:24:11:5D:2D:98",
+      "IP": "10.63.20.10",
+      "bridge": "vmbr20",
+      "gateway": "10.63.20.1",
+      "DNS": "1.1.1.1",
+      "allocation": "static-on-new-owned-bridge",
+      "source_config": "virtio=BC:24:11:5D:2D:98,bridge=vmbr20"
+    },
+    {
+      "vmid": 220,
+      "role": "publish-service",
+      "MAC": "BC:24:11:2A:01:AD",
+      "IP": "10.63.30.10",
+      "bridge": "vmbr30",
+      "gateway": "10.63.30.1",
+      "DNS": "1.1.1.1",
+      "allocation": "static-on-new-owned-bridge",
+      "source_config": "virtio=BC:24:11:2A:01:AD,bridge=vmbr30"
+    },
+    {
+      "vmid": 221,
+      "role": "artifact-service",
+      "MAC": "BC:24:11:EC:E1:6F",
+      "IP": "10.63.30.20",
+      "bridge": "vmbr30",
+      "gateway": "10.63.30.1",
+      "DNS": "1.1.1.1",
+      "allocation": "static-on-new-owned-bridge",
+      "source_config": "virtio=BC:24:11:EC:E1:6F,bridge=vmbr30"
+    },
+    {
+      "vmid": 230,
+      "role": "java-prod-01",
+      "MAC": "BC:24:11:1C:20:00",
+      "IP": "10.63.10.20",
+      "bridge": "vmbr10",
+      "gateway": "10.63.10.1",
+      "DNS": "1.1.1.1",
+      "allocation": "static-on-new-owned-bridge",
+      "source_config": "virtio=BC:24:11:1C:20:00,bridge=vmbr10"
+    },
+    {
+      "vmid": 231,
+      "role": "java-prod-02",
+      "MAC": "BC:24:11:E9:E5:CC",
+      "IP": "10.63.10.21",
+      "bridge": "vmbr10",
+      "gateway": "10.63.10.1",
+      "DNS": "1.1.1.1",
+      "allocation": "static-on-new-owned-bridge",
+      "source_config": "virtio=BC:24:11:E9:E5:CC,bridge=vmbr10"
+    },
+    {
+      "vmid": 232,
+      "role": "java-prod-03",
+      "MAC": "BC:24:11:7D:1C:AA",
+      "IP": "10.63.10.22",
+      "bridge": "vmbr10",
+      "gateway": "10.63.10.1",
+      "DNS": "1.1.1.1",
+      "allocation": "static-on-new-owned-bridge",
+      "source_config": "virtio=BC:24:11:7D:1C:AA,bridge=vmbr10"
+    },
+    {
+      "vmid": 240,
+      "role": "java-test-01",
+      "MAC": "BC:24:11:65:41:5A",
+      "IP": "10.63.20.20",
+      "bridge": "vmbr20",
+      "gateway": "10.63.20.1",
+      "DNS": "1.1.1.1",
+      "allocation": "static-on-new-owned-bridge",
+      "source_config": "virtio=BC:24:11:65:41:5A,bridge=vmbr20"
+    },
+    {
+      "vmid": 250,
+      "role": "penpot-service",
+      "MAC": "BC:24:11:78:E9:84",
+      "IP": "10.63.30.30",
+      "bridge": "vmbr30",
+      "gateway": "10.63.30.1",
+      "DNS": "1.1.1.1",
+      "allocation": "static-on-new-owned-bridge",
+      "source_config": "virtio=BC:24:11:78:E9:84,bridge=vmbr30"
+    },
+    {
+      "vmid": 260,
+      "role": "nas-media",
+      "MAC": "BC:24:11:A7:3B:73",
+      "IP": "10.63.40.10",
+      "bridge": "vmbr40",
+      "gateway": "10.63.40.1",
+      "DNS": "1.1.1.1",
+      "allocation": "static-on-new-owned-bridge",
+      "source_config": "virtio=BC:24:11:A7:3B:73,bridge=vmbr40"
+    },
+    {
+      "vmid": 270,
+      "role": "ops-service",
+      "MAC": "BC:24:11:CE:8C:67",
+      "IP": "10.63.30.40",
+      "bridge": "vmbr30",
+      "gateway": "10.63.30.1",
+      "DNS": "1.1.1.1",
+      "allocation": "static-on-new-owned-bridge",
+      "source_config": "virtio=BC:24:11:CE:8C:67,bridge=vmbr30"
+    }
+  ],
+  "LAN_management": "192.168.21.22; old104 publisher .23 retained stopped, newpublisher220 uses10.63.30.10",
+  "evidence_sources": [
+    "pve-final-inventory.json",
+    "private-guest-access.json",
+    "guest-final-ssh-audit.json"
+  ]
+}

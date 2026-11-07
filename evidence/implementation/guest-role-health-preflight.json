@@ -1,0 +1,565 @@
+{
+  "at": "2026-11-06T14:09:26.640917+08:00",
+  "mode": "read-only-role-health-preflight",
+  "guests": [
+    {
+      "role": "data-prod-db",
+      "config": {
+        "role": "data-prod-db",
+        "private_ip": "10.63.10.10",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "dell-data-prod-db.service",
+          "prometheus-node-exporter.service",
+          "qemu-guest-agent.service",
+          "ssh.service"
+        ],
+        "http_checks": [],
+        "candidate_service_units": [
+          "docker.service",
+          "dell-data-prod-db.service"
+        ],
+        "candidate_http_checks": [],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "config_sha256": "be74665d2936306485c287325935210639c0ad835d2b0336f5536d29d139558c",
+      "config_uid": 0,
+      "config_gid": 0,
+      "config_mode": "0o644",
+      "role_units": {
+        "dell-data-prod-db.service": {
+          "MainPID": "1130",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "http": [],
+      "passed": true,
+      "response_bodies_saved": false,
+      "vmid": 200
+    },
+    {
+      "role": "data-prod-infra",
+      "config": {
+        "role": "data-prod-infra",
+        "private_ip": "10.63.10.11",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "dell-data-prod-infra.service",
+          "prometheus-node-exporter.service",
+          "qemu-guest-agent.service",
+          "ssh.service"
+        ],
+        "http_checks": [],
+        "candidate_service_units": [
+          "docker.service",
+          "dell-data-prod-infra.service"
+        ],
+        "candidate_http_checks": [
+          {
+            "name": "nacos-readiness",
+            "url": "http://10.63.10.11:8848/nacos/v1/console/health/readiness"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "config_sha256": "ce180a409dc8e0fb022a65e723b5da86a31520233a4a578d25eb70141e2c07a5",
+      "config_uid": 0,
+      "config_gid": 0,
+      "config_mode": "0o644",
+      "role_units": {
+        "dell-data-prod-infra.service": {
+          "MainPID": "1128",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "http": [
+        {
+          "name": "nacos-readiness",
+          "port": 8848,
+          "path": "/nacos/v1/console/health/readiness",
+          "status": 200
+        }
+      ],
+      "passed": true,
+      "response_bodies_saved": false,
+      "vmid": 201
+    },
+    {
+      "role": "data-test",
+      "config": {
+        "role": "data-test",
+        "private_ip": "10.63.20.10",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "dell-data-test-data.service",
+          "prometheus-node-exporter.service",
+          "qemu-guest-agent.service",
+          "ssh.service"
+        ],
+        "http_checks": [],
+        "candidate_service_units": [
+          "docker.service",
+          "dell-data-test-data.service"
+        ],
+        "candidate_http_checks": [
+          {
+            "name": "nacos-readiness",
+            "url": "http://10.63.20.10:8848/nacos/v1/console/health/readiness"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "config_sha256": "e03c121c2b01a8967c2fb0e7761db7758f3e7902c0fa708e589ff0905518a0ec",
+      "config_uid": 0,
+      "config_gid": 0,
+      "config_mode": "0o644",
+      "role_units": {
+        "dell-data-test-data.service": {
+          "MainPID": "1150",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "http": [
+        {
+          "name": "nacos-readiness",
+          "port": 8848,
+          "path": "/nacos/v1/console/health/readiness",
+          "status": 200
+        }
+      ],
+      "passed": true,
+      "response_bodies_saved": false,
+      "vmid": 210
+    },
+    {
+      "role": "artifact-service",
+      "config": {
+        "role": "artifact-service",
+        "private_ip": "10.63.30.20",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "ssh.service",
+          "qemu-guest-agent.service",
+          "prometheus-node-exporter.service"
+        ],
+        "http_checks": [],
+        "candidate_service_units": [
+          "docker.service"
+        ],
+        "candidate_http_checks": [
+          {
+            "name": "nexus-status",
+            "url": "http://10.63.30.20:8081/service/rest/v1/status"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "config_sha256": "ce01d5268626b1925bf41595df2ea8eafce5455eb56dfa75662b9de661659967",
+      "config_uid": 0,
+      "config_gid": 0,
+      "config_mode": "0o644",
+      "role_units": {
+        "dell-nexus.service": {
+          "MainPID": "1018",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "http": [
+        {
+          "name": "nexus-status",
+          "port": 8081,
+          "path": "/service/rest/v1/status",
+          "status": 200
+        }
+      ],
+      "passed": true,
+      "response_bodies_saved": false,
+      "vmid": 221
+    },
+    {
+      "role": "java-test-01",
+      "config": {
+        "role": "java-test-01",
+        "private_ip": "10.63.20.20",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "ssh.service",
+          "qemu-guest-agent.service",
+          "prometheus-node-exporter.service"
+        ],
+        "http_checks": [],
+        "candidate_service_units": [],
+        "candidate_http_checks": [
+          {
+            "name": "actuator-example-not-enabled",
+            "url": "http://127.0.0.1:9999/actuator/health/readiness"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "config_sha256": "4d17b3acbd76260d472900a04153f1c54c1fab9cbe0936b18d0f0553273e302a",
+      "config_uid": 0,
+      "config_gid": 0,
+      "config_mode": "0o644",
+      "role_units": {
+        "dell-finger-finger-service-system.service": {
+          "MainPID": "688",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-finger-finger-service-coms.service": {
+          "MainPID": "687",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-finger-finger-auth.service": {
+          "MainPID": "680",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-finger-finger-bff-system.service": {
+          "MainPID": "681",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-finger-finger-gateway-mobile.service": {
+          "MainPID": "686",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "http": [
+        {
+          "name": "finger-service-system-health",
+          "port": 10210,
+          "path": "/actuator/health",
+          "status": 200
+        },
+        {
+          "name": "finger-service-coms-health",
+          "port": 10202,
+          "path": "/actuator/health",
+          "status": 200
+        },
+        {
+          "name": "finger-auth-health",
+          "port": 10000,
+          "path": "/actuator/health",
+          "status": 200
+        },
+        {
+          "name": "finger-bff-system-health",
+          "port": 10104,
+          "path": "/actuator/health",
+          "status": 200
+        },
+        {
+          "name": "finger-gateway-mobile-health",
+          "port": 9999,
+          "path": "/actuator/health",
+          "status": 200
+        }
+      ],
+      "passed": true,
+      "response_bodies_saved": false,
+      "vmid": 240
+    },
+    {
+      "role": "penpot-service",
+      "config": {
+        "role": "penpot-service",
+        "private_ip": "10.63.30.30",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "ssh.service",
+          "qemu-guest-agent.service",
+          "prometheus-node-exporter.service"
+        ],
+        "http_checks": [],
+        "candidate_service_units": [
+          "docker.service"
+        ],
+        "candidate_http_checks": [
+          {
+            "name": "penpot-frontend-only",
+            "url": "http://10.63.30.30:9001/"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "config_sha256": "2e1f904e4e70172277466ce3ac869f0ebae5836a7f25bda2692b03bcf99914c7",
+      "config_uid": 0,
+      "config_gid": 0,
+      "config_mode": "0o644",
+      "role_units": {
+        "dell-penpot.service": {
+          "MainPID": "1091",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "http": [
+        {
+          "name": "penpot-frontend",
+          "port": 9001,
+          "path": "/",
+          "status": 200
+        }
+      ],
+      "passed": true,
+      "response_bodies_saved": false,
+      "vmid": 250
+    },
+    {
+      "role": "nas-media",
+      "config": {
+        "role": "nas-media",
+        "private_ip": "10.63.40.10",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "ssh.service",
+          "qemu-guest-agent.service",
+          "prometheus-node-exporter.service"
+        ],
+        "http_checks": [],
+        "candidate_service_units": [
+          "docker.service",
+          "dell-nas-jellyfin.service"
+        ],
+        "candidate_http_checks": [
+          {
+            "name": "jellyfin-health",
+            "url": "http://10.63.40.10:8096/health"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "config_sha256": "33b52d365e25974649ad03a43c9e6a08f97cc608625907cde5aaa758e29987ca",
+      "config_uid": 0,
+      "config_gid": 0,
+      "config_mode": "0o644",
+      "role_units": {
+        "openmediavault-engined.service": {
+          "MainPID": "824",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "nginx.service": {
+          "MainPID": "762",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "smbd.service": {
+          "MainPID": "852",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-nas-jellyfin.service": {
+          "MainPID": "1154",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "http": [
+        {
+          "name": "omv-web",
+          "port": 80,
+          "path": "/",
+          "status": 200
+        },
+        {
+          "name": "jellyfin-health",
+          "port": 8096,
+          "path": "/health",
+          "status": 200
+        }
+      ],
+      "passed": true,
+      "response_bodies_saved": false,
+      "vmid": 260
+    },
+    {
+      "role": "ops-service",
+      "config": {
+        "role": "ops-service",
+        "private_ip": "10.63.30.40",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "dell-ops.service",
+          "prometheus-node-exporter.service",
+          "qemu-guest-agent.service",
+          "ssh.service"
+        ],
+        "http_checks": [],
+        "candidate_service_units": [
+          "docker.service",
+          "dell-ops.service"
+        ],
+        "candidate_http_checks": [
+          {
+            "name": "grafana-health",
+            "url": "http://10.63.30.40:3000/api/health"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "config_sha256": "dd504542e6b567825718897e5dfa1afdebed416beaa27b76ddc4760cf9c77422",
+      "config_uid": 0,
+      "config_gid": 0,
+      "config_mode": "0o644",
+      "role_units": {
+        "dell-ops.service": {
+          "MainPID": "1053",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "http": [
+        {
+          "name": "prometheus-readiness",
+          "port": 9090,
+          "path": "/-/ready",
+          "status": 200
+        },
+        {
+          "name": "alertmanager-readiness",
+          "port": 9093,
+          "path": "/-/ready",
+          "status": 200
+        },
+        {
+          "name": "grafana-health",
+          "port": 3000,
+          "path": "/api/health",
+          "status": 200
+        }
+      ],
+      "passed": true,
+      "response_bodies_saved": false,
+      "vmid": 270
+    },
+    {
+      "role": "publish-service",
+      "config": {
+        "role": "publish-service",
+        "private_ip": "10.63.30.10",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "ssh.service",
+          "qemu-guest-agent.service",
+          "prometheus-node-exporter.service"
+        ],
+        "http_checks": [],
+        "candidate_service_units": [],
+        "candidate_http_checks": [],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "config_sha256": "4480eebf78b274affc7c4a068b28e435cc2b3ee55c1dea652572de783c667f19",
+      "config_uid": 0,
+      "config_gid": 0,
+      "config_mode": "0o644",
+      "role_units": {},
+      "http": [],
+      "passed": true,
+      "response_bodies_saved": false,
+      "vmid": 220
+    },
+    {
+      "role": "java-prod-01",
+      "config": {
+        "role": "java-prod-01",
+        "private_ip": "10.63.10.20",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "ssh.service",
+          "qemu-guest-agent.service",
+          "prometheus-node-exporter.service"
+        ],
+        "http_checks": [],
+        "candidate_service_units": [],
+        "candidate_http_checks": [
+          {
+            "name": "actuator-example-not-enabled",
+            "url": "http://127.0.0.1:9999/actuator/health/readiness"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "config_sha256": "ff02fe9634b7a61df8a4675eb92ca9c33b79899539deb6329fc2816fb087ab54",
+      "config_uid": 0,
+      "config_gid": 0,
+      "config_mode": "0o644",
+      "role_units": {},
+      "http": [],
+      "passed": true,
+      "response_bodies_saved": false,
+      "vmid": 230
+    },
+    {
+      "role": "java-prod-02",
+      "config": {
+        "role": "java-prod-02",
+        "private_ip": "10.63.10.21",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "ssh.service",
+          "qemu-guest-agent.service",
+          "prometheus-node-exporter.service"
+        ],
+        "http_checks": [],
+        "candidate_service_units": [],
+        "candidate_http_checks": [
+          {
+            "name": "actuator-example-not-enabled",
+            "url": "http://127.0.0.1:9999/actuator/health/readiness"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "config_sha256": "4a0280628c7aac1dc05902434e844b75ffde3628f0df959101b217b0a800c1df",
+      "config_uid": 0,
+      "config_gid": 0,
+      "config_mode": "0o644",
+      "role_units": {},
+      "http": [],
+      "passed": true,
+      "response_bodies_saved": false,
+      "vmid": 231
+    },
+    {
+      "role": "java-prod-03",
+      "config": {
+        "role": "java-prod-03",
+        "private_ip": "10.63.10.22",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "ssh.service",
+          "qemu-guest-agent.service",
+          "prometheus-node-exporter.service"
+        ],
+        "http_checks": [],
+        "candidate_service_units": [],
+        "candidate_http_checks": [
+          {
+            "name": "actuator-example-not-enabled",
+            "url": "http://127.0.0.1:9999/actuator/health/readiness"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "config_sha256": "51fc6ba7c33deeb820f9c8b94a85c89ff0b533570d3e3f5219965b52707ef913",
+      "config_uid": 0,
+      "config_gid": 0,
+      "config_mode": "0o644",
+      "role_units": {},
+      "http": [],
+      "passed": true,
+      "response_bodies_saved": false,
+      "vmid": 232
+    }
+  ]
+}

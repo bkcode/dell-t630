@@ -1,0 +1,14 @@
+{
+  "client_single_frame_fixed": true,
+  "status_exit_code": 1,
+  "server_frame": {
+    "ok": false,
+    "error_category": "RuntimeError",
+    "message": "restricted publish request rejected or fixed transition failed; no sensitive details emitted"
+  },
+  "expected_baseline_false_rejection": true,
+  "private_key_exported": false,
+  "target240_modified": false,
+  "evidence_recorded_at": "2026-11-06T12:31:15.850978+08:00",
+  "command": "220 publisher dell-publish status while baseline=false"
+}

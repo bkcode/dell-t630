@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-07T00:29:18.853805+08:00",
+  "action": "hot-stage",
+  "target": {
+    "vmid": 190,
+    "ip": "192.168.21.23",
+    "host_key_alias": "dell-gw190",
+    "host_key_fingerprint": "SHA256:i2MOCPizZ+sOeM1Hxe76A0Qrz6Tlcis0IStJPBNX96E",
+    "trust_source": "trusted PVE QGA;both gateway IPs and hostname verified"
+  },
+  "independent_strict_SSH": true,
+  "client_key_copied": false,
+  "code_sha256": {
+    "manage.py": "3f8ddf3aa65c1643ea7a9da6ebe7363d58756787d6b28a437ec0f61cf60bf2b2",
+    "policy.py": "bd237ff8c6417306af7cf0a9e3106d0426f5ca6bb54f072984dd9e89638708da"
+  },
+  "exit_code": 1,
+  "result": {
+    "status": "failed",
+    "message": "fixed gateway190 action failed; inspect root-private transaction and QGA, no blind retry"
+  }
+}

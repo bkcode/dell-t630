@@ -1,0 +1,33 @@
+{
+  "id": "ACC-DOCKER-002",
+  "status": "passed",
+  "executed_at": "2026-11-06T14:47:31.147585+08:00",
+  "timezone": "Asia/Shanghai",
+  "operator": "root-task-manager",
+  "plan_sha256": "2090547eae7c1562a4a20814fefdd90b033137d4549f0aff079763ad4e4ec902",
+  "preconditions_checked": true,
+  "target": {
+    "host": "192.168.21.22",
+    "environment": "managed-PVE-implementation",
+    "vmid": null
+  },
+  "commands_or_steps": [
+    "See linked execution artifact and operator observations"
+  ],
+  "exit_codes": [
+    0
+  ],
+  "observations": [
+    "数据组件受控合成fixture在替换/重启后保留并清理；root持久pids后正常guest boot重复验证同UUID/数据，权限正确",
+    "Nexus两容器真实force-recreate+guest reboot后234主制品/合成JAR SHA保持；Penpot健康覆盖重建与故障恢复后原3设计/971媒体/973当前文件hash保持",
+    "Ops四组件同数据bind重建后Grafana管理员/仪表盘和目标状态保持，源Mac未替换、旧实例未删除"
+  ],
+  "artifacts": [
+    "evidence/implementation/container-persistence-recreation-summary.json"
+  ],
+  "limitations": [
+    "仅已批准的新目标及专用数据，不等同完整业务/全宿主灾备或已批准RPO/RTO；真实NAS媒体不做破坏性负测"
+  ],
+  "reviewed_by": "root-task-manager",
+  "plan_snapshot": "evidence/plans/plan-2090547eae7c1562.json"
+}

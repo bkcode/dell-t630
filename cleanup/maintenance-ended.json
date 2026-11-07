@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-06T18:37:11.188725+00:00",
+  "status": "cleanup-own-maintenance-expired-original-alerting-restored",
+  "silence_id": "9bd59e38-845f-441e-a4a2-ca29e909c8e7",
+  "targets_UP": 15,
+  "active_alerts_before": 0,
+  "test_messages_sent": false,
+  "Nexus221_kept_UP": true,
+  "pending_Nexus_migration_requires_new_approved_window": true,
+  "Lark_mode_credentials_unchanged": true,
+  "Mac_probe_stays_disabled": true
+}

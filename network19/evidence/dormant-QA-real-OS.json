@@ -1,0 +1,168 @@
+{
+  "at": "2026-11-06T17:27:51.142794",
+  "scope": "7 originally stopped QA clones actual boot/readback/normal-stop",
+  "rows": [
+    {
+      "vmid": 9000,
+      "expected_IP": "192.168.19.190",
+      "started_at": "2026-11-06T17:24:12.387619",
+      "OS_network": {
+        "hostname": "dell-template-inspect",
+        "addresses": [
+          "192.168.19.190"
+        ],
+        "defaults": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ]
+      },
+      "passed": true,
+      "normal_shutdown_exit": 0,
+      "final_stopped": true
+    },
+    {
+      "vmid": 9002,
+      "expected_IP": "192.168.19.191",
+      "started_at": "2026-11-06T17:24:48.089617",
+      "OS_network": {
+        "hostname": "dell-linux-clone-test",
+        "addresses": [
+          "192.168.19.191"
+        ],
+        "defaults": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ]
+      },
+      "passed": true,
+      "normal_shutdown_exit": 0,
+      "final_stopped": true
+    },
+    {
+      "vmid": 9003,
+      "expected_IP": "192.168.19.192",
+      "started_at": "2026-11-06T17:25:17.979543",
+      "OS_network": {
+        "hostname": "dell-docker-clone-test",
+        "addresses": [
+          "192.168.19.192"
+        ],
+        "defaults": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ]
+      },
+      "passed": true,
+      "normal_shutdown_exit": 0,
+      "final_stopped": true
+    },
+    {
+      "vmid": 9004,
+      "expected_IP": "192.168.19.193",
+      "started_at": "2026-11-06T17:25:47.587428",
+      "OS_network": {
+        "hostname": "dell-docker-clone-a",
+        "addresses": [
+          "192.168.19.193"
+        ],
+        "defaults": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ]
+      },
+      "passed": true,
+      "normal_shutdown_exit": 0,
+      "final_stopped": true
+    },
+    {
+      "vmid": 9005,
+      "expected_IP": "192.168.19.194",
+      "started_at": "2026-11-06T17:26:20.543293",
+      "OS_network": {
+        "hostname": "dell-linux-clone-b",
+        "addresses": [
+          "192.168.19.194"
+        ],
+        "defaults": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ]
+      },
+      "passed": true,
+      "normal_shutdown_exit": 0,
+      "final_stopped": true
+    },
+    {
+      "vmid": 9006,
+      "expected_IP": "192.168.19.195",
+      "started_at": "2026-11-06T17:26:49.105348",
+      "OS_network": {
+        "hostname": "dell-docker-clone-b",
+        "addresses": [
+          "192.168.19.195"
+        ],
+        "defaults": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ]
+      },
+      "passed": true,
+      "normal_shutdown_exit": 0,
+      "final_stopped": true
+    },
+    {
+      "vmid": 9020,
+      "expected_IP": "192.168.19.196",
+      "started_at": "2026-11-06T17:27:18.049822",
+      "OS_network": {
+        "hostname": "dell-restore-baseline",
+        "addresses": [
+          "192.168.19.196"
+        ],
+        "defaults": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ]
+      },
+      "passed": true,
+      "normal_shutdown_exit": 0,
+      "final_stopped": true
+    }
+  ],
+  "all_passed": true
+}

@@ -1,0 +1,7 @@
+{
+  "captured_at": "2026-11-07T01:37:46.316011+08:00",
+  "type": "offline-fixtures-not-live-snapshot",
+  "master_plan_source_sha256": "b9a7c5f938403d1539db134a6acee2d26d69a2f235c053a304010da4892b7461",
+  "inventory_source_sha256": "6710510cd3d96e7e18fd79d4dbf1f709cc0d076dbde236292b586a09e5863c63",
+  "fixture_transform": "remove temporary9040..9045 rows for old-model baseline; then tests explicitly add builder or QA phase, never both on reused IP"
+}

@@ -1,0 +1,27 @@
+{
+  "mode": "public-image-artifact-transfer-only",
+  "records": [
+    {
+      "group": "data",
+      "path": "/mnt/pve/store/dell-artifacts/amd64/target-amd64-data-images.tar",
+      "bytes": 1460631040,
+      "sha256": "c85e0df24676577118b9d058451140a311713b65bb2234528dd18a4a7726b0ba"
+    },
+    {
+      "group": "penpot",
+      "path": "/mnt/pve/store/dell-artifacts/amd64/target-amd64-penpot-images.tar",
+      "bytes": 4430068224,
+      "sha256": "a2ae6671af20ee7c970d0c367ffeb51c828b666eec3580b16105d733c9d3390e"
+    },
+    {
+      "group": "nexus",
+      "path": "/mnt/pve/store/dell-artifacts/amd64/target-amd64-nexus-images.tar",
+      "bytes": 688315392,
+      "sha256": "6a0b1cd013c69acf67ded46e3fa0913b36302395269ffc48315ec0406e624033"
+    }
+  ],
+  "limitations": [
+    "No containers loaded or started",
+    "Docker load may require manifest-only pull to restore registry digest aliases"
+  ]
+}

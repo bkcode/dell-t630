@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-06T17:48:54.177920+00:00",
+  "exit_code": 0,
+  "contract": {
+    "schema_version": 1,
+    "vmid": 9040,
+    "source_template": 9010,
+    "hostname": "fish-build-linux",
+    "ip": "192.168.19.197",
+    "mac": "bc:24:11:8f:30:c7",
+    "fish_version": "4.0.2-1",
+    "no_chsh": true
+  },
+  "result": {
+    "vmid": 9040,
+    "status": "reviewed-public-tool-CAS-refreshed",
+    "before_sha256": "39be4065cfa4de7ed8fea27d37a2912d479576134d2692aebf1c3462e1f693bd",
+    "after_sha256": "3d2fa5f6eab371cde5860d98224a232ddc0d9c0f94ca8fc7d9182ecf47b3de94",
+    "contract_profile_refreshed": false,
+    "no_network_identity_service_changes": true
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "at": "2026-11-06T12:38:36.869442+08:00",
+  "status": "local-pending-candidate-offline-validation-only",
+  "offline_tests": 30,
+  "negative_cases": [
+    "test_status_canonical",
+    "test_stage_canonical",
+    "test_shell_subsystem_and_injection_rejected",
+    "test_extra_prod_target_marker_fields_rejected",
+    "test_bool_or_oversize_archive_rejected",
+    "test_traversal_release_id_rejected",
+    "test_duplicate_json_and_unsafe_yaml_rejected",
+    "test_canonical_roundtrip",
+    "test_pax_giant_metadata_rejected_at_first512_header",
+    "test_gnu_longname_rejected_at_first_header",
+    "test_symlink_hardlink_device_rejected",
+    "test_traversal_member_rejected",
+    "test_giant_manifest_claim_rejected_without_payload",
+    "test_compressed_input_never_decompressed",
+    "test_member12_rejected_before_any_payload",
+    "test_stage_persistent_config_is_root600",
+    "test_exact_order_and_extra_script_rejected",
+    "test_wrong_snowflake_or_old_coms_domain_rejected",
+    "test_mutated_config_hash_rejected",
+    "test_prod_nested_nacos_and_unit_fields_rejected",
+    "test_nonzero_stop_only_passes_after_quiescence_verification",
+    "test_failed_unit_with_live_pid_is_not_quiescent",
+    "test_lingering_cgroup_children_block_stop_success",
+    "test_previous_checked_before_any_stop",
+    "test_pointer_failure_attempts_rollback_and_start_old",
+    "test_stop_failure_still_attempts_old_restore",
+    "test_status_main_does_not_acquire_modify_lock",
+    "test_status_filters_private_receipt_and_reports_busy",
+    "test_missing_fixed_unit_is_rejected",
+    "test_fixed_units_use_credentials_and_never_persistent_secret_path_argv"
+  ],
+  "target_scope": "220 publisher to test240 only",
+  "persistent_yaml": "root:root0600",
+  "runtime_credentials": "systemd LoadCredential; argv contains only file:%d path",
+  "canonical_archive": "manual512-byte USTAR parsing; exact11 regular; reject member12 before payload; no PAX/GNU/compressed processing",
+  "status_locking": "no modifying flock; filtered atomic receipt+busy",
+  "fault_injection": {
+    "pointer_failure_attempted_rollback_and_old_start": true,
+    "events": [
+      {
+        "step": "stop",
+        "strict": true
+      },
+      {
+        "step": "pointer",
+        "release": "20261106T120000"
+      },
+      {
+        "step": "stop",
+        "strict": false
+      },
+      {
+        "step": "pointer",
+        "release": "20261106T110000"
+      },
+      {
+        "step": "start",
+        "release": "20261106T110000"
+      }
+    ],
+    "actual_guest_or_service_called": false
+  },
+  "actual121030_contract": "passed without outputting config values",
+  "gateway_nacos_import": "finger-gateway-mobile-lan-v2.yaml",
+  "snowflake": "DC1; Gateway1/Auth2/System3/COMS4/BFF5",
+  "target240_modified": false,
+  "target240_services_restarted": false,
+  "A_metadata_migration": "pending-approved-window",
+  "sshd_sudoers_native_syntax": "pending-approved240-window",
+  "real_B_activate_and_A_rollback": "pending",
+  "raw_public_or_private_keys_in_report": false,
+  "files_sha256": {
+    "install220-client.py": "ca8c9a5f5d29a27cc20dea0cf57ba76179fe93d1a3131064a4657cbe2f276d1b",
+    "test_security.py": "e5be69ba1a058323f40de7d0d76b110dd871893c663272aef5452531cbbfce94",
+    "manager-negative-tests.py": "9799105f047d1e60d9b772cfcd64927d78eace15256506d01eda4987a55354a6",
+    "fixed-deploy-test-chain.py": "2e8822ee99dd60dd9af53840b23b7b118ce0b6254f59954a68fb5d4ec52a37fb",
+    "install240-transport.py": "1b19312e62e76eaf117b017b1d7486313b87918c16d2fbf8157cadb270d69fbd",
+    "manager-install-limited.py": "89c69068cc0c45b75844f2031502f2e23fc6548ee8cc66ff20e04374919fed5e",
+    "manager-exercise.py": "e55690f94e9a99376936f949e4f8434317b5d67a1282a74217008dda6c2a673c",
+    "publisher_client220.py": "27f20c96914c5374a3a8775adaca43157b2e76bba5f673503e3881992b8d0170",
+    "validate.py": "9428f8226817cb5f180346571bc1ecd96870e8a60d0a27257391197805d30a01",
+    "manager-create220-identity.py": "f6123dc520bca37ad324ca7d3e5615bc508df8564de518312264794a6d7836e3",
+    "publisher_root.py": "0220f9905aed243c01f36110793641f0b9cd385a315dd0b76544f75c7f3cdf71",
+    "adopt-baseline240.py": "4b8053ec7bcec2ee429b13b7f076d6669e6e43a0209257990667554897e31d6b",
+    "publisher_dispatch.py": "8e327e157500feb7202e3afedc3a24e42573c1f6e7bafe0645187beda8a49193",
+    "publisher_protocol.py": "382d761e1d5dce4323fb2d30375bd1c76353044290c3d6c924eb9892accca910"
+  },
+  "candidate_deployed": false,
+  "actual_active_offline_tests": 27,
+  "actual_active_code_reference": "deployed/vm240; evidence/implementation/publisher-installed-code.json",
+  "live_acceptance_reference": "evidence/implementation/publisher-implementation-summary.json"
+}

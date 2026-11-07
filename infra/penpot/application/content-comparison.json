@@ -1,0 +1,20 @@
+[
+  {
+    "source_file_id": "9eb8678d-764d-810b-8008-e237712e9048",
+    "target_file_id": "13a31dab-5204-818d-8008-e6fe8d7ec046",
+    "stats_equal": true,
+    "differences": {}
+  },
+  {
+    "source_file_id": "e519ae78-b5c8-81fe-8008-e32aa3221908",
+    "target_file_id": "13a31dab-5204-818d-8008-e6feac0c763c",
+    "stats_equal": true,
+    "differences": {}
+  },
+  {
+    "source_file_id": "e519ae78-b5c8-81fe-8008-e32a81af5e27",
+    "target_file_id": "13a31dab-5204-818d-8008-e6febff84cd7",
+    "stats_equal": true,
+    "differences": {}
+  }
+]

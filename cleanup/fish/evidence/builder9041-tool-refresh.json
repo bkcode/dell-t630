@@ -1,0 +1,28 @@
+{
+  "at": "2026-11-06T17:49:40.686026+00:00",
+  "exit_code": 0,
+  "contract": {
+    "schema_version": 1,
+    "vmid": 9041,
+    "source_template": 9001,
+    "hostname": "fish-build-docker",
+    "ip": "192.168.19.198",
+    "mac": "bc:24:11:a6:72:55",
+    "fish_version": "4.0.2-1",
+    "no_chsh": true,
+    "docker_profile": {
+      "driver": "overlayfs",
+      "live_restore": true,
+      "containerd_snapshotter": "default-enabled"
+    },
+    "docker_daemon_sha256": "2c1c9ff5b7a09c2a49f196beebe463c83ca12380a6a34b899296c7d6c0b8cb6b"
+  },
+  "result": {
+    "vmid": 9041,
+    "status": "reviewed-public-tool-CAS-refreshed",
+    "before_sha256": "39be4065cfa4de7ed8fea27d37a2912d479576134d2692aebf1c3462e1f693bd",
+    "after_sha256": "3d2fa5f6eab371cde5860d98224a232ddc0d9c0f94ca8fc7d9182ecf47b3de94",
+    "contract_profile_refreshed": true,
+    "no_network_identity_service_changes": true
+  }
+}

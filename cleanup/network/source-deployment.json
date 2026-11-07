@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-07T01:39:27.800373+08:00",
+  "status": "control-and-bridge-model-source-applied-after22fixtures",
+  "files": [
+    {
+      "path": "dell/scripts/control.py",
+      "new_SHA256": "9e61ffe58c478a4d126052df2efb2c469dd26f01533555fb0cebd4ef74652987"
+    },
+    {
+      "path": "dell/network19/audit/render-bridge-acl.py",
+      "new_SHA256": "7a51f8be6c213719050acf461a3f66cfed27a7ddb7095d4460a28322c42921a0"
+    }
+  ],
+  "gateway_code_or_config_not_changed": true
+}

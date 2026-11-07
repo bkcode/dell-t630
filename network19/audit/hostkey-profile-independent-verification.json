@@ -1,0 +1,221 @@
+{
+  "captured_at": "2026-11-06T09:06:24.105060+00:00",
+  "profile_rows": [
+    {
+      "vmid": 190,
+      "reference": "store:snippets/dell-network-gateway-user.yaml",
+      "single_line_only_change": true,
+      "ssh_deletekeys_now_false": true,
+      "host_private_keys_embedded": false,
+      "cicustom_reference_matches": true,
+      "backup_root600": true,
+      "snippet_root600": true,
+      "full_userdata_or_key_contents_emitted": false
+    },
+    {
+      "vmid": 200,
+      "reference": "store:snippets/dell-data-prod-db-user.yaml",
+      "single_line_only_change": true,
+      "ssh_deletekeys_now_false": true,
+      "host_private_keys_embedded": false,
+      "cicustom_reference_matches": true,
+      "backup_root600": true,
+      "snippet_root600": true,
+      "full_userdata_or_key_contents_emitted": false
+    },
+    {
+      "vmid": 201,
+      "reference": "store:snippets/dell-data-prod-infra-user.yaml",
+      "single_line_only_change": true,
+      "ssh_deletekeys_now_false": true,
+      "host_private_keys_embedded": false,
+      "cicustom_reference_matches": true,
+      "backup_root600": true,
+      "snippet_root600": true,
+      "full_userdata_or_key_contents_emitted": false
+    },
+    {
+      "vmid": 210,
+      "reference": "store:snippets/dell-data-test-user.yaml",
+      "single_line_only_change": true,
+      "ssh_deletekeys_now_false": true,
+      "host_private_keys_embedded": false,
+      "cicustom_reference_matches": true,
+      "backup_root600": true,
+      "snippet_root600": true,
+      "full_userdata_or_key_contents_emitted": false
+    },
+    {
+      "vmid": 220,
+      "reference": "store:snippets/dell-publish-service-user.yaml",
+      "single_line_only_change": true,
+      "ssh_deletekeys_now_false": true,
+      "host_private_keys_embedded": false,
+      "cicustom_reference_matches": true,
+      "backup_root600": true,
+      "snippet_root600": true,
+      "full_userdata_or_key_contents_emitted": false
+    },
+    {
+      "vmid": 221,
+      "reference": "store:snippets/dell-artifact-service-user.yaml",
+      "single_line_only_change": true,
+      "ssh_deletekeys_now_false": true,
+      "host_private_keys_embedded": false,
+      "cicustom_reference_matches": true,
+      "backup_root600": true,
+      "snippet_root600": true,
+      "full_userdata_or_key_contents_emitted": false
+    },
+    {
+      "vmid": 230,
+      "reference": "store:snippets/dell-java-prod-01-user.yaml",
+      "single_line_only_change": true,
+      "ssh_deletekeys_now_false": true,
+      "host_private_keys_embedded": false,
+      "cicustom_reference_matches": true,
+      "backup_root600": true,
+      "snippet_root600": true,
+      "full_userdata_or_key_contents_emitted": false
+    },
+    {
+      "vmid": 231,
+      "reference": "store:snippets/dell-java-prod-02-user.yaml",
+      "single_line_only_change": true,
+      "ssh_deletekeys_now_false": true,
+      "host_private_keys_embedded": false,
+      "cicustom_reference_matches": true,
+      "backup_root600": true,
+      "snippet_root600": true,
+      "full_userdata_or_key_contents_emitted": false
+    },
+    {
+      "vmid": 232,
+      "reference": "store:snippets/dell-java-prod-03-user.yaml",
+      "single_line_only_change": true,
+      "ssh_deletekeys_now_false": true,
+      "host_private_keys_embedded": false,
+      "cicustom_reference_matches": true,
+      "backup_root600": true,
+      "snippet_root600": true,
+      "full_userdata_or_key_contents_emitted": false
+    },
+    {
+      "vmid": 240,
+      "reference": "store:snippets/dell-java-test-01-user.yaml",
+      "single_line_only_change": true,
+      "ssh_deletekeys_now_false": true,
+      "host_private_keys_embedded": false,
+      "cicustom_reference_matches": true,
+      "backup_root600": true,
+      "snippet_root600": true,
+      "full_userdata_or_key_contents_emitted": false
+    },
+    {
+      "vmid": 250,
+      "reference": "store:snippets/dell-penpot-service-user.yaml",
+      "single_line_only_change": true,
+      "ssh_deletekeys_now_false": true,
+      "host_private_keys_embedded": false,
+      "cicustom_reference_matches": true,
+      "backup_root600": true,
+      "snippet_root600": true,
+      "full_userdata_or_key_contents_emitted": false
+    },
+    {
+      "vmid": 260,
+      "reference": "store:snippets/dell-nas-media-user.yaml",
+      "single_line_only_change": true,
+      "ssh_deletekeys_now_false": true,
+      "host_private_keys_embedded": false,
+      "cicustom_reference_matches": true,
+      "backup_root600": true,
+      "snippet_root600": true,
+      "full_userdata_or_key_contents_emitted": false
+    },
+    {
+      "vmid": 270,
+      "reference": "store:snippets/dell-ops-service-user.yaml",
+      "single_line_only_change": true,
+      "ssh_deletekeys_now_false": true,
+      "host_private_keys_embedded": false,
+      "cicustom_reference_matches": true,
+      "backup_root600": true,
+      "snippet_root600": true,
+      "full_userdata_or_key_contents_emitted": false
+    }
+  ],
+  "guest230": {
+    "qga_exit_code": 0,
+    "guest_exit_code": 0,
+    "identity": {
+      "hostname": "java-prod-01",
+      "machine_id": "346f97d644174e89a3fe8dbe9fa7039f",
+      "interfaces": [
+        {
+          "ifname": "eth0",
+          "MAC": "bc:24:11:1c:20:00",
+          "IPv4": [
+            [
+              "192.168.19.40",
+              24
+            ]
+          ]
+        }
+      ],
+      "ed25519_public_fingerprint": "SHA256:KeItAegZqF5lSTCA3fAzKUFYuLAbnG9Pt1AqWskXMlM"
+    },
+    "original_machine_id_matches": true,
+    "expected_hostname_MAC_IP_matches": true
+  },
+  "host_guest_or_trust_file_mutations": false,
+  "original230_evidence": {
+    "path": "evidence/implementation/rolling-guest-reboot-acceptance.json",
+    "machine_id_lines": [
+      207,
+      726,
+      784
+    ],
+    "machine_id": "346f97d644174e89a3fe8dbe9fa7039f",
+    "hostname": "java-prod-01",
+    "original_fingerprint": "SHA256:SsWkQtSVu/3sssyrmVMb13r8r9/zQhWeEH3ZQ/CzCDM"
+  },
+  "status": "passed",
+  "generated_template_dump_not_effective_custom_userdata_proof": true,
+  "templates_generated_dump_observation": [
+    {
+      "vmid": 9001,
+      "dump_exit_code": 0,
+      "ssh_deletekeys_default_true": false,
+      "profile_contents_emitted": false
+    },
+    {
+      "vmid": 9010,
+      "dump_exit_code": 0,
+      "ssh_deletekeys_default_true": false,
+      "profile_contents_emitted": false
+    }
+  ],
+  "templates": [
+    {
+      "vmid": 9001,
+      "reference": "store:snippets/dell-docker-default-user.yaml",
+      "effective_custom_user_flags": [
+        "true"
+      ],
+      "field_name_present": true,
+      "host_keys_injected_present": false,
+      "profile_contents_or_keys_emitted": false
+    },
+    {
+      "vmid": 9010,
+      "reference": "store:snippets/dell-linux-default-user.yaml",
+      "effective_custom_user_flags": [
+        "true"
+      ],
+      "field_name_present": true,
+      "host_keys_injected_present": false,
+      "profile_contents_or_keys_emitted": false
+    }
+  ]
+}

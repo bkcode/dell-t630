@@ -1,0 +1,491 @@
+[
+  {
+    "at": "2026-11-06T08:09:08.759660+00:00",
+    "role": 250,
+    "hostname": "penpot-service",
+    "read_only": true,
+    "secret_or_full_config_emitted": false,
+    "public_env": {
+      "PENPOT_PUBLIC_URI": "http://192.168.21.22:9001"
+    },
+    "public_file_metadata": [
+      {
+        "path": "/opt/dell/penpot/assignment.json",
+        "uid": 0,
+        "gid": 0,
+        "mode": "0o644",
+        "bytes": 374,
+        "sha256": "67edbf7c1906000bf15c0977d15e52a73e7dcd8a92bec3e1701a7c92eae6563b"
+      },
+      {
+        "path": "/opt/dell/penpot/compose.fresh.yaml",
+        "uid": 0,
+        "gid": 0,
+        "mode": "0o644",
+        "bytes": 10573,
+        "sha256": "9aca0e47e83508c517e1299f33afcfb435da70ab4c1a45ed8fbe8deb96d28db9"
+      },
+      {
+        "path": "/opt/dell/penpot/application/target-api.py",
+        "uid": 0,
+        "gid": 0,
+        "mode": "0o755",
+        "bytes": 11165,
+        "sha256": "8cebfda636e14bfe5edd712f538b757d6d1e84acbb8fe5168c7c8f427b24a5ef"
+      },
+      {
+        "path": "/opt/dell/penpot/runtime/health-supervision/supervisor.py",
+        "uid": 0,
+        "gid": 0,
+        "mode": "0o555",
+        "bytes": 11737,
+        "sha256": "d9152f24693ffb7352abd887e61475f60b0d8c4921ee93787c956278a703a289"
+      },
+      {
+        "path": "/opt/dell/penpot/runtime/health-supervision/node-health.mjs",
+        "uid": 0,
+        "gid": 0,
+        "mode": "0o555",
+        "bytes": 3444,
+        "sha256": "ae4a6a9784dc5bd70da893a0cb39c86cbd5981b869f5755573beaf32fa590114"
+      },
+      {
+        "path": "/opt/dell/penpot/runtime/health-supervision/deployment-lock.json",
+        "uid": 0,
+        "gid": 0,
+        "mode": "0o600",
+        "bytes": 10614,
+        "sha256": "4df67e36624d30bd5ac4d48d752a5f2b07b9e8ad864adda88713fb2c7f1d0d29"
+      }
+    ],
+    "locked_guest": {
+      "vmid": 250,
+      "hostname": "penpot-service",
+      "ip": "10.63.30.30",
+      "arch": "amd64"
+    },
+    "locked_storage": {
+      "mountpoint": "/srv/penpot",
+      "filesystem_uuid": "ccccda03-bffd-4054-afd3-e0e22f0c607e",
+      "docker_root_dir": "/srv/penpot/docker"
+    },
+    "locked_git": {
+      "path": "/opt/dell/penpot/source",
+      "HEAD": "ff1783e7865af7aae571c985f03e057631b7af63",
+      "dirty_required": false,
+      "no_update_or_source_mutation": true
+    },
+    "11_image_ids": {
+      "penpot-import": "sha256:d4414e3f2e41ac4f5eb4b2c146c05cbc9f9754b179d6b63efa3af95c005b1261",
+      "penpot-worker": "sha256:c0bead679c3fe7a4b80d2485f87bdce0e5a6acc26a9c2a001b0e4e3270dadee5",
+      "penpot-frontend": "sha256:bd020fb6bddfd77449c26f76ee04ca7b2b50a0ffe8562ebc7b9e294bfcd38b89",
+      "penpot-backend": "sha256:c54c38204393018c4009b7161b9ee3a04ccc0daab657b820d5de86a0d3013630",
+      "penpot-admin-console": "sha256:29c13326e854fd63e18a7231cb1ca26d60f728692bd1207ded003b94aba79390",
+      "penpot-exporter": "sha256:6173b08e25850cda792cd75261e741649c0febd48326e68e8711ba44b5c9af42",
+      "penpot-dns": "sha256:7ed84fca86579b7bee90ec5c9750457cd9450729d2dd01fb2070f00f6cd7fb14",
+      "penpot-valkey": "sha256:ca662989648f173e01fb1a1768e7d84ddcaf8b7de135070b59271b0918104eb3",
+      "penpot-mcp": "sha256:e95070617f49eacc00f136061d9c6b4bad957319046e9e65e7cee14b9e77577c",
+      "penpot-postgres": "sha256:245fc027b7f3755bbd21b4375c2a0ebc7fa5d16c4573da497be9850a823973c8",
+      "penpot-mailpit": "sha256:580a202b5088e9c651a8e8b4e461e3213fbd3a3aacaa3d2251892a546a734116"
+    },
+    "selector_counts": {
+      "supervisor_old_ip": 2,
+      "admin_health_old_origin": 2,
+      "frontend_literal_0_bind": 1,
+      "owner_loopback_origin": 1
+    },
+    "fresh_marker_keys": [
+      "created_at",
+      "git_head",
+      "mode",
+      "source_credentials_copied"
+    ],
+    "public_hash_locks_match": true
+  },
+  {
+    "at": "2026-11-06T08:09:08.622116+00:00",
+    "role": 221,
+    "hostname": "artifact-service",
+    "read_only": true,
+    "secret_or_full_config_emitted": false,
+    "public_env": {
+      "NEXUS_DATA_DIR": "/srv/nexus/data",
+      "NEXUS_BIND_ADDRESS": "0.0.0.0"
+    },
+    "public_file_metadata": [
+      {
+        "path": "/opt/dell/nexus/assignment.json",
+        "uid": 0,
+        "gid": 0,
+        "mode": "0o644",
+        "bytes": 374,
+        "sha256": "ca988b2a947bb7712e8e38097b0e02b1911c06c51fb83c6264bad503f5086b22"
+      },
+      {
+        "path": "/opt/dell/nexus/application-import.py",
+        "uid": 0,
+        "gid": 0,
+        "mode": "0o755",
+        "bytes": 16630,
+        "sha256": "f7ea6a0f775bde3c3db297690ee476ac32ebbc7a89c739cbbcf259beaf1d5a71"
+      },
+      {
+        "path": "/opt/dell/nexus/manage.py",
+        "uid": 0,
+        "gid": 0,
+        "mode": "0o644",
+        "bytes": 5242,
+        "sha256": "522a12a9738802a3cab7312b9a9ada886839e88e173e44313b9263528f55b470"
+      },
+      {
+        "path": "/opt/dell/nexus/target_guard.py",
+        "uid": 0,
+        "gid": 0,
+        "mode": "0o755",
+        "bytes": 5217,
+        "sha256": "5d138cde0f0457ed0691d8fdcf0bbdea9495fc0c9af05d317d92953da07894cb"
+      }
+    ],
+    "fresh_marker": {
+      "mode": "new-instance-application-export-import",
+      "expected_guest_ip": "10.63.30.20",
+      "expected_hostname": "artifact-service",
+      "filesystem_uuid": "239dc45a-b1f3-408b-a8ef-7afa77b52204",
+      "old_h2_or_credentials_imported": false
+    },
+    "importer_loopback_origin_count": 1
+  },
+  {
+    "at": "2026-11-06T08:09:08.677622+00:00",
+    "role": 260,
+    "hostname": "nas-media",
+    "read_only": true,
+    "secret_or_full_config_emitted": false,
+    "public_env": {
+      "NAS_BIND_IP": "10.63.40.10",
+      "NAS_DATA_UUID": "5b19837c-128c-498a-b79d-563db810c34a",
+      "NAS_MOUNT": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a",
+      "JELLYFIN_UID": "2000",
+      "JELLYFIN_GID": "2000",
+      "JELLYFIN_PUBLIC_URL": "http://192.168.21.22:8096"
+    },
+    "network_xml_exists": true,
+    "network_xml_metadata": {
+      "path": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a/appdata/jellyfin/config/config/network.xml",
+      "uid": 2000,
+      "gid": 2000,
+      "mode": "0o644",
+      "bytes": 1140,
+      "sha256": "316cf588a9319915ee4a0f0e10406d784fc1807a5f8164a40c606c3a723a0349"
+    },
+    "JF_network_structure": {
+      "BaseUrl": null,
+      "EnableHttps": null,
+      "RequireHttps": null,
+      "CertificatePath": null,
+      "CertificatePassword": null,
+      "InternalHttpPort": null,
+      "InternalHttpsPort": null,
+      "PublicHttpPort": null,
+      "PublicHttpsPort": null,
+      "AutoDiscovery": null,
+      "EnableUPnP": null,
+      "EnableIPv4": null,
+      "EnableIPv6": null,
+      "EnableRemoteAccess": null,
+      "LocalNetworkSubnets": [
+        "string",
+        "string",
+        "string",
+        "string"
+      ],
+      "LocalNetworkAddresses": null,
+      "KnownProxies": null,
+      "IgnoreVirtualInterfaces": null,
+      "VirtualInterfaceNames": [
+        "string"
+      ],
+      "EnablePublishedServerUriByRequest": null,
+      "PublishedServerUriBySubnet": null,
+      "RemoteIPFilter": null,
+      "IsRemoteIPFilterBlacklist": null
+    },
+    "JF_public_network_fields": {
+      "LocalNetworkSubnets": [
+        "10.63.40.0/24",
+        "192.168.21.0/24",
+        "127.0.0.0/8",
+        "172.18.0.1/32"
+      ],
+      "EnableRemoteAccess": "false",
+      "EnableUPnP": "false"
+    },
+    "OMV_wired_object": {
+      "address": "10.63.40.10",
+      "address6": "",
+      "altmacaddress": "",
+      "comment": "",
+      "devicename": "ens18",
+      "dnsnameservers": "1.1.1.1",
+      "dnssearch": "",
+      "gateway": "10.63.40.1",
+      "gateway6": "",
+      "method": "static",
+      "method6": "manual",
+      "mtu": 0,
+      "netmask": "255.255.255.0",
+      "netmask6": 64,
+      "type": "ethernet",
+      "uuid": "f5ea6395-ec2e-47ca-9e5e-4d541eeb9f5f",
+      "wol": false,
+      "routemetric": 0,
+      "routemetric6": 1
+    },
+    "OMV_network_rpc_methods": [
+      "getName",
+      "initialize",
+      "getGeneralSettings",
+      "setGeneralSettings",
+      "enumerateDevices",
+      "enumerateDevicesList",
+      "enumerateConfiguredDevices",
+      "identify",
+      "getInformation",
+      "getInterfaceList",
+      "getInterface",
+      "deleteInterface",
+      "getEthernetCandidates",
+      "getEthernetIface",
+      "setEthernetIface",
+      "enumerateBondSlaves",
+      "getBondIface",
+      "setBondIface",
+      "getVlanCandidates",
+      "getVlanIface",
+      "setVlanIface",
+      "getWirelessCandidates",
+      "getWirelessIface",
+      "setWirelessIface",
+      "enumerateBridgeSlaves",
+      "getBridgeIface",
+      "setBridgeIface",
+      "getProxy",
+      "setProxy"
+    ],
+    "OMV_setEthernetIface_public_source_excerpt": "function setEthernetIface($params, $context)\n    {\n        // Validate the RPC caller context.\n        $this->validateMethodContext($context, [\n            \"role\" => OMV_ROLE_ADMINISTRATOR\n        ]);\n        // Validate the network interface specific parameters of the\n        // RPC service method.\n        $this->validateMethodParams($params, \"rpc.network.setethernetiface\");\n        // Set the configuration object.\n        return $this->setInterfaceConfig($params, [\n            \"type\" => \"ethernet\"\n        ]);\n    }\n\n    /**\n     * Enumerate all interfaces from a bonded interface object.\n     * @param params An array containing the following fields:\n     *   \\em uuid The UUID of the bonded interface configuration object.\n     *   \\em unused If TRUE then the network interfaces that are\n     *   not configured nor used will be appended to the result list.\n     *   Defaults to TRUE.\n     * @param context The context of the caller.\n     * @return If \\em uuid is set to OMV_CONFIGOBJECT_NEW_UUID a list of\n     *   available network interfaces (iface class objects) is returned,\n     *   otherwise the bonded interface slaves and the unreferenced\n     *   network interfaces are returned.\n     */\n    public function enumerateBondSlaves($params, $context)\n    {\n        // Validate the RPC caller context.\n        $this->validateMethodContext($context, [\n            \"role\" => OMV_ROLE_ADMINISTRATOR\n        ]);\n        // Validate the parameters of the RPC service method.\n        $this->validateMethodParams($params, \"rpc.network.enumeratebondslaves\");\n        // Get list of network interfaces.\n        $db = \\OMV\\Config\\Database::getInstance();\n        $result = [];\n        if (array_value($params, \"unused\", false) === true) {\n            // Get all existing ethernet network interface devices.\n            $mngr = \\OMV\\System\\Net\\NetworkInterfaceBackend\\Manager::getInstance();\n            if (false === ($devs = $mngr->enumerate(\n                OMV_NETWORK_INTERFACE_TYPE_ETHERNET\n            ))) {\n                throw new \\OMV\\Exception(\n                    \"Failed to get list of network interface devices.\"\n                );\n            }\n            // Process the identified devices and skip those that are\n            // already configured or in use.\n            foreach ($devs as $devk => $devv) {\n                // Is network interface device referenced somewhere:\n                // - Check if the interface is already used by a bond\n                //   or bridge interface.\n                if ($db->exists(\"conf.system.network.interface\", [\n                    \"operator\" => \"and\",\n                    \"arg0\" => [\n                        \"operator\" => \"stringEnum\",\n",
+    "OMV_network_model_exists": true,
+    "OMV_network_model": {
+      "type": "config",
+      "id": "conf.system.network.interface",
+      "title": "Network interface",
+      "queryinfo": {
+        "xpath": ".//system/network/interfaces/interface",
+        "iterable": true,
+        "idproperty": "uuid",
+        "refproperty": "interfaceref"
+      },
+      "properties": {
+        "uuid": {
+          "type": "string",
+          "format": "uuidv4"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "ethernet",
+            "bond",
+            "vlan",
+            "wifi",
+            "bridge"
+          ],
+          "default": "ethernet"
+        },
+        "devicename": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string",
+          "enum": [
+            "dhcp",
+            "static",
+            "manual"
+          ],
+          "default": "manual"
+        },
+        "address": {
+          "type": "string"
+        },
+        "netmask": {
+          "type": "string"
+        },
+        "gateway": {
+          "type": "string"
+        },
+        "routemetric": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 65535,
+          "default": 0
+        },
+        "method6": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "dhcp",
+            "static",
+            "manual"
+          ],
+          "default": "manual"
+        },
+        "address6": {
+          "type": "string"
+        },
+        "netmask6": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 128,
+          "default": 64
+        },
+        "gateway6": {
+          "type": "string"
+        },
+        "routemetric6": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 65535,
+          "default": 1
+        },
+        "dnsnameservers": {
+          "type": "string",
+          "pattern": "^((\\S+\\s+)*\\S+)?$"
+        },
+        "dnssearch": {
+          "type": "string",
+          "pattern": "^((\\S+\\s+)*\\S+)?$"
+        },
+        "mtu": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 65535,
+          "default": 0
+        },
+        "wol": {
+          "type": "boolean",
+          "default": false
+        },
+        "comment": {
+          "type": "string"
+        },
+        "altmacaddress": {
+          "type": "string",
+          "pattern": "^([a-fA-F0-9]{2}(:[a-fA-F0-9]{2}){5})?$",
+          "default": ""
+        },
+        "slaves": {
+          "type": "string",
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^(((eth|venet|wlan)\\d+|(en|veth|wl)\\S+|(bond)\\d+)(\\.\\d+)?,)*((eth|venet|wlan)\\d+|(en|veth|wl)\\S+|(bond)\\d+)(\\.\\d+)?$"
+            },
+            {
+              "type": "string",
+              "maxLength": 0
+            }
+          ]
+        },
+        "bondprimary": {
+          "type": "string"
+        },
+        "bondmode": {
+          "type": "integer",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "default": 1
+        },
+        "bondmiimon": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 0
+        },
+        "bonddowndelay": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 0
+        },
+        "bondupdelay": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 0
+        },
+        "bondtransmithashpolicy": {
+          "type": "string",
+          "enum": [
+            "layer2",
+            "layer2+3",
+            "layer3+4",
+            "encap2+3",
+            "encap3+4"
+          ],
+          "default": "layer2"
+        },
+        "vlanid": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4095,
+          "default": 1
+        },
+        "vlanrawdevice": {
+          "type": "string"
+        },
+        "band": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "2.4GHz",
+            "5GHz"
+          ],
+          "default": "auto"
+        },
+        "wpassid": {
+          "type": "string"
+        },
+        "wpapsk": {
+          "type": "string"
+        },
+        "keymanagement": {
+          "type": "string",
+          "enum": [
+            "psk",
+            "sae"
+          ],
+          "default": "psk"
+        },
+        "hidden": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "SSH_fields": [
+      "listenaddress [::]:22",
+      "listenaddress 0.0.0.0:22",
+      "permitrootlogin no",
+      "pubkeyauthentication yes",
+      "passwordauthentication no"
+    ],
+    "SMB_bind_fields": {
+      "interfaces": "",
+      "bind interfaces only": "No",
+      "hosts allow": "",
+      "hosts deny": ""
+    }
+  }
+]

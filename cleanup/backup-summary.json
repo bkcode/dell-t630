@@ -1,0 +1,8 @@
+{
+  "archives": 21,
+  "all_verified": true,
+  "compressed_bytes": 32096582489,
+  "directory_mode": "0o700",
+  "bad_archive_permissions": [],
+  "storage": "Name             Type     Status           Total            Used       Available        %\nlocal             dir     active        98497780        10712940        82735292   10.88%\nlocal-lvm     lvmthin     active       334610432        13016345       321594086    3.89%\nstore             dir     active      7750194656       121085520      7238445816    1.56%\n"
+}

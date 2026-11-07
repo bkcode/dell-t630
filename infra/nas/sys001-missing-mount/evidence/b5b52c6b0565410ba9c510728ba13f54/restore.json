@@ -1,0 +1,13 @@
+{
+  "collected_at": "2026-11-06T06:50:08.343810+00:00",
+  "exit_code": 1,
+  "result": {
+    "status": "failed",
+    "phase": "restore",
+    "nonce": "b5b52c6b0565410ba9c510728ba13f54",
+    "error_category": "Failure",
+    "safe_reason": "QA-exited-or-OOM-no-resource-increase",
+    "cleanup_may_be_required": true,
+    "real_services_not_restarted": true
+  }
+}

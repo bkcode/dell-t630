@@ -1,0 +1,68 @@
+{
+  "role": 260,
+  "status": "readonly-SMB-helper-input-structure",
+  "existing_permission_auth": [
+    {
+      "folder": "permissions-5193233d83fe453eb9aa1290e404b1bc",
+      "mode": "0o700",
+      "uid": 0,
+      "auth_files": [
+        {
+          "name": "writer.auth",
+          "uid": 0,
+          "mode": "0o600",
+          "symlink": false,
+          "username_fields": [
+            "naswriter"
+          ]
+        },
+        {
+          "name": "reader.auth",
+          "uid": 0,
+          "mode": "0o600",
+          "symlink": false,
+          "username_fields": [
+            "nasreader"
+          ]
+        }
+      ]
+    },
+    {
+      "folder": "permissions-c9afdeefb90347dca36abc4247a1a90c",
+      "mode": "0o700",
+      "uid": 0,
+      "auth_files": [
+        {
+          "name": "writer.auth",
+          "uid": 0,
+          "mode": "0o600",
+          "symlink": false,
+          "username_fields": [
+            "naswriter"
+          ]
+        },
+        {
+          "name": "reader.auth",
+          "uid": 0,
+          "mode": "0o600",
+          "symlink": false,
+          "username_fields": [
+            "nasreader"
+          ]
+        }
+      ]
+    }
+  ],
+  "new_attempt_private_files": [
+    {
+      "folder": "network19-permissions-036b6b6c20c04159acd0bbe2a9984309",
+      "filenames": [
+        "modified.bin",
+        "original.bin",
+        "reader.auth",
+        "writer.auth"
+      ]
+    }
+  ],
+  "password_or_hash_emitted": false
+}

@@ -1,0 +1,50 @@
+{
+  "scope": "read-only exact valid synthetic-token denial RCA",
+  "redis_state": {
+    "at": "2026-11-06T12:04:04.948047+08:00",
+    "redis_host": "10.63.20.10",
+    "redis_database": 0,
+    "own_test_token_jti_sha256": "dcc196e66dd065d24be6c47373c7bbf619466e4cf3fe078b0ffcaf0ab8b5caf0",
+    "blacklist_key_exists": false,
+    "blacklist_key_pttl_ms": -2,
+    "key_or_secret_value_emitted": false,
+    "redis_business_value_modified": false
+  },
+  "safe_claims": {
+    "aud": "finger-admin",
+    "iss": "http://192.168.21.22:19999",
+    "ui": 900000000001,
+    "ir": true,
+    "ri": 900000000002
+  },
+  "gateway_denial_code": 10016,
+  "actual_requested_path": "/sys-api/v1/role/get-list",
+  "source_filter_branches": [
+    "blacklist key exists",
+    "audience client-route prefix mismatch"
+  ],
+  "prepared_security_client_route_map_override_present": false,
+  "default_admin_allowed_prefixes": [
+    "finger-bff-system",
+    "finger-bff-socket"
+  ],
+  "frontend_contract": {
+    "development_api_prefix": "/finger-bff-system",
+    "development_auth_prefix": "/finger-auth"
+  },
+  "conclusion": "Own fresh token is not blacklisted; explicit unprefixed test route does not match default finger-admin service-prefix policy. No request header can change this filter path-prefix branch.",
+  "changes_performed": false,
+  "configured_redis_database_confirmed": 0,
+  "legacy_and_spring_redis_database_aliases_match": true,
+  "gateway_compiled_blacklist_prefix_confirmed": true,
+  "source_frontend_base_evidence": [
+    "projects/finger-admin/.env.development VITE_GLOB_API_URL prefix /finger-bff-system",
+    "projects/finger-admin/.env.production VITE_GLOB_API_URL suffix /finger-bff-system"
+  ],
+  "resolution": {
+    "status": "resolved-in-approved-test-e2e",
+    "evidence": "evidence/implementation/java-test-business-acceptance.json",
+    "release": "20261106T121030",
+    "old_failure_preserved": true
+  }
+}

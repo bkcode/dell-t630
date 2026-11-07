@@ -1,0 +1,91 @@
+name: nexus
+services:
+  nexus:
+    image: sonatype/nexus3@sha256:e190be450888ec912b941579bac90767d73debc3307a26326c8a71132b02951f
+    platform: linux/amd64
+    restart: unless-stopped
+    user: 200:200
+    cpus: '1.75'
+    mem_limit: 3g
+    environment:
+      INSTALL4J_ADD_VM_PARAMS: -Xms512m -Xmx1536m -XX:MaxDirectMemorySize=768m -Djava.util.prefs.userRoot=/nexus-data/javaprefs
+        -Dfile.encoding=UTF-8
+    volumes:
+    - type: bind
+      source: ${NEXUS_DATA_DIR:?Set NEXUS_DATA_DIR}
+      target: /nexus-data
+      bind:
+        create_host_path: false
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+    stop_grace_period: 120s
+    healthcheck:
+      test:
+      - CMD
+      - curl
+      - --fail
+      - --silent
+      - http://localhost:8081/service/rest/v1/status
+      interval: 30s
+      timeout: 5s
+      retries: 6
+      start_period: 180s
+    logging:
+      driver: local
+      options:
+        max-size: 10m
+        max-file: '3'
+    networks:
+    - backend
+    expose:
+    - '8081'
+    pids_limit: 1024
+  gateway:
+    image: nginx@sha256:db4f612f385437d11eb26620a4f1d7efb3ff44e1296a3c21540b30454e6e2bf3
+    platform: linux/amd64
+    restart: unless-stopped
+    cpus: '0.25'
+    mem_limit: 64m
+    memswap_limit: 64m
+    read_only: true
+    security_opt:
+    - no-new-privileges:true
+    networks:
+    - ingress
+    - backend
+    depends_on:
+      nexus:
+        condition: service_healthy
+    ports:
+    - ${NEXUS_BIND_ADDRESS:-127.0.0.1}:8081:8080
+    volumes:
+    - type: bind
+      source: ./config/nginx.conf
+      target: /etc/nginx/conf.d/default.conf
+      read_only: true
+      bind:
+        create_host_path: false
+    tmpfs:
+    - /var/cache/nginx:size=32m,mode=0755
+    - /var/run:size=4m,mode=0755
+    healthcheck:
+      test:
+      - CMD
+      - nginx
+      - -t
+      - -q
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    logging:
+      driver: local
+      options:
+        max-size: 10m
+        max-file: '3'
+    pids_limit: 1024
+networks:
+  backend:
+    internal: true
+  ingress: {}

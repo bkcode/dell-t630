@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-06T16:07:02.342220",
+  "target": {
+    "vmid": 270,
+    "ip": "10.63.30.40",
+    "host_key_alias": "dell-vm270",
+    "host_key_fingerprint": "SHA256:OjP5q9f3WXxGcoOHs23VlnOf258C6T+nNAxTiYoyf0g",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "result": {
+    "silence_id": "d6a7051e-ff56-47a1-a8ba-2254063c3c68",
+    "status": "active",
+    "matchers": [
+      {
+        "isEqual": true,
+        "isRegex": false,
+        "name": "site",
+        "value": "dell-t630"
+      }
+    ],
+    "endsAt": "2026-11-06T14:07:02.284Z",
+    "notification_config_changed": false,
+    "message_sent": false
+  },
+  "remove_after_network19_healthy": true
+}

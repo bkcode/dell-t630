@@ -1,0 +1,17 @@
+{
+  "status": "readonly-inventory-complete-installation-not-started",
+  "at": "2026-11-06T17:08:18.380196+00:00",
+  "guest_count": 8,
+  "all_Debian13": true,
+  "all_current_ub_root_bash": true,
+  "fish_installed_count": 0,
+  "cached_candidate_versions": [
+    "4.0.2-1"
+  ],
+  "templates_all_stopped": true,
+  "templates_package_state": "unknown-no-start",
+  "default_shell_policy": "pending user reply; install-only/no chsh by default",
+  "source_template_update_method": "root fullclones→builder install→seal candidate→2 independent identity QA clones; originals stopped",
+  "guest_or_host_mutations": false,
+  "exclusions_respected": true
+}

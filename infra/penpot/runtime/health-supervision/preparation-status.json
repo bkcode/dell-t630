@@ -1,0 +1,26 @@
+{
+  "prepared_at": "2026-11-06T05:11:50.086622+00:00",
+  "status": "local-and-target-runtime-verified",
+  "scope": "VM250 only; existing11 not modified",
+  "python_tests_passed": 14,
+  "node_tests_passed": 8,
+  "DNS_network_none_exact_helper_passed": true,
+  "DNS_public_upstream_is_restart_gate": false,
+  "supervisor_implemented": true,
+  "target_installed": true,
+  "existing11_stopped_or_recreated": false,
+  "source_Git_or_design_mutations": false,
+  "frontend_fault_recovery_executed": true,
+  "runtime_acceptance_status": "passed",
+  "artifacts": {
+    "supervisor.py": "d9152f24693ffb7352abd887e61475f60b0d8c4921ee93787c956278a703a289",
+    "deployment-lock.json": "4df67e36624d30bd5ac4d48d752a5f2b07b9e8ad864adda88713fb2c7f1d0d29",
+    "compose.health-supervision.yaml": "806177bae84d81af31fc42e9f6e4cb06b331e01640e78e975c8d00d9cd90dc18",
+    "20-health-supervision.conf": "370bdfa9e057c72c08569c8794979a4debbbb3155ee52b8d98d4dbe13da5400d",
+    "node-health.mjs": "ae4a6a9784dc5bd70da893a0cb39c86cbd5981b869f5755573beaf32fa590114",
+    "dns-health.sh": "adf4f98c4f8a51045e45a65a1fe8a7e938c1dead8fd025ae865aee7db6433b83",
+    "dns-health.hosts": "62cbbe447e6d52e9b4fe5d075e4ce2e63a9ada31edbed6092d0e723aebce203a"
+  },
+  "approved_window_complete": true,
+  "one_normal_guest_reboot_verified": true
+}

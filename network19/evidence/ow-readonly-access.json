@@ -1,0 +1,5 @@
+{
+  "exit_code": 255,
+  "stdout": "",
+  "error_category": "** WARNING: connection is not using a post-quantum key exchange algorithm.\n** This session may be vulnerable to \"store now, decrypt later\" attacks.\n** The server may need to be upgraded. See https://openssh.com/pq.html\nroot@192.168.21.1: Permission denied (publickey,password).\n"
+}

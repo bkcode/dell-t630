@@ -1,0 +1,64 @@
+name: dell-data-prod-db
+services:
+  mysql:
+    pids_limit: 1024
+    platform: linux/amd64
+    restart: 'no'
+    logging:
+      driver: local
+      options:
+        max-size: 10m
+        max-file: '3'
+    image: mysql:8.4.5@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840
+    cpus: '5.0'
+    mem_limit: 12g
+    memswap_limit: 12g
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql-root-password
+      MYSQL_DATABASE: ${NACOS_DB_NAME:?required}
+      MYSQL_USER: ${NACOS_DB_USER:?required}
+      MYSQL_PASSWORD_FILE: /run/secrets/nacos-db-password
+    ports:
+    - ${SERVICE_IP:?required}:3306:3306
+    volumes:
+    - type: bind
+      source: ${DATA_ROOT:?required}/mysql
+      target: /var/lib/mysql
+      bind:
+        create_host_path: false
+    - type: bind
+      source: ./config/mysql.cnf
+      target: /etc/mysql/conf.d/dell.cnf
+      bind:
+        create_host_path: false
+      read_only: true
+    - type: bind
+      source: ./vendor/nacos-mysql-schema-2.4.3.sql
+      target: /docker-entrypoint-initdb.d/10-nacos.sql
+      bind:
+        create_host_path: false
+      read_only: true
+    - type: bind
+      source: ./scripts/mysql-health.sh
+      target: /opt/health/mysql-health.sh
+      bind:
+        create_host_path: false
+      read_only: true
+    secrets:
+    - mysql-root-password
+    - nacos-db-password
+    healthcheck:
+      test:
+      - CMD
+      - sh
+      - /opt/health/mysql-health.sh
+      interval: 15s
+      timeout: 10s
+      retries: 12
+      start_period: 90s
+    stop_grace_period: 90s
+secrets:
+  mysql-root-password:
+    file: ./secrets/mysql-root-password
+  nacos-db-password:
+    file: ./secrets/nacos-db-password

@@ -1,0 +1,84 @@
+{
+  "at": "2026-11-06T17:57:53.541821",
+  "actual_client": "Mac192.168.21.116 via OW/gateway190",
+  "PVE_ports": [
+    {
+      "port": 22,
+      "connected": true,
+      "expected": true
+    },
+    {
+      "port": 8006,
+      "connected": true,
+      "expected": true
+    },
+    {
+      "port": 9001,
+      "connected": false,
+      "expected": false
+    },
+    {
+      "port": 8081,
+      "connected": false,
+      "expected": false
+    },
+    {
+      "port": 9080,
+      "connected": false,
+      "expected": false
+    },
+    {
+      "port": 445,
+      "connected": false,
+      "expected": false
+    },
+    {
+      "port": 8096,
+      "connected": false,
+      "expected": false
+    },
+    {
+      "port": 9999,
+      "connected": false,
+      "expected": false
+    },
+    {
+      "port": 19999,
+      "connected": false,
+      "expected": false
+    }
+  ],
+  "real_IP_services": [
+    {
+      "name": "Penpot",
+      "URL": "http://192.168.19.50:9001/",
+      "exit": 0,
+      "HTTP": "200"
+    },
+    {
+      "name": "Nexus",
+      "URL": "http://192.168.19.31:8081/",
+      "exit": 0,
+      "HTTP": "200"
+    },
+    {
+      "name": "OMV",
+      "URL": "http://192.168.19.60/",
+      "exit": 0,
+      "HTTP": "200"
+    },
+    {
+      "name": "Jellyfin",
+      "URL": "http://192.168.19.60:8096/health",
+      "exit": 0,
+      "HTTP": "200"
+    },
+    {
+      "name": "Grafana",
+      "URL": "http://192.168.19.70:3000/login",
+      "exit": 0,
+      "HTTP": "200"
+    }
+  ],
+  "all_passed": true
+}

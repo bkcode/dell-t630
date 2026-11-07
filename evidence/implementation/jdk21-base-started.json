@@ -1,0 +1,71 @@
+{
+  "at": "2026-11-06T06:05:59.386633+08:00",
+  "applications_started": false,
+  "results": [
+    {
+      "role": "java-prod-01",
+      "target": {
+        "vmid": 230,
+        "ip": "192.168.21.235",
+        "host_key_alias": "dell-vm230",
+        "host_key_fingerprint": "SHA256:QDO/Sh54JTBcdOpQPS72Gvtk+wuUjyiEP/KwWFUEO/s",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nRunning as unit: dell-jdk21-base.service; invocation ID: 4dd06ac06f744cf5adb9e13db7266586\n"
+    },
+    {
+      "role": "java-prod-02",
+      "target": {
+        "vmid": 231,
+        "ip": "192.168.21.221",
+        "host_key_alias": "dell-vm231",
+        "host_key_fingerprint": "SHA256:jBZbSCpKbPGxG70+luD10Fz2zQU5CbRInk0W7sjTqxo",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nRunning as unit: dell-jdk21-base.service; invocation ID: 04c4fea122bc41ccb2e8eb6fd06c9c15\n"
+    },
+    {
+      "role": "java-prod-03",
+      "target": {
+        "vmid": 232,
+        "ip": "192.168.21.148",
+        "host_key_alias": "dell-vm232",
+        "host_key_fingerprint": "SHA256:NYSxfiyZ2e0BikkyhtomHu3fAgTxdYCcbfq2rc8kARs",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nRunning as unit: dell-jdk21-base.service; invocation ID: 410730b357a44a6f813f43397d846284\n"
+    },
+    {
+      "role": "java-test-01",
+      "target": {
+        "vmid": 240,
+        "ip": "192.168.21.112",
+        "host_key_alias": "dell-vm240",
+        "host_key_fingerprint": "SHA256:I/UslFEJaEwF2zaWAwDhPmlSQDY5Yqbv7HE5PGDOaNA",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nRunning as unit: dell-jdk21-base.service; invocation ID: f6f391a724d4415e88adf2329a882c06\n"
+    },
+    {
+      "role": "publish-service",
+      "target": {
+        "vmid": 220,
+        "ip": "192.168.21.163",
+        "host_key_alias": "dell-vm220",
+        "host_key_fingerprint": "SHA256:5X/KJJzRjVAwgXasAjR9ok7UW+6UhHyr1FdSKkOowBw",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nRunning as unit: dell-jdk21-base.service; invocation ID: ccf98928c3974ccbaf9f2c8269ec306a\n"
+    }
+  ]
+}

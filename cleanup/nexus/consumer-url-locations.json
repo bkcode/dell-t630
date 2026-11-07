@@ -1,0 +1,150 @@
+[
+  {
+    "at": "2026-11-06T17:09:52.600202+00:00",
+    "vmid": 220,
+    "readonly": true,
+    "whitelist_configuration_locations": [
+      {
+        "path": "/etc/maven/settings.xml",
+        "exists": false
+      },
+      {
+        "path": "/etc/gradle/gradle.properties",
+        "exists": false
+      },
+      {
+        "path": "/etc/profile.d/dell-tools.sh",
+        "exists": false
+      },
+      {
+        "path": "/root/.gradle/gradle.properties",
+        "exists": false
+      },
+      {
+        "path": "/root/.m2/settings.xml",
+        "exists": false
+      },
+      {
+        "path": "/root/.npmrc",
+        "exists": false
+      },
+      {
+        "path": "/home/ub/.gradle/gradle.properties",
+        "exists": false
+      },
+      {
+        "path": "/home/ub/.m2/settings.xml",
+        "exists": false
+      },
+      {
+        "path": "/home/ub/.npmrc",
+        "exists": false
+      },
+      {
+        "path": "/var/lib/dell-publisher/.gradle/gradle.properties",
+        "exists": false
+      },
+      {
+        "path": "/var/lib/dell-publisher/.m2/settings.xml",
+        "exists": false
+      },
+      {
+        "path": "/var/lib/dell-publisher/.npmrc",
+        "exists": false
+      },
+      {
+        "path": "/srv/dell-build/gradle/gradle.properties",
+        "exists": false
+      },
+      {
+        "path": "/srv/dell-build/maven/settings.xml",
+        "exists": false
+      },
+      {
+        "path": "/etc/dell-publisher/client-test240.json",
+        "exists": true,
+        "selected_nonsecret_fields": [
+          {
+            "selector": "source_ip",
+            "value": "192.168.19.30"
+          },
+          {
+            "selector": "target_host",
+            "value": "192.168.19.45"
+          },
+          {
+            "selector": "target_user",
+            "value": "deployer"
+          },
+          {
+            "selector": "host_key_alias",
+            "value": "dell-test240-publisher"
+          }
+        ],
+        "contains19_31_literal": false
+      }
+    ],
+    "key_or_credentials_values_exported": false,
+    "no_recursive_home_or_publisher_backup": true
+  },
+  {
+    "at": "2026-11-06T17:09:52.476842+00:00",
+    "vmid": 221,
+    "readonly": true,
+    "whitelist_configuration_locations": [
+      {
+        "path": "/etc/nexus.env",
+        "exists": true,
+        "selected_nonsecret_fields": [],
+        "contains19_31_literal": true
+      },
+      {
+        "path": "/opt/dell/nexus/assignment.json",
+        "exists": true,
+        "selected_nonsecret_fields": [
+          {
+            "selector": "role",
+            "value": "artifact-service"
+          },
+          {
+            "selector": "expected_guest_ip",
+            "value": "192.168.19.31"
+          },
+          {
+            "selector": "expected_hostname",
+            "value": "artifact-service"
+          }
+        ],
+        "contains19_31_literal": true
+      },
+      {
+        "path": "/opt/dell/nexus/fresh-instance.json",
+        "exists": true,
+        "selected_nonsecret_fields": [
+          {
+            "selector": "expected_guest_ip",
+            "value": "192.168.19.31"
+          },
+          {
+            "selector": "expected_hostname",
+            "value": "artifact-service"
+          }
+        ],
+        "contains19_31_literal": true
+      },
+      {
+        "path": "/etc/dell-guest-monitoring/health.json",
+        "exists": true,
+        "selected_nonsecret_fields": [
+          {
+            "selector": "http_checks.nexus-status.url",
+            "value": "http://192.168.19.31:8081/service/rest/v1/status"
+          }
+        ],
+        "contains19_31_literal": true
+      }
+    ],
+    "key_or_credentials_values_exported": false,
+    "no_recursive_home_or_publisher_backup": true
+  }
+]

@@ -1,0 +1,419 @@
+{
+  "at": "2026-11-07T02:35:01.759527+08:00",
+  "status": "independent-cleanup-fish-template-checks-passed-Nexusmerge-still-pending-approval",
+  "guest_checks": [
+    {
+      "vmid": 200,
+      "name": "data-prod-db",
+      "target": {
+        "vmid": 200,
+        "ip": "192.168.19.10",
+        "host_key_alias": "dell-vm200",
+        "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "strict_SSH": true,
+      "readback": {
+        "hostname": "data-prod-db",
+        "ip": [
+          "192.168.19.10"
+        ],
+        "routes": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "fish": "fish, version 4.0.2",
+        "shells": {
+          "root": "/bin/bash",
+          "ub": "/bin/bash"
+        },
+        "business_Java_processes": false
+      }
+    },
+    {
+      "vmid": 201,
+      "name": "data-prod-infra",
+      "target": {
+        "vmid": 201,
+        "ip": "192.168.19.11",
+        "host_key_alias": "dell-vm201",
+        "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "strict_SSH": true,
+      "readback": {
+        "hostname": "data-prod-infra",
+        "ip": [
+          "192.168.19.11"
+        ],
+        "routes": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "fish": "fish, version 4.0.2",
+        "shells": {
+          "root": "/bin/bash",
+          "ub": "/bin/bash"
+        },
+        "business_Java_processes": true
+      }
+    },
+    {
+      "vmid": 210,
+      "name": "data-test",
+      "target": {
+        "vmid": 210,
+        "ip": "192.168.19.20",
+        "host_key_alias": "dell-vm210",
+        "host_key_fingerprint": "SHA256:8bBCQbBKGmZAw5q2AgT2vXHsyr2aFJktLqs/tDZ9SiA",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "strict_SSH": true,
+      "readback": {
+        "hostname": "data-test",
+        "ip": [
+          "192.168.19.20"
+        ],
+        "routes": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "fish": "fish, version 4.0.2",
+        "shells": {
+          "root": "/bin/bash",
+          "ub": "/bin/bash"
+        },
+        "business_Java_processes": true
+      }
+    },
+    {
+      "vmid": 220,
+      "name": "publish-service",
+      "target": {
+        "vmid": 220,
+        "ip": "192.168.19.30",
+        "host_key_alias": "dell-vm220",
+        "host_key_fingerprint": "SHA256:2PFQYC3uPSg/sMihWZZ7R1vgkKKozJbTwTjf6VNWwG4",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "strict_SSH": true,
+      "readback": {
+        "hostname": "publish-service",
+        "ip": [
+          "192.168.19.30"
+        ],
+        "routes": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "fish": "fish, version 4.0.2",
+        "shells": {
+          "root": "/bin/bash",
+          "ub": "/bin/bash"
+        },
+        "business_Java_processes": false
+      }
+    },
+    {
+      "vmid": 221,
+      "name": "artifact-service",
+      "target": {
+        "vmid": 221,
+        "ip": "192.168.19.31",
+        "host_key_alias": "dell-vm221",
+        "host_key_fingerprint": "SHA256:ky2Wn7M2CKgUqHaj65c4KnqphO6d3zh6sGEoYYzomWo",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "strict_SSH": true,
+      "readback": {
+        "hostname": "artifact-service",
+        "ip": [
+          "192.168.19.31"
+        ],
+        "routes": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "fish": "fish, version 4.0.2",
+        "shells": {
+          "root": "/bin/bash",
+          "ub": "/bin/bash"
+        },
+        "business_Java_processes": true
+      }
+    },
+    {
+      "vmid": 230,
+      "name": "java-prod-01",
+      "target": {
+        "vmid": 230,
+        "ip": "192.168.19.40",
+        "host_key_alias": "dell-vm230",
+        "host_key_fingerprint": "SHA256:KeItAegZqF5lSTCA3fAzKUFYuLAbnG9Pt1AqWskXMlM",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "strict_SSH": true,
+      "readback": {
+        "hostname": "java-prod-01",
+        "ip": [
+          "192.168.19.40"
+        ],
+        "routes": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "fish": "fish, version 4.0.2",
+        "shells": {
+          "root": "/bin/bash",
+          "ub": "/bin/bash"
+        },
+        "business_Java_processes": false
+      }
+    },
+    {
+      "vmid": 240,
+      "name": "java-test-01",
+      "target": {
+        "vmid": 240,
+        "ip": "192.168.19.45",
+        "host_key_alias": "dell-vm240",
+        "host_key_fingerprint": "SHA256:a5slwmQWq1U2AaeY9965RUYU63BxMymRus8IA9WydNQ",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "strict_SSH": true,
+      "readback": {
+        "hostname": "java-test-01",
+        "ip": [
+          "192.168.19.45"
+        ],
+        "routes": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "fish": "fish, version 4.0.2",
+        "shells": {
+          "root": "/bin/bash",
+          "ub": "/bin/bash"
+        },
+        "business_Java_processes": false
+      }
+    },
+    {
+      "vmid": 250,
+      "name": "penpot-service",
+      "target": {
+        "vmid": 250,
+        "ip": "192.168.19.50",
+        "host_key_alias": "dell-vm250",
+        "host_key_fingerprint": "SHA256:AwyeGczSVPEBV9PW6VZc2Iz3w5oA6sQoKYnNuVKgNik",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "strict_SSH": true,
+      "readback": {
+        "hostname": "penpot-service",
+        "ip": [
+          "192.168.19.50"
+        ],
+        "routes": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "fish": null,
+        "shells": {
+          "root": "/bin/bash",
+          "ub": "/bin/bash"
+        },
+        "business_Java_processes": true
+      }
+    },
+    {
+      "vmid": 260,
+      "name": "nas-media",
+      "target": {
+        "vmid": 260,
+        "ip": "192.168.19.60",
+        "host_key_alias": "dell-vm260",
+        "host_key_fingerprint": "SHA256:jYNEYlwXnr4412nGU/Dg616AhDW8eZz3UDIxn4pP7c0",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "strict_SSH": true,
+      "readback": {
+        "hostname": "nas-media",
+        "ip": [
+          "192.168.19.60"
+        ],
+        "routes": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "ens18",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "fish": "fish, version 4.0.2",
+        "shells": {
+          "root": "/bin/bash",
+          "ub": "/bin/bash"
+        },
+        "business_Java_processes": false
+      }
+    },
+    {
+      "vmid": 270,
+      "name": "ops-service",
+      "target": {
+        "vmid": 270,
+        "ip": "192.168.19.70",
+        "host_key_alias": "dell-vm270",
+        "host_key_fingerprint": "SHA256:OjP5q9f3WXxGcoOHs23VlnOf258C6T+nNAxTiYoyf0g",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "strict_SSH": true,
+      "readback": {
+        "hostname": "ops-service",
+        "ip": [
+          "192.168.19.70"
+        ],
+        "routes": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "fish": null,
+        "shells": {
+          "root": "/bin/bash",
+          "ub": "/bin/bash"
+        },
+        "business_Java_processes": false
+      }
+    }
+  ],
+  "host": {
+    "running": [
+      100,
+      190,
+      200,
+      201,
+      210,
+      220,
+      221,
+      230,
+      240,
+      250,
+      260,
+      270
+    ],
+    "templates": [
+      9001,
+      9010,
+      9011
+    ],
+    "stopped_non_templates": [],
+    "forward": "0",
+    "all_interface_forward_zero": true,
+    "tables": [
+      "table bridge dell19_acl"
+    ],
+    "vmbr19_addresses": [],
+    "old_internal_bridges": []
+  },
+  "monitoring": {
+    "total": 15,
+    "all_up": true,
+    "nodeids": [
+      200,
+      201,
+      210,
+      220,
+      221,
+      230,
+      240,
+      250,
+      260,
+      270
+    ],
+    "active_alerts": 0
+  },
+  "HTTP": [
+    {
+      "URL": "http://192.168.19.50:9001/",
+      "HTTP": 200
+    },
+    {
+      "URL": "http://192.168.19.31:8081/",
+      "HTTP": 200
+    },
+    {
+      "URL": "http://192.168.19.60/",
+      "HTTP": 200
+    },
+    {
+      "URL": "http://192.168.19.60:8096/health",
+      "HTTP": 200
+    },
+    {
+      "URL": "http://192.168.19.70:3000/login",
+      "HTTP": 200
+    }
+  ],
+  "Nexus_current_vmid": 221,
+  "Nexus220_standby_only": true,
+  "fish_excluded_ids": [
+    100,
+    250,
+    270
+  ],
+  "PVE_host_shell_or_fish_not_changed": true,
+  "Java_kept_each_one": [
+    230,
+    240
+  ],
+  "Java_business_programs_started": false,
+  "backups": "backup-summary.json",
+  "Nexus_unapproved_lifecycle_not_performed": true
+}

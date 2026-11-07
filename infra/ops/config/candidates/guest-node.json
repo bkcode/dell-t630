@@ -1,0 +1,122 @@
+[
+  {
+    "targets": [
+      "10.63.10.10:9100"
+    ],
+    "labels": {
+      "role": "data-prod-db",
+      "zone": "prod",
+      "vmid": "200"
+    }
+  },
+  {
+    "targets": [
+      "10.63.10.11:9100"
+    ],
+    "labels": {
+      "role": "data-prod-infra",
+      "zone": "prod",
+      "vmid": "201"
+    }
+  },
+  {
+    "targets": [
+      "10.63.20.10:9100"
+    ],
+    "labels": {
+      "role": "data-test",
+      "zone": "test",
+      "vmid": "210"
+    }
+  },
+  {
+    "targets": [
+      "10.63.30.10:9100"
+    ],
+    "labels": {
+      "role": "publish-service",
+      "zone": "management",
+      "vmid": "220"
+    }
+  },
+  {
+    "targets": [
+      "10.63.30.20:9100"
+    ],
+    "labels": {
+      "role": "artifact-service",
+      "zone": "tools",
+      "vmid": "221"
+    }
+  },
+  {
+    "targets": [
+      "10.63.10.20:9100"
+    ],
+    "labels": {
+      "role": "java-prod-01",
+      "zone": "prod",
+      "vmid": "230"
+    }
+  },
+  {
+    "targets": [
+      "10.63.10.21:9100"
+    ],
+    "labels": {
+      "role": "java-prod-02",
+      "zone": "prod",
+      "vmid": "231"
+    }
+  },
+  {
+    "targets": [
+      "10.63.10.22:9100"
+    ],
+    "labels": {
+      "role": "java-prod-03",
+      "zone": "prod",
+      "vmid": "232"
+    }
+  },
+  {
+    "targets": [
+      "10.63.20.20:9100"
+    ],
+    "labels": {
+      "role": "java-test-01",
+      "zone": "test",
+      "vmid": "240"
+    }
+  },
+  {
+    "targets": [
+      "10.63.30.30:9100"
+    ],
+    "labels": {
+      "role": "penpot-service",
+      "zone": "tools",
+      "vmid": "250"
+    }
+  },
+  {
+    "targets": [
+      "10.63.40.10:9100"
+    ],
+    "labels": {
+      "role": "nas-media",
+      "zone": "home",
+      "vmid": "260"
+    }
+  },
+  {
+    "targets": [
+      "10.63.30.40:9100"
+    ],
+    "labels": {
+      "role": "ops-service",
+      "zone": "management",
+      "vmid": "270"
+    }
+  }
+]

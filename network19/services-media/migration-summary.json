@@ -1,0 +1,53 @@
+{
+  "at": "2026-11-06T10:13:50.606480+00:00",
+  "status": "all-three-media-services-migrated-and-semantics-verified",
+  "roles": [
+    {
+      "vmid": 221,
+      "ip": "192.168.19.31",
+      "URL": "http://192.168.19.31:8081",
+      "nonce": "1058e856fcab43f7ae53816d9659f214",
+      "runtime": "2 healthy/original systemd",
+      "data": "49 GAV234primary SHA35metadata semantics1076checksums",
+      "identity": "same new credentials/EULA/group/roles; GET-only verification",
+      "evidence": "nexus-post-cutover-verification.json"
+    },
+    {
+      "vmid": 250,
+      "ip": "192.168.19.50",
+      "URL": "http://192.168.19.50:9001",
+      "nonce": "05da6bff4609467e8524af42463c78b1",
+      "runtime": "11healthy/notify/original images",
+      "data": "3original data/revn/stats andall973asset paths/SHA unchanged incl971original",
+      "identity": "same new identities/IDmap/MCP; Gitff clean",
+      "semantics": "MCP read/unauth design denial, existingcompletedjob andonefile, newpublicURI/routerDNS",
+      "evidence": "penpot-post-cutover-verification.json"
+    },
+    {
+      "vmid": 260,
+      "ip": "192.168.19.60",
+      "URL": [
+        "http://192.168.19.60:80",
+        "http://192.168.19.60:8096",
+        "smb://192.168.19.60/{media,games,incoming}"
+      ],
+      "nonce": "1c97ce46e0e8494aa67f95768a818753",
+      "runtime": "originalJellyfin healthy/OMV+SMB preserved",
+      "data": "3originalSMBfixture SHA+newnonce permission matrix; originalMP4staticSHA/DirectPlayprofile",
+      "identity": "sameNAS accounts/credentials/shadow/key; noAuthPolicyChange",
+      "network_adaptation": "onlyperShare hostsallow old40to19;21/127 andallpermissions preserved viaofficialOMV+Salt",
+      "evidence": [
+        "nas-smb-post-cutover-verification.json",
+        "nas-jellyfin-post-cutover-verification.json",
+        "nas-smb-network-policy-result.json"
+      ]
+    }
+  ],
+  "PVE_OW_OS_changes_owner": "root; not this subagent",
+  "source_Mac_Git_preserved": true,
+  "secret_values_or_private_hashes_in_stdout_or_public_evidence": false,
+  "rollback_exercised": false,
+  "private_rollback_backups": "eachguest root700/600 original nonce; NAS includesseparate SMBnetwork policy",
+  "failure_history_retained": true,
+  "remaining_scope": "root globalmonitor/network/oldbridges/docs; no newguest mutation fromthisagent"
+}

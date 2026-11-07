@@ -1,0 +1,29 @@
+{
+  "role": 221,
+  "status": "quiesced-private-stage-verified-ready-for-root-OS-cutover",
+  "journal_phase": "quiesced",
+  "unit_state": {
+    "ActiveState": "inactive",
+    "SubState": "dead"
+  },
+  "active_files_unchanged": true,
+  "identity_bytes_unchanged": true,
+  "stage_old_new_SHAs_valid": true,
+  "containers": [
+    {
+      "name": "/nexus-nexus-1",
+      "id": "70d4bec45b73e68dee425c6962ba0ec2d1448b03187dfa0dc8369bdc44eb65bb",
+      "image": "sha256:2ae4fee2eed85f42c982aa2fc16746a8453c7f79faf2a7ea236855ca8652e001",
+      "running": false,
+      "health": "unhealthy"
+    },
+    {
+      "name": "/nexus-gateway-1",
+      "id": "f66975b48be1d7ef073a3f6318f6646fa53e4522b0fb42f17f756acc85927f55",
+      "image": "sha256:4e5db4761e0ff445f7fd29aad680ad28e8abf7d204895557f145d65535abcc1c",
+      "running": false,
+      "health": "unhealthy"
+    }
+  ],
+  "no_other_role_or_network_operation": true
+}

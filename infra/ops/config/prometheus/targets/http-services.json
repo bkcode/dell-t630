@@ -1,0 +1,32 @@
+[
+  {
+    "targets": [
+      "http://grafana:3000/api/health"
+    ],
+    "labels": {
+      "role": "ops-service",
+      "check": "grafana-health",
+      "scope": "service-http"
+    }
+  },
+  {
+    "targets": [
+      "http://alertmanager:9093/-/ready"
+    ],
+    "labels": {
+      "role": "ops-service",
+      "check": "alertmanager-ready",
+      "scope": "service-http"
+    }
+  },
+  {
+    "targets": [
+      "http://prometheus:9090/-/ready"
+    ],
+    "labels": {
+      "role": "ops-service",
+      "check": "prometheus-ready",
+      "scope": "service-http"
+    }
+  }
+]

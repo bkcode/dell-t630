@@ -1,0 +1,7 @@
+{
+  "expected_unique_media": 971,
+  "target_asset_files": 971,
+  "missing_media_hashes": 0,
+  "all_official_binary_media_present": true,
+  "frontend_real_new_mcp_key_in_logs": false
+}

@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-06T06:01:22.406869+00:00",
+  "label": "gui/501/com.dell.t630.external-probe-diagnosis",
+  "bootstrap_exit": 0,
+  "schedule": null,
+  "notify": false,
+  "kickstart_exit": 0
+}

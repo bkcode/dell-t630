@@ -1,0 +1,58 @@
+{
+  "updated_at": "2026-11-07T10:55:18.181006+08:00",
+  "status": "paused-awaiting-hardware-recovery",
+  "scope": "cleanup/acceptance.json",
+  "required_cases": [
+    "CLN-JAVA-001",
+    "CLN-BAK-001",
+    "CLN-DEL-001",
+    "CLN-FISH-001",
+    "CLN-TPL-001",
+    "CLN-TMP-001",
+    "CLN-DNS-001",
+    "CLN-OBS-001",
+    "CLN-REG-001",
+    "CLN-NEXUS-001"
+  ],
+  "required_passed": 9,
+  "required_pending": [
+    "CLN-NEXUS-001"
+  ],
+  "manifest": "cleanup/acceptance.json",
+  "source_Nexus_vmid221_kept_running": null,
+  "previous_network_phase_snapshot": "cleanup/phase-before-cleanup.json",
+  "claims_excluded": [
+    "Nexus migrated to220",
+    "current T630/guests/services verified running after POST incident",
+    "DIMM module conclusively diagnosed or sole physical poweroff cause proven",
+    "default login fish selected",
+    "all old archive restore boots tested",
+    "long-term RPO/RTO or SLO accepted"
+  ],
+  "runtime_state": {
+    "status": "paused-awaiting-hardware-recovery",
+    "current_live_status": "unverified-firmware-POST-halted",
+    "last_successful_full_verification_at": "2026-11-07T02:35:01.759527+08:00",
+    "last_successful_PVE_operation_at": "2026-11-07T02:44:29+08:00",
+    "last_PVE_operation_time_source": "root-task-manager handoff; distinct from full acceptance",
+    "hardware_evidence": "cleanup/hardware/DIMM_B1-incident.json",
+    "hardware_code": "UEFI0058",
+    "prior_SEL_location": "DIMM_B1",
+    "BMC_timezone_verified": false,
+    "Nexus_maintenance_authorized": true,
+    "Nexus_migration_started": false,
+    "remote_actions_in_this_document_closeout": false
+  },
+  "hardware_resume_pending": [
+    "REC-HW-001",
+    "REC-BAK-001",
+    "REC-DATA-001",
+    "REC-NET-001",
+    "REC-OBS-001",
+    "REC-ROLL-001"
+  ],
+  "Nexus_maintenance_authorized": true,
+  "Nexus_migration_started": false,
+  "source_Nexus_last_verified_running": true,
+  "counts_are_historical_not_current_live": true
+}

@@ -1,0 +1,25 @@
+{
+  "updated_at": "2026-11-06T16:43:22.857483+00:00",
+  "status": "NAS-VPN-recognition-committed-runtime-and-original-source-verified",
+  "VPN_CIDR": "10.66.66.0/24",
+  "NAS_address_unchanged": "192.168.19.60",
+  "local_tests": {
+    "passed": 8,
+    "failed": 0
+  },
+  "nonce": "d4f269ae477f479b9d240ff52b560812",
+  "prior_stage_rejection_preserved": true,
+  "SMB_effective_permissions_unchanged": true,
+  "JF_RemoteAccess_and_UPnP": false,
+  "identity_data_UUID_preserved": true,
+  "JF_playback_paused_transcoding_before": 0,
+  "SMB_sessions_tcons_locks_before": 0,
+  "JF_original_unit_required_restart": true,
+  "official_Samba_Salt_changed_SMBD_PID": true,
+  "VM_or_Docker_restart": false,
+  "original19_source_read_regression": "passed",
+  "real_VPN_source_proof": "root external MacAir10.66.66 client batch; not performed bythissubagent",
+  "gateway_PVE_NAT_or_other_role_changes": false,
+  "credential_values_or_private_hashes_disclosed": false,
+  "remote_source_pending_owner": "root"
+}

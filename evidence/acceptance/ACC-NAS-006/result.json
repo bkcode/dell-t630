@@ -1,0 +1,32 @@
+{
+  "id": "ACC-NAS-006",
+  "status": "passed",
+  "executed_at": "2026-11-06T12:03:20.114429+08:00",
+  "timezone": "Asia/Shanghai",
+  "operator": "root-task-manager",
+  "plan_sha256": "62033457a32b74cbb68597ab0a7fdaab50b18716c5be20559e2f20931ea318dd",
+  "preconditions_checked": true,
+  "target": {
+    "host": "192.168.21.22",
+    "environment": "managed-PVE-implementation",
+    "vmid": null
+  },
+  "commands_or_steps": [
+    "See linked execution artifact and operator observations"
+  ],
+  "exit_codes": [
+    0
+  ],
+  "observations": [
+    "首期仅OMV加Jellyfin-only派生部署，固定AMD64镜像、持久cache/config与只读媒体目录已实际验证",
+    "未部署MoviePilot/qBittorrent/WireGuard，源Mac影音项目未修改，NAS不作为正式业务备份目标"
+  ],
+  "artifacts": [
+    "infra/nas/runtime-status.json"
+  ],
+  "limitations": [
+    "真实电视/游戏设备、GPU转码与生产并发SLO保持待验"
+  ],
+  "reviewed_by": "root-task-manager",
+  "plan_snapshot": "evidence/plans/plan-62033457a32b74cb.json"
+}

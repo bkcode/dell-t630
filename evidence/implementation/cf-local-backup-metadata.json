@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-06T06:44:58.140884",
+  "ctid": 100,
+  "archive_on_same_pve_host": "/root/dell-bootstrap/protected-cf-backups/vzdump-lxc-100-2026_11_06-06_44_43.tar.zst",
+  "bytes": 244256662,
+  "sha256": "77956d127fcfb578df217c86d4746f95c14e05665b35a98e3186801e3f6c5e1f",
+  "source_process_unchanged": true,
+  "payload_exported": false,
+  "secret_values_read_or_printed": false,
+  "restore_tested": false,
+  "limitation": "Same PVE host only; exporting backup payload to Mac waits explicit user approval",
+  "technical_correction": "Separate local temp directory permits mapped UID100000 tar access; protected dump directory remains0700/archive0600"
+}

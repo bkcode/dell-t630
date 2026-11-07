@@ -1,0 +1,14 @@
+{
+  "vmid": 260,
+  "hostname": "nas-media",
+  "old_ip": "10.63.40.10",
+  "old_gateway": "10.63.40.1",
+  "new_ip": "192.168.19.60",
+  "prefix": 24,
+  "gateway": "192.168.19.1",
+  "DNS": "192.168.19.1",
+  "MAC": "bc:24:11:a7:3b:73",
+  "old_PVE_net0": "virtio=BC:24:11:A7:3B:73,bridge=vmbr40",
+  "new_PVE_net0": "virtio=BC:24:11:A7:3B:73,bridge=vmbr19,firewall=0",
+  "OS_renderer": "official OMV setEthernetIface+Salt, excludes generic guest-network transaction"
+}

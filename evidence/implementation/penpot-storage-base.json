@@ -1,0 +1,12 @@
+{
+  "exit_code": 0,
+  "stdout": "{\"status\": \"base-storage-ready-no-application\", \"uuid\": \"ccccda03-bffd-4054-afd3-e0e22f0c607e\", \"mountpoint\": \"/srv/penpot\", \"docker_root_dir\": \"/srv/penpot/docker\", \"containerd_image_cache_reconstructible_on_os_disk\": true, \"live_restore\": false, \"application_containers\": 0}\n",
+  "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+  "target": {
+    "vmid": 250,
+    "ip": "192.168.21.180",
+    "host_key_alias": "dell-vm250",
+    "host_key_fingerprint": "SHA256:CB7xsY1DIoonCx3SaDbWqGUIKaTcy1bCusZpVQccK4U",
+    "trust_source": "PVE QGA over known SSH host"
+  }
+}

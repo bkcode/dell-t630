@@ -1,0 +1,42 @@
+{
+  "at": "2026-11-06T14:14:53.482585+08:00",
+  "status": "reviewed-and-live-native-Lark-verified",
+  "guest270_accessed": false,
+  "real_webhook_read": false,
+  "messages_sent": false,
+  "files": {
+    "configuration.py": "18217358ee2c81f0f3a6404ebd95c6e6a4d5a982587175596f73b698e493fb20",
+    "acceptance270.py": "e3b4229612c54962ba76d83ca5188eb237fcfa481f9985671d541abef7f033fc",
+    "install270.py": "8f3b544116e049cc76bbe778a806b87ce00cbe1ae3521e842d83497629b4d726",
+    "bridge.py": "e4b251653d0ae9822351928d3f04b6d4a0833edbe50ce3e6057edc7de7182f80",
+    "dell-lark-notify.service": "682831587cd2d624aec40efb2651e0020a3c64b2630f5b6df88200aae0fc6fbf",
+    "rebuild270-network.py": "058193b00439bdaaaf4e5d30cc1f2f2e2df0db69b9ce22d7a5b0c4e60f68edea",
+    "validate-local.py": "e7713ee06c9aa110f2eba54001414bfe67460b3df0d54d8b114de7db22378da3",
+    "test_bridge.py": "9fa6568198171de5f676a65bde1e3934ad47e5570a3591972e8fad45c9fac827",
+    "manager.py": "05087a34216658e8dce28c8789310630a97aaa71c62d6c712ec627300f4f5b7a"
+  },
+  "ops_source_changes": {
+    "dell/infra/ops/compose.yaml": "c0d1783ae4d393355d5beb3d4dd0587917eb7d2b5d386ac915ec70185f467f80",
+    "dell/infra/ops/prepare.py": "ead70b7586ad4d1545a6b6c4d6d7b30ce6e470d40df835c2262ba39923849dd5",
+    "dell/infra/ops/scripts/manage.py": "a5de4cb7013fe56c5df9b2b30148f43e470438df4ecb3754429ab0cbe3575ed9",
+    "dell/infra/ops/validate.py": "ce7f0d23151d30e16f8e83cb53182f7face1e478cb4a873a4a64534f1cc0ffda"
+  },
+  "new_secret_location": "Compose secrets host 65534:65534/600 and native LoadCredential; never public config",
+  "source_service_budgets_and_pids_unchanged": true,
+  "controlled_ops_secret_mount_recreation_owner": "child only after parent reviewed window",
+  "local_security_tests": 35,
+  "existing_ops_mount_health_regressions": 13,
+  "native_config_only_modes_passed": 2,
+  "local_source_containers_unchanged": true,
+  "new_cycle_dedupe_regression": "same labels firing->resolved->new startsAt firing sends three; same retry cached",
+  "AM_source_stability": "explicit existing default IPAM plus all four fixed existing addresses; runtime IPAMConfig guard",
+  "implementation_status": "native-active-verified-after-parent-window",
+  "actual_evidence": "evidence/implementation/lark-notify-implementation-summary.json",
+  "additional_readonly_and_collector_helpers": {
+    "audit270.py": "b8379626641380f3eb449e504c048794fbdfa4dfb2f0d5d22fad81ed325fd12b",
+    "collector-update270.py": "bea28893bbdcc95486e7e125d4d820e3fd8e134895be29bf8d5dc88c94e8d60f"
+  },
+  "metadata_contract_update_at": "2026-11-06T14:38:39.253573+08:00",
+  "existing_ops_safety_tests": 13,
+  "full_ops_static_regressions": 57
+}

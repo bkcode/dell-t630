@@ -1,0 +1,85 @@
+{
+  "at": "2026-11-06T16:33:16.074836+08:00",
+  "result": {
+    "dell-gateway19-apply.service": [
+      "Result=exit-code",
+      "ExecMainStatus=1",
+      "ActiveState=failed",
+      "SubState=failed"
+    ],
+    "dell-gateway19-firewall.service": [
+      "Result=success",
+      "ExecMainStatus=0",
+      "ActiveState=inactive",
+      "SubState=dead"
+    ],
+    "dell-gateway19-ready.service": [
+      "Result=success",
+      "ExecMainStatus=0",
+      "ActiveState=inactive",
+      "SubState=dead"
+    ],
+    "dell-gateway19-dnsmasq.service": [
+      "Result=success",
+      "ExecMainStatus=0",
+      "ActiveState=inactive",
+      "SubState=dead"
+    ],
+    "dell-gateway19-rollback.timer": [
+      "Result=resources",
+      "ActiveState=failed",
+      "SubState=failed"
+    ],
+    "pending_exists": false,
+    "last_result": "rolled-back-bootstrap-network-restored",
+    "forward": [
+      "net.ipv4.ip_forward = 0",
+      "net.ipv4.conf.all.forwarding = 0",
+      "net.ipv4.conf.eth0.forwarding = 0",
+      "net.ipv4.conf.eth1.forwarding = 0"
+    ],
+    "listening": [
+      "udp UNCONN 0      0                             0.0.0.0:5355 0.0.0.0:* users:((\"systemd-resolve\",pid=325,fd=11)) ",
+      "udp UNCONN 0      0                          127.0.0.54:53   0.0.0.0:* users:((\"systemd-resolve\",pid=325,fd=20)) ",
+      "udp UNCONN 0      0                       127.0.0.53%lo:53   0.0.0.0:* users:((\"systemd-resolve\",pid=325,fd=18)) ",
+      "udp UNCONN 0      0                                [::]:5355    [::]:* users:((\"systemd-resolve\",pid=325,fd=13)) ",
+      "udp UNCONN 0      0      [fe80::63:19ff:fe01:9000]%eth0:546     [::]:* users:((\"systemd-network\",pid=2152,fd=35))",
+      "tcp LISTEN 0      4096                    127.0.0.53%lo:53   0.0.0.0:* users:((\"systemd-resolve\",pid=325,fd=19)) ",
+      "tcp LISTEN 0      4096                          0.0.0.0:5355 0.0.0.0:* users:((\"systemd-resolve\",pid=325,fd=12)) ",
+      "tcp LISTEN 0      128                           0.0.0.0:22   0.0.0.0:* users:((\"sshd\",pid=732,fd=6))             ",
+      "tcp LISTEN 0      4096                       127.0.0.54:53   0.0.0.0:* users:((\"systemd-resolve\",pid=325,fd=21)) ",
+      "tcp LISTEN 0      4096                             [::]:5355    [::]:* users:((\"systemd-resolve\",pid=325,fd=14)) ",
+      "tcp LISTEN 0      128                              [::]:22      [::]:* users:((\"sshd\",pid=732,fd=7))             "
+    ],
+    "journal": [
+      "Nov 06 08:32:32 network-gateway systemd[1]: Starting dell-gateway19-apply.service - Dell dedicated gateway19 independent apply transaction...",
+      "Nov 06 08:32:32 network-gateway systemd[1]: Starting dell-gateway19-firewall.service - Dell dedicated gateway19 filter before networking...",
+      "Nov 06 08:32:33 network-gateway python3[1713]: {\"status\": \"filter-loaded-forwarding-still-disabled\", \"MAC_interfaces\": {\"WAN\": \"eth0\", \"LAN\": \"eth1\"}, \"rules_sha256\": \"906814462fe9fdc2e689d3a002249e53694691399fb69d78eb3fa2544eadb2a0\"}",
+      "Nov 06 08:32:33 network-gateway systemd[1]: Finished dell-gateway19-firewall.service - Dell dedicated gateway19 filter before networking.",
+      "Nov 06 08:32:33 network-gateway systemd[1]: Starting dell-gateway19-ready.service - Dell dedicated gateway19 readiness and forwarding...",
+      "Nov 06 08:32:34 network-gateway python3[1813]: {\"status\": \"gateway-config-ready-forward-enabled\", \"MAC_interfaces\": {\"WAN\": \"eth0\", \"LAN\": \"eth1\"}, \"NAT\": \"none\", \"IPv6\": \"WAN/LAN disabled,lo retained\", \"forwarding_all_WAN_LAN\": {\"all\": \"1\", \"WAN\": \"1\", \"LAN\": \"1\"}, \"packet_path_and_LAN_DHCP_tests\": \"pending-external-client-verification\"}",
+      "Nov 06 08:32:34 network-gateway systemd[1]: Finished dell-gateway19-ready.service - Dell dedicated gateway19 readiness and forwarding.",
+      "Nov 06 08:32:34 network-gateway systemd[1]: Starting dell-gateway19-dnsmasq.service - Dell dedicated gateway19 LAN DNS/DHCP...",
+      "Nov 06 08:32:34 network-gateway dnsmasq[1921]: dnsmasq: syntax check OK.",
+      "Nov 06 08:32:34 network-gateway systemd[1]: Started dell-gateway19-dnsmasq.service - Dell dedicated gateway19 LAN DNS/DHCP.",
+      "Nov 06 08:32:34 network-gateway dnsmasq[1923]: dnsmasq: cannot open or create lease file /var/lib/dell-gateway19-dhcp/leases: Permission denied",
+      "Nov 06 08:32:34 network-gateway dnsmasq[1923]: cannot open or create lease file /var/lib/dell-gateway19-dhcp/leases: Permission denied",
+      "Nov 06 08:32:34 network-gateway dnsmasq[1923]: FAILED to start up",
+      "Nov 06 08:32:34 network-gateway systemd[1]: dell-gateway19-dnsmasq.service: Main process exited, code=exited, status=3/NOTIMPLEMENTED",
+      "Nov 06 08:32:34 network-gateway systemd[1]: dell-gateway19-dnsmasq.service: Failed with result 'exit-code'.",
+      "Nov 06 08:32:34 network-gateway systemd[1]: Stopped dell-gateway19-dnsmasq.service - Dell dedicated gateway19 LAN DNS/DHCP.",
+      "Nov 06 08:32:34 network-gateway systemd[1]: Stopping dell-gateway19-ready.service - Dell dedicated gateway19 readiness and forwarding...",
+      "Nov 06 08:32:34 network-gateway python3[1952]: {\"status\": \"quiesced\", \"forwarding_all_WAN_LAN\": {\"all\": \"0\", \"WAN\": \"0\", \"LAN\": \"0\"}}",
+      "Nov 06 08:32:35 network-gateway systemd[1]: dell-gateway19-ready.service: Deactivated successfully.",
+      "Nov 06 08:32:35 network-gateway systemd[1]: Stopped dell-gateway19-ready.service - Dell dedicated gateway19 readiness and forwarding.",
+      "Nov 06 08:32:35 network-gateway systemd[1]: Stopping dell-gateway19-firewall.service - Dell dedicated gateway19 filter before networking...",
+      "Nov 06 08:32:35 network-gateway python3[1974]: {\"status\": \"quiesced\", \"forwarding_all_WAN_LAN\": {\"all\": \"0\", \"WAN\": \"0\", \"LAN\": \"0\"}}",
+      "Nov 06 08:32:35 network-gateway systemd[1]: dell-gateway19-firewall.service: Deactivated successfully.",
+      "Nov 06 08:32:35 network-gateway systemd[1]: Stopped dell-gateway19-firewall.service - Dell dedicated gateway19 filter before networking.",
+      "Nov 06 08:32:38 network-gateway python3[1704]: {\"status\": \"failed\", \"message\": \"fixed gateway190 action failed; inspect root-private transaction and QGA, no blind retry\"}",
+      "Nov 06 08:32:38 network-gateway systemd[1]: dell-gateway19-apply.service: Main process exited, code=exited, status=1/FAILURE",
+      "Nov 06 08:32:38 network-gateway systemd[1]: dell-gateway19-apply.service: Failed with result 'exit-code'.",
+      "Nov 06 08:32:38 network-gateway systemd[1]: Failed to start dell-gateway19-apply.service."
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-07T02:30:28.849107+08:00",
+  "mode": "readonly-backup-vs-active-DNS-options",
+  "result": {
+    "all_non_host_DNS_options_identical": true,
+    "old_host_record_count": 22,
+    "new_host_record_count": 11,
+    "backup_config_mode": "0o600",
+    "backup_dns_mode": "0o600",
+    "backup_directory_mode": "0o700"
+  }
+}

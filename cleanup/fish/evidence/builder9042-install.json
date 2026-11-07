@@ -1,0 +1,200 @@
+{
+  "at": "2026-11-06T17:43:49.142825+00:00",
+  "vmid": 9042,
+  "phase": "install-only",
+  "exit_code": 0,
+  "target": {
+    "vmid": 9042,
+    "ip": "192.168.19.199",
+    "host_key_alias": "dell-vm9042",
+    "host_key_fingerprint": "SHA256:Z0gjHtV/HL2eVj7rEYGId0Q9F4rIXoQ7UrBEdiS1klo",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "contract": {
+    "schema_version": 1,
+    "vmid": 9042,
+    "source_template": 9011,
+    "hostname": "fish-build-java",
+    "ip": "192.168.19.199",
+    "mac": "bc:24:11:db:14:ec",
+    "fish_version": "4.0.2-1",
+    "no_chsh": true
+  },
+  "result": {
+    "stage": "/root/dell-fish-template-stage-9042",
+    "vmid": 9042,
+    "phases": {
+      "check": {
+        "exit_code": 0,
+        "receipt": {
+          "at": "2026-11-06T17:43:33.029376+00:00",
+          "vmid": 9042,
+          "phase": "check",
+          "status": "passed",
+          "result": {
+            "protected": {
+              "shells": {
+                "root": "/bin/bash",
+                "ub": "/bin/bash"
+              },
+              "files": {
+                "/usr/local/libexec/dell-java-acceptance/verify.py": "20bc24ce5ceb8258149a11ec28059d2d0b2f3f9b1e58178e9d6e6f8b26736814"
+              },
+              "java": {
+                "uid": 999,
+                "gid": 989,
+                "shell": "/usr/sbin/nologin",
+                "home": "/var/lib/java",
+                "java_realpath": "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
+                "javac_realpath": "/usr/lib/jvm/java-21-openjdk-amd64/bin/javac"
+              }
+            },
+            "machine_id_sha256": "fb76cea0896cd4b9605770807c6aca94fdde0a20fe9d0b80e4f30c516c863e81",
+            "hostkey_fingerprint": "SHA256:Z0gjHtV/HL2eVj7rEYGId0Q9F4rIXoQ7UrBEdiS1klo",
+            "persistent_configuration_writes": false,
+            "temporary_java_smoke_cleaned": true
+          }
+        }
+      },
+      "install": {
+        "exit_code": 0,
+        "receipt": {
+          "at": "2026-11-06T17:43:49.108100+00:00",
+          "vmid": 9042,
+          "phase": "install",
+          "status": "passed",
+          "result": {
+            "before": {
+              "shells": {
+                "root": "/bin/bash",
+                "ub": "/bin/bash"
+              },
+              "files": {
+                "/usr/local/libexec/dell-java-acceptance/verify.py": "20bc24ce5ceb8258149a11ec28059d2d0b2f3f9b1e58178e9d6e6f8b26736814"
+              },
+              "java": {
+                "uid": 999,
+                "gid": 989,
+                "shell": "/usr/sbin/nologin",
+                "home": "/var/lib/java",
+                "java_realpath": "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
+                "javac_realpath": "/usr/lib/jvm/java-21-openjdk-amd64/bin/javac"
+              }
+            },
+            "install": {
+              "status": "installed-verified",
+              "vmid": 9042,
+              "at": "2026-11-06T17:43:49.088379+00:00",
+              "checks": {
+                "fish_exact_version": true,
+                "fish_common_exact_version": true,
+                "binary_version_command": true,
+                "ub_nonconfig_private_smoke": true,
+                "ub_root_login_shells_unchanged": true,
+                "core_services_and_containers_PIDs_start_health_unchanged": true
+              },
+              "before_shells": {
+                "ub": "/bin/bash",
+                "root": "/bin/bash"
+              },
+              "after_shells": {
+                "ub": "/bin/bash",
+                "root": "/bin/bash"
+              },
+              "fish_binary_version": "fish, version 4.0.2",
+              "new_packages": [
+                "fish-common",
+                "libpcre2-32-0",
+                "fish"
+              ],
+              "NEEDRESTART_MODE": "l",
+              "no_install_recommends": true,
+              "existing_packages_upgraded_or_removed": false,
+              "apt_update_fullupgrade_autoremove_chsh_or_shellconfig_run": false,
+              "service_restart_requested_by_tool": false,
+              "core_before": {
+                "services": {
+                  "qemu-guest-agent.service": {
+                    "MainPID": "685",
+                    "ExecMainStartTimestampMonotonic": "33378797",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "ssh.service": {
+                    "MainPID": "727",
+                    "ExecMainStartTimestampMonotonic": "33681179",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "systemd-networkd.service": {
+                    "MainPID": "625",
+                    "ExecMainStartTimestampMonotonic": "29258785",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "systemd-resolved.service": {
+                    "MainPID": "334",
+                    "ExecMainStartTimestampMonotonic": "17035259",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  }
+                },
+                "containers": {}
+              },
+              "core_after": {
+                "services": {
+                  "qemu-guest-agent.service": {
+                    "MainPID": "685",
+                    "ExecMainStartTimestampMonotonic": "33378797",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "ssh.service": {
+                    "MainPID": "727",
+                    "ExecMainStartTimestampMonotonic": "33681179",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "systemd-networkd.service": {
+                    "MainPID": "625",
+                    "ExecMainStartTimestampMonotonic": "29258785",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "systemd-resolved.service": {
+                    "MainPID": "334",
+                    "ExecMainStartTimestampMonotonic": "17035259",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  }
+                },
+                "containers": {}
+              },
+              "publisher_before": null,
+              "publisher_after": null,
+              "user_config_temporary_smoke_cleaned": true
+            },
+            "machine_id_sha256": "fb76cea0896cd4b9605770807c6aca94fdde0a20fe9d0b80e4f30c516c863e81",
+            "hostkey_fingerprint": "SHA256:Z0gjHtV/HL2eVj7rEYGId0Q9F4rIXoQ7UrBEdiS1klo"
+          }
+        }
+      }
+    }
+  },
+  "no_seal_no_PVE": true,
+  "new_strict_SSH": {
+    "user": "ub",
+    "shell": "/bin/bash",
+    "fish_newSSH_noconfig_private": true,
+    "temporary_smoke_cleaned": true
+  },
+  "new_strict_SSH_exit": 0
+}

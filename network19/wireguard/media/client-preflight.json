@@ -1,0 +1,41 @@
+{
+  "role": 260,
+  "status": "read-only-active-client-preflight",
+  "JF_session_count": 2,
+  "JF_active_or_paused_playback_count": 0,
+  "JF_transcoding_count": 0,
+  "JF_safe_for_required_restart": true,
+  "SMB_counts": {
+    "sessions": 0,
+    "tcons": 0,
+    "open_files": 0
+  },
+  "Samba_service_deploy_source": [
+    {
+      "source": "/srv/salt/omv/deploy/samba/30homes.sls",
+      "line": 38,
+      "text": "- watch_in:"
+    },
+    {
+      "source": "/srv/salt/omv/deploy/samba/default.sls",
+      "line": 46,
+      "text": "service.running:"
+    },
+    {
+      "source": "/srv/salt/omv/deploy/samba/default.sls",
+      "line": 51,
+      "text": "- watch:"
+    },
+    {
+      "source": "/srv/salt/omv/deploy/samba/default.sls",
+      "line": 62,
+      "text": "service.running:"
+    },
+    {
+      "source": "/srv/salt/omv/deploy/samba/default.sls",
+      "line": 78,
+      "text": "service.running:"
+    }
+  ],
+  "no_client_file_names_or_credentials_emitted": true
+}

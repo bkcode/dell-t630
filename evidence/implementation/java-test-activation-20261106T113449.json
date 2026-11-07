@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-06T11:38:13.671057",
+  "result": {
+    "exit_code": 0,
+    "stdout": "{\"status\": \"runtime-health-verified-business-acceptance-pending\", \"action\": \"activate\", \"release_id\": \"20261106T113449\", \"previous_release\": \"20261106T061002\", \"sql_executed\": false, \"database_rollback_performed\": false}\n",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+    "target": {
+      "vmid": 240,
+      "ip": "10.63.20.20",
+      "host_key_alias": "dell-vm240",
+      "host_key_fingerprint": "SHA256:a5slwmQWq1U2AaeY9965RUYU63BxMymRus8IA9WydNQ",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  }
+}

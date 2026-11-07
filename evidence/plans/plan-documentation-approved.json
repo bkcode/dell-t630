@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-05",
+  "timezone": "Asia/Shanghai",
+  "status": "proposed-not-deployed",
+  "scope": "documentation-and-read-only-verification",
+  "pve": {
+    "host": "192.168.21.22",
+    "ssh_user": "root",
+    "identity_file": "~/.ssh/yang_local_rsa",
+    "physical_cores": 28,
+    "logical_cpus": 56,
+    "memory_budget_gib": 125,
+    "minimum_host_reserve_gib": 8
+  },
+  "guest_ssh": {
+    "user": "ub",
+    "identity_file": "~/.ssh/yang_local_rsa",
+    "verification": "pending-instance-start-not-authorized-in-this-doc-task",
+    "nas_iso_requirement": "Create/verify ub and install only the matching public key after OMV installation; not inherited from PVE templates."
+  },
+  "templates": [
+    {
+      "name": "tpl-linux-base",
+      "status": "proposed",
+      "purpose": "Linux + Cloud-Init + qemu-guest-agent + baseline operations; no credentials or business data"
+    },
+    {
+      "name": "tpl-docker-base",
+      "status": "proposed",
+      "purpose": "Linux base + Docker Engine + Compose; application manifests separate"
+    }
+  ],
+  "existing_role_templates": {
+    "103": "publish-base-tpl; optional reuse after inspection",
+    "105": "java-running-base-tpl; optional reuse after inspection"
+  },
+  "roles": [
+    {
+      "name": "cf-tunnel",
+      "kind": "lxc",
+      "vcpu": 1,
+      "memory_gib": 0.5,
+      "zone": "ingress",
+      "existing_vmid_candidate": 100,
+      "deployment_status": "not-accepted",
+      "ip": null
+    },
+    {
+      "name": "data-prod-db",
+      "kind": "vm",
+      "vcpu": 6,
+      "memory_gib": 16,
+      "zone": "prod",
+      "existing_vmid_candidate": null,
+      "deployment_status": "not-accepted",
+      "ip": null
+    },
+    {
+      "name": "data-prod-infra",
+      "kind": "vm",
+      "vcpu": 4,
+      "memory_gib": 8,
+      "zone": "prod",
+      "existing_vmid_candidate": null,
+      "deployment_status": "not-accepted",
+      "ip": null
+    },
+    {
+      "name": "data-test",
+      "kind": "vm",
+      "vcpu": 2,
+      "memory_gib": 4,
+      "zone": "test",
+      "existing_vmid_candidate": null,
+      "deployment_status": "not-accepted",
+      "ip": null
+    },
+    {
+      "name": "publish-service",
+      "kind": "vm",
+      "vcpu": 4,
+      "memory_gib": 4,
+      "zone": "management",
+      "existing_vmid_candidate": 104,
+      "deployment_status": "not-accepted",
+      "ip": null
+    },
+    {
+      "name": "artifact-service",
+      "kind": "vm",
+      "vcpu": 2,
+      "memory_gib": 4,
+      "zone": "tools",
+      "existing_vmid_candidate": null,
+      "deployment_status": "not-accepted",
+      "ip": null
+    },
+    {
+      "name": "java-prod-01",
+      "kind": "vm",
+      "vcpu": 6,
+      "memory_gib": 16,
+      "zone": "prod",
+      "existing_vmid_candidate": null,
+      "deployment_status": "not-accepted",
+      "ip": null
+    },
+    {
+      "name": "java-prod-02",
+      "kind": "vm",
+      "vcpu": 6,
+      "memory_gib": 16,
+      "zone": "prod",
+      "existing_vmid_candidate": null,
+      "deployment_status": "not-accepted",
+      "ip": null
+    },
+    {
+      "name": "java-prod-03",
+      "kind": "vm",
+      "vcpu": 6,
+      "memory_gib": 16,
+      "zone": "prod",
+      "existing_vmid_candidate": null,
+      "deployment_status": "not-accepted",
+      "ip": null
+    },
+    {
+      "name": "java-test-01",
+      "kind": "vm",
+      "vcpu": 4,
+      "memory_gib": 8,
+      "zone": "test",
+      "existing_vmid_candidate": null,
+      "deployment_status": "not-accepted",
+      "ip": null
+    },
+    {
+      "name": "penpot-service",
+      "kind": "vm",
+      "vcpu": 6,
+      "memory_gib": 16,
+      "zone": "tools",
+      "existing_vmid_candidate": null,
+      "deployment_status": "not-accepted",
+      "ip": null
+    },
+    {
+      "name": "nas-media",
+      "kind": "vm",
+      "vcpu": 4,
+      "memory_gib": 4,
+      "zone": "home",
+      "existing_vmid_candidate": null,
+      "deployment_status": "not-accepted",
+      "ip": null
+    },
+    {
+      "name": "ops-service",
+      "kind": "vm",
+      "vcpu": 2,
+      "memory_gib": 4,
+      "zone": "management",
+      "existing_vmid_candidate": null,
+      "deployment_status": "not-accepted",
+      "ip": null
+    }
+  ],
+  "nas": {
+    "purpose": "family-cinema-and-game-file-library",
+    "software": "OpenMediaVault + Jellyfin container",
+    "system_disk_gib": 32,
+    "initial_data_disk_gib": 2048,
+    "data_storage": "store",
+    "dedicated_template_required": false,
+    "game_scope": "store-organize-transfer; no assumption of direct network game execution",
+    "playback": "direct-play-first; hardware transcoding unverified"
+  },
+  "decisions": {
+    "java": "retain JAR + systemd initially",
+    "data_penpot_nexus": "Docker Compose inside separate VMs",
+    "backup": "independent backup/restore design; home NAS is not the formal business backup target"
+  },
+  "unresolved": [
+    "RAID levels, member mapping and protected cache status",
+    "VMID and IP assignment after live inventory and network conflict checks",
+    "exact current template OS and installed packages",
+    "VLAN/routing/firewall implementation",
+    "formal workload, service list and validated capacity",
+    "independent backup destination and recovery target validation"
+  ]
+}

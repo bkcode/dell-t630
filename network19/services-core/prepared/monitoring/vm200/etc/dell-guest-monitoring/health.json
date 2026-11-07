@@ -1,0 +1,18 @@
+{
+  "role": "data-prod-db",
+  "private_ip": "192.168.19.10",
+  "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+  "services": [
+    "dell-data-prod-db.service",
+    "prometheus-node-exporter.service",
+    "qemu-guest-agent.service",
+    "ssh.service"
+  ],
+  "http_checks": [],
+  "candidate_service_units": [
+    "docker.service",
+    "dell-data-prod-db.service"
+  ],
+  "candidate_http_checks": [],
+  "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+}

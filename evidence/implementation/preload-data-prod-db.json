@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "role": "data-prod-db",
+  "target": {
+    "vmid": 200,
+    "ip": "192.168.21.171",
+    "host_key_alias": "dell-vm200",
+    "host_key_fingerprint": "SHA256:DvGgHhP62V5OuMxO7+6rHZPSRU9N2hD+QWmtSe9HdqA",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "started_at": "2026-11-06T06:56:02.143333+08:00",
+  "scope": "assigned-new-guest-software-preload-only",
+  "status": "software-preloaded-no-containers",
+  "runtime_profile_script_sha256": "45692f1732688f010f6a9ef6b4abc3ea1950934a5655bcf92f3e97fff5ea05a4",
+  "preload_script_sha256": "efb101cda53df8e99dc825217bfe51552589ddc60b17c6d7fab30b7cfb483a79",
+  "archives": [
+    {
+      "group": "data",
+      "archive": "target-amd64-data-images.tar",
+      "started_at": "2026-11-06T06:56:06.506878+08:00",
+      "status": "verified-preloaded",
+      "completed_at": "2026-11-06T06:57:18.110080+08:00",
+      "result": {
+        "status": "images-preloaded-no-containers",
+        "role": "data-prod-db",
+        "archive": "target-amd64-data-images.tar",
+        "sha256": "c85e0df24676577118b9d058451140a311713b65bb2234528dd18a4a7726b0ba",
+        "verified_image_ids": [
+          "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+          "sha256:17c1c1b96fd1685968790c7fcab311e5bc49c809efe9744af262640a559c4cf2",
+          "sha256:de912cbbf07f938bb8aaa5682464a73a00c6a996efdf0880423aeb4eae006c34",
+          "sha256:fc86d4833afb7abc64006f04c715946303f6b15d694c2f05c2895a27d967ed88"
+        ],
+        "registry_reference_available": {
+          "mysql@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840": false,
+          "redis@sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a": false,
+          "rabbitmq@sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920": false,
+          "nacos/nacos-server@sha256:c8dc1db0ac6a345b62bad4e76963d25237a90bf45704795e7cb4d1d972b024a3": false
+        },
+        "applications_started": false,
+        "image_load_stdout": "Loaded image ID: sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe\nLoaded image ID: sha256:17c1c1b96fd1685968790c7fcab311e5bc49c809efe9744af262640a559c4cf2\nLoaded image ID: sha256:de912cbbf07f938bb8aaa5682464a73a00c6a996efdf0880423aeb4eae006c34\nLoaded image ID: sha256:fc86d4833afb7abc64006f04c715946303f6b15d694c2f05c2895a27d967ed88\n"
+      }
+    }
+  ],
+  "applications_started": false,
+  "host_network_applied": false,
+  "before": {
+    "role": "data-prod-db",
+    "driver": "overlayfs",
+    "docker_root": "/var/lib/docker",
+    "containers": 0,
+    "images": 0,
+    "live_restore": true,
+    "filesystem_free_bytes": 30907654144,
+    "filesystem_total_bytes": 33603391488,
+    "artifact_device_exists": true
+  },
+  "runtime_profile": {
+    "role": "data-prod-db",
+    "driver": "overlay2",
+    "docker_root": "/var/lib/docker",
+    "live_restore": false,
+    "containers": 0,
+    "changed": true,
+    "old_backend_data_preserved": true
+  },
+  "after": {
+    "role": "data-prod-db",
+    "driver": "overlay2",
+    "docker_root": "/var/lib/docker",
+    "containers": 0,
+    "images": 4,
+    "live_restore": false,
+    "filesystem_free_bytes": 29380866048,
+    "filesystem_total_bytes": 33603391488,
+    "artifact_device_exists": true
+  },
+  "limitations": [
+    "No docker pull or compose invoked; registry manifest aliases may remain unavailable pending manager-approved metadata pull.",
+    "No application target_guard, application IP, host network, source machine or unassigned guest changed.",
+    "Old containerd cache retained by runtime profile; no data removed."
+  ],
+  "completed_at": "2026-11-06T06:57:18.906762+08:00"
+}

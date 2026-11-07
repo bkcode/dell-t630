@@ -1,0 +1,12 @@
+{
+  "exit_code": 0,
+  "stdout": "ExecMainStatus=0\nActiveState=inactive\nSubState=dead\n{\n  \"java\": \"openjdk version \\\"21.0.13\\\" 2026-10-20\",\n  \"git\": \"git version 2.47.3\",\n  \"rsync\": \"rsync  version 3.5.0  protocol version 32\",\n  \"python\": \"Python 3.13.5\",\n  \"node\": \"v22.23.4\",\n  \"pnpm8\": \"8.15.9\",\n  \"pnpm10\": \"10.33.2\",\n  \"mcp\": \"1.26.0\",\n  \"applications_started\": false,\n  \"git_credentials_installed\": false\n}\n",
+  "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+  "target": {
+    "vmid": 220,
+    "ip": "192.168.21.163",
+    "host_key_alias": "dell-vm220",
+    "host_key_fingerprint": "SHA256:5X/KJJzRjVAwgXasAjR9ok7UW+6UhHyr1FdSKkOowBw",
+    "trust_source": "PVE QGA over known SSH host"
+  }
+}

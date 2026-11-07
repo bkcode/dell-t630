@@ -1,0 +1,93 @@
+{
+  "role": 250,
+  "status": "quiesced-private-stage-verified-ready-for-root-OS-cutover",
+  "journal_phase": "quiesced",
+  "unit_state": {
+    "ActiveState": "inactive",
+    "SubState": "dead"
+  },
+  "worker_and_import_idle_gate_passed_before_stop": true,
+  "active_files_unchanged": true,
+  "identity_and_IDmap_bytes_unchanged": true,
+  "stage_old_new_SHAs_valid": true,
+  "containers": [
+    {
+      "name": "/penpot-penpot-frontend-1",
+      "id": "96eb86ab81047ab108b1cb698b5a4f64c44e2bd9c75a8b1ab0175ade2c5de100",
+      "image": "sha256:bd020fb6bddfd77449c26f76ee04ca7b2b50a0ffe8562ebc7b9e294bfcd38b89",
+      "running": false,
+      "health": "unhealthy"
+    },
+    {
+      "name": "/penpot-penpot-backend-1",
+      "id": "c35064923ae5d0ef1c29108e6e4d355d5f494d7829a9665ec10652d62e8fa9a3",
+      "image": "sha256:c54c38204393018c4009b7161b9ee3a04ccc0daab657b820d5de86a0d3013630",
+      "running": false,
+      "health": "unhealthy"
+    },
+    {
+      "name": "/penpot-penpot-admin-console-1",
+      "id": "2613151017b978ac7ec997033889076f94b9033a60177e65245a00b6bfc14782",
+      "image": "sha256:29c13326e854fd63e18a7231cb1ca26d60f728692bd1207ded003b94aba79390",
+      "running": false,
+      "health": "unhealthy"
+    },
+    {
+      "name": "/penpot-penpot-exporter-1",
+      "id": "5680b9587467045c8d1b8538a4b4708ab474cdca067ce2af7f6b33d1185facb9",
+      "image": "sha256:6173b08e25850cda792cd75261e741649c0febd48326e68e8711ba44b5c9af42",
+      "running": false,
+      "health": "unhealthy"
+    },
+    {
+      "name": "/penpot-penpot-dns-1",
+      "id": "896b4b365781d4ce0922b7a250fc277fcb1de2b34cdb5cca76578352de76239b",
+      "image": "sha256:7ed84fca86579b7bee90ec5c9750457cd9450729d2dd01fb2070f00f6cd7fb14",
+      "running": false,
+      "health": "unhealthy"
+    },
+    {
+      "name": "/penpot-penpot-mcp-1",
+      "id": "aa9c599b0dd027b4f8056f8adf283d6ebb07f861569af13478c68305d53ccbaf",
+      "image": "sha256:e95070617f49eacc00f136061d9c6b4bad957319046e9e65e7cee14b9e77577c",
+      "running": false,
+      "health": "unhealthy"
+    },
+    {
+      "name": "/penpot-penpot-worker-1",
+      "id": "bdd8e421ad746ddecc7950b390c21c046f6622914eed89cf3fc9e5f52fca31cb",
+      "image": "sha256:c0bead679c3fe7a4b80d2485f87bdce0e5a6acc26a9c2a001b0e4e3270dadee5",
+      "running": false,
+      "health": "unhealthy"
+    },
+    {
+      "name": "/penpot-penpot-import-1",
+      "id": "90aacbc3b78e9b1c07771b55013e3b62c5634df8c777545c4229558f974b01ed",
+      "image": "sha256:d4414e3f2e41ac4f5eb4b2c146c05cbc9f9754b179d6b63efa3af95c005b1261",
+      "running": false,
+      "health": "unhealthy"
+    },
+    {
+      "name": "/penpot-penpot-postgres-1",
+      "id": "b6ac0e7fd316f8b53df1d8853d5614049fa5d180f8f9b5f84e3baa448f481c17",
+      "image": "sha256:245fc027b7f3755bbd21b4375c2a0ebc7fa5d16c4573da497be9850a823973c8",
+      "running": false,
+      "health": "unhealthy"
+    },
+    {
+      "name": "/penpot-penpot-valkey-1",
+      "id": "d08ee10d5b4ce72de16ca148218a85edda276963b6e0d665517a763801a9616e",
+      "image": "sha256:ca662989648f173e01fb1a1768e7d84ddcaf8b7de135070b59271b0918104eb3",
+      "running": false,
+      "health": "unhealthy"
+    },
+    {
+      "name": "/penpot-penpot-mailpit-1",
+      "id": "b223cafa5cb2450dc520513f71e999ba6550c0cf894a514c4d520e72c33f39d9",
+      "image": "sha256:580a202b5088e9c651a8e8b4e461e3213fbd3a3aacaa3d2251892a546a734116",
+      "running": false,
+      "health": "unhealthy"
+    }
+  ],
+  "no_other_role_or_network_operation": true
+}

@@ -1,0 +1,56 @@
+table inet dell_filter {
+ set managed { type ifname; elements = { "vmbr10", "vmbr20", "vmbr30", "vmbr40" }; }
+ chain input {
+  type filter hook input priority 0; policy accept;
+  ct state established,related accept
+  iifname @managed ip protocol icmp accept
+  iifname @managed counter drop
+ }
+ chain forward {
+  type filter hook forward priority 0; policy accept;
+  iifname "vmbr10" ip saddr != 10.63.10.0/24 drop
+  iifname "vmbr20" ip saddr != 10.63.20.0/24 drop
+  iifname "vmbr30" ip saddr != 10.63.30.0/24 drop
+  iifname "vmbr40" ip saddr != 10.63.40.0/24 drop
+  meta nfproto ipv6 iifname @managed drop
+  meta nfproto ipv6 oifname @managed drop
+  ct state established,related accept
+  iifname "vmbr10" oifname "vmbr10" accept
+  iifname "vmbr20" oifname "vmbr20" accept
+  iifname "vmbr30" oifname "vmbr30" accept
+  iifname "vmbr40" oifname "vmbr40" accept
+  iifname "vmbr30" ip saddr 10.63.30.10 oifname { "vmbr10", "vmbr20" } tcp dport 22 accept
+  iifname "vmbr30" ip saddr 10.63.30.40 oifname @managed tcp dport 9100 accept
+  iifname { "vmbr10", "vmbr20" } ip daddr 10.63.30.20 tcp dport 8081 accept
+  iifname "vmbr0" ip saddr 192.168.21.0/24 ip daddr 10.63.30.30 tcp dport 9001 accept
+  iifname "vmbr0" ip saddr 192.168.21.0/24 ip daddr 10.63.30.20 tcp dport 8081 accept
+  iifname "vmbr0" ip saddr 192.168.21.0/24 ip daddr 10.63.40.10 tcp dport 80 accept
+  iifname "vmbr0" ip saddr 192.168.21.0/24 ip daddr 10.63.40.10 tcp dport 445 accept
+  iifname "vmbr0" ip saddr 192.168.21.0/24 ip daddr 10.63.40.10 tcp dport 8096 accept
+  iifname "vmbr0" ip saddr 192.168.21.0/24 ip daddr 10.63.10.20 tcp dport 9999 accept
+  iifname "vmbr0" ip saddr 192.168.21.0/24 ip daddr 10.63.20.20 tcp dport 9999 accept
+  iifname @managed oifname "vmbr0" ip daddr 192.168.21.0/24 drop
+  iifname @managed oifname "vmbr0" tcp dport { 53, 80, 443 } accept
+  iifname "vmbr30" ip saddr 10.63.30.10 oifname "vmbr0" tcp dport 22 accept
+  iifname @managed oifname "vmbr0" udp dport { 53, 123 } accept
+  iifname @managed oifname "vmbr0" ip protocol icmp accept
+  iifname @managed counter drop
+  oifname @managed counter drop
+ }
+}
+table ip dell_nat {
+ chain prerouting {
+  type nat hook prerouting priority dstnat; policy accept;
+  iifname "vmbr0" ip saddr 192.168.21.0/24 ip daddr 192.168.21.22 tcp dport 9001 dnat to 10.63.30.30:9001
+  iifname "vmbr0" ip saddr 192.168.21.0/24 ip daddr 192.168.21.22 tcp dport 8081 dnat to 10.63.30.20:8081
+  iifname "vmbr0" ip saddr 192.168.21.0/24 ip daddr 192.168.21.22 tcp dport 9080 dnat to 10.63.40.10:80
+  iifname "vmbr0" ip saddr 192.168.21.0/24 ip daddr 192.168.21.22 tcp dport 445 dnat to 10.63.40.10:445
+  iifname "vmbr0" ip saddr 192.168.21.0/24 ip daddr 192.168.21.22 tcp dport 8096 dnat to 10.63.40.10:8096
+  iifname "vmbr0" ip saddr 192.168.21.0/24 ip daddr 192.168.21.22 tcp dport 9999 dnat to 10.63.10.20:9999
+  iifname "vmbr0" ip saddr 192.168.21.0/24 ip daddr 192.168.21.22 tcp dport 19999 dnat to 10.63.20.20:9999
+ }
+ chain postrouting {
+  type nat hook postrouting priority srcnat; policy accept;
+  ip saddr 10.63.0.0/16 oifname "vmbr0" masquerade
+ }
+}

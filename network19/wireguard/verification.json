@@ -1,0 +1,144 @@
+{
+  "at": "2026-11-07T00:20:23.140985+08:00",
+  "status": "remote-client-access-confirmed",
+  "authorized_source": "10.66.66.0/24",
+  "destination": "192.168.19.50",
+  "TCP_port": 9001,
+  "GW": {
+    "counter": {
+      "packets": 12,
+      "bytes": 768
+    },
+    "rule": {
+      "family": "inet",
+      "table": "dell_gateway19",
+      "chain": "forward",
+      "handle": 29,
+      "comment": "WG-Penpot-TCP9001",
+      "expr": [
+        {
+          "match": {
+            "op": "==",
+            "left": {
+              "meta": {
+                "key": "iifname"
+              }
+            },
+            "right": "eth0"
+          }
+        },
+        {
+          "match": {
+            "op": "==",
+            "left": {
+              "meta": {
+                "key": "oifname"
+              }
+            },
+            "right": "eth1"
+          }
+        },
+        {
+          "match": {
+            "op": "==",
+            "left": {
+              "payload": {
+                "protocol": "ip",
+                "field": "saddr"
+              }
+            },
+            "right": {
+              "prefix": {
+                "addr": "10.66.66.0",
+                "len": 24
+              }
+            }
+          }
+        },
+        {
+          "match": {
+            "op": "==",
+            "left": {
+              "payload": {
+                "protocol": "ip",
+                "field": "daddr"
+              }
+            },
+            "right": "192.168.19.50"
+          }
+        },
+        {
+          "match": {
+            "op": "==",
+            "left": {
+              "payload": {
+                "protocol": "tcp",
+                "field": "dport"
+              }
+            },
+            "right": 9001
+          }
+        },
+        {
+          "match": {
+            "op": "in",
+            "left": {
+              "ct": {
+                "key": "state"
+              }
+            },
+            "right": "new"
+          }
+        },
+        {
+          "mangle": {
+            "key": {
+              "ct": {
+                "key": "mark"
+              }
+            },
+            "value": 419430404
+          }
+        },
+        {
+          "counter": {
+            "packets": 12,
+            "bytes": 768
+          }
+        },
+        {
+          "accept": null
+        }
+      ]
+    }
+  },
+  "PVE": {
+    "host_forward": "0",
+    "tables": [
+      "table bridge dell19_acl"
+    ],
+    "VPN_counter": {
+      "packets": 12,
+      "bytes": 768
+    }
+  },
+  "actual_VPN_client": "10.66.66.3",
+  "user_confirmation": "可以访问了",
+  "remote_HTTP_code": "not supplied; do not claim a specific status",
+  "passive_handshake": {
+    "observed_source_port": 51951,
+    "all_three_interfaces": [
+      "tap190i0",
+      "tap190i1",
+      "tap250i0"
+    ],
+    "both_Syn_and_SynAck_seen_each": true,
+    "client_SYN_seq": 1816410404,
+    "server_SYNACK_ack": 1816410405,
+    "true_client_source_preserved_no_SNAT": true,
+    "application_payload_or_credentials_captured": false
+  },
+  "OpenWrt_peer_AllowedIPs": "air10.66.66.3/32 andphone10.66.66.2/32 leftunchanged",
+  "other_VPN_services_or_ports_enabled": false,
+  "service_restarts": 0
+}

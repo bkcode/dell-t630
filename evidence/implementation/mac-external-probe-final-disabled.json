@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-06T14:05:19.720514",
+  "status": "disabled-by-explicit-user-scope",
+  "live_job_loaded": false,
+  "diagnostic_job_loaded": false,
+  "login_plist_present": false,
+  "state_and_diagnostics_preserved": true,
+  "gateway_fault_exercise_executed": false,
+  "scope": "current phase server-internal Lark only; no claim of independent whole-host failure monitoring"
+}

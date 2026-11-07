@@ -1,0 +1,10 @@
+{
+  "collected_at": "2026-11-06T04:07:56.876712+00:00",
+  "vmid": 201,
+  "component": "redis",
+  "exit_code": 0,
+  "stdout": "{\"status\": \"passed\", \"started_at\": \"2026-11-06T04:07:53.352583+00:00\", \"component\": \"redis\", \"preflight\": {\"vmid\": 201, \"component\": \"redis\", \"input_bytes\": 171, \"input_hash_matches\": true, \"image\": \"redis:7.4.4@sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a\", \"platform\": \"linux/amd64\", \"free_bytes\": 24529158144, \"mem_available_bytes\": 6946906112, \"live_container_count\": 3}, \"source_snapshot_read_only\": true, \"CF_accessed\": false, \"cross_device_exported\": false, \"isolation\": {\"network_none\": true, \"no_published_ports\": true, \"nonroot\": true, \"read_only_root\": true, \"not_privileged\": true, \"cap_drop_all\": true, \"only_own_scratch_mounts\": true, \"no_host_network\": true}, \"verification\": {\"full_RDB_checksum_passed\": true, \"snapshot_keys_read\": 0, \"keys_restored\": 0, \"keys_after_restart\": 0, \"expired_or_elapsed_keys\": 0, \"database_count\": 0, \"all_persistent_key_type_value_digests_match\": true, \"restart_RDB_reload_verified\": true, \"ACL_password_config_restored\": false, \"source_snapshot_or_BGSAVE_requested\": false}, \"temporary_containers_removed\": true, \"source_snapshot_SHA_unchanged\": true, \"live_container_identity_health_unchanged\": true, \"finished_at\": \"2026-11-06T04:07:56.848230+00:00\", \"elapsed_seconds\": 3.496, \"RPO_RTO_approved\": false, \"disaster_recovery_claimed\": false}\n",
+  "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+  "snapshot_content_exported": false,
+  "CF_accessed": false
+}

@@ -1,0 +1,6 @@
+{
+  "file": "changes.py",
+  "old_sha256": "04e1cecbe5979a03f67f8d368fab0dd774fe6230de569f8f88aecd67d562178c",
+  "new_sha256": "8c4cfd98c1378e3bc2df5257a81c6362774a2ed5fe0c7c01b098927094f293b5",
+  "scope": "Only support inline closing LocalNetworkSubnets tag; same exact old subnet/false safety validation andone VPN append, no runtime change"
+}

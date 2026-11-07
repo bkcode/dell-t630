@@ -1,0 +1,126 @@
+{
+  "at": "2026-11-07T11:03:07.624401+08:00",
+  "scope": "local documentation, manual, rules and Git delivery; no server actions",
+  "status": "locally-verified-ready-for-Git-delivery",
+  "facts": {
+    "current_server_state": "user-paused; UEFI0058 POST halt; prior SEL DIMM_B1; current services unverified",
+    "last_full_verification": "2026-11-07T02:35:01+08:00",
+    "last_successful_PVE_operation": "2026-11-07T02:44:29+08:00",
+    "last_verified_instances": 12,
+    "retained_templates": [
+      9001,
+      9010,
+      9011
+    ],
+    "last_verified_monitoring_targets": 15,
+    "Nexus_maintenance_authorized": true,
+    "Nexus_migration_started": false,
+    "Java_business_deployment_allowed": false
+  },
+  "verification": {
+    "document_validation": {
+      "status": "passed",
+      "scope": "local-document-validation-only",
+      "stats": {
+        "operational_state": "user-paused-awaiting-memory-hardware-repair",
+        "live_verification_in_this_check": false,
+        "roles": 12,
+        "guest_memory_gib": 85.0,
+        "vcpu": 43,
+        "host_reserve_gib": 40.0,
+        "current_acceptance_manifest": "cleanup/acceptance.json",
+        "current_network_cases": 16,
+        "current_network_required_passed": 9,
+        "current_network_required_count": 10,
+        "current_network_optional_pending": 6,
+        "Java_acceptance_templates": 1,
+        "acceptance_cases": 38,
+        "documentation_passed": 2,
+        "implementation_pending": 12,
+        "pve_checks": 42,
+        "local_links_checked": 598,
+        "external_links_listed": 36
+      },
+      "errors": [],
+      "warnings": [
+        "vCPU exceeds physical cores; concurrent workload capacity is unverified",
+        "PVE check cluster-status exit=2; see scope/limitations",
+        "External URL availability is not tested by this offline validator"
+      ]
+    },
+    "public_only_copy_without_private": "passed; 1646 candidate files copied, same validator passed with private absent",
+    "all_public_JSON_and_Python_syntax": "passed; 884 JSON and 436 Python checked before this receipt",
+    "Git_candidate_secret_rule_scan": "passed; exact index scan required again after final staging",
+    "private_exact_value_comparison": {
+      "small_private_files_read": 52,
+      "values_compared": 45,
+      "candidate_matches": 0,
+      "contents_or_hashes_emitted": false
+    },
+    "independent_review": "passed; no credential/key/backup payload/symlink blocker; ambiguous old-template wording fixed",
+    "Git_guard_fixture_checks": [
+      "clean working files",
+      "clean index",
+      "force-added ignored private path caught",
+      "private-key marker caught",
+      "nonfixture hook caught"
+    ]
+  },
+  "fact_surfaces": {
+    "code": "verified-current as local files; no deployment claimed",
+    "runtime": "pending; historical live evidence retained, current unavailable",
+    "docs": "changed-and-verified",
+    "rules": "changed-and-verified; current pause and Git scope replace append-only contradictory rules",
+    "memory": "out-of-scope; no writes",
+    "workspace": "private data and original evidence retained; no deletion"
+  },
+  "preserved_original_bytes": {
+    "global_Git_diff_check": "historical-whitespace-warnings",
+    "paths": [
+      "cleanup/monitoring/diffs/live-installer.patch",
+      "cleanup/monitoring/diffs/source-installer.patch",
+      "cleanup/monitoring/ten-role/diffs/vm200-install-guest-baseline.py.patch",
+      "cleanup/monitoring/ten-role/diffs/vm201-install-guest-baseline.py.patch",
+      "cleanup/monitoring/ten-role/diffs/vm210-install-guest-baseline.py.patch",
+      "cleanup/monitoring/ten-role/diffs/vm220-install-guest-baseline.py.patch",
+      "cleanup/monitoring/ten-role/diffs/vm221-install-guest-baseline.py.patch",
+      "cleanup/monitoring/ten-role/diffs/vm230-install-guest-baseline.py.patch",
+      "cleanup/monitoring/ten-role/diffs/vm240-install-guest-baseline.py.patch",
+      "cleanup/monitoring/ten-role/diffs/vm250-install-guest-baseline.py.patch",
+      "cleanup/monitoring/ten-role/diffs/vm260-install-guest-baseline.py.patch",
+      "cleanup/monitoring/ten-role/diffs/vm270-install-guest-baseline.py.patch",
+      "cleanup/network/diffs/control.py.diff",
+      "cleanup/network/diffs/render-bridge-acl.py.diff",
+      "evidence/implementation/nas-admin-port-install-guard.json",
+      "evidence/implementation/nas-admin-port-restored.json",
+      "evidence/implementation/network-applied.json",
+      "evidence/implementation/pve-metrics-push-first.json",
+      "infra/data/audit-isolation/AbstractAuthenticationManager.java",
+      "infra/data/audit-isolation/ConsoleExceptionHandler.java",
+      "infra/data/audit-isolation/NacosUserDetailsServiceImpl.java",
+      "infra/data/audit-isolation/UserController.java",
+      "infra/data/vendor/nacos-application-2.4.3.properties",
+      "infra/data/vendor/nacos-mysql-schema-2.4.3.sql",
+      "infra/penpot/runtime/logging/runtime-template.diff",
+      "network19/services-core/source-sync-backups/20261106T095934/install-guest-baseline.py.diff",
+      "network19/wireguard/bridge-full.diff",
+      "network19/wireguard/bridge-policy.diff"
+    ],
+    "reason": "Existing patches contain unified-diff context spaces; vendor/audit/JSON snapshots preserve original provenance. They are not reformatted to make a global whitespace check green. Changed current docs, rule, plan and new check code pass the scoped whitespace check."
+  },
+  "Git": {
+    "remote": "git@github.com:bkcode/dell-t630.git",
+    "branch": "main",
+    "initial_remote_refs": "empty when checked",
+    "commit_and_push_evidence": "Git history and final delivery response; no self-referential commit hash in this receipt",
+    "private_directory_ignored": true,
+    "new_machine_trust_and_secrets_not_in_repo": true
+  },
+  "pending": [
+    "memory hardware repair and explicit execution resume",
+    "fresh memory/storage/application verification",
+    "Nexus merge and postmerge14targets validation",
+    "long-term independent backup and approved RPO/RTO",
+    "physical TV/PS/public-domain/production performance acceptance"
+  ]
+}

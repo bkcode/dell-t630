@@ -1,0 +1,71 @@
+{
+  "at": "2026-11-07T02:13:16.731333",
+  "mode": "execute",
+  "review": [
+    {
+      "core_vmid": 9010,
+      "candidate_vmid": 9040,
+      "name": "tpl-linux-base",
+      "old_archive": "/mnt/pve/store/dell-artifacts/cleanup-backups-20261107/vzdump-qemu-9010-2026_11_07-01_54_33.vma.zst",
+      "new_archive": "/mnt/pve/store/dell-artifacts/cleanup-backups-20261107/vzdump-qemu-9040-2026_11_07-02_04_28.vma.zst",
+      "storage": "local-lvm",
+      "source_dependencies_clear": true,
+      "both_archives_full_verified": true
+    },
+    {
+      "core_vmid": 9001,
+      "candidate_vmid": 9041,
+      "name": "tpl-docker-base",
+      "old_archive": "/mnt/pve/store/dell-artifacts/cleanup-backups-20261107/vzdump-qemu-9001-2026_11_07-01_53_49.vma.zst",
+      "new_archive": "/mnt/pve/store/dell-artifacts/cleanup-backups-20261107/vzdump-qemu-9041-2026_11_07-02_05_06.vma.zst",
+      "storage": "local-lvm",
+      "source_dependencies_clear": true,
+      "both_archives_full_verified": true
+    },
+    {
+      "core_vmid": 9011,
+      "candidate_vmid": 9042,
+      "name": "tpl-java-acceptance",
+      "old_archive": "/mnt/pve/store/dell-artifacts/cleanup-backups-20261107/vzdump-qemu-9011-2026_11_07-01_55_08.vma.zst",
+      "new_archive": "/mnt/pve/store/dell-artifacts/cleanup-backups-20261107/vzdump-qemu-9042-2026_11_07-02_05_52.vma.zst",
+      "storage": "store",
+      "source_dependencies_clear": true,
+      "both_archives_full_verified": true
+    }
+  ],
+  "replaced": [
+    {
+      "vmid": 9010,
+      "name": "tpl-linux-base",
+      "template_stopped": true,
+      "generic_CI_DHCP": true,
+      "candidate_archive_SHA256": "38258b3b252e72b41f9894795837a611b4699b2e28ffd4da211db0575cc51fa1",
+      "old_rollback_archive": "/mnt/pve/store/dell-artifacts/cleanup-backups-20261107/vzdump-qemu-9010-2026_11_07-01_54_33.vma.zst",
+      "net0": "virtio=BC:24:11:E8:C9:67,bridge=vmbr19,firewall=0",
+      "source_candidate": 9040
+    },
+    {
+      "vmid": 9001,
+      "name": "tpl-docker-base",
+      "template_stopped": true,
+      "generic_CI_DHCP": true,
+      "candidate_archive_SHA256": "39f14e0b5bfdc0ef6ef7952ddf67f24e74a678ea2c6176a28fd0dc661a59cddc",
+      "old_rollback_archive": "/mnt/pve/store/dell-artifacts/cleanup-backups-20261107/vzdump-qemu-9001-2026_11_07-01_53_49.vma.zst",
+      "net0": "virtio=BC:24:11:7E:96:13,bridge=vmbr19,firewall=0",
+      "source_candidate": 9041
+    },
+    {
+      "vmid": 9011,
+      "name": "tpl-java-acceptance",
+      "template_stopped": true,
+      "generic_CI_DHCP": true,
+      "candidate_archive_SHA256": "86989c14842b37b3d201f0acc3a59c418bcf2d54e85d6984f54f4c90a8a245dc",
+      "old_rollback_archive": "/mnt/pve/store/dell-artifacts/cleanup-backups-20261107/vzdump-qemu-9011-2026_11_07-01_55_08.vma.zst",
+      "net0": "virtio=BC:24:11:C3:A1:80,bridge=vmbr19,firewall=0",
+      "source_candidate": 9042
+    }
+  ],
+  "runtime_business_VMs_touched": false,
+  "old_archives_retained_PVE_only": true,
+  "status": "3core-fish-templates-replaced-metadata-verified"
+}

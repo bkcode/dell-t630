@@ -1,0 +1,8 @@
+{
+  "nonce": "cb01b8582f544381b0461001dfa3ccb4",
+  "source_vmid": 221,
+  "target_vmid": 220,
+  "source": "192.168.19.31",
+  "target_primary": "192.168.19.30",
+  "scope": "minimal code/env/new-owned-Nexus secrets only; no publisher or SSH identities/runtime data"
+}

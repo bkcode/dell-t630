@@ -1,0 +1,20 @@
+{
+  "fixture": {
+    "url": "https://raw.githubusercontent.com/penpot/penpot-files/be9b1c33ff7546f2a5246b4c52a96f1183c2fe35/CSD-Matrix.penpot",
+    "git_commit": "be9b1c33ff7546f2a5246b4c52a96f1183c2fe35",
+    "bytes": 6761,
+    "sha256": "b6b400cd71d06e395ea6b73b4a8e5c6acf0fd81c0b067c076595c1c4b3983877",
+    "origin": "official public penpot/penpot-files",
+    "no_user_data_published": true
+  },
+  "job_id": "25f2efd7-fcca-4d2b-be51-42fb6c8be36d",
+  "project_id": "de61f388-8edd-813f-8008-e705c16ad485",
+  "new_file_id": "de61f388-8edd-813f-8008-e705c31d611d",
+  "completed": true,
+  "same_request_retry_same_job": true,
+  "one_file_only": true,
+  "completed_status_and_ids_survive_service_restart": true,
+  "inflight_interruption_test": "not-run",
+  "real_source_designs_modified": false,
+  "key_values_emitted": false
+}

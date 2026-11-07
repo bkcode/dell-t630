@@ -1,0 +1,63 @@
+{
+  "collected_at": "2026-11-06T06:34:03.160418+00:00",
+  "exit_code": 0,
+  "result": {
+    "status": "passed",
+    "failures": [],
+    "real_NAS_continuity_unchanged": true,
+    "own_container_removed": true,
+    "own_mount_absent": true,
+    "own_loop_absent": true,
+    "own_unit_file_absent": true,
+    "own_loopfile_and_nonce_directories_removed": true,
+    "nonce": "3d7d910a5c6b4ae7906819363460ed20",
+    "phase": "cleanup",
+    "at": "2026-11-06T06:34:02.990879+00:00",
+    "real_media_disk_touched": false,
+    "real_NAS_snapshot": {
+      "files": {
+        "guard": "5ba9fd7cfc37d1e7398a454dff0151c516b15a15b93b3c37061f0486d01120fc",
+        "unit": "847a04928bf0d5d831e4cc8c7afe5490b61c7a5cc2d7ad7e570ca1fc7ed017ff",
+        "compose": "f57289cc286a4b2991f0c0709f3ef41336931a2041c8d8a051a87e9a434d86a7",
+        "env": "efa85416f73b28221ca7f15240f97dd33854c9e1bc0dc2c793b94b483a501a8e",
+        "OMVconfig": "e0f9787cb9d675bad04254f41c494822c6eced46b873bff7261763d62c1f6f06"
+      },
+      "units": {
+        "openmediavault-engined.service": {
+          "MainPID": "824",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "smbd.service": {
+          "MainPID": "852",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-nas-jellyfin.service": {
+          "MainPID": "1154",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "container": {
+        "id": "13d571fdc3332da2f81fc237cc7f445afc1e6ca313d2e2f43b3b9016e9fe7956",
+        "pid": 1308,
+        "started_at": "2026-11-06T05:42:27.252051871Z",
+        "health": "healthy",
+        "image": "sha256:fea863d0cd9ec445985d9c75fc6ed64e38a1d2766cf0c250a33d553f4fc1b771"
+      },
+      "real_mount": {
+        "target": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a",
+        "source": "/dev/sdb1",
+        "fstype": "ext4",
+        "uuid": "5b19837c-128c-498a-b79d-563db810c34a"
+      },
+      "samples": {
+        "media": "8f106c67b7b0f9ba8fc55ca569989fd955237e2c480ab3d36b63db7229dae35d",
+        "games": "8f106c67b7b0f9ba8fc55ca569989fd955237e2c480ab3d36b63db7229dae35d",
+        "incoming": "8f106c67b7b0f9ba8fc55ca569989fd955237e2c480ab3d36b63db7229dae35d"
+      }
+    },
+    "QA_UUID": "563272d3-9966-46a9-99c6-cb2900662036"
+  }
+}

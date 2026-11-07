@@ -1,0 +1,49 @@
+{
+  "at": "2026-11-06T17:35:48.636854+08:00",
+  "status": "template9011-sealed-QA9012-identity-JDK-cleanliness-passed",
+  "files_sha256": {
+    "build.py": "9a981f130d408ddf585a42e5decec450a5689440c5bd656b741c99d7eb3c6764",
+    "clean.py": "ab827984b2ae99f9b66cfb06226bad0c92295ae8f241e508281e0d9e56213d47",
+    "verify.py": "20bc24ce5ceb8258149a11ec28059d2d0b2f3f9b1e58178e9d6e6f8b26736814",
+    "verify-clone.py": "e766a0e40f2747e26219ac3ce30c2adf635824a858fa338391aad497df2958aa"
+  },
+  "evidence": [
+    "build-evidence.json",
+    "clean-evidence.json",
+    "QA-target.json",
+    "clone-evidence.json"
+  ],
+  "PVE_creation_shutdown_template_operations_performed_by_this_agent": false,
+  "no_java_business_apps": true,
+  "template9012_identity_acceptance": "passed",
+  "updated_at": "2026-11-06T17:45:50.143791+08:00",
+  "template9011_state": "sealed/stopped per parent report; generic user profile, DHCP, ssh_deletekeys true, no role hostname",
+  "QA9012_initial_observation": {
+    "IP": "192.168.19.198",
+    "cloud_init": "done/no errors",
+    "QGA": "active",
+    "hostname": "localhost",
+    "source": "parent current read-only observation"
+  },
+  "hostname_contract": {
+    "automatic_PVE_VM_name_to_guest_hostname_guaranteed": false,
+    "each_clone_requires_explicit_hostname_custom_user_profile": true,
+    "template_role_hostname_baked": false,
+    "QA9012_proposed_hostname": "java-acceptance-clone-check (applied and verified)",
+    "QA9012_reboot_key_policy": "instance-only ssh_deletekeys false to preserve firstboot key; template stays true",
+    "final_reboot_SSH_JDK_identity_checks": "passed; see clone-evidence.json"
+  },
+  "this_update_scope": "README/manifest plus separately authorized9012 readonly+temporary smoke; no PVE or guest network changes",
+  "QA9012_final_state": {
+    "hostname": "java-acceptance-clone-check",
+    "IP": "192.168.19.198",
+    "strict_SSH": "passed-QGA-trusted-key",
+    "machine_id_vs_builder": "different",
+    "hostkey_vs_builder": "different",
+    "JDK21_nonroot_smoke": "passed",
+    "business_dirs_units_listeners": "absent",
+    "exporter": "parked/masked",
+    "released_to_parent": true,
+    "parent_remaining_action": "only/run DHCP DORA then QA destruction and232budget restore; not performed by this agent"
+  }
+}

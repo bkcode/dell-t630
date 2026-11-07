@@ -1,0 +1,6 @@
+{
+  "status": "narrow-VPN-plan-metadata-synced",
+  "only_new_VPN_access_metadata_and_timestamp": true,
+  "plan_SHA256": "bcd5689900fa4ad82cc878b195165f47aa1b99821ab523f0f3f4e41af411d750",
+  "service_network_or_secrets_changed": false
+}

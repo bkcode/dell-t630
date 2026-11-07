@@ -1,0 +1,186 @@
+{
+  "started_at": "2026-11-06T11:28:06.903026+08:00",
+  "mode": "approved-pure-synthetic-fixtures-only",
+  "work_id": "010285d7461641efa34dc81fd86f2171",
+  "vmids": [
+    200,
+    201
+  ],
+  "source_business_data_exported": false,
+  "source_credentials_exported": false,
+  "cf_accessed": false,
+  "host_network_changed": false,
+  "real_messages_sent": 0,
+  "steps": [
+    {
+      "vmid": 200,
+      "name": "source-before",
+      "exit_code": 0,
+      "stdout": "{\"hostname\": \"data-prod-db\", \"product_uuid\": \"c7ef9dfd-7515-4b52-a1a1-793daf644cf8\", \"mount\": {\"filesystems\": [{\"target\": \"/srv/dell-data\", \"source\": \"/dev/sda\", \"uuid\": \"d61c0e22-941e-447a-9e9a-1e9e50deb02f\", \"fstype\": \"ext4\", \"options\": \"rw,relatime,stripe=16\"}]}, \"containers\": [{\"service\": \"mysql\", \"container_id\": \"1ab31359642069a7bd4f36a9db0632be9f8d1263778e373f846a58e126e8f577\", \"image\": \"mysql:8.4.5@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840\", \"state\": \"running\", \"health\": \"healthy\", \"started_at\": \"2026-11-06T02:45:12.30631388Z\", \"pid\": 5473, \"restart_policy\": \"no\"}]}\n",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n"
+    },
+    {
+      "vmid": 200,
+      "name": "copy-public-fixture-tool",
+      "exit_code": 0,
+      "stdout": "{\"public_tool_copied\": true, \"sha256\": \"8603716105d7946752dd1407c174358a4ae645210b8b4e3631ad733d15bf6c23\", \"secrets_transferred\": false}\n",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n"
+    },
+    {
+      "vmid": 200,
+      "name": "prepare",
+      "exit_code": 0,
+      "stdout": "{\"phase\": \"prepare\", \"result\": {\"fixture_prepared\": true, \"nonce\": \"010285d7461641efa34dc81fd86f2171\", \"role\": \"prod-db\", \"real_messages_published\": 0}, \"cf_accessed\": false, \"source_business_data_exported\": false}\n",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n"
+    },
+    {
+      "vmid": 201,
+      "name": "source-before",
+      "exit_code": 0,
+      "stdout": "{\"hostname\": \"data-prod-infra\", \"product_uuid\": \"35cbe96d-d7be-4ba4-9e0f-812e47c47d86\", \"mount\": {\"filesystems\": [{\"target\": \"/srv/dell-data\", \"source\": \"/dev/sdb\", \"uuid\": \"b85156c2-dac8-4b33-ab25-460aaf676c57\", \"fstype\": \"ext4\", \"options\": \"rw,relatime,stripe=16\"}]}, \"containers\": [{\"service\": \"nacos\", \"container_id\": \"95657f464981f82a6acecafd265b219d3beef1e843c45a423193577637b55c61\", \"image\": \"nacos/nacos-server:v2.4.3@sha256:c8dc1db0ac6a345b62bad4e76963d25237a90bf45704795e7cb4d1d972b024a3\", \"state\": \"running\", \"health\": \"healthy\", \"started_at\": \"2026-11-06T03:04:14.099173367Z\", \"pid\": 17973, \"restart_policy\": \"no\"}, {\"service\": \"rabbitmq\", \"container_id\": \"7f71dfb53684993f7467216ac1a77e4f88af566da4b780ba8b555e15497a3f8e\", \"image\": \"rabbitmq:3.13.7-management@sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920\", \"state\": \"running\", \"health\": \"healthy\", \"started_at\": \"2026-11-06T03:04:14.462223208Z\", \"pid\": 18085, \"restart_policy\": \"no\"}, {\"service\": \"redis\", \"container_id\": \"1fc3ec90a23008f6108f3e83f34fdda4c53099edf844ad80dc27b2d4ed5c6432\", \"image\": \"redis:7.4.4@sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a\", \"state\": \"running\", \"health\": \"healthy\", \"started_at\": \"2026-11-06T03:04:13.740627097Z\", \"pid\": 17825, \"restart_policy\": \"no\"}]}\n",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n"
+    },
+    {
+      "vmid": 201,
+      "name": "copy-public-fixture-tool",
+      "exit_code": 0,
+      "stdout": "{\"public_tool_copied\": true, \"sha256\": \"8603716105d7946752dd1407c174358a4ae645210b8b4e3631ad733d15bf6c23\", \"secrets_transferred\": false}\n",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n"
+    },
+    {
+      "vmid": 201,
+      "name": "prepare",
+      "exit_code": 0,
+      "stdout": "{\"phase\": \"prepare\", \"result\": {\"fixture_prepared\": true, \"nonce\": \"010285d7461641efa34dc81fd86f2171\", \"role\": \"prod-infra\", \"real_messages_published\": 0}, \"cf_accessed\": false, \"source_business_data_exported\": false}\n",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n"
+    },
+    {
+      "vmid": 200,
+      "name": "snapshot",
+      "exit_code": 0,
+      "stdout": "{\"phase\": \"snapshot\", \"result\": {\"snapshot_prepared\": true, \"role\": \"prod-db\", \"files\": [\"mysql-fixture.sql\", \"nacos-filtered-config.sql\"], \"scope\": \"MySQL synthetic fixture + one Nacos config_info row only (not complete config backup)\", \"contains_credentials\": false}, \"cf_accessed\": false, \"source_business_data_exported\": false}\n",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n"
+    },
+    {
+      "vmid": 201,
+      "name": "snapshot",
+      "exit_code": 0,
+      "stdout": "{\"phase\": \"snapshot\", \"result\": {\"snapshot_prepared\": true, \"role\": \"prod-infra\", \"files\": [\"rabbit-fixture-definitions.json\", \"redis-fixture.dump\"], \"scope\": \"Redis single-key serialized value + empty Rabbit fixture topology only\", \"contains_credentials\": false}, \"cf_accessed\": false, \"source_business_data_exported\": false}\n",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n"
+    },
+    {
+      "vmid": 200,
+      "name": "verify",
+      "exit_code": 0,
+      "stdout": "{\"phase\": \"verify\", \"result\": {\"role\": \"prod-db\", \"verified\": {\"mysql_isolated_restore\": true, \"nacos_filtered_row_isolated_restore\": true, \"complete_nacos_backup\": false}, \"network\": \"none\", \"ports_published\": false, \"source_volumes_mounted\": false, \"credentials_exported\": false, \"real_messages_sent\": 0}, \"cf_accessed\": false, \"source_business_data_exported\": false}\n",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n"
+    },
+    {
+      "vmid": 201,
+      "name": "verify",
+      "exit_code": 0,
+      "stdout": "{\"phase\": \"verify\", \"result\": {\"role\": \"prod-infra\", \"verified\": {\"redis_isolated_restore\": true, \"rabbit_empty_topology_isolated_restore\": true}, \"network\": \"none\", \"ports_published\": false, \"source_volumes_mounted\": false, \"credentials_exported\": false, \"real_messages_sent\": 0}, \"cf_accessed\": false, \"source_business_data_exported\": false}\n",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n"
+    },
+    {
+      "vmid": 200,
+      "name": "cleanup",
+      "exit_code": 0,
+      "stdout": "{\"phase\": \"cleanup\", \"result\": {\"source_owned_fixtures_cleaned\": true, \"source_services_stopped\": false, \"business_data_modified\": false}, \"cf_accessed\": false, \"source_business_data_exported\": false}\n",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n"
+    },
+    {
+      "vmid": 201,
+      "name": "cleanup",
+      "exit_code": 0,
+      "stdout": "{\"phase\": \"cleanup\", \"result\": {\"source_owned_fixtures_cleaned\": true, \"source_services_stopped\": false, \"business_data_modified\": false}, \"cf_accessed\": false, \"source_business_data_exported\": false}\n",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n"
+    },
+    {
+      "vmid": 200,
+      "name": "source-after",
+      "exit_code": 0,
+      "stdout": "{\"hostname\": \"data-prod-db\", \"product_uuid\": \"c7ef9dfd-7515-4b52-a1a1-793daf644cf8\", \"mount\": {\"filesystems\": [{\"target\": \"/srv/dell-data\", \"source\": \"/dev/sda\", \"uuid\": \"d61c0e22-941e-447a-9e9a-1e9e50deb02f\", \"fstype\": \"ext4\", \"options\": \"rw,relatime,stripe=16\"}]}, \"containers\": [{\"service\": \"mysql\", \"container_id\": \"1ab31359642069a7bd4f36a9db0632be9f8d1263778e373f846a58e126e8f577\", \"image\": \"mysql:8.4.5@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840\", \"state\": \"running\", \"health\": \"healthy\", \"started_at\": \"2026-11-06T02:45:12.30631388Z\", \"pid\": 5473, \"restart_policy\": \"no\"}]}\n",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n"
+    },
+    {
+      "vmid": 201,
+      "name": "source-after",
+      "exit_code": 0,
+      "stdout": "{\"hostname\": \"data-prod-infra\", \"product_uuid\": \"35cbe96d-d7be-4ba4-9e0f-812e47c47d86\", \"mount\": {\"filesystems\": [{\"target\": \"/srv/dell-data\", \"source\": \"/dev/sdb\", \"uuid\": \"b85156c2-dac8-4b33-ab25-460aaf676c57\", \"fstype\": \"ext4\", \"options\": \"rw,relatime,stripe=16\"}]}, \"containers\": [{\"service\": \"nacos\", \"container_id\": \"95657f464981f82a6acecafd265b219d3beef1e843c45a423193577637b55c61\", \"image\": \"nacos/nacos-server:v2.4.3@sha256:c8dc1db0ac6a345b62bad4e76963d25237a90bf45704795e7cb4d1d972b024a3\", \"state\": \"running\", \"health\": \"healthy\", \"started_at\": \"2026-11-06T03:04:14.099173367Z\", \"pid\": 17973, \"restart_policy\": \"no\"}, {\"service\": \"rabbitmq\", \"container_id\": \"7f71dfb53684993f7467216ac1a77e4f88af566da4b780ba8b555e15497a3f8e\", \"image\": \"rabbitmq:3.13.7-management@sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920\", \"state\": \"running\", \"health\": \"healthy\", \"started_at\": \"2026-11-06T03:04:14.462223208Z\", \"pid\": 18085, \"restart_policy\": \"no\"}, {\"service\": \"redis\", \"container_id\": \"1fc3ec90a23008f6108f3e83f34fdda4c53099edf844ad80dc27b2d4ed5c6432\", \"image\": \"redis:7.4.4@sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a\", \"state\": \"running\", \"health\": \"healthy\", \"started_at\": \"2026-11-06T03:04:13.740627097Z\", \"pid\": 17825, \"restart_policy\": \"no\"}]}\n",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n"
+    }
+  ],
+  "status": "synthetic-backup-isolated-restore-and-private-Mac-archive-verified",
+  "mac_artifacts": [
+    {
+      "role": "prod-db",
+      "coverage": "MySQL synthetic fixture + one Nacos config_info row only (not complete config backup)",
+      "verification": {
+        "mysql_isolated_restore": true,
+        "nacos_filtered_row_isolated_restore": true,
+        "complete_nacos_backup": false
+      },
+      "files": [
+        "mysql-fixture.sql",
+        "nacos-filtered-config.sql"
+      ],
+      "contains_credentials": false,
+      "contains_business_data": false,
+      "vmid": 200,
+      "relative_private_path": "private/backups/app/010285d7461641efa34dc81fd86f2171/vm200-synthetic-fixture.tar",
+      "archive_sha256": "c316f2198908357dd2d1f1b89712aff227a81c8259245b687f6ab6c958ab32f5",
+      "mode": "0o600"
+    },
+    {
+      "role": "prod-infra",
+      "coverage": "Redis single-key serialized value + empty Rabbit fixture topology only",
+      "verification": {
+        "redis_isolated_restore": true,
+        "rabbit_empty_topology_isolated_restore": true
+      },
+      "files": [
+        "rabbit-fixture-definitions.json",
+        "redis-fixture.dump"
+      ],
+      "contains_credentials": false,
+      "contains_business_data": false,
+      "vmid": 201,
+      "relative_private_path": "private/backups/app/010285d7461641efa34dc81fd86f2171/vm201-synthetic-fixture.tar",
+      "archive_sha256": "a08a4b3fed04dc652504d0e2d075c96d207a8ca7954ab2eb9f236fa6545c5156",
+      "mode": "0o600"
+    }
+  ],
+  "cleanup": [
+    {
+      "vmid": 200,
+      "status": "source-owned-fixtures-cleaned",
+      "result": {
+        "phase": "cleanup",
+        "result": {
+          "source_owned_fixtures_cleaned": true,
+          "source_services_stopped": false,
+          "business_data_modified": false
+        },
+        "cf_accessed": false,
+        "source_business_data_exported": false
+      }
+    },
+    {
+      "vmid": 201,
+      "status": "source-owned-fixtures-cleaned",
+      "result": {
+        "phase": "cleanup",
+        "result": {
+          "source_owned_fixtures_cleaned": true,
+          "source_services_stopped": false,
+          "business_data_modified": false
+        },
+        "cf_accessed": false,
+        "source_business_data_exported": false
+      }
+    }
+  ],
+  "source_service_identity_unchanged": true,
+  "finished_at": "2026-11-06T11:29:28.741697+08:00"
+}

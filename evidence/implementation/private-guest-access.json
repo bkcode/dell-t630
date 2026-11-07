@@ -1,0 +1,130 @@
+{
+  "at": "2026-11-07T02:35:01.759527+08:00",
+  "scope": "current12roles-10singleNIC-active-SSH",
+  "roles": [
+    {
+      "name": "data-prod-db",
+      "status": "strict-retained-cleanup-verified",
+      "target": {
+        "vmid": 200,
+        "ip": "192.168.19.10",
+        "host_key_alias": "dell-vm200",
+        "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "stdout": "{\"hostname\": \"data-prod-db\", \"ip\": [\"192.168.19.10\"], \"routes\": [{\"dst\": \"default\", \"gateway\": \"192.168.19.1\", \"dev\": \"eth0\", \"protocol\": \"static\", \"flags\": []}], \"fish\": \"fish, version 4.0.2\", \"shells\": {\"root\": \"/bin/bash\", \"ub\": \"/bin/bash\"}, \"business_Java_processes\": false}"
+    },
+    {
+      "name": "data-prod-infra",
+      "status": "strict-retained-cleanup-verified",
+      "target": {
+        "vmid": 201,
+        "ip": "192.168.19.11",
+        "host_key_alias": "dell-vm201",
+        "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "stdout": "{\"hostname\": \"data-prod-infra\", \"ip\": [\"192.168.19.11\"], \"routes\": [{\"dst\": \"default\", \"gateway\": \"192.168.19.1\", \"dev\": \"eth0\", \"protocol\": \"static\", \"flags\": []}], \"fish\": \"fish, version 4.0.2\", \"shells\": {\"root\": \"/bin/bash\", \"ub\": \"/bin/bash\"}, \"business_Java_processes\": true}"
+    },
+    {
+      "name": "data-test",
+      "status": "strict-retained-cleanup-verified",
+      "target": {
+        "vmid": 210,
+        "ip": "192.168.19.20",
+        "host_key_alias": "dell-vm210",
+        "host_key_fingerprint": "SHA256:8bBCQbBKGmZAw5q2AgT2vXHsyr2aFJktLqs/tDZ9SiA",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "stdout": "{\"hostname\": \"data-test\", \"ip\": [\"192.168.19.20\"], \"routes\": [{\"dst\": \"default\", \"gateway\": \"192.168.19.1\", \"dev\": \"eth0\", \"protocol\": \"static\", \"flags\": []}], \"fish\": \"fish, version 4.0.2\", \"shells\": {\"root\": \"/bin/bash\", \"ub\": \"/bin/bash\"}, \"business_Java_processes\": true}"
+    },
+    {
+      "name": "publish-service",
+      "status": "strict-retained-cleanup-verified",
+      "target": {
+        "vmid": 220,
+        "ip": "192.168.19.30",
+        "host_key_alias": "dell-vm220",
+        "host_key_fingerprint": "SHA256:2PFQYC3uPSg/sMihWZZ7R1vgkKKozJbTwTjf6VNWwG4",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "stdout": "{\"hostname\": \"publish-service\", \"ip\": [\"192.168.19.30\"], \"routes\": [{\"dst\": \"default\", \"gateway\": \"192.168.19.1\", \"dev\": \"eth0\", \"protocol\": \"static\", \"flags\": []}], \"fish\": \"fish, version 4.0.2\", \"shells\": {\"root\": \"/bin/bash\", \"ub\": \"/bin/bash\"}, \"business_Java_processes\": false}"
+    },
+    {
+      "name": "artifact-service",
+      "status": "strict-retained-cleanup-verified",
+      "target": {
+        "vmid": 221,
+        "ip": "192.168.19.31",
+        "host_key_alias": "dell-vm221",
+        "host_key_fingerprint": "SHA256:ky2Wn7M2CKgUqHaj65c4KnqphO6d3zh6sGEoYYzomWo",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "stdout": "{\"hostname\": \"artifact-service\", \"ip\": [\"192.168.19.31\"], \"routes\": [{\"dst\": \"default\", \"gateway\": \"192.168.19.1\", \"dev\": \"eth0\", \"protocol\": \"static\", \"flags\": []}], \"fish\": \"fish, version 4.0.2\", \"shells\": {\"root\": \"/bin/bash\", \"ub\": \"/bin/bash\"}, \"business_Java_processes\": true}"
+    },
+    {
+      "name": "java-prod-01",
+      "status": "strict-retained-cleanup-verified",
+      "target": {
+        "vmid": 230,
+        "ip": "192.168.19.40",
+        "host_key_alias": "dell-vm230",
+        "host_key_fingerprint": "SHA256:KeItAegZqF5lSTCA3fAzKUFYuLAbnG9Pt1AqWskXMlM",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "stdout": "{\"hostname\": \"java-prod-01\", \"ip\": [\"192.168.19.40\"], \"routes\": [{\"dst\": \"default\", \"gateway\": \"192.168.19.1\", \"dev\": \"eth0\", \"protocol\": \"static\", \"flags\": []}], \"fish\": \"fish, version 4.0.2\", \"shells\": {\"root\": \"/bin/bash\", \"ub\": \"/bin/bash\"}, \"business_Java_processes\": false}"
+    },
+    {
+      "name": "java-test-01",
+      "status": "strict-retained-cleanup-verified",
+      "target": {
+        "vmid": 240,
+        "ip": "192.168.19.45",
+        "host_key_alias": "dell-vm240",
+        "host_key_fingerprint": "SHA256:a5slwmQWq1U2AaeY9965RUYU63BxMymRus8IA9WydNQ",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "stdout": "{\"hostname\": \"java-test-01\", \"ip\": [\"192.168.19.45\"], \"routes\": [{\"dst\": \"default\", \"gateway\": \"192.168.19.1\", \"dev\": \"eth0\", \"protocol\": \"static\", \"flags\": []}], \"fish\": \"fish, version 4.0.2\", \"shells\": {\"root\": \"/bin/bash\", \"ub\": \"/bin/bash\"}, \"business_Java_processes\": false}"
+    },
+    {
+      "name": "penpot-service",
+      "status": "strict-retained-cleanup-verified",
+      "target": {
+        "vmid": 250,
+        "ip": "192.168.19.50",
+        "host_key_alias": "dell-vm250",
+        "host_key_fingerprint": "SHA256:AwyeGczSVPEBV9PW6VZc2Iz3w5oA6sQoKYnNuVKgNik",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "stdout": "{\"hostname\": \"penpot-service\", \"ip\": [\"192.168.19.50\"], \"routes\": [{\"dst\": \"default\", \"gateway\": \"192.168.19.1\", \"dev\": \"eth0\", \"protocol\": \"static\", \"flags\": []}], \"fish\": null, \"shells\": {\"root\": \"/bin/bash\", \"ub\": \"/bin/bash\"}, \"business_Java_processes\": true}"
+    },
+    {
+      "name": "nas-media",
+      "status": "strict-retained-cleanup-verified",
+      "target": {
+        "vmid": 260,
+        "ip": "192.168.19.60",
+        "host_key_alias": "dell-vm260",
+        "host_key_fingerprint": "SHA256:jYNEYlwXnr4412nGU/Dg616AhDW8eZz3UDIxn4pP7c0",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "stdout": "{\"hostname\": \"nas-media\", \"ip\": [\"192.168.19.60\"], \"routes\": [{\"dst\": \"default\", \"gateway\": \"192.168.19.1\", \"dev\": \"ens18\", \"protocol\": \"static\", \"flags\": []}], \"fish\": \"fish, version 4.0.2\", \"shells\": {\"root\": \"/bin/bash\", \"ub\": \"/bin/bash\"}, \"business_Java_processes\": false}"
+    },
+    {
+      "name": "ops-service",
+      "status": "strict-retained-cleanup-verified",
+      "target": {
+        "vmid": 270,
+        "ip": "192.168.19.70",
+        "host_key_alias": "dell-vm270",
+        "host_key_fingerprint": "SHA256:OjP5q9f3WXxGcoOHs23VlnOf258C6T+nNAxTiYoyf0g",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "stdout": "{\"hostname\": \"ops-service\", \"ip\": [\"192.168.19.70\"], \"routes\": [{\"dst\": \"default\", \"gateway\": \"192.168.19.1\", \"dev\": \"eth0\", \"protocol\": \"static\", \"flags\": []}], \"fish\": null, \"shells\": {\"root\": \"/bin/bash\", \"ub\": \"/bin/bash\"}, \"business_Java_processes\": false}"
+    }
+  ],
+  "network_revision": "network19",
+  "updated_at": "2026-11-06T18:06:32.536296+08:00",
+  "historical_original": "network19/evidence/guest-access-before-current-signoff.json",
+  "evidence": "cleanup/final-live-check.json"
+}

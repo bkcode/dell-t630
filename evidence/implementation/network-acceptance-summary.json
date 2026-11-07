@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-06T12:36:19.160475+08:00",
+  "scope": "read-only-evidence-sufficiency-map; manager alone updates acceptance.json",
+  "acceptance_statuses_mutated": false,
+  "cases": [
+    {
+      "id": "ACC-PVE-001",
+      "recommendation": "keep-passed-after-manager-additional-evidence",
+      "evidence": [
+        "evidence/pve-audit-2026-11-05.json",
+        "01-current-state.md",
+        "evidence/implementation/private-guest-access.json",
+        "evidence/implementation/network-independent-verification.json",
+        "evidence/acceptance/ACC-PVE-001/result.json",
+        "evidence/implementation/pve-final-inventory.json"
+      ],
+      "reason": "Manager supplied final inventory/storage or per-role SSH/sudo audit and signed acceptance; the earlier independent-verifier evidence gaps are now covered by the linked records.",
+      "scope_limits": [
+        "VM104 is a retained old candidate; actual publisher is VM220 in current access mapping."
+      ],
+      "missing_conditions": [],
+      "current_acceptance_status": "passed",
+      "manager_additional_observations": [
+        "初始硬件/实例盘点与当前12目标增量均有带时间证据；PVE8.4.0/kernel6.8.12-9-pve和当前映射明确",
+        "原101至106保留，100现有CF、104旧发布机与新220发布机区分；新VMID/IP已实际分配并验证"
+      ]
+    },
+    {
+      "id": "ACC-PVE-002",
+      "recommendation": "keep-passed-corroborated",
+      "evidence": [
+        "evidence/implementation/raid-controller.json",
+        "evidence/implementation/raid-recovered.json",
+        "evidence/implementation/network-independent-verification.json",
+        "08-hardware-findings.md"
+      ],
+      "reason": "RAID1/RAID5 members, current Optimal/Onln states and BBU protection are proven; repeated current counters are zero. Historical slot3 rebuild and slot2 reallocated-block observation remain documented.",
+      "scope_limits": [
+        "Historical hardware root cause is unknown and monitoring remains necessary; not a high-availability or backup claim."
+      ],
+      "missing_conditions": [],
+      "current_acceptance_status": "passed"
+    },
+    {
+      "id": "ACC-PVE-003",
+      "recommendation": "keep-passed-after-manager-additional-evidence",
+      "evidence": [
+        "evidence/implementation/network-independent-verification.json",
+        "evidence/implementation/pve-metrics-push-first.json",
+        "evidence/implementation/pve-metrics-timer.json",
+        "evidence/implementation/ops-pve-metrics-live-query.json",
+        "infra/ops/config/prometheus/rules/infra.yml",
+        "evidence/acceptance/ACC-PVE-003/result.json",
+        "evidence/implementation/pve-storage-final-check.json"
+      ],
+      "reason": "Manager supplied final inventory/storage or per-role SSH/sudo audit and signed acceptance; the earlier independent-verifier evidence gaps are now covered by the linked records.",
+      "scope_limits": [
+        "Guest free space and virtual 2TiB size do not substitute for actual underlying host capacity."
+      ],
+      "missing_conditions": [],
+      "current_acceptance_status": "passed",
+      "manager_additional_observations": [
+        "NAS仅独占PVE创建2TiB qcow2；H730/store文件系统继续PVE管理，无宿主块设备重复交付",
+        "当前store/local/local-lvm实际空闲93.85%/84.04%/80.75%；thin池数据19.25%、元数据1.05%",
+        "20%容量规则通过promtool并已加载，宿主容量实际抓取通过"
+      ]
+    },
+    {
+      "id": "ACC-NET-001",
+      "recommendation": "sufficient-for-manager-pass-current-five-service-test-scope",
+      "evidence": [
+        "evidence/implementation/private-guest-access.json",
+        "evidence/implementation/network-independent-verification.json",
+        "evidence/implementation/java-test-nacos.json",
+        "evidence/implementation/java-test-readiness.json",
+        "evidence/implementation/java-test-discovery-dns.json",
+        "evidence/implementation/java-test-business-acceptance.json"
+      ],
+      "reason": "Own new test runtime Nacos identity observes all five healthy/enabled private instances in intended namespace/group; actual Gateway/Auth/BFF/Feign/System and data flows succeeded. Official Debian hostname resolves and strict TLS1.3 egress succeeds without HTTP business payload.",
+      "scope_limits": [
+        "Current five-service test batch; no claim that all Finger modules or public DNS/HTTPS business ingress are deployed."
+      ],
+      "missing_conditions": [],
+      "current_acceptance_status": "pending"
+    },
+    {
+      "id": "ACC-NET-002",
+      "recommendation": "keep-passed-corroborated",
+      "evidence": [
+        "evidence/implementation/network-applied.json",
+        "evidence/implementation/network-independent-verification.json"
+      ],
+      "reason": "Independent 10 SSH cases and 30 live-data-port cases pass: production/test own data allowed, cross-zone unauthorized data/SSH denied with known listening targets and drop counter growth. Management22/8006 preserved; ops9100 reaches all12 guest exporters.",
+      "scope_limits": [
+        "Shared counters are not per-flow packet trace.",
+        "Current approved topology routes IPv4 and disables IPv6 forwarding; managed IPv6 drops precede established acceptance. Enabling routed IPv6 later requires separate validation.",
+        "This is not an exhaustive attack/spoofing test or business authorization test."
+      ],
+      "missing_conditions": [],
+      "current_acceptance_status": "passed"
+    },
+    {
+      "id": "ACC-NET-003",
+      "recommendation": "pending-external-ingress-and-websocket",
+      "evidence": [
+        "evidence/implementation/cloudflare-ingress.json",
+        "evidence/implementation/cf-local-backup-metadata.json",
+        "evidence/implementation/network-independent-verification.json"
+      ],
+      "reason": "Existing CF PID171 predates the network change and remains running; LAN DNAT policy is constrained and management endpoints retained. Logged CF hostname/route inventory was unavailable, and approved external business HTTPS/WebSocket response has not been demonstrated.",
+      "scope_limits": [
+        "Known CF backup is same-host only.",
+        "PVE TCP8006 availability is not public application HTTPS validation."
+      ],
+      "missing_conditions": [
+        "Confirmed approved external hostname/Tunnel route and source mapping without guessing new domains.",
+        "Actual HTTPS, authentication and WebSocket tests on that selected entrypoint; source preservation is separate from new ingress readiness."
+      ],
+      "current_acceptance_status": "pending"
+    },
+    {
+      "id": "ACC-SSH-001",
+      "recommendation": "keep-passed-corroborated",
+      "evidence": [
+        "evidence/pve-audit-2026-11-05.json",
+        "evidence/implementation/network-independent-verification.json",
+        "scripts/control.py"
+      ],
+      "reason": "Trusted strict-key root SSH continues to work after host network change; Mac TCP22 succeeds.",
+      "scope_limits": [
+        "Only PVE host access, not guest/app authorization."
+      ],
+      "missing_conditions": [],
+      "current_acceptance_status": "passed"
+    },
+    {
+      "id": "ACC-SSH-002",
+      "recommendation": "keep-passed-after-manager-additional-evidence",
+      "evidence": [
+        "evidence/implementation/private-guest-access.json",
+        "evidence/implementation/network-independent-verification.json",
+        "evidence/implementation/test-data-deployment.json",
+        "evidence/implementation/java-test-independent-diagnostics.json",
+        "evidence/acceptance/ACC-SSH-002/result.json",
+        "evidence/implementation/guest-final-ssh-audit.json"
+      ],
+      "reason": "Manager supplied final inventory/storage or per-role SSH/sudo audit and signed acceptance; the earlier independent-verifier evidence gaps are now covered by the linked records.",
+      "scope_limits": [
+        "Do not require every application/deployment acceptance to complete merely to establish SSH; their identity claims remain separate."
+      ],
+      "missing_conditions": [],
+      "current_acceptance_status": "passed",
+      "manager_additional_observations": [
+        "12台目标Linux VM含OMV均严格host key、指定密钥登录为ub非root，hostname及最终IP逐台匹配",
+        "逐台记录ub groups与sudo实际授权；ub为新建来宾管理员，业务finger及publisher权限分项验收；不推断CF来宾登录状态"
+      ]
+    }
+  ],
+  "network_matrix_summary": {
+    "ssh_cases": 10,
+    "data_port_cases": 30,
+    "data_allow_pass": 10,
+    "data_deny_pass": 20,
+    "ops_exporters_http200": 12
+  },
+  "limitations": [
+    "Passed E2E is limited to the approved synthetic administrator and owned file; historical failures remain linked.",
+    "Public HTTPS/callback/WebSocket and full/nonroot UI authorization remain outside this five-service test evidence."
+  ]
+}

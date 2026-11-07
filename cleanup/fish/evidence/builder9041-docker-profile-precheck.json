@@ -1,0 +1,11 @@
+{
+  "version": "29.9.3",
+  "root": "/var/lib/docker",
+  "driver": "overlayfs",
+  "live_restore": true,
+  "containers": 0,
+  "features": null,
+  "declared_live_restore": true,
+  "declared_storage_driver": null,
+  "image_count": 0
+}

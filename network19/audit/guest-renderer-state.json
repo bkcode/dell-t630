@@ -1,0 +1,4532 @@
+{
+  "captured_at": "2026-11-06T16:26:00.141463+08:00",
+  "mode": "read-only-renderer-audit",
+  "excluded": [
+    190,
+    260,
+    100
+  ],
+  "guests": [
+    {
+      "vmid": 230,
+      "hostname": "java-prod-01",
+      "interface": "eth0",
+      "mac": "BC:24:11:1C:20:00",
+      "interface_addresses": [
+        {
+          "family": "inet",
+          "address": "10.63.10.20",
+          "prefix": 24,
+          "dynamic": false
+        },
+        {
+          "family": "inet6",
+          "address": "fe80::be24:11ff:fe1c:2000",
+          "prefix": 64,
+          "dynamic": false
+        }
+      ],
+      "default_routes": {
+        "-4": {
+          "exit": 0,
+          "routes": [
+            {
+              "dst": "default",
+              "gateway": "10.63.10.1",
+              "dev": "eth0",
+              "protocol": "static",
+              "flags": []
+            }
+          ]
+        },
+        "-6": {
+          "exit": 0,
+          "routes": []
+        }
+      },
+      "network_services": {
+        "systemd-networkd.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "NetworkManager.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        },
+        "networking.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        }
+      },
+      "networkctl_status": {
+        "exit": 0,
+        "selected_lines": [
+          "Link File: /run/systemd/network/10-netplan-eth0.link",
+          "Network File: /run/systemd/network/10-netplan-eth0.network",
+          "State: routable (configured)",
+          "Online state: online",
+          "Type: ether",
+          "Driver: virtio_net",
+          "Address: 10.63.10.20",
+          "Gateway: 10.63.10.1",
+          "DNS: 1.1.1.1"
+        ]
+      },
+      "resolved_link": {
+        "exit": 0,
+        "selected_lines": [
+          "Current Scopes: DNS LLMNR/IPv4 LLMNR/IPv6",
+          "Protocols: +DefaultRoute +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+          "Current DNS Server: 1.1.1.1",
+          "DNS Servers: 1.1.1.1"
+        ]
+      },
+      "resolv_conf": {
+        "symlink": true,
+        "resolved_path": "/run/systemd/resolve/stub-resolv.conf",
+        "settings": [
+          "nameserver 127.0.0.53",
+          "options edns0 trust-ad",
+          "search ."
+        ]
+      },
+      "network_files": [
+        {
+          "path": "/run/systemd/network/10-netplan-eth0.network",
+          "basename": "10-netplan-eth0.network",
+          "directory_priority": 1,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "PermanentMACAddress",
+              "value": "bc:24:11:1c:20:00"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "eth0"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "ipv6"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "10.63.10.20/24"
+            },
+            {
+              "section": "Network",
+              "key": "DNS",
+              "value": "1.1.1.1"
+            },
+            {
+              "section": "Route",
+              "key": "Destination",
+              "value": "0.0.0.0/0"
+            },
+            {
+              "section": "Route",
+              "key": "Gateway",
+              "value": "10.63.10.1"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-6rd-tunnel.network",
+          "basename": "80-6rd-tunnel.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "sit"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "6rd-*"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0-tun.network",
+          "basename": "80-container-host0-tun.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0.network",
+          "basename": "80-container-host0.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vb.network",
+          "basename": "80-container-vb.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vb-*"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-ve.network",
+          "basename": "80-container-ve.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "ve-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vz.network",
+          "basename": "80-container-vz.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "bridge"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vz-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/24"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-vm-vt.network",
+          "basename": "80-vm-vt.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vt-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-wifi-adhoc.network",
+          "basename": "80-wifi-adhoc.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Type",
+              "value": "wlan"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            },
+            {
+              "section": "Network",
+              "key": "MulticastDNS",
+              "value": "yes"
+            }
+          ]
+        }
+      ],
+      "ifupdown_files": [],
+      "netplan_files": [
+        {
+          "path": "/etc/netplan/50-cloud-init.yaml",
+          "network_only_selected_lines": [
+            "network:",
+            "  version: 2",
+            "  ethernets:",
+            "      match:",
+            "        macaddress: \"bc:24:11:1c:20:00\"",
+            "      addresses:",
+            "      nameservers:",
+            "        addresses:",
+            "        - 1.1.1.1",
+            "      set-name: \"eth0\"",
+            "      routes:",
+            "        via: \"10.63.10.1\""
+          ]
+        }
+      ],
+      "cloud_init_network_disable_files": [],
+      "cloud_init_network_config_files_present": [
+        "/var/lib/cloud/instance/network-config.json"
+      ],
+      "cloud_id": "nocloud",
+      "ipv6_interface_sysctl": {
+        "disable_ipv6": "0",
+        "accept_ra": "0",
+        "autoconf": "0"
+      },
+      "secret_or_userdata_or_environment_read": false
+    },
+    {
+      "vmid": 200,
+      "hostname": "data-prod-db",
+      "interface": "eth0",
+      "mac": "BC:24:11:1C:62:00",
+      "interface_addresses": [
+        {
+          "family": "inet",
+          "address": "10.63.10.10",
+          "prefix": 24,
+          "dynamic": false
+        },
+        {
+          "family": "inet6",
+          "address": "fe80::be24:11ff:fe1c:6200",
+          "prefix": 64,
+          "dynamic": false
+        }
+      ],
+      "default_routes": {
+        "-4": {
+          "exit": 0,
+          "routes": [
+            {
+              "dst": "default",
+              "gateway": "10.63.10.1",
+              "dev": "eth0",
+              "protocol": "static",
+              "flags": []
+            }
+          ]
+        },
+        "-6": {
+          "exit": 0,
+          "routes": []
+        }
+      },
+      "network_services": {
+        "systemd-networkd.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "NetworkManager.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        },
+        "networking.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        }
+      },
+      "networkctl_status": {
+        "exit": 0,
+        "selected_lines": [
+          "Link File: /run/systemd/network/10-netplan-eth0.link",
+          "Network File: /run/systemd/network/10-netplan-eth0.network",
+          "State: routable (configured)",
+          "Online state: online",
+          "Type: ether",
+          "Driver: virtio_net",
+          "Address: 10.63.10.10",
+          "Gateway: 10.63.10.1",
+          "DNS: 1.1.1.1"
+        ]
+      },
+      "resolved_link": {
+        "exit": 0,
+        "selected_lines": [
+          "Current Scopes: DNS LLMNR/IPv4 LLMNR/IPv6",
+          "Protocols: +DefaultRoute +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+          "Current DNS Server: 1.1.1.1",
+          "DNS Servers: 1.1.1.1"
+        ]
+      },
+      "resolv_conf": {
+        "symlink": true,
+        "resolved_path": "/run/systemd/resolve/stub-resolv.conf",
+        "settings": [
+          "nameserver 127.0.0.53",
+          "options edns0 trust-ad",
+          "search ."
+        ]
+      },
+      "network_files": [
+        {
+          "path": "/run/systemd/network/10-netplan-eth0.network",
+          "basename": "10-netplan-eth0.network",
+          "directory_priority": 1,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "PermanentMACAddress",
+              "value": "bc:24:11:1c:62:00"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "eth0"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "ipv6"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "10.63.10.10/24"
+            },
+            {
+              "section": "Network",
+              "key": "DNS",
+              "value": "1.1.1.1"
+            },
+            {
+              "section": "Route",
+              "key": "Destination",
+              "value": "0.0.0.0/0"
+            },
+            {
+              "section": "Route",
+              "key": "Gateway",
+              "value": "10.63.10.1"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-6rd-tunnel.network",
+          "basename": "80-6rd-tunnel.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "sit"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "6rd-*"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0-tun.network",
+          "basename": "80-container-host0-tun.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0.network",
+          "basename": "80-container-host0.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vb.network",
+          "basename": "80-container-vb.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vb-*"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-ve.network",
+          "basename": "80-container-ve.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "ve-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vz.network",
+          "basename": "80-container-vz.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "bridge"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vz-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/24"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-vm-vt.network",
+          "basename": "80-vm-vt.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vt-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-wifi-adhoc.network",
+          "basename": "80-wifi-adhoc.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Type",
+              "value": "wlan"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            },
+            {
+              "section": "Network",
+              "key": "MulticastDNS",
+              "value": "yes"
+            }
+          ]
+        }
+      ],
+      "ifupdown_files": [],
+      "netplan_files": [
+        {
+          "path": "/etc/netplan/50-cloud-init.yaml",
+          "network_only_selected_lines": [
+            "network:",
+            "  version: 2",
+            "  ethernets:",
+            "      match:",
+            "        macaddress: \"bc:24:11:1c:62:00\"",
+            "      addresses:",
+            "      nameservers:",
+            "        addresses:",
+            "        - 1.1.1.1",
+            "      set-name: \"eth0\"",
+            "      routes:",
+            "        via: \"10.63.10.1\""
+          ]
+        }
+      ],
+      "cloud_init_network_disable_files": [],
+      "cloud_init_network_config_files_present": [
+        "/var/lib/cloud/instance/network-config.json"
+      ],
+      "cloud_id": "nocloud",
+      "ipv6_interface_sysctl": {
+        "disable_ipv6": "0",
+        "accept_ra": "0",
+        "autoconf": "0"
+      },
+      "secret_or_userdata_or_environment_read": false
+    },
+    {
+      "vmid": 201,
+      "hostname": "data-prod-infra",
+      "interface": "eth0",
+      "mac": "BC:24:11:1C:BB:93",
+      "interface_addresses": [
+        {
+          "family": "inet",
+          "address": "10.63.10.11",
+          "prefix": 24,
+          "dynamic": false
+        },
+        {
+          "family": "inet6",
+          "address": "fe80::be24:11ff:fe1c:bb93",
+          "prefix": 64,
+          "dynamic": false
+        }
+      ],
+      "default_routes": {
+        "-4": {
+          "exit": 0,
+          "routes": [
+            {
+              "dst": "default",
+              "gateway": "10.63.10.1",
+              "dev": "eth0",
+              "protocol": "static",
+              "flags": []
+            }
+          ]
+        },
+        "-6": {
+          "exit": 0,
+          "routes": []
+        }
+      },
+      "network_services": {
+        "systemd-networkd.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "NetworkManager.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        },
+        "networking.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        }
+      },
+      "networkctl_status": {
+        "exit": 0,
+        "selected_lines": [
+          "Link File: /run/systemd/network/10-netplan-eth0.link",
+          "Network File: /run/systemd/network/10-netplan-eth0.network",
+          "State: routable (configured)",
+          "Online state: online",
+          "Type: ether",
+          "Driver: virtio_net",
+          "Address: 10.63.10.11",
+          "Gateway: 10.63.10.1",
+          "DNS: 1.1.1.1"
+        ]
+      },
+      "resolved_link": {
+        "exit": 0,
+        "selected_lines": [
+          "Current Scopes: DNS LLMNR/IPv4 LLMNR/IPv6",
+          "Protocols: +DefaultRoute +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+          "Current DNS Server: 1.1.1.1",
+          "DNS Servers: 1.1.1.1"
+        ]
+      },
+      "resolv_conf": {
+        "symlink": true,
+        "resolved_path": "/run/systemd/resolve/stub-resolv.conf",
+        "settings": [
+          "nameserver 127.0.0.53",
+          "options edns0 trust-ad",
+          "search ."
+        ]
+      },
+      "network_files": [
+        {
+          "path": "/run/systemd/network/10-netplan-eth0.network",
+          "basename": "10-netplan-eth0.network",
+          "directory_priority": 1,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "PermanentMACAddress",
+              "value": "bc:24:11:1c:bb:93"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "eth0"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "ipv6"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "10.63.10.11/24"
+            },
+            {
+              "section": "Network",
+              "key": "DNS",
+              "value": "1.1.1.1"
+            },
+            {
+              "section": "Route",
+              "key": "Destination",
+              "value": "0.0.0.0/0"
+            },
+            {
+              "section": "Route",
+              "key": "Gateway",
+              "value": "10.63.10.1"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-6rd-tunnel.network",
+          "basename": "80-6rd-tunnel.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "sit"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "6rd-*"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0-tun.network",
+          "basename": "80-container-host0-tun.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0.network",
+          "basename": "80-container-host0.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vb.network",
+          "basename": "80-container-vb.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vb-*"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-ve.network",
+          "basename": "80-container-ve.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "ve-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vz.network",
+          "basename": "80-container-vz.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "bridge"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vz-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/24"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-vm-vt.network",
+          "basename": "80-vm-vt.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vt-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-wifi-adhoc.network",
+          "basename": "80-wifi-adhoc.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Type",
+              "value": "wlan"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            },
+            {
+              "section": "Network",
+              "key": "MulticastDNS",
+              "value": "yes"
+            }
+          ]
+        }
+      ],
+      "ifupdown_files": [],
+      "netplan_files": [
+        {
+          "path": "/etc/netplan/50-cloud-init.yaml",
+          "network_only_selected_lines": [
+            "network:",
+            "  version: 2",
+            "  ethernets:",
+            "      match:",
+            "        macaddress: \"bc:24:11:1c:bb:93\"",
+            "      addresses:",
+            "      nameservers:",
+            "        addresses:",
+            "        - 1.1.1.1",
+            "      set-name: \"eth0\"",
+            "      routes:",
+            "        via: \"10.63.10.1\""
+          ]
+        }
+      ],
+      "cloud_init_network_disable_files": [],
+      "cloud_init_network_config_files_present": [
+        "/var/lib/cloud/instance/network-config.json"
+      ],
+      "cloud_id": "nocloud",
+      "ipv6_interface_sysctl": {
+        "disable_ipv6": "0",
+        "accept_ra": "0",
+        "autoconf": "0"
+      },
+      "secret_or_userdata_or_environment_read": false
+    },
+    {
+      "vmid": 210,
+      "hostname": "data-test",
+      "interface": "eth0",
+      "mac": "BC:24:11:5D:2D:98",
+      "interface_addresses": [
+        {
+          "family": "inet",
+          "address": "10.63.20.10",
+          "prefix": 24,
+          "dynamic": false
+        },
+        {
+          "family": "inet6",
+          "address": "fe80::be24:11ff:fe5d:2d98",
+          "prefix": 64,
+          "dynamic": false
+        }
+      ],
+      "default_routes": {
+        "-4": {
+          "exit": 0,
+          "routes": [
+            {
+              "dst": "default",
+              "gateway": "10.63.20.1",
+              "dev": "eth0",
+              "protocol": "static",
+              "flags": []
+            }
+          ]
+        },
+        "-6": {
+          "exit": 0,
+          "routes": []
+        }
+      },
+      "network_services": {
+        "systemd-networkd.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "NetworkManager.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        },
+        "networking.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        }
+      },
+      "networkctl_status": {
+        "exit": 0,
+        "selected_lines": [
+          "Link File: /run/systemd/network/10-netplan-eth0.link",
+          "Network File: /run/systemd/network/10-netplan-eth0.network",
+          "State: routable (configured)",
+          "Online state: online",
+          "Type: ether",
+          "Driver: virtio_net",
+          "Address: 10.63.20.10",
+          "Gateway: 10.63.20.1",
+          "DNS: 1.1.1.1"
+        ]
+      },
+      "resolved_link": {
+        "exit": 0,
+        "selected_lines": [
+          "Current Scopes: DNS LLMNR/IPv4 LLMNR/IPv6",
+          "Protocols: +DefaultRoute +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+          "Current DNS Server: 1.1.1.1",
+          "DNS Servers: 1.1.1.1"
+        ]
+      },
+      "resolv_conf": {
+        "symlink": true,
+        "resolved_path": "/run/systemd/resolve/stub-resolv.conf",
+        "settings": [
+          "nameserver 127.0.0.53",
+          "options edns0 trust-ad",
+          "search ."
+        ]
+      },
+      "network_files": [
+        {
+          "path": "/run/systemd/network/10-netplan-eth0.network",
+          "basename": "10-netplan-eth0.network",
+          "directory_priority": 1,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "PermanentMACAddress",
+              "value": "bc:24:11:5d:2d:98"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "eth0"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "ipv6"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "10.63.20.10/24"
+            },
+            {
+              "section": "Network",
+              "key": "DNS",
+              "value": "1.1.1.1"
+            },
+            {
+              "section": "Route",
+              "key": "Destination",
+              "value": "0.0.0.0/0"
+            },
+            {
+              "section": "Route",
+              "key": "Gateway",
+              "value": "10.63.20.1"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-6rd-tunnel.network",
+          "basename": "80-6rd-tunnel.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "sit"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "6rd-*"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0-tun.network",
+          "basename": "80-container-host0-tun.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0.network",
+          "basename": "80-container-host0.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vb.network",
+          "basename": "80-container-vb.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vb-*"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-ve.network",
+          "basename": "80-container-ve.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "ve-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vz.network",
+          "basename": "80-container-vz.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "bridge"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vz-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/24"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-vm-vt.network",
+          "basename": "80-vm-vt.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vt-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-wifi-adhoc.network",
+          "basename": "80-wifi-adhoc.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Type",
+              "value": "wlan"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            },
+            {
+              "section": "Network",
+              "key": "MulticastDNS",
+              "value": "yes"
+            }
+          ]
+        }
+      ],
+      "ifupdown_files": [],
+      "netplan_files": [
+        {
+          "path": "/etc/netplan/50-cloud-init.yaml",
+          "network_only_selected_lines": [
+            "network:",
+            "  version: 2",
+            "  ethernets:",
+            "      match:",
+            "        macaddress: \"bc:24:11:5d:2d:98\"",
+            "      addresses:",
+            "      nameservers:",
+            "        addresses:",
+            "        - 1.1.1.1",
+            "      set-name: \"eth0\"",
+            "      routes:",
+            "        via: \"10.63.20.1\""
+          ]
+        }
+      ],
+      "cloud_init_network_disable_files": [],
+      "cloud_init_network_config_files_present": [
+        "/var/lib/cloud/instance/network-config.json"
+      ],
+      "cloud_id": "nocloud",
+      "ipv6_interface_sysctl": {
+        "disable_ipv6": "0",
+        "accept_ra": "0",
+        "autoconf": "0"
+      },
+      "secret_or_userdata_or_environment_read": false
+    },
+    {
+      "vmid": 220,
+      "hostname": "publish-service",
+      "interface": "eth0",
+      "mac": "BC:24:11:2A:01:AD",
+      "interface_addresses": [
+        {
+          "family": "inet",
+          "address": "10.63.30.10",
+          "prefix": 24,
+          "dynamic": false
+        },
+        {
+          "family": "inet6",
+          "address": "fe80::be24:11ff:fe2a:1ad",
+          "prefix": 64,
+          "dynamic": false
+        }
+      ],
+      "default_routes": {
+        "-4": {
+          "exit": 0,
+          "routes": [
+            {
+              "dst": "default",
+              "gateway": "10.63.30.1",
+              "dev": "eth0",
+              "protocol": "static",
+              "flags": []
+            }
+          ]
+        },
+        "-6": {
+          "exit": 0,
+          "routes": []
+        }
+      },
+      "network_services": {
+        "systemd-networkd.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "NetworkManager.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        },
+        "networking.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        }
+      },
+      "networkctl_status": {
+        "exit": 0,
+        "selected_lines": [
+          "Link File: /run/systemd/network/10-netplan-eth0.link",
+          "Network File: /run/systemd/network/10-netplan-eth0.network",
+          "State: routable (configured)",
+          "Online state: online",
+          "Type: ether",
+          "Driver: virtio_net",
+          "Address: 10.63.30.10",
+          "Gateway: 10.63.30.1",
+          "DNS: 1.1.1.1"
+        ]
+      },
+      "resolved_link": {
+        "exit": 0,
+        "selected_lines": [
+          "Current Scopes: DNS LLMNR/IPv4 LLMNR/IPv6",
+          "Protocols: +DefaultRoute +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+          "Current DNS Server: 1.1.1.1",
+          "DNS Servers: 1.1.1.1"
+        ]
+      },
+      "resolv_conf": {
+        "symlink": true,
+        "resolved_path": "/run/systemd/resolve/stub-resolv.conf",
+        "settings": [
+          "nameserver 127.0.0.53",
+          "options edns0 trust-ad",
+          "search ."
+        ]
+      },
+      "network_files": [
+        {
+          "path": "/run/systemd/network/10-netplan-eth0.network",
+          "basename": "10-netplan-eth0.network",
+          "directory_priority": 1,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "PermanentMACAddress",
+              "value": "bc:24:11:2a:01:ad"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "eth0"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "ipv6"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "10.63.30.10/24"
+            },
+            {
+              "section": "Network",
+              "key": "DNS",
+              "value": "1.1.1.1"
+            },
+            {
+              "section": "Route",
+              "key": "Destination",
+              "value": "0.0.0.0/0"
+            },
+            {
+              "section": "Route",
+              "key": "Gateway",
+              "value": "10.63.30.1"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-6rd-tunnel.network",
+          "basename": "80-6rd-tunnel.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "sit"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "6rd-*"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0-tun.network",
+          "basename": "80-container-host0-tun.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0.network",
+          "basename": "80-container-host0.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vb.network",
+          "basename": "80-container-vb.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vb-*"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-ve.network",
+          "basename": "80-container-ve.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "ve-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vz.network",
+          "basename": "80-container-vz.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "bridge"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vz-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/24"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-vm-vt.network",
+          "basename": "80-vm-vt.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vt-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-wifi-adhoc.network",
+          "basename": "80-wifi-adhoc.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Type",
+              "value": "wlan"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            },
+            {
+              "section": "Network",
+              "key": "MulticastDNS",
+              "value": "yes"
+            }
+          ]
+        }
+      ],
+      "ifupdown_files": [],
+      "netplan_files": [
+        {
+          "path": "/etc/netplan/50-cloud-init.yaml",
+          "network_only_selected_lines": [
+            "network:",
+            "  version: 2",
+            "  ethernets:",
+            "      match:",
+            "        macaddress: \"bc:24:11:2a:01:ad\"",
+            "      addresses:",
+            "      nameservers:",
+            "        addresses:",
+            "        - 1.1.1.1",
+            "      set-name: \"eth0\"",
+            "      routes:",
+            "        via: \"10.63.30.1\""
+          ]
+        }
+      ],
+      "cloud_init_network_disable_files": [],
+      "cloud_init_network_config_files_present": [
+        "/var/lib/cloud/instance/network-config.json"
+      ],
+      "cloud_id": "nocloud",
+      "ipv6_interface_sysctl": {
+        "disable_ipv6": "0",
+        "accept_ra": "0",
+        "autoconf": "0"
+      },
+      "secret_or_userdata_or_environment_read": false
+    },
+    {
+      "vmid": 221,
+      "hostname": "artifact-service",
+      "interface": "eth0",
+      "mac": "BC:24:11:EC:E1:6F",
+      "interface_addresses": [
+        {
+          "family": "inet",
+          "address": "10.63.30.20",
+          "prefix": 24,
+          "dynamic": false
+        },
+        {
+          "family": "inet6",
+          "address": "fe80::be24:11ff:feec:e16f",
+          "prefix": 64,
+          "dynamic": false
+        }
+      ],
+      "default_routes": {
+        "-4": {
+          "exit": 0,
+          "routes": [
+            {
+              "dst": "default",
+              "gateway": "10.63.30.1",
+              "dev": "eth0",
+              "protocol": "static",
+              "flags": []
+            }
+          ]
+        },
+        "-6": {
+          "exit": 0,
+          "routes": []
+        }
+      },
+      "network_services": {
+        "systemd-networkd.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "NetworkManager.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        },
+        "networking.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        }
+      },
+      "networkctl_status": {
+        "exit": 0,
+        "selected_lines": [
+          "Link File: /run/systemd/network/10-netplan-eth0.link",
+          "Network File: /run/systemd/network/10-netplan-eth0.network",
+          "State: routable (configured)",
+          "Online state: online",
+          "Type: ether",
+          "Driver: virtio_net",
+          "Address: 10.63.30.20",
+          "Gateway: 10.63.30.1",
+          "DNS: 1.1.1.1"
+        ]
+      },
+      "resolved_link": {
+        "exit": 0,
+        "selected_lines": [
+          "Current Scopes: DNS LLMNR/IPv4 LLMNR/IPv6",
+          "Protocols: +DefaultRoute +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+          "Current DNS Server: 1.1.1.1",
+          "DNS Servers: 1.1.1.1"
+        ]
+      },
+      "resolv_conf": {
+        "symlink": true,
+        "resolved_path": "/run/systemd/resolve/stub-resolv.conf",
+        "settings": [
+          "nameserver 127.0.0.53",
+          "options edns0 trust-ad",
+          "search ."
+        ]
+      },
+      "network_files": [
+        {
+          "path": "/run/systemd/network/10-netplan-eth0.network",
+          "basename": "10-netplan-eth0.network",
+          "directory_priority": 1,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "PermanentMACAddress",
+              "value": "bc:24:11:ec:e1:6f"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "eth0"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "ipv6"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "10.63.30.20/24"
+            },
+            {
+              "section": "Network",
+              "key": "DNS",
+              "value": "1.1.1.1"
+            },
+            {
+              "section": "Route",
+              "key": "Destination",
+              "value": "0.0.0.0/0"
+            },
+            {
+              "section": "Route",
+              "key": "Gateway",
+              "value": "10.63.30.1"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-6rd-tunnel.network",
+          "basename": "80-6rd-tunnel.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "sit"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "6rd-*"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0-tun.network",
+          "basename": "80-container-host0-tun.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0.network",
+          "basename": "80-container-host0.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vb.network",
+          "basename": "80-container-vb.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vb-*"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-ve.network",
+          "basename": "80-container-ve.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "ve-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vz.network",
+          "basename": "80-container-vz.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "bridge"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vz-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/24"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-vm-vt.network",
+          "basename": "80-vm-vt.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vt-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-wifi-adhoc.network",
+          "basename": "80-wifi-adhoc.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Type",
+              "value": "wlan"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            },
+            {
+              "section": "Network",
+              "key": "MulticastDNS",
+              "value": "yes"
+            }
+          ]
+        }
+      ],
+      "ifupdown_files": [],
+      "netplan_files": [
+        {
+          "path": "/etc/netplan/50-cloud-init.yaml",
+          "network_only_selected_lines": [
+            "network:",
+            "  version: 2",
+            "  ethernets:",
+            "      match:",
+            "        macaddress: \"bc:24:11:ec:e1:6f\"",
+            "      addresses:",
+            "      nameservers:",
+            "        addresses:",
+            "        - 1.1.1.1",
+            "      set-name: \"eth0\"",
+            "      routes:",
+            "        via: \"10.63.30.1\""
+          ]
+        }
+      ],
+      "cloud_init_network_disable_files": [],
+      "cloud_init_network_config_files_present": [
+        "/var/lib/cloud/instance/network-config.json"
+      ],
+      "cloud_id": "nocloud",
+      "ipv6_interface_sysctl": {
+        "disable_ipv6": "0",
+        "accept_ra": "0",
+        "autoconf": "0"
+      },
+      "secret_or_userdata_or_environment_read": false
+    },
+    {
+      "vmid": 231,
+      "hostname": "java-prod-02",
+      "interface": "eth0",
+      "mac": "BC:24:11:E9:E5:CC",
+      "interface_addresses": [
+        {
+          "family": "inet",
+          "address": "10.63.10.21",
+          "prefix": 24,
+          "dynamic": false
+        },
+        {
+          "family": "inet6",
+          "address": "fe80::be24:11ff:fee9:e5cc",
+          "prefix": 64,
+          "dynamic": false
+        }
+      ],
+      "default_routes": {
+        "-4": {
+          "exit": 0,
+          "routes": [
+            {
+              "dst": "default",
+              "gateway": "10.63.10.1",
+              "dev": "eth0",
+              "protocol": "static",
+              "flags": []
+            }
+          ]
+        },
+        "-6": {
+          "exit": 0,
+          "routes": []
+        }
+      },
+      "network_services": {
+        "systemd-networkd.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "NetworkManager.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        },
+        "networking.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        }
+      },
+      "networkctl_status": {
+        "exit": 0,
+        "selected_lines": [
+          "Link File: /run/systemd/network/10-netplan-eth0.link",
+          "Network File: /run/systemd/network/10-netplan-eth0.network",
+          "State: routable (configured)",
+          "Online state: online",
+          "Type: ether",
+          "Driver: virtio_net",
+          "Address: 10.63.10.21",
+          "Gateway: 10.63.10.1",
+          "DNS: 1.1.1.1"
+        ]
+      },
+      "resolved_link": {
+        "exit": 0,
+        "selected_lines": [
+          "Current Scopes: DNS LLMNR/IPv4 LLMNR/IPv6",
+          "Protocols: +DefaultRoute +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+          "Current DNS Server: 1.1.1.1",
+          "DNS Servers: 1.1.1.1"
+        ]
+      },
+      "resolv_conf": {
+        "symlink": true,
+        "resolved_path": "/run/systemd/resolve/stub-resolv.conf",
+        "settings": [
+          "nameserver 127.0.0.53",
+          "options edns0 trust-ad",
+          "search ."
+        ]
+      },
+      "network_files": [
+        {
+          "path": "/run/systemd/network/10-netplan-eth0.network",
+          "basename": "10-netplan-eth0.network",
+          "directory_priority": 1,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "PermanentMACAddress",
+              "value": "bc:24:11:e9:e5:cc"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "eth0"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "ipv6"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "10.63.10.21/24"
+            },
+            {
+              "section": "Network",
+              "key": "DNS",
+              "value": "1.1.1.1"
+            },
+            {
+              "section": "Route",
+              "key": "Destination",
+              "value": "0.0.0.0/0"
+            },
+            {
+              "section": "Route",
+              "key": "Gateway",
+              "value": "10.63.10.1"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-6rd-tunnel.network",
+          "basename": "80-6rd-tunnel.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "sit"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "6rd-*"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0-tun.network",
+          "basename": "80-container-host0-tun.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0.network",
+          "basename": "80-container-host0.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vb.network",
+          "basename": "80-container-vb.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vb-*"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-ve.network",
+          "basename": "80-container-ve.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "ve-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vz.network",
+          "basename": "80-container-vz.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "bridge"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vz-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/24"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-vm-vt.network",
+          "basename": "80-vm-vt.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vt-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-wifi-adhoc.network",
+          "basename": "80-wifi-adhoc.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Type",
+              "value": "wlan"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            },
+            {
+              "section": "Network",
+              "key": "MulticastDNS",
+              "value": "yes"
+            }
+          ]
+        }
+      ],
+      "ifupdown_files": [],
+      "netplan_files": [
+        {
+          "path": "/etc/netplan/50-cloud-init.yaml",
+          "network_only_selected_lines": [
+            "network:",
+            "  version: 2",
+            "  ethernets:",
+            "      match:",
+            "        macaddress: \"bc:24:11:e9:e5:cc\"",
+            "      addresses:",
+            "      nameservers:",
+            "        addresses:",
+            "        - 1.1.1.1",
+            "      set-name: \"eth0\"",
+            "      routes:",
+            "        via: \"10.63.10.1\""
+          ]
+        }
+      ],
+      "cloud_init_network_disable_files": [],
+      "cloud_init_network_config_files_present": [
+        "/var/lib/cloud/instance/network-config.json"
+      ],
+      "cloud_id": "nocloud",
+      "ipv6_interface_sysctl": {
+        "disable_ipv6": "0",
+        "accept_ra": "0",
+        "autoconf": "0"
+      },
+      "secret_or_userdata_or_environment_read": false
+    },
+    {
+      "vmid": 232,
+      "hostname": "java-prod-03",
+      "interface": "eth0",
+      "mac": "BC:24:11:7D:1C:AA",
+      "interface_addresses": [
+        {
+          "family": "inet",
+          "address": "10.63.10.22",
+          "prefix": 24,
+          "dynamic": false
+        },
+        {
+          "family": "inet6",
+          "address": "fe80::be24:11ff:fe7d:1caa",
+          "prefix": 64,
+          "dynamic": false
+        }
+      ],
+      "default_routes": {
+        "-4": {
+          "exit": 0,
+          "routes": [
+            {
+              "dst": "default",
+              "gateway": "10.63.10.1",
+              "dev": "eth0",
+              "protocol": "static",
+              "flags": []
+            }
+          ]
+        },
+        "-6": {
+          "exit": 0,
+          "routes": []
+        }
+      },
+      "network_services": {
+        "systemd-networkd.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "NetworkManager.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        },
+        "networking.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        }
+      },
+      "networkctl_status": {
+        "exit": 0,
+        "selected_lines": [
+          "Link File: /run/systemd/network/10-netplan-eth0.link",
+          "Network File: /run/systemd/network/10-netplan-eth0.network",
+          "State: routable (configured)",
+          "Online state: online",
+          "Type: ether",
+          "Driver: virtio_net",
+          "Address: 10.63.10.22",
+          "Gateway: 10.63.10.1",
+          "DNS: 1.1.1.1"
+        ]
+      },
+      "resolved_link": {
+        "exit": 0,
+        "selected_lines": [
+          "Current Scopes: DNS LLMNR/IPv4 LLMNR/IPv6",
+          "Protocols: +DefaultRoute +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+          "Current DNS Server: 1.1.1.1",
+          "DNS Servers: 1.1.1.1"
+        ]
+      },
+      "resolv_conf": {
+        "symlink": true,
+        "resolved_path": "/run/systemd/resolve/stub-resolv.conf",
+        "settings": [
+          "nameserver 127.0.0.53",
+          "options edns0 trust-ad",
+          "search ."
+        ]
+      },
+      "network_files": [
+        {
+          "path": "/run/systemd/network/10-netplan-eth0.network",
+          "basename": "10-netplan-eth0.network",
+          "directory_priority": 1,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "PermanentMACAddress",
+              "value": "bc:24:11:7d:1c:aa"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "eth0"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "ipv6"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "10.63.10.22/24"
+            },
+            {
+              "section": "Network",
+              "key": "DNS",
+              "value": "1.1.1.1"
+            },
+            {
+              "section": "Route",
+              "key": "Destination",
+              "value": "0.0.0.0/0"
+            },
+            {
+              "section": "Route",
+              "key": "Gateway",
+              "value": "10.63.10.1"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-6rd-tunnel.network",
+          "basename": "80-6rd-tunnel.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "sit"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "6rd-*"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0-tun.network",
+          "basename": "80-container-host0-tun.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0.network",
+          "basename": "80-container-host0.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vb.network",
+          "basename": "80-container-vb.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vb-*"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-ve.network",
+          "basename": "80-container-ve.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "ve-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vz.network",
+          "basename": "80-container-vz.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "bridge"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vz-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/24"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-vm-vt.network",
+          "basename": "80-vm-vt.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vt-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-wifi-adhoc.network",
+          "basename": "80-wifi-adhoc.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Type",
+              "value": "wlan"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            },
+            {
+              "section": "Network",
+              "key": "MulticastDNS",
+              "value": "yes"
+            }
+          ]
+        }
+      ],
+      "ifupdown_files": [],
+      "netplan_files": [
+        {
+          "path": "/etc/netplan/50-cloud-init.yaml",
+          "network_only_selected_lines": [
+            "network:",
+            "  version: 2",
+            "  ethernets:",
+            "      match:",
+            "        macaddress: \"bc:24:11:7d:1c:aa\"",
+            "      addresses:",
+            "      nameservers:",
+            "        addresses:",
+            "        - 1.1.1.1",
+            "      set-name: \"eth0\"",
+            "      routes:",
+            "        via: \"10.63.10.1\""
+          ]
+        }
+      ],
+      "cloud_init_network_disable_files": [],
+      "cloud_init_network_config_files_present": [
+        "/var/lib/cloud/instance/network-config.json"
+      ],
+      "cloud_id": "nocloud",
+      "ipv6_interface_sysctl": {
+        "disable_ipv6": "0",
+        "accept_ra": "0",
+        "autoconf": "0"
+      },
+      "secret_or_userdata_or_environment_read": false
+    },
+    {
+      "vmid": 240,
+      "hostname": "java-test-01",
+      "interface": "eth0",
+      "mac": "BC:24:11:65:41:5A",
+      "interface_addresses": [
+        {
+          "family": "inet",
+          "address": "10.63.20.20",
+          "prefix": 24,
+          "dynamic": false
+        },
+        {
+          "family": "inet6",
+          "address": "fe80::be24:11ff:fe65:415a",
+          "prefix": 64,
+          "dynamic": false
+        }
+      ],
+      "default_routes": {
+        "-4": {
+          "exit": 0,
+          "routes": [
+            {
+              "dst": "default",
+              "gateway": "10.63.20.1",
+              "dev": "eth0",
+              "protocol": "static",
+              "flags": []
+            }
+          ]
+        },
+        "-6": {
+          "exit": 0,
+          "routes": []
+        }
+      },
+      "network_services": {
+        "systemd-networkd.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "NetworkManager.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        },
+        "networking.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        }
+      },
+      "networkctl_status": {
+        "exit": 0,
+        "selected_lines": [
+          "Link File: /run/systemd/network/10-netplan-eth0.link",
+          "Network File: /run/systemd/network/10-netplan-eth0.network",
+          "State: routable (configured)",
+          "Online state: online",
+          "Type: ether",
+          "Driver: virtio_net",
+          "Address: 10.63.20.20",
+          "Gateway: 10.63.20.1",
+          "DNS: 1.1.1.1"
+        ]
+      },
+      "resolved_link": {
+        "exit": 0,
+        "selected_lines": [
+          "Current Scopes: DNS LLMNR/IPv4 LLMNR/IPv6",
+          "Protocols: +DefaultRoute +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+          "Current DNS Server: 1.1.1.1",
+          "DNS Servers: 1.1.1.1"
+        ]
+      },
+      "resolv_conf": {
+        "symlink": true,
+        "resolved_path": "/run/systemd/resolve/stub-resolv.conf",
+        "settings": [
+          "nameserver 127.0.0.53",
+          "options edns0 trust-ad",
+          "search ."
+        ]
+      },
+      "network_files": [
+        {
+          "path": "/run/systemd/network/10-netplan-eth0.network",
+          "basename": "10-netplan-eth0.network",
+          "directory_priority": 1,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "PermanentMACAddress",
+              "value": "bc:24:11:65:41:5a"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "eth0"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "ipv6"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "10.63.20.20/24"
+            },
+            {
+              "section": "Network",
+              "key": "DNS",
+              "value": "1.1.1.1"
+            },
+            {
+              "section": "Route",
+              "key": "Destination",
+              "value": "0.0.0.0/0"
+            },
+            {
+              "section": "Route",
+              "key": "Gateway",
+              "value": "10.63.20.1"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-6rd-tunnel.network",
+          "basename": "80-6rd-tunnel.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "sit"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "6rd-*"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0-tun.network",
+          "basename": "80-container-host0-tun.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0.network",
+          "basename": "80-container-host0.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vb.network",
+          "basename": "80-container-vb.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vb-*"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-ve.network",
+          "basename": "80-container-ve.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "ve-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vz.network",
+          "basename": "80-container-vz.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "bridge"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vz-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/24"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-vm-vt.network",
+          "basename": "80-vm-vt.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vt-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-wifi-adhoc.network",
+          "basename": "80-wifi-adhoc.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Type",
+              "value": "wlan"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            },
+            {
+              "section": "Network",
+              "key": "MulticastDNS",
+              "value": "yes"
+            }
+          ]
+        }
+      ],
+      "ifupdown_files": [],
+      "netplan_files": [
+        {
+          "path": "/etc/netplan/50-cloud-init.yaml",
+          "network_only_selected_lines": [
+            "network:",
+            "  version: 2",
+            "  ethernets:",
+            "      match:",
+            "        macaddress: \"bc:24:11:65:41:5a\"",
+            "      addresses:",
+            "      nameservers:",
+            "        addresses:",
+            "        - 1.1.1.1",
+            "      set-name: \"eth0\"",
+            "      routes:",
+            "        via: \"10.63.20.1\""
+          ]
+        }
+      ],
+      "cloud_init_network_disable_files": [],
+      "cloud_init_network_config_files_present": [
+        "/var/lib/cloud/instance/network-config.json"
+      ],
+      "cloud_id": "nocloud",
+      "ipv6_interface_sysctl": {
+        "disable_ipv6": "0",
+        "accept_ra": "0",
+        "autoconf": "0"
+      },
+      "secret_or_userdata_or_environment_read": false
+    },
+    {
+      "vmid": 250,
+      "hostname": "penpot-service",
+      "interface": "eth0",
+      "mac": "BC:24:11:78:E9:84",
+      "interface_addresses": [
+        {
+          "family": "inet",
+          "address": "10.63.30.30",
+          "prefix": 24,
+          "dynamic": false
+        },
+        {
+          "family": "inet6",
+          "address": "fe80::be24:11ff:fe78:e984",
+          "prefix": 64,
+          "dynamic": false
+        }
+      ],
+      "default_routes": {
+        "-4": {
+          "exit": 0,
+          "routes": [
+            {
+              "dst": "default",
+              "gateway": "10.63.30.1",
+              "dev": "eth0",
+              "protocol": "static",
+              "flags": []
+            }
+          ]
+        },
+        "-6": {
+          "exit": 0,
+          "routes": []
+        }
+      },
+      "network_services": {
+        "systemd-networkd.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "NetworkManager.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        },
+        "networking.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        }
+      },
+      "networkctl_status": {
+        "exit": 0,
+        "selected_lines": [
+          "Link File: /run/systemd/network/10-netplan-eth0.link",
+          "Network File: /run/systemd/network/10-netplan-eth0.network",
+          "State: routable (configured)",
+          "Online state: online",
+          "Type: ether",
+          "Driver: virtio_net",
+          "Address: 10.63.30.30",
+          "Gateway: 10.63.30.1",
+          "DNS: 1.1.1.1"
+        ]
+      },
+      "resolved_link": {
+        "exit": 0,
+        "selected_lines": [
+          "Current Scopes: DNS LLMNR/IPv4 LLMNR/IPv6",
+          "Protocols: +DefaultRoute +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+          "Current DNS Server: 1.1.1.1",
+          "DNS Servers: 1.1.1.1"
+        ]
+      },
+      "resolv_conf": {
+        "symlink": true,
+        "resolved_path": "/run/systemd/resolve/stub-resolv.conf",
+        "settings": [
+          "nameserver 127.0.0.53",
+          "options edns0 trust-ad",
+          "search ."
+        ]
+      },
+      "network_files": [
+        {
+          "path": "/run/systemd/network/10-netplan-eth0.network",
+          "basename": "10-netplan-eth0.network",
+          "directory_priority": 1,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "PermanentMACAddress",
+              "value": "bc:24:11:78:e9:84"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "eth0"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "ipv6"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "10.63.30.30/24"
+            },
+            {
+              "section": "Network",
+              "key": "DNS",
+              "value": "1.1.1.1"
+            },
+            {
+              "section": "Route",
+              "key": "Destination",
+              "value": "0.0.0.0/0"
+            },
+            {
+              "section": "Route",
+              "key": "Gateway",
+              "value": "10.63.30.1"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-6rd-tunnel.network",
+          "basename": "80-6rd-tunnel.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "sit"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "6rd-*"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0-tun.network",
+          "basename": "80-container-host0-tun.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0.network",
+          "basename": "80-container-host0.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vb.network",
+          "basename": "80-container-vb.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vb-*"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-ve.network",
+          "basename": "80-container-ve.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "ve-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vz.network",
+          "basename": "80-container-vz.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "bridge"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vz-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/24"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-vm-vt.network",
+          "basename": "80-vm-vt.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vt-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-wifi-adhoc.network",
+          "basename": "80-wifi-adhoc.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Type",
+              "value": "wlan"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            },
+            {
+              "section": "Network",
+              "key": "MulticastDNS",
+              "value": "yes"
+            }
+          ]
+        }
+      ],
+      "ifupdown_files": [],
+      "netplan_files": [
+        {
+          "path": "/etc/netplan/50-cloud-init.yaml",
+          "network_only_selected_lines": [
+            "network:",
+            "  version: 2",
+            "  ethernets:",
+            "      match:",
+            "        macaddress: \"bc:24:11:78:e9:84\"",
+            "      addresses:",
+            "      nameservers:",
+            "        addresses:",
+            "        - 1.1.1.1",
+            "      set-name: \"eth0\"",
+            "      routes:",
+            "        via: \"10.63.30.1\""
+          ]
+        }
+      ],
+      "cloud_init_network_disable_files": [],
+      "cloud_init_network_config_files_present": [
+        "/var/lib/cloud/instance/network-config.json"
+      ],
+      "cloud_id": "nocloud",
+      "ipv6_interface_sysctl": {
+        "disable_ipv6": "0",
+        "accept_ra": "0",
+        "autoconf": "0"
+      },
+      "secret_or_userdata_or_environment_read": false
+    },
+    {
+      "vmid": 270,
+      "hostname": "ops-service",
+      "interface": "eth0",
+      "mac": "BC:24:11:CE:8C:67",
+      "interface_addresses": [
+        {
+          "family": "inet",
+          "address": "10.63.30.40",
+          "prefix": 24,
+          "dynamic": false
+        },
+        {
+          "family": "inet6",
+          "address": "fe80::be24:11ff:fece:8c67",
+          "prefix": 64,
+          "dynamic": false
+        }
+      ],
+      "default_routes": {
+        "-4": {
+          "exit": 0,
+          "routes": [
+            {
+              "dst": "default",
+              "gateway": "10.63.30.1",
+              "dev": "eth0",
+              "protocol": "static",
+              "flags": []
+            }
+          ]
+        },
+        "-6": {
+          "exit": 0,
+          "routes": []
+        }
+      },
+      "network_services": {
+        "systemd-networkd.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "NetworkManager.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        },
+        "networking.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        }
+      },
+      "networkctl_status": {
+        "exit": 0,
+        "selected_lines": [
+          "Link File: /run/systemd/network/10-netplan-eth0.link",
+          "Network File: /run/systemd/network/10-netplan-eth0.network",
+          "State: routable (configured)",
+          "Online state: online",
+          "Type: ether",
+          "Driver: virtio_net",
+          "Address: 10.63.30.40",
+          "Gateway: 10.63.30.1",
+          "DNS: 1.1.1.1"
+        ]
+      },
+      "resolved_link": {
+        "exit": 0,
+        "selected_lines": [
+          "Current Scopes: DNS LLMNR/IPv4 LLMNR/IPv6",
+          "Protocols: +DefaultRoute +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported",
+          "Current DNS Server: 1.1.1.1",
+          "DNS Servers: 1.1.1.1"
+        ]
+      },
+      "resolv_conf": {
+        "symlink": true,
+        "resolved_path": "/run/systemd/resolve/stub-resolv.conf",
+        "settings": [
+          "nameserver 127.0.0.53",
+          "options edns0 trust-ad",
+          "search ."
+        ]
+      },
+      "network_files": [
+        {
+          "path": "/run/systemd/network/10-netplan-eth0.network",
+          "basename": "10-netplan-eth0.network",
+          "directory_priority": 1,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "PermanentMACAddress",
+              "value": "bc:24:11:ce:8c:67"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "eth0"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "ipv6"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "10.63.30.40/24"
+            },
+            {
+              "section": "Network",
+              "key": "DNS",
+              "value": "1.1.1.1"
+            },
+            {
+              "section": "Route",
+              "key": "Destination",
+              "value": "0.0.0.0/0"
+            },
+            {
+              "section": "Route",
+              "key": "Gateway",
+              "value": "10.63.30.1"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-6rd-tunnel.network",
+          "basename": "80-6rd-tunnel.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "sit"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "6rd-*"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0-tun.network",
+          "basename": "80-container-host0-tun.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-host0.network",
+          "basename": "80-container-host0.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "host0"
+            },
+            {
+              "section": "Match",
+              "key": "Virtualization",
+              "value": "container"
+            },
+            {
+              "section": "Network",
+              "key": "DHCP",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vb.network",
+          "basename": "80-container-vb.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vb-*"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-ve.network",
+          "basename": "80-container-ve.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "veth"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "ve-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-container-vz.network",
+          "basename": "80-container-vz.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "bridge"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vz-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/24"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-vm-vt.network",
+          "basename": "80-vm-vt.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Kind",
+              "value": "tun"
+            },
+            {
+              "section": "Match",
+              "key": "Name",
+              "value": "vt-*"
+            },
+            {
+              "section": "Network",
+              "key": "Address",
+              "value": "0.0.0.0/28"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/network/80-wifi-adhoc.network",
+          "basename": "80-wifi-adhoc.network",
+          "directory_priority": 3,
+          "symlink": false,
+          "masked": false,
+          "selected_settings": [
+            {
+              "section": "Match",
+              "key": "Type",
+              "value": "wlan"
+            },
+            {
+              "section": "Network",
+              "key": "LinkLocalAddressing",
+              "value": "yes"
+            },
+            {
+              "section": "Network",
+              "key": "IPv6AcceptRA",
+              "value": "no"
+            },
+            {
+              "section": "Network",
+              "key": "MulticastDNS",
+              "value": "yes"
+            }
+          ]
+        }
+      ],
+      "ifupdown_files": [],
+      "netplan_files": [
+        {
+          "path": "/etc/netplan/50-cloud-init.yaml",
+          "network_only_selected_lines": [
+            "network:",
+            "  version: 2",
+            "  ethernets:",
+            "      match:",
+            "        macaddress: \"bc:24:11:ce:8c:67\"",
+            "      addresses:",
+            "      nameservers:",
+            "        addresses:",
+            "        - 1.1.1.1",
+            "      set-name: \"eth0\"",
+            "      routes:",
+            "        via: \"10.63.30.1\""
+          ]
+        }
+      ],
+      "cloud_init_network_disable_files": [],
+      "cloud_init_network_config_files_present": [
+        "/var/lib/cloud/instance/network-config.json"
+      ],
+      "cloud_id": "nocloud",
+      "ipv6_interface_sysctl": {
+        "disable_ipv6": "0",
+        "accept_ra": "0",
+        "autoconf": "0"
+      },
+      "secret_or_userdata_or_environment_read": false
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "generated_dump_flags": [
+    {
+      "vmid": 9001,
+      "dump_exit_code": 0,
+      "ssh_deletekeys_literal": [],
+      "field_name_present": false,
+      "host_keys_injected_present": false,
+      "custom_user_ref": "store:snippets/dell-docker-default-user.yaml",
+      "full_profile_emitted": false
+    },
+    {
+      "vmid": 9010,
+      "dump_exit_code": 0,
+      "ssh_deletekeys_literal": [],
+      "field_name_present": false,
+      "host_keys_injected_present": false,
+      "custom_user_ref": "store:snippets/dell-linux-default-user.yaml",
+      "full_profile_emitted": false
+    }
+  ],
+  "actual_custom_user_snippet_flags": [
+    {
+      "vmid": 9001,
+      "reference": "store:snippets/dell-docker-default-user.yaml",
+      "effective_custom_user_flags": [
+        "true"
+      ],
+      "field_name_present": true,
+      "host_keys_injected_present": false,
+      "profile_contents_or_keys_emitted": false
+    },
+    {
+      "vmid": 9010,
+      "reference": "store:snippets/dell-linux-default-user.yaml",
+      "effective_custom_user_flags": [
+        "true"
+      ],
+      "field_name_present": true,
+      "host_keys_injected_present": false,
+      "profile_contents_or_keys_emitted": false
+    }
+  ],
+  "generated_dump_not_used_as_custom_profile_proof": true
+}

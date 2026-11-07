@@ -1,0 +1,32 @@
+--- health-full-before
++++ health-full-candidate
+@@ -5,10 +5,24 @@
+   "services": [
+     "ssh.service",
+     "qemu-guest-agent.service",
+-    "prometheus-node-exporter.service"
++    "prometheus-node-exporter.service",
++    "dell-nexus.service"
+   ],
+-  "http_checks": [],
+-  "candidate_service_units": [],
+-  "candidate_http_checks": [],
+-  "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
++  "http_checks": [
++    {
++      "name": "nexus-status",
++      "url": "http://192.168.19.31:8081/service/rest/v1/status"
++    }
++  ],
++  "candidate_service_units": [
++    "docker.service",
++    "dell-nexus.service"
++  ],
++  "candidate_http_checks": [
++    {
++      "name": "nexus-status",
++      "url": "http://192.168.19.31:8081/service/rest/v1/status"
++    }
++  ],
++  "notes": "Merged publisher/Nexus role; Nexus HTTP uses approved alias31 on original MAC; no broad CIDR/headers or Java apps."
+ }

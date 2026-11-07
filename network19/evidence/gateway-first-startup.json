@@ -1,0 +1,16 @@
+{
+  "status": "gateway-first-startup-order-persisted",
+  "gateway190": {
+    "onboot": 1,
+    "order": 1,
+    "up": 30
+  },
+  "CF100": {
+    "onboot": 1,
+    "order": 5,
+    "up": 10
+  },
+  "others_original_orders": "20010,20111,21012,etc unchanged",
+  "no_guests_started_stopped_rebooted": true,
+  "PVE_reboot_executed": false
+}

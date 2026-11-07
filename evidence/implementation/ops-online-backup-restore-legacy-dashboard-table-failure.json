@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-06T11:32:45.885422",
+  "result": {
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nTraceback (most recent call last):\n  File \"/root/dell-ops-backup-acceptance.py\", line 23, in <module>\n    assert db.execute('SELECT COUNT(*) FROM dashboard WHERE uid=?',(uid,)).fetchone()[0]==1\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+    "target": {
+      "vmid": 270,
+      "ip": "10.63.30.40",
+      "host_key_alias": "dell-vm270",
+      "host_key_fingerprint": "SHA256:OjP5q9f3WXxGcoOHs23VlnOf258C6T+nNAxTiYoyf0g",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  }
+}

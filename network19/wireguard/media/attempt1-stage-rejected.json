@@ -1,0 +1,18 @@
+{
+  "role": 260,
+  "status": "VPN-recognition-rejected-or-unconfirmed",
+  "nonce": "6cc04b116eef49028728806579a0578e",
+  "actions": [
+    {
+      "action": "stage",
+      "exit_code": 1,
+      "result": {
+        "role": 260,
+        "status": "VPN-recognition-rejected-or-unconfirmed",
+        "private_journal_retained": true
+      }
+    }
+  ],
+  "secret_values_or_hashes_emitted": false,
+  "gateway_firewall_or_other_role_changed": false
+}

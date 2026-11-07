@@ -1,0 +1,31 @@
+{
+  "platform": "linux/amd64",
+  "verified_at": "2026-11-06T05:35:00.112322+08:00",
+  "method": "official GitHub release + Docker registry manifest platform linux/amd64",
+  "images": {
+    "prometheus": {
+      "tag": "prom/prometheus:v3.16.0",
+      "amd64_digest": "sha256:89c1a644817e9ad70fa2af76c84898e327c1de7063735f962e8313b1e28672c3",
+      "reference": "prom/prometheus:v3.16.0@sha256:89c1a644817e9ad70fa2af76c84898e327c1de7063735f962e8313b1e28672c3",
+      "release_source": "https://github.com/prometheus/prometheus/releases/tag/v3.16.0"
+    },
+    "grafana": {
+      "tag": "grafana/grafana:13.3.0",
+      "amd64_digest": "sha256:6e5d306338670f381a942f1c50d3c266bf71531e5ddd9ee4fc1a133dac5ce63d",
+      "reference": "grafana/grafana:13.3.0@sha256:6e5d306338670f381a942f1c50d3c266bf71531e5ddd9ee4fc1a133dac5ce63d",
+      "release_source": "https://github.com/grafana/grafana/releases/tag/v13.3.0"
+    },
+    "alertmanager": {
+      "tag": "prom/alertmanager:v0.34.2",
+      "amd64_digest": "sha256:7619e9399e623c9f99a40cb199c2bceb972cbf725598a51dcbde69d51dcaaedf",
+      "reference": "prom/alertmanager:v0.34.2@sha256:7619e9399e623c9f99a40cb199c2bceb972cbf725598a51dcbde69d51dcaaedf",
+      "release_source": "https://github.com/prometheus/alertmanager/releases/tag/v0.34.2"
+    },
+    "blackbox": {
+      "tag": "prom/blackbox-exporter:v0.29.1",
+      "amd64_digest": "sha256:66eae352a79e6f677aeddd8c25a9bdb017586dc5fbd230f22329213d891f94bd",
+      "reference": "prom/blackbox-exporter:v0.29.1@sha256:66eae352a79e6f677aeddd8c25a9bdb017586dc5fbd230f22329213d891f94bd",
+      "release_source": "https://github.com/prometheus/blackbox_exporter/releases/tag/v0.29.1"
+    }
+  }
+}

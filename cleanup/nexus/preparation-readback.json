@@ -1,0 +1,68 @@
+[
+  {
+    "role": 220,
+    "status": "readonly-prepare-final-metadata",
+    "OS_hostname": "publish-service",
+    "physical_ipv4": [
+      {
+        "name": "eth0",
+        "IPs": [
+          "192.168.19.30"
+        ]
+      }
+    ],
+    "changed_public_files_SHA": {
+      "/etc/apt/sources.list.d/docker.sources": "61246a32aa079ddf3d8a57d922a7fc311d82f23379bfe0bec65f7c685c141e97",
+      "/etc/apt/keyrings/docker.asc": "1500c1f56fa9e26b9b8f42452a553675796ade0807cdce11975eb98170b3a570",
+      "/etc/docker/daemon.json": "2848ba6cca5cfb119df7f057d9bd172a9449e71316d49ad1fb5db5bb31539aa6",
+      "/opt/dell/cleanup/nexus/target.py": "c7839413765d1bd62faed4d51260cc60f99de5822d3ad45ca605029aeac51cab",
+      "/opt/dell/cleanup/nexus/relocate.py": "5161ea0b369ff95fc05f1fccde59e8d7e1667fd0eb7afab0c526f2ccc2fea140"
+    },
+    "private_standby_dirs_root700": true,
+    "all_standby_files_root600": true,
+    "phase": "prepared-no-active-install",
+    "env_and_three_secrets_byte_preserved": true,
+    "Nexus_active_paths_absent": true,
+    "publisher_key_metadata_only": {
+      "uid": 999,
+      "gid": 989,
+      "mode": 384,
+      "size": 419,
+      "inode": 280661,
+      "mtime_ns": 1793936890687081274,
+      "ctime_ns": 1793936890691080907
+    },
+    "publisher_groups": "uid=999(publisher) gid=989(publisher) groups=989(publisher)",
+    "container_count": 0
+  },
+  {
+    "role": 221,
+    "status": "readonly-prepare-final-metadata",
+    "OS_hostname": "artifact-service",
+    "physical_ipv4": [
+      {
+        "name": "eth0",
+        "IPs": [
+          "192.168.19.31"
+        ]
+      }
+    ],
+    "containers": [
+      {
+        "name": "/nexus-nexus-1",
+        "id": "70d4bec45b73e68dee425c6962ba0ec2d1448b03187dfa0dc8369bdc44eb65bb",
+        "image": "sha256:2ae4fee2eed85f42c982aa2fc16746a8453c7f79faf2a7ea236855ca8652e001",
+        "running": true,
+        "health": "healthy"
+      },
+      {
+        "name": "/nexus-gateway-1",
+        "id": "bb273c7b5b309671bd34f56c04dc6ae96dc7451105b8f1f19f890968fb4ce69a",
+        "image": "sha256:4e5db4761e0ff445f7fd29aad680ad28e8abf7d204895557f145d65535abcc1c",
+        "running": true,
+        "health": "healthy"
+      }
+    ],
+    "source_mutations_performed": false
+  }
+]

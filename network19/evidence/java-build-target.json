@@ -1,0 +1,22 @@
+{
+  "target": {
+    "vmid": 9011,
+    "ip": "192.168.19.197",
+    "host_key_alias": "dell-vm9011",
+    "host_key_fingerprint": "SHA256:usstocef/jdM4rrpKcApoYyLCizdayTQZlFwDjwBcqE",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "strict_SSH": {
+    "exit_code": 0,
+    "stdout": "ub\njava-acceptance-build\nstatus: done\n",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+    "target": {
+      "vmid": 9011,
+      "ip": "192.168.19.197",
+      "host_key_alias": "dell-vm9011",
+      "host_key_fingerprint": "SHA256:usstocef/jdM4rrpKcApoYyLCizdayTQZlFwDjwBcqE",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  },
+  "resources": "2CPU2GiB;232 temporary stopped"
+}

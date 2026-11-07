@@ -1,0 +1,9 @@
+{
+  "role": "prod-infra",
+  "management_wait_fix_synchronized": true,
+  "old_public_code_sha256": "8bcd00a36fc74af9c0f016e796c2c0aebc049db074d248a4d4c83e217fe0ba0d",
+  "new_public_code_sha256": "b86e6c8339fc3ebc9151258849d78276d91e179692be588ce5bcdd344b341a10",
+  "secrets_changed": false,
+  "guard_or_ip_changed": false,
+  "service_restarted": false
+}

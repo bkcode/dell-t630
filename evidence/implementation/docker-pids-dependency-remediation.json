@@ -1,0 +1,1246 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-11-06T12:57:49.543783+08:00",
+  "scope": "approved12-containers-pids-only-and-NAS-dependency-metadata",
+  "status": "passed-no-restart-pids-and-dependency-only",
+  "preaudit": "evidence/implementation/docker-pids-dependency-preaudit.json",
+  "local_files": [
+    {
+      "path": "infra/data/compose.prod-db.yaml",
+      "backup": "/Users/yangzhaohui/work/www/harness/dell/private/audit-backups/pids-20261106T125749/infra/data/compose.prod-db.yaml",
+      "before_sha256": "c5ad6aae21a0cae674f7da1b7f02f9e5f43a9ef30526ad483121554028bba87a",
+      "after_sha256": "5039f612b888cb3a944beed1027b1e071dfa4b4d21cf6b334904f593438841c3",
+      "stripped_before_sha256": "c5ad6aae21a0cae674f7da1b7f02f9e5f43a9ef30526ad483121554028bba87a",
+      "stripped_after_sha256": "c5ad6aae21a0cae674f7da1b7f02f9e5f43a9ef30526ad483121554028bba87a",
+      "services": [
+        "mysql"
+      ],
+      "non_pids_text_unchanged": true
+    },
+    {
+      "path": "infra/data/compose.prod-infra.yaml",
+      "backup": "/Users/yangzhaohui/work/www/harness/dell/private/audit-backups/pids-20261106T125749/infra/data/compose.prod-infra.yaml",
+      "before_sha256": "005a3366ba7633cfdc8cf1a77bb1074ae88ea58c4ea2c93340eefc7b24ce55a1",
+      "after_sha256": "b1f5178a320b55cc7b9478fc23f436d5eb2047eee38030e697abe196c679dccf",
+      "stripped_before_sha256": "005a3366ba7633cfdc8cf1a77bb1074ae88ea58c4ea2c93340eefc7b24ce55a1",
+      "stripped_after_sha256": "005a3366ba7633cfdc8cf1a77bb1074ae88ea58c4ea2c93340eefc7b24ce55a1",
+      "services": [
+        "nacos",
+        "redis",
+        "rabbitmq"
+      ],
+      "non_pids_text_unchanged": true
+    },
+    {
+      "path": "infra/data/compose.test-data.yaml",
+      "backup": "/Users/yangzhaohui/work/www/harness/dell/private/audit-backups/pids-20261106T125749/infra/data/compose.test-data.yaml",
+      "before_sha256": "6f5041cb3f2165d360864981a7357f9ab0bb5267cee31a36f7312b180fcfd93a",
+      "after_sha256": "5a2a1c24f08dec6a06485450f47fa02e33a9d38c7573626be31394298e363e37",
+      "stripped_before_sha256": "6f5041cb3f2165d360864981a7357f9ab0bb5267cee31a36f7312b180fcfd93a",
+      "stripped_after_sha256": "6f5041cb3f2165d360864981a7357f9ab0bb5267cee31a36f7312b180fcfd93a",
+      "services": [
+        "mysql",
+        "nacos",
+        "redis",
+        "rabbitmq"
+      ],
+      "non_pids_text_unchanged": true
+    },
+    {
+      "path": "infra/ops/compose.yaml",
+      "backup": "/Users/yangzhaohui/work/www/harness/dell/private/audit-backups/pids-20261106T125749/infra/ops/compose.yaml",
+      "before_sha256": "144b412be2809b91b7c70744a61bc7fc5dfb03675be6df79e4e6789bc959efb8",
+      "after_sha256": "fc1e5d00864c2a9b00a729b4db18df00cd50d218c547fcafbb2c55ba703e5b05",
+      "stripped_before_sha256": "144b412be2809b91b7c70744a61bc7fc5dfb03675be6df79e4e6789bc959efb8",
+      "stripped_after_sha256": "144b412be2809b91b7c70744a61bc7fc5dfb03675be6df79e4e6789bc959efb8",
+      "services": [
+        "prometheus",
+        "grafana",
+        "alertmanager",
+        "blackbox"
+      ],
+      "non_pids_text_unchanged": true
+    },
+    {
+      "path": "private/data/bundles/prod-db/compose.yaml",
+      "backup": "/Users/yangzhaohui/work/www/harness/dell/private/audit-backups/pids-20261106T125749/private/data/bundles/prod-db/compose.yaml",
+      "before_sha256": "c5ad6aae21a0cae674f7da1b7f02f9e5f43a9ef30526ad483121554028bba87a",
+      "after_sha256": "5039f612b888cb3a944beed1027b1e071dfa4b4d21cf6b334904f593438841c3",
+      "stripped_before_sha256": "c5ad6aae21a0cae674f7da1b7f02f9e5f43a9ef30526ad483121554028bba87a",
+      "stripped_after_sha256": "c5ad6aae21a0cae674f7da1b7f02f9e5f43a9ef30526ad483121554028bba87a",
+      "services": [
+        "mysql"
+      ],
+      "non_pids_text_unchanged": true
+    },
+    {
+      "path": "private/data/bundles/prod-infra/compose.yaml",
+      "backup": "/Users/yangzhaohui/work/www/harness/dell/private/audit-backups/pids-20261106T125749/private/data/bundles/prod-infra/compose.yaml",
+      "before_sha256": "005a3366ba7633cfdc8cf1a77bb1074ae88ea58c4ea2c93340eefc7b24ce55a1",
+      "after_sha256": "b1f5178a320b55cc7b9478fc23f436d5eb2047eee38030e697abe196c679dccf",
+      "stripped_before_sha256": "005a3366ba7633cfdc8cf1a77bb1074ae88ea58c4ea2c93340eefc7b24ce55a1",
+      "stripped_after_sha256": "005a3366ba7633cfdc8cf1a77bb1074ae88ea58c4ea2c93340eefc7b24ce55a1",
+      "services": [
+        "nacos",
+        "redis",
+        "rabbitmq"
+      ],
+      "non_pids_text_unchanged": true
+    },
+    {
+      "path": "private/data/bundles/test-data/compose.yaml",
+      "backup": "/Users/yangzhaohui/work/www/harness/dell/private/audit-backups/pids-20261106T125749/private/data/bundles/test-data/compose.yaml",
+      "before_sha256": "6f5041cb3f2165d360864981a7357f9ab0bb5267cee31a36f7312b180fcfd93a",
+      "after_sha256": "5a2a1c24f08dec6a06485450f47fa02e33a9d38c7573626be31394298e363e37",
+      "stripped_before_sha256": "6f5041cb3f2165d360864981a7357f9ab0bb5267cee31a36f7312b180fcfd93a",
+      "stripped_after_sha256": "6f5041cb3f2165d360864981a7357f9ab0bb5267cee31a36f7312b180fcfd93a",
+      "services": [
+        "mysql",
+        "nacos",
+        "redis",
+        "rabbitmq"
+      ],
+      "non_pids_text_unchanged": true
+    },
+    {
+      "path": "private/ops/bundle/compose.yaml",
+      "backup": "/Users/yangzhaohui/work/www/harness/dell/private/audit-backups/pids-20261106T125749/private/ops/bundle/compose.yaml",
+      "before_sha256": "144b412be2809b91b7c70744a61bc7fc5dfb03675be6df79e4e6789bc959efb8",
+      "after_sha256": "fc1e5d00864c2a9b00a729b4db18df00cd50d218c547fcafbb2c55ba703e5b05",
+      "stripped_before_sha256": "144b412be2809b91b7c70744a61bc7fc5dfb03675be6df79e4e6789bc959efb8",
+      "stripped_after_sha256": "144b412be2809b91b7c70744a61bc7fc5dfb03675be6df79e4e6789bc959efb8",
+      "services": [
+        "prometheus",
+        "grafana",
+        "alertmanager",
+        "blackbox"
+      ],
+      "non_pids_text_unchanged": true
+    }
+  ],
+  "guests": [
+    {
+      "role": "data-prod-db",
+      "started_at": "2026-11-06T12:57:55.316458+08:00",
+      "status": "passed-no-restart-pids-only",
+      "environment_read": false,
+      "health_logs_read": false,
+      "container_recreate_or_restart_invoked": false,
+      "operations": [
+        {
+          "container_id": "1ab31359642069a7bd4f36a9db0632be9f8d1263778e373f846a58e126e8f577",
+          "action": "docker update --pids-limit1024",
+          "exit_code": 0
+        }
+      ],
+      "native_config_before": {
+        "exit_code": 0,
+        "stdout_bytes": 0,
+        "stderr_bytes": 0,
+        "rendered_output_saved": false
+      },
+      "native_config_after": {
+        "exit_code": 0,
+        "stdout_bytes": 0,
+        "stderr_bytes": 0,
+        "rendered_output_saved": false
+      },
+      "compose": {
+        "path": "/opt/dell/data/prod-db/compose.yaml",
+        "backup": "/root/dell-docker-audit-backups/20261106T125749/compose.yaml.before",
+        "before_sha256": "c5ad6aae21a0cae674f7da1b7f02f9e5f43a9ef30526ad483121554028bba87a",
+        "after_sha256": "5039f612b888cb3a944beed1027b1e071dfa4b4d21cf6b334904f593438841c3",
+        "stripped_before_sha256": "c5ad6aae21a0cae674f7da1b7f02f9e5f43a9ef30526ad483121554028bba87a",
+        "stripped_after_sha256": "c5ad6aae21a0cae674f7da1b7f02f9e5f43a9ef30526ad483121554028bba87a",
+        "non_pids_text_unchanged": true,
+        "services": [
+          "mysql"
+        ]
+      },
+      "before": [
+        {
+          "id": "1ab31359642069a7bd4f36a9db0632be9f8d1263778e373f846a58e126e8f577",
+          "name": "/dell-data-prod-db-mysql-1",
+          "pid": 5473,
+          "started_at": "2026-11-06T02:45:12.30631388Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": null,
+          "image_id": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+          "nano_cpus": 5000000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 12884901888,
+          "memory_swap": 12884901888,
+          "port_bindings": {
+            "3306/tcp": [
+              {
+                "HostIp": "10.63.10.10",
+                "HostPort": "3306"
+              }
+            ]
+          },
+          "service": "mysql",
+          "compose_files": "/opt/dell/data/prod-db/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "37",
+            "pids.max": "19169",
+            "pids.peak": "47"
+          }
+        }
+      ],
+      "after": [
+        {
+          "id": "1ab31359642069a7bd4f36a9db0632be9f8d1263778e373f846a58e126e8f577",
+          "name": "/dell-data-prod-db-mysql-1",
+          "pid": 5473,
+          "started_at": "2026-11-06T02:45:12.30631388Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": 1024,
+          "image_id": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+          "nano_cpus": 5000000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 12884901888,
+          "memory_swap": 12884901888,
+          "port_bindings": {
+            "3306/tcp": [
+              {
+                "HostIp": "10.63.10.10",
+                "HostPort": "3306"
+              }
+            ]
+          },
+          "service": "mysql",
+          "compose_files": "/opt/dell/data/prod-db/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "37",
+            "pids.max": "1024",
+            "pids.peak": "47"
+          }
+        }
+      ],
+      "completed_at": "2026-11-06T12:57:56.151695+08:00",
+      "immutable_metadata_unchanged": true,
+      "vmid": 200,
+      "same_bytes_public_private_installed_after": true
+    },
+    {
+      "role": "data-prod-infra",
+      "started_at": "2026-11-06T12:57:56.700235+08:00",
+      "status": "passed-no-restart-pids-only",
+      "environment_read": false,
+      "health_logs_read": false,
+      "container_recreate_or_restart_invoked": false,
+      "operations": [
+        {
+          "container_id": "1fc3ec90a23008f6108f3e83f34fdda4c53099edf844ad80dc27b2d4ed5c6432",
+          "action": "docker update --pids-limit1024",
+          "exit_code": 0
+        },
+        {
+          "container_id": "7f71dfb53684993f7467216ac1a77e4f88af566da4b780ba8b555e15497a3f8e",
+          "action": "docker update --pids-limit1024",
+          "exit_code": 0
+        },
+        {
+          "container_id": "95657f464981f82a6acecafd265b219d3beef1e843c45a423193577637b55c61",
+          "action": "docker update --pids-limit1024",
+          "exit_code": 0
+        }
+      ],
+      "native_config_before": {
+        "exit_code": 0,
+        "stdout_bytes": 0,
+        "stderr_bytes": 0,
+        "rendered_output_saved": false
+      },
+      "native_config_after": {
+        "exit_code": 0,
+        "stdout_bytes": 0,
+        "stderr_bytes": 0,
+        "rendered_output_saved": false
+      },
+      "compose": {
+        "path": "/opt/dell/data/prod-infra/compose.yaml",
+        "backup": "/root/dell-docker-audit-backups/20261106T125749/compose.yaml.before",
+        "before_sha256": "005a3366ba7633cfdc8cf1a77bb1074ae88ea58c4ea2c93340eefc7b24ce55a1",
+        "after_sha256": "b1f5178a320b55cc7b9478fc23f436d5eb2047eee38030e697abe196c679dccf",
+        "stripped_before_sha256": "005a3366ba7633cfdc8cf1a77bb1074ae88ea58c4ea2c93340eefc7b24ce55a1",
+        "stripped_after_sha256": "005a3366ba7633cfdc8cf1a77bb1074ae88ea58c4ea2c93340eefc7b24ce55a1",
+        "non_pids_text_unchanged": true,
+        "services": [
+          "nacos",
+          "redis",
+          "rabbitmq"
+        ]
+      },
+      "before": [
+        {
+          "id": "1fc3ec90a23008f6108f3e83f34fdda4c53099edf844ad80dc27b2d4ed5c6432",
+          "name": "/dell-data-prod-infra-redis-1",
+          "pid": 17825,
+          "started_at": "2026-11-06T03:04:13.740627097Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": null,
+          "image_id": "sha256:17c1c1b96fd1685968790c7fcab311e5bc49c809efe9744af262640a559c4cf2",
+          "nano_cpus": 1000000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 2147483648,
+          "memory_swap": 2147483648,
+          "port_bindings": {
+            "6379/tcp": [
+              {
+                "HostIp": "10.63.10.11",
+                "HostPort": "6379"
+              }
+            ]
+          },
+          "service": "redis",
+          "compose_files": "/opt/dell/data/prod-infra/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "6",
+            "pids.max": "9507",
+            "pids.peak": "14"
+          }
+        },
+        {
+          "id": "7f71dfb53684993f7467216ac1a77e4f88af566da4b780ba8b555e15497a3f8e",
+          "name": "/dell-data-prod-infra-rabbitmq-1",
+          "pid": 18085,
+          "started_at": "2026-11-06T03:04:14.462223208Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": null,
+          "image_id": "sha256:de912cbbf07f938bb8aaa5682464a73a00c6a996efdf0880423aeb4eae006c34",
+          "nano_cpus": 1000000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 1610612736,
+          "memory_swap": 1610612736,
+          "port_bindings": {
+            "15672/tcp": [
+              {
+                "HostIp": "10.63.10.11",
+                "HostPort": "15672"
+              }
+            ],
+            "5672/tcp": [
+              {
+                "HostIp": "10.63.10.11",
+                "HostPort": "5672"
+              }
+            ]
+          },
+          "service": "rabbitmq",
+          "compose_files": "/opt/dell/data/prod-infra/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "28",
+            "pids.max": "9507",
+            "pids.peak": "57"
+          }
+        },
+        {
+          "id": "95657f464981f82a6acecafd265b219d3beef1e843c45a423193577637b55c61",
+          "name": "/dell-data-prod-infra-nacos-1",
+          "pid": 17973,
+          "started_at": "2026-11-06T03:04:14.099173367Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": null,
+          "image_id": "sha256:fc86d4833afb7abc64006f04c715946303f6b15d694c2f05c2895a27d967ed88",
+          "nano_cpus": 2000000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 1610612736,
+          "memory_swap": 1610612736,
+          "port_bindings": {
+            "8848/tcp": [
+              {
+                "HostIp": "10.63.10.11",
+                "HostPort": "8848"
+              }
+            ],
+            "9848/tcp": [
+              {
+                "HostIp": "10.63.10.11",
+                "HostPort": "9848"
+              }
+            ]
+          },
+          "service": "nacos",
+          "compose_files": "/opt/dell/data/prod-infra/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "184",
+            "pids.max": "9507",
+            "pids.peak": "192"
+          }
+        }
+      ],
+      "after": [
+        {
+          "id": "1fc3ec90a23008f6108f3e83f34fdda4c53099edf844ad80dc27b2d4ed5c6432",
+          "name": "/dell-data-prod-infra-redis-1",
+          "pid": 17825,
+          "started_at": "2026-11-06T03:04:13.740627097Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": 1024,
+          "image_id": "sha256:17c1c1b96fd1685968790c7fcab311e5bc49c809efe9744af262640a559c4cf2",
+          "nano_cpus": 1000000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 2147483648,
+          "memory_swap": 2147483648,
+          "port_bindings": {
+            "6379/tcp": [
+              {
+                "HostIp": "10.63.10.11",
+                "HostPort": "6379"
+              }
+            ]
+          },
+          "service": "redis",
+          "compose_files": "/opt/dell/data/prod-infra/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "6",
+            "pids.max": "1024",
+            "pids.peak": "14"
+          }
+        },
+        {
+          "id": "7f71dfb53684993f7467216ac1a77e4f88af566da4b780ba8b555e15497a3f8e",
+          "name": "/dell-data-prod-infra-rabbitmq-1",
+          "pid": 18085,
+          "started_at": "2026-11-06T03:04:14.462223208Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": 1024,
+          "image_id": "sha256:de912cbbf07f938bb8aaa5682464a73a00c6a996efdf0880423aeb4eae006c34",
+          "nano_cpus": 1000000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 1610612736,
+          "memory_swap": 1610612736,
+          "port_bindings": {
+            "15672/tcp": [
+              {
+                "HostIp": "10.63.10.11",
+                "HostPort": "15672"
+              }
+            ],
+            "5672/tcp": [
+              {
+                "HostIp": "10.63.10.11",
+                "HostPort": "5672"
+              }
+            ]
+          },
+          "service": "rabbitmq",
+          "compose_files": "/opt/dell/data/prod-infra/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "34",
+            "pids.max": "1024",
+            "pids.peak": "57"
+          }
+        },
+        {
+          "id": "95657f464981f82a6acecafd265b219d3beef1e843c45a423193577637b55c61",
+          "name": "/dell-data-prod-infra-nacos-1",
+          "pid": 17973,
+          "started_at": "2026-11-06T03:04:14.099173367Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": 1024,
+          "image_id": "sha256:fc86d4833afb7abc64006f04c715946303f6b15d694c2f05c2895a27d967ed88",
+          "nano_cpus": 2000000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 1610612736,
+          "memory_swap": 1610612736,
+          "port_bindings": {
+            "8848/tcp": [
+              {
+                "HostIp": "10.63.10.11",
+                "HostPort": "8848"
+              }
+            ],
+            "9848/tcp": [
+              {
+                "HostIp": "10.63.10.11",
+                "HostPort": "9848"
+              }
+            ]
+          },
+          "service": "nacos",
+          "compose_files": "/opt/dell/data/prod-infra/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "184",
+            "pids.max": "1024",
+            "pids.peak": "192"
+          }
+        }
+      ],
+      "completed_at": "2026-11-06T12:57:57.979332+08:00",
+      "immutable_metadata_unchanged": true,
+      "vmid": 201,
+      "same_bytes_public_private_installed_after": true
+    },
+    {
+      "role": "data-test",
+      "started_at": "2026-11-06T12:57:58.560209+08:00",
+      "status": "passed-no-restart-pids-only",
+      "environment_read": false,
+      "health_logs_read": false,
+      "container_recreate_or_restart_invoked": false,
+      "operations": [
+        {
+          "container_id": "1e32c610136730142486270496876ef9af4a9c3cc6b2ec2c13e3402936e8ba1e",
+          "action": "docker update --pids-limit1024",
+          "exit_code": 0
+        },
+        {
+          "container_id": "3695c8f5e67305d622e5370d9c4c8157911baf762a3325fa93d614061b1452c6",
+          "action": "docker update --pids-limit1024",
+          "exit_code": 0
+        },
+        {
+          "container_id": "7bccd526194a68723b6fba1dfa7e1626a22abd88358cd540a2522c6a54d263c7",
+          "action": "docker update --pids-limit1024",
+          "exit_code": 0
+        },
+        {
+          "container_id": "55bac7f288b3871eb784018291b0eb5ec572120b61c72f635ef11eaa2cef46f6",
+          "action": "docker update --pids-limit1024",
+          "exit_code": 0
+        }
+      ],
+      "native_config_before": {
+        "exit_code": 0,
+        "stdout_bytes": 0,
+        "stderr_bytes": 0,
+        "rendered_output_saved": false
+      },
+      "native_config_after": {
+        "exit_code": 0,
+        "stdout_bytes": 0,
+        "stderr_bytes": 0,
+        "rendered_output_saved": false
+      },
+      "compose": {
+        "path": "/opt/dell/data/test-data/compose.yaml",
+        "backup": "/root/dell-docker-audit-backups/20261106T125749/compose.yaml.before",
+        "before_sha256": "6f5041cb3f2165d360864981a7357f9ab0bb5267cee31a36f7312b180fcfd93a",
+        "after_sha256": "5a2a1c24f08dec6a06485450f47fa02e33a9d38c7573626be31394298e363e37",
+        "stripped_before_sha256": "6f5041cb3f2165d360864981a7357f9ab0bb5267cee31a36f7312b180fcfd93a",
+        "stripped_after_sha256": "6f5041cb3f2165d360864981a7357f9ab0bb5267cee31a36f7312b180fcfd93a",
+        "non_pids_text_unchanged": true,
+        "services": [
+          "mysql",
+          "nacos",
+          "redis",
+          "rabbitmq"
+        ]
+      },
+      "before": [
+        {
+          "id": "1e32c610136730142486270496876ef9af4a9c3cc6b2ec2c13e3402936e8ba1e",
+          "name": "/dell-data-test-data-nacos-1",
+          "pid": 8104,
+          "started_at": "2026-11-06T03:05:44.03579927Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": null,
+          "image_id": "sha256:fc86d4833afb7abc64006f04c715946303f6b15d694c2f05c2895a27d967ed88",
+          "nano_cpus": 1000000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 1073741824,
+          "memory_swap": 1073741824,
+          "port_bindings": {
+            "8848/tcp": [
+              {
+                "HostIp": "10.63.20.10",
+                "HostPort": "8848"
+              }
+            ],
+            "9848/tcp": [
+              {
+                "HostIp": "10.63.20.10",
+                "HostPort": "9848"
+              }
+            ]
+          },
+          "service": "nacos",
+          "compose_files": "/opt/dell/data/test-data/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "189",
+            "pids.max": "4676",
+            "pids.peak": "197"
+          }
+        },
+        {
+          "id": "3695c8f5e67305d622e5370d9c4c8157911baf762a3325fa93d614061b1452c6",
+          "name": "/dell-data-test-data-rabbitmq-1",
+          "pid": 7759,
+          "started_at": "2026-11-06T03:05:38.52390545Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": null,
+          "image_id": "sha256:de912cbbf07f938bb8aaa5682464a73a00c6a996efdf0880423aeb4eae006c34",
+          "nano_cpus": 500000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 536870912,
+          "memory_swap": 536870912,
+          "port_bindings": {
+            "15672/tcp": [
+              {
+                "HostIp": "10.63.20.10",
+                "HostPort": "15672"
+              }
+            ],
+            "5672/tcp": [
+              {
+                "HostIp": "10.63.20.10",
+                "HostPort": "5672"
+              }
+            ]
+          },
+          "service": "rabbitmq",
+          "compose_files": "/opt/dell/data/test-data/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "28",
+            "pids.max": "4676",
+            "pids.peak": "72"
+          }
+        },
+        {
+          "id": "7bccd526194a68723b6fba1dfa7e1626a22abd88358cd540a2522c6a54d263c7",
+          "name": "/dell-data-test-data-mysql-1",
+          "pid": 7679,
+          "started_at": "2026-11-06T03:05:38.211829792Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": null,
+          "image_id": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+          "nano_cpus": 750000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 939524096,
+          "memory_swap": 939524096,
+          "port_bindings": {
+            "3306/tcp": [
+              {
+                "HostIp": "10.63.20.10",
+                "HostPort": "3306"
+              }
+            ]
+          },
+          "service": "mysql",
+          "compose_files": "/opt/dell/data/test-data/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "41",
+            "pids.max": "4676",
+            "pids.peak": "51"
+          }
+        },
+        {
+          "id": "55bac7f288b3871eb784018291b0eb5ec572120b61c72f635ef11eaa2cef46f6",
+          "name": "/dell-data-test-data-redis-1",
+          "pid": 7580,
+          "started_at": "2026-11-06T03:05:37.940469798Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": null,
+          "image_id": "sha256:17c1c1b96fd1685968790c7fcab311e5bc49c809efe9744af262640a559c4cf2",
+          "nano_cpus": 250000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 268435456,
+          "memory_swap": 268435456,
+          "port_bindings": {
+            "6379/tcp": [
+              {
+                "HostIp": "10.63.20.10",
+                "HostPort": "6379"
+              }
+            ]
+          },
+          "service": "redis",
+          "compose_files": "/opt/dell/data/test-data/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "6",
+            "pids.max": "4676",
+            "pids.peak": "14"
+          }
+        }
+      ],
+      "after": [
+        {
+          "id": "1e32c610136730142486270496876ef9af4a9c3cc6b2ec2c13e3402936e8ba1e",
+          "name": "/dell-data-test-data-nacos-1",
+          "pid": 8104,
+          "started_at": "2026-11-06T03:05:44.03579927Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": 1024,
+          "image_id": "sha256:fc86d4833afb7abc64006f04c715946303f6b15d694c2f05c2895a27d967ed88",
+          "nano_cpus": 1000000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 1073741824,
+          "memory_swap": 1073741824,
+          "port_bindings": {
+            "8848/tcp": [
+              {
+                "HostIp": "10.63.20.10",
+                "HostPort": "8848"
+              }
+            ],
+            "9848/tcp": [
+              {
+                "HostIp": "10.63.20.10",
+                "HostPort": "9848"
+              }
+            ]
+          },
+          "service": "nacos",
+          "compose_files": "/opt/dell/data/test-data/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "189",
+            "pids.max": "1024",
+            "pids.peak": "197"
+          }
+        },
+        {
+          "id": "3695c8f5e67305d622e5370d9c4c8157911baf762a3325fa93d614061b1452c6",
+          "name": "/dell-data-test-data-rabbitmq-1",
+          "pid": 7759,
+          "started_at": "2026-11-06T03:05:38.52390545Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": 1024,
+          "image_id": "sha256:de912cbbf07f938bb8aaa5682464a73a00c6a996efdf0880423aeb4eae006c34",
+          "nano_cpus": 500000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 536870912,
+          "memory_swap": 536870912,
+          "port_bindings": {
+            "15672/tcp": [
+              {
+                "HostIp": "10.63.20.10",
+                "HostPort": "15672"
+              }
+            ],
+            "5672/tcp": [
+              {
+                "HostIp": "10.63.20.10",
+                "HostPort": "5672"
+              }
+            ]
+          },
+          "service": "rabbitmq",
+          "compose_files": "/opt/dell/data/test-data/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "28",
+            "pids.max": "1024",
+            "pids.peak": "72"
+          }
+        },
+        {
+          "id": "7bccd526194a68723b6fba1dfa7e1626a22abd88358cd540a2522c6a54d263c7",
+          "name": "/dell-data-test-data-mysql-1",
+          "pid": 7679,
+          "started_at": "2026-11-06T03:05:38.211829792Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": 1024,
+          "image_id": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+          "nano_cpus": 750000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 939524096,
+          "memory_swap": 939524096,
+          "port_bindings": {
+            "3306/tcp": [
+              {
+                "HostIp": "10.63.20.10",
+                "HostPort": "3306"
+              }
+            ]
+          },
+          "service": "mysql",
+          "compose_files": "/opt/dell/data/test-data/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "41",
+            "pids.max": "1024",
+            "pids.peak": "51"
+          }
+        },
+        {
+          "id": "55bac7f288b3871eb784018291b0eb5ec572120b61c72f635ef11eaa2cef46f6",
+          "name": "/dell-data-test-data-redis-1",
+          "pid": 7580,
+          "started_at": "2026-11-06T03:05:37.940469798Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": 1024,
+          "image_id": "sha256:17c1c1b96fd1685968790c7fcab311e5bc49c809efe9744af262640a559c4cf2",
+          "nano_cpus": 250000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 268435456,
+          "memory_swap": 268435456,
+          "port_bindings": {
+            "6379/tcp": [
+              {
+                "HostIp": "10.63.20.10",
+                "HostPort": "6379"
+              }
+            ]
+          },
+          "service": "redis",
+          "compose_files": "/opt/dell/data/test-data/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "6",
+            "pids.max": "1024",
+            "pids.peak": "14"
+          }
+        }
+      ],
+      "completed_at": "2026-11-06T12:58:00.239446+08:00",
+      "immutable_metadata_unchanged": true,
+      "vmid": 210,
+      "same_bytes_public_private_installed_after": true
+    },
+    {
+      "role": "ops-service",
+      "started_at": "2026-11-06T12:58:00.808036+08:00",
+      "status": "passed-no-restart-pids-only",
+      "environment_read": false,
+      "health_logs_read": false,
+      "container_recreate_or_restart_invoked": false,
+      "operations": [
+        {
+          "container_id": "cc44366d5b41b7bea30adfb939551ae62d0faffeae7d25c4a66a76bec2963325",
+          "action": "docker update --pids-limit1024",
+          "exit_code": 0
+        },
+        {
+          "container_id": "d27b041fb49721ba8a10b9a4f6f7da82bea7f4656f32c45765ac600423278045",
+          "action": "docker update --pids-limit1024",
+          "exit_code": 0
+        },
+        {
+          "container_id": "68406abe1c775fd2ba8efced947989ad1e5bb88da1c7abea51db5384b9c28fea",
+          "action": "docker update --pids-limit1024",
+          "exit_code": 0
+        },
+        {
+          "container_id": "462891a120cab615e3d14a478fb52e76d0e51a2a30c2f1fb5111e711eb6acf0c",
+          "action": "docker update --pids-limit1024",
+          "exit_code": 0
+        }
+      ],
+      "native_config_before": {
+        "exit_code": 0,
+        "stdout_bytes": 0,
+        "stderr_bytes": 0,
+        "rendered_output_saved": false
+      },
+      "native_config_after": {
+        "exit_code": 0,
+        "stdout_bytes": 0,
+        "stderr_bytes": 0,
+        "rendered_output_saved": false
+      },
+      "compose": {
+        "path": "/opt/dell/ops/compose.yaml",
+        "backup": "/root/dell-docker-audit-backups/20261106T125749/compose.yaml.before",
+        "before_sha256": "144b412be2809b91b7c70744a61bc7fc5dfb03675be6df79e4e6789bc959efb8",
+        "after_sha256": "fc1e5d00864c2a9b00a729b4db18df00cd50d218c547fcafbb2c55ba703e5b05",
+        "stripped_before_sha256": "144b412be2809b91b7c70744a61bc7fc5dfb03675be6df79e4e6789bc959efb8",
+        "stripped_after_sha256": "144b412be2809b91b7c70744a61bc7fc5dfb03675be6df79e4e6789bc959efb8",
+        "non_pids_text_unchanged": true,
+        "services": [
+          "prometheus",
+          "grafana",
+          "alertmanager",
+          "blackbox"
+        ]
+      },
+      "before": [
+        {
+          "id": "cc44366d5b41b7bea30adfb939551ae62d0faffeae7d25c4a66a76bec2963325",
+          "name": "/dell-ops-grafana-1",
+          "pid": 10878,
+          "started_at": "2026-11-06T02:51:10.211566584Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": null,
+          "image_id": "sha256:6afa1ab7f6e662c739a45a1d458598d7eb6ab70fc7c0ab45af64864e1503d4b6",
+          "nano_cpus": 500000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 805306368,
+          "memory_swap": 805306368,
+          "port_bindings": {
+            "3000/tcp": [
+              {
+                "HostIp": "10.63.30.40",
+                "HostPort": "3000"
+              }
+            ]
+          },
+          "service": "grafana",
+          "compose_files": "/opt/dell/ops/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "112",
+            "pids.max": "4676",
+            "pids.peak": "119"
+          }
+        },
+        {
+          "id": "d27b041fb49721ba8a10b9a4f6f7da82bea7f4656f32c45765ac600423278045",
+          "name": "/dell-ops-alertmanager-1",
+          "pid": 10731,
+          "started_at": "2026-11-06T02:51:09.165672322Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": null,
+          "image_id": "sha256:151292169170da9f8414b68c8e5994c75bd9cbb94ff60b8bc90860c4994b0946",
+          "nano_cpus": 250000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 268435456,
+          "memory_swap": 268435456,
+          "port_bindings": {
+            "9093/tcp": [
+              {
+                "HostIp": "10.63.30.40",
+                "HostPort": "9093"
+              }
+            ]
+          },
+          "service": "alertmanager",
+          "compose_files": "/opt/dell/ops/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "9",
+            "pids.max": "4676",
+            "pids.peak": "16"
+          }
+        },
+        {
+          "id": "68406abe1c775fd2ba8efced947989ad1e5bb88da1c7abea51db5384b9c28fea",
+          "name": "/dell-ops-prometheus-1",
+          "pid": 10655,
+          "started_at": "2026-11-06T02:51:08.832679582Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": null,
+          "image_id": "sha256:9bd9cbec4bd4f33bb6ccedf8c25a5132f8e7b2fb158c9a223a54485e4332e962",
+          "nano_cpus": 1000000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 1610612736,
+          "memory_swap": 1610612736,
+          "port_bindings": {
+            "9090/tcp": [
+              {
+                "HostIp": "10.63.30.40",
+                "HostPort": "9090"
+              }
+            ]
+          },
+          "service": "prometheus",
+          "compose_files": "/opt/dell/ops/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "7",
+            "pids.max": "4676",
+            "pids.peak": "15"
+          }
+        },
+        {
+          "id": "462891a120cab615e3d14a478fb52e76d0e51a2a30c2f1fb5111e711eb6acf0c",
+          "name": "/dell-ops-blackbox-1",
+          "pid": 10810,
+          "started_at": "2026-11-06T02:51:09.742554043Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": null,
+          "image_id": "sha256:e6f02b1a6c427e2a771fb33b42cb167dde3e5e8b3625e55e55aa20aaa018946d",
+          "nano_cpus": 250000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 134217728,
+          "memory_swap": 134217728,
+          "port_bindings": {},
+          "service": "blackbox",
+          "compose_files": "/opt/dell/ops/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "9",
+            "pids.max": "4676",
+            "pids.peak": "17"
+          }
+        }
+      ],
+      "after": [
+        {
+          "id": "cc44366d5b41b7bea30adfb939551ae62d0faffeae7d25c4a66a76bec2963325",
+          "name": "/dell-ops-grafana-1",
+          "pid": 10878,
+          "started_at": "2026-11-06T02:51:10.211566584Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": 1024,
+          "image_id": "sha256:6afa1ab7f6e662c739a45a1d458598d7eb6ab70fc7c0ab45af64864e1503d4b6",
+          "nano_cpus": 500000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 805306368,
+          "memory_swap": 805306368,
+          "port_bindings": {
+            "3000/tcp": [
+              {
+                "HostIp": "10.63.30.40",
+                "HostPort": "3000"
+              }
+            ]
+          },
+          "service": "grafana",
+          "compose_files": "/opt/dell/ops/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "112",
+            "pids.max": "1024",
+            "pids.peak": "119"
+          }
+        },
+        {
+          "id": "d27b041fb49721ba8a10b9a4f6f7da82bea7f4656f32c45765ac600423278045",
+          "name": "/dell-ops-alertmanager-1",
+          "pid": 10731,
+          "started_at": "2026-11-06T02:51:09.165672322Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": 1024,
+          "image_id": "sha256:151292169170da9f8414b68c8e5994c75bd9cbb94ff60b8bc90860c4994b0946",
+          "nano_cpus": 250000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 268435456,
+          "memory_swap": 268435456,
+          "port_bindings": {
+            "9093/tcp": [
+              {
+                "HostIp": "10.63.30.40",
+                "HostPort": "9093"
+              }
+            ]
+          },
+          "service": "alertmanager",
+          "compose_files": "/opt/dell/ops/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "9",
+            "pids.max": "1024",
+            "pids.peak": "16"
+          }
+        },
+        {
+          "id": "68406abe1c775fd2ba8efced947989ad1e5bb88da1c7abea51db5384b9c28fea",
+          "name": "/dell-ops-prometheus-1",
+          "pid": 10655,
+          "started_at": "2026-11-06T02:51:08.832679582Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": 1024,
+          "image_id": "sha256:9bd9cbec4bd4f33bb6ccedf8c25a5132f8e7b2fb158c9a223a54485e4332e962",
+          "nano_cpus": 1000000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 1610612736,
+          "memory_swap": 1610612736,
+          "port_bindings": {
+            "9090/tcp": [
+              {
+                "HostIp": "10.63.30.40",
+                "HostPort": "9090"
+              }
+            ]
+          },
+          "service": "prometheus",
+          "compose_files": "/opt/dell/ops/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "7",
+            "pids.max": "1024",
+            "pids.peak": "15"
+          }
+        },
+        {
+          "id": "462891a120cab615e3d14a478fb52e76d0e51a2a30c2f1fb5111e711eb6acf0c",
+          "name": "/dell-ops-blackbox-1",
+          "pid": 10810,
+          "started_at": "2026-11-06T02:51:09.742554043Z",
+          "state": "running",
+          "health": "healthy",
+          "pids_limit": 1024,
+          "image_id": "sha256:e6f02b1a6c427e2a771fb33b42cb167dde3e5e8b3625e55e55aa20aaa018946d",
+          "nano_cpus": 250000000,
+          "cpu_quota": 0,
+          "cpu_period": 0,
+          "memory": 134217728,
+          "memory_swap": 134217728,
+          "port_bindings": {},
+          "service": "blackbox",
+          "compose_files": "/opt/dell/ops/compose.yaml",
+          "cgroup_pids": {
+            "pids.current": "9",
+            "pids.max": "1024",
+            "pids.peak": "17"
+          }
+        }
+      ],
+      "completed_at": "2026-11-06T12:58:02.290558+08:00",
+      "immutable_metadata_unchanged": true,
+      "vmid": 270,
+      "same_bytes_public_private_installed_after": true
+    }
+  ],
+  "health_logs_read": false,
+  "pve_original_repo_knownhosts_touched": false,
+  "nas": {
+    "status": "passed-dependency-only-no-restart",
+    "at": "2026-11-06T12:58:04.546812+08:00",
+    "dropin": "/etc/systemd/system/dell-nas-jellyfin.service.d/20-docker-binds.conf",
+    "dropin_sha256": "de244e86fdaa9d9d9455903541fe2a8dea1d0f757f0ca3ed6dc23276dcde8f68",
+    "before": {
+      "MainPID": "1110",
+      "ExecMainStartTimestampMonotonic": "23242999",
+      "Requires": "docker.service system.slice \"srv-dev\\\\x2ddisk\\\\x2dby\\\\x2duuid\\\\x2d5b19837c\\\\x2d128c\\\\x2d498a\\\\x2db79d\\\\x2d563db810c34a.mount\" -.mount sysinit.target",
+      "BindsTo": "\"srv-dev\\\\x2ddisk\\\\x2dby\\\\x2duuid\\\\x2d5b19837c\\\\x2d128c\\\\x2d498a\\\\x2db79d\\\\x2d563db810c34a.mount\"",
+      "After": "basic.target sysinit.target system.slice -.mount systemd-journald.socket network-online.target docker.service \"srv-dev\\\\x2ddisk\\\\x2dby\\\\x2duuid\\\\x2d5b19837c\\\\x2d128c\\\\x2d498a\\\\x2db79d\\\\x2d563db810c34a.mount\"",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "after": {
+      "MainPID": "1110",
+      "ExecMainStartTimestampMonotonic": "23242999",
+      "Requires": "\"srv-dev\\\\x2ddisk\\\\x2dby\\\\x2duuid\\\\x2d5b19837c\\\\x2d128c\\\\x2d498a\\\\x2db79d\\\\x2d563db810c34a.mount\" docker.service system.slice -.mount sysinit.target",
+      "BindsTo": "docker.service \"srv-dev\\\\x2ddisk\\\\x2dby\\\\x2duuid\\\\x2d5b19837c\\\\x2d128c\\\\x2d498a\\\\x2db79d\\\\x2d563db810c34a.mount\"",
+      "After": "systemd-journald.socket system.slice sysinit.target \"srv-dev\\\\x2ddisk\\\\x2dby\\\\x2duuid\\\\x2d5b19837c\\\\x2d128c\\\\x2d498a\\\\x2db79d\\\\x2d563db810c34a.mount\" network-online.target basic.target docker.service -.mount",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "docker_before": {
+      "MainPID": "840",
+      "ExecMainStartTimestampMonotonic": "17129945",
+      "Requires": "docker.socket system.slice sysinit.target",
+      "BindsTo": "",
+      "After": "network-online.target systemd-journald.socket docker.socket firewalld.service basic.target sysinit.target containerd.service nss-lookup.target system.slice time-set.target",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "docker_after": {
+      "MainPID": "840",
+      "ExecMainStartTimestampMonotonic": "17129945",
+      "Requires": "system.slice sysinit.target docker.socket",
+      "BindsTo": "",
+      "After": "nss-lookup.target docker.socket firewalld.service network-online.target sysinit.target time-set.target basic.target containerd.service system.slice systemd-journald.socket",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "containers_before": [
+      {
+        "id": "13d571fdc3332da2f81fc237cc7f445afc1e6ca313d2e2f43b3b9016e9fe7956",
+        "name": "/dell-nas-jellyfin-1",
+        "pid": 1216,
+        "started_at": "2026-11-06T03:41:12.009488882Z",
+        "state": "running",
+        "health": "healthy",
+        "pids_limit": 256,
+        "image_id": "sha256:fea863d0cd9ec445985d9c75fc6ed64e38a1d2766cf0c250a33d553f4fc1b771",
+        "nano_cpus": 2000000000,
+        "cpu_quota": 0,
+        "cpu_period": 0,
+        "memory": 1610612736,
+        "memory_swap": 3221225472,
+        "port_bindings": {
+          "8096/tcp": [
+            {
+              "HostIp": "10.63.40.10",
+              "HostPort": "8096"
+            }
+          ]
+        },
+        "service": "jellyfin",
+        "compose_files": "/opt/dell/nas/compose.yaml",
+        "cgroup_pids": {
+          "pids.current": "17",
+          "pids.max": "256",
+          "pids.peak": "35"
+        }
+      }
+    ],
+    "containers_after": [
+      {
+        "id": "13d571fdc3332da2f81fc237cc7f445afc1e6ca313d2e2f43b3b9016e9fe7956",
+        "name": "/dell-nas-jellyfin-1",
+        "pid": 1216,
+        "started_at": "2026-11-06T03:41:12.009488882Z",
+        "state": "running",
+        "health": "healthy",
+        "pids_limit": 256,
+        "image_id": "sha256:fea863d0cd9ec445985d9c75fc6ed64e38a1d2766cf0c250a33d553f4fc1b771",
+        "nano_cpus": 2000000000,
+        "cpu_quota": 0,
+        "cpu_period": 0,
+        "memory": 1610612736,
+        "memory_swap": 3221225472,
+        "port_bindings": {
+          "8096/tcp": [
+            {
+              "HostIp": "10.63.40.10",
+              "HostPort": "8096"
+            }
+          ]
+        },
+        "service": "jellyfin",
+        "compose_files": "/opt/dell/nas/compose.yaml",
+        "cgroup_pids": {
+          "pids.current": "17",
+          "pids.max": "256",
+          "pids.peak": "35"
+        }
+      }
+    ],
+    "mount_dependency_preserved": true,
+    "pids256_preserved": true,
+    "environment_or_unit_file_contents_read": false,
+    "daemon_reload_exit_code": 0,
+    "restart_invoked": false
+  },
+  "nas_generator": {
+    "path": "infra/nas/deploy-jellyfin.sh",
+    "before_sha256": "3fa104417af5e7ba1847ee6c26387d026e6dd599fd1aa192cc13d88424b22ef1",
+    "after_sha256": "49e7aef00e89ad779210975984648e647fa02bcba7b85d83d9c54a5a923de040",
+    "only_BindsTo_line_changed": true,
+    "backup": "/Users/yangzhaohui/work/www/harness/dell/private/audit-backups/pids-20261106T125749/infra/nas/deploy-jellyfin.sh"
+  },
+  "completed_at": "2026-11-06T12:58:04.572308+08:00",
+  "container_Config_Env_inspected": false,
+  "secret_payload_files_read_by_verifier": false,
+  "native_compose_existing_env_resolution_internal_only": true,
+  "rendered_compose_output_saved": false,
+  "verification": {
+    "status": "passed",
+    "container_count": 12,
+    "native_config_checks": 8,
+    "pid_started_health_metadata_unchanged": true,
+    "source_non_pids_text_unchanged": true,
+    "NAS_dependency_only_processes_preserved": true
+  }
+}

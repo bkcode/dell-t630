@@ -1,0 +1,54 @@
+{
+  "status": "local-source-synced-minimal-merge",
+  "apply_only_after_root_all12_OS_and_monitoring_committed": true,
+  "files": [
+    {
+      "active_source_path": "infra/ops/guest-baseline/guest-targets.json",
+      "prepared_path": "prepared/source-commonprofile/guest-targets.json",
+      "new_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c"
+    },
+    {
+      "active_source_path": "infra/ops/guest-baseline/install-guest-baseline.py",
+      "prepared_path": "prepared/source-commonprofile/install-guest-baseline.py",
+      "new_SHA256": "3936bfbf913bb55b5785e0484c7bc93c2a320d67036c2a31e2dec9aa108f6798",
+      "prior_installed_baseline_candidate_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5"
+    },
+    {
+      "active_source_path": "infra/ops/guest-baseline/collect-guest-health.py",
+      "prepared_path": "prepared/source-commonprofile/collect-guest-health.py",
+      "new_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1"
+    }
+  ],
+  "old_inventory_and_evidence_immutable": true,
+  "plan_private_guest_access_and_active_deployment_metadata_owner": "root coordinator; separate from historical evidence",
+  "no_gateway190_or_legacy104_enrollment": true,
+  "actual_files": [
+    {
+      "path": "infra/ops/guest-baseline/guest-targets.json",
+      "beforeSHA256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+      "afterSHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+      "changed": true,
+      "backup": "network19/services-core/source-sync-backups/20261106T095934/guest-targets.json",
+      "diff": "network19/services-core/source-sync-backups/20261106T095934/guest-targets.json.diff"
+    },
+    {
+      "path": "infra/ops/guest-baseline/install-guest-baseline.py",
+      "beforeSHA256": "3031278f55018321a83c9c2f70f23557e33e5d9586da83edaa2c624f3fa5bfa8",
+      "afterSHA256": "3936bfbf913bb55b5785e0484c7bc93c2a320d67036c2a31e2dec9aa108f6798",
+      "changed": true,
+      "backup": "network19/services-core/source-sync-backups/20261106T095934/install-guest-baseline.py",
+      "diff": "network19/services-core/source-sync-backups/20261106T095934/install-guest-baseline.py.diff"
+    },
+    {
+      "path": "infra/ops/guest-baseline/collect-guest-health.py",
+      "beforeSHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+      "afterSHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+      "changed": false,
+      "backup": "network19/services-core/source-sync-backups/20261106T095934/collect-guest-health.py",
+      "diff": "network19/services-core/source-sync-backups/20261106T095934/collect-guest-health.py.diff"
+    }
+  ],
+  "preserved_current_role_health_profile": true,
+  "Java_scope_no_business_profile": true,
+  "live_guest_state_inferred_from_source": false
+}

@@ -1,0 +1,20 @@
+--- install-guest-baseline.py-actual-before
++++ install-guest-baseline.py-ten-role-candidate
+@@ -13,7 +13,7 @@
+ POLICY=Path('/usr/sbin/policy-rc.d')
+ SELF_LOCK=Path('/run/lock/dell-guest-monitoring.lock')
+ APT_LOCKS=[Path(x) for x in ['/var/lib/dpkg/lock-frontend','/var/lib/dpkg/lock','/var/lib/apt/lists/lock','/var/cache/apt/archives/lock']]
+-ROLES={'data-prod-db','data-prod-infra','data-test','publish-service','artifact-service','java-prod-01','java-prod-02','java-prod-03','java-test-01','penpot-service','nas-media','ops-service'}
++ROLES={'artifact-service','data-prod-db','data-prod-infra','data-test','java-prod-01','java-test-01','nas-media','ops-service','penpot-service','publish-service'}
+ 
+ def command(args,label,check=True,timeout=180):
+     p=subprocess.run(args,capture_output=True,text=True,timeout=timeout)
+@@ -87,7 +87,7 @@
+     short=(hostname or socket.gethostname()).split('.')[0]
+     if role not in ROLES or short!=role:raise RuntimeError('hostname is not the assigned guest role')
+     catalog=json.loads((HERE/'guest-targets.json').read_text())
+-    if len(catalog['roles'])!=12 or {x['role'] for x in catalog['roles']}!=ROLES:raise RuntimeError('guest target whitelist mismatch')
++    if len(catalog['roles'])!=len(ROLES) or {x['role'] for x in catalog['roles']}!=ROLES:raise RuntimeError('guest target whitelist mismatch')
+     row=next(x for x in catalog['roles'] if x['role']==role)
+     if row['hostname']!=role:raise RuntimeError('catalog hostname mismatch')
+     ip=ipaddress.IPv4Address(row['private_ip'])

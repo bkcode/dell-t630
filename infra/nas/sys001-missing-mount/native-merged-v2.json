@@ -1,0 +1,17 @@
+{
+  "status": "failed",
+  "checks": {
+    "exact_QA_project": true,
+    "exact_one_service": true,
+    "exact_zero_publish_mappings": true,
+    "only_exact_QA_bind_sources": true,
+    "internal_network": true,
+    "CPU025": true,
+    "memory512": false,
+    "pids128": true
+  },
+  "nonce": "b5b52c6b0565410ba9c510728ba13f54",
+  "runtime_zero_PortBindings_still_to_assert": true,
+  "mount_mkfs_container_or_unit_created": false,
+  "temporary_config_removed": true
+}

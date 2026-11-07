@@ -1,0 +1,36 @@
+{
+  "role": 260,
+  "status": "original19-source-SMB-read-identity-data-regression-passed",
+  "SMB3_results": [
+    {
+      "share": "media",
+      "reads": {
+        "writer": "authenticated-original-SHA-matches",
+        "reader": "authenticated-original-SHA-matches"
+      },
+      "anonymous_denied": true
+    },
+    {
+      "share": "games",
+      "reads": {
+        "writer": "authenticated-original-SHA-matches",
+        "reader": "authenticated-original-SHA-matches"
+      },
+      "anonymous_denied": true
+    },
+    {
+      "share": "incoming",
+      "reads": {
+        "writer": "authenticated-original-SHA-matches",
+        "reader": "authenticated-original-SHA-matches"
+      },
+      "anonymous_denied": true
+    }
+  ],
+  "existing_same_guest_auth_files_reused": true,
+  "no_user_password_role_or_share_write_request": true,
+  "identity_shadow_key_guard_bytes_unchanged": true,
+  "VPN_packet_source_exercised": false,
+  "remote_VPN_proof_owner": "root real10.66.66 client batch",
+  "readback_copies_guest_private_mode600": true
+}

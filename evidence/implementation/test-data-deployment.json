@@ -1,0 +1,490 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-11-06T11:00:43.930421+08:00",
+  "scope": "guest210-test-data-only",
+  "target": {
+    "vmid": 210,
+    "ip": "10.63.20.10",
+    "host_key_alias": "dell-vm210",
+    "host_key_fingerprint": "SHA256:8bBCQbBKGmZAw5q2AgT2vXHsyr2aFJktLqs/tDZ9SiA",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "status": "test-data-ready-authenticated-persistence-restart-verified-fixture-cleaned",
+  "preflight": {
+    "role": "data-test",
+    "vmid": 210,
+    "architecture": "x86_64",
+    "private_ip_verified": true,
+    "data_mount": {
+      "target": "/srv/dell-data",
+      "source": "/dev/sdb",
+      "uuid": "dd1773f9-aa48-4401-a9c8-caf0f66845f3",
+      "fstype": "ext4",
+      "options": "rw,relatime"
+    },
+    "supervisor_state_before": {
+      "MainPID": "0",
+      "ActiveState": "inactive",
+      "SubState": "dead"
+    },
+    "existing_secret_files_checked": 0,
+    "existing_secret_values_match": true,
+    "fixture_absent": true,
+    "data_or_secret_modified": false
+  },
+  "stages": [
+    {
+      "name": "secure-bundle-install",
+      "started_at": "2026-11-06T11:03:38.331410+08:00",
+      "status": "passed",
+      "exit_code": 0,
+      "completed_at": "2026-11-06T11:03:39.348435+08:00",
+      "result": {
+        "bundle_installed": true,
+        "role": "test-data",
+        "hostname": "data-test",
+        "file_count": 24,
+        "payload_sha256": "4c70cd249573f2920c30bff162493a32cac79382c2ef50abbcad51968f8063bf",
+        "secret_values_emitted": false,
+        "existing_passwords_not_rotated": true,
+        "data_uuid": "dd1773f9-aa48-4401-a9c8-caf0f66845f3"
+      }
+    },
+    {
+      "name": "manager-preflight",
+      "started_at": "2026-11-06T11:03:39.349790+08:00",
+      "status": "passed",
+      "exit_code": 0,
+      "completed_at": "2026-11-06T11:03:40.641943+08:00",
+      "result": {
+        "role": "test-data",
+        "preflight": "passed",
+        "deployment": "not-run"
+      }
+    },
+    {
+      "name": "deploy-health",
+      "started_at": "2026-11-06T11:03:40.643195+08:00",
+      "status": "passed",
+      "exit_code": 0,
+      "completed_at": "2026-11-06T11:05:17.482433+08:00",
+      "result": {
+        "timestamp": "2026-11-06T03:05:16.745380+00:00",
+        "role": "test-data",
+        "service_ip": "10.63.20.10",
+        "containers": [
+          {
+            "service": "mysql",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          },
+          {
+            "service": "nacos",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          },
+          {
+            "service": "rabbitmq",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          },
+          {
+            "service": "redis",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          }
+        ],
+        "business_data_migration_status": "not-checked-by-this-health-probe",
+        "readiness_scope": "infrastructure-only",
+        "nacos": {
+          "admin_login": true,
+          "client_login": true,
+          "namespace_present": true,
+          "client_namespace_read": true,
+          "other_namespace_denied": true
+        },
+        "rabbitmq": {
+          "app_authentication": true,
+          "vhost_access": true,
+          "messages_published": 0
+        }
+      }
+    },
+    {
+      "name": "explicit-health",
+      "started_at": "2026-11-06T11:05:17.484063+08:00",
+      "status": "passed",
+      "exit_code": 0,
+      "completed_at": "2026-11-06T11:05:19.918975+08:00",
+      "result": {
+        "timestamp": "2026-11-06T03:05:18.886715+00:00",
+        "role": "test-data",
+        "service_ip": "10.63.20.10",
+        "containers": [
+          {
+            "service": "mysql",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          },
+          {
+            "service": "nacos",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          },
+          {
+            "service": "rabbitmq",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          },
+          {
+            "service": "redis",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          }
+        ],
+        "business_data_migration_status": "not-checked-by-this-health-probe",
+        "readiness_scope": "infrastructure-only",
+        "nacos": {
+          "admin_login": true,
+          "client_login": true,
+          "namespace_present": true,
+          "client_namespace_read": true,
+          "other_namespace_denied": true
+        },
+        "rabbitmq": {
+          "app_authentication": true,
+          "vhost_access": true,
+          "messages_published": 0
+        }
+      }
+    },
+    {
+      "name": "real-authentication",
+      "started_at": "2026-11-06T11:05:19.920318+08:00",
+      "status": "passed",
+      "exit_code": 0,
+      "completed_at": "2026-11-06T11:05:23.639263+08:00",
+      "result": {
+        "role": "test-data",
+        "action": "auth",
+        "result": {
+          "mysql": {
+            "version": "8.4.5",
+            "root_authenticated": true,
+            "nacos_db_user_authenticated": true,
+            "nacos_db_user_system_database_denied": true
+          },
+          "redis": {
+            "authenticated": true,
+            "anonymous_denied": true
+          },
+          "nacos": {
+            "admin_login": true,
+            "client_login": true,
+            "namespace_present": true,
+            "client_namespace_read": true,
+            "other_namespace_denied": true
+          },
+          "rabbitmq": {
+            "app_authentication": true,
+            "vhost_access": true,
+            "messages_published": 0,
+            "management_authenticated": true
+          }
+        },
+        "source_business_data_imported": false,
+        "secrets_values_emitted": false
+      }
+    },
+    {
+      "name": "prepare-owned-fixture",
+      "started_at": "2026-11-06T11:05:23.640631+08:00",
+      "status": "passed",
+      "exit_code": 0,
+      "completed_at": "2026-11-06T11:05:28.262211+08:00",
+      "result": {
+        "role": "test-data",
+        "action": "prepare",
+        "result": {
+          "fixture_created": true,
+          "nonce": "117edf8621df444598640749e01df3c4",
+          "scope": "isolated disposable objects; no business data or real business messages"
+        },
+        "source_business_data_imported": false,
+        "secrets_values_emitted": false
+      }
+    },
+    {
+      "name": "verify-fixture-before-restart",
+      "started_at": "2026-11-06T11:05:28.263919+08:00",
+      "status": "passed",
+      "exit_code": 0,
+      "completed_at": "2026-11-06T11:05:30.762099+08:00",
+      "result": {
+        "role": "test-data",
+        "action": "verify",
+        "result": {
+          "mysql_fixture_persisted": true,
+          "redis_fixture_persisted": true,
+          "nacos_fixture_persisted": true,
+          "rabbit_durable_fixture_persisted": true,
+          "real_business_messages_sent": false
+        },
+        "source_business_data_imported": false,
+        "secrets_values_emitted": false
+      }
+    },
+    {
+      "name": "before-restart-processes",
+      "started_at": "2026-11-06T11:05:30.763973+08:00",
+      "status": "passed",
+      "exit_code": 0,
+      "completed_at": "2026-11-06T11:05:31.622469+08:00",
+      "result": {
+        "containers": [
+          {
+            "id": "7bccd526194a68723b6fba1dfa7e1626a22abd88358cd540a2522c6a54d263c7",
+            "service": "mysql",
+            "started_at": "2026-11-06T03:03:54.673697133Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "1e32c610136730142486270496876ef9af4a9c3cc6b2ec2c13e3402936e8ba1e",
+            "service": "nacos",
+            "started_at": "2026-11-06T03:04:16.548040107Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "3695c8f5e67305d622e5370d9c4c8157911baf762a3325fa93d614061b1452c6",
+            "service": "rabbitmq",
+            "started_at": "2026-11-06T03:03:55.040411255Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "55bac7f288b3871eb784018291b0eb5ec572120b61c72f635ef11eaa2cef46f6",
+            "service": "redis",
+            "started_at": "2026-11-06T03:03:54.031144758Z",
+            "state": "running",
+            "health": "healthy"
+          }
+        ],
+        "supervisor": {
+          "MainPID": "2911",
+          "NRestarts": "0",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      }
+    },
+    {
+      "name": "controlled-supervisor-restart-and-health",
+      "started_at": "2026-11-06T11:05:31.624225+08:00",
+      "status": "passed",
+      "exit_code": 0,
+      "completed_at": "2026-11-06T11:06:38.116623+08:00",
+      "result": {
+        "timestamp": "2026-11-06T03:06:36.048078+00:00",
+        "role": "test-data",
+        "service_ip": "10.63.20.10",
+        "containers": [
+          {
+            "service": "mysql",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          },
+          {
+            "service": "nacos",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          },
+          {
+            "service": "rabbitmq",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          },
+          {
+            "service": "redis",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          }
+        ],
+        "business_data_migration_status": "not-checked-by-this-health-probe",
+        "readiness_scope": "infrastructure-only",
+        "nacos": {
+          "admin_login": true,
+          "client_login": true,
+          "namespace_present": true,
+          "client_namespace_read": true,
+          "other_namespace_denied": true
+        },
+        "rabbitmq": {
+          "app_authentication": true,
+          "vhost_access": true,
+          "messages_published": 0
+        }
+      }
+    },
+    {
+      "name": "after-restart-processes",
+      "started_at": "2026-11-06T11:06:38.118157+08:00",
+      "status": "passed",
+      "exit_code": 0,
+      "completed_at": "2026-11-06T11:06:38.852334+08:00",
+      "result": {
+        "containers": [
+          {
+            "id": "7bccd526194a68723b6fba1dfa7e1626a22abd88358cd540a2522c6a54d263c7",
+            "service": "mysql",
+            "started_at": "2026-11-06T03:05:38.211829792Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "1e32c610136730142486270496876ef9af4a9c3cc6b2ec2c13e3402936e8ba1e",
+            "service": "nacos",
+            "started_at": "2026-11-06T03:05:44.03579927Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "3695c8f5e67305d622e5370d9c4c8157911baf762a3325fa93d614061b1452c6",
+            "service": "rabbitmq",
+            "started_at": "2026-11-06T03:05:38.52390545Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "55bac7f288b3871eb784018291b0eb5ec572120b61c72f635ef11eaa2cef46f6",
+            "service": "redis",
+            "started_at": "2026-11-06T03:05:37.940469798Z",
+            "state": "running",
+            "health": "healthy"
+          }
+        ],
+        "supervisor": {
+          "MainPID": "7369",
+          "NRestarts": "0",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      }
+    },
+    {
+      "name": "verify-persistence-after-restart",
+      "started_at": "2026-11-06T11:06:38.854355+08:00",
+      "status": "passed",
+      "exit_code": 0,
+      "completed_at": "2026-11-06T11:06:40.894476+08:00",
+      "result": {
+        "role": "test-data",
+        "action": "verify",
+        "result": {
+          "mysql_fixture_persisted": true,
+          "redis_fixture_persisted": true,
+          "nacos_fixture_persisted": true,
+          "rabbit_durable_fixture_persisted": true,
+          "real_business_messages_sent": false
+        },
+        "source_business_data_imported": false,
+        "secrets_values_emitted": false
+      }
+    },
+    {
+      "name": "cleanup-owned-fixture-only",
+      "started_at": "2026-11-06T11:06:40.896115+08:00",
+      "status": "passed",
+      "exit_code": 0,
+      "completed_at": "2026-11-06T11:06:43.500883+08:00",
+      "result": {
+        "role": "test-data",
+        "action": "cleanup",
+        "result": {
+          "owned_fixture_cleaned": true,
+          "business_objects_modified": false
+        },
+        "source_business_data_imported": false,
+        "secrets_values_emitted": false
+      }
+    },
+    {
+      "name": "final-health",
+      "started_at": "2026-11-06T11:06:43.502309+08:00",
+      "status": "passed",
+      "exit_code": 0,
+      "completed_at": "2026-11-06T11:06:45.436788+08:00",
+      "result": {
+        "timestamp": "2026-11-06T03:06:44.985435+00:00",
+        "role": "test-data",
+        "service_ip": "10.63.20.10",
+        "containers": [
+          {
+            "service": "mysql",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          },
+          {
+            "service": "nacos",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          },
+          {
+            "service": "rabbitmq",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          },
+          {
+            "service": "redis",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          }
+        ],
+        "business_data_migration_status": "not-checked-by-this-health-probe",
+        "readiness_scope": "infrastructure-only",
+        "nacos": {
+          "admin_login": true,
+          "client_login": true,
+          "namespace_present": true,
+          "client_namespace_read": true,
+          "other_namespace_denied": true
+        },
+        "rabbitmq": {
+          "app_authentication": true,
+          "vhost_access": true,
+          "messages_published": 0
+        }
+      }
+    }
+  ],
+  "source_business_data_imported": false,
+  "secret_values_emitted": false,
+  "host_mutated": false,
+  "locked_code_sha256": {
+    "scripts/manage.py": "b86e6c8339fc3ebc9151258849d78276d91e179692be588ce5bcdd344b341a10",
+    "scripts/acceptance.py": "79077300d3643f9b338da0858a8357b22e77a1bf2d9db50d2193f186555ae8c1",
+    "scripts/redis-entrypoint.sh": "bd98984ec702712d5222ed1f21f2956e1922f044e09ef44c9a3f924928fb6f88",
+    "compose.yaml": "6f5041cb3f2165d360864981a7357f9ab0bb5267cee31a36f7312b180fcfd93a"
+  },
+  "controlled_restart_process_transition_verified": true,
+  "completed_at": "2026-11-06T11:06:45.438228+08:00",
+  "secrets_values_emitted": false,
+  "real_business_messages_sent": false
+}

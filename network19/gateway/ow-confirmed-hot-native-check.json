@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-06T17:09:49.594259+08:00",
+  "code_sha256": {
+    "policy.py": "82b0676fcfaac3a0bd6abeffb88c4f5cd20163fe6f9fbd3f2527aa82b884a61a",
+    "manage.py": "3971c7abfabc01ccbdbcbbfcd15f9c800451b911564655b9f331a4f7fba0c9b6"
+  },
+  "result": {
+    "status": "hot-delta-and-native-nft-check-passed",
+    "nft_check_exit_code": 0,
+    "only_change": "exact198.18/15 OW fake-IP compatibility + provenance hash",
+    "persistent_services_unchanged": true,
+    "forward_before": {
+      "all": "1",
+      "WAN": "1",
+      "LAN": "1"
+    },
+    "forward_after": {
+      "all": "1",
+      "WAN": "1",
+      "LAN": "1"
+    },
+    "rule_load_performed": false,
+    "addresses_or_sysctls_changed": false
+  }
+}

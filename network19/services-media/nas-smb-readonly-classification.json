@@ -1,0 +1,31 @@
+{
+  "role": 260,
+  "status": "read-only-SMB-auth-or-network-classified",
+  "existing_auth_source": "permissions-5193233d83fe453eb9aa1290e404b1bc",
+  "checks": [
+    {
+      "target": "192.168.19.60",
+      "identity": "writer",
+      "returncode": 1,
+      "NT_STATUS": [
+        "NT_STATUS_ACCESS_DENIED"
+      ]
+    },
+    {
+      "target": "192.168.19.60",
+      "identity": "reader",
+      "returncode": 1,
+      "NT_STATUS": [
+        "NT_STATUS_ACCESS_DENIED"
+      ]
+    },
+    {
+      "target": "127.0.0.1",
+      "identity": "writer",
+      "returncode": 0,
+      "NT_STATUS": []
+    }
+  ],
+  "tcp445_listening": true,
+  "private_directory_content_or_password_emitted": false
+}

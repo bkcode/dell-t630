@@ -1,0 +1,33 @@
+{
+  "id": "ACC-OBS-001",
+  "status": "passed",
+  "executed_at": "2026-11-06T14:31:00.591132+08:00",
+  "timezone": "Asia/Shanghai",
+  "operator": "root-task-manager",
+  "plan_sha256": "57059d122924364b566ee359801f7836f049a42dbdbad22d66b7c9b4055839a2",
+  "preconditions_checked": true,
+  "target": {
+    "host": "192.168.21.22",
+    "environment": "managed-PVE-implementation",
+    "vmid": null
+  },
+  "commands_or_steps": [
+    "See linked execution artifact and operator observations"
+  ],
+  "exit_codes": [
+    0
+  ],
+  "observations": [
+    "按用户本期机内Lark范围，17监控目标/43角色健康样本及PVE指标有实际采集证据；Mac外部已停用移除任务，误告警已更正并保留诊断",
+    "真实Alertmanager经仅bridge可达且Bearer认证的native适配器，将同run firing与resolved两phase送Lark API code0；不以单独HTTP200或mock替代",
+    "维护结束后currentboot proof门禁通过，实际policy与AM白名单route=active，新reload成功；DynamicUser/LoadCredential/仅172.18.0.1/96MiB32TasksCPU10%和secret600已核验"
+  ],
+  "artifacts": [
+    "evidence/implementation/lark-notify-final-audit.json"
+  ],
+  "limitations": [
+    "本期机内监控与T630同故障域，整机故障时不会由该链通知；Mac外部探测用户明确延期；公网证书、持续备份失败通知未由本例代签；API成功不宣称人工已读"
+  ],
+  "reviewed_by": "root-task-manager",
+  "plan_snapshot": "evidence/plans/plan-57059d122924364b.json"
+}

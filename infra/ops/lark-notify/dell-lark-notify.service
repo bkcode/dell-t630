@@ -1,0 +1,48 @@
+[Unit]
+Description=Dell Alertmanager to Lark private notification adapter
+Requires=docker.service
+After=docker.service network-online.target dell-ops.service
+BindsTo=docker.service
+Wants=network-online.target
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+[Service]
+Type=simple
+DynamicUser=yes
+User=dell-lark-notify
+LoadCredential=lark-webhook:/etc/dell-lark-notify/secrets/lark-webhook
+LoadCredential=bridge-auth:/opt/dell/ops/secrets/lark-bridge-token
+ExecStartPre=/usr/bin/python3 -I /usr/local/libexec/dell-lark-notify/bridge.py check
+ExecStart=/usr/bin/python3 -I /usr/local/libexec/dell-lark-notify/bridge.py serve
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=10
+UMask=0077
+MemoryMax=96M
+TasksMax=32
+CPUQuota=10%
+LimitNOFILE=64
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+ProtectClock=true
+ProtectProc=invisible
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+CapabilityBoundingSet=
+AmbientCapabilities=
+RestrictSUIDSGID=true
+RestrictRealtime=true
+LockPersonality=true
+SystemCallArchitectures=native
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-06T09:25:13.251974+00:00",
+  "exit_code": 0,
+  "result": {
+    "status": "public-IP-contract-committed-fenced-until-fresh-baseline",
+    "vmid": 220,
+    "code_files": 1,
+    "actual_installed_source_only": true,
+    "private_key_or_host_key_changed": false,
+    "immutable_releases_DB_Nacos_or_apps_started_or_mutated": false,
+    "secret_values_emitted": false,
+    "business_deploy_requests_issued": 0,
+    "Java_apps_started": false
+  }
+}

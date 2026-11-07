@@ -1,0 +1,38 @@
+{
+  "platform": "linux/amd64",
+  "verified_at": "2026-11-05T23:38:28.085456+08:00",
+  "method": "docker buildx imagetools inspect --raw; choose manifest platform linux/amd64",
+  "images": {
+    "mysql": {
+      "tag": "mysql:8.4.5",
+      "amd64_digest": "sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840",
+      "reference": "mysql:8.4.5@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840"
+    },
+    "redis": {
+      "tag": "redis:7.4.4",
+      "amd64_digest": "sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a",
+      "reference": "redis:7.4.4@sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a"
+    },
+    "rabbitmq": {
+      "tag": "rabbitmq:3.13.7-management",
+      "amd64_digest": "sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920",
+      "reference": "rabbitmq:3.13.7-management@sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920"
+    },
+    "nacos": {
+      "tag": "nacos/nacos-server:v2.4.3",
+      "amd64_digest": "sha256:c8dc1db0ac6a345b62bad4e76963d25237a90bf45704795e7cb4d1d972b024a3",
+      "reference": "nacos/nacos-server:v2.4.3@sha256:c8dc1db0ac6a345b62bad4e76963d25237a90bf45704795e7cb4d1d972b024a3"
+    }
+  },
+  "source_runtime_rabbitmq_version": "3.13.7",
+  "vendor": {
+    "nacos-mysql-schema-2.4.3.sql": {
+      "source_url": "https://raw.githubusercontent.com/alibaba/nacos/2.4.3/distribution/conf/mysql-schema.sql",
+      "sha256": "87aaae43774601ff5223a385de9f0d64840b5b7ec59fb26217e955a276afdb21"
+    },
+    "nacos-application-2.4.3.properties": {
+      "source_url": "https://raw.githubusercontent.com/nacos-group/nacos-docker/v2.4.3/build/conf/application.properties",
+      "sha256": "577f589d3c29d7eee2c474d35ae68592c9a5c75e864d259fc1fb98a656dbb8d8"
+    }
+  }
+}

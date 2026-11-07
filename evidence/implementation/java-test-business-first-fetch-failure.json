@@ -1,0 +1,139 @@
+{
+  "at": "2026-11-06T11:46:20.206944+08:00",
+  "current_release": "20261106T113449",
+  "checks": [
+    {
+      "port": 10210,
+      "path": "/actuator/health",
+      "http_status": 200,
+      "health_status": "UP",
+      "issuer_observed": null,
+      "jwks_key_count": null
+    },
+    {
+      "port": 10202,
+      "path": "/actuator/health",
+      "http_status": 200,
+      "health_status": "UP",
+      "issuer_observed": null,
+      "jwks_key_count": null
+    },
+    {
+      "port": 10000,
+      "path": "/actuator/health",
+      "http_status": 200,
+      "health_status": "UP",
+      "issuer_observed": null,
+      "jwks_key_count": null
+    },
+    {
+      "port": 10104,
+      "path": "/actuator/health",
+      "http_status": 200,
+      "health_status": "UP",
+      "issuer_observed": null,
+      "jwks_key_count": null
+    },
+    {
+      "port": 9999,
+      "path": "/actuator/health",
+      "http_status": 200,
+      "health_status": "UP",
+      "issuer_observed": null,
+      "jwks_key_count": null
+    },
+    {
+      "port": 9999,
+      "path": "/.well-known/openid-configuration",
+      "http_status": 200,
+      "health_status": null,
+      "issuer_observed": "http://192.168.21.22:19999",
+      "jwks_key_count": null
+    },
+    {
+      "port": 10000,
+      "path": "/.well-known/openid-configuration",
+      "http_status": 200,
+      "health_status": null,
+      "issuer_observed": "http://192.168.21.22:19999",
+      "jwks_key_count": null
+    },
+    {
+      "port": 9999,
+      "path": "/oauth2/jwks",
+      "http_status": 200,
+      "health_status": null,
+      "issuer_observed": null,
+      "jwks_key_count": 1
+    },
+    {
+      "port": 10000,
+      "path": "/oauth2/jwks",
+      "http_status": 200,
+      "health_status": null,
+      "issuer_observed": null,
+      "jwks_key_count": 1
+    }
+  ],
+  "raw_response_bodies_saved": false,
+  "captcha_diagnostic": {
+    "http_status": 200,
+    "api_code": 100000,
+    "data_type": "NoneType",
+    "auth_exception_classes": {
+      "java.lang.UnsatisfiedLinkError": 4,
+      "jakarta.servlet.ServletException": 2,
+      "java.lang.NoClassDefFoundError": 3,
+      "java.lang.ExceptionInInitializerError": 1
+    },
+    "missing_property_keys": [],
+    "font_related": true,
+    "file_missing_basenames": [],
+    "invalid_captcha_type": false,
+    "raw_log_saved": false
+  },
+  "font_dependency_diagnostic": {
+    "at": "2026-11-06T11:47:18.049648+08:00",
+    "font_library_exists": true,
+    "native_library_names_in_auth_error": [
+      "libfontmanager.so",
+      "libharfbuzz.so.0"
+    ],
+    "ldd_missing_libraries": [
+      "libharfbuzz.so.0",
+      "libjvm.so",
+      "libjvm.so",
+      "libjvm.so"
+    ],
+    "package_status": {
+      "fonts-dejavu-core": {
+        "exit_code": 0,
+        "status": "installed 2.37-8"
+      },
+      "fontconfig": {
+        "exit_code": 0,
+        "status": "installed 2.15.0-2.3"
+      },
+      "libfontconfig1": {
+        "exit_code": 0,
+        "status": "installed 2.15.0-2.3"
+      },
+      "libfreetype6": {
+        "exit_code": 0,
+        "status": "installed 2.13.3+dfsg-1+deb13u1"
+      },
+      "libharfbuzz0b": {
+        "exit_code": 0,
+        "status": "not-installed"
+      }
+    },
+    "fc_list_available": true,
+    "raw_logs_or_ldd_saved": false
+  },
+  "resolution": {
+    "status": "resolved-in-approved-test-e2e",
+    "evidence": "evidence/implementation/java-test-business-acceptance.json",
+    "release": "20261106T121030",
+    "old_failure_preserved": true
+  }
+}

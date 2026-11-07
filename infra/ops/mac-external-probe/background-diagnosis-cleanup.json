@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-06T06:04:01.753812+00:00",
+  "label": "gui/501/com.dell.t630.external-probe-diagnosis",
+  "bootout_exit": 0,
+  "still_loaded": false,
+  "diagnostic_plist_removed": true,
+  "background_runtime_seconds": 120.18,
+  "background_rounds": 2,
+  "background_passes_each": [
+    0,
+    0
+  ],
+  "no_sender_hook_or_production_state_access": true,
+  "production_probe_reenabled": false
+}

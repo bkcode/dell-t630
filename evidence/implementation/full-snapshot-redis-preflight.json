@@ -1,0 +1,10 @@
+{
+  "collected_at": "2026-11-06T04:07:01.759138+00:00",
+  "vmid": 201,
+  "component": "redis",
+  "exit_code": 0,
+  "stdout": "{\"status\": \"preflight-passed\", \"metadata\": {\"vmid\": 201, \"component\": \"redis\", \"input_bytes\": 171, \"input_hash_matches\": true, \"image\": \"redis:7.4.4@sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a\", \"platform\": \"linux/amd64\", \"free_bytes\": 24529543168, \"mem_available_bytes\": 6944468992, \"live_container_count\": 3}, \"snapshot_content_exported\": false}\n",
+  "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+  "snapshot_content_exported": false,
+  "CF_accessed": false
+}

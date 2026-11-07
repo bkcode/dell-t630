@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-07T01:18:37.675355+08:00",
+  "nodes": [
+    {
+      "vmid": 231,
+      "business_Java_processes_before": 0,
+      "normal_shutdown": true,
+      "onboot_disabled": true,
+      "data_or_disks_deleted": false
+    },
+    {
+      "vmid": 232,
+      "business_Java_processes_before": 0,
+      "normal_shutdown": true,
+      "onboot_disabled": true,
+      "data_or_disks_deleted": false
+    }
+  ],
+  "next": "protected backup then dependency-gated cleanup"
+}

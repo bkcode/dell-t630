@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-07T01:56:10.919181+08:00",
+  "method": "readonly actualPromtool STDIN equivalent staticgroups; actualfileSD/15UP pendingcommit",
+  "result": {
+    "config": {
+      "exit": 0,
+      "stderr_present": false
+    },
+    "SD": {
+      "exit": 0,
+      "stderr_present": false,
+      "groups": 10,
+      "addresses": [
+        "192.168.19.10:9100",
+        "192.168.19.11:9100",
+        "192.168.19.20:9100",
+        "192.168.19.30:9100",
+        "192.168.19.31:9100",
+        "192.168.19.40:9100",
+        "192.168.19.45:9100",
+        "192.168.19.50:9100",
+        "192.168.19.60:9100",
+        "192.168.19.70:9100"
+      ]
+    },
+    "Prometheus_main_identity_health_unchanged": true,
+    "live_file_write_or_service_restart": false
+  },
+  "status": "passed-prepare-only"
+}

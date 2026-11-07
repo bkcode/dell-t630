@@ -1,0 +1,18 @@
+{
+  "source_version": "3.84.0-03",
+  "version_evidence": "Running source HTTP Server header: Nexus/3.84.0-03 (COMMUNITY)",
+  "source_index": "sonatype/nexus3@sha256:ab0f63137038a0f40321f33c56da17d6e0579b3e7eaa6369fb147a59fbd9d6fa",
+  "platform": "linux/amd64",
+  "target": "sonatype/nexus3@sha256:e190be450888ec912b941579bac90767d73debc3307a26326c8a71132b02951f",
+  "source_database": "H2: nexus.mv.db",
+  "source_data_kib_snapshot": 457660,
+  "target_status": "prepared-not-deployed",
+  "verified_at": "2026-11-05T23:44:14.097566+08:00",
+  "gateway": {
+    "version": "1.31.3",
+    "source_index": "nginx@sha256:5a88c9c45479443d7be2eadc894b4ed0a9801bae03d97a5760ae13b5c2005942",
+    "platform": "linux/amd64",
+    "target": "nginx@sha256:db4f612f385437d11eb26620a4f1d7efb3ff44e1296a3c21540b30454e6e2bf3",
+    "verified_at": "2026-11-06T05:36:58.374587+08:00"
+  }
+}

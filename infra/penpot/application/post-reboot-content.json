@@ -1,0 +1,162 @@
+{
+  "new_id_mapping": {
+    "teams": {
+      "9eb8678d-764d-810b-8008-e236e65b555e": {
+        "target_id": "13a31dab-5204-818d-8008-e6fe8bd0dd50",
+        "name": "Default"
+      },
+      "4851dc10-336a-8011-8008-e27967cc5b0f": {
+        "target_id": "13a31dab-5204-818d-8008-e6fe8be8d9d7",
+        "name": "Default"
+      }
+    },
+    "projects": {
+      "9eb8678d-764d-810b-8008-e236e65cee36": {
+        "target_id": "13a31dab-5204-818d-8008-e6fe8bd1b6d6",
+        "name": "Drafts",
+        "target_team_id": "13a31dab-5204-818d-8008-e6fe8bd0dd50"
+      },
+      "4851dc10-336a-8011-8008-e27967cc5b10": {
+        "target_id": "13a31dab-5204-818d-8008-e6fe8be96763",
+        "name": "Drafts",
+        "target_team_id": "13a31dab-5204-818d-8008-e6fe8be8d9d7"
+      }
+    },
+    "files": {
+      "9eb8678d-764d-810b-8008-e237712e9048": {
+        "target_id": "13a31dab-5204-818d-8008-e6fe8d7ec046",
+        "name": "Penpot MCP 验证",
+        "source_export_sha256": "341cc8ba8520d0cd6d7fd88c5955186aa04372ae277bde4c32343f396eb8e5c8",
+        "target_project_id": "13a31dab-5204-818d-8008-e6fe8bd1b6d6",
+        "target_team_id": "13a31dab-5204-818d-8008-e6fe8bd0dd50",
+        "imported_at": "2026-11-06T03:32:31.542590+00:00"
+      },
+      "e519ae78-b5c8-81fe-8008-e32aa3221908": {
+        "target_id": "13a31dab-5204-818d-8008-e6feac0c763c",
+        "name": "E-commerce UI - Figma Ecommerce UI Kit (Demo Version) (Community)",
+        "source_export_sha256": "f4b94f853c8a658ec9f357b2f7de2a6793febd225359e6861586ec51355004a4",
+        "target_project_id": "13a31dab-5204-818d-8008-e6fe8bd1b6d6",
+        "target_team_id": "13a31dab-5204-818d-8008-e6fe8bd0dd50",
+        "imported_at": "2026-11-06T03:32:53.222420+00:00"
+      },
+      "e519ae78-b5c8-81fe-8008-e32a81af5e27": {
+        "target_id": "13a31dab-5204-818d-8008-e6febff84cd7",
+        "name": "100 card design templates UI kit (Community)",
+        "source_export_sha256": "375504af9348d06ec0c57ab98abd35bffc9e916a3af14d6419f46c3f1e8d665f",
+        "target_project_id": "13a31dab-5204-818d-8008-e6fe8bd1b6d6",
+        "target_team_id": "13a31dab-5204-818d-8008-e6fe8bd0dd50",
+        "imported_at": "2026-11-06T03:32:54.837783+00:00"
+      }
+    },
+    "source_session_or_identity_imported": false,
+    "inflight": null,
+    "active_file_count": 3,
+    "source_library_edges": 0,
+    "recoverable_deleted_projects_not_activated": 2,
+    "active_content_complete": true
+  },
+  "post_reboot_stats": {
+    "9eb8678d-764d-810b-8008-e237712e9048": {
+      "pageCount": 3,
+      "updatedAt": "2026-11-06T03:32:01.619366Z",
+      "shapeCounts": {
+        "total": 29491,
+        "byType": {
+          "rect": 3342,
+          "text": 8300,
+          "frame": 12681,
+          "group": 1847,
+          "path": 2833,
+          "circle": 488
+        }
+      },
+      "fileId": "13a31dab-5204-818d-8008-e6fe8d7ec046",
+      "deletedComponentCount": 0,
+      "revn": 2718,
+      "referencedByCount": 0,
+      "typographyCount": 0,
+      "componentCount": 22,
+      "colorCount": 0,
+      "libraryCount": 0
+    },
+    "e519ae78-b5c8-81fe-8008-e32aa3221908": {
+      "pageCount": 23,
+      "updatedAt": "2026-11-06T03:32:32.934546Z",
+      "shapeCounts": {
+        "total": 21714,
+        "byType": {
+          "frame": 12407,
+          "text": 6184,
+          "path": 2331,
+          "rect": 383,
+          "circle": 365,
+          "group": 44
+        }
+      },
+      "fileId": "13a31dab-5204-818d-8008-e6feac0c763c",
+      "deletedComponentCount": 0,
+      "revn": 1,
+      "referencedByCount": 0,
+      "typographyCount": 62,
+      "componentCount": 381,
+      "colorCount": 57,
+      "libraryCount": 0
+    },
+    "e519ae78-b5c8-81fe-8008-e32a81af5e27": {
+      "pageCount": 4,
+      "updatedAt": "2026-11-06T03:32:53.342033Z",
+      "shapeCounts": {
+        "total": 1396,
+        "byType": {
+          "text": 520,
+          "rect": 57,
+          "frame": 673,
+          "group": 17,
+          "circle": 125,
+          "path": 4
+        }
+      },
+      "fileId": "13a31dab-5204-818d-8008-e6febff84cd7",
+      "deletedComponentCount": 0,
+      "revn": 1,
+      "referencedByCount": 0,
+      "typographyCount": 0,
+      "componentCount": 8,
+      "colorCount": 0,
+      "libraryCount": 0
+    }
+  },
+  "copy_roundtrip": {
+    "controlled_copy_only": true,
+    "original_file_id": "13a31dab-5204-818d-8008-e6febff84cd7",
+    "copy_file_id": "de61f388-8edd-813f-8008-e7054babf98d",
+    "reimport_file_id": "de61f388-8edd-813f-8008-e705bc5cb32f",
+    "copy_project_id": "de61f388-8edd-813f-8008-e7054ba557d6",
+    "edited_page_name_preserved": true,
+    "export_sha256": "7436f90e680c744ad3cd786461596362e8c70b4fa1bdf76638800ae3388b995a",
+    "reexport_sha256": "864b68f513040cc8aa0ca2b8eba2d4ec20d744cc76ba63e618324283eabf095e",
+    "original_imported_design_unchanged": true,
+    "source_processes_or_designs_touched": false
+  },
+  "async_import": {
+    "fixture": {
+      "url": "https://raw.githubusercontent.com/penpot/penpot-files/be9b1c33ff7546f2a5246b4c52a96f1183c2fe35/CSD-Matrix.penpot",
+      "git_commit": "be9b1c33ff7546f2a5246b4c52a96f1183c2fe35",
+      "bytes": 6761,
+      "sha256": "b6b400cd71d06e395ea6b73b4a8e5c6acf0fd81c0b067c076595c1c4b3983877",
+      "origin": "official public penpot/penpot-files",
+      "no_user_data_published": true
+    },
+    "job_id": "25f2efd7-fcca-4d2b-be51-42fb6c8be36d",
+    "project_id": "de61f388-8edd-813f-8008-e705c16ad485",
+    "new_file_id": "de61f388-8edd-813f-8008-e705c31d611d",
+    "completed": true,
+    "same_request_retry_same_job": true,
+    "one_file_only": true,
+    "completed_status_and_ids_survive_service_restart": true,
+    "inflight_interruption_test": "not-run",
+    "real_source_designs_modified": false,
+    "key_values_emitted": false
+  },
+  "source_credentials_copied": false
+}

@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-07T02:31:51.706180+08:00",
+  "status": "DNS-only-cleanup-applied-verified",
+  "DNS_records_removed": 11,
+  "retained_A_UDP_TCP_passed": 11,
+  "retired_NXDOMAIN_UDP_TCP_passed": 11,
+  "nonDNS_invariants_unchanged": true,
+  "all_non_host_DNS_options_identical": true,
+  "fresh_strict_SSH_passed": true,
+  "only_DNS_restarted": true,
+  "Nexus220221CF_PVE_OW_touched": false,
+  "lease_contents_read_or_cleared": false,
+  "code_sha256": {
+    "remote.py": "e1da62425ecd79834bbfbfaa1921a44c4e8effcb44af358d84d2deb02973caf2",
+    "manager.py": "2e4ab75c0190cab77a0de02f65e9b5a6ffe40be78eb571e7cf22f08778e04b76"
+  }
+}

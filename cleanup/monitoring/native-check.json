@@ -1,0 +1,32 @@
+{
+  "config": {
+    "exit_code": 0,
+    "stderr_present": false,
+    "stdout_bytes": 179
+  },
+  "service_discovery": {
+    "exit_code": 0,
+    "stderr_present": false,
+    "stdout_bytes": 8850,
+    "discovered_objects": 9,
+    "unique_guest_addresses": [
+      "192.168.19.10:9100",
+      "192.168.19.11:9100",
+      "192.168.19.20:9100",
+      "192.168.19.30:9100",
+      "192.168.19.40:9100",
+      "192.168.19.45:9100",
+      "192.168.19.50:9100",
+      "192.168.19.60:9100",
+      "192.168.19.70:9100"
+    ],
+    "exact_expected_addresses": true
+  },
+  "Prometheus_mainPID_StartedAt_health_unchanged": true,
+  "method": "actualpromtool in current container; stdin equivalent config replaces only guest-node file_sd with candidate static groups",
+  "does_not_prove": "actual candidate file_sd commit/watcher/14target UP; those remain deployment validation",
+  "live_config_or_targets_written": false,
+  "containers_created_or_restarted": false,
+  "captured_at": "2026-11-07T01:41:08.056842+08:00",
+  "status": "passed-prepare-only"
+}

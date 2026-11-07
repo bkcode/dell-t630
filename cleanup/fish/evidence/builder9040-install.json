@@ -1,0 +1,180 @@
+{
+  "at": "2026-11-06T17:42:46.817934+00:00",
+  "vmid": 9040,
+  "phase": "install-only",
+  "exit_code": 0,
+  "target": {
+    "vmid": 9040,
+    "ip": "192.168.19.197",
+    "host_key_alias": "dell-vm9040",
+    "host_key_fingerprint": "SHA256:rfZijnheE0nA1iRSsQhFxg7kBAfn5IJFW1B6bsEXmQA",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "contract": {
+    "schema_version": 1,
+    "vmid": 9040,
+    "source_template": 9010,
+    "hostname": "fish-build-linux",
+    "ip": "192.168.19.197",
+    "mac": "bc:24:11:8f:30:c7",
+    "fish_version": "4.0.2-1",
+    "no_chsh": true
+  },
+  "result": {
+    "stage": "/root/dell-fish-template-stage-9040",
+    "vmid": 9040,
+    "phases": {
+      "check": {
+        "exit_code": 0,
+        "receipt": {
+          "at": "2026-11-06T17:42:32.758275+00:00",
+          "vmid": 9040,
+          "phase": "check",
+          "status": "passed",
+          "result": {
+            "protected": {
+              "shells": {
+                "root": "/bin/bash",
+                "ub": "/bin/bash"
+              },
+              "files": {}
+            },
+            "machine_id_sha256": "893ee112348c5a31fe54446f46d2abb6a4b27ede70b2bbfd90fd376c9fdf8d6f",
+            "hostkey_fingerprint": "SHA256:rfZijnheE0nA1iRSsQhFxg7kBAfn5IJFW1B6bsEXmQA",
+            "persistent_configuration_writes": false,
+            "temporary_java_smoke_cleaned": false
+          }
+        }
+      },
+      "install": {
+        "exit_code": 0,
+        "receipt": {
+          "at": "2026-11-06T17:42:46.797060+00:00",
+          "vmid": 9040,
+          "phase": "install",
+          "status": "passed",
+          "result": {
+            "before": {
+              "shells": {
+                "root": "/bin/bash",
+                "ub": "/bin/bash"
+              },
+              "files": {}
+            },
+            "install": {
+              "status": "installed-verified",
+              "vmid": 9040,
+              "at": "2026-11-06T17:42:46.785983+00:00",
+              "checks": {
+                "fish_exact_version": true,
+                "fish_common_exact_version": true,
+                "binary_version_command": true,
+                "ub_nonconfig_private_smoke": true,
+                "ub_root_login_shells_unchanged": true,
+                "core_services_and_containers_PIDs_start_health_unchanged": true
+              },
+              "before_shells": {
+                "ub": "/bin/bash",
+                "root": "/bin/bash"
+              },
+              "after_shells": {
+                "ub": "/bin/bash",
+                "root": "/bin/bash"
+              },
+              "fish_binary_version": "fish, version 4.0.2",
+              "new_packages": [
+                "fish-common",
+                "libpcre2-32-0",
+                "fish"
+              ],
+              "NEEDRESTART_MODE": "l",
+              "no_install_recommends": true,
+              "existing_packages_upgraded_or_removed": false,
+              "apt_update_fullupgrade_autoremove_chsh_or_shellconfig_run": false,
+              "service_restart_requested_by_tool": false,
+              "core_before": {
+                "services": {
+                  "qemu-guest-agent.service": {
+                    "MainPID": "685",
+                    "ExecMainStartTimestampMonotonic": "20094742",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "ssh.service": {
+                    "MainPID": "749",
+                    "ExecMainStartTimestampMonotonic": "20485241",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "systemd-networkd.service": {
+                    "MainPID": "626",
+                    "ExecMainStartTimestampMonotonic": "17410103",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "systemd-resolved.service": {
+                    "MainPID": "331",
+                    "ExecMainStartTimestampMonotonic": "8437298",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  }
+                },
+                "containers": {}
+              },
+              "core_after": {
+                "services": {
+                  "qemu-guest-agent.service": {
+                    "MainPID": "685",
+                    "ExecMainStartTimestampMonotonic": "20094742",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "ssh.service": {
+                    "MainPID": "749",
+                    "ExecMainStartTimestampMonotonic": "20485241",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "systemd-networkd.service": {
+                    "MainPID": "626",
+                    "ExecMainStartTimestampMonotonic": "17410103",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "systemd-resolved.service": {
+                    "MainPID": "331",
+                    "ExecMainStartTimestampMonotonic": "8437298",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  }
+                },
+                "containers": {}
+              },
+              "publisher_before": null,
+              "publisher_after": null,
+              "user_config_temporary_smoke_cleaned": true
+            },
+            "machine_id_sha256": "893ee112348c5a31fe54446f46d2abb6a4b27ede70b2bbfd90fd376c9fdf8d6f",
+            "hostkey_fingerprint": "SHA256:rfZijnheE0nA1iRSsQhFxg7kBAfn5IJFW1B6bsEXmQA"
+          }
+        }
+      }
+    }
+  },
+  "no_seal_no_PVE": true,
+  "new_strict_SSH": {
+    "user": "ub",
+    "shell": "/bin/bash",
+    "fish_newSSH_noconfig_private": true,
+    "temporary_smoke_cleaned": true
+  },
+  "new_strict_SSH_exit": 0
+}

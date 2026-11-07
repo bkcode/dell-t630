@@ -1,0 +1,2204 @@
+{
+  "started_at": "2026-11-06T14:12:00.068396+08:00",
+  "scope": "8-existing-guests-local-health-config-only",
+  "business_or_host_network_mutation": false,
+  "guests": [
+    {
+      "role": "data-prod-db",
+      "private_ip": "10.63.10.10",
+      "applied": true,
+      "business_services_restarted": false,
+      "response_bodies_or_env_or_logs_emitted": false,
+      "before": {
+        "units": {
+          "dell-data-prod-db.service": {
+            "MainPID": "1130",
+            "ExecMainStartTimestampMonotonic": "12662411",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "792",
+            "ExecMainStartTimestampMonotonic": "8950431",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "732",
+            "ExecMainStartTimestampMonotonic": "8175923",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "ssh.service": {
+            "MainPID": "752",
+            "ExecMainStartTimestampMonotonic": "8257446",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          {
+            "id": "da9ff74e37fe8bec70402b7fdfb938fb385efdf35968aa99fd2e5e5c6ebe8508",
+            "pid": 1277,
+            "started_at": "2026-11-06T05:36:18.087612842Z",
+            "state": "running",
+            "health": "healthy"
+          }
+        ]
+      },
+      "before_sha256": "be74665d2936306485c287325935210639c0ad835d2b0336f5536d29d139558c",
+      "before_config": {
+        "role": "data-prod-db",
+        "private_ip": "10.63.10.10",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "dell-data-prod-db.service",
+          "prometheus-node-exporter.service",
+          "qemu-guest-agent.service",
+          "ssh.service"
+        ],
+        "http_checks": [],
+        "candidate_service_units": [
+          "docker.service",
+          "dell-data-prod-db.service"
+        ],
+        "candidate_http_checks": [],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "target_profile": {
+        "services": [
+          "dell-data-prod-db.service"
+        ],
+        "http_checks": []
+      },
+      "guest_backup_path": "/var/backups/dell-guest-monitoring/health-before-role-activation-20261106T061201383989.json",
+      "after_sha256": "be74665d2936306485c287325935210639c0ad835d2b0336f5536d29d139558c",
+      "collector_start_exit_code": 0,
+      "after": {
+        "units": {
+          "dell-data-prod-db.service": {
+            "MainPID": "1130",
+            "ExecMainStartTimestampMonotonic": "12662411",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "792",
+            "ExecMainStartTimestampMonotonic": "8950431",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "732",
+            "ExecMainStartTimestampMonotonic": "8175923",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "ssh.service": {
+            "MainPID": "752",
+            "ExecMainStartTimestampMonotonic": "8257446",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          {
+            "id": "da9ff74e37fe8bec70402b7fdfb938fb385efdf35968aa99fd2e5e5c6ebe8508",
+            "pid": 1277,
+            "started_at": "2026-11-06T05:36:18.087612842Z",
+            "state": "running",
+            "health": "healthy"
+          }
+        ]
+      },
+      "status": "passed",
+      "after_config": {
+        "role": "data-prod-db",
+        "private_ip": "10.63.10.10",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "dell-data-prod-db.service",
+          "prometheus-node-exporter.service",
+          "qemu-guest-agent.service",
+          "ssh.service"
+        ],
+        "http_checks": [],
+        "candidate_service_units": [
+          "docker.service",
+          "dell-data-prod-db.service"
+        ],
+        "candidate_http_checks": [],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "config_uid": 0,
+      "config_gid": 0,
+      "config_mode": "0o644",
+      "local_textfile_metrics": [
+        {
+          "kind": "service",
+          "name": "dell-data-prod-db.service",
+          "active": 1
+        }
+      ],
+      "pids_started_at_and_service_state_unchanged": true,
+      "vmid": 200,
+      "transport_exit_code": 0,
+      "at": "2026-11-06T14:12:06.069185+08:00"
+    },
+    {
+      "role": "data-prod-infra",
+      "private_ip": "10.63.10.11",
+      "applied": true,
+      "business_services_restarted": false,
+      "response_bodies_or_env_or_logs_emitted": false,
+      "before": {
+        "units": {
+          "dell-data-prod-infra.service": {
+            "MainPID": "1128",
+            "ExecMainStartTimestampMonotonic": "14100285",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "760",
+            "ExecMainStartTimestampMonotonic": "9271752",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "702",
+            "ExecMainStartTimestampMonotonic": "8537050",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "ssh.service": {
+            "MainPID": "718",
+            "ExecMainStartTimestampMonotonic": "8622759",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          {
+            "id": "32bf052df7fee409f29d3a1c4aa70d9de9520177a13076db6e667bbff92e21b3",
+            "pid": 1498,
+            "started_at": "2026-11-06T05:37:02.883613579Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "3efb43d65fa7b4bac75fe872f55f793a575929f9aea7cd3bf07419d11c5715a2",
+            "pid": 1400,
+            "started_at": "2026-11-06T05:37:02.417516118Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "fed3a9a2f2af3f279c2299790c81d481307beeda29043326f909ceba2b083136",
+            "pid": 1593,
+            "started_at": "2026-11-06T05:37:03.206507024Z",
+            "state": "running",
+            "health": "healthy"
+          }
+        ]
+      },
+      "before_sha256": "ce180a409dc8e0fb022a65e723b5da86a31520233a4a578d25eb70141e2c07a5",
+      "before_config": {
+        "role": "data-prod-infra",
+        "private_ip": "10.63.10.11",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "dell-data-prod-infra.service",
+          "prometheus-node-exporter.service",
+          "qemu-guest-agent.service",
+          "ssh.service"
+        ],
+        "http_checks": [],
+        "candidate_service_units": [
+          "docker.service",
+          "dell-data-prod-infra.service"
+        ],
+        "candidate_http_checks": [
+          {
+            "name": "nacos-readiness",
+            "url": "http://10.63.10.11:8848/nacos/v1/console/health/readiness"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "target_profile": {
+        "services": [
+          "dell-data-prod-infra.service"
+        ],
+        "http_checks": [
+          {
+            "name": "nacos-readiness",
+            "url": "http://10.63.10.11:8848/nacos/v1/console/health/readiness"
+          }
+        ]
+      },
+      "guest_backup_path": "/var/backups/dell-guest-monitoring/health-before-role-activation-20261106T061207506137.json",
+      "after_sha256": "8276d352a8c1c0fba721c305c03992b0d8c968db9d5408df1e1f7d75d3f0fd5a",
+      "collector_start_exit_code": 0,
+      "after": {
+        "units": {
+          "dell-data-prod-infra.service": {
+            "MainPID": "1128",
+            "ExecMainStartTimestampMonotonic": "14100285",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "760",
+            "ExecMainStartTimestampMonotonic": "9271752",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "702",
+            "ExecMainStartTimestampMonotonic": "8537050",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "ssh.service": {
+            "MainPID": "718",
+            "ExecMainStartTimestampMonotonic": "8622759",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          {
+            "id": "32bf052df7fee409f29d3a1c4aa70d9de9520177a13076db6e667bbff92e21b3",
+            "pid": 1498,
+            "started_at": "2026-11-06T05:37:02.883613579Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "3efb43d65fa7b4bac75fe872f55f793a575929f9aea7cd3bf07419d11c5715a2",
+            "pid": 1400,
+            "started_at": "2026-11-06T05:37:02.417516118Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "fed3a9a2f2af3f279c2299790c81d481307beeda29043326f909ceba2b083136",
+            "pid": 1593,
+            "started_at": "2026-11-06T05:37:03.206507024Z",
+            "state": "running",
+            "health": "healthy"
+          }
+        ]
+      },
+      "status": "passed",
+      "after_config": {
+        "role": "data-prod-infra",
+        "private_ip": "10.63.10.11",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "dell-data-prod-infra.service",
+          "prometheus-node-exporter.service",
+          "qemu-guest-agent.service",
+          "ssh.service"
+        ],
+        "http_checks": [
+          {
+            "name": "nacos-readiness",
+            "url": "http://10.63.10.11:8848/nacos/v1/console/health/readiness"
+          }
+        ],
+        "candidate_service_units": [
+          "docker.service",
+          "dell-data-prod-infra.service"
+        ],
+        "candidate_http_checks": [
+          {
+            "name": "nacos-readiness",
+            "url": "http://10.63.10.11:8848/nacos/v1/console/health/readiness"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "config_uid": 0,
+      "config_gid": 0,
+      "config_mode": "0o644",
+      "local_textfile_metrics": [
+        {
+          "kind": "service",
+          "name": "dell-data-prod-infra.service",
+          "active": 1
+        },
+        {
+          "kind": "http",
+          "name": "nacos-readiness",
+          "up": 1,
+          "status": 200
+        }
+      ],
+      "pids_started_at_and_service_state_unchanged": true,
+      "vmid": 201,
+      "transport_exit_code": 0,
+      "at": "2026-11-06T14:12:09.346580+08:00"
+    },
+    {
+      "role": "data-test",
+      "private_ip": "10.63.20.10",
+      "applied": true,
+      "business_services_restarted": false,
+      "response_bodies_or_env_or_logs_emitted": false,
+      "before": {
+        "units": {
+          "dell-data-test-data.service": {
+            "MainPID": "1150",
+            "ExecMainStartTimestampMonotonic": "21904184",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "727",
+            "ExecMainStartTimestampMonotonic": "13915244",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "672",
+            "ExecMainStartTimestampMonotonic": "13236455",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "ssh.service": {
+            "MainPID": "699",
+            "ExecMainStartTimestampMonotonic": "13526053",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          {
+            "id": "6227b8ca05dc5ba12e2852a9d37db2a0d53cbc1904891a28feca678a7e14887c",
+            "pid": 2000,
+            "started_at": "2026-11-06T05:38:24.196263965Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "63c79477eef56371abf57fcc6e402a8574cb636e63fa77f769128e172c78ef1b",
+            "pid": 1324,
+            "started_at": "2026-11-06T05:38:11.60981183Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "87cba48d30e0dd296cf3599280957cca697deee36c6661964502c4576737cfd5",
+            "pid": 1489,
+            "started_at": "2026-11-06T05:38:13.190219586Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "ed912936fe76c0212c634c267224328e7c96d947d87d5b527ac1b85b9c4bc837",
+            "pid": 1403,
+            "started_at": "2026-11-06T05:38:12.704371391Z",
+            "state": "running",
+            "health": "healthy"
+          }
+        ]
+      },
+      "before_sha256": "e03c121c2b01a8967c2fb0e7761db7758f3e7902c0fa708e589ff0905518a0ec",
+      "before_config": {
+        "role": "data-test",
+        "private_ip": "10.63.20.10",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "dell-data-test-data.service",
+          "prometheus-node-exporter.service",
+          "qemu-guest-agent.service",
+          "ssh.service"
+        ],
+        "http_checks": [],
+        "candidate_service_units": [
+          "docker.service",
+          "dell-data-test-data.service"
+        ],
+        "candidate_http_checks": [
+          {
+            "name": "nacos-readiness",
+            "url": "http://10.63.20.10:8848/nacos/v1/console/health/readiness"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "target_profile": {
+        "services": [
+          "dell-data-test-data.service"
+        ],
+        "http_checks": [
+          {
+            "name": "nacos-readiness",
+            "url": "http://10.63.20.10:8848/nacos/v1/console/health/readiness"
+          }
+        ]
+      },
+      "guest_backup_path": "/var/backups/dell-guest-monitoring/health-before-role-activation-20261106T061211158311.json",
+      "after_sha256": "fe2544e268b9ad3e9e2e6cd4b9325a9a5f2886ca1a4f89c8a0e6922635f897b1",
+      "collector_start_exit_code": 0,
+      "after": {
+        "units": {
+          "dell-data-test-data.service": {
+            "MainPID": "1150",
+            "ExecMainStartTimestampMonotonic": "21904184",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "727",
+            "ExecMainStartTimestampMonotonic": "13915244",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "672",
+            "ExecMainStartTimestampMonotonic": "13236455",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "ssh.service": {
+            "MainPID": "699",
+            "ExecMainStartTimestampMonotonic": "13526053",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          {
+            "id": "6227b8ca05dc5ba12e2852a9d37db2a0d53cbc1904891a28feca678a7e14887c",
+            "pid": 2000,
+            "started_at": "2026-11-06T05:38:24.196263965Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "63c79477eef56371abf57fcc6e402a8574cb636e63fa77f769128e172c78ef1b",
+            "pid": 1324,
+            "started_at": "2026-11-06T05:38:11.60981183Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "87cba48d30e0dd296cf3599280957cca697deee36c6661964502c4576737cfd5",
+            "pid": 1489,
+            "started_at": "2026-11-06T05:38:13.190219586Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "ed912936fe76c0212c634c267224328e7c96d947d87d5b527ac1b85b9c4bc837",
+            "pid": 1403,
+            "started_at": "2026-11-06T05:38:12.704371391Z",
+            "state": "running",
+            "health": "healthy"
+          }
+        ]
+      },
+      "status": "passed",
+      "after_config": {
+        "role": "data-test",
+        "private_ip": "10.63.20.10",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "dell-data-test-data.service",
+          "prometheus-node-exporter.service",
+          "qemu-guest-agent.service",
+          "ssh.service"
+        ],
+        "http_checks": [
+          {
+            "name": "nacos-readiness",
+            "url": "http://10.63.20.10:8848/nacos/v1/console/health/readiness"
+          }
+        ],
+        "candidate_service_units": [
+          "docker.service",
+          "dell-data-test-data.service"
+        ],
+        "candidate_http_checks": [
+          {
+            "name": "nacos-readiness",
+            "url": "http://10.63.20.10:8848/nacos/v1/console/health/readiness"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "config_uid": 0,
+      "config_gid": 0,
+      "config_mode": "0o644",
+      "local_textfile_metrics": [
+        {
+          "kind": "service",
+          "name": "dell-data-test-data.service",
+          "active": 1
+        },
+        {
+          "kind": "http",
+          "name": "nacos-readiness",
+          "up": 1,
+          "status": 200
+        }
+      ],
+      "pids_started_at_and_service_state_unchanged": true,
+      "vmid": 210,
+      "transport_exit_code": 0,
+      "at": "2026-11-06T14:12:16.961116+08:00"
+    },
+    {
+      "role": "artifact-service",
+      "private_ip": "10.63.30.20",
+      "applied": true,
+      "business_services_restarted": false,
+      "response_bodies_or_env_or_logs_emitted": false,
+      "before": {
+        "units": {
+          "ssh.service": {
+            "MainPID": "702",
+            "ExecMainStartTimestampMonotonic": "15001577",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "677",
+            "ExecMainStartTimestampMonotonic": "14741852",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "729",
+            "ExecMainStartTimestampMonotonic": "15482473",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-nexus.service": {
+            "MainPID": "1018",
+            "ExecMainStartTimestampMonotonic": "21034578",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          {
+            "id": "70d4bec45b73e68dee425c6962ba0ec2d1448b03187dfa0dc8369bdc44eb65bb",
+            "pid": 1180,
+            "started_at": "2026-11-06T04:46:55.595170422Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "f66975b48be1d7ef073a3f6318f6646fa53e4522b0fb42f17f756acc85927f55",
+            "pid": 1712,
+            "started_at": "2026-11-06T04:48:03.524723694Z",
+            "state": "running",
+            "health": "healthy"
+          }
+        ]
+      },
+      "before_sha256": "ce01d5268626b1925bf41595df2ea8eafce5455eb56dfa75662b9de661659967",
+      "before_config": {
+        "role": "artifact-service",
+        "private_ip": "10.63.30.20",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "ssh.service",
+          "qemu-guest-agent.service",
+          "prometheus-node-exporter.service"
+        ],
+        "http_checks": [],
+        "candidate_service_units": [
+          "docker.service"
+        ],
+        "candidate_http_checks": [
+          {
+            "name": "nexus-status",
+            "url": "http://10.63.30.20:8081/service/rest/v1/status"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "target_profile": {
+        "services": [
+          "dell-nexus.service"
+        ],
+        "http_checks": [
+          {
+            "name": "nexus-status",
+            "url": "http://10.63.30.20:8081/service/rest/v1/status"
+          }
+        ]
+      },
+      "guest_backup_path": "/var/backups/dell-guest-monitoring/health-before-role-activation-20261106T061218384728.json",
+      "after_sha256": "d6d13e0dcc00a80479f31dc9b5b7d36538e108106d3dcaca820fbb5dfb2af27d",
+      "collector_start_exit_code": 0,
+      "after": {
+        "units": {
+          "ssh.service": {
+            "MainPID": "702",
+            "ExecMainStartTimestampMonotonic": "15001577",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "677",
+            "ExecMainStartTimestampMonotonic": "14741852",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "729",
+            "ExecMainStartTimestampMonotonic": "15482473",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-nexus.service": {
+            "MainPID": "1018",
+            "ExecMainStartTimestampMonotonic": "21034578",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          {
+            "id": "70d4bec45b73e68dee425c6962ba0ec2d1448b03187dfa0dc8369bdc44eb65bb",
+            "pid": 1180,
+            "started_at": "2026-11-06T04:46:55.595170422Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "f66975b48be1d7ef073a3f6318f6646fa53e4522b0fb42f17f756acc85927f55",
+            "pid": 1712,
+            "started_at": "2026-11-06T04:48:03.524723694Z",
+            "state": "running",
+            "health": "healthy"
+          }
+        ]
+      },
+      "status": "passed",
+      "after_config": {
+        "role": "artifact-service",
+        "private_ip": "10.63.30.20",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "ssh.service",
+          "qemu-guest-agent.service",
+          "prometheus-node-exporter.service",
+          "dell-nexus.service"
+        ],
+        "http_checks": [
+          {
+            "name": "nexus-status",
+            "url": "http://10.63.30.20:8081/service/rest/v1/status"
+          }
+        ],
+        "candidate_service_units": [
+          "docker.service"
+        ],
+        "candidate_http_checks": [
+          {
+            "name": "nexus-status",
+            "url": "http://10.63.30.20:8081/service/rest/v1/status"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "config_uid": 0,
+      "config_gid": 0,
+      "config_mode": "0o644",
+      "local_textfile_metrics": [
+        {
+          "kind": "service",
+          "name": "dell-nexus.service",
+          "active": 1
+        },
+        {
+          "kind": "http",
+          "name": "nexus-status",
+          "up": 1,
+          "status": 200
+        }
+      ],
+      "pids_started_at_and_service_state_unchanged": true,
+      "vmid": 221,
+      "transport_exit_code": 0,
+      "at": "2026-11-06T14:12:24.572179+08:00"
+    },
+    {
+      "role": "java-test-01",
+      "private_ip": "10.63.20.20",
+      "applied": true,
+      "business_services_restarted": false,
+      "response_bodies_or_env_or_logs_emitted": false,
+      "before": {
+        "units": {
+          "ssh.service": {
+            "MainPID": "725",
+            "ExecMainStartTimestampMonotonic": "17160834",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "695",
+            "ExecMainStartTimestampMonotonic": "16805727",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "735",
+            "ExecMainStartTimestampMonotonic": "17591058",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-finger-finger-service-system.service": {
+            "MainPID": "688",
+            "ExecMainStartTimestampMonotonic": "16767054",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-finger-finger-service-coms.service": {
+            "MainPID": "687",
+            "ExecMainStartTimestampMonotonic": "16759509",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-finger-finger-auth.service": {
+            "MainPID": "680",
+            "ExecMainStartTimestampMonotonic": "16707375",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-finger-finger-bff-system.service": {
+            "MainPID": "681",
+            "ExecMainStartTimestampMonotonic": "16714215",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-finger-finger-gateway-mobile.service": {
+            "MainPID": "686",
+            "ExecMainStartTimestampMonotonic": "16753352",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": []
+      },
+      "before_sha256": "4d17b3acbd76260d472900a04153f1c54c1fab9cbe0936b18d0f0553273e302a",
+      "before_config": {
+        "role": "java-test-01",
+        "private_ip": "10.63.20.20",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "ssh.service",
+          "qemu-guest-agent.service",
+          "prometheus-node-exporter.service"
+        ],
+        "http_checks": [],
+        "candidate_service_units": [],
+        "candidate_http_checks": [
+          {
+            "name": "actuator-example-not-enabled",
+            "url": "http://127.0.0.1:9999/actuator/health/readiness"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "target_profile": {
+        "services": [
+          "dell-finger-finger-service-system.service",
+          "dell-finger-finger-service-coms.service",
+          "dell-finger-finger-auth.service",
+          "dell-finger-finger-bff-system.service",
+          "dell-finger-finger-gateway-mobile.service"
+        ],
+        "http_checks": [
+          {
+            "name": "finger-service-system-health",
+            "url": "http://10.63.20.20:10210/actuator/health"
+          },
+          {
+            "name": "finger-service-coms-health",
+            "url": "http://10.63.20.20:10202/actuator/health"
+          },
+          {
+            "name": "finger-auth-health",
+            "url": "http://10.63.20.20:10000/actuator/health"
+          },
+          {
+            "name": "finger-bff-system-health",
+            "url": "http://10.63.20.20:10104/actuator/health"
+          },
+          {
+            "name": "finger-gateway-mobile-health",
+            "url": "http://10.63.20.20:9999/actuator/health"
+          }
+        ]
+      },
+      "guest_backup_path": "/var/backups/dell-guest-monitoring/health-before-role-activation-20261106T061226300387.json",
+      "after_sha256": "65ef2c87c17f8a02f756c25bf8ee6c1cb9fc30c033b284832f6a02a70d50757d",
+      "collector_start_exit_code": 0,
+      "after": {
+        "units": {
+          "ssh.service": {
+            "MainPID": "725",
+            "ExecMainStartTimestampMonotonic": "17160834",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "695",
+            "ExecMainStartTimestampMonotonic": "16805727",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "735",
+            "ExecMainStartTimestampMonotonic": "17591058",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-finger-finger-service-system.service": {
+            "MainPID": "688",
+            "ExecMainStartTimestampMonotonic": "16767054",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-finger-finger-service-coms.service": {
+            "MainPID": "687",
+            "ExecMainStartTimestampMonotonic": "16759509",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-finger-finger-auth.service": {
+            "MainPID": "680",
+            "ExecMainStartTimestampMonotonic": "16707375",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-finger-finger-bff-system.service": {
+            "MainPID": "681",
+            "ExecMainStartTimestampMonotonic": "16714215",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-finger-finger-gateway-mobile.service": {
+            "MainPID": "686",
+            "ExecMainStartTimestampMonotonic": "16753352",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": []
+      },
+      "status": "passed",
+      "after_config": {
+        "role": "java-test-01",
+        "private_ip": "10.63.20.20",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "ssh.service",
+          "qemu-guest-agent.service",
+          "prometheus-node-exporter.service",
+          "dell-finger-finger-service-system.service",
+          "dell-finger-finger-service-coms.service",
+          "dell-finger-finger-auth.service",
+          "dell-finger-finger-bff-system.service",
+          "dell-finger-finger-gateway-mobile.service"
+        ],
+        "http_checks": [
+          {
+            "name": "finger-service-system-health",
+            "url": "http://10.63.20.20:10210/actuator/health"
+          },
+          {
+            "name": "finger-service-coms-health",
+            "url": "http://10.63.20.20:10202/actuator/health"
+          },
+          {
+            "name": "finger-auth-health",
+            "url": "http://10.63.20.20:10000/actuator/health"
+          },
+          {
+            "name": "finger-bff-system-health",
+            "url": "http://10.63.20.20:10104/actuator/health"
+          },
+          {
+            "name": "finger-gateway-mobile-health",
+            "url": "http://10.63.20.20:9999/actuator/health"
+          }
+        ],
+        "candidate_service_units": [],
+        "candidate_http_checks": [
+          {
+            "name": "actuator-example-not-enabled",
+            "url": "http://127.0.0.1:9999/actuator/health/readiness"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "config_uid": 0,
+      "config_gid": 0,
+      "config_mode": "0o644",
+      "local_textfile_metrics": [
+        {
+          "kind": "service",
+          "name": "dell-finger-finger-service-system.service",
+          "active": 1
+        },
+        {
+          "kind": "service",
+          "name": "dell-finger-finger-service-coms.service",
+          "active": 1
+        },
+        {
+          "kind": "service",
+          "name": "dell-finger-finger-auth.service",
+          "active": 1
+        },
+        {
+          "kind": "service",
+          "name": "dell-finger-finger-bff-system.service",
+          "active": 1
+        },
+        {
+          "kind": "service",
+          "name": "dell-finger-finger-gateway-mobile.service",
+          "active": 1
+        },
+        {
+          "kind": "http",
+          "name": "finger-service-system-health",
+          "up": 1,
+          "status": 200
+        },
+        {
+          "kind": "http",
+          "name": "finger-service-coms-health",
+          "up": 1,
+          "status": 200
+        },
+        {
+          "kind": "http",
+          "name": "finger-auth-health",
+          "up": 1,
+          "status": 200
+        },
+        {
+          "kind": "http",
+          "name": "finger-bff-system-health",
+          "up": 1,
+          "status": 200
+        },
+        {
+          "kind": "http",
+          "name": "finger-gateway-mobile-health",
+          "up": 1,
+          "status": 200
+        }
+      ],
+      "pids_started_at_and_service_state_unchanged": true,
+      "vmid": 240,
+      "transport_exit_code": 0,
+      "at": "2026-11-06T14:12:34.507780+08:00"
+    },
+    {
+      "role": "penpot-service",
+      "private_ip": "10.63.30.30",
+      "applied": true,
+      "business_services_restarted": false,
+      "response_bodies_or_env_or_logs_emitted": false,
+      "before": {
+        "units": {
+          "ssh.service": {
+            "MainPID": "750",
+            "ExecMainStartTimestampMonotonic": "12180873",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "731",
+            "ExecMainStartTimestampMonotonic": "11952428",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "778",
+            "ExecMainStartTimestampMonotonic": "12793112",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-penpot.service": {
+            "MainPID": "1091",
+            "ExecMainStartTimestampMonotonic": "22530245",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          {
+            "id": "2613151017b978ac7ec997033889076f94b9033a60177e65245a00b6bfc14782",
+            "pid": 2249,
+            "started_at": "2026-11-06T05:40:23.653541304Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "5680b9587467045c8d1b8538a4b4708ab474cdca067ce2af7f6b33d1185facb9",
+            "pid": 2048,
+            "started_at": "2026-11-06T05:40:20.234720622Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "896b4b365781d4ce0922b7a250fc277fcb1de2b34cdb5cca76578352de76239b",
+            "pid": 1635,
+            "started_at": "2026-11-06T05:40:15.499260482Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "90aacbc3b78e9b1c07771b55013e3b62c5634df8c777545c4229558f974b01ed",
+            "pid": 2648,
+            "started_at": "2026-11-06T05:40:27.413973227Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "96eb86ab81047ab108b1cb698b5a4f64c44e2bd9c75a8b1ab0175ade2c5de100",
+            "pid": 2450,
+            "started_at": "2026-11-06T05:40:25.511759307Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "aa9c599b0dd027b4f8056f8adf283d6ebb07f861569af13478c68305d53ccbaf",
+            "pid": 1905,
+            "started_at": "2026-11-06T05:40:18.031828695Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "b223cafa5cb2450dc520513f71e999ba6550c0cf894a514c4d520e72c33f39d9",
+            "pid": 1775,
+            "started_at": "2026-11-06T05:40:16.823810265Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "b6ac0e7fd316f8b53df1d8853d5614049fa5d180f8f9b5f84e3baa448f481c17",
+            "pid": 1843,
+            "started_at": "2026-11-06T05:40:17.458631518Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "bdd8e421ad746ddecc7950b390c21c046f6622914eed89cf3fc9e5f52fca31cb",
+            "pid": 2547,
+            "started_at": "2026-11-06T05:40:26.624912354Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "c35064923ae5d0ef1c29108e6e4d355d5f494d7829a9665ec10652d62e8fa9a3",
+            "pid": 2344,
+            "started_at": "2026-11-06T05:40:24.396703746Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "d08ee10d5b4ce72de16ca148218a85edda276963b6e0d665517a763801a9616e",
+            "pid": 1713,
+            "started_at": "2026-11-06T05:40:16.392237659Z",
+            "state": "running",
+            "health": "healthy"
+          }
+        ]
+      },
+      "before_sha256": "2e1f904e4e70172277466ce3ac869f0ebae5836a7f25bda2692b03bcf99914c7",
+      "before_config": {
+        "role": "penpot-service",
+        "private_ip": "10.63.30.30",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "ssh.service",
+          "qemu-guest-agent.service",
+          "prometheus-node-exporter.service"
+        ],
+        "http_checks": [],
+        "candidate_service_units": [
+          "docker.service"
+        ],
+        "candidate_http_checks": [
+          {
+            "name": "penpot-frontend-only",
+            "url": "http://10.63.30.30:9001/"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "target_profile": {
+        "services": [
+          "dell-penpot.service"
+        ],
+        "http_checks": [
+          {
+            "name": "penpot-frontend",
+            "url": "http://10.63.30.30:9001/"
+          }
+        ]
+      },
+      "guest_backup_path": "/var/backups/dell-guest-monitoring/health-before-role-activation-20261106T061236507252.json",
+      "after_sha256": "5ea374921fb609c24f3029137cd611925edb5073fcf9139a4bda65fe65c88888",
+      "collector_start_exit_code": 0,
+      "after": {
+        "units": {
+          "ssh.service": {
+            "MainPID": "750",
+            "ExecMainStartTimestampMonotonic": "12180873",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "731",
+            "ExecMainStartTimestampMonotonic": "11952428",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "778",
+            "ExecMainStartTimestampMonotonic": "12793112",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-penpot.service": {
+            "MainPID": "1091",
+            "ExecMainStartTimestampMonotonic": "22530245",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          {
+            "id": "2613151017b978ac7ec997033889076f94b9033a60177e65245a00b6bfc14782",
+            "pid": 2249,
+            "started_at": "2026-11-06T05:40:23.653541304Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "5680b9587467045c8d1b8538a4b4708ab474cdca067ce2af7f6b33d1185facb9",
+            "pid": 2048,
+            "started_at": "2026-11-06T05:40:20.234720622Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "896b4b365781d4ce0922b7a250fc277fcb1de2b34cdb5cca76578352de76239b",
+            "pid": 1635,
+            "started_at": "2026-11-06T05:40:15.499260482Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "90aacbc3b78e9b1c07771b55013e3b62c5634df8c777545c4229558f974b01ed",
+            "pid": 2648,
+            "started_at": "2026-11-06T05:40:27.413973227Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "96eb86ab81047ab108b1cb698b5a4f64c44e2bd9c75a8b1ab0175ade2c5de100",
+            "pid": 2450,
+            "started_at": "2026-11-06T05:40:25.511759307Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "aa9c599b0dd027b4f8056f8adf283d6ebb07f861569af13478c68305d53ccbaf",
+            "pid": 1905,
+            "started_at": "2026-11-06T05:40:18.031828695Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "b223cafa5cb2450dc520513f71e999ba6550c0cf894a514c4d520e72c33f39d9",
+            "pid": 1775,
+            "started_at": "2026-11-06T05:40:16.823810265Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "b6ac0e7fd316f8b53df1d8853d5614049fa5d180f8f9b5f84e3baa448f481c17",
+            "pid": 1843,
+            "started_at": "2026-11-06T05:40:17.458631518Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "bdd8e421ad746ddecc7950b390c21c046f6622914eed89cf3fc9e5f52fca31cb",
+            "pid": 2547,
+            "started_at": "2026-11-06T05:40:26.624912354Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "c35064923ae5d0ef1c29108e6e4d355d5f494d7829a9665ec10652d62e8fa9a3",
+            "pid": 2344,
+            "started_at": "2026-11-06T05:40:24.396703746Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "d08ee10d5b4ce72de16ca148218a85edda276963b6e0d665517a763801a9616e",
+            "pid": 1713,
+            "started_at": "2026-11-06T05:40:16.392237659Z",
+            "state": "running",
+            "health": "healthy"
+          }
+        ]
+      },
+      "status": "passed",
+      "after_config": {
+        "role": "penpot-service",
+        "private_ip": "10.63.30.30",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "ssh.service",
+          "qemu-guest-agent.service",
+          "prometheus-node-exporter.service",
+          "dell-penpot.service"
+        ],
+        "http_checks": [
+          {
+            "name": "penpot-frontend",
+            "url": "http://10.63.30.30:9001/"
+          }
+        ],
+        "candidate_service_units": [
+          "docker.service"
+        ],
+        "candidate_http_checks": [
+          {
+            "name": "penpot-frontend-only",
+            "url": "http://10.63.30.30:9001/"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "config_uid": 0,
+      "config_gid": 0,
+      "config_mode": "0o644",
+      "local_textfile_metrics": [
+        {
+          "kind": "service",
+          "name": "dell-penpot.service",
+          "active": 1
+        },
+        {
+          "kind": "http",
+          "name": "penpot-frontend",
+          "up": 1,
+          "status": 200
+        }
+      ],
+      "pids_started_at_and_service_state_unchanged": true,
+      "vmid": 250,
+      "transport_exit_code": 0,
+      "at": "2026-11-06T14:12:42.054091+08:00"
+    },
+    {
+      "role": "nas-media",
+      "private_ip": "10.63.40.10",
+      "applied": true,
+      "business_services_restarted": false,
+      "response_bodies_or_env_or_logs_emitted": false,
+      "before": {
+        "units": {
+          "ssh.service": {
+            "MainPID": "756",
+            "ExecMainStartTimestampMonotonic": "12128479",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "692",
+            "ExecMainStartTimestampMonotonic": "11311965",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "770",
+            "ExecMainStartTimestampMonotonic": "12608487",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "openmediavault-engined.service": {
+            "MainPID": "824",
+            "ExecMainStartTimestampMonotonic": "15190001",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "nginx.service": {
+            "MainPID": "762",
+            "ExecMainStartTimestampMonotonic": "12380000",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "smbd.service": {
+            "MainPID": "852",
+            "ExecMainStartTimestampMonotonic": "16186671",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-nas-jellyfin.service": {
+            "MainPID": "1154",
+            "ExecMainStartTimestampMonotonic": "25114810",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          {
+            "id": "13d571fdc3332da2f81fc237cc7f445afc1e6ca313d2e2f43b3b9016e9fe7956",
+            "pid": 1308,
+            "started_at": "2026-11-06T05:42:27.252051871Z",
+            "state": "running",
+            "health": "healthy"
+          }
+        ]
+      },
+      "before_sha256": "33b52d365e25974649ad03a43c9e6a08f97cc608625907cde5aaa758e29987ca",
+      "before_config": {
+        "role": "nas-media",
+        "private_ip": "10.63.40.10",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "ssh.service",
+          "qemu-guest-agent.service",
+          "prometheus-node-exporter.service"
+        ],
+        "http_checks": [],
+        "candidate_service_units": [
+          "docker.service",
+          "dell-nas-jellyfin.service"
+        ],
+        "candidate_http_checks": [
+          {
+            "name": "jellyfin-health",
+            "url": "http://10.63.40.10:8096/health"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "target_profile": {
+        "services": [
+          "openmediavault-engined.service",
+          "nginx.service",
+          "smbd.service",
+          "dell-nas-jellyfin.service"
+        ],
+        "http_checks": [
+          {
+            "name": "omv-web",
+            "url": "http://10.63.40.10:80/"
+          },
+          {
+            "name": "jellyfin-health",
+            "url": "http://10.63.40.10:8096/health"
+          }
+        ]
+      },
+      "guest_backup_path": "/var/backups/dell-guest-monitoring/health-before-role-activation-20261106T061243679657.json",
+      "after_sha256": "67ebfb184d7b76cddd34a993e48a17152c19b8384fc9d898159e1624ecbb8e4f",
+      "collector_start_exit_code": 0,
+      "after": {
+        "units": {
+          "ssh.service": {
+            "MainPID": "756",
+            "ExecMainStartTimestampMonotonic": "12128479",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "692",
+            "ExecMainStartTimestampMonotonic": "11311965",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "770",
+            "ExecMainStartTimestampMonotonic": "12608487",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "openmediavault-engined.service": {
+            "MainPID": "824",
+            "ExecMainStartTimestampMonotonic": "15190001",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "nginx.service": {
+            "MainPID": "762",
+            "ExecMainStartTimestampMonotonic": "12380000",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "smbd.service": {
+            "MainPID": "852",
+            "ExecMainStartTimestampMonotonic": "16186671",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-nas-jellyfin.service": {
+            "MainPID": "1154",
+            "ExecMainStartTimestampMonotonic": "25114810",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          {
+            "id": "13d571fdc3332da2f81fc237cc7f445afc1e6ca313d2e2f43b3b9016e9fe7956",
+            "pid": 1308,
+            "started_at": "2026-11-06T05:42:27.252051871Z",
+            "state": "running",
+            "health": "healthy"
+          }
+        ]
+      },
+      "status": "passed",
+      "after_config": {
+        "role": "nas-media",
+        "private_ip": "10.63.40.10",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "ssh.service",
+          "qemu-guest-agent.service",
+          "prometheus-node-exporter.service",
+          "openmediavault-engined.service",
+          "nginx.service",
+          "smbd.service",
+          "dell-nas-jellyfin.service"
+        ],
+        "http_checks": [
+          {
+            "name": "omv-web",
+            "url": "http://10.63.40.10:80/"
+          },
+          {
+            "name": "jellyfin-health",
+            "url": "http://10.63.40.10:8096/health"
+          }
+        ],
+        "candidate_service_units": [
+          "docker.service",
+          "dell-nas-jellyfin.service"
+        ],
+        "candidate_http_checks": [
+          {
+            "name": "jellyfin-health",
+            "url": "http://10.63.40.10:8096/health"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "config_uid": 0,
+      "config_gid": 0,
+      "config_mode": "0o644",
+      "local_textfile_metrics": [
+        {
+          "kind": "service",
+          "name": "openmediavault-engined.service",
+          "active": 1
+        },
+        {
+          "kind": "service",
+          "name": "nginx.service",
+          "active": 1
+        },
+        {
+          "kind": "service",
+          "name": "smbd.service",
+          "active": 1
+        },
+        {
+          "kind": "service",
+          "name": "dell-nas-jellyfin.service",
+          "active": 1
+        },
+        {
+          "kind": "http",
+          "name": "omv-web",
+          "up": 1,
+          "status": 200
+        },
+        {
+          "kind": "http",
+          "name": "jellyfin-health",
+          "up": 1,
+          "status": 200
+        }
+      ],
+      "pids_started_at_and_service_state_unchanged": true,
+      "vmid": 260,
+      "transport_exit_code": 0,
+      "at": "2026-11-06T14:12:50.774538+08:00"
+    },
+    {
+      "role": "ops-service",
+      "private_ip": "10.63.30.40",
+      "applied": true,
+      "business_services_restarted": false,
+      "response_bodies_or_env_or_logs_emitted": false,
+      "before": {
+        "units": {
+          "dell-ops.service": {
+            "MainPID": "1053",
+            "ExecMainStartTimestampMonotonic": "22995533",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "717",
+            "ExecMainStartTimestampMonotonic": "14320740",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "669",
+            "ExecMainStartTimestampMonotonic": "13660637",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "ssh.service": {
+            "MainPID": "697",
+            "ExecMainStartTimestampMonotonic": "13965136",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          {
+            "id": "5f6a796993d6346b6c494f9aac42f645de660d581491e1d4dc160dbb38e45ac4",
+            "pid": 1383,
+            "started_at": "2026-11-06T05:34:13.581518412Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "8a1d009421d86ea35a27b9737155b296e868c70329e693b4d47a95e104614395",
+            "pid": 1525,
+            "started_at": "2026-11-06T05:34:14.457876478Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "abae77fceaf1763df4a28538a3098395be3bffff089887550dca88252c95e374",
+            "pid": 1444,
+            "started_at": "2026-11-06T05:34:13.866063743Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "b7b98a0d77f8fe1dee547a59c326ffe2ecdd59e604e6c929533761892e84b848",
+            "pid": 1276,
+            "started_at": "2026-11-06T05:34:12.878825139Z",
+            "state": "running",
+            "health": "healthy"
+          }
+        ]
+      },
+      "before_sha256": "dd504542e6b567825718897e5dfa1afdebed416beaa27b76ddc4760cf9c77422",
+      "before_config": {
+        "role": "ops-service",
+        "private_ip": "10.63.30.40",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "dell-ops.service",
+          "prometheus-node-exporter.service",
+          "qemu-guest-agent.service",
+          "ssh.service"
+        ],
+        "http_checks": [],
+        "candidate_service_units": [
+          "docker.service",
+          "dell-ops.service"
+        ],
+        "candidate_http_checks": [
+          {
+            "name": "grafana-health",
+            "url": "http://10.63.30.40:3000/api/health"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "target_profile": {
+        "services": [
+          "dell-ops.service"
+        ],
+        "http_checks": [
+          {
+            "name": "prometheus-readiness",
+            "url": "http://10.63.30.40:9090/-/ready"
+          },
+          {
+            "name": "alertmanager-readiness",
+            "url": "http://10.63.30.40:9093/-/ready"
+          },
+          {
+            "name": "grafana-health",
+            "url": "http://10.63.30.40:3000/api/health"
+          }
+        ]
+      },
+      "guest_backup_path": "/var/backups/dell-guest-monitoring/health-before-role-activation-20261106T061252204109.json",
+      "after_sha256": "b3a1e51ed454040759db2ebb6e569c8831519c60ce064f93cb40e9f8a90beb9e",
+      "collector_start_exit_code": 0,
+      "after": {
+        "units": {
+          "dell-ops.service": {
+            "MainPID": "1053",
+            "ExecMainStartTimestampMonotonic": "22995533",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "717",
+            "ExecMainStartTimestampMonotonic": "14320740",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "669",
+            "ExecMainStartTimestampMonotonic": "13660637",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "ssh.service": {
+            "MainPID": "697",
+            "ExecMainStartTimestampMonotonic": "13965136",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          {
+            "id": "5f6a796993d6346b6c494f9aac42f645de660d581491e1d4dc160dbb38e45ac4",
+            "pid": 1383,
+            "started_at": "2026-11-06T05:34:13.581518412Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "8a1d009421d86ea35a27b9737155b296e868c70329e693b4d47a95e104614395",
+            "pid": 1525,
+            "started_at": "2026-11-06T05:34:14.457876478Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "abae77fceaf1763df4a28538a3098395be3bffff089887550dca88252c95e374",
+            "pid": 1444,
+            "started_at": "2026-11-06T05:34:13.866063743Z",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "id": "b7b98a0d77f8fe1dee547a59c326ffe2ecdd59e604e6c929533761892e84b848",
+            "pid": 1276,
+            "started_at": "2026-11-06T05:34:12.878825139Z",
+            "state": "running",
+            "health": "healthy"
+          }
+        ]
+      },
+      "status": "passed",
+      "after_config": {
+        "role": "ops-service",
+        "private_ip": "10.63.30.40",
+        "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+        "services": [
+          "dell-ops.service",
+          "prometheus-node-exporter.service",
+          "qemu-guest-agent.service",
+          "ssh.service"
+        ],
+        "http_checks": [
+          {
+            "name": "prometheus-readiness",
+            "url": "http://10.63.30.40:9090/-/ready"
+          },
+          {
+            "name": "alertmanager-readiness",
+            "url": "http://10.63.30.40:9093/-/ready"
+          },
+          {
+            "name": "grafana-health",
+            "url": "http://10.63.30.40:3000/api/health"
+          }
+        ],
+        "candidate_service_units": [
+          "docker.service",
+          "dell-ops.service"
+        ],
+        "candidate_http_checks": [
+          {
+            "name": "grafana-health",
+            "url": "http://10.63.30.40:3000/api/health"
+          }
+        ],
+        "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+      },
+      "config_uid": 0,
+      "config_gid": 0,
+      "config_mode": "0o644",
+      "local_textfile_metrics": [
+        {
+          "kind": "service",
+          "name": "dell-ops.service",
+          "active": 1
+        },
+        {
+          "kind": "http",
+          "name": "prometheus-readiness",
+          "up": 1,
+          "status": 200
+        },
+        {
+          "kind": "http",
+          "name": "alertmanager-readiness",
+          "up": 1,
+          "status": 200
+        },
+        {
+          "kind": "http",
+          "name": "grafana-health",
+          "up": 1,
+          "status": 200
+        }
+      ],
+      "pids_started_at_and_service_state_unchanged": true,
+      "vmid": 270,
+      "transport_exit_code": 0,
+      "at": "2026-11-06T14:12:58.895446+08:00"
+    }
+  ],
+  "status": "passed",
+  "prometheus_verification": {
+    "at": 1793945623.066884,
+    "roles": [
+      {
+        "role": "data-prod-db",
+        "instance": "10.63.10.10:9100",
+        "scrape_endpoint_is_existing_9100": true,
+        "target_up": true,
+        "collection_age_seconds": 97.5,
+        "metrics": [
+          {
+            "metric": "dell_guest_service_active",
+            "service": "dell-data-prod-db.service",
+            "value": 1.0,
+            "expected": 1
+          }
+        ],
+        "passed": true
+      },
+      {
+        "role": "data-prod-infra",
+        "instance": "10.63.10.11:9100",
+        "scrape_endpoint_is_existing_9100": true,
+        "target_up": true,
+        "collection_age_seconds": 94.4,
+        "metrics": [
+          {
+            "metric": "dell_guest_service_active",
+            "service": "dell-data-prod-infra.service",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_http_up",
+            "check": "nacos-readiness",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_http_status_code",
+            "check": "nacos-readiness",
+            "value": 200.0,
+            "expected": 200
+          }
+        ],
+        "passed": true
+      },
+      {
+        "role": "data-test",
+        "instance": "10.63.20.10:9100",
+        "scrape_endpoint_is_existing_9100": true,
+        "target_up": true,
+        "collection_age_seconds": 86.8,
+        "metrics": [
+          {
+            "metric": "dell_guest_service_active",
+            "service": "dell-data-test-data.service",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_http_up",
+            "check": "nacos-readiness",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_http_status_code",
+            "check": "nacos-readiness",
+            "value": 200.0,
+            "expected": 200
+          }
+        ],
+        "passed": true
+      },
+      {
+        "role": "artifact-service",
+        "instance": "10.63.30.20:9100",
+        "scrape_endpoint_is_existing_9100": true,
+        "target_up": true,
+        "collection_age_seconds": 79.2,
+        "metrics": [
+          {
+            "metric": "dell_guest_service_active",
+            "service": "dell-nexus.service",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_http_up",
+            "check": "nexus-status",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_http_status_code",
+            "check": "nexus-status",
+            "value": 200.0,
+            "expected": 200
+          }
+        ],
+        "passed": true
+      },
+      {
+        "role": "java-test-01",
+        "instance": "10.63.20.20:9100",
+        "scrape_endpoint_is_existing_9100": true,
+        "target_up": true,
+        "collection_age_seconds": 69.2,
+        "metrics": [
+          {
+            "metric": "dell_guest_service_active",
+            "service": "dell-finger-finger-service-system.service",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_service_active",
+            "service": "dell-finger-finger-service-coms.service",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_service_active",
+            "service": "dell-finger-finger-auth.service",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_service_active",
+            "service": "dell-finger-finger-bff-system.service",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_service_active",
+            "service": "dell-finger-finger-gateway-mobile.service",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_http_up",
+            "check": "finger-service-system-health",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_http_status_code",
+            "check": "finger-service-system-health",
+            "value": 200.0,
+            "expected": 200
+          },
+          {
+            "metric": "dell_guest_http_up",
+            "check": "finger-service-coms-health",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_http_status_code",
+            "check": "finger-service-coms-health",
+            "value": 200.0,
+            "expected": 200
+          },
+          {
+            "metric": "dell_guest_http_up",
+            "check": "finger-auth-health",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_http_status_code",
+            "check": "finger-auth-health",
+            "value": 200.0,
+            "expected": 200
+          },
+          {
+            "metric": "dell_guest_http_up",
+            "check": "finger-bff-system-health",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_http_status_code",
+            "check": "finger-bff-system-health",
+            "value": 200.0,
+            "expected": 200
+          },
+          {
+            "metric": "dell_guest_http_up",
+            "check": "finger-gateway-mobile-health",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_http_status_code",
+            "check": "finger-gateway-mobile-health",
+            "value": 200.0,
+            "expected": 200
+          }
+        ],
+        "passed": true
+      },
+      {
+        "role": "penpot-service",
+        "instance": "10.63.30.30:9100",
+        "scrape_endpoint_is_existing_9100": true,
+        "target_up": true,
+        "collection_age_seconds": 62.2,
+        "metrics": [
+          {
+            "metric": "dell_guest_service_active",
+            "service": "dell-penpot.service",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_http_up",
+            "check": "penpot-frontend",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_http_status_code",
+            "check": "penpot-frontend",
+            "value": 200.0,
+            "expected": 200
+          }
+        ],
+        "passed": true
+      },
+      {
+        "role": "nas-media",
+        "instance": "10.63.40.10:9100",
+        "scrape_endpoint_is_existing_9100": true,
+        "target_up": true,
+        "collection_age_seconds": 53.0,
+        "metrics": [
+          {
+            "metric": "dell_guest_service_active",
+            "service": "openmediavault-engined.service",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_service_active",
+            "service": "nginx.service",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_service_active",
+            "service": "smbd.service",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_service_active",
+            "service": "dell-nas-jellyfin.service",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_http_up",
+            "check": "omv-web",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_http_status_code",
+            "check": "omv-web",
+            "value": 200.0,
+            "expected": 200
+          },
+          {
+            "metric": "dell_guest_http_up",
+            "check": "jellyfin-health",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_http_status_code",
+            "check": "jellyfin-health",
+            "value": 200.0,
+            "expected": 200
+          }
+        ],
+        "passed": true
+      },
+      {
+        "role": "ops-service",
+        "instance": "10.63.30.40:9100",
+        "scrape_endpoint_is_existing_9100": true,
+        "target_up": true,
+        "collection_age_seconds": 44.9,
+        "metrics": [
+          {
+            "metric": "dell_guest_service_active",
+            "service": "dell-ops.service",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_http_up",
+            "check": "prometheus-readiness",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_http_status_code",
+            "check": "prometheus-readiness",
+            "value": 200.0,
+            "expected": 200
+          },
+          {
+            "metric": "dell_guest_http_up",
+            "check": "alertmanager-readiness",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_http_status_code",
+            "check": "alertmanager-readiness",
+            "value": 200.0,
+            "expected": 200
+          },
+          {
+            "metric": "dell_guest_http_up",
+            "check": "grafana-health",
+            "value": 1.0,
+            "expected": 1
+          },
+          {
+            "metric": "dell_guest_http_status_code",
+            "check": "grafana-health",
+            "value": 200.0,
+            "expected": 200
+          }
+        ],
+        "passed": true
+      }
+    ],
+    "target_count": 17,
+    "target_up_count": 17,
+    "passed": true,
+    "response_bodies_or_credentials_emitted": false,
+    "attempts": 1
+  },
+  "base_only_guests": {
+    "220": {
+      "sha256": "4480eebf78b274affc7c4a068b28e435cc2b3ee55c1dea652572de783c667f19",
+      "services": [
+        "ssh.service",
+        "qemu-guest-agent.service",
+        "prometheus-node-exporter.service"
+      ],
+      "http_checks": [],
+      "unchanged": true
+    },
+    "230": {
+      "sha256": "ff02fe9634b7a61df8a4675eb92ca9c33b79899539deb6329fc2816fb087ab54",
+      "services": [
+        "ssh.service",
+        "qemu-guest-agent.service",
+        "prometheus-node-exporter.service"
+      ],
+      "http_checks": [],
+      "unchanged": true
+    },
+    "231": {
+      "sha256": "4a0280628c7aac1dc05902434e844b75ffde3628f0df959101b217b0a800c1df",
+      "services": [
+        "ssh.service",
+        "qemu-guest-agent.service",
+        "prometheus-node-exporter.service"
+      ],
+      "http_checks": [],
+      "unchanged": true
+    },
+    "232": {
+      "sha256": "51fc6ba7c33deeb820f9c8b94a85c89ff0b533570d3e3f5219965b52707ef913",
+      "services": [
+        "ssh.service",
+        "qemu-guest-agent.service",
+        "prometheus-node-exporter.service"
+      ],
+      "http_checks": [],
+      "unchanged": true
+    }
+  },
+  "source_backup_directory": "private/monitoring-profile-backups/20261106T141015",
+  "source_sha256": {
+    "install-guest-baseline.py": "425a93927a51b1df6ba0ce2081d65814997ca3a8e3fbf32a0e7fe3178110bfab",
+    "activate-role-health.py": "086d84725baf08c28cd29bd520d7e5647adf54d0d97585dd6b822c9929a5ae4e",
+    "README.md": "36e1757d4b67fec083fa8efc1913c0f1d1305477d1a32d6bd62e0fb83e3eaa33"
+  },
+  "verification": {
+    "original_guest_baseline_tests": 33,
+    "all_tests_passed": true,
+    "configuration_fields_changed_only": [
+      "services",
+      "http_checks"
+    ],
+    "business_pids_and_container_started_at_unchanged": true,
+    "collector_health_path_allowlist_changed": false,
+    "pve_template_host_known_hosts_or_acl_changed": false,
+    "native_lark_unit_added": false,
+    "mac_probe_state_changed": false,
+    "mac_e2e_user_deferred": "evidence/implementation/mac-external-probe-java-e2e.json"
+  },
+  "completed_at": "2026-11-06T14:13:46.725361+08:00"
+}

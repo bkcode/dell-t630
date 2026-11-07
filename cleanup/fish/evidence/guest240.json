@@ -1,0 +1,104 @@
+{
+  "at": "2026-11-06T17:12:09.089180+00:00",
+  "exit_code": 0,
+  "result": {
+    "status": "installed-verified",
+    "vmid": 240,
+    "at": "2026-11-06T17:12:09.084597+00:00",
+    "checks": {
+      "fish_exact_version": true,
+      "fish_common_exact_version": true,
+      "binary_version_command": true,
+      "ub_nonconfig_private_smoke": true,
+      "ub_root_login_shells_unchanged": true,
+      "core_services_and_containers_PIDs_start_health_unchanged": true
+    },
+    "before_shells": {
+      "ub": "/bin/bash",
+      "root": "/bin/bash"
+    },
+    "after_shells": {
+      "ub": "/bin/bash",
+      "root": "/bin/bash"
+    },
+    "fish_binary_version": "fish, version 4.0.2",
+    "new_packages": [
+      "fish-common",
+      "libpcre2-32-0",
+      "fish"
+    ],
+    "NEEDRESTART_MODE": "l",
+    "no_install_recommends": true,
+    "existing_packages_upgraded_or_removed": false,
+    "apt_update_fullupgrade_autoremove_chsh_or_shellconfig_run": false,
+    "service_restart_requested_by_tool": false,
+    "core_before": {
+      "services": {
+        "qemu-guest-agent.service": {
+          "MainPID": "695",
+          "ExecMainStartTimestampMonotonic": "16805727",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "ssh.service": {
+          "MainPID": "725",
+          "ExecMainStartTimestampMonotonic": "17160834",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-networkd.service": {
+          "MainPID": "634",
+          "ExecMainStartTimestampMonotonic": "13825734",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "MainPID": "368",
+          "ExecMainStartTimestampMonotonic": "10062379",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "containers": {}
+    },
+    "core_after": {
+      "services": {
+        "qemu-guest-agent.service": {
+          "MainPID": "695",
+          "ExecMainStartTimestampMonotonic": "16805727",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "ssh.service": {
+          "MainPID": "725",
+          "ExecMainStartTimestampMonotonic": "17160834",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-networkd.service": {
+          "MainPID": "634",
+          "ExecMainStartTimestampMonotonic": "13825734",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "MainPID": "368",
+          "ExecMainStartTimestampMonotonic": "10062379",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "containers": {}
+    },
+    "user_config_temporary_smoke_cleaned": true
+  },
+  "new_strict_SSH_connection_verified": true
+}

@@ -1,0 +1,220 @@
+{
+  "at": "2026-11-06T14:35:51.110983+08:00",
+  "mode": "local-tests-and-config-only",
+  "real_webhook_read": false,
+  "guest270_accessed": false,
+  "external_messages_sent": false,
+  "native_checks": [
+    {
+      "mode": "acceptance",
+      "image": "prom/alertmanager@sha256:7619e9399e623c9f99a40cb199c2bceb972cbf725598a51dcbde69d51dcaaedf",
+      "exit_code": 0,
+      "network": "none",
+      "secrets_mounted": false,
+      "synthetic_placeholder_only": true,
+      "output_summary": "Checking '/etc/alertmanager/alertmanager.yml'  SUCCESS\nFound:\n - global config\n - route\n - 0 inhibit rules\n - 2 receivers\n - 0 templates\n\n"
+    },
+    {
+      "mode": "active",
+      "image": "prom/alertmanager@sha256:7619e9399e623c9f99a40cb199c2bceb972cbf725598a51dcbde69d51dcaaedf",
+      "exit_code": 0,
+      "network": "none",
+      "secrets_mounted": false,
+      "synthetic_placeholder_only": true,
+      "output_summary": "Checking '/etc/alertmanager/alertmanager.yml'  SUCCESS\nFound:\n - global config\n - route\n - 0 inhibit rules\n - 3 receivers\n - 0 templates\n\n"
+    }
+  ],
+  "tests": {
+    "exit_code": 0,
+    "output_summary": "...................................\n----------------------------------------------------------------------\nRan 35 tests in 2.583s\n\nOK\n"
+  },
+  "source_before": {
+    "penpot-penpot-frontend-1": {
+      "container_id": "0baef97331827c824e89ff303c1e700f4b6f36afa101e39a85c063956d862623",
+      "status": "running",
+      "running": true
+    },
+    "penpot-penpot-import-1": {
+      "container_id": "2ee2ba25a906bffde3ba606789637ab66e59672570836186ed6765fdf5487f25",
+      "status": "running",
+      "running": true
+    },
+    "penpot-penpot-worker-1": {
+      "container_id": "183a8b9f0096f49851caf952f7d5c52575779c6b3a15d66a173b2ba702a0e7ea",
+      "status": "running",
+      "running": true
+    },
+    "penpot-penpot-backend-1": {
+      "container_id": "409d564f9de683079f048572d86a9fd41859a5cc70367a0716f7b9b86adf278f",
+      "status": "running",
+      "running": true
+    },
+    "penpot-penpot-dns-1": {
+      "container_id": "8ac008d312c3fabf8b8e6dc67a6a5e1ee9129ca8daec9959c896b22fdf4e2ec4",
+      "status": "running",
+      "running": true
+    },
+    "penpot-penpot-exporter-1": {
+      "container_id": "50dcad169d95e62250723f97ebf240ec3d5591b2228ab08ad5ca5c1ce7b6741f",
+      "status": "running",
+      "running": true
+    },
+    "penpot-penpot-admin-console-1": {
+      "container_id": "26fe6a3fc9cfa9a03f0e6c4dce519278cc5c58c3c1b35c72fe983d5562092fac",
+      "status": "running",
+      "running": true
+    },
+    "penpot-penpot-mcp-1": {
+      "container_id": "ac619100a461903de6535bac69e7ef14f81b16d933e488a64b56f18eade5280f",
+      "status": "running",
+      "running": true
+    },
+    "penpot-penpot-valkey-1": {
+      "container_id": "64d4d31fffff4d18cbaec25719825a469613c52d294f8d680d901bde95eca507",
+      "status": "running",
+      "running": true
+    },
+    "penpot-penpot-postgres-1": {
+      "container_id": "1cabd374862fb4a26ca1fd6de6d96c9b79ba2a5295ebc2801f163cafc2ffad68",
+      "status": "running",
+      "running": true
+    },
+    "penpot-penpot-mailpit-1": {
+      "container_id": "c137da25e9fc1799235ee5e3ec35cf22933d0d2ab136aaef4ee497179d997621",
+      "status": "running",
+      "running": true
+    },
+    "nginx": {
+      "container_id": "f52a8a22e7b04535253c4379e63a096146aae20b5b2e48a07802dcc00adb4963",
+      "status": "running",
+      "running": true
+    },
+    "rabbitmq": {
+      "container_id": "676fa938c3eba6cfe2045970a7405c22e7ec4b304686812deb58f40eaac6e7ef",
+      "status": "running",
+      "running": true
+    },
+    "redis": {
+      "container_id": "19755277cfa7774a1de50bf4c4f50127a5d5eb8e0954d2b94f4f835957a2c33d",
+      "status": "running",
+      "running": true
+    },
+    "nexus3": {
+      "container_id": "4ee8299f444554c33b2a2dc7d6c53eb4e23df7586476dc53e6abf5cc83e8424f",
+      "status": "running",
+      "running": true
+    },
+    "mysql": {
+      "container_id": "1fee5c4074fac7f6fe309a7ecd24ef882a1b038c1890f13aef5fa04453105788",
+      "status": "running",
+      "running": true
+    },
+    "nacos": {
+      "container_id": "61cfa904c75240b900e5ec2b443f58ff05f5e906d29d3638b3656f422d4aed49",
+      "status": "running",
+      "running": true
+    }
+  },
+  "source_after": {
+    "penpot-penpot-frontend-1": {
+      "container_id": "0baef97331827c824e89ff303c1e700f4b6f36afa101e39a85c063956d862623",
+      "status": "running",
+      "running": true
+    },
+    "penpot-penpot-import-1": {
+      "container_id": "2ee2ba25a906bffde3ba606789637ab66e59672570836186ed6765fdf5487f25",
+      "status": "running",
+      "running": true
+    },
+    "penpot-penpot-worker-1": {
+      "container_id": "183a8b9f0096f49851caf952f7d5c52575779c6b3a15d66a173b2ba702a0e7ea",
+      "status": "running",
+      "running": true
+    },
+    "penpot-penpot-backend-1": {
+      "container_id": "409d564f9de683079f048572d86a9fd41859a5cc70367a0716f7b9b86adf278f",
+      "status": "running",
+      "running": true
+    },
+    "penpot-penpot-dns-1": {
+      "container_id": "8ac008d312c3fabf8b8e6dc67a6a5e1ee9129ca8daec9959c896b22fdf4e2ec4",
+      "status": "running",
+      "running": true
+    },
+    "penpot-penpot-exporter-1": {
+      "container_id": "50dcad169d95e62250723f97ebf240ec3d5591b2228ab08ad5ca5c1ce7b6741f",
+      "status": "running",
+      "running": true
+    },
+    "penpot-penpot-admin-console-1": {
+      "container_id": "26fe6a3fc9cfa9a03f0e6c4dce519278cc5c58c3c1b35c72fe983d5562092fac",
+      "status": "running",
+      "running": true
+    },
+    "penpot-penpot-mcp-1": {
+      "container_id": "ac619100a461903de6535bac69e7ef14f81b16d933e488a64b56f18eade5280f",
+      "status": "running",
+      "running": true
+    },
+    "penpot-penpot-valkey-1": {
+      "container_id": "64d4d31fffff4d18cbaec25719825a469613c52d294f8d680d901bde95eca507",
+      "status": "running",
+      "running": true
+    },
+    "penpot-penpot-postgres-1": {
+      "container_id": "1cabd374862fb4a26ca1fd6de6d96c9b79ba2a5295ebc2801f163cafc2ffad68",
+      "status": "running",
+      "running": true
+    },
+    "penpot-penpot-mailpit-1": {
+      "container_id": "c137da25e9fc1799235ee5e3ec35cf22933d0d2ab136aaef4ee497179d997621",
+      "status": "running",
+      "running": true
+    },
+    "nginx": {
+      "container_id": "f52a8a22e7b04535253c4379e63a096146aae20b5b2e48a07802dcc00adb4963",
+      "status": "running",
+      "running": true
+    },
+    "rabbitmq": {
+      "container_id": "676fa938c3eba6cfe2045970a7405c22e7ec4b304686812deb58f40eaac6e7ef",
+      "status": "running",
+      "running": true
+    },
+    "redis": {
+      "container_id": "19755277cfa7774a1de50bf4c4f50127a5d5eb8e0954d2b94f4f835957a2c33d",
+      "status": "running",
+      "running": true
+    },
+    "nexus3": {
+      "container_id": "4ee8299f444554c33b2a2dc7d6c53eb4e23df7586476dc53e6abf5cc83e8424f",
+      "status": "running",
+      "running": true
+    },
+    "mysql": {
+      "container_id": "1fee5c4074fac7f6fe309a7ecd24ef882a1b038c1890f13aef5fa04453105788",
+      "status": "running",
+      "running": true
+    },
+    "nacos": {
+      "container_id": "61cfa904c75240b900e5ec2b443f58ff05f5e906d29d3638b3656f422d4aed49",
+      "status": "running",
+      "running": true
+    }
+  },
+  "source_unchanged": true,
+  "code_sha256": {
+    "configuration.py": "18217358ee2c81f0f3a6404ebd95c6e6a4d5a982587175596f73b698e493fb20",
+    "acceptance270.py": "e3b4229612c54962ba76d83ca5188eb237fcfa481f9985671d541abef7f033fc",
+    "install270.py": "8f3b544116e049cc76bbe778a806b87ce00cbe1ae3521e842d83497629b4d726",
+    "bridge.py": "e4b251653d0ae9822351928d3f04b6d4a0833edbe50ce3e6057edc7de7182f80",
+    "dell-lark-notify.service": "682831587cd2d624aec40efb2651e0020a3c64b2630f5b6df88200aae0fc6fbf",
+    "audit270.py": "b8379626641380f3eb449e504c048794fbdfa4dfb2f0d5d22fad81ed325fd12b",
+    "collector-update270.py": "bea28893bbdcc95486e7e125d4d820e3fd8e134895be29bf8d5dc88c94e8d60f",
+    "rebuild270-network.py": "058193b00439bdaaaf4e5d30cc1f2f2e2df0db69b9ce22d7a5b0c4e60f68edea",
+    "validate-local.py": "e7713ee06c9aa110f2eba54001414bfe67460b3df0d54d8b114de7db22378da3",
+    "test_bridge.py": "8b06834518a4fb9061df659f884ee6b19d941cd4bdd59661cedd183477a8c08f",
+    "manager.py": "05087a34216658e8dce28c8789310630a97aaa71c62d6c712ec627300f4f5b7a"
+  },
+  "status": "local-tests-and-native-config-passed-no-live-delivery"
+}

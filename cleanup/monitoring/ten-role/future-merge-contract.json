@@ -1,0 +1,60 @@
+{
+  "status": "future-merge-planning-only",
+  "current_phase": "10guests12physicalroles15targets,221retained",
+  "pinned_ten_role_runtime_files": {
+    "200": {
+      "/opt/dell/guest-monitoring/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "/opt/dell/guest-monitoring/install-guest-baseline.py": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789"
+    },
+    "201": {
+      "/opt/dell/guest-monitoring/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "/opt/dell/guest-monitoring/install-guest-baseline.py": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789"
+    },
+    "210": {
+      "/opt/dell/guest-monitoring/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "/opt/dell/guest-monitoring/install-guest-baseline.py": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789"
+    },
+    "220": {
+      "/opt/dell/guest-monitoring/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "/opt/dell/guest-monitoring/install-guest-baseline.py": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789"
+    },
+    "221": {
+      "/opt/dell/guest-monitoring/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "/opt/dell/guest-monitoring/install-guest-baseline.py": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789"
+    },
+    "230": {
+      "/opt/dell/guest-monitoring/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "/opt/dell/guest-monitoring/install-guest-baseline.py": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789"
+    },
+    "240": {
+      "/opt/dell/guest-monitoring/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "/opt/dell/guest-monitoring/install-guest-baseline.py": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789"
+    },
+    "250": {
+      "/opt/dell/guest-monitoring/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "/opt/dell/guest-monitoring/install-guest-baseline.py": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789"
+    },
+    "260": {
+      "/opt/dell/guest-monitoring/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "/opt/dell/guest-monitoring/install-guest-baseline.py": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789"
+    },
+    "270": {
+      "/opt/dell/guest-monitoring/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "/opt/dell/guest-monitoring/install-guest-baseline.py": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789"
+    }
+  },
+  "pinned_ten_role_source_files": {
+    "infra/ops/guest-baseline/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+    "infra/ops/guest-baseline/install-guest-baseline.py": "72860ba5eeb268a626f587aa57ea8b683ba36477e21787080ec994d543d8792a"
+  },
+  "fileSD10_SHA256": "dc7cf106ebb42021191018c7eda121cf1deb7128308fee7a75beff9a5bf3c9f0",
+  "next_phase_requires": [
+    "explicitNexusmaintenance authorization",
+    "fresh10paired source+catalog/live fileSHAs",
+    "221 lifecycle handled only byroot after authorization",
+    "220alias31 actualonoriginalMAC and mergedNexushealthy",
+    "new220Nexushealth/profile+9catalog/ROLES patch reviewed together",
+    "fresh14target verification after finalSD9commit"
+  ],
+  "do_not_reuse_old_full12_baseline_by_blindSHA_replacement": true
+}

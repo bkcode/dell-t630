@@ -1,0 +1,38 @@
+{
+  "status": "running-git-backed-fresh-identity-official-data-imported",
+  "historical_sensitive_export": "rejected and never performed; workflow superseded by new target identities",
+  "summary": {
+    "checked_at": "2026-11-06T12:08:17.544407+08:00",
+    "guest_vmid": 250,
+    "guest_ip": "10.63.30.30",
+    "lan_url": "http://192.168.21.22:9001/",
+    "code_git_head": "ff1783e7865af7aae571c985f03e057631b7af63",
+    "local_commits_preserved": 2,
+    "source_worktree_modified": false,
+    "source_processes_stopped": false,
+    "old_deployment_or_account_identity_copied": false,
+    "target_identity_generation": "new-on-target",
+    "runtime_backend": "2.18.5-RC1",
+    "new_frontend_image": "dell-penpot-frontend:2.18.5-ff1783e-amd64",
+    "active_files_exported_imported": 3,
+    "source_teams_mapped": 2,
+    "active_source_projects_mapped": 2,
+    "source_library_relations": 0,
+    "unique_media_sha256_present": 971,
+    "structure_comparison": "all-three-equal",
+    "target_reboot_persistence": "passed",
+    "dedicated_copy_edit_export_reimport": "passed",
+    "authenticated_mcp_readonly_and_unauth_design_denial": "passed",
+    "async_import_completed_retry_restart": "passed",
+    "inflight_import_interruption": "not-run",
+    "https": "pending-no-domain",
+    "real_smtp": "pending-no-mail-provider",
+    "recycle_bin_history": "source-retained; 2 deleted projects/4 deleted files not activated",
+    "comment_and_version_history": "not migrated by official file format",
+    "credential_locations_on_guest": [
+      "/etc/penpot/new-identities.json",
+      "/etc/penpot/worker-credentials.json"
+    ],
+    "credential_values_in_evidence": false
+  }
+}

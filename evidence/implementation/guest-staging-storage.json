@@ -1,0 +1,277 @@
+{
+  "collected_at": "2026-11-06T05:57:11.825930+08:00",
+  "scope": "temporary-LAN-guest-system-storage-preparation",
+  "host_network_mutated": false,
+  "roles": [
+    {
+      "target": {
+        "vmid": 200,
+        "ip": "192.168.21.171",
+        "host_key_alias": "dell-vm200",
+        "host_key_fingerprint": "SHA256:DvGgHhP62V5OuMxO7+6rHZPSRU9N2hD+QWmtSe9HdqA",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "data-prod-db",
+      "status": "prepared",
+      "result": {
+        "role": "data-prod-db",
+        "hostname": "data-prod-db",
+        "staging_interface_ipv6_disabled": true,
+        "ipv6_kernel_loopback_preserved": true,
+        "business_services_started": false,
+        "storage": {
+          "device": "/dev/sdb",
+          "size_gib": 80,
+          "uuid": "d61c0e22-941e-447a-9e9a-1e9e50deb02f",
+          "mountpoint": "/srv/dell-data",
+          "guest_mount_verified": true
+        }
+      }
+    },
+    {
+      "target": {
+        "vmid": 201,
+        "ip": "192.168.21.177",
+        "host_key_alias": "dell-vm201",
+        "host_key_fingerprint": "SHA256:IVJyMVDW1aYjgf6s3oaE/0GwOmpy05ulDHAy8yggeiA",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "data-prod-infra",
+      "status": "prepared",
+      "result": {
+        "role": "data-prod-infra",
+        "hostname": "data-prod-infra",
+        "staging_interface_ipv6_disabled": true,
+        "ipv6_kernel_loopback_preserved": true,
+        "business_services_started": false,
+        "storage": {
+          "device": "/dev/sdb",
+          "size_gib": 24,
+          "uuid": "b85156c2-dac8-4b33-ab25-460aaf676c57",
+          "mountpoint": "/srv/dell-data",
+          "guest_mount_verified": true
+        }
+      }
+    },
+    {
+      "target": {
+        "vmid": 210,
+        "ip": "192.168.21.153",
+        "host_key_alias": "dell-vm210",
+        "host_key_fingerprint": "SHA256:0NGrIbuCNFPozzA3n4Gf7zE7q8JbG8gmWxLDBFPMnsU",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "data-test",
+      "status": "prepared",
+      "result": {
+        "role": "data-test",
+        "hostname": "data-test",
+        "staging_interface_ipv6_disabled": true,
+        "ipv6_kernel_loopback_preserved": true,
+        "business_services_started": false,
+        "storage": {
+          "device": "/dev/sdb",
+          "size_gib": 40,
+          "uuid": "dd1773f9-aa48-4401-a9c8-caf0f66845f3",
+          "mountpoint": "/srv/dell-data",
+          "guest_mount_verified": true
+        }
+      }
+    },
+    {
+      "target": {
+        "vmid": 220,
+        "ip": "192.168.21.163",
+        "host_key_alias": "dell-vm220",
+        "host_key_fingerprint": "SHA256:5X/KJJzRjVAwgXasAjR9ok7UW+6UhHyr1FdSKkOowBw",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "publish-service",
+      "status": "prepared",
+      "result": {
+        "role": "publish-service",
+        "hostname": "publish-service",
+        "staging_interface_ipv6_disabled": true,
+        "ipv6_kernel_loopback_preserved": true,
+        "business_services_started": false,
+        "storage": {
+          "device": "/dev/sda",
+          "size_gib": 100,
+          "uuid": "16dc6067-56ef-4687-a314-edc6421f9ed4",
+          "mountpoint": "/srv/dell-build",
+          "guest_mount_verified": true
+        }
+      }
+    },
+    {
+      "target": {
+        "vmid": 221,
+        "ip": "192.168.21.247",
+        "host_key_alias": "dell-vm221",
+        "host_key_fingerprint": "SHA256:7N4dWTJAt6KcZZYakrVc/mlUVPannAQRI28dmyMF7uE",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "artifact-service",
+      "status": "prepared",
+      "result": {
+        "role": "artifact-service",
+        "hostname": "artifact-service",
+        "staging_interface_ipv6_disabled": true,
+        "ipv6_kernel_loopback_preserved": true,
+        "business_services_started": false,
+        "storage": {
+          "device": "/dev/sda",
+          "size_gib": 100,
+          "uuid": "239dc45a-b1f3-408b-a8ef-7afa77b52204",
+          "mountpoint": "/srv/nexus",
+          "guest_mount_verified": true
+        }
+      }
+    },
+    {
+      "target": {
+        "vmid": 230,
+        "ip": "192.168.21.235",
+        "host_key_alias": "dell-vm230",
+        "host_key_fingerprint": "SHA256:QDO/Sh54JTBcdOpQPS72Gvtk+wuUjyiEP/KwWFUEO/s",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "java-prod-01",
+      "status": "prepared",
+      "result": {
+        "role": "java-prod-01",
+        "hostname": "java-prod-01",
+        "staging_interface_ipv6_disabled": true,
+        "ipv6_kernel_loopback_preserved": true,
+        "business_services_started": false,
+        "storage": null
+      }
+    },
+    {
+      "target": {
+        "vmid": 231,
+        "ip": "192.168.21.221",
+        "host_key_alias": "dell-vm231",
+        "host_key_fingerprint": "SHA256:jBZbSCpKbPGxG70+luD10Fz2zQU5CbRInk0W7sjTqxo",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "java-prod-02",
+      "status": "prepared",
+      "result": {
+        "role": "java-prod-02",
+        "hostname": "java-prod-02",
+        "staging_interface_ipv6_disabled": true,
+        "ipv6_kernel_loopback_preserved": true,
+        "business_services_started": false,
+        "storage": null
+      }
+    },
+    {
+      "target": {
+        "vmid": 232,
+        "ip": "192.168.21.148",
+        "host_key_alias": "dell-vm232",
+        "host_key_fingerprint": "SHA256:NYSxfiyZ2e0BikkyhtomHu3fAgTxdYCcbfq2rc8kARs",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "java-prod-03",
+      "status": "prepared",
+      "result": {
+        "role": "java-prod-03",
+        "hostname": "java-prod-03",
+        "staging_interface_ipv6_disabled": true,
+        "ipv6_kernel_loopback_preserved": true,
+        "business_services_started": false,
+        "storage": null
+      }
+    },
+    {
+      "target": {
+        "vmid": 240,
+        "ip": "192.168.21.112",
+        "host_key_alias": "dell-vm240",
+        "host_key_fingerprint": "SHA256:I/UslFEJaEwF2zaWAwDhPmlSQDY5Yqbv7HE5PGDOaNA",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "java-test-01",
+      "status": "prepared",
+      "result": {
+        "role": "java-test-01",
+        "hostname": "java-test-01",
+        "staging_interface_ipv6_disabled": true,
+        "ipv6_kernel_loopback_preserved": true,
+        "business_services_started": false,
+        "storage": null
+      }
+    },
+    {
+      "target": {
+        "vmid": 250,
+        "ip": "192.168.21.180",
+        "host_key_alias": "dell-vm250",
+        "host_key_fingerprint": "SHA256:CB7xsY1DIoonCx3SaDbWqGUIKaTcy1bCusZpVQccK4U",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "penpot-service",
+      "status": "prepared",
+      "result": {
+        "role": "penpot-service",
+        "hostname": "penpot-service",
+        "staging_interface_ipv6_disabled": true,
+        "ipv6_kernel_loopback_preserved": true,
+        "business_services_started": false,
+        "storage": {
+          "device": "/dev/sdb",
+          "size_gib": 100,
+          "uuid": "ccccda03-bffd-4054-afd3-e0e22f0c607e",
+          "mountpoint": "/srv/penpot",
+          "guest_mount_verified": true
+        }
+      }
+    },
+    {
+      "target": {
+        "vmid": 260,
+        "ip": "192.168.21.172",
+        "host_key_alias": "dell-vm260",
+        "host_key_fingerprint": "SHA256:T9f/CKfKek2AR1pXhJwT58Ys3YoH1I00zqf3Y7a+UxE",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "nas-media",
+      "status": "prepared",
+      "result": {
+        "role": "nas-media",
+        "hostname": "nas-media",
+        "staging_interface_ipv6_disabled": true,
+        "ipv6_kernel_loopback_preserved": true,
+        "business_services_started": false,
+        "storage": null
+      }
+    },
+    {
+      "target": {
+        "vmid": 270,
+        "ip": "192.168.21.124",
+        "host_key_alias": "dell-vm270",
+        "host_key_fingerprint": "SHA256:at37hIThlyw5rNVQdnJeXA/x3CSl3IrBtMNaA65Ccvc",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "ops-service",
+      "status": "prepared",
+      "result": {
+        "role": "ops-service",
+        "hostname": "ops-service",
+        "staging_interface_ipv6_disabled": true,
+        "ipv6_kernel_loopback_preserved": true,
+        "business_services_started": false,
+        "storage": {
+          "device": "/dev/sdb",
+          "size_gib": 32,
+          "uuid": "01b1f302-27be-4fbd-b4af-b8e782d85dea",
+          "mountpoint": "/srv/dell-data",
+          "guest_mount_verified": true
+        }
+      }
+    }
+  ]
+}

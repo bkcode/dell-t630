@@ -1,0 +1,23 @@
+services:
+  penpot-admin-console:
+    restart: 'no'
+  penpot-backend:
+    restart: 'no'
+  penpot-dns:
+    restart: 'no'
+  penpot-exporter:
+    restart: 'no'
+  penpot-frontend:
+    restart: 'no'
+  penpot-mailpit:
+    restart: 'no'
+  penpot-mcp:
+    restart: 'no'
+  penpot-import:
+    restart: 'no'
+  penpot-postgres:
+    restart: 'no'
+  penpot-valkey:
+    restart: 'no'
+  penpot-worker:
+    restart: 'no'

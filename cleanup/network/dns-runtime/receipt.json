@@ -1,0 +1,567 @@
+{
+  "at": "2026-11-07T02:28:30.100247+08:00",
+  "target": "190",
+  "exit_code": 0,
+  "result": {
+    "at": "2026-11-06T18:28:29.418464+00:00",
+    "scope": "190-owned-DNS-files-and-DNS-unit-only",
+    "status": "DNS-only-cleanup-applied-verified",
+    "backup_directory_190_private": "/var/lib/dell-gateway19/dns-cleanup/c30b6546fb0942a181f87460469e300a",
+    "approved_removed": [
+      [
+        "data-docker-base-tpl",
+        "192.168.19.101"
+      ],
+      [
+        "dell-docker-clone-a",
+        "192.168.19.193"
+      ],
+      [
+        "dell-docker-clone-b",
+        "192.168.19.195"
+      ],
+      [
+        "dell-docker-clone-test",
+        "192.168.19.192"
+      ],
+      [
+        "dell-linux-clone-b",
+        "192.168.19.194"
+      ],
+      [
+        "dell-linux-clone-test",
+        "192.168.19.191"
+      ],
+      [
+        "dell-restore-baseline",
+        "192.168.19.196"
+      ],
+      [
+        "dell-template-inspect",
+        "192.168.19.190"
+      ],
+      [
+        "java-prod-02",
+        "192.168.19.41"
+      ],
+      [
+        "java-prod-03",
+        "192.168.19.42"
+      ],
+      [
+        "publish-legacy",
+        "192.168.19.104"
+      ]
+    ],
+    "retained_aliases": [
+      [
+        "artifact-service",
+        "192.168.19.31"
+      ],
+      [
+        "publish-service",
+        "192.168.19.30"
+      ]
+    ],
+    "native_dnsmasq_test_exit": 0,
+    "lease_contents_read_or_overwritten_by_tool": false,
+    "lease_bytes_before": 0,
+    "before": {
+      "persistent_nonDNS_services": {
+        "dell-gateway19-firewall.service": [
+          "MainPID=0",
+          "ExecMainStartTimestampMonotonic=6730113",
+          "ActiveState=active",
+          "SubState=exited"
+        ],
+        "dell-gateway19-ready.service": [
+          "MainPID=0",
+          "ExecMainStartTimestampMonotonic=9847579",
+          "ActiveState=active",
+          "SubState=exited"
+        ],
+        "systemd-networkd.service": [
+          "MainPID=633",
+          "ExecMainStartTimestampMonotonic=8683207",
+          "ActiveState=active",
+          "SubState=running"
+        ],
+        "ssh.service": [
+          "MainPID=705",
+          "ExecMainStartTimestampMonotonic=10177708",
+          "ActiveState=active",
+          "SubState=running"
+        ],
+        "systemd-resolved.service": [
+          "MainPID=325",
+          "ExecMainStartTimestampMonotonic=5493297",
+          "ActiveState=active",
+          "SubState=running"
+        ]
+      },
+      "normalized_nft_sha256": "d1875f9aece48a297872544f78ee94e8311ccf4a47cd372cdcf4e9fe7b3083cd",
+      "routes": [
+        {
+          "dst": "default",
+          "gateway": "192.168.21.1",
+          "dev": "eth0",
+          "protocol": "static",
+          "metric": 100,
+          "flags": []
+        },
+        {
+          "dst": "192.168.19.0/24",
+          "dev": "eth1",
+          "protocol": "kernel",
+          "scope": "link",
+          "prefsrc": "192.168.19.1",
+          "flags": []
+        },
+        {
+          "dst": "192.168.21.0/24",
+          "dev": "eth0",
+          "protocol": "kernel",
+          "scope": "link",
+          "prefsrc": "192.168.21.23",
+          "flags": []
+        }
+      ],
+      "MAC_IPs": {
+        "WAN": {
+          "name": "eth0",
+          "mac": "02:63:19:01:90:00",
+          "v4": [
+            "192.168.21.23/24"
+          ]
+        },
+        "LAN": {
+          "name": "eth1",
+          "mac": "02:63:19:01:90:01",
+          "v4": [
+            "192.168.19.1/24"
+          ]
+        }
+      },
+      "forwarding_all_WAN_LAN": {
+        "all": "1",
+        "WAN": "1",
+        "LAN": "1"
+      },
+      "ip_forward": "1",
+      "lease_metadata": {
+        "uid": 999,
+        "gid": 65534,
+        "mode": "0o600"
+      },
+      "DNS_uid_caps": [
+        "CapabilityBoundingSet=cap_net_bind_service cap_net_admin cap_net_raw",
+        "AmbientCapabilities=cap_net_bind_service cap_net_admin cap_net_raw",
+        "User=dnsmasq",
+        "Group=nogroup",
+        "ReadWritePaths=/var/lib/misc/dnsmasq.leases",
+        "ProtectSystem=strict",
+        "NoNewPrivileges=yes"
+      ],
+      "SSH_auth": {
+        "pubkeyauthentication": "yes",
+        "passwordauthentication": "no",
+        "kbdinteractiveauthentication": "no"
+      },
+      "WireGuard_client_access": {
+        "source": "10.66.66.0/24",
+        "destination": "192.168.19.0/24",
+        "protocols": "all",
+        "gateway_local_addresses": [
+          "192.168.21.23",
+          "192.168.19.1"
+        ],
+        "no_NAT": true
+      }
+    },
+    "DNS_PID_before": "MainPID=822",
+    "after": {
+      "persistent_nonDNS_services": {
+        "dell-gateway19-firewall.service": [
+          "MainPID=0",
+          "ExecMainStartTimestampMonotonic=6730113",
+          "ActiveState=active",
+          "SubState=exited"
+        ],
+        "dell-gateway19-ready.service": [
+          "MainPID=0",
+          "ExecMainStartTimestampMonotonic=9847579",
+          "ActiveState=active",
+          "SubState=exited"
+        ],
+        "systemd-networkd.service": [
+          "MainPID=633",
+          "ExecMainStartTimestampMonotonic=8683207",
+          "ActiveState=active",
+          "SubState=running"
+        ],
+        "ssh.service": [
+          "MainPID=705",
+          "ExecMainStartTimestampMonotonic=10177708",
+          "ActiveState=active",
+          "SubState=running"
+        ],
+        "systemd-resolved.service": [
+          "MainPID=325",
+          "ExecMainStartTimestampMonotonic=5493297",
+          "ActiveState=active",
+          "SubState=running"
+        ]
+      },
+      "normalized_nft_sha256": "d1875f9aece48a297872544f78ee94e8311ccf4a47cd372cdcf4e9fe7b3083cd",
+      "routes": [
+        {
+          "dst": "default",
+          "gateway": "192.168.21.1",
+          "dev": "eth0",
+          "protocol": "static",
+          "metric": 100,
+          "flags": []
+        },
+        {
+          "dst": "192.168.19.0/24",
+          "dev": "eth1",
+          "protocol": "kernel",
+          "scope": "link",
+          "prefsrc": "192.168.19.1",
+          "flags": []
+        },
+        {
+          "dst": "192.168.21.0/24",
+          "dev": "eth0",
+          "protocol": "kernel",
+          "scope": "link",
+          "prefsrc": "192.168.21.23",
+          "flags": []
+        }
+      ],
+      "MAC_IPs": {
+        "WAN": {
+          "name": "eth0",
+          "mac": "02:63:19:01:90:00",
+          "v4": [
+            "192.168.21.23/24"
+          ]
+        },
+        "LAN": {
+          "name": "eth1",
+          "mac": "02:63:19:01:90:01",
+          "v4": [
+            "192.168.19.1/24"
+          ]
+        }
+      },
+      "forwarding_all_WAN_LAN": {
+        "all": "1",
+        "WAN": "1",
+        "LAN": "1"
+      },
+      "ip_forward": "1",
+      "lease_metadata": {
+        "uid": 999,
+        "gid": 65534,
+        "mode": "0o600"
+      },
+      "DNS_uid_caps": [
+        "CapabilityBoundingSet=cap_net_bind_service cap_net_admin cap_net_raw",
+        "AmbientCapabilities=cap_net_bind_service cap_net_admin cap_net_raw",
+        "User=dnsmasq",
+        "Group=nogroup",
+        "ReadWritePaths=/var/lib/misc/dnsmasq.leases",
+        "ProtectSystem=strict",
+        "NoNewPrivileges=yes"
+      ],
+      "SSH_auth": {
+        "pubkeyauthentication": "yes",
+        "passwordauthentication": "no",
+        "kbdinteractiveauthentication": "no"
+      },
+      "WireGuard_client_access": {
+        "source": "10.66.66.0/24",
+        "destination": "192.168.19.0/24",
+        "protocols": "all",
+        "gateway_local_addresses": [
+          "192.168.21.23",
+          "192.168.19.1"
+        ],
+        "no_NAT": true
+      }
+    },
+    "nonDNS_invariants_unchanged": true,
+    "retained_A_queries": {
+      "cf-tunnel.dell.home.arpa": {
+        "UDP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.5"
+          ]
+        },
+        "TCP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.5"
+          ]
+        }
+      },
+      "data-prod-db.dell.home.arpa": {
+        "UDP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.10"
+          ]
+        },
+        "TCP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.10"
+          ]
+        }
+      },
+      "data-prod-infra.dell.home.arpa": {
+        "UDP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.11"
+          ]
+        },
+        "TCP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.11"
+          ]
+        }
+      },
+      "data-test.dell.home.arpa": {
+        "UDP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.20"
+          ]
+        },
+        "TCP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.20"
+          ]
+        }
+      },
+      "publish-service.dell.home.arpa": {
+        "UDP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.30"
+          ]
+        },
+        "TCP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.30"
+          ]
+        }
+      },
+      "artifact-service.dell.home.arpa": {
+        "UDP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.31"
+          ]
+        },
+        "TCP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.31"
+          ]
+        }
+      },
+      "java-prod-01.dell.home.arpa": {
+        "UDP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.40"
+          ]
+        },
+        "TCP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.40"
+          ]
+        }
+      },
+      "java-test-01.dell.home.arpa": {
+        "UDP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.45"
+          ]
+        },
+        "TCP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.45"
+          ]
+        }
+      },
+      "penpot-service.dell.home.arpa": {
+        "UDP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.50"
+          ]
+        },
+        "TCP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.50"
+          ]
+        }
+      },
+      "nas-media.dell.home.arpa": {
+        "UDP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.60"
+          ]
+        },
+        "TCP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.60"
+          ]
+        }
+      },
+      "ops-service.dell.home.arpa": {
+        "UDP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.70"
+          ]
+        },
+        "TCP": {
+          "rcode": 0,
+          "A": [
+            "192.168.19.70"
+          ]
+        }
+      }
+    },
+    "retired_NXDOMAIN_queries": {
+      "data-docker-base-tpl.dell.home.arpa": {
+        "UDP": {
+          "rcode": 3,
+          "A": []
+        },
+        "TCP": {
+          "rcode": 3,
+          "A": []
+        }
+      },
+      "dell-docker-clone-a.dell.home.arpa": {
+        "UDP": {
+          "rcode": 3,
+          "A": []
+        },
+        "TCP": {
+          "rcode": 3,
+          "A": []
+        }
+      },
+      "dell-docker-clone-b.dell.home.arpa": {
+        "UDP": {
+          "rcode": 3,
+          "A": []
+        },
+        "TCP": {
+          "rcode": 3,
+          "A": []
+        }
+      },
+      "dell-docker-clone-test.dell.home.arpa": {
+        "UDP": {
+          "rcode": 3,
+          "A": []
+        },
+        "TCP": {
+          "rcode": 3,
+          "A": []
+        }
+      },
+      "dell-linux-clone-b.dell.home.arpa": {
+        "UDP": {
+          "rcode": 3,
+          "A": []
+        },
+        "TCP": {
+          "rcode": 3,
+          "A": []
+        }
+      },
+      "dell-linux-clone-test.dell.home.arpa": {
+        "UDP": {
+          "rcode": 3,
+          "A": []
+        },
+        "TCP": {
+          "rcode": 3,
+          "A": []
+        }
+      },
+      "dell-restore-baseline.dell.home.arpa": {
+        "UDP": {
+          "rcode": 3,
+          "A": []
+        },
+        "TCP": {
+          "rcode": 3,
+          "A": []
+        }
+      },
+      "dell-template-inspect.dell.home.arpa": {
+        "UDP": {
+          "rcode": 3,
+          "A": []
+        },
+        "TCP": {
+          "rcode": 3,
+          "A": []
+        }
+      },
+      "java-prod-02.dell.home.arpa": {
+        "UDP": {
+          "rcode": 3,
+          "A": []
+        },
+        "TCP": {
+          "rcode": 3,
+          "A": []
+        }
+      },
+      "java-prod-03.dell.home.arpa": {
+        "UDP": {
+          "rcode": 3,
+          "A": []
+        },
+        "TCP": {
+          "rcode": 3,
+          "A": []
+        }
+      },
+      "publish-legacy.dell.home.arpa": {
+        "UDP": {
+          "rcode": 3,
+          "A": []
+        },
+        "TCP": {
+          "rcode": 3,
+          "A": []
+        }
+      }
+    },
+    "DNS_PID_after": "MainPID=3139",
+    "lease_bytes_after": 0
+  },
+  "PVE_OW_other_guest_Nexus_writes": false
+}

@@ -1,0 +1,47 @@
+{
+  "first_tool": "high_level_overview",
+  "api_info_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "type": {
+        "type": "string",
+        "minLength": 1
+      },
+      "member": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "type"
+    ]
+  },
+  "docs": {
+    "Page": {
+      "isError": false,
+      "text": "```\nname: string\n```\n\nThe `name` property is the name of the page."
+    },
+    "File": {
+      "isError": false,
+      "text": "```\nreadonly name: string\n```\n\nThe `name` for the file"
+    }
+  },
+  "state": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"result\": {\n    \"fileId\": \"13a31dab-5204-818d-8008-e7004b9343a1\",\n    \"fileName\": \"Dell dedicated MCP acceptance\",\n    \"pageId\": \"13a31dab-5204-818d-8008-e7004b9343a2\",\n    \"pageName\": \"Page 1\",\n    \"selectionCount\": 0,\n    \"topLevel\": {\n      \"id\": \"00000000-0000-0000-0000-000000000000\",\n      \"name\": \"Root Frame\",\n      \"type\": \"board\",\n      \"children\": []\n    }\n  },\n  \"log\": \"\"\n}"
+      }
+    ]
+  },
+  "tokens": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"result\": {},\n  \"log\": \"\"\n}"
+      }
+    ]
+  },
+  "mutations": 0,
+  "default_connector_used": false
+}

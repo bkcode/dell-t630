@@ -1,0 +1,200 @@
+name: dell-ops
+services:
+  prometheus:
+    pids_limit: 1024
+    platform: linux/amd64
+    restart: 'no'
+    logging: &id001
+      driver: local
+      options:
+        max-size: 10m
+        max-file: '3'
+    security_opt: &id002
+    - no-new-privileges:true
+    cap_drop: &id003
+    - ALL
+    image: prom/prometheus:v3.16.0@sha256:89c1a644817e9ad70fa2af76c84898e327c1de7063735f962e8313b1e28672c3
+    cpus: '1.0'
+    mem_limit: 1536m
+    memswap_limit: 1536m
+    command:
+    - --config.file=/etc/prometheus/prometheus.yml
+    - --storage.tsdb.path=/prometheus
+    - --storage.tsdb.retention.time=14d
+    - --storage.tsdb.retention.size=8GB
+    volumes:
+    - type: bind
+      source: ./config/prometheus
+      target: /etc/prometheus
+      bind:
+        create_host_path: false
+      read_only: true
+    - type: bind
+      source: ${DATA_ROOT:?required}/prometheus
+      target: /prometheus
+      bind:
+        create_host_path: false
+    ports:
+    - ${SERVICE_IP:?required}:9090:9090
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - wget -q -O /dev/null http://127.0.0.1:9090/-/ready
+      interval: 15s
+      timeout: 8s
+      retries: 12
+      start_period: 60s
+    stop_grace_period: 60s
+    networks:
+      default:
+        ipv4_address: 172.18.0.2
+  grafana:
+    pids_limit: 1024
+    platform: linux/amd64
+    restart: 'no'
+    logging: *id001
+    security_opt: *id002
+    cap_drop: *id003
+    image: grafana/grafana:13.3.0@sha256:6e5d306338670f381a942f1c50d3c266bf71531e5ddd9ee4fc1a133dac5ce63d
+    cpus: '0.5'
+    mem_limit: 768m
+    memswap_limit: 768m
+    environment:
+      GF_SECURITY_ADMIN_USER: ${GRAFANA_ADMIN_USER:?required}
+      GF_SECURITY_ADMIN_PASSWORD__FILE: /run/secrets/grafana-admin-password
+      GF_SERVER_ROOT_URL: ${GRAFANA_ROOT_URL:?required}
+      GF_SECURITY_COOKIE_SECURE: ${GRAFANA_COOKIE_SECURE:-false}
+      GF_USERS_ALLOW_SIGN_UP: 'false'
+      GF_AUTH_ANONYMOUS_ENABLED: 'false'
+      GF_SMTP_ENABLED: 'false'
+      GF_UNIFIED_ALERTING_ENABLED: 'false'
+      GF_ANALYTICS_REPORTING_ENABLED: 'false'
+      GF_ANALYTICS_CHECK_FOR_UPDATES: 'false'
+      GF_ANALYTICS_CHECK_FOR_PLUGIN_UPDATES: 'false'
+    volumes:
+    - type: bind
+      source: ./config/grafana/provisioning
+      target: /etc/grafana/provisioning
+      bind:
+        create_host_path: false
+      read_only: true
+    - type: bind
+      source: ./config/grafana/dashboards
+      target: /etc/grafana/dashboards
+      bind:
+        create_host_path: false
+      read_only: true
+    - type: bind
+      source: ${DATA_ROOT:?required}/grafana
+      target: /var/lib/grafana
+      bind:
+        create_host_path: false
+    secrets:
+    - grafana-admin-password
+    ports:
+    - ${SERVICE_IP:?required}:3000:3000
+    healthcheck:
+      test:
+      - CMD
+      - curl
+      - --fail
+      - --silent
+      - --max-time
+      - '5'
+      - http://127.0.0.1:3000/api/health
+      interval: 15s
+      timeout: 8s
+      retries: 12
+      start_period: 60s
+    stop_grace_period: 60s
+    networks:
+      default:
+        ipv4_address: 172.18.0.5
+  alertmanager:
+    pids_limit: 1024
+    platform: linux/amd64
+    restart: 'no'
+    logging: *id001
+    security_opt: *id002
+    cap_drop: *id003
+    image: prom/alertmanager:v0.34.2@sha256:7619e9399e623c9f99a40cb199c2bceb972cbf725598a51dcbde69d51dcaaedf
+    cpus: '0.25'
+    mem_limit: 256m
+    memswap_limit: 256m
+    command:
+    - --config.file=/etc/alertmanager/alertmanager.yml
+    - --storage.path=/alertmanager
+    - --cluster.listen-address=
+    volumes:
+    - type: bind
+      source: ./config/alertmanager
+      target: /etc/alertmanager
+      bind:
+        create_host_path: false
+      read_only: true
+    - type: bind
+      source: ${DATA_ROOT:?required}/alertmanager
+      target: /alertmanager
+      bind:
+        create_host_path: false
+    ports:
+    - ${SERVICE_IP:?required}:9093:9093
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - wget -q -O /dev/null http://127.0.0.1:9093/-/ready
+      interval: 15s
+      timeout: 8s
+      retries: 12
+      start_period: 60s
+    stop_grace_period: 30s
+    secrets:
+    - lark-bridge-token
+    networks:
+      default:
+        ipv4_address: 172.18.0.3
+  blackbox:
+    pids_limit: 1024
+    platform: linux/amd64
+    restart: 'no'
+    logging: *id001
+    security_opt: *id002
+    cap_drop: *id003
+    image: prom/blackbox-exporter:v0.29.1@sha256:66eae352a79e6f677aeddd8c25a9bdb017586dc5fbd230f22329213d891f94bd
+    cpus: '0.25'
+    mem_limit: 128m
+    memswap_limit: 128m
+    user: 65534:65534
+    command:
+    - --config.file=/etc/blackbox_exporter/blackbox.yml
+    volumes:
+    - type: bind
+      source: ./config/blackbox
+      target: /etc/blackbox_exporter
+      bind:
+        create_host_path: false
+      read_only: true
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - wget -q -O /dev/null http://127.0.0.1:9115/
+      interval: 15s
+      timeout: 8s
+      retries: 12
+      start_period: 60s
+    stop_grace_period: 30s
+    networks:
+      default:
+        ipv4_address: 172.18.0.4
+secrets:
+  grafana-admin-password:
+    file: ./secrets/grafana-admin-password
+  lark-bridge-token:
+    file: ./secrets/lark-bridge-token
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 172.18.0.0/16
+        gateway: 172.18.0.1

@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-06T11:48:10.785157+08:00",
+  "result": {
+    "vmid": 220,
+    "role": "publish-service",
+    "private_ip": "10.63.30.10",
+    "user": "publisher",
+    "uid": 999,
+    "groups": [
+      "publisher"
+    ],
+    "identity_created": true,
+    "key_created": true,
+    "private_key_path": "/var/lib/dell-publisher/.ssh/test240_ed25519",
+    "private_key_mode": "0600",
+    "private_key_read_or_exported": false,
+    "public_key": "[public key stored only in private/publisher; fingerprint retained]",
+    "public_fingerprint": "256 SHA256:CM5jqsVt6VHzApGnyhXaU5Hg45Wvyfh2ng0X1YppvlU dell-test240-publisher-v1 (ED25519)",
+    "target240_modified": false,
+    "services_started": false
+  }
+}

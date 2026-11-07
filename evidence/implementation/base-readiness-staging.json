@@ -1,0 +1,798 @@
+{
+  "collected_at": "2026-11-06T07:22:47.563006+08:00",
+  "scope": "staging-base-readiness-not-business-acceptance",
+  "roles": [
+    {
+      "role": "data-prod-db",
+      "target": {
+        "vmid": 200,
+        "ip": "192.168.21.171",
+        "host_key_alias": "dell-vm200",
+        "host_key_fingerprint": "SHA256:DvGgHhP62V5OuMxO7+6rHZPSRU9N2hD+QWmtSe9HdqA",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "result": {
+        "hostname": "data-prod-db",
+        "user": "ub",
+        "os": {
+          "id": "debian",
+          "version": "13"
+        },
+        "cloud_init": {
+          "boot_status_code": "enabled-by-generator",
+          "datasource": "nocloud",
+          "detail": "DataSourceNoCloud [seed=/dev/sr0]",
+          "errors": [],
+          "extended_status": "done",
+          "init": {
+            "errors": [],
+            "finished": 11.99,
+            "recoverable_errors": {},
+            "start": 10.57
+          },
+          "init-local": {
+            "errors": [],
+            "finished": 7.01,
+            "recoverable_errors": {},
+            "start": 5.56
+          },
+          "last_update": "Thu, 01 Jan 1970 00:00:17 +0000",
+          "modules-config": {
+            "errors": [],
+            "finished": 12.54,
+            "recoverable_errors": {},
+            "start": 12.19
+          },
+          "modules-final": {
+            "errors": [],
+            "finished": 17.4,
+            "recoverable_errors": {},
+            "start": 15.58
+          },
+          "recoverable_errors": {},
+          "stage": null,
+          "status": "done"
+        },
+        "ntp_synchronized": "yes",
+        "guest_agent": "active",
+        "exporter_enabled": "masked",
+        "exporter_active": "inactive",
+        "business_containers": "",
+        "docker": {
+          "Name": "data-prod-db",
+          "ServerVersion": "29.9.3",
+          "Driver": "overlay2",
+          "DockerRootDir": "/var/lib/docker",
+          "Containers": 0,
+          "Images": 4,
+          "LiveRestoreEnabled": false
+        },
+        "java": null,
+        "unexpected_business_ports": [],
+        "no_business_stack_started": true
+      }
+    },
+    {
+      "role": "data-prod-infra",
+      "target": {
+        "vmid": 201,
+        "ip": "192.168.21.177",
+        "host_key_alias": "dell-vm201",
+        "host_key_fingerprint": "SHA256:IVJyMVDW1aYjgf6s3oaE/0GwOmpy05ulDHAy8yggeiA",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "result": {
+        "hostname": "data-prod-infra",
+        "user": "ub",
+        "os": {
+          "id": "debian",
+          "version": "13"
+        },
+        "cloud_init": {
+          "boot_status_code": "enabled-by-generator",
+          "datasource": "nocloud",
+          "detail": "DataSourceNoCloud [seed=/dev/sr0]",
+          "errors": [],
+          "extended_status": "done",
+          "init": {
+            "errors": [],
+            "finished": 11.95,
+            "recoverable_errors": {},
+            "start": 10.8
+          },
+          "init-local": {
+            "errors": [],
+            "finished": 7.25,
+            "recoverable_errors": {},
+            "start": 5.94
+          },
+          "last_update": "Thu, 01 Jan 1970 00:00:17 +0000",
+          "modules-config": {
+            "errors": [],
+            "finished": 12.53,
+            "recoverable_errors": {},
+            "start": 12.13
+          },
+          "modules-final": {
+            "errors": [],
+            "finished": 17.58,
+            "recoverable_errors": {},
+            "start": 15.61
+          },
+          "recoverable_errors": {},
+          "stage": null,
+          "status": "done"
+        },
+        "ntp_synchronized": "yes",
+        "guest_agent": "active",
+        "exporter_enabled": "masked",
+        "exporter_active": "inactive",
+        "business_containers": "",
+        "docker": {
+          "Name": "data-prod-infra",
+          "ServerVersion": "29.9.3",
+          "Driver": "overlay2",
+          "DockerRootDir": "/var/lib/docker",
+          "Containers": 0,
+          "Images": 4,
+          "LiveRestoreEnabled": false
+        },
+        "java": null,
+        "unexpected_business_ports": [],
+        "no_business_stack_started": true
+      }
+    },
+    {
+      "role": "data-test",
+      "target": {
+        "vmid": 210,
+        "ip": "192.168.21.153",
+        "host_key_alias": "dell-vm210",
+        "host_key_fingerprint": "SHA256:0NGrIbuCNFPozzA3n4Gf7zE7q8JbG8gmWxLDBFPMnsU",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "result": {
+        "hostname": "data-test",
+        "user": "ub",
+        "os": {
+          "id": "debian",
+          "version": "13"
+        },
+        "cloud_init": {
+          "boot_status_code": "enabled-by-generator",
+          "datasource": "nocloud",
+          "detail": "DataSourceNoCloud [seed=/dev/sr0]",
+          "errors": [],
+          "extended_status": "done",
+          "init": {
+            "errors": [],
+            "finished": 16.4,
+            "recoverable_errors": {},
+            "start": 15.11
+          },
+          "init-local": {
+            "errors": [],
+            "finished": 11.67,
+            "recoverable_errors": {},
+            "start": 9.79
+          },
+          "last_update": "Thu, 01 Jan 1970 00:00:27 +0000",
+          "modules-config": {
+            "errors": [],
+            "finished": 17.55,
+            "recoverable_errors": {},
+            "start": 16.66
+          },
+          "modules-final": {
+            "errors": [],
+            "finished": 27.69,
+            "recoverable_errors": {},
+            "start": 25.42
+          },
+          "recoverable_errors": {},
+          "stage": null,
+          "status": "done"
+        },
+        "ntp_synchronized": "yes",
+        "guest_agent": "active",
+        "exporter_enabled": "masked",
+        "exporter_active": "inactive",
+        "business_containers": "",
+        "docker": {
+          "Name": "data-test",
+          "ServerVersion": "29.9.3",
+          "Driver": "overlay2",
+          "DockerRootDir": "/var/lib/docker",
+          "Containers": 0,
+          "Images": 4,
+          "LiveRestoreEnabled": false
+        },
+        "java": null,
+        "unexpected_business_ports": [],
+        "no_business_stack_started": true
+      }
+    },
+    {
+      "role": "publish-service",
+      "target": {
+        "vmid": 220,
+        "ip": "192.168.21.163",
+        "host_key_alias": "dell-vm220",
+        "host_key_fingerprint": "SHA256:5X/KJJzRjVAwgXasAjR9ok7UW+6UhHyr1FdSKkOowBw",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "result": {
+        "hostname": "publish-service",
+        "user": "ub",
+        "os": {
+          "id": "debian",
+          "version": "13"
+        },
+        "cloud_init": {
+          "boot_status_code": "enabled-by-generator",
+          "datasource": "nocloud",
+          "detail": "DataSourceNoCloud [seed=/dev/sr0]",
+          "errors": [],
+          "extended_status": "done",
+          "init": {
+            "errors": [],
+            "finished": 17.24,
+            "recoverable_errors": {},
+            "start": 15.78
+          },
+          "init-local": {
+            "errors": [],
+            "finished": 11.77,
+            "recoverable_errors": {},
+            "start": 9.54
+          },
+          "last_update": "Thu, 01 Jan 1970 00:00:20 +0000",
+          "modules-config": {
+            "errors": [],
+            "finished": 18.17,
+            "recoverable_errors": {},
+            "start": 17.43
+          },
+          "modules-final": {
+            "errors": [],
+            "finished": 20.57,
+            "recoverable_errors": {},
+            "start": 18.26
+          },
+          "recoverable_errors": {},
+          "stage": null,
+          "status": "done"
+        },
+        "ntp_synchronized": "yes",
+        "guest_agent": "active",
+        "exporter_enabled": "masked",
+        "exporter_active": "inactive",
+        "business_containers": null,
+        "docker": null,
+        "java": "openjdk version \"21.0.13\" 2026-10-20",
+        "unexpected_business_ports": [],
+        "no_business_stack_started": true
+      }
+    },
+    {
+      "role": "artifact-service",
+      "target": {
+        "vmid": 221,
+        "ip": "192.168.21.247",
+        "host_key_alias": "dell-vm221",
+        "host_key_fingerprint": "SHA256:7N4dWTJAt6KcZZYakrVc/mlUVPannAQRI28dmyMF7uE",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "result": {
+        "hostname": "artifact-service",
+        "user": "ub",
+        "os": {
+          "id": "debian",
+          "version": "13"
+        },
+        "cloud_init": {
+          "boot_status_code": "enabled-by-generator",
+          "datasource": "nocloud",
+          "detail": "DataSourceNoCloud [seed=/dev/sr0]",
+          "errors": [],
+          "extended_status": "done",
+          "init": {
+            "errors": [],
+            "finished": 20.94,
+            "recoverable_errors": {},
+            "start": 19.64
+          },
+          "init-local": {
+            "errors": [],
+            "finished": 15.87,
+            "recoverable_errors": {},
+            "start": 14.11
+          },
+          "last_update": "Thu, 01 Jan 1970 00:00:36 +0000",
+          "modules-config": {
+            "errors": [],
+            "finished": 21.76,
+            "recoverable_errors": {},
+            "start": 21.19
+          },
+          "modules-final": {
+            "errors": [],
+            "finished": 36.38,
+            "recoverable_errors": {},
+            "start": 33.71
+          },
+          "recoverable_errors": {},
+          "stage": null,
+          "status": "done"
+        },
+        "ntp_synchronized": "yes",
+        "guest_agent": "active",
+        "exporter_enabled": "masked",
+        "exporter_active": "inactive",
+        "business_containers": "",
+        "docker": {
+          "Name": "artifact-service",
+          "ServerVersion": "29.9.3",
+          "Driver": "overlay2",
+          "DockerRootDir": "/var/lib/docker",
+          "Containers": 0,
+          "Images": 7,
+          "LiveRestoreEnabled": false
+        },
+        "java": null,
+        "unexpected_business_ports": [],
+        "no_business_stack_started": true
+      }
+    },
+    {
+      "role": "java-prod-01",
+      "target": {
+        "vmid": 230,
+        "ip": "192.168.21.235",
+        "host_key_alias": "dell-vm230",
+        "host_key_fingerprint": "SHA256:QDO/Sh54JTBcdOpQPS72Gvtk+wuUjyiEP/KwWFUEO/s",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "result": {
+        "hostname": "java-prod-01",
+        "user": "ub",
+        "os": {
+          "id": "debian",
+          "version": "13"
+        },
+        "cloud_init": {
+          "boot_status_code": "enabled-by-generator",
+          "datasource": "nocloud",
+          "detail": "DataSourceNoCloud [seed=/dev/sr0]",
+          "errors": [],
+          "extended_status": "done",
+          "init": {
+            "errors": [],
+            "finished": 19.92,
+            "recoverable_errors": {},
+            "start": 17.6
+          },
+          "init-local": {
+            "errors": [],
+            "finished": 13.52,
+            "recoverable_errors": {},
+            "start": 11.71
+          },
+          "last_update": "Thu, 01 Jan 1970 00:00:23 +0000",
+          "modules-config": {
+            "errors": [],
+            "finished": 20.84,
+            "recoverable_errors": {},
+            "start": 20.12
+          },
+          "modules-final": {
+            "errors": [],
+            "finished": 23.12,
+            "recoverable_errors": {},
+            "start": 20.93
+          },
+          "recoverable_errors": {},
+          "stage": null,
+          "status": "done"
+        },
+        "ntp_synchronized": "yes",
+        "guest_agent": "active",
+        "exporter_enabled": "masked",
+        "exporter_active": "inactive",
+        "business_containers": null,
+        "docker": null,
+        "java": "openjdk version \"21.0.13\" 2026-10-20",
+        "unexpected_business_ports": [],
+        "no_business_stack_started": true
+      }
+    },
+    {
+      "role": "java-prod-02",
+      "target": {
+        "vmid": 231,
+        "ip": "192.168.21.221",
+        "host_key_alias": "dell-vm231",
+        "host_key_fingerprint": "SHA256:jBZbSCpKbPGxG70+luD10Fz2zQU5CbRInk0W7sjTqxo",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "result": {
+        "hostname": "java-prod-02",
+        "user": "ub",
+        "os": {
+          "id": "debian",
+          "version": "13"
+        },
+        "cloud_init": {
+          "boot_status_code": "enabled-by-generator",
+          "datasource": "nocloud",
+          "detail": "DataSourceNoCloud [seed=/dev/sr0]",
+          "errors": [],
+          "extended_status": "done",
+          "init": {
+            "errors": [],
+            "finished": 22.57,
+            "recoverable_errors": {},
+            "start": 20.53
+          },
+          "init-local": {
+            "errors": [],
+            "finished": 16.38,
+            "recoverable_errors": {},
+            "start": 14.35
+          },
+          "last_update": "Thu, 01 Jan 1970 00:00:26 +0000",
+          "modules-config": {
+            "errors": [],
+            "finished": 23.48,
+            "recoverable_errors": {},
+            "start": 22.7
+          },
+          "modules-final": {
+            "errors": [],
+            "finished": 26.05,
+            "recoverable_errors": {},
+            "start": 23.55
+          },
+          "recoverable_errors": {},
+          "stage": null,
+          "status": "done"
+        },
+        "ntp_synchronized": "yes",
+        "guest_agent": "active",
+        "exporter_enabled": "masked",
+        "exporter_active": "inactive",
+        "business_containers": null,
+        "docker": null,
+        "java": "openjdk version \"21.0.13\" 2026-10-20",
+        "unexpected_business_ports": [],
+        "no_business_stack_started": true
+      }
+    },
+    {
+      "role": "java-prod-03",
+      "target": {
+        "vmid": 232,
+        "ip": "192.168.21.148",
+        "host_key_alias": "dell-vm232",
+        "host_key_fingerprint": "SHA256:NYSxfiyZ2e0BikkyhtomHu3fAgTxdYCcbfq2rc8kARs",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "result": {
+        "hostname": "java-prod-03",
+        "user": "ub",
+        "os": {
+          "id": "debian",
+          "version": "13"
+        },
+        "cloud_init": {
+          "boot_status_code": "enabled-by-generator",
+          "datasource": "nocloud",
+          "detail": "DataSourceNoCloud [seed=/dev/sr1]",
+          "errors": [],
+          "extended_status": "done",
+          "init": {
+            "errors": [],
+            "finished": 12.47,
+            "recoverable_errors": {},
+            "start": 11.86
+          },
+          "init-local": {
+            "errors": [],
+            "finished": 9.66,
+            "recoverable_errors": {},
+            "start": 9.0
+          },
+          "last_update": "Thu, 01 Jan 1970 00:00:13 +0000",
+          "modules-config": {
+            "errors": [],
+            "finished": 12.73,
+            "recoverable_errors": {},
+            "start": 12.63
+          },
+          "modules-final": {
+            "errors": [],
+            "finished": 13.06,
+            "recoverable_errors": {},
+            "start": 12.93
+          },
+          "recoverable_errors": {},
+          "stage": null,
+          "status": "done"
+        },
+        "ntp_synchronized": "yes",
+        "guest_agent": "active",
+        "exporter_enabled": "masked",
+        "exporter_active": "inactive",
+        "business_containers": null,
+        "docker": null,
+        "java": "openjdk version \"21.0.13\" 2026-10-20",
+        "unexpected_business_ports": [],
+        "no_business_stack_started": true
+      }
+    },
+    {
+      "role": "java-test-01",
+      "target": {
+        "vmid": 240,
+        "ip": "192.168.21.112",
+        "host_key_alias": "dell-vm240",
+        "host_key_fingerprint": "SHA256:I/UslFEJaEwF2zaWAwDhPmlSQDY5Yqbv7HE5PGDOaNA",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "result": {
+        "hostname": "java-test-01",
+        "user": "ub",
+        "os": {
+          "id": "debian",
+          "version": "13"
+        },
+        "cloud_init": {
+          "boot_status_code": "enabled-by-generator",
+          "datasource": "nocloud",
+          "detail": "DataSourceNoCloud [seed=/dev/sr0]",
+          "errors": [],
+          "extended_status": "done",
+          "init": {
+            "errors": [],
+            "finished": 21.96,
+            "recoverable_errors": {},
+            "start": 19.47
+          },
+          "init-local": {
+            "errors": [],
+            "finished": 15.56,
+            "recoverable_errors": {},
+            "start": 13.55
+          },
+          "last_update": "Thu, 01 Jan 1970 00:00:25 +0000",
+          "modules-config": {
+            "errors": [],
+            "finished": 22.88,
+            "recoverable_errors": {},
+            "start": 22.11
+          },
+          "modules-final": {
+            "errors": [],
+            "finished": 25.25,
+            "recoverable_errors": {},
+            "start": 22.96
+          },
+          "recoverable_errors": {},
+          "stage": null,
+          "status": "done"
+        },
+        "ntp_synchronized": "yes",
+        "guest_agent": "active",
+        "exporter_enabled": "masked",
+        "exporter_active": "inactive",
+        "business_containers": null,
+        "docker": null,
+        "java": "openjdk version \"21.0.13\" 2026-10-20",
+        "unexpected_business_ports": [],
+        "no_business_stack_started": true
+      }
+    },
+    {
+      "role": "penpot-service",
+      "target": {
+        "vmid": 250,
+        "ip": "192.168.21.180",
+        "host_key_alias": "dell-vm250",
+        "host_key_fingerprint": "SHA256:CB7xsY1DIoonCx3SaDbWqGUIKaTcy1bCusZpVQccK4U",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "result": {
+        "hostname": "penpot-service",
+        "user": "ub",
+        "os": {
+          "id": "debian",
+          "version": "13"
+        },
+        "cloud_init": {
+          "boot_status_code": "enabled-by-generator",
+          "datasource": "nocloud",
+          "detail": "DataSourceNoCloud [seed=/dev/sr0]",
+          "errors": [],
+          "extended_status": "done",
+          "init": {
+            "errors": [],
+            "finished": 21.54,
+            "recoverable_errors": {},
+            "start": 19.61
+          },
+          "init-local": {
+            "errors": [],
+            "finished": 15.52,
+            "recoverable_errors": {},
+            "start": 13.72
+          },
+          "last_update": "Thu, 01 Jan 1970 00:00:30 +0000",
+          "modules-config": {
+            "errors": [],
+            "finished": 22.68,
+            "recoverable_errors": {},
+            "start": 21.8
+          },
+          "modules-final": {
+            "errors": [],
+            "finished": 30.82,
+            "recoverable_errors": {},
+            "start": 29.02
+          },
+          "recoverable_errors": {},
+          "stage": null,
+          "status": "done"
+        },
+        "ntp_synchronized": "yes",
+        "guest_agent": "active",
+        "exporter_enabled": "masked",
+        "exporter_active": "inactive",
+        "business_containers": "",
+        "docker": {
+          "Name": "penpot-service",
+          "ServerVersion": "29.9.3",
+          "Driver": "overlay2",
+          "DockerRootDir": "/srv/penpot/docker",
+          "Containers": 0,
+          "Images": 12,
+          "LiveRestoreEnabled": false
+        },
+        "java": null,
+        "unexpected_business_ports": [],
+        "no_business_stack_started": true
+      }
+    },
+    {
+      "role": "nas-media",
+      "target": {
+        "vmid": 260,
+        "ip": "192.168.21.172",
+        "host_key_alias": "dell-vm260",
+        "host_key_fingerprint": "SHA256:T9f/CKfKek2AR1pXhJwT58Ys3YoH1I00zqf3Y7a+UxE",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "result": {
+        "hostname": "nas-media",
+        "user": "ub",
+        "os": {
+          "id": "debian",
+          "version": "13"
+        },
+        "cloud_init": {
+          "boot_status_code": "enabled-by-generator",
+          "datasource": "nocloud",
+          "detail": "DataSourceNoCloud [seed=/dev/sr0]",
+          "errors": [],
+          "extended_status": "done",
+          "init": {
+            "errors": [],
+            "finished": 20.51,
+            "recoverable_errors": {},
+            "start": 19.25
+          },
+          "init-local": {
+            "errors": [],
+            "finished": 14.98,
+            "recoverable_errors": {},
+            "start": 13.08
+          },
+          "last_update": "Thu, 01 Jan 1970 00:00:23 +0000",
+          "modules-config": {
+            "errors": [],
+            "finished": 21.29,
+            "recoverable_errors": {},
+            "start": 20.68
+          },
+          "modules-final": {
+            "errors": [],
+            "finished": 23.39,
+            "recoverable_errors": {},
+            "start": 21.37
+          },
+          "recoverable_errors": {},
+          "stage": null,
+          "status": "done"
+        },
+        "ntp_synchronized": "yes",
+        "guest_agent": "active",
+        "exporter_enabled": "masked",
+        "exporter_active": "inactive",
+        "business_containers": null,
+        "docker": null,
+        "java": null,
+        "unexpected_business_ports": [],
+        "no_business_stack_started": true
+      }
+    },
+    {
+      "role": "ops-service",
+      "target": {
+        "vmid": 270,
+        "ip": "192.168.21.124",
+        "host_key_alias": "dell-vm270",
+        "host_key_fingerprint": "SHA256:at37hIThlyw5rNVQdnJeXA/x3CSl3IrBtMNaA65Ccvc",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "result": {
+        "hostname": "ops-service",
+        "user": "ub",
+        "os": {
+          "id": "debian",
+          "version": "13"
+        },
+        "cloud_init": {
+          "boot_status_code": "enabled-by-generator",
+          "datasource": "nocloud",
+          "detail": "DataSourceNoCloud [seed=/dev/sr0]",
+          "errors": [],
+          "extended_status": "done",
+          "init": {
+            "errors": [],
+            "finished": 19.82,
+            "recoverable_errors": {},
+            "start": 18.51
+          },
+          "init-local": {
+            "errors": [],
+            "finished": 14.79,
+            "recoverable_errors": {},
+            "start": 12.77
+          },
+          "last_update": "Thu, 01 Jan 1970 00:00:27 +0000",
+          "modules-config": {
+            "errors": [],
+            "finished": 20.59,
+            "recoverable_errors": {},
+            "start": 20.07
+          },
+          "modules-final": {
+            "errors": [],
+            "finished": 27.11,
+            "recoverable_errors": {},
+            "start": 24.96
+          },
+          "recoverable_errors": {},
+          "stage": null,
+          "status": "done"
+        },
+        "ntp_synchronized": "yes",
+        "guest_agent": "active",
+        "exporter_enabled": "masked",
+        "exporter_active": "inactive",
+        "business_containers": "",
+        "docker": {
+          "Name": "ops-service",
+          "ServerVersion": "29.9.3",
+          "Driver": "overlay2",
+          "DockerRootDir": "/var/lib/docker",
+          "Containers": 0,
+          "Images": 6,
+          "LiveRestoreEnabled": false
+        },
+        "java": null,
+        "unexpected_business_ports": [],
+        "no_business_stack_started": true
+      }
+    }
+  ]
+}

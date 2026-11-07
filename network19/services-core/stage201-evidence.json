@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-06T08:58:42.904307+00:00",
+  "exit_code": 0,
+  "result": {
+    "status": "private-backups-and-candidates-staged",
+    "vmid": 201,
+    "path": "/root/dell-network19/staged/services-core-v1",
+    "reports": [
+      {
+        "tool": "stage-commit-env.py",
+        "exit_code": 0,
+        "status": "private-env-staged-not-committed"
+      }
+    ],
+    "active_files_addresses_services_unchanged": true,
+    "formal_apps_started": false,
+    "Nacos_published": false,
+    "secret_values_emitted": false
+  }
+}

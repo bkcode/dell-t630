@@ -1,0 +1,35 @@
+{
+  "role": "nas-media",
+  "private_ip": "192.168.19.60",
+  "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+  "services": [
+    "ssh.service",
+    "qemu-guest-agent.service",
+    "prometheus-node-exporter.service",
+    "openmediavault-engined.service",
+    "nginx.service",
+    "smbd.service",
+    "dell-nas-jellyfin.service"
+  ],
+  "http_checks": [
+    {
+      "name": "omv-web",
+      "url": "http://192.168.19.60:80/"
+    },
+    {
+      "name": "jellyfin-health",
+      "url": "http://192.168.19.60:8096/health"
+    }
+  ],
+  "candidate_service_units": [
+    "docker.service",
+    "dell-nas-jellyfin.service"
+  ],
+  "candidate_http_checks": [
+    {
+      "name": "jellyfin-health",
+      "url": "http://192.168.19.60:8096/health"
+    }
+  ],
+  "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+}

@@ -1,0 +1,233 @@
+name: dell-data-test-data
+services:
+  mysql:
+    pids_limit: 1024
+    platform: linux/amd64
+    restart: 'no'
+    logging: &id001
+      driver: local
+      options:
+        max-size: 10m
+        max-file: '3'
+    image: mysql:8.4.5@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840
+    cpus: '0.75'
+    mem_limit: 896m
+    memswap_limit: 896m
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql-root-password
+      MYSQL_DATABASE: ${NACOS_DB_NAME:?required}
+      MYSQL_USER: ${NACOS_DB_USER:?required}
+      MYSQL_PASSWORD_FILE: /run/secrets/nacos-db-password
+    ports:
+    - ${SERVICE_IP:?required}:3306:3306
+    volumes:
+    - type: bind
+      source: ${DATA_ROOT:?required}/mysql
+      target: /var/lib/mysql
+      bind:
+        create_host_path: false
+    - type: bind
+      source: ./config/mysql.cnf
+      target: /etc/mysql/conf.d/dell.cnf
+      bind:
+        create_host_path: false
+      read_only: true
+    - type: bind
+      source: ./vendor/nacos-mysql-schema-2.4.3.sql
+      target: /docker-entrypoint-initdb.d/10-nacos.sql
+      bind:
+        create_host_path: false
+      read_only: true
+    - type: bind
+      source: ./scripts/mysql-health.sh
+      target: /opt/health/mysql-health.sh
+      bind:
+        create_host_path: false
+      read_only: true
+    secrets:
+    - mysql-root-password
+    - nacos-db-password
+    healthcheck:
+      test:
+      - CMD
+      - sh
+      - /opt/health/mysql-health.sh
+      interval: 15s
+      timeout: 10s
+      retries: 12
+      start_period: 90s
+    stop_grace_period: 90s
+  nacos:
+    pids_limit: 1024
+    platform: linux/amd64
+    restart: 'no'
+    logging: *id001
+    image: nacos/nacos-server:v2.4.3@sha256:c8dc1db0ac6a345b62bad4e76963d25237a90bf45704795e7cb4d1d972b024a3
+    cpus: '1.0'
+    mem_limit: 1g
+    memswap_limit: 1g
+    environment:
+      MODE: standalone
+      PREFER_HOST_MODE: ip
+      NACOS_SERVER_IP: ${SERVICE_IP:?required}
+      SPRING_DATASOURCE_PLATFORM: mysql
+      MYSQL_SERVICE_HOST: ${MYSQL_HOST:?required}
+      MYSQL_SERVICE_PORT: '3306'
+      MYSQL_SERVICE_DB_NAME: ${NACOS_DB_NAME:?required}
+      MYSQL_SERVICE_USER: ${NACOS_DB_USER:?required}
+      MYSQL_DATABASE_NUM: '1'
+      MYSQL_SERVICE_DB_PARAM: characterEncoding=utf8&connectTimeout=3000&socketTimeout=10000&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true
+      NACOS_AUTH_ENABLE: 'true'
+      NACOS_AUTH_USER_AGENT_AUTH_WHITE_ENABLE: 'false'
+      NACOS_AUTH_IDENTITY_KEY: dell-${ENVIRONMENT:?required}-server
+      JVM_XMS: 256m
+      JVM_XMX: 512m
+      JVM_XMN: 128m
+      JAVA_TOOL_OPTIONS: -XX:MaxMetaspaceSize=128m -XX:ReservedCodeCacheSize=64m -XX:MaxDirectMemorySize=64m
+    entrypoint:
+    - /bin/bash
+    - /opt/bootstrap/nacos-entrypoint.sh
+    ports:
+    - ${SERVICE_IP:?required}:8848:8848
+    - ${SERVICE_IP:?required}:9848:9848
+    volumes:
+    - type: bind
+      source: ${DATA_ROOT:?required}/nacos/logs
+      target: /home/nacos/logs
+      bind:
+        create_host_path: false
+    - type: bind
+      source: ${DATA_ROOT:?required}/nacos/data
+      target: /home/nacos/data
+      bind:
+        create_host_path: false
+    - type: bind
+      source: ./vendor/nacos-application-2.4.3.properties
+      target: /home/nacos/conf/application.properties
+      bind:
+        create_host_path: false
+      read_only: true
+    - type: bind
+      source: ./scripts/nacos-entrypoint.sh
+      target: /opt/bootstrap/nacos-entrypoint.sh
+      bind:
+        create_host_path: false
+      read_only: true
+    secrets:
+    - nacos-db-password
+    - nacos-auth-token
+    - nacos-identity-value
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - curl --fail --silent --max-time 5 http://127.0.0.1:8848/nacos/v1/console/health/readiness
+        >/dev/null
+      interval: 15s
+      timeout: 8s
+      retries: 20
+      start_period: 90s
+    stop_grace_period: 60s
+    depends_on:
+      mysql:
+        condition: service_healthy
+  redis:
+    pids_limit: 1024
+    platform: linux/amd64
+    restart: 'no'
+    logging: *id001
+    image: redis:7.4.4@sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a
+    cpus: '0.25'
+    mem_limit: 256m
+    memswap_limit: 256m
+    entrypoint:
+    - sh
+    - /opt/bootstrap/redis-entrypoint.sh
+    environment:
+      REDIS_MAXMEMORY: 96mb
+    ports:
+    - ${SERVICE_IP:?required}:6379:6379
+    volumes:
+    - type: bind
+      source: ${DATA_ROOT:?required}/redis
+      target: /data
+      bind:
+        create_host_path: false
+    - type: bind
+      source: ./scripts/redis-entrypoint.sh
+      target: /opt/bootstrap/redis-entrypoint.sh
+      bind:
+        create_host_path: false
+      read_only: true
+    - type: bind
+      source: ./scripts/redis-health.sh
+      target: /opt/health/redis-health.sh
+      bind:
+        create_host_path: false
+      read_only: true
+    secrets:
+    - redis-password
+    healthcheck:
+      test:
+      - CMD
+      - sh
+      - /opt/health/redis-health.sh
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+    stop_grace_period: 60s
+    tmpfs:
+    - /run/dell-redis:size=1m,mode=0711,uid=0,gid=0
+  rabbitmq:
+    pids_limit: 1024
+    platform: linux/amd64
+    restart: 'no'
+    logging: *id001
+    image: rabbitmq:3.13.7-management@sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920
+    hostname: rabbitmq-${ENVIRONMENT:?required}
+    cpus: '0.5'
+    mem_limit: 512m
+    memswap_limit: 512m
+    environment:
+      RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS: +S 2:2
+    ports:
+    - ${SERVICE_IP:?required}:5672:5672
+    - ${SERVICE_IP:?required}:15672:15672
+    volumes:
+    - type: bind
+      source: ${DATA_ROOT:?required}/rabbitmq
+      target: /var/lib/rabbitmq
+      bind:
+        create_host_path: false
+    - type: bind
+      source: ./config/rabbitmq.conf
+      target: /etc/rabbitmq/rabbitmq.conf
+      bind:
+        create_host_path: false
+      read_only: true
+    secrets:
+    - rabbit-definitions.json
+    healthcheck:
+      test:
+      - CMD
+      - rabbitmq-diagnostics
+      - -q
+      - check_running
+      interval: 20s
+      timeout: 15s
+      retries: 12
+      start_period: 60s
+    stop_grace_period: 90s
+secrets:
+  mysql-root-password:
+    file: ./secrets/mysql-root-password
+  nacos-auth-token:
+    file: ./secrets/nacos-auth-token
+  nacos-db-password:
+    file: ./secrets/nacos-db-password
+  nacos-identity-value:
+    file: ./secrets/nacos-identity-value
+  rabbit-definitions.json:
+    file: ./secrets/rabbit-definitions.json
+  redis-password:
+    file: ./secrets/redis-password

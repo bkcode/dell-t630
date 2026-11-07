@@ -1,0 +1,12 @@
+{
+  "exit_code": 0,
+  "stdout": "{\"mount\": \"{\\n   \\\"filesystems\\\": [\\n      {\\n         \\\"target\\\": \\\"/mnt/dell-artifacts\\\",\\n         \\\"source\\\": \\\"/dev/sr1\\\",\\n         \\\"fstype\\\": \\\"udf\\\",\\n         \\\"options\\\": \\\"ro,nosuid,nodev,noexec,relatime,iocharset=utf8\\\"\\n      }\\n   ]\\n}\\n\", \"archives\": [{\"name\": \"custom-penpot-amd64-images.tar\", \"bytes\": 2637143552}, {\"name\": \"target-amd64-data-images.tar\", \"bytes\": 1460631040}, {\"name\": \"target-amd64-extras-images.tar\", \"bytes\": 3746444288}, {\"name\": \"target-amd64-nexus-images.tar\", \"bytes\": 688315392}, {\"name\": \"target-amd64-penpot-images.tar\", \"bytes\": 4430068224}], \"business_containers\": \"\"}\n",
+  "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+  "target": {
+    "vmid": 210,
+    "ip": "192.168.21.153",
+    "host_key_alias": "dell-vm210",
+    "host_key_fingerprint": "SHA256:0NGrIbuCNFPozzA3n4Gf7zE7q8JbG8gmWxLDBFPMnsU",
+    "trust_source": "PVE QGA over known SSH host"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "status": "full-VPN-explicitly-authorized-minimal-one-rule-replacement-validated",
+  "added": [
+    "+    ip saddr 10.66.66.0/24 ip daddr 192.168.19.0/24 counter accept comment \"trusted-WireGuard-to-server19\""
+  ],
+  "removed": [
+    "-    ip saddr 10.66.66.0/24 ip daddr 192.168.19.50 tcp dport 9001 counter accept comment \"WireGuard-Penpot-only\""
+  ],
+  "binding_guards_peer_rules_and_host_L3_unchanged": true,
+  "invalid_broader_contracts_rejected": 5
+}

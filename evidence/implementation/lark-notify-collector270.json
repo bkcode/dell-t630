@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-06T14:26:28.179283+08:00",
+  "target": "ops270",
+  "result": {
+    "status": "ops270-native-notifier-monitored",
+    "services_before": [
+      "dell-ops.service",
+      "prometheus-node-exporter.service",
+      "qemu-guest-agent.service",
+      "ssh.service"
+    ],
+    "services_after": [
+      "dell-ops.service",
+      "prometheus-node-exporter.service",
+      "qemu-guest-agent.service",
+      "ssh.service",
+      "dell-lark-notify.service"
+    ],
+    "URLs_and_all_other_fields_unchanged": true,
+    "unprivileged_check": "passed",
+    "sampled_once": true,
+    "textfile_present_active": true,
+    "Prometheus_service_active": 1,
+    "notifications_sent_by_this_action": false
+  }
+}

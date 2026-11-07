@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-06T17:10:58.461532+08:00",
+  "action": "hot-stage",
+  "target": {
+    "vmid": 190,
+    "ip": "192.168.21.23",
+    "host_key_alias": "dell-gw190",
+    "host_key_fingerprint": "SHA256:i2MOCPizZ+sOeM1Hxe76A0Qrz6Tlcis0IStJPBNX96E",
+    "trust_source": "trusted PVE QGA;both gateway IPs and hostname verified"
+  },
+  "independent_strict_SSH": true,
+  "client_key_copied": false,
+  "code_sha256": {
+    "manage.py": "3971c7abfabc01ccbdbcbbfcd15f9c800451b911564655b9f331a4f7fba0c9b6",
+    "policy.py": "82b0676fcfaac3a0bd6abeffb88c4f5cd20163fe6f9fbd3f2527aa82b884a61a"
+  },
+  "exit_code": 0,
+  "result": {
+    "status": "hot-policy-activation-scheduled",
+    "nonce": "10c24105ac9a4dbb87db9f209529c054",
+    "deadline_utc": "2026-11-06T09:14:00.647607+00:00",
+    "rollback_armed": true,
+    "no_service_or_address_or_sysctl_restart": true
+  }
+}

@@ -1,0 +1,387 @@
+{
+  "schema_version": 1,
+  "collected_at": "2026-11-05T23:13:49.688795+08:00",
+  "timezone": "Asia/Shanghai",
+  "host_scope": "local-Mac-OrbStack-not-T630",
+  "mode": "read-only",
+  "context": "orbstack",
+  "containers": [
+    {
+      "name": "nacos",
+      "image": "nacos/nacos-server:v2.4.3",
+      "image_id": "sha256:e7e48cb036c4e72bbb37b2fa04557e1fca192392eb954120e7b0b785fa08ae6f",
+      "image_architecture": "arm64",
+      "state": "running",
+      "network_mode": "host",
+      "restart_policy": "no",
+      "memory_limit_bytes": 0,
+      "nano_cpus": 0,
+      "mounts": [
+        {
+          "type": "bind",
+          "name": null,
+          "destination": "/home/nacos/logs"
+        }
+      ],
+      "compose_working_dir": "/Users/yangzhaohui/work/nacos",
+      "compose_files": "/Users/yangzhaohui/work/nacos/docker-compose.yml"
+    },
+    {
+      "name": "mysql",
+      "image": "mysql:8.4.5",
+      "image_id": "sha256:b2f81adb2f3335ee77c6a74a6099bea0c5dca5b51ed01cd84c7966d826992764",
+      "image_architecture": "arm64",
+      "state": "running",
+      "network_mode": "host",
+      "restart_policy": "no",
+      "memory_limit_bytes": 0,
+      "nano_cpus": 0,
+      "mounts": [
+        {
+          "type": "bind",
+          "name": null,
+          "destination": "/var/lib/mysql"
+        }
+      ],
+      "compose_working_dir": "/Users/yangzhaohui/work/nacos",
+      "compose_files": "/Users/yangzhaohui/work/nacos/docker-compose.yml"
+    },
+    {
+      "name": "redis",
+      "image": "redis:7.4.4",
+      "image_id": "sha256:b8bbd8ea40e06ac580453a51bac3341e29a492b75ea7cd1b517e82a421a0b926",
+      "image_architecture": "arm64",
+      "state": "running",
+      "network_mode": "host",
+      "restart_policy": "no",
+      "memory_limit_bytes": 0,
+      "nano_cpus": 0,
+      "mounts": [
+        {
+          "type": "bind",
+          "name": null,
+          "destination": "/data"
+        }
+      ],
+      "compose_working_dir": "/Users/yangzhaohui/work/nacos",
+      "compose_files": "/Users/yangzhaohui/work/nacos/docker-compose.yml"
+    },
+    {
+      "name": "rabbitmq",
+      "image": "rabbitmq:3-management",
+      "image_id": "sha256:7c0ce624561b1eba19a1fc35008450a0b6bd2c08fa8088ce46d7bc39415130a8",
+      "image_architecture": "arm64",
+      "state": "running",
+      "network_mode": "host",
+      "restart_policy": "no",
+      "memory_limit_bytes": 0,
+      "nano_cpus": 0,
+      "mounts": [
+        {
+          "type": "bind",
+          "name": null,
+          "destination": "/var/lib/rabbitmq"
+        }
+      ],
+      "compose_working_dir": "/Users/yangzhaohui/work/nacos",
+      "compose_files": "/Users/yangzhaohui/work/nacos/docker-compose.yml"
+    },
+    {
+      "name": "nexus3",
+      "image": "sonatype/nexus3",
+      "image_id": "sha256:e90bcee9a286ce698455ba1524f811390b9f77d18e893986ac20b65346cb81d4",
+      "image_architecture": "arm64",
+      "state": "running",
+      "network_mode": "host",
+      "restart_policy": "no",
+      "memory_limit_bytes": 0,
+      "nano_cpus": 0,
+      "mounts": [
+        {
+          "type": "bind",
+          "name": null,
+          "destination": "/nexus-data"
+        }
+      ],
+      "compose_working_dir": "/Users/yangzhaohui/work/nacos",
+      "compose_files": "/Users/yangzhaohui/work/nacos/docker-compose.yml"
+    },
+    {
+      "name": "nginx",
+      "image": "nginx:latest",
+      "image_id": "sha256:f46d9988131118c112be07525503d4a7cda698d90c7e39d62be70ea202a9a0f2",
+      "image_architecture": "arm64",
+      "state": "running",
+      "network_mode": "host",
+      "restart_policy": "always",
+      "memory_limit_bytes": 0,
+      "nano_cpus": 0,
+      "mounts": [
+        {
+          "type": "bind",
+          "name": null,
+          "destination": "/etc/nginx/conf.d"
+        },
+        {
+          "type": "bind",
+          "name": null,
+          "destination": "/usr/local/etc/nginx/certs"
+        },
+        {
+          "type": "bind",
+          "name": null,
+          "destination": "/var/log/nginx"
+        }
+      ],
+      "compose_working_dir": "/Users/yangzhaohui/work/nacos",
+      "compose_files": "/Users/yangzhaohui/work/nacos/docker-compose.yml"
+    },
+    {
+      "name": "penpot-penpot-frontend-1",
+      "image": "penpot-frontend-selfhost:local",
+      "image_id": "sha256:a1a9c9bb90b93f3cff334448648be90fc3ca7e315840298772f43b24306f5c82",
+      "image_architecture": "arm64",
+      "state": "running",
+      "network_mode": "penpot_penpot",
+      "restart_policy": "always",
+      "memory_limit_bytes": 268435456,
+      "nano_cpus": 1000000000,
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "penpot_penpot_assets",
+          "destination": "/opt/data/assets"
+        },
+        {
+          "type": "bind",
+          "name": null,
+          "destination": "/run/secrets/login-defaults"
+        }
+      ],
+      "compose_working_dir": "/Users/yangzhaohui/work/www/harness/penpot",
+      "compose_files": "/Users/yangzhaohui/work/www/harness/penpot/compose.yaml"
+    },
+    {
+      "name": "penpot-penpot-backend-1",
+      "image": "penpotapp/backend:2.18.5",
+      "image_id": "sha256:28dd4e06b33a70d9ace1b3589def985cddd3f5b49b4964d06a5093381356ee7c",
+      "image_architecture": "arm64",
+      "state": "running",
+      "network_mode": "penpot_penpot",
+      "restart_policy": "always",
+      "memory_limit_bytes": 3221225472,
+      "nano_cpus": 2000000000,
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "penpot_penpot_assets",
+          "destination": "/opt/data/assets"
+        }
+      ],
+      "compose_working_dir": "/Users/yangzhaohui/work/www/harness/penpot",
+      "compose_files": "/Users/yangzhaohui/work/www/harness/penpot/compose.yaml,/Users/yangzhaohui/work/www/harness/penpot/compose.override.yaml,/Users/yangzhaohui/work/www/harness/penpot/compose.worker.yaml,/Users/yangzhaohui/work/www/harness/penpot/compose.dns.yaml"
+    },
+    {
+      "name": "penpot-penpot-worker-1",
+      "image": "penpot-resident-worker:local",
+      "image_id": "sha256:289d99c39712b9bbcb12ee4343571233421523f471c05c9f4fb8e6f3b26b9bb0",
+      "image_architecture": "arm64",
+      "state": "running",
+      "network_mode": "penpot_penpot",
+      "restart_policy": "unless-stopped",
+      "memory_limit_bytes": 4294967296,
+      "nano_cpus": 2000000000,
+      "mounts": [
+        {
+          "type": "bind",
+          "name": null,
+          "destination": "/run/secrets/worker-credentials"
+        }
+      ],
+      "compose_working_dir": "/Users/yangzhaohui/work/www/harness/penpot",
+      "compose_files": "/Users/yangzhaohui/work/www/harness/penpot/compose.yaml"
+    },
+    {
+      "name": "penpot-penpot-import-1",
+      "image": "penpot-mcp-file-import:local",
+      "image_id": "sha256:2ee54c62207d15e6f063db95870c76442b1ba757b47ebaf72863051b86238294",
+      "image_architecture": "arm64",
+      "state": "running",
+      "network_mode": "penpot_penpot",
+      "restart_policy": "unless-stopped",
+      "memory_limit_bytes": 1073741824,
+      "nano_cpus": 1000000000,
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "penpot_penpot_import_jobs",
+          "destination": "/data/jobs"
+        },
+        {
+          "type": "bind",
+          "name": null,
+          "destination": "/run/secrets/worker-credentials"
+        }
+      ],
+      "compose_working_dir": "/Users/yangzhaohui/work/www/harness/penpot",
+      "compose_files": "/Users/yangzhaohui/work/www/harness/penpot/compose.yaml"
+    },
+    {
+      "name": "penpot-penpot-postgres-1",
+      "image": "postgres:15",
+      "image_id": "sha256:04fba66fe1804636acd8ce729a27cb6f0a5dbe591c8898433aeb6444d7267bfd",
+      "image_architecture": "arm64",
+      "state": "running",
+      "network_mode": "penpot_penpot",
+      "restart_policy": "always",
+      "memory_limit_bytes": 805306368,
+      "nano_cpus": 1000000000,
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "penpot_penpot_postgres_v15",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ],
+      "compose_working_dir": "/Users/yangzhaohui/work/www/harness/penpot",
+      "compose_files": "/Users/yangzhaohui/work/www/harness/penpot/compose.yaml,/Users/yangzhaohui/work/www/harness/penpot/compose.override.yaml"
+    },
+    {
+      "name": "penpot-penpot-exporter-1",
+      "image": "penpotapp/exporter:2.18.5",
+      "image_id": "sha256:9918a73bb7c720252df3124bf674ade2493f970e8f63e711a442432d810c2e58",
+      "image_architecture": "arm64",
+      "state": "running",
+      "network_mode": "penpot_penpot",
+      "restart_policy": "always",
+      "memory_limit_bytes": 1610612736,
+      "nano_cpus": 2000000000,
+      "mounts": [],
+      "compose_working_dir": "/Users/yangzhaohui/work/www/harness/penpot",
+      "compose_files": "/Users/yangzhaohui/work/www/harness/penpot/compose.yaml,/Users/yangzhaohui/work/www/harness/penpot/compose.override.yaml"
+    },
+    {
+      "name": "penpot-penpot-mcp-1",
+      "image": "penpotapp/mcp:2.18.5",
+      "image_id": "sha256:f6c48cf9e9923ac1a30bc46393bf94b78c9970be66469650ac576f26e05ac36f",
+      "image_architecture": "arm64",
+      "state": "running",
+      "network_mode": "penpot_penpot",
+      "restart_policy": "always",
+      "memory_limit_bytes": 536870912,
+      "nano_cpus": 1000000000,
+      "mounts": [],
+      "compose_working_dir": "/Users/yangzhaohui/work/www/harness/penpot",
+      "compose_files": "/Users/yangzhaohui/work/www/harness/penpot/compose.yaml,/Users/yangzhaohui/work/www/harness/penpot/compose.override.yaml"
+    }
+  ],
+  "limitations": [
+    "No source data or credentials read, changed or migrated.",
+    "Single snapshots are not capacity or leak diagnoses.",
+    "Container environment values and process command lines are intentionally excluded."
+  ],
+  "stats_snapshot": [
+    {
+      "CPUPerc": "0.00%",
+      "MemPerc": "72.97%",
+      "MemUsage": "186.8MiB / 256MiB",
+      "Name": "penpot-penpot-frontend-1"
+    },
+    {
+      "CPUPerc": "0.00%",
+      "MemPerc": "6.23%",
+      "MemUsage": "63.82MiB / 1GiB",
+      "Name": "penpot-penpot-import-1"
+    },
+    {
+      "CPUPerc": "34.93%",
+      "MemPerc": "37.10%",
+      "MemUsage": "1.484GiB / 4GiB",
+      "Name": "penpot-penpot-worker-1"
+    },
+    {
+      "CPUPerc": "0.44%",
+      "MemPerc": "66.98%",
+      "MemUsage": "2.009GiB / 3GiB",
+      "Name": "penpot-penpot-backend-1"
+    },
+    {
+      "CPUPerc": "0.00%",
+      "MemPerc": "1.43%",
+      "MemUsage": "1.836MiB / 128MiB",
+      "Name": "penpot-penpot-dns-1"
+    },
+    {
+      "CPUPerc": "0.00%",
+      "MemPerc": "10.73%",
+      "MemUsage": "164.9MiB / 1.5GiB",
+      "Name": "penpot-penpot-exporter-1"
+    },
+    {
+      "CPUPerc": "0.00%",
+      "MemPerc": "15.24%",
+      "MemUsage": "78.01MiB / 512MiB",
+      "Name": "penpot-penpot-admin-console-1"
+    },
+    {
+      "CPUPerc": "0.01%",
+      "MemPerc": "18.18%",
+      "MemUsage": "93.08MiB / 512MiB",
+      "Name": "penpot-penpot-mcp-1"
+    },
+    {
+      "CPUPerc": "1.90%",
+      "MemPerc": "3.34%",
+      "MemUsage": "6.418MiB / 192MiB",
+      "Name": "penpot-penpot-valkey-1"
+    },
+    {
+      "CPUPerc": "2.16%",
+      "MemPerc": "20.38%",
+      "MemUsage": "156.5MiB / 768MiB",
+      "Name": "penpot-penpot-postgres-1"
+    },
+    {
+      "CPUPerc": "1.32%",
+      "MemPerc": "11.23%",
+      "MemUsage": "14.38MiB / 128MiB",
+      "Name": "penpot-penpot-mailpit-1"
+    },
+    {
+      "CPUPerc": "0.00%",
+      "MemPerc": "0.05%",
+      "MemUsage": "8.746MiB / 15.65GiB",
+      "Name": "nginx"
+    },
+    {
+      "CPUPerc": "0.19%",
+      "MemPerc": "0.81%",
+      "MemUsage": "130.1MiB / 15.65GiB",
+      "Name": "rabbitmq"
+    },
+    {
+      "CPUPerc": "0.30%",
+      "MemPerc": "0.03%",
+      "MemUsage": "4.703MiB / 15.65GiB",
+      "Name": "redis"
+    },
+    {
+      "CPUPerc": "0.35%",
+      "MemPerc": "15.48%",
+      "MemUsage": "2.424GiB / 15.65GiB",
+      "Name": "nexus3"
+    },
+    {
+      "CPUPerc": "0.34%",
+      "MemPerc": "2.88%",
+      "MemUsage": "461MiB / 15.65GiB",
+      "Name": "mysql"
+    },
+    {
+      "CPUPerc": "0.36%",
+      "MemPerc": "5.76%",
+      "MemUsage": "922.9MiB / 15.65GiB",
+      "Name": "nacos"
+    }
+  ]
+}

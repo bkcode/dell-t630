@@ -1,0 +1,106 @@
+[
+  {
+    "at": "2026-11-06T10:32:00.775041+08:00",
+    "vmid": 200,
+    "assigned_ip": "10.63.10.10",
+    "reason": "User explicitly approved network rollout; Cloud-Init changed from staging DHCP to assigned private network",
+    "trust_source": "PVE QGA over unchanged trusted PVE SSH host",
+    "global_known_hosts_changed": false
+  },
+  {
+    "at": "2026-11-06T10:32:08.955687+08:00",
+    "vmid": 201,
+    "assigned_ip": "10.63.10.11",
+    "reason": "User explicitly approved network rollout; Cloud-Init changed from staging DHCP to assigned private network",
+    "trust_source": "PVE QGA over unchanged trusted PVE SSH host",
+    "global_known_hosts_changed": false
+  },
+  {
+    "at": "2026-11-06T10:32:17.491120+08:00",
+    "vmid": 210,
+    "assigned_ip": "10.63.20.10",
+    "reason": "User explicitly approved network rollout; Cloud-Init changed from staging DHCP to assigned private network",
+    "trust_source": "PVE QGA over unchanged trusted PVE SSH host",
+    "global_known_hosts_changed": false
+  },
+  {
+    "at": "2026-11-06T10:32:27.668121+08:00",
+    "vmid": 220,
+    "assigned_ip": "10.63.30.10",
+    "reason": "User explicitly approved network rollout; Cloud-Init changed from staging DHCP to assigned private network",
+    "trust_source": "PVE QGA over unchanged trusted PVE SSH host",
+    "global_known_hosts_changed": false
+  },
+  {
+    "at": "2026-11-06T10:32:36.454394+08:00",
+    "vmid": 221,
+    "assigned_ip": "10.63.30.20",
+    "reason": "User explicitly approved network rollout; Cloud-Init changed from staging DHCP to assigned private network",
+    "trust_source": "PVE QGA over unchanged trusted PVE SSH host",
+    "global_known_hosts_changed": false
+  },
+  {
+    "at": "2026-11-06T10:32:46.631911+08:00",
+    "vmid": 230,
+    "assigned_ip": "10.63.10.20",
+    "reason": "User explicitly approved network rollout; Cloud-Init changed from staging DHCP to assigned private network",
+    "trust_source": "PVE QGA over unchanged trusted PVE SSH host",
+    "global_known_hosts_changed": false
+  },
+  {
+    "at": "2026-11-06T10:32:55.157542+08:00",
+    "vmid": 231,
+    "assigned_ip": "10.63.10.21",
+    "reason": "User explicitly approved network rollout; Cloud-Init changed from staging DHCP to assigned private network",
+    "trust_source": "PVE QGA over unchanged trusted PVE SSH host",
+    "global_known_hosts_changed": false
+  },
+  {
+    "at": "2026-11-06T10:33:03.558471+08:00",
+    "vmid": 232,
+    "assigned_ip": "10.63.10.22",
+    "reason": "User explicitly approved network rollout; Cloud-Init changed from staging DHCP to assigned private network",
+    "trust_source": "PVE QGA over unchanged trusted PVE SSH host",
+    "global_known_hosts_changed": false
+  },
+  {
+    "at": "2026-11-06T10:33:12.100489+08:00",
+    "vmid": 240,
+    "assigned_ip": "10.63.20.20",
+    "reason": "User explicitly approved network rollout; Cloud-Init changed from staging DHCP to assigned private network",
+    "trust_source": "PVE QGA over unchanged trusted PVE SSH host",
+    "global_known_hosts_changed": false
+  },
+  {
+    "at": "2026-11-06T10:33:20.165034+08:00",
+    "vmid": 250,
+    "assigned_ip": "10.63.30.30",
+    "reason": "User explicitly approved network rollout; Cloud-Init changed from staging DHCP to assigned private network",
+    "trust_source": "PVE QGA over unchanged trusted PVE SSH host",
+    "global_known_hosts_changed": false
+  },
+  {
+    "at": "2026-11-06T10:33:28.696881+08:00",
+    "vmid": 260,
+    "assigned_ip": "10.63.40.10",
+    "reason": "User explicitly approved network rollout; Cloud-Init changed from staging DHCP to assigned private network",
+    "trust_source": "PVE QGA over unchanged trusted PVE SSH host",
+    "global_known_hosts_changed": false
+  },
+  {
+    "at": "2026-11-06T10:33:37.041087+08:00",
+    "vmid": 270,
+    "assigned_ip": "10.63.30.40",
+    "reason": "User explicitly approved network rollout; Cloud-Init changed from staging DHCP to assigned private network",
+    "trust_source": "PVE QGA over unchanged trusted PVE SSH host",
+    "global_known_hosts_changed": false
+  },
+  {
+    "at": "2026-11-06T17:02:14.622107+08:00",
+    "vmid": 230,
+    "assigned_ip": "192.168.19.40",
+    "reason": "network19 CI IP metadata refreshed instance-id; cloud-init ssh_deletekeys true caused key rotation on planned reboot; trusted PVE QGA exact original machine-id 346f97d644174e89a3fe8dbe9fa7039f, hostname, MAC/IP verified; deployed per-VM snippet now false; templates unchanged",
+    "trust_source": "PVE QGA over unchanged trusted PVE SSH host",
+    "global_known_hosts_changed": false
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-06T12:15:28.729454",
+  "user_decision": "user-decisions-2026-11-06.json#nexus_eula",
+  "result": {
+    "exit_code": 0,
+    "stdout": "{\"at\": \"2026-11-06T04:15:28.686688+00:00\", \"status\": \"EULA-explicitly-user-authorized-and-accepted-on-new-instance\", \"target\": \"10.63.30.20:8081\", \"version\": \"3.84.0-03\", \"previously_accepted\": false, \"accepted\": true, \"disclaimer_sha256\": \"dbf11b9452533be1e9291f0b532c1d289778cfbd467d98e0ae9985a12335e56e\", \"source_or_upstream_credentials_used\": false}\n",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+    "target": {
+      "vmid": 221,
+      "ip": "10.63.30.20",
+      "host_key_alias": "dell-vm221",
+      "host_key_fingerprint": "SHA256:ky2Wn7M2CKgUqHaj65c4KnqphO6d3zh6sGEoYYzomWo",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "recorded_at": "2026-11-05T23:48:28.567850+08:00",
+  "source_untouched": true,
+  "source_image_platform": "linux/arm64",
+  "target_platform": "linux/amd64",
+  "source_postgres_version": "15.19",
+  "postgres_database_bytes": 47037799,
+  "postgres_volume_kib": 150968,
+  "assets_kib": 247280,
+  "import_jobs": {
+    "files": 5,
+    "bytes": 2122
+  },
+  "source_worker_uid_gid": [
+    1001,
+    1001
+  ],
+  "source_import_uid_gid": [
+    1000,
+    1000
+  ],
+  "source_file_sha256": {
+    "frontend/selfhost/Dockerfile": "4f935c3e09d26b2a9f57f4c38d752c4b0276b1bdded3926af21ab1d91a6fd5c9",
+    "frontend/selfhost/sidebar.css": "5c1c8342295982507e3a273d1b54ad3d05555bf57099c1a8ad33823806e82953",
+    "mcp/resident-worker/Dockerfile": "6749b1d6b43c1b675ccd44d002927f3dd339aec22dc4431b6b5731af80415eed",
+    "mcp/resident-worker/package.json": "ba95ecbc6ba244cf2c008db49b47b276939f94c7c29d77e7546bbd4b1a8f1ee3",
+    "mcp/resident-worker/pnpm-lock.yaml": "485d09c957a8699346630320fb373f72dae661be587a2b59fe392111abf3ef8f",
+    "mcp/file-import/Dockerfile": "e8b83cfef6aa54009092625b0c1f9f8325d0e1ce3f7723b9f6f6534def733089",
+    "mcp/file-import/package.json": "83f87c67a07c8cc7d2daae0097659caec82448730680d896a02a18f4c7fa6dfa",
+    "mcp/file-import/pnpm-lock.yaml": "23a99cf7ff05ffa16cbfa59e69e763450ba64cfbcfd03c4dc2b612ffffbfb8c0"
+  },
+  "amd64_build": "built-and-isolated-smoke-verified",
+  "data_export": "not-run",
+  "source_stopped": "not-run",
+  "target_deployment": "not-run",
+  "artifact_finished_at": "2026-11-06T05:36:29.640086+08:00",
+  "artifact_sha256": "6d27b16c5bd9e9cecbd4c825734ac2e1bc9cee2d10a8f38d5f26da32bd7036d1",
+  "artifact_bytes": 2637143552,
+  "source_containers_and_tags_unchanged": true,
+  "functional_acceptance": "pending-on-Intel-guest"
+}

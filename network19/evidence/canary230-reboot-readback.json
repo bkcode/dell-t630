@@ -1,0 +1,12 @@
+{
+  "exit_code": 0,
+  "stdout": "java-prod-01\nlo               UNKNOWN        127.0.0.1/8 \neth0             UP             192.168.19.40/24 \ndefault via 192.168.19.1 dev eth0 proto static \n192.168.19.0/24 dev eth0 proto kernel scope link src 192.168.19.40 \nactive\nLISTEN 0      4096   192.168.19.40:9100 0.0.0.0:*\n198.18.5.245    STREAM deb.debian.org\n198.18.5.245    DGRAM  \n198.18.5.245    RAW    \nHTTP/2 200 \r\nserver: Apache\r\nx-content-type-options: nosniff\r\nx-frame-options: sameorigin\r\nreferrer-policy: no-referrer\r\nx-xss-protection: 1\r\npermissions-policy: interest-cohort=()\r\nlast-modified: Fri, 01 Sep 2023 16:12:16 GMT\r\netag: \"754-6044e6c99e42d\"\r\nx-clacks-overhead: GNU Terry Pratchett\r\ncontent-type: text/html\r\nbackend: 4qpvL1tJyeV1P6Tmf0Lj8g--F_static_backend\r\naccept-ranges: bytes\r\ndate: Fri, 06 Nov 2026 09:02:16 GMT\r\nvia: 1.1 varnish\r\nage: 84\r\nx-served-by: cache-nrt-rjaa8190053-NRT\r\nx-cache: HIT\r\nx-cache-hits: 1\r\nx-timer: S1793955737.851011,VS0,VE1\r\nvary: Accept-Encoding\r\ncontent-length: 1876\r\n\r\n",
+  "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0  1876    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n",
+  "target": {
+    "vmid": 230,
+    "ip": "192.168.19.40",
+    "host_key_alias": "dell-vm230",
+    "host_key_fingerprint": "SHA256:KeItAegZqF5lSTCA3fAzKUFYuLAbnG9Pt1AqWskXMlM",
+    "trust_source": "PVE QGA over known SSH host"
+  }
+}

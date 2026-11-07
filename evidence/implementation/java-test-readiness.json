@@ -1,0 +1,30 @@
+{
+  "target_ip": "10.63.20.20",
+  "database_schemas_ready": true,
+  "nacos_configs_ready": true,
+  "network_policy_ready": true,
+  "issuer_candidate_acknowledged": true,
+  "issuer_scope": "LAN initial deployment, not public HTTPS approval",
+  "at": "2026-11-06T12:11:57.315549",
+  "network_evidence_sha256": "4b7b62837438b910a59baa692619567d3ec6499761bbf87c5cc9abcb7f675848",
+  "database_evidence": {
+    "status": "target-test-structure-and-synthetic-seed-initialized",
+    "target_ip": "10.63.20.10",
+    "application_table_count": 18,
+    "dba_registry_tables": 1,
+    "schema_sha256": "db917a71003303cd2c59f656513f73f4dddafc24a0972a49b4114e83409e0ea3",
+    "sql_package_sha256": "ce51b901dba800de0b58a65a9cf93ff0258255692305a540386f09b4259b0add",
+    "accounts_host": "10.63.20.20",
+    "runtime_privileges": [
+      "SELECT",
+      "INSERT",
+      "UPDATE",
+      "DELETE"
+    ],
+    "source_rows_copied": false,
+    "source_sql_writes": false,
+    "runtime_started": false,
+    "nacos_configs_ready": false
+  },
+  "nacos_evidence": "java-test-nacos.json"
+}

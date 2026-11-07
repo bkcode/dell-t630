@@ -1,0 +1,8 @@
+[Unit]
+Description=Dell read-only PVE metadata to Ops QGA textfile
+After=pve-cluster.service
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /root/dell-bootstrap/pve-push-metrics.py
+TimeoutStartSec=90
+UMask=0077

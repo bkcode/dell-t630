@@ -1,0 +1,161 @@
+{
+  "at": "2026-11-06T13:54:42.821507+08:00",
+  "status": "user-deferred",
+  "gateway_stop_issued": false,
+  "all_guest_services_unchanged": true,
+  "preflight": {
+    "publisher_current": "20261106T121030",
+    "publisher_busy": false,
+    "publisher_health_ok": true,
+    "java_health": [
+      {
+        "service": "finger-service-system",
+        "health_up": true
+      },
+      {
+        "service": "finger-service-coms",
+        "health_up": true
+      },
+      {
+        "service": "finger-auth",
+        "health_up": true
+      },
+      {
+        "service": "finger-bff-system",
+        "health_up": true
+      },
+      {
+        "service": "finger-gateway-mobile",
+        "health_up": true
+      }
+    ],
+    "java_health_ok": true,
+    "other_four_pids": {
+      "dell-finger-finger-service-system.service": "688",
+      "dell-finger-finger-service-coms.service": "687",
+      "dell-finger-finger-auth.service": "680",
+      "dell-finger-finger-bff-system.service": "681"
+    }
+  },
+  "launchagent_state_metadata": {
+    "cycles": 6,
+    "last_sample": 1793944468.9264178,
+    "checks": {
+      "pve-ssh": {
+        "stable": "down",
+        "last": false,
+        "count": 2
+      },
+      "pve-ui": {
+        "stable": "down",
+        "last": false,
+        "count": 2
+      },
+      "penpot": {
+        "stable": "down",
+        "last": false,
+        "count": 2
+      },
+      "nexus": {
+        "stable": "down",
+        "last": false,
+        "count": 2
+      },
+      "nas-web": {
+        "stable": "down",
+        "last": false,
+        "count": 2
+      },
+      "jellyfin": {
+        "stable": "down",
+        "last": false,
+        "count": 2
+      },
+      "java-test-oidc": {
+        "stable": "down",
+        "last": false,
+        "count": 2
+      },
+      "pve-host": {
+        "stable": "down",
+        "last": false,
+        "count": 2
+      }
+    },
+    "incidents": {
+      "pve-host": {
+        "desired": "firing",
+        "delivered": "firing",
+        "sequence": 1,
+        "pending": null
+      },
+      "pve-ssh": {
+        "desired": null,
+        "delivered": null,
+        "sequence": 0,
+        "pending": null
+      },
+      "pve-ui": {
+        "desired": null,
+        "delivered": null,
+        "sequence": 0,
+        "pending": null
+      },
+      "penpot": {
+        "desired": null,
+        "delivered": null,
+        "sequence": 0,
+        "pending": null
+      },
+      "nexus": {
+        "desired": null,
+        "delivered": null,
+        "sequence": 0,
+        "pending": null
+      },
+      "nas-web": {
+        "desired": null,
+        "delivered": null,
+        "sequence": 0,
+        "pending": null
+      },
+      "jellyfin": {
+        "desired": null,
+        "delivered": null,
+        "sequence": 0,
+        "pending": null
+      },
+      "java-test-oidc": {
+        "desired": null,
+        "delivered": null,
+        "sequence": 0,
+        "pending": null
+      }
+    }
+  },
+  "automatic_delivery_ack_events": [
+    {
+      "at": "2026-11-06T05:50:28.017579+00:00",
+      "event": "delivery_acknowledged",
+      "id": "167bfec56826b2b3",
+      "check": "pve-host",
+      "phase": "firing",
+      "attempt": 1,
+      "exhausted": false
+    }
+  ],
+  "explicit_escalated_native_anonymous_baseline": "all-7-up",
+  "secret_or_webhook_read": false,
+  "limitations": "No stop/start E2E attempted because real scheduled probe had not attained two healthy cycles.",
+  "historical_preflight_status": "pending-real-launchagent-healthy-baseline",
+  "user_decision": {
+    "at": "2026-11-06T14:09:50.399507+08:00",
+    "scope": "server-internal-Lark-only",
+    "external_mac_probe": "disabled",
+    "gateway_stop_start_window": "cancelled",
+    "gateway_stop_issued": false,
+    "state_or_probe_logic_changed_by_this_agent": false,
+    "final_disabled_evidence": "evidence/implementation/mac-external-probe-final-disabled.json",
+    "reason": "User explicitly deferred Mac external probing for this phase; original preflight mismatch facts remain preserved."
+  }
+}

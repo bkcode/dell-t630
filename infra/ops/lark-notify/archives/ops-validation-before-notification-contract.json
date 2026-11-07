@@ -1,0 +1,82 @@
+{
+  "status": "static-and-offline-passed-not-deployed",
+  "offline_tests": 57,
+  "services": [
+    "alertmanager",
+    "blackbox",
+    "grafana",
+    "prometheus"
+  ],
+  "container_memory_limits_gib": 2.625,
+  "guest_budget_gib": 4,
+  "os_runtime_headroom_gib": 1.375,
+  "candidate_roles": 13,
+  "active_guest_roles": [],
+  "filesystem_uuid": "pending",
+  "external_notifications": "not-configured-not-tested",
+  "pve_host_metrics": "not-enabled-pending-authorized-interface",
+  "native_promtool_amtool": "config-only-passed-local-cached-amd64-tools",
+  "source_docker_services_touched": false,
+  "mac_background_scheduler_installed": false,
+  "guest_baseline_preparation": {
+    "status": "12-new-guests-installed-parked-verified",
+    "as_of": "2026-11-06T07:05:31.920668+08:00",
+    "scope": "install-only snapshot; later activation requires separate verification",
+    "targets": 12,
+    "installed_parked_count": 12,
+    "activated_count_during_install": 0,
+    "offline_tests": 33,
+    "guest_commands_executed": true,
+    "pve_host_mutated": false,
+    "network_changed": false,
+    "collector_started_during_install": false,
+    "evidence": "evidence/implementation/guest-monitoring-install.json",
+    "current_guest_state_requeried": false
+  },
+  "native_config_only": {
+    "captured_at": "2026-11-06T05:56:26.687733+08:00",
+    "mode": "config-only",
+    "result": "passed",
+    "input_sha256": {
+      "images.lock.json": "d5c79d99b823f95a3cd27114929dd98184c47bb633063fdcbc1b39a81e9fc593",
+      "config/prometheus/prometheus.yml": "35b0a682e8cef2802cd871982e442614e67ae3313f39945ace2591879f508c04",
+      "config/prometheus/rules/infra.yml": "574614c3d15ada8d5241e617bb19ece319b30f36f8c0f7c2849a2849c98ff57e",
+      "config/prometheus/targets/guest-node.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "config/prometheus/targets/http-services.json": "736b5f1d7c6d376fd8a8c7305ec5b41b1dd81910a8329febc67259067eb03cb1",
+      "config/alertmanager/alertmanager.yml": "95d2db99d309af56edc0be75fb6ef3b739f3c622a55aad1e2ef843cf8a04afc6",
+      "config/blackbox/blackbox.yml": "64f164f26ed86cc38ff0faf694c4efe6e385e3dd4bb684d1560ee8b06565e89a"
+    },
+    "source_identity_and_running_state_unchanged": true,
+    "monitoring_targets_verified": false,
+    "notification_delivery_verified": false,
+    "target_deployment_verified": false,
+    "checks": [
+      {
+        "name": "blackbox-help",
+        "exit_code": 0,
+        "summary": "help advertises --[no-]config.check"
+      },
+      {
+        "name": "promtool-config",
+        "exit_code": 0,
+        "summary": "  SUCCESS: 1 rule files found\n SUCCESS: /etc/prometheus/prometheus.yml is valid prometheus config file syntax\n\nChecking /etc/prometheus/rules/infra.yml\n  SUCCESS: 4 rules found"
+      },
+      {
+        "name": "promtool-rules",
+        "exit_code": 0,
+        "summary": "Checking /etc/prometheus/rules/infra.yml\n  SUCCESS: 4 rules found"
+      },
+      {
+        "name": "amtool-config",
+        "exit_code": 0,
+        "summary": " - global config\n - route\n - 0 inhibit rules\n - 1 receivers\n - 0 templates"
+      },
+      {
+        "name": "blackbox-static-config",
+        "exit_code": 0,
+        "summary": "time=2026-11-05T21:56:29.343Z level=INFO source=main.go:99 msg=\"Starting blackbox_exporter\" version=\"(version=0.29.1, branch=HEAD, revision=ad91668339ca265f460c23fc422a27ba6d788db9)\"\ntime=2026-11-05T21:56:29.347Z level=INFO source=main.go:100 msg=\"(go=go1.27.3, platform=linux/amd64, user=root@ab03ed60a291, date=20261021-18:03:25, tags=unknown)\"\ntime=2026-11-05T21:56:29.348Z level=INFO source=config.go:144 msg=\"Configuration file change detected, reloading the configuration.\"\ntime=2026-11-05T21:56:29.355Z level=INFO source=main.go:108 msg=\"Config file is ok exiting...\""
+      }
+    ]
+  },
+  "target_native_configuration_validation": "pending-on-assigned-guest"
+}

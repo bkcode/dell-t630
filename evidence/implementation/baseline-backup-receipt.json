@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-06T06:30:20.389769",
+  "source_vmid": 9002,
+  "source_was_stopped": true,
+  "restore_vmid": 9020,
+  "archive": "/mnt/pve/store/dell-artifacts/baseline-backup/vzdump-qemu-9002-2026_11_06-06_29_18.vma.zst",
+  "bytes": 380475872,
+  "sha256": "8db60b7f9f2f89f011dd5c369b88aca6c71d66c0d03cc1e6eeaa01339cc651cf",
+  "scope": "disposable OS baseline backup/restore only; no production/application data",
+  "limitations": [
+    "Guest boot and independent off-host copy validation pending",
+    "Not a MySQL/Penpot/Nexus restore acceptance",
+    "Idle staging VM232 stopped to retain host memory reserve"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "role": 220,
+  "status": "two-exact-public-AMD64-image-IDs-imported-no-stack",
+  "images": [
+    {
+      "id": "sha256:2ae4fee2eed85f42c982aa2fc16746a8453c7f79faf2a7ea236855ca8652e001",
+      "OS": "linux",
+      "arch": "amd64"
+    },
+    {
+      "id": "sha256:4e5db4761e0ff445f7fd29aad680ad28e8abf7d204895557f145d65535abcc1c",
+      "OS": "linux",
+      "arch": "amd64"
+    }
+  ],
+  "registry_pull_or_tag_change": false,
+  "runtime_data_or_secrets_in_image_stream": false,
+  "Nexus_started": false
+}

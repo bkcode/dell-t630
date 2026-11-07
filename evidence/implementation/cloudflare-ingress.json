@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "collected_at": "2026-11-06T05:28:09.040324+08:00",
+  "timezone": "Asia/Shanghai",
+  "host": "192.168.21.22",
+  "container_id": 100,
+  "mode": "read-only-existing-ingress-inventory",
+  "service_state": {
+    "ActiveState": "active",
+    "SubState": "running",
+    "UnitFileState": "enabled"
+  },
+  "management": {
+    "mode": "remote-token-indicated",
+    "token_flag_present": true,
+    "token_file_flag_present": false,
+    "config_flag_present": false,
+    "conventional_yaml_exists": {
+      "/etc/cloudflared/config.yml": false,
+      "/etc/cloudflared/config.yaml": false,
+      "/root/.cloudflared/config.yml": false,
+      "/root/.cloudflared/config.yaml": false
+    },
+    "local_yaml_contents_read": false,
+    "token_files_read": false,
+    "launch_raw_output_saved": false
+  },
+  "log_observation": {
+    "command_exit_code": 0,
+    "journal_records_examined": 66,
+    "matching_configuration_events": 0,
+    "configuration_parse_errors": 0,
+    "latest_configuration_time": null,
+    "raw_logs_saved": false
+  },
+  "ingress": [],
+  "limitations": [
+    "Existing logged routes only; no Cloudflare external API requests or configuration changes.",
+    "Hostname and scheme/host/port only; userinfo, URL paths, query parameters and origin-request settings are intentionally omitted.",
+    "No DNS, public reachability, current origin availability or ownership validation performed.",
+    "No new hostname assigned; remote ingress configuration may change after this snapshot."
+  ],
+  "retained_journal_follow_up": {
+    "collected_at": "2026-11-06T05:29:30.510962+08:00",
+    "exit_code": 0,
+    "safe_shape_counters": {
+      "journal_records": 190,
+      "message_strings": 190,
+      "message_byte_arrays": 0,
+      "messages_mentioning_ingress": 0,
+      "messages_mentioning_config": 0,
+      "parsed_ingress_events": 0
+    },
+    "latest_configuration": null,
+    "scope": "retained unit journal up to 2000 records; byte-array MESSAGE fields decoded in memory; raw logs never returned"
+  },
+  "status": "management-mode-observed-ingress-not-found-in-retained-journal",
+  "updated_at": "2026-11-06T05:30:49.617704+08:00",
+  "logging_destination_check": {
+    "collected_at": "2026-11-06T05:30:16.097736+08:00",
+    "logging_metadata_query_exit": 0,
+    "explicit_file_log_destination_present": false,
+    "permitted_file_log_destination_present": false,
+    "logging_uses_journal": true,
+    "raw_launch_suppressed": true
+  },
+  "ingress_observation_status": "unavailable-in-retained-logs; empty list is not proof of no configured routes"
+}

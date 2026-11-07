@@ -1,0 +1,131 @@
+{
+  "at": "2026-11-06T07:28:52.947959",
+  "status": "all-target-guests-parked-awaiting-explicit-network-approval",
+  "records": [
+    {
+      "vmid": 270,
+      "name": "ops-service",
+      "state": "stopped",
+      "configured_ip": "10.63.30.40",
+      "bridge": "vmbr30",
+      "network_live": false,
+      "onboot": false,
+      "mac_preserved": true
+    },
+    {
+      "vmid": 260,
+      "name": "nas-media",
+      "state": "stopped",
+      "configured_ip": "10.63.40.10",
+      "bridge": "vmbr40",
+      "network_live": false,
+      "onboot": false,
+      "mac_preserved": true
+    },
+    {
+      "vmid": 250,
+      "name": "penpot-service",
+      "state": "stopped",
+      "configured_ip": "10.63.30.30",
+      "bridge": "vmbr30",
+      "network_live": false,
+      "onboot": false,
+      "mac_preserved": true
+    },
+    {
+      "vmid": 240,
+      "name": "java-test-01",
+      "state": "stopped",
+      "configured_ip": "10.63.20.20",
+      "bridge": "vmbr20",
+      "network_live": false,
+      "onboot": false,
+      "mac_preserved": true
+    },
+    {
+      "vmid": 232,
+      "name": "java-prod-03",
+      "state": "stopped",
+      "configured_ip": "10.63.10.22",
+      "bridge": "vmbr10",
+      "network_live": false,
+      "onboot": false,
+      "mac_preserved": true
+    },
+    {
+      "vmid": 231,
+      "name": "java-prod-02",
+      "state": "stopped",
+      "configured_ip": "10.63.10.21",
+      "bridge": "vmbr10",
+      "network_live": false,
+      "onboot": false,
+      "mac_preserved": true
+    },
+    {
+      "vmid": 230,
+      "name": "java-prod-01",
+      "state": "stopped",
+      "configured_ip": "10.63.10.20",
+      "bridge": "vmbr10",
+      "network_live": false,
+      "onboot": false,
+      "mac_preserved": true
+    },
+    {
+      "vmid": 221,
+      "name": "artifact-service",
+      "state": "stopped",
+      "configured_ip": "10.63.30.20",
+      "bridge": "vmbr30",
+      "network_live": false,
+      "onboot": false,
+      "mac_preserved": true
+    },
+    {
+      "vmid": 220,
+      "name": "publish-service",
+      "state": "stopped",
+      "configured_ip": "10.63.30.10",
+      "bridge": "vmbr30",
+      "network_live": false,
+      "onboot": false,
+      "mac_preserved": true
+    },
+    {
+      "vmid": 210,
+      "name": "data-test",
+      "state": "stopped",
+      "configured_ip": "10.63.20.10",
+      "bridge": "vmbr20",
+      "network_live": false,
+      "onboot": false,
+      "mac_preserved": true
+    },
+    {
+      "vmid": 201,
+      "name": "data-prod-infra",
+      "state": "stopped",
+      "configured_ip": "10.63.10.11",
+      "bridge": "vmbr10",
+      "network_live": false,
+      "onboot": false,
+      "mac_preserved": true
+    },
+    {
+      "vmid": 200,
+      "name": "data-prod-db",
+      "state": "stopped",
+      "configured_ip": "10.63.10.10",
+      "bridge": "vmbr10",
+      "network_live": false,
+      "onboot": false,
+      "mac_preserved": true
+    }
+  ],
+  "host_forwarding": 0,
+  "managed_host_bridges_created": false,
+  "dedicated_host_firewall_applied": false,
+  "cf100_running": true,
+  "business_stacks_started": false
+}

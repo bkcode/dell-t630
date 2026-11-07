@@ -1,0 +1,126 @@
+{
+  "updated_at": "2026-11-06T18:20:35.254449+08:00",
+  "status": "current-LAN-infrastructure-and-Java-template-accepted",
+  "scope": "network19-only-current-scope; no Java business application deployment",
+  "required_cases": [
+    "N19-SCOPE-001",
+    "N19-INV-001",
+    "N19-GW-001",
+    "N19-ROUTE-001",
+    "N19-DNS-001",
+    "N19-DHCP-001",
+    "N19-L2-001",
+    "N19-L2-002",
+    "N19-L2-003",
+    "N19-L2-004",
+    "N19-L2-005",
+    "N19-ID-001",
+    "N19-OS-001",
+    "N19-DATA-001",
+    "N19-JAVA-001",
+    "N19-PUB-001",
+    "N19-NEXUS-001",
+    "N19-NAS-001",
+    "N19-PENPOT-001",
+    "N19-OPS-001",
+    "N19-CF-001",
+    "N19-DORMANT-001",
+    "N19-TPL-001",
+    "N19-HOST-001",
+    "N19-FINAL-001"
+  ],
+  "required_passed": 25,
+  "acceptance_manifest": "network19/audit/network19-acceptance.json",
+  "future_or_manual_cases": [
+    {
+      "id": "N19-CF-002",
+      "status": "pending",
+      "reason": "Unknown account-side original Cloudflare ingress/public origin; this phase accepts LAN and tunnel registration only"
+    }
+  ],
+  "historical_38_case_manifest": "acceptance.json",
+  "historical_phase_snapshot": "network19/evidence/phase-delivery-before-network19.json",
+  "historical_future_manual_cases": [
+    {
+      "id": "ACC-NET-003",
+      "status": "pending",
+      "reason": "暂无新公网域名/Cloudflare账户侧路由/HTTPS；本期LAN已验证，现有CF保留。"
+    },
+    {
+      "id": "ACC-DATA-002",
+      "status": "pending",
+      "reason": "当前为五服务新测试配置/命名空间；原Mac Nacos全量业务配置与Derby迁移未执行，源保留。"
+    },
+    {
+      "id": "ACC-DATA-003",
+      "status": "pending",
+      "reason": "基础Redis/Rabbit持久化/恢复已验证；业务消费者重投幂等/死信结果需后续选定异步业务。"
+    },
+    {
+      "id": "ACC-JAVA-002",
+      "status": "pending",
+      "reason": "正式业务本期用户明确仅runtime；未启动同服务多副本生成ID并发验收。"
+    },
+    {
+      "id": "ACC-JAVA-003",
+      "status": "pending",
+      "reason": "定时/Outbox并发副作用业务未在当前五服务链启用，不外发真实金融/通知。"
+    },
+    {
+      "id": "ACC-JAVA-004",
+      "status": "pending",
+      "reason": "当前单测试节点文件持久已验；WS与多实例跨节点共享文件未部署/未验。"
+    },
+    {
+      "id": "ACC-PEN-002",
+      "status": "pending",
+      "reason": "空默认口令/登录鉴权已验；公网HTTPS与真实SMTP未配置，暂无域名/provider。"
+    },
+    {
+      "id": "ACC-NAS-003",
+      "status": "pending",
+      "reason": "软件合成DirectPlay已验；真实电视/播放器4K HDR/字幕音轨/连续播放需实际设备。"
+    },
+    {
+      "id": "ACC-NAS-004",
+      "status": "pending",
+      "reason": "SMB权限/合成保存读取SHA已验；真实PS4/PS5工具/格式/目标设备传输未提供。"
+    },
+    {
+      "id": "ACC-NAS-005",
+      "status": "pending",
+      "reason": "正式业务未启，业务SLO/基线未批准，不以合成负载冒充生产并发性能。"
+    },
+    {
+      "id": "ACC-BAK-001",
+      "status": "pending",
+      "reason": "已有初始Mac独立副本及应用恢复证据；长期独立目的地/保留/连续调度未定，CF与publisher私钥按用户仅本机/220。"
+    },
+    {
+      "id": "ACC-BAK-002",
+      "status": "pending",
+      "reason": "初始隔离恢复已验；用户尚无获批RPO/RTO及独立恢复硬件，不能签完整灾备。"
+    }
+  ],
+  "signoff": {
+    "reviewer": "root coordinator plus independent audit subagent",
+    "current_live_network": "network19/evidence/final-live-network-identity.json",
+    "monitoring": "network19/services-core/ops270-new-network-allup-readback.json",
+    "maintenance": "network19/evidence/maintenance-ended.json",
+    "Java_template": "network19/java-template/clone-evidence.json",
+    "no_Java_business_programs": true,
+    "publisher_fenced": true,
+    "CF_backup_only_PVE": true,
+    "publisher_private_key_only220": true,
+    "Mac_probe_disabled": true,
+    "host_reboot_executed": false
+  },
+  "claims_excluded": [
+    "unverified original CF public origins",
+    "PVE whole-host power/reboot proof",
+    "physical TV or console client acceptance",
+    "production workload SLO",
+    "long-term offsite backups and RPO/RTO",
+    "new vendor Lark send test after this network migration"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "exit_code": 0,
+  "hostname": "java-prod-01",
+  "strict_host_key": true,
+  "ProxyPVE_not_used": true
+}

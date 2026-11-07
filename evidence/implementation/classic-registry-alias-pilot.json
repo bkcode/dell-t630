@@ -1,0 +1,12 @@
+{
+  "exit_code": 0,
+  "stdout": "{\"exit_code\": 0, \"elapsed_seconds\": 3.09, \"pull_complete_lines\": 0, \"already_exists_lines\": 0, \"applications_started\": false, \"image_id\": \"sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe\", \"architecture\": \"amd64\", \"registry_ref_resolved\": true}\n",
+  "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+  "target": {
+    "vmid": 210,
+    "ip": "192.168.21.153",
+    "host_key_alias": "dell-vm210",
+    "host_key_fingerprint": "SHA256:0NGrIbuCNFPozzA3n4Gf7zE7q8JbG8gmWxLDBFPMnsU",
+    "trust_source": "PVE QGA over known SSH host"
+  }
+}

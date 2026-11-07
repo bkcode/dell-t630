@@ -1,0 +1,400 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-06T06:19:52.621817+08:00",
+  "status": "five-boot-artifacts-built-not-runtime-accepted",
+  "services": [
+    {
+      "service": "finger-gateway-mobile",
+      "build_status": "compile-and-bootjar-passed-offline",
+      "tests_status": "blocked-missing-isolated-test-config",
+      "runtime_status": "not-started",
+      "target_amd64_runtime_verified": false,
+      "original_git": {
+        "head": "5718f44d8ce2dd6074122cef4a4a7c922a16a444",
+        "branch": "codex/fix-fund-session",
+        "status_porcelain": ""
+      },
+      "source_git_state_unchanged": true,
+      "source_snapshot_content_sha256": "25ba0bf08c883165257b08d4fcf291f83aa9be4b142f03be8a0baac3e4150f58",
+      "artifact": {
+        "path": "/Users/yangzhaohui/work/www/harness/dell/private/java-build/repos/finger-gateway-mobile/build/libs/finger-gateway-mobile-0.0.1.jar",
+        "bytes": 91220068,
+        "sha256": "971e07f24704a814ad7eed26f2a1e6cc468d380bff2fa9d320c01ab40a3ffe72",
+        "embedded_internal_dependencies": [
+          {
+            "name": "common-core-1.0.0-plain.jar",
+            "sha256": "3994cdaf3de60009c6205d219ecc3ad9eae1988011aea08d816e083e0050b447"
+          },
+          {
+            "name": "common-redis-1.0.0.jar",
+            "sha256": "0285f1638de714dffdb14f8d6adb038963b8d8d2ffb868632e12866e97a67182"
+          }
+        ]
+      },
+      "successful_build_logs": [
+        "/Users/yangzhaohui/work/www/harness/dell/private/java-build/logs/finger-gateway-mobile-bootjar-bootjar-01.log",
+        "/Users/yangzhaohui/work/www/harness/dell/private/java-build/logs/finger-gateway-mobile-compile-compile-01.log"
+      ],
+      "runtime_profiles_copied": false,
+      "publish_executed": false
+    },
+    {
+      "service": "finger-auth",
+      "build_status": "compile-and-bootjar-passed-offline",
+      "tests_status": "blocked-missing-isolated-test-config",
+      "runtime_status": "not-started",
+      "target_amd64_runtime_verified": false,
+      "original_git": {
+        "head": "ecb67536e43280ae02685a615e1ac74f742ac3c3",
+        "branch": "codex/feat-omva",
+        "status_porcelain": "?? docs/"
+      },
+      "source_git_state_unchanged": true,
+      "source_snapshot_content_sha256": "57d5263168256ddebfed41db247a60f836ea1c8884bc7dcabe88019554dc4365",
+      "artifact": {
+        "path": "/Users/yangzhaohui/work/www/harness/dell/private/java-build/repos/finger-auth/build/libs/finger-auth-1.0.0.jar",
+        "bytes": 112317676,
+        "sha256": "b003de47f326fbe8c528a4430a3fa2b3f36b4a94ca302b07534e1062e354addc",
+        "embedded_internal_dependencies": [
+          {
+            "name": "ums-api-1.0.0.jar",
+            "sha256": "5cf5090fd2610cb6079f515bdbb8a7b7835e94244ee3a872e99aac07120a9a00"
+          },
+          {
+            "name": "system-api-1.0.0.jar",
+            "sha256": "7b406df29d256e9fb4255e55942ec57b49dd35fb319af0e6016c2865df213564"
+          },
+          {
+            "name": "fds-api-1.0.0.jar",
+            "sha256": "8d2d7b59aec72d5eb96a96ed815f6d3fbbae8ee403591ea688c164919d8347a8"
+          },
+          {
+            "name": "common-apidoc-1.0.0.jar",
+            "sha256": "e4a6559fa7471c79e51f7b6ed6cb03609c54af1c002db2e4edb7b599e2ec0f2f"
+          },
+          {
+            "name": "common-web-1.0.0-plain.jar",
+            "sha256": "24165165b27a3c1938b07d3182cfdb8e7099b9b8c104747504c099988e604c09"
+          },
+          {
+            "name": "common-security-1.0.0-plain.jar",
+            "sha256": "8ac3000e0b164ebf39c91a45e4abca43bce3b58e203d082201ab9bc4aadd9411"
+          },
+          {
+            "name": "common-core-1.0.0-plain.jar",
+            "sha256": "3994cdaf3de60009c6205d219ecc3ad9eae1988011aea08d816e083e0050b447"
+          },
+          {
+            "name": "common-redis-1.0.0.jar",
+            "sha256": "0285f1638de714dffdb14f8d6adb038963b8d8d2ffb868632e12866e97a67182"
+          },
+          {
+            "name": "common-sms-1.0.0.jar",
+            "sha256": "842cc1e840041a6175979494fc2928c4018fb93d46c1b313cf03a0aa6b13e597"
+          }
+        ]
+      },
+      "successful_build_logs": [
+        "/Users/yangzhaohui/work/www/harness/dell/private/java-build/logs/finger-auth-compile-compile-contracts-01.log",
+        "/Users/yangzhaohui/work/www/harness/dell/private/java-build/logs/finger-auth-bootjar-bootjar-01.log",
+        "/Users/yangzhaohui/work/www/harness/dell/private/java-build/logs/finger-auth-bootjar-deployment-config-bootjar-01.log"
+      ],
+      "runtime_profiles_copied": false,
+      "publish_executed": false,
+      "deployment_config_unit_tests": {
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "status": "passed",
+        "evidence": "/Users/yangzhaohui/work/www/harness/dell/private/java-build/repos/finger-auth/build/test-results/test/TEST-com.sargia.finger.gateway.auth.config.AuthBootstrapPropertiesTest.xml",
+        "spring_context_started": false
+      },
+      "deployment_patch_manifest": "/Users/yangzhaohui/work/www/harness/dell/private/java-build/auth-deployment-patch-manifest.json"
+    },
+    {
+      "service": "finger-service-system",
+      "build_status": "compile-and-bootjar-passed-offline",
+      "tests_status": "blocked-missing-isolated-test-config",
+      "runtime_status": "not-started",
+      "target_amd64_runtime_verified": false,
+      "original_git": {
+        "head": "9ec3a82dedb165cd7d764f0335dd1de37cc541f4",
+        "branch": "dev",
+        "status_porcelain": ""
+      },
+      "source_git_state_unchanged": true,
+      "source_snapshot_content_sha256": "de3498dd792590c11df73a041ff35a75a72a5e618bc6bae7d5b14e21f5b84d44",
+      "artifact": {
+        "path": "/Users/yangzhaohui/work/www/harness/dell/private/java-build/repos/finger-service-system/system-boot/build/libs/system-boot-1.0.0.jar",
+        "bytes": 100405912,
+        "sha256": "3ddfff8c5cd6d4800c3739a7663eb3bf539935a9427c1a5178b0faa9f5f204f9",
+        "embedded_internal_dependencies": [
+          {
+            "name": "common-web-1.0.0-plain.jar",
+            "sha256": "24165165b27a3c1938b07d3182cfdb8e7099b9b8c104747504c099988e604c09"
+          },
+          {
+            "name": "common-snowflake-1.0.0-plain.jar",
+            "sha256": "2590d78524c98c2bed9b9e5bd1a55147bcab0ba6de10671df2aadbb4369b0590"
+          },
+          {
+            "name": "common-easyquery-1.0.0-plain.jar",
+            "sha256": "0e0772d4ce7f63c542e3fbd992f1e3b6d1be2800edb52565322b16a622e1abdc"
+          },
+          {
+            "name": "msgs-api-1.0.0.jar",
+            "sha256": "2938221e57372d293746bbb8b5ebca86cb84d8f4f70ee02602f3447feb6d977e"
+          },
+          {
+            "name": "system-api-1.0.0.jar",
+            "sha256": "7b406df29d256e9fb4255e55942ec57b49dd35fb319af0e6016c2865df213564"
+          },
+          {
+            "name": "common-apidoc-1.0.0.jar",
+            "sha256": "e4a6559fa7471c79e51f7b6ed6cb03609c54af1c002db2e4edb7b599e2ec0f2f"
+          },
+          {
+            "name": "common-core-1.0.0-plain.jar",
+            "sha256": "3994cdaf3de60009c6205d219ecc3ad9eae1988011aea08d816e083e0050b447"
+          },
+          {
+            "name": "common-redis-1.0.0.jar",
+            "sha256": "0285f1638de714dffdb14f8d6adb038963b8d8d2ffb868632e12866e97a67182"
+          }
+        ]
+      },
+      "successful_build_logs": [
+        "/Users/yangzhaohui/work/www/harness/dell/private/java-build/logs/finger-service-system-compile-compile-msgs-source-01.log",
+        "/Users/yangzhaohui/work/www/harness/dell/private/java-build/logs/finger-service-system-bootjar-bootjar-01.log"
+      ],
+      "runtime_profiles_copied": false,
+      "publish_executed": false
+    },
+    {
+      "service": "finger-service-coms",
+      "build_status": "compile-and-bootjar-passed-offline",
+      "tests_status": "blocked-missing-isolated-test-config",
+      "runtime_status": "not-started",
+      "target_amd64_runtime_verified": false,
+      "original_git": {
+        "head": "53c831d1763ed94459865b37a3bb79ad243789ff",
+        "branch": "codex/fix-traditional-city-names",
+        "status_porcelain": "?? coms-boot/src/main/.DS_Store"
+      },
+      "source_git_state_unchanged": true,
+      "source_snapshot_content_sha256": "52a9c7cd943bdfcd09350c0e954af1c8720703b0d137ef94340833f9217c5ac8",
+      "artifact": {
+        "path": "/Users/yangzhaohui/work/www/harness/dell/private/java-build/repos/finger-service-coms/coms-boot/build/libs/coms-boot-1.0.0.jar",
+        "bytes": 135495088,
+        "sha256": "3c124f75c9d1bc20126d2c2567a92a0d15051dee962723d85d7b49d56e712cef",
+        "embedded_internal_dependencies": [
+          {
+            "name": "coms-api-1.0.0.jar",
+            "sha256": "908170238429544fbd9bc5358d0c02cd936e43d905835d3d3df1198b27475814"
+          },
+          {
+            "name": "common-apidoc-1.0.0.jar",
+            "sha256": "e4a6559fa7471c79e51f7b6ed6cb03609c54af1c002db2e4edb7b599e2ec0f2f"
+          },
+          {
+            "name": "common-web-1.0.0-plain.jar",
+            "sha256": "24165165b27a3c1938b07d3182cfdb8e7099b9b8c104747504c099988e604c09"
+          },
+          {
+            "name": "common-easyquery-1.0.0-plain.jar",
+            "sha256": "0e0772d4ce7f63c542e3fbd992f1e3b6d1be2800edb52565322b16a622e1abdc"
+          },
+          {
+            "name": "common-snowflake-1.0.0-plain.jar",
+            "sha256": "2590d78524c98c2bed9b9e5bd1a55147bcab0ba6de10671df2aadbb4369b0590"
+          },
+          {
+            "name": "common-core-1.0.0-plain.jar",
+            "sha256": "3994cdaf3de60009c6205d219ecc3ad9eae1988011aea08d816e083e0050b447"
+          },
+          {
+            "name": "common-redis-1.0.0.jar",
+            "sha256": "0285f1638de714dffdb14f8d6adb038963b8d8d2ffb868632e12866e97a67182"
+          }
+        ]
+      },
+      "successful_build_logs": [
+        "/Users/yangzhaohui/work/www/harness/dell/private/java-build/logs/finger-service-coms-bootjar-bootjar-01.log",
+        "/Users/yangzhaohui/work/www/harness/dell/private/java-build/logs/finger-service-coms-compile-compile-01.log"
+      ],
+      "runtime_profiles_copied": false,
+      "publish_executed": false
+    },
+    {
+      "service": "finger-bff-system",
+      "build_status": "compile-and-bootjar-passed-offline",
+      "tests_status": "blocked-missing-isolated-test-config",
+      "runtime_status": "not-started",
+      "target_amd64_runtime_verified": false,
+      "original_git": {
+        "head": "37896647fa27cd038662574d93f0cd12f86ea32c",
+        "branch": "codex/bridge-kyc-review",
+        "status_porcelain": ""
+      },
+      "source_git_state_unchanged": true,
+      "source_snapshot_content_sha256": "d3bb6fc894df0b5a57e73612e26a7bfc34cc99134afa6331b01a25dd1a3ea918",
+      "artifact": {
+        "path": "/Users/yangzhaohui/work/www/harness/dell/private/java-build/repos/finger-bff-system/build/libs/finger-bff-system-1.0.0.jar",
+        "bytes": 96981061,
+        "sha256": "d6302ef18bb1c526eb1e3add58d94d29060e163758d0bdd6031bd41c89bd1c23",
+        "embedded_internal_dependencies": [
+          {
+            "name": "system-api-1.0.0.jar",
+            "sha256": "7b406df29d256e9fb4255e55942ec57b49dd35fb319af0e6016c2865df213564"
+          },
+          {
+            "name": "ums-api-1.0.0.jar",
+            "sha256": "5cf5090fd2610cb6079f515bdbb8a7b7835e94244ee3a872e99aac07120a9a00"
+          },
+          {
+            "name": "msgs-api-1.0.0.jar",
+            "sha256": "2938221e57372d293746bbb8b5ebca86cb84d8f4f70ee02602f3447feb6d977e"
+          },
+          {
+            "name": "bcs-api-1.0.0.jar",
+            "sha256": "d88230283c55ac8f82ae487c4a71644226336e66ea59fc33cad5bfae5533a2d5"
+          },
+          {
+            "name": "subs-api-1.0.0.jar",
+            "sha256": "52322461a2b4c7b60f0231e50d5af2d569c3b81610baaf0831c2492e1d33b235"
+          },
+          {
+            "name": "coms-api-1.0.0.jar",
+            "sha256": "908170238429544fbd9bc5358d0c02cd936e43d905835d3d3df1198b27475814"
+          },
+          {
+            "name": "auds-api-1.0.0.jar",
+            "sha256": "d7f94cd54b4f10dcf0c0a8fc39cfa31f22e952a5eeec75c7e4201dbf327b3abc"
+          },
+          {
+            "name": "exs-api-1.0.0.jar",
+            "sha256": "50fca65c3eaef82968bfeac669620ab54cec8ec5d8470ce622a73c6c69ce433c"
+          },
+          {
+            "name": "cms-api-1.0.0.jar",
+            "sha256": "dc94589c48968cb4633441afe0f7f5598ca4167aa1184e17393a4fac4b393614"
+          },
+          {
+            "name": "mkts-api-1.0.0.jar",
+            "sha256": "d8f6a64d3cdb2fb652148256a9ceaf0582f15ccd9be794edcbaf909b296314b2"
+          },
+          {
+            "name": "fds-api-1.0.0.jar",
+            "sha256": "8d2d7b59aec72d5eb96a96ed815f6d3fbbae8ee403591ea688c164919d8347a8"
+          },
+          {
+            "name": "common-apidoc-1.0.0.jar",
+            "sha256": "e4a6559fa7471c79e51f7b6ed6cb03609c54af1c002db2e4edb7b599e2ec0f2f"
+          },
+          {
+            "name": "common-security-1.0.0-plain.jar",
+            "sha256": "8ac3000e0b164ebf39c91a45e4abca43bce3b58e203d082201ab9bc4aadd9411"
+          },
+          {
+            "name": "common-web-1.0.0-plain.jar",
+            "sha256": "24165165b27a3c1938b07d3182cfdb8e7099b9b8c104747504c099988e604c09"
+          },
+          {
+            "name": "common-core-1.0.0-plain.jar",
+            "sha256": "3994cdaf3de60009c6205d219ecc3ad9eae1988011aea08d816e083e0050b447"
+          },
+          {
+            "name": "common-voucher-1.0.0.jar",
+            "sha256": "a18d6ec38d013cdf07015625f559f674b6ad589b93ded06ce5107ddf37b6a5b7"
+          },
+          {
+            "name": "common-redis-1.0.0.jar",
+            "sha256": "0285f1638de714dffdb14f8d6adb038963b8d8d2ffb868632e12866e97a67182"
+          }
+        ]
+      },
+      "successful_build_logs": [
+        "/Users/yangzhaohui/work/www/harness/dell/private/java-build/logs/finger-bff-system-bootjar-bootjar-01.log",
+        "/Users/yangzhaohui/work/www/harness/dell/private/java-build/logs/finger-bff-system-compile-compile-exs-source-01.log"
+      ],
+      "runtime_profiles_copied": false,
+      "publish_executed": false
+    }
+  ],
+  "contract_source_snapshots": [
+    {
+      "manifest": "/Users/yangzhaohui/work/www/harness/dell/private/java-build/auds-api-source-contract-manifest.json",
+      "source": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-auds",
+      "git": {
+        "head": "a13bef2c484a9c3e84176e1ba6c912a54f80b36b",
+        "branch": "codex/omva",
+        "status_porcelain": ""
+      },
+      "git_state_unchanged": true,
+      "snapshot_input_records_sha256": "9290e3ca0092bdc8c7e3cb9ff70db942f8af22f015a598eb70a1353f7959396a"
+    },
+    {
+      "manifest": "/Users/yangzhaohui/work/www/harness/dell/private/java-build/exs-api-source-contract-manifest.json",
+      "source": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-exs",
+      "git": {
+        "head": "8c6c8a5dcd11c7e26d64586765bc09afa9f97cb5",
+        "branch": "dev",
+        "status_porcelain": ""
+      },
+      "git_state_unchanged": true,
+      "snapshot_input_records_sha256": "fd09d153d295ff39fc9379d370a512befc404a217c89bc782e52f087035834b3"
+    },
+    {
+      "manifest": "/Users/yangzhaohui/work/www/harness/dell/private/java-build/fds-api-source-contract-manifest.json",
+      "source": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-fds",
+      "git": {
+        "head": "4b578b5b4bda374e33af0f589bf06d73bb84f2dc",
+        "branch": "codex/feat-omva",
+        "status_porcelain": "?? fds-boot/src/main/.DS_Store\n?? fds-boot/src/main/resources/.DS_Store"
+      },
+      "git_state_unchanged": true,
+      "snapshot_input_records_sha256": "5a06911ab29adf202ac91f2b5538797f5b6de35830090d3929a1bc23d8f7c320"
+    },
+    {
+      "manifest": "/Users/yangzhaohui/work/www/harness/dell/private/java-build/msgs-source-contract-manifest.json",
+      "source": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-msgs",
+      "git": {
+        "head": "1365309ff5ead39bc705b699a5ae98349d2ef1d3",
+        "branch": "codex/feat-omva",
+        "status_porcelain": ""
+      },
+      "git_state_unchanged": true,
+      "snapshot_input_records_sha256": "cfc54a98f7db845fab08eaa1c9f7b702a3c311f5ca0009aa321506eddfee040a"
+    },
+    {
+      "manifest": "/Users/yangzhaohui/work/www/harness/dell/private/java-build/sms-source-contract-manifest.json",
+      "source": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-common-lib",
+      "git": {
+        "head": "ffba5364b379558e627dccf6e43acf2aea9b1fcd",
+        "branch": "main",
+        "status_porcelain": ""
+      },
+      "git_state_unchanged": true,
+      "snapshot_input_records_sha256": "9cc30f289e1468b1ba59f3b84b8dca2fbc82e52cd1e5104b3ac800bb41ec898b"
+    },
+    {
+      "manifest": "/Users/yangzhaohui/work/www/harness/dell/private/java-build/ums-binary-source-contract-manifest.json",
+      "source": "/Users/yangzhaohui/work/www/finger/finger-master/projects/finger-service-ums",
+      "git": {
+        "head": "ada7bfb2f5aeb5101f5c6931ab62edddd55ba9c8",
+        "branch": "main",
+        "status_porcelain": ""
+      },
+      "git_state_unchanged": true,
+      "snapshot_input_records_sha256": "cd1f5d4041d4a7892019e045a51c25662340c37666be11cf517cea225c6ade86"
+    }
+  ],
+  "same_internal_filename_different_sha256": {},
+  "same_internal_dependencies_consistent": true,
+  "original_sources_unchanged": true,
+  "tests_status": "blocked-missing-isolated-test-config",
+  "public_downloads": "Only approved official Maven Central Jackson2.19.0, unauthenticated, SHA1 and SHA256 recorded",
+  "gradle_network": "external denied, loopback only",
+  "publish_executed": false
+}

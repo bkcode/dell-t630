@@ -1,0 +1,653 @@
+{
+  "started_at": "2026-11-06T10:44:25.155180+08:00",
+  "scope": "data-guests-only-private-network",
+  "vmids": [
+    200,
+    201,
+    210
+  ],
+  "source_business_data_imported": false,
+  "source_mac_services_modified": false,
+  "cf_backup_accessed_or_exported": false,
+  "host_network_mutated": false,
+  "status": "stopped-on-error",
+  "roles": [
+    {
+      "role": "prod-db",
+      "vmid": 200,
+      "started_at": "2026-11-06T10:44:25.155749+08:00",
+      "steps": [
+        {
+          "name": "secure-bundle-stdin-copy",
+          "at": "2026-11-06T10:44:26.676042+08:00",
+          "result": {
+            "exit_code": 0,
+            "stdout": "{\"role\": \"prod-db\", \"vmid\": 200, \"private_ip\": \"10.63.10.10\", \"files\": 16, \"mode\": \"secure-stdin-bundle\", \"secrets_values_emitted\": false, \"source_business_data_included\": false, \"status\": \"copied\"}\n",
+            "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+            "target": {
+              "vmid": 200,
+              "ip": "10.63.10.10",
+              "host_key_alias": "dell-vm200",
+              "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+              "trust_source": "PVE QGA over known SSH host"
+            }
+          }
+        },
+        {
+          "name": "preflight-check",
+          "at": "2026-11-06T10:44:27.952480+08:00",
+          "result": {
+            "exit_code": 0,
+            "stdout": "{\"role\": \"prod-db\", \"preflight\": \"passed\", \"deployment\": \"not-run\"}\n",
+            "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+            "target": {
+              "vmid": 200,
+              "ip": "10.63.10.10",
+              "host_key_alias": "dell-vm200",
+              "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+              "trust_source": "PVE QGA over known SSH host"
+            }
+          }
+        },
+        {
+          "name": "deploy",
+          "at": "2026-11-06T10:45:01.848699+08:00",
+          "result": {
+            "exit_code": 0,
+            "stdout": "{\"timestamp\": \"2026-11-06T02:45:01.810238+00:00\", \"role\": \"prod-db\", \"service_ip\": \"10.63.10.10\", \"containers\": [{\"service\": \"mysql\", \"state\": \"running\", \"health\": \"healthy\", \"restart_count\": 0}], \"business_data_migration_status\": \"not-checked-by-this-health-probe\", \"readiness_scope\": \"infrastructure-only\"}\n",
+            "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+            "target": {
+              "vmid": 200,
+              "ip": "10.63.10.10",
+              "host_key_alias": "dell-vm200",
+              "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+              "trust_source": "PVE QGA over known SSH host"
+            }
+          }
+        },
+        {
+          "name": "real-auth-before-restart",
+          "at": "2026-11-06T10:45:04.817041+08:00",
+          "result": {
+            "exit_code": 0,
+            "stdout": "{\"role\": \"prod-db\", \"action\": \"auth\", \"result\": {\"mysql\": {\"version\": \"8.4.5\", \"root_authenticated\": true, \"nacos_db_user_authenticated\": true, \"nacos_db_user_system_database_denied\": true}}, \"source_business_data_imported\": false, \"secrets_values_emitted\": false}\n",
+            "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+            "target": {
+              "vmid": 200,
+              "ip": "10.63.10.10",
+              "host_key_alias": "dell-vm200",
+              "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+              "trust_source": "PVE QGA over known SSH host"
+            }
+          }
+        },
+        {
+          "name": "prepare-disposable-fixtures",
+          "at": "2026-11-06T10:45:06.651250+08:00",
+          "result": {
+            "exit_code": 0,
+            "stdout": "{\"role\": \"prod-db\", \"action\": \"prepare\", \"result\": {\"fixture_created\": true, \"nonce\": \"51e5a9306e6b4bb9b1bece3b7b7a52d2\", \"scope\": \"isolated disposable objects; no business data or real business messages\"}, \"source_business_data_imported\": false, \"secrets_values_emitted\": false}\n",
+            "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+            "target": {
+              "vmid": 200,
+              "ip": "10.63.10.10",
+              "host_key_alias": "dell-vm200",
+              "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+              "trust_source": "PVE QGA over known SSH host"
+            }
+          }
+        },
+        {
+          "name": "snapshot-before-restart",
+          "at": "2026-11-06T10:45:07.512028+08:00",
+          "result": {
+            "exit_code": 0,
+            "stdout": "{\"hostname\": \"data-prod-db\", \"product_uuid\": \"c7ef9dfd-7515-4b52-a1a1-793daf644cf8\", \"mount\": {\"filesystems\": [{\"target\": \"/srv/dell-data\", \"source\": \"/dev/sda\", \"uuid\": \"d61c0e22-941e-447a-9e9a-1e9e50deb02f\", \"fstype\": \"ext4\", \"options\": \"rw,relatime,stripe=16\"}]}, \"containers\": [{\"service\": \"mysql\", \"container_id\": \"1ab31359642069a7bd4f36a9db0632be9f8d1263778e373f846a58e126e8f577\", \"image\": \"mysql:8.4.5@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840\", \"state\": \"running\", \"health\": \"healthy\", \"started_at\": \"2026-11-06T02:44:32.516933528Z\", \"pid\": 3007, \"restart_policy\": \"no\"}]}\n",
+            "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+            "target": {
+              "vmid": 200,
+              "ip": "10.63.10.10",
+              "host_key_alias": "dell-vm200",
+              "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+              "trust_source": "PVE QGA over known SSH host"
+            }
+          }
+        },
+        {
+          "name": "controlled-role-restart",
+          "at": "2026-11-06T10:45:11.456747+08:00",
+          "result": {
+            "exit_code": 0,
+            "stdout": "",
+            "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+            "target": {
+              "vmid": 200,
+              "ip": "10.63.10.10",
+              "host_key_alias": "dell-vm200",
+              "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+              "trust_source": "PVE QGA over known SSH host"
+            }
+          }
+        },
+        {
+          "name": "health-after-controlled-restart",
+          "at": "2026-11-06T10:45:19.924198+08:00",
+          "result": {
+            "exit_code": 0,
+            "stdout": "{\"timestamp\": \"2026-11-06T02:45:19.893901+00:00\", \"role\": \"prod-db\", \"service_ip\": \"10.63.10.10\", \"containers\": [{\"service\": \"mysql\", \"state\": \"running\", \"health\": \"healthy\", \"restart_count\": 0}], \"business_data_migration_status\": \"not-checked-by-this-health-probe\", \"readiness_scope\": \"infrastructure-only\"}\n",
+            "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+            "target": {
+              "vmid": 200,
+              "ip": "10.63.10.10",
+              "host_key_alias": "dell-vm200",
+              "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+              "trust_source": "PVE QGA over known SSH host"
+            }
+          }
+        },
+        {
+          "name": "snapshot-after-restart",
+          "at": "2026-11-06T10:45:20.791390+08:00",
+          "result": {
+            "exit_code": 0,
+            "stdout": "{\"hostname\": \"data-prod-db\", \"product_uuid\": \"c7ef9dfd-7515-4b52-a1a1-793daf644cf8\", \"mount\": {\"filesystems\": [{\"target\": \"/srv/dell-data\", \"source\": \"/dev/sda\", \"uuid\": \"d61c0e22-941e-447a-9e9a-1e9e50deb02f\", \"fstype\": \"ext4\", \"options\": \"rw,relatime,stripe=16\"}]}, \"containers\": [{\"service\": \"mysql\", \"container_id\": \"1ab31359642069a7bd4f36a9db0632be9f8d1263778e373f846a58e126e8f577\", \"image\": \"mysql:8.4.5@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840\", \"state\": \"running\", \"health\": \"healthy\", \"started_at\": \"2026-11-06T02:45:12.30631388Z\", \"pid\": 5473, \"restart_policy\": \"no\"}]}\n",
+            "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+            "target": {
+              "vmid": 200,
+              "ip": "10.63.10.10",
+              "host_key_alias": "dell-vm200",
+              "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+              "trust_source": "PVE QGA over known SSH host"
+            }
+          }
+        },
+        {
+          "name": "real-auth-after-restart",
+          "at": "2026-11-06T10:45:23.746578+08:00",
+          "result": {
+            "exit_code": 0,
+            "stdout": "{\"role\": \"prod-db\", \"action\": \"auth\", \"result\": {\"mysql\": {\"version\": \"8.4.5\", \"root_authenticated\": true, \"nacos_db_user_authenticated\": true, \"nacos_db_user_system_database_denied\": true}}, \"source_business_data_imported\": false, \"secrets_values_emitted\": false}\n",
+            "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+            "target": {
+              "vmid": 200,
+              "ip": "10.63.10.10",
+              "host_key_alias": "dell-vm200",
+              "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+              "trust_source": "PVE QGA over known SSH host"
+            }
+          }
+        },
+        {
+          "name": "verify-restart-persistence",
+          "at": "2026-11-06T10:45:25.630782+08:00",
+          "result": {
+            "exit_code": 0,
+            "stdout": "{\"role\": \"prod-db\", \"action\": \"verify\", \"result\": {\"mysql_fixture_persisted\": true}, \"source_business_data_imported\": false, \"secrets_values_emitted\": false}\n",
+            "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+            "target": {
+              "vmid": 200,
+              "ip": "10.63.10.10",
+              "host_key_alias": "dell-vm200",
+              "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+              "trust_source": "PVE QGA over known SSH host"
+            }
+          }
+        },
+        {
+          "name": "cleanup-owned-fixtures",
+          "at": "2026-11-06T10:45:27.469561+08:00",
+          "result": {
+            "exit_code": 0,
+            "stdout": "{\"role\": \"prod-db\", \"action\": \"cleanup\", \"result\": {\"owned_fixture_cleaned\": true, \"business_objects_modified\": false}, \"source_business_data_imported\": false, \"secrets_values_emitted\": false}\n",
+            "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+            "target": {
+              "vmid": 200,
+              "ip": "10.63.10.10",
+              "host_key_alias": "dell-vm200",
+              "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+              "trust_source": "PVE QGA over known SSH host"
+            }
+          }
+        },
+        {
+          "name": "final-infrastructure-health",
+          "at": "2026-11-06T10:45:28.916122+08:00",
+          "result": {
+            "exit_code": 0,
+            "stdout": "{\"timestamp\": \"2026-11-06T02:45:28.885964+00:00\", \"role\": \"prod-db\", \"service_ip\": \"10.63.10.10\", \"containers\": [{\"service\": \"mysql\", \"state\": \"running\", \"health\": \"healthy\", \"restart_count\": 0}], \"business_data_migration_status\": \"not-checked-by-this-health-probe\", \"readiness_scope\": \"infrastructure-only\"}\n",
+            "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+            "target": {
+              "vmid": 200,
+              "ip": "10.63.10.10",
+              "host_key_alias": "dell-vm200",
+              "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+              "trust_source": "PVE QGA over known SSH host"
+            }
+          }
+        }
+      ],
+      "initial_health": {
+        "timestamp": "2026-11-06T02:45:01.810238+00:00",
+        "role": "prod-db",
+        "service_ip": "10.63.10.10",
+        "containers": [
+          {
+            "service": "mysql",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          }
+        ],
+        "business_data_migration_status": "not-checked-by-this-health-probe",
+        "readiness_scope": "infrastructure-only"
+      },
+      "auth_before_restart": {
+        "role": "prod-db",
+        "action": "auth",
+        "result": {
+          "mysql": {
+            "version": "8.4.5",
+            "root_authenticated": true,
+            "nacos_db_user_authenticated": true,
+            "nacos_db_user_system_database_denied": true
+          }
+        },
+        "source_business_data_imported": false,
+        "secrets_values_emitted": false
+      },
+      "fixture_created": {
+        "role": "prod-db",
+        "action": "prepare",
+        "result": {
+          "fixture_created": true,
+          "nonce": "51e5a9306e6b4bb9b1bece3b7b7a52d2",
+          "scope": "isolated disposable objects; no business data or real business messages"
+        },
+        "source_business_data_imported": false,
+        "secrets_values_emitted": false
+      },
+      "before_restart": {
+        "hostname": "data-prod-db",
+        "product_uuid": "c7ef9dfd-7515-4b52-a1a1-793daf644cf8",
+        "mount": {
+          "filesystems": [
+            {
+              "target": "/srv/dell-data",
+              "source": "/dev/sda",
+              "uuid": "d61c0e22-941e-447a-9e9a-1e9e50deb02f",
+              "fstype": "ext4",
+              "options": "rw,relatime,stripe=16"
+            }
+          ]
+        },
+        "containers": [
+          {
+            "service": "mysql",
+            "container_id": "1ab31359642069a7bd4f36a9db0632be9f8d1263778e373f846a58e126e8f577",
+            "image": "mysql:8.4.5@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840",
+            "state": "running",
+            "health": "healthy",
+            "started_at": "2026-11-06T02:44:32.516933528Z",
+            "pid": 3007,
+            "restart_policy": "no"
+          }
+        ]
+      },
+      "health_after_restart": {
+        "timestamp": "2026-11-06T02:45:19.893901+00:00",
+        "role": "prod-db",
+        "service_ip": "10.63.10.10",
+        "containers": [
+          {
+            "service": "mysql",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          }
+        ],
+        "business_data_migration_status": "not-checked-by-this-health-probe",
+        "readiness_scope": "infrastructure-only"
+      },
+      "after_restart": {
+        "hostname": "data-prod-db",
+        "product_uuid": "c7ef9dfd-7515-4b52-a1a1-793daf644cf8",
+        "mount": {
+          "filesystems": [
+            {
+              "target": "/srv/dell-data",
+              "source": "/dev/sda",
+              "uuid": "d61c0e22-941e-447a-9e9a-1e9e50deb02f",
+              "fstype": "ext4",
+              "options": "rw,relatime,stripe=16"
+            }
+          ]
+        },
+        "containers": [
+          {
+            "service": "mysql",
+            "container_id": "1ab31359642069a7bd4f36a9db0632be9f8d1263778e373f846a58e126e8f577",
+            "image": "mysql:8.4.5@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840",
+            "state": "running",
+            "health": "healthy",
+            "started_at": "2026-11-06T02:45:12.30631388Z",
+            "pid": 5473,
+            "restart_policy": "no"
+          }
+        ]
+      },
+      "auth_after_restart": {
+        "role": "prod-db",
+        "action": "auth",
+        "result": {
+          "mysql": {
+            "version": "8.4.5",
+            "root_authenticated": true,
+            "nacos_db_user_authenticated": true,
+            "nacos_db_user_system_database_denied": true
+          }
+        },
+        "source_business_data_imported": false,
+        "secrets_values_emitted": false
+      },
+      "persistence": {
+        "role": "prod-db",
+        "action": "verify",
+        "result": {
+          "mysql_fixture_persisted": true
+        },
+        "source_business_data_imported": false,
+        "secrets_values_emitted": false
+      },
+      "cleanup": {
+        "role": "prod-db",
+        "action": "cleanup",
+        "result": {
+          "owned_fixture_cleaned": true,
+          "business_objects_modified": false
+        },
+        "source_business_data_imported": false,
+        "secrets_values_emitted": false
+      },
+      "final_health": {
+        "timestamp": "2026-11-06T02:45:28.885964+00:00",
+        "role": "prod-db",
+        "service_ip": "10.63.10.10",
+        "containers": [
+          {
+            "service": "mysql",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          }
+        ],
+        "business_data_migration_status": "not-checked-by-this-health-probe",
+        "readiness_scope": "infrastructure-only"
+      },
+      "status": "deployed-authenticated-restart-persistence-verified",
+      "finished_at": "2026-11-06T10:45:28.917555+08:00",
+      "source_business_data_imported": false,
+      "real_business_messages_sent": false
+    },
+    {
+      "role": "prod-infra",
+      "vmid": 201,
+      "started_at": "2026-11-06T10:45:28.920091+08:00",
+      "steps": [
+        {
+          "name": "secure-bundle-stdin-copy",
+          "at": "2026-11-06T10:45:29.946063+08:00",
+          "result": {
+            "exit_code": 0,
+            "stdout": "{\"role\": \"prod-infra\", \"vmid\": 201, \"private_ip\": \"10.63.10.11\", \"files\": 23, \"mode\": \"secure-stdin-bundle\", \"secrets_values_emitted\": false, \"source_business_data_included\": false, \"status\": \"copied\"}\n",
+            "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+            "target": {
+              "vmid": 201,
+              "ip": "10.63.10.11",
+              "host_key_alias": "dell-vm201",
+              "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+              "trust_source": "PVE QGA over known SSH host"
+            }
+          }
+        },
+        {
+          "name": "preflight-check",
+          "at": "2026-11-06T10:45:31.023044+08:00",
+          "result": {
+            "exit_code": 0,
+            "stdout": "{\"role\": \"prod-infra\", \"preflight\": \"passed\", \"deployment\": \"not-run\"}\n",
+            "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+            "target": {
+              "vmid": 201,
+              "ip": "10.63.10.11",
+              "host_key_alias": "dell-vm201",
+              "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+              "trust_source": "PVE QGA over known SSH host"
+            }
+          }
+        },
+        {
+          "name": "deploy",
+          "at": "2026-11-06T10:46:09.853610+08:00",
+          "result": {
+            "exit_code": 0,
+            "stdout": "{\"timestamp\": \"2026-11-06T02:46:09.168504+00:00\", \"role\": \"prod-infra\", \"service_ip\": \"10.63.10.11\", \"containers\": [{\"service\": \"nacos\", \"state\": \"running\", \"health\": \"healthy\", \"restart_count\": 0}, {\"service\": \"rabbitmq\", \"state\": \"running\", \"health\": \"healthy\", \"restart_count\": 0}, {\"service\": \"redis\", \"state\": \"running\", \"health\": \"healthy\", \"restart_count\": 0}], \"business_data_migration_status\": \"not-checked-by-this-health-probe\", \"readiness_scope\": \"infrastructure-only\", \"nacos\": {\"admin_login\": true, \"client_login\": true, \"namespace_present\": true, \"client_namespace_read\": true, \"other_namespace_denied\": true}, \"rabbitmq\": {\"app_authentication\": true, \"vhost_access\": true, \"messages_published\": 0}}\n",
+            "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+            "target": {
+              "vmid": 201,
+              "ip": "10.63.10.11",
+              "host_key_alias": "dell-vm201",
+              "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+              "trust_source": "PVE QGA over known SSH host"
+            }
+          }
+        },
+        {
+          "name": "real-auth-before-restart",
+          "at": "2026-11-06T10:46:12.074669+08:00",
+          "result": {
+            "exit_code": 0,
+            "stdout": "{\"role\": \"prod-infra\", \"action\": \"auth\", \"result\": {\"redis\": {\"authenticated\": true, \"anonymous_denied\": true}, \"nacos\": {\"admin_login\": true, \"client_login\": true, \"namespace_present\": true, \"client_namespace_read\": true, \"other_namespace_denied\": true}, \"rabbitmq\": {\"app_authentication\": true, \"vhost_access\": true, \"messages_published\": 0, \"management_authenticated\": true}}, \"source_business_data_imported\": false, \"secrets_values_emitted\": false}\n",
+            "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+            "target": {
+              "vmid": 201,
+              "ip": "10.63.10.11",
+              "host_key_alias": "dell-vm201",
+              "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+              "trust_source": "PVE QGA over known SSH host"
+            }
+          }
+        },
+        {
+          "name": "prepare-disposable-fixtures",
+          "at": "2026-11-06T10:46:16.267389+08:00",
+          "result": {
+            "exit_code": 0,
+            "stdout": "{\"role\": \"prod-infra\", \"action\": \"prepare\", \"result\": {\"fixture_created\": true, \"nonce\": \"a11032e0d6894a849cdd50557d045e50\", \"scope\": \"isolated disposable objects; no business data or real business messages\"}, \"source_business_data_imported\": false, \"secrets_values_emitted\": false}\n",
+            "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+            "target": {
+              "vmid": 201,
+              "ip": "10.63.10.11",
+              "host_key_alias": "dell-vm201",
+              "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+              "trust_source": "PVE QGA over known SSH host"
+            }
+          }
+        },
+        {
+          "name": "snapshot-before-restart",
+          "at": "2026-11-06T10:46:17.125082+08:00",
+          "result": {
+            "exit_code": 0,
+            "stdout": "{\"hostname\": \"data-prod-infra\", \"product_uuid\": \"35cbe96d-d7be-4ba4-9e0f-812e47c47d86\", \"mount\": {\"filesystems\": [{\"target\": \"/srv/dell-data\", \"source\": \"/dev/sdb\", \"uuid\": \"b85156c2-dac8-4b33-ab25-460aaf676c57\", \"fstype\": \"ext4\", \"options\": \"rw,relatime,stripe=16\"}]}, \"containers\": [{\"service\": \"nacos\", \"container_id\": \"95657f464981f82a6acecafd265b219d3beef1e843c45a423193577637b55c61\", \"image\": \"nacos/nacos-server:v2.4.3@sha256:c8dc1db0ac6a345b62bad4e76963d25237a90bf45704795e7cb4d1d972b024a3\", \"state\": \"running\", \"health\": \"healthy\", \"started_at\": \"2026-11-06T02:45:38.824428045Z\", \"pid\": 2879, \"restart_policy\": \"no\"}, {\"service\": \"rabbitmq\", \"container_id\": \"7f71dfb53684993f7467216ac1a77e4f88af566da4b780ba8b555e15497a3f8e\", \"image\": \"rabbitmq:3.13.7-management@sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920\", \"state\": \"running\", \"health\": \"healthy\", \"started_at\": \"2026-11-06T02:45:39.217999909Z\", \"pid\": 2978, \"restart_policy\": \"no\"}, {\"service\": \"redis\", \"container_id\": \"e4d7ff6f6d2c51ea5445513524f43ab81c5ca6e03d1d99536f25328ad7ff0a07\", \"image\": \"redis:7.4.4@sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a\", \"state\": \"running\", \"health\": \"healthy\", \"started_at\": \"2026-11-06T02:45:38.360652272Z\", \"pid\": 2780, \"restart_policy\": \"no\"}]}\n",
+            "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+            "target": {
+              "vmid": 201,
+              "ip": "10.63.10.11",
+              "host_key_alias": "dell-vm201",
+              "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+              "trust_source": "PVE QGA over known SSH host"
+            }
+          }
+        },
+        {
+          "name": "controlled-role-restart",
+          "at": "2026-11-06T10:46:20.880605+08:00",
+          "result": {
+            "exit_code": 0,
+            "stdout": "",
+            "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+            "target": {
+              "vmid": 201,
+              "ip": "10.63.10.11",
+              "host_key_alias": "dell-vm201",
+              "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+              "trust_source": "PVE QGA over known SSH host"
+            }
+          }
+        },
+        {
+          "name": "health-after-controlled-restart",
+          "at": "2026-11-06T10:46:23.006007+08:00",
+          "result": {
+            "exit_code": 1,
+            "stdout": "",
+            "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nTraceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    import importlib.util,sys;sys.dont_write_bytecode=True;s=importlib.util.spec_from_file_location('m','/opt/dell/data/prod-infra/scripts/manage.py');m=importlib.util.module_from_spec(s);s.loader.exec_module(m);c=m.cfg();m.preflight(c);m.wait_healthy();m.health(c)\n                                                                                                                                                                                                                                             ~~~~~~~~~~~~~~^^\n  File \"/opt/dell/data/prod-infra/scripts/manage.py\", line 160, in wait_healthy\n    if any(x['state'] in ('dead','exited') for x in current):raise RuntimeError('target container exited; inspect private logs')\n                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: target container exited; inspect private logs\n",
+            "target": {
+              "vmid": 201,
+              "ip": "10.63.10.11",
+              "host_key_alias": "dell-vm201",
+              "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+              "trust_source": "PVE QGA over known SSH host"
+            }
+          }
+        }
+      ],
+      "initial_health": {
+        "timestamp": "2026-11-06T02:46:09.168504+00:00",
+        "role": "prod-infra",
+        "service_ip": "10.63.10.11",
+        "containers": [
+          {
+            "service": "nacos",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          },
+          {
+            "service": "rabbitmq",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          },
+          {
+            "service": "redis",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          }
+        ],
+        "business_data_migration_status": "not-checked-by-this-health-probe",
+        "readiness_scope": "infrastructure-only",
+        "nacos": {
+          "admin_login": true,
+          "client_login": true,
+          "namespace_present": true,
+          "client_namespace_read": true,
+          "other_namespace_denied": true
+        },
+        "rabbitmq": {
+          "app_authentication": true,
+          "vhost_access": true,
+          "messages_published": 0
+        }
+      },
+      "auth_before_restart": {
+        "role": "prod-infra",
+        "action": "auth",
+        "result": {
+          "redis": {
+            "authenticated": true,
+            "anonymous_denied": true
+          },
+          "nacos": {
+            "admin_login": true,
+            "client_login": true,
+            "namespace_present": true,
+            "client_namespace_read": true,
+            "other_namespace_denied": true
+          },
+          "rabbitmq": {
+            "app_authentication": true,
+            "vhost_access": true,
+            "messages_published": 0,
+            "management_authenticated": true
+          }
+        },
+        "source_business_data_imported": false,
+        "secrets_values_emitted": false
+      },
+      "fixture_created": {
+        "role": "prod-infra",
+        "action": "prepare",
+        "result": {
+          "fixture_created": true,
+          "nonce": "a11032e0d6894a849cdd50557d045e50",
+          "scope": "isolated disposable objects; no business data or real business messages"
+        },
+        "source_business_data_imported": false,
+        "secrets_values_emitted": false
+      },
+      "before_restart": {
+        "hostname": "data-prod-infra",
+        "product_uuid": "35cbe96d-d7be-4ba4-9e0f-812e47c47d86",
+        "mount": {
+          "filesystems": [
+            {
+              "target": "/srv/dell-data",
+              "source": "/dev/sdb",
+              "uuid": "b85156c2-dac8-4b33-ab25-460aaf676c57",
+              "fstype": "ext4",
+              "options": "rw,relatime,stripe=16"
+            }
+          ]
+        },
+        "containers": [
+          {
+            "service": "nacos",
+            "container_id": "95657f464981f82a6acecafd265b219d3beef1e843c45a423193577637b55c61",
+            "image": "nacos/nacos-server:v2.4.3@sha256:c8dc1db0ac6a345b62bad4e76963d25237a90bf45704795e7cb4d1d972b024a3",
+            "state": "running",
+            "health": "healthy",
+            "started_at": "2026-11-06T02:45:38.824428045Z",
+            "pid": 2879,
+            "restart_policy": "no"
+          },
+          {
+            "service": "rabbitmq",
+            "container_id": "7f71dfb53684993f7467216ac1a77e4f88af566da4b780ba8b555e15497a3f8e",
+            "image": "rabbitmq:3.13.7-management@sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920",
+            "state": "running",
+            "health": "healthy",
+            "started_at": "2026-11-06T02:45:39.217999909Z",
+            "pid": 2978,
+            "restart_policy": "no"
+          },
+          {
+            "service": "redis",
+            "container_id": "e4d7ff6f6d2c51ea5445513524f43ab81c5ca6e03d1d99536f25328ad7ff0a07",
+            "image": "redis:7.4.4@sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a",
+            "state": "running",
+            "health": "healthy",
+            "started_at": "2026-11-06T02:45:38.360652272Z",
+            "pid": 2780,
+            "restart_policy": "no"
+          }
+        ]
+      },
+      "status": "failed-stopped-queue",
+      "error": "health-after-controlled-restart failed; sanitized guest result retained",
+      "finished_at": "2026-11-06T10:46:23.007632+08:00"
+    }
+  ],
+  "finished_at": "2026-11-06T10:46:23.007653+08:00"
+}

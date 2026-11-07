@@ -1,0 +1,40 @@
+{
+  "at": "2026-11-06T10:11:06.565976+00:00",
+  "status": "three-media-roles-new19-runtime-and-semantic-verified",
+  "local_tests": {
+    "passed": 18,
+    "failed": 0,
+    "scope": "synthetic files and captured public wired models; no actual env or identities"
+  },
+  "read_only_guest_preflight": "active-readonly-preflight.json",
+  "guest_roles_read": [
+    250,
+    221,
+    260
+  ],
+  "guest_write_actions_executed": [
+    "public-tools-upload/private-stage",
+    "221quiesce/commit-files/start",
+    "250quiesce/commit-files/start",
+    "260commit-files/start",
+    "260officialSMBshared-source-allowlist40to19+Salt",
+    "NASnewnonce synthetic permissions"
+  ],
+  "PVE_or_OW_actions": [],
+  "source_Git_or_Mac_mutation": false,
+  "secret_values_or_full_env_emitted": false,
+  "credentials_changed": false,
+  "future_private_credential_hashes": "guest-local600 journal only; public stdout emits equality status, no secret hashes",
+  "pending": [
+    "root global Ops/ACL/oldbridge/CI+currentdocs closeout; no further app mutation needed",
+    "Future optional rollback only after explicit root window; not exercised"
+  ],
+  "DNS_policy": "All active Penpot DNS forwarding via192.168.19.1:53; GW forwards toOW192.168.21.1; no active DoH exception",
+  "new_router_ready": "root supplied vmbr19/gateway190 dualIP+OW route proof; this agent does not change router",
+  "semantic_evidence": [
+    "nexus-post-cutover-verification.json",
+    "penpot-post-cutover-verification.json",
+    "nas-jellyfin-post-cutover-verification.json",
+    "nas-smb-post-cutover-verification.json"
+  ]
+}

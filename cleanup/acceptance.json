@@ -1,0 +1,696 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-07T10:55:18.181006+08:00",
+  "timezone": "Asia/Shanghai",
+  "scope": "historical cleanup/fish/template acceptance; authorized Nexus merge paused for hardware; recovery checks not executed",
+  "status": "paused-awaiting-hardware-recovery",
+  "summary": {
+    "total": 16,
+    "current_phase_case_count": 10,
+    "current_phase_passed": 9,
+    "historical_cleanup_passed": 9,
+    "statuses": {
+      "passed": 9,
+      "pending": 7
+    },
+    "required_pending": [
+      "CLN-NEXUS-001"
+    ],
+    "hardware_resume_pending": [
+      "REC-HW-001",
+      "REC-BAK-001",
+      "REC-DATA-001",
+      "REC-NET-001",
+      "REC-OBS-001",
+      "REC-ROLL-001"
+    ]
+  },
+  "cases": [
+    {
+      "id": "CLN-JAVA-001",
+      "title": "正式测试各保留一个运行基础",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "本轮用户整理/多余模板清理与fish范围已知；原数据/认证/CF及220privatekey边界保持",
+        "Nexus短停维护已获明确授权；先通过硬件恢复门禁及fresh基线，才能执行合并"
+      ],
+      "steps": [
+        "按18当前计划及对应受控工具逐项操作",
+        "核对每项真实receipt与PVE/guest后置读回；失败不冒签或绕过审批"
+      ],
+      "observable_pass_conditions": [
+        "PVE中230/240各一且无业务Java进程，231/232已归档清理；原生产测试隔离保持。"
+      ],
+      "evidence": [
+        {
+          "path": "cleanup/final-live-check.json",
+          "note": ""
+        },
+        {
+          "path": "cleanup/redundant-Java-stopped.json",
+          "note": ""
+        }
+      ],
+      "observed_result": "PVE中230/240各一且无业务Java进程，231/232已归档清理；原生产测试隔离保持。",
+      "limitations": [
+        "旧回退档完整性不等于所有旧VM恢复启动实演",
+        "正式/测试各一按既有隔离要求处理，未回复的默认shell偏好不视作chsh许可",
+        "UEFI0058 POST暂停后未重新验证在线状态；历史通过不代表当前服务仍运行。"
+      ],
+      "current_live_status": "unverified-hardware-paused",
+      "verification_scope": "historical-success-not-current-live",
+      "full_service_baseline_reference_at": "2026-11-07T02:35:01.759527+08:00",
+      "phase": "historical-cleanup",
+      "execution_type": "manual-review",
+      "fail_criteria": [
+        "真实观察不符合该项通过条件、缺少对象/时间/步骤或证据，或越过原身份/数据/权限边界；旧passed不能代替硬件暂停后的fresh验收。"
+      ]
+    },
+    {
+      "id": "CLN-BAK-001",
+      "title": "21份受保护原/候选归档完整性",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "本轮用户整理/多余模板清理与fish范围已知；原数据/认证/CF及220privatekey边界保持",
+        "Nexus短停维护已获明确授权；先通过硬件恢复门禁及fresh基线，才能执行合并"
+      ],
+      "steps": [
+        "按18当前计划及对应受控工具逐项操作",
+        "核对每项真实receipt与PVE/guest后置读回；失败不冒签或绕过审批"
+      ],
+      "observable_pass_conditions": [
+        "15旧对象+3原core+3fish候选归档均zstd/VMA/SHA验证，root700/600，排除CF100与整机220。"
+      ],
+      "evidence": [
+        {
+          "path": "cleanup/backup-summary.json",
+          "note": ""
+        }
+      ],
+      "observed_result": "15旧对象+3原core+3fish候选归档均zstd/VMA/SHA验证，root700/600，排除CF100与整机220。",
+      "limitations": [
+        "旧回退档完整性不等于所有旧VM恢复启动实演",
+        "正式/测试各一按既有隔离要求处理，未回复的默认shell偏好不视作chsh许可",
+        "UEFI0058 POST暂停后未重新验证在线状态；历史通过不代表当前服务仍运行。"
+      ],
+      "current_live_status": "unverified-hardware-paused",
+      "verification_scope": "historical-success-not-current-live",
+      "full_service_baseline_reference_at": "2026-11-07T02:35:01.759527+08:00",
+      "phase": "historical-cleanup",
+      "execution_type": "manual-review",
+      "fail_criteria": [
+        "真实观察不符合该项通过条件、缺少对象/时间/步骤或证据，或越过原身份/数据/权限边界；旧passed不能代替硬件暂停后的fresh验收。"
+      ]
+    },
+    {
+      "id": "CLN-DEL-001",
+      "title": "精确15旧对象依赖顺序清理",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "本轮用户整理/多余模板清理与fish范围已知；原数据/认证/CF及220privatekey边界保持",
+        "Nexus短停维护已获明确授权；先通过硬件恢复门禁及fresh基线，才能执行合并"
+      ],
+      "steps": [
+        "按18当前计划及对应受控工具逐项操作",
+        "核对每项真实receipt与PVE/guest后置读回；失败不冒签或绕过审批"
+      ],
+      "observable_pass_conditions": [
+        "15个确切对象已删，104先103，无force/skiplock或共享ISO删除。"
+      ],
+      "evidence": [
+        {
+          "path": "cleanup/deleted-candidates.json",
+          "note": ""
+        },
+        {
+          "path": "cleanup/audit/delete-script-review.md",
+          "note": ""
+        }
+      ],
+      "observed_result": "15个确切对象已删，104先103，无force/skiplock或共享ISO删除。",
+      "limitations": [
+        "旧回退档完整性不等于所有旧VM恢复启动实演",
+        "正式/测试各一按既有隔离要求处理，未回复的默认shell偏好不视作chsh许可",
+        "UEFI0058 POST暂停后未重新验证在线状态；历史通过不代表当前服务仍运行。"
+      ],
+      "current_live_status": "unverified-hardware-paused",
+      "verification_scope": "historical-success-not-current-live",
+      "full_service_baseline_reference_at": "2026-11-07T02:35:01.759527+08:00",
+      "phase": "historical-cleanup",
+      "execution_type": "manual-review",
+      "fail_criteria": [
+        "真实观察不符合该项通过条件、缺少对象/时间/步骤或证据，或越过原身份/数据/权限边界；旧passed不能代替硬件暂停后的fresh验收。"
+      ]
+    },
+    {
+      "id": "CLN-FISH-001",
+      "title": "9运行来宾安装fish并保默认shell",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "本轮用户整理/多余模板清理与fish范围已知；原数据/认证/CF及220privatekey边界保持",
+        "Nexus短停维护已获明确授权；先通过硬件恢复门禁及fresh基线，才能执行合并"
+      ],
+      "steps": [
+        "按18当前计划及对应受控工具逐项操作",
+        "核对每项真实receipt与PVE/guest后置读回；失败不冒签或绕过审批"
+      ],
+      "observable_pass_conditions": [
+        "190200201210220221230240260 fish4.0.2-1，默认Bash未改，CF/Penpot/Ops与PVEhost排除不动。"
+      ],
+      "evidence": [
+        {
+          "path": "cleanup/fish/runtime-status.json",
+          "note": ""
+        }
+      ],
+      "observed_result": "190200201210220221230240260 fish4.0.2-1，默认Bash未改，CF/Penpot/Ops与PVEhost排除不动。",
+      "limitations": [
+        "旧回退档完整性不等于所有旧VM恢复启动实演",
+        "正式/测试各一按既有隔离要求处理，未回复的默认shell偏好不视作chsh许可",
+        "UEFI0058 POST暂停后未重新验证在线状态；历史通过不代表当前服务仍运行。"
+      ],
+      "current_live_status": "unverified-hardware-paused",
+      "verification_scope": "historical-success-not-current-live",
+      "full_service_baseline_reference_at": "2026-11-07T02:35:01.759527+08:00",
+      "phase": "historical-cleanup",
+      "execution_type": "manual-review",
+      "fail_criteria": [
+        "真实观察不符合该项通过条件、缺少对象/时间/步骤或证据，或越过原身份/数据/权限边界；旧passed不能代替硬件暂停后的fresh验收。"
+      ]
+    },
+    {
+      "id": "CLN-TPL-001",
+      "title": "三模板fish升级与独立QA",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "本轮用户整理/多余模板清理与fish范围已知；原数据/认证/CF及220privatekey边界保持",
+        "Nexus短停维护已获明确授权；先通过硬件恢复门禁及fresh基线，才能执行合并"
+      ],
+      "steps": [
+        "按18当前计划及对应受控工具逐项操作",
+        "核对每项真实receipt与PVE/guest后置读回；失败不冒签或绕过审批"
+      ],
+      "observable_pass_conditions": [
+        "三独立candidate QA验证新机器/hostkey/DockerID、Java原基线和fish；原备份后恢复到9001/9010/9011，stopped/DHCP/genericCI。"
+      ],
+      "evidence": [
+        {
+          "path": "cleanup/fish/template-QA-summary.json",
+          "note": ""
+        },
+        {
+          "path": "cleanup/fish/core-template-replacement.json",
+          "note": ""
+        }
+      ],
+      "observed_result": "三独立candidate QA验证新机器/hostkey/DockerID、Java原基线和fish；原备份后恢复到9001/9010/9011，stopped/DHCP/genericCI。",
+      "limitations": [
+        "旧回退档完整性不等于所有旧VM恢复启动实演",
+        "正式/测试各一按既有隔离要求处理，未回复的默认shell偏好不视作chsh许可",
+        "UEFI0058 POST暂停后未重新验证在线状态；历史通过不代表当前服务仍运行。"
+      ],
+      "current_live_status": "unverified-hardware-paused",
+      "verification_scope": "historical-success-not-current-live",
+      "full_service_baseline_reference_at": "2026-11-07T02:35:01.759527+08:00",
+      "phase": "historical-cleanup",
+      "execution_type": "manual-review",
+      "fail_criteria": [
+        "真实观察不符合该项通过条件、缺少对象/时间/步骤或证据，或越过原身份/数据/权限边界；旧passed不能代替硬件暂停后的fresh验收。"
+      ]
+    },
+    {
+      "id": "CLN-TMP-001",
+      "title": "临时构建验收对象无残留",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "本轮用户整理/多余模板清理与fish范围已知；原数据/认证/CF及220privatekey边界保持",
+        "Nexus短停维护已获明确授权；先通过硬件恢复门禁及fresh基线，才能执行合并"
+      ],
+      "steps": [
+        "按18当前计划及对应受控工具逐项操作",
+        "核对每项真实receipt与PVE/guest后置读回；失败不冒签或绕过审批"
+      ],
+      "observable_pass_conditions": [
+        "本任务9040–9045已清除，PVE仅12运行+3模板，无额外停止VM。"
+      ],
+      "evidence": [
+        {
+          "path": "cleanup/fish/temp-closeout.json",
+          "note": ""
+        },
+        {
+          "path": "cleanup/final-live-check.json",
+          "note": ""
+        }
+      ],
+      "observed_result": "本任务9040–9045已清除，PVE仅12运行+3模板，无额外停止VM。",
+      "limitations": [
+        "旧回退档完整性不等于所有旧VM恢复启动实演",
+        "正式/测试各一按既有隔离要求处理，未回复的默认shell偏好不视作chsh许可",
+        "UEFI0058 POST暂停后未重新验证在线状态；历史通过不代表当前服务仍运行。"
+      ],
+      "current_live_status": "unverified-hardware-paused",
+      "verification_scope": "historical-success-not-current-live",
+      "full_service_baseline_reference_at": "2026-11-07T02:35:01.759527+08:00",
+      "phase": "historical-cleanup",
+      "execution_type": "manual-review",
+      "fail_criteria": [
+        "真实观察不符合该项通过条件、缺少对象/时间/步骤或证据，或越过原身份/数据/权限边界；旧passed不能代替硬件暂停后的fresh验收。"
+      ]
+    },
+    {
+      "id": "CLN-DNS-001",
+      "title": "退役DNS与身份同步",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "本轮用户整理/多余模板清理与fish范围已知；原数据/认证/CF及220privatekey边界保持",
+        "Nexus短停维护已获明确授权；先通过硬件恢复门禁及fresh基线，才能执行合并"
+      ],
+      "steps": [
+        "按18当前计划及对应受控工具逐项操作",
+        "核对每项真实receipt与PVE/guest后置读回；失败不冒签或绕过审批"
+      ],
+      "observable_pass_conditions": [
+        "11退休名UDP/TCP NXDOMAIN、11保留A正确，artifact31/publisher30保留；WGfull/NATnone/hostforward0及MACIP/role隔离保持。"
+      ],
+      "evidence": [
+        {
+          "path": "cleanup/network/dns-runtime/summary.json",
+          "note": ""
+        },
+        {
+          "path": "cleanup/final-live-check.json",
+          "note": ""
+        }
+      ],
+      "observed_result": "11退休名UDP/TCP NXDOMAIN、11保留A正确，artifact31/publisher30保留；WGfull/NATnone/hostforward0及MACIP/role隔离保持。",
+      "limitations": [
+        "旧回退档完整性不等于所有旧VM恢复启动实演",
+        "正式/测试各一按既有隔离要求处理，未回复的默认shell偏好不视作chsh许可",
+        "UEFI0058 POST暂停后未重新验证在线状态；历史通过不代表当前服务仍运行。"
+      ],
+      "current_live_status": "unverified-hardware-paused",
+      "verification_scope": "historical-success-not-current-live",
+      "full_service_baseline_reference_at": "2026-11-07T02:35:01.759527+08:00",
+      "phase": "historical-cleanup",
+      "execution_type": "manual-review",
+      "fail_criteria": [
+        "真实观察不符合该项通过条件、缺少对象/时间/步骤或证据，或越过原身份/数据/权限边界；旧passed不能代替硬件暂停后的fresh验收。"
+      ]
+    },
+    {
+      "id": "CLN-OBS-001",
+      "title": "10节点15目标与维护恢复",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "本轮用户整理/多余模板清理与fish范围已知；原数据/认证/CF及220privatekey边界保持",
+        "Nexus短停维护已获明确授权；先通过硬件恢复门禁及fresh基线，才能执行合并"
+      ],
+      "steps": [
+        "按18当前计划及对应受控工具逐项操作",
+        "核对每项真实receipt与PVE/guest后置读回；失败不冒签或绕过审批"
+      ],
+      "observable_pass_conditions": [
+        "15/15UP、221保留UP，10份catalog/installer配套；health/collector/业务身份不变，清理site静默仅本任务项解除，0activealerts/no testsend。"
+      ],
+      "evidence": [
+        {
+          "path": "cleanup/monitoring/ten-role/execution-status.json",
+          "note": ""
+        },
+        {
+          "path": "cleanup/maintenance-ended.json",
+          "note": ""
+        }
+      ],
+      "observed_result": "15/15UP、221保留UP，10份catalog/installer配套；health/collector/业务身份不变，清理site静默仅本任务项解除，0activealerts/no testsend。",
+      "limitations": [
+        "旧回退档完整性不等于所有旧VM恢复启动实演",
+        "正式/测试各一按既有隔离要求处理，未回复的默认shell偏好不视作chsh许可",
+        "UEFI0058 POST暂停后未重新验证在线状态；历史通过不代表当前服务仍运行。"
+      ],
+      "current_live_status": "unverified-hardware-paused",
+      "verification_scope": "historical-success-not-current-live",
+      "full_service_baseline_reference_at": "2026-11-07T02:35:01.759527+08:00",
+      "phase": "historical-cleanup",
+      "execution_type": "manual-review",
+      "fail_criteria": [
+        "真实观察不符合该项通过条件、缺少对象/时间/步骤或证据，或越过原身份/数据/权限边界；旧passed不能代替硬件暂停后的fresh验收。"
+      ]
+    },
+    {
+      "id": "CLN-REG-001",
+      "title": "保留SSH与原应用入口回归",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "本轮用户整理/多余模板清理与fish范围已知；原数据/认证/CF及220privatekey边界保持",
+        "Nexus短停维护已获明确授权；先通过硬件恢复门禁及fresh基线，才能执行合并"
+      ],
+      "steps": [
+        "按18当前计划及对应受控工具逐项操作",
+        "核对每项真实receipt与PVE/guest后置读回；失败不冒签或绕过审批"
+      ],
+      "observable_pass_conditions": [
+        "10guest新strictSSH/唯一19地址/默认GW正确，五原web入口200、数据/身份未被fish/模板清理改变，Java业务不启动。"
+      ],
+      "evidence": [
+        {
+          "path": "cleanup/final-live-check.json",
+          "note": ""
+        }
+      ],
+      "observed_result": "10guest新strictSSH/唯一19地址/默认GW正确，五原web入口200、数据/身份未被fish/模板清理改变，Java业务不启动。",
+      "limitations": [
+        "旧回退档完整性不等于所有旧VM恢复启动实演",
+        "正式/测试各一按既有隔离要求处理，未回复的默认shell偏好不视作chsh许可",
+        "UEFI0058 POST暂停后未重新验证在线状态；历史通过不代表当前服务仍运行。"
+      ],
+      "current_live_status": "unverified-hardware-paused",
+      "verification_scope": "historical-success-not-current-live",
+      "full_service_baseline_reference_at": "2026-11-07T02:35:01.759527+08:00",
+      "phase": "historical-cleanup",
+      "execution_type": "manual-review",
+      "fail_criteria": [
+        "真实观察不符合该项通过条件、缺少对象/时间/步骤或证据，或越过原身份/数据/权限边界；旧passed不能代替硬件暂停后的fresh验收。"
+      ]
+    },
+    {
+      "id": "CLN-NEXUS-001",
+      "title": "Nexus同机合并与源221退役",
+      "status": "pending",
+      "required_for_phase": true,
+      "preconditions": [
+        "本轮用户整理/多余模板清理与fish范围已知；原数据/认证/CF及220privatekey边界保持",
+        "Nexus短停维护已获明确授权；先通过硬件恢复门禁及fresh基线，才能执行合并"
+      ],
+      "steps": [
+        "按18当前计划及对应受控工具逐项操作",
+        "核对每项真实receipt与PVE/guest后置读回；失败不冒签或绕过审批"
+      ],
+      "observable_pass_conditions": [
+        "硬件恢复门禁通过并fresh核对后，在已获授权维护内完成221冷备、唯一原盘/IP31交接到220(6CPU8GiB)、账号/EULA及49GAV/234主制品SHA核验、回退证明和221退役；仅有prepare或授权不通过。"
+      ],
+      "evidence": [
+        {
+          "path": "cleanup/nexus/PLAN.md",
+          "note": ""
+        },
+        {
+          "path": "cleanup/nexus/preparation-readback.json",
+          "note": ""
+        },
+        {
+          "path": "cleanup/nexus/approval-block.json",
+          "note": ""
+        },
+        {
+          "path": "cleanup/nexus/maintenance-authorized.json",
+          "note": "new explicit user approval and current connectivity blocker"
+        },
+        {
+          "path": "cleanup/hardware/DIMM_B1-incident.json",
+          "note": "firmware POST gate; no migration executed"
+        }
+      ],
+      "observed_result": "用户已明确授权短时停机合并，但迁移未开始。iDRAC先示PowerOff，随后控制台UEFI0058停在POST；此前SEL指向DIMM_B1。当前阻塞是硬件恢复和fresh验收，不是再次等待同项维护授权。",
+      "limitations": [
+        "02:35完整验收后当前源221/目标220运行状态不可现场确认；助手未执行本轮迁移停服/重启/盘或IP移交。",
+        "SEL的B1事件与UEFI0058支持内存路径故障，但不足以断言单条DIMM已确诊或内存是整机物理关机唯一原因；BMC显示时间时区未核。"
+      ],
+      "current_live_status": "unverified-hardware-paused",
+      "verification_scope": "authorized-not-executed",
+      "maintenance_authorized": true,
+      "migration_started": false,
+      "phase": "historical-cleanup",
+      "execution_type": "manual-review",
+      "fail_criteria": [
+        "真实观察不符合该项通过条件、缺少对象/时间/步骤或证据，或越过原身份/数据/权限边界；旧passed不能代替硬件暂停后的fresh验收。"
+      ]
+    },
+    {
+      "id": "REC-HW-001",
+      "title": "硬件POST、内存路径与可信管理恢复",
+      "phase": "hardware-recovery",
+      "execution_type": "manual-review",
+      "status": "pending",
+      "required_for_phase": false,
+      "required_for_hardware_resume": true,
+      "preconditions": [
+        "由具备资质的现场人员保留SEL/Lifecycle与POST证据；不得清日志掩盖错误，不自动按F1绕过，不远程powercycle。"
+      ],
+      "steps": [
+        "现场核B1所在内存模块/槽位/通道与整机内存清单，断电维护与替换遵循Dell流程；故障对象与根因未证实前如实登记。",
+        "完成维护记录和适用离线内存诊断，再由root可信SSH核PVE启动时间、内存可见容量、fresh SEL/RAID/BBU/文件系统状态；稳定观察窗口由现场负责人明确并留证。"
+      ],
+      "observable_pass_conditions": [
+        "POST正常进入OS、内存诊断与fresh错误检查达成现场批准条件、可信管理身份匹配、存储无新异常；根因未完全定位时限制明确。"
+      ],
+      "fail_criteria": [
+        "UEFI0058仍在、出现新的不可纠正内存错误、存储异常或管理身份不符；仅按F1进入OS或仅端口开放不通过。"
+      ],
+      "evidence": [
+        {
+          "path": "cleanup/hardware/DIMM_B1-incident.json",
+          "note": "baseline/plan only; no new recovery execution evidence"
+        },
+        {
+          "path": "08-hardware-findings.md",
+          "note": "baseline/plan only; no new recovery execution evidence"
+        }
+      ],
+      "planned_result_evidence": "cleanup/hardware/recovery/REC-HW-001.json",
+      "observed_result": "未执行；本轮在本地同步文档、规则与暂停状态，编写人工手册并进行Git交付，未远程连接服务器或实施物理/运行恢复。实际Git结果由20-git-and-handoff.md及交付证据记录。",
+      "current_live_status": "unverified-hardware-paused",
+      "limitations": [
+        "当前证据只支持事故事实/旧基线与执行计划，不能视为恢复通过。"
+      ]
+    },
+    {
+      "id": "REC-BAK-001",
+      "title": "合并前冷备完整性与隔离恢复点",
+      "phase": "hardware-recovery",
+      "execution_type": "disruptive-test",
+      "status": "pending",
+      "required_for_phase": false,
+      "required_for_hardware_resume": true,
+      "preconditions": [
+        "REC-HW-001通过；现有Nexus维护授权有效，root再次确认本次确切221/220对象、可用空间和回退资源。"
+      ],
+      "steps": [
+        "fresh核221数据UUID/挂载/账号身份/制品摘要与220standby，先保存root600基线。",
+        "仅在已批准维护窗由root干净停221并制作PVE本机冷备，核zstd/VMA/SHA；如需恢复启动验收，由root另指派无外连的专用QA对象，不覆盖现役盘。",
+        "CF归档仍仅PVE，禁止wholebackup220或导出其publisher私钥；不得把旧21份完整性检查当本次221冷备已完成。"
+      ],
+      "observable_pass_conditions": [
+        "本次221冷备与磁盘/config对应，校验通过且受保护；批准的隔离恢复对象能读取预期数据，源副本不被修改。"
+      ],
+      "fail_criteria": [
+        "缺少fresh备份/校验、写错盘、覆盖现役对象、触及220私钥或恢复未经隔离；只有备份命令退出0不通过。"
+      ],
+      "evidence": [
+        {
+          "path": "cleanup/nexus/maintenance-authorized.json",
+          "note": "baseline/plan only; no new recovery execution evidence"
+        },
+        {
+          "path": "cleanup/backup-summary.json",
+          "note": "baseline/plan only; no new recovery execution evidence"
+        },
+        {
+          "path": "cleanup/nexus/PLAN.md",
+          "note": "baseline/plan only; no new recovery execution evidence"
+        }
+      ],
+      "planned_result_evidence": "cleanup/hardware/recovery/REC-BAK-001.json",
+      "observed_result": "未执行；本轮在本地同步文档、规则与暂停状态，编写人工手册并进行Git交付，未远程连接服务器或实施物理/运行恢复。实际Git结果由20-git-and-handoff.md及交付证据记录。",
+      "current_live_status": "unverified-hardware-paused",
+      "limitations": [
+        "当前证据只支持事故事实/旧基线与执行计划，不能视为恢复通过。"
+      ]
+    },
+    {
+      "id": "REC-DATA-001",
+      "title": "恢复后的数据和服务身份一致性",
+      "phase": "hardware-recovery",
+      "execution_type": "read-only",
+      "status": "pending",
+      "required_for_phase": false,
+      "required_for_hardware_resume": true,
+      "preconditions": [
+        "REC-HW-001通过；恢复后可信访问信息由root重新确认，不自行重生host keys或初始化业务。"
+      ],
+      "steps": [
+        "逐项比对200/201/210数据盘UUID、已有MySQL/Nacos/Redis/Rabbit身份与权限，不导入真实业务行，不重置密码/namespace/vhost。",
+        "核Penpot原3设计/971原媒体保护摘要及已批准额外素材归因、新身份；Nexus账号/EULA及49GAV/234主制品摘要；NAS三共享/媒体UUID与授权；只输出元数据和比较布尔。",
+        "230/240仅验JDK/非root与无业务进程；publisher保持fenced、baseline=false，不发布或激活旧Java配置。"
+      ],
+      "observable_pass_conditions": [
+        "既有数据/身份/权限/UUID与批准基线一致，Java业务仍未部署，差异逐项可解释且获审。"
+      ],
+      "fail_criteria": [
+        "新空库/默认账号替换、数据或身份丢失、UUID不符、权限扩大，或为验收重启Java业务。"
+      ],
+      "evidence": [
+        {
+          "path": "cleanup/final-live-check.json",
+          "note": "baseline/plan only; no new recovery execution evidence"
+        },
+        {
+          "path": "cleanup/nexus/preparation-readback.json",
+          "note": "baseline/plan only; no new recovery execution evidence"
+        },
+        {
+          "path": "infra/penpot/application/acceptance-summary.json",
+          "note": "baseline/plan only; no new recovery execution evidence"
+        }
+      ],
+      "planned_result_evidence": "cleanup/hardware/recovery/REC-DATA-001.json",
+      "observed_result": "未执行；本轮在本地同步文档、规则与暂停状态，编写人工手册并进行Git交付，未远程连接服务器或实施物理/运行恢复。实际Git结果由20-git-and-handoff.md及交付证据记录。",
+      "current_live_status": "unverified-hardware-paused",
+      "limitations": [
+        "当前证据只支持事故事实/旧基线与执行计划，不能视为恢复通过。"
+      ]
+    },
+    {
+      "id": "REC-NET-001",
+      "title": "恢复后的19网段、WireGuard和宿主管理边界",
+      "phase": "hardware-recovery",
+      "execution_type": "read-only",
+      "status": "pending",
+      "required_for_phase": false,
+      "required_for_hardware_resume": true,
+      "preconditions": [
+        "REC-HW-001通过，网关190和访问方实际可达；本条不授权新网络变更。"
+      ],
+      "steps": [
+        "只读核PVE21.22管理/L2、vmbr19无宿主IP、host NAT/forward未恢复；190仍21.23WAN/19.1LAN及既有路由/ACL。",
+        "fresh核12角色已登记IP/MAC、默认网关/DNS19.1及WireGuard10.66.66/24实际路径；按既有矩阵重验允许/拒绝，不关闭hostkey校验或盲改known_hosts。"
+      ],
+      "observable_pass_conditions": [
+        "登记地址和MAC匹配，无冲突/旧NAT复活，管理与既有VPN路由、角色隔离正反检查通过。"
+      ],
+      "fail_criteria": [
+        "地址冲突、错误网关/来源、旧宿主NAT/forward重现、绕过角色隔离或信任未知SSHkey。"
+      ],
+      "evidence": [
+        {
+          "path": "network19/wireguard/full-access-verification.json",
+          "note": "baseline/plan only; no new recovery execution evidence"
+        },
+        {
+          "path": "network19/audit/network19-acceptance.json",
+          "note": "baseline/plan only; no new recovery execution evidence"
+        }
+      ],
+      "planned_result_evidence": "cleanup/hardware/recovery/REC-NET-001.json",
+      "observed_result": "未执行；本轮在本地同步文档、规则与暂停状态，编写人工手册并进行Git交付，未远程连接服务器或实施物理/运行恢复。实际Git结果由20-git-and-handoff.md及交付证据记录。",
+      "current_live_status": "unverified-hardware-paused",
+      "limitations": [
+        "当前证据只支持事故事实/旧基线与执行计划，不能视为恢复通过。"
+      ]
+    },
+    {
+      "id": "REC-OBS-001",
+      "title": "恢复后的监控15目标与内部通知边界",
+      "phase": "hardware-recovery",
+      "execution_type": "read-only",
+      "status": "pending",
+      "required_for_phase": false,
+      "required_for_hardware_resume": true,
+      "preconditions": [
+        "REC-HW-001通过，Ops270与10个节点已恢复预期基础服务；本条不授权新外发测试。"
+      ],
+      "steps": [
+        "fresh核10guest+5Ops共15targets的实际UP、加载配置/报警、PVE硬件采集及Java base-only语义；不能拿02:35/02:37旧快照代替。",
+        "核原内部Larkactive白名单及受保护凭据加载、bridge172.18网络不变；只读不send。Mac外部探针继续停用，不宣称T630断电时能独立外告警。"
+      ],
+      "observable_pass_conditions": [
+        "15targets fresh采样符合预期、硬件指标可观测、当前告警逐项处理，内部通知配置身份保持且无未授权外发。"
+      ],
+      "fail_criteria": [
+        "仅旧15UP/配置文件存在、目标仍失联、Java被错误当五服务要求，或擅自发消息/恢复Mac探针。"
+      ],
+      "evidence": [
+        {
+          "path": "cleanup/maintenance-ended.json",
+          "note": "baseline/plan only; no new recovery execution evidence"
+        },
+        {
+          "path": "cleanup/monitoring/ten-role/execution-status.json",
+          "note": "baseline/plan only; no new recovery execution evidence"
+        }
+      ],
+      "planned_result_evidence": "cleanup/hardware/recovery/REC-OBS-001.json",
+      "observed_result": "未执行；本轮在本地同步文档、规则与暂停状态，编写人工手册并进行Git交付，未远程连接服务器或实施物理/运行恢复。实际Git结果由20-git-and-handoff.md及交付证据记录。",
+      "current_live_status": "unverified-hardware-paused",
+      "limitations": [
+        "当前证据只支持事故事实/旧基线与执行计划，不能视为恢复通过。"
+      ]
+    },
+    {
+      "id": "REC-ROLL-001",
+      "title": "Nexus合并回退与最终签收",
+      "phase": "hardware-recovery",
+      "execution_type": "manual-review",
+      "status": "pending",
+      "required_for_phase": false,
+      "required_for_hardware_resume": true,
+      "preconditions": [
+        "REC-HW/BAK/DATA/NET/OBS各项通过；只有本轮授权合并恢复执行后才可完成，未执行不签。"
+      ],
+      "steps": [
+        "root核回退清单：停止写者后唯一盘/IP31只能有一个owner；恢复源221资源/原盘及原访问配置时不双挂、不双写；220publisher私钥不迁出。",
+        "在批准对象验证回退步骤可行性与镜像/数据库兼容，再记录合并后制品/权限/入口/监控fresh结果及221退役条件；不能以计划存在代替回退演练。"
+      ],
+      "observable_pass_conditions": [
+        "回退与最终切换有真实对象/时间/步骤/结果，数据身份和唯一owner保持，审批范围内最终验收完整。"
+      ],
+      "fail_criteria": [
+        "只有文字方案、未验兼容、双写/双挂、遗失回退点或未经本次fresh结果便宣称合并交付。"
+      ],
+      "evidence": [
+        {
+          "path": "cleanup/nexus/PLAN.md",
+          "note": "baseline/plan only; no new recovery execution evidence"
+        },
+        {
+          "path": "cleanup/nexus/maintenance-authorized.json",
+          "note": "baseline/plan only; no new recovery execution evidence"
+        },
+        {
+          "path": "10-resume-after-approval.md",
+          "note": "baseline/plan only; no new recovery execution evidence"
+        }
+      ],
+      "planned_result_evidence": "cleanup/hardware/recovery/REC-ROLL-001.json",
+      "observed_result": "未执行；本轮在本地同步文档、规则与暂停状态，编写人工手册并进行Git交付，未远程连接服务器或实施物理/运行恢复。实际Git结果由20-git-and-handoff.md及交付证据记录。",
+      "current_live_status": "unverified-hardware-paused",
+      "limitations": [
+        "当前证据只支持事故事实/旧基线与执行计划，不能视为恢复通过。"
+      ]
+    }
+  ],
+  "runtime_state": {
+    "status": "paused-awaiting-hardware-recovery",
+    "current_live_status": "unverified-firmware-POST-halted",
+    "last_successful_full_verification_at": "2026-11-07T02:35:01.759527+08:00",
+    "last_successful_PVE_operation_at": "2026-11-07T02:44:29+08:00",
+    "last_PVE_operation_time_source": "root-task-manager handoff; distinct from full acceptance",
+    "hardware_evidence": "cleanup/hardware/DIMM_B1-incident.json",
+    "hardware_code": "UEFI0058",
+    "prior_SEL_location": "DIMM_B1",
+    "BMC_timezone_verified": false,
+    "Nexus_maintenance_authorized": true,
+    "Nexus_migration_started": false,
+    "remote_actions_in_this_document_closeout": false
+  }
+}

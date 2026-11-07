@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "failed",
+      "scope": "local-document-validation-only",
+      "stats": {
+        "roles": 13,
+        "guest_memory_gib": 116.5,
+        "vcpu": 53,
+        "host_reserve_gib": 8.5,
+        "acceptance_cases": 38,
+        "documentation_passed": 2,
+        "implementation_pending": 36,
+        "pve_checks": 42,
+        "local_links_checked": 61,
+        "external_links_listed": 14
+      },
+      "errors": [
+        "Broken local link in evidence/document-verification.md: document-validation.json"
+      ],
+      "warnings": [
+        "vCPU exceeds physical cores; concurrent workload capacity is unverified",
+        "PVE check cluster-status exit=2; see scope/limitations",
+        "External URL availability is not tested by this offline validator"
+      ],
+      "validated_at": "2026-11-05T23:18:08.129923+08:00",
+      "timezone": "Asia/Shanghai"
+    },
+    {
+      "attempt": 2,
+      "status": "passed",
+      "scope": "local-document-validation-only",
+      "stats": {
+        "roles": 13,
+        "guest_memory_gib": 116.5,
+        "vcpu": 53,
+        "host_reserve_gib": 8.5,
+        "acceptance_cases": 38,
+        "documentation_passed": 2,
+        "implementation_pending": 36,
+        "pve_checks": 42,
+        "local_links_checked": 61,
+        "external_links_listed": 14
+      },
+      "errors": [],
+      "warnings": [
+        "vCPU exceeds physical cores; concurrent workload capacity is unverified",
+        "PVE check cluster-status exit=2; see scope/limitations",
+        "External URL availability is not tested by this offline validator"
+      ],
+      "validated_at": "2026-11-05T23:18:08.190087+08:00",
+      "timezone": "Asia/Shanghai"
+    }
+  ]
+}

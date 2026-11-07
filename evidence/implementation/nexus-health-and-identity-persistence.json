@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-06T11:23:43.921417",
+  "result": {
+    "exit_code": 0,
+    "stdout": "{\"containers\": [{\"service\": \"gateway\", \"state\": \"running\", \"health\": \"healthy\", \"restart_count\": 0, \"restart_policy\": \"no\", \"networks\": [\"nexus_backend\", \"nexus_ingress\"]}, {\"service\": \"nexus\", \"state\": \"running\", \"health\": \"healthy\", \"restart_count\": 0, \"restart_policy\": \"no\", \"networks\": [\"nexus_backend\"]}], \"managed_roles_retained\": true, \"eula_accepted\": false}\n",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+    "target": {
+      "vmid": 221,
+      "ip": "10.63.30.20",
+      "host_key_alias": "dell-vm221",
+      "host_key_fingerprint": "SHA256:ky2Wn7M2CKgUqHaj65c4KnqphO6d3zh6sGEoYYzomWo",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  }
+}

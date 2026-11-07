@@ -1,0 +1,73 @@
+--- a/dell/network19/audit/render-bridge-acl.py
++++ b/dell/network19/audit/render-bridge-acl.py
+@@ -5,8 +5,22 @@
+ HERE=Path(__file__).resolve().parent
+ 
+ def render(plan,inventory,old_ops=False):
+- ipmap={int(x['vmid']):str(ipaddress.IPv4Address(x['new_ip'])) for x in plan['guest_addresses']}
+- assert len(ipmap)==len(plan['guest_addresses']) and len(set(ipmap.values()))==len(ipmap), 'Duplicate VMID/IP assignment refuses candidate'
++ retired=set(plan.get('retired_vmids',[]));temporary=set(plan.get('temporary_bootstrap_vmids',[]))|{int(row['vmid']) for row in plan['guest_addresses'] if row.get('temporary_build_only') is True}
++ assert temporary.issubset({9040,9041,9042,9043,9044,9045}) and not temporary.intersection(retired), 'Only approved Fish temporary identities in bootstrap list'
++ active=[x for x in plan['guest_addresses'] if int(x['vmid']) not in retired]
++ ipmap={int(x['vmid']):str(ipaddress.IPv4Address(x['new_ip'])) for x in active}
++ assert len(ipmap)==len(active), 'Duplicate active VMID refuses candidate'
++ aliasmap={int(x['vmid']):x.get('additional_ips',[]) for x in active};all_addresses=[]
++ for v,primary in ipmap.items():
++  aliases=aliasmap[v];assert isinstance(aliases,list) and all(isinstance(x,str) and str(ipaddress.IPv4Address(x))==x for x in aliases)
++  assert not (v==190 and aliases), 'Gateway NIC topology cannot acquire service aliases'
++  for x in [primary,*aliases]:assert ipaddress.IPv4Address(x) in ipaddress.IPv4Network('192.168.19.0/24');all_addresses.append(x)
++ assert len(set(all_addresses))==len(all_addresses), 'One active physical owner per IPv4'
++ endpoints=plan.get('service_endpoints',{})
++ if 'artifact-service'in endpoints:
++  endpoint=endpoints['artifact-service'];assert set(endpoint)=={'vmid','ip','tcp'} and type(endpoint['vmid']) is int and endpoint['vmid'] not in retired and endpoint['vmid'] in ipmap
++  assert endpoint['ip']=='192.168.19.31' and endpoint['tcp']==[8081] and endpoint['ip'] in [ipmap[endpoint['vmid']],*aliasmap[endpoint['vmid']]], 'Nexus endpoint must belong to approved physical NIC'
++ else:endpoint={'vmid':221,'ip':ipmap.get(221),'tcp':[8081]}
+  assert ipmap[190]=='192.168.19.1' and all(ipaddress.ip_address(x) in ipaddress.ip_network('192.168.19.0/24') for x in ipmap.values())
+  rows=[];gw=[];guests=[];macids=[];ipids=[];access={'vmbr19'};warnings=[]
+  policy=plan['gateway_policy'];management=[str(ipaddress.IPv4Address(x)) for x in plan['gateway_management_sources']];wan_rules=[]
+@@ -14,6 +28,7 @@
+   src=rule['src'] if isinstance(rule['src'],list) else [rule['src']];src=[str(ipaddress.ip_network(x,strict=False)) if '/' in x else str(ipaddress.ip_address(x)) for x in src];dst=str(ipaddress.ip_network(rule['dst'],strict=False)) if '/' in rule['dst'] else str(ipaddress.ip_address(rule['dst']));ports=sorted(set(int(x) for x in rule['tcp']));assert ports and all(1<=x<=65535 for x in ports);wan_rules.append({'src':src,'dst':dst,'tcp':ports})
+  for vm in inventory['guests']:
+   v=int(vm['vmid'])
++  if v in retired:continue
+   for name,nic in sorted(vm['nics'].items()):
+    assert re.fullmatch('net[0-9]+',name);index=int(name[3:])
+    assert not nic.get('tag') and not nic.get('trunks'), 'VLAN/trunk NIC needs separate explicit design'
+@@ -22,11 +37,12 @@
+    # Direct QEMU tap / CT veth and legacy PVE-firewall peer are both known aliases.
+    ports=[('veth' if vm['kind']=='lxc' else 'tap')+str(v)+'i'+str(index),'fwpr'+str(v)+'p'+str(index)]
+    ip=ipmap.get(v) if (index==0 or v==190) and not vm.get('template') else None
+-   row={'vmid':v,'nic':name,'mac':mac,'ip':ip,'ports':ports,'current_bridge':nic.get('bridge'),'template':vm.get('template',False),'role':'gateway-LAN' if v==190 else 'approved-role' if ip else 'quarantine-DHCP-only'};rows.append(row)
++   ips=([ip,*aliasmap.get(v,[])] if ip else [])
++   row={'vmid':v,'nic':name,'mac':mac,'ip':ip,'ips':ips,'ports':ports,'current_bridge':nic.get('bridge'),'template':vm.get('template',False),'role':'gateway-LAN' if v==190 else 'temporary-bootstrap' if v in temporary else 'approved-role' if ip else 'quarantine-DHCP-only'};rows.append(row)
+    if nic.get('firewall')=='1':warnings.append({'vmid':v,'nic':name,'warning':'Requires parent firewall=0/direct tap-veth at activation. This stage guards vmbr19 only, never prospective old fwbr.'})
+    for port in ports:
+     macids.append((port,mac))
+-    if ip:ipids.append((port,ip))
++    for address in ips:ipids.append((port,address))
+     (gw if v==190 else guests).append(port)
+  assert gw and len({x['mac'] for x in rows})==len(rows),'Duplicate MAC identity refuses candidate'
+  peer=set()
+@@ -36,9 +52,11 @@
+  add(201,200,[3306])
+  for v in [230,231,232]:add(v,200,[3306]);add(v,201,[6379,5672,8848,9848])
+  add(240,210,[3306,6379,5672,8848,9848]);add(220,240,[22])
+- for v in [200,201,210,220,230,231,232,240,250,270]:add(v,221,[8081])
++ for v in [200,201,210,220,230,231,232,240,250,270]:
++  if v in ipmap and endpoint['ip']:
++   for port in endpoint['tcp']:peer.add((ipmap[v],endpoint['ip'],port))
+  for v in ipmap:
+-  if v!=190:add(270,v,[9100])
++  if v!=190 and v not in temporary:add(270,v,[9100])
+  public=set()
+  # WAN port matrix is rendered from the manager-owned policy, never re-created here.
+  q=json.dumps
+@@ -138,7 +156,7 @@
+    ports=sorted(set(int(x) for x in rule.get(proto,[])));assert all(1<=x<=65535 for x in ports)
+    if ports:out.append('    ip saddr '+src+' '+proto+' dport { '+', '.join(map(str,ports))+' } counter accept comment '+q('manager-'+key))
+  out+=['    counter drop comment "unapproved-egress"','  }','}']
+- return '\n'.join(out)+'\n',{'status':'offline-candidate-not-applied','inventory_timestamp':inventory.get('captured_at'),'rows':rows,'warnings':warnings,'peer_tcp_tuple_count':len(peer),'wan_to_lan_rules':wan_rules,'management_sources':management,'CF_legacy_LAN_origin_compatibility_enabled':False,'host_guard_bridges':['vmbr19'],'direct_attachment_required':True,'old_ops_transition_exception':old_ops,'required_before_apply':['Parent-owned nft -c with needed nf_tables_bridge/NFT_BRIDGE_META/NF_CONNTRACK_BRIDGE support; no such validation was run by read-only agent.','Atomic transaction delete/recreate only bridge dell19_acl; rollback table+startup mechanism preserved.','Confirm source/destination interface aliases and meta ibrname/obrname visibility using dedicated test before real data migration.','No blanket inet-forward ACCEPT workaround is needed while bridge-nf flags remain0; preserve/recheck them.','All target NICs must be firewall=0/direct tap-veth before activation; host guard onlyvmbr19. No prospective old-fwbr guard is applied in this stage.','MAC/IP registry refreshed before clone activation; unknown/template clone remains DHCP-only, never automatic prod role.','CF internal origin allowlist is unknown and intentionally not granted; parent must add exact approved origins.','New same-tools arbitrary SSH/other traffic is intentionally not preserved; review any required dependency before cutover.']}
++ return '\n'.join(out)+'\n',{'status':'offline-candidate-not-applied','retired_vmids':sorted(retired),'temporary_bootstrap_vmids':sorted(temporary),'service_endpoints':endpoints,'inventory_timestamp':inventory.get('captured_at'),'rows':rows,'warnings':warnings,'peer_tcp_tuple_count':len(peer),'wan_to_lan_rules':wan_rules,'management_sources':management,'CF_legacy_LAN_origin_compatibility_enabled':False,'host_guard_bridges':['vmbr19'],'direct_attachment_required':True,'old_ops_transition_exception':old_ops,'required_before_apply':['Parent-owned nft -c with needed nf_tables_bridge/NFT_BRIDGE_META/NF_CONNTRACK_BRIDGE support; no such validation was run by read-only agent.','Atomic transaction delete/recreate only bridge dell19_acl; rollback table+startup mechanism preserved.','Confirm source/destination interface aliases and meta ibrname/obrname visibility using dedicated test before real data migration.','No blanket inet-forward ACCEPT workaround is needed while bridge-nf flags remain0; preserve/recheck them.','All target NICs must be firewall=0/direct tap-veth before activation; host guard onlyvmbr19. No prospective old-fwbr guard is applied in this stage.','MAC/IP registry refreshed before clone activation; unknown/template clone remains DHCP-only, never automatic prod role.','CF internal origin allowlist is unknown and intentionally not granted; parent must add exact approved origins.','New same-tools arbitrary SSH/other traffic is intentionally not preserved; review any required dependency before cutover.']}
+ def main():
+  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--plan',type=Path,default=HERE.parent/'migration-plan.json');p.add_argument('--inventory',type=Path,default=HERE/'nic-registry-stage.json');p.add_argument('--output',type=Path,default=HERE/'bridge19-acl-candidate.nft');p.add_argument('--allow-old-ops-during-cutover',action='store_true');a=p.parse_args();rules,notes=render(json.loads(a.plan.read_text()),json.loads(a.inventory.read_text()),a.allow_old_ops_during_cutover);a.output.write_text(rules);a.output.with_suffix('.json').write_text(json.dumps(notes,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'candidate':str(a.output),'applied':False,'nic_identities':len(notes['rows']),'peer_tuple_count':notes['peer_tcp_tuple_count'],'warnings':len(notes['warnings'])}))
+ if __name__=='__main__':main()

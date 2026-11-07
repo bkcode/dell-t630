@@ -1,0 +1,20 @@
+{
+  "collected_at": "2026-11-06T05:20:26.779853+00:00",
+  "phase": "install-and-check",
+  "exit_code": 1,
+  "result": {
+    "status": "installed-validation-failed-not-activated",
+    "checks": [
+      {
+        "tool": "bash",
+        "exit_code": 0
+      },
+      {
+        "tool": "systemd-analyze",
+        "exit_code": 1
+      }
+    ],
+    "services_stopped_or_recreated": false,
+    "raw_details_emitted": false
+  }
+}

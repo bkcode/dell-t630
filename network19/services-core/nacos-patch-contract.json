@@ -1,0 +1,153 @@
+{
+  "revision": "network19-v1",
+  "status": "not-published",
+  "configs": [
+    {
+      "source_dataId": "finger-auth.yaml",
+      "target_dataId": "finger-auth.network19-v1.yaml",
+      "source_content_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "group_unchanged": "DELL_TEST",
+      "namespace_preservation_sha256": "7f76f5a8a0a079dd94359988d6941a4a14e743b8c7b78e65e0b124cc68b758c3",
+      "allowed_changes": [],
+      "publish_mode": "new ID only; never overwrite source/historical ID"
+    },
+    {
+      "source_dataId": "finger-bff-system.yaml",
+      "target_dataId": "finger-bff-system.network19-v1.yaml",
+      "source_content_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "group_unchanged": "DELL_TEST",
+      "namespace_preservation_sha256": "7f76f5a8a0a079dd94359988d6941a4a14e743b8c7b78e65e0b124cc68b758c3",
+      "allowed_changes": [],
+      "publish_mode": "new ID only; never overwrite source/historical ID"
+    },
+    {
+      "source_dataId": "finger-common.yaml",
+      "target_dataId": "finger-common.network19-v1.yaml",
+      "source_content_sha256": "7a73a4e39a20b4e5faad09402d2866c91da6ee4ca9f7fb051937fb83cceafbf4",
+      "group_unchanged": "DELL_TEST",
+      "namespace_preservation_sha256": "7f76f5a8a0a079dd94359988d6941a4a14e743b8c7b78e65e0b124cc68b758c3",
+      "allowed_changes": [
+        {
+          "path": [
+            "redis",
+            "host"
+          ],
+          "expected": "10.63.20.10",
+          "new": "192.168.19.20"
+        },
+        {
+          "path": [
+            "gateway",
+            "endpoint"
+          ],
+          "expected": "http://192.168.21.22:19999",
+          "new": "http://192.168.19.45:9999"
+        },
+        {
+          "path": [
+            "nacos",
+            "server-addr"
+          ],
+          "expected": "10.63.20.10:8848",
+          "new": "192.168.19.20:8848"
+        },
+        {
+          "path": [
+            "spring",
+            "data",
+            "redis",
+            "host"
+          ],
+          "expected": "10.63.20.10",
+          "new": "192.168.19.20"
+        },
+        {
+          "path": [
+            "spring",
+            "rabbitmq",
+            "host"
+          ],
+          "expected": "10.63.20.10",
+          "new": "192.168.19.20"
+        },
+        {
+          "path": [
+            "spring",
+            "security",
+            "oauth2",
+            "resourceserver",
+            "jwt",
+            "issuer-uri"
+          ],
+          "expected": "http://192.168.21.22:19999",
+          "new": "http://192.168.19.45:9999"
+        },
+        {
+          "path": [
+            "spring",
+            "security",
+            "oauth2",
+            "resourceserver",
+            "jwt",
+            "jwk-set-uri"
+          ],
+          "expected": "http://10.63.20.20:10000/oauth2/jwks",
+          "new": "http://192.168.19.45:10000/oauth2/jwks"
+        }
+      ],
+      "publish_mode": "new ID only; never overwrite source/historical ID"
+    },
+    {
+      "source_dataId": "finger-gateway-mobile-lan-v2.yaml",
+      "target_dataId": "finger-gateway-mobile-lan-v2.network19-v1.yaml",
+      "source_content_sha256": "ce46d462fc82c527e0afd18d41c91664e8785d8cb726546cf8e0236ae7244c51",
+      "group_unchanged": "DELL_TEST",
+      "namespace_preservation_sha256": "7f76f5a8a0a079dd94359988d6941a4a14e743b8c7b78e65e0b124cc68b758c3",
+      "allowed_changes": [
+        {
+          "path": [
+            "security",
+            "jwt",
+            "trustedIssuers",
+            "0",
+            "issuerUri"
+          ],
+          "expected": "http://192.168.21.22:19999",
+          "new": "http://192.168.19.45:9999"
+        },
+        {
+          "path": [
+            "security",
+            "jwt",
+            "trustedIssuers",
+            "0",
+            "jwkSetUri"
+          ],
+          "expected": "http://10.63.20.20:10000/oauth2/jwks",
+          "new": "http://192.168.19.45:10000/oauth2/jwks"
+        }
+      ],
+      "publish_mode": "new ID only; never overwrite source/historical ID"
+    },
+    {
+      "source_dataId": "finger-service-coms.yaml",
+      "target_dataId": "finger-service-coms.network19-v1.yaml",
+      "source_content_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "group_unchanged": "DELL_TEST",
+      "namespace_preservation_sha256": "7f76f5a8a0a079dd94359988d6941a4a14e743b8c7b78e65e0b124cc68b758c3",
+      "allowed_changes": [],
+      "publish_mode": "new ID only; never overwrite source/historical ID"
+    },
+    {
+      "source_dataId": "finger-service-system.yaml",
+      "target_dataId": "finger-service-system.network19-v1.yaml",
+      "source_content_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "group_unchanged": "DELL_TEST",
+      "namespace_preservation_sha256": "7f76f5a8a0a079dd94359988d6941a4a14e743b8c7b78e65e0b124cc68b758c3",
+      "allowed_changes": [],
+      "publish_mode": "new ID only; never overwrite source/historical ID"
+    }
+  ],
+  "all_secrets_and_other_values_copied_only_inside_guest": true,
+  "Nacos_password_namespace_vhost_unchanged": true
+}

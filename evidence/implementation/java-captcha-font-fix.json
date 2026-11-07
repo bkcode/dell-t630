@@ -1,0 +1,74 @@
+{
+  "started_at": "2026-11-06T11:52:23.298593+08:00",
+  "stage": "completed",
+  "before": {
+    "finger-service-system": {
+      "MainPID": "4400",
+      "NRestarts": "0",
+      "ActiveState": "active"
+    },
+    "finger-service-coms": {
+      "MainPID": "4572",
+      "NRestarts": "0",
+      "ActiveState": "active"
+    },
+    "finger-auth": {
+      "MainPID": "4756",
+      "NRestarts": "0",
+      "ActiveState": "active"
+    },
+    "finger-bff-system": {
+      "MainPID": "4976",
+      "NRestarts": "0",
+      "ActiveState": "active"
+    },
+    "finger-gateway-mobile": {
+      "MainPID": "5200",
+      "NRestarts": "0",
+      "ActiveState": "active"
+    }
+  },
+  "new_packages": [
+    "libgraphite2-3",
+    "libharfbuzz0b"
+  ],
+  "auth_restart_completed": true,
+  "secret_values_emitted": false,
+  "package_version": "10.2.0-1+deb13u1",
+  "jdk_unchanged": true,
+  "completed_at": "2026-11-06T11:53:29.056288+08:00",
+  "after": {
+    "finger-service-system": {
+      "MainPID": "4400",
+      "NRestarts": "0",
+      "ActiveState": "active"
+    },
+    "finger-service-coms": {
+      "MainPID": "4572",
+      "NRestarts": "0",
+      "ActiveState": "active"
+    },
+    "finger-auth": {
+      "MainPID": "10147",
+      "NRestarts": "0",
+      "ActiveState": "active"
+    },
+    "finger-bff-system": {
+      "MainPID": "4976",
+      "NRestarts": "0",
+      "ActiveState": "active"
+    },
+    "finger-gateway-mobile": {
+      "MainPID": "5200",
+      "NRestarts": "0",
+      "ActiveState": "active"
+    }
+  },
+  "other_four_pids_unchanged": true,
+  "auth_health": "UP",
+  "jdk_package_version": "21.0.13+9-1~deb13u2",
+  "missing_font_libraries_after": [],
+  "auth_restart_count_by_this_fix": 1,
+  "coms_persistence_restart_used": false,
+  "scope": "VM240 signed APT missing native dependency repair only"
+}

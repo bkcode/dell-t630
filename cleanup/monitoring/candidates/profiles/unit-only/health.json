@@ -1,0 +1,18 @@
+{
+  "role": "publish-service",
+  "private_ip": "192.168.19.30",
+  "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+  "services": [
+    "ssh.service",
+    "qemu-guest-agent.service",
+    "prometheus-node-exporter.service",
+    "dell-nexus.service"
+  ],
+  "http_checks": [],
+  "candidate_service_units": [
+    "docker.service",
+    "dell-nexus.service"
+  ],
+  "candidate_http_checks": [],
+  "notes": "Merged publisher/Nexus role; active Nexus unit only. Alias31 HTTP requires exact approved local-MAC readiness; no Java apps."
+}

@@ -1,0 +1,81 @@
+{
+  "checked_at": "2026-11-06T07:24:11.780423+08:00",
+  "image": "dell-penpot-frontend:2.18.5-amd64",
+  "image_id": "sha256:fa395b809ed21c53a01387567264100fb28c553f1dd4af113f38c50de3b739bc",
+  "source_or_private_settings_used": false,
+  "archive_modified": false,
+  "deployment_overlay_applied": false,
+  "proposal": "Query-free access format; omit referer; suppress MCP location error logs only; preserve query forwarding",
+  "baseline_confirmed_query_leak_in_access_and_error": true,
+  "candidate_dummy_query_absent_from_access_and_error": true,
+  "candidate_query_forwarding_preserved": true,
+  "upstream_http_502_preserved": true,
+  "real_mcp_authentication_acceptance": "not-run",
+  "cases": [
+    {
+      "case": "baseline-upstream-failure",
+      "network": "none",
+      "dummy_only": true,
+      "upstream_available": false,
+      "http_status": {
+        "/mcp/stream": 502,
+        "/mcp/ws": 502
+      },
+      "query_in_any_log": true,
+      "mcp_log_lines": [
+        "127.0.0.1 - - [05/Nov/2026:23:24:09 +0000] \"GET /mcp/stream?userToken=<DUMMY> HTTP/1.1\" 502 150 \"-\" \"-\" us=502 uct=- urt=0.002 ua=127.0.0.1:9",
+        "127.0.0.1 - - [05/Nov/2026:23:24:09 +0000] \"GET /mcp/ws?userToken=<DUMMY> HTTP/1.1\" 502 150 \"-\" \"-\" us=502 uct=- urt=0.000 ua=127.0.0.1:9",
+        "2026/11/05 23:24:09 [error] 20#20: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: _, request: \"GET /mcp/stream?userToken=<DUMMY> HTTP/1.1\", upstream: \"http://127.0.0.1:9/mcp?userToken=<DUMMY>\", host: \"127.0.0.1\"",
+        "2026/11/05 23:24:09 [error] 20#20: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: _, request: \"GET /mcp/ws?userToken=<DUMMY> HTTP/1.1\", upstream: \"http://127.0.0.1:9/mcp/ws?userToken=<DUMMY>\", host: \"127.0.0.1\""
+      ],
+      "access_line_count": 2,
+      "error_line_count": 2,
+      "stream_query_preserved": null,
+      "ws_query_preserved": null
+    },
+    {
+      "case": "candidate-upstream-failure",
+      "network": "none",
+      "dummy_only": true,
+      "upstream_available": false,
+      "http_status": {
+        "/mcp/stream": 502,
+        "/mcp/ws": 502
+      },
+      "query_in_any_log": false,
+      "mcp_log_lines": [
+        "127.0.0.1 - - [05/Nov/2026:23:24:10 +0000] \"GET /mcp/stream HTTP/1.1\" 502 150 \"-\" us=502 uct=- urt=0.003 ua=127.0.0.1:9",
+        "127.0.0.1 - - [05/Nov/2026:23:24:10 +0000] \"GET /mcp/ws HTTP/1.1\" 502 150 \"-\" us=502 uct=- urt=0.000 ua=127.0.0.1:9"
+      ],
+      "access_line_count": 2,
+      "error_line_count": 0,
+      "stream_query_preserved": null,
+      "ws_query_preserved": null
+    },
+    {
+      "case": "candidate-loopback-stub",
+      "network": "none",
+      "dummy_only": true,
+      "upstream_available": true,
+      "http_status": {
+        "/mcp/stream": 200,
+        "/mcp/ws": 200
+      },
+      "query_in_any_log": false,
+      "mcp_log_lines": [
+        "127.0.0.1 - - [05/Nov/2026:23:24:11 +0000] \"GET /mcp/stream HTTP/1.1\" 200 52 \"-\" us=200 uct=0.002 urt=0.003 ua=127.0.0.1:8765",
+        "127.0.0.1 - - [05/Nov/2026:23:24:11 +0000] \"GET /mcp/ws HTTP/1.1\" 200 55 \"-\" us=200 uct=0.001 urt=0.001 ua=127.0.0.1:8765"
+      ],
+      "access_line_count": 2,
+      "error_line_count": 0,
+      "stream_query_preserved": true,
+      "ws_query_preserved": true
+    }
+  ],
+  "scope": "isolated Nginx only; full MCP server authentication/function acceptance remains separate",
+  "source_state_verified_at": "2026-11-06T07:25:12.956452+08:00",
+  "source_containers_and_tags_unchanged_since_artifact_build": true,
+  "source_container_count": 17,
+  "reviewed_archive_sha256_unchanged": "6d27b16c5bd9e9cecbd4c825734ac2e1bc9cee2d10a8f38d5f26da32bd7036d1",
+  "prepared_package_compose_integrated": true
+}

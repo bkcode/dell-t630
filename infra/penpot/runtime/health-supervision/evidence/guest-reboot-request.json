@@ -1,0 +1,13 @@
+{
+  "collected_at": "2026-11-06T05:39:03.456728+00:00",
+  "phase": "guest-reboot-request",
+  "exit_code": 0,
+  "result": {
+    "status": "guest-reboot-scheduled",
+    "vmid": 250,
+    "boot_id_before": "37a6e06d-a72d-4a2e-ba96-d170ad002366",
+    "worker_import_idle": true,
+    "guest_reboots_requested": 1,
+    "transient_timer": "dell-penpot-supervision-reboot-053903"
+  }
+}

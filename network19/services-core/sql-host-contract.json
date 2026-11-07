@@ -1,0 +1,51 @@
+{
+  "target_vmid": 210,
+  "accounts": {
+    "finger_auth_test": {
+      "old_host": "10.63.20.20",
+      "new_host": "192.168.19.45",
+      "plugin": "caching_sha2_password",
+      "grant_prefixes": [
+        "GRANT SELECT, INSERT, UPDATE, DELETE ON `finger_auth_test`.`oauth2_authorization_consent`",
+        "GRANT SELECT, INSERT, UPDATE, DELETE ON `finger_auth_test`.`oauth2_authorization`",
+        "GRANT SELECT, INSERT, UPDATE, DELETE ON `finger_auth_test`.`oauth2_registered_client`",
+        "GRANT USAGE ON *.*"
+      ],
+      "table_grants": 3
+    },
+    "finger_coms_test": {
+      "old_host": "10.63.20.20",
+      "new_host": "192.168.19.45",
+      "plugin": "caching_sha2_password",
+      "grant_prefixes": [
+        "GRANT SELECT, INSERT, UPDATE, DELETE ON `finger_coms_test`.`city_info_i18n`",
+        "GRANT SELECT, INSERT, UPDATE, DELETE ON `finger_coms_test`.`city_info`",
+        "GRANT SELECT, INSERT, UPDATE, DELETE ON `finger_coms_test`.`country_info_i18n`",
+        "GRANT SELECT, INSERT, UPDATE, DELETE ON `finger_coms_test`.`country_info`",
+        "GRANT SELECT, INSERT, UPDATE, DELETE ON `finger_coms_test`.`dict`",
+        "GRANT SELECT, INSERT, UPDATE, DELETE ON `finger_coms_test`.`file_info`",
+        "GRANT SELECT, INSERT, UPDATE, DELETE ON `finger_coms_test`.`permission_menu_url`",
+        "GRANT SELECT, INSERT, UPDATE, DELETE ON `finger_coms_test`.`permission_menu`",
+        "GRANT SELECT, INSERT, UPDATE, DELETE ON `finger_coms_test`.`permission_role_menu`",
+        "GRANT SELECT, INSERT, UPDATE, DELETE ON `finger_coms_test`.`permission_role`",
+        "GRANT USAGE ON *.*"
+      ],
+      "table_grants": 10
+    },
+    "finger_system_test": {
+      "old_host": "10.63.20.20",
+      "new_host": "192.168.19.45",
+      "plugin": "caching_sha2_password",
+      "grant_prefixes": [
+        "GRANT SELECT, INSERT, UPDATE, DELETE ON `finger_system_test`.`admin_notice_delivery`",
+        "GRANT SELECT, INSERT, UPDATE, DELETE ON `finger_system_test`.`admin_notice`",
+        "GRANT SELECT, INSERT, UPDATE, DELETE ON `finger_system_test`.`role_info`",
+        "GRANT SELECT, INSERT, UPDATE, DELETE ON `finger_system_test`.`role_permission`",
+        "GRANT SELECT, INSERT, UPDATE, DELETE ON `finger_system_test`.`user`",
+        "GRANT USAGE ON *.*"
+      ],
+      "table_grants": 5
+    }
+  },
+  "Nacos_percent_unchanged": true
+}

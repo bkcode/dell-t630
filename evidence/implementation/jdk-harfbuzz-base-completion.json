@@ -1,0 +1,66 @@
+{
+  "at": "2026-11-06T11:51:33.634680",
+  "scope": "4 JDK bases only;240 repair handled by QA agent",
+  "results": [
+    {
+      "vmid": 220,
+      "result": {
+        "exit_code": 0,
+        "stdout": "{\"role\": \"publish-service\", \"libharfbuzz0b\": \"10.2.0-1+deb13u1\", \"jdk_upgraded\": false, \"services_restarted_by_task\": false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 220,
+          "ip": "10.63.30.10",
+          "host_key_alias": "dell-vm220",
+          "host_key_fingerprint": "SHA256:2PFQYC3uPSg/sMihWZZ7R1vgkKKozJbTwTjf6VNWwG4",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      }
+    },
+    {
+      "vmid": 230,
+      "result": {
+        "exit_code": 0,
+        "stdout": "{\"role\": \"java-prod-01\", \"libharfbuzz0b\": \"10.2.0-1+deb13u1\", \"jdk_upgraded\": false, \"services_restarted_by_task\": false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 230,
+          "ip": "10.63.10.20",
+          "host_key_alias": "dell-vm230",
+          "host_key_fingerprint": "SHA256:SsWkQtSVu/3sssyrmVMb13r8r9/zQhWeEH3ZQ/CzCDM",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      }
+    },
+    {
+      "vmid": 231,
+      "result": {
+        "exit_code": 0,
+        "stdout": "{\"role\": \"java-prod-02\", \"libharfbuzz0b\": \"10.2.0-1+deb13u1\", \"jdk_upgraded\": false, \"services_restarted_by_task\": false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 231,
+          "ip": "10.63.10.21",
+          "host_key_alias": "dell-vm231",
+          "host_key_fingerprint": "SHA256:F4FTk8hT14QASJ/nWmjUBtxP4h9dthfE8/8MOdnmLUQ",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      }
+    },
+    {
+      "vmid": 232,
+      "result": {
+        "exit_code": 0,
+        "stdout": "{\"role\": \"java-prod-03\", \"libharfbuzz0b\": \"10.2.0-1+deb13u1\", \"jdk_upgraded\": false, \"services_restarted_by_task\": false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 232,
+          "ip": "10.63.10.22",
+          "host_key_alias": "dell-vm232",
+          "host_key_fingerprint": "SHA256:hp5JQlxhH7LG5ItvhzzLzHGbky5d+dghbTNsEfdNabo",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      }
+    }
+  ]
+}

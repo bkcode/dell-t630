@@ -1,0 +1,122 @@
+{
+  "at": "2026-11-06T14:26:44.433207+08:00",
+  "mode": "read-only-native-notification-audit",
+  "target": "ops270",
+  "result": {
+    "mode": "active",
+    "unit": {
+      "MainPID": "40894",
+      "NRestarts": "0",
+      "MemoryCurrent": "12328960",
+      "MemoryPeak": "12578816",
+      "TasksCurrent": "1",
+      "CPUQuotaPerSecUSec": "100ms",
+      "MemoryMax": "100663296",
+      "TasksMax": "32",
+      "User": "dell-lark-notify",
+      "DynamicUser": "yes",
+      "ProtectSystem": "strict",
+      "NoNewPrivileges": "yes",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "files": {
+      "webhook": {
+        "owner_uid": 0,
+        "owner_gid": 0,
+        "mode": "0o600",
+        "metadata_matches": true
+      },
+      "root_secret_directory": {
+        "owner_uid": 0,
+        "owner_gid": 0,
+        "mode": "0o700",
+        "metadata_matches": true
+      },
+      "compose_bridge_token": {
+        "owner_uid": 65534,
+        "owner_gid": 65534,
+        "mode": "0o600",
+        "metadata_matches": true
+      },
+      "acceptance_proof": {
+        "owner_uid": 0,
+        "owner_gid": 0,
+        "mode": "0o600",
+        "metadata_matches": true
+      }
+    },
+    "listeners": [
+      "172.18.0.1:19093"
+    ],
+    "native_argv_fixed": true,
+    "AM_config_matches_renderer": true,
+    "AM_receivers": [
+      "local-only",
+      "lark-acceptance",
+      "lark-live"
+    ],
+    "no_real_notifications_route": false,
+    "AM_fresh_reload_success_metric": true,
+    "static_network": {
+      "prometheus": {
+        "address": "172.18.0.2",
+        "static_address": "172.18.0.2"
+      },
+      "alertmanager": {
+        "address": "172.18.0.3",
+        "static_address": "172.18.0.3"
+      },
+      "blackbox": {
+        "address": "172.18.0.4",
+        "static_address": "172.18.0.4"
+      },
+      "grafana": {
+        "address": "172.18.0.5",
+        "static_address": "172.18.0.5"
+      }
+    },
+    "acceptance_status": "firing-and-resolved-acknowledged",
+    "acceptance_run": "f20465caddac4d0db4a035da5aaf155f",
+    "proof_boot_matches": true,
+    "bridge_code_sha256": "e4b251653d0ae9822351928d3f04b6d4a0833edbe50ce3e6057edc7de7182f80",
+    "ops_containers": [
+      {
+        "service": "alertmanager",
+        "state": "running",
+        "health": "healthy",
+        "restart_count": 0
+      },
+      {
+        "service": "blackbox",
+        "state": "running",
+        "health": "healthy",
+        "restart_count": 0
+      },
+      {
+        "service": "grafana",
+        "state": "running",
+        "health": "healthy",
+        "restart_count": 0
+      },
+      {
+        "service": "prometheus",
+        "state": "running",
+        "health": "healthy",
+        "restart_count": 0
+      }
+    ],
+    "targets_total": 17,
+    "targets_up": 17,
+    "grafana_admin_login": "passed",
+    "webhook_contents_read": false,
+    "AM_identity": {
+      "id": "ed909e82cb16958943315aa222423b7628edc5ea221c815124c0cbb543d0b8a5",
+      "pid": 34656,
+      "started_at": "2026-11-06T06:18:26.078295276Z"
+    },
+    "passed": true,
+    "source_bridge_code_matches": true
+  },
+  "passed": true
+}

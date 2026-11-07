@@ -1,0 +1,184 @@
+{
+  "at": "2026-11-07T02:07:26.070321",
+  "scope": "exact15redundantoldtemplates/QA/duplicateJava;NOT Nexus221,active220/coretemplates",
+  "review": [
+    {
+      "vmid": 104,
+      "name": "publish",
+      "archive": "vzdump-qemu-104-2026_11_07-01_21_27.vma.zst",
+      "archive_SHA_verified": true,
+      "VMA_full_verify": true,
+      "disk_slots": [
+        "scsi0",
+        "scsi1"
+      ]
+    },
+    {
+      "vmid": 103,
+      "name": "publish-base-tpl",
+      "archive": "vzdump-qemu-103-2026_11_07-01_24_14.vma.zst",
+      "archive_SHA_verified": true,
+      "VMA_full_verify": true,
+      "disk_slots": [
+        "scsi0",
+        "scsi1"
+      ]
+    },
+    {
+      "vmid": 101,
+      "name": "data-docker-base-tpl",
+      "archive": "vzdump-qemu-101-2026_11_07-01_25_47.vma.zst",
+      "archive_SHA_verified": true,
+      "VMA_full_verify": true,
+      "disk_slots": [
+        "scsi0"
+      ]
+    },
+    {
+      "vmid": 102,
+      "name": "data-docker-tpl2",
+      "archive": "vzdump-qemu-102-2026_11_07-01_27_14.vma.zst",
+      "archive_SHA_verified": true,
+      "VMA_full_verify": true,
+      "disk_slots": [
+        "scsi0"
+      ]
+    },
+    {
+      "vmid": 105,
+      "name": "java-running-base-tpl",
+      "archive": "vzdump-qemu-105-2026_11_07-01_28_38.vma.zst",
+      "archive_SHA_verified": true,
+      "VMA_full_verify": true,
+      "disk_slots": [
+        "scsi0"
+      ]
+    },
+    {
+      "vmid": 106,
+      "name": "windoge-template",
+      "archive": "vzdump-qemu-106-2026_11_07-01_30_14.vma.zst",
+      "archive_SHA_verified": true,
+      "VMA_full_verify": true,
+      "disk_slots": [
+        "virtio0"
+      ]
+    },
+    {
+      "vmid": 9000,
+      "name": "dell-template-inspect",
+      "archive": "vzdump-qemu-9000-2026_11_07-01_33_47.vma.zst",
+      "archive_SHA_verified": true,
+      "VMA_full_verify": true,
+      "disk_slots": [
+        "scsi0"
+      ]
+    },
+    {
+      "vmid": 9002,
+      "name": "dell-linux-clone-test",
+      "archive": "vzdump-qemu-9002-2026_11_07-01_35_32.vma.zst",
+      "archive_SHA_verified": true,
+      "VMA_full_verify": true,
+      "disk_slots": [
+        "scsi0"
+      ]
+    },
+    {
+      "vmid": 9003,
+      "name": "dell-docker-clone-test",
+      "archive": "vzdump-qemu-9003-2026_11_07-01_36_30.vma.zst",
+      "archive_SHA_verified": true,
+      "VMA_full_verify": true,
+      "disk_slots": [
+        "scsi0"
+      ]
+    },
+    {
+      "vmid": 9004,
+      "name": "dell-docker-clone-a",
+      "archive": "vzdump-qemu-9004-2026_11_07-01_37_32.vma.zst",
+      "archive_SHA_verified": true,
+      "VMA_full_verify": true,
+      "disk_slots": [
+        "scsi0"
+      ]
+    },
+    {
+      "vmid": 9005,
+      "name": "dell-linux-clone-b",
+      "archive": "vzdump-qemu-9005-2026_11_07-01_38_28.vma.zst",
+      "archive_SHA_verified": true,
+      "VMA_full_verify": true,
+      "disk_slots": [
+        "scsi0"
+      ]
+    },
+    {
+      "vmid": 9006,
+      "name": "dell-docker-clone-b",
+      "archive": "vzdump-qemu-9006-2026_11_07-01_39_22.vma.zst",
+      "archive_SHA_verified": true,
+      "VMA_full_verify": true,
+      "disk_slots": [
+        "scsi0"
+      ]
+    },
+    {
+      "vmid": 9020,
+      "name": "dell-restore-baseline",
+      "archive": "vzdump-qemu-9020-2026_11_07-01_40_21.vma.zst",
+      "archive_SHA_verified": true,
+      "VMA_full_verify": true,
+      "disk_slots": [
+        "scsi0"
+      ]
+    },
+    {
+      "vmid": 231,
+      "name": "java-prod-02",
+      "archive": "vzdump-qemu-231-2026_11_07-01_41_08.vma.zst",
+      "archive_SHA_verified": true,
+      "VMA_full_verify": true,
+      "disk_slots": [
+        "scsi0"
+      ]
+    },
+    {
+      "vmid": 232,
+      "name": "java-prod-03",
+      "archive": "vzdump-qemu-232-2026_11_07-01_41_59.vma.zst",
+      "archive_SHA_verified": true,
+      "VMA_full_verify": true,
+      "disk_slots": [
+        "scsi0"
+      ]
+    }
+  ],
+  "execute": true,
+  "deleted": [
+    104,
+    103,
+    101,
+    102,
+    105,
+    106,
+    9000,
+    9002,
+    9003,
+    9004,
+    9005,
+    9006,
+    9020,
+    231,
+    232
+  ],
+  "kept_core_templates": [
+    9001,
+    9010,
+    9011
+  ],
+  "shared_artifacts_ISO_not_a_delete_target": true,
+  "status": "exact-candidates-cleaned-backups-retained",
+  "at_completed": "2026-11-07T02:08:51.012023"
+}

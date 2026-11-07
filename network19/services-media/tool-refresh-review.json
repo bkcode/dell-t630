@@ -1,0 +1,10 @@
+{
+  "file": "guest_transaction.py",
+  "old_sha256": "45722775ca8fdbd6f1161a1cfb070f730e5ef37bf6c51a5005298dd276c7a7f6",
+  "new_sha256": "bca1b7a96ac1851f345a43b2479e94d0599f19993156b5187a184f285601dc28",
+  "reason": [
+    "Pin NAS toactual overlayfs fromboth prior audits andcurrent daemon metadata; preserve backend, do not switch it",
+    "Allow quiesced precommit rollback-files when OS cutover fails; preserve all SHA/MAC/UUID/protected-file checks"
+  ],
+  "target_active_files_changed": false
+}

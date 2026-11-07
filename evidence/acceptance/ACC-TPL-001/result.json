@@ -1,0 +1,41 @@
+{
+  "id": "ACC-TPL-001",
+  "status": "passed",
+  "executed_at": "2026-11-06T05:17:37.616740+08:00",
+  "timezone": "Asia/Shanghai",
+  "operator": "root-task-manager",
+  "plan_sha256": "42a0a8cfb2d418a97defa6b96c81501a8b5a7b7b92a0d589a03ef2401404ad3b",
+  "preconditions_checked": true,
+  "observations": [
+    "Core templates9010 and9001 created from SHA512-verified official Debian13 AMD64 image.",
+    "Linux and Docker baselines verified from clean full clones; Docker29.9.3 and Compose5.7.0 with local rotated logging and no application containers.",
+    "Only expected ub management public key is present; no source application data or client private key copied."
+  ],
+  "artifacts": [
+    "evidence/implementation/template-clone-validation.json"
+  ],
+  "limitations": [
+    "Template source hostnames must be set through per-instance Cloud-Init; application identities accepted separately."
+  ],
+  "reviewed_by": "root-task-manager",
+  "plan_snapshot": "evidence/plans/plan-42a0a8cfb2d418a9.json",
+  "target": {
+    "host": "192.168.21.22",
+    "environment": "managed-PVE-implementation",
+    "vmid": null,
+    "vmids": [
+      9001,
+      9010,
+      9002,
+      9004,
+      9005,
+      9006
+    ]
+  },
+  "commands_or_steps": [
+    "See linked execution artifact and operator observations"
+  ],
+  "exit_codes": [
+    0
+  ]
+}

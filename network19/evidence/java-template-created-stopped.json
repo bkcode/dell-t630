@@ -1,0 +1,9 @@
+{
+  "vmid": 9011,
+  "state": "stopped-awaiting-L2-registry",
+  "net0": "virtio=BC:24:11:A4:D3:4D,bridge=vmbr19,firewall=0",
+  "build_IP": "192.168.19.197",
+  "temporary_resource_budget": "232 stopped releases16GiB; build2GiB; eventualQA2GiB; at least20GiB planned reserve",
+  "source": 9010,
+  "business_apps_installed": false
+}

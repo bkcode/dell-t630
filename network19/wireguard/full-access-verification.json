@@ -1,0 +1,303 @@
+{
+  "at": "2026-11-07T00:48:02.173233+08:00",
+  "status": "trusted-VPN-server-network-access-configured-user-batch-confirmed",
+  "source": "10.66.66.0/24",
+  "destination": "192.168.19.0/24",
+  "protocols": "all valid IPv4",
+  "gateway_local_IPs": [
+    "192.168.21.23",
+    "192.168.19.1"
+  ],
+  "GW": {
+    "WG_rules": [
+      {
+        "chain": "input",
+        "comment": "WG-TrustedVPN-Gateway-IPv4",
+        "expr": [
+          {
+            "match": {
+              "op": "==",
+              "left": {
+                "meta": {
+                  "key": "iifname"
+                }
+              },
+              "right": "eth0"
+            }
+          },
+          {
+            "match": {
+              "op": "==",
+              "left": {
+                "payload": {
+                  "protocol": "ip",
+                  "field": "saddr"
+                }
+              },
+              "right": {
+                "prefix": {
+                  "addr": "10.66.66.0",
+                  "len": 24
+                }
+              }
+            }
+          },
+          {
+            "match": {
+              "op": "==",
+              "left": {
+                "payload": {
+                  "protocol": "ip",
+                  "field": "daddr"
+                }
+              },
+              "right": {
+                "set": [
+                  "192.168.19.1",
+                  "192.168.21.23"
+                ]
+              }
+            }
+          },
+          {
+            "mangle": {
+              "key": {
+                "ct": {
+                  "key": "mark"
+                }
+              },
+              "value": 419430405
+            }
+          },
+          {
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            }
+          },
+          {
+            "accept": null
+          }
+        ]
+      },
+      {
+        "chain": "forward",
+        "comment": "WG-TrustedVPN-Server19-IPv4",
+        "expr": [
+          {
+            "match": {
+              "op": "==",
+              "left": {
+                "meta": {
+                  "key": "iifname"
+                }
+              },
+              "right": "eth0"
+            }
+          },
+          {
+            "match": {
+              "op": "==",
+              "left": {
+                "meta": {
+                  "key": "oifname"
+                }
+              },
+              "right": "eth1"
+            }
+          },
+          {
+            "match": {
+              "op": "==",
+              "left": {
+                "payload": {
+                  "protocol": "ip",
+                  "field": "saddr"
+                }
+              },
+              "right": {
+                "prefix": {
+                  "addr": "10.66.66.0",
+                  "len": 24
+                }
+              }
+            }
+          },
+          {
+            "match": {
+              "op": "==",
+              "left": {
+                "payload": {
+                  "protocol": "ip",
+                  "field": "daddr"
+                }
+              },
+              "right": {
+                "prefix": {
+                  "addr": "192.168.19.0",
+                  "len": 24
+                }
+              }
+            }
+          },
+          {
+            "mangle": {
+              "key": {
+                "ct": {
+                  "key": "mark"
+                }
+              },
+              "value": 419430405
+            }
+          },
+          {
+            "counter": {
+              "packets": 75,
+              "bytes": 4800
+            }
+          },
+          {
+            "accept": null
+          }
+        ]
+      }
+    ],
+    "tables": [
+      "table inet dell_gateway19"
+    ],
+    "pending": false,
+    "forward": "1"
+  },
+  "PVE": {
+    "VPN_rule": {
+      "family": "bridge",
+      "table": "dell19_acl",
+      "chain": "from_gateway",
+      "handle": 54,
+      "comment": "trusted-WireGuard-to-server19",
+      "expr": [
+        {
+          "match": {
+            "op": "==",
+            "left": {
+              "payload": {
+                "protocol": "ip",
+                "field": "saddr"
+              }
+            },
+            "right": {
+              "prefix": {
+                "addr": "10.66.66.0",
+                "len": 24
+              }
+            }
+          }
+        },
+        {
+          "match": {
+            "op": "==",
+            "left": {
+              "payload": {
+                "protocol": "ip",
+                "field": "daddr"
+              }
+            },
+            "right": {
+              "prefix": {
+                "addr": "192.168.19.0",
+                "len": 24
+              }
+            }
+          }
+        },
+        {
+          "counter": {
+            "packets": 75,
+            "bytes": 4800
+          }
+        },
+        {
+          "accept": null
+        }
+      ]
+    },
+    "host_forward": "0",
+    "all_interface_forward_zero": true,
+    "tables": [
+      "table bridge dell19_acl"
+    ],
+    "running_VM": 13,
+    "running_LXC": 1,
+    "templates": 7,
+    "stopped_non_templates": 9
+  },
+  "local_LAN_regression": [
+    {
+      "URL": "http://192.168.19.50:9001/",
+      "HTTP": "200",
+      "exit": 0
+    },
+    {
+      "URL": "http://192.168.19.31:8081/",
+      "HTTP": "200",
+      "exit": 0
+    },
+    {
+      "URL": "http://192.168.19.60/",
+      "HTTP": "200",
+      "exit": 0
+    },
+    {
+      "URL": "http://192.168.19.60:8096/health",
+      "HTTP": "200",
+      "exit": 0
+    },
+    {
+      "URL": "http://192.168.19.70:3000/login",
+      "HTTP": "200",
+      "exit": 0
+    },
+    {
+      "URL": "http://192.168.19.70:9090/-/ready",
+      "HTTP": "200",
+      "exit": 0
+    },
+    {
+      "URL": "http://192.168.19.70:9093/-/ready",
+      "HTTP": "200",
+      "exit": 0
+    },
+    {
+      "URL": "http://192.168.19.20:8848/nacos/v1/console/health/readiness",
+      "HTTP": "200",
+      "exit": 0
+    },
+    {
+      "URL": "http://192.168.19.11:8848/nacos/v1/console/health/readiness",
+      "HTTP": "200",
+      "exit": 0
+    }
+  ],
+  "remote_MacAir10.66.66.3": {
+    "user_confirmation": "全部正常访问",
+    "HTTP_batch_targets": [
+      "http://192.168.19.50:9001/",
+      "http://192.168.19.31:8081/",
+      "http://192.168.19.60/",
+      "http://192.168.19.60:8096/health",
+      "http://192.168.19.70:3000/login",
+      "http://192.168.19.70:9090/-/ready",
+      "http://192.168.19.70:9093/-/ready",
+      "http://192.168.19.20:8848/nacos/v1/console/health/readiness",
+      "http://192.168.19.11:8848/nacos/v1/console/health/readiness"
+    ],
+    "exact_remote_HTTP_codes": "not supplied; do not fabricate specific codes",
+    "SMB_auth_and_SSH_login_from_remote": "not individually supplied; transport policy open, original auth preserved",
+    "gateway_DNS_optional_test_result": "not separately provided"
+  },
+  "NAS_network_filters": "wireguard/media/apply-result.json",
+  "no_SNAT": true,
+  "OpenWrt_peer_per_client32_unchanged": true,
+  "service_credentials_changed": false,
+  "Java_business_programs_started": false
+}

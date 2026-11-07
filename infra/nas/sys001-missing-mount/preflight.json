@@ -1,0 +1,71 @@
+{
+  "files": {
+    "/usr/local/libexec/dell-nas-check-data": {
+      "exists": true,
+      "sha256": "5ba9fd7cfc37d1e7398a454dff0151c516b15a15b93b3c37061f0486d01120fc"
+    },
+    "/opt/dell/nas-stage/check-data-mount.py": {
+      "exists": true,
+      "sha256": "5ba9fd7cfc37d1e7398a454dff0151c516b15a15b93b3c37061f0486d01120fc"
+    },
+    "/opt/dell/nas-stage/deploy-jellyfin.sh": {
+      "exists": true,
+      "sha256": "3fa104417af5e7ba1847ee6c26387d026e6dd599fd1aa192cc13d88424b22ef1"
+    },
+    "/etc/systemd/system/dell-nas-jellyfin.service": {
+      "exists": true,
+      "sha256": "847a04928bf0d5d831e4cc8c7afe5490b61c7a5cc2d7ad7e570ca1fc7ed017ff"
+    },
+    "/opt/dell/nas/compose.yaml": {
+      "exists": true,
+      "sha256": "f57289cc286a4b2991f0c0709f3ef41336931a2041c8d8a051a87e9a434d86a7"
+    }
+  },
+  "real_unit_content": "[Unit]\nDescription=Dell NAS Jellyfin (requires verified data filesystem)\nRequires=docker.service\nAfter=docker.service network-online.target srv-dev\\x2ddisk\\x2dby\\x2duuid\\x2d5b19837c\\x2d128c\\x2d498a\\x2db79d\\x2d563db810c34a.mount\nWants=network-online.target\nRequiresMountsFor=/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a\nBindsTo=srv-dev\\x2ddisk\\x2dby\\x2duuid\\x2d5b19837c\\x2d128c\\x2d498a\\x2db79d\\x2d563db810c34a.mount\nStartLimitIntervalSec=120\nStartLimitBurst=3\n\n[Service]\nType=simple\nWorkingDirectory=/opt/dell/nas\nExecStartPre=/usr/local/libexec/dell-nas-check-data --mountpoint /srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a --uuid 5b19837c-128c-498a-b79d-563db810c34a\nExecStart=/usr/bin/docker compose --env-file /opt/dell/nas/.env -f /opt/dell/nas/compose.yaml up --no-build --abort-on-container-exit --exit-code-from jellyfin\nExecStop=/usr/bin/docker compose --env-file /opt/dell/nas/.env -f /opt/dell/nas/compose.yaml stop --timeout 30\nRestart=on-failure\nRestartSec=10\nTimeoutStopSec=60\n\n[Install]\nWantedBy=multi-user.target\n",
+  "memory": {
+    "MemTotal": 4112359424,
+    "MemAvailable": 3270025216,
+    "SwapTotal": 0,
+    "SwapFree": 0
+  },
+  "root_disk": {
+    "root_available_bytes": 27873939456,
+    "root_total_bytes": 33603391488
+  },
+  "real_Jellyfin": {
+    "id": "13d571fdc3332da2f81fc237cc7f445afc1e6ca313d2e2f43b3b9016e9fe7956",
+    "pid": 1308,
+    "started_at": "2026-11-06T05:42:27.252051871Z",
+    "image_id": "sha256:fea863d0cd9ec445985d9c75fc6ed64e38a1d2766cf0c250a33d553f4fc1b771",
+    "image_reference": "jellyfin/jellyfin@sha256:fea863d0cd9ec445985d9c75fc6ed64e38a1d2766cf0c250a33d553f4fc1b771",
+    "health": "healthy",
+    "memory_limit": 1610612736
+  },
+  "cached_image": {
+    "id": "sha256:fea863d0cd9ec445985d9c75fc6ed64e38a1d2766cf0c250a33d553f4fc1b771",
+    "arch": "amd64",
+    "os": "linux"
+  },
+  "mount_namespaces": {
+    "PID1": "mnt:[4026531841]",
+    "dockerd": "mnt:[4026531841]",
+    "NAS_unit_main": "mnt:[4026531841]"
+  },
+  "production_guard_sha_matches_staged_source": true,
+  "real_services": {
+    "openmediavault-engined": "active",
+    "smbd": "active",
+    "dell-nas-jellyfin": "active"
+  },
+  "real_mount_metadata": {
+    "filesystems": [
+      {
+        "target": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a",
+        "source": "/dev/sdb1",
+        "fstype": "ext4",
+        "uuid": "5b19837c-128c-498a-b79d-563db810c34a"
+      }
+    ]
+  },
+  "collected_at": "2026-11-06T14:03:41.547560+08:00"
+}

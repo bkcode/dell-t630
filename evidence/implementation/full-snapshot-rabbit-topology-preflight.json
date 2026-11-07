@@ -1,0 +1,10 @@
+{
+  "collected_at": "2026-11-06T04:08:16.275934+00:00",
+  "vmid": 201,
+  "component": "rabbit-topology",
+  "exit_code": 0,
+  "stdout": "{\"status\": \"preflight-passed\", \"metadata\": {\"vmid\": 201, \"component\": \"rabbit-topology\", \"input_bytes\": 1080, \"input_hash_matches\": true, \"image\": \"rabbitmq:3.13.7-management@sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920\", \"platform\": \"linux/amd64\", \"free_bytes\": 24528998400, \"mem_available_bytes\": 6944964608, \"live_container_count\": 3, \"definition_fields\": [\"bindings\", \"exchanges\", \"global_parameters\", \"parameters\", \"permissions\", \"policies\", \"product_name\", \"product_version\", \"queues\", \"rabbit_version\", \"rabbitmq_version\", \"topic_permissions\", \"users\", \"vhosts\"], \"runtime_parameter_count\": 0, \"object_counts\": {\"users\": 2, \"vhosts\": 1, \"permissions\": 2, \"topic_permissions\": 0, \"parameters\": 0, \"global_parameters\": 1, \"policies\": 0, \"queues\": 0, \"exchanges\": 0, \"bindings\": 0}}, \"snapshot_content_exported\": false}\n",
+  "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+  "snapshot_content_exported": false,
+  "CF_accessed": false
+}

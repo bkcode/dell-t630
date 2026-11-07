@@ -1,0 +1,491 @@
+{
+  "at": "2026-11-06T05:59:55.643084+00:00",
+  "command_scope": "last30m targeted network/TCC/launchd + Python/nc/curl/task label",
+  "exit_code": 0,
+  "stderr": "",
+  "matching_rows": 126,
+  "rows": [
+    {
+      "timestamp": "2026-11-06 13:30:20.947030+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[11100], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:30:20.947373+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[11100], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:30:20.989916+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[11098], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:30:20.990231+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[11098], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:30:39.393129+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[11463], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:30:39.393400+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[11463], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:31:14.257735+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[11521], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:31:14.258073+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[11521], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:31:34.851339+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[11554], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:31:34.851634+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[11554], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:31:44.527079+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[11565], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:31:44.527333+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[11565], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:31:44.551059+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[11564], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:31:44.551271+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[11564], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:31:56.110189+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[11584], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:31:56.110430+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[11584], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:31:56.139174+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[11582], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:31:56.139471+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[11582], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:32:15.417190+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[11614], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:32:15.417405+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[11614], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:33:09.281300+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[11995], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:33:09.281502+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[11995], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:33:09.317037+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[11994], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:33:09.317366+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[11994], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:33:16.097251+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[12006], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:33:16.097464+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[12006], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:33:28.279844+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[12021], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:33:28.280048+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[12021], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:34:03.985608+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[13641], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:34:03.985827+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[13641], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:34:10.580493+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[13655], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:34:10.580674+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[13655], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:34:58.878967+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[14709], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:34:58.879174+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[14709], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:35:43.918676+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[15799], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:35:43.919013+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[15799], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:35:54.911453+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[17202], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:35:54.911710+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[17202], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:36:12.403778+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[17236], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:36:12.404097+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[17236], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:36:13.838459+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[17239], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:36:13.840426+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[17239], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:38:16.905650+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[18413], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:38:16.905948+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[18413], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:38:49.930588+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[21086], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:38:49.930802+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[21086], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:39:01.022751+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[21100], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:39:01.022980+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[21100], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:39:47.226200+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[22503], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:39:47.226429+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[22503], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:39:47.254200+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[22502], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:39:47.254432+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[22502], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:40:56.130429+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[23220], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:40:56.130661+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[23220], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:40:59.480358+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[23229], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:40:59.480524+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[23229], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:41:44.024887+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[24626], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:41:44.025096+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[24626], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:41:44.052754+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.system.notification_center, flags = 0x9, requestor = python3.14[24627], error = 159: Sandbox restriction"
+    },
+    {
+      "timestamp": "2026-11-06 13:41:44.052956+0800",
+      "processID": 1,
+      "subsystem": "user/501",
+      "category": "",
+      "messageType": "Default",
+      "message": "denied lookup: name = com.apple.logd, flags = 0x9, requestor = python3.14[24627], error = 159: Sandbox restriction"
+    }
+  ],
+  "truncated": true,
+  "lark_hook_read": false
+}

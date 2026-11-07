@@ -1,0 +1,28 @@
+{
+  "at": "2026-11-06T05:26:07.254644",
+  "records": [
+    {
+      "vmid": 200,
+      "role": "data-prod-db",
+      "device": "/dev/pve/vm-200-disk-1",
+      "size_gib": 80,
+      "uuid": "d61c0e22-941e-447a-9e9a-1e9e50deb02f",
+      "filesystem": "ext4",
+      "planned_guest_mount": "/srv/dell-data",
+      "guest_mount_verified": false,
+      "state": "stopped-awaiting-network"
+    },
+    {
+      "vmid": 201,
+      "role": "data-prod-infra",
+      "device": "/dev/pve/vm-201-disk-1",
+      "size_gib": 24,
+      "uuid": "b85156c2-dac8-4b33-ab25-460aaf676c57",
+      "filesystem": "ext4",
+      "planned_guest_mount": "/srv/dell-data",
+      "guest_mount_verified": false,
+      "state": "stopped-awaiting-network"
+    }
+  ],
+  "scope": "only newly allocated empty guest data LVs; no PVE system or physical array formatting"
+}

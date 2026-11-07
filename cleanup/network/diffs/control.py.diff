@@ -1,0 +1,43 @@
+--- a/dell/scripts/control.py
++++ b/dell/scripts/control.py
+@@ -23,16 +23,36 @@
+ 
+ def trust_guest(vmid, *, expected_ip=None, allow_reprovisioned_key=False, reason=None):
+     vmid=int(vmid)
++    plan=json.loads((ROOT/'plan.json').read_text())
++    if vmid in plan.get('retired_vmids',[]):raise RuntimeError('Retired VM cannot acquire active SSH identity')
+     interfaces=json.loads(pve(shlex.join(['qm','agent',str(vmid),'network-get-interfaces'])))
+-    candidates=[]
++    candidates=[];address_interfaces={}
+     for interface in interfaces:
+         if interface.get('name') in ['lo','docker0'] or interface.get('name','').startswith(('br-','veth')):continue
+         for address in interface.get('ip-addresses',[]):
+             if address.get('ip-address-type')=='ipv4':
+                 ip=ipaddress.ip_address(address['ip-address'])
+-                if not ip.is_loopback and not ip.is_link_local:candidates.append(str(ip))
+-    if len(candidates)!=1:raise RuntimeError('Expected one unambiguous guest IPv4: '+str(candidates))
+-    if expected_ip is not None and candidates[0]!=expected_ip:raise RuntimeError('Guest has not reached its assigned address')
++                if not ip.is_loopback and not ip.is_link_local:
++                    candidates.append(str(ip));address_interfaces.setdefault(str(ip),set()).add(interface['name'])
++    matches=[r for r in plan['roles'] if r.get('vmid',r.get('planned_vmid'))==vmid]
++    declared=matches[0].get('additional_ips',[]) if len(matches)==1 else []
++    if declared:
++        role=matches[0];primary=str(ipaddress.IPv4Address(role['ip']))
++        if not isinstance(declared,list) or any(not isinstance(x,str) or str(ipaddress.IPv4Address(x))!=x for x in declared):raise RuntimeError('Exact declared IPv4 aliases required')
++        approved=[primary,*declared]
++        if len(set(approved))!=len(approved):raise RuntimeError('Duplicate primary/alias declaration')
++        retired=set(plan.get('retired_vmids',[]))
++        for other in plan['roles']:
++            if other is role or other.get('vmid',other.get('planned_vmid')) in retired:continue
++            claimed=[other.get('ip'),*other.get('additional_ips',[])]
++            if any(x in claimed for x in approved):raise RuntimeError('Another active VM claims an approved address')
++        if primary not in candidates or not set(candidates).issubset(approved):raise RuntimeError('Primary missing or undeclared guest IPv4 observed')
++        if len(candidates)!=len(set(candidates)) or len(set.union(*(address_interfaces[x] for x in candidates)))!=1:raise RuntimeError('Declared service aliases must be on one approved NIC')
++        if expected_ip is not None and expected_ip!=primary:raise RuntimeError('SSH management target must remain declared primary')
++        candidates=[primary]
++    else:
++        if len(candidates)!=1:raise RuntimeError('Expected one unambiguous guest IPv4: '+str(candidates))
++        if expected_ip is not None and candidates[0]!=expected_ip:raise RuntimeError('Guest has not reached its assigned address')
+     public=qga(vmid,['cat','/etc/ssh/ssh_host_ed25519_key.pub']).strip().split()
+     if len(public)<2 or public[0]!='ssh-ed25519':raise RuntimeError('Unexpected guest host key')
+     alias='dell-vm'+str(vmid)

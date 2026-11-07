@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-06T07:23:58.969397+08:00",
+  "status": "reviewed-not-authorized-not-applied",
+  "files": [
+    {
+      "path": "infra/internal-bridges.conf",
+      "sha256": "5ec60d1b10840a1c83b6e9020876335d6ae6372b075a3dd9d391dc8c72ec64f2"
+    },
+    {
+      "path": "infra/dell-network.nft",
+      "sha256": "cbaaae8943d82ac929dea39a267e7c05f21371ed4f5eb3909c046e19e16c9538"
+    },
+    {
+      "path": "infra/provision_network.py",
+      "sha256": "3a690c4177e94496ca7b8a53a1de1c5241584c725461a85f8a8e2f4ff2d75f0e"
+    },
+    {
+      "path": "infra/apply_guest_firewall.py",
+      "sha256": "277f95c9704356338d99aeb3928542d4dd4c0a3c2fc87d5f5ad8c37bdd92c357"
+    }
+  ]
+}

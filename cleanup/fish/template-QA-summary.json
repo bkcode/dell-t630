@@ -1,0 +1,36 @@
+{
+  "at": "2026-11-06T18:03:10.338379+00:00",
+  "status": "candidate-QA-passed-final-core-promotion-root-owned",
+  "checks": {
+    "three_QA_exit0": true,
+    "three_new_strict_SSH_exit0": true,
+    "three_own_stage_removed_and_released": true,
+    "machine_IDs_pairwise_distinct": true,
+    "hostkeys_pairwise_distinct": true,
+    "all_fish_exact_and_bash": true,
+    "exact_candidate_sources": true
+  },
+  "QA": [
+    {
+      "vmid": 9043,
+      "candidate_source": 9040,
+      "logical_final_template": 9010,
+      "evidence": "evidence/QA9043.json"
+    },
+    {
+      "vmid": 9044,
+      "candidate_source": 9041,
+      "logical_final_template": 9001,
+      "evidence": "evidence/QA9044.json"
+    },
+    {
+      "vmid": 9045,
+      "candidate_source": 9042,
+      "logical_final_template": 9011,
+      "evidence": "evidence/QA9045.json"
+    }
+  ],
+  "all_QA_released": true,
+  "source_core_replaced_by_this_agent": false,
+  "PVE_operations_by_this_agent": false
+}

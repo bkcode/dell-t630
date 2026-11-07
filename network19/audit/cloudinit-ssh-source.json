@@ -1,0 +1,8 @@
+{
+  "url": "https://docs.cloud-init.io/en/latest/reference/modules.html#ssh",
+  "facts_used": [
+    "ssh_deletekeys controls removal of existing host keys and defaults true; explicitly false preserves existing host key material.",
+    "Host-key generation for missing keys is distinct from deletion. Fresh template clone identity must remain unique."
+  ],
+  "scope": "module behavior; runtime outcomes are checked independently"
+}

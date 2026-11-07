@@ -1,0 +1,91 @@
+[
+  {
+    "service": "frontend",
+    "port": 8082,
+    "path": "/stub_status",
+    "credential_used": false,
+    "status": 200,
+    "content_type": "text/plain",
+    "body_bytes": 103,
+    "body_sha256": "9a198e366fba0c64a9c0fca9fbdb5e14e1dd60405d52d9602c1868ca001b0b61",
+    "OK_body": false,
+    "nginx_stub_marker": true,
+    "html_doctype": false,
+    "html_title_contains_penpot": false,
+    "redirect_path": null
+  },
+  {
+    "service": "backend",
+    "port": 6060,
+    "path": "/readyz",
+    "credential_used": false,
+    "status": 200,
+    "content_type": null,
+    "body_bytes": 2,
+    "body_sha256": "565339bc4d33d72817b583024112eb7f5cdf3e5eef0252d6ec1b9c9a94e12bb3",
+    "OK_body": true,
+    "nginx_stub_marker": false,
+    "html_doctype": false,
+    "html_title_contains_penpot": false,
+    "redirect_path": null
+  },
+  {
+    "service": "exporter",
+    "port": 6061,
+    "path": "/readyz",
+    "credential_used": false,
+    "status": 200,
+    "content_type": null,
+    "body_bytes": 2,
+    "body_sha256": "565339bc4d33d72817b583024112eb7f5cdf3e5eef0252d6ec1b9c9a94e12bb3",
+    "OK_body": true,
+    "nginx_stub_marker": false,
+    "html_doctype": false,
+    "html_title_contains_penpot": false,
+    "redirect_path": null
+  },
+  {
+    "service": "admin-console",
+    "port": 3000,
+    "path": "/",
+    "credential_used": false,
+    "status": 307,
+    "content_type": null,
+    "body_bytes": 0,
+    "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "OK_body": false,
+    "nginx_stub_marker": false,
+    "html_doctype": false,
+    "html_title_contains_penpot": false,
+    "redirect_path": "/admin-console/"
+  },
+  {
+    "service": "mcp",
+    "port": 4401,
+    "path": "/",
+    "credential_used": false,
+    "status": 404,
+    "content_type": "text/html; charset=utf-8",
+    "body_bytes": 139,
+    "body_sha256": "52c1e7a2c36be28c42455fe1572d7d7918c3180cad99a2b82daa2a38a7e7bb23",
+    "OK_body": false,
+    "nginx_stub_marker": false,
+    "html_doctype": true,
+    "html_title_contains_penpot": false,
+    "redirect_path": null
+  },
+  {
+    "service": "dns",
+    "native_command": "busybox nslookup -type=A one.one.one.one 127.0.0.1",
+    "exit_code": 0,
+    "answer_has_Cloudflare_A": true,
+    "response_content_emitted": false
+  },
+  {
+    "service": "frontend",
+    "native_command": "timeout4 bash /dev/tcp GET existing stub_status",
+    "exit_code": 0,
+    "HTTP200_and_status_marker": true,
+    "response_content_emitted": false
+  }
+]

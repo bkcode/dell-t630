@@ -1,0 +1,109 @@
+{
+  "updated_at": "2026-11-06T14:32:39.254748",
+  "status": "current-phase-complete",
+  "scope": "LAN infrastructure and selected five-service test chain; production runtime only; Penpot/Nexus/NAS software; server-internal Lark",
+  "user_decision_evidence": "evidence/implementation/user-decisions-2026-11-06.json",
+  "required_cases": [
+    "ACC-DOC-001",
+    "ACC-DOC-002",
+    "ACC-PVE-001",
+    "ACC-PVE-002",
+    "ACC-PVE-003",
+    "ACC-NET-001",
+    "ACC-NET-002",
+    "ACC-TPL-001",
+    "ACC-TPL-002",
+    "ACC-SSH-001",
+    "ACC-SSH-002",
+    "ACC-SYS-001",
+    "ACC-DOCKER-001",
+    "ACC-DOCKER-002",
+    "ACC-DATA-001",
+    "ACC-ART-001",
+    "ACC-REL-001",
+    "ACC-JAVA-001",
+    "ACC-PEN-001",
+    "ACC-PEN-003",
+    "ACC-PEN-004",
+    "ACC-NAS-001",
+    "ACC-NAS-002",
+    "ACC-NAS-006",
+    "ACC-OBS-001",
+    "ACC-CUT-001"
+  ],
+  "future_or_manual_cases": [
+    {
+      "id": "ACC-NET-003",
+      "status": "pending",
+      "reason": "暂无新公网域名/Cloudflare账户侧路由/HTTPS；本期LAN已验证，现有CF保留。"
+    },
+    {
+      "id": "ACC-DATA-002",
+      "status": "pending",
+      "reason": "当前为五服务新测试配置/命名空间；原Mac Nacos全量业务配置与Derby迁移未执行，源保留。"
+    },
+    {
+      "id": "ACC-DATA-003",
+      "status": "pending",
+      "reason": "基础Redis/Rabbit持久化/恢复已验证；业务消费者重投幂等/死信结果需后续选定异步业务。"
+    },
+    {
+      "id": "ACC-JAVA-002",
+      "status": "pending",
+      "reason": "正式业务本期用户明确仅runtime；未启动同服务多副本生成ID并发验收。"
+    },
+    {
+      "id": "ACC-JAVA-003",
+      "status": "pending",
+      "reason": "定时/Outbox并发副作用业务未在当前五服务链启用，不外发真实金融/通知。"
+    },
+    {
+      "id": "ACC-JAVA-004",
+      "status": "pending",
+      "reason": "当前单测试节点文件持久已验；WS与多实例跨节点共享文件未部署/未验。"
+    },
+    {
+      "id": "ACC-PEN-002",
+      "status": "pending",
+      "reason": "空默认口令/登录鉴权已验；公网HTTPS与真实SMTP未配置，暂无域名/provider。"
+    },
+    {
+      "id": "ACC-NAS-003",
+      "status": "pending",
+      "reason": "软件合成DirectPlay已验；真实电视/播放器4K HDR/字幕音轨/连续播放需实际设备。"
+    },
+    {
+      "id": "ACC-NAS-004",
+      "status": "pending",
+      "reason": "SMB权限/合成保存读取SHA已验；真实PS4/PS5工具/格式/目标设备传输未提供。"
+    },
+    {
+      "id": "ACC-NAS-005",
+      "status": "pending",
+      "reason": "正式业务未启，业务SLO/基线未批准，不以合成负载冒充生产并发性能。"
+    },
+    {
+      "id": "ACC-BAK-001",
+      "status": "pending",
+      "reason": "已有初始Mac独立副本及应用恢复证据；长期独立目的地/保留/连续调度未定，CF与publisher私钥按用户仅本机/220。"
+    },
+    {
+      "id": "ACC-BAK-002",
+      "status": "pending",
+      "reason": "初始隔离恢复已验；用户尚无获批RPO/RTO及独立恢复硬件，不能签完整灾备。"
+    }
+  ],
+  "claims_excluded": [
+    "production business launch",
+    "whole-host/physical power disaster",
+    "unapproved RPO/RTO",
+    "public HTTPS/mail",
+    "real TV/console compatibility",
+    "continuous external whole-host alerting"
+  ],
+  "policy": "Future/manual pending cases are not counted as passed. Current phase only closes when all26 required have real evidence.",
+  "completed_at": "2026-11-06T15:07:33.695773",
+  "required_passed": 26,
+  "future_or_manual_pending": 12,
+  "signoff": "evidence/implementation/current-phase-manager-signoff.json"
+}

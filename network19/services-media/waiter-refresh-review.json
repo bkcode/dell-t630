@@ -1,0 +1,6 @@
+{
+  "file": "guest_transaction.py",
+  "old_sha256": "bca1b7a96ac1851f345a43b2479e94d0599f19993156b5187a184f285601dc28",
+  "new_sha256": "016170763d9c4e27d2e46fe2e9114e0fbb72498b09fa6b70853f1e75c4261050",
+  "change": "Within existing600s readiness deadline only, missing owned container names during Compose port recreation become incomplete frames and retry; require full exact count andhealthy, same final images/identity checks. No config or service changes."
+}

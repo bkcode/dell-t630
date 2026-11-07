@@ -1,0 +1,54 @@
+{
+  "status": "readonly-diagnosis",
+  "accounts": [
+    {
+      "user": "finger_auth_test",
+      "old_exists": true,
+      "new_exists": false,
+      "old_canonical": {
+        "columns": 1,
+        "starts_CREATE_USER": true,
+        "backtick_account_prefix": true,
+        "singlequote_account_prefix": false,
+        "identified_with_present": true,
+        "authentication_AS_keyword": true,
+        "plugin_caching_sha2_password": true
+      },
+      "parser": "accepted"
+    },
+    {
+      "user": "finger_system_test",
+      "old_exists": true,
+      "new_exists": false,
+      "old_canonical": {
+        "columns": 2,
+        "starts_CREATE_USER": true,
+        "backtick_account_prefix": true,
+        "singlequote_account_prefix": false,
+        "identified_with_present": true,
+        "authentication_AS_keyword": true,
+        "plugin_caching_sha2_password": true
+      },
+      "parser_error_category": "Refused",
+      "parser_safe_reason": "unsupported-canonical-CREATE-USER-format"
+    },
+    {
+      "user": "finger_coms_test",
+      "old_exists": true,
+      "new_exists": false,
+      "old_canonical": {
+        "columns": 1,
+        "starts_CREATE_USER": true,
+        "backtick_account_prefix": true,
+        "singlequote_account_prefix": false,
+        "identified_with_present": true,
+        "authentication_AS_keyword": true,
+        "plugin_caching_sha2_password": true
+      },
+      "parser": "accepted"
+    }
+  ],
+  "all_newHost_absent": true,
+  "auth_hash_SQL_values_emitted": false,
+  "writes": 0
+}

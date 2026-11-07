@@ -1,0 +1,102 @@
+{
+  "at": "2026-11-06T18:02:43.542800+00:00",
+  "vmid": 9045,
+  "candidate_source": 9042,
+  "logical_final_template": 9011,
+  "contract": {
+    "purpose": "fish-template-independent-QA",
+    "vmid": 9045,
+    "source_template": 9011,
+    "candidate_vmid": 9042,
+    "hostname": "fish-qa-java",
+    "ip": "192.168.19.199",
+    "mac": "bc:24:11:99:06:a5",
+    "expected_shells": {
+      "root": "/bin/bash",
+      "ub": "/bin/bash"
+    },
+    "protected_files": {
+      "/usr/local/libexec/dell-java-acceptance/verify.py": "20bc24ce5ceb8258149a11ec28059d2d0b2f3f9b1e58178e9d6e6f8b26736814"
+    },
+    "trusted_hostkey_fingerprint": "SHA256:dtn/gwXMH4GvLbNDQgWFNQYIeTWCi4CWvDTozJcT2Xo",
+    "forbidden_machine_id_sha256": [
+      "893ee112348c5a31fe54446f46d2abb6a4b27ede70b2bbfd90fd376c9fdf8d6f",
+      "a086a1a1926da6a8e18c347ad4ce6d9433cbb20841e1f3ca15a62d0cb4966ce6",
+      "fb76cea0896cd4b9605770807c6aca94fdde0a20fe9d0b80e4f30c516c863e81",
+      "66b4861e2c1c18fe46b28c83ba860d02ad30c743e8425a522a0c809362828835",
+      "e8f832d4aeca41369d9f5e6dd0f230ef799d8684bb00785cf3b551ecd21de382"
+    ],
+    "forbidden_hostkey_fingerprints": [
+      "SHA256:rfZijnheE0nA1iRSsQhFxg7kBAfn5IJFW1B6bsEXmQA",
+      "SHA256:uXQUq3GP+pOk0Wua9wC6l7KrbehHE5B5zCZFeoGYfS8",
+      "SHA256:Z0gjHtV/HL2eVj7rEYGId0Q9F4rIXoQ7UrBEdiS1klo",
+      "SHA256:w7Bc0QFnJdhQrM4sBz99ElNvovxpZZ/NEvYhyFCL9/o",
+      "SHA256:h7IxCTYEATlQs74EUlVzKvyzERuAHSrQ05r/2BzbI5w"
+    ]
+  },
+  "target": {
+    "vmid": 9045,
+    "ip": "192.168.19.199",
+    "host_key_alias": "dell-vm9045",
+    "host_key_fingerprint": "SHA256:dtn/gwXMH4GvLbNDQgWFNQYIeTWCi4CWvDTozJcT2Xo",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "exit_code": 0,
+  "result": {
+    "exit_code": 0,
+    "receipt": {
+      "at": "2026-11-06T18:02:43.482599+00:00",
+      "vmid": 9045,
+      "logical_final_template": 9011,
+      "actual_candidate_source_vmid": 9042,
+      "status": "QA-checks-passed",
+      "machine_id_sha256": "082f9c2c83c50f6dee6c43d865f4abd409b1650abf0927306bb0f02fa7817142",
+      "hostkey_fingerprint": "SHA256:dtn/gwXMH4GvLbNDQgWFNQYIeTWCi4CWvDTozJcT2Xo",
+      "shells": {
+        "ub": "/bin/bash",
+        "root": "/bin/bash"
+      },
+      "cloud_init": "done",
+      "fish": "4.0.2-1",
+      "extra": {
+        "java": {
+          "status": "java21-clean-nonroot-acceptance-passed",
+          "uid": 999,
+          "user": "java",
+          "versions": {
+            "java": "openjdk version \"21.0.13\" 2026-10-20\nOpenJDK Runtime Environment (build 21.0.13+9-1-deb13u2-Debian)\nOpenJDK 64-Bit Server VM (build 21.0.13+9-1-deb13u2-Debian, mixed mode, sharing)",
+            "javac": "javac 21.0.13"
+          },
+          "business_artifacts_present": false,
+          "business_or_exporter_listeners": [],
+          "exporter_parked": true,
+          "CPU_count": 2,
+          "loadavg": [
+            0.17138671875,
+            0.1025390625,
+            0.0380859375
+          ],
+          "filesystem_free_bytes": 30886850560,
+          "MemTotal_kib": 2021540,
+          "machine_id_sha256": "082f9c2c83c50f6dee6c43d865f4abd409b1650abf0927306bb0f02fa7817142",
+          "boot_id_sha256": "75035892b769075fc691a6085eb6c0ac6d9c3e05deea7b97d487b80dd772c916",
+          "network_or_external_messages_sent": false,
+          "temporary_compile_and_run": "passed; source/class automatically removed"
+        }
+      },
+      "no_network_package_service_config_writes": true,
+      "temporary_nonroot_smoke_removed": true,
+      "new_strict_SSH_connection_still_required_by_caller": true
+    },
+    "own_QA_stage_removed": true
+  },
+  "no_PVE_package_configuration_or_service_actions": true,
+  "new_strict_SSH": {
+    "user": "ub",
+    "shell": "/bin/bash",
+    "fish_newSSH_noconfig_private": true,
+    "temporary_smoke_cleaned": true
+  },
+  "new_strict_SSH_exit": 0,
+  "released_after_verification": true
+}

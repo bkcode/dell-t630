@@ -1,0 +1,1180 @@
+{
+  "status": "local-staged",
+  "roles": [
+    {
+      "vmid": 200,
+      "role": "data-prod-db",
+      "old_ip": "10.63.10.10",
+      "new_ip": "192.168.19.10",
+      "gateway_and_DNS": "192.168.19.1",
+      "status": "local-staged-not-applied",
+      "files": [
+        {
+          "target_path": "/etc/default/prometheus-node-exporter",
+          "expected_old_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "new_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "staged_path": "prepared/monitoring/vm200/etc/default/prometheus-node-exporter",
+          "changes": [],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "expected_old_SHA256": "0456740522e112ffd1f09e4d32cf4a9ab421875e27570bae855bda329a57d6f0",
+          "new_SHA256": "261a868eda5f2586a7a8e09e7402f33943f934fe13342da146590ad628b38bd3",
+          "staged_path": "prepared/monitoring/vm200/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "changes": [
+            "exact-web.listen-address-flag"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/dell-guest-monitoring/health.json",
+          "expected_old_SHA256": "be74665d2936306485c287325935210639c0ad835d2b0336f5536d29d139558c",
+          "new_SHA256": "bfecc990f0c4afb384a9c43f4b5461cc0f1f01f902c16c7e674e079f5e3ad0eb",
+          "staged_path": "prepared/monitoring/vm200/etc/dell-guest-monitoring/health.json",
+          "changes": [
+            "private_ip"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "expected_old_SHA256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "new_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "staged_path": "prepared/monitoring/vm200/opt/dell/guest-monitoring/guest-targets.json",
+          "changes": [
+            "roles.200.private_ip",
+            "roles.201.private_ip",
+            "roles.210.private_ip",
+            "roles.220.private_ip",
+            "roles.221.private_ip",
+            "roles.230.private_ip",
+            "roles.231.private_ip",
+            "roles.232.private_ip",
+            "roles.240.private_ip",
+            "roles.250.private_ip",
+            "roles.260.private_ip",
+            "roles.270.private_ip"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "expected_old_SHA256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "new_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "staged_path": "prepared/monitoring/vm200/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "changes": [
+            "exact-subnet-guard-literal"
+          ],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "expected_old_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "new_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "staged_path": "prepared/monitoring/vm200/opt/dell/guest-monitoring/collect-guest-health.py",
+          "changes": [],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        }
+      ],
+      "apply_gate": "OScommit: exact new address UP /24; root600 per-role window receipt; all old source SHAs still match",
+      "apply_order": [
+        "pause only guest-health timer preserving prior enabled/active state; no app service changes",
+        "install new catalog+installer guard+health JSON+listen files as root with original modes, each atomic",
+        "daemon-reload; native --check-private-ip with new row; restart only node exporter",
+        "prove listen only own newIP9100 and local real active HTTP health; collector --check is access-only, not HTTP pass",
+        "restore original collector timer activation; check textfile freshness and Ops targetUP"
+      ],
+      "candidate_activation_changed": false,
+      "business_services_started_or_restarted": false,
+      "source_host_key_alias_unchanged": true,
+      "guest_writes_performed": false,
+      "rollback": "Restore same per-role old files only together with root OS old-address rollback; new-only file rollback on new-only OS is invalid"
+    },
+    {
+      "vmid": 201,
+      "role": "data-prod-infra",
+      "old_ip": "10.63.10.11",
+      "new_ip": "192.168.19.11",
+      "gateway_and_DNS": "192.168.19.1",
+      "status": "local-staged-not-applied",
+      "files": [
+        {
+          "target_path": "/etc/default/prometheus-node-exporter",
+          "expected_old_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "new_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "staged_path": "prepared/monitoring/vm201/etc/default/prometheus-node-exporter",
+          "changes": [],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "expected_old_SHA256": "b2bbd80dedc1caa2d06a1a6fd19c724e4a0b7c29758374ceb602422e26402e24",
+          "new_SHA256": "e94578fab6910071b62536d3fda0c07206154cf02ce5f8d436508194c07e345e",
+          "staged_path": "prepared/monitoring/vm201/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "changes": [
+            "exact-web.listen-address-flag"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/dell-guest-monitoring/health.json",
+          "expected_old_SHA256": "8276d352a8c1c0fba721c305c03992b0d8c968db9d5408df1e1f7d75d3f0fd5a",
+          "new_SHA256": "b27a081ab737d13b5d0b5c67b60f7f45b25d016f3936dedcd9c1fdf13f11e412",
+          "staged_path": "prepared/monitoring/vm201/etc/dell-guest-monitoring/health.json",
+          "changes": [
+            "private_ip",
+            "http_checks.0.url",
+            "candidate_http_checks.0.url"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "expected_old_SHA256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "new_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "staged_path": "prepared/monitoring/vm201/opt/dell/guest-monitoring/guest-targets.json",
+          "changes": [
+            "roles.200.private_ip",
+            "roles.201.private_ip",
+            "roles.210.private_ip",
+            "roles.220.private_ip",
+            "roles.221.private_ip",
+            "roles.230.private_ip",
+            "roles.231.private_ip",
+            "roles.232.private_ip",
+            "roles.240.private_ip",
+            "roles.250.private_ip",
+            "roles.260.private_ip",
+            "roles.270.private_ip"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "expected_old_SHA256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "new_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "staged_path": "prepared/monitoring/vm201/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "changes": [
+            "exact-subnet-guard-literal"
+          ],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "expected_old_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "new_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "staged_path": "prepared/monitoring/vm201/opt/dell/guest-monitoring/collect-guest-health.py",
+          "changes": [],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        }
+      ],
+      "apply_gate": "OScommit: exact new address UP /24; root600 per-role window receipt; all old source SHAs still match",
+      "apply_order": [
+        "pause only guest-health timer preserving prior enabled/active state; no app service changes",
+        "install new catalog+installer guard+health JSON+listen files as root with original modes, each atomic",
+        "daemon-reload; native --check-private-ip with new row; restart only node exporter",
+        "prove listen only own newIP9100 and local real active HTTP health; collector --check is access-only, not HTTP pass",
+        "restore original collector timer activation; check textfile freshness and Ops targetUP"
+      ],
+      "candidate_activation_changed": false,
+      "business_services_started_or_restarted": false,
+      "source_host_key_alias_unchanged": true,
+      "guest_writes_performed": false,
+      "rollback": "Restore same per-role old files only together with root OS old-address rollback; new-only file rollback on new-only OS is invalid"
+    },
+    {
+      "vmid": 210,
+      "role": "data-test",
+      "old_ip": "10.63.20.10",
+      "new_ip": "192.168.19.20",
+      "gateway_and_DNS": "192.168.19.1",
+      "status": "local-staged-not-applied",
+      "files": [
+        {
+          "target_path": "/etc/default/prometheus-node-exporter",
+          "expected_old_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "new_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "staged_path": "prepared/monitoring/vm210/etc/default/prometheus-node-exporter",
+          "changes": [],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "expected_old_SHA256": "5ee948d665b720ee33e3de8031f8321c4104c63af1810f938755d69dbdd74a83",
+          "new_SHA256": "2f634c4876c20f023e2e4923e3af4c1d5ac1b012b0ea0418f66521da0110b127",
+          "staged_path": "prepared/monitoring/vm210/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "changes": [
+            "exact-web.listen-address-flag"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/dell-guest-monitoring/health.json",
+          "expected_old_SHA256": "fe2544e268b9ad3e9e2e6cd4b9325a9a5f2886ca1a4f89c8a0e6922635f897b1",
+          "new_SHA256": "2a9563cf2b980e4ea457c5b6938b8687a373ab89cca9cd74e3713db6ccdc7c50",
+          "staged_path": "prepared/monitoring/vm210/etc/dell-guest-monitoring/health.json",
+          "changes": [
+            "private_ip",
+            "http_checks.0.url",
+            "candidate_http_checks.0.url"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "expected_old_SHA256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "new_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "staged_path": "prepared/monitoring/vm210/opt/dell/guest-monitoring/guest-targets.json",
+          "changes": [
+            "roles.200.private_ip",
+            "roles.201.private_ip",
+            "roles.210.private_ip",
+            "roles.220.private_ip",
+            "roles.221.private_ip",
+            "roles.230.private_ip",
+            "roles.231.private_ip",
+            "roles.232.private_ip",
+            "roles.240.private_ip",
+            "roles.250.private_ip",
+            "roles.260.private_ip",
+            "roles.270.private_ip"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "expected_old_SHA256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "new_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "staged_path": "prepared/monitoring/vm210/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "changes": [
+            "exact-subnet-guard-literal"
+          ],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "expected_old_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "new_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "staged_path": "prepared/monitoring/vm210/opt/dell/guest-monitoring/collect-guest-health.py",
+          "changes": [],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        }
+      ],
+      "apply_gate": "OScommit: exact new address UP /24; root600 per-role window receipt; all old source SHAs still match",
+      "apply_order": [
+        "pause only guest-health timer preserving prior enabled/active state; no app service changes",
+        "install new catalog+installer guard+health JSON+listen files as root with original modes, each atomic",
+        "daemon-reload; native --check-private-ip with new row; restart only node exporter",
+        "prove listen only own newIP9100 and local real active HTTP health; collector --check is access-only, not HTTP pass",
+        "restore original collector timer activation; check textfile freshness and Ops targetUP"
+      ],
+      "candidate_activation_changed": false,
+      "business_services_started_or_restarted": false,
+      "source_host_key_alias_unchanged": true,
+      "guest_writes_performed": false,
+      "rollback": "Restore same per-role old files only together with root OS old-address rollback; new-only file rollback on new-only OS is invalid"
+    },
+    {
+      "vmid": 220,
+      "role": "publish-service",
+      "old_ip": "10.63.30.10",
+      "new_ip": "192.168.19.30",
+      "gateway_and_DNS": "192.168.19.1",
+      "status": "local-staged-not-applied",
+      "files": [
+        {
+          "target_path": "/etc/default/prometheus-node-exporter",
+          "expected_old_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "new_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "staged_path": "prepared/monitoring/vm220/etc/default/prometheus-node-exporter",
+          "changes": [],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "expected_old_SHA256": "c03328ace75205926f648497c084bd5c1cdc6b58ae61f1c985b77fa49b1d2d50",
+          "new_SHA256": "38dbedc503e412a303e89658238d2e9368530d610092ba20b5cfb2daf89459e0",
+          "staged_path": "prepared/monitoring/vm220/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "changes": [
+            "exact-web.listen-address-flag"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/dell-guest-monitoring/health.json",
+          "expected_old_SHA256": "4480eebf78b274affc7c4a068b28e435cc2b3ee55c1dea652572de783c667f19",
+          "new_SHA256": "90e624a3cf03eeacfc302d7d47711c3c71b9e93b41e654dd1698623656014320",
+          "staged_path": "prepared/monitoring/vm220/etc/dell-guest-monitoring/health.json",
+          "changes": [
+            "private_ip"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "expected_old_SHA256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "new_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "staged_path": "prepared/monitoring/vm220/opt/dell/guest-monitoring/guest-targets.json",
+          "changes": [
+            "roles.200.private_ip",
+            "roles.201.private_ip",
+            "roles.210.private_ip",
+            "roles.220.private_ip",
+            "roles.221.private_ip",
+            "roles.230.private_ip",
+            "roles.231.private_ip",
+            "roles.232.private_ip",
+            "roles.240.private_ip",
+            "roles.250.private_ip",
+            "roles.260.private_ip",
+            "roles.270.private_ip"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "expected_old_SHA256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "new_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "staged_path": "prepared/monitoring/vm220/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "changes": [
+            "exact-subnet-guard-literal"
+          ],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "expected_old_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "new_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "staged_path": "prepared/monitoring/vm220/opt/dell/guest-monitoring/collect-guest-health.py",
+          "changes": [],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        }
+      ],
+      "apply_gate": "OScommit: exact new address UP /24; root600 per-role window receipt; all old source SHAs still match",
+      "apply_order": [
+        "pause only guest-health timer preserving prior enabled/active state; no app service changes",
+        "install new catalog+installer guard+health JSON+listen files as root with original modes, each atomic",
+        "daemon-reload; native --check-private-ip with new row; restart only node exporter",
+        "prove listen only own newIP9100 and local real active HTTP health; collector --check is access-only, not HTTP pass",
+        "restore original collector timer activation; check textfile freshness and Ops targetUP"
+      ],
+      "candidate_activation_changed": false,
+      "business_services_started_or_restarted": false,
+      "source_host_key_alias_unchanged": true,
+      "guest_writes_performed": false,
+      "rollback": "Restore same per-role old files only together with root OS old-address rollback; new-only file rollback on new-only OS is invalid"
+    },
+    {
+      "vmid": 221,
+      "role": "artifact-service",
+      "old_ip": "10.63.30.20",
+      "new_ip": "192.168.19.31",
+      "gateway_and_DNS": "192.168.19.1",
+      "status": "local-staged-not-applied",
+      "files": [
+        {
+          "target_path": "/etc/default/prometheus-node-exporter",
+          "expected_old_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "new_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "staged_path": "prepared/monitoring/vm221/etc/default/prometheus-node-exporter",
+          "changes": [],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "expected_old_SHA256": "ea069aadb427c5ca0309a12e22484c9a3ab723bb83bb74ee0c154131679c7719",
+          "new_SHA256": "84f335eb2a752cfafad8d1897f1d580100365712e87e9da4f33b7de37e5a7010",
+          "staged_path": "prepared/monitoring/vm221/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "changes": [
+            "exact-web.listen-address-flag"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/dell-guest-monitoring/health.json",
+          "expected_old_SHA256": "d6d13e0dcc00a80479f31dc9b5b7d36538e108106d3dcaca820fbb5dfb2af27d",
+          "new_SHA256": "37ebb565de493c1454b36947ff492d3dd64bfb0ae2583583f0eb86ec159aac75",
+          "staged_path": "prepared/monitoring/vm221/etc/dell-guest-monitoring/health.json",
+          "changes": [
+            "private_ip",
+            "http_checks.0.url",
+            "candidate_http_checks.0.url"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "expected_old_SHA256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "new_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "staged_path": "prepared/monitoring/vm221/opt/dell/guest-monitoring/guest-targets.json",
+          "changes": [
+            "roles.200.private_ip",
+            "roles.201.private_ip",
+            "roles.210.private_ip",
+            "roles.220.private_ip",
+            "roles.221.private_ip",
+            "roles.230.private_ip",
+            "roles.231.private_ip",
+            "roles.232.private_ip",
+            "roles.240.private_ip",
+            "roles.250.private_ip",
+            "roles.260.private_ip",
+            "roles.270.private_ip"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "expected_old_SHA256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "new_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "staged_path": "prepared/monitoring/vm221/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "changes": [
+            "exact-subnet-guard-literal"
+          ],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "expected_old_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "new_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "staged_path": "prepared/monitoring/vm221/opt/dell/guest-monitoring/collect-guest-health.py",
+          "changes": [],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        }
+      ],
+      "apply_gate": "OScommit: exact new address UP /24; root600 per-role window receipt; all old source SHAs still match",
+      "apply_order": [
+        "pause only guest-health timer preserving prior enabled/active state; no app service changes",
+        "install new catalog+installer guard+health JSON+listen files as root with original modes, each atomic",
+        "daemon-reload; native --check-private-ip with new row; restart only node exporter",
+        "prove listen only own newIP9100 and local real active HTTP health; collector --check is access-only, not HTTP pass",
+        "restore original collector timer activation; check textfile freshness and Ops targetUP"
+      ],
+      "candidate_activation_changed": false,
+      "business_services_started_or_restarted": false,
+      "source_host_key_alias_unchanged": true,
+      "guest_writes_performed": false,
+      "rollback": "Restore same per-role old files only together with root OS old-address rollback; new-only file rollback on new-only OS is invalid"
+    },
+    {
+      "vmid": 230,
+      "role": "java-prod-01",
+      "old_ip": "10.63.10.20",
+      "new_ip": "192.168.19.40",
+      "gateway_and_DNS": "192.168.19.1",
+      "status": "local-staged-not-applied",
+      "files": [
+        {
+          "target_path": "/etc/default/prometheus-node-exporter",
+          "expected_old_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "new_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "staged_path": "prepared/monitoring/vm230/etc/default/prometheus-node-exporter",
+          "changes": [],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "expected_old_SHA256": "43211d42ed8a36e35bbab64b705162f4d7a2b76ecb786283cd47263c83d56fbc",
+          "new_SHA256": "987ccba8c9e20cb87ed00f1d0ace6c5e20d2d4efb0eac70a1df0133916d8f3cd",
+          "staged_path": "prepared/monitoring/vm230/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "changes": [
+            "exact-web.listen-address-flag"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/dell-guest-monitoring/health.json",
+          "expected_old_SHA256": "ff02fe9634b7a61df8a4675eb92ca9c33b79899539deb6329fc2816fb087ab54",
+          "new_SHA256": "46dda1ad99b21bb945f3b81cfde97a3b14121b8c81c58a603cacd67c94c7b189",
+          "staged_path": "prepared/monitoring/vm230/etc/dell-guest-monitoring/health.json",
+          "changes": [
+            "private_ip"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "expected_old_SHA256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "new_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "staged_path": "prepared/monitoring/vm230/opt/dell/guest-monitoring/guest-targets.json",
+          "changes": [
+            "roles.200.private_ip",
+            "roles.201.private_ip",
+            "roles.210.private_ip",
+            "roles.220.private_ip",
+            "roles.221.private_ip",
+            "roles.230.private_ip",
+            "roles.231.private_ip",
+            "roles.232.private_ip",
+            "roles.240.private_ip",
+            "roles.250.private_ip",
+            "roles.260.private_ip",
+            "roles.270.private_ip"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "expected_old_SHA256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "new_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "staged_path": "prepared/monitoring/vm230/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "changes": [
+            "exact-subnet-guard-literal"
+          ],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "expected_old_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "new_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "staged_path": "prepared/monitoring/vm230/opt/dell/guest-monitoring/collect-guest-health.py",
+          "changes": [],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        }
+      ],
+      "apply_gate": "OScommit: exact new address UP /24; root600 per-role window receipt; all old source SHAs still match",
+      "apply_order": [
+        "pause only guest-health timer preserving prior enabled/active state; no app service changes",
+        "install new catalog+installer guard+health JSON+listen files as root with original modes, each atomic",
+        "daemon-reload; native --check-private-ip with new row; restart only node exporter",
+        "prove listen only own newIP9100 and local real active HTTP health; collector --check is access-only, not HTTP pass",
+        "restore original collector timer activation; check textfile freshness and Ops targetUP"
+      ],
+      "candidate_activation_changed": false,
+      "business_services_started_or_restarted": false,
+      "source_host_key_alias_unchanged": true,
+      "guest_writes_performed": false,
+      "rollback": "Restore same per-role old files only together with root OS old-address rollback; new-only file rollback on new-only OS is invalid"
+    },
+    {
+      "vmid": 231,
+      "role": "java-prod-02",
+      "old_ip": "10.63.10.21",
+      "new_ip": "192.168.19.41",
+      "gateway_and_DNS": "192.168.19.1",
+      "status": "local-staged-not-applied",
+      "files": [
+        {
+          "target_path": "/etc/default/prometheus-node-exporter",
+          "expected_old_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "new_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "staged_path": "prepared/monitoring/vm231/etc/default/prometheus-node-exporter",
+          "changes": [],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "expected_old_SHA256": "fc9da29c0426886c36b75bb1c9f764c00a661edbd539236dfc81d2585c13943c",
+          "new_SHA256": "b8f25af0f36a7b508a10a51af57f12f5bfee8c1207873adc059718e993c0fc15",
+          "staged_path": "prepared/monitoring/vm231/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "changes": [
+            "exact-web.listen-address-flag"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/dell-guest-monitoring/health.json",
+          "expected_old_SHA256": "4a0280628c7aac1dc05902434e844b75ffde3628f0df959101b217b0a800c1df",
+          "new_SHA256": "dd751c8939e29e31a5551d4f568e933f38b26b91026c7b739d67aa165b1de4e4",
+          "staged_path": "prepared/monitoring/vm231/etc/dell-guest-monitoring/health.json",
+          "changes": [
+            "private_ip"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "expected_old_SHA256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "new_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "staged_path": "prepared/monitoring/vm231/opt/dell/guest-monitoring/guest-targets.json",
+          "changes": [
+            "roles.200.private_ip",
+            "roles.201.private_ip",
+            "roles.210.private_ip",
+            "roles.220.private_ip",
+            "roles.221.private_ip",
+            "roles.230.private_ip",
+            "roles.231.private_ip",
+            "roles.232.private_ip",
+            "roles.240.private_ip",
+            "roles.250.private_ip",
+            "roles.260.private_ip",
+            "roles.270.private_ip"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "expected_old_SHA256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "new_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "staged_path": "prepared/monitoring/vm231/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "changes": [
+            "exact-subnet-guard-literal"
+          ],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "expected_old_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "new_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "staged_path": "prepared/monitoring/vm231/opt/dell/guest-monitoring/collect-guest-health.py",
+          "changes": [],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        }
+      ],
+      "apply_gate": "OScommit: exact new address UP /24; root600 per-role window receipt; all old source SHAs still match",
+      "apply_order": [
+        "pause only guest-health timer preserving prior enabled/active state; no app service changes",
+        "install new catalog+installer guard+health JSON+listen files as root with original modes, each atomic",
+        "daemon-reload; native --check-private-ip with new row; restart only node exporter",
+        "prove listen only own newIP9100 and local real active HTTP health; collector --check is access-only, not HTTP pass",
+        "restore original collector timer activation; check textfile freshness and Ops targetUP"
+      ],
+      "candidate_activation_changed": false,
+      "business_services_started_or_restarted": false,
+      "source_host_key_alias_unchanged": true,
+      "guest_writes_performed": false,
+      "rollback": "Restore same per-role old files only together with root OS old-address rollback; new-only file rollback on new-only OS is invalid"
+    },
+    {
+      "vmid": 232,
+      "role": "java-prod-03",
+      "old_ip": "10.63.10.22",
+      "new_ip": "192.168.19.42",
+      "gateway_and_DNS": "192.168.19.1",
+      "status": "local-staged-not-applied",
+      "files": [
+        {
+          "target_path": "/etc/default/prometheus-node-exporter",
+          "expected_old_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "new_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "staged_path": "prepared/monitoring/vm232/etc/default/prometheus-node-exporter",
+          "changes": [],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "expected_old_SHA256": "6264a953c8da297ceb5671f4fd89eeba8b1452effc888ad7d795b3ff8348784e",
+          "new_SHA256": "8626a5886218a4405f74b2d46e9f5318a3349c0996d41f679153c8af46ba0a74",
+          "staged_path": "prepared/monitoring/vm232/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "changes": [
+            "exact-web.listen-address-flag"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/dell-guest-monitoring/health.json",
+          "expected_old_SHA256": "51fc6ba7c33deeb820f9c8b94a85c89ff0b533570d3e3f5219965b52707ef913",
+          "new_SHA256": "2a3588a86644bd10130c88a83c9711d9100cd142717465e155d1c025aaccf147",
+          "staged_path": "prepared/monitoring/vm232/etc/dell-guest-monitoring/health.json",
+          "changes": [
+            "private_ip"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "expected_old_SHA256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "new_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "staged_path": "prepared/monitoring/vm232/opt/dell/guest-monitoring/guest-targets.json",
+          "changes": [
+            "roles.200.private_ip",
+            "roles.201.private_ip",
+            "roles.210.private_ip",
+            "roles.220.private_ip",
+            "roles.221.private_ip",
+            "roles.230.private_ip",
+            "roles.231.private_ip",
+            "roles.232.private_ip",
+            "roles.240.private_ip",
+            "roles.250.private_ip",
+            "roles.260.private_ip",
+            "roles.270.private_ip"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "expected_old_SHA256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "new_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "staged_path": "prepared/monitoring/vm232/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "changes": [
+            "exact-subnet-guard-literal"
+          ],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "expected_old_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "new_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "staged_path": "prepared/monitoring/vm232/opt/dell/guest-monitoring/collect-guest-health.py",
+          "changes": [],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        }
+      ],
+      "apply_gate": "OScommit: exact new address UP /24; root600 per-role window receipt; all old source SHAs still match",
+      "apply_order": [
+        "pause only guest-health timer preserving prior enabled/active state; no app service changes",
+        "install new catalog+installer guard+health JSON+listen files as root with original modes, each atomic",
+        "daemon-reload; native --check-private-ip with new row; restart only node exporter",
+        "prove listen only own newIP9100 and local real active HTTP health; collector --check is access-only, not HTTP pass",
+        "restore original collector timer activation; check textfile freshness and Ops targetUP"
+      ],
+      "candidate_activation_changed": false,
+      "business_services_started_or_restarted": false,
+      "source_host_key_alias_unchanged": true,
+      "guest_writes_performed": false,
+      "rollback": "Restore same per-role old files only together with root OS old-address rollback; new-only file rollback on new-only OS is invalid"
+    },
+    {
+      "vmid": 240,
+      "role": "java-test-01",
+      "old_ip": "10.63.20.20",
+      "new_ip": "192.168.19.45",
+      "gateway_and_DNS": "192.168.19.1",
+      "status": "local-staged-not-applied",
+      "files": [
+        {
+          "target_path": "/etc/default/prometheus-node-exporter",
+          "expected_old_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "new_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "staged_path": "prepared/monitoring/vm240/etc/default/prometheus-node-exporter",
+          "changes": [],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "expected_old_SHA256": "e9546f3c326c0b52b5fd5ceb9057fed4bbe5f54d516eddf4887b0c86a386e77d",
+          "new_SHA256": "230d3b54dde31695d3905154ca7f34fbbfe4954a11c3b97bac9b629645e7ce72",
+          "staged_path": "prepared/monitoring/vm240/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "changes": [
+            "exact-web.listen-address-flag"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/dell-guest-monitoring/health.json",
+          "expected_old_SHA256": "65ef2c87c17f8a02f756c25bf8ee6c1cb9fc30c033b284832f6a02a70d50757d",
+          "new_SHA256": "516349c2a842221a13de6943889cd33e03ec6f265ca62f49000317a8ad31ede6",
+          "staged_path": "prepared/monitoring/vm240/etc/dell-guest-monitoring/health.json",
+          "changes": [
+            "private_ip",
+            "http_checks.0.url",
+            "http_checks.1.url",
+            "http_checks.2.url",
+            "http_checks.3.url",
+            "http_checks.4.url"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "expected_old_SHA256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "new_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "staged_path": "prepared/monitoring/vm240/opt/dell/guest-monitoring/guest-targets.json",
+          "changes": [
+            "roles.200.private_ip",
+            "roles.201.private_ip",
+            "roles.210.private_ip",
+            "roles.220.private_ip",
+            "roles.221.private_ip",
+            "roles.230.private_ip",
+            "roles.231.private_ip",
+            "roles.232.private_ip",
+            "roles.240.private_ip",
+            "roles.250.private_ip",
+            "roles.260.private_ip",
+            "roles.270.private_ip"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "expected_old_SHA256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "new_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "staged_path": "prepared/monitoring/vm240/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "changes": [
+            "exact-subnet-guard-literal"
+          ],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "expected_old_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "new_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "staged_path": "prepared/monitoring/vm240/opt/dell/guest-monitoring/collect-guest-health.py",
+          "changes": [],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        }
+      ],
+      "apply_gate": "OScommit: exact new address UP /24; root600 per-role window receipt; all old source SHAs still match",
+      "apply_order": [
+        "pause only guest-health timer preserving prior enabled/active state; no app service changes",
+        "install new catalog+installer guard+health JSON+listen files as root with original modes, each atomic",
+        "daemon-reload; native --check-private-ip with new row; restart only node exporter",
+        "prove listen only own newIP9100 and local real active HTTP health; collector --check is access-only, not HTTP pass",
+        "restore original collector timer activation; check textfile freshness and Ops targetUP"
+      ],
+      "candidate_activation_changed": false,
+      "business_services_started_or_restarted": false,
+      "source_host_key_alias_unchanged": true,
+      "guest_writes_performed": false,
+      "rollback": "Restore same per-role old files only together with root OS old-address rollback; new-only file rollback on new-only OS is invalid"
+    },
+    {
+      "vmid": 250,
+      "role": "penpot-service",
+      "old_ip": "10.63.30.30",
+      "new_ip": "192.168.19.50",
+      "gateway_and_DNS": "192.168.19.1",
+      "status": "local-staged-not-applied",
+      "files": [
+        {
+          "target_path": "/etc/default/prometheus-node-exporter",
+          "expected_old_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "new_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "staged_path": "prepared/monitoring/vm250/etc/default/prometheus-node-exporter",
+          "changes": [],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "expected_old_SHA256": "a085ac99545589e85709b975920eb07bdf9ce1ac2ff8241035c75b1e9d3695c9",
+          "new_SHA256": "451e3a270fea9a86ed1764d47cccd7d6c99e542f3d0a07e3ff485a5cc74bac1d",
+          "staged_path": "prepared/monitoring/vm250/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "changes": [
+            "exact-web.listen-address-flag"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/dell-guest-monitoring/health.json",
+          "expected_old_SHA256": "5ea374921fb609c24f3029137cd611925edb5073fcf9139a4bda65fe65c88888",
+          "new_SHA256": "27c4a99c65a477bd4b63cfd75b3b35cbdba3d50b5ed605b584fc86d3356784a9",
+          "staged_path": "prepared/monitoring/vm250/etc/dell-guest-monitoring/health.json",
+          "changes": [
+            "private_ip",
+            "http_checks.0.url",
+            "candidate_http_checks.0.url"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "expected_old_SHA256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "new_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "staged_path": "prepared/monitoring/vm250/opt/dell/guest-monitoring/guest-targets.json",
+          "changes": [
+            "roles.200.private_ip",
+            "roles.201.private_ip",
+            "roles.210.private_ip",
+            "roles.220.private_ip",
+            "roles.221.private_ip",
+            "roles.230.private_ip",
+            "roles.231.private_ip",
+            "roles.232.private_ip",
+            "roles.240.private_ip",
+            "roles.250.private_ip",
+            "roles.260.private_ip",
+            "roles.270.private_ip"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "expected_old_SHA256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "new_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "staged_path": "prepared/monitoring/vm250/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "changes": [
+            "exact-subnet-guard-literal"
+          ],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "expected_old_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "new_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "staged_path": "prepared/monitoring/vm250/opt/dell/guest-monitoring/collect-guest-health.py",
+          "changes": [],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        }
+      ],
+      "apply_gate": "OScommit: exact new address UP /24; root600 per-role window receipt; all old source SHAs still match",
+      "apply_order": [
+        "pause only guest-health timer preserving prior enabled/active state; no app service changes",
+        "install new catalog+installer guard+health JSON+listen files as root with original modes, each atomic",
+        "daemon-reload; native --check-private-ip with new row; restart only node exporter",
+        "prove listen only own newIP9100 and local real active HTTP health; collector --check is access-only, not HTTP pass",
+        "restore original collector timer activation; check textfile freshness and Ops targetUP"
+      ],
+      "candidate_activation_changed": false,
+      "business_services_started_or_restarted": false,
+      "source_host_key_alias_unchanged": true,
+      "guest_writes_performed": false,
+      "rollback": "Restore same per-role old files only together with root OS old-address rollback; new-only file rollback on new-only OS is invalid"
+    },
+    {
+      "vmid": 260,
+      "role": "nas-media",
+      "old_ip": "10.63.40.10",
+      "new_ip": "192.168.19.60",
+      "gateway_and_DNS": "192.168.19.1",
+      "status": "local-staged-not-applied",
+      "files": [
+        {
+          "target_path": "/etc/default/prometheus-node-exporter",
+          "expected_old_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "new_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "staged_path": "prepared/monitoring/vm260/etc/default/prometheus-node-exporter",
+          "changes": [],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "expected_old_SHA256": "41a5193f6beb3a8f7faaa3846c9ffc78fe43ed078f1f4cc676f24a9f397d6b6e",
+          "new_SHA256": "47daf51f31698f2f18e9addd4bf550c17307110ecb928c0ea4adaea375fe0605",
+          "staged_path": "prepared/monitoring/vm260/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "changes": [
+            "exact-web.listen-address-flag"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/dell-guest-monitoring/health.json",
+          "expected_old_SHA256": "67ebfb184d7b76cddd34a993e48a17152c19b8384fc9d898159e1624ecbb8e4f",
+          "new_SHA256": "272796f6f1e1c2c02d8ac3180bf5a984fbde48faf27645b17b8940665f9d972f",
+          "staged_path": "prepared/monitoring/vm260/etc/dell-guest-monitoring/health.json",
+          "changes": [
+            "private_ip",
+            "http_checks.0.url",
+            "http_checks.1.url",
+            "candidate_http_checks.0.url"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "expected_old_SHA256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "new_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "staged_path": "prepared/monitoring/vm260/opt/dell/guest-monitoring/guest-targets.json",
+          "changes": [
+            "roles.200.private_ip",
+            "roles.201.private_ip",
+            "roles.210.private_ip",
+            "roles.220.private_ip",
+            "roles.221.private_ip",
+            "roles.230.private_ip",
+            "roles.231.private_ip",
+            "roles.232.private_ip",
+            "roles.240.private_ip",
+            "roles.250.private_ip",
+            "roles.260.private_ip",
+            "roles.270.private_ip"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "expected_old_SHA256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "new_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "staged_path": "prepared/monitoring/vm260/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "changes": [
+            "exact-subnet-guard-literal"
+          ],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "expected_old_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "new_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "staged_path": "prepared/monitoring/vm260/opt/dell/guest-monitoring/collect-guest-health.py",
+          "changes": [],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        }
+      ],
+      "apply_gate": "OScommit: exact new address UP /24; root600 per-role window receipt; all old source SHAs still match",
+      "apply_order": [
+        "pause only guest-health timer preserving prior enabled/active state; no app service changes",
+        "install new catalog+installer guard+health JSON+listen files as root with original modes, each atomic",
+        "daemon-reload; native --check-private-ip with new row; restart only node exporter",
+        "prove listen only own newIP9100 and local real active HTTP health; collector --check is access-only, not HTTP pass",
+        "restore original collector timer activation; check textfile freshness and Ops targetUP"
+      ],
+      "candidate_activation_changed": false,
+      "business_services_started_or_restarted": false,
+      "source_host_key_alias_unchanged": true,
+      "guest_writes_performed": false,
+      "rollback": "Restore same per-role old files only together with root OS old-address rollback; new-only file rollback on new-only OS is invalid"
+    },
+    {
+      "vmid": 270,
+      "role": "ops-service",
+      "old_ip": "10.63.30.40",
+      "new_ip": "192.168.19.70",
+      "gateway_and_DNS": "192.168.19.1",
+      "status": "local-staged-not-applied",
+      "files": [
+        {
+          "target_path": "/etc/default/prometheus-node-exporter",
+          "expected_old_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "new_SHA256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "staged_path": "prepared/monitoring/vm270/etc/default/prometheus-node-exporter",
+          "changes": [],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "expected_old_SHA256": "7ae68e17c871e7ce2ae06f428d81abff1732a02e3a762b9bc8a0f9f00c34db66",
+          "new_SHA256": "93d49819f5daa12a5a0256a4a6a829b577560d0c5f999c73e7c5971f03d09544",
+          "staged_path": "prepared/monitoring/vm270/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "changes": [
+            "exact-web.listen-address-flag"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/etc/dell-guest-monitoring/health.json",
+          "expected_old_SHA256": "6327578c371729d8d3ddb44afa4cdd535c3105c3012cd206b9dc82cbab2ec00e",
+          "new_SHA256": "dc65c27cc8367f1332ca26250f898c6c1c2ae689cae6ae5ad87122ba29088a7d",
+          "staged_path": "prepared/monitoring/vm270/etc/dell-guest-monitoring/health.json",
+          "changes": [
+            "private_ip",
+            "http_checks.0.url",
+            "http_checks.1.url",
+            "http_checks.2.url",
+            "candidate_http_checks.0.url"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "expected_old_SHA256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "new_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "staged_path": "prepared/monitoring/vm270/opt/dell/guest-monitoring/guest-targets.json",
+          "changes": [
+            "roles.200.private_ip",
+            "roles.201.private_ip",
+            "roles.210.private_ip",
+            "roles.220.private_ip",
+            "roles.221.private_ip",
+            "roles.230.private_ip",
+            "roles.231.private_ip",
+            "roles.232.private_ip",
+            "roles.240.private_ip",
+            "roles.250.private_ip",
+            "roles.260.private_ip",
+            "roles.270.private_ip"
+          ],
+          "target_mode": "0o644",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "expected_old_SHA256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "new_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "staged_path": "prepared/monitoring/vm270/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "changes": [
+            "exact-subnet-guard-literal"
+          ],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        },
+        {
+          "target_path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "expected_old_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "new_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "staged_path": "prepared/monitoring/vm270/opt/dell/guest-monitoring/collect-guest-health.py",
+          "changes": [],
+          "target_mode": "0o755",
+          "target_owner_uid": 0
+        }
+      ],
+      "apply_gate": "OScommit: exact new address UP /24; root600 per-role window receipt; all old source SHAs still match",
+      "apply_order": [
+        "pause only guest-health timer preserving prior enabled/active state; no app service changes",
+        "install new catalog+installer guard+health JSON+listen files as root with original modes, each atomic",
+        "daemon-reload; native --check-private-ip with new row; restart only node exporter",
+        "prove listen only own newIP9100 and local real active HTTP health; collector --check is access-only, not HTTP pass",
+        "restore original collector timer activation; check textfile freshness and Ops targetUP"
+      ],
+      "candidate_activation_changed": false,
+      "business_services_started_or_restarted": false,
+      "source_host_key_alias_unchanged": true,
+      "guest_writes_performed": false,
+      "rollback": "Restore same per-role old files only together with root OS old-address rollback; new-only file rollback on new-only OS is invalid"
+    }
+  ],
+  "targets_kept": 12,
+  "router190_and_legacy104_not_auto_enrolled": true,
+  "apply_available": "root coordinator only after OScommit; no guest write command in this tool"
+}

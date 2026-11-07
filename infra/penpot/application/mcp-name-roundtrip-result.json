@@ -1,0 +1,105 @@
+{
+  "captured_at": "2026-11-06T05:03:39.639Z",
+  "file_id": "13a31dab-5204-818d-8008-e7004b9343a1",
+  "page_id": "13a31dab-5204-818d-8008-e7004b9343a2",
+  "property": "Page.name",
+  "original": "Page 1",
+  "nonce": "Dell MCP name acceptance 2026-11-06T05:03:39.638Z-0e172b00",
+  "first_tool": "high_level_overview",
+  "target_only": true,
+  "default_connector_used": false,
+  "events": [
+    {
+      "label": "initial",
+      "result": {
+        "fileId": "13a31dab-5204-818d-8008-e7004b9343a1",
+        "pageId": "13a31dab-5204-818d-8008-e7004b9343a2",
+        "name": "Page 1"
+      }
+    },
+    {
+      "label": "backend-initial",
+      "backend": {
+        "ok": true,
+        "name": "Page 1",
+        "revn": 0,
+        "polls": 1,
+        "elapsed_ms": 32,
+        "source": "independent owner get-file API"
+      }
+    },
+    {
+      "label": "set-nonce",
+      "result": {
+        "name": "Dell MCP name acceptance 2026-11-06T05:03:39.638Z-0e172b00"
+      }
+    },
+    {
+      "label": "verify-nonce",
+      "result": {
+        "fileId": "13a31dab-5204-818d-8008-e7004b9343a1",
+        "pageId": "13a31dab-5204-818d-8008-e7004b9343a2",
+        "name": "Dell MCP name acceptance 2026-11-06T05:03:39.638Z-0e172b00"
+      }
+    },
+    {
+      "label": "backend-verify-nonce",
+      "backend": {
+        "ok": true,
+        "name": "Dell MCP name acceptance 2026-11-06T05:03:39.638Z-0e172b00",
+        "revn": 1,
+        "polls": 7,
+        "elapsed_ms": 3315,
+        "source": "independent owner get-file API"
+      }
+    },
+    {
+      "label": "before-restore",
+      "result": {
+        "fileId": "13a31dab-5204-818d-8008-e7004b9343a1",
+        "pageId": "13a31dab-5204-818d-8008-e7004b9343a2",
+        "name": "Dell MCP name acceptance 2026-11-06T05:03:39.638Z-0e172b00"
+      }
+    },
+    {
+      "label": "restore-original",
+      "result": {
+        "restorationRequested": true
+      }
+    },
+    {
+      "label": "verify-restored",
+      "result": {
+        "fileId": "13a31dab-5204-818d-8008-e7004b9343a1",
+        "pageId": "13a31dab-5204-818d-8008-e7004b9343a2",
+        "name": "Page 1"
+      }
+    },
+    {
+      "label": "backend-verify-restored",
+      "backend": {
+        "ok": true,
+        "name": "Page 1",
+        "revn": 2,
+        "polls": 7,
+        "elapsed_ms": 3161,
+        "source": "independent owner get-file API"
+      }
+    }
+  ],
+  "restored": true,
+  "api_member_documentation": "```\nname: string\n```\n\nThe `name` property is the name of the page.",
+  "authenticated_write_read_confirmed": true,
+  "status": "passed",
+  "process_exit_code": 0,
+  "migrated_original_stats_unchanged": true,
+  "new_identity_and_idmap_hashes_unchanged": true,
+  "backend_final": {
+    "ok": true,
+    "name": "Page 1",
+    "revn": 2,
+    "polls": 1,
+    "elapsed_ms": 21,
+    "source": "independent owner get-file API"
+  }
+}

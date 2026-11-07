@@ -1,0 +1,204 @@
+{
+  "at": "2026-11-06T17:13:56.476998+00:00",
+  "exit_code": 0,
+  "result": {
+    "status": "installed-verified",
+    "vmid": 210,
+    "at": "2026-11-06T17:13:56.455147+00:00",
+    "checks": {
+      "fish_exact_version": true,
+      "fish_common_exact_version": true,
+      "binary_version_command": true,
+      "ub_nonconfig_private_smoke": true,
+      "ub_root_login_shells_unchanged": true,
+      "core_services_and_containers_PIDs_start_health_unchanged": true
+    },
+    "before_shells": {
+      "ub": "/bin/bash",
+      "root": "/bin/bash"
+    },
+    "after_shells": {
+      "ub": "/bin/bash",
+      "root": "/bin/bash"
+    },
+    "fish_binary_version": "fish, version 4.0.2",
+    "new_packages": [
+      "fish-common",
+      "libpcre2-32-0",
+      "fish"
+    ],
+    "NEEDRESTART_MODE": "l",
+    "no_install_recommends": true,
+    "existing_packages_upgraded_or_removed": false,
+    "apt_update_fullupgrade_autoremove_chsh_or_shellconfig_run": false,
+    "service_restart_requested_by_tool": false,
+    "core_before": {
+      "services": {
+        "containerd.service": {
+          "MainPID": "719",
+          "ExecMainStartTimestampMonotonic": "13674270",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-data-test-data.service": {
+          "MainPID": "187589",
+          "ExecMainStartTimestampMonotonic": "13360459431",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "docker.service": {
+          "MainPID": "735",
+          "ExecMainStartTimestampMonotonic": "14840607",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "672",
+          "ExecMainStartTimestampMonotonic": "13236455",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "ssh.service": {
+          "MainPID": "699",
+          "ExecMainStartTimestampMonotonic": "13526053",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-networkd.service": {
+          "MainPID": "614",
+          "ExecMainStartTimestampMonotonic": "8832802",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "MainPID": "351",
+          "ExecMainStartTimestampMonotonic": "5715266",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "containers": {
+        "5bd9a27fd405": {
+          "name": "/dell-data-test-data-nacos-1",
+          "pid": 188305,
+          "running": true,
+          "started_at": "2026-11-06T09:20:36.205996646Z",
+          "health": "healthy"
+        },
+        "df4e9d159f59": {
+          "name": "/dell-data-test-data-mysql-1",
+          "pid": 187829,
+          "running": true,
+          "started_at": "2026-11-06T09:20:30.31012915Z",
+          "health": "healthy"
+        },
+        "b5d49893d99c": {
+          "name": "/dell-data-test-data-redis-1",
+          "pid": 187738,
+          "running": true,
+          "started_at": "2026-11-06T09:20:29.734437085Z",
+          "health": "healthy"
+        },
+        "4d955f668d96": {
+          "name": "/dell-data-test-data-rabbitmq-1",
+          "pid": 187911,
+          "running": true,
+          "started_at": "2026-11-06T09:20:30.722200722Z",
+          "health": "healthy"
+        }
+      }
+    },
+    "core_after": {
+      "services": {
+        "containerd.service": {
+          "MainPID": "719",
+          "ExecMainStartTimestampMonotonic": "13674270",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-data-test-data.service": {
+          "MainPID": "187589",
+          "ExecMainStartTimestampMonotonic": "13360459431",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "docker.service": {
+          "MainPID": "735",
+          "ExecMainStartTimestampMonotonic": "14840607",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "672",
+          "ExecMainStartTimestampMonotonic": "13236455",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "ssh.service": {
+          "MainPID": "699",
+          "ExecMainStartTimestampMonotonic": "13526053",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-networkd.service": {
+          "MainPID": "614",
+          "ExecMainStartTimestampMonotonic": "8832802",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "MainPID": "351",
+          "ExecMainStartTimestampMonotonic": "5715266",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "containers": {
+        "5bd9a27fd405": {
+          "name": "/dell-data-test-data-nacos-1",
+          "pid": 188305,
+          "running": true,
+          "started_at": "2026-11-06T09:20:36.205996646Z",
+          "health": "healthy"
+        },
+        "df4e9d159f59": {
+          "name": "/dell-data-test-data-mysql-1",
+          "pid": 187829,
+          "running": true,
+          "started_at": "2026-11-06T09:20:30.31012915Z",
+          "health": "healthy"
+        },
+        "b5d49893d99c": {
+          "name": "/dell-data-test-data-redis-1",
+          "pid": 187738,
+          "running": true,
+          "started_at": "2026-11-06T09:20:29.734437085Z",
+          "health": "healthy"
+        },
+        "4d955f668d96": {
+          "name": "/dell-data-test-data-rabbitmq-1",
+          "pid": 187911,
+          "running": true,
+          "started_at": "2026-11-06T09:20:30.722200722Z",
+          "health": "healthy"
+        }
+      }
+    },
+    "user_config_temporary_smoke_cleaned": true
+  },
+  "new_strict_SSH_connection_verified": true
+}

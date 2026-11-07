@@ -1,0 +1,291 @@
+{
+  "status": "prepared-not-applied",
+  "physical_permanent_roles": 12,
+  "exporter_ids": [
+    200,
+    201,
+    210,
+    220,
+    221,
+    230,
+    240,
+    250,
+    260,
+    270
+  ],
+  "exporters": 10,
+  "Ops_other_targets": 5,
+  "actual_fileSD_target_total": 15,
+  "Nexus221_kept": true,
+  "Nexus220_profile_added": false,
+  "files": [
+    {
+      "vmid": 200,
+      "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+      "expected_old_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+      "new_SHA256": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "candidate": "candidates/vm200/guest-targets.json"
+    },
+    {
+      "vmid": 200,
+      "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+      "expected_old_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+      "new_SHA256": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789",
+      "mode": 493,
+      "uid": 0,
+      "gid": 0,
+      "candidate": "candidates/vm200/install-guest-baseline.py"
+    },
+    {
+      "vmid": 201,
+      "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+      "expected_old_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+      "new_SHA256": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "candidate": "candidates/vm201/guest-targets.json"
+    },
+    {
+      "vmid": 201,
+      "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+      "expected_old_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+      "new_SHA256": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789",
+      "mode": 493,
+      "uid": 0,
+      "gid": 0,
+      "candidate": "candidates/vm201/install-guest-baseline.py"
+    },
+    {
+      "vmid": 210,
+      "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+      "expected_old_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+      "new_SHA256": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "candidate": "candidates/vm210/guest-targets.json"
+    },
+    {
+      "vmid": 210,
+      "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+      "expected_old_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+      "new_SHA256": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789",
+      "mode": 493,
+      "uid": 0,
+      "gid": 0,
+      "candidate": "candidates/vm210/install-guest-baseline.py"
+    },
+    {
+      "vmid": 220,
+      "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+      "expected_old_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+      "new_SHA256": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "candidate": "candidates/vm220/guest-targets.json"
+    },
+    {
+      "vmid": 220,
+      "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+      "expected_old_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+      "new_SHA256": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789",
+      "mode": 493,
+      "uid": 0,
+      "gid": 0,
+      "candidate": "candidates/vm220/install-guest-baseline.py"
+    },
+    {
+      "vmid": 221,
+      "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+      "expected_old_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+      "new_SHA256": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "candidate": "candidates/vm221/guest-targets.json"
+    },
+    {
+      "vmid": 221,
+      "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+      "expected_old_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+      "new_SHA256": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789",
+      "mode": 493,
+      "uid": 0,
+      "gid": 0,
+      "candidate": "candidates/vm221/install-guest-baseline.py"
+    },
+    {
+      "vmid": 230,
+      "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+      "expected_old_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+      "new_SHA256": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "candidate": "candidates/vm230/guest-targets.json"
+    },
+    {
+      "vmid": 230,
+      "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+      "expected_old_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+      "new_SHA256": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789",
+      "mode": 493,
+      "uid": 0,
+      "gid": 0,
+      "candidate": "candidates/vm230/install-guest-baseline.py"
+    },
+    {
+      "vmid": 240,
+      "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+      "expected_old_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+      "new_SHA256": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "candidate": "candidates/vm240/guest-targets.json"
+    },
+    {
+      "vmid": 240,
+      "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+      "expected_old_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+      "new_SHA256": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789",
+      "mode": 493,
+      "uid": 0,
+      "gid": 0,
+      "candidate": "candidates/vm240/install-guest-baseline.py"
+    },
+    {
+      "vmid": 250,
+      "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+      "expected_old_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+      "new_SHA256": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "candidate": "candidates/vm250/guest-targets.json"
+    },
+    {
+      "vmid": 250,
+      "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+      "expected_old_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+      "new_SHA256": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789",
+      "mode": 493,
+      "uid": 0,
+      "gid": 0,
+      "candidate": "candidates/vm250/install-guest-baseline.py"
+    },
+    {
+      "vmid": 260,
+      "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+      "expected_old_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+      "new_SHA256": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "candidate": "candidates/vm260/guest-targets.json"
+    },
+    {
+      "vmid": 260,
+      "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+      "expected_old_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+      "new_SHA256": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789",
+      "mode": 493,
+      "uid": 0,
+      "gid": 0,
+      "candidate": "candidates/vm260/install-guest-baseline.py"
+    },
+    {
+      "vmid": 270,
+      "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+      "expected_old_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+      "new_SHA256": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "candidate": "candidates/vm270/guest-targets.json"
+    },
+    {
+      "vmid": 270,
+      "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+      "expected_old_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+      "new_SHA256": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789",
+      "mode": 493,
+      "uid": 0,
+      "gid": 0,
+      "candidate": "candidates/vm270/install-guest-baseline.py"
+    }
+  ],
+  "unchanged_guards": {
+    "200": {
+      "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+      "/etc/dell-guest-monitoring/health.json": "bfecc990f0c4afb384a9c43f4b5461cc0f1f01f902c16c7e674e079f5e3ad0eb"
+    },
+    "201": {
+      "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+      "/etc/dell-guest-monitoring/health.json": "b27a081ab737d13b5d0b5c67b60f7f45b25d016f3936dedcd9c1fdf13f11e412"
+    },
+    "210": {
+      "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+      "/etc/dell-guest-monitoring/health.json": "2a9563cf2b980e4ea457c5b6938b8687a373ab89cca9cd74e3713db6ccdc7c50"
+    },
+    "220": {
+      "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+      "/etc/dell-guest-monitoring/health.json": "90e624a3cf03eeacfc302d7d47711c3c71b9e93b41e654dd1698623656014320"
+    },
+    "221": {
+      "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+      "/etc/dell-guest-monitoring/health.json": "37ebb565de493c1454b36947ff492d3dd64bfb0ae2583583f0eb86ec159aac75"
+    },
+    "230": {
+      "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+      "/etc/dell-guest-monitoring/health.json": "46dda1ad99b21bb945f3b81cfde97a3b14121b8c81c58a603cacd67c94c7b189"
+    },
+    "240": {
+      "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+      "/etc/dell-guest-monitoring/health.json": "b19b5e4e0eb585ea6361a36ae781293a5b0d4e7640c714a740b2eb71dce67484"
+    },
+    "250": {
+      "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+      "/etc/dell-guest-monitoring/health.json": "27c4a99c65a477bd4b63cfd75b3b35cbdba3d50b5ed605b584fc86d3356784a9"
+    },
+    "260": {
+      "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+      "/etc/dell-guest-monitoring/health.json": "272796f6f1e1c2c02d8ac3180bf5a984fbde48faf27645b17b8940665f9d972f"
+    },
+    "270": {
+      "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+      "/etc/dell-guest-monitoring/health.json": "dc65c27cc8367f1332ca26250f898c6c1c2ae689cae6ae5ad87122ba29088a7d"
+    }
+  },
+  "source_files": [
+    {
+      "path": "infra/ops/guest-baseline/guest-targets.json",
+      "old_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+      "new_SHA256": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "candidate": "source-candidates/guest-targets.json"
+    },
+    {
+      "path": "infra/ops/guest-baseline/install-guest-baseline.py",
+      "old_SHA256": "3936bfbf913bb55b5785e0484c7bc93c2a320d67036c2a31e2dec9aa108f6798",
+      "new_SHA256": "72860ba5eeb268a626f587aa57ea8b683ba36477e21787080ec994d543d8792a",
+      "candidate": "source-candidates/install-guest-baseline.py"
+    }
+  ],
+  "allowed_live_changes": [
+    "ROLES removejava-prod-02/java-prod-03",
+    "catalog removetwo rows+scope metadata",
+    "catalog count guard len(ROLES)"
+  ],
+  "no_profile_function_or_collector_health_change": true,
+  "source_all_retained_role_profiles_equal": true,
+  "runtime_other_functions_equal": true,
+  "Nexus_stop_authorization_pending": true,
+  "current_source_overwritten": false,
+  "guest_files_written": false,
+  "interimSD_receipt": "../interim/deployment-evidence/940e757ea48c4fc59e4413cd20a04b07.json"
+}

@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-06T17:45:04.869863",
+  "vmid": 270,
+  "old_ip": "10.63.30.40",
+  "new_ip": "192.168.19.70",
+  "action": "apply",
+  "OS_commit": {
+    "exitcode": 0,
+    "exited": 1,
+    "out-data": "{\"status\": \"new-network-committed\", \"IP\": \"192.168.19.70\", \"gateway\": \"192.168.19.1\", \"interface\": \"eth0\", \"apps_started\": false}\n",
+    "out-truncated": 0
+  },
+  "strict_new_SSH": {
+    "exit_code": 0,
+    "stdout": "ub\nops-service\nlo               UNKNOWN        127.0.0.1/8 \neth0             UP             192.168.19.70/24 \ndocker0          DOWN           172.17.0.1/16 \nbr-417d79bfd70b  DOWN           172.18.0.1/16 \ndefault via 192.168.19.1 dev eth0 proto static \n172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown \n172.18.0.0/16 dev br-417d79bfd70b proto kernel scope link src 172.18.0.1 linkdown \n192.168.19.0/24 dev eth0 proto kernel scope link src 192.168.19.70 \nLink 2 (eth0): 192.168.19.1\nactive\nactive\n",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+    "target": {
+      "vmid": 270,
+      "ip": "192.168.19.70",
+      "host_key_alias": "dell-vm270",
+      "host_key_fingerprint": "SHA256:OjP5q9f3WXxGcoOHs23VlnOf258C6T+nNAxTiYoyf0g",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  },
+  "new_target": {
+    "vmid": 270,
+    "ip": "192.168.19.70",
+    "host_key_alias": "dell-vm270",
+    "host_key_fingerprint": "SHA256:OjP5q9f3WXxGcoOHs23VlnOf258C6T+nNAxTiYoyf0g",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "status": "OS-network19-committed-app-state-managed-separately"
+}

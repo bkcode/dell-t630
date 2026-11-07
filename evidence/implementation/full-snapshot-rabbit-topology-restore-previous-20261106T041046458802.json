@@ -1,0 +1,10 @@
+{
+  "collected_at": "2026-11-06T04:09:14.704277+00:00",
+  "vmid": 201,
+  "component": "rabbit-topology",
+  "exit_code": 1,
+  "stdout": "{\"status\": \"failed\", \"started_at\": \"2026-11-06T04:08:37.071220+00:00\", \"component\": \"rabbit-topology\", \"preflight\": {\"vmid\": 201, \"component\": \"rabbit-topology\", \"input_bytes\": 1080, \"input_hash_matches\": true, \"image\": \"rabbitmq:3.13.7-management@sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920\", \"platform\": \"linux/amd64\", \"free_bytes\": 24528850944, \"mem_available_bytes\": 6950469632, \"live_container_count\": 3}, \"source_snapshot_read_only\": true, \"CF_accessed\": false, \"cross_device_exported\": false, \"isolation\": {\"network_none\": true, \"no_published_ports\": true, \"nonroot\": true, \"read_only_root\": true, \"not_privileged\": true, \"cap_drop_all\": true, \"only_own_scratch_mounts\": true, \"no_host_network\": true}, \"error_category\": \"Rejected\", \"safe_reason\": \"Rabbit restored definitions differ in field vhosts; values suppressed\", \"temporary_containers_removed\": true, \"source_snapshot_SHA_unchanged\": true, \"live_container_identity_health_unchanged\": true, \"finished_at\": \"2026-11-06T04:09:14.661430+00:00\", \"elapsed_seconds\": 37.59, \"RPO_RTO_approved\": false, \"disaster_recovery_claimed\": false}\n",
+  "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+  "snapshot_content_exported": false,
+  "CF_accessed": false
+}

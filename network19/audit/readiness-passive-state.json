@@ -1,0 +1,3921 @@
+{
+  "captured_at": "2026-11-06T08:55:28.870002+00:00",
+  "mutations": false,
+  "bridge_acl": {
+    "exit_code": 0,
+    "data": {
+      "nftables": [
+        {
+          "metainfo": {
+            "version": "1.0.6",
+            "release_name": "Lester Gooch #5",
+            "json_schema_version": 1
+          }
+        },
+        {
+          "table": {
+            "family": "bridge",
+            "name": "dell19_acl",
+            "handle": 25
+          }
+        },
+        {
+          "set": {
+            "family": "bridge",
+            "name": "mac_ids",
+            "table": "dell19_acl",
+            "type": [
+              "ifname",
+              "ether_addr"
+            ],
+            "handle": 10,
+            "elem": [
+              {
+                "concat": [
+                  "tap230i0",
+                  "bc:24:11:1c:20:00"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr230p0",
+                  "bc:24:11:1c:20:00"
+                ]
+              },
+              {
+                "concat": [
+                  "tap200i0",
+                  "bc:24:11:1c:62:00"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr200p0",
+                  "bc:24:11:1c:62:00"
+                ]
+              },
+              {
+                "concat": [
+                  "tap190i1",
+                  "02:63:19:01:90:01"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr190p1",
+                  "02:63:19:01:90:01"
+                ]
+              },
+              {
+                "concat": [
+                  "tap102i0",
+                  "bc:24:11:9e:04:04"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr102p0",
+                  "bc:24:11:9e:04:04"
+                ]
+              },
+              {
+                "concat": [
+                  "tap9003i0",
+                  "bc:24:11:3f:b7:34"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr9003p0",
+                  "bc:24:11:3f:b7:34"
+                ]
+              },
+              {
+                "concat": [
+                  "tap103i0",
+                  "bc:24:11:77:2b:3c"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr103p0",
+                  "bc:24:11:77:2b:3c"
+                ]
+              },
+              {
+                "concat": [
+                  "tap9005i0",
+                  "bc:24:11:b9:34:42"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr9005p0",
+                  "bc:24:11:b9:34:42"
+                ]
+              },
+              {
+                "concat": [
+                  "tap101i0",
+                  "bc:24:11:97:74:4a"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr101p0",
+                  "bc:24:11:97:74:4a"
+                ]
+              },
+              {
+                "concat": [
+                  "tap240i0",
+                  "bc:24:11:65:41:5a"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr240p0",
+                  "bc:24:11:65:41:5a"
+                ]
+              },
+              {
+                "concat": [
+                  "tap270i0",
+                  "bc:24:11:ce:8c:67"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr270p0",
+                  "bc:24:11:ce:8c:67"
+                ]
+              },
+              {
+                "concat": [
+                  "tap9004i0",
+                  "bc:24:11:7a:e9:67"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr9004p0",
+                  "bc:24:11:7a:e9:67"
+                ]
+              },
+              {
+                "concat": [
+                  "tap221i0",
+                  "bc:24:11:ec:e1:6f"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr221p0",
+                  "bc:24:11:ec:e1:6f"
+                ]
+              },
+              {
+                "concat": [
+                  "tap260i0",
+                  "bc:24:11:a7:3b:73"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr260p0",
+                  "bc:24:11:a7:3b:73"
+                ]
+              },
+              {
+                "concat": [
+                  "tap105i0",
+                  "bc:24:11:7e:87:77"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr105p0",
+                  "bc:24:11:7e:87:77"
+                ]
+              },
+              {
+                "concat": [
+                  "tap250i0",
+                  "bc:24:11:78:e9:84"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr250p0",
+                  "bc:24:11:78:e9:84"
+                ]
+              },
+              {
+                "concat": [
+                  "tap201i0",
+                  "bc:24:11:1c:bb:93"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr201p0",
+                  "bc:24:11:1c:bb:93"
+                ]
+              },
+              {
+                "concat": [
+                  "tap9020i0",
+                  "bc:24:11:60:1c:95"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr9020p0",
+                  "bc:24:11:60:1c:95"
+                ]
+              },
+              {
+                "concat": [
+                  "tap210i0",
+                  "bc:24:11:5d:2d:98"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr210p0",
+                  "bc:24:11:5d:2d:98"
+                ]
+              },
+              {
+                "concat": [
+                  "tap9000i0",
+                  "bc:24:11:06:c1:9f"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr9000p0",
+                  "bc:24:11:06:c1:9f"
+                ]
+              },
+              {
+                "concat": [
+                  "tap9002i0",
+                  "bc:24:11:4c:9f:a1"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr9002p0",
+                  "bc:24:11:4c:9f:a1"
+                ]
+              },
+              {
+                "concat": [
+                  "tap9006i0",
+                  "bc:24:11:e3:bd:a2"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr9006p0",
+                  "bc:24:11:e3:bd:a2"
+                ]
+              },
+              {
+                "concat": [
+                  "tap232i0",
+                  "bc:24:11:7d:1c:aa"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr232p0",
+                  "bc:24:11:7d:1c:aa"
+                ]
+              },
+              {
+                "concat": [
+                  "tap220i0",
+                  "bc:24:11:2a:01:ad"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr220p0",
+                  "bc:24:11:2a:01:ad"
+                ]
+              },
+              {
+                "concat": [
+                  "tap9001i0",
+                  "bc:24:11:50:bd:ad"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr9001p0",
+                  "bc:24:11:50:bd:ad"
+                ]
+              },
+              {
+                "concat": [
+                  "veth100i0",
+                  "bc:24:11:42:04:c1"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr100p0",
+                  "bc:24:11:42:04:c1"
+                ]
+              },
+              {
+                "concat": [
+                  "tap104i0",
+                  "bc:24:11:f3:1e:cc"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr104p0",
+                  "bc:24:11:f3:1e:cc"
+                ]
+              },
+              {
+                "concat": [
+                  "tap231i0",
+                  "bc:24:11:e9:e5:cc"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr231p0",
+                  "bc:24:11:e9:e5:cc"
+                ]
+              },
+              {
+                "concat": [
+                  "tap9010i0",
+                  "bc:24:11:ee:9e:d8"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr9010p0",
+                  "bc:24:11:ee:9e:d8"
+                ]
+              },
+              {
+                "concat": [
+                  "tap106i0",
+                  "bc:24:11:ff:90:f9"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr106p0",
+                  "bc:24:11:ff:90:f9"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "set": {
+            "family": "bridge",
+            "name": "ip_ids",
+            "table": "dell19_acl",
+            "type": [
+              "ifname",
+              "ipv4_addr"
+            ],
+            "handle": 11,
+            "elem": [
+              {
+                "concat": [
+                  "tap190i1",
+                  "192.168.19.1"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr190p1",
+                  "192.168.19.1"
+                ]
+              },
+              {
+                "concat": [
+                  "veth100i0",
+                  "192.168.19.5"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr100p0",
+                  "192.168.19.5"
+                ]
+              },
+              {
+                "concat": [
+                  "tap200i0",
+                  "192.168.19.10"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr200p0",
+                  "192.168.19.10"
+                ]
+              },
+              {
+                "concat": [
+                  "tap201i0",
+                  "192.168.19.11"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr201p0",
+                  "192.168.19.11"
+                ]
+              },
+              {
+                "concat": [
+                  "tap210i0",
+                  "192.168.19.20"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr210p0",
+                  "192.168.19.20"
+                ]
+              },
+              {
+                "concat": [
+                  "tap220i0",
+                  "192.168.19.30"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr220p0",
+                  "192.168.19.30"
+                ]
+              },
+              {
+                "concat": [
+                  "tap221i0",
+                  "192.168.19.31"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr221p0",
+                  "192.168.19.31"
+                ]
+              },
+              {
+                "concat": [
+                  "tap230i0",
+                  "192.168.19.40"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr230p0",
+                  "192.168.19.40"
+                ]
+              },
+              {
+                "concat": [
+                  "tap231i0",
+                  "192.168.19.41"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr231p0",
+                  "192.168.19.41"
+                ]
+              },
+              {
+                "concat": [
+                  "tap232i0",
+                  "192.168.19.42"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr232p0",
+                  "192.168.19.42"
+                ]
+              },
+              {
+                "concat": [
+                  "tap240i0",
+                  "192.168.19.45"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr240p0",
+                  "192.168.19.45"
+                ]
+              },
+              {
+                "concat": [
+                  "tap250i0",
+                  "192.168.19.50"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr250p0",
+                  "192.168.19.50"
+                ]
+              },
+              {
+                "concat": [
+                  "tap260i0",
+                  "192.168.19.60"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr260p0",
+                  "192.168.19.60"
+                ]
+              },
+              {
+                "concat": [
+                  "tap270i0",
+                  "192.168.19.70"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr270p0",
+                  "192.168.19.70"
+                ]
+              },
+              {
+                "concat": [
+                  "tap101i0",
+                  "192.168.19.101"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr101p0",
+                  "192.168.19.101"
+                ]
+              },
+              {
+                "concat": [
+                  "tap104i0",
+                  "192.168.19.104"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr104p0",
+                  "192.168.19.104"
+                ]
+              },
+              {
+                "concat": [
+                  "tap9000i0",
+                  "192.168.19.190"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr9000p0",
+                  "192.168.19.190"
+                ]
+              },
+              {
+                "concat": [
+                  "tap9002i0",
+                  "192.168.19.191"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr9002p0",
+                  "192.168.19.191"
+                ]
+              },
+              {
+                "concat": [
+                  "tap9003i0",
+                  "192.168.19.192"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr9003p0",
+                  "192.168.19.192"
+                ]
+              },
+              {
+                "concat": [
+                  "tap9004i0",
+                  "192.168.19.193"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr9004p0",
+                  "192.168.19.193"
+                ]
+              },
+              {
+                "concat": [
+                  "tap9005i0",
+                  "192.168.19.194"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr9005p0",
+                  "192.168.19.194"
+                ]
+              },
+              {
+                "concat": [
+                  "tap9006i0",
+                  "192.168.19.195"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr9006p0",
+                  "192.168.19.195"
+                ]
+              },
+              {
+                "concat": [
+                  "tap9020i0",
+                  "192.168.19.196"
+                ]
+              },
+              {
+                "concat": [
+                  "fwpr9020p0",
+                  "192.168.19.196"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "set": {
+            "family": "bridge",
+            "name": "gateway_ports",
+            "table": "dell19_acl",
+            "type": "ifname",
+            "handle": 12,
+            "elem": [
+              "tap190i1",
+              "fwpr190p1"
+            ]
+          }
+        },
+        {
+          "set": {
+            "family": "bridge",
+            "name": "guest_ports",
+            "table": "dell19_acl",
+            "type": "ifname",
+            "handle": 13,
+            "elem": [
+              "tap200i0",
+              "tap210i0",
+              "tap220i0",
+              "tap230i0",
+              "tap240i0",
+              "tap250i0",
+              "tap260i0",
+              "tap270i0",
+              "tap101i0",
+              "tap201i0",
+              "tap221i0",
+              "tap231i0",
+              "tap102i0",
+              "tap232i0",
+              "tap103i0",
+              "tap104i0",
+              "tap105i0",
+              "tap106i0",
+              "tap9000i0",
+              "veth100i0",
+              "tap9010i0",
+              "tap9020i0",
+              "tap9001i0",
+              "tap9002i0",
+              "tap9003i0",
+              "tap9004i0",
+              "tap9005i0",
+              "tap9006i0",
+              "fwpr100p0",
+              "fwpr200p0",
+              "fwpr210p0",
+              "fwpr220p0",
+              "fwpr230p0",
+              "fwpr240p0",
+              "fwpr250p0",
+              "fwpr260p0",
+              "fwpr270p0",
+              "fwpr101p0",
+              "fwpr201p0",
+              "fwpr221p0",
+              "fwpr231p0",
+              "fwpr102p0",
+              "fwpr232p0",
+              "fwpr103p0",
+              "fwpr104p0",
+              "fwpr105p0",
+              "fwpr106p0",
+              "fwpr9000p0",
+              "fwpr9010p0",
+              "fwpr9020p0",
+              "fwpr9001p0",
+              "fwpr9002p0",
+              "fwpr9003p0",
+              "fwpr9004p0",
+              "fwpr9005p0",
+              "fwpr9006p0"
+            ]
+          }
+        },
+        {
+          "set": {
+            "family": "bridge",
+            "name": "access_bridges",
+            "table": "dell19_acl",
+            "type": "ifname",
+            "handle": 14,
+            "elem": [
+              "vmbr19"
+            ]
+          }
+        },
+        {
+          "set": {
+            "family": "bridge",
+            "name": "peer_tcp",
+            "table": "dell19_acl",
+            "type": [
+              "ipv4_addr",
+              "ipv4_addr",
+              "inet_service"
+            ],
+            "handle": 15,
+            "elem": [
+              {
+                "concat": [
+                  "192.168.19.30",
+                  "192.168.19.45",
+                  22
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.40",
+                  "192.168.19.11",
+                  5672
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.41",
+                  "192.168.19.11",
+                  5672
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.42",
+                  "192.168.19.11",
+                  5672
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.45",
+                  "192.168.19.20",
+                  5672
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.40",
+                  "192.168.19.11",
+                  9848
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.41",
+                  "192.168.19.11",
+                  9848
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.42",
+                  "192.168.19.11",
+                  9848
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.45",
+                  "192.168.19.20",
+                  9848
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.5",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.10",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.11",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.20",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.30",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.31",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.40",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.41",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.42",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.45",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.50",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.60",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.70",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.101",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.104",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.190",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.191",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.192",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.193",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.194",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.195",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.196",
+                  9100
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.40",
+                  "192.168.19.11",
+                  8848
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.41",
+                  "192.168.19.11",
+                  8848
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.42",
+                  "192.168.19.11",
+                  8848
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.45",
+                  "192.168.19.20",
+                  8848
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.10",
+                  "192.168.19.31",
+                  8081
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.11",
+                  "192.168.19.31",
+                  8081
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.20",
+                  "192.168.19.31",
+                  8081
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.30",
+                  "192.168.19.31",
+                  8081
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.40",
+                  "192.168.19.31",
+                  8081
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.41",
+                  "192.168.19.31",
+                  8081
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.42",
+                  "192.168.19.31",
+                  8081
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.45",
+                  "192.168.19.31",
+                  8081
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.50",
+                  "192.168.19.31",
+                  8081
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.70",
+                  "192.168.19.31",
+                  8081
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.11",
+                  "192.168.19.10",
+                  3306
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.40",
+                  "192.168.19.10",
+                  3306
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.41",
+                  "192.168.19.10",
+                  3306
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.42",
+                  "192.168.19.10",
+                  3306
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.45",
+                  "192.168.19.20",
+                  3306
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.40",
+                  "192.168.19.11",
+                  6379
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.41",
+                  "192.168.19.11",
+                  6379
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.42",
+                  "192.168.19.11",
+                  6379
+                ]
+              },
+              {
+                "concat": [
+                  "192.168.19.45",
+                  "192.168.19.20",
+                  6379
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "set": {
+            "family": "bridge",
+            "name": "lan_tcp",
+            "table": "dell19_acl",
+            "type": [
+              "ipv4_addr",
+              "inet_service"
+            ],
+            "handle": 16
+          }
+        },
+        {
+          "chain": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "name": "host_input",
+            "handle": 1,
+            "type": "filter",
+            "hook": "input",
+            "prio": -200,
+            "policy": "accept"
+          }
+        },
+        {
+          "chain": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "name": "host_output",
+            "handle": 2,
+            "type": "filter",
+            "hook": "output",
+            "prio": -200,
+            "policy": "accept"
+          }
+        },
+        {
+          "chain": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "name": "forward",
+            "handle": 3,
+            "type": "filter",
+            "hook": "forward",
+            "prio": -200,
+            "policy": "accept"
+          }
+        },
+        {
+          "chain": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "name": "server19",
+            "handle": 4
+          }
+        },
+        {
+          "chain": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "name": "arp_guard",
+            "handle": 5
+          }
+        },
+        {
+          "chain": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "name": "ip_guard",
+            "handle": 6
+          }
+        },
+        {
+          "chain": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "name": "from_gateway",
+            "handle": 7
+          }
+        },
+        {
+          "chain": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "name": "from_guest",
+            "handle": 8
+          }
+        },
+        {
+          "chain": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "name": "to_gateway",
+            "handle": 9
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "host_input",
+            "handle": 17,
+            "comment": "no-host-service-on-server19-or-access-fwbr",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "meta": {
+                      "key": "ibrname"
+                    }
+                  },
+                  "right": "@access_bridges"
+                }
+              },
+              {
+                "counter": {
+                  "packets": 94,
+                  "bytes": 5508
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "host_output",
+            "handle": 18,
+            "comment": "host-client-route-must-use-gateway-WAN",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "meta": {
+                      "key": "obrname"
+                    }
+                  },
+                  "right": "@access_bridges"
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "forward",
+            "handle": 19,
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "meta": {
+                      "key": "ibrname"
+                    }
+                  },
+                  "right": "vmbr19"
+                }
+              },
+              {
+                "jump": {
+                  "target": "server19"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "forward",
+            "handle": 20,
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "meta": {
+                      "key": "obrname"
+                    }
+                  },
+                  "right": "vmbr19"
+                }
+              },
+              {
+                "jump": {
+                  "target": "server19"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "server19",
+            "handle": 22,
+            "comment": "no-ipv6-vlan-bypass",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ether",
+                      "field": "type"
+                    }
+                  },
+                  "right": {
+                    "set": [
+                      "8021q",
+                      "ip6",
+                      "8021ad"
+                    ]
+                  }
+                }
+              },
+              {
+                "counter": {
+                  "packets": 48,
+                  "bytes": 3924
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "server19",
+            "handle": 23,
+            "comment": "unknown-port-or-source-MAC",
+            "expr": [
+              {
+                "match": {
+                  "op": "!=",
+                  "left": {
+                    "concat": [
+                      {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      {
+                        "payload": {
+                          "protocol": "ether",
+                          "field": "saddr"
+                        }
+                      }
+                    ]
+                  },
+                  "right": "@mac_ids"
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "server19",
+            "handle": 24,
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ether",
+                      "field": "type"
+                    }
+                  },
+                  "right": "arp"
+                }
+              },
+              {
+                "jump": {
+                  "target": "arp_guard"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "server19",
+            "handle": 25,
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ether",
+                      "field": "type"
+                    }
+                  },
+                  "right": "ip"
+                }
+              },
+              {
+                "jump": {
+                  "target": "ip_guard"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "server19",
+            "handle": 26,
+            "comment": "unapproved-ethertype",
+            "expr": [
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "arp_guard",
+            "handle": 27,
+            "comment": "ARP-SHA-source-binding",
+            "expr": [
+              {
+                "match": {
+                  "op": "!=",
+                  "left": {
+                    "concat": [
+                      {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      {
+                        "payload": {
+                          "protocol": "arp",
+                          "field": "saddr ether"
+                        }
+                      }
+                    ]
+                  },
+                  "right": "@mac_ids"
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "arp_guard",
+            "handle": 28,
+            "comment": "address-probe",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "arp",
+                      "field": "operation"
+                    }
+                  },
+                  "right": "request"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "arp",
+                      "field": "saddr ip"
+                    }
+                  },
+                  "right": "0.0.0.0"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "arp",
+                      "field": "daddr ip"
+                    }
+                  },
+                  "right": {
+                    "prefix": {
+                      "addr": "192.168.19.0",
+                      "len": 24
+                    }
+                  }
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "arp_guard",
+            "handle": 29,
+            "comment": "ARP-SPA-exact-port-IP",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "concat": [
+                      {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      {
+                        "payload": {
+                          "protocol": "arp",
+                          "field": "saddr ip"
+                        }
+                      }
+                    ]
+                  },
+                  "right": "@ip_ids"
+                }
+              },
+              {
+                "counter": {
+                  "packets": 25,
+                  "bytes": 700
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "arp_guard",
+            "handle": 30,
+            "comment": "ARP-source-IP-spoof",
+            "expr": [
+              {
+                "counter": {
+                  "packets": 18,
+                  "bytes": 504
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "ip_guard",
+            "handle": 32,
+            "comment": "MAC-bound-DHCP-client-only",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "meta": {
+                      "key": "iifname"
+                    }
+                  },
+                  "right": "@guest_ports"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "meta": {
+                      "key": "oifname"
+                    }
+                  },
+                  "right": "@gateway_ports"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "saddr"
+                    }
+                  },
+                  "right": {
+                    "set": [
+                      "0.0.0.0",
+                      {
+                        "prefix": {
+                          "addr": "192.168.19.0",
+                          "len": 24
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "udp",
+                      "field": "sport"
+                    }
+                  },
+                  "right": 68
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "udp",
+                      "field": "dport"
+                    }
+                  },
+                  "right": 67
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "ip_guard",
+            "handle": 33,
+            "comment": "gateway-only-DHCP-server",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "meta": {
+                      "key": "iifname"
+                    }
+                  },
+                  "right": "@gateway_ports"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "meta": {
+                      "key": "oifname"
+                    }
+                  },
+                  "right": "@guest_ports"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "saddr"
+                    }
+                  },
+                  "right": "192.168.19.1"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "udp",
+                      "field": "sport"
+                    }
+                  },
+                  "right": 67
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "udp",
+                      "field": "dport"
+                    }
+                  },
+                  "right": 68
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "ip_guard",
+            "handle": 34,
+            "comment": "unicast-destination-MAC-binding",
+            "expr": [
+              {
+                "match": {
+                  "op": "!=",
+                  "left": {
+                    "concat": [
+                      {
+                        "meta": {
+                          "key": "oifname"
+                        }
+                      },
+                      {
+                        "payload": {
+                          "protocol": "ether",
+                          "field": "daddr"
+                        }
+                      }
+                    ]
+                  },
+                  "right": "@mac_ids"
+                }
+              },
+              {
+                "counter": {
+                  "packets": 66,
+                  "bytes": 3288
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "ip_guard",
+            "handle": 35,
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "meta": {
+                      "key": "iifname"
+                    }
+                  },
+                  "right": "@gateway_ports"
+                }
+              },
+              {
+                "jump": {
+                  "target": "from_gateway"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "ip_guard",
+            "handle": 36,
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "meta": {
+                      "key": "iifname"
+                    }
+                  },
+                  "right": "@guest_ports"
+                }
+              },
+              {
+                "jump": {
+                  "target": "from_guest"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "ip_guard",
+            "handle": 37,
+            "comment": "unregistered-direction",
+            "expr": [
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "from_gateway",
+            "handle": 38,
+            "comment": "gateway-cannot-spoof-peer19",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "saddr"
+                    }
+                  },
+                  "right": {
+                    "prefix": {
+                      "addr": "192.168.19.0",
+                      "len": 24
+                    }
+                  }
+                }
+              },
+              {
+                "match": {
+                  "op": "!=",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "saddr"
+                    }
+                  },
+                  "right": "192.168.19.1"
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "from_gateway",
+            "handle": 39,
+            "comment": "approved-destination-IP-only",
+            "expr": [
+              {
+                "match": {
+                  "op": "!=",
+                  "left": {
+                    "concat": [
+                      {
+                        "meta": {
+                          "key": "oifname"
+                        }
+                      },
+                      {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "daddr"
+                        }
+                      }
+                    ]
+                  },
+                  "right": "@ip_ids"
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "from_gateway",
+            "handle": 40,
+            "expr": [
+              {
+                "match": {
+                  "op": "in",
+                  "left": {
+                    "ct": {
+                      "key": "state"
+                    }
+                  },
+                  "right": "invalid"
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "from_gateway",
+            "handle": 42,
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "ct": {
+                      "key": "state"
+                    }
+                  },
+                  "right": {
+                    "set": [
+                      "established",
+                      "related"
+                    ]
+                  }
+                }
+              },
+              {
+                "counter": {
+                  "packets": 251,
+                  "bytes": 135674
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "from_gateway",
+            "handle": 43,
+            "comment": "gateway-diagnostics",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "saddr"
+                    }
+                  },
+                  "right": "192.168.19.1"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "protocol"
+                    }
+                  },
+                  "right": "icmp"
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "from_gateway",
+            "handle": 44,
+            "comment": "manager-WAN-to-LAN-0",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "saddr"
+                    }
+                  },
+                  "right": {
+                    "prefix": {
+                      "addr": "192.168.21.0",
+                      "len": 24
+                    }
+                  }
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "daddr"
+                    }
+                  },
+                  "right": "192.168.19.50"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "tcp",
+                      "field": "dport"
+                    }
+                  },
+                  "right": 9001
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "from_gateway",
+            "handle": 45,
+            "comment": "manager-WAN-to-LAN-1",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "saddr"
+                    }
+                  },
+                  "right": {
+                    "prefix": {
+                      "addr": "192.168.21.0",
+                      "len": 24
+                    }
+                  }
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "daddr"
+                    }
+                  },
+                  "right": "192.168.19.31"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "tcp",
+                      "field": "dport"
+                    }
+                  },
+                  "right": 8081
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "from_gateway",
+            "handle": 47,
+            "comment": "manager-WAN-to-LAN-2",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "saddr"
+                    }
+                  },
+                  "right": {
+                    "prefix": {
+                      "addr": "192.168.21.0",
+                      "len": 24
+                    }
+                  }
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "daddr"
+                    }
+                  },
+                  "right": "192.168.19.60"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "tcp",
+                      "field": "dport"
+                    }
+                  },
+                  "right": {
+                    "set": [
+                      80,
+                      445,
+                      8096
+                    ]
+                  }
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "from_gateway",
+            "handle": 48,
+            "comment": "manager-WAN-to-LAN-3",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "saddr"
+                    }
+                  },
+                  "right": {
+                    "prefix": {
+                      "addr": "192.168.21.0",
+                      "len": 24
+                    }
+                  }
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "daddr"
+                    }
+                  },
+                  "right": "192.168.19.45"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "tcp",
+                      "field": "dport"
+                    }
+                  },
+                  "right": 9999
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "from_gateway",
+            "handle": 49,
+            "comment": "manager-WAN-to-LAN-4",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "saddr"
+                    }
+                  },
+                  "right": {
+                    "prefix": {
+                      "addr": "192.168.21.0",
+                      "len": 24
+                    }
+                  }
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "daddr"
+                    }
+                  },
+                  "right": "192.168.19.40"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "tcp",
+                      "field": "dport"
+                    }
+                  },
+                  "right": 9999
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "from_gateway",
+            "handle": 50,
+            "comment": "manager-WAN-to-LAN-5",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "saddr"
+                    }
+                  },
+                  "right": {
+                    "prefix": {
+                      "addr": "192.168.21.0",
+                      "len": 24
+                    }
+                  }
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "daddr"
+                    }
+                  },
+                  "right": "192.168.19.70"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "tcp",
+                      "field": "dport"
+                    }
+                  },
+                  "right": 3000
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "from_gateway",
+            "handle": 53,
+            "comment": "manager-WAN-to-LAN-6",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "saddr"
+                    }
+                  },
+                  "right": {
+                    "set": [
+                      "192.168.21.22",
+                      "192.168.21.116"
+                    ]
+                  }
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "daddr"
+                    }
+                  },
+                  "right": {
+                    "prefix": {
+                      "addr": "192.168.19.0",
+                      "len": 24
+                    }
+                  }
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "tcp",
+                      "field": "dport"
+                    }
+                  },
+                  "right": {
+                    "set": [
+                      22,
+                      3306,
+                      5672,
+                      6379,
+                      8848,
+                      9090,
+                      9093,
+                      9100,
+                      9848,
+                      9849,
+                      15672
+                    ]
+                  }
+                }
+              },
+              {
+                "counter": {
+                  "packets": 10,
+                  "bytes": 604
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "from_gateway",
+            "handle": 54,
+            "comment": "gateway-ingress-denied",
+            "expr": [
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "from_guest",
+            "handle": 55,
+            "comment": "guest-source-IP-binding",
+            "expr": [
+              {
+                "match": {
+                  "op": "!=",
+                  "left": {
+                    "concat": [
+                      {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      }
+                    ]
+                  },
+                  "right": "@ip_ids"
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "from_guest",
+            "handle": 56,
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "meta": {
+                      "key": "oifname"
+                    }
+                  },
+                  "right": "@gateway_ports"
+                }
+              },
+              {
+                "jump": {
+                  "target": "to_gateway"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "from_guest",
+            "handle": 57,
+            "comment": "peer-destination-IP-binding",
+            "expr": [
+              {
+                "match": {
+                  "op": "!=",
+                  "left": {
+                    "concat": [
+                      {
+                        "meta": {
+                          "key": "oifname"
+                        }
+                      },
+                      {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "daddr"
+                        }
+                      }
+                    ]
+                  },
+                  "right": "@ip_ids"
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "from_guest",
+            "handle": 58,
+            "expr": [
+              {
+                "match": {
+                  "op": "in",
+                  "left": {
+                    "ct": {
+                      "key": "state"
+                    }
+                  },
+                  "right": "invalid"
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "from_guest",
+            "handle": 60,
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "ct": {
+                      "key": "state"
+                    }
+                  },
+                  "right": {
+                    "set": [
+                      "established",
+                      "related"
+                    ]
+                  }
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "from_guest",
+            "handle": 61,
+            "comment": "explicit-role-TCP-matrix",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "concat": [
+                      {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "daddr"
+                        }
+                      },
+                      {
+                        "payload": {
+                          "protocol": "tcp",
+                          "field": "dport"
+                        }
+                      }
+                    ]
+                  },
+                  "right": "@peer_tcp"
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "from_guest",
+            "handle": 62,
+            "comment": "east-west-denied",
+            "expr": [
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "to_gateway",
+            "handle": 63,
+            "comment": "no-peer-hairpin-through-gateway",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "daddr"
+                    }
+                  },
+                  "right": {
+                    "prefix": {
+                      "addr": "192.168.19.0",
+                      "len": 24
+                    }
+                  }
+                }
+              },
+              {
+                "match": {
+                  "op": "!=",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "daddr"
+                    }
+                  },
+                  "right": "192.168.19.1"
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "to_gateway",
+            "handle": 64,
+            "expr": [
+              {
+                "match": {
+                  "op": "in",
+                  "left": {
+                    "ct": {
+                      "key": "state"
+                    }
+                  },
+                  "right": "invalid"
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "to_gateway",
+            "handle": 66,
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "ct": {
+                      "key": "state"
+                    }
+                  },
+                  "right": {
+                    "set": [
+                      "established",
+                      "related"
+                    ]
+                  }
+                }
+              },
+              {
+                "counter": {
+                  "packets": 240,
+                  "bytes": 67578
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "to_gateway",
+            "handle": 67,
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "daddr"
+                    }
+                  },
+                  "right": "192.168.19.1"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "udp",
+                      "field": "dport"
+                    }
+                  },
+                  "right": 53
+                }
+              },
+              {
+                "counter": {
+                  "packets": 15,
+                  "bytes": 1054
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "to_gateway",
+            "handle": 68,
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "daddr"
+                    }
+                  },
+                  "right": "192.168.19.1"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "tcp",
+                      "field": "dport"
+                    }
+                  },
+                  "right": 53
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "to_gateway",
+            "handle": 69,
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "daddr"
+                    }
+                  },
+                  "right": "192.168.19.1"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "protocol"
+                    }
+                  },
+                  "right": "icmp"
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "to_gateway",
+            "handle": 70,
+            "comment": "Ops-gateway-exporter-if-activated",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "saddr"
+                    }
+                  },
+                  "right": "192.168.19.70"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "daddr"
+                    }
+                  },
+                  "right": "192.168.19.1"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "tcp",
+                      "field": "dport"
+                    }
+                  },
+                  "right": 9100
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "to_gateway",
+            "handle": 71,
+            "comment": "no-unapproved-server-to-management-LAN-session",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "daddr"
+                    }
+                  },
+                  "right": {
+                    "prefix": {
+                      "addr": "192.168.21.0",
+                      "len": 24
+                    }
+                  }
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "to_gateway",
+            "handle": 72,
+            "comment": "no-other-gateway-service",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "daddr"
+                    }
+                  },
+                  "right": "192.168.19.1"
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "to_gateway",
+            "handle": 74,
+            "comment": "manager-exclude-private-destinations",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "daddr"
+                    }
+                  },
+                  "right": {
+                    "set": [
+                      {
+                        "prefix": {
+                          "addr": "10.0.0.0",
+                          "len": 8
+                        }
+                      },
+                      {
+                        "prefix": {
+                          "addr": "172.16.0.0",
+                          "len": 12
+                        }
+                      },
+                      {
+                        "prefix": {
+                          "addr": "192.168.0.0",
+                          "len": 16
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "to_gateway",
+            "handle": 76,
+            "comment": "manager-public-egress",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "tcp",
+                      "field": "dport"
+                    }
+                  },
+                  "right": {
+                    "set": [
+                      53,
+                      80,
+                      443
+                    ]
+                  }
+                }
+              },
+              {
+                "counter": {
+                  "packets": 22,
+                  "bytes": 1320
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "to_gateway",
+            "handle": 78,
+            "comment": "manager-public-egress",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "udp",
+                      "field": "dport"
+                    }
+                  },
+                  "right": {
+                    "set": [
+                      53,
+                      123
+                    ]
+                  }
+                }
+              },
+              {
+                "counter": {
+                  "packets": 5,
+                  "bytes": 380
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "to_gateway",
+            "handle": 79,
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "protocol"
+                    }
+                  },
+                  "right": "icmp"
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "to_gateway",
+            "handle": 80,
+            "comment": "manager-CF_extra_public",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "saddr"
+                    }
+                  },
+                  "right": "192.168.19.5"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "tcp",
+                      "field": "dport"
+                    }
+                  },
+                  "right": 7844
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "to_gateway",
+            "handle": 81,
+            "comment": "manager-CF_extra_public",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "saddr"
+                    }
+                  },
+                  "right": "192.168.19.5"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "udp",
+                      "field": "dport"
+                    }
+                  },
+                  "right": 7844
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "to_gateway",
+            "handle": 82,
+            "comment": "manager-publisher_optional_public_ssh",
+            "expr": [
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "ip",
+                      "field": "saddr"
+                    }
+                  },
+                  "right": "192.168.19.30"
+                }
+              },
+              {
+                "match": {
+                  "op": "==",
+                  "left": {
+                    "payload": {
+                      "protocol": "tcp",
+                      "field": "dport"
+                    }
+                  },
+                  "right": 22
+                }
+              },
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "accept": null
+              }
+            ]
+          }
+        },
+        {
+          "rule": {
+            "family": "bridge",
+            "table": "dell19_acl",
+            "chain": "to_gateway",
+            "handle": 83,
+            "comment": "unapproved-egress",
+            "expr": [
+              {
+                "counter": {
+                  "packets": 0,
+                  "bytes": 0
+                }
+              },
+              {
+                "drop": null
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "routes": {
+    "exit_code": 0,
+    "data": [
+      {
+        "dst": "default",
+        "gateway": "192.168.21.1",
+        "dev": "vmbr0",
+        "protocol": "kernel",
+        "flags": [
+          "onlink"
+        ]
+      },
+      {
+        "dst": "10.63.10.0/24",
+        "dev": "vmbr10",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "10.63.10.1",
+        "flags": []
+      },
+      {
+        "dst": "10.63.20.0/24",
+        "dev": "vmbr20",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "10.63.20.1",
+        "flags": []
+      },
+      {
+        "dst": "10.63.30.0/24",
+        "dev": "vmbr30",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "10.63.30.1",
+        "flags": []
+      },
+      {
+        "dst": "10.63.40.0/24",
+        "dev": "vmbr40",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "10.63.40.1",
+        "flags": []
+      },
+      {
+        "dst": "192.168.19.0/24",
+        "gateway": "192.168.21.23",
+        "dev": "vmbr0",
+        "flags": []
+      },
+      {
+        "dst": "192.168.21.0/24",
+        "dev": "vmbr0",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "192.168.21.22",
+        "flags": []
+      }
+    ]
+  },
+  "bridge19_v4": {
+    "exit_code": 0,
+    "data": []
+  },
+  "bridge19_v6": {
+    "exit_code": 0,
+    "data": []
+  },
+  "bridge_links": {
+    "exit_code": 0,
+    "data": [
+      {
+        "ifindex": 2,
+        "ifname": "eno1",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "master": "vmbr0",
+        "state": "forwarding",
+        "priority": 32,
+        "cost": 5
+      },
+      {
+        "ifindex": 5,
+        "link": "eno1",
+        "ifname": "veth100i0",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "master": "fwbr100i0",
+        "state": "forwarding",
+        "priority": 32,
+        "cost": 2
+      },
+      {
+        "ifindex": 7,
+        "link": "fwln100i0",
+        "ifname": "fwpr100p0",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "master": "vmbr0",
+        "state": "forwarding",
+        "priority": 32,
+        "cost": 2
+      },
+      {
+        "ifindex": 8,
+        "link": "fwpr100p0",
+        "ifname": "fwln100i0",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "master": "fwbr100i0",
+        "state": "forwarding",
+        "priority": 32,
+        "cost": 2
+      },
+      {
+        "ifindex": 41,
+        "ifname": "tap200i0",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "PROMISC",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "master": "vmbr10",
+        "state": "forwarding",
+        "priority": 32,
+        "cost": 2
+      },
+      {
+        "ifindex": 42,
+        "ifname": "tap201i0",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "PROMISC",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "master": "vmbr10",
+        "state": "forwarding",
+        "priority": 32,
+        "cost": 2
+      },
+      {
+        "ifindex": 43,
+        "ifname": "tap210i0",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "PROMISC",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "master": "vmbr20",
+        "state": "forwarding",
+        "priority": 32,
+        "cost": 2
+      },
+      {
+        "ifindex": 44,
+        "ifname": "tap220i0",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "PROMISC",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "master": "vmbr30",
+        "state": "forwarding",
+        "priority": 32,
+        "cost": 2
+      },
+      {
+        "ifindex": 45,
+        "ifname": "tap221i0",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "PROMISC",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "master": "vmbr30",
+        "state": "forwarding",
+        "priority": 32,
+        "cost": 2
+      },
+      {
+        "ifindex": 46,
+        "ifname": "tap250i0",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "PROMISC",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "master": "vmbr30",
+        "state": "forwarding",
+        "priority": 32,
+        "cost": 2
+      },
+      {
+        "ifindex": 47,
+        "ifname": "tap260i0",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "PROMISC",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "master": "vmbr40",
+        "state": "forwarding",
+        "priority": 32,
+        "cost": 2
+      },
+      {
+        "ifindex": 48,
+        "ifname": "tap270i0",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "PROMISC",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "master": "vmbr30",
+        "state": "forwarding",
+        "priority": 32,
+        "cost": 2
+      },
+      {
+        "ifindex": 50,
+        "ifname": "tap231i0",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "PROMISC",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "master": "vmbr19",
+        "state": "forwarding",
+        "priority": 32,
+        "cost": 2
+      },
+      {
+        "ifindex": 51,
+        "ifname": "tap232i0",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "PROMISC",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "master": "vmbr19",
+        "state": "forwarding",
+        "priority": 32,
+        "cost": 2
+      },
+      {
+        "ifindex": 52,
+        "ifname": "tap240i0",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "PROMISC",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "master": "vmbr20",
+        "state": "forwarding",
+        "priority": 32,
+        "cost": 2
+      },
+      {
+        "ifindex": 54,
+        "ifname": "tap190i0",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "PROMISC",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "master": "vmbr0",
+        "state": "forwarding",
+        "priority": 32,
+        "cost": 2
+      },
+      {
+        "ifindex": 55,
+        "ifname": "tap190i1",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "PROMISC",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "master": "vmbr19",
+        "state": "forwarding",
+        "priority": 32,
+        "cost": 2
+      }
+    ]
+  },
+  "module_names": {
+    "exit_code": 0,
+    "names": [
+      "nf_conntrack_bridge",
+      "nft_meta_bridge"
+    ]
+  },
+  "sysctls": {
+    "ipv4_forward": "1",
+    "ipv6_forward": "0",
+    "bridge_nf4": "0",
+    "bridge_nf6": "0"
+  },
+  "guest230_qga": {
+    "exit_code": 2,
+    "classification": "planned-maintenance-down-during-capture-parent-confirmed",
+    "fault_investigation_opened": false
+  },
+  "phase": "transition-old-routing-retained; not-final-cleanup"
+}

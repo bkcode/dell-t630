@@ -1,0 +1,143 @@
+{
+  "status": "prepared-not-applied",
+  "exporter_VMIDs": [
+    200,
+    201,
+    210,
+    220,
+    230,
+    240,
+    250,
+    260,
+    270
+  ],
+  "removed_VMIDs": [
+    221,
+    231,
+    232
+  ],
+  "permanent_role_count": 11,
+  "future_guest_node_count": 9,
+  "unchanged_Ops_other_target_count": 5,
+  "future_total_target_count": 14,
+  "live_target_count_at_capture": 17,
+  "files": [
+    {
+      "vmid": 220,
+      "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+      "expected_old_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+      "new_SHA256": "bea0fb367fa5252f5e3986b89743be90ba1bdad496d5b703b9942e8bccf208a3",
+      "candidate": "candidates/live-common/guest-targets.json",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0
+    },
+    {
+      "vmid": 220,
+      "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+      "expected_old_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+      "new_SHA256": "b6888c8360b4deb658a91aff21f16c00013c813fd3ae39a266351d43dcc312e2",
+      "candidate": "candidates/live-common/install-guest-baseline.py",
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0
+    },
+    {
+      "vmid": 270,
+      "target_path": "/opt/dell/guest-monitoring/guest-targets.json",
+      "expected_old_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+      "new_SHA256": "bea0fb367fa5252f5e3986b89743be90ba1bdad496d5b703b9942e8bccf208a3",
+      "candidate": "candidates/live-common/guest-targets.json",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0
+    },
+    {
+      "vmid": 270,
+      "target_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+      "expected_old_SHA256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+      "new_SHA256": "b6888c8360b4deb658a91aff21f16c00013c813fd3ae39a266351d43dcc312e2",
+      "candidate": "candidates/live-common/install-guest-baseline.py",
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0
+    },
+    {
+      "vmid": 270,
+      "target_path": "/opt/dell/ops/config/prometheus/targets/guest-node.json",
+      "expected_old_SHA256": "b2d2898c56523d3e06af1af130e2068c7346d5e546a54e23c8d5d9be02a03612",
+      "new_SHA256": "bf9e4dc25aded6d67ff671bec441b61fb74c8fd4df5b47177b4e51d8aa87384d",
+      "candidate": "candidates/ops/guest-node.json",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0
+    }
+  ],
+  "health220": {
+    "vmid": 220,
+    "target_path": "/etc/dell-guest-monitoring/health.json",
+    "expected_old_SHA256": "90e624a3cf03eeacfc302d7d47711c3c71b9e93b41e654dd1698623656014320",
+    "profiles": {
+      "unit-only": {
+        "candidate": "candidates/profiles/unit-only/health.json",
+        "new_SHA256": "34e0b321699c1639f1b15a88290251316974f9540a6d53bbdf652ce81364c65c"
+      },
+      "full": {
+        "candidate": "candidates/profiles/full/health.json",
+        "new_SHA256": "1595fd2e6938639e77ee77da985c1c12cdf90be24dc355707d922800a518ffb0"
+      }
+    },
+    "mode": "0o644",
+    "uid": 0,
+    "gid": 0
+  },
+  "source_sync": [
+    {
+      "path": "infra/ops/guest-baseline/guest-targets.json",
+      "expected_old_SHA256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+      "new_SHA256": "bea0fb367fa5252f5e3986b89743be90ba1bdad496d5b703b9942e8bccf208a3",
+      "candidate": "source-candidates/infra/ops/guest-baseline/guest-targets.json"
+    },
+    {
+      "path": "infra/ops/guest-baseline/install-guest-baseline.py",
+      "expected_old_SHA256": "3936bfbf913bb55b5785e0484c7bc93c2a320d67036c2a31e2dec9aa108f6798",
+      "new_SHA256": "64c8d19ff1b566268ee7826caf08de24e3a05803c658b63926ea009631155861",
+      "candidate": "source-candidates/infra/ops/guest-baseline/install-guest-baseline.py"
+    },
+    {
+      "path": "infra/ops/config/candidates/guest-node.json",
+      "expected_old_SHA256": "ee3980ee68f72ce1b10c97b71d92e3060cf7c9550099ca605fdb7b1dd921dab6",
+      "new_SHA256": "3509f180f79079b3295c7b94e0e28af2631f6396a70e241455549ff2f9ac8be4",
+      "candidate": "source-candidates/infra/ops/config/candidates/guest-node.json"
+    }
+  ],
+  "unchanged_collector_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+  "prometheus_config_SHA256": "35b0a682e8cef2802cd871982e442614e67ae3313f39945ace2591879f508c04",
+  "rules_SHA256": "4d1eee3973d41739a673bb097ec965af31c2f339122654db24a63195f1e90ae9",
+  "guards": {
+    "vm220_original_MAC": "bc:24:11:2a:01:ad",
+    "primary_IP": "192.168.19.30",
+    "approved_alias_IP": "192.168.19.31",
+    "full_profile_requires_alias_on_original_MAC": true,
+    "Nexus_unit_must_be_active_even_unit_only": true,
+    "new_proxy_listener": false,
+    "no_generic_installer_install_activate_mask_or_restart": true,
+    "no_WireGuard_host_forward_or_data_auth_modification": true
+  },
+  "readiness": {
+    "alias31_live_at_capture": false,
+    "Nexus_active_at_capture": false,
+    "full_profile_ready_live": false
+  },
+  "local_tests": {
+    "paired_catalogs9": true,
+    "native_live_collector_unchanged": true,
+    "actual_alias_absence_rejected_full": true,
+    "approved_expected_alias_model_accepts_full": true,
+    "external_otherVM_auth_query_URLs_rejected": true,
+    "newer_source_nonpublisher_profiles_preserved": true,
+    "Java_scope_no_business_HTTP": true,
+    "OpsLark_source_preserved": true
+  },
+  "deployment_not_performed": true
+}

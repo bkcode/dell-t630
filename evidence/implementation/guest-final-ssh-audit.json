@@ -1,0 +1,224 @@
+{
+  "at": "2026-11-06T11:13:00.241734",
+  "strict_host_keys": true,
+  "specified_private_key_used": true,
+  "results": [
+    {
+      "exit_code": 0,
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+      "target": {
+        "vmid": 200,
+        "ip": "10.63.10.10",
+        "host_key_alias": "dell-vm200",
+        "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "observation": {
+        "hostname": "data-prod-db",
+        "user": "ub",
+        "uid": 1000,
+        "groups": "ub sudo",
+        "sudo": "Matching Defaults entries for ub on data-prod-db:\n    env_reset, mail_badpass, secure_path=/usr/local/sbin\\:/usr/local/bin\\:/usr/sbin\\:/usr/bin\\:/sbin\\:/bin, use_pty\n\nUser ub may run the following commands on data-prod-db:\n    (ALL : ALL) ALL\n    (ALL) NOPASSWD: ALL\n"
+      }
+    },
+    {
+      "exit_code": 0,
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+      "target": {
+        "vmid": 201,
+        "ip": "10.63.10.11",
+        "host_key_alias": "dell-vm201",
+        "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "observation": {
+        "hostname": "data-prod-infra",
+        "user": "ub",
+        "uid": 1000,
+        "groups": "ub sudo",
+        "sudo": "Matching Defaults entries for ub on data-prod-infra:\n    env_reset, mail_badpass, secure_path=/usr/local/sbin\\:/usr/local/bin\\:/usr/sbin\\:/usr/bin\\:/sbin\\:/bin, use_pty\n\nUser ub may run the following commands on data-prod-infra:\n    (ALL : ALL) ALL\n    (ALL) NOPASSWD: ALL\n"
+      }
+    },
+    {
+      "exit_code": 0,
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+      "target": {
+        "vmid": 210,
+        "ip": "10.63.20.10",
+        "host_key_alias": "dell-vm210",
+        "host_key_fingerprint": "SHA256:8bBCQbBKGmZAw5q2AgT2vXHsyr2aFJktLqs/tDZ9SiA",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "observation": {
+        "hostname": "data-test",
+        "user": "ub",
+        "uid": 1000,
+        "groups": "ub sudo",
+        "sudo": "Matching Defaults entries for ub on data-test:\n    env_reset, mail_badpass, secure_path=/usr/local/sbin\\:/usr/local/bin\\:/usr/sbin\\:/usr/bin\\:/sbin\\:/bin, use_pty\n\nUser ub may run the following commands on data-test:\n    (ALL : ALL) ALL\n    (ALL) NOPASSWD: ALL\n"
+      }
+    },
+    {
+      "exit_code": 0,
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+      "target": {
+        "vmid": 220,
+        "ip": "10.63.30.10",
+        "host_key_alias": "dell-vm220",
+        "host_key_fingerprint": "SHA256:2PFQYC3uPSg/sMihWZZ7R1vgkKKozJbTwTjf6VNWwG4",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "observation": {
+        "hostname": "publish-service",
+        "user": "ub",
+        "uid": 1000,
+        "groups": "ub sudo",
+        "sudo": "Matching Defaults entries for ub on publish-service:\n    env_reset, mail_badpass, secure_path=/usr/local/sbin\\:/usr/local/bin\\:/usr/sbin\\:/usr/bin\\:/sbin\\:/bin, use_pty\n\nUser ub may run the following commands on publish-service:\n    (ALL : ALL) ALL\n    (ALL) NOPASSWD: ALL\n"
+      }
+    },
+    {
+      "exit_code": 0,
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+      "target": {
+        "vmid": 221,
+        "ip": "10.63.30.20",
+        "host_key_alias": "dell-vm221",
+        "host_key_fingerprint": "SHA256:ky2Wn7M2CKgUqHaj65c4KnqphO6d3zh6sGEoYYzomWo",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "observation": {
+        "hostname": "artifact-service",
+        "user": "ub",
+        "uid": 1000,
+        "groups": "ub sudo",
+        "sudo": "Matching Defaults entries for ub on artifact-service:\n    env_reset, mail_badpass, secure_path=/usr/local/sbin\\:/usr/local/bin\\:/usr/sbin\\:/usr/bin\\:/sbin\\:/bin, use_pty\n\nUser ub may run the following commands on artifact-service:\n    (ALL : ALL) ALL\n    (ALL) NOPASSWD: ALL\n"
+      }
+    },
+    {
+      "exit_code": 0,
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+      "target": {
+        "vmid": 230,
+        "ip": "10.63.10.20",
+        "host_key_alias": "dell-vm230",
+        "host_key_fingerprint": "SHA256:SsWkQtSVu/3sssyrmVMb13r8r9/zQhWeEH3ZQ/CzCDM",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "observation": {
+        "hostname": "java-prod-01",
+        "user": "ub",
+        "uid": 1000,
+        "groups": "ub sudo",
+        "sudo": "Matching Defaults entries for ub on java-prod-01:\n    env_reset, mail_badpass, secure_path=/usr/local/sbin\\:/usr/local/bin\\:/usr/sbin\\:/usr/bin\\:/sbin\\:/bin, use_pty\n\nUser ub may run the following commands on java-prod-01:\n    (ALL : ALL) ALL\n    (ALL) NOPASSWD: ALL\n"
+      }
+    },
+    {
+      "exit_code": 0,
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+      "target": {
+        "vmid": 231,
+        "ip": "10.63.10.21",
+        "host_key_alias": "dell-vm231",
+        "host_key_fingerprint": "SHA256:F4FTk8hT14QASJ/nWmjUBtxP4h9dthfE8/8MOdnmLUQ",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "observation": {
+        "hostname": "java-prod-02",
+        "user": "ub",
+        "uid": 1000,
+        "groups": "ub sudo",
+        "sudo": "Matching Defaults entries for ub on java-prod-02:\n    env_reset, mail_badpass, secure_path=/usr/local/sbin\\:/usr/local/bin\\:/usr/sbin\\:/usr/bin\\:/sbin\\:/bin, use_pty\n\nUser ub may run the following commands on java-prod-02:\n    (ALL : ALL) ALL\n    (ALL) NOPASSWD: ALL\n"
+      }
+    },
+    {
+      "exit_code": 0,
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+      "target": {
+        "vmid": 232,
+        "ip": "10.63.10.22",
+        "host_key_alias": "dell-vm232",
+        "host_key_fingerprint": "SHA256:hp5JQlxhH7LG5ItvhzzLzHGbky5d+dghbTNsEfdNabo",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "observation": {
+        "hostname": "java-prod-03",
+        "user": "ub",
+        "uid": 1000,
+        "groups": "ub sudo",
+        "sudo": "Matching Defaults entries for ub on java-prod-03:\n    env_reset, mail_badpass, secure_path=/usr/local/sbin\\:/usr/local/bin\\:/usr/sbin\\:/usr/bin\\:/sbin\\:/bin, use_pty\n\nUser ub may run the following commands on java-prod-03:\n    (ALL : ALL) ALL\n    (ALL) NOPASSWD: ALL\n"
+      }
+    },
+    {
+      "exit_code": 0,
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+      "target": {
+        "vmid": 240,
+        "ip": "10.63.20.20",
+        "host_key_alias": "dell-vm240",
+        "host_key_fingerprint": "SHA256:a5slwmQWq1U2AaeY9965RUYU63BxMymRus8IA9WydNQ",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "observation": {
+        "hostname": "java-test-01",
+        "user": "ub",
+        "uid": 1000,
+        "groups": "ub sudo",
+        "sudo": "Matching Defaults entries for ub on java-test-01:\n    env_reset, mail_badpass, secure_path=/usr/local/sbin\\:/usr/local/bin\\:/usr/sbin\\:/usr/bin\\:/sbin\\:/bin, use_pty\n\nUser ub may run the following commands on java-test-01:\n    (ALL : ALL) ALL\n    (ALL) NOPASSWD: ALL\n"
+      }
+    },
+    {
+      "exit_code": 0,
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+      "target": {
+        "vmid": 250,
+        "ip": "10.63.30.30",
+        "host_key_alias": "dell-vm250",
+        "host_key_fingerprint": "SHA256:AwyeGczSVPEBV9PW6VZc2Iz3w5oA6sQoKYnNuVKgNik",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "observation": {
+        "hostname": "penpot-service",
+        "user": "ub",
+        "uid": 1000,
+        "groups": "ub sudo",
+        "sudo": "Matching Defaults entries for ub on penpot-service:\n    env_reset, mail_badpass, secure_path=/usr/local/sbin\\:/usr/local/bin\\:/usr/sbin\\:/usr/bin\\:/sbin\\:/bin, use_pty\n\nUser ub may run the following commands on penpot-service:\n    (ALL : ALL) ALL\n    (ALL) NOPASSWD: ALL\n"
+      }
+    },
+    {
+      "exit_code": 0,
+      "stderr": "",
+      "target": {
+        "vmid": 260,
+        "ip": "10.63.40.10",
+        "host_key_alias": "dell-vm260",
+        "host_key_fingerprint": "SHA256:jYNEYlwXnr4412nGU/Dg616AhDW8eZz3UDIxn4pP7c0",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "observation": {
+        "hostname": "nas-media",
+        "user": "ub",
+        "uid": 1000,
+        "groups": "ub sudo _ssh",
+        "sudo": "Matching Defaults entries for ub on nas-media:\n    env_reset, mail_badpass, secure_path=/usr/local/sbin\\:/usr/local/bin\\:/usr/sbin\\:/usr/bin\\:/sbin\\:/bin, use_pty\n\nUser ub may run the following commands on nas-media:\n    (ALL : ALL) ALL\n    (ALL) NOPASSWD: ALL\n"
+      }
+    },
+    {
+      "exit_code": 0,
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+      "target": {
+        "vmid": 270,
+        "ip": "10.63.30.40",
+        "host_key_alias": "dell-vm270",
+        "host_key_fingerprint": "SHA256:OjP5q9f3WXxGcoOHs23VlnOf258C6T+nNAxTiYoyf0g",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "observation": {
+        "hostname": "ops-service",
+        "user": "ub",
+        "uid": 1000,
+        "groups": "ub sudo",
+        "sudo": "Matching Defaults entries for ub on ops-service:\n    env_reset, mail_badpass, secure_path=/usr/local/sbin\\:/usr/local/bin\\:/usr/sbin\\:/usr/bin\\:/sbin\\:/bin, use_pty\n\nUser ub may run the following commands on ops-service:\n    (ALL : ALL) ALL\n    (ALL) NOPASSWD: ALL\n"
+      }
+    }
+  ],
+  "scope": "guest ub admin access; application/deployer rights separate"
+}

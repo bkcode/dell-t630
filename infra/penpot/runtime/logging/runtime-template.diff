@@ -1,0 +1,29 @@
+--- image:/tmp/nginx.conf.template
++++ runtime:/tmp/nginx.conf.template
+@@ -37,8 +37,8 @@
+     # took to answer (urt) and which internal address served the request
+     # (ua). With proxy_pass on variables there is no upstream keepalive,
+     # so uct measures one real TCP connection per request.
+-    log_format penpot_upstream '$remote_addr - $remote_user [$time_local] "$request" '
+-                               '$status $body_bytes_sent "$http_referer" "$http_user_agent" '
++    log_format penpot_upstream '$remote_addr - $remote_user [$time_local] "$request_method $uri $server_protocol" '
++                               '$status $body_bytes_sent "$http_user_agent" '
+                                'us=$upstream_status uct=$upstream_connect_time '
+                                'urt=$upstream_response_time ua=$upstream_addr';
+     access_log /dev/stdout penpot_upstream;
+--- image:/tmp/nginx-mcp-locations.conf.template
++++ runtime:/tmp/nginx-mcp-locations.conf.template
+@@ -1,4 +1,5 @@
+ location /mcp/ws {
++    error_log /dev/null;
+     proxy_set_header Upgrade $http_upgrade;
+     proxy_set_header Connection 'upgrade';
+     set $mcp_ws_backend $PENPOT_MCP_URI_WS;
+@@ -7,6 +8,7 @@
+ }
+ 
+ location /mcp/stream {
++    error_log /dev/null;
+     set $mcp_stream_backend $PENPOT_MCP_URI/mcp$is_args$args;
+     proxy_pass $mcp_stream_backend;
+     proxy_http_version 1.1;

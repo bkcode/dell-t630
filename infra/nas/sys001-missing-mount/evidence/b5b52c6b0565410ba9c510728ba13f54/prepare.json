@@ -1,0 +1,213 @@
+{
+  "collected_at": "2026-11-06T06:43:39.339837+00:00",
+  "exit_code": 0,
+  "result": {
+    "A": {
+      "native_container_HTTP_status": 200,
+      "consecutive_successes": 3,
+      "Docker_health": "healthy",
+      "zero_PortBindings": true,
+      "resource_contract": true,
+      "only_QA_volume_mounted": true,
+      "container_id": "9ee98c39d7aa216086571b52715e20328c0ae535ebaf68120ae98db315cb8ef1",
+      "resource_net_health_samples": [
+        {
+          "running": true,
+          "status": "running",
+          "health": "starting",
+          "OOM": false,
+          "ports_requested": {},
+          "ports_effective": {
+            "8096/tcp": null
+          },
+          "memory_limit": 536870912,
+          "cpu_limit": 250000000,
+          "pids_limit": 128,
+          "at": "2026-11-06T06:43:14.530016+00:00",
+          "memory.current": "56422400",
+          "memory.peak": "56463360",
+          "pids.current": "10",
+          "pids.peak": "10",
+          "cpu.stat": "usage_usec 743640\nuser_usec 619082\nsystem_usec 124557\nnice_usec 0\nnr_periods 28\nnr_throttled 27\nthrottled_usec 1953076\nnr_bursts 0\nburst_usec 0",
+          "native_HTTP_exit_code": 7,
+          "HTTP_status": "000",
+          "HTTP_body_or_credentials_emitted": false
+        },
+        {
+          "running": true,
+          "status": "running",
+          "health": "starting",
+          "OOM": false,
+          "ports_requested": {},
+          "ports_effective": {
+            "8096/tcp": null
+          },
+          "memory_limit": 536870912,
+          "cpu_limit": 250000000,
+          "pids_limit": 128,
+          "at": "2026-11-06T06:43:18.699395+00:00",
+          "memory.current": "83234816",
+          "memory.peak": "88268800",
+          "pids.current": "14",
+          "pids.peak": "20",
+          "cpu.stat": "usage_usec 1780530\nuser_usec 1516465\nsystem_usec 264065\nnice_usec 0\nnr_periods 70\nnr_throttled 69\nthrottled_usec 7704652\nnr_bursts 0\nburst_usec 0",
+          "native_HTTP_exit_code": 7,
+          "HTTP_status": "000",
+          "HTTP_body_or_credentials_emitted": false
+        },
+        {
+          "running": true,
+          "status": "running",
+          "health": "starting",
+          "OOM": false,
+          "ports_requested": {},
+          "ports_effective": {
+            "8096/tcp": null
+          },
+          "memory_limit": 536870912,
+          "cpu_limit": 250000000,
+          "pids_limit": 128,
+          "at": "2026-11-06T06:43:22.704665+00:00",
+          "memory.current": "104615936",
+          "memory.peak": "104689664",
+          "pids.current": "16",
+          "pids.peak": "20",
+          "cpu.stat": "usage_usec 2788794\nuser_usec 2399969\nsystem_usec 388825\nnice_usec 0\nnr_periods 110\nnr_throttled 109\nthrottled_usec 11745270\nnr_bursts 0\nburst_usec 0",
+          "native_HTTP_exit_code": 0,
+          "HTTP_status": "200",
+          "HTTP_body_or_credentials_emitted": false
+        },
+        {
+          "running": true,
+          "status": "running",
+          "health": "healthy",
+          "OOM": false,
+          "ports_requested": {},
+          "ports_effective": {
+            "8096/tcp": null
+          },
+          "memory_limit": 536870912,
+          "cpu_limit": 250000000,
+          "pids_limit": 128,
+          "at": "2026-11-06T06:43:29.790250+00:00",
+          "memory.current": "119312384",
+          "memory.peak": "125579264",
+          "pids.current": "18",
+          "pids.peak": "28",
+          "cpu.stat": "usage_usec 4539211\nuser_usec 3976990\nsystem_usec 562221\nnice_usec 0\nnr_periods 181\nnr_throttled 180\nthrottled_usec 21936261\nnr_bursts 0\nburst_usec 0",
+          "native_HTTP_exit_code": 0,
+          "HTTP_status": "200",
+          "HTTP_body_or_credentials_emitted": false
+        },
+        {
+          "running": true,
+          "status": "running",
+          "health": "healthy",
+          "OOM": false,
+          "ports_requested": {},
+          "ports_effective": {
+            "8096/tcp": null
+          },
+          "memory_limit": 536870912,
+          "cpu_limit": 250000000,
+          "pids_limit": 128,
+          "at": "2026-11-06T06:43:33.999900+00:00",
+          "memory.current": "124547072",
+          "memory.peak": "127959040",
+          "pids.current": "18",
+          "pids.peak": "28",
+          "cpu.stat": "usage_usec 5597511\nuser_usec 4937726\nsystem_usec 659785\nnice_usec 0\nnr_periods 223\nnr_throttled 222\nthrottled_usec 26138937\nnr_bursts 0\nburst_usec 0",
+          "native_HTTP_exit_code": 0,
+          "HTTP_status": "200",
+          "HTTP_body_or_credentials_emitted": false
+        },
+        {
+          "running": true,
+          "status": "running",
+          "health": "healthy",
+          "OOM": false,
+          "ports_requested": {},
+          "ports_effective": {
+            "8096/tcp": null
+          },
+          "memory_limit": 536870912,
+          "cpu_limit": 250000000,
+          "pids_limit": 128,
+          "at": "2026-11-06T06:43:38.086737+00:00",
+          "memory.current": "128155648",
+          "memory.peak": "132481024",
+          "pids.current": "18",
+          "pids.peak": "28",
+          "cpu.stat": "usage_usec 6612392\nuser_usec 5858745\nsystem_usec 753647\nnice_usec 0\nnr_periods 263\nnr_throttled 262\nthrottled_usec 29934665\nnr_bursts 0\nburst_usec 0",
+          "native_HTTP_exit_code": 0,
+          "HTTP_status": "200",
+          "HTTP_body_or_credentials_emitted": false
+        }
+      ]
+    },
+    "guard_A": {
+      "exit_code": 0,
+      "result": {
+        "status": "passed",
+        "mountpoint": "/srv/dell-nas-sys001/b5b52c6b0565410ba9c510728ba13f54/mount",
+        "filesystem_uuid": "498b2c5a-d912-4884-a9f9-9a460cd2b264",
+        "filesystem": "ext4",
+        "total_bytes": 4143677440,
+        "available_bytes": 3911081984
+      }
+    },
+    "status": "passed",
+    "same_installed_guard_used": true,
+    "test_profile": "v2-internal-only-zero-publish",
+    "nonce": "b5b52c6b0565410ba9c510728ba13f54",
+    "phase": "prepare",
+    "at": "2026-11-06T06:43:39.161070+00:00",
+    "real_media_disk_touched": false,
+    "real_NAS_snapshot": {
+      "files": {
+        "guard": "5ba9fd7cfc37d1e7398a454dff0151c516b15a15b93b3c37061f0486d01120fc",
+        "unit": "847a04928bf0d5d831e4cc8c7afe5490b61c7a5cc2d7ad7e570ca1fc7ed017ff",
+        "compose": "f57289cc286a4b2991f0c0709f3ef41336931a2041c8d8a051a87e9a434d86a7",
+        "env": "efa85416f73b28221ca7f15240f97dd33854c9e1bc0dc2c793b94b483a501a8e",
+        "OMVconfig": "e0f9787cb9d675bad04254f41c494822c6eced46b873bff7261763d62c1f6f06"
+      },
+      "units": {
+        "openmediavault-engined.service": {
+          "MainPID": "824",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "smbd.service": {
+          "MainPID": "852",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-nas-jellyfin.service": {
+          "MainPID": "1154",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "container": {
+        "id": "13d571fdc3332da2f81fc237cc7f445afc1e6ca313d2e2f43b3b9016e9fe7956",
+        "pid": 1308,
+        "started_at": "2026-11-06T05:42:27.252051871Z",
+        "health": "healthy",
+        "image": "sha256:fea863d0cd9ec445985d9c75fc6ed64e38a1d2766cf0c250a33d553f4fc1b771"
+      },
+      "real_mount": {
+        "target": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a",
+        "source": "/dev/sdb1",
+        "fstype": "ext4",
+        "uuid": "5b19837c-128c-498a-b79d-563db810c34a"
+      },
+      "samples": {
+        "media": "8f106c67b7b0f9ba8fc55ca569989fd955237e2c480ab3d36b63db7229dae35d",
+        "games": "8f106c67b7b0f9ba8fc55ca569989fd955237e2c480ab3d36b63db7229dae35d",
+        "incoming": "8f106c67b7b0f9ba8fc55ca569989fd955237e2c480ab3d36b63db7229dae35d"
+      }
+    },
+    "real_NAS_continuity_unchanged": true,
+    "QA_UUID": "498b2c5a-d912-4884-a9f9-9a460cd2b264"
+  }
+}

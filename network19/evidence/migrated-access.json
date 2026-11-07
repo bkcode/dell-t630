@@ -1,0 +1,74 @@
+{
+  "targets": {
+    "230": {
+      "vmid": 230,
+      "ip": "192.168.19.40",
+      "host_key_alias": "dell-vm230",
+      "host_key_fingerprint": "SHA256:KeItAegZqF5lSTCA3fAzKUFYuLAbnG9Pt1AqWskXMlM",
+      "trust_source": "PVE QGA over known SSH host"
+    },
+    "200": {
+      "vmid": 200,
+      "ip": "192.168.19.10",
+      "host_key_alias": "dell-vm200",
+      "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+      "trust_source": "PVE QGA over known SSH host"
+    },
+    "221": {
+      "vmid": 221,
+      "ip": "192.168.19.31",
+      "host_key_alias": "dell-vm221",
+      "host_key_fingerprint": "SHA256:ky2Wn7M2CKgUqHaj65c4KnqphO6d3zh6sGEoYYzomWo",
+      "trust_source": "PVE QGA over known SSH host"
+    },
+    "201": {
+      "vmid": 201,
+      "ip": "192.168.19.11",
+      "host_key_alias": "dell-vm201",
+      "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+      "trust_source": "PVE QGA over known SSH host"
+    },
+    "260": {
+      "vmid": 260,
+      "ip": "192.168.19.60",
+      "host_key_alias": "dell-vm260",
+      "host_key_fingerprint": "SHA256:jYNEYlwXnr4412nGU/Dg616AhDW8eZz3UDIxn4pP7c0",
+      "trust_source": "PVE QGA over known SSH host"
+    },
+    "240": {
+      "vmid": 240,
+      "ip": "192.168.19.45",
+      "host_key_alias": "dell-vm240",
+      "host_key_fingerprint": "SHA256:a5slwmQWq1U2AaeY9965RUYU63BxMymRus8IA9WydNQ",
+      "trust_source": "PVE QGA over known SSH host"
+    },
+    "210": {
+      "vmid": 210,
+      "ip": "192.168.19.20",
+      "host_key_alias": "dell-vm210",
+      "host_key_fingerprint": "SHA256:8bBCQbBKGmZAw5q2AgT2vXHsyr2aFJktLqs/tDZ9SiA",
+      "trust_source": "PVE QGA over known SSH host"
+    },
+    "220": {
+      "vmid": 220,
+      "ip": "192.168.19.30",
+      "host_key_alias": "dell-vm220",
+      "host_key_fingerprint": "SHA256:2PFQYC3uPSg/sMihWZZ7R1vgkKKozJbTwTjf6VNWwG4",
+      "trust_source": "PVE QGA over known SSH host"
+    },
+    "250": {
+      "vmid": 250,
+      "ip": "192.168.19.50",
+      "host_key_alias": "dell-vm250",
+      "host_key_fingerprint": "SHA256:AwyeGczSVPEBV9PW6VZc2Iz3w5oA6sQoKYnNuVKgNik",
+      "trust_source": "PVE QGA over known SSH host"
+    },
+    "270": {
+      "vmid": 270,
+      "ip": "192.168.19.70",
+      "host_key_alias": "dell-vm270",
+      "host_key_fingerprint": "SHA256:OjP5q9f3WXxGcoOHs23VlnOf258C6T+nNAxTiYoyf0g",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  }
+}

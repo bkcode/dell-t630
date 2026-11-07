@@ -1,0 +1,254 @@
+{
+  "at": "2026-11-07T00:24:24.566695+08:00",
+  "active_matches_local": true,
+  "result": {
+    "code_sha256": {
+      "policy.py": "e34905f9f0d8ee0ee6071445ab942403beac533a475ee5fcdd181c84e94c4559",
+      "manage.py": "6f6ad767a8d03fc2f03ce4b8f55bf25a5ec15e68c52a586cf162fa5e7f005481"
+    },
+    "pending": false,
+    "config": {
+      "schema_version": 1,
+      "vmid": 190,
+      "hostname": "network-gateway",
+      "WAN_MAC": "02:63:19:01:90:00",
+      "LAN_MAC": "02:63:19:01:90:01",
+      "management_hosts": [
+        "192.168.21.22",
+        "192.168.21.116"
+      ],
+      "hosts": [
+        {
+          "role": "cf-tunnel",
+          "address": "192.168.19.5"
+        },
+        {
+          "role": "data-docker-base-tpl",
+          "address": "192.168.19.101"
+        },
+        {
+          "role": "publish-legacy",
+          "address": "192.168.19.104"
+        },
+        {
+          "role": "data-prod-db",
+          "address": "192.168.19.10"
+        },
+        {
+          "role": "data-prod-infra",
+          "address": "192.168.19.11"
+        },
+        {
+          "role": "data-test",
+          "address": "192.168.19.20"
+        },
+        {
+          "role": "publish-service",
+          "address": "192.168.19.30"
+        },
+        {
+          "role": "artifact-service",
+          "address": "192.168.19.31"
+        },
+        {
+          "role": "java-prod-01",
+          "address": "192.168.19.40"
+        },
+        {
+          "role": "java-prod-02",
+          "address": "192.168.19.41"
+        },
+        {
+          "role": "java-prod-03",
+          "address": "192.168.19.42"
+        },
+        {
+          "role": "java-test-01",
+          "address": "192.168.19.45"
+        },
+        {
+          "role": "penpot-service",
+          "address": "192.168.19.50"
+        },
+        {
+          "role": "nas-media",
+          "address": "192.168.19.60"
+        },
+        {
+          "role": "ops-service",
+          "address": "192.168.19.70"
+        },
+        {
+          "role": "dell-template-inspect",
+          "address": "192.168.19.190"
+        },
+        {
+          "role": "dell-linux-clone-test",
+          "address": "192.168.19.191"
+        },
+        {
+          "role": "dell-docker-clone-test",
+          "address": "192.168.19.192"
+        },
+        {
+          "role": "dell-docker-clone-a",
+          "address": "192.168.19.193"
+        },
+        {
+          "role": "dell-linux-clone-b",
+          "address": "192.168.19.194"
+        },
+        {
+          "role": "dell-docker-clone-b",
+          "address": "192.168.19.195"
+        },
+        {
+          "role": "dell-restore-baseline",
+          "address": "192.168.19.196"
+        }
+      ],
+      "WAN_to_LAN": [
+        {
+          "src": [
+            "192.168.21.0/24"
+          ],
+          "dst": [
+            "192.168.19.50"
+          ],
+          "tcp": [
+            9001
+          ]
+        },
+        {
+          "src": [
+            "192.168.21.0/24"
+          ],
+          "dst": [
+            "192.168.19.31"
+          ],
+          "tcp": [
+            8081
+          ]
+        },
+        {
+          "src": [
+            "192.168.21.0/24"
+          ],
+          "dst": [
+            "192.168.19.60"
+          ],
+          "tcp": [
+            80,
+            445,
+            8096
+          ]
+        },
+        {
+          "src": [
+            "192.168.21.0/24"
+          ],
+          "dst": [
+            "192.168.19.45"
+          ],
+          "tcp": [
+            9999
+          ]
+        },
+        {
+          "src": [
+            "192.168.21.0/24"
+          ],
+          "dst": [
+            "192.168.19.40"
+          ],
+          "tcp": [
+            9999
+          ]
+        },
+        {
+          "src": [
+            "192.168.21.0/24"
+          ],
+          "dst": [
+            "192.168.19.70"
+          ],
+          "tcp": [
+            3000
+          ]
+        },
+        {
+          "src": [
+            "192.168.21.22",
+            "192.168.21.116"
+          ],
+          "dst": [
+            "192.168.19.0/24"
+          ],
+          "tcp": [
+            22,
+            3306,
+            5672,
+            6379,
+            8848,
+            9090,
+            9093,
+            9100,
+            9848,
+            9849,
+            15672
+          ]
+        }
+      ],
+      "public_tcp": [
+        53,
+        80,
+        443
+      ],
+      "public_udp": [
+        53,
+        123
+      ],
+      "CF_compat_tcp": [
+        80,
+        443,
+        8081,
+        8096,
+        9001,
+        9999
+      ],
+      "migration_plan_sha256": "6caf1e081cfca5e4001723179b1fb7da908ef2f49383c287595aea3ec8bd4d97",
+      "OW_fake_IP_proxy": {
+        "source": "192.168.19.0/24",
+        "destination": "198.18.0.0/15",
+        "tcp": [
+          53,
+          80,
+          443
+        ],
+        "udp": [
+          53,
+          123
+        ],
+        "icmp": true
+      },
+      "CF_fake_IP_proxy": {
+        "source": "192.168.19.5",
+        "destination": "198.18.0.0/15",
+        "tcp": [
+          7844
+        ],
+        "udp": [
+          7844
+        ]
+      },
+      "WireGuard_client_access": {
+        "source": "10.66.66.0/24",
+        "destination": "192.168.19.50",
+        "tcp": [
+          9001
+        ],
+        "no_NAT": true
+      }
+    }
+  }
+}

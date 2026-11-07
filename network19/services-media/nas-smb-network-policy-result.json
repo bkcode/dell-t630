@@ -1,0 +1,17 @@
+{
+  "role": 260,
+  "status": "official-SMB-network-allowlists-adapted-no-auth-or-permission-change",
+  "old_allowlist": "192.168.21.0/24 10.63.40.0/24 127.0.0.1",
+  "new_allowlist": "192.168.21.0/24 192.168.19.0/24 127.0.0.1",
+  "shareIDs": {
+    "media": "32e8c383-753a-48b4-b397-9adf490bb0e1",
+    "games": "86815a17-f9cd-4c0e-b548-4266949b75d4",
+    "incoming": "c9c8d068-e056-4ed3-be78-775118367582"
+  },
+  "all_other_OMV_share_fields_unchanged": true,
+  "effective_users_groups_read_write_guest_policies_unchanged": true,
+  "root_shadow_key_guard_bytes_unchanged": true,
+  "official_setter_and_samba_Salt": true,
+  "no_ALL_expansion_or_account_change": true,
+  "private_backup_mode600": true
+}

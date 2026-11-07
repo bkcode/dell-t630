@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-06T12:24:50.602898",
+  "result": {
+    "exit_code": 0,
+    "stdout": "{\"consumer_role\": \"java-prod-01\", \"runtime_user\": \"finger\", \"read_only_identity\": \"dell-reader\", \"artifact_sha256\": \"baa80d112a9a144b7ffbb3e71bc202b0e231eb71c9a0ef0154dcc55b2865ea59\", \"artifact_bytes\": 311, \"publisher_credentials_received\": false, \"reader_credentials_persisted\": false, \"business_application_started\": false}\n",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+    "target": {
+      "vmid": 230,
+      "ip": "10.63.10.20",
+      "host_key_alias": "dell-vm230",
+      "host_key_fingerprint": "SHA256:SsWkQtSVu/3sssyrmVMb13r8r9/zQhWeEH3ZQ/CzCDM",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  }
+}

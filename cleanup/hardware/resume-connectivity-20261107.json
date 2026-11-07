@@ -1,0 +1,40 @@
+{
+  "at": "2026-11-07T10:14:54.012741+08:00",
+  "checks": {
+    "local": {
+      "exit": 0,
+      "out": "en1: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500\n\toptions=6460<TSO4,TSO6,CHANNEL_IO,PARTIAL_CSUM,ZEROINVERT_CSUM>\n\tether 02:00:00:00:00:00\n\tinet6 fe80::896:bd0a:ae84:7661%en1 prefixlen 64 secured scopeid 0x11 \n\tinet6 2409:8a4c:1840:640:cbf:844f:cb23:e8a4 prefixlen 64 autoconf secured \n\tinet6 2409:8a4c:1840:640:1146:5475:11dd:5106 prefixlen 64 deprecated autoconf temporary \n\tinet 192.168.21.116 netmask 0xffffff00 broadcast 192.168.21.255\n\tinet6 2409:8a4c:1840:640:542f:2ee:aa6c:3ce0 prefixlen 64 deprecated autoconf temporary \n\tinet6 2409:8a4c:1840:640:d0f7:a0b:c9a9:c9d prefixlen 64 autoconf temporary \n\tnd6 options=201<PERFORMNUD,DAD>\n\tmedia: autoselect\n\tstatus: active\n",
+      "err": ""
+    },
+    "route": {
+      "exit": 0,
+      "out": "   route to: 192.168.21.22\ndestination: 192.168.21.22\n  interface: en1\n      flags: <UP,HOST,REJECT,DONE,LLINFO,WASCLONED,IFSCOPE,IFREF>\n recvpipe  sendpipe  ssthresh  rtt,msec    rttvar  hopcount      mtu     expire\n       0         0         0         0         0         0      1500         0 \n",
+      "err": ""
+    },
+    "PVE_ARP": {
+      "exit": 1,
+      "out": "192.168.21.22 (192.168.21.22) -- no entry\n",
+      "err": ""
+    },
+    "192.168.21.1:80": {
+      "open": true,
+      "err": "Connection to 192.168.21.1 port 80 [tcp/http] succeeded!"
+    },
+    "192.168.21.21:443": {
+      "open": true,
+      "err": "Connection to 192.168.21.21 port 443 [tcp/https] succeeded!"
+    },
+    "192.168.21.22:22": {
+      "open": false,
+      "err": ""
+    },
+    "192.168.21.22:8006": {
+      "open": false,
+      "err": ""
+    },
+    "192.168.21.23:22": {
+      "open": false,
+      "err": ""
+    }
+  }
+}

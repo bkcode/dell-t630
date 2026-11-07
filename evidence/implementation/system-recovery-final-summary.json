@@ -1,0 +1,42 @@
+{
+  "at": "2026-11-06T15:04:45.927296",
+  "status": "normal-guest-reboot-and-isolated-NAS-missing-mount-protection-verified",
+  "positive_reboot_evidence": [
+    "evidence/implementation/rolling-guest-reboot-acceptance.json",
+    "infra/nexus/rebuild-acceptance-result.json",
+    "infra/penpot/runtime/health-supervision/runtime-status.json"
+  ],
+  "negative_QA_phases": {
+    "prepare": {
+      "artifact": "infra/nas/sys001-missing-mount/evidence/b5b52c6b0565410ba9c510728ba13f54/prepare.json",
+      "status": "passed"
+    },
+    "b1": {
+      "artifact": "infra/nas/sys001-missing-mount/evidence/b5b52c6b0565410ba9c510728ba13f54/b1.json",
+      "status": "passed"
+    },
+    "b2": {
+      "artifact": "infra/nas/sys001-missing-mount/evidence/b5b52c6b0565410ba9c510728ba13f54/b2.json",
+      "status": "passed"
+    },
+    "resume-c": {
+      "artifact": "infra/nas/sys001-missing-mount/evidence/b5b52c6b0565410ba9c510728ba13f54/resume-c.json",
+      "status": "passed"
+    },
+    "cleanup": {
+      "artifact": "infra/nas/sys001-missing-mount/evidence/b5b52c6b0565410ba9c510728ba13f54/cleanup.json",
+      "status": "passed"
+    }
+  },
+  "guard": "same installed production guard, unchanged SHA; separate4GiB loop/QA instance only",
+  "NAS_real_media_or_service_modified": false,
+  "NAS_original_PIDs_IDs_UUIDs_samples_unchanged": true,
+  "rootfs_fallback_write_observed": false,
+  "temporary_QA_cleanup_complete": true,
+  "limitations": [
+    "Normal guest reboots only, no PVE host/power disaster",
+    "B2 deliberately detached onlyQA loop; not merely unmount, localguard failure independently testedB1",
+    "Local guard/systemd failure signals recorded; no real media pull/unmount or QA Lark notification delivery test",
+    "Original host-port ready attempt, numeric precheck sequencing issue and originalC old-exit race failures retained, not rewritten; corrected C performed once after reviewed bounded wait"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "vmid": 210,
+  "hostname": "data-test",
+  "old_ip": "10.63.20.10",
+  "old_gateway": "10.63.20.1",
+  "new_ip": "192.168.19.20",
+  "prefix": 24,
+  "gateway": "192.168.19.1",
+  "DNS": "192.168.19.1",
+  "MAC": "bc:24:11:5d:2d:98",
+  "old_PVE_net0": "virtio=BC:24:11:5D:2D:98,bridge=vmbr20",
+  "new_PVE_net0": "virtio=BC:24:11:5D:2D:98,bridge=vmbr19,firewall=0"
+}

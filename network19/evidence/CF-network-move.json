@@ -1,0 +1,14 @@
+{
+  "status": "CF-network19-committed-connection-registered-after-OW-fakeIP-compatibility",
+  "token_exported": false,
+  "protected_backup": "PVE-only",
+  "old_hot_attempt": "PVE restored oldNIC/IP but default route missing; preserving service with controlled container restart",
+  "phase": "new-container-started",
+  "reason": "RuntimeError:cloudflared-not-active",
+  "at": "2026-11-06T17:06:01.604163",
+  "protected_archive_PVE_only": true,
+  "original_cloudflared_service_bytes_including_token_unchanged": true,
+  "secret_bytes_hashes_or_tokens_emitted": false,
+  "post_check": "CF-post-fakeIP-check.json",
+  "hot_attempt_failed_and_controlled_restart_recorded": true
+}

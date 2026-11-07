@@ -1,0 +1,98 @@
+{
+  "prepared_at": "2026-11-06T07:59:17.302661+00:00",
+  "status": "three-media-roles-new19-runtime-and-semantic-verified",
+  "router": {
+    "vmid": 190,
+    "outside": "192.168.21.23",
+    "inside": "192.168.19.1"
+  },
+  "guest_roles": [
+    {
+      "vmid": 250,
+      "role": "penpot-service",
+      "old_ip": "10.63.30.30",
+      "new_ip": "192.168.19.50",
+      "prefix_length": 24,
+      "new_gateway": "192.168.19.1",
+      "DNS_policy": "192.168.19.1 forwarding via router to192.168.21.1",
+      "MAC": "bc:24:11:78:e9:84",
+      "old_interface": "eth0",
+      "public_uri": "http://192.168.19.50:9001",
+      "unit": "dell-penpot.service",
+      "env_path": "/etc/penpot/.env",
+      "data_mount": "/srv/penpot",
+      "data_uuid": "ccccda03-bffd-4054-afd3-e0e22f0c607e",
+      "data_and_identity_reinitialization": false
+    },
+    {
+      "vmid": 221,
+      "role": "artifact-service",
+      "old_ip": "10.63.30.20",
+      "new_ip": "192.168.19.31",
+      "prefix_length": 24,
+      "new_gateway": "192.168.19.1",
+      "DNS_policy": "192.168.19.1 forwarding via router to192.168.21.1",
+      "MAC": "bc:24:11:ec:e1:6f",
+      "old_interface": "eth0",
+      "public_uri": "http://192.168.19.31:8081",
+      "unit": "dell-nexus.service",
+      "env_path": "/etc/nexus.env",
+      "data_mount": "/srv/nexus",
+      "data_uuid": "239dc45a-b1f3-408b-a8ef-7afa77b52204",
+      "data_and_identity_reinitialization": false
+    },
+    {
+      "vmid": 260,
+      "role": "nas-media",
+      "old_ip": "10.63.40.10",
+      "new_ip": "192.168.19.60",
+      "prefix_length": 24,
+      "new_gateway": "192.168.19.1",
+      "DNS_policy": "192.168.19.1 forwarding via router to192.168.21.1",
+      "MAC": "bc:24:11:a7:3b:73",
+      "old_interface": "ens18",
+      "public_uri": "http://192.168.19.60:8096",
+      "unit": "dell-nas-jellyfin.service",
+      "env_path": "/opt/dell/nas/.env",
+      "data_mount": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a",
+      "data_uuid": "5b19837c-128c-498a-b79d-563db810c34a",
+      "data_and_identity_reinitialization": false
+    }
+  ],
+  "actions_performed": {
+    "guest_reads": true,
+    "guest_writes": true,
+    "PVE_or_OW_writes": false,
+    "source_Git_or_Mac_changed": false,
+    "credential_values_exported_or_changed": false,
+    "private_env_parsed_in_guest_memory_for_public_keys_only": true,
+    "guest_writes_scope": "reviewedpublic migration tools, guest-localprivate stage andapplication config, official three-share network allowlist, synthetic acceptance only"
+  },
+  "cutover_responsibility": {
+    "root": "router/bridges/guest NIC and persistent IP/route/ACL/strict trust metadata; QGA standby and rollback",
+    "services-media": "only reviewed role config transaction once an explicit window is supplied",
+    "other_agents": "data/Java/Ops consumers/exporter health targets/firewall retargeting"
+  },
+  "must_not_publish": [
+    "Penpot PG/Valkey/admin/Mailpit/MCP-helper/import4405/worker ports",
+    "Nexus container backend directly or proxy outbound",
+    "Docker API/socket or NAS games toJellyfin"
+  ],
+  "NAS_entrypoints": {
+    "OMV": "http://192.168.19.60:80",
+    "Jellyfin": "http://192.168.19.60:8096",
+    "SMB": "smb://192.168.19.60/{media,games,incoming}"
+  },
+  "network_bridge": "vmbr19",
+  "DNS": {
+    "server": "192.168.19.1",
+    "upstream": "192.168.21.1"
+  },
+  "Penpot_DNS": {
+    "internal_proxy": "172.30.250.53",
+    "upstream": "192.168.19.1:53",
+    "old_DoH_removed_from_active_full_compose": true,
+    "guest_apply_performed": false
+  },
+  "current_evidence": "EXECUTION.md"
+}

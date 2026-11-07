@@ -1,0 +1,79 @@
+{
+  "status": "running-fresh-identity-hosted-import-and-rebuild-reboot-verified",
+  "summary": {
+    "source_components": 49,
+    "target_components": 49,
+    "component_gav_sets_equal": true,
+    "primary_actual_sha_verified": 234,
+    "metadata_service_regenerated": 35,
+    "metadata_bytes_different": 35,
+    "metadata_coordinate_versions_equal": true,
+    "metadata_latest_release_differences": 3,
+    "generated_checksums_verified": 1076,
+    "checksum_file_bytes_different": 140,
+    "initial_added": 234,
+    "same_manifest_retry_added": 0,
+    "same_manifest_retry_matching_skip": 234,
+    "source_request_id": "1157b5a425d1ec0a35bbca8ca3fe65413473a00db7d3bd4eaa6da6e7326679cc",
+    "group_members": [
+      "finger-releases",
+      "finger-snapshots",
+      "imnull-releases"
+    ],
+    "publisher_write_scope": [
+      "finger-snapshots",
+      "dell-acceptance"
+    ],
+    "formal_release_and_legacy_write_delete_denied_by_role": true,
+    "old_h2_users_credentials_imported": false,
+    "external_proxy_requests": 0,
+    "service_restart": "force-recreate-two-containers-and-guest-reboot-passed",
+    "container_ids_changed": true,
+    "boot_id_changed": true,
+    "identity_files_preserved": true,
+    "eula_preserved": true,
+    "other_repository_synthetic_canary_preserved": true,
+    "pids_limit": 1024,
+    "runtime_pids": {
+      "nexus-nexus-1": 73,
+      "nexus-gateway-1": 3
+    },
+    "checked_at": "2026-11-06T12:52:16.377611+08:00"
+  },
+  "persistence": {
+    "container_rebuild_and_guest_reboot": true,
+    "boot_before": "340fcd0f-da9b-42ee-95a9-e94408076e61",
+    "boot_after": "ca932a9c-6293-414d-a0b2-b0bbe73a3730",
+    "container_ids_changed_from_baseline": true,
+    "recreated_container_ids_preserved_after_boot": true,
+    "new_identity_files_preserved": true,
+    "eula_still_accepted": true,
+    "repository_group_roles_preserved": true,
+    "data_uuid_preserved": true,
+    "primary_sha_verified": 234,
+    "component_gav_verified": 49,
+    "metadata_verified": 35,
+    "checksum_verified": 1076,
+    "other_repo_synthetic_jar_sha256_preserved": "baa80d112a9a144b7ffbb3e71bc202b0e231eb71c9a0ef0154dcc55b2865ea59",
+    "runtime_pids": {
+      "nexus-nexus-1": 73,
+      "nexus-gateway-1": 3
+    },
+    "pids_limit": 1024,
+    "old_h2_users_upstream_credentials_used": false,
+    "external_proxy_requests": 0,
+    "source_or_pve_restarted": false,
+    "container_ids_before": {
+      "/nexus-nexus-1": "b95415524f58ae4c3d804b2915a5cc9897f38d685fafe4580bb217104c2d41a4",
+      "/nexus-gateway-1": "2ad1f92273da7cf54133a190605422e8401aaa2c60dde50583e004c693f46225"
+    },
+    "container_ids_recreated": {
+      "/nexus-nexus-1": "70d4bec45b73e68dee425c6962ba0ec2d1448b03187dfa0dc8369bdc44eb65bb",
+      "/nexus-gateway-1": "f66975b48be1d7ef073a3f6318f6646fa53e4522b0fb42f17f756acc85927f55"
+    },
+    "docker_classic_overlay2": true,
+    "docker_root_dir": "/var/lib/docker",
+    "backend_internal_only": true,
+    "systemd_active": "active"
+  }
+}

@@ -1,0 +1,436 @@
+{
+  "captured_at": "2026-11-07T02:17:19.111861+08:00",
+  "read_only": true,
+  "roles": [
+    {
+      "vmid": 200,
+      "hostname": "data-prod-db",
+      "files": [
+        {
+          "path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "sha256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm200/guest-targets.json"
+        },
+        {
+          "path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "sha256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "mode": 493,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm200/install-guest-baseline.py"
+        },
+        {
+          "path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "mode": 493,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm200/collect-guest-health.py"
+        },
+        {
+          "path": "/etc/dell-guest-monitoring/health.json",
+          "sha256": "bfecc990f0c4afb384a9c43f4b5461cc0f1f01f902c16c7e674e079f5e3ad0eb",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "health_metadata": {
+            "role": "data-prod-db",
+            "private_ip": "192.168.19.10",
+            "service_count": 4,
+            "http_count": 0
+          }
+        }
+      ]
+    },
+    {
+      "vmid": 201,
+      "hostname": "data-prod-infra",
+      "files": [
+        {
+          "path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "sha256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm201/guest-targets.json"
+        },
+        {
+          "path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "sha256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "mode": 493,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm201/install-guest-baseline.py"
+        },
+        {
+          "path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "mode": 493,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm201/collect-guest-health.py"
+        },
+        {
+          "path": "/etc/dell-guest-monitoring/health.json",
+          "sha256": "b27a081ab737d13b5d0b5c67b60f7f45b25d016f3936dedcd9c1fdf13f11e412",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "health_metadata": {
+            "role": "data-prod-infra",
+            "private_ip": "192.168.19.11",
+            "service_count": 4,
+            "http_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "vmid": 210,
+      "hostname": "data-test",
+      "files": [
+        {
+          "path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "sha256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm210/guest-targets.json"
+        },
+        {
+          "path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "sha256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "mode": 493,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm210/install-guest-baseline.py"
+        },
+        {
+          "path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "mode": 493,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm210/collect-guest-health.py"
+        },
+        {
+          "path": "/etc/dell-guest-monitoring/health.json",
+          "sha256": "2a9563cf2b980e4ea457c5b6938b8687a373ab89cca9cd74e3713db6ccdc7c50",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "health_metadata": {
+            "role": "data-test",
+            "private_ip": "192.168.19.20",
+            "service_count": 4,
+            "http_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "vmid": 220,
+      "hostname": "publish-service",
+      "files": [
+        {
+          "path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "sha256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm220/guest-targets.json"
+        },
+        {
+          "path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "sha256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "mode": 493,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm220/install-guest-baseline.py"
+        },
+        {
+          "path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "mode": 493,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm220/collect-guest-health.py"
+        },
+        {
+          "path": "/etc/dell-guest-monitoring/health.json",
+          "sha256": "90e624a3cf03eeacfc302d7d47711c3c71b9e93b41e654dd1698623656014320",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "health_metadata": {
+            "role": "publish-service",
+            "private_ip": "192.168.19.30",
+            "service_count": 3,
+            "http_count": 0
+          }
+        }
+      ]
+    },
+    {
+      "vmid": 221,
+      "hostname": "artifact-service",
+      "files": [
+        {
+          "path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "sha256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm221/guest-targets.json"
+        },
+        {
+          "path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "sha256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "mode": 493,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm221/install-guest-baseline.py"
+        },
+        {
+          "path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "mode": 493,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm221/collect-guest-health.py"
+        },
+        {
+          "path": "/etc/dell-guest-monitoring/health.json",
+          "sha256": "37ebb565de493c1454b36947ff492d3dd64bfb0ae2583583f0eb86ec159aac75",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "health_metadata": {
+            "role": "artifact-service",
+            "private_ip": "192.168.19.31",
+            "service_count": 4,
+            "http_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "vmid": 230,
+      "hostname": "java-prod-01",
+      "files": [
+        {
+          "path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "sha256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm230/guest-targets.json"
+        },
+        {
+          "path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "sha256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "mode": 493,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm230/install-guest-baseline.py"
+        },
+        {
+          "path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "mode": 493,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm230/collect-guest-health.py"
+        },
+        {
+          "path": "/etc/dell-guest-monitoring/health.json",
+          "sha256": "46dda1ad99b21bb945f3b81cfde97a3b14121b8c81c58a603cacd67c94c7b189",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "health_metadata": {
+            "role": "java-prod-01",
+            "private_ip": "192.168.19.40",
+            "service_count": 3,
+            "http_count": 0
+          }
+        }
+      ]
+    },
+    {
+      "vmid": 240,
+      "hostname": "java-test-01",
+      "files": [
+        {
+          "path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "sha256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm240/guest-targets.json"
+        },
+        {
+          "path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "sha256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "mode": 493,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm240/install-guest-baseline.py"
+        },
+        {
+          "path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "mode": 493,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm240/collect-guest-health.py"
+        },
+        {
+          "path": "/etc/dell-guest-monitoring/health.json",
+          "sha256": "b19b5e4e0eb585ea6361a36ae781293a5b0d4e7640c714a740b2eb71dce67484",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "health_metadata": {
+            "role": "java-test-01",
+            "private_ip": "192.168.19.45",
+            "service_count": 3,
+            "http_count": 0
+          }
+        }
+      ]
+    },
+    {
+      "vmid": 250,
+      "hostname": "penpot-service",
+      "files": [
+        {
+          "path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "sha256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm250/guest-targets.json"
+        },
+        {
+          "path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "sha256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "mode": 493,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm250/install-guest-baseline.py"
+        },
+        {
+          "path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "mode": 493,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm250/collect-guest-health.py"
+        },
+        {
+          "path": "/etc/dell-guest-monitoring/health.json",
+          "sha256": "27c4a99c65a477bd4b63cfd75b3b35cbdba3d50b5ed605b584fc86d3356784a9",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "health_metadata": {
+            "role": "penpot-service",
+            "private_ip": "192.168.19.50",
+            "service_count": 4,
+            "http_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "vmid": 260,
+      "hostname": "nas-media",
+      "files": [
+        {
+          "path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "sha256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm260/guest-targets.json"
+        },
+        {
+          "path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "sha256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "mode": 493,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm260/install-guest-baseline.py"
+        },
+        {
+          "path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "mode": 493,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm260/collect-guest-health.py"
+        },
+        {
+          "path": "/etc/dell-guest-monitoring/health.json",
+          "sha256": "272796f6f1e1c2c02d8ac3180bf5a984fbde48faf27645b17b8940665f9d972f",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "health_metadata": {
+            "role": "nas-media",
+            "private_ip": "192.168.19.60",
+            "service_count": 7,
+            "http_count": 2
+          }
+        }
+      ]
+    },
+    {
+      "vmid": 270,
+      "hostname": "ops-service",
+      "files": [
+        {
+          "path": "/opt/dell/guest-monitoring/guest-targets.json",
+          "sha256": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm270/guest-targets.json"
+        },
+        {
+          "path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+          "sha256": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "mode": 493,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm270/install-guest-baseline.py"
+        },
+        {
+          "path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "mode": 493,
+          "uid": 0,
+          "gid": 0,
+          "baseline": "baselines/vm270/collect-guest-health.py"
+        },
+        {
+          "path": "/etc/dell-guest-monitoring/health.json",
+          "sha256": "dc65c27cc8367f1332ca26250f898c6c1c2ae689cae6ae5ad87122ba29088a7d",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "health_metadata": {
+            "role": "ops-service",
+            "private_ip": "192.168.19.70",
+            "service_count": 5,
+            "http_count": 3
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,613 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-11-06T05:41:26.380138+08:00",
+  "timezone": "Asia/Shanghai",
+  "scope": "local-public-amd64-extras-cache-only",
+  "docker_context": "orbstack",
+  "source_files": [
+    {
+      "path": "/Users/yangzhaohui/work/www/harness/dell/infra/ops/images.lock.json",
+      "sha256": "d5c79d99b823f95a3cd27114929dd98184c47bb633063fdcbc1b39a81e9fc593"
+    },
+    {
+      "path": "/Users/yangzhaohui/work/www/harness/dell/infra/nas/.env.example",
+      "sha256": "04003a3de5aba5c6b5e244e59359602481cd9f907c3f8dc5f368a3bf4199a8df"
+    }
+  ],
+  "source_before": {
+    "collected_at": "2026-11-06T05:41:26.523978+08:00",
+    "containers": [
+      {
+        "id": "08dc2c229b7e733e4e72fc3fa979ac02936c9612f8d3730fb0dcaf0276f2ca24",
+        "name": "/finger-bitgo-express-test-express-1",
+        "image_id": "sha256:4390224e59dca080e4046db51c113a62cf8027429dd01638bd6e937e8cbf629d",
+        "state": "exited",
+        "started_at": "2026-10-14T05:12:35.239159205Z"
+      },
+      {
+        "id": "0baef97331827c824e89ff303c1e700f4b6f36afa101e39a85c063956d862623",
+        "name": "/penpot-penpot-frontend-1",
+        "image_id": "sha256:a1a9c9bb90b93f3cff334448648be90fc3ca7e315840298772f43b24306f5c82",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.234179422Z"
+      },
+      {
+        "id": "183a8b9f0096f49851caf952f7d5c52575779c6b3a15d66a173b2ba702a0e7ea",
+        "name": "/penpot-penpot-worker-1",
+        "image_id": "sha256:289d99c39712b9bbcb12ee4343571233421523f471c05c9f4fb8e6f3b26b9bb0",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:13.320524546Z"
+      },
+      {
+        "id": "19755277cfa7774a1de50bf4c4f50127a5d5eb8e0954d2b94f4f835957a2c33d",
+        "name": "/redis",
+        "image_id": "sha256:b8bbd8ea40e06ac580453a51bac3341e29a492b75ea7cd1b517e82a421a0b926",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.7686016Z"
+      },
+      {
+        "id": "1cabd374862fb4a26ca1fd6de6d96c9b79ba2a5295ebc2801f163cafc2ffad68",
+        "name": "/penpot-penpot-postgres-1",
+        "image_id": "sha256:04fba66fe1804636acd8ce729a27cb6f0a5dbe591c8898433aeb6444d7267bfd",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:14.54120588Z"
+      },
+      {
+        "id": "1fee5c4074fac7f6fe309a7ecd24ef882a1b038c1890f13aef5fa04453105788",
+        "name": "/mysql",
+        "image_id": "sha256:b2f81adb2f3335ee77c6a74a6099bea0c5dca5b51ed01cd84c7966d826992764",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.765822244Z"
+      },
+      {
+        "id": "26fe6a3fc9cfa9a03f0e6c4dce519278cc5c58c3c1b35c72fe983d5562092fac",
+        "name": "/penpot-penpot-admin-console-1",
+        "image_id": "sha256:cdd0cddbd829b9aa3ce55b8622f9884c12b094bdcbdc6f1036f0f260a954570d",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.358799797Z"
+      },
+      {
+        "id": "2ee2ba25a906bffde3ba606789637ab66e59672570836186ed6765fdf5487f25",
+        "name": "/penpot-penpot-import-1",
+        "image_id": "sha256:2ee54c62207d15e6f063db95870c76442b1ba757b47ebaf72863051b86238294",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.473813922Z"
+      },
+      {
+        "id": "409d564f9de683079f048572d86a9fd41859a5cc70367a0716f7b9b86adf278f",
+        "name": "/penpot-penpot-backend-1",
+        "image_id": "sha256:28dd4e06b33a70d9ace1b3589def985cddd3f5b49b4964d06a5093381356ee7c",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:14.106480088Z"
+      },
+      {
+        "id": "45194c5c15ccaf3f16c70aa7ad170f4d0832009e8ba4b2f2adf28345da1ad868",
+        "name": "/kafka-docker-zookeeper-1",
+        "image_id": "sha256:3f43f72cb2832e7a5fbed7f7dbcd0c43004357974d8f32555d101bd53e81e74f",
+        "state": "exited",
+        "started_at": "2026-05-18T05:23:20.188993466Z"
+      },
+      {
+        "id": "4ee8299f444554c33b2a2dc7d6c53eb4e23df7586476dc53e6abf5cc83e8424f",
+        "name": "/nexus3",
+        "image_id": "sha256:e90bcee9a286ce698455ba1524f811390b9f77d18e893986ac20b65346cb81d4",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.754667194Z"
+      },
+      {
+        "id": "50dcad169d95e62250723f97ebf240ec3d5591b2228ab08ad5ca5c1ce7b6741f",
+        "name": "/penpot-penpot-exporter-1",
+        "image_id": "sha256:9918a73bb7c720252df3124bf674ade2493f970e8f63e711a442432d810c2e58",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.304331589Z"
+      },
+      {
+        "id": "61cfa904c75240b900e5ec2b443f58ff05f5e906d29d3638b3656f422d4aed49",
+        "name": "/nacos",
+        "image_id": "sha256:e7e48cb036c4e72bbb37b2fa04557e1fca192392eb954120e7b0b785fa08ae6f",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.757028255Z"
+      },
+      {
+        "id": "64d4d31fffff4d18cbaec25719825a469613c52d294f8d680d901bde95eca507",
+        "name": "/penpot-penpot-valkey-1",
+        "image_id": "sha256:76ec93b657e31d13a44a4a26daef4d50b5efa3ace97d07b37a2c771a3f5409bf",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.022630922Z"
+      },
+      {
+        "id": "676fa938c3eba6cfe2045970a7405c22e7ec4b304686812deb58f40eaac6e7ef",
+        "name": "/rabbitmq",
+        "image_id": "sha256:7c0ce624561b1eba19a1fc35008450a0b6bd2c08fa8088ce46d7bc39415130a8",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.760844328Z"
+      },
+      {
+        "id": "679684698f40ed30f94834e43d516b94174e3b6afdd23ae9da88c3c654a57eb6",
+        "name": "/kafka-docker-kafka-1",
+        "image_id": "sha256:ba9de0a3777766688c3a0d0a119117cf110ddf318df11c403e29ddb3b4198fa3",
+        "state": "exited",
+        "started_at": "2026-05-18T05:23:20.183155894Z"
+      },
+      {
+        "id": "8ac008d312c3fabf8b8e6dc67a6a5e1ee9129ca8daec9959c896b22fdf4e2ec4",
+        "name": "/penpot-penpot-dns-1",
+        "image_id": "sha256:00d31b9fc97c28510895f64a5139e16d93df5eaa2c2f9a776eacea7a3125abaa",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.462119089Z"
+      },
+      {
+        "id": "a7668262e9b9d773dc0cb317f08b6328ec4b89cdd5d8c2b692c6fbc62cac584e",
+        "name": "/wonderful_agnesi",
+        "image_id": "sha256:0c3a7dc4e9a44dbc40861816315a04dfcbcca9ccf0b84743b34efd268be82567",
+        "state": "exited",
+        "started_at": "2026-06-24T02:24:09.82593007Z"
+      },
+      {
+        "id": "ac619100a461903de6535bac69e7ef14f81b16d933e488a64b56f18eade5280f",
+        "name": "/penpot-penpot-mcp-1",
+        "image_id": "sha256:f6c48cf9e9923ac1a30bc46393bf94b78c9970be66469650ac576f26e05ac36f",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:13.301979671Z"
+      },
+      {
+        "id": "c137da25e9fc1799235ee5e3ec35cf22933d0d2ab136aaef4ee497179d997621",
+        "name": "/penpot-penpot-mailpit-1",
+        "image_id": "sha256:245e558b2e440962f2d646b6415fbb99b38761dc8a170e6646edf1113779965f",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:14.760573755Z"
+      },
+      {
+        "id": "f52a8a22e7b04535253c4379e63a096146aae20b5b2e48a07802dcc00adb4963",
+        "name": "/nginx",
+        "image_id": "sha256:f46d9988131118c112be07525503d4a7cda698d90c7e39d62be70ea202a9a0f2",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.71366823Z"
+      }
+    ],
+    "tagged_images": {
+      "dell-penpot-import:2.18.5-amd64": "sha256:d4414e3f2e41ac4f5eb4b2c146c05cbc9f9754b179d6b63efa3af95c005b1261",
+      "dell-penpot-worker:2.18.5-amd64": "sha256:c0bead679c3fe7a4b80d2485f87bdce0e5a6acc26a9c2a001b0e4e3270dadee5",
+      "dell-penpot-frontend:2.18.5-amd64": "sha256:fa395b809ed21c53a01387567264100fb28c553f1dd4af113f38c50de3b739bc",
+      "penpot-frontend-selfhost:local": "sha256:a1a9c9bb90b93f3cff334448648be90fc3ca7e315840298772f43b24306f5c82",
+      "penpot-mcp-file-import:local": "sha256:2ee54c62207d15e6f063db95870c76442b1ba757b47ebaf72863051b86238294",
+      "penpot-resident-worker:local": "sha256:289d99c39712b9bbcb12ee4343571233421523f471c05c9f4fb8e6f3b26b9bb0",
+      "axllent/mailpit:v1": "sha256:245e558b2e440962f2d646b6415fbb99b38761dc8a170e6646edf1113779965f",
+      "postgres:15": "sha256:04fba66fe1804636acd8ce729a27cb6f0a5dbe591c8898433aeb6444d7267bfd",
+      "valkey/valkey:8.1": "sha256:76ec93b657e31d13a44a4a26daef4d50b5efa3ace97d07b37a2c771a3f5409bf",
+      "penpotapp/mcp:2.18.5": "sha256:f6c48cf9e9923ac1a30bc46393bf94b78c9970be66469650ac576f26e05ac36f",
+      "penpotapp/exporter:2.18.5": "sha256:9918a73bb7c720252df3124bf674ade2493f970e8f63e711a442432d810c2e58",
+      "penpotapp/frontend:2.18.5": "sha256:a5b042c17a1e95fe35a0a112c93d26df6ebbacd7451c7e823afb30269bf001c6",
+      "registry-1.docker.io/penpotapp/frontend:2.18.5": "sha256:a5b042c17a1e95fe35a0a112c93d26df6ebbacd7451c7e823afb30269bf001c6",
+      "penpotapp/backend:2.18.5": "sha256:28dd4e06b33a70d9ace1b3589def985cddd3f5b49b4964d06a5093381356ee7c",
+      "adguard/dnsproxy:v0.86.0": "sha256:00d31b9fc97c28510895f64a5139e16d93df5eaa2c2f9a776eacea7a3125abaa",
+      "penpotapp/admin-console:2.18.5": "sha256:cdd0cddbd829b9aa3ce55b8622f9884c12b094bdcbdc6f1036f0f260a954570d",
+      "nginx:latest": "sha256:f46d9988131118c112be07525503d4a7cda698d90c7e39d62be70ea202a9a0f2",
+      "cloudflare/cloudflared:latest": "sha256:0c3a7dc4e9a44dbc40861816315a04dfcbcca9ccf0b84743b34efd268be82567",
+      "sonatype/nexus3:latest": "sha256:e90bcee9a286ce698455ba1524f811390b9f77d18e893986ac20b65346cb81d4",
+      "redis:7.4.4": "sha256:b8bbd8ea40e06ac580453a51bac3341e29a492b75ea7cd1b517e82a421a0b926",
+      "mysql:8.4.5": "sha256:b2f81adb2f3335ee77c6a74a6099bea0c5dca5b51ed01cd84c7966d826992764",
+      "kafka-docker-kafka:latest": "sha256:ba9de0a3777766688c3a0d0a119117cf110ddf318df11c403e29ddb3b4198fa3",
+      "nacos/nacos-server:v2.4.3": "sha256:e7e48cb036c4e72bbb37b2fa04557e1fca192392eb954120e7b0b785fa08ae6f",
+      "jerryin/cloudflare-warp:latest": "sha256:438b5e95c668b3753d0792d9f7273ffd563ac47dc91ee25f4a0fff8c9a9c5f72",
+      "rabbitmq:3-management": "sha256:7c0ce624561b1eba19a1fc35008450a0b6bd2c08fa8088ce46d7bc39415130a8",
+      "wurstmeister/zookeeper:latest": "sha256:3f43f72cb2832e7a5fbed7f7dbcd0c43004357974d8f32555d101bd53e81e74f"
+    }
+  },
+  "images": [
+    {
+      "group": "nexus-gateway",
+      "name": "nginx",
+      "requested_reference": "nginx@sha256:db4f612f385437d11eb26620a4f1d7efb3ff44e1296a3c21540b30454e6e2bf3",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 7.63,
+          "stdout_tail": "2f385437d11eb26620a4f1d7efb3ff44e1296a3c21540b30454e6e2bf3: Pulling from library/nginx\n062e450697fa: Pulling fs layer\n82454cdbf456: Pulling fs layer\n3c7ab7949321: Pulling fs layer\ncacfcdd01f30: Pulling fs layer\nb6698f04e005: Pulling fs layer\n2bedaf25031a: Pulling fs layer\nd26f27cc8c41: Pulling fs layer\nb6698f04e005: Waiting\n2bedaf25031a: Waiting\nd26f27cc8c41: Waiting\ncacfcdd01f30: Waiting\n3c7ab7949321: Verifying Checksum\n3c7ab7949321: Download complete\ncacfcdd01f30: Download complete\nb6698f04e005: Verifying Checksum\nb6698f04e005: Download complete\n2bedaf25031a: Download complete\n062e450697fa: Download complete\nd26f27cc8c41: Download complete\n062e450697fa: Pull complete\n82454cdbf456: Verifying Checksum\n82454cdbf456: Download complete\n82454cdbf456: Pull complete\n3c7ab7949321: Pull complete\ncacfcdd01f30: Pull complete\nb6698f04e005: Pull complete\n2bedaf25031a: Pull complete\nd26f27cc8c41: Pull complete\nDigest: sha256:db4f612f385437d11eb26620a4f1d7efb3ff44e1296a3c21540b30454e6e2bf3\nStatus: Downloaded newer image for nginx@sha256:db4f612f385437d11eb26620a4f1d7efb3ff44e1296a3c21540b30454e6e2bf3\ndocker.io/library/nginx@sha256:db4f612f385437d11eb26620a4f1d7efb3ff44e1296a3c21540b30454e6e2bf3\n",
+          "stderr_tail": ""
+        }
+      ],
+      "status": "verified-amd64",
+      "manifest_media_type": "application/vnd.oci.image.manifest.v1+json",
+      "amd64_manifest_selected": false,
+      "reference": "nginx@sha256:db4f612f385437d11eb26620a4f1d7efb3ff44e1296a3c21540b30454e6e2bf3",
+      "inspect": {
+        "id": "sha256:4e5db4761e0ff445f7fd29aad680ad28e8abf7d204895557f145d65535abcc1c",
+        "architecture": "amd64",
+        "os": "linux",
+        "repo_digests": [
+          "nginx@sha256:db4f612f385437d11eb26620a4f1d7efb3ff44e1296a3c21540b30454e6e2bf3"
+        ],
+        "repo_tags": [],
+        "size": 161327548
+      }
+    },
+    {
+      "group": "ops",
+      "name": "prometheus",
+      "requested_reference": "prom/prometheus@sha256:89c1a644817e9ad70fa2af76c84898e327c1de7063735f962e8313b1e28672c3",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 10.4,
+          "stdout_tail": "7db7b7e0: Waiting\nf4d3d6669d6d: Waiting\nadd0f1445f2b: Waiting\nf6bf6bb569c5: Waiting\n7a8519c01f22: Waiting\nd53a350ae5bb: Waiting\n72dcf69f72aa: Download complete\n72dcf69f72aa: Pull complete\n456bdf926fcd: Verifying Checksum\n456bdf926fcd: Download complete\n456bdf926fcd: Pull complete\nd53a350ae5bb: Verifying Checksum\nd53a350ae5bb: Download complete\ncfe87db7b7e0: Verifying Checksum\ncfe87db7b7e0: Download complete\nf4d3d6669d6d: Verifying Checksum\nf4d3d6669d6d: Download complete\nadd0f1445f2b: Download complete\nf6bf6bb569c5: Verifying Checksum\nf6bf6bb569c5: Download complete\n7a8519c01f22: Verifying Checksum\n7a8519c01f22: Download complete\n492c0d6bf242: Verifying Checksum\n492c0d6bf242: Download complete\n492c0d6bf242: Pull complete\n7a8519c01f22: Pull complete\nd53a350ae5bb: Pull complete\ncfe87db7b7e0: Pull complete\nf4d3d6669d6d: Pull complete\nadd0f1445f2b: Pull complete\nf6bf6bb569c5: Pull complete\nDigest: sha256:89c1a644817e9ad70fa2af76c84898e327c1de7063735f962e8313b1e28672c3\nStatus: Downloaded newer image for prom/prometheus@sha256:89c1a644817e9ad70fa2af76c84898e327c1de7063735f962e8313b1e28672c3\ndocker.io/prom/prometheus@sha256:89c1a644817e9ad70fa2af76c84898e327c1de7063735f962e8313b1e28672c3\n",
+          "stderr_tail": ""
+        }
+      ],
+      "status": "verified-amd64",
+      "manifest_media_type": "application/vnd.oci.image.manifest.v1+json",
+      "amd64_manifest_selected": false,
+      "reference": "prom/prometheus@sha256:89c1a644817e9ad70fa2af76c84898e327c1de7063735f962e8313b1e28672c3",
+      "inspect": {
+        "id": "sha256:9bd9cbec4bd4f33bb6ccedf8c25a5132f8e7b2fb158c9a223a54485e4332e962",
+        "architecture": "amd64",
+        "os": "linux",
+        "repo_digests": [
+          "prom/prometheus@sha256:89c1a644817e9ad70fa2af76c84898e327c1de7063735f962e8313b1e28672c3"
+        ],
+        "repo_tags": [],
+        "size": 271626134
+      }
+    },
+    {
+      "group": "ops",
+      "name": "grafana",
+      "requested_reference": "grafana/grafana@sha256:6e5d306338670f381a942f1c50d3c266bf71531e5ddd9ee4fc1a133dac5ce63d",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 30.62,
+          "stdout_tail": "g\nbcd7fa5168a7: Download complete\nbcd7fa5168a7: Pull complete\nd69c4cfa651f: Verifying Checksum\nd69c4cfa651f: Download complete\nd69c4cfa651f: Pull complete\nf4e5155cc91f: Verifying Checksum\nf4e5155cc91f: Download complete\n1bd0660b80e5: Verifying Checksum\n1bd0660b80e5: Download complete\n1bd0660b80e5: Pull complete\nf4e5155cc91f: Pull complete\n9a60019a8816: Verifying Checksum\n9a60019a8816: Download complete\n9a60019a8816: Pull complete\n06da073526e3: Verifying Checksum\n06da073526e3: Download complete\n4f4fb700ef54: Verifying Checksum\n4f4fb700ef54: Download complete\n4a2b3a64321a: Verifying Checksum\n4a2b3a64321a: Download complete\n1ff600371a0f: Verifying Checksum\n1ff600371a0f: Download complete\n1ff600371a0f: Pull complete\naa465df46998: Verifying Checksum\naa465df46998: Download complete\naa465df46998: Pull complete\n06da073526e3: Pull complete\n4f4fb700ef54: Pull complete\n4a2b3a64321a: Pull complete\nDigest: sha256:6e5d306338670f381a942f1c50d3c266bf71531e5ddd9ee4fc1a133dac5ce63d\nStatus: Downloaded newer image for grafana/grafana@sha256:6e5d306338670f381a942f1c50d3c266bf71531e5ddd9ee4fc1a133dac5ce63d\ndocker.io/grafana/grafana@sha256:6e5d306338670f381a942f1c50d3c266bf71531e5ddd9ee4fc1a133dac5ce63d\n",
+          "stderr_tail": ""
+        }
+      ],
+      "status": "verified-amd64",
+      "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+      "amd64_manifest_selected": false,
+      "reference": "grafana/grafana@sha256:6e5d306338670f381a942f1c50d3c266bf71531e5ddd9ee4fc1a133dac5ce63d",
+      "inspect": {
+        "id": "sha256:6afa1ab7f6e662c739a45a1d458598d7eb6ab70fc7c0ab45af64864e1503d4b6",
+        "architecture": "amd64",
+        "os": "linux",
+        "repo_digests": [
+          "grafana/grafana@sha256:6e5d306338670f381a942f1c50d3c266bf71531e5ddd9ee4fc1a133dac5ce63d"
+        ],
+        "repo_tags": [],
+        "size": 1456256212
+      }
+    },
+    {
+      "group": "ops",
+      "name": "alertmanager",
+      "requested_reference": "prom/alertmanager@sha256:7619e9399e623c9f99a40cb199c2bceb972cbf725598a51dcbde69d51dcaaedf",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 7.48,
+          "stdout_tail": "docker.io/prom/alertmanager@sha256:7619e9399e623c9f99a40cb199c2bceb972cbf725598a51dcbde69d51dcaaedf: Pulling from prom/alertmanager\n72dcf69f72aa: Already exists\n456bdf926fcd: Already exists\n56050deba77b: Pulling fs layer\nfba81b676387: Pulling fs layer\nd0a7272f072d: Pulling fs layer\n8b3cf48719e4: Pulling fs layer\n4f4fb700ef54: Pulling fs layer\n8b3cf48719e4: Waiting\n4f4fb700ef54: Waiting\nd0a7272f072d: Verifying Checksum\nd0a7272f072d: Download complete\n8b3cf48719e4: Verifying Checksum\n8b3cf48719e4: Download complete\n4f4fb700ef54: Verifying Checksum\n4f4fb700ef54: Download complete\n56050deba77b: Verifying Checksum\n56050deba77b: Download complete\n56050deba77b: Pull complete\nfba81b676387: Download complete\nfba81b676387: Pull complete\nd0a7272f072d: Pull complete\n8b3cf48719e4: Pull complete\n4f4fb700ef54: Pull complete\nDigest: sha256:7619e9399e623c9f99a40cb199c2bceb972cbf725598a51dcbde69d51dcaaedf\nStatus: Downloaded newer image for prom/alertmanager@sha256:7619e9399e623c9f99a40cb199c2bceb972cbf725598a51dcbde69d51dcaaedf\ndocker.io/prom/alertmanager@sha256:7619e9399e623c9f99a40cb199c2bceb972cbf725598a51dcbde69d51dcaaedf\n",
+          "stderr_tail": ""
+        }
+      ],
+      "status": "verified-amd64",
+      "manifest_media_type": "application/vnd.oci.image.manifest.v1+json",
+      "amd64_manifest_selected": false,
+      "reference": "prom/alertmanager@sha256:7619e9399e623c9f99a40cb199c2bceb972cbf725598a51dcbde69d51dcaaedf",
+      "inspect": {
+        "id": "sha256:151292169170da9f8414b68c8e5994c75bd9cbb94ff60b8bc90860c4994b0946",
+        "architecture": "amd64",
+        "os": "linux",
+        "repo_digests": [
+          "prom/alertmanager@sha256:7619e9399e623c9f99a40cb199c2bceb972cbf725598a51dcbde69d51dcaaedf"
+        ],
+        "repo_tags": [],
+        "size": 82262212
+      }
+    },
+    {
+      "group": "ops",
+      "name": "blackbox",
+      "requested_reference": "prom/blackbox-exporter@sha256:66eae352a79e6f677aeddd8c25a9bdb017586dc5fbd230f22329213d891f94bd",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 5.28,
+          "stdout_tail": "docker.io/prom/blackbox-exporter@sha256:66eae352a79e6f677aeddd8c25a9bdb017586dc5fbd230f22329213d891f94bd: Pulling from prom/blackbox-exporter\n72dcf69f72aa: Already exists\n456bdf926fcd: Already exists\n8ee69c48eb1e: Pulling fs layer\nb511a43251b4: Pulling fs layer\nb511a43251b4: Download complete\n8ee69c48eb1e: Verifying Checksum\n8ee69c48eb1e: Download complete\n8ee69c48eb1e: Pull complete\nb511a43251b4: Pull complete\nDigest: sha256:66eae352a79e6f677aeddd8c25a9bdb017586dc5fbd230f22329213d891f94bd\nStatus: Downloaded newer image for prom/blackbox-exporter@sha256:66eae352a79e6f677aeddd8c25a9bdb017586dc5fbd230f22329213d891f94bd\ndocker.io/prom/blackbox-exporter@sha256:66eae352a79e6f677aeddd8c25a9bdb017586dc5fbd230f22329213d891f94bd\n",
+          "stderr_tail": ""
+        }
+      ],
+      "status": "verified-amd64",
+      "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+      "amd64_manifest_selected": false,
+      "reference": "prom/blackbox-exporter@sha256:66eae352a79e6f677aeddd8c25a9bdb017586dc5fbd230f22329213d891f94bd",
+      "inspect": {
+        "id": "sha256:e6f02b1a6c427e2a771fb33b42cb167dde3e5e8b3625e55e55aa20aaa018946d",
+        "architecture": "amd64",
+        "os": "linux",
+        "repo_digests": [
+          "prom/blackbox-exporter@sha256:66eae352a79e6f677aeddd8c25a9bdb017586dc5fbd230f22329213d891f94bd"
+        ],
+        "repo_tags": [],
+        "size": 37700614
+      }
+    },
+    {
+      "group": "nas",
+      "name": "jellyfin",
+      "requested_reference": "jellyfin/jellyfin@sha256:fea863d0cd9ec445985d9c75fc6ed64e38a1d2766cf0c250a33d553f4fc1b771",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 42.51,
+          "stdout_tail": "ng\n00d1feae788f: Waiting\neb04fc9266f4: Waiting\nda8ad6b41798: Waiting\ne4f64296b96e: Waiting\n0a41bce6ef14: Verifying Checksum\n0a41bce6ef14: Download complete\n0a41bce6ef14: Pull complete\n4f4fb700ef54: Download complete\n526fffcbc249: Verifying Checksum\n526fffcbc249: Download complete\n00d1feae788f: Verifying Checksum\n00d1feae788f: Download complete\neb04fc9266f4: Verifying Checksum\neb04fc9266f4: Download complete\n526fffcbc249: Pull complete\n5ec2bdefc613: Verifying Checksum\n5ec2bdefc613: Download complete\nda8ad6b41798: Verifying Checksum\nda8ad6b41798: Download complete\ne4f64296b96e: Verifying Checksum\ne4f64296b96e: Download complete\n2ad4c3afb22d: Verifying Checksum\n2ad4c3afb22d: Download complete\n2ad4c3afb22d: Pull complete\n4f4fb700ef54: Pull complete\n5ec2bdefc613: Pull complete\n00d1feae788f: Pull complete\neb04fc9266f4: Pull complete\nda8ad6b41798: Pull complete\ne4f64296b96e: Pull complete\nDigest: sha256:7da5184caa38c553f219f6772476540081f392a68049e2b68c923f6daf877f8e\nStatus: Downloaded newer image for jellyfin/jellyfin@sha256:7da5184caa38c553f219f6772476540081f392a68049e2b68c923f6daf877f8e\ndocker.io/jellyfin/jellyfin@sha256:7da5184caa38c553f219f6772476540081f392a68049e2b68c923f6daf877f8e\n",
+          "stderr_tail": ""
+        }
+      ],
+      "status": "verified-amd64",
+      "manifest_media_type": "application/vnd.docker.distribution.manifest.list.v2+json",
+      "amd64_manifest_selected": true,
+      "reference": "jellyfin/jellyfin@sha256:7da5184caa38c553f219f6772476540081f392a68049e2b68c923f6daf877f8e",
+      "inspect": {
+        "id": "sha256:995797bf87597b4247190e0034827f7887b34e75a4f603374591eab4f44172cb",
+        "architecture": "amd64",
+        "os": "linux",
+        "repo_digests": [
+          "jellyfin/jellyfin@sha256:7da5184caa38c553f219f6772476540081f392a68049e2b68c923f6daf877f8e"
+        ],
+        "repo_tags": [],
+        "size": 1717674290
+      }
+    }
+  ],
+  "archives": [
+    {
+      "file": "/Users/yangzhaohui/work/www/harness/dell/private/images/target-amd64-extras-images.tar",
+      "status": "saved",
+      "bytes": 3746444288,
+      "sha256": "257cccab4640234caa9250129b4652e2f76e4f7dfbb876b75af461aa8200ad72",
+      "manifest_images": [
+        {
+          "config_path": "blobs/sha256/151292169170da9f8414b68c8e5994c75bd9cbb94ff60b8bc90860c4994b0946",
+          "repo_tags": null,
+          "architecture": "amd64",
+          "os": "linux"
+        },
+        {
+          "config_path": "blobs/sha256/e6f02b1a6c427e2a771fb33b42cb167dde3e5e8b3625e55e55aa20aaa018946d",
+          "repo_tags": null,
+          "architecture": "amd64",
+          "os": "linux"
+        },
+        {
+          "config_path": "blobs/sha256/995797bf87597b4247190e0034827f7887b34e75a4f603374591eab4f44172cb",
+          "repo_tags": null,
+          "architecture": "amd64",
+          "os": "linux"
+        },
+        {
+          "config_path": "blobs/sha256/4e5db4761e0ff445f7fd29aad680ad28e8abf7d204895557f145d65535abcc1c",
+          "repo_tags": null,
+          "architecture": "amd64",
+          "os": "linux"
+        },
+        {
+          "config_path": "blobs/sha256/9bd9cbec4bd4f33bb6ccedf8c25a5132f8e7b2fb158c9a223a54485e4332e962",
+          "repo_tags": null,
+          "architecture": "amd64",
+          "os": "linux"
+        },
+        {
+          "config_path": "blobs/sha256/6afa1ab7f6e662c739a45a1d458598d7eb6ab70fc7c0ab45af64864e1503d4b6",
+          "repo_tags": null,
+          "architecture": "amd64",
+          "os": "linux"
+        }
+      ],
+      "archive_all_amd64": true,
+      "sha256_file": "/Users/yangzhaohui/work/www/harness/dell/private/images/target-amd64-extras-images.tar.sha256"
+    }
+  ],
+  "status": "verified-cache",
+  "source_operations": {
+    "container_start_stop": false,
+    "build": false,
+    "push": false,
+    "tag_update": false,
+    "credential_read": false,
+    "pve_operations": false
+  },
+  "source_after": {
+    "collected_at": "2026-11-06T05:43:44.757683+08:00",
+    "containers": [
+      {
+        "id": "08dc2c229b7e733e4e72fc3fa979ac02936c9612f8d3730fb0dcaf0276f2ca24",
+        "name": "/finger-bitgo-express-test-express-1",
+        "image_id": "sha256:4390224e59dca080e4046db51c113a62cf8027429dd01638bd6e937e8cbf629d",
+        "state": "exited",
+        "started_at": "2026-10-14T05:12:35.239159205Z"
+      },
+      {
+        "id": "0baef97331827c824e89ff303c1e700f4b6f36afa101e39a85c063956d862623",
+        "name": "/penpot-penpot-frontend-1",
+        "image_id": "sha256:a1a9c9bb90b93f3cff334448648be90fc3ca7e315840298772f43b24306f5c82",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.234179422Z"
+      },
+      {
+        "id": "183a8b9f0096f49851caf952f7d5c52575779c6b3a15d66a173b2ba702a0e7ea",
+        "name": "/penpot-penpot-worker-1",
+        "image_id": "sha256:289d99c39712b9bbcb12ee4343571233421523f471c05c9f4fb8e6f3b26b9bb0",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:13.320524546Z"
+      },
+      {
+        "id": "19755277cfa7774a1de50bf4c4f50127a5d5eb8e0954d2b94f4f835957a2c33d",
+        "name": "/redis",
+        "image_id": "sha256:b8bbd8ea40e06ac580453a51bac3341e29a492b75ea7cd1b517e82a421a0b926",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.7686016Z"
+      },
+      {
+        "id": "1cabd374862fb4a26ca1fd6de6d96c9b79ba2a5295ebc2801f163cafc2ffad68",
+        "name": "/penpot-penpot-postgres-1",
+        "image_id": "sha256:04fba66fe1804636acd8ce729a27cb6f0a5dbe591c8898433aeb6444d7267bfd",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:14.54120588Z"
+      },
+      {
+        "id": "1fee5c4074fac7f6fe309a7ecd24ef882a1b038c1890f13aef5fa04453105788",
+        "name": "/mysql",
+        "image_id": "sha256:b2f81adb2f3335ee77c6a74a6099bea0c5dca5b51ed01cd84c7966d826992764",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.765822244Z"
+      },
+      {
+        "id": "26fe6a3fc9cfa9a03f0e6c4dce519278cc5c58c3c1b35c72fe983d5562092fac",
+        "name": "/penpot-penpot-admin-console-1",
+        "image_id": "sha256:cdd0cddbd829b9aa3ce55b8622f9884c12b094bdcbdc6f1036f0f260a954570d",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.358799797Z"
+      },
+      {
+        "id": "2ee2ba25a906bffde3ba606789637ab66e59672570836186ed6765fdf5487f25",
+        "name": "/penpot-penpot-import-1",
+        "image_id": "sha256:2ee54c62207d15e6f063db95870c76442b1ba757b47ebaf72863051b86238294",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.473813922Z"
+      },
+      {
+        "id": "409d564f9de683079f048572d86a9fd41859a5cc70367a0716f7b9b86adf278f",
+        "name": "/penpot-penpot-backend-1",
+        "image_id": "sha256:28dd4e06b33a70d9ace1b3589def985cddd3f5b49b4964d06a5093381356ee7c",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:14.106480088Z"
+      },
+      {
+        "id": "45194c5c15ccaf3f16c70aa7ad170f4d0832009e8ba4b2f2adf28345da1ad868",
+        "name": "/kafka-docker-zookeeper-1",
+        "image_id": "sha256:3f43f72cb2832e7a5fbed7f7dbcd0c43004357974d8f32555d101bd53e81e74f",
+        "state": "exited",
+        "started_at": "2026-05-18T05:23:20.188993466Z"
+      },
+      {
+        "id": "4ee8299f444554c33b2a2dc7d6c53eb4e23df7586476dc53e6abf5cc83e8424f",
+        "name": "/nexus3",
+        "image_id": "sha256:e90bcee9a286ce698455ba1524f811390b9f77d18e893986ac20b65346cb81d4",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.754667194Z"
+      },
+      {
+        "id": "50dcad169d95e62250723f97ebf240ec3d5591b2228ab08ad5ca5c1ce7b6741f",
+        "name": "/penpot-penpot-exporter-1",
+        "image_id": "sha256:9918a73bb7c720252df3124bf674ade2493f970e8f63e711a442432d810c2e58",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.304331589Z"
+      },
+      {
+        "id": "61cfa904c75240b900e5ec2b443f58ff05f5e906d29d3638b3656f422d4aed49",
+        "name": "/nacos",
+        "image_id": "sha256:e7e48cb036c4e72bbb37b2fa04557e1fca192392eb954120e7b0b785fa08ae6f",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.757028255Z"
+      },
+      {
+        "id": "64d4d31fffff4d18cbaec25719825a469613c52d294f8d680d901bde95eca507",
+        "name": "/penpot-penpot-valkey-1",
+        "image_id": "sha256:76ec93b657e31d13a44a4a26daef4d50b5efa3ace97d07b37a2c771a3f5409bf",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.022630922Z"
+      },
+      {
+        "id": "676fa938c3eba6cfe2045970a7405c22e7ec4b304686812deb58f40eaac6e7ef",
+        "name": "/rabbitmq",
+        "image_id": "sha256:7c0ce624561b1eba19a1fc35008450a0b6bd2c08fa8088ce46d7bc39415130a8",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.760844328Z"
+      },
+      {
+        "id": "679684698f40ed30f94834e43d516b94174e3b6afdd23ae9da88c3c654a57eb6",
+        "name": "/kafka-docker-kafka-1",
+        "image_id": "sha256:ba9de0a3777766688c3a0d0a119117cf110ddf318df11c403e29ddb3b4198fa3",
+        "state": "exited",
+        "started_at": "2026-05-18T05:23:20.183155894Z"
+      },
+      {
+        "id": "8ac008d312c3fabf8b8e6dc67a6a5e1ee9129ca8daec9959c896b22fdf4e2ec4",
+        "name": "/penpot-penpot-dns-1",
+        "image_id": "sha256:00d31b9fc97c28510895f64a5139e16d93df5eaa2c2f9a776eacea7a3125abaa",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:15.462119089Z"
+      },
+      {
+        "id": "a7668262e9b9d773dc0cb317f08b6328ec4b89cdd5d8c2b692c6fbc62cac584e",
+        "name": "/wonderful_agnesi",
+        "image_id": "sha256:0c3a7dc4e9a44dbc40861816315a04dfcbcca9ccf0b84743b34efd268be82567",
+        "state": "exited",
+        "started_at": "2026-06-24T02:24:09.82593007Z"
+      },
+      {
+        "id": "ac619100a461903de6535bac69e7ef14f81b16d933e488a64b56f18eade5280f",
+        "name": "/penpot-penpot-mcp-1",
+        "image_id": "sha256:f6c48cf9e9923ac1a30bc46393bf94b78c9970be66469650ac576f26e05ac36f",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:13.301979671Z"
+      },
+      {
+        "id": "c137da25e9fc1799235ee5e3ec35cf22933d0d2ab136aaef4ee497179d997621",
+        "name": "/penpot-penpot-mailpit-1",
+        "image_id": "sha256:245e558b2e440962f2d646b6415fbb99b38761dc8a170e6646edf1113779965f",
+        "state": "running",
+        "started_at": "2026-11-04T12:42:14.760573755Z"
+      },
+      {
+        "id": "f52a8a22e7b04535253c4379e63a096146aae20b5b2e48a07802dcc00adb4963",
+        "name": "/nginx",
+        "image_id": "sha256:f46d9988131118c112be07525503d4a7cda698d90c7e39d62be70ea202a9a0f2",
+        "state": "running",
+        "started_at": "2026-11-04T13:04:18.71366823Z"
+      }
+    ],
+    "tagged_images": {
+      "dell-penpot-import:2.18.5-amd64": "sha256:d4414e3f2e41ac4f5eb4b2c146c05cbc9f9754b179d6b63efa3af95c005b1261",
+      "dell-penpot-worker:2.18.5-amd64": "sha256:c0bead679c3fe7a4b80d2485f87bdce0e5a6acc26a9c2a001b0e4e3270dadee5",
+      "dell-penpot-frontend:2.18.5-amd64": "sha256:fa395b809ed21c53a01387567264100fb28c553f1dd4af113f38c50de3b739bc",
+      "penpot-frontend-selfhost:local": "sha256:a1a9c9bb90b93f3cff334448648be90fc3ca7e315840298772f43b24306f5c82",
+      "penpot-mcp-file-import:local": "sha256:2ee54c62207d15e6f063db95870c76442b1ba757b47ebaf72863051b86238294",
+      "penpot-resident-worker:local": "sha256:289d99c39712b9bbcb12ee4343571233421523f471c05c9f4fb8e6f3b26b9bb0",
+      "axllent/mailpit:v1": "sha256:245e558b2e440962f2d646b6415fbb99b38761dc8a170e6646edf1113779965f",
+      "postgres:15": "sha256:04fba66fe1804636acd8ce729a27cb6f0a5dbe591c8898433aeb6444d7267bfd",
+      "valkey/valkey:8.1": "sha256:76ec93b657e31d13a44a4a26daef4d50b5efa3ace97d07b37a2c771a3f5409bf",
+      "penpotapp/mcp:2.18.5": "sha256:f6c48cf9e9923ac1a30bc46393bf94b78c9970be66469650ac576f26e05ac36f",
+      "penpotapp/exporter:2.18.5": "sha256:9918a73bb7c720252df3124bf674ade2493f970e8f63e711a442432d810c2e58",
+      "penpotapp/frontend:2.18.5": "sha256:a5b042c17a1e95fe35a0a112c93d26df6ebbacd7451c7e823afb30269bf001c6",
+      "registry-1.docker.io/penpotapp/frontend:2.18.5": "sha256:a5b042c17a1e95fe35a0a112c93d26df6ebbacd7451c7e823afb30269bf001c6",
+      "penpotapp/backend:2.18.5": "sha256:28dd4e06b33a70d9ace1b3589def985cddd3f5b49b4964d06a5093381356ee7c",
+      "adguard/dnsproxy:v0.86.0": "sha256:00d31b9fc97c28510895f64a5139e16d93df5eaa2c2f9a776eacea7a3125abaa",
+      "penpotapp/admin-console:2.18.5": "sha256:cdd0cddbd829b9aa3ce55b8622f9884c12b094bdcbdc6f1036f0f260a954570d",
+      "nginx:latest": "sha256:f46d9988131118c112be07525503d4a7cda698d90c7e39d62be70ea202a9a0f2",
+      "cloudflare/cloudflared:latest": "sha256:0c3a7dc4e9a44dbc40861816315a04dfcbcca9ccf0b84743b34efd268be82567",
+      "sonatype/nexus3:latest": "sha256:e90bcee9a286ce698455ba1524f811390b9f77d18e893986ac20b65346cb81d4",
+      "redis:7.4.4": "sha256:b8bbd8ea40e06ac580453a51bac3341e29a492b75ea7cd1b517e82a421a0b926",
+      "mysql:8.4.5": "sha256:b2f81adb2f3335ee77c6a74a6099bea0c5dca5b51ed01cd84c7966d826992764",
+      "kafka-docker-kafka:latest": "sha256:ba9de0a3777766688c3a0d0a119117cf110ddf318df11c403e29ddb3b4198fa3",
+      "nacos/nacos-server:v2.4.3": "sha256:e7e48cb036c4e72bbb37b2fa04557e1fca192392eb954120e7b0b785fa08ae6f",
+      "jerryin/cloudflare-warp:latest": "sha256:438b5e95c668b3753d0792d9f7273ffd563ac47dc91ee25f4a0fff8c9a9c5f72",
+      "rabbitmq:3-management": "sha256:7c0ce624561b1eba19a1fc35008450a0b6bd2c08fa8088ce46d7bc39415130a8",
+      "wurstmeister/zookeeper:latest": "sha256:3f43f72cb2832e7a5fbed7f7dbcd0c43004357974d8f32555d101bd53e81e74f"
+    }
+  },
+  "source_safety": {
+    "containers_unchanged": true,
+    "preexisting_tags_unchanged": true
+  },
+  "completed_at": "2026-11-06T05:43:44.757761+08:00",
+  "export_limitations": [
+    "Digest-only archives have no RepoTags; target load needs image-ID verification and explicit internal reference mapping.",
+    "No source-container operations, builds, pushes or PVE network operations performed."
+  ]
+}

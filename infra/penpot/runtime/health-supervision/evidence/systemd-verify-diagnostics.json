@@ -1,0 +1,25 @@
+{
+  "collected_at": "2026-11-06T05:21:35.210322+00:00",
+  "phase": "systemd-verify-diagnostics",
+  "exit_code": 0,
+  "result": {
+    "status": "read-only-validation-diagnostics",
+    "results": [
+      {
+        "input": "dell-penpot.service",
+        "exit_code": 1,
+        "public_unit_diagnostics": [
+          "dell-penpot.service: Failed to create dell-penpot.service/start: Unit srv-penpot.mount not found."
+        ]
+      },
+      {
+        "input": "/etc/systemd/system/dell-penpot.service",
+        "exit_code": 1,
+        "public_unit_diagnostics": [
+          "dell-penpot.service: Failed to create dell-penpot.service/start: Unit srv-penpot.mount not found."
+        ]
+      }
+    ],
+    "service_changed": false
+  }
+}

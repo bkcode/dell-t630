@@ -1,0 +1,33 @@
+{
+  "id": "ACC-REL-001",
+  "status": "passed",
+  "executed_at": "2026-11-06T13:24:12.817825+08:00",
+  "timezone": "Asia/Shanghai",
+  "operator": "root-task-manager",
+  "plan_sha256": "4da2b208f17e14d048b86b5453abae58a829b0989a90f09a8ff54e8334318380",
+  "preconditions_checked": true,
+  "target": {
+    "host": "192.168.21.22",
+    "environment": "managed-PVE-implementation",
+    "vmid": null
+  },
+  "commands_or_steps": [
+    "See linked execution artifact and operator observations"
+  ],
+  "exit_codes": [
+    0
+  ],
+  "observations": [
+    "ub/独立publisher220/deployer240/finger运行身份分离，强制SSH来源/命令、精确无argv sudo及root固定程序已部署并原生验证",
+    "真实构建五JAR已有证据，220只上传manifest/JAR/YAML；A metadata迁移字节不变、root600+LoadCredential；真实B发布五health再回退A五health成功",
+    "12项SSH/RPC/归档和2原生sudo负测通过，busy/status真实可读，私钥仅220，未扩正式节点或执行SQL/Nacos迁移回退"
+  ],
+  "artifacts": [
+    "evidence/implementation/publisher-implementation-summary.json"
+  ],
+  "limitations": [
+    "回退只证明应用制品与配置，不回滚数据库/Nacos；普通应用启动可能有正常DB写入；active固定程序27测试，未部署停止策略候选仍独立pending；公网HTTPS/完整UI未在此验证"
+  ],
+  "reviewed_by": "root-task-manager",
+  "plan_snapshot": "evidence/plans/plan-4da2b208f17e14d0.json"
+}

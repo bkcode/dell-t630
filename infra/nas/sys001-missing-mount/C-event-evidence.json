@@ -1,0 +1,32 @@
+{
+  "status": "race-signal-chain-supported",
+  "checks": {
+    "start_event": true,
+    "controlled_SIGTERM_event": true,
+    "die143_event": true
+  },
+  "events": [
+    {
+      "action": "start",
+      "timeNano": 1793947807958544105,
+      "id": "9ee98c39d7aa216086571b52715e20328c0ae535ebaf68120ae98db315cb8ef1",
+      "exitCode": "",
+      "signal": ""
+    },
+    {
+      "action": "kill",
+      "timeNano": 1793947807980007094,
+      "id": "9ee98c39d7aa216086571b52715e20328c0ae535ebaf68120ae98db315cb8ef1",
+      "exitCode": "",
+      "signal": "15"
+    },
+    {
+      "action": "die",
+      "timeNano": 1793947808213752643,
+      "id": "9ee98c39d7aa216086571b52715e20328c0ae535ebaf68120ae98db315cb8ef1",
+      "exitCode": "143",
+      "signal": ""
+    }
+  ],
+  "no_exec_Env_or_arbitrary_labels_read": true
+}

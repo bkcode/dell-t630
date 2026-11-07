@@ -1,0 +1,200 @@
+{
+  "at": "2026-11-06T14:46:45.880187",
+  "status": "live-targets-raid-and-notification-processes-healthy",
+  "observations": {
+    "count(up == 1)": [
+      {
+        "metric": {},
+        "value": [
+          1793947605.793,
+          "17"
+        ]
+      }
+    ],
+    "count(up)": [
+      {
+        "metric": {},
+        "value": [
+          1793947605.796,
+          "17"
+        ]
+      }
+    ],
+    "dell_pve_raid_virtual_optimal": [
+      {
+        "metric": {
+          "__name__": "dell_pve_raid_virtual_optimal",
+          "array": "0/0",
+          "instance": "10.63.30.40:9100",
+          "job": "guest-node",
+          "raid": "RAID1",
+          "role": "ops-service",
+          "vmid": "270",
+          "zone": "management"
+        },
+        "value": [
+          1793947605.798,
+          "1"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "dell_pve_raid_virtual_optimal",
+          "array": "1/1",
+          "instance": "10.63.30.40:9100",
+          "job": "guest-node",
+          "raid": "RAID5",
+          "role": "ops-service",
+          "vmid": "270",
+          "zone": "management"
+        },
+        "value": [
+          1793947605.798,
+          "1"
+        ]
+      }
+    ],
+    "dell_pve_raid_member_online": [
+      {
+        "metric": {
+          "__name__": "dell_pve_raid_member_online",
+          "instance": "10.63.30.40:9100",
+          "job": "guest-node",
+          "role": "ops-service",
+          "slot": "32:0",
+          "vmid": "270",
+          "zone": "management"
+        },
+        "value": [
+          1793947605.8,
+          "1"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "dell_pve_raid_member_online",
+          "instance": "10.63.30.40:9100",
+          "job": "guest-node",
+          "role": "ops-service",
+          "slot": "32:1",
+          "vmid": "270",
+          "zone": "management"
+        },
+        "value": [
+          1793947605.8,
+          "1"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "dell_pve_raid_member_online",
+          "instance": "10.63.30.40:9100",
+          "job": "guest-node",
+          "role": "ops-service",
+          "slot": "32:2",
+          "vmid": "270",
+          "zone": "management"
+        },
+        "value": [
+          1793947605.8,
+          "1"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "dell_pve_raid_member_online",
+          "instance": "10.63.30.40:9100",
+          "job": "guest-node",
+          "role": "ops-service",
+          "slot": "32:3",
+          "vmid": "270",
+          "zone": "management"
+        },
+        "value": [
+          1793947605.8,
+          "1"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "dell_pve_raid_member_online",
+          "instance": "10.63.30.40:9100",
+          "job": "guest-node",
+          "role": "ops-service",
+          "slot": "32:7",
+          "vmid": "270",
+          "zone": "management"
+        },
+        "value": [
+          1793947605.8,
+          "1"
+        ]
+      }
+    ],
+    "time()-dell_pve_collector_timestamp_seconds": [
+      {
+        "metric": {
+          "instance": "10.63.30.40:9100",
+          "job": "guest-node",
+          "role": "ops-service",
+          "vmid": "270",
+          "zone": "management"
+        },
+        "value": [
+          1793947605.802,
+          "44.171977281570435"
+        ]
+      }
+    ],
+    "dell_pve_storage_avail_bytes/dell_pve_storage_total_bytes": [
+      {
+        "metric": {
+          "instance": "10.63.30.40:9100",
+          "job": "guest-node",
+          "role": "ops-service",
+          "storage": "local",
+          "vmid": "270",
+          "zone": "management"
+        },
+        "value": [
+          1793947605.803,
+          "0.8401023048438249"
+        ]
+      },
+      {
+        "metric": {
+          "instance": "10.63.30.40:9100",
+          "job": "guest-node",
+          "role": "ops-service",
+          "storage": "local-lvm",
+          "vmid": "270",
+          "zone": "management"
+        },
+        "value": [
+          1793947605.803,
+          "0.80560000000099"
+        ]
+      },
+      {
+        "metric": {
+          "instance": "10.63.30.40:9100",
+          "job": "guest-node",
+          "role": "ops-service",
+          "storage": "store",
+          "vmid": "270",
+          "zone": "management"
+        },
+        "value": [
+          1793947605.803,
+          "0.9380481356518847"
+        ]
+      }
+    ],
+    "units": {
+      "dell-ops.service": "active",
+      "dell-lark-notify.service": "active",
+      "prometheus-node-exporter.service": "active"
+    }
+  },
+  "no_notification_message_sent": true
+}

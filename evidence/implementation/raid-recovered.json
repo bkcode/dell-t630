@@ -1,0 +1,2270 @@
+{
+  "schema_version": 1,
+  "host": "192.168.21.22",
+  "timezone": "Asia/Shanghai",
+  "collected_at": "2026-11-06T05:17:13.090703+08:00",
+  "mode": "read-only-controller-queries",
+  "mutations_performed": false,
+  "checks": [
+    {
+      "id": "controller-all",
+      "command": "/root/dell-bootstrap/perccli-extracted/opt/MegaRAID/perccli/perccli64 /c0 show all J",
+      "collected_at": "2026-11-06T05:17:12.898066+08:00",
+      "exit_code": 0,
+      "result": {
+        "Controllers": [
+          {
+            "Command Status": {
+              "CLI Version": "007.1623.0000.0000 May 17, 2021",
+              "Operating system": "Linux 6.8.12-9-pve",
+              "Controller": 0,
+              "Status": "Success",
+              "Description": "None"
+            },
+            "Response Data": {
+              "Basics": {
+                "Controller": 0,
+                "Model": "PERC H730 Adapter",
+                "Serial Number": "[redacted]",
+                "Current Controller Date/Time": "11/05/2026, 21:17:13",
+                "Current System Date/time": "11/06/2026, 05:17:12",
+                "SAS Address": "5d0946601881ae00",
+                "PCI Address": "00:03:00:00",
+                "Mfg Date": "09/11/17",
+                "Rework Date": "09/11/17",
+                "Revision No": "A07"
+              },
+              "Version": {
+                "Firmware Package Build": "25.5.2.0001",
+                "Firmware Version": "4.270.00-8168",
+                "Bios Version": "6.33.01.0_4.16.07.00_0x06120300",
+                "Ctrl-R Version": "5.18-0700",
+                "NVDATA Version": "3.1511.00-0014",
+                "Boot Block Version": "3.07.00.00-0003",
+                "Driver Name": "megaraid_sas",
+                "Driver Version": "07.727.03.00-rc1"
+              },
+              "Bus": {
+                "Vendor Id": 4096,
+                "Device Id": 93,
+                "SubVendor Id": 4136,
+                "SubDevice Id": 8003,
+                "Host Interface": "PCI-E",
+                "Device Interface": "SAS-12G",
+                "Bus Number": 3,
+                "Device Number": 0,
+                "Function Number": 0,
+                "Domain ID": 0
+              },
+              "Pending Images in Flash": {
+                "Image name": "No pending images"
+              },
+              "Status": {
+                "Controller Status": "Optimal",
+                "Memory Correctable Errors": 0,
+                "Memory Uncorrectable Errors": 0,
+                "ECC Bucket Count": 0,
+                "Any Offline VD Cache Preserved": "No",
+                "BBU Status": 0,
+                "PD Firmware Download in progress": "No",
+                "Support PD Firmware Download": "Yes",
+                "Lock Key Assigned": "No",
+                "Failed to get lock key on bootup": "No",
+                "Lock key has not been backed up": "No",
+                "Bios was not detected during boot": "No",
+                "Controller must be rebooted to complete security operation": "No",
+                "A rollback operation is in progress": "No",
+                "At least one PFK exists in NVRAM": "No",
+                "SSC Policy is WB": "No",
+                "Controller has booted into safe mode": "No",
+                "Controller shutdown required": "No",
+                "Controller has booted into certificate provision mode": "No",
+                "Current Personality": "RAID-Mode "
+              },
+              "Supported Adapter Operations": {
+                "Rebuild Rate": "Yes",
+                "CC Rate": "Yes",
+                "BGI Rate ": "Yes",
+                "Reconstruct Rate": "Yes",
+                "Patrol Read Rate": "Yes",
+                "Alarm Control": "Yes",
+                "Cluster Support": "No",
+                "BBU": "Yes",
+                "Spanning": "Yes",
+                "Dedicated Hot Spare": "Yes",
+                "Revertible Hot Spares": "Yes",
+                "Foreign Config Import": "Yes",
+                "Self Diagnostic": "Yes",
+                "Allow Mixed Redundancy on Array": "No",
+                "Global Hot Spares": "Yes",
+                "Deny SCSI Passthrough": "No",
+                "Deny SMP Passthrough": "No",
+                "Deny STP Passthrough": "No",
+                "Support more than 8 Phys": "Yes",
+                "FW and Event Time in GMT": "No",
+                "Support Enhanced Foreign Import": "Yes",
+                "Support Enclosure Enumeration": "Yes",
+                "Support Allowed Operations": "Yes",
+                "Abort CC on Error": "Yes",
+                "Support Multipath": "Yes",
+                "Support Odd & Even Drive count in RAID1E": "No",
+                "Support Security": "Yes",
+                "Support Config Page Model": "Yes",
+                "Support the OCE without adding drives": "Yes",
+                "Support EKM": "No",
+                "Snapshot Enabled": "No",
+                "Support PFK": "No",
+                "Support PI": "No",
+                "Support Ld BBM Info": "No",
+                "Support Shield State": "Yes",
+                "Block SSD Write Disk Cache Change": "No",
+                "Support Suspend Resume BG ops": "Yes",
+                "Support Emergency Spares": "No",
+                "Support Set Link Speed": "Yes",
+                "Support Boot Time PFK Change": "No",
+                "Support SystemPD": "Yes",
+                "Disable Online PFK Change": "No",
+                "Support Perf Tuning": "Yes",
+                "Support SSD PatrolRead": "Yes",
+                "Real Time Scheduler": "No",
+                "Support Reset Now": "Yes",
+                "Support Emulated Drives": "Yes",
+                "Headless Mode": "Yes",
+                "Dedicated HotSpares Limited": "No",
+                "Point In Time Progress": "No",
+                "Extended LD": "Yes",
+                "Support Uneven span ": "Yes",
+                "Support Config Auto Balance": "No",
+                "Support Maintenance Mode": "No",
+                "Support Diagnostic results": "Yes",
+                "Support Ext Enclosure": "No",
+                "Support Sesmonitoring": "No",
+                "Support SecurityonJBOD": "No",
+                "Support ForceFlash": "No",
+                "Support DisableImmediateIO": "No",
+                "Support LargeIOSupport": "Yes",
+                "Support DrvActivityLEDSetting": "No",
+                "Support FlushWriteVerify": "No",
+                "Support CPLDUpdate": "No",
+                "Support ForceTo512e": "No",
+                "Support discardCacheDuringLDDelete": "No",
+                "Support JBOD Write cache": "Yes",
+                "Support Large QD Support": "No",
+                "Support Ctrl Info Extended": "No",
+                "Support IButton less": "No",
+                "Support AES Encryption Algorithm": "No",
+                "Support Encrypted MFC": "No",
+                "Support Snapdump": "No",
+                "Support Force Personality Change": "No",
+                "Support Dual Fw Image": "No",
+                "Support PSOC Update": "No",
+                "Support Secure Boot": "No",
+                "Support Debug Queue": "No",
+                "Support Least Latency Mode": "Yes",
+                "Support OnDemand Snapdump": "No",
+                "Support Clear Snapdump": "No",
+                "Support PHY current speed": "No",
+                "Support Lane current speed": "No",
+                "Support NVMe Width": "No",
+                "Support Lane DeviceType": "No",
+                "Support Extended Drive performance Monitoring": "No",
+                "Support NVMe Repair": "No",
+                "Support Platform Security": "No",
+                "Support None Mode Params": "No",
+                "Support Extended Controller Property": "No",
+                "Support Smart Poll Interval for DirectAttached": "No",
+                "Support Write Journal Pinning": "No",
+                "Support SMP Passthru with Port Number": "No",
+                "Support NVMe Init Error Device ConnectorIndex": "No"
+              },
+              "Enterprise Key management": {
+                "Capability": "Not Supported"
+              },
+              "Supported PD Operations": {
+                "Force Online": "Yes",
+                "Force Offline": "Yes",
+                "Force Rebuild": "Yes",
+                "Deny Force Failed": "No",
+                "Deny Force Good/Bad": "No",
+                "Deny Missing Replace": "No",
+                "Deny Clear": "No",
+                "Deny Locate": "No",
+                "Support Power State": "Yes",
+                "Set Power State For Cfg": "No",
+                "Support T10 Power State": "Yes",
+                "Support Temperature": "Yes",
+                "NCQ": "No",
+                "Support Max Rate SATA": "No",
+                "Support Degraded Media": "No",
+                "Support Parallel FW Update": "No",
+                "Support Drive Crypto Erase": "Yes",
+                "Support SSD Wear Gauge": "No"
+              },
+              "Supported VD Operations": {
+                "Read Policy": "Yes",
+                "Write Policy": "Yes",
+                "IO Policy": "Yes",
+                "Access Policy": "Yes",
+                "Disk Cache Policy": "Yes",
+                "Reconstruction": "Yes",
+                "Deny Locate": "No",
+                "Deny CC": "No",
+                "Allow Ctrl Encryption": "No",
+                "Enable LDBBM": "Yes",
+                "Support FastPath": "Yes",
+                "Performance Metrics": "Yes",
+                "Power Savings": "Yes",
+                "Support Powersave Max With Cache": "No",
+                "Support Breakmirror": "Yes",
+                "Support SSC WriteBack": "No",
+                "Support SSC Association": "No",
+                "Support VD Hide": "No",
+                "Support VD Cachebypass": "Yes",
+                "Support VD discardCacheDuringLDDelete": "No",
+                "Support VD Scsi Unmap": "No"
+              },
+              "HwCfg": {
+                "ChipRevision": " C0",
+                "BatteryFRU": "N/A",
+                "Front End Port Count": 0,
+                "Backend Port Count": 8,
+                "BBU": "Present",
+                "Alarm": "Absent",
+                "Serial Debugger": "[redacted]",
+                "NVRAM Size": "32KB",
+                "Flash Size": "16MB",
+                "On Board Memory Size": "1024MB",
+                "CacheVault Flash Size": "4.000 GB",
+                "TPM": "Absent",
+                "Upgrade Key": "Absent",
+                "On Board Expander": "Absent",
+                "Temperature Sensor for ROC": "Present",
+                "Temperature Sensor for Controller": "Present",
+                "Upgradable CPLD": "Absent",
+                "Upgradable PSOC": "Absent",
+                "Current Size of CacheCade (GB)": 0,
+                "Current Size of FW Cache (MB)": 925,
+                "ROC temperature(Degree Celsius)": 76,
+                "Ctrl temperature(Degree Celsius)": 76
+              },
+              "Policies": {
+                "Policies Table": [
+                  {
+                    "Policy": "Predictive Fail Poll Interval",
+                    "Current": "300 sec",
+                    "Default": ""
+                  },
+                  {
+                    "Policy": "Interrupt Throttle Active Count",
+                    "Current": "16",
+                    "Default": ""
+                  },
+                  {
+                    "Policy": "Interrupt Throttle Completion",
+                    "Current": "50 us",
+                    "Default": ""
+                  },
+                  {
+                    "Policy": "Rebuild Rate",
+                    "Current": "30 %",
+                    "Default": "30%"
+                  },
+                  {
+                    "Policy": "PR Rate",
+                    "Current": "30 %",
+                    "Default": "30%"
+                  },
+                  {
+                    "Policy": "BGI Rate",
+                    "Current": "30 %",
+                    "Default": "30%"
+                  },
+                  {
+                    "Policy": "Check Consistency Rate",
+                    "Current": "30 %",
+                    "Default": "30%"
+                  },
+                  {
+                    "Policy": "Reconstruction Rate",
+                    "Current": "30 %",
+                    "Default": "30%"
+                  },
+                  {
+                    "Policy": "Cache Flush Interval",
+                    "Current": "4s",
+                    "Default": ""
+                  }
+                ],
+                "Flush Time(Default)": "4s",
+                "Drive Coercion Mode": "128MB",
+                "Auto Rebuild": "On",
+                "Battery Warning": "On",
+                "ECC Bucket Size": 255,
+                "ECC Bucket Leak Rate (hrs)": 4,
+                "Restore Hot Spare on Insertion": "Off",
+                "Expose Enclosure Devices": "Off",
+                "Maintain PD Fail History": "Off",
+                "Reorder Host Requests": "On",
+                "Auto detect BackPlane": "SGPIO/i2c SEP",
+                "Load Balance Mode": "Auto",
+                "Security Key Assigned": "Off",
+                "Disable Online Controller Reset": "Off",
+                "Use drive activity for locate": "Off"
+              },
+              "Boot": {
+                "BIOS Enumerate VDs": 1,
+                "Stop BIOS on Error": "Off",
+                "Delay during POST": 0,
+                "Spin Down Mode": "None",
+                "Enable Ctrl-R": "Yes",
+                "Enable Web BIOS": "No",
+                "Enable PreBoot CLI": "No",
+                "Enable BIOS": "Yes",
+                "Max Drives to Spinup at One Time": 4,
+                "Maximum number of direct attached drives to spin up in 1 min": 0,
+                "Delay Among Spinup Groups (sec)": 12,
+                "Allow Boot with Preserved Cache": "Off"
+              },
+              "High Availability": {
+                "Topology Type": "None",
+                "Cluster Permitted": "No",
+                "Cluster Active": "No"
+              },
+              "Defaults": {
+                "Phy Polarity": 0,
+                "Phy PolaritySplit": 0,
+                "Strip Size": "64 KB",
+                "Write Policy": "WB",
+                "Read Policy": "Adaptive",
+                "Cache When BBU Bad": "Off",
+                "Cached IO": "Off",
+                "VD PowerSave Policy": "Controller Defined",
+                "Default spin down time (mins)": 30,
+                "Coercion Mode": "128 MB",
+                "ZCR Config": "Unknown",
+                "Max Chained Enclosures": 4,
+                "Direct PD Mapping": "Yes",
+                "Restore Hot Spare on Insertion": "No",
+                "Expose Enclosure Devices": "No",
+                "Maintain PD Fail History": "No",
+                "Zero Based Enclosure Enumeration": "Yes",
+                "Disable Puncturing": "No",
+                "EnableLDBBM": "Yes",
+                "DisableHII": "No",
+                "Un-Certified Hard Disk Drives": "Allow",
+                "SMART Mode": "Mode 6",
+                "Enable LED Header": "No",
+                "LED Show Drive Activity": "Yes",
+                "Dirty LED Shows Drive Activity": "No",
+                "EnableCrashDump": "No",
+                "Disable Online Controller Reset": "No",
+                "Treat Single span R1E as R10": "Yes",
+                "Power Saving option": "Enabled",
+                "TTY Log In Flash": "Yes",
+                "Auto Enhanced Import": "No",
+                "BreakMirror RAID Support": "single span R1",
+                "Disable Join Mirror": "Yes",
+                "Enable Shield State": "No",
+                "Time taken to detect CME": "60 sec"
+              },
+              "Capabilities": {
+                "Supported Drives": "SAS, SATA",
+                "RAID Level Supported": "RAID0, RAID1, RAID5, RAID6, RAID10(2 or more drives per span), RAID50, RAID60",
+                "Enable SystemPD": "Yes",
+                "Mix in Enclosure": "Allowed",
+                "Mix of SAS/SATA of HDD type in VD": "Not Allowed",
+                "Mix of SAS/SATA of SSD type in VD": "Not Allowed",
+                "Mix of SSD/HDD in VD": "Not Allowed",
+                "SAS Disable": "No",
+                "Max Arms Per VD": 32,
+                "Max Spans Per VD": 8,
+                "Max Arrays": 128,
+                "Max VD per array": 16,
+                "Max Number of VDs": 64,
+                "Max Parallel Commands": 928,
+                "Max SGE Count": 60,
+                "Max Data Transfer Size": "8192 sectors",
+                "Max Strips PerIO": 128,
+                "Max Configurable CacheCade Size(GB)": 0,
+                "Max Transportable DGs": 0,
+                "Enable Snapdump": "No",
+                "Enable SCSI Unmap": "Yes",
+                "FDE Drive Mix Support": "No",
+                "Min Strip Size": "64 KB",
+                "Max Strip Size": "1.000 MB"
+              },
+              "Scheduled Tasks": {
+                "Consistency Check Reoccurrence": "168 hrs",
+                "Next Consistency check launch": "NA",
+                "Patrol Read Reoccurrence": "168 hrs",
+                "Next Patrol Read launch": "11/07/2026, 03:00:00",
+                "Battery learn Reoccurrence": "2160 hrs",
+                "OEMID": "Dell"
+              },
+              "Security Protocol properties": {
+                "Security Protocol": "None"
+              },
+              "Drive Groups": 2,
+              "TOPOLOGY": [
+                {
+                  "DG": 0,
+                  "Arr": "-",
+                  "Row": "-",
+                  "EID:Slot": "-",
+                  "DID": "-",
+                  "Type": "RAID1",
+                  "State": "Optl",
+                  "BT": "N",
+                  "Size": "446.625 GB",
+                  "PDC": "dflt",
+                  "PI": "N",
+                  "SED": "N",
+                  "DS3": "dflt",
+                  "FSpace": "N",
+                  "TR": "N"
+                },
+                {
+                  "DG": 0,
+                  "Arr": 0,
+                  "Row": "-",
+                  "EID:Slot": "-",
+                  "DID": "-",
+                  "Type": "RAID1",
+                  "State": "Optl",
+                  "BT": "N",
+                  "Size": "446.625 GB",
+                  "PDC": "dflt",
+                  "PI": "N",
+                  "SED": "N",
+                  "DS3": "dflt",
+                  "FSpace": "N",
+                  "TR": "N"
+                },
+                {
+                  "DG": 0,
+                  "Arr": 0,
+                  "Row": 0,
+                  "EID:Slot": "32:0",
+                  "DID": 0,
+                  "Type": "DRIVE",
+                  "State": "Onln",
+                  "BT": "N",
+                  "Size": "446.625 GB",
+                  "PDC": "dflt",
+                  "PI": "N",
+                  "SED": "N",
+                  "DS3": "dflt",
+                  "FSpace": "-",
+                  "TR": "N"
+                },
+                {
+                  "DG": 0,
+                  "Arr": 0,
+                  "Row": 1,
+                  "EID:Slot": "32:1",
+                  "DID": 1,
+                  "Type": "DRIVE",
+                  "State": "Onln",
+                  "BT": "N",
+                  "Size": "446.625 GB",
+                  "PDC": "dflt",
+                  "PI": "N",
+                  "SED": "N",
+                  "DS3": "dflt",
+                  "FSpace": "-",
+                  "TR": "N"
+                },
+                {
+                  "DG": 1,
+                  "Arr": "-",
+                  "Row": "-",
+                  "EID:Slot": "-",
+                  "DID": "-",
+                  "Type": "RAID5",
+                  "State": "Optl",
+                  "BT": "N",
+                  "Size": "7.276 TB",
+                  "PDC": "dflt",
+                  "PI": "N",
+                  "SED": "N",
+                  "DS3": "dflt",
+                  "FSpace": "N",
+                  "TR": "N"
+                },
+                {
+                  "DG": 1,
+                  "Arr": 0,
+                  "Row": "-",
+                  "EID:Slot": "-",
+                  "DID": "-",
+                  "Type": "RAID5",
+                  "State": "Optl",
+                  "BT": "N",
+                  "Size": "7.276 TB",
+                  "PDC": "dflt",
+                  "PI": "N",
+                  "SED": "N",
+                  "DS3": "dflt",
+                  "FSpace": "N",
+                  "TR": "N"
+                },
+                {
+                  "DG": 1,
+                  "Arr": 0,
+                  "Row": 0,
+                  "EID:Slot": "32:2",
+                  "DID": 2,
+                  "Type": "DRIVE",
+                  "State": "Onln",
+                  "BT": "N",
+                  "Size": "3.637 TB",
+                  "PDC": "dflt",
+                  "PI": "N",
+                  "SED": "N",
+                  "DS3": "dflt",
+                  "FSpace": "-",
+                  "TR": "N"
+                },
+                {
+                  "DG": 1,
+                  "Arr": 0,
+                  "Row": 1,
+                  "EID:Slot": "32:3",
+                  "DID": 3,
+                  "Type": "DRIVE",
+                  "State": "Onln",
+                  "BT": "N",
+                  "Size": "3.637 TB",
+                  "PDC": "dflt",
+                  "PI": "N",
+                  "SED": "N",
+                  "DS3": "dflt",
+                  "FSpace": "-",
+                  "TR": "N"
+                },
+                {
+                  "DG": 1,
+                  "Arr": 0,
+                  "Row": 2,
+                  "EID:Slot": "32:7",
+                  "DID": 7,
+                  "Type": "DRIVE",
+                  "State": "Onln",
+                  "BT": "N",
+                  "Size": "3.637 TB",
+                  "PDC": "dflt",
+                  "PI": "N",
+                  "SED": "N",
+                  "DS3": "dflt",
+                  "FSpace": "-",
+                  "TR": "N"
+                }
+              ],
+              "Virtual Drives": 2,
+              "VD LIST": [
+                {
+                  "DG/VD": "0/0",
+                  "TYPE": "RAID1",
+                  "State": "Optl",
+                  "Access": "RW",
+                  "Consist": "Yes",
+                  "Cache": "RWBD",
+                  "Cac": "-",
+                  "sCC": "OFF",
+                  "Size": "446.625 GB",
+                  "Name": ""
+                },
+                {
+                  "DG/VD": "1/1",
+                  "TYPE": "RAID5",
+                  "State": "Optl",
+                  "Access": "RW",
+                  "Consist": "Yes",
+                  "Cache": "RWBD",
+                  "Cac": "-",
+                  "sCC": "OFF",
+                  "Size": "7.276 TB",
+                  "Name": ""
+                }
+              ],
+              "Physical Drives": 5,
+              "PD LIST": [
+                {
+                  "EID:Slt": "32:0",
+                  "DID": 0,
+                  "State": "Onln",
+                  "DG": 0,
+                  "Size": "446.625 GB",
+                  "Intf": "SATA",
+                  "Med": "SSD",
+                  "SED": "N",
+                  "PI": "N",
+                  "SeSz": "512B",
+                  "Model": "INTEL SSDSC2BB480G6",
+                  "Sp": "U",
+                  "Type": "-"
+                },
+                {
+                  "EID:Slt": "32:1",
+                  "DID": 1,
+                  "State": "Onln",
+                  "DG": 0,
+                  "Size": "446.625 GB",
+                  "Intf": "SATA",
+                  "Med": "SSD",
+                  "SED": "N",
+                  "PI": "N",
+                  "SeSz": "512B",
+                  "Model": "INTEL SSDSC2BB480G6L",
+                  "Sp": "U",
+                  "Type": "-"
+                },
+                {
+                  "EID:Slt": "32:2",
+                  "DID": 2,
+                  "State": "Onln",
+                  "DG": 1,
+                  "Size": "3.637 TB",
+                  "Intf": "SAS",
+                  "Med": "HDD",
+                  "SED": "N",
+                  "PI": "N",
+                  "SeSz": "512B",
+                  "Model": "ST4000NM0295    ",
+                  "Sp": "U",
+                  "Type": "-"
+                },
+                {
+                  "EID:Slt": "32:3",
+                  "DID": 3,
+                  "State": "Onln",
+                  "DG": 1,
+                  "Size": "3.637 TB",
+                  "Intf": "SAS",
+                  "Med": "HDD",
+                  "SED": "N",
+                  "PI": "N",
+                  "SeSz": "512B",
+                  "Model": "ST4000NM0295    ",
+                  "Sp": "U",
+                  "Type": "-"
+                },
+                {
+                  "EID:Slt": "32:7",
+                  "DID": 7,
+                  "State": "Onln",
+                  "DG": 1,
+                  "Size": "3.637 TB",
+                  "Intf": "SAS",
+                  "Med": "HDD",
+                  "SED": "N",
+                  "PI": "N",
+                  "SeSz": "512B",
+                  "Model": "ST4000NM0295    ",
+                  "Sp": "U",
+                  "Type": "-"
+                }
+              ],
+              "Enclosures": 1,
+              "Enclosure LIST": [
+                {
+                  "EID": 32,
+                  "State": "OK",
+                  "Slots": 8,
+                  "PD": 5,
+                  "PS": 0,
+                  "Fans": 0,
+                  "TSs": 0,
+                  "Alms": 0,
+                  "SIM": 0,
+                  "Port#": "00 x1",
+                  "ProdID": "BP13G+",
+                  "VendorSpecific": "57900M3"
+                }
+              ],
+              "BBU_Info": [
+                {
+                  "Model": "BBU",
+                  "State": "Optimal",
+                  "RetentionTime": "0 hour(s)",
+                  "Temp": "46C",
+                  "Mode": "-",
+                  "MfgDate": "0/00/00"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "virtual-disks",
+      "command": "/root/dell-bootstrap/perccli-extracted/opt/MegaRAID/perccli/perccli64 /c0/vall show all J",
+      "collected_at": "2026-11-06T05:17:12.922667+08:00",
+      "exit_code": 0,
+      "result": {
+        "Controllers": [
+          {
+            "Command Status": {
+              "CLI Version": "007.1623.0000.0000 May 17, 2021",
+              "Operating system": "Linux 6.8.12-9-pve",
+              "Controller": 0,
+              "Status": "Success",
+              "Description": "None"
+            },
+            "Response Data": {
+              "/c0/v0": [
+                {
+                  "DG/VD": "0/0",
+                  "TYPE": "RAID1",
+                  "State": "Optl",
+                  "Access": "RW",
+                  "Consist": "Yes",
+                  "Cache": "RWBD",
+                  "Cac": "-",
+                  "sCC": "OFF",
+                  "Size": "446.625 GB",
+                  "Name": ""
+                }
+              ],
+              "PDs for VD 0": [
+                {
+                  "EID:Slt": "32:0",
+                  "DID": 0,
+                  "State": "Onln",
+                  "DG": 0,
+                  "Size": "446.625 GB",
+                  "Intf": "SATA",
+                  "Med": "SSD",
+                  "SED": "N",
+                  "PI": "N",
+                  "SeSz": "512B",
+                  "Model": "INTEL SSDSC2BB480G6",
+                  "Sp": "U",
+                  "Type": "-"
+                },
+                {
+                  "EID:Slt": "32:1",
+                  "DID": 1,
+                  "State": "Onln",
+                  "DG": 0,
+                  "Size": "446.625 GB",
+                  "Intf": "SATA",
+                  "Med": "SSD",
+                  "SED": "N",
+                  "PI": "N",
+                  "SeSz": "512B",
+                  "Model": "INTEL SSDSC2BB480G6L",
+                  "Sp": "U",
+                  "Type": "-"
+                }
+              ],
+              "VD0 Properties": {
+                "Strip Size": "64 KB",
+                "Number of Blocks": 936640512,
+                "VD has Emulated PD": "Yes",
+                "Span Depth": 1,
+                "Number of Drives Per Span": 2,
+                "Write Cache(initial setting)": "WriteBack",
+                "Disk Cache Policy": "Disk's Default",
+                "Encryption": "None",
+                "Data Protection": "None",
+                "Active Operations": "None",
+                "Exposed to OS": "Yes",
+                "OS Drive Name": "/dev/sda",
+                "Creation Date": "10-05-2024",
+                "Creation Time": "01:34:51 PM",
+                "Emulation type": "default",
+                "Cachebypass size": "Cachebypass-64k",
+                "Cachebypass Mode": "Cachebypass Intelligent",
+                "Is LD Ready for OS Requests": "Yes",
+                "SCSI NAA Id": "6d0946601881ae002dd0defb051ddb22",
+                "Unmap Enabled": "N/A"
+              },
+              "/c0/v1": [
+                {
+                  "DG/VD": "1/1",
+                  "TYPE": "RAID5",
+                  "State": "Optl",
+                  "Access": "RW",
+                  "Consist": "Yes",
+                  "Cache": "RWBD",
+                  "Cac": "-",
+                  "sCC": "OFF",
+                  "Size": "7.276 TB",
+                  "Name": ""
+                }
+              ],
+              "PDs for VD 1": [
+                {
+                  "EID:Slt": "32:2",
+                  "DID": 2,
+                  "State": "Onln",
+                  "DG": 1,
+                  "Size": "3.637 TB",
+                  "Intf": "SAS",
+                  "Med": "HDD",
+                  "SED": "N",
+                  "PI": "N",
+                  "SeSz": "512B",
+                  "Model": "ST4000NM0295    ",
+                  "Sp": "U",
+                  "Type": "-"
+                },
+                {
+                  "EID:Slt": "32:3",
+                  "DID": 3,
+                  "State": "Onln",
+                  "DG": 1,
+                  "Size": "3.637 TB",
+                  "Intf": "SAS",
+                  "Med": "HDD",
+                  "SED": "N",
+                  "PI": "N",
+                  "SeSz": "512B",
+                  "Model": "ST4000NM0295    ",
+                  "Sp": "U",
+                  "Type": "-"
+                },
+                {
+                  "EID:Slt": "32:7",
+                  "DID": 7,
+                  "State": "Onln",
+                  "DG": 1,
+                  "Size": "3.637 TB",
+                  "Intf": "SAS",
+                  "Med": "HDD",
+                  "SED": "N",
+                  "PI": "N",
+                  "SeSz": "512B",
+                  "Model": "ST4000NM0295    ",
+                  "Sp": "U",
+                  "Type": "-"
+                }
+              ],
+              "VD1 Properties": {
+                "Strip Size": "64 KB",
+                "Number of Blocks": 15625879552,
+                "VD has Emulated PD": "No",
+                "Span Depth": 1,
+                "Number of Drives Per Span": 3,
+                "Write Cache(initial setting)": "WriteBack",
+                "Disk Cache Policy": "Disk's Default",
+                "Encryption": "None",
+                "Data Protection": "None",
+                "Active Operations": "None",
+                "Exposed to OS": "Yes",
+                "OS Drive Name": "/dev/sdb",
+                "Creation Date": "10-05-2024",
+                "Creation Time": "01:34:59 PM",
+                "Emulation type": "default",
+                "Cachebypass size": "Cachebypass-64k",
+                "Cachebypass Mode": "Cachebypass Intelligent",
+                "Is LD Ready for OS Requests": "Yes",
+                "SCSI NAA Id": "6d0946601881ae002dd0df03058ba2df",
+                "Unmap Enabled": "N/A"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "physical-disks",
+      "command": "/root/dell-bootstrap/perccli-extracted/opt/MegaRAID/perccli/perccli64 /c0/eall/sall show all J",
+      "collected_at": "2026-11-06T05:17:12.968787+08:00",
+      "exit_code": 0,
+      "result": {
+        "Controllers": [
+          {
+            "Command Status": {
+              "CLI Version": "007.1623.0000.0000 May 17, 2021",
+              "Operating system": "Linux 6.8.12-9-pve",
+              "Controller": 0,
+              "Status": "Success",
+              "Description": "Show Drive Information Succeeded."
+            },
+            "Response Data": {
+              "Drive /c0/e32/s0": [
+                {
+                  "EID:Slt": "32:0",
+                  "DID": 0,
+                  "State": "Onln",
+                  "DG": 0,
+                  "Size": "446.625 GB",
+                  "Intf": "SATA",
+                  "Med": "SSD",
+                  "SED": "N",
+                  "PI": "N",
+                  "SeSz": "512B",
+                  "Model": "INTEL SSDSC2BB480G6",
+                  "Sp": "U",
+                  "Type": "-"
+                }
+              ],
+              "Drive /c0/e32/s0 - Detailed Information": {
+                "Drive /c0/e32/s0 State": {
+                  "Shield Counter": 0,
+                  "Media Error Count": 0,
+                  "Other Error Count": 0,
+                  "Drive Temperature": " 27C (80.60 F)",
+                  "Predictive Failure Count": 0,
+                  "S.M.A.R.T alert flagged by drive": "No"
+                },
+                "Drive /c0/e32/s0 Device attributes": {
+                  "SN": "[redacted]",
+                  "Manufacturer Id": "ATA     ",
+                  "Model Number": "INTEL SSDSC2BB480G6",
+                  "NAND Vendor": "NA",
+                  "WWN": "[redacted]",
+                  "Firmware Revision": "G2010140",
+                  "Raw size": "447.130 GB [0x37e436b0 Sectors]",
+                  "Coerced size": "446.625 GB [0x37d40000 Sectors]",
+                  "Non Coerced size": "446.630 GB [0x37d436b0 Sectors]",
+                  "Device Speed": "6.0Gb/s",
+                  "Link Speed": "6.0Gb/s",
+                  "NCQ setting": "N/A",
+                  "Write Cache": "Enabled",
+                  "Logical Sector Size": "512B",
+                  "Physical Sector Size": "4 KB",
+                  "Connector Name": "00 "
+                },
+                "Drive /c0/e32/s0 Policies/Settings": {
+                  "Drive position": "DriveGroup:0, Span:0, Row:0",
+                  "Enclosure position": "1",
+                  "Connected Port Number": "4(path0) ",
+                  "Sequence Number": 2,
+                  "Commissioned Spare": "No",
+                  "Emergency Spare": "No",
+                  "Last Predictive Failure Event Sequence Number": 0,
+                  "Successful diagnostics completion on": "N/A",
+                  "FDE Type": "None",
+                  "SED Capable": "No",
+                  "SED Enabled": "No",
+                  "Secured": "No",
+                  "Cryptographic Erase Capable": "Yes",
+                  "Sanitize Support": "Not supported",
+                  "Locked": "No",
+                  "Needs EKM Attention": "No",
+                  "PI Eligible": "No",
+                  "Certified": "No",
+                  "Wide Port Capable": "No",
+                  "Multipath": "No",
+                  "Port Information": [
+                    {
+                      "Port": 0,
+                      "Status": "Active",
+                      "Linkspeed": "6.0Gb/s",
+                      "SAS address": "0x4433221106000000"
+                    }
+                  ]
+                },
+                "Inquiry Data": "[omitted device identification bytes]"
+              },
+              "Drive /c0/e32/s1": [
+                {
+                  "EID:Slt": "32:1",
+                  "DID": 1,
+                  "State": "Onln",
+                  "DG": 0,
+                  "Size": "446.625 GB",
+                  "Intf": "SATA",
+                  "Med": "SSD",
+                  "SED": "N",
+                  "PI": "N",
+                  "SeSz": "512B",
+                  "Model": "INTEL SSDSC2BB480G6L",
+                  "Sp": "U",
+                  "Type": "-"
+                }
+              ],
+              "Drive /c0/e32/s1 - Detailed Information": {
+                "Drive /c0/e32/s1 State": {
+                  "Shield Counter": 0,
+                  "Media Error Count": 0,
+                  "Other Error Count": 0,
+                  "Drive Temperature": " 30C (86.00 F)",
+                  "Predictive Failure Count": 0,
+                  "S.M.A.R.T alert flagged by drive": "No"
+                },
+                "Drive /c0/e32/s1 Device attributes": {
+                  "SN": "[redacted]",
+                  "Manufacturer Id": "ATA     ",
+                  "Model Number": "INTEL SSDSC2BB480G6L",
+                  "NAND Vendor": "NA",
+                  "WWN": "[redacted]",
+                  "Firmware Revision": "G201LH02",
+                  "Raw size": "447.130 GB [0x37e436b0 Sectors]",
+                  "Coerced size": "446.625 GB [0x37d40000 Sectors]",
+                  "Non Coerced size": "446.630 GB [0x37d436b0 Sectors]",
+                  "Device Speed": "6.0Gb/s",
+                  "Link Speed": "6.0Gb/s",
+                  "NCQ setting": "N/A",
+                  "Write Cache": "Enabled",
+                  "Logical Sector Size": "512B",
+                  "Physical Sector Size": "4 KB",
+                  "Connector Name": "00 "
+                },
+                "Drive /c0/e32/s1 Policies/Settings": {
+                  "Drive position": "DriveGroup:0, Span:0, Row:1",
+                  "Enclosure position": "1",
+                  "Connected Port Number": "3(path0) ",
+                  "Sequence Number": 2,
+                  "Commissioned Spare": "No",
+                  "Emergency Spare": "No",
+                  "Last Predictive Failure Event Sequence Number": 0,
+                  "Successful diagnostics completion on": "N/A",
+                  "FDE Type": "None",
+                  "SED Capable": "No",
+                  "SED Enabled": "No",
+                  "Secured": "No",
+                  "Cryptographic Erase Capable": "Yes",
+                  "Sanitize Support": "Not supported",
+                  "Locked": "No",
+                  "Needs EKM Attention": "No",
+                  "PI Eligible": "No",
+                  "Certified": "No",
+                  "Wide Port Capable": "No",
+                  "Multipath": "No",
+                  "Port Information": [
+                    {
+                      "Port": 0,
+                      "Status": "Active",
+                      "Linkspeed": "6.0Gb/s",
+                      "SAS address": "0x4433221107000000"
+                    }
+                  ]
+                },
+                "Inquiry Data": "[omitted device identification bytes]"
+              },
+              "Drive /c0/e32/s2": [
+                {
+                  "EID:Slt": "32:2",
+                  "DID": 2,
+                  "State": "Onln",
+                  "DG": 1,
+                  "Size": "3.637 TB",
+                  "Intf": "SAS",
+                  "Med": "HDD",
+                  "SED": "N",
+                  "PI": "N",
+                  "SeSz": "512B",
+                  "Model": "ST4000NM0295    ",
+                  "Sp": "U",
+                  "Type": "-"
+                }
+              ],
+              "Drive /c0/e32/s2 - Detailed Information": {
+                "Drive /c0/e32/s2 State": {
+                  "Shield Counter": 0,
+                  "Media Error Count": 0,
+                  "Other Error Count": 0,
+                  "Drive Temperature": " 42C (107.60 F)",
+                  "Predictive Failure Count": 0,
+                  "S.M.A.R.T alert flagged by drive": "No"
+                },
+                "Drive /c0/e32/s2 Device attributes": {
+                  "SN": "[redacted]",
+                  "Manufacturer Id": "SEAGATE ",
+                  "Model Number": "ST4000NM0295    ",
+                  "NAND Vendor": "NA",
+                  "WWN": "[redacted]",
+                  "Firmware Revision": "DT31",
+                  "Firmware Release Number": "N/A",
+                  "Raw size": "3.638 TB [0x1d1c0beb0 Sectors]",
+                  "Coerced size": "3.637 TB [0x1d1b00000 Sectors]",
+                  "Non Coerced size": "3.637 TB [0x1d1b0beb0 Sectors]",
+                  "Device Speed": "12.0Gb/s",
+                  "Link Speed": "12.0Gb/s",
+                  "Write Cache": "Disabled",
+                  "Logical Sector Size": "512B",
+                  "Physical Sector Size": "512B",
+                  "Connector Name": "00 "
+                },
+                "Drive /c0/e32/s2 Policies/Settings": {
+                  "Drive position": "DriveGroup:1, Span:0, Row:0",
+                  "Enclosure position": "1",
+                  "Connected Port Number": "2(path0) ",
+                  "Sequence Number": 2,
+                  "Commissioned Spare": "No",
+                  "Emergency Spare": "No",
+                  "Last Predictive Failure Event Sequence Number": 0,
+                  "Successful diagnostics completion on": "N/A",
+                  "FDE Type": "None",
+                  "SED Capable": "No",
+                  "SED Enabled": "No",
+                  "Secured": "No",
+                  "Cryptographic Erase Capable": "Yes",
+                  "Sanitize Support": "Not supported",
+                  "Locked": "No",
+                  "Needs EKM Attention": "No",
+                  "PI Eligible": "No",
+                  "Certified": "Yes",
+                  "Wide Port Capable": "No",
+                  "Multipath": "No",
+                  "Port Information": [
+                    {
+                      "Port": 0,
+                      "Status": "Active",
+                      "Linkspeed": "12.0Gb/s",
+                      "SAS address": "0x5000c500a6af5229"
+                    },
+                    {
+                      "Port": 1,
+                      "Status": "Active",
+                      "Linkspeed": "12.0Gb/s",
+                      "SAS address": "0x0"
+                    }
+                  ]
+                },
+                "Inquiry Data": "[omitted device identification bytes]"
+              },
+              "Drive /c0/e32/s3": [
+                {
+                  "EID:Slt": "32:3",
+                  "DID": 3,
+                  "State": "Onln",
+                  "DG": 1,
+                  "Size": "3.637 TB",
+                  "Intf": "SAS",
+                  "Med": "HDD",
+                  "SED": "N",
+                  "PI": "N",
+                  "SeSz": "512B",
+                  "Model": "ST4000NM0295    ",
+                  "Sp": "U",
+                  "Type": "-"
+                }
+              ],
+              "Drive /c0/e32/s3 - Detailed Information": {
+                "Drive /c0/e32/s3 State": {
+                  "Shield Counter": 0,
+                  "Media Error Count": 0,
+                  "Other Error Count": 0,
+                  "Drive Temperature": " 43C (109.40 F)",
+                  "Predictive Failure Count": 0,
+                  "S.M.A.R.T alert flagged by drive": "No"
+                },
+                "Drive /c0/e32/s3 Device attributes": {
+                  "SN": "[redacted]",
+                  "Manufacturer Id": "SEAGATE ",
+                  "Model Number": "ST4000NM0295    ",
+                  "NAND Vendor": "NA",
+                  "WWN": "[redacted]",
+                  "Firmware Revision": "DT31",
+                  "Firmware Release Number": "N/A",
+                  "Raw size": "3.638 TB [0x1d1c0beb0 Sectors]",
+                  "Coerced size": "3.637 TB [0x1d1b00000 Sectors]",
+                  "Non Coerced size": "3.637 TB [0x1d1b0beb0 Sectors]",
+                  "Device Speed": "12.0Gb/s",
+                  "Link Speed": "12.0Gb/s",
+                  "Write Cache": "Disabled",
+                  "Logical Sector Size": "512B",
+                  "Physical Sector Size": "512B",
+                  "Connector Name": "00 "
+                },
+                "Drive /c0/e32/s3 Policies/Settings": {
+                  "Drive position": "DriveGroup:1, Span:0, Row:1",
+                  "Enclosure position": "1",
+                  "Connected Port Number": "1(path0) ",
+                  "Sequence Number": 4,
+                  "Commissioned Spare": "No",
+                  "Emergency Spare": "No",
+                  "Last Predictive Failure Event Sequence Number": 0,
+                  "Successful diagnostics completion on": "N/A",
+                  "FDE Type": "None",
+                  "SED Capable": "No",
+                  "SED Enabled": "No",
+                  "Secured": "No",
+                  "Cryptographic Erase Capable": "Yes",
+                  "Sanitize Support": "Not supported",
+                  "Locked": "No",
+                  "Needs EKM Attention": "No",
+                  "PI Eligible": "No",
+                  "Certified": "Yes",
+                  "Wide Port Capable": "No",
+                  "Multipath": "No",
+                  "Port Information": [
+                    {
+                      "Port": 0,
+                      "Status": "Active",
+                      "Linkspeed": "12.0Gb/s",
+                      "SAS address": "0x5000c500a6af2169"
+                    },
+                    {
+                      "Port": 1,
+                      "Status": "Active",
+                      "Linkspeed": "12.0Gb/s",
+                      "SAS address": "0x0"
+                    }
+                  ]
+                },
+                "Inquiry Data": "[omitted device identification bytes]"
+              },
+              "Drive /c0/e32/s7": [
+                {
+                  "EID:Slt": "32:7",
+                  "DID": 7,
+                  "State": "Onln",
+                  "DG": 1,
+                  "Size": "3.637 TB",
+                  "Intf": "SAS",
+                  "Med": "HDD",
+                  "SED": "N",
+                  "PI": "N",
+                  "SeSz": "512B",
+                  "Model": "ST4000NM0295    ",
+                  "Sp": "U",
+                  "Type": "-"
+                }
+              ],
+              "Drive /c0/e32/s7 - Detailed Information": {
+                "Drive /c0/e32/s7 State": {
+                  "Shield Counter": 0,
+                  "Media Error Count": 0,
+                  "Other Error Count": 0,
+                  "Drive Temperature": " 42C (107.60 F)",
+                  "Predictive Failure Count": 0,
+                  "S.M.A.R.T alert flagged by drive": "No"
+                },
+                "Drive /c0/e32/s7 Device attributes": {
+                  "SN": "[redacted]",
+                  "Manufacturer Id": "SEAGATE ",
+                  "Model Number": "ST4000NM0295    ",
+                  "NAND Vendor": "NA",
+                  "WWN": "[redacted]",
+                  "Firmware Revision": "DT31",
+                  "Firmware Release Number": "N/A",
+                  "Raw size": "3.638 TB [0x1d1c0beb0 Sectors]",
+                  "Coerced size": "3.637 TB [0x1d1b00000 Sectors]",
+                  "Non Coerced size": "3.637 TB [0x1d1b0beb0 Sectors]",
+                  "Device Speed": "12.0Gb/s",
+                  "Link Speed": "12.0Gb/s",
+                  "Write Cache": "Disabled",
+                  "Logical Sector Size": "512B",
+                  "Physical Sector Size": "512B",
+                  "Connector Name": "00 "
+                },
+                "Drive /c0/e32/s7 Policies/Settings": {
+                  "Drive position": "DriveGroup:1, Span:0, Row:2",
+                  "Enclosure position": "1",
+                  "Connected Port Number": "0(path0) ",
+                  "Sequence Number": 2,
+                  "Commissioned Spare": "No",
+                  "Emergency Spare": "No",
+                  "Last Predictive Failure Event Sequence Number": 0,
+                  "Successful diagnostics completion on": "N/A",
+                  "FDE Type": "None",
+                  "SED Capable": "No",
+                  "SED Enabled": "No",
+                  "Secured": "No",
+                  "Cryptographic Erase Capable": "Yes",
+                  "Sanitize Support": "Not supported",
+                  "Locked": "No",
+                  "Needs EKM Attention": "No",
+                  "PI Eligible": "No",
+                  "Certified": "Yes",
+                  "Wide Port Capable": "No",
+                  "Multipath": "No",
+                  "Port Information": [
+                    {
+                      "Port": 0,
+                      "Status": "Active",
+                      "Linkspeed": "12.0Gb/s",
+                      "SAS address": "0x5000c500a6af0931"
+                    },
+                    {
+                      "Port": 1,
+                      "Status": "Active",
+                      "Linkspeed": "12.0Gb/s",
+                      "SAS address": "0x0"
+                    }
+                  ]
+                },
+                "Inquiry Data": "[omitted device identification bytes]"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "bbu",
+      "command": "/root/dell-bootstrap/perccli-extracted/opt/MegaRAID/perccli/perccli64 /c0/bbu show all J",
+      "collected_at": "2026-11-06T05:17:13.021623+08:00",
+      "exit_code": 0,
+      "result": {
+        "Controllers": [
+          {
+            "Command Status": {
+              "CLI Version": "007.1623.0000.0000 May 17, 2021",
+              "Operating system": "Linux 6.8.12-9-pve",
+              "Controller": 0,
+              "Status": "Success",
+              "Description": "None"
+            },
+            "Response Data": {
+              "BBU_Info": [
+                {
+                  "Property": "Type",
+                  "Value": "BBU"
+                },
+                {
+                  "Property": "Voltage",
+                  "Value": "3917 mV"
+                },
+                {
+                  "Property": "Current",
+                  "Value": "0 mA"
+                },
+                {
+                  "Property": "Temperature",
+                  "Value": "46 C"
+                },
+                {
+                  "Property": "Battery State",
+                  "Value": "Optimal"
+                }
+              ],
+              "BBU_Firmware_Status": [
+                {
+                  "Property": "Charging Status",
+                  "Value": "None"
+                },
+                {
+                  "Property": "Voltage",
+                  "Value": "OK"
+                },
+                {
+                  "Property": "Temperature",
+                  "Value": "OK"
+                },
+                {
+                  "Property": "Learn Cycle Requested",
+                  "Value": "No"
+                },
+                {
+                  "Property": "Learn Cycle Active",
+                  "Value": "No"
+                },
+                {
+                  "Property": "Learn Cycle Status",
+                  "Value": "OK"
+                },
+                {
+                  "Property": "Learn Cycle Timeout",
+                  "Value": "No"
+                },
+                {
+                  "Property": "I2C Errors Detected",
+                  "Value": "No"
+                },
+                {
+                  "Property": "Battery Pack Missing",
+                  "Value": "No"
+                },
+                {
+                  "Property": "Replacement required",
+                  "Value": "No"
+                },
+                {
+                  "Property": "Remaining Capacity Low",
+                  "Value": "No"
+                },
+                {
+                  "Property": "Periodic Learn Required",
+                  "Value": "No"
+                },
+                {
+                  "Property": "Transparent Learn",
+                  "Value": "No"
+                },
+                {
+                  "Property": "No space to cache offload",
+                  "Value": "No"
+                },
+                {
+                  "Property": "Pack is about to fail & should be replaced",
+                  "Value": "No"
+                },
+                {
+                  "Property": "Cache Offload premium feature required",
+                  "Value": "No"
+                },
+                {
+                  "Property": "Module microcode update required",
+                  "Value": "No"
+                }
+              ],
+              "GasGaugeStatus": [
+                {
+                  "Property": "GasGauge StatusCode",
+                  "Value": "0x228"
+                },
+                {
+                  "Property": "Fully Discharged",
+                  "Value": "N/A"
+                },
+                {
+                  "Property": "Fully Charged",
+                  "Value": "N/A"
+                },
+                {
+                  "Property": "Discharging",
+                  "Value": "N/A"
+                },
+                {
+                  "Property": "Initialized",
+                  "Value": "N/A"
+                },
+                {
+                  "Property": "Remaining Time Alarm",
+                  "Value": "N/A"
+                },
+                {
+                  "Property": "Terminate Discharge Alarm",
+                  "Value": "N/A"
+                },
+                {
+                  "Property": "Over Temperature",
+                  "Value": "N/A"
+                },
+                {
+                  "Property": "Charging Terminated",
+                  "Value": "N/A"
+                },
+                {
+                  "Property": "Over Charged",
+                  "Value": "N/A"
+                },
+                {
+                  "Property": "Relative State of Charge",
+                  "Value": "100%"
+                },
+                {
+                  "Property": "Charger System State",
+                  "Value": "Complete"
+                },
+                {
+                  "Property": "Remaining Capacity",
+                  "Value": 441
+                },
+                {
+                  "Property": "Full Charge Capacity",
+                  "Value": 445
+                },
+                {
+                  "Property": "Is SOH Good",
+                  "Value": "Yes"
+                },
+                {
+                  "Property": "Battery backup charge time",
+                  "Value": "0 hour(s)"
+                }
+              ],
+              "BBU_Capacity_Info": [
+                {
+                  "Property": "Relative State of Charge",
+                  "Value": "100%"
+                },
+                {
+                  "Property": "Absolute State of charge",
+                  "Value": "0%"
+                },
+                {
+                  "Property": "Remaining Capacity",
+                  "Value": "441 mAh"
+                },
+                {
+                  "Property": "Full Charge Capacity",
+                  "Value": "445 mAh"
+                },
+                {
+                  "Property": "Run time to empty",
+                  "Value": "Unavailable"
+                },
+                {
+                  "Property": "Average time to empty",
+                  "Value": "35 min"
+                },
+                {
+                  "Property": "Average Time to full",
+                  "Value": "Unavailable"
+                },
+                {
+                  "Property": "Cycle Count",
+                  "Value": "0"
+                },
+                {
+                  "Property": "Max Error",
+                  "Value": "0%"
+                },
+                {
+                  "Property": "Remaining Capacity Alarm",
+                  "Value": "0 mAh"
+                },
+                {
+                  "Property": "Remaining Time Alarm",
+                  "Value": "0 minutes(s)"
+                }
+              ],
+              "BBU_Design_Info": [
+                {
+                  "Property": "Date of Manufacture",
+                  "Value": "00/00/0"
+                },
+                {
+                  "Property": "Design Capacity",
+                  "Value": "0 mAh"
+                },
+                {
+                  "Property": "Design Voltage",
+                  "Value": "0 mV"
+                },
+                {
+                  "Property": "Specification Info",
+                  "Value": 0
+                },
+                {
+                  "Property": "Serial Number",
+                  "Value": "[redacted]"
+                },
+                {
+                  "Property": "Pack Stat Configuration",
+                  "Value": "0"
+                },
+                {
+                  "Property": "Manufacture Name",
+                  "Value": "0x129"
+                },
+                {
+                  "Property": "Device Name",
+                  "Value": ""
+                },
+                {
+                  "Property": "Device Chemistry",
+                  "Value": ""
+                },
+                {
+                  "Property": "Battery FRU",
+                  "Value": "N/A"
+                },
+                {
+                  "Property": "Transparent Learn",
+                  "Value": 1
+                },
+                {
+                  "Property": "App Data",
+                  "Value": 0
+                },
+                {
+                  "Property": "Module Version",
+                  "Value": "0.4"
+                }
+              ],
+              "BBU_Properties": [
+                {
+                  "Property": "Auto Learn Period",
+                  "Value": "90d (7776000 seconds)"
+                },
+                {
+                  "Property": "Learn Delay Interval",
+                  "Value": "0 hour(s)"
+                },
+                {
+                  "Property": "Auto-Learn Mode",
+                  "Value": "Transparent"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "rebuild-slot-32-3",
+      "command": "/root/dell-bootstrap/perccli-extracted/opt/MegaRAID/perccli/perccli64 /c0/e32/s3 show rebuild J",
+      "collected_at": "2026-11-06T05:17:13.040642+08:00",
+      "exit_code": 0,
+      "result": {
+        "Controllers": [
+          {
+            "Command Status": {
+              "CLI Version": "007.1623.0000.0000 May 17, 2021",
+              "Operating system": "Linux 6.8.12-9-pve",
+              "Controller": 0,
+              "Status": "Success",
+              "Description": "Show Drive Rebuild Status Succeeded."
+            },
+            "Response Data": [
+              {
+                "Drive-ID": "/c0/e32/s3",
+                "Progress%": "-",
+                "Status": "Not in progress",
+                "Estimated Time Left": "-"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "latest-events",
+      "command": "/root/dell-bootstrap/perccli-extracted/opt/MegaRAID/perccli/perccli64 /c0 show events type=latest=60 file=/dev/stdout",
+      "collected_at": "2026-11-06T05:17:13.090674+08:00",
+      "exit_code": 0,
+      "result": {
+        "events": [
+          {
+            "sequence": "0x00002795",
+            "controller_time": "Thu Nov  5 19:48:57 2026",
+            "code": "0x000000f9",
+            "class": "0",
+            "description": "VD 01/1 is now OPTIMAL"
+          },
+          {
+            "sequence": "0x00002794",
+            "controller_time": "Thu Nov  5 19:48:57 2026",
+            "code": "0x00000051",
+            "class": "0",
+            "description": "State change on VD 01/1 from DEGRADED(2) to OPTIMAL(3)"
+          },
+          {
+            "sequence": "0x00002793",
+            "controller_time": "Thu Nov  5 19:48:57 2026",
+            "code": "0x00000072",
+            "class": "0",
+            "description": "State change on PD 03(e0x20/s3) from REBUILD(14) to ONLINE(18)"
+          },
+          {
+            "sequence": "0x00002792",
+            "controller_time": "Thu Nov  5 19:48:57 2026",
+            "code": "0x00000194",
+            "class": "0",
+            "description": "Drive Cache settings restored after rebuild for PD 03(e0x20/s3)"
+          },
+          {
+            "sequence": "0x00002791",
+            "controller_time": "Thu Nov  5 19:48:57 2026",
+            "code": "0x00000064",
+            "class": "0",
+            "description": "Rebuild complete on PD 03(e0x20/s3)"
+          },
+          {
+            "sequence": "0x00002790",
+            "controller_time": "Thu Nov  5 19:48:57 2026",
+            "code": "0x00000063",
+            "class": "0",
+            "description": "Rebuild complete on VD 01/1"
+          },
+          {
+            "sequence": "0x0000278f",
+            "controller_time": "Thu Nov  5 19:48:38 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 99.94%(25140s)"
+          },
+          {
+            "sequence": "0x0000278e",
+            "controller_time": "Thu Nov  5 19:42:14 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 98.95%(24756s)"
+          },
+          {
+            "sequence": "0x0000278d",
+            "controller_time": "Thu Nov  5 19:35:56 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 97.96%(24378s)"
+          },
+          {
+            "sequence": "0x0000278c",
+            "controller_time": "Thu Nov  5 19:29:44 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 96.96%(24006s)"
+          },
+          {
+            "sequence": "0x0000278b",
+            "controller_time": "Thu Nov  5 19:23:38 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 95.95%(23640s)"
+          },
+          {
+            "sequence": "0x0000278a",
+            "controller_time": "Thu Nov  5 19:17:38 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 94.96%(23280s)"
+          },
+          {
+            "sequence": "0x00002789",
+            "controller_time": "Thu Nov  5 19:11:32 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 93.95%(22914s)"
+          },
+          {
+            "sequence": "0x00002788",
+            "controller_time": "Thu Nov  5 19:05:26 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 92.95%(22548s)"
+          },
+          {
+            "sequence": "0x00002787",
+            "controller_time": "Thu Nov  5 18:59:26 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 91.96%(22188s)"
+          },
+          {
+            "sequence": "0x00002786",
+            "controller_time": "Thu Nov  5 18:53:38 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 90.96%(21840s)"
+          },
+          {
+            "sequence": "0x00002785",
+            "controller_time": "Thu Nov  5 18:47:56 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 89.96%(21498s)"
+          },
+          {
+            "sequence": "0x00002784",
+            "controller_time": "Thu Nov  5 18:42:20 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 88.96%(21162s)"
+          },
+          {
+            "sequence": "0x00002783",
+            "controller_time": "Thu Nov  5 18:36:50 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 87.96%(20832s)"
+          },
+          {
+            "sequence": "0x00002782",
+            "controller_time": "Thu Nov  5 18:31:26 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 86.96%(20508s)"
+          },
+          {
+            "sequence": "0x00002781",
+            "controller_time": "Thu Nov  5 18:26:08 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 85.96%(20190s)"
+          },
+          {
+            "sequence": "0x00002780",
+            "controller_time": "Thu Nov  5 18:20:56 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 84.96%(19878s)"
+          },
+          {
+            "sequence": "0x0000277f",
+            "controller_time": "Thu Nov  5 18:15:44 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 83.96%(19566s)"
+          },
+          {
+            "sequence": "0x0000277e",
+            "controller_time": "Thu Nov  5 18:10:38 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 82.96%(19260s)"
+          },
+          {
+            "sequence": "0x0000277d",
+            "controller_time": "Thu Nov  5 18:05:26 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 81.96%(18948s)"
+          },
+          {
+            "sequence": "0x0000277c",
+            "controller_time": "Thu Nov  5 18:00:26 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 80.97%(18648s)"
+          },
+          {
+            "sequence": "0x0000277b",
+            "controller_time": "Thu Nov  5 17:55:32 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 79.97%(18354s)"
+          },
+          {
+            "sequence": "0x0000277a",
+            "controller_time": "Thu Nov  5 17:50:38 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 78.96%(18060s)"
+          },
+          {
+            "sequence": "0x00002779",
+            "controller_time": "Thu Nov  5 17:45:50 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 77.96%(17772s)"
+          },
+          {
+            "sequence": "0x00002778",
+            "controller_time": "Thu Nov  5 17:41:08 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 76.97%(17490s)"
+          },
+          {
+            "sequence": "0x00002777",
+            "controller_time": "Thu Nov  5 17:36:20 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 75.96%(17202s)"
+          },
+          {
+            "sequence": "0x00002776",
+            "controller_time": "Thu Nov  5 17:31:44 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 74.97%(16926s)"
+          },
+          {
+            "sequence": "0x00002775",
+            "controller_time": "Thu Nov  5 17:27:08 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 73.97%(16650s)"
+          },
+          {
+            "sequence": "0x00002774",
+            "controller_time": "Thu Nov  5 17:22:32 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 72.96%(16374s)"
+          },
+          {
+            "sequence": "0x00002773",
+            "controller_time": "Thu Nov  5 17:18:02 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 71.96%(16104s)"
+          },
+          {
+            "sequence": "0x00002772",
+            "controller_time": "Thu Nov  5 17:13:38 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 70.97%(15840s)"
+          },
+          {
+            "sequence": "0x00002771",
+            "controller_time": "Thu Nov  5 17:09:14 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 69.98%(15576s)"
+          },
+          {
+            "sequence": "0x00002770",
+            "controller_time": "Thu Nov  5 17:04:50 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 68.97%(15312s)"
+          },
+          {
+            "sequence": "0x0000276f",
+            "controller_time": "Thu Nov  5 17:00:26 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 67.96%(15048s)"
+          },
+          {
+            "sequence": "0x0000276e",
+            "controller_time": "Thu Nov  5 16:56:08 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 66.98%(14790s)"
+          },
+          {
+            "sequence": "0x0000276d",
+            "controller_time": "Thu Nov  5 16:51:50 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 65.97%(14532s)"
+          },
+          {
+            "sequence": "0x0000276c",
+            "controller_time": "Thu Nov  5 16:47:38 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 64.98%(14280s)"
+          },
+          {
+            "sequence": "0x0000276b",
+            "controller_time": "Thu Nov  5 16:43:26 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 63.98%(14028s)"
+          },
+          {
+            "sequence": "0x0000276a",
+            "controller_time": "Thu Nov  5 16:39:14 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 62.97%(13776s)"
+          },
+          {
+            "sequence": "0x00002769",
+            "controller_time": "Thu Nov  5 16:35:08 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 61.98%(13530s)"
+          },
+          {
+            "sequence": "0x00002768",
+            "controller_time": "Thu Nov  5 16:31:02 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 60.98%(13284s)"
+          },
+          {
+            "sequence": "0x00002767",
+            "controller_time": "Thu Nov  5 16:26:50 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 59.98%(13032s)"
+          },
+          {
+            "sequence": "0x00002766",
+            "controller_time": "Thu Nov  5 16:22:44 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 58.98%(12786s)"
+          },
+          {
+            "sequence": "0x00002765",
+            "controller_time": "Thu Nov  5 16:19:28 2026",
+            "code": "0x000000f2",
+            "class": "0",
+            "description": "Battery charge complete"
+          },
+          {
+            "sequence": "0x00002764",
+            "controller_time": "Thu Nov  5 16:18:38 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 57.97%(12540s)"
+          },
+          {
+            "sequence": "0x00002763",
+            "controller_time": "Thu Nov  5 16:14:14 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 56.97%(12276s)"
+          },
+          {
+            "sequence": "0x00002762",
+            "controller_time": "Thu Nov  5 16:10:08 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 55.98%(12030s)"
+          },
+          {
+            "sequence": "0x00002761",
+            "controller_time": "Thu Nov  5 16:06:02 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 54.97%(11784s)"
+          },
+          {
+            "sequence": "0x00002760",
+            "controller_time": "Thu Nov  5 16:02:08 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 53.98%(11550s)"
+          },
+          {
+            "sequence": "0x0000275f",
+            "controller_time": "Thu Nov  5 15:57:44 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 52.97%(11286s)"
+          },
+          {
+            "sequence": "0x0000275e",
+            "controller_time": "Thu Nov  5 15:53:50 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 51.99%(11052s)"
+          },
+          {
+            "sequence": "0x0000275d",
+            "controller_time": "Thu Nov  5 15:49:50 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 50.97%(10812s)"
+          },
+          {
+            "sequence": "0x0000275c",
+            "controller_time": "Thu Nov  5 15:45:26 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 49.97%(10548s)"
+          },
+          {
+            "sequence": "0x0000275b",
+            "controller_time": "Thu Nov  5 15:41:38 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 48.98%(10320s)"
+          },
+          {
+            "sequence": "0x0000275a",
+            "controller_time": "Thu Nov  5 15:37:50 2026",
+            "code": "0x00000067",
+            "class": "-1",
+            "description": "Rebuild progress on PD 03(e0x20/s3) is 47.99%(10092s)"
+          }
+        ],
+        "event_count": 60,
+        "output_contains_success": true,
+        "event_output": "stdout only"
+      }
+    }
+  ],
+  "summary": {
+    "status": "recovered-verified-current",
+    "controller_status": "Optimal",
+    "virtual_disks": [
+      {
+        "DG/VD": "0/0",
+        "TYPE": "RAID1",
+        "State": "Optl",
+        "Access": "RW",
+        "Consist": "Yes",
+        "Cache": "RWBD",
+        "Cac": "-",
+        "sCC": "OFF",
+        "Size": "446.625 GB",
+        "Name": ""
+      },
+      {
+        "DG/VD": "1/1",
+        "TYPE": "RAID5",
+        "State": "Optl",
+        "Access": "RW",
+        "Consist": "Yes",
+        "Cache": "RWBD",
+        "Cac": "-",
+        "sCC": "OFF",
+        "Size": "7.276 TB",
+        "Name": ""
+      }
+    ],
+    "physical_disks": [
+      {
+        "EID:Slt": "32:0",
+        "DID": 0,
+        "State": "Onln",
+        "DG": 0,
+        "Size": "446.625 GB",
+        "Intf": "SATA",
+        "Med": "SSD",
+        "SED": "N",
+        "PI": "N",
+        "SeSz": "512B",
+        "Model": "INTEL SSDSC2BB480G6",
+        "Sp": "U",
+        "Type": "-"
+      },
+      {
+        "EID:Slt": "32:1",
+        "DID": 1,
+        "State": "Onln",
+        "DG": 0,
+        "Size": "446.625 GB",
+        "Intf": "SATA",
+        "Med": "SSD",
+        "SED": "N",
+        "PI": "N",
+        "SeSz": "512B",
+        "Model": "INTEL SSDSC2BB480G6L",
+        "Sp": "U",
+        "Type": "-"
+      },
+      {
+        "EID:Slt": "32:2",
+        "DID": 2,
+        "State": "Onln",
+        "DG": 1,
+        "Size": "3.637 TB",
+        "Intf": "SAS",
+        "Med": "HDD",
+        "SED": "N",
+        "PI": "N",
+        "SeSz": "512B",
+        "Model": "ST4000NM0295    ",
+        "Sp": "U",
+        "Type": "-"
+      },
+      {
+        "EID:Slt": "32:3",
+        "DID": 3,
+        "State": "Onln",
+        "DG": 1,
+        "Size": "3.637 TB",
+        "Intf": "SAS",
+        "Med": "HDD",
+        "SED": "N",
+        "PI": "N",
+        "SeSz": "512B",
+        "Model": "ST4000NM0295    ",
+        "Sp": "U",
+        "Type": "-"
+      },
+      {
+        "EID:Slt": "32:7",
+        "DID": 7,
+        "State": "Onln",
+        "DG": 1,
+        "Size": "3.637 TB",
+        "Intf": "SAS",
+        "Med": "HDD",
+        "SED": "N",
+        "PI": "N",
+        "SeSz": "512B",
+        "Model": "ST4000NM0295    ",
+        "Sp": "U",
+        "Type": "-"
+      }
+    ],
+    "rebuild_response_type": "list",
+    "rebuild_status": [
+      {
+        "Drive-ID": "/c0/e32/s3",
+        "Progress%": "-",
+        "Status": "Not in progress",
+        "Estimated Time Left": "-"
+      }
+    ],
+    "physical_error_counters": [
+      {
+        "drive": "Drive /c0/e32/s0",
+        "Media Error Count": 0,
+        "Other Error Count": 0,
+        "Predictive Failure Count": 0,
+        "S.M.A.R.T alert flagged by drive": "No"
+      },
+      {
+        "drive": "Drive /c0/e32/s1",
+        "Media Error Count": 0,
+        "Other Error Count": 0,
+        "Predictive Failure Count": 0,
+        "S.M.A.R.T alert flagged by drive": "No"
+      },
+      {
+        "drive": "Drive /c0/e32/s2",
+        "Media Error Count": 0,
+        "Other Error Count": 0,
+        "Predictive Failure Count": 0,
+        "S.M.A.R.T alert flagged by drive": "No"
+      },
+      {
+        "drive": "Drive /c0/e32/s3",
+        "Media Error Count": 0,
+        "Other Error Count": 0,
+        "Predictive Failure Count": 0,
+        "S.M.A.R.T alert flagged by drive": "No"
+      },
+      {
+        "drive": "Drive /c0/e32/s7",
+        "Media Error Count": 0,
+        "Other Error Count": 0,
+        "Predictive Failure Count": 0,
+        "S.M.A.R.T alert flagged by drive": "No"
+      }
+    ],
+    "comparison_to_prior": "All current media, other and predictive failure counters remain 0; SMART alert remains No for all five drives. Prior historical SMART reallocated-block observation is not erased.",
+    "bbu_info": {
+      "Type": "BBU",
+      "Voltage": "3917 mV",
+      "Current": "0 mA",
+      "Temperature": "46 C",
+      "Battery State": "Optimal"
+    },
+    "bbu_firmware_status": {
+      "Charging Status": "None",
+      "Voltage": "OK",
+      "Temperature": "OK",
+      "Learn Cycle Requested": "No",
+      "Learn Cycle Active": "No",
+      "Learn Cycle Status": "OK",
+      "Learn Cycle Timeout": "No",
+      "I2C Errors Detected": "No",
+      "Battery Pack Missing": "No",
+      "Replacement required": "No",
+      "Remaining Capacity Low": "No",
+      "Periodic Learn Required": "No",
+      "Transparent Learn": "No",
+      "No space to cache offload": "No",
+      "Pack is about to fail & should be replaced": "No",
+      "Cache Offload premium feature required": "No",
+      "Module microcode update required": "No"
+    },
+    "bbu_charge": "100%",
+    "completion_events": [
+      {
+        "sequence": "0x00002795",
+        "controller_time": "Thu Nov  5 19:48:57 2026",
+        "code": "0x000000f9",
+        "class": "0",
+        "description": "VD 01/1 is now OPTIMAL"
+      },
+      {
+        "sequence": "0x00002794",
+        "controller_time": "Thu Nov  5 19:48:57 2026",
+        "code": "0x00000051",
+        "class": "0",
+        "description": "State change on VD 01/1 from DEGRADED(2) to OPTIMAL(3)"
+      },
+      {
+        "sequence": "0x00002793",
+        "controller_time": "Thu Nov  5 19:48:57 2026",
+        "code": "0x00000072",
+        "class": "0",
+        "description": "State change on PD 03(e0x20/s3) from REBUILD(14) to ONLINE(18)"
+      },
+      {
+        "sequence": "0x00002791",
+        "controller_time": "Thu Nov  5 19:48:57 2026",
+        "code": "0x00000064",
+        "class": "0",
+        "description": "Rebuild complete on PD 03(e0x20/s3)"
+      },
+      {
+        "sequence": "0x00002790",
+        "controller_time": "Thu Nov  5 19:48:57 2026",
+        "code": "0x00000063",
+        "class": "0",
+        "description": "Rebuild complete on VD 01/1"
+      }
+    ],
+    "completion_controller_time": "2026-11-05 19:48:57",
+    "completion_local_time_inferred": "2026-11-06T03:48:57+08:00",
+    "clock_conversion": "+8h observed offset relative to host; derived event local time, not an independently synchronized BMC clock assertion",
+    "previous_eta_assessment": "Earlier linear planning estimate 02:45-03:15 was too early; observed completion inferred at 03:48:57. Old evidence retained unchanged.",
+    "follow_up": "Historical slot3 unready/missing cause still unknown; monitor dropouts, new errors, rebuild reoccurrence and device SMART trends.",
+    "deployment_gate": "Rebuild-specific pause can be reviewed by manager; filesystem, capacity and bounded I/O acceptance remain separate. This evidence alone does not mark all production storage acceptance passed.",
+    "network_status": "Not applied; precise user authorization for host network changes still pending per manager instruction."
+  }
+}

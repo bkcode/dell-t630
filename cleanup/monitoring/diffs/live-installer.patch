@@ -1,0 +1,38 @@
+--- live-installer-before
++++ live-installer-candidate
+@@ -13,7 +13,7 @@
+ POLICY=Path('/usr/sbin/policy-rc.d')
+ SELF_LOCK=Path('/run/lock/dell-guest-monitoring.lock')
+ APT_LOCKS=[Path(x) for x in ['/var/lib/dpkg/lock-frontend','/var/lib/dpkg/lock','/var/lib/apt/lists/lock','/var/cache/apt/archives/lock']]
+-ROLES={'data-prod-db','data-prod-infra','data-test','publish-service','artifact-service','java-prod-01','java-prod-02','java-prod-03','java-test-01','penpot-service','nas-media','ops-service'}
++ROLES={'data-prod-db','data-prod-infra','data-test','java-prod-01','java-test-01','nas-media','ops-service','penpot-service','publish-service'}
+ 
+ def command(args,label,check=True,timeout=180):
+     p=subprocess.run(args,capture_output=True,text=True,timeout=timeout)
+@@ -87,7 +87,7 @@
+     short=(hostname or socket.gethostname()).split('.')[0]
+     if role not in ROLES or short!=role:raise RuntimeError('hostname is not the assigned guest role')
+     catalog=json.loads((HERE/'guest-targets.json').read_text())
+-    if len(catalog['roles'])!=12 or {x['role'] for x in catalog['roles']}!=ROLES:raise RuntimeError('guest target whitelist mismatch')
++    if len(catalog['roles'])!=len(ROLES) or {x['role'] for x in catalog['roles']}!=ROLES:raise RuntimeError('guest target whitelist mismatch')
+     row=next(x for x in catalog['roles'] if x['role']==role)
+     if row['hostname']!=role:raise RuntimeError('catalog hostname mismatch')
+     ip=ipaddress.IPv4Address(row['private_ip'])
+@@ -149,14 +149,12 @@
+       'data-test':['docker.service','dell-data-test-data.service'],
+       'ops-service':['docker.service','dell-ops.service'],
+       'nas-media':['docker.service','dell-nas-jellyfin.service'],
+-      'artifact-service':['docker.service'],
++      'publish-service':['docker.service','dell-nexus.service'],
+       'penpot-service':['docker.service']}
+-    mapping={'data-prod-infra':(8848,'/nacos/v1/console/health/readiness','nacos-readiness'),'data-test':(8848,'/nacos/v1/console/health/readiness','nacos-readiness'),'artifact-service':(8081,'/service/rest/v1/status','nexus-status'),'penpot-service':(9001,'/','penpot-frontend-only'),'nas-media':(8096,'/health','jellyfin-health'),'ops-service':(3000,'/api/health','grafana-health')}
++    mapping={'data-prod-infra':(8848,'/nacos/v1/console/health/readiness','nacos-readiness'),'data-test':(8848,'/nacos/v1/console/health/readiness','nacos-readiness'),'publish-service':(8081,'/service/rest/v1/status','nexus-status'),'penpot-service':(9001,'/','penpot-frontend-only'),'nas-media':(8096,'/health','jellyfin-health'),'ops-service':(3000,'/api/health','grafana-health')}
+     checks=[]
+     if role in mapping:
+-        port,path,name=mapping[role];checks=[{'name':name,'url':'http://'+ip+':'+str(port)+path}]
+-    if role.startswith('java-'):
+-        checks=[{'name':'actuator-example-not-enabled','url':'http://127.0.0.1:9999/actuator/health/readiness'}]
++        port,path,name=mapping[role];checks=[{'name':name,'url':'http://'+(row.get('service_aliases',[ip])[0] if role=='publish-service' else ip)+':'+str(port)+path}]
+     return {'role':role,'private_ip':ip,'textfile_directory':str(TEXTFILE),'services':['ssh.service','qemu-guest-agent.service',EXPORTER],'http_checks':[],'candidate_service_units':units.get(role,[]),'candidate_http_checks':checks,'notes':'Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths.'}
+ 
+ def write(path,body,mode=0o644):

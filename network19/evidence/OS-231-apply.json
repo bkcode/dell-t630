@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-06T16:53:40.038957",
+  "vmid": 231,
+  "old_ip": "10.63.10.21",
+  "new_ip": "192.168.19.41",
+  "action": "apply",
+  "OS_commit": {
+    "exitcode": 0,
+    "exited": 1,
+    "out-data": "{\"status\": \"new-network-committed\", \"IP\": \"192.168.19.41\", \"gateway\": \"192.168.19.1\", \"interface\": \"eth0\", \"apps_started\": false}\n",
+    "out-truncated": 0
+  },
+  "strict_new_SSH": {
+    "exit_code": 0,
+    "stdout": "ub\njava-prod-02\nlo               UNKNOWN        127.0.0.1/8 \neth0             UP             192.168.19.41/24 \ndefault via 192.168.19.1 dev eth0 proto static \n192.168.19.0/24 dev eth0 proto kernel scope link src 192.168.19.41 \nLink 2 (eth0): 192.168.19.1\nactive\nactive\n",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+    "target": {
+      "vmid": 231,
+      "ip": "192.168.19.41",
+      "host_key_alias": "dell-vm231",
+      "host_key_fingerprint": "SHA256:F4FTk8hT14QASJ/nWmjUBtxP4h9dthfE8/8MOdnmLUQ",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  },
+  "new_target": {
+    "vmid": 231,
+    "ip": "192.168.19.41",
+    "host_key_alias": "dell-vm231",
+    "host_key_fingerprint": "SHA256:F4FTk8hT14QASJ/nWmjUBtxP4h9dthfE8/8MOdnmLUQ",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "status": "OS-network19-committed-app-state-managed-separately"
+}

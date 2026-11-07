@@ -1,0 +1,185 @@
+{
+  "at": "2026-11-06T17:15:20.999337+00:00",
+  "rows": [
+    {
+      "vmid": 101,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 102,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 103,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 104,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 105,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 106,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 190,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 200,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 201,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 210,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 220,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 221,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 230,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 231,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 232,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 240,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 250,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 260,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 270,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 9000,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 9001,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 9002,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 9003,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 9004,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 9005,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 9006,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 9010,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 9011,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 9020,
+      "kind": "qemu",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    },
+    {
+      "vmid": 100,
+      "kind": "lxc",
+      "opaque_device_or_hook_fields_present": [],
+      "values_not_read_or_emitted": true
+    }
+  ]
+}

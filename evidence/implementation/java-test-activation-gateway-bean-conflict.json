@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-06T11:18:26.297368",
+  "result": {
+    "exit_code": 1,
+    "stdout": "{\"status\": \"failed\", \"error_category\": \"RuntimeError\", \"message\": \"Health verification failed: finger-gateway-mobile\"}\n",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+    "target": {
+      "vmid": 240,
+      "ip": "10.63.20.20",
+      "host_key_alias": "dell-vm240",
+      "host_key_fingerprint": "SHA256:a5slwmQWq1U2AaeY9965RUYU63BxMymRus8IA9WydNQ",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  }
+}

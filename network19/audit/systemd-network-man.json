@@ -1,0 +1,15 @@
+{
+  "url": "https://manpages.debian.org/trixie/systemd/systemd.network.5.en.html",
+  "purpose": "read-only network transaction review",
+  "search_terms_located": [
+    "lexical",
+    "first",
+    "reconfigure",
+    "DNS=",
+    "KeepConfiguration="
+  ],
+  "facts_used": [
+    "Network files are considered by lexical filename order and the first matching network file configures a link. Directory priority resolves identical filenames.",
+    "Current11 have10-netplan and80 defaults, so00-dell is the earlier candidate; actual selection still needs readback."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "role": 260,
+  "status": "new-network-native-client-original-media-and-identities-verified",
+  "origin": "http://192.168.19.60:8096",
+  "server_version": "12.4.0",
+  "existing_admin_and_viewer_login": true,
+  "viewer_non_admin": true,
+  "original_library_reused": true,
+  "original_movie_fixture_SHA256": "5b2499415295d67552b400a8d197fe11c61e73801b8c281247de04567d312905",
+  "original_movie_bytes": 1144701,
+  "playback_info_supports_DirectPlay": true,
+  "original_static_stream_SHA_matches": true,
+  "transcoding_enabled_in_request": false,
+  "new_fixture_library_or_user_created": false,
+  "playing_event_or_scan_requests": false,
+  "credential_files_unchanged": true,
+  "credentials_tokens_or_hashes_emitted": false,
+  "secret_transport": "native curl STDIN config only, no argv/env/proxy/redirect",
+  "physical_TV_console_claimed": false
+}

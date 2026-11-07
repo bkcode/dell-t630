@@ -1,0 +1,12 @@
+{
+  "exit_code": 1,
+  "stdout": "{\"status\": \"rejected-or-unconfirmed\", \"details_withheld\": true, \"inspect\": \"guest-private transaction journal if already staged\"}\n",
+  "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+  "target": {
+    "vmid": 250,
+    "ip": "10.63.30.30",
+    "host_key_alias": "dell-vm250",
+    "host_key_fingerprint": "SHA256:AwyeGczSVPEBV9PW6VZc2Iz3w5oA6sQoKYnNuVKgNik",
+    "trust_source": "PVE QGA over known SSH host"
+  }
+}

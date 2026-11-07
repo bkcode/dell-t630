@@ -1,0 +1,5394 @@
+{
+  "captured_at_utc": "2026-11-06T07:51:14.900092+00:00",
+  "mode": "read-only",
+  "commands": [
+    "pvesh get /cluster/resources --type vm --output-format json",
+    "whitelist /etc/pve/qemu-server/*.conf and /etc/pve/lxc/*.conf",
+    "qm agent RUNNING_VM network-get-interfaces",
+    "ip -j addr/route/neigh",
+    "bridge -j link",
+    "nft -j list ruleset",
+    "read forwarding sysctls and whitelisted interfaces directives"
+  ],
+  "guests": [
+    {
+      "vmid": 101,
+      "kind": "qemu",
+      "fields": {
+        "agent": "1",
+        "ciuser": "ub",
+        "cores": "4",
+        "memory": "8192",
+        "name": "data-docker-base-tpl",
+        "ostype": "l26",
+        "sockets": "1"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:97:74:4A",
+          "bridge": "vmbr0",
+          "firewall": "1"
+        }
+      },
+      "cloudinit_network": {},
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "stopped",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 8589934592,
+        "mem": 0,
+        "maxdisk": 34359738368,
+        "uptime": 0
+      },
+      "qga_network": {
+        "attempted": false
+      }
+    },
+    {
+      "vmid": 102,
+      "kind": "qemu",
+      "fields": {
+        "agent": "1",
+        "ciuser": "ub",
+        "cores": "4",
+        "memory": "8192",
+        "name": "data-docker-tpl2",
+        "ostype": "l26",
+        "sockets": "1",
+        "template": "1"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:9E:04:04",
+          "bridge": "vmbr0",
+          "firewall": "1"
+        }
+      },
+      "cloudinit_network": {},
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "stopped",
+        "template": 1,
+        "cpus": null,
+        "maxmem": 8589934592,
+        "mem": 0,
+        "maxdisk": 34359738368,
+        "uptime": 0
+      },
+      "qga_network": {
+        "attempted": false
+      }
+    },
+    {
+      "vmid": 103,
+      "kind": "qemu",
+      "fields": {
+        "agent": "1",
+        "ciuser": "ub",
+        "cores": "4",
+        "memory": "8192",
+        "name": "publish-base-tpl",
+        "ostype": "l26",
+        "sockets": "1",
+        "template": "1"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:77:2B:3C",
+          "bridge": "vmbr0",
+          "firewall": "1"
+        }
+      },
+      "cloudinit_network": {},
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "stopped",
+        "template": 1,
+        "cpus": null,
+        "maxmem": 8589934592,
+        "mem": 0,
+        "maxdisk": 34359738368,
+        "uptime": 0
+      },
+      "qga_network": {
+        "attempted": false
+      }
+    },
+    {
+      "vmid": 104,
+      "kind": "qemu",
+      "fields": {
+        "agent": "1",
+        "ciuser": "ub",
+        "cores": "4",
+        "memory": "8192",
+        "name": "publish",
+        "ostype": "l26",
+        "sockets": "1"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:F3:1E:CC",
+          "bridge": "vmbr0",
+          "firewall": "1"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=192.168.21.23/24,gw=192.168.21.1"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "stopped",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 8589934592,
+        "mem": 0,
+        "maxdisk": 34359738368,
+        "uptime": 0
+      },
+      "qga_network": {
+        "attempted": false
+      }
+    },
+    {
+      "vmid": 105,
+      "kind": "qemu",
+      "fields": {
+        "agent": "1",
+        "ciuser": "ub",
+        "cores": "8",
+        "memory": "16384",
+        "name": "java-running-base-tpl",
+        "ostype": "l26",
+        "sockets": "1",
+        "template": "1"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:7E:87:77",
+          "bridge": "vmbr0",
+          "firewall": "1"
+        }
+      },
+      "cloudinit_network": {},
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "stopped",
+        "template": 1,
+        "cpus": null,
+        "maxmem": 17179869184,
+        "mem": 0,
+        "maxdisk": 42949672960,
+        "uptime": 0
+      },
+      "qga_network": {
+        "attempted": false
+      }
+    },
+    {
+      "vmid": 106,
+      "kind": "qemu",
+      "fields": {
+        "agent": "1",
+        "balloon": "0",
+        "cores": "2",
+        "memory": "4096",
+        "name": "windoge-template",
+        "ostype": "win10",
+        "sockets": "1",
+        "template": "1"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:FF:90:F9",
+          "bridge": "br2001"
+        }
+      },
+      "cloudinit_network": {},
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "stopped",
+        "template": 1,
+        "cpus": null,
+        "maxmem": 4294967296,
+        "mem": 0,
+        "maxdisk": 17179869184,
+        "uptime": 0
+      },
+      "qga_network": {
+        "attempted": false
+      }
+    },
+    {
+      "vmid": 200,
+      "kind": "qemu",
+      "fields": {
+        "agent": "enabled=1",
+        "balloon": "0",
+        "ciuser": "ub",
+        "cores": "6",
+        "memory": "16384",
+        "name": "data-prod-db",
+        "nameserver": "1.1.1.1",
+        "onboot": "1",
+        "ostype": "l26",
+        "startup": "order=10,up=60,down=120"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:1C:62:00",
+          "bridge": "vmbr10"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=10.63.10.10/24,gw=10.63.10.1"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "running",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 17179869184,
+        "mem": 3594349597,
+        "maxdisk": 34359738368,
+        "uptime": 19198
+      },
+      "qga_network": {
+        "attempted": true,
+        "exit_code": 0,
+        "interfaces": [
+          {
+            "name": "lo",
+            "hardware_address": "00:00:00:00:00:00",
+            "ip_addresses": [
+              {
+                "address": "127.0.0.1",
+                "prefix": 8,
+                "type": "ipv4"
+              },
+              {
+                "address": "::1",
+                "prefix": 128,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "eth0",
+            "hardware_address": "bc:24:11:1c:62:00",
+            "ip_addresses": [
+              {
+                "address": "10.63.10.10",
+                "prefix": 24,
+                "type": "ipv4"
+              },
+              {
+                "address": "fe80::be24:11ff:fe1c:6200",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "br-130ddce4ef74",
+            "hardware_address": "12:4a:4b:00:02:e6",
+            "ip_addresses": [
+              {
+                "address": "172.18.0.1",
+                "prefix": 16,
+                "type": "ipv4"
+              },
+              {
+                "address": "fe80::104a:4bff:fe00:2e6",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "docker0",
+            "hardware_address": "a6:fa:95:38:b8:b5",
+            "ip_addresses": [
+              {
+                "address": "172.17.0.1",
+                "prefix": 16,
+                "type": "ipv4"
+              }
+            ]
+          },
+          {
+            "name": "vethadcfa52",
+            "hardware_address": "6a:a0:be:e2:6b:3d",
+            "ip_addresses": [
+              {
+                "address": "fe80::68a0:beff:fee2:6b3d",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 201,
+      "kind": "qemu",
+      "fields": {
+        "agent": "enabled=1",
+        "balloon": "0",
+        "ciuser": "ub",
+        "cores": "4",
+        "memory": "8192",
+        "name": "data-prod-infra",
+        "nameserver": "1.1.1.1",
+        "onboot": "1",
+        "ostype": "l26",
+        "startup": "order=11,up=90,down=120"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:1C:BB:93",
+          "bridge": "vmbr10"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=10.63.10.11/24,gw=10.63.10.1"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "running",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 8589934592,
+        "mem": 2298146539,
+        "maxdisk": 34359738368,
+        "uptime": 19193
+      },
+      "qga_network": {
+        "attempted": true,
+        "exit_code": 0,
+        "interfaces": [
+          {
+            "name": "lo",
+            "hardware_address": "00:00:00:00:00:00",
+            "ip_addresses": [
+              {
+                "address": "127.0.0.1",
+                "prefix": 8,
+                "type": "ipv4"
+              },
+              {
+                "address": "::1",
+                "prefix": 128,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "eth0",
+            "hardware_address": "bc:24:11:1c:bb:93",
+            "ip_addresses": [
+              {
+                "address": "10.63.10.11",
+                "prefix": 24,
+                "type": "ipv4"
+              },
+              {
+                "address": "fe80::be24:11ff:fe1c:bb93",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "docker0",
+            "hardware_address": "6a:d7:df:b7:be:0a",
+            "ip_addresses": [
+              {
+                "address": "172.17.0.1",
+                "prefix": 16,
+                "type": "ipv4"
+              }
+            ]
+          },
+          {
+            "name": "br-f638bf454723",
+            "hardware_address": "2e:3c:e9:c5:39:b3",
+            "ip_addresses": [
+              {
+                "address": "172.18.0.1",
+                "prefix": 16,
+                "type": "ipv4"
+              },
+              {
+                "address": "fe80::2c3c:e9ff:fec5:39b3",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth1a79083",
+            "hardware_address": "ba:b5:fd:00:d1:4b",
+            "ip_addresses": [
+              {
+                "address": "fe80::b8b5:fdff:fe00:d14b",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth813729d",
+            "hardware_address": "de:65:c2:26:49:c6",
+            "ip_addresses": [
+              {
+                "address": "fe80::dc65:c2ff:fe26:49c6",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth820e568",
+            "hardware_address": "0a:8f:a0:07:6f:21",
+            "ip_addresses": [
+              {
+                "address": "fe80::88f:a0ff:fe07:6f21",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 210,
+      "kind": "qemu",
+      "fields": {
+        "agent": "enabled=1",
+        "balloon": "0",
+        "ciuser": "ub",
+        "cores": "2",
+        "memory": "4096",
+        "name": "data-test",
+        "nameserver": "1.1.1.1",
+        "onboot": "1",
+        "ostype": "l26",
+        "startup": "order=12,up=90,down=120"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:5D:2D:98",
+          "bridge": "vmbr20"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=10.63.20.10/24,gw=10.63.20.1"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "running",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 4294967296,
+        "mem": 1568150231,
+        "maxdisk": 34359738368,
+        "uptime": 19188
+      },
+      "qga_network": {
+        "attempted": true,
+        "exit_code": 0,
+        "interfaces": [
+          {
+            "name": "lo",
+            "hardware_address": "00:00:00:00:00:00",
+            "ip_addresses": [
+              {
+                "address": "127.0.0.1",
+                "prefix": 8,
+                "type": "ipv4"
+              },
+              {
+                "address": "::1",
+                "prefix": 128,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "eth0",
+            "hardware_address": "bc:24:11:5d:2d:98",
+            "ip_addresses": [
+              {
+                "address": "10.63.20.10",
+                "prefix": 24,
+                "type": "ipv4"
+              },
+              {
+                "address": "fe80::be24:11ff:fe5d:2d98",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "docker0",
+            "hardware_address": "e6:12:36:3c:d2:f5",
+            "ip_addresses": [
+              {
+                "address": "172.17.0.1",
+                "prefix": 16,
+                "type": "ipv4"
+              }
+            ]
+          },
+          {
+            "name": "br-a92ce9a20927",
+            "hardware_address": "6e:fc:4e:ac:4c:9c",
+            "ip_addresses": [
+              {
+                "address": "172.18.0.1",
+                "prefix": 16,
+                "type": "ipv4"
+              },
+              {
+                "address": "fe80::6cfc:4eff:feac:4c9c",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth1d5088a",
+            "hardware_address": "62:fa:92:38:65:fe",
+            "ip_addresses": [
+              {
+                "address": "fe80::60fa:92ff:fe38:65fe",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "vethf528be1",
+            "hardware_address": "42:cf:9b:d3:50:f4",
+            "ip_addresses": [
+              {
+                "address": "fe80::40cf:9bff:fed3:50f4",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth5706717",
+            "hardware_address": "7e:ba:48:c8:18:92",
+            "ip_addresses": [
+              {
+                "address": "fe80::7cba:48ff:fec8:1892",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth6440bc3",
+            "hardware_address": "2e:40:75:1b:b7:06",
+            "ip_addresses": [
+              {
+                "address": "fe80::2c40:75ff:fe1b:b706",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 220,
+      "kind": "qemu",
+      "fields": {
+        "agent": "enabled=1",
+        "balloon": "0",
+        "ciuser": "ub",
+        "cores": "4",
+        "memory": "4096",
+        "name": "publish-service",
+        "nameserver": "1.1.1.1",
+        "onboot": "1",
+        "ostype": "l26",
+        "startup": "order=30,up=15,down=60"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:2A:01:AD",
+          "bridge": "vmbr30"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=10.63.30.10/24,gw=10.63.30.1"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "running",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 4294967296,
+        "mem": 1585399041,
+        "maxdisk": 34359738368,
+        "uptime": 19183
+      },
+      "qga_network": {
+        "attempted": true,
+        "exit_code": 0,
+        "interfaces": [
+          {
+            "name": "lo",
+            "hardware_address": "00:00:00:00:00:00",
+            "ip_addresses": [
+              {
+                "address": "127.0.0.1",
+                "prefix": 8,
+                "type": "ipv4"
+              },
+              {
+                "address": "::1",
+                "prefix": 128,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "eth0",
+            "hardware_address": "bc:24:11:2a:01:ad",
+            "ip_addresses": [
+              {
+                "address": "10.63.30.10",
+                "prefix": 24,
+                "type": "ipv4"
+              },
+              {
+                "address": "fe80::be24:11ff:fe2a:1ad",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 221,
+      "kind": "qemu",
+      "fields": {
+        "agent": "enabled=1",
+        "balloon": "0",
+        "ciuser": "ub",
+        "cores": "2",
+        "memory": "4096",
+        "name": "artifact-service",
+        "nameserver": "1.1.1.1",
+        "onboot": "1",
+        "ostype": "l26",
+        "startup": "order=21,up=90,down=180"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:EC:E1:6F",
+          "bridge": "vmbr30"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=10.63.30.20/24,gw=10.63.30.1"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "running",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 4294967296,
+        "mem": 2095275284,
+        "maxdisk": 34359738368,
+        "uptime": 19178
+      },
+      "qga_network": {
+        "attempted": true,
+        "exit_code": 0,
+        "interfaces": [
+          {
+            "name": "lo",
+            "hardware_address": "00:00:00:00:00:00",
+            "ip_addresses": [
+              {
+                "address": "127.0.0.1",
+                "prefix": 8,
+                "type": "ipv4"
+              },
+              {
+                "address": "::1",
+                "prefix": 128,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "eth0",
+            "hardware_address": "bc:24:11:ec:e1:6f",
+            "ip_addresses": [
+              {
+                "address": "10.63.30.20",
+                "prefix": 24,
+                "type": "ipv4"
+              },
+              {
+                "address": "fe80::be24:11ff:feec:e16f",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "br-1017846d7409",
+            "hardware_address": "8a:e5:98:a9:8c:b5",
+            "ip_addresses": [
+              {
+                "address": "172.19.0.1",
+                "prefix": 16,
+                "type": "ipv4"
+              },
+              {
+                "address": "fe80::88e5:98ff:fea9:8cb5",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "br-169f64db65ec",
+            "hardware_address": "b6:d9:58:ae:ec:51",
+            "ip_addresses": [
+              {
+                "address": "172.18.0.1",
+                "prefix": 16,
+                "type": "ipv4"
+              },
+              {
+                "address": "fe80::b4d9:58ff:feae:ec51",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "docker0",
+            "hardware_address": "f2:b0:05:77:5f:6d",
+            "ip_addresses": [
+              {
+                "address": "172.17.0.1",
+                "prefix": 16,
+                "type": "ipv4"
+              }
+            ]
+          },
+          {
+            "name": "vethab4ba47",
+            "hardware_address": "fa:72:fe:75:b8:05",
+            "ip_addresses": [
+              {
+                "address": "fe80::f872:feff:fe75:b805",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth4a2ab9a",
+            "hardware_address": "ee:bb:cb:a7:76:77",
+            "ip_addresses": [
+              {
+                "address": "fe80::ecbb:cbff:fea7:7677",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth43579c3",
+            "hardware_address": "26:67:53:ba:c3:1b",
+            "ip_addresses": [
+              {
+                "address": "fe80::2467:53ff:feba:c31b",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 230,
+      "kind": "qemu",
+      "fields": {
+        "agent": "enabled=1",
+        "balloon": "0",
+        "ciuser": "ub",
+        "cores": "6",
+        "memory": "16384",
+        "name": "java-prod-01",
+        "nameserver": "1.1.1.1",
+        "onboot": "1",
+        "ostype": "l26",
+        "startup": "order=40,up=15,down=120"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:1C:20:00",
+          "bridge": "vmbr10"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=10.63.10.20/24,gw=10.63.10.1"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "running",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 17179869184,
+        "mem": 1460370699,
+        "maxdisk": 34359738368,
+        "uptime": 19157
+      },
+      "qga_network": {
+        "attempted": true,
+        "exit_code": 0,
+        "interfaces": [
+          {
+            "name": "lo",
+            "hardware_address": "00:00:00:00:00:00",
+            "ip_addresses": [
+              {
+                "address": "127.0.0.1",
+                "prefix": 8,
+                "type": "ipv4"
+              },
+              {
+                "address": "::1",
+                "prefix": 128,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "eth0",
+            "hardware_address": "bc:24:11:1c:20:00",
+            "ip_addresses": [
+              {
+                "address": "10.63.10.20",
+                "prefix": 24,
+                "type": "ipv4"
+              },
+              {
+                "address": "fe80::be24:11ff:fe1c:2000",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 231,
+      "kind": "qemu",
+      "fields": {
+        "agent": "enabled=1",
+        "balloon": "0",
+        "ciuser": "ub",
+        "cores": "6",
+        "memory": "16384",
+        "name": "java-prod-02",
+        "nameserver": "1.1.1.1",
+        "onboot": "1",
+        "ostype": "l26",
+        "startup": "order=41,up=15,down=120"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:E9:E5:CC",
+          "bridge": "vmbr10"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=10.63.10.21/24,gw=10.63.10.1"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "running",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 17179869184,
+        "mem": 1264553849,
+        "maxdisk": 34359738368,
+        "uptime": 19152
+      },
+      "qga_network": {
+        "attempted": true,
+        "exit_code": 0,
+        "interfaces": [
+          {
+            "name": "lo",
+            "hardware_address": "00:00:00:00:00:00",
+            "ip_addresses": [
+              {
+                "address": "127.0.0.1",
+                "prefix": 8,
+                "type": "ipv4"
+              },
+              {
+                "address": "::1",
+                "prefix": 128,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "eth0",
+            "hardware_address": "bc:24:11:e9:e5:cc",
+            "ip_addresses": [
+              {
+                "address": "10.63.10.21",
+                "prefix": 24,
+                "type": "ipv4"
+              },
+              {
+                "address": "fe80::be24:11ff:fee9:e5cc",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 232,
+      "kind": "qemu",
+      "fields": {
+        "agent": "enabled=1",
+        "balloon": "0",
+        "ciuser": "ub",
+        "cores": "6",
+        "memory": "16384",
+        "name": "java-prod-03",
+        "nameserver": "1.1.1.1",
+        "onboot": "1",
+        "ostype": "l26",
+        "startup": "order=42,up=15,down=120"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:7D:1C:AA",
+          "bridge": "vmbr10"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=10.63.10.22/24,gw=10.63.10.1"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "running",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 17179869184,
+        "mem": 1366392727,
+        "maxdisk": 34359738368,
+        "uptime": 19147
+      },
+      "qga_network": {
+        "attempted": true,
+        "exit_code": 0,
+        "interfaces": [
+          {
+            "name": "lo",
+            "hardware_address": "00:00:00:00:00:00",
+            "ip_addresses": [
+              {
+                "address": "127.0.0.1",
+                "prefix": 8,
+                "type": "ipv4"
+              },
+              {
+                "address": "::1",
+                "prefix": 128,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "eth0",
+            "hardware_address": "bc:24:11:7d:1c:aa",
+            "ip_addresses": [
+              {
+                "address": "10.63.10.22",
+                "prefix": 24,
+                "type": "ipv4"
+              },
+              {
+                "address": "fe80::be24:11ff:fe7d:1caa",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 240,
+      "kind": "qemu",
+      "fields": {
+        "agent": "enabled=1",
+        "balloon": "0",
+        "ciuser": "ub",
+        "cores": "4",
+        "memory": "8192",
+        "name": "java-test-01",
+        "nameserver": "1.1.1.1",
+        "onboot": "1",
+        "ostype": "l26",
+        "startup": "order=43,up=30,down=180"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:65:41:5A",
+          "bridge": "vmbr20"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=10.63.20.20/24,gw=10.63.20.1"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "running",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 8589934592,
+        "mem": 6171142002,
+        "maxdisk": 34359738368,
+        "uptime": 19142
+      },
+      "qga_network": {
+        "attempted": true,
+        "exit_code": 0,
+        "interfaces": [
+          {
+            "name": "lo",
+            "hardware_address": "00:00:00:00:00:00",
+            "ip_addresses": [
+              {
+                "address": "127.0.0.1",
+                "prefix": 8,
+                "type": "ipv4"
+              },
+              {
+                "address": "::1",
+                "prefix": 128,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "eth0",
+            "hardware_address": "bc:24:11:65:41:5a",
+            "ip_addresses": [
+              {
+                "address": "10.63.20.20",
+                "prefix": 24,
+                "type": "ipv4"
+              },
+              {
+                "address": "fe80::be24:11ff:fe65:415a",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 250,
+      "kind": "qemu",
+      "fields": {
+        "agent": "enabled=1",
+        "balloon": "0",
+        "ciuser": "ub",
+        "cores": "6",
+        "memory": "16384",
+        "name": "penpot-service",
+        "nameserver": "1.1.1.1",
+        "onboot": "1",
+        "ostype": "l26",
+        "startup": "order=22,up=90,down=180"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:78:E9:84",
+          "bridge": "vmbr30"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=10.63.30.30/24,gw=10.63.30.1"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "running",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 17179869184,
+        "mem": 6626982776,
+        "maxdisk": 34359738368,
+        "uptime": 19172
+      },
+      "qga_network": {
+        "attempted": true,
+        "exit_code": 0,
+        "interfaces": [
+          {
+            "name": "lo",
+            "hardware_address": "00:00:00:00:00:00",
+            "ip_addresses": [
+              {
+                "address": "127.0.0.1",
+                "prefix": 8,
+                "type": "ipv4"
+              },
+              {
+                "address": "::1",
+                "prefix": 128,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "eth0",
+            "hardware_address": "bc:24:11:78:e9:84",
+            "ip_addresses": [
+              {
+                "address": "10.63.30.30",
+                "prefix": 24,
+                "type": "ipv4"
+              },
+              {
+                "address": "fe80::be24:11ff:fe78:e984",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "docker0",
+            "hardware_address": "0e:0a:81:93:9b:16",
+            "ip_addresses": [
+              {
+                "address": "172.17.0.1",
+                "prefix": 16,
+                "type": "ipv4"
+              }
+            ]
+          },
+          {
+            "name": "br-91b41eb0d508",
+            "hardware_address": "d6:17:ec:43:83:64",
+            "ip_addresses": [
+              {
+                "address": "172.30.250.1",
+                "prefix": 24,
+                "type": "ipv4"
+              },
+              {
+                "address": "fe80::d417:ecff:fe43:8364",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "br-f666e48452a4",
+            "hardware_address": "5a:b4:c3:59:ff:ce",
+            "ip_addresses": [
+              {
+                "address": "172.18.0.1",
+                "prefix": 16,
+                "type": "ipv4"
+              },
+              {
+                "address": "fe80::58b4:c3ff:fe59:ffce",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth599b2a7",
+            "hardware_address": "7a:6e:d6:49:1b:34",
+            "ip_addresses": [
+              {
+                "address": "fe80::786e:d6ff:fe49:1b34",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth260468a",
+            "hardware_address": "ee:06:1a:69:a0:d6",
+            "ip_addresses": [
+              {
+                "address": "fe80::ec06:1aff:fe69:a0d6",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth90ea36c",
+            "hardware_address": "06:bb:c1:be:6a:6d",
+            "ip_addresses": [
+              {
+                "address": "fe80::4bb:c1ff:febe:6a6d",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth00a4467",
+            "hardware_address": "5a:cc:c4:76:be:fe",
+            "ip_addresses": [
+              {
+                "address": "fe80::58cc:c4ff:fe76:befe",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "vethbfda3be",
+            "hardware_address": "0e:ec:9f:ea:8b:09",
+            "ip_addresses": [
+              {
+                "address": "fe80::cec:9fff:feea:8b09",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth0add9de",
+            "hardware_address": "4e:b5:d7:db:51:0c",
+            "ip_addresses": [
+              {
+                "address": "fe80::4cb5:d7ff:fedb:510c",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth54f1afd",
+            "hardware_address": "22:70:3c:5e:16:05",
+            "ip_addresses": [
+              {
+                "address": "fe80::2070:3cff:fe5e:1605",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth0ba9f90",
+            "hardware_address": "6a:07:67:f6:db:10",
+            "ip_addresses": [
+              {
+                "address": "fe80::6807:67ff:fef6:db10",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth60adf0b",
+            "hardware_address": "0a:e9:62:aa:59:c8",
+            "ip_addresses": [
+              {
+                "address": "fe80::8e9:62ff:feaa:59c8",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "vethce0e04d",
+            "hardware_address": "6e:e5:4f:e2:db:bb",
+            "ip_addresses": [
+              {
+                "address": "fe80::6ce5:4fff:fee2:dbbb",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth6a7e7c3",
+            "hardware_address": "4a:2f:6c:9c:a0:64",
+            "ip_addresses": [
+              {
+                "address": "fe80::482f:6cff:fe9c:a064",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth2224ea9",
+            "hardware_address": "22:6e:ec:7b:8b:81",
+            "ip_addresses": [
+              {
+                "address": "fe80::206e:ecff:fe7b:8b81",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth517e813",
+            "hardware_address": "e2:15:ec:75:b3:12",
+            "ip_addresses": [
+              {
+                "address": "fe80::e015:ecff:fe75:b312",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 260,
+      "kind": "qemu",
+      "fields": {
+        "agent": "enabled=1",
+        "balloon": "0",
+        "ciuser": "ub",
+        "cores": "4",
+        "memory": "4096",
+        "name": "nas-media",
+        "nameserver": "1.1.1.1",
+        "onboot": "1",
+        "ostype": "l26",
+        "startup": "order=50,up=30,down=120"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:A7:3B:73",
+          "bridge": "vmbr40"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=10.63.40.10/24,gw=10.63.40.1"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "running",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 4294967296,
+        "mem": 2484857159,
+        "maxdisk": 34359738368,
+        "uptime": 19168
+      },
+      "qga_network": {
+        "attempted": true,
+        "exit_code": 0,
+        "interfaces": [
+          {
+            "name": "lo",
+            "hardware_address": "00:00:00:00:00:00",
+            "ip_addresses": [
+              {
+                "address": "127.0.0.1",
+                "prefix": 8,
+                "type": "ipv4"
+              },
+              {
+                "address": "::1",
+                "prefix": 128,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "ens18",
+            "hardware_address": "bc:24:11:a7:3b:73",
+            "ip_addresses": [
+              {
+                "address": "10.63.40.10",
+                "prefix": 24,
+                "type": "ipv4"
+              }
+            ]
+          },
+          {
+            "name": "br-e3e97ae6b2b4",
+            "hardware_address": "b2:70:4f:30:bd:7b",
+            "ip_addresses": [
+              {
+                "address": "172.18.0.1",
+                "prefix": 16,
+                "type": "ipv4"
+              },
+              {
+                "address": "fe80::b070:4fff:fe30:bd7b",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "docker0",
+            "hardware_address": "26:51:b8:13:01:0e",
+            "ip_addresses": [
+              {
+                "address": "172.17.0.1",
+                "prefix": 16,
+                "type": "ipv4"
+              }
+            ]
+          },
+          {
+            "name": "vethc6f344b",
+            "hardware_address": "5e:7d:dd:63:d7:71",
+            "ip_addresses": [
+              {
+                "address": "fe80::5c7d:ddff:fe63:d771",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 270,
+      "kind": "qemu",
+      "fields": {
+        "agent": "enabled=1",
+        "balloon": "0",
+        "ciuser": "ub",
+        "cores": "2",
+        "memory": "4096",
+        "name": "ops-service",
+        "nameserver": "1.1.1.1",
+        "onboot": "1",
+        "ostype": "l26",
+        "startup": "order=20,up=30,down=60"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:CE:8C:67",
+          "bridge": "vmbr30"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=10.63.30.40/24,gw=10.63.30.1"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "running",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 4294967296,
+        "mem": 2569049472,
+        "maxdisk": 34359738368,
+        "uptime": 19163
+      },
+      "qga_network": {
+        "attempted": true,
+        "exit_code": 0,
+        "interfaces": [
+          {
+            "name": "lo",
+            "hardware_address": "00:00:00:00:00:00",
+            "ip_addresses": [
+              {
+                "address": "127.0.0.1",
+                "prefix": 8,
+                "type": "ipv4"
+              },
+              {
+                "address": "::1",
+                "prefix": 128,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "eth0",
+            "hardware_address": "bc:24:11:ce:8c:67",
+            "ip_addresses": [
+              {
+                "address": "10.63.30.40",
+                "prefix": 24,
+                "type": "ipv4"
+              },
+              {
+                "address": "fe80::be24:11ff:fece:8c67",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "docker0",
+            "hardware_address": "be:99:84:34:da:69",
+            "ip_addresses": [
+              {
+                "address": "172.17.0.1",
+                "prefix": 16,
+                "type": "ipv4"
+              }
+            ]
+          },
+          {
+            "name": "br-417d79bfd70b",
+            "hardware_address": "d6:b1:7f:01:2a:83",
+            "ip_addresses": [
+              {
+                "address": "172.18.0.1",
+                "prefix": 16,
+                "type": "ipv4"
+              },
+              {
+                "address": "fe80::d4b1:7fff:fe01:2a83",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth4ff7842",
+            "hardware_address": "36:10:f7:7d:b7:ae",
+            "ip_addresses": [
+              {
+                "address": "fe80::3410:f7ff:fe7d:b7ae",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "vethcf77575",
+            "hardware_address": "aa:aa:95:f3:77:43",
+            "ip_addresses": [
+              {
+                "address": "fe80::a8aa:95ff:fef3:7743",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth086746c",
+            "hardware_address": "be:41:b2:c5:44:f0",
+            "ip_addresses": [
+              {
+                "address": "fe80::bc41:b2ff:fec5:44f0",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          },
+          {
+            "name": "veth53fa0a5",
+            "hardware_address": "82:36:03:2e:2e:68",
+            "ip_addresses": [
+              {
+                "address": "fe80::8036:3ff:fe2e:2e68",
+                "prefix": 64,
+                "type": "ipv6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 9000,
+      "kind": "qemu",
+      "fields": {
+        "agent": "enabled=1",
+        "balloon": "0",
+        "ciuser": "ub",
+        "cores": "2",
+        "memory": "2048",
+        "name": "dell-template-inspect",
+        "onboot": "0",
+        "ostype": "l26",
+        "sockets": "1"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:06:C1:9F",
+          "bridge": "vmbr0",
+          "firewall": "1"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=dhcp"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "stopped",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 2147483648,
+        "mem": 0,
+        "maxdisk": 34359738368,
+        "uptime": 0
+      },
+      "qga_network": {
+        "attempted": false
+      }
+    },
+    {
+      "vmid": 9001,
+      "kind": "qemu",
+      "fields": {
+        "agent": "enabled=1",
+        "balloon": "0",
+        "ciuser": "ub",
+        "cores": "2",
+        "memory": "2048",
+        "name": "tpl-docker-base",
+        "nameserver": "1.1.1.1",
+        "onboot": "0",
+        "ostype": "l26",
+        "template": "1"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:50:BD:AD",
+          "bridge": "vmbr0"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=dhcp"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "stopped",
+        "template": 1,
+        "cpus": null,
+        "maxmem": 2147483648,
+        "mem": 0,
+        "maxdisk": 34359738368,
+        "uptime": 0
+      },
+      "qga_network": {
+        "attempted": false
+      }
+    },
+    {
+      "vmid": 9002,
+      "kind": "qemu",
+      "fields": {
+        "agent": "enabled=1",
+        "balloon": "0",
+        "ciuser": "ub",
+        "cores": "2",
+        "memory": "2048",
+        "name": "dell-linux-clone-test",
+        "nameserver": "1.1.1.1",
+        "onboot": "0",
+        "ostype": "l26"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:4C:9F:A1",
+          "bridge": "vmbr0"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=dhcp"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "stopped",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 2147483648,
+        "mem": 0,
+        "maxdisk": 34359738368,
+        "uptime": 0
+      },
+      "qga_network": {
+        "attempted": false
+      }
+    },
+    {
+      "vmid": 9003,
+      "kind": "qemu",
+      "fields": {
+        "agent": "enabled=1",
+        "balloon": "0",
+        "ciuser": "ub",
+        "cores": "2",
+        "memory": "2048",
+        "name": "dell-docker-clone-test",
+        "nameserver": "1.1.1.1",
+        "onboot": "0",
+        "ostype": "l26"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:3F:B7:34",
+          "bridge": "vmbr0"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=dhcp"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "stopped",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 2147483648,
+        "mem": 0,
+        "maxdisk": 34359738368,
+        "uptime": 0
+      },
+      "qga_network": {
+        "attempted": false
+      }
+    },
+    {
+      "vmid": 9004,
+      "kind": "qemu",
+      "fields": {
+        "agent": "enabled=1",
+        "balloon": "0",
+        "ciuser": "ub",
+        "cores": "2",
+        "memory": "2048",
+        "name": "dell-docker-clone-a",
+        "nameserver": "1.1.1.1",
+        "onboot": "0",
+        "ostype": "l26"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:7A:E9:67",
+          "bridge": "vmbr0"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=dhcp"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "stopped",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 2147483648,
+        "mem": 0,
+        "maxdisk": 34359738368,
+        "uptime": 0
+      },
+      "qga_network": {
+        "attempted": false
+      }
+    },
+    {
+      "vmid": 9005,
+      "kind": "qemu",
+      "fields": {
+        "agent": "enabled=1",
+        "balloon": "0",
+        "ciuser": "ub",
+        "cores": "2",
+        "memory": "2048",
+        "name": "dell-linux-clone-b",
+        "nameserver": "1.1.1.1",
+        "onboot": "0",
+        "ostype": "l26"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:B9:34:42",
+          "bridge": "vmbr0"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=dhcp"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "stopped",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 2147483648,
+        "mem": 0,
+        "maxdisk": 34359738368,
+        "uptime": 0
+      },
+      "qga_network": {
+        "attempted": false
+      }
+    },
+    {
+      "vmid": 9006,
+      "kind": "qemu",
+      "fields": {
+        "agent": "enabled=1",
+        "balloon": "0",
+        "ciuser": "ub",
+        "cores": "2",
+        "memory": "2048",
+        "name": "dell-docker-clone-b",
+        "nameserver": "1.1.1.1",
+        "onboot": "0",
+        "ostype": "l26"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:E3:BD:A2",
+          "bridge": "vmbr0"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=dhcp"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "stopped",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 2147483648,
+        "mem": 0,
+        "maxdisk": 34359738368,
+        "uptime": 0
+      },
+      "qga_network": {
+        "attempted": false
+      }
+    },
+    {
+      "vmid": 9010,
+      "kind": "qemu",
+      "fields": {
+        "agent": "enabled=1",
+        "balloon": "0",
+        "ciuser": "ub",
+        "cores": "2",
+        "memory": "2048",
+        "name": "tpl-linux-base",
+        "nameserver": "1.1.1.1",
+        "onboot": "0",
+        "ostype": "l26",
+        "template": "1"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:EE:9E:D8",
+          "bridge": "vmbr0"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=dhcp"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "stopped",
+        "template": 1,
+        "cpus": null,
+        "maxmem": 2147483648,
+        "mem": 0,
+        "maxdisk": 34359738368,
+        "uptime": 0
+      },
+      "qga_network": {
+        "attempted": false
+      }
+    },
+    {
+      "vmid": 9020,
+      "kind": "qemu",
+      "fields": {
+        "agent": "enabled=1",
+        "balloon": "0",
+        "ciuser": "ub",
+        "cores": "2",
+        "memory": "2048",
+        "name": "dell-restore-baseline",
+        "nameserver": "1.1.1.1",
+        "onboot": "0",
+        "ostype": "l26"
+      },
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:60:1C:95",
+          "bridge": "vmbr0"
+        }
+      },
+      "cloudinit_network": {
+        "ipconfig0": "ip=dhcp"
+      },
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "stopped",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 2147483648,
+        "mem": 0,
+        "maxdisk": 34359738368,
+        "uptime": 0
+      },
+      "qga_network": {
+        "attempted": false
+      }
+    },
+    {
+      "vmid": 100,
+      "kind": "lxc",
+      "fields": {
+        "cores": "1",
+        "hostname": "cf-tunnel",
+        "memory": "512",
+        "onboot": "1",
+        "ostype": "debian",
+        "unprivileged": "1"
+      },
+      "nics": {
+        "net0": {
+          "name": "eth0",
+          "bridge": "vmbr0",
+          "firewall": "1",
+          "hwaddr": "BC:24:11:42:04:C1",
+          "ip": "dhcp",
+          "type": "veth"
+        }
+      },
+      "cloudinit_network": {},
+      "secret_fields_emitted": false,
+      "runtime": {
+        "status": "running",
+        "template": 0,
+        "cpus": null,
+        "maxmem": 536870912,
+        "mem": 36954112,
+        "maxdisk": 4143677440,
+        "uptime": 68375
+      },
+      "qga_network": {
+        "attempted": false
+      }
+    }
+  ],
+  "vmid190_available": true,
+  "all_resource_vmids": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    200,
+    201,
+    210,
+    220,
+    221,
+    230,
+    231,
+    232,
+    240,
+    250,
+    260,
+    270,
+    9000,
+    9001,
+    9002,
+    9003,
+    9004,
+    9005,
+    9006,
+    9010,
+    9020
+  ],
+  "host_memory_bytes": {
+    "MemTotal": 135056257024,
+    "MemAvailable": 88802156544,
+    "SwapTotal": 8589930496,
+    "SwapFree": 8589930496
+  },
+  "host_network": {
+    "ipv4_addresses": {
+      "exit_code": 0,
+      "data": [
+        {
+          "ifindex": 1,
+          "ifname": "lo",
+          "flags": [
+            "LOOPBACK",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 65536,
+          "qdisc": "noqueue",
+          "operstate": "UNKNOWN",
+          "group": "default",
+          "txqlen": 1000,
+          "addr_info": [
+            {
+              "family": "inet",
+              "local": "127.0.0.1",
+              "prefixlen": 8,
+              "scope": "host",
+              "label": "lo",
+              "valid_life_time": 4294967295,
+              "preferred_life_time": 4294967295
+            }
+          ]
+        },
+        {
+          "ifindex": 4,
+          "ifname": "vmbr0",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "qdisc": "noqueue",
+          "operstate": "UP",
+          "group": "default",
+          "txqlen": 1000,
+          "addr_info": [
+            {
+              "family": "inet",
+              "local": "192.168.21.22",
+              "prefixlen": 24,
+              "scope": "global",
+              "label": "vmbr0",
+              "valid_life_time": 4294967295,
+              "preferred_life_time": 4294967295
+            }
+          ]
+        },
+        {
+          "ifindex": 37,
+          "ifname": "vmbr10",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "qdisc": "noqueue",
+          "operstate": "UP",
+          "group": "default",
+          "txqlen": 1000,
+          "addr_info": [
+            {
+              "family": "inet",
+              "local": "10.63.10.1",
+              "prefixlen": 24,
+              "scope": "global",
+              "label": "vmbr10",
+              "valid_life_time": 4294967295,
+              "preferred_life_time": 4294967295
+            }
+          ]
+        },
+        {
+          "ifindex": 38,
+          "ifname": "vmbr20",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "qdisc": "noqueue",
+          "operstate": "UP",
+          "group": "default",
+          "txqlen": 1000,
+          "addr_info": [
+            {
+              "family": "inet",
+              "local": "10.63.20.1",
+              "prefixlen": 24,
+              "scope": "global",
+              "label": "vmbr20",
+              "valid_life_time": 4294967295,
+              "preferred_life_time": 4294967295
+            }
+          ]
+        },
+        {
+          "ifindex": 39,
+          "ifname": "vmbr30",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "qdisc": "noqueue",
+          "operstate": "UP",
+          "group": "default",
+          "txqlen": 1000,
+          "addr_info": [
+            {
+              "family": "inet",
+              "local": "10.63.30.1",
+              "prefixlen": 24,
+              "scope": "global",
+              "label": "vmbr30",
+              "valid_life_time": 4294967295,
+              "preferred_life_time": 4294967295
+            }
+          ]
+        },
+        {
+          "ifindex": 40,
+          "ifname": "vmbr40",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "qdisc": "noqueue",
+          "operstate": "UP",
+          "group": "default",
+          "txqlen": 1000,
+          "addr_info": [
+            {
+              "family": "inet",
+              "local": "10.63.40.1",
+              "prefixlen": 24,
+              "scope": "global",
+              "label": "vmbr40",
+              "valid_life_time": 4294967295,
+              "preferred_life_time": 4294967295
+            }
+          ]
+        }
+      ]
+    },
+    "ipv4_routes": {
+      "exit_code": 0,
+      "data": [
+        {
+          "dst": "default",
+          "gateway": "192.168.21.1",
+          "dev": "vmbr0",
+          "protocol": "kernel",
+          "flags": [
+            "onlink"
+          ]
+        },
+        {
+          "dst": "10.63.10.0/24",
+          "dev": "vmbr10",
+          "protocol": "kernel",
+          "scope": "link",
+          "prefsrc": "10.63.10.1",
+          "flags": []
+        },
+        {
+          "dst": "10.63.20.0/24",
+          "dev": "vmbr20",
+          "protocol": "kernel",
+          "scope": "link",
+          "prefsrc": "10.63.20.1",
+          "flags": []
+        },
+        {
+          "dst": "10.63.30.0/24",
+          "dev": "vmbr30",
+          "protocol": "kernel",
+          "scope": "link",
+          "prefsrc": "10.63.30.1",
+          "flags": []
+        },
+        {
+          "dst": "10.63.40.0/24",
+          "dev": "vmbr40",
+          "protocol": "kernel",
+          "scope": "link",
+          "prefsrc": "10.63.40.1",
+          "flags": []
+        },
+        {
+          "dst": "192.168.21.0/24",
+          "dev": "vmbr0",
+          "protocol": "kernel",
+          "scope": "link",
+          "prefsrc": "192.168.21.22",
+          "flags": []
+        },
+        {
+          "type": "local",
+          "dst": "10.63.10.1",
+          "dev": "vmbr10",
+          "table": "local",
+          "protocol": "kernel",
+          "scope": "host",
+          "prefsrc": "10.63.10.1",
+          "flags": []
+        },
+        {
+          "type": "broadcast",
+          "dst": "10.63.10.255",
+          "dev": "vmbr10",
+          "table": "local",
+          "protocol": "kernel",
+          "scope": "link",
+          "prefsrc": "10.63.10.1",
+          "flags": []
+        },
+        {
+          "type": "local",
+          "dst": "10.63.20.1",
+          "dev": "vmbr20",
+          "table": "local",
+          "protocol": "kernel",
+          "scope": "host",
+          "prefsrc": "10.63.20.1",
+          "flags": []
+        },
+        {
+          "type": "broadcast",
+          "dst": "10.63.20.255",
+          "dev": "vmbr20",
+          "table": "local",
+          "protocol": "kernel",
+          "scope": "link",
+          "prefsrc": "10.63.20.1",
+          "flags": []
+        },
+        {
+          "type": "local",
+          "dst": "10.63.30.1",
+          "dev": "vmbr30",
+          "table": "local",
+          "protocol": "kernel",
+          "scope": "host",
+          "prefsrc": "10.63.30.1",
+          "flags": []
+        },
+        {
+          "type": "broadcast",
+          "dst": "10.63.30.255",
+          "dev": "vmbr30",
+          "table": "local",
+          "protocol": "kernel",
+          "scope": "link",
+          "prefsrc": "10.63.30.1",
+          "flags": []
+        },
+        {
+          "type": "local",
+          "dst": "10.63.40.1",
+          "dev": "vmbr40",
+          "table": "local",
+          "protocol": "kernel",
+          "scope": "host",
+          "prefsrc": "10.63.40.1",
+          "flags": []
+        },
+        {
+          "type": "broadcast",
+          "dst": "10.63.40.255",
+          "dev": "vmbr40",
+          "table": "local",
+          "protocol": "kernel",
+          "scope": "link",
+          "prefsrc": "10.63.40.1",
+          "flags": []
+        },
+        {
+          "type": "local",
+          "dst": "127.0.0.0/8",
+          "dev": "lo",
+          "table": "local",
+          "protocol": "kernel",
+          "scope": "host",
+          "prefsrc": "127.0.0.1",
+          "flags": []
+        },
+        {
+          "type": "local",
+          "dst": "127.0.0.1",
+          "dev": "lo",
+          "table": "local",
+          "protocol": "kernel",
+          "scope": "host",
+          "prefsrc": "127.0.0.1",
+          "flags": []
+        },
+        {
+          "type": "broadcast",
+          "dst": "127.255.255.255",
+          "dev": "lo",
+          "table": "local",
+          "protocol": "kernel",
+          "scope": "link",
+          "prefsrc": "127.0.0.1",
+          "flags": []
+        },
+        {
+          "type": "local",
+          "dst": "192.168.21.22",
+          "dev": "vmbr0",
+          "table": "local",
+          "protocol": "kernel",
+          "scope": "host",
+          "prefsrc": "192.168.21.22",
+          "flags": []
+        },
+        {
+          "type": "broadcast",
+          "dst": "192.168.21.255",
+          "dev": "vmbr0",
+          "table": "local",
+          "protocol": "kernel",
+          "scope": "link",
+          "prefsrc": "192.168.21.22",
+          "flags": []
+        }
+      ]
+    },
+    "ipv6_addresses": {
+      "exit_code": 0,
+      "data": [
+        {
+          "ifindex": 1,
+          "ifname": "lo",
+          "flags": [
+            "LOOPBACK",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 65536,
+          "operstate": "UNKNOWN",
+          "txqlen": 1000,
+          "addr_info": [
+            {
+              "family": "inet6",
+              "local": "::1",
+              "prefixlen": 128,
+              "scope": "host",
+              "noprefixroute": true,
+              "valid_life_time": 4294967295,
+              "preferred_life_time": 4294967295
+            }
+          ]
+        },
+        {
+          "ifindex": 4,
+          "ifname": "vmbr0",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "operstate": "UP",
+          "txqlen": 1000,
+          "addr_info": [
+            {
+              "family": "inet6",
+              "local": "fe80::46a8:42ff:fe38:c11b",
+              "prefixlen": 64,
+              "scope": "link",
+              "valid_life_time": 4294967295,
+              "preferred_life_time": 4294967295
+            }
+          ]
+        },
+        {
+          "ifindex": 37,
+          "ifname": "vmbr10",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "operstate": "UP",
+          "txqlen": 1000,
+          "addr_info": [
+            {
+              "family": "inet6",
+              "local": "fe80::f41b:adff:fe4b:b7f1",
+              "prefixlen": 64,
+              "scope": "link",
+              "valid_life_time": 4294967295,
+              "preferred_life_time": 4294967295
+            }
+          ]
+        },
+        {
+          "ifindex": 38,
+          "ifname": "vmbr20",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "operstate": "UP",
+          "txqlen": 1000,
+          "addr_info": [
+            {
+              "family": "inet6",
+              "local": "fe80::b003:14ff:fe22:60fa",
+              "prefixlen": 64,
+              "scope": "link",
+              "valid_life_time": 4294967295,
+              "preferred_life_time": 4294967295
+            }
+          ]
+        },
+        {
+          "ifindex": 39,
+          "ifname": "vmbr30",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "operstate": "UP",
+          "txqlen": 1000,
+          "addr_info": [
+            {
+              "family": "inet6",
+              "local": "fe80::c46e:bdff:feab:2784",
+              "prefixlen": 64,
+              "scope": "link",
+              "valid_life_time": 4294967295,
+              "preferred_life_time": 4294967295
+            }
+          ]
+        },
+        {
+          "ifindex": 40,
+          "ifname": "vmbr40",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "operstate": "UP",
+          "txqlen": 1000,
+          "addr_info": [
+            {
+              "family": "inet6",
+              "local": "fe80::9c66:b7ff:fee7:f41b",
+              "prefixlen": 64,
+              "scope": "link",
+              "valid_life_time": 4294967295,
+              "preferred_life_time": 4294967295
+            }
+          ]
+        }
+      ]
+    },
+    "ipv6_routes": {
+      "exit_code": 0,
+      "data": [
+        {
+          "dst": "fe80::/64",
+          "dev": "vmbr0",
+          "protocol": "kernel",
+          "metric": 256,
+          "flags": [],
+          "pref": "medium"
+        },
+        {
+          "dst": "fe80::/64",
+          "dev": "vmbr10",
+          "protocol": "kernel",
+          "metric": 256,
+          "flags": [],
+          "pref": "medium"
+        },
+        {
+          "dst": "fe80::/64",
+          "dev": "vmbr20",
+          "protocol": "kernel",
+          "metric": 256,
+          "flags": [],
+          "pref": "medium"
+        },
+        {
+          "dst": "fe80::/64",
+          "dev": "vmbr30",
+          "protocol": "kernel",
+          "metric": 256,
+          "flags": [],
+          "pref": "medium"
+        },
+        {
+          "dst": "fe80::/64",
+          "dev": "vmbr40",
+          "protocol": "kernel",
+          "metric": 256,
+          "flags": [],
+          "pref": "medium"
+        },
+        {
+          "dst": "default",
+          "gateway": "fe80::ced8:43ff:fec5:416e",
+          "dev": "vmbr0",
+          "metric": 1024,
+          "flags": [],
+          "pref": "medium"
+        },
+        {
+          "type": "local",
+          "dst": "::1",
+          "dev": "lo",
+          "table": "local",
+          "protocol": "kernel",
+          "metric": 0,
+          "flags": [],
+          "pref": "medium"
+        },
+        {
+          "type": "anycast",
+          "dst": "fe80::",
+          "dev": "vmbr0",
+          "table": "local",
+          "protocol": "kernel",
+          "metric": 0,
+          "flags": [],
+          "pref": "medium"
+        },
+        {
+          "type": "anycast",
+          "dst": "fe80::",
+          "dev": "vmbr10",
+          "table": "local",
+          "protocol": "kernel",
+          "metric": 0,
+          "flags": [],
+          "pref": "medium"
+        },
+        {
+          "type": "anycast",
+          "dst": "fe80::",
+          "dev": "vmbr20",
+          "table": "local",
+          "protocol": "kernel",
+          "metric": 0,
+          "flags": [],
+          "pref": "medium"
+        },
+        {
+          "type": "anycast",
+          "dst": "fe80::",
+          "dev": "vmbr30",
+          "table": "local",
+          "protocol": "kernel",
+          "metric": 0,
+          "flags": [],
+          "pref": "medium"
+        },
+        {
+          "type": "anycast",
+          "dst": "fe80::",
+          "dev": "vmbr40",
+          "table": "local",
+          "protocol": "kernel",
+          "metric": 0,
+          "flags": [],
+          "pref": "medium"
+        },
+        {
+          "type": "local",
+          "dst": "fe80::46a8:42ff:fe38:c11b",
+          "dev": "vmbr0",
+          "table": "local",
+          "protocol": "kernel",
+          "metric": 0,
+          "flags": [],
+          "pref": "medium"
+        },
+        {
+          "type": "local",
+          "dst": "fe80::9c66:b7ff:fee7:f41b",
+          "dev": "vmbr40",
+          "table": "local",
+          "protocol": "kernel",
+          "metric": 0,
+          "flags": [],
+          "pref": "medium"
+        },
+        {
+          "type": "local",
+          "dst": "fe80::b003:14ff:fe22:60fa",
+          "dev": "vmbr20",
+          "table": "local",
+          "protocol": "kernel",
+          "metric": 0,
+          "flags": [],
+          "pref": "medium"
+        },
+        {
+          "type": "local",
+          "dst": "fe80::c46e:bdff:feab:2784",
+          "dev": "vmbr30",
+          "table": "local",
+          "protocol": "kernel",
+          "metric": 0,
+          "flags": [],
+          "pref": "medium"
+        },
+        {
+          "type": "local",
+          "dst": "fe80::f41b:adff:fe4b:b7f1",
+          "dev": "vmbr10",
+          "table": "local",
+          "protocol": "kernel",
+          "metric": 0,
+          "flags": [],
+          "pref": "medium"
+        },
+        {
+          "type": "multicast",
+          "dst": "ff00::/8",
+          "dev": "vmbr0",
+          "table": "local",
+          "protocol": "kernel",
+          "metric": 256,
+          "flags": [],
+          "pref": "medium"
+        },
+        {
+          "type": "multicast",
+          "dst": "ff00::/8",
+          "dev": "vmbr10",
+          "table": "local",
+          "protocol": "kernel",
+          "metric": 256,
+          "flags": [],
+          "pref": "medium"
+        },
+        {
+          "type": "multicast",
+          "dst": "ff00::/8",
+          "dev": "vmbr20",
+          "table": "local",
+          "protocol": "kernel",
+          "metric": 256,
+          "flags": [],
+          "pref": "medium"
+        },
+        {
+          "type": "multicast",
+          "dst": "ff00::/8",
+          "dev": "vmbr30",
+          "table": "local",
+          "protocol": "kernel",
+          "metric": 256,
+          "flags": [],
+          "pref": "medium"
+        },
+        {
+          "type": "multicast",
+          "dst": "ff00::/8",
+          "dev": "vmbr40",
+          "table": "local",
+          "protocol": "kernel",
+          "metric": 256,
+          "flags": [],
+          "pref": "medium"
+        }
+      ]
+    },
+    "bridge_links": {
+      "exit_code": 0,
+      "data": [
+        {
+          "ifindex": 2,
+          "ifname": "eno1",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "master": "vmbr0",
+          "state": "forwarding",
+          "priority": 32,
+          "cost": 5
+        },
+        {
+          "ifindex": 5,
+          "link": "eno1",
+          "ifname": "veth100i0",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "master": "fwbr100i0",
+          "state": "forwarding",
+          "priority": 32,
+          "cost": 2
+        },
+        {
+          "ifindex": 7,
+          "link": "fwln100i0",
+          "ifname": "fwpr100p0",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "master": "vmbr0",
+          "state": "forwarding",
+          "priority": 32,
+          "cost": 2
+        },
+        {
+          "ifindex": 8,
+          "link": "fwpr100p0",
+          "ifname": "fwln100i0",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "master": "fwbr100i0",
+          "state": "forwarding",
+          "priority": 32,
+          "cost": 2
+        },
+        {
+          "ifindex": 41,
+          "ifname": "tap200i0",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "PROMISC",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "master": "vmbr10",
+          "state": "forwarding",
+          "priority": 32,
+          "cost": 2
+        },
+        {
+          "ifindex": 42,
+          "ifname": "tap201i0",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "PROMISC",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "master": "vmbr10",
+          "state": "forwarding",
+          "priority": 32,
+          "cost": 2
+        },
+        {
+          "ifindex": 43,
+          "ifname": "tap210i0",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "PROMISC",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "master": "vmbr20",
+          "state": "forwarding",
+          "priority": 32,
+          "cost": 2
+        },
+        {
+          "ifindex": 44,
+          "ifname": "tap220i0",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "PROMISC",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "master": "vmbr30",
+          "state": "forwarding",
+          "priority": 32,
+          "cost": 2
+        },
+        {
+          "ifindex": 45,
+          "ifname": "tap221i0",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "PROMISC",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "master": "vmbr30",
+          "state": "forwarding",
+          "priority": 32,
+          "cost": 2
+        },
+        {
+          "ifindex": 46,
+          "ifname": "tap250i0",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "PROMISC",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "master": "vmbr30",
+          "state": "forwarding",
+          "priority": 32,
+          "cost": 2
+        },
+        {
+          "ifindex": 47,
+          "ifname": "tap260i0",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "PROMISC",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "master": "vmbr40",
+          "state": "forwarding",
+          "priority": 32,
+          "cost": 2
+        },
+        {
+          "ifindex": 48,
+          "ifname": "tap270i0",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "PROMISC",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "master": "vmbr30",
+          "state": "forwarding",
+          "priority": 32,
+          "cost": 2
+        },
+        {
+          "ifindex": 49,
+          "ifname": "tap230i0",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "PROMISC",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "master": "vmbr10",
+          "state": "forwarding",
+          "priority": 32,
+          "cost": 2
+        },
+        {
+          "ifindex": 50,
+          "ifname": "tap231i0",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "PROMISC",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "master": "vmbr10",
+          "state": "forwarding",
+          "priority": 32,
+          "cost": 2
+        },
+        {
+          "ifindex": 51,
+          "ifname": "tap232i0",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "PROMISC",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "master": "vmbr10",
+          "state": "forwarding",
+          "priority": 32,
+          "cost": 2
+        },
+        {
+          "ifindex": 52,
+          "ifname": "tap240i0",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "PROMISC",
+            "UP",
+            "LOWER_UP"
+          ],
+          "mtu": 1500,
+          "master": "vmbr20",
+          "state": "forwarding",
+          "priority": 32,
+          "cost": 2
+        }
+      ]
+    },
+    "ipv4_neighbors": {
+      "exit_code": 0,
+      "data": [
+        {
+          "dst": "10.63.10.11",
+          "dev": "vmbr10",
+          "lladdr": "bc:24:11:1c:bb:93",
+          "state": [
+            "REACHABLE"
+          ]
+        },
+        {
+          "dst": "192.168.21.180",
+          "dev": "vmbr0",
+          "lladdr": "bc:24:11:78:e9:84",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "10.63.10.21",
+          "dev": "vmbr10",
+          "lladdr": "bc:24:11:e9:e5:cc",
+          "state": [
+            "DELAY"
+          ]
+        },
+        {
+          "dst": "192.168.21.129",
+          "dev": "vmbr0",
+          "lladdr": "bc:24:11:ee:9e:d8",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "192.168.21.124",
+          "dev": "vmbr0",
+          "lladdr": "bc:24:11:ce:8c:67",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "10.63.10.10",
+          "dev": "vmbr10",
+          "lladdr": "bc:24:11:1c:62:00",
+          "state": [
+            "DELAY"
+          ]
+        },
+        {
+          "dst": "10.63.10.20",
+          "dev": "vmbr10",
+          "lladdr": "bc:24:11:1c:20:00",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "192.168.21.139",
+          "dev": "vmbr0",
+          "lladdr": "bc:24:11:e3:bd:a2",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "10.63.20.20",
+          "dev": "vmbr20",
+          "lladdr": "bc:24:11:65:41:5a",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "192.168.21.247",
+          "dev": "vmbr0",
+          "lladdr": "bc:24:11:ec:e1:6f",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "192.168.21.153",
+          "dev": "vmbr0",
+          "lladdr": "bc:24:11:5d:2d:98",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "192.168.21.116",
+          "dev": "vmbr0",
+          "lladdr": "ea:dd:85:78:d9:b5",
+          "state": [
+            "REACHABLE"
+          ]
+        },
+        {
+          "dst": "192.168.21.235",
+          "dev": "vmbr0",
+          "lladdr": "bc:24:11:1c:20:00",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "192.168.21.221",
+          "dev": "vmbr0",
+          "lladdr": "bc:24:11:e9:e5:cc",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "10.63.30.30",
+          "dev": "vmbr30",
+          "lladdr": "bc:24:11:78:e9:84",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "192.168.21.211",
+          "dev": "vmbr0",
+          "lladdr": "bc:24:11:7a:e9:67",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "192.168.21.170",
+          "dev": "vmbr0",
+          "lladdr": "bc:24:11:b9:34:42",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "10.63.30.40",
+          "dev": "vmbr30",
+          "lladdr": "bc:24:11:ce:8c:67",
+          "state": [
+            "REACHABLE"
+          ]
+        },
+        {
+          "dst": "10.63.30.10",
+          "dev": "vmbr30",
+          "lladdr": "bc:24:11:2a:01:ad",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "10.63.30.20",
+          "dev": "vmbr30",
+          "lladdr": "bc:24:11:ec:e1:6f",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "192.168.21.213",
+          "dev": "vmbr0",
+          "lladdr": "bc:24:11:60:1c:95",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "192.168.21.172",
+          "dev": "vmbr0",
+          "lladdr": "bc:24:11:a7:3b:73",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "192.168.21.1",
+          "dev": "vmbr0",
+          "lladdr": "cc:d8:43:c5:41:6e",
+          "state": [
+            "REACHABLE"
+          ]
+        },
+        {
+          "dst": "192.168.21.171",
+          "dev": "vmbr0",
+          "lladdr": "bc:24:11:1c:62:00",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "192.168.21.148",
+          "dev": "vmbr0",
+          "lladdr": "bc:24:11:7d:1c:aa",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "192.168.21.164",
+          "dev": "vmbr0",
+          "lladdr": "d2:2f:8f:c2:04:78",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "192.168.21.163",
+          "dev": "vmbr0",
+          "lladdr": "bc:24:11:2a:01:ad",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "192.168.21.177",
+          "dev": "vmbr0",
+          "lladdr": "bc:24:11:1c:bb:93",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "10.63.20.10",
+          "dev": "vmbr20",
+          "lladdr": "bc:24:11:5d:2d:98",
+          "state": [
+            "REACHABLE"
+          ]
+        },
+        {
+          "dst": "192.168.21.215",
+          "dev": "vmbr0",
+          "lladdr": "bc:24:11:3f:b7:34",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "192.168.21.112",
+          "dev": "vmbr0",
+          "lladdr": "bc:24:11:65:41:5a",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "192.168.21.165",
+          "dev": "vmbr0",
+          "lladdr": "bc:24:11:50:bd:ad",
+          "state": [
+            "STALE"
+          ]
+        },
+        {
+          "dst": "10.63.10.22",
+          "dev": "vmbr10",
+          "lladdr": "bc:24:11:7d:1c:aa",
+          "state": [
+            "DELAY"
+          ]
+        },
+        {
+          "dst": "10.63.40.10",
+          "dev": "vmbr40",
+          "lladdr": "bc:24:11:a7:3b:73",
+          "state": [
+            "REACHABLE"
+          ]
+        }
+      ]
+    },
+    "nft_ruleset": {
+      "exit_code": 0,
+      "data": {
+        "nftables": [
+          {
+            "metainfo": {
+              "version": "1.0.6",
+              "release_name": "Lester Gooch #5",
+              "json_schema_version": 1
+            }
+          },
+          {
+            "table": {
+              "family": "inet",
+              "name": "dell_filter",
+              "handle": 19
+            }
+          },
+          {
+            "set": {
+              "family": "inet",
+              "name": "managed",
+              "table": "dell_filter",
+              "type": "ifname",
+              "handle": 3,
+              "elem": [
+                "vmbr10",
+                "vmbr20",
+                "vmbr30",
+                "vmbr40"
+              ]
+            }
+          },
+          {
+            "chain": {
+              "family": "inet",
+              "table": "dell_filter",
+              "name": "input",
+              "handle": 1,
+              "type": "filter",
+              "hook": "input",
+              "prio": 0,
+              "policy": "accept"
+            }
+          },
+          {
+            "chain": {
+              "family": "inet",
+              "table": "dell_filter",
+              "name": "forward",
+              "handle": 2,
+              "type": "filter",
+              "hook": "forward",
+              "prio": 0,
+              "policy": "accept"
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "input",
+              "handle": 4,
+              "expr": [
+                {
+                  "match": {
+                    "op": "in",
+                    "left": {
+                      "ct": {
+                        "key": "state"
+                      }
+                    },
+                    "right": [
+                      "established",
+                      "related"
+                    ]
+                  }
+                },
+                {
+                  "accept": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "input",
+              "handle": 5,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "@managed"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "protocol"
+                      }
+                    },
+                    "right": "icmp"
+                  }
+                },
+                {
+                  "accept": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "input",
+              "handle": 6,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "@managed"
+                  }
+                },
+                {
+                  "counter": {
+                    "packets": 326,
+                    "bytes": 21482
+                  }
+                },
+                {
+                  "drop": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 7,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr10"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "!=",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": {
+                      "prefix": {
+                        "addr": "10.63.10.0",
+                        "len": 24
+                      }
+                    }
+                  }
+                },
+                {
+                  "drop": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 8,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr20"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "!=",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": {
+                      "prefix": {
+                        "addr": "10.63.20.0",
+                        "len": 24
+                      }
+                    }
+                  }
+                },
+                {
+                  "drop": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 9,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr30"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "!=",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": {
+                      "prefix": {
+                        "addr": "10.63.30.0",
+                        "len": 24
+                      }
+                    }
+                  }
+                },
+                {
+                  "drop": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 10,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr40"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "!=",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": {
+                      "prefix": {
+                        "addr": "10.63.40.0",
+                        "len": 24
+                      }
+                    }
+                  }
+                },
+                {
+                  "drop": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 11,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "nfproto"
+                      }
+                    },
+                    "right": "ipv6"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "@managed"
+                  }
+                },
+                {
+                  "drop": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 12,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "nfproto"
+                      }
+                    },
+                    "right": "ipv6"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "oifname"
+                      }
+                    },
+                    "right": "@managed"
+                  }
+                },
+                {
+                  "drop": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 13,
+              "expr": [
+                {
+                  "match": {
+                    "op": "in",
+                    "left": {
+                      "ct": {
+                        "key": "state"
+                      }
+                    },
+                    "right": [
+                      "established",
+                      "related"
+                    ]
+                  }
+                },
+                {
+                  "accept": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 14,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr10"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "oifname"
+                      }
+                    },
+                    "right": "vmbr10"
+                  }
+                },
+                {
+                  "accept": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 15,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr20"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "oifname"
+                      }
+                    },
+                    "right": "vmbr20"
+                  }
+                },
+                {
+                  "accept": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 16,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr30"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "oifname"
+                      }
+                    },
+                    "right": "vmbr30"
+                  }
+                },
+                {
+                  "accept": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 17,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr40"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "oifname"
+                      }
+                    },
+                    "right": "vmbr40"
+                  }
+                },
+                {
+                  "accept": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 19,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr30"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": "10.63.30.10"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "oifname"
+                      }
+                    },
+                    "right": {
+                      "set": [
+                        "vmbr10",
+                        "vmbr20"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "tcp",
+                        "field": "dport"
+                      }
+                    },
+                    "right": 22
+                  }
+                },
+                {
+                  "accept": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 20,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr30"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": "10.63.30.40"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "oifname"
+                      }
+                    },
+                    "right": "@managed"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "tcp",
+                        "field": "dport"
+                      }
+                    },
+                    "right": 9100
+                  }
+                },
+                {
+                  "accept": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 22,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": {
+                      "set": [
+                        "vmbr10",
+                        "vmbr20"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "daddr"
+                      }
+                    },
+                    "right": "10.63.30.20"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "tcp",
+                        "field": "dport"
+                      }
+                    },
+                    "right": 8081
+                  }
+                },
+                {
+                  "accept": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 23,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr0"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": {
+                      "prefix": {
+                        "addr": "192.168.21.0",
+                        "len": 24
+                      }
+                    }
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "daddr"
+                      }
+                    },
+                    "right": "10.63.30.30"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "tcp",
+                        "field": "dport"
+                      }
+                    },
+                    "right": 9001
+                  }
+                },
+                {
+                  "accept": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 24,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr0"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": {
+                      "prefix": {
+                        "addr": "192.168.21.0",
+                        "len": 24
+                      }
+                    }
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "daddr"
+                      }
+                    },
+                    "right": "10.63.30.20"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "tcp",
+                        "field": "dport"
+                      }
+                    },
+                    "right": 8081
+                  }
+                },
+                {
+                  "accept": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 25,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr0"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": {
+                      "prefix": {
+                        "addr": "192.168.21.0",
+                        "len": 24
+                      }
+                    }
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "daddr"
+                      }
+                    },
+                    "right": "10.63.40.10"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "tcp",
+                        "field": "dport"
+                      }
+                    },
+                    "right": 80
+                  }
+                },
+                {
+                  "accept": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 26,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr0"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": {
+                      "prefix": {
+                        "addr": "192.168.21.0",
+                        "len": 24
+                      }
+                    }
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "daddr"
+                      }
+                    },
+                    "right": "10.63.40.10"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "tcp",
+                        "field": "dport"
+                      }
+                    },
+                    "right": 445
+                  }
+                },
+                {
+                  "accept": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 27,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr0"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": {
+                      "prefix": {
+                        "addr": "192.168.21.0",
+                        "len": 24
+                      }
+                    }
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "daddr"
+                      }
+                    },
+                    "right": "10.63.40.10"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "tcp",
+                        "field": "dport"
+                      }
+                    },
+                    "right": 8096
+                  }
+                },
+                {
+                  "accept": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 28,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr0"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": {
+                      "prefix": {
+                        "addr": "192.168.21.0",
+                        "len": 24
+                      }
+                    }
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "daddr"
+                      }
+                    },
+                    "right": "10.63.10.20"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "tcp",
+                        "field": "dport"
+                      }
+                    },
+                    "right": 9999
+                  }
+                },
+                {
+                  "accept": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 29,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr0"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": {
+                      "prefix": {
+                        "addr": "192.168.21.0",
+                        "len": 24
+                      }
+                    }
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "daddr"
+                      }
+                    },
+                    "right": "10.63.20.20"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "tcp",
+                        "field": "dport"
+                      }
+                    },
+                    "right": 9999
+                  }
+                },
+                {
+                  "accept": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 30,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "@managed"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "oifname"
+                      }
+                    },
+                    "right": "vmbr0"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "daddr"
+                      }
+                    },
+                    "right": {
+                      "prefix": {
+                        "addr": "192.168.21.0",
+                        "len": 24
+                      }
+                    }
+                  }
+                },
+                {
+                  "drop": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 32,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "@managed"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "oifname"
+                      }
+                    },
+                    "right": "vmbr0"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "tcp",
+                        "field": "dport"
+                      }
+                    },
+                    "right": {
+                      "set": [
+                        53,
+                        80,
+                        443
+                      ]
+                    }
+                  }
+                },
+                {
+                  "accept": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 33,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr30"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": "10.63.30.10"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "oifname"
+                      }
+                    },
+                    "right": "vmbr0"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "tcp",
+                        "field": "dport"
+                      }
+                    },
+                    "right": 22
+                  }
+                },
+                {
+                  "accept": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 35,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "@managed"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "oifname"
+                      }
+                    },
+                    "right": "vmbr0"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "udp",
+                        "field": "dport"
+                      }
+                    },
+                    "right": {
+                      "set": [
+                        53,
+                        123
+                      ]
+                    }
+                  }
+                },
+                {
+                  "accept": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 36,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "@managed"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "oifname"
+                      }
+                    },
+                    "right": "vmbr0"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "protocol"
+                      }
+                    },
+                    "right": "icmp"
+                  }
+                },
+                {
+                  "accept": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 37,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "@managed"
+                  }
+                },
+                {
+                  "counter": {
+                    "packets": 78,
+                    "bytes": 4680
+                  }
+                },
+                {
+                  "drop": null
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "inet",
+              "table": "dell_filter",
+              "chain": "forward",
+              "handle": 38,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "oifname"
+                      }
+                    },
+                    "right": "@managed"
+                  }
+                },
+                {
+                  "counter": {
+                    "packets": 0,
+                    "bytes": 0
+                  }
+                },
+                {
+                  "drop": null
+                }
+              ]
+            }
+          },
+          {
+            "table": {
+              "family": "ip",
+              "name": "dell_nat",
+              "handle": 20
+            }
+          },
+          {
+            "chain": {
+              "family": "ip",
+              "table": "dell_nat",
+              "name": "prerouting",
+              "handle": 1,
+              "type": "nat",
+              "hook": "prerouting",
+              "prio": -100,
+              "policy": "accept"
+            }
+          },
+          {
+            "chain": {
+              "family": "ip",
+              "table": "dell_nat",
+              "name": "postrouting",
+              "handle": 2,
+              "type": "nat",
+              "hook": "postrouting",
+              "prio": 100,
+              "policy": "accept"
+            }
+          },
+          {
+            "rule": {
+              "family": "ip",
+              "table": "dell_nat",
+              "chain": "prerouting",
+              "handle": 3,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr0"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": {
+                      "prefix": {
+                        "addr": "192.168.21.0",
+                        "len": 24
+                      }
+                    }
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "daddr"
+                      }
+                    },
+                    "right": "192.168.21.22"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "tcp",
+                        "field": "dport"
+                      }
+                    },
+                    "right": 9001
+                  }
+                },
+                {
+                  "dnat": {
+                    "addr": "10.63.30.30",
+                    "port": 9001
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "ip",
+              "table": "dell_nat",
+              "chain": "prerouting",
+              "handle": 4,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr0"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": {
+                      "prefix": {
+                        "addr": "192.168.21.0",
+                        "len": 24
+                      }
+                    }
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "daddr"
+                      }
+                    },
+                    "right": "192.168.21.22"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "tcp",
+                        "field": "dport"
+                      }
+                    },
+                    "right": 8081
+                  }
+                },
+                {
+                  "dnat": {
+                    "addr": "10.63.30.20",
+                    "port": 8081
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "ip",
+              "table": "dell_nat",
+              "chain": "prerouting",
+              "handle": 6,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr0"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": {
+                      "prefix": {
+                        "addr": "192.168.21.0",
+                        "len": 24
+                      }
+                    }
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "daddr"
+                      }
+                    },
+                    "right": "192.168.21.22"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "tcp",
+                        "field": "dport"
+                      }
+                    },
+                    "right": 445
+                  }
+                },
+                {
+                  "dnat": {
+                    "addr": "10.63.40.10",
+                    "port": 445
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "ip",
+              "table": "dell_nat",
+              "chain": "prerouting",
+              "handle": 7,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr0"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": {
+                      "prefix": {
+                        "addr": "192.168.21.0",
+                        "len": 24
+                      }
+                    }
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "daddr"
+                      }
+                    },
+                    "right": "192.168.21.22"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "tcp",
+                        "field": "dport"
+                      }
+                    },
+                    "right": 8096
+                  }
+                },
+                {
+                  "dnat": {
+                    "addr": "10.63.40.10",
+                    "port": 8096
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "ip",
+              "table": "dell_nat",
+              "chain": "prerouting",
+              "handle": 8,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr0"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": {
+                      "prefix": {
+                        "addr": "192.168.21.0",
+                        "len": 24
+                      }
+                    }
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "daddr"
+                      }
+                    },
+                    "right": "192.168.21.22"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "tcp",
+                        "field": "dport"
+                      }
+                    },
+                    "right": 9999
+                  }
+                },
+                {
+                  "dnat": {
+                    "addr": "10.63.10.20",
+                    "port": 9999
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "ip",
+              "table": "dell_nat",
+              "chain": "prerouting",
+              "handle": 9,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr0"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": {
+                      "prefix": {
+                        "addr": "192.168.21.0",
+                        "len": 24
+                      }
+                    }
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "daddr"
+                      }
+                    },
+                    "right": "192.168.21.22"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "tcp",
+                        "field": "dport"
+                      }
+                    },
+                    "right": 19999
+                  }
+                },
+                {
+                  "dnat": {
+                    "addr": "10.63.20.20",
+                    "port": 9999
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "ip",
+              "table": "dell_nat",
+              "chain": "prerouting",
+              "handle": 11,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "iifname"
+                      }
+                    },
+                    "right": "vmbr0"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": {
+                      "prefix": {
+                        "addr": "192.168.21.0",
+                        "len": 24
+                      }
+                    }
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "daddr"
+                      }
+                    },
+                    "right": "192.168.21.22"
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "tcp",
+                        "field": "dport"
+                      }
+                    },
+                    "right": 9080
+                  }
+                },
+                {
+                  "dnat": {
+                    "addr": "10.63.40.10",
+                    "port": 80
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "rule": {
+              "family": "ip",
+              "table": "dell_nat",
+              "chain": "postrouting",
+              "handle": 10,
+              "expr": [
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "saddr"
+                      }
+                    },
+                    "right": {
+                      "prefix": {
+                        "addr": "10.63.0.0",
+                        "len": 16
+                      }
+                    }
+                  }
+                },
+                {
+                  "match": {
+                    "op": "==",
+                    "left": {
+                      "meta": {
+                        "key": "oifname"
+                      }
+                    },
+                    "right": "vmbr0"
+                  }
+                },
+                {
+                  "masquerade": null
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "forwarding": {
+      "net.ipv4.ip_forward": "1",
+      "net.ipv6.conf.all.forwarding": "0"
+    },
+    "interface_files": [
+      {
+        "path": "/etc/network/interfaces",
+        "allowed_directives": [
+          "auto lo",
+          "iface lo inet loopback",
+          "iface eno1 inet manual",
+          "auto vmbr0",
+          "iface vmbr0 inet static",
+          "address 192.168.21.22/24",
+          "gateway 192.168.21.1",
+          "bridge-ports eno1",
+          "bridge-stp off",
+          "bridge-fd 0",
+          "iface eno2 inet manual",
+          "iface vmbr0 inet6 auto",
+          "source /etc/network/interfaces.d/*"
+        ]
+      },
+      {
+        "path": "/etc/network/interfaces.d/dell-internal",
+        "allowed_directives": [
+          "auto vmbr10",
+          "iface vmbr10 inet static",
+          "address 10.63.10.1/24",
+          "bridge-ports none",
+          "bridge-stp off",
+          "bridge-fd 0",
+          "auto vmbr20",
+          "iface vmbr20 inet static",
+          "address 10.63.20.1/24",
+          "bridge-ports none",
+          "bridge-stp off",
+          "bridge-fd 0",
+          "auto vmbr30",
+          "iface vmbr30 inet static",
+          "address 10.63.30.1/24",
+          "bridge-ports none",
+          "bridge-stp off",
+          "bridge-fd 0",
+          "auto vmbr40",
+          "iface vmbr40 inet static",
+          "address 10.63.40.1/24",
+          "bridge-ports none",
+          "bridge-stp off",
+          "bridge-fd 0"
+        ]
+      }
+    ]
+  },
+  "config_secret_fields_emitted": false,
+  "pve_or_guest_mutations": false
+}

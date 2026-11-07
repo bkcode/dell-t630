@@ -1,0 +1,124 @@
+{
+  "at": "2026-11-07T00:18:14.531448+08:00",
+  "mode": "readonly-after-narrow-WG-confirm",
+  "result": {
+    "pending": false,
+    "watchdog_active": false,
+    "WG_rule": {
+      "chain": "forward",
+      "handle": 29,
+      "comment": "WG-Penpot-TCP9001",
+      "expr": [
+        {
+          "match": {
+            "op": "==",
+            "left": {
+              "meta": {
+                "key": "iifname"
+              }
+            },
+            "right": "eth0"
+          }
+        },
+        {
+          "match": {
+            "op": "==",
+            "left": {
+              "meta": {
+                "key": "oifname"
+              }
+            },
+            "right": "eth1"
+          }
+        },
+        {
+          "match": {
+            "op": "==",
+            "left": {
+              "payload": {
+                "protocol": "ip",
+                "field": "saddr"
+              }
+            },
+            "right": {
+              "prefix": {
+                "addr": "10.66.66.0",
+                "len": 24
+              }
+            }
+          }
+        },
+        {
+          "match": {
+            "op": "==",
+            "left": {
+              "payload": {
+                "protocol": "ip",
+                "field": "daddr"
+              }
+            },
+            "right": "192.168.19.50"
+          }
+        },
+        {
+          "match": {
+            "op": "==",
+            "left": {
+              "payload": {
+                "protocol": "tcp",
+                "field": "dport"
+              }
+            },
+            "right": 9001
+          }
+        },
+        {
+          "match": {
+            "op": "in",
+            "left": {
+              "ct": {
+                "key": "state"
+              }
+            },
+            "right": "new"
+          }
+        },
+        {
+          "mangle": {
+            "key": {
+              "ct": {
+                "key": "mark"
+              }
+            },
+            "value": 419430404
+          }
+        },
+        {
+          "counter": {
+            "packets": 0,
+            "bytes": 0
+          }
+        },
+        {
+          "accept": null
+        }
+      ],
+      "counter": {
+        "packets": 0,
+        "bytes": 0
+      }
+    },
+    "forward_return_mark_sets": [
+      {
+        "set": [
+          419430401,
+          419430402,
+          419430403,
+          419430404
+        ]
+      }
+    ],
+    "no_INPUT_WG_rule": true
+  },
+  "remote_MacAir_HTTP_result": "pending-user-retest"
+}

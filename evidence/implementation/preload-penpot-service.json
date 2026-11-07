@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "role": "penpot-service",
+  "target": {
+    "vmid": 250,
+    "ip": "192.168.21.180",
+    "host_key_alias": "dell-vm250",
+    "host_key_fingerprint": "SHA256:CB7xsY1DIoonCx3SaDbWqGUIKaTcy1bCusZpVQccK4U",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "started_at": "2026-11-06T07:01:29.601285+08:00",
+  "scope": "assigned-new-guest-software-preload-only",
+  "status": "software-preloaded-no-containers",
+  "runtime_profile_script_sha256": "45692f1732688f010f6a9ef6b4abc3ea1950934a5655bcf92f3e97fff5ea05a4",
+  "preload_script_sha256": "efb101cda53df8e99dc825217bfe51552589ddc60b17c6d7fab30b7cfb483a79",
+  "archives": [
+    {
+      "group": "penpot",
+      "archive": "target-amd64-penpot-images.tar",
+      "started_at": "2026-11-06T07:01:33.869418+08:00",
+      "status": "verified-preloaded",
+      "completed_at": "2026-11-06T07:05:28.296672+08:00",
+      "result": {
+        "status": "images-preloaded-no-containers",
+        "role": "penpot-service",
+        "archive": "target-amd64-penpot-images.tar",
+        "sha256": "a2ae6671af20ee7c970d0c367ffeb51c828b666eec3580b16105d733c9d3390e",
+        "verified_image_ids": [
+          "sha256:8a9691a7ca4c7c0870345368f701e6c04970a908307d0a75e0c323bfccff986c",
+          "sha256:c54c38204393018c4009b7161b9ee3a04ccc0daab657b820d5de86a0d3013630",
+          "sha256:6173b08e25850cda792cd75261e741649c0febd48326e68e8711ba44b5c9af42",
+          "sha256:29c13326e854fd63e18a7231cb1ca26d60f728692bd1207ded003b94aba79390",
+          "sha256:e95070617f49eacc00f136061d9c6b4bad957319046e9e65e7cee14b9e77577c",
+          "sha256:245fc027b7f3755bbd21b4375c2a0ebc7fa5d16c4573da497be9850a823973c8",
+          "sha256:ca662989648f173e01fb1a1768e7d84ddcaf8b7de135070b59271b0918104eb3",
+          "sha256:7ed84fca86579b7bee90ec5c9750457cd9450729d2dd01fb2070f00f6cd7fb14",
+          "sha256:580a202b5088e9c651a8e8b4e461e3213fbd3a3aacaa3d2251892a546a734116"
+        ],
+        "registry_reference_available": {
+          "penpotapp/frontend@sha256:d5bec7ab86328a2bce02b331291eab5833dcb56e403428ad07ccd6740be73735": false,
+          "penpotapp/backend@sha256:3d3d1eeb5a488efd31ec22038374eb6b52dccc21532047c2e508a18193f3e71f": false,
+          "penpotapp/exporter@sha256:48b66f774d338f0ed25d58c6d42f9f107a99170f67bf75ce76361d3dc9e6e27b": false,
+          "penpotapp/admin-console@sha256:679bada92344ad5ebd1ee68b5067d63592383a050e3e5da63d106b259e1b0ac9": false,
+          "penpotapp/mcp@sha256:6b39db0ca73d0a50a8afa264676d8ab9f455e87d426cff276d31b2a84a0447c5": false,
+          "postgres@sha256:7da5d534f1ffcdb2f69efa6e466a7a29ff89eefd611c7b50c4d69aa77fd4a822": false,
+          "valkey/valkey@sha256:757b7e559b14512bcc252949b13b717385d9381ed42e6b325982d03f4a5c8e8e": false,
+          "adguard/dnsproxy@sha256:29a27f0a695fa0ae97c56e61343bb7fb820b555e7069b87562a0d5b6fabaea6f": false,
+          "axllent/mailpit@sha256:18156f9ee243aa339170ac33d09d6d5a80b10d9e06b265f90f223a777a8f4b73": false
+        },
+        "applications_started": false,
+        "image_load_stdout": "Loaded image ID: sha256:8a9691a7ca4c7c0870345368f701e6c04970a908307d0a75e0c323bfccff986c\nLoaded image ID: sha256:6173b08e25850cda792cd75261e741649c0febd48326e68e8711ba44b5c9af42\nLoaded image ID: sha256:e95070617f49eacc00f136061d9c6b4bad957319046e9e65e7cee14b9e77577c\nLoaded image ID: sha256:245fc027b7f3755bbd21b4375c2a0ebc7fa5d16c4573da497be9850a823973c8\nLoaded image ID: sha256:7ed84fca86579b7bee90ec5c9750457cd9450729d2dd01fb2070f00f6cd7fb14\nLoaded image ID: sha256:580a202b5088e9c651a8e8b4e461e3213fbd3a3aacaa3d2251892a546a734116\nLoaded image ID: sha256:c54c38204393018c4009b7161b9ee3a04ccc0daab657b820d5de86a0d3013630\nLoaded image ID: sha256:29c13326e854fd63e18a7231cb1ca26d60f728692bd1207ded003b94aba79390\nLoaded image ID: sha256:ca662989648f173e01fb1a1768e7d84ddcaf8b7de135070b59271b0918104eb3\n"
+      }
+    },
+    {
+      "group": "custom",
+      "archive": "custom-penpot-amd64-images.tar",
+      "started_at": "2026-11-06T07:05:28.297656+08:00",
+      "status": "verified-preloaded",
+      "completed_at": "2026-11-06T07:05:55.518805+08:00",
+      "result": {
+        "status": "images-preloaded-no-containers",
+        "role": "penpot-service",
+        "archive": "custom-penpot-amd64-images.tar",
+        "sha256": "6d27b16c5bd9e9cecbd4c825734ac2e1bc9cee2d10a8f38d5f26da32bd7036d1",
+        "verified_image_ids": [
+          "sha256:fa395b809ed21c53a01387567264100fb28c553f1dd4af113f38c50de3b739bc",
+          "sha256:c0bead679c3fe7a4b80d2485f87bdce0e5a6acc26a9c2a001b0e4e3270dadee5",
+          "sha256:d4414e3f2e41ac4f5eb4b2c146c05cbc9f9754b179d6b63efa3af95c005b1261"
+        ],
+        "registry_reference_available": {},
+        "applications_started": false,
+        "image_load_stdout": "Loaded image: dell-penpot-frontend:2.18.5-amd64\nLoaded image: dell-penpot-worker:2.18.5-amd64\nLoaded image: dell-penpot-import:2.18.5-amd64\n"
+      }
+    }
+  ],
+  "applications_started": false,
+  "host_network_applied": false,
+  "before": {
+    "role": "penpot-service",
+    "driver": "overlayfs",
+    "docker_root": "/srv/penpot/docker",
+    "containers": 0,
+    "images": 0,
+    "live_restore": false,
+    "filesystem_free_bytes": 105070145536,
+    "filesystem_total_bytes": 105089261568,
+    "artifact_device_exists": true
+  },
+  "runtime_profile": {
+    "role": "penpot-service",
+    "driver": "overlay2",
+    "docker_root": "/srv/penpot/docker",
+    "live_restore": false,
+    "containers": 0,
+    "changed": true,
+    "old_backend_data_preserved": true
+  },
+  "after": {
+    "role": "penpot-service",
+    "driver": "overlay2",
+    "docker_root": "/srv/penpot/docker",
+    "containers": 0,
+    "images": 12,
+    "live_restore": false,
+    "filesystem_free_bytes": 100396670976,
+    "filesystem_total_bytes": 105089261568,
+    "artifact_device_exists": true
+  },
+  "limitations": [
+    "No docker pull or compose invoked; registry manifest aliases may remain unavailable pending manager-approved metadata pull.",
+    "No application target_guard, application IP, host network, source machine or unassigned guest changed.",
+    "Old containerd cache retained by runtime profile; no data removed."
+  ],
+  "completed_at": "2026-11-06T07:05:56.179228+08:00",
+  "docker_data_root_verification": {
+    "status": "verified-data-root-on-assigned-100gib-disk",
+    "role": "penpot-service",
+    "docker_root": "/srv/penpot/docker",
+    "expected_uuid": "ccccda03-bffd-4054-afd3-e0e22f0c607e",
+    "driver": "overlay2",
+    "containers": 0,
+    "images": 12,
+    "live_restore": false,
+    "mounts": {
+      "docker_root": {
+        "path": "/srv/penpot/docker",
+        "mount": {
+          "target": "/srv/penpot",
+          "source": "/dev/sdb",
+          "fstype": "ext4",
+          "options": "rw,relatime",
+          "uuid": "ccccda03-bffd-4054-afd3-e0e22f0c607e"
+        }
+      },
+      "images_metadata": {
+        "path": "/srv/penpot/docker/image",
+        "mount": {
+          "target": "/srv/penpot",
+          "source": "/dev/sdb",
+          "fstype": "ext4",
+          "options": "rw,relatime",
+          "uuid": "ccccda03-bffd-4054-afd3-e0e22f0c607e"
+        }
+      },
+      "layers": {
+        "path": "/srv/penpot/docker/overlay2",
+        "mount": {
+          "target": "/srv/penpot",
+          "source": "/dev/sdb",
+          "fstype": "ext4",
+          "options": "rw,relatime",
+          "uuid": "ccccda03-bffd-4054-afd3-e0e22f0c607e"
+        }
+      },
+      "volumes": {
+        "path": "/srv/penpot/docker/volumes",
+        "mount": {
+          "target": "/srv/penpot",
+          "source": "/dev/sdb",
+          "fstype": "ext4",
+          "options": "rw,relatime",
+          "uuid": "ccccda03-bffd-4054-afd3-e0e22f0c607e"
+        }
+      }
+    },
+    "filesystem_free_bytes": 100396670976,
+    "filesystem_total_bytes": 105089261568,
+    "df_bytes": "Filesystem        1B-blocks       Used    Available Use% Mounted on\n/dev/sdb       105089261568 4675813376 100396670976   5% /srv/penpot\n",
+    "var_lib_containerd_cache_exists": true,
+    "cache_deleted": false,
+    "collected_at": "2026-11-06T07:08:42.933203+08:00"
+  }
+}

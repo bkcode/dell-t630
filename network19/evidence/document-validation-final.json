@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "scope": "local-document-validation-only",
+  "stats": {
+    "roles": 14,
+    "guest_memory_gib": 117.0,
+    "vcpu": 55,
+    "host_reserve_gib": 8.0,
+    "current_network_cases": 26,
+    "current_network_required_passed": 25,
+    "current_network_required_count": 25,
+    "current_network_optional_pending": 1,
+    "Java_acceptance_templates": 1,
+    "acceptance_cases": 38,
+    "documentation_passed": 2,
+    "implementation_pending": 12,
+    "pve_checks": 42,
+    "local_links_checked": 362,
+    "external_links_listed": 49
+  },
+  "errors": [],
+  "warnings": [
+    "vCPU exceeds physical cores; concurrent workload capacity is unverified",
+    "PVE check cluster-status exit=2; see scope/limitations",
+    "External URL availability is not tested by this offline validator"
+  ],
+  "at": "2026-11-06T18:22:01.590864+08:00"
+}

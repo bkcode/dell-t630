@@ -1,0 +1,18 @@
+{
+  "status": "own-fish-temporary-objects-removed-3core-templates-preserved",
+  "removed": [
+    9043,
+    9044,
+    9045,
+    9040,
+    9041,
+    9042
+  ],
+  "source_core_templates": [
+    9001,
+    9010,
+    9011
+  ],
+  "Nexus221_not_touched": true,
+  "private_original_and_fish_archives_retained": true
+}

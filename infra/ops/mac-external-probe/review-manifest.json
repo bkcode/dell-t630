@@ -1,0 +1,23 @@
+{
+  "stage": "disabled-after-confirmed-background-local-network-privacy-denial",
+  "files": {
+    "DIAGNOSIS.md": "6cfcdf18e852caf2ff289552106837dbe7072305626a8f5a326b4c8a4958f3f8",
+    "README.md": "2bcd8cbc6a15f87cfcf70ff3f7e61db01b2abb1526b382c87b69060edc37e8fc",
+    "acceptance.py": "5aa0f4e1e836336e2556271634d2cf516136303ab0ff77e3d4b12352c4c82d37",
+    "background-diagnosis-cleanup.json": "c39470ec2785ef2e31faf76ec4f085b0db315d96abc4d08681073d882a5ffc97",
+    "background-diagnosis-direct.json": "9961003de3501bc19d8fd11249a6d62e3e6b22cb968143210d9c83278daf8caa",
+    "background-diagnosis-launch.json": "e031fb95ec0d8a254167a1b374415dfcb75e9afc21c68f17bfbf3bd85766368d",
+    "background-diagnosis-localnetwork-log.json": "dc321072082fa48f5bbfd76a6e87eb0a3999db1619f25685d059929538e6cf06",
+    "background-diagnosis.json": "02fc97472e14924caa7f9bd2f77763ed7e1c44860ac2513e04873e0db1e0151e",
+    "background-localnetwork-log-observation.json": "5825c141125b222336de5a43d1f498d799fb2ca81a3177cee44e8877fdc80a9f",
+    "background-log-observation.json": "3c62f1f004425c6e86bb38774fd7661911b123500f10fa2360e9f0a9d604512c",
+    "com.dell.t630.external-probe.plist": "22fa3a7c7924d9f0c94d9a45a5375f5e85c0172d347af75bb206c1c0ac516de3",
+    "diagnosis.py": "883eeb8f0a99d358a87517aea4720142bc84cefee74168ad675ef92515600b90",
+    "lan-baseline-after-maintenance.json": "67789d6de5d350436a45b2480c7931c1015e3f04fa9a78aa42da903c14dcb97f",
+    "lan-baseline.json": "ddb310274ef573aafd1d2cf8a93f404545f2c14ebb0e9a67de007066b445cf11",
+    "notify-environment-issue.py": "113e754fca036dc16509b5b0e66512cf75b8e68c6799dcd98adc1cf380f628da",
+    "probe.py": "4433c599aaa61daa7c9a62f757a58de49bc111a47bdc570e58697b48060d9019",
+    "test_probe.py": "a48154c8e232b418bafeca5be8b15a7fb813a76fe1c25d03c1634f3534e2e51c",
+    "validation.json": "4c7897fc5267702373118c13b342b02d27cb66f24863347a5a5560e4b13f42cd"
+  }
+}

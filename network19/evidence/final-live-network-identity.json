@@ -1,0 +1,655 @@
+{
+  "at": "2026-11-06T18:09:13.248667+08:00",
+  "scope": "current final network/strict SSH and management-only host, not whole-host reboot",
+  "roles": [
+    {
+      "vmid": 200,
+      "name": "data-prod-db",
+      "target": {
+        "vmid": 200,
+        "ip": "192.168.19.10",
+        "host_key_alias": "dell-vm200",
+        "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "exit": 0,
+      "passed": true,
+      "network_identity": {
+        "user": "ub",
+        "hostname": "data-prod-db",
+        "NICs": [
+          {
+            "ifname": "eth0",
+            "address": null,
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "192.168.19.10",
+                "prefixlen": 24,
+                "broadcast": "192.168.19.255",
+                "scope": "global",
+                "label": "eth0",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          }
+        ],
+        "default": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "sudo_noninteractive": true,
+        "DNS": [
+          "Link 2 (eth0): 192.168.19.1"
+        ]
+      }
+    },
+    {
+      "vmid": 201,
+      "name": "data-prod-infra",
+      "target": {
+        "vmid": 201,
+        "ip": "192.168.19.11",
+        "host_key_alias": "dell-vm201",
+        "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "exit": 0,
+      "passed": true,
+      "network_identity": {
+        "user": "ub",
+        "hostname": "data-prod-infra",
+        "NICs": [
+          {
+            "ifname": "eth0",
+            "address": null,
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "192.168.19.11",
+                "prefixlen": 24,
+                "broadcast": "192.168.19.255",
+                "scope": "global",
+                "label": "eth0",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          }
+        ],
+        "default": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "sudo_noninteractive": true,
+        "DNS": [
+          "Link 2 (eth0): 192.168.19.1"
+        ]
+      }
+    },
+    {
+      "vmid": 210,
+      "name": "data-test",
+      "target": {
+        "vmid": 210,
+        "ip": "192.168.19.20",
+        "host_key_alias": "dell-vm210",
+        "host_key_fingerprint": "SHA256:8bBCQbBKGmZAw5q2AgT2vXHsyr2aFJktLqs/tDZ9SiA",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "exit": 0,
+      "passed": true,
+      "network_identity": {
+        "user": "ub",
+        "hostname": "data-test",
+        "NICs": [
+          {
+            "ifname": "eth0",
+            "address": null,
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "192.168.19.20",
+                "prefixlen": 24,
+                "broadcast": "192.168.19.255",
+                "scope": "global",
+                "label": "eth0",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          }
+        ],
+        "default": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "sudo_noninteractive": true,
+        "DNS": [
+          "Link 2 (eth0): 192.168.19.1"
+        ]
+      }
+    },
+    {
+      "vmid": 220,
+      "name": "publish-service",
+      "target": {
+        "vmid": 220,
+        "ip": "192.168.19.30",
+        "host_key_alias": "dell-vm220",
+        "host_key_fingerprint": "SHA256:2PFQYC3uPSg/sMihWZZ7R1vgkKKozJbTwTjf6VNWwG4",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "exit": 0,
+      "passed": true,
+      "network_identity": {
+        "user": "ub",
+        "hostname": "publish-service",
+        "NICs": [
+          {
+            "ifname": "eth0",
+            "address": null,
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "192.168.19.30",
+                "prefixlen": 24,
+                "broadcast": "192.168.19.255",
+                "scope": "global",
+                "label": "eth0",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          }
+        ],
+        "default": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "sudo_noninteractive": true,
+        "DNS": [
+          "Link 2 (eth0): 192.168.19.1"
+        ]
+      }
+    },
+    {
+      "vmid": 221,
+      "name": "artifact-service",
+      "target": {
+        "vmid": 221,
+        "ip": "192.168.19.31",
+        "host_key_alias": "dell-vm221",
+        "host_key_fingerprint": "SHA256:ky2Wn7M2CKgUqHaj65c4KnqphO6d3zh6sGEoYYzomWo",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "exit": 0,
+      "passed": true,
+      "network_identity": {
+        "user": "ub",
+        "hostname": "artifact-service",
+        "NICs": [
+          {
+            "ifname": "eth0",
+            "address": null,
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "192.168.19.31",
+                "prefixlen": 24,
+                "broadcast": "192.168.19.255",
+                "scope": "global",
+                "label": "eth0",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          }
+        ],
+        "default": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "sudo_noninteractive": true,
+        "DNS": [
+          "Link 2 (eth0): 192.168.19.1"
+        ]
+      }
+    },
+    {
+      "vmid": 230,
+      "name": "java-prod-01",
+      "target": {
+        "vmid": 230,
+        "ip": "192.168.19.40",
+        "host_key_alias": "dell-vm230",
+        "host_key_fingerprint": "SHA256:KeItAegZqF5lSTCA3fAzKUFYuLAbnG9Pt1AqWskXMlM",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "exit": 0,
+      "passed": true,
+      "network_identity": {
+        "user": "ub",
+        "hostname": "java-prod-01",
+        "NICs": [
+          {
+            "ifname": "eth0",
+            "address": null,
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "192.168.19.40",
+                "prefixlen": 24,
+                "broadcast": "192.168.19.255",
+                "scope": "global",
+                "label": "eth0",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          }
+        ],
+        "default": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "sudo_noninteractive": true,
+        "DNS": [
+          "Link 2 (eth0): 192.168.19.1"
+        ]
+      }
+    },
+    {
+      "vmid": 231,
+      "name": "java-prod-02",
+      "target": {
+        "vmid": 231,
+        "ip": "192.168.19.41",
+        "host_key_alias": "dell-vm231",
+        "host_key_fingerprint": "SHA256:F4FTk8hT14QASJ/nWmjUBtxP4h9dthfE8/8MOdnmLUQ",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "exit": 0,
+      "passed": true,
+      "network_identity": {
+        "user": "ub",
+        "hostname": "java-prod-02",
+        "NICs": [
+          {
+            "ifname": "eth0",
+            "address": null,
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "192.168.19.41",
+                "prefixlen": 24,
+                "broadcast": "192.168.19.255",
+                "scope": "global",
+                "label": "eth0",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          }
+        ],
+        "default": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "sudo_noninteractive": true,
+        "DNS": [
+          "Link 2 (eth0): 192.168.19.1"
+        ]
+      }
+    },
+    {
+      "vmid": 232,
+      "name": "java-prod-03",
+      "target": {
+        "vmid": 232,
+        "ip": "192.168.19.42",
+        "host_key_alias": "dell-vm232",
+        "host_key_fingerprint": "SHA256:hp5JQlxhH7LG5ItvhzzLzHGbky5d+dghbTNsEfdNabo",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "exit": 0,
+      "passed": true,
+      "network_identity": {
+        "user": "ub",
+        "hostname": "java-prod-03",
+        "NICs": [
+          {
+            "ifname": "eth0",
+            "address": null,
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "192.168.19.42",
+                "prefixlen": 24,
+                "broadcast": "192.168.19.255",
+                "scope": "global",
+                "label": "eth0",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          }
+        ],
+        "default": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "sudo_noninteractive": true,
+        "DNS": [
+          "Link 2 (eth0): 192.168.19.1"
+        ]
+      }
+    },
+    {
+      "vmid": 240,
+      "name": "java-test-01",
+      "target": {
+        "vmid": 240,
+        "ip": "192.168.19.45",
+        "host_key_alias": "dell-vm240",
+        "host_key_fingerprint": "SHA256:a5slwmQWq1U2AaeY9965RUYU63BxMymRus8IA9WydNQ",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "exit": 0,
+      "passed": true,
+      "network_identity": {
+        "user": "ub",
+        "hostname": "java-test-01",
+        "NICs": [
+          {
+            "ifname": "eth0",
+            "address": null,
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "192.168.19.45",
+                "prefixlen": 24,
+                "broadcast": "192.168.19.255",
+                "scope": "global",
+                "label": "eth0",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          }
+        ],
+        "default": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "sudo_noninteractive": true,
+        "DNS": [
+          "Link 2 (eth0): 192.168.19.1"
+        ]
+      }
+    },
+    {
+      "vmid": 250,
+      "name": "penpot-service",
+      "target": {
+        "vmid": 250,
+        "ip": "192.168.19.50",
+        "host_key_alias": "dell-vm250",
+        "host_key_fingerprint": "SHA256:AwyeGczSVPEBV9PW6VZc2Iz3w5oA6sQoKYnNuVKgNik",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "exit": 0,
+      "passed": true,
+      "network_identity": {
+        "user": "ub",
+        "hostname": "penpot-service",
+        "NICs": [
+          {
+            "ifname": "eth0",
+            "address": null,
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "192.168.19.50",
+                "prefixlen": 24,
+                "broadcast": "192.168.19.255",
+                "scope": "global",
+                "label": "eth0",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          }
+        ],
+        "default": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "sudo_noninteractive": true,
+        "DNS": [
+          "Link 2 (eth0): 192.168.19.1"
+        ]
+      }
+    },
+    {
+      "vmid": 260,
+      "name": "nas-media",
+      "target": {
+        "vmid": 260,
+        "ip": "192.168.19.60",
+        "host_key_alias": "dell-vm260",
+        "host_key_fingerprint": "SHA256:jYNEYlwXnr4412nGU/Dg616AhDW8eZz3UDIxn4pP7c0",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "exit": 0,
+      "passed": true,
+      "network_identity": {
+        "user": "ub",
+        "hostname": "nas-media",
+        "NICs": [
+          {
+            "ifname": "ens18",
+            "address": null,
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "192.168.19.60",
+                "prefixlen": 24,
+                "broadcast": "192.168.19.255",
+                "scope": "global",
+                "label": "ens18",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          }
+        ],
+        "default": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "ens18",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "sudo_noninteractive": true,
+        "DNS": [
+          "Link 2 (ens18): 192.168.19.1"
+        ]
+      }
+    },
+    {
+      "vmid": 270,
+      "name": "ops-service",
+      "target": {
+        "vmid": 270,
+        "ip": "192.168.19.70",
+        "host_key_alias": "dell-vm270",
+        "host_key_fingerprint": "SHA256:OjP5q9f3WXxGcoOHs23VlnOf258C6T+nNAxTiYoyf0g",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "exit": 0,
+      "passed": true,
+      "network_identity": {
+        "user": "ub",
+        "hostname": "ops-service",
+        "NICs": [
+          {
+            "ifname": "eth0",
+            "address": null,
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "192.168.19.70",
+                "prefixlen": 24,
+                "broadcast": "192.168.19.255",
+                "scope": "global",
+                "label": "eth0",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          }
+        ],
+        "default": [
+          {
+            "dst": "default",
+            "gateway": "192.168.19.1",
+            "dev": "eth0",
+            "protocol": "static",
+            "flags": []
+          }
+        ],
+        "sudo_noninteractive": true,
+        "DNS": [
+          "Link 2 (eth0): 192.168.19.1"
+        ]
+      }
+    }
+  ],
+  "host": {
+    "host_forward": "0",
+    "all_forwarding_zero": true,
+    "tables": [
+      "table bridge dell19_acl"
+    ],
+    "vmbr19_host_addresses": [],
+    "host_route19": "192.168.19.10 via 192.168.21.23 dev vmbr0 src 192.168.21.22 uid 0 \n    cache",
+    "old_bridges_present": [],
+    "permanent_running": [
+      100,
+      190,
+      200,
+      201,
+      210,
+      220,
+      221,
+      230,
+      231,
+      232,
+      240,
+      250,
+      260,
+      270
+    ],
+    "template_ids": [
+      102,
+      103,
+      105,
+      106,
+      9001,
+      9010,
+      9011
+    ],
+    "QA9012_absent": true,
+    "CF_active": true,
+    "CF_IP": [
+      {
+        "ifindex": 2,
+        "link_index": 62,
+        "ifname": "eth0",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "qdisc": "noqueue",
+        "operstate": "UP",
+        "group": "default",
+        "txqlen": 1000,
+        "link_netnsid": 0,
+        "addr_info": [
+          {
+            "family": "inet",
+            "local": "192.168.19.5",
+            "prefixlen": 24,
+            "broadcast": "192.168.19.255",
+            "scope": "global",
+            "label": "eth0",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      }
+    ],
+    "CF_local_ready": {
+      "HTTP": "200",
+      "readyConnections": 2
+    }
+  },
+  "all_passed": true
+}

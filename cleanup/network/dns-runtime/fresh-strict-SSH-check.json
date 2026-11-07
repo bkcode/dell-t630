@@ -1,0 +1,70 @@
+{
+  "at": "2026-11-07T02:28:30.962467+08:00",
+  "fresh_strict_SSH_passed": true,
+  "result": {
+    "status": "configuration-and-services-only",
+    "MAC_interfaces": {
+      "WAN": "eth0",
+      "LAN": "eth1"
+    },
+    "forward": "1",
+    "forwarding_all_WAN_LAN": {
+      "all": "1",
+      "WAN": "1",
+      "LAN": "1"
+    },
+    "NAT": "none",
+    "DHCP_pool": "192.168.19.200-239",
+    "packet_tests": "external positive/negative checks still required",
+    "units": {
+      "dell-gateway19-firewall.service": "active",
+      "dell-gateway19-ready.service": "active",
+      "dell-gateway19-dnsmasq.service": "active"
+    },
+    "IPv6": {
+      "WAN": "1",
+      "LAN": "1"
+    },
+    "lo_IPv6_disable": "0",
+    "listeners": {
+      "DNS": "v4 TCP/UDP19.1 only",
+      "DHCP_socket_present": true,
+      "DHCP_WAN_negative_packet_test": "pending"
+    },
+    "OW_fake_IP_proxy": {
+      "source": "192.168.19.0/24",
+      "destination": "198.18.0.0/15",
+      "tcp": [
+        53,
+        80,
+        443
+      ],
+      "udp": [
+        53,
+        123
+      ],
+      "icmp": true
+    },
+    "CF_fake_IP_proxy": {
+      "source": "192.168.19.5",
+      "destination": "198.18.0.0/15",
+      "tcp": [
+        7844
+      ],
+      "udp": [
+        7844
+      ]
+    },
+    "WireGuard_client_access": {
+      "source": "10.66.66.0/24",
+      "destination": "192.168.19.0/24",
+      "protocols": "all",
+      "gateway_local_addresses": [
+        "192.168.21.23",
+        "192.168.19.1"
+      ],
+      "no_NAT": true
+    },
+    "WG_actual_rules": "trusted VPN /24 full19 /24 + exact gateway addresses mark5"
+  }
+}

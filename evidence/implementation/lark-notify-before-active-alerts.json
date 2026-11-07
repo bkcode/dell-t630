@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-06T14:23:51.366738+08:00",
+  "mode": "read-only-alert-precheck-before-live-route",
+  "result": {
+    "prometheus": [],
+    "alertmanager": [],
+    "safe_to_enable": true
+  }
+}

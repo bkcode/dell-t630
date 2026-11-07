@@ -1,0 +1,8 @@
+{
+  "removed_only_aliases": [
+    "dell-vm9011",
+    "dell-vm9012"
+  ],
+  "reason": "builder keys erased before template sealing, dedicatedQA destroyed; all permanent aliases unchanged",
+  "private_key_material_touched": false
+}

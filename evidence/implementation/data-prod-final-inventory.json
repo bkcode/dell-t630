@@ -1,0 +1,32 @@
+{
+  "scope": "read-only-final-prod-data-inventory",
+  "roles": [
+    {
+      "role": "prod-db",
+      "private_ip": "10.63.10.10",
+      "source_business_data_imported": false,
+      "acceptance_fixture_state_present": false,
+      "formal_business_schema_count": 0,
+      "nacos_metadata_database": "nacos_prod",
+      "mysql_version": "8.4.5",
+      "vmid": 200
+    },
+    {
+      "role": "prod-infra",
+      "private_ip": "10.63.10.11",
+      "source_business_data_imported": false,
+      "acceptance_fixture_state_present": false,
+      "redis_version": "7.4.4",
+      "redis_dbsize": 0,
+      "rabbitmq_version": "3.13.7",
+      "remaining_acceptance_vhosts": 0,
+      "nacos_version": "2.4.3",
+      "namespace_id": "9545c5c8-e112-542f-8302-36504e80e90a",
+      "client_user": "finger_prod",
+      "guest_overcommit_memory": "1",
+      "vmid": 201
+    }
+  ],
+  "source_or_cf_accessed": false,
+  "collected_at": "2026-11-06T11:07:30.855387+08:00"
+}

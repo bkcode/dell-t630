@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-06T08:35:19.812999+00:00",
+  "exit_code": 0,
+  "result": {
+    "stage_path": "/root/dell-network19/staged/core-monitoring230",
+    "stage_file_count": 9,
+    "inspect_exit_code": 0,
+    "inspect": {
+      "status": "stage-inspected-no-write",
+      "vmid": 230,
+      "role": "java-prod-01",
+      "files": 6,
+      "old_and_staged_SHAs_match": true,
+      "paired_new_map_valid": true,
+      "services_changed": false
+    },
+    "OS_transaction_path_touched": false,
+    "active_monitoring_or_addresses_changed": false,
+    "services_started_or_restarted": false
+  }
+}

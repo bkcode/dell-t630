@@ -1,0 +1,114 @@
+{
+  "files": [
+    "rpc.network.json"
+  ],
+  "matching_schemas": [
+    {
+      "source": "rpc.network.json",
+      "schema": {
+        "type": "rpc",
+        "id": "rpc.network.setethernetiface",
+        "params": {
+          "type": "object",
+          "properties": {
+            "uuid": {
+              "type": "string",
+              "format": "uuidv4",
+              "required": true
+            },
+            "devicename": {
+              "type": "string",
+              "required": true
+            },
+            "method": {
+              "type": "string",
+              "enum": [
+                "dhcp",
+                "static",
+                "manual"
+              ],
+              "required": true
+            },
+            "address": {
+              "type": "string",
+              "required": true
+            },
+            "netmask": {
+              "type": "string",
+              "required": true
+            },
+            "gateway": {
+              "type": "string",
+              "required": true
+            },
+            "routemetric": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 65535,
+              "required": true
+            },
+            "method6": {
+              "type": "string",
+              "enum": [
+                "auto",
+                "static",
+                "manual",
+                "dhcp"
+              ],
+              "required": true
+            },
+            "address6": {
+              "type": "string",
+              "required": true
+            },
+            "netmask6": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 128,
+              "required": true
+            },
+            "gateway6": {
+              "type": "string",
+              "required": true
+            },
+            "routemetric6": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 65535,
+              "required": true
+            },
+            "dnsnameservers": {
+              "type": "string",
+              "pattern": "^((\\S+[,;]\\s*)*\\S+)?$",
+              "required": true
+            },
+            "dnssearch": {
+              "type": "string",
+              "pattern": "^((\\S+[,;]\\s*)*\\S+)?$",
+              "required": true
+            },
+            "mtu": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 65535,
+              "required": true
+            },
+            "wol": {
+              "type": "boolean",
+              "required": true
+            },
+            "comment": {
+              "type": "string",
+              "required": true
+            },
+            "altmacaddress": {
+              "type": "string",
+              "pattern": "^([a-fA-F0-9]{2}(:[a-fA-F0-9]{2}){5})?$",
+              "required": true
+            }
+          }
+        }
+      }
+    }
+  ]
+}

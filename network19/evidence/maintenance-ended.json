@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-06T10:11:32.430132+00:00",
+  "status": "own-network19-maintenance-silence-expired-monitoring-restored",
+  "silence_id": "d6a7051e-ff56-47a1-a8ba-2254063c3c68",
+  "only_own_silence_changed": true,
+  "targets_up": 17,
+  "Prometheus_firing_or_pending_before": 0,
+  "Alertmanager_active_before": 0,
+  "mode_or_secrets_changed": false,
+  "test_notifications_sent": false,
+  "external_Mac_probe_unchanged_disabled": true
+}

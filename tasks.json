@@ -1,0 +1,338 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-05",
+  "scope": "historical implementation/network19/cleanup results preserved; current local documentation/rules/paused-state synchronization, manual operations guide and Git delivery; no remote server modification",
+  "documentation": [
+    {
+      "id": "DOC-01",
+      "title": "PVE实机只读盘点",
+      "owner": "pve_audit",
+      "status": "completed",
+      "outputs": [
+        "01-current-state.md",
+        "evidence/pve-audit-2026-11-05.json"
+      ],
+      "manager_verified": true,
+      "verified_by": "root-task-manager",
+      "verified_at": "2026-11-05T23:17:40.589591+08:00",
+      "verification_evidence": "evidence/document-verification.md"
+    },
+    {
+      "id": "DOC-02",
+      "title": "架构与模板访问文档",
+      "owner": "architecture_templates",
+      "status": "completed",
+      "outputs": [
+        "02-architecture.md",
+        "03-templates-and-access.md"
+      ],
+      "manager_verified": true,
+      "verified_by": "root-task-manager",
+      "verified_at": "2026-11-05T23:17:40.589591+08:00",
+      "verification_evidence": "evidence/document-verification.md"
+    },
+    {
+      "id": "DOC-03",
+      "title": "迁移与家庭NAS文档",
+      "owner": "migration_media",
+      "status": "completed",
+      "outputs": [
+        "04-services-and-migration.md",
+        "05-home-nas.md"
+      ],
+      "manager_verified": true,
+      "verified_by": "root-task-manager",
+      "verified_at": "2026-11-05T23:17:40.589591+08:00",
+      "verification_evidence": "evidence/document-verification.md"
+    },
+    {
+      "id": "DOC-04",
+      "title": "验收标准与结构化用例",
+      "owner": "acceptance",
+      "status": "completed",
+      "outputs": [
+        "06-acceptance.md",
+        "acceptance.json"
+      ],
+      "manager_verified": true,
+      "verified_by": "root-task-manager",
+      "verified_at": "2026-11-05T23:17:40.589591+08:00",
+      "verification_evidence": "evidence/document-verification.md"
+    },
+    {
+      "id": "DOC-05",
+      "title": "协调交叉验证与交付",
+      "owner": "root",
+      "status": "completed",
+      "outputs": [
+        "README.md",
+        "AGENTS.md",
+        "plan.json",
+        "tasks.json",
+        "07-implementation-and-tasks.md",
+        "scripts/validate_docs.py",
+        "evidence/document-verification.md"
+      ],
+      "manager_verified": true,
+      "verified_by": "root-task-manager",
+      "verified_at": "2026-11-05T23:17:40.589591+08:00",
+      "verification_evidence": "evidence/document-verification.md"
+    }
+  ],
+  "implementation": [
+    {
+      "id": "IMP-01",
+      "status": "completed",
+      "owner": "root+pve_audit",
+      "evidence": [
+        "evidence/implementation/raid-recovered.json"
+      ],
+      "note": "RAID恢复及映射/BBU已复核；历史slot3根因保留监控。",
+      "manager_verified": true,
+      "verified_by": "root-task-manager",
+      "verification_scope": "historical-completed-stage-not-current-live"
+    },
+    {
+      "id": "IMP-02",
+      "status": "completed",
+      "owner": "root",
+      "evidence": [
+        "evidence/implementation/network-applied.json",
+        "evidence/implementation/network-independent-verification.json"
+      ],
+      "note": "Explicit network authorization applied; final private bridges/SSH/30 data ACL cases and12 exporters verified.",
+      "manager_verified": true,
+      "verified_by": "root-task-manager",
+      "verification_scope": "historical-completed-stage-not-current-live"
+    },
+    {
+      "id": "IMP-03",
+      "status": "completed",
+      "owner": "root",
+      "evidence": [
+        "evidence/implementation/template-clone-validation.json",
+        "evidence/implementation/guest-final-ssh-audit.json",
+        "evidence/implementation/pve-storage-final-check.json"
+      ],
+      "note": "Two templates and12 assigned private VMs/storage/ub admin identities verified; app acceptance separate.",
+      "manager_verified": true,
+      "verified_by": "root-task-manager",
+      "verification_scope": "historical-completed-stage-not-current-live"
+    },
+    {
+      "id": "IMP-04",
+      "status": "completed",
+      "owner": "architecture_templates+pve_audit",
+      "evidence": [
+        "evidence/implementation/data-deployment-acceptance.json",
+        "evidence/implementation/test-data-deployment.json"
+      ],
+      "note": "Prod/test component auth, least privilege and restart persistence verified; prod business remains empty.",
+      "manager_verified": true,
+      "verified_by": "root-task-manager",
+      "verification_scope": "historical-completed-stage-not-current-live"
+    },
+    {
+      "id": "IMP-05",
+      "status": "completed",
+      "owner": "root+architecture_templates+migration_media",
+      "evidence": [
+        "evidence/implementation/publisher-implementation-summary.json",
+        "infra/nexus/rebuild-acceptance-result.json"
+      ],
+      "note": "Nexus应用导入/重建重启/权限、受限发布真实B/A回退与原生负测全部通过；EULA已落实，无候选部署。",
+      "manager_verified": true,
+      "verified_by": "root-task-manager",
+      "verification_scope": "historical-completed-stage-not-current-live"
+    },
+    {
+      "id": "IMP-06",
+      "status": "completed",
+      "owner": "root+pve_audit",
+      "evidence": [
+        "evidence/implementation/java-test-business-acceptance.json",
+        "evidence/implementation/rolling-guest-reboot-acceptance.json"
+      ],
+      "note": "历史测试A121030/E2E曾通过；后续用户明确不部署Java业务，230/240各一运行基础、原五服务停用、publisher fenced、仅9011验收模板。",
+      "manager_verified": true,
+      "verified_by": "root-task-manager",
+      "verification_scope": "historical-completed-stage-not-current-live"
+    },
+    {
+      "id": "IMP-07",
+      "status": "completed",
+      "owner": "migration_media+acceptance",
+      "evidence": [
+        "infra/penpot/application/acceptance-summary.json",
+        "infra/penpot/runtime/health-supervision/runtime-status.json"
+      ],
+      "note": "Git新身份+官方应用包3设计/971原媒体、MCP/async/往返通过；11健康notify自动故障恢复/guest重启通过。",
+      "manager_verified": true,
+      "verified_by": "root-task-manager",
+      "verification_scope": "historical-completed-stage-not-current-live"
+    },
+    {
+      "id": "IMP-08",
+      "status": "completed",
+      "owner": "acceptance",
+      "evidence": [
+        "infra/nas/runtime-status.json",
+        "evidence/implementation/system-recovery-final-summary.json"
+      ],
+      "note": "NAS软件/权限/正常重启与隔离缺挂载阻断-恢复-清理全部通过；真实设备/SLO后续。",
+      "manager_verified": true,
+      "verified_by": "root-task-manager",
+      "verification_scope": "historical-completed-stage-not-current-live"
+    },
+    {
+      "id": "IMP-09",
+      "status": "completed",
+      "owner": "root+architecture_templates",
+      "evidence": [
+        "evidence/implementation/lark-notify-final-audit.json",
+        "evidence/implementation/guest-role-health-activation.json",
+        "infra/backup/full-snapshot-restore/runtime-status.json",
+        "evidence/implementation/prod-initial-private-Mac-backups.json"
+      ],
+      "note": "机内Lark双phase/active、监控与初始恢复副本已验；Mac外部用户明确停用，长期独立调度/RPO后续。",
+      "manager_verified": true,
+      "verified_by": "root-task-manager",
+      "verification_scope": "historical-completed-stage-not-current-live"
+    },
+    {
+      "id": "IMP-10",
+      "status": "completed",
+      "owner": "root",
+      "evidence": [
+        "evidence/implementation/current-phase-manager-signoff.json",
+        "evidence/implementation/final-operational-snapshot.json"
+      ],
+      "note": "本期26/26required签收，12future/manual保持pending，最终26容器/5LAN入口健康。",
+      "manager_verified": true,
+      "verified_by": "root-task-manager",
+      "verification_scope": "historical-completed-stage-not-current-live"
+    }
+  ],
+  "updated_at": "2026-11-07T10:55:18.181006+08:00",
+  "implementation_note": "Original IMP entries describe the prior completed baseline. Latest user scope overrides Java program deployment: five test services are stopped/disabled, publisher fenced, only acceptance template9011 current.",
+  "overall_status": "paused-awaiting-hardware-recovery",
+  "network19_execution": [
+    {
+      "id": "N19-TASK-GW",
+      "owner": "architecture_templates",
+      "status": "completed",
+      "manager_verified": true,
+      "evidence": "network19/gateway/reboot-evidence.json",
+      "verification_scope": "historical-completed-stage-not-current-live"
+    },
+    {
+      "id": "N19-TASK-HOST",
+      "owner": "root",
+      "status": "completed",
+      "manager_verified": true,
+      "evidence": "network19/evidence/host-management-only-retirement.json",
+      "verification_scope": "historical-completed-stage-not-current-live"
+    },
+    {
+      "id": "N19-TASK-CORE",
+      "owner": "acceptance",
+      "status": "completed",
+      "manager_verified": true,
+      "evidence": "network19/services-core/runtime-status.json",
+      "verification_scope": "historical-completed-stage-not-current-live"
+    },
+    {
+      "id": "N19-TASK-MEDIA",
+      "owner": "migration_media",
+      "status": "completed",
+      "manager_verified": true,
+      "evidence": "network19/services-media/migration-summary.json",
+      "verification_scope": "historical-completed-stage-not-current-live"
+    },
+    {
+      "id": "N19-TASK-JTPL",
+      "owner": "architecture_templates + root",
+      "status": "completed",
+      "manager_verified": true,
+      "evidence": "network19/java-template/QA-closeout.json",
+      "verification_scope": "historical-completed-stage-not-current-live"
+    },
+    {
+      "id": "N19-TASK-AUDIT",
+      "owner": "pve_audit",
+      "status": "completed",
+      "manager_verified": true,
+      "evidence": "network19/audit/network19-acceptance.json",
+      "verification_scope": "historical-completed-stage-not-current-live"
+    },
+    {
+      "id": "N19-TASK-CLOSE",
+      "owner": "root",
+      "status": "completed",
+      "manager_verified": true,
+      "evidence": "15-network19-delivery.md",
+      "verification_scope": "historical-completed-stage-not-current-live"
+    }
+  ],
+  "current_Java_scope": {
+    "business_deployment": "disabled-user-deferred",
+    "running_business_units": 0,
+    "single_accepted_template": 9011,
+    "old_immutable_files": "private backups only; no activation"
+  },
+  "wireguard_execution": {
+    "scope": "explicit trustedVPN10.66.66/24 to server19/24 allIPv4 +GWown21.23/19.1;NASsource recognition;originalauthpreserved",
+    "status": "server-configured-and-external-user-batch-confirmed",
+    "evidence": "network19/wireguard/full-access-verification.json",
+    "owners": [
+      "root",
+      "architecture_templates",
+      "migration_media"
+    ],
+    "server_count": "historical topology superseded by cleanup: last verified12roles+3templates",
+    "Java_business_programs_started": false,
+    "verification_scope": "historical before cleanup and hardware pause"
+  },
+  "cleanup_execution": {
+    "status": "nine-historically-passed-Nexus-authorized-hardware-paused",
+    "roles_current": 12,
+    "templates_current": 3,
+    "old_objects_deleted": 15,
+    "own_temp_objects_deleted": 6,
+    "fish_runtime_guests": 9,
+    "fish_templates": 3,
+    "current_targets_UP": null,
+    "Nexus_merge": "explicitly authorized; not started; UEFI0058 POST/B1 memory-path gate before fresh baseline/cold backup",
+    "evidence": "cleanup/acceptance.json",
+    "last_verified_targets_UP": 15,
+    "last_verified_at": "2026-11-07T02:35:01.759527+08:00"
+  },
+  "runtime_state": {
+    "status": "paused-awaiting-hardware-recovery",
+    "current_live_status": "unverified-firmware-POST-halted",
+    "last_successful_full_verification_at": "2026-11-07T02:35:01.759527+08:00",
+    "last_successful_PVE_operation_at": "2026-11-07T02:44:29+08:00",
+    "last_PVE_operation_time_source": "root-task-manager handoff; distinct from full acceptance",
+    "hardware_evidence": "cleanup/hardware/DIMM_B1-incident.json",
+    "hardware_code": "UEFI0058",
+    "prior_SEL_location": "DIMM_B1",
+    "BMC_timezone_verified": false,
+    "Nexus_maintenance_authorized": true,
+    "Nexus_migration_started": false,
+    "remote_actions_in_this_document_closeout": false
+  },
+  "hardware_recovery": {
+    "status": "pending-no-remote-execution",
+    "owner": "root + qualified onsite hardware operator",
+    "acceptance_manifest": "cleanup/acceptance.json",
+    "cases": [
+      "REC-HW-001",
+      "REC-BAK-001",
+      "REC-DATA-001",
+      "REC-NET-001",
+      "REC-OBS-001",
+      "REC-ROLL-001"
+    ]
+  },
+  "local_delivery_record": "20-git-and-handoff.md"
+}

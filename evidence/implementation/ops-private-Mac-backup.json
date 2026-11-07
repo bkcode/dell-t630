@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-06T11:37:57.316075",
+  "status": "private-Mac-ops-backup-archive-hash-and-payload-verified",
+  "target_vmid": 270,
+  "local_path": "/Users/yangzhaohui/work/www/harness/dell/private/backups/ops/dell-backup-df9e5995d6d5.tar.gz",
+  "mode": "0o600",
+  "bytes": 113933,
+  "sha256": "fe4adcdef0fe9917dceedc21609b6283911ab4a9f4248e8ca1eccb5fed5b3d6c",
+  "contains": "new Ops Grafana SQLite and declarative config; new independent target identity, no old Penpot/Nexus or CF credentials",
+  "restore_evidence": "ops-online-backup-restore.json",
+  "limitations": "App restore used isolated network-none container on same T630; Mac archive is a separate disk copy, no full independent-host RPO/RTO claim"
+}

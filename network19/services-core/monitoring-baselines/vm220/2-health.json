@@ -1,0 +1,14 @@
+{
+  "role": "publish-service",
+  "private_ip": "10.63.30.10",
+  "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+  "services": [
+    "ssh.service",
+    "qemu-guest-agent.service",
+    "prometheus-node-exporter.service"
+  ],
+  "http_checks": [],
+  "candidate_service_units": [],
+  "candidate_http_checks": [],
+  "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+}

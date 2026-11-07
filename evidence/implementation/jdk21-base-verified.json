@@ -1,0 +1,71 @@
+{
+  "at": "2026-11-06T06:12:37.232923+08:00",
+  "scope": "JDK/fonts/base-only-no-app-start",
+  "records": [
+    {
+      "role": "java-prod-01",
+      "exit_code": 0,
+      "stdout": "ExecMainStatus=0\nActiveState=inactive\nSubState=dead\nopenjdk version \"21.0.13\" 2026-10-20\nDejaVuSans.ttf: \"DejaVu Sans\" \"Book\"\n",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+      "target": {
+        "vmid": 230,
+        "ip": "192.168.21.235",
+        "host_key_alias": "dell-vm230",
+        "host_key_fingerprint": "SHA256:QDO/Sh54JTBcdOpQPS72Gvtk+wuUjyiEP/KwWFUEO/s",
+        "trust_source": "PVE QGA over known SSH host"
+      }
+    },
+    {
+      "role": "java-prod-02",
+      "exit_code": 0,
+      "stdout": "ExecMainStatus=0\nActiveState=inactive\nSubState=dead\nopenjdk version \"21.0.13\" 2026-10-20\nDejaVuSans.ttf: \"DejaVu Sans\" \"Book\"\n",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+      "target": {
+        "vmid": 231,
+        "ip": "192.168.21.221",
+        "host_key_alias": "dell-vm231",
+        "host_key_fingerprint": "SHA256:jBZbSCpKbPGxG70+luD10Fz2zQU5CbRInk0W7sjTqxo",
+        "trust_source": "PVE QGA over known SSH host"
+      }
+    },
+    {
+      "role": "java-prod-03",
+      "exit_code": 0,
+      "stdout": "ExecMainStatus=0\nActiveState=inactive\nSubState=dead\nopenjdk version \"21.0.13\" 2026-10-20\nDejaVuSans.ttf: \"DejaVu Sans\" \"Book\"\n",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+      "target": {
+        "vmid": 232,
+        "ip": "192.168.21.148",
+        "host_key_alias": "dell-vm232",
+        "host_key_fingerprint": "SHA256:NYSxfiyZ2e0BikkyhtomHu3fAgTxdYCcbfq2rc8kARs",
+        "trust_source": "PVE QGA over known SSH host"
+      }
+    },
+    {
+      "role": "java-test-01",
+      "exit_code": 0,
+      "stdout": "ExecMainStatus=0\nActiveState=inactive\nSubState=dead\nopenjdk version \"21.0.13\" 2026-10-20\nDejaVuSans.ttf: \"DejaVu Sans\" \"Book\"\n",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+      "target": {
+        "vmid": 240,
+        "ip": "192.168.21.112",
+        "host_key_alias": "dell-vm240",
+        "host_key_fingerprint": "SHA256:I/UslFEJaEwF2zaWAwDhPmlSQDY5Yqbv7HE5PGDOaNA",
+        "trust_source": "PVE QGA over known SSH host"
+      }
+    },
+    {
+      "role": "publish-service",
+      "exit_code": 0,
+      "stdout": "ExecMainStatus=0\nActiveState=inactive\nSubState=dead\nopenjdk version \"21.0.13\" 2026-10-20\nDejaVuSans.ttf: \"DejaVu Sans\" \"Book\"\n",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+      "target": {
+        "vmid": 220,
+        "ip": "192.168.21.163",
+        "host_key_alias": "dell-vm220",
+        "host_key_fingerprint": "SHA256:5X/KJJzRjVAwgXasAjR9ok7UW+6UhHyr1FdSKkOowBw",
+        "trust_source": "PVE QGA over known SSH host"
+      }
+    }
+  ]
+}

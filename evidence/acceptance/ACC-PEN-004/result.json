@@ -1,0 +1,33 @@
+{
+  "id": "ACC-PEN-004",
+  "status": "passed",
+  "executed_at": "2026-11-06T14:10:11.413417+08:00",
+  "timezone": "Asia/Shanghai",
+  "operator": "root-task-manager",
+  "plan_sha256": "1c2587e81d7d37740154a4453ce68463867270994f5dc20ce6fb4bb0fda41537",
+  "preconditions_checked": true,
+  "target": {
+    "host": "192.168.21.22",
+    "environment": "managed-PVE-implementation",
+    "vmid": null
+  },
+  "commands_or_steps": [
+    "See linked execution artifact and operator observations"
+  ],
+  "exit_codes": [
+    0
+  ],
+  "observations": [
+    "新MCP身份先overview+API member验证，受权读取正确专用file/page，无key设计读取拒绝（公开initialize200不被当授权）",
+    "专用空页Page.name nonce→独立读+owner API确认落库revn1→恢复Page1落库revn2，3原设计与身份hash保持，无新增图形或Token",
+    "真实async小样本completed、同requestId重试仅同job/一个文件，idle服务重启后completed状态与ID保持；250正常重启与监督故障恢复后MCP只读/无key拒绝再次通过"
+  ],
+  "artifacts": [
+    "infra/penpot/application/acceptance-summary.json"
+  ],
+  "limitations": [
+    "未强制中断进行中导入；本次修改仅独立验收页，历史保留两次验收修订；旧账号/MCP identity未迁入"
+  ],
+  "reviewed_by": "root-task-manager",
+  "plan_snapshot": "evidence/plans/plan-1c2587e81d7d3774.json"
+}

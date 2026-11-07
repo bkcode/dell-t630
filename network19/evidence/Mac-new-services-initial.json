@@ -1,0 +1,23 @@
+[
+  {
+    "service": "Nexus",
+    "URL": "http://192.168.19.31:8081/",
+    "exit": 0,
+    "http_status": "200",
+    "client": "Mac actual LAN, no credentials"
+  },
+  {
+    "service": "OMV",
+    "URL": "http://192.168.19.60/",
+    "exit": 0,
+    "http_status": "200",
+    "client": "Mac actual LAN, no credentials"
+  },
+  {
+    "service": "Jellyfin",
+    "URL": "http://192.168.19.60:8096/health",
+    "exit": 0,
+    "http_status": "200",
+    "client": "Mac actual LAN, no credentials"
+  }
+]

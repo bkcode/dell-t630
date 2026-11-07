@@ -1,0 +1,37 @@
+{
+  "role": "ops-service",
+  "private_ip": "192.168.19.70",
+  "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+  "services": [
+    "dell-ops.service",
+    "prometheus-node-exporter.service",
+    "qemu-guest-agent.service",
+    "ssh.service",
+    "dell-lark-notify.service"
+  ],
+  "http_checks": [
+    {
+      "name": "prometheus-readiness",
+      "url": "http://192.168.19.70:9090/-/ready"
+    },
+    {
+      "name": "alertmanager-readiness",
+      "url": "http://192.168.19.70:9093/-/ready"
+    },
+    {
+      "name": "grafana-health",
+      "url": "http://192.168.19.70:3000/api/health"
+    }
+  ],
+  "candidate_service_units": [
+    "docker.service",
+    "dell-ops.service"
+  ],
+  "candidate_http_checks": [
+    {
+      "name": "grafana-health",
+      "url": "http://192.168.19.70:3000/api/health"
+    }
+  ],
+  "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+}

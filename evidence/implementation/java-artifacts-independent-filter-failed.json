@@ -1,0 +1,48 @@
+{
+  "scope": "independent artifact hash/linkage-input consistency; no application startup",
+  "artifacts": [
+    {
+      "service": "finger-gateway-mobile",
+      "artifact_sha256": "971e07f24704a814ad7eed26f2a1e6cc468d380bff2fa9d320c01ab40a3ffe72",
+      "bytes": 91220068,
+      "internal_dependencies": 10
+    },
+    {
+      "service": "finger-auth",
+      "artifact_sha256": "b003de47f326fbe8c528a4430a3fa2b3f36b4a94ca302b07534e1062e354addc",
+      "bytes": 112317676,
+      "internal_dependencies": 20
+    },
+    {
+      "service": "finger-service-system",
+      "artifact_sha256": "3ddfff8c5cd6d4800c3739a7663eb3bf539935a9427c1a5178b0faa9f5f204f9",
+      "bytes": 100405912,
+      "internal_dependencies": 17
+    },
+    {
+      "service": "finger-service-coms",
+      "artifact_sha256": "3c124f75c9d1bc20126d2c2567a92a0d15051dee962723d85d7b49d56e712cef",
+      "bytes": 135495088,
+      "internal_dependencies": 16
+    },
+    {
+      "service": "finger-bff-system",
+      "artifact_sha256": "d6302ef18bb1c526eb1e3add58d94d29060e163758d0bdd6031bd41c89bd1c23",
+      "bytes": 96981061,
+      "internal_dependencies": 25
+    }
+  ],
+  "errors": [
+    "finger-gateway-mobile embedded manifest mismatch",
+    "finger-auth embedded manifest mismatch",
+    "finger-service-system embedded manifest mismatch",
+    "finger-service-coms embedded manifest mismatch",
+    "finger-bff-system embedded manifest mismatch"
+  ],
+  "conflicts": {},
+  "status": "failed",
+  "limitations": [
+    "Spring context and Linux runtime not validated",
+    "No SQL or external business actions executed"
+  ]
+}

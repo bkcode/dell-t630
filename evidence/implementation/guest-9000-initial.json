@@ -1,0 +1,17 @@
+{
+  "collected_at": "2026-11-05T23:52:52.199744+08:00",
+  "host": "192.168.21.123",
+  "vmid": 9000,
+  "mode": "read-only",
+  "purpose": "existing-template-102-verification",
+  "host_key_source": "trusted PVE QGA channel",
+  "ssh_user": "ub",
+  "exit_code": 0,
+  "stdout": "ub\ndell-template-inspect\nPRETTY_NAME=\"Ubuntu 24.04.2 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.2 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\nstatus: running\nextended_status: degraded running\nboot_status_code: enabled-by-generator\nlast_update: Thu, 01 Jan 1970 00:00:18 +0000\ndetail: DataSourceNoCloud [seed=/dev/sr0]\nerrors: []\nrecoverable_errors:\nDEPRECATED:\n\t- 'user' of type string is deprecated in 22.2 and scheduled to be removed in 27.2. Use 'users' list instead.\nactive\n29.1.3\n",
+  "stderr": "",
+  "limitations": [
+    "Temporary VM on healthy SSD using existing LAN DHCP",
+    "Ubuntu24.04 template; not Debian13 required for OMV and current Finger initialization",
+    "No new private bridges, host forwarding or host firewall applied"
+  ]
+}

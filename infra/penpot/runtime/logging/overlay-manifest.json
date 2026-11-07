@@ -1,0 +1,22 @@
+{
+  "created_at": "2026-11-06T07:25:12.957266+08:00",
+  "scope": "public runtime patch only; no .env/secrets/assignment/source data",
+  "files": {
+    "compose.yaml": "9b5d9472f77c9c6889125d559364685f00038aad750560e2cfda02aa61f2d555",
+    "compose.query-safe-logs.yaml": "9de75f54b7f9140b20ffd3518807aa7e03445574a578df4a158017327c103ec4",
+    "target.py": "067dbd79d1066304ff22b10e42d0f38bfa58a4ff127045843bf97f49d43b916e",
+    "runtime_logging.py": "ca755afec7fe8c2ede626b529952b5ef7a4876f8e96985600fb284e53eff826a",
+    "runtime/logging/templates.lock.json": "d0469913da35d7497b6d24ed681758366be180fcd114a90218c46e408fd755c5",
+    "runtime/logging/templates/nginx.conf.template": "ac2d6f88f2e246cf9bfc7a61c13393d1587777ad1fc3e8043f9ff98af095ae25",
+    "runtime/logging/templates/nginx-mcp-locations.conf.template": "8066954ca94052183584405a4b5a27ac6302ee327e29702cfab099995162ed82",
+    "runtime/logging/public-source/nginx.conf.template": "493bf7c5b48abeb54c4d0ba4a224bcc5ce90c39f81f15098e3dca1fac6a649d2",
+    "runtime/logging/public-source/nginx-mcp-locations.conf.template": "db714107532c346f2c0e6a45f831b9209e15a8ef75213e9c519580fa91882301",
+    "runtime/logging/public-source/entrypoint.sh": "7f90840fcf67ef4b933b91e1e00c8fb0f20ae01277f9bce5087d7587c0679089",
+    "runtime/logging/runtime-template.diff": "3a854c87ac6c74fed6d1ab314adaa5c814c81d38b781c3242254893b6ad1e5b6",
+    "runtime/logging/audit.json": "efd3f3203b92f039e83be4827cfb4e5ecf1937429dc98cd6da6b86ea6ef5882a",
+    "runtime/logging/source-state-check.json": "54cb8fab79fb39cc6ec2f16d70c08e3ff7d26534a9632eb3b8fb3356730aa118",
+    "runtime/logging/README.md": "1b24dbeb85f794ae46ff1f9c98c340e698585db8745eb8079e7da4bae840a0de"
+  },
+  "original_image_id": "sha256:fa395b809ed21c53a01387567264100fb28c553f1dd4af113f38c50de3b739bc",
+  "original_archive_sha256_unchanged": "6d27b16c5bd9e9cecbd4c825734ac2e1bc9cee2d10a8f38d5f26da32bd7036d1"
+}

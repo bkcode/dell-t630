@@ -1,0 +1,65 @@
+{
+  "at": "2026-11-06T11:11:12.243693",
+  "roles": [
+    {
+      "vmid": 200,
+      "result": {
+        "exit_code": 0,
+        "stdout": "{\"units_added\": [\"dell-data-prod-db.service\"], \"metrics_collected\": true}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 200,
+          "ip": "10.63.10.10",
+          "host_key_alias": "dell-vm200",
+          "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      }
+    },
+    {
+      "vmid": 201,
+      "result": {
+        "exit_code": 0,
+        "stdout": "{\"units_added\": [\"dell-data-prod-infra.service\"], \"metrics_collected\": true}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 201,
+          "ip": "10.63.10.11",
+          "host_key_alias": "dell-vm201",
+          "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      }
+    },
+    {
+      "vmid": 210,
+      "result": {
+        "exit_code": 0,
+        "stdout": "{\"units_added\": [\"dell-data-test-data.service\"], \"metrics_collected\": true}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 210,
+          "ip": "10.63.20.10",
+          "host_key_alias": "dell-vm210",
+          "host_key_fingerprint": "SHA256:8bBCQbBKGmZAw5q2AgT2vXHsyr2aFJktLqs/tDZ9SiA",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      }
+    },
+    {
+      "vmid": 270,
+      "result": {
+        "exit_code": 0,
+        "stdout": "{\"units_added\": [\"dell-ops.service\"], \"metrics_collected\": true}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 270,
+          "ip": "10.63.30.40",
+          "host_key_alias": "dell-vm270",
+          "host_key_fingerprint": "SHA256:OjP5q9f3WXxGcoOHs23VlnOf258C6T+nNAxTiYoyf0g",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      }
+    }
+  ]
+}

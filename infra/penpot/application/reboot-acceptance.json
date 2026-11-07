@@ -1,0 +1,12 @@
+{
+  "reboot_verified": true,
+  "boot_before": "1d7dcf4c-8235-46bd-8c42-d29b137bcc11",
+  "boot_after": "37a6e06d-a72d-4a2e-ba96-d170ad002366",
+  "identity_and_idmap_files_preserved": true,
+  "data_uuid_preserved": true,
+  "docker_root_preserved": true,
+  "running_services": 11,
+  "worker_ready": 200,
+  "source_processes_touched": false,
+  "checked_at": "2026-11-06T11:57:58.011888+08:00"
+}

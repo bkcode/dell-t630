@@ -1,0 +1,31 @@
+{
+  "mode": "local-template-only-no-guest-change",
+  "compose": {
+    "infra/ops/compose.yaml": {
+      "services": 4,
+      "only_alertmanager_secret_mount_added": true,
+      "original_all_service_fields_preserved": true,
+      "pids_limit_all": 1024
+    },
+    "private/ops/bundle/compose.yaml": {
+      "services": 4,
+      "only_alertmanager_secret_mount_added": true,
+      "original_all_service_fields_preserved": true,
+      "pids_limit_all": 1024
+    }
+  },
+  "bridge_token_values_emitted": false,
+  "bridge_token_status": "generated",
+  "current_delta": [
+    "AM read-only Compose token secret",
+    "original default CIDR/gateway and four original addresses pinned"
+  ],
+  "current_service_networks": {
+    "prometheus": "172.18.0.2",
+    "alertmanager": "172.18.0.3",
+    "blackbox": "172.18.0.4",
+    "grafana": "172.18.0.5"
+  },
+  "guest270_modified": false,
+  "resources_ports_pids_data_binds_unchanged": true
+}

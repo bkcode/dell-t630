@@ -1,0 +1,37 @@
+{
+  "status": "readback-of-actual-installed-reviewed-code",
+  "code_contains_no_keys_or_config_values": true,
+  "candidate_code_not_deployed": true,
+  "guests": {
+    "240": {
+      "publisher_root.py": {
+        "source_path": "/usr/local/libexec/dell-publish-test240",
+        "sha256": "98f5c4d460cfa251aaebbe5ef4791f728762b546031d43b263d208a22a2f6f06"
+      },
+      "publisher_dispatch.py": {
+        "source_path": "/usr/local/libexec/dell-publisher-dispatch",
+        "sha256": "8e327e157500feb7202e3afedc3a24e42573c1f6e7bafe0645187beda8a49193"
+      },
+      "publisher_protocol.py": {
+        "source_path": "/usr/local/libexec/dell-publisher/publisher_protocol.py",
+        "sha256": "382d761e1d5dce4323fb2d30375bd1c76353044290c3d6c924eb9892accca910"
+      },
+      "fixed-deploy-test-chain.py": {
+        "source_path": "/usr/local/libexec/dell/deploy-test-chain.py",
+        "sha256": "8beb4586ce4504252e5076f5852bf4f19a50481747eb2f0d8e47af5094cf41ff"
+      },
+      "adopt-baseline240.py": {
+        "source_path": "/usr/local/libexec/dell-publisher/adopt-baseline240.py",
+        "sha256": "cf3470e14f539fe3175564bdce3a9332488a60dc044ef1a5b07ac18df97dbca2"
+      }
+    },
+    "220": {
+      "publisher_client220.py": {
+        "source_path": "/usr/local/bin/dell-publish",
+        "sha256": "27f20c96914c5374a3a8775adaca43157b2e76bba5f673503e3881992b8d0170"
+      }
+    }
+  },
+  "evidence_recorded_at": "2026-11-06T12:41:48.117832+08:00",
+  "command": "read-only root-owned public code readback on 220/240"
+}

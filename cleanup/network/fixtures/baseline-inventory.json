@@ -1,0 +1,373 @@
+{
+  "captured_at": "2026-11-07T00:25:53.670530",
+  "guests": [
+    {
+      "vmid": 101,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:97:74:4A",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 102,
+      "kind": "vm",
+      "template": true,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:9E:04:04",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 103,
+      "kind": "vm",
+      "template": true,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:77:2B:3C",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 104,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:F3:1E:CC",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 105,
+      "kind": "vm",
+      "template": true,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:7E:87:77",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 106,
+      "kind": "vm",
+      "template": true,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:FF:90:F9",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 190,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "02:63:19:01:90:00",
+          "bridge": "vmbr0"
+        },
+        "net1": {
+          "virtio": "02:63:19:01:90:01",
+          "bridge": "vmbr19"
+        }
+      }
+    },
+    {
+      "vmid": 200,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:1C:62:00",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 201,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:1C:BB:93",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 210,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:5D:2D:98",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 220,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:2A:01:AD",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 221,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:EC:E1:6F",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 230,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:1C:20:00",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 231,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:E9:E5:CC",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 232,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:7D:1C:AA",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 240,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:65:41:5A",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 250,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:78:E9:84",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 260,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:A7:3B:73",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 270,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:CE:8C:67",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 9000,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:06:C1:9F",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 9001,
+      "kind": "vm",
+      "template": true,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:50:BD:AD",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 9002,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:4C:9F:A1",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 9003,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:3F:B7:34",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 9004,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:7A:E9:67",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 9005,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:B9:34:42",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 9006,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:E3:BD:A2",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 9010,
+      "kind": "vm",
+      "template": true,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:EE:9E:D8",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 9011,
+      "kind": "vm",
+      "template": true,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:A4:D3:4D",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 9020,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:60:1C:95",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 100,
+      "kind": "lxc",
+      "template": false,
+      "nics": {
+        "net0": {
+          "name": "eth0",
+          "bridge": "vmbr19",
+          "firewall": "0",
+          "gw": "192.168.19.1",
+          "hwaddr": "BC:24:11:42:04:C1",
+          "ip": "192.168.19.5/24",
+          "ip6": "manual",
+          "type": "veth"
+        }
+      }
+    }
+  ]
+}

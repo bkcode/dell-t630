@@ -1,0 +1,27 @@
+{
+  "target": {
+    "vmid": 9012,
+    "ip": "192.168.19.198",
+    "host_key_alias": "dell-vm9012",
+    "host_key_fingerprint": "SHA256:wSfndEAvQsEHu7FAJuiwY+gtVo/EHSQqD/Fvc7vQ/nQ",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "SSH": {
+    "exit_code": 0,
+    "stdout": "ub\nstatus: done\n",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+    "target": {
+      "vmid": 9012,
+      "ip": "192.168.19.198",
+      "host_key_alias": "dell-vm9012",
+      "host_key_fingerprint": "SHA256:wSfndEAvQsEHu7FAJuiwY+gtVo/EHSQqD/Fvc7vQ/nQ",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  },
+  "per_instance_hostname_note": {
+    "reason": "PVE generated meta contains only instance-id; role hostname must be injected per clone as existing provisioner does",
+    "template9011_generic_profile_unchanged": true,
+    "QA_profile_only": true,
+    "QA_existing_SSH_keys_preserved": true
+  }
+}

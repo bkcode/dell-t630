@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-11-06T11:55:24.932240+08:00",
+  "status": "software-deployed-and-verified-physical-device-acceptance-pending",
+  "target": {
+    "vmid": 260,
+    "hostname": "nas-media",
+    "ip": "10.63.40.10",
+    "interface": "ens18",
+    "gateway": "10.63.40.1",
+    "DNS": "1.1.1.1"
+  },
+  "software": {
+    "OMV": "8.6.0-1",
+    "Jellyfin": "12.4.0",
+    "Docker": "29.9.3",
+    "Compose": "5.7.0",
+    "architecture": "amd64",
+    "jellyfin_image": "jellyfin/jellyfin@sha256:fea863d0cd9ec445985d9c75fc6ed64e38a1d2766cf0c250a33d553f4fc1b771"
+  },
+  "LAN_entrypoints": {
+    "OMV": "http://192.168.21.22:9080",
+    "Jellyfin": "http://192.168.21.22:8096",
+    "SMB": [
+      "//192.168.21.22/media",
+      "//192.168.21.22/games",
+      "//192.168.21.22/incoming"
+    ]
+  },
+  "storage": {
+    "assigned_by_id": "/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi1",
+    "assigned_bytes": 2199023255552,
+    "filesystem": "ext4",
+    "filesystem_uuid": "5b19837c-128c-498a-b79d-563db810c34a",
+    "root_uuid_unchanged": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+    "mountpoint": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a",
+    "OMV_registered": true,
+    "root_or_PVE_formatted": false,
+    "partition_creation_method": "OMV FileSystemMgmt.create only after empty signature/size/serial/root exclusion checks"
+  },
+  "SSH": {
+    "ub_strict_key_reconnect": true,
+    "ub_authorized_keys_unchanged": true,
+    "ub_sudo_and_ssh_group": true,
+    "permitrootlogin": "no",
+    "passwordauthentication": "no",
+    "pubkeyauthentication": "yes",
+    "credentials_values_emitted": false
+  },
+  "network_persistence": {
+    "OMV_UI_devicename": "ens18",
+    "NIC_or_MAC_changed": false,
+    "ens18_disable_ipv6": "1",
+    "ens18_accept_ra": "0",
+    "ens18_autoconf": "0",
+    "lo_disable_ipv6": "0",
+    "all_disable_ipv6": "0",
+    "default_disable_ipv6": "0",
+    "global_IPv6_addresses": [],
+    "old_eth0_persistent_rules": false,
+    "exporter_bind": "10.63.40.10:9100"
+  },
+  "reboot_persistence": {
+    "completed_guest_reboots": 2,
+    "original_root_and_data_UUIDs_unchanged": true,
+    "strong_OMV_login_after_reboot": true,
+    "SMB_and_Jellyfin_revalidated": true,
+    "services": {
+      "qemu-guest-agent": "active",
+      "ssh": "active",
+      "nginx": "active",
+      "openmediavault-engined": "active",
+      "smbd": "active",
+      "docker": "active",
+      "dell-nas-jellyfin": "active",
+      "prometheus-node-exporter": "active"
+    }
+  },
+  "smb_synthetic_acceptance": {
+    "status": "passed",
+    "checks": [
+      {
+        "share": "media",
+        "writer_put_exit": 0,
+        "reader_get_exit": 0,
+        "sha256_matches": true,
+        "reader_write_denied": true,
+        "anonymous_denied": true,
+        "fixture_sha256": "fbbab289f7f94b25736c58be46a994c441fd02552cc6022352e3d86d2fab7c83",
+        "fixture_bytes": 1048576,
+        "fixture_name": "dell-acceptance-media.bin",
+        "protocol_requested": "SMB3"
+      },
+      {
+        "share": "games",
+        "writer_put_exit": 0,
+        "reader_get_exit": 0,
+        "sha256_matches": true,
+        "reader_write_denied": true,
+        "anonymous_denied": true,
+        "fixture_sha256": "fbbab289f7f94b25736c58be46a994c441fd02552cc6022352e3d86d2fab7c83",
+        "fixture_bytes": 1048576,
+        "fixture_name": "dell-acceptance-games.bin",
+        "protocol_requested": "SMB3"
+      },
+      {
+        "share": "incoming",
+        "writer_put_exit": 0,
+        "reader_get_exit": 0,
+        "sha256_matches": true,
+        "reader_write_denied": true,
+        "anonymous_denied": true,
+        "fixture_sha256": "fbbab289f7f94b25736c58be46a994c441fd02552cc6022352e3d86d2fab7c83",
+        "fixture_bytes": 1048576,
+        "fixture_name": "dell-acceptance-incoming.bin",
+        "protocol_requested": "SMB3"
+      }
+    ],
+    "source_movies_or_games_used": false,
+    "private_values_emitted": false
+  },
+  "jellyfin_synthetic_acceptance": {
+    "status": "passed-synthetic-directplay-protocol",
+    "server_version": "12.4.0",
+    "fixture_name": "dell-acceptance-fixture.mp4",
+    "fixture_bytes": 1144701,
+    "fixture_sha256": "5b2499415295d67552b400a8d197fe11c61e73801b8c281247de04567d312905",
+    "supports_direct_play": true,
+    "original_stream_sha256_matches": true,
+    "observed_session_without_transcoding": true,
+    "admin_and_viewer_login_verified": true,
+    "physical_TV_or_console_verified": false,
+    "actual_movie_or_game_downloaded": false,
+    "library_internet_providers": false,
+    "hardware_transcoding_claimed": false
+  },
+  "LAN_evidence_source": "../../evidence/implementation/LAN-entrypoint-cli-probes.json (main native nc/curl proof); system curl OMV/Jellyfin HTTP200",
+  "strong_credentials_metadata": "/Users/yangzhaohui/work/www/harness/dell/private/nas/credentials-metadata.json",
+  "manual_or_pending": [
+    {
+      "item": "physical TV/player 4K HDR/audio/subtitle/display behavior",
+      "reason": "No physical device supplied; synthetic protocol test only"
+    },
+    {
+      "item": "real PS4/PS5 tooling, format and device transfer",
+      "reason": "Storage/SMB3/hash tested with synthetic files only; no direct network game execution promise"
+    },
+    {
+      "item": "hardware accelerated transcoding",
+      "reason": "No GPU configured or claimed"
+    },
+    {
+      "item": "NAS concurrent media/file I/O vs real production SLO",
+      "reason": "Production workload/SLO baseline not established; no unbounded load test executed"
+    },
+    {
+      "item": "independent backups/restoration and external alert destination",
+      "reason": "Separate manager stage; home NAS is not formal business backup target"
+    }
+  ],
+  "source_preservation": {
+    "source_Mac_project_written_by_this_task": false,
+    "real_movies_or_games_downloaded": false,
+    "other_guests_or_PVE_modified_by_this_task": false,
+    "client_private_key_copied": false,
+    "CF_backup_exported": false
+  },
+  "known_nonblocking": [
+    {
+      "item": "Missing optional ECDSA host key warning",
+      "impact": "Trusted ED25519 unchanged; strict key SSH and QGA verified; no host key rotation done"
+    }
+  ],
+  "secret_log_scan": {
+    "status": "passed",
+    "actual_secret_values_in_local_action_logs": false
+  },
+  "systemd_final": {
+    "state": "running",
+    "failed_units": []
+  },
+  "optional_quota": {
+    "per_user_limits_configured": false,
+    "external_mount_quota_activation_requested": false,
+    "kernel_internal_accounting_preserved": true,
+    "unit_masked": false,
+    "OMV_supported_configuration_updated": true,
+    "media_UUID_unchanged": true
+  },
+  "NAS002_detailed_permissions": {
+    "status": "passed",
+    "evidence": "evidence/implementation/nas002-detailed-permissions.json",
+    "reader_operations_denied": [
+      "create",
+      "modify",
+      "rename",
+      "delete"
+    ],
+    "writer_rename_delete_passed_all_three_shares": true,
+    "sample_retained": true,
+    "jellyfin_mount_boundary_passed": true
+  }
+}

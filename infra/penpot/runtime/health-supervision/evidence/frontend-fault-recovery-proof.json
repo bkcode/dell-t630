@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "checks": {
+    "fault_command_count_exactly_one": true,
+    "complete_group_stopped_observed": true,
+    "auto_restart_observed": true,
+    "one_automatic_restart": true,
+    "new_supervisor_invocation": true,
+    "all_11_healthy_notify_running": true,
+    "same_managed_11_containers_started_again": true,
+    "image_IDs_unchanged": true
+  },
+  "injected_object": "exact frontend ID only",
+  "manual_recovery_start_performed": false,
+  "additional_faults": 0,
+  "observed_fault_time": "2026-11-06T05:29:42Z",
+  "observed_all_stopped_time": "2026-11-06T05:30:20Z",
+  "observed_recovered_time": "2026-11-06T05:33:55Z"
+}

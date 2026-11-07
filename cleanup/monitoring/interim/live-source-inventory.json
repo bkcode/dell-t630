@@ -1,0 +1,193 @@
+{
+  "files": [
+    {
+      "path": "/opt/dell/ops/config/prometheus/targets/guest-node.json",
+      "sha256": "b2d2898c56523d3e06af1af130e2068c7346d5e546a54e23c8d5d9be02a03612",
+      "mode": 420,
+      "uid": 0,
+      "gid": 0
+    },
+    {
+      "path": "/opt/dell/ops/config/prometheus/prometheus.yml",
+      "sha256": "35b0a682e8cef2802cd871982e442614e67ae3313f39945ace2591879f508c04",
+      "mode": 420,
+      "uid": 0,
+      "gid": 0
+    },
+    {
+      "path": "/opt/dell/ops/config/prometheus/rules/infra.yml",
+      "sha256": "4d1eee3973d41739a673bb097ec965af31c2f339122654db24a63195f1e90ae9",
+      "mode": 420,
+      "uid": 0,
+      "gid": 0
+    }
+  ],
+  "live_targets": [
+    {
+      "labels": {
+        "instance": "blackbox:9115",
+        "job": "blackbox-exporter",
+        "role": "ops-service"
+      },
+      "health": "up"
+    },
+    {
+      "labels": {
+        "instance": "192.168.19.42:9100",
+        "job": "guest-node",
+        "role": "java-prod-03",
+        "vmid": "232",
+        "zone": "prod"
+      },
+      "health": "down"
+    },
+    {
+      "labels": {
+        "instance": "192.168.19.50:9100",
+        "job": "guest-node",
+        "role": "penpot-service",
+        "vmid": "250",
+        "zone": "tools"
+      },
+      "health": "up"
+    },
+    {
+      "labels": {
+        "instance": "192.168.19.30:9100",
+        "job": "guest-node",
+        "role": "publish-service",
+        "vmid": "220",
+        "zone": "management"
+      },
+      "health": "up"
+    },
+    {
+      "labels": {
+        "instance": "192.168.19.40:9100",
+        "job": "guest-node",
+        "role": "java-prod-01",
+        "vmid": "230",
+        "zone": "prod"
+      },
+      "health": "up"
+    },
+    {
+      "labels": {
+        "instance": "192.168.19.41:9100",
+        "job": "guest-node",
+        "role": "java-prod-02",
+        "vmid": "231",
+        "zone": "prod"
+      },
+      "health": "down"
+    },
+    {
+      "labels": {
+        "instance": "192.168.19.45:9100",
+        "job": "guest-node",
+        "role": "java-test-01",
+        "vmid": "240",
+        "zone": "test"
+      },
+      "health": "up"
+    },
+    {
+      "labels": {
+        "instance": "192.168.19.60:9100",
+        "job": "guest-node",
+        "role": "nas-media",
+        "vmid": "260",
+        "zone": "home"
+      },
+      "health": "up"
+    },
+    {
+      "labels": {
+        "instance": "192.168.19.70:9100",
+        "job": "guest-node",
+        "role": "ops-service",
+        "vmid": "270",
+        "zone": "management"
+      },
+      "health": "up"
+    },
+    {
+      "labels": {
+        "instance": "192.168.19.10:9100",
+        "job": "guest-node",
+        "role": "data-prod-db",
+        "vmid": "200",
+        "zone": "prod"
+      },
+      "health": "up"
+    },
+    {
+      "labels": {
+        "instance": "192.168.19.11:9100",
+        "job": "guest-node",
+        "role": "data-prod-infra",
+        "vmid": "201",
+        "zone": "prod"
+      },
+      "health": "up"
+    },
+    {
+      "labels": {
+        "instance": "192.168.19.20:9100",
+        "job": "guest-node",
+        "role": "data-test",
+        "vmid": "210",
+        "zone": "test"
+      },
+      "health": "up"
+    },
+    {
+      "labels": {
+        "instance": "192.168.19.31:9100",
+        "job": "guest-node",
+        "role": "artifact-service",
+        "vmid": "221",
+        "zone": "tools"
+      },
+      "health": "up"
+    },
+    {
+      "labels": {
+        "check": "prometheus-ready",
+        "instance": "http://prometheus:9090/-/ready",
+        "job": "http-health",
+        "role": "ops-service",
+        "scope": "service-http"
+      },
+      "health": "up"
+    },
+    {
+      "labels": {
+        "check": "grafana-health",
+        "instance": "http://grafana:3000/api/health",
+        "job": "http-health",
+        "role": "ops-service",
+        "scope": "service-http"
+      },
+      "health": "up"
+    },
+    {
+      "labels": {
+        "check": "alertmanager-ready",
+        "instance": "http://alertmanager:9093/-/ready",
+        "job": "http-health",
+        "role": "ops-service",
+        "scope": "service-http"
+      },
+      "health": "up"
+    },
+    {
+      "labels": {
+        "instance": "localhost:9090",
+        "job": "prometheus",
+        "role": "ops-service"
+      },
+      "health": "up"
+    }
+  ]
+}

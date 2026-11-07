@@ -1,0 +1,328 @@
+{
+  "at": "2026-11-06T08:52:11.978374+00:00",
+  "scope": "approved-standby-upload-preflight-private-stage-only",
+  "nonces": {
+    "250": "05da6bff4609467e8524af42463c78b1",
+    "221": "1058e856fcab43f7ae53816d9659f214",
+    "260": "1c97ce46e0e8494aa67f95768a818753"
+  },
+  "roles": [
+    {
+      "role": 250,
+      "status": "standby-staged-no-active-change",
+      "tools_upload": "public-only",
+      "at": "2026-11-06T08:51:22.544165+00:00",
+      "Git_HEAD": "ff1783e7865af7aae571c985f03e057631b7af63",
+      "Git_clean": true,
+      "preflight": {
+        "exit_code": 0,
+        "status": "read-only-preflight"
+      },
+      "stage": {
+        "exit_code": 0,
+        "status": "prepared-transaction-action-completed"
+      },
+      "active_files_unchanged": true,
+      "protected_identity_bytes_unchanged": true,
+      "production_container_PID_ID_startedAt_image_health_unchanged": true,
+      "containers": [
+        {
+          "name": "/penpot-penpot-frontend-1",
+          "id": "96eb86ab81047ab108b1cb698b5a4f64c44e2bd9c75a8b1ab0175ade2c5de100",
+          "image": "sha256:bd020fb6bddfd77449c26f76ee04ca7b2b50a0ffe8562ebc7b9e294bfcd38b89",
+          "running": true,
+          "health": "healthy"
+        },
+        {
+          "name": "/penpot-penpot-backend-1",
+          "id": "c35064923ae5d0ef1c29108e6e4d355d5f494d7829a9665ec10652d62e8fa9a3",
+          "image": "sha256:c54c38204393018c4009b7161b9ee3a04ccc0daab657b820d5de86a0d3013630",
+          "running": true,
+          "health": "healthy"
+        },
+        {
+          "name": "/penpot-penpot-admin-console-1",
+          "id": "2613151017b978ac7ec997033889076f94b9033a60177e65245a00b6bfc14782",
+          "image": "sha256:29c13326e854fd63e18a7231cb1ca26d60f728692bd1207ded003b94aba79390",
+          "running": true,
+          "health": "healthy"
+        },
+        {
+          "name": "/penpot-penpot-exporter-1",
+          "id": "5680b9587467045c8d1b8538a4b4708ab474cdca067ce2af7f6b33d1185facb9",
+          "image": "sha256:6173b08e25850cda792cd75261e741649c0febd48326e68e8711ba44b5c9af42",
+          "running": true,
+          "health": "healthy"
+        },
+        {
+          "name": "/penpot-penpot-dns-1",
+          "id": "896b4b365781d4ce0922b7a250fc277fcb1de2b34cdb5cca76578352de76239b",
+          "image": "sha256:7ed84fca86579b7bee90ec5c9750457cd9450729d2dd01fb2070f00f6cd7fb14",
+          "running": true,
+          "health": "healthy"
+        },
+        {
+          "name": "/penpot-penpot-mcp-1",
+          "id": "aa9c599b0dd027b4f8056f8adf283d6ebb07f861569af13478c68305d53ccbaf",
+          "image": "sha256:e95070617f49eacc00f136061d9c6b4bad957319046e9e65e7cee14b9e77577c",
+          "running": true,
+          "health": "healthy"
+        },
+        {
+          "name": "/penpot-penpot-worker-1",
+          "id": "bdd8e421ad746ddecc7950b390c21c046f6622914eed89cf3fc9e5f52fca31cb",
+          "image": "sha256:c0bead679c3fe7a4b80d2485f87bdce0e5a6acc26a9c2a001b0e4e3270dadee5",
+          "running": true,
+          "health": "healthy"
+        },
+        {
+          "name": "/penpot-penpot-import-1",
+          "id": "90aacbc3b78e9b1c07771b55013e3b62c5634df8c777545c4229558f974b01ed",
+          "image": "sha256:d4414e3f2e41ac4f5eb4b2c146c05cbc9f9754b179d6b63efa3af95c005b1261",
+          "running": true,
+          "health": "healthy"
+        },
+        {
+          "name": "/penpot-penpot-postgres-1",
+          "id": "b6ac0e7fd316f8b53df1d8853d5614049fa5d180f8f9b5f84e3baa448f481c17",
+          "image": "sha256:245fc027b7f3755bbd21b4375c2a0ebc7fa5d16c4573da497be9850a823973c8",
+          "running": true,
+          "health": "healthy"
+        },
+        {
+          "name": "/penpot-penpot-valkey-1",
+          "id": "d08ee10d5b4ce72de16ca148218a85edda276963b6e0d665517a763801a9616e",
+          "image": "sha256:ca662989648f173e01fb1a1768e7d84ddcaf8b7de135070b59271b0918104eb3",
+          "running": true,
+          "health": "healthy"
+        },
+        {
+          "name": "/penpot-penpot-mailpit-1",
+          "id": "b223cafa5cb2450dc520513f71e999ba6550c0cf894a514c4d520e72c33f39d9",
+          "image": "sha256:580a202b5088e9c651a8e8b4e461e3213fbd3a3aacaa3d2251892a546a734116",
+          "running": true,
+          "health": "healthy"
+        }
+      ],
+      "PID_metadata_before": [
+        {
+          "id": "96eb86ab81047ab108b1cb698b5a4f64c44e2bd9c75a8b1ab0175ade2c5de100",
+          "pid": 732916,
+          "started_at": "2026-11-06T08:42:06.12471798Z"
+        },
+        {
+          "id": "c35064923ae5d0ef1c29108e6e4d355d5f494d7829a9665ec10652d62e8fa9a3",
+          "pid": 732827,
+          "started_at": "2026-11-06T08:42:05.714001722Z"
+        },
+        {
+          "id": "2613151017b978ac7ec997033889076f94b9033a60177e65245a00b6bfc14782",
+          "pid": 732691,
+          "started_at": "2026-11-06T08:42:05.001056903Z"
+        },
+        {
+          "id": "5680b9587467045c8d1b8538a4b4708ab474cdca067ce2af7f6b33d1185facb9",
+          "pid": 732761,
+          "started_at": "2026-11-06T08:42:05.362062393Z"
+        },
+        {
+          "id": "896b4b365781d4ce0922b7a250fc277fcb1de2b34cdb5cca76578352de76239b",
+          "pid": 732264,
+          "started_at": "2026-11-06T08:42:01.176032076Z"
+        },
+        {
+          "id": "aa9c599b0dd027b4f8056f8adf283d6ebb07f861569af13478c68305d53ccbaf",
+          "pid": 732472,
+          "started_at": "2026-11-06T08:42:02.296862668Z"
+        },
+        {
+          "id": "bdd8e421ad746ddecc7950b390c21c046f6622914eed89cf3fc9e5f52fca31cb",
+          "pid": 733028,
+          "started_at": "2026-11-06T08:42:06.515943515Z"
+        },
+        {
+          "id": "90aacbc3b78e9b1c07771b55013e3b62c5634df8c777545c4229558f974b01ed",
+          "pid": 733139,
+          "started_at": "2026-11-06T08:42:06.879037039Z"
+        },
+        {
+          "id": "b6ac0e7fd316f8b53df1d8853d5614049fa5d180f8f9b5f84e3baa448f481c17",
+          "pid": 732536,
+          "started_at": "2026-11-06T08:42:02.600219808Z"
+        },
+        {
+          "id": "d08ee10d5b4ce72de16ca148218a85edda276963b6e0d665517a763801a9616e",
+          "pid": 732340,
+          "started_at": "2026-11-06T08:42:01.546711789Z"
+        },
+        {
+          "id": "b223cafa5cb2450dc520513f71e999ba6550c0cf894a514c4d520e72c33f39d9",
+          "pid": 732408,
+          "started_at": "2026-11-06T08:42:01.935140001Z"
+        }
+      ],
+      "PID_metadata_after": [
+        {
+          "id": "96eb86ab81047ab108b1cb698b5a4f64c44e2bd9c75a8b1ab0175ade2c5de100",
+          "pid": 732916,
+          "started_at": "2026-11-06T08:42:06.12471798Z"
+        },
+        {
+          "id": "c35064923ae5d0ef1c29108e6e4d355d5f494d7829a9665ec10652d62e8fa9a3",
+          "pid": 732827,
+          "started_at": "2026-11-06T08:42:05.714001722Z"
+        },
+        {
+          "id": "2613151017b978ac7ec997033889076f94b9033a60177e65245a00b6bfc14782",
+          "pid": 732691,
+          "started_at": "2026-11-06T08:42:05.001056903Z"
+        },
+        {
+          "id": "5680b9587467045c8d1b8538a4b4708ab474cdca067ce2af7f6b33d1185facb9",
+          "pid": 732761,
+          "started_at": "2026-11-06T08:42:05.362062393Z"
+        },
+        {
+          "id": "896b4b365781d4ce0922b7a250fc277fcb1de2b34cdb5cca76578352de76239b",
+          "pid": 732264,
+          "started_at": "2026-11-06T08:42:01.176032076Z"
+        },
+        {
+          "id": "aa9c599b0dd027b4f8056f8adf283d6ebb07f861569af13478c68305d53ccbaf",
+          "pid": 732472,
+          "started_at": "2026-11-06T08:42:02.296862668Z"
+        },
+        {
+          "id": "bdd8e421ad746ddecc7950b390c21c046f6622914eed89cf3fc9e5f52fca31cb",
+          "pid": 733028,
+          "started_at": "2026-11-06T08:42:06.515943515Z"
+        },
+        {
+          "id": "90aacbc3b78e9b1c07771b55013e3b62c5634df8c777545c4229558f974b01ed",
+          "pid": 733139,
+          "started_at": "2026-11-06T08:42:06.879037039Z"
+        },
+        {
+          "id": "b6ac0e7fd316f8b53df1d8853d5614049fa5d180f8f9b5f84e3baa448f481c17",
+          "pid": 732536,
+          "started_at": "2026-11-06T08:42:02.600219808Z"
+        },
+        {
+          "id": "d08ee10d5b4ce72de16ca148218a85edda276963b6e0d665517a763801a9616e",
+          "pid": 732340,
+          "started_at": "2026-11-06T08:42:01.546711789Z"
+        },
+        {
+          "id": "b223cafa5cb2450dc520513f71e999ba6550c0cf894a514c4d520e72c33f39d9",
+          "pid": 732408,
+          "started_at": "2026-11-06T08:42:01.935140001Z"
+        }
+      ],
+      "stage_directory": "/root/dell-network19-media/250/05da6bff4609467e8524af42463c78b1",
+      "private_backup_and_journal_permissions": true,
+      "journal_phase": "staged",
+      "staged_files_count": 7
+    },
+    {
+      "role": 221,
+      "status": "standby-staged-no-active-change",
+      "tools_upload": "public-only",
+      "at": "2026-11-06T08:51:21.467966+00:00",
+      "preflight": {
+        "exit_code": 0,
+        "status": "read-only-preflight"
+      },
+      "stage": {
+        "exit_code": 0,
+        "status": "prepared-transaction-action-completed"
+      },
+      "active_files_unchanged": true,
+      "protected_identity_bytes_unchanged": true,
+      "production_container_PID_ID_startedAt_image_health_unchanged": true,
+      "containers": [
+        {
+          "name": "/nexus-nexus-1",
+          "id": "70d4bec45b73e68dee425c6962ba0ec2d1448b03187dfa0dc8369bdc44eb65bb",
+          "image": "sha256:2ae4fee2eed85f42c982aa2fc16746a8453c7f79faf2a7ea236855ca8652e001",
+          "running": true,
+          "health": "healthy"
+        },
+        {
+          "name": "/nexus-gateway-1",
+          "id": "f66975b48be1d7ef073a3f6318f6646fa53e4522b0fb42f17f756acc85927f55",
+          "image": "sha256:4e5db4761e0ff445f7fd29aad680ad28e8abf7d204895557f145d65535abcc1c",
+          "running": true,
+          "health": "healthy"
+        }
+      ],
+      "PID_metadata_before": [
+        {
+          "id": "70d4bec45b73e68dee425c6962ba0ec2d1448b03187dfa0dc8369bdc44eb65bb",
+          "pid": 1180,
+          "started_at": "2026-11-06T04:46:55.595170422Z"
+        },
+        {
+          "id": "f66975b48be1d7ef073a3f6318f6646fa53e4522b0fb42f17f756acc85927f55",
+          "pid": 1712,
+          "started_at": "2026-11-06T04:48:03.524723694Z"
+        }
+      ],
+      "PID_metadata_after": [
+        {
+          "id": "70d4bec45b73e68dee425c6962ba0ec2d1448b03187dfa0dc8369bdc44eb65bb",
+          "pid": 1180,
+          "started_at": "2026-11-06T04:46:55.595170422Z"
+        },
+        {
+          "id": "f66975b48be1d7ef073a3f6318f6646fa53e4522b0fb42f17f756acc85927f55",
+          "pid": 1712,
+          "started_at": "2026-11-06T04:48:03.524723694Z"
+        }
+      ],
+      "stage_directory": "/root/dell-network19-media/221/1058e856fcab43f7ae53816d9659f214",
+      "private_backup_and_journal_permissions": true,
+      "journal_phase": "staged",
+      "staged_files_count": 4
+    },
+    {
+      "role": 260,
+      "status": "standby-stage-unconfirmed-no-cutover",
+      "tools_upload": "public-only",
+      "at": "2026-11-06T08:51:21.423486+00:00",
+      "preflight": {
+        "exit_code": 1,
+        "status": "rejected-or-unconfirmed"
+      },
+      "active_files_unchanged": true,
+      "protected_identity_bytes_unchanged": true,
+      "production_container_PID_ID_startedAt_image_health_unchanged": true,
+      "containers": [
+        {
+          "name": "/dell-nas-jellyfin-1",
+          "id": "13d571fdc3332da2f81fc237cc7f445afc1e6ca313d2e2f43b3b9016e9fe7956",
+          "image": "sha256:fea863d0cd9ec445985d9c75fc6ed64e38a1d2766cf0c250a33d553f4fc1b771",
+          "running": true,
+          "health": "healthy"
+        }
+      ],
+      "PID_metadata_before": [
+        {
+          "id": "13d571fdc3332da2f81fc237cc7f445afc1e6ca313d2e2f43b3b9016e9fe7956",
+          "pid": 1308,
+          "started_at": "2026-11-06T05:42:27.252051871Z"
+        }
+      ],
+      "PID_metadata_after": [
+        {
+          "id": "13d571fdc3332da2f81fc237cc7f445afc1e6ca313d2e2f43b3b9016e9fe7956",
+          "pid": 1308,
+          "started_at": "2026-11-06T05:42:27.252051871Z"
+        }
+      ],
+      "stage_directory": "/root/dell-network19-media/260/1c97ce46e0e8494aa67f95768a818753",
+      "private_backup_and_journal_permissions": false
+    }
+  ],
+  "quiesce_commit_start_or_network_actions_executed": false,
+  "secret_values_or_hashes_emitted": false
+}

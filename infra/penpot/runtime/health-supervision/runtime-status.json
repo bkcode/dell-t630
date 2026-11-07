@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-11-06T05:53:52.873526+00:00",
+  "status": "deployed-and-verified",
+  "target": {
+    "vmid": 250,
+    "name": "penpot-service",
+    "ip": "10.63.30.30",
+    "LAN": "http://192.168.21.22:9001"
+  },
+  "systemd": {
+    "unit": "dell-penpot.service",
+    "Type": "notify",
+    "ActiveState": "active",
+    "SubState": "running",
+    "enabled": true,
+    "Restart": "on-failure",
+    "RestartSec": 30,
+    "StartLimitIntervalSec": 900,
+    "StartLimitBurst": 3,
+    "system_state": "running",
+    "failed_units": []
+  },
+  "runtime": {
+    "expected_services": 11,
+    "running": 11,
+    "healthy": 11,
+    "all_explicit_PIDs_caps": true,
+    "three_source_built_images_reference_immutable_actual_ID": true,
+    "all_Linux_AMD64_verified": true,
+    "all_image_resource_mount_contracts_match": true,
+    "all_log_rotation": "local 10m x3",
+    "DNS_health": "positive local hosts record only; no public upstream gate",
+    "CPU_caps_sum_vcpu": 12.5,
+    "VM_vcpu": 6,
+    "memory_caps_sum_gib": 11.9375,
+    "VM_memory_gib": 16,
+    "caps_are_upper_bounds_not_reservations": true
+  },
+  "preserved": {
+    "Git_HEAD": "ff1783e7865af7aae571c985f03e057631b7af63",
+    "Git_clean": true,
+    "original_7_package_file_bytes_unchanged": true,
+    "base_unit_bytes_unchanged": true,
+    "original_design_files": 3,
+    "original_full_data_SHA_stats_revn_vern_unchanged": true,
+    "original_migration_media_unique_SHA": 971,
+    "original_media_missing": 0,
+    "current_storage_files": 973,
+    "all_973_paths_and_bytes_unchanged": true,
+    "extra_2_attribution": [
+      "dedicated-copy-official-export",
+      "dedicated-reimport-official-reexport"
+    ],
+    "new_identity_and_assignment_file_hashes_unchanged": true,
+    "identity_modes": "0600; existing UID/GID retained",
+    "source_Mac_runtime_changed": false,
+    "PVE_templates_or_other_guests_changed": false
+  },
+  "acceptance": {
+    "local_Python_tests_passed": 14,
+    "local_Node_tests_passed": 8,
+    "DNS_network_none_positive_and_negative_exact_helper": true,
+    "one_frontend_KILL": {
+      "status": "passed",
+      "checks": {
+        "fault_command_count_exactly_one": true,
+        "complete_group_stopped_observed": true,
+        "auto_restart_observed": true,
+        "one_automatic_restart": true,
+        "new_supervisor_invocation": true,
+        "all_11_healthy_notify_running": true,
+        "same_managed_11_containers_started_again": true,
+        "image_IDs_unchanged": true
+      },
+      "injected_object": "exact frontend ID only",
+      "manual_recovery_start_performed": false,
+      "additional_faults": 0,
+      "observed_fault_time": "2026-11-06T05:29:42Z",
+      "observed_all_stopped_time": "2026-11-06T05:30:20Z",
+      "observed_recovered_time": "2026-11-06T05:33:55Z"
+    },
+    "one_normal_guest_reboot": {
+      "requested": 1,
+      "old_boot_id": "37a6e06d-a72d-4a2e-ba96-d170ad002366",
+      "new_boot_id": "6229b125-13ea-470a-9044-83974f3a3f16",
+      "strict_hostkey_SSH_verified": true,
+      "automatic_boot_notify11ready": true,
+      "manual_start_after_boot": false
+    },
+    "post_reboot_content": {
+      "status": "passed",
+      "checks": {
+        "worker_import_idle": true,
+        "original_three_file_stats_revn_and_full_data_hash_unchanged": true,
+        "all_973_current_media_paths_and_bytes_unchanged": true,
+        "all_original_971_media_SHA_present": true,
+        "new_identity_and_assignment_file_hashes_unchanged": true,
+        "Git_same_clean_ff1783e": true,
+        "old_base_unit_bytes_unchanged": true,
+        "all_11_running_healthy": true,
+        "boot_id_changed": true
+      },
+      "source_original_media": 971,
+      "current_media_baseline": 973,
+      "media_files_after": 973,
+      "original_designs": 3,
+      "design_writes": 0,
+      "secret_values_emitted": false
+    },
+    "MCP_authenticated_readonly_and_no_key_denial": {
+      "status": "passed",
+      "first_tool": "high_level_overview",
+      "authenticated_readonly_context_matches": true,
+      "unauthenticated_design_read_denied": true,
+      "design_writes": 0,
+      "HTTP_body_session_or_credentials_emitted": false
+    },
+    "native_LAN_static_and_empty_defaults": {
+      "status": "passed",
+      "at": "2026-11-06T05:48:27.846238+00:00",
+      "transport": "native curl -q --noproxy *",
+      "checks": {
+        "frontend": {
+          "HTTP_status": "200",
+          "curl_exit_code": 0,
+          "bytes": 283404,
+          "sha256": "a03e85c4ba82536333a67951dde6b9fc5aded497d918ff3d3c48b7eaf799793e",
+          "HTTP_body_emitted": false,
+          "same_SHA_as_Git_deployment_acceptance": true
+        },
+        "git_login_helper": {
+          "HTTP_status": "200",
+          "curl_exit_code": 0,
+          "bytes": 2474,
+          "sha256": "feb3ff7542b366c5d0670272a7e12d108debcaf79b9184340668f875dc30d162",
+          "HTTP_body_emitted": false,
+          "same_SHA_as_Git_deployment_acceptance": true
+        },
+        "git_sidebar": {
+          "HTTP_status": "200",
+          "curl_exit_code": 0,
+          "bytes": 215,
+          "sha256": "5c1c8342295982507e3a273d1b54ad3d05555bf57099c1a8ad33823806e82953",
+          "HTTP_body_emitted": false,
+          "same_SHA_as_Git_deployment_acceptance": true
+        },
+        "browser_defaults": {
+          "HTTP_status": "200",
+          "curl_exit_code": 0,
+          "bytes": 27,
+          "sha256": "267d12ab4d1b3931ee181730d77cc711d5acf0856f360da5acbe8bf85a578334",
+          "HTTP_body_emitted": false,
+          "same_SHA_as_Git_deployment_acceptance": true,
+          "password_empty": true
+        },
+        "backend_ready": {
+          "HTTP_status": "200",
+          "curl_exit_code": 0,
+          "bytes": 2,
+          "sha256": "565339bc4d33d72817b583024112eb7f5cdf3e5eef0252d6ec1b9c9a94e12bb3",
+          "HTTP_body_emitted": false,
+          "body_exact_OK": true
+        }
+      },
+      "source_Mac_runtime_read_or_changed": false,
+      "credentials_used": false
+    }
+  },
+  "credentials_HTTP_body_or_sessions_in_output": false,
+  "business_design_writes_by_this_task": 0,
+  "additional_load_tests_performed": false,
+  "limitations": [
+    "Admin unauthenticated health confirms exact auth redirect, not an authorized admin action",
+    "Exporter readyz proves server readiness, not a full render job",
+    "Public MCP initialize is component liveness; authorized readonly is separately verified",
+    "DNS health proves local protocol/static record only, not public name resolution",
+    "PIDs limits based on short observation with headroom, not production peak validation",
+    "No approved production SLO/RPO/RTO, internet-outage/partition or physical-host failure proof"
+  ],
+  "evidence_directory": "infra/penpot/runtime/health-supervision/evidence",
+  "immutable_approved_contract_SHA256": "4df67e36624d30bd5ac4d48d752a5f2b07b9e8ad864adda88713fb2c7f1d0d29",
+  "contract_status_semantics": "deployment-lock preserves the exact preapproved preparation artifact bytes; runtime-status.json is current deployment truth"
+}

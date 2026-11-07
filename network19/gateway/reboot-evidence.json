@@ -1,0 +1,398 @@
+{
+  "at": "2026-11-06T17:17:46.037265+08:00",
+  "scope": "gateway190-only-normal-reboot",
+  "before": {
+    "at": 1793956665.4796724,
+    "status": "read-only-gateway-metadata-and-ownDNS",
+    "DNS_short_queries": {
+      "udp": {
+        "A": [
+          "192.168.19.70"
+        ],
+        "matches_migration_plan": true
+      },
+      "tcp": {
+        "A": [
+          "192.168.19.70"
+        ],
+        "matches_migration_plan": true
+      }
+    },
+    "DNS_query_scope": "gateway-local socket only, not external-LAN-client proof",
+    "dnsmasq_unit": {
+      "MainPID": "2900",
+      "CapabilityBoundingSet": "cap_net_bind_service cap_net_admin cap_net_raw",
+      "AmbientCapabilities": "cap_net_bind_service cap_net_admin cap_net_raw",
+      "User": "dnsmasq",
+      "Group": "nogroup",
+      "ReadWritePaths": "/var/lib/misc/dnsmasq.leases",
+      "ProtectSystem": "strict",
+      "NoNewPrivileges": "yes",
+      "ActiveState": "active"
+    },
+    "dnsmasq_process_metadata": {
+      "Uid": "999\t999\t999\t999",
+      "Gid": "65534\t65534\t65534\t65534",
+      "CapEff": "0000000000003400",
+      "CapAmb": "0000000000003400",
+      "NoNewPrivs": "1"
+    },
+    "lease_owner_mode": {
+      "uid": 999,
+      "gid": 65534,
+      "mode": "0o600"
+    },
+    "chains": [
+      {
+        "family": "inet",
+        "table": "dell_gateway19",
+        "name": "input",
+        "type": "filter",
+        "hook": "input",
+        "policy": "drop"
+      },
+      {
+        "family": "inet",
+        "table": "dell_gateway19",
+        "name": "forward",
+        "type": "filter",
+        "hook": "forward",
+        "policy": "drop"
+      },
+      {
+        "family": "inet",
+        "table": "dell_gateway19",
+        "name": "output",
+        "type": "filter",
+        "hook": "output",
+        "policy": "accept"
+      }
+    ],
+    "no_NAT": true,
+    "routes": [
+      {
+        "dst": "default",
+        "gateway": "192.168.21.1",
+        "dev": "eth0",
+        "protocol": "static",
+        "metric": 100,
+        "flags": []
+      },
+      {
+        "dst": "192.168.19.0/24",
+        "dev": "eth1",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "192.168.19.1",
+        "flags": []
+      },
+      {
+        "dst": "192.168.21.0/24",
+        "dev": "eth0",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "192.168.21.23",
+        "flags": []
+      }
+    ],
+    "IPv6_addresses": [
+      {
+        "ifindex": 1,
+        "ifname": "lo",
+        "flags": [
+          "LOOPBACK",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 65536,
+        "operstate": "UNKNOWN",
+        "txqlen": 1000,
+        "addr_info": [
+          {
+            "family": "inet6",
+            "local": "::1",
+            "prefixlen": 128,
+            "scope": "host",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      }
+    ],
+    "pending_transaction": false,
+    "rollback_timer_active": false,
+    "failed_units": [],
+    "forwarding": {
+      "net.ipv4.ip_forward": "1",
+      "net.ipv4.conf.all.forwarding": "1",
+      "net.ipv4.conf.eth0.forwarding": "1",
+      "net.ipv4.conf.eth1.forwarding": "1"
+    },
+    "boot_id": "9882d8c9-6eb1-4f13-9ac3-9db8e13cc08b",
+    "ED25519_fingerprint": "SHA256:i2MOCPizZ+sOeM1Hxe76A0Qrz6Tlcis0IStJPBNX96E",
+    "file_sha256": {
+      "config": "7ff17c0d0a3627f3c76c74cd35b5c2f4e883ea32af507bf0d8e2f3406897dd9e",
+      "policy": "82b0676fcfaac3a0bd6abeffb88c4f5cd20163fe6f9fbd3f2527aa82b884a61a",
+      "manage": "3971c7abfabc01ccbdbcbbfcd15f9c800451b911564655b9f331a4f7fba0c9b6"
+    },
+    "normalized_nft_sha256": "087da488627a01f10969ef7bb43bcb780fcd700642e22b22b7bd8934795e0442",
+    "unit_timing": {
+      "dell-gateway19-firewall.service": {
+        "ExecMainStartTimestampMonotonic": "2307074147",
+        "ExecMainExitTimestampMonotonic": "2307459475",
+        "ActiveState": "active",
+        "UnitFileState": "enabled",
+        "ActiveEnterTimestampMonotonic": "2307459932"
+      },
+      "systemd-networkd.service": {
+        "ExecMainStartTimestampMonotonic": "2307499187",
+        "ExecMainExitTimestampMonotonic": "0",
+        "ActiveState": "active",
+        "UnitFileState": "enabled",
+        "ActiveEnterTimestampMonotonic": "2307678377"
+      },
+      "dell-gateway19-ready.service": {
+        "ExecMainStartTimestampMonotonic": "2308243318",
+        "ExecMainExitTimestampMonotonic": "2308718957",
+        "ActiveState": "active",
+        "UnitFileState": "enabled",
+        "ActiveEnterTimestampMonotonic": "2308719397"
+      },
+      "dell-gateway19-dnsmasq.service": {
+        "ExecMainStartTimestampMonotonic": "2308801622",
+        "ExecMainExitTimestampMonotonic": "0",
+        "ActiveState": "active",
+        "UnitFileState": "enabled",
+        "ActiveEnterTimestampMonotonic": "2308802549"
+      }
+    },
+    "NTP": [
+      "NTP=yes",
+      "NTPSynchronized=yes"
+    ],
+    "MAC_addresses": {
+      "WAN": {
+        "ifname": "eth0",
+        "MAC": "02:63:19:01:90:00",
+        "ipv4": [
+          "192.168.21.23/24"
+        ]
+      },
+      "LAN": {
+        "ifname": "eth1",
+        "MAC": "02:63:19:01:90:01",
+        "ipv4": [
+          "192.168.19.1/24"
+        ]
+      }
+    }
+  },
+  "host_key_verification_bypassed": false,
+  "other_guest_or_PVE_writes": false,
+  "status": "reboot-persistence-verified",
+  "reboot_command_exit": 0,
+  "after": {
+    "at": 1793956688.660169,
+    "status": "read-only-gateway-metadata-and-ownDNS",
+    "DNS_short_queries": {
+      "udp": {
+        "A": [
+          "192.168.19.70"
+        ],
+        "matches_migration_plan": true
+      },
+      "tcp": {
+        "A": [
+          "192.168.19.70"
+        ],
+        "matches_migration_plan": true
+      }
+    },
+    "DNS_query_scope": "gateway-local socket only, not external-LAN-client proof",
+    "dnsmasq_unit": {
+      "MainPID": "822",
+      "CapabilityBoundingSet": "cap_net_bind_service cap_net_admin cap_net_raw",
+      "AmbientCapabilities": "cap_net_bind_service cap_net_admin cap_net_raw",
+      "User": "dnsmasq",
+      "Group": "nogroup",
+      "ReadWritePaths": "/var/lib/misc/dnsmasq.leases",
+      "ProtectSystem": "strict",
+      "NoNewPrivileges": "yes",
+      "ActiveState": "active"
+    },
+    "dnsmasq_process_metadata": {
+      "Uid": "999\t999\t999\t999",
+      "Gid": "65534\t65534\t65534\t65534",
+      "CapEff": "0000000000003400",
+      "CapAmb": "0000000000003400",
+      "NoNewPrivs": "1"
+    },
+    "lease_owner_mode": {
+      "uid": 999,
+      "gid": 65534,
+      "mode": "0o600"
+    },
+    "chains": [
+      {
+        "family": "inet",
+        "table": "dell_gateway19",
+        "name": "input",
+        "type": "filter",
+        "hook": "input",
+        "policy": "drop"
+      },
+      {
+        "family": "inet",
+        "table": "dell_gateway19",
+        "name": "forward",
+        "type": "filter",
+        "hook": "forward",
+        "policy": "drop"
+      },
+      {
+        "family": "inet",
+        "table": "dell_gateway19",
+        "name": "output",
+        "type": "filter",
+        "hook": "output",
+        "policy": "accept"
+      }
+    ],
+    "no_NAT": true,
+    "routes": [
+      {
+        "dst": "default",
+        "gateway": "192.168.21.1",
+        "dev": "eth0",
+        "protocol": "static",
+        "metric": 100,
+        "flags": []
+      },
+      {
+        "dst": "192.168.19.0/24",
+        "dev": "eth1",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "192.168.19.1",
+        "flags": []
+      },
+      {
+        "dst": "192.168.21.0/24",
+        "dev": "eth0",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "192.168.21.23",
+        "flags": []
+      }
+    ],
+    "IPv6_addresses": [
+      {
+        "ifindex": 1,
+        "ifname": "lo",
+        "flags": [
+          "LOOPBACK",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 65536,
+        "operstate": "UNKNOWN",
+        "txqlen": 1000,
+        "addr_info": [
+          {
+            "family": "inet6",
+            "local": "::1",
+            "prefixlen": 128,
+            "scope": "host",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      }
+    ],
+    "pending_transaction": false,
+    "rollback_timer_active": false,
+    "failed_units": [],
+    "forwarding": {
+      "net.ipv4.ip_forward": "1",
+      "net.ipv4.conf.all.forwarding": "1",
+      "net.ipv4.conf.eth0.forwarding": "1",
+      "net.ipv4.conf.eth1.forwarding": "1"
+    },
+    "boot_id": "c8c08417-0944-43d5-a09e-19eccd742e8f",
+    "ED25519_fingerprint": "SHA256:i2MOCPizZ+sOeM1Hxe76A0Qrz6Tlcis0IStJPBNX96E",
+    "file_sha256": {
+      "config": "7ff17c0d0a3627f3c76c74cd35b5c2f4e883ea32af507bf0d8e2f3406897dd9e",
+      "policy": "82b0676fcfaac3a0bd6abeffb88c4f5cd20163fe6f9fbd3f2527aa82b884a61a",
+      "manage": "3971c7abfabc01ccbdbcbbfcd15f9c800451b911564655b9f331a4f7fba0c9b6"
+    },
+    "normalized_nft_sha256": "087da488627a01f10969ef7bb43bcb780fcd700642e22b22b7bd8934795e0442",
+    "unit_timing": {
+      "dell-gateway19-firewall.service": {
+        "ExecMainStartTimestampMonotonic": "6730113",
+        "ExecMainExitTimestampMonotonic": "7812531",
+        "ActiveState": "active",
+        "UnitFileState": "enabled",
+        "ActiveEnterTimestampMonotonic": "7812938"
+      },
+      "systemd-networkd.service": {
+        "ExecMainStartTimestampMonotonic": "8683207",
+        "ExecMainExitTimestampMonotonic": "0",
+        "ActiveState": "active",
+        "UnitFileState": "enabled",
+        "ActiveEnterTimestampMonotonic": "8962577"
+      },
+      "dell-gateway19-ready.service": {
+        "ExecMainStartTimestampMonotonic": "9847579",
+        "ExecMainExitTimestampMonotonic": "10579250",
+        "ActiveState": "active",
+        "UnitFileState": "enabled",
+        "ActiveEnterTimestampMonotonic": "10579688"
+      },
+      "dell-gateway19-dnsmasq.service": {
+        "ExecMainStartTimestampMonotonic": "10660782",
+        "ExecMainExitTimestampMonotonic": "0",
+        "ActiveState": "active",
+        "UnitFileState": "enabled",
+        "ActiveEnterTimestampMonotonic": "10661692"
+      }
+    },
+    "NTP": [
+      "NTP=yes",
+      "NTPSynchronized=no"
+    ],
+    "MAC_addresses": {
+      "WAN": {
+        "ifname": "eth0",
+        "MAC": "02:63:19:01:90:00",
+        "ipv4": [
+          "192.168.21.23/24"
+        ]
+      },
+      "LAN": {
+        "ifname": "eth1",
+        "MAC": "02:63:19:01:90:01",
+        "ipv4": [
+          "192.168.19.1/24"
+        ]
+      }
+    }
+  },
+  "checks": {
+    "new_bootID": true,
+    "same_hostkey": true,
+    "code_and_config_sha_unchanged": true,
+    "nft_policy_structure_unchanged": true,
+    "same_MAC_and_IPs": true,
+    "same_routes": true,
+    "forwarding_all_three_1": true,
+    "only_lo_IPv6": true,
+    "DNS_UDP_TCP_static_A": true,
+    "no_NAT": true,
+    "all_units_active": true,
+    "firewall_before_networkd": true,
+    "networkd_before_ready": true,
+    "ready_before_DNS": true,
+    "no_pending_or_rollback": true,
+    "no_failed_units": true
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-06T11:26:58.644619",
+  "status": "storage-ownership-capacity-and-alert-rules-verified",
+  "target": "192.168.21.22",
+  "actual_free_fraction": {
+    "store": 0.9384630181345474,
+    "local": 0.8403685037368355,
+    "local-lvm": 0.8075000000024516
+  },
+  "nas_source": "PVE-owned dedicated 2TiB qcow2, no physical H730/store block passthrough",
+  "evidence": [
+    "pve-final-inventory.json",
+    "ops-alert-rules.json",
+    "ops-pve-metrics-live-query.json"
+  ],
+  "alert_threshold": "PVE storage free <20% for5m; rules native validated and loaded",
+  "limitations": [
+    "Thin virtual allocation is not actual consumption; performance under concurrent application workload unverified",
+    "Storage and RAID health are time-specific and require ongoing monitoring"
+  ]
+}

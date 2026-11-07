@@ -1,0 +1,83 @@
+[
+  {
+    "status": "owned-bridge-ACL-refreshed-native-check-atomic-persisted",
+    "old_SHA": "f3e291876ba002f9acd3455f933ad36e2c9fe8c6c81db995bf003dfd03a510e8",
+    "new_SHA": "7fd7593f527f8d48afaa09c7330ed3d41a022931d191978be6f80b76e4ad4ea6",
+    "backup_PVE_only": true,
+    "other_tables_addresses_L3_forwarding_unchanged": true,
+    "at": "2026-11-06T17:22:22.455411",
+    "nic_identities": 30
+  },
+  {
+    "status": "owned-bridge-ACL-refreshed-native-check-atomic-persisted",
+    "old_SHA": "7fd7593f527f8d48afaa09c7330ed3d41a022931d191978be6f80b76e4ad4ea6",
+    "new_SHA": "4a8d3de6cdde87756814c59be1317bbe6af0495833183663daa351c9205cf59a",
+    "backup_PVE_only": true,
+    "other_tables_addresses_L3_forwarding_unchanged": true,
+    "at": "2026-11-06T17:35:26.763748",
+    "nic_identities": 31
+  },
+  {
+    "status": "owned-bridge-ACL-refreshed-native-check-atomic-persisted",
+    "old_SHA": "4a8d3de6cdde87756814c59be1317bbe6af0495833183663daa351c9205cf59a",
+    "new_SHA": "a5e41dbf9b44d2901c1530fdbbe08806e853bf64d3a4eeac19376b474d2de469",
+    "backup_PVE_only": true,
+    "other_tables_addresses_L3_forwarding_unchanged": true,
+    "at": "2026-11-06T17:53:56.537494",
+    "nic_identities": 31
+  },
+  {
+    "status": "owned-bridge-ACL-refreshed-native-check-atomic-persisted",
+    "old_SHA": "a5e41dbf9b44d2901c1530fdbbe08806e853bf64d3a4eeac19376b474d2de469",
+    "new_SHA": "b8238edbfea5389d54505fc93aeea9197092997547f711f1136be338306cbbf4",
+    "backup_PVE_only": true,
+    "other_tables_addresses_L3_forwarding_unchanged": true,
+    "at": "2026-11-06T17:55:08.090386",
+    "nic_identities": 30
+  },
+  {
+    "status": "owned-bridge-ACL-refreshed-native-check-atomic-persisted",
+    "old_SHA": "b8238edbfea5389d54505fc93aeea9197092997547f711f1136be338306cbbf4",
+    "new_SHA": "0977e3db2ed48858327fd231d7832ab2b5ab172fa6e5bdfd3119448853d47138",
+    "backup_PVE_only": true,
+    "other_tables_addresses_L3_forwarding_unchanged": true,
+    "at": "2026-11-07T00:13:31.362385",
+    "nic_identities": 30
+  },
+  {
+    "status": "owned-bridge-ACL-refreshed-native-check-atomic-persisted",
+    "old_SHA": "0977e3db2ed48858327fd231d7832ab2b5ab172fa6e5bdfd3119448853d47138",
+    "new_SHA": "f8cf229ac372071105e164a592b27f49f095c0fbbd43fd591e31dac574343738",
+    "backup_PVE_only": true,
+    "other_tables_addresses_L3_forwarding_unchanged": true,
+    "at": "2026-11-07T00:25:54.166905",
+    "nic_identities": 30
+  },
+  {
+    "status": "owned-bridge-ACL-refreshed-native-check-atomic-persisted",
+    "old_SHA": "f8cf229ac372071105e164a592b27f49f095c0fbbd43fd591e31dac574343738",
+    "new_SHA": "7d82f562845284d0282045de65abc8b9eb13a5cec6cdcad61f3ce9bc72ba4e1c",
+    "backup_PVE_only": true,
+    "other_tables_addresses_L3_forwarding_unchanged": true,
+    "at": "2026-11-07T01:39:29.180181",
+    "nic_identities": 33
+  },
+  {
+    "status": "owned-bridge-ACL-refreshed-native-check-atomic-persisted",
+    "old_SHA": "7d82f562845284d0282045de65abc8b9eb13a5cec6cdcad61f3ce9bc72ba4e1c",
+    "new_SHA": "d8aa7fd4d0251a532736a2c2e6397513729635624732eb9764cc015f7e9b262c",
+    "backup_PVE_only": true,
+    "other_tables_addresses_L3_forwarding_unchanged": true,
+    "at": "2026-11-07T01:59:05.043300",
+    "nic_identities": 36
+  },
+  {
+    "status": "owned-bridge-ACL-refreshed-native-check-atomic-persisted",
+    "old_SHA": "d8aa7fd4d0251a532736a2c2e6397513729635624732eb9764cc015f7e9b262c",
+    "new_SHA": "72edbc48d8bbe60c7bc6f26fec7c00a8c94132ee80b66b94f0d28fd06f06d9f6",
+    "backup_PVE_only": true,
+    "other_tables_addresses_L3_forwarding_unchanged": true,
+    "at": "2026-11-07T02:22:41.205443",
+    "nic_identities": 15
+  }
+]

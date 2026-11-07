@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-06T11:35:29.377160",
+  "result": {
+    "exit_code": 0,
+    "stdout": "{\"at\": \"2026-11-06T03:35:29.247360+00:00\", \"status\": \"online-sqlite-backup-and-isolated-grafana-app-restore-passed\", \"dashboard_uid\": \"dell-backup-df9e5995d6d5\", \"backup_sha256\": \"3be9bc0e8c365d9b18519d8f918c1664b570b2e30b59691c89b1394e343f2830\", \"backup_bytes\": 1572864, \"restore_seconds\": 31.567, \"existing_target_admin_login_retained\": true, \"network_none\": true, \"host_port_published\": false, \"source_sqlite_replaced\": false, \"source_fixture_deleted\": true, \"coverage\": [\"Grafana SQLite users/dashboards/settings\", \"Ops declarative configuration\"], \"excluded\": [\"Prometheus TSDB\", \"Alertmanager notification log\", \"approved full-business RPO/RTO\", \"CF data\"], \"archive_path\": \"/root/dell-app-backups/dell-backup-df9e5995d6d5.tar.gz\", \"archive_sha256\": \"fe4adcdef0fe9917dceedc21609b6283911ab4a9f4248e8ca1eccb5fed5b3d6c\", \"archive_bytes\": 113933}\n",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+    "target": {
+      "vmid": 270,
+      "ip": "10.63.30.40",
+      "host_key_alias": "dell-vm270",
+      "host_key_fingerprint": "SHA256:OjP5q9f3WXxGcoOHs23VlnOf258C6T+nNAxTiYoyf0g",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "exit_code": 0,
+  "stdout": "ub\njava-acceptance-clone-check\nHTTPS=200\n",
+  "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+  "target": {
+    "vmid": 9012,
+    "ip": "192.168.19.229",
+    "host_key_alias": "dell-vm9012",
+    "host_key_fingerprint": "SHA256:wSfndEAvQsEHu7FAJuiwY+gtVo/EHSQqD/Fvc7vQ/nQ",
+    "trust_source": "PVE QGA over known SSH host"
+  }
+}

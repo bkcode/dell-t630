@@ -1,0 +1,29 @@
+{
+  "at": "2026-11-06T13:24:12.599263",
+  "credentials_sent": false,
+  "scope": "Mac native curl, explicit no proxy; no raw public keys saved",
+  "results": [
+    {
+      "check": "OIDC",
+      "http_status": 200,
+      "native_cli_exit": 0,
+      "observation": {
+        "issuer": "http://192.168.21.22:19999",
+        "token_endpoint": "http://192.168.21.22:19999/oauth2/token",
+        "jwks_uri": "http://192.168.21.22:19999/oauth2/jwks"
+      }
+    },
+    {
+      "check": "JWKS",
+      "http_status": 200,
+      "native_cli_exit": 0,
+      "observation": {
+        "key_count": 1,
+        "private_key_fields_returned": false,
+        "public_jwk_fingerprints": [
+          "12793ee3f4ea47024cde65bf63ebffd365517d7f6dd299ab807f8da545955060"
+        ]
+      }
+    }
+  ]
+}

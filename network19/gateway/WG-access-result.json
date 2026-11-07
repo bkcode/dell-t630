@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-07T00:21:14.573499+08:00",
+  "server_configuration": "narrow feature confirmed persistent, no service restart",
+  "remote_client": "MacAir10.66.66.3",
+  "user_confirmed_access": true,
+  "scope": "10.66.66/24 ->19.50 TCP9001 only",
+  "verification": "../wireguard/verification.json",
+  "historical_counter_snapshot": "WG-active-counter.json",
+  "first_counter0_is_pre_retest_history": true
+}

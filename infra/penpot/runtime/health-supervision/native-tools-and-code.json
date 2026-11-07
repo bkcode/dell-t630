@@ -1,0 +1,181 @@
+[
+  {
+    "service": "frontend",
+    "tools": {
+      "bash": [
+        "/bin/bash",
+        "/usr/bin/bash"
+      ],
+      "dash": [],
+      "timeout": [
+        "/bin/timeout",
+        "/usr/bin/timeout"
+      ],
+      "busybox": []
+    },
+    "selected_code_directory": "etc/nginx",
+    "directory_entries": [
+      "fastcgi.conf",
+      "mime.types",
+      "fastcgi_params.default",
+      "html",
+      "fastcgi.conf.default",
+      "nginx.conf",
+      "stream-conf.d",
+      "scgi_params.default",
+      "fastcgi_params",
+      "nginx.conf.default",
+      "koi-win",
+      "koi-utf",
+      "conf.d",
+      "uwsgi_params.default",
+      "modules",
+      "mime.types.default",
+      "win-utf",
+      "scgi_params",
+      "uwsgi_params",
+      "overrides",
+      "nginx-security-headers.conf"
+    ],
+    "public_code_candidates": []
+  },
+  {
+    "service": "admin-console",
+    "tools": {
+      "bash": [],
+      "dash": [],
+      "timeout": [],
+      "busybox": []
+    },
+    "selected_code_directory": "nitrate",
+    "directory_entries": [
+      "apps",
+      "docker-start-admin-console.mjs"
+    ],
+    "public_code_candidates": [
+      "nitrate/docker-start-admin-console.mjs",
+      "nitrate/apps/admin-console/migrate.mjs",
+      "nitrate/apps/admin-console/package.json",
+      "nitrate/apps/admin-console/drizzle/meta/0001_snapshot.json",
+      "nitrate/apps/admin-console/drizzle/meta/0002_snapshot.json",
+      "nitrate/apps/admin-console/drizzle/meta/0007_snapshot.json",
+      "nitrate/apps/admin-console/drizzle/meta/0004_snapshot.json",
+      "nitrate/apps/admin-console/drizzle/meta/_journal.json",
+      "nitrate/apps/admin-console/drizzle/meta/0005_snapshot.json",
+      "nitrate/apps/admin-console/drizzle/meta/0003_snapshot.json",
+      "nitrate/apps/admin-console/drizzle/meta/0000_snapshot.json",
+      "nitrate/apps/admin-console/drizzle/meta/0006_snapshot.json",
+      "nitrate/apps/admin-console/src/locales/es/translation.json",
+      "nitrate/apps/admin-console/src/locales/en/translation.json",
+      "nitrate/apps/admin-console/.output/nitro.json",
+      "nitrate/apps/admin-console/.output/server/_organizationSlug._organizationId.permissions-X7BQmERU.mjs",
+      "nitrate/apps/admin-console/.output/server/_organizationSlug._organizationId.people-CwEJR_BM.mjs",
+      "nitrate/apps/admin-console/.output/server/_organizationSlug._organizationId-C_f0SQYV.mjs",
+      "nitrate/apps/admin-console/.output/server/_organizationSlug._organizationId-BAz6gVU_.mjs",
+      "nitrate/apps/admin-console/.output/server/_organizationSlug._organizationId.permissions-ynfCSGp5.mjs",
+      "nitrate/apps/admin-console/.output/server/_organizationSlug._organizationId.teams-qYhC_YU4.mjs",
+      "nitrate/apps/admin-console/.output/server/_organizationSlug._organizationId.sso-Cimj4Jgp.mjs",
+      "nitrate/apps/admin-console/.output/server/_organizationSlug._organizationId.people-ByW22HOn.mjs",
+      "nitrate/apps/admin-console/.output/server/index.mjs",
+      "nitrate/apps/admin-console/.output/server/_runtime.mjs",
+      "nitrate/apps/admin-console/.output/server/package.json",
+      "nitrate/apps/admin-console/.output/server/_organizationSlug._organizationId.sso-PjTrZtnX.mjs",
+      "nitrate/apps/admin-console/.output/server/_tanstack-start-manifest_v-DUEIe5ep.mjs",
+      "nitrate/apps/admin-console/.output/server/_organizationSlug._organizationId.teams-Y9p2NZ64.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/billing-return-CstREgJ1.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/admin-cnUr5DrZ.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/start-DFlXuETy.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/bulk-users-DfwrpHKz.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/createSsrRpc-D2BDletI.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/createServerRpc-CKoTnwnP.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/db-CCAeTub3.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/organization-owner.middleware-2jX4gjT8.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/auth.middleware-5vP5RcCs.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/user-avatar-URzYPKT-.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/empty-plugin-adapters-BaGcmrjC.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/billing-return-C4eh3K_E.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/storage-keys-Bz-O0FtJ.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/subscription-audit-log-g5IKOF4Y.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/penpot-version-DvQAcXXd.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/Modal-CCsJKn2a.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/Button-BHqkpP12.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/connectivity-DjlId0q7.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/ssr.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/fingerprint-IQCRkDnq.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/data-table-DjgLu4T-.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/routes-BmRdnFOP.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/Radio-BnWakUSC.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/onboarding-BeW0J6KV.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/schema-Bvw5XQgF.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/i18n-DOjp6o4q.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/activation-codes-D1czWRVA.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/queries-B0liPEhk.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/use-audit-log-DhiJXXtY.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/penpot-air-gapped-DCE7Gxa5.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/finish-DbCRaFrv.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/config-GPdx-qez.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/connectivity-CvIlkdvw.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/date-utils-CXtgRMaE.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/Input-DtRaAMx3.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/license-Ta24UgWU.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/config.context-DsRlz7qg.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/start-DmfIDaB8.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/queries-Cvc6oJ9w.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/license-CglMgam4.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/redirect-C-EphO8f.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/admin.middleware-BZxf1x6W.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/licenses-jwks-cache-BMZPFOTf.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/request-logger.middleware-DQvLGAJh.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/billing-C2N_ICt4.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/sidebar-DEAqAMdp.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/404-DcjfrHrI.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/fingerprint-DAP0M1c9.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/start-j017iout.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/use-onboarding-modal-CR7WqonY.mjs",
+      "nitrate/apps/admin-console/.output/server/_ssr/organization-DNR6BOvA.mjs"
+    ]
+  },
+  {
+    "service": "mcp",
+    "tools": {
+      "bash": [],
+      "dash": [],
+      "timeout": [],
+      "busybox": []
+    },
+    "selected_code_directory": "opt/penpot/mcp",
+    "directory_entries": [
+      "LICENSE",
+      "data",
+      "index.js",
+      "version.txt",
+      "node_modules",
+      "package.json",
+      "pnpm-workspace.yaml",
+      "pnpm-lock.yaml",
+      "setup",
+      "static"
+    ],
+    "public_code_candidates": [
+      "opt/penpot/mcp/index.js",
+      "opt/penpot/mcp/package.json"
+    ]
+  },
+  {
+    "service": "dns",
+    "tools": {
+      "bash": [],
+      "dash": [],
+      "timeout": [],
+      "busybox": [
+        "/bin/busybox"
+      ]
+    },
+    "selected_code_directory": "opt/dnsproxy",
+    "directory_entries": [
+      "dnsproxy",
+      "config.yaml"
+    ],
+    "public_code_candidates": []
+  }
+]

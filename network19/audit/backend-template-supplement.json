@@ -1,0 +1,25 @@
+{
+  "pve_firewall_status": {
+    "exit_code": 0,
+    "safe_status": "Status: disabled/running"
+  },
+  "cluster_firewall_options": {
+    "exists": false,
+    "options": {}
+  },
+  "node_firewall_options": {
+    "exists": false,
+    "options": {}
+  },
+  "linux_base_9010_disks": {
+    "ide2": {
+      "media": "cdrom",
+      "cloudinit_reference": true
+    },
+    "scsi0": {
+      "size": "32G",
+      "cloudinit_reference": false
+    }
+  },
+  "captured_at_utc": "2026-11-06T07:54:50.887077+00:00"
+}

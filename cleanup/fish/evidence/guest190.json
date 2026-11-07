@@ -1,0 +1,146 @@
+{
+  "at": "2026-11-06T17:14:37.312994+00:00",
+  "exit_code": 0,
+  "result": {
+    "status": "installed-verified",
+    "vmid": 190,
+    "at": "2026-11-06T17:14:37.258273+00:00",
+    "checks": {
+      "fish_exact_version": true,
+      "fish_common_exact_version": true,
+      "binary_version_command": true,
+      "ub_nonconfig_private_smoke": true,
+      "ub_root_login_shells_unchanged": true,
+      "core_services_and_containers_PIDs_start_health_unchanged": true
+    },
+    "before_shells": {
+      "ub": "/bin/bash",
+      "root": "/bin/bash"
+    },
+    "after_shells": {
+      "ub": "/bin/bash",
+      "root": "/bin/bash"
+    },
+    "fish_binary_version": "fish, version 4.0.2",
+    "new_packages": [
+      "fish-common",
+      "libpcre2-32-0",
+      "fish"
+    ],
+    "NEEDRESTART_MODE": "l",
+    "no_install_recommends": true,
+    "existing_packages_upgraded_or_removed": false,
+    "apt_update_fullupgrade_autoremove_chsh_or_shellconfig_run": false,
+    "service_restart_requested_by_tool": false,
+    "core_before": {
+      "services": {
+        "dell-gateway19-dnsmasq.service": {
+          "MainPID": "822",
+          "ExecMainStartTimestampMonotonic": "10660782",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-gateway19-firewall.service": {
+          "MainPID": "0",
+          "ExecMainStartTimestampMonotonic": "6730113",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "exited"
+        },
+        "dell-gateway19-ready.service": {
+          "MainPID": "0",
+          "ExecMainStartTimestampMonotonic": "9847579",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "exited"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "683",
+          "ExecMainStartTimestampMonotonic": "9897705",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "ssh.service": {
+          "MainPID": "705",
+          "ExecMainStartTimestampMonotonic": "10177708",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-networkd.service": {
+          "MainPID": "633",
+          "ExecMainStartTimestampMonotonic": "8683207",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "MainPID": "325",
+          "ExecMainStartTimestampMonotonic": "5493297",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "containers": {}
+    },
+    "core_after": {
+      "services": {
+        "dell-gateway19-dnsmasq.service": {
+          "MainPID": "822",
+          "ExecMainStartTimestampMonotonic": "10660782",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-gateway19-firewall.service": {
+          "MainPID": "0",
+          "ExecMainStartTimestampMonotonic": "6730113",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "exited"
+        },
+        "dell-gateway19-ready.service": {
+          "MainPID": "0",
+          "ExecMainStartTimestampMonotonic": "9847579",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "exited"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "683",
+          "ExecMainStartTimestampMonotonic": "9897705",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "ssh.service": {
+          "MainPID": "705",
+          "ExecMainStartTimestampMonotonic": "10177708",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-networkd.service": {
+          "MainPID": "633",
+          "ExecMainStartTimestampMonotonic": "8683207",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "MainPID": "325",
+          "ExecMainStartTimestampMonotonic": "5493297",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "containers": {}
+    },
+    "user_config_temporary_smoke_cleaned": true
+  },
+  "new_strict_SSH_connection_verified": true
+}

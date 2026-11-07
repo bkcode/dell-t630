@@ -1,0 +1,33 @@
+{
+  "id": "ACC-PEN-003",
+  "status": "passed",
+  "executed_at": "2026-11-06T12:47:57.548436+08:00",
+  "timezone": "Asia/Shanghai",
+  "operator": "root-task-manager",
+  "plan_sha256": "4da2b208f17e14d048b86b5453abae58a829b0989a90f09a8ff54e8334318380",
+  "preconditions_checked": true,
+  "target": {
+    "host": "192.168.21.22",
+    "environment": "managed-PVE-implementation",
+    "vmid": null
+  },
+  "commands_or_steps": [
+    "See linked execution artifact and operator observations"
+  ],
+  "exit_codes": [
+    0
+  ],
+  "observations": [
+    "按用户官方应用包方法迁入3活动文件、2团队/2项目，新ID映射完整；3文件结构统计一致，971唯一媒体SHA全部在目标",
+    "专用副本页面名编辑后导出/再导入保留编辑，原迁入设计和Mac源未修改",
+    "目标来宾受控重启后新身份/映射/数据保持，原源数据及UUID保留"
+  ],
+  "artifacts": [
+    "infra/penpot/application/acceptance-summary.json"
+  ],
+  "limitations": [
+    "官方格式不迁评论/版本历史或旧账号/session/MCP身份；2软删项目/4软删文件留源未激活；新目标ID是本次授权方法"
+  ],
+  "reviewed_by": "root-task-manager",
+  "plan_snapshot": "evidence/plans/plan-4da2b208f17e14d0.json"
+}

@@ -1,0 +1,594 @@
+{
+  "at": "2026-11-06T08:25:35.277571+00:00",
+  "scope": "12 guest baseline monitoring files only; no media apps or secrets",
+  "roles": [
+    {
+      "vmid": 200,
+      "role": "data-prod-db",
+      "files": {
+        "/etc/default/prometheus-node-exporter": {
+          "exists": true,
+          "sha256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm200/0-prometheus-node-exporter"
+        },
+        "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf": {
+          "exists": true,
+          "sha256": "0456740522e112ffd1f09e4d32cf4a9ab421875e27570bae855bda329a57d6f0",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm200/1-10-private-only.conf"
+        },
+        "/etc/dell-guest-monitoring/health.json": {
+          "exists": true,
+          "sha256": "be74665d2936306485c287325935210639c0ad835d2b0336f5536d29d139558c",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm200/2-health.json"
+        },
+        "/opt/dell/guest-monitoring/guest-targets.json": {
+          "exists": true,
+          "sha256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm200/3-guest-targets.json"
+        },
+        "/opt/dell/guest-monitoring/install-guest-baseline.py": {
+          "exists": true,
+          "sha256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm200/4-install-guest-baseline.py"
+        },
+        "/opt/dell/guest-monitoring/collect-guest-health.py": {
+          "exists": true,
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm200/5-collect-guest-health.py"
+        }
+      },
+      "unit_state": "Id=prometheus-node-exporter.service\nLoadState=loaded\nActiveState=active\nSubState=running\nUnitFileState=enabled\n\nId=dell-guest-health.timer\nLoadState=loaded\nActiveState=active\nSubState=running\nUnitFileState=enabled\n"
+    },
+    {
+      "vmid": 201,
+      "role": "data-prod-infra",
+      "files": {
+        "/etc/default/prometheus-node-exporter": {
+          "exists": true,
+          "sha256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm201/0-prometheus-node-exporter"
+        },
+        "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf": {
+          "exists": true,
+          "sha256": "b2bbd80dedc1caa2d06a1a6fd19c724e4a0b7c29758374ceb602422e26402e24",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm201/1-10-private-only.conf"
+        },
+        "/etc/dell-guest-monitoring/health.json": {
+          "exists": true,
+          "sha256": "8276d352a8c1c0fba721c305c03992b0d8c968db9d5408df1e1f7d75d3f0fd5a",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm201/2-health.json"
+        },
+        "/opt/dell/guest-monitoring/guest-targets.json": {
+          "exists": true,
+          "sha256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm201/3-guest-targets.json"
+        },
+        "/opt/dell/guest-monitoring/install-guest-baseline.py": {
+          "exists": true,
+          "sha256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm201/4-install-guest-baseline.py"
+        },
+        "/opt/dell/guest-monitoring/collect-guest-health.py": {
+          "exists": true,
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm201/5-collect-guest-health.py"
+        }
+      },
+      "unit_state": "Id=prometheus-node-exporter.service\nLoadState=loaded\nActiveState=active\nSubState=running\nUnitFileState=enabled\n\nId=dell-guest-health.timer\nLoadState=loaded\nActiveState=active\nSubState=waiting\nUnitFileState=enabled\n"
+    },
+    {
+      "vmid": 210,
+      "role": "data-test",
+      "files": {
+        "/etc/default/prometheus-node-exporter": {
+          "exists": true,
+          "sha256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm210/0-prometheus-node-exporter"
+        },
+        "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf": {
+          "exists": true,
+          "sha256": "5ee948d665b720ee33e3de8031f8321c4104c63af1810f938755d69dbdd74a83",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm210/1-10-private-only.conf"
+        },
+        "/etc/dell-guest-monitoring/health.json": {
+          "exists": true,
+          "sha256": "fe2544e268b9ad3e9e2e6cd4b9325a9a5f2886ca1a4f89c8a0e6922635f897b1",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm210/2-health.json"
+        },
+        "/opt/dell/guest-monitoring/guest-targets.json": {
+          "exists": true,
+          "sha256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm210/3-guest-targets.json"
+        },
+        "/opt/dell/guest-monitoring/install-guest-baseline.py": {
+          "exists": true,
+          "sha256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm210/4-install-guest-baseline.py"
+        },
+        "/opt/dell/guest-monitoring/collect-guest-health.py": {
+          "exists": true,
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm210/5-collect-guest-health.py"
+        }
+      },
+      "unit_state": "Id=prometheus-node-exporter.service\nLoadState=loaded\nActiveState=active\nSubState=running\nUnitFileState=enabled\n\nId=dell-guest-health.timer\nLoadState=loaded\nActiveState=active\nSubState=waiting\nUnitFileState=enabled\n"
+    },
+    {
+      "vmid": 220,
+      "role": "publish-service",
+      "files": {
+        "/etc/default/prometheus-node-exporter": {
+          "exists": true,
+          "sha256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm220/0-prometheus-node-exporter"
+        },
+        "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf": {
+          "exists": true,
+          "sha256": "c03328ace75205926f648497c084bd5c1cdc6b58ae61f1c985b77fa49b1d2d50",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm220/1-10-private-only.conf"
+        },
+        "/etc/dell-guest-monitoring/health.json": {
+          "exists": true,
+          "sha256": "4480eebf78b274affc7c4a068b28e435cc2b3ee55c1dea652572de783c667f19",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm220/2-health.json"
+        },
+        "/opt/dell/guest-monitoring/guest-targets.json": {
+          "exists": true,
+          "sha256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm220/3-guest-targets.json"
+        },
+        "/opt/dell/guest-monitoring/install-guest-baseline.py": {
+          "exists": true,
+          "sha256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm220/4-install-guest-baseline.py"
+        },
+        "/opt/dell/guest-monitoring/collect-guest-health.py": {
+          "exists": true,
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm220/5-collect-guest-health.py"
+        }
+      },
+      "unit_state": "Id=prometheus-node-exporter.service\nLoadState=loaded\nActiveState=active\nSubState=running\nUnitFileState=enabled\n\nId=dell-guest-health.timer\nLoadState=loaded\nActiveState=active\nSubState=waiting\nUnitFileState=enabled\n"
+    },
+    {
+      "vmid": 221,
+      "role": "artifact-service",
+      "files": {
+        "/etc/default/prometheus-node-exporter": {
+          "exists": true,
+          "sha256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm221/0-prometheus-node-exporter"
+        },
+        "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf": {
+          "exists": true,
+          "sha256": "ea069aadb427c5ca0309a12e22484c9a3ab723bb83bb74ee0c154131679c7719",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm221/1-10-private-only.conf"
+        },
+        "/etc/dell-guest-monitoring/health.json": {
+          "exists": true,
+          "sha256": "d6d13e0dcc00a80479f31dc9b5b7d36538e108106d3dcaca820fbb5dfb2af27d",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm221/2-health.json"
+        },
+        "/opt/dell/guest-monitoring/guest-targets.json": {
+          "exists": true,
+          "sha256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm221/3-guest-targets.json"
+        },
+        "/opt/dell/guest-monitoring/install-guest-baseline.py": {
+          "exists": true,
+          "sha256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm221/4-install-guest-baseline.py"
+        },
+        "/opt/dell/guest-monitoring/collect-guest-health.py": {
+          "exists": true,
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm221/5-collect-guest-health.py"
+        }
+      },
+      "unit_state": "Id=prometheus-node-exporter.service\nLoadState=loaded\nActiveState=active\nSubState=running\nUnitFileState=enabled\n\nId=dell-guest-health.timer\nLoadState=loaded\nActiveState=active\nSubState=waiting\nUnitFileState=enabled\n"
+    },
+    {
+      "vmid": 230,
+      "role": "java-prod-01",
+      "files": {
+        "/etc/default/prometheus-node-exporter": {
+          "exists": true,
+          "sha256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm230/0-prometheus-node-exporter"
+        },
+        "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf": {
+          "exists": true,
+          "sha256": "43211d42ed8a36e35bbab64b705162f4d7a2b76ecb786283cd47263c83d56fbc",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm230/1-10-private-only.conf"
+        },
+        "/etc/dell-guest-monitoring/health.json": {
+          "exists": true,
+          "sha256": "ff02fe9634b7a61df8a4675eb92ca9c33b79899539deb6329fc2816fb087ab54",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm230/2-health.json"
+        },
+        "/opt/dell/guest-monitoring/guest-targets.json": {
+          "exists": true,
+          "sha256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm230/3-guest-targets.json"
+        },
+        "/opt/dell/guest-monitoring/install-guest-baseline.py": {
+          "exists": true,
+          "sha256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm230/4-install-guest-baseline.py"
+        },
+        "/opt/dell/guest-monitoring/collect-guest-health.py": {
+          "exists": true,
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm230/5-collect-guest-health.py"
+        }
+      },
+      "unit_state": "Id=prometheus-node-exporter.service\nLoadState=loaded\nActiveState=active\nSubState=running\nUnitFileState=enabled\n\nId=dell-guest-health.timer\nLoadState=loaded\nActiveState=active\nSubState=waiting\nUnitFileState=enabled\n"
+    },
+    {
+      "vmid": 231,
+      "role": "java-prod-02",
+      "files": {
+        "/etc/default/prometheus-node-exporter": {
+          "exists": true,
+          "sha256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm231/0-prometheus-node-exporter"
+        },
+        "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf": {
+          "exists": true,
+          "sha256": "fc9da29c0426886c36b75bb1c9f764c00a661edbd539236dfc81d2585c13943c",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm231/1-10-private-only.conf"
+        },
+        "/etc/dell-guest-monitoring/health.json": {
+          "exists": true,
+          "sha256": "4a0280628c7aac1dc05902434e844b75ffde3628f0df959101b217b0a800c1df",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm231/2-health.json"
+        },
+        "/opt/dell/guest-monitoring/guest-targets.json": {
+          "exists": true,
+          "sha256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm231/3-guest-targets.json"
+        },
+        "/opt/dell/guest-monitoring/install-guest-baseline.py": {
+          "exists": true,
+          "sha256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm231/4-install-guest-baseline.py"
+        },
+        "/opt/dell/guest-monitoring/collect-guest-health.py": {
+          "exists": true,
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm231/5-collect-guest-health.py"
+        }
+      },
+      "unit_state": "Id=prometheus-node-exporter.service\nLoadState=loaded\nActiveState=active\nSubState=running\nUnitFileState=enabled\n\nId=dell-guest-health.timer\nLoadState=loaded\nActiveState=active\nSubState=waiting\nUnitFileState=enabled\n"
+    },
+    {
+      "vmid": 232,
+      "role": "java-prod-03",
+      "files": {
+        "/etc/default/prometheus-node-exporter": {
+          "exists": true,
+          "sha256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm232/0-prometheus-node-exporter"
+        },
+        "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf": {
+          "exists": true,
+          "sha256": "6264a953c8da297ceb5671f4fd89eeba8b1452effc888ad7d795b3ff8348784e",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm232/1-10-private-only.conf"
+        },
+        "/etc/dell-guest-monitoring/health.json": {
+          "exists": true,
+          "sha256": "51fc6ba7c33deeb820f9c8b94a85c89ff0b533570d3e3f5219965b52707ef913",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm232/2-health.json"
+        },
+        "/opt/dell/guest-monitoring/guest-targets.json": {
+          "exists": true,
+          "sha256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm232/3-guest-targets.json"
+        },
+        "/opt/dell/guest-monitoring/install-guest-baseline.py": {
+          "exists": true,
+          "sha256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm232/4-install-guest-baseline.py"
+        },
+        "/opt/dell/guest-monitoring/collect-guest-health.py": {
+          "exists": true,
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm232/5-collect-guest-health.py"
+        }
+      },
+      "unit_state": "Id=prometheus-node-exporter.service\nLoadState=loaded\nActiveState=active\nSubState=running\nUnitFileState=enabled\n\nId=dell-guest-health.timer\nLoadState=loaded\nActiveState=active\nSubState=running\nUnitFileState=enabled\n"
+    },
+    {
+      "vmid": 240,
+      "role": "java-test-01",
+      "files": {
+        "/etc/default/prometheus-node-exporter": {
+          "exists": true,
+          "sha256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm240/0-prometheus-node-exporter"
+        },
+        "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf": {
+          "exists": true,
+          "sha256": "e9546f3c326c0b52b5fd5ceb9057fed4bbe5f54d516eddf4887b0c86a386e77d",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm240/1-10-private-only.conf"
+        },
+        "/etc/dell-guest-monitoring/health.json": {
+          "exists": true,
+          "sha256": "65ef2c87c17f8a02f756c25bf8ee6c1cb9fc30c033b284832f6a02a70d50757d",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm240/2-health.json"
+        },
+        "/opt/dell/guest-monitoring/guest-targets.json": {
+          "exists": true,
+          "sha256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm240/3-guest-targets.json"
+        },
+        "/opt/dell/guest-monitoring/install-guest-baseline.py": {
+          "exists": true,
+          "sha256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm240/4-install-guest-baseline.py"
+        },
+        "/opt/dell/guest-monitoring/collect-guest-health.py": {
+          "exists": true,
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm240/5-collect-guest-health.py"
+        }
+      },
+      "unit_state": "Id=prometheus-node-exporter.service\nLoadState=loaded\nActiveState=active\nSubState=running\nUnitFileState=enabled\n\nId=dell-guest-health.timer\nLoadState=loaded\nActiveState=active\nSubState=running\nUnitFileState=enabled\n"
+    },
+    {
+      "vmid": 250,
+      "role": "penpot-service",
+      "files": {
+        "/etc/default/prometheus-node-exporter": {
+          "exists": true,
+          "sha256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm250/0-prometheus-node-exporter"
+        },
+        "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf": {
+          "exists": true,
+          "sha256": "a085ac99545589e85709b975920eb07bdf9ce1ac2ff8241035c75b1e9d3695c9",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm250/1-10-private-only.conf"
+        },
+        "/etc/dell-guest-monitoring/health.json": {
+          "exists": true,
+          "sha256": "5ea374921fb609c24f3029137cd611925edb5073fcf9139a4bda65fe65c88888",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm250/2-health.json"
+        },
+        "/opt/dell/guest-monitoring/guest-targets.json": {
+          "exists": true,
+          "sha256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm250/3-guest-targets.json"
+        },
+        "/opt/dell/guest-monitoring/install-guest-baseline.py": {
+          "exists": true,
+          "sha256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm250/4-install-guest-baseline.py"
+        },
+        "/opt/dell/guest-monitoring/collect-guest-health.py": {
+          "exists": true,
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm250/5-collect-guest-health.py"
+        }
+      },
+      "unit_state": "Id=prometheus-node-exporter.service\nLoadState=loaded\nActiveState=active\nSubState=running\nUnitFileState=enabled\n\nId=dell-guest-health.timer\nLoadState=loaded\nActiveState=active\nSubState=waiting\nUnitFileState=enabled\n"
+    },
+    {
+      "vmid": 260,
+      "role": "nas-media",
+      "files": {
+        "/etc/default/prometheus-node-exporter": {
+          "exists": true,
+          "sha256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm260/0-prometheus-node-exporter"
+        },
+        "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf": {
+          "exists": true,
+          "sha256": "41a5193f6beb3a8f7faaa3846c9ffc78fe43ed078f1f4cc676f24a9f397d6b6e",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm260/1-10-private-only.conf"
+        },
+        "/etc/dell-guest-monitoring/health.json": {
+          "exists": true,
+          "sha256": "67ebfb184d7b76cddd34a993e48a17152c19b8384fc9d898159e1624ecbb8e4f",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm260/2-health.json"
+        },
+        "/opt/dell/guest-monitoring/guest-targets.json": {
+          "exists": true,
+          "sha256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm260/3-guest-targets.json"
+        },
+        "/opt/dell/guest-monitoring/install-guest-baseline.py": {
+          "exists": true,
+          "sha256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm260/4-install-guest-baseline.py"
+        },
+        "/opt/dell/guest-monitoring/collect-guest-health.py": {
+          "exists": true,
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm260/5-collect-guest-health.py"
+        }
+      },
+      "unit_state": "Id=prometheus-node-exporter.service\nLoadState=loaded\nActiveState=active\nSubState=running\nUnitFileState=enabled\n\nId=dell-guest-health.timer\nLoadState=loaded\nActiveState=active\nSubState=waiting\nUnitFileState=enabled\n"
+    },
+    {
+      "vmid": 270,
+      "role": "ops-service",
+      "files": {
+        "/etc/default/prometheus-node-exporter": {
+          "exists": true,
+          "sha256": "667762bc8ea1e872ce55d54dd6c349679adca09801e5974a3e561126ee0a4421",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm270/0-prometheus-node-exporter"
+        },
+        "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf": {
+          "exists": true,
+          "sha256": "7ae68e17c871e7ce2ae06f428d81abff1732a02e3a762b9bc8a0f9f00c34db66",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm270/1-10-private-only.conf"
+        },
+        "/etc/dell-guest-monitoring/health.json": {
+          "exists": true,
+          "sha256": "6327578c371729d8d3ddb44afa4cdd535c3105c3012cd206b9dc82cbab2ec00e",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm270/2-health.json"
+        },
+        "/opt/dell/guest-monitoring/guest-targets.json": {
+          "exists": true,
+          "sha256": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e",
+          "uid": 0,
+          "mode": "0o644",
+          "captured_file": "monitoring-baselines/vm270/3-guest-targets.json"
+        },
+        "/opt/dell/guest-monitoring/install-guest-baseline.py": {
+          "exists": true,
+          "sha256": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm270/4-install-guest-baseline.py"
+        },
+        "/opt/dell/guest-monitoring/collect-guest-health.py": {
+          "exists": true,
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "uid": 0,
+          "mode": "0o755",
+          "captured_file": "monitoring-baselines/vm270/5-collect-guest-health.py"
+        }
+      },
+      "unit_state": "Id=prometheus-node-exporter.service\nLoadState=loaded\nActiveState=active\nSubState=running\nUnitFileState=enabled\n\nId=dell-guest-health.timer\nLoadState=loaded\nActiveState=active\nSubState=waiting\nUnitFileState=enabled\n"
+    }
+  ]
+}

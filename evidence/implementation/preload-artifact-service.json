@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "role": "artifact-service",
+  "target": {
+    "vmid": 221,
+    "ip": "192.168.21.247",
+    "host_key_alias": "dell-vm221",
+    "host_key_fingerprint": "SHA256:7N4dWTJAt6KcZZYakrVc/mlUVPannAQRI28dmyMF7uE",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "started_at": "2026-11-06T06:58:32.943721+08:00",
+  "scope": "assigned-new-guest-software-preload-only",
+  "status": "software-preloaded-no-containers",
+  "runtime_profile_script_sha256": "45692f1732688f010f6a9ef6b4abc3ea1950934a5655bcf92f3e97fff5ea05a4",
+  "preload_script_sha256": "efb101cda53df8e99dc825217bfe51552589ddc60b17c6d7fab30b7cfb483a79",
+  "archives": [
+    {
+      "group": "nexus",
+      "archive": "target-amd64-nexus-images.tar",
+      "started_at": "2026-11-06T06:58:38.935691+08:00",
+      "status": "verified-preloaded",
+      "completed_at": "2026-11-06T06:58:57.321988+08:00",
+      "result": {
+        "status": "images-preloaded-no-containers",
+        "role": "artifact-service",
+        "archive": "target-amd64-nexus-images.tar",
+        "sha256": "6a0b1cd013c69acf67ded46e3fa0913b36302395269ffc48315ec0406e624033",
+        "verified_image_ids": [
+          "sha256:2ae4fee2eed85f42c982aa2fc16746a8453c7f79faf2a7ea236855ca8652e001"
+        ],
+        "registry_reference_available": {
+          "sonatype/nexus3@sha256:e190be450888ec912b941579bac90767d73debc3307a26326c8a71132b02951f": false
+        },
+        "applications_started": false,
+        "image_load_stdout": "Loaded image ID: sha256:2ae4fee2eed85f42c982aa2fc16746a8453c7f79faf2a7ea236855ca8652e001\n"
+      }
+    },
+    {
+      "group": "extras",
+      "archive": "target-amd64-extras-images.tar",
+      "started_at": "2026-11-06T06:58:57.322836+08:00",
+      "status": "verified-preloaded",
+      "completed_at": "2026-11-06T07:01:28.521632+08:00",
+      "result": {
+        "status": "images-preloaded-no-containers",
+        "role": "artifact-service",
+        "archive": "target-amd64-extras-images.tar",
+        "sha256": "257cccab4640234caa9250129b4652e2f76e4f7dfbb876b75af461aa8200ad72",
+        "verified_image_ids": [
+          "sha256:4e5db4761e0ff445f7fd29aad680ad28e8abf7d204895557f145d65535abcc1c",
+          "sha256:9bd9cbec4bd4f33bb6ccedf8c25a5132f8e7b2fb158c9a223a54485e4332e962",
+          "sha256:6afa1ab7f6e662c739a45a1d458598d7eb6ab70fc7c0ab45af64864e1503d4b6",
+          "sha256:151292169170da9f8414b68c8e5994c75bd9cbb94ff60b8bc90860c4994b0946",
+          "sha256:e6f02b1a6c427e2a771fb33b42cb167dde3e5e8b3625e55e55aa20aaa018946d",
+          "sha256:995797bf87597b4247190e0034827f7887b34e75a4f603374591eab4f44172cb"
+        ],
+        "registry_reference_available": {
+          "nginx@sha256:db4f612f385437d11eb26620a4f1d7efb3ff44e1296a3c21540b30454e6e2bf3": false,
+          "prom/prometheus@sha256:89c1a644817e9ad70fa2af76c84898e327c1de7063735f962e8313b1e28672c3": false,
+          "grafana/grafana@sha256:6e5d306338670f381a942f1c50d3c266bf71531e5ddd9ee4fc1a133dac5ce63d": false,
+          "prom/alertmanager@sha256:7619e9399e623c9f99a40cb199c2bceb972cbf725598a51dcbde69d51dcaaedf": false,
+          "prom/blackbox-exporter@sha256:66eae352a79e6f677aeddd8c25a9bdb017586dc5fbd230f22329213d891f94bd": false,
+          "jellyfin/jellyfin@sha256:7da5184caa38c553f219f6772476540081f392a68049e2b68c923f6daf877f8e": false
+        },
+        "applications_started": false,
+        "image_load_stdout": "Loaded image ID: sha256:151292169170da9f8414b68c8e5994c75bd9cbb94ff60b8bc90860c4994b0946\nLoaded image ID: sha256:e6f02b1a6c427e2a771fb33b42cb167dde3e5e8b3625e55e55aa20aaa018946d\nLoaded image ID: sha256:995797bf87597b4247190e0034827f7887b34e75a4f603374591eab4f44172cb\nLoaded image ID: sha256:4e5db4761e0ff445f7fd29aad680ad28e8abf7d204895557f145d65535abcc1c\nLoaded image ID: sha256:9bd9cbec4bd4f33bb6ccedf8c25a5132f8e7b2fb158c9a223a54485e4332e962\nLoaded image ID: sha256:6afa1ab7f6e662c739a45a1d458598d7eb6ab70fc7c0ab45af64864e1503d4b6\n"
+      }
+    }
+  ],
+  "applications_started": false,
+  "host_network_applied": false,
+  "before": {
+    "role": "artifact-service",
+    "driver": "overlayfs",
+    "docker_root": "/var/lib/docker",
+    "containers": 0,
+    "images": 0,
+    "live_restore": true,
+    "filesystem_free_bytes": 30907904000,
+    "filesystem_total_bytes": 33603391488,
+    "artifact_device_exists": true
+  },
+  "runtime_profile": {
+    "role": "artifact-service",
+    "driver": "overlay2",
+    "docker_root": "/var/lib/docker",
+    "live_restore": false,
+    "containers": 0,
+    "changed": true,
+    "old_backend_data_preserved": true
+  },
+  "after": {
+    "role": "artifact-service",
+    "driver": "overlay2",
+    "docker_root": "/var/lib/docker",
+    "containers": 0,
+    "images": 7,
+    "live_restore": false,
+    "filesystem_free_bytes": 26397761536,
+    "filesystem_total_bytes": 33603391488,
+    "artifact_device_exists": true
+  },
+  "limitations": [
+    "No docker pull or compose invoked; registry manifest aliases may remain unavailable pending manager-approved metadata pull.",
+    "No application target_guard, application IP, host network, source machine or unassigned guest changed.",
+    "Old containerd cache retained by runtime profile; no data removed."
+  ],
+  "completed_at": "2026-11-06T07:01:29.600166+08:00"
+}

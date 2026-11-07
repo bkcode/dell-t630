@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "prepared_at": "2026-11-06T06:16:03.188396+08:00",
+  "status": "prepared-not-executed",
+  "target": {
+    "java_vmid": 240,
+    "java_ip": "10.63.20.20",
+    "data_vmid": 210,
+    "data_ip": "10.63.20.10"
+  },
+  "issuer": "http://192.168.21.22:19999",
+  "issuer_status": "explicit-candidate-not-runtime-accepted",
+  "nacos_group": "DELL_TEST",
+  "accounts": [
+    {
+      "schema": "finger_auth_test",
+      "user": "finger_auth_test",
+      "password_file": "/Users/yangzhaohui/work/www/harness/dell/private/java/secrets/db-auth-password",
+      "client_host": "10.63.20.20"
+    },
+    {
+      "schema": "finger_system_test",
+      "user": "finger_system_test",
+      "password_file": "/Users/yangzhaohui/work/www/harness/dell/private/java/secrets/db-system-password",
+      "client_host": "10.63.20.20"
+    },
+    {
+      "schema": "finger_coms_test",
+      "user": "finger_coms_test",
+      "password_file": "/Users/yangzhaohui/work/www/harness/dell/private/java/secrets/db-coms-password",
+      "client_host": "10.63.20.20"
+    }
+  ],
+  "oauth_clients": [
+    {
+      "client_id": "finger-admin",
+      "secret_file": "/Users/yangzhaohui/work/www/harness/dell/private/java/secrets/oauth-finger-admin-secret"
+    },
+    {
+      "client_id": "finger-merchant",
+      "secret_file": "/Users/yangzhaohui/work/www/harness/dell/private/java/secrets/oauth-finger-merchant-secret"
+    },
+    {
+      "client_id": "finger-app",
+      "secret_file": "/Users/yangzhaohui/work/www/harness/dell/private/java/secrets/oauth-finger-app-secret"
+    },
+    {
+      "client_id": "finger-web",
+      "secret_file": "/Users/yangzhaohui/work/www/harness/dell/private/java/secrets/oauth-finger-web-secret"
+    }
+  ],
+  "synthetic_admin": {
+    "account": "FNTEST0001",
+    "id": 900000000001,
+    "password_file": "/Users/yangzhaohui/work/www/harness/dell/private/java/secrets/admin-password",
+    "password_hash_file": "/Users/yangzhaohui/work/www/harness/dell/private/java/secrets/admin-password-hash",
+    "encoder": "Spring PasswordEncoderFactories delegating bcrypt",
+    "source_user_rows_copied": false
+  },
+  "start_gates": [
+    "network authorization/VM start",
+    "schema review and initialization",
+    "Nacos mandatory data-id publication and permissions",
+    "target Java21 and finger permissions",
+    "explicit issuer entrypoint validation"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "role": 260,
+  "status": "VPN-source-recognition-committed-verified",
+  "nonce": "d4f269ae477f479b9d240ff52b560812",
+  "actions": [
+    {
+      "action": "stage",
+      "exit_code": 0,
+      "result": {
+        "role": 260,
+        "status": "VPN-recognition-staged-no-active-change"
+      }
+    },
+    {
+      "action": "commit",
+      "exit_code": 0,
+      "result": {
+        "role": 260,
+        "status": "VPN-source-recognition-committed-verified",
+        "VPN_CIDR": "10.66.66.0/24",
+        "SMB_old": "192.168.21.0/24 192.168.19.0/24 127.0.0.1",
+        "SMB_new": "192.168.21.0/24 192.168.19.0/24 127.0.0.1 10.66.66.0/24",
+        "JF_old": [
+          "192.168.19.0/24",
+          "192.168.21.0/24",
+          "127.0.0.0/8",
+          "172.18.0.1/32"
+        ],
+        "JF_new": [
+          "192.168.19.0/24",
+          "192.168.21.0/24",
+          "127.0.0.0/8",
+          "172.18.0.1/32",
+          "10.66.66.0/24"
+        ],
+        "all_non_network_share_fields_and_effective_permissions_unchanged": true,
+        "EnableRemoteAccess": false,
+        "EnableUPnP": false,
+        "root_shadow_key_guard_bytes_and_original_fixture_hashes_unchanged": true,
+        "data_uuid": "5b19837c-128c-498a-b79d-563db810c34a",
+        "JF_required_restart_completed": true,
+        "Docker_or_VM_restarted": false,
+        "SMB_clients_before": {
+          "sessions": 0,
+          "tcons": 0,
+          "open_files": 0
+        },
+        "JF_active_or_paused_playback_before": 0,
+        "JF_transcoding_before": 0,
+        "SMBD_PID_changed_by_official_Salt": true,
+        "JF_running_healthy": true,
+        "credential_values_or_private_hashes_emitted": false
+      }
+    }
+  ],
+  "secret_values_or_hashes_emitted": false,
+  "gateway_firewall_or_other_role_changed": false
+}

@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-06T11:17:53.270581",
+  "result": {
+    "exit_code": 0,
+    "stdout": "{\"status\": \"fresh-admin-and-scoped-repositories-initialized\", \"new_identity_count\": 3, \"hosted_repositories\": [\"finger-releases\", \"finger-snapshots\", \"dell-acceptance\"], \"group\": \"finger-public\", \"anonymous_enabled\": false, \"source_credentials_imported\": false, \"source_artifacts_imported\": false, \"public_upstream_used\": false}\n",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+    "target": {
+      "vmid": 221,
+      "ip": "10.63.30.20",
+      "host_key_alias": "dell-vm221",
+      "host_key_fingerprint": "SHA256:ky2Wn7M2CKgUqHaj65c4KnqphO6d3zh6sGEoYYzomWo",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  }
+}

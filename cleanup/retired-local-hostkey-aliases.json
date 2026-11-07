@@ -1,0 +1,25 @@
+{
+  "removed_aliases": [
+    "dell-vm9001",
+    "dell-vm9010",
+    "dell-vm9002",
+    "dell-vm9003",
+    "dell-vm9004",
+    "dell-vm9005",
+    "dell-vm9006",
+    "dell-vm9020",
+    "dell-vm231",
+    "dell-vm232",
+    "dell-vm104",
+    "dell-vm101",
+    "dell-vm9040",
+    "dell-vm9041",
+    "dell-vm9042",
+    "dell-vm9043",
+    "dell-vm9044",
+    "dell-vm9045"
+  ],
+  "only_task_private_knownhosts": true,
+  "permanent_guest_and_gateway_keys_unchanged": true,
+  "client_private_key_touched": false
+}

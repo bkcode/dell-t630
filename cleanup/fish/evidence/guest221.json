@@ -1,0 +1,179 @@
+{
+  "at": "2026-11-06T18:04:14.206701+00:00",
+  "exit_code": 0,
+  "result": {
+    "status": "installed-verified",
+    "vmid": 221,
+    "at": "2026-11-06T18:04:14.169192+00:00",
+    "checks": {
+      "fish_exact_version": true,
+      "fish_common_exact_version": true,
+      "binary_version_command": true,
+      "ub_nonconfig_private_smoke": true,
+      "ub_root_login_shells_unchanged": true,
+      "core_services_and_containers_PIDs_start_health_unchanged": true,
+      "Nexus221_two_container_ID_PID_start_health_and_Docker_service_unchanged": true
+    },
+    "before_shells": {
+      "ub": "/bin/bash",
+      "root": "/bin/bash"
+    },
+    "after_shells": {
+      "ub": "/bin/bash",
+      "root": "/bin/bash"
+    },
+    "fish_binary_version": "fish, version 4.0.2",
+    "new_packages": [
+      "fish-common",
+      "libpcre2-32-0",
+      "fish"
+    ],
+    "NEEDRESTART_MODE": "l",
+    "no_install_recommends": true,
+    "existing_packages_upgraded_or_removed": false,
+    "apt_update_fullupgrade_autoremove_chsh_or_shellconfig_run": false,
+    "service_restart_requested_by_tool": false,
+    "core_before": {
+      "services": {
+        "containerd.service": {
+          "MainPID": "717",
+          "ExecMainStartTimestampMonotonic": "15175181",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-nexus.service": {
+          "MainPID": "127067",
+          "ExecMainStartTimestampMonotonic": "15796527436",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "docker.service": {
+          "MainPID": "739",
+          "ExecMainStartTimestampMonotonic": "16301512",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "677",
+          "ExecMainStartTimestampMonotonic": "14741852",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "ssh.service": {
+          "MainPID": "702",
+          "ExecMainStartTimestampMonotonic": "15001577",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-networkd.service": {
+          "MainPID": "620",
+          "ExecMainStartTimestampMonotonic": "11761319",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "MainPID": "352",
+          "ExecMainStartTimestampMonotonic": "5936526",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "containers": {
+        "bb273c7b5b30": {
+          "name": "/nexus-gateway-1",
+          "pid": 127695,
+          "running": true,
+          "started_at": "2026-11-06T09:10:44.864614102Z",
+          "health": "healthy"
+        },
+        "70d4bec45b73": {
+          "name": "/nexus-nexus-1",
+          "pid": 127238,
+          "running": true,
+          "started_at": "2026-11-06T09:09:49.07710254Z",
+          "health": "healthy"
+        }
+      }
+    },
+    "core_after": {
+      "services": {
+        "containerd.service": {
+          "MainPID": "717",
+          "ExecMainStartTimestampMonotonic": "15175181",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-nexus.service": {
+          "MainPID": "127067",
+          "ExecMainStartTimestampMonotonic": "15796527436",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "docker.service": {
+          "MainPID": "739",
+          "ExecMainStartTimestampMonotonic": "16301512",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "677",
+          "ExecMainStartTimestampMonotonic": "14741852",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "ssh.service": {
+          "MainPID": "702",
+          "ExecMainStartTimestampMonotonic": "15001577",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-networkd.service": {
+          "MainPID": "620",
+          "ExecMainStartTimestampMonotonic": "11761319",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "MainPID": "352",
+          "ExecMainStartTimestampMonotonic": "5936526",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "containers": {
+        "bb273c7b5b30": {
+          "name": "/nexus-gateway-1",
+          "pid": 127695,
+          "running": true,
+          "started_at": "2026-11-06T09:10:44.864614102Z",
+          "health": "healthy"
+        },
+        "70d4bec45b73": {
+          "name": "/nexus-nexus-1",
+          "pid": 127238,
+          "running": true,
+          "started_at": "2026-11-06T09:09:49.07710254Z",
+          "health": "healthy"
+        }
+      }
+    },
+    "publisher_before": null,
+    "publisher_after": null,
+    "user_config_temporary_smoke_cleaned": true
+  },
+  "new_strict_SSH_connection_verified": true
+}

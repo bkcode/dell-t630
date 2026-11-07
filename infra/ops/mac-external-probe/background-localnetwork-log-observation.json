@@ -1,0 +1,570 @@
+{
+  "at": "2026-11-06T06:00:19.469588+00:00",
+  "command_scope": "13:48 onward targeted local-network/host/task-label network logs",
+  "exit_code": 0,
+  "matching_rows": 265,
+  "rows": [
+    {
+      "timestamp": "2026-11-06 13:54:28.881298+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 36641, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.881314+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.881398+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.883468+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 36641, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.883478+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.883514+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.893057+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 36641, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.893068+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.893108+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.894923+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 36641, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.894933+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.894978+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.895013+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 36641, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.895018+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.895042+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.898286+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 36641, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.898296+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.898336+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.911621+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 36641, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.911632+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.911677+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.913860+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 36641, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.913872+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.913915+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.918693+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 36641, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.918704+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.918743+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.920429+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 36641, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.920438+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.920479+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:54:28.942800+0800",
+      "processID": 1,
+      "subsystem": "gui/501 [100014]",
+      "category": "",
+      "messageType": "Default",
+      "message": "service inactive: com.dell.t630.external-probe"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.087559+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 37348, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.087572+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.087619+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.087662+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 37348, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.087667+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.087689+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.105614+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 37348, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.105626+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.105680+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.108169+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 37348, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.108177+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.108212+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.118850+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 37348, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.118862+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.118904+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.120196+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 37348, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.120205+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.120237+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.120974+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 37348, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.120983+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.121021+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.122708+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 37348, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.122716+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.122748+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.132378+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 37348, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.132388+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.132430+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.133731+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 37348, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.133742+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.133773+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.139955+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 37348, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.139965+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.139998+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.141079+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Info",
+      "message": "Got local network blocked notification: pid: 37348, uuid: 5DCA660D-E773-319E-ABE8-E96240774B3C, bundle_id: (null)"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.141088+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id Python-555549445dca660de773319eabe8e96240774b3c by PID"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.141118+0800",
+      "processID": 552,
+      "subsystem": "com.apple.networkextension",
+      "category": "",
+      "messageType": "Default",
+      "message": "LocalNetwork: found bundle id org.python.python by UUID 5DCA660D-E773-319E-ABE8-E96240774B3C"
+    },
+    {
+      "timestamp": "2026-11-06 13:55:29.161138+0800",
+      "processID": 1,
+      "subsystem": "gui/501 [100014]",
+      "category": "",
+      "messageType": "Default",
+      "message": "service inactive: com.dell.t630.external-probe"
+    },
+    {
+      "timestamp": "2026-11-06 13:56:21.620469+0800",
+      "processID": 1,
+      "subsystem": "gui/501 [100014]",
+      "category": "",
+      "messageType": "Default",
+      "message": "removing service: com.dell.t630.external-probe"
+    },
+    {
+      "timestamp": null,
+      "processID": null,
+      "subsystem": null,
+      "category": null,
+      "messageType": null,
+      "message": ""
+    }
+  ],
+  "truncated": true,
+  "lark_hook_read": false
+}

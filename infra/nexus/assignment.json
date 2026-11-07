@@ -1,0 +1,12 @@
+{
+  "role": "artifact-service",
+  "expected_guest_ip": "10.63.30.20",
+  "expected_hostname": "artifact-service",
+  "assignment_source": "manager supplied guest address; live verification required",
+  "storage": {
+    "mode": "dedicated",
+    "data_path": "/srv/nexus/data",
+    "mountpoint": "/srv/nexus",
+    "filesystem_uuid": "239dc45a-b1f3-408b-a8ef-7afa77b52204"
+  }
+}

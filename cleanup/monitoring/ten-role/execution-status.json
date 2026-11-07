@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-07T02:28:53.374964+08:00",
+  "status": "applied-verified",
+  "guest_pair_updates": 10,
+  "live_files": 20,
+  "source_files": 2,
+  "source_newer_profiles_preserved": true,
+  "health_collector_unchanged": true,
+  "services_Exporter_container_identity_timer_state_unchanged": true,
+  "Prometheus_total_UP": 15,
+  "guest_nodes_UP": 10,
+  "Ops_other_UP": 5,
+  "Nexus221_active_and_exporter_UP": true,
+  "220Nexus_profile_added": false,
+  "fileSD_not_overwritten": true,
+  "Nexus_lifecycle_packages_credentials_changed": false,
+  "Lark_hook_mode_secret_send_touched": false,
+  "mainplan_or_root_docs_modified": false,
+  "normal_apply_exercised": true,
+  "failure_rollback_not_exercised": true,
+  "evidence": [
+    "execution-window.json",
+    "final-Prometheus-readback.json",
+    "deployment-evidence/"
+  ]
+}

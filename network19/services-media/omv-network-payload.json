@@ -1,0 +1,70 @@
+{
+  "status": "prepared-not-applied",
+  "owner": "root network/QGA window only",
+  "MAC_must_match": "bc:24:11:a7:3b:73",
+  "old_RPC": {
+    "service": "Network",
+    "method": "setEthernetIface",
+    "params": {
+      "uuid": "f5ea6395-ec2e-47ca-9e5e-4d541eeb9f5f",
+      "devicename": "ens18",
+      "method": "static",
+      "address": "10.63.40.10",
+      "netmask": "255.255.255.0",
+      "gateway": "10.63.40.1",
+      "routemetric": 0,
+      "method6": "manual",
+      "address6": "",
+      "netmask6": 64,
+      "gateway6": "",
+      "routemetric6": 1,
+      "dnsnameservers": "1.1.1.1",
+      "dnssearch": "",
+      "mtu": 0,
+      "wol": false,
+      "comment": "",
+      "altmacaddress": ""
+    }
+  },
+  "new_RPC": {
+    "service": "Network",
+    "method": "setEthernetIface",
+    "params": {
+      "uuid": "f5ea6395-ec2e-47ca-9e5e-4d541eeb9f5f",
+      "devicename": "ens18",
+      "method": "static",
+      "address": "192.168.19.60",
+      "netmask": "255.255.255.0",
+      "gateway": "192.168.19.1",
+      "routemetric": 0,
+      "method6": "manual",
+      "address6": "",
+      "netmask6": 64,
+      "gateway6": "",
+      "routemetric6": 1,
+      "dnsnameservers": "192.168.19.1",
+      "dnssearch": "",
+      "mtu": 0,
+      "wol": false,
+      "comment": "",
+      "altmacaddress": ""
+    }
+  },
+  "apply_then_deploy": "root separately invokes installed official network setter then reviewed omv-salt systemd-networkd deployment; never populate/reinitialize",
+  "preserved_fields": [
+    "address6",
+    "altmacaddress",
+    "comment",
+    "devicename",
+    "dnssearch",
+    "gateway6",
+    "method",
+    "method6",
+    "mtu",
+    "netmask6",
+    "routemetric",
+    "routemetric6",
+    "uuid",
+    "wol"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-06T09:56:48.225175+00:00",
+  "result": {
+    "private_key_owner_publisher600": true,
+    "private_key_bytes_read_or_exported": false,
+    "new_profile_exact": true,
+    "business_or_SSH_deploy_request_issued": false,
+    "known_host_matches_root_trusted240_fingerprint": true,
+    "status": "passed"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "role": 260,
+  "status": "new-network-runtime-ready",
+  "actions": [
+    {
+      "action": "commit-files",
+      "exit_code": 0,
+      "status": "prepared-transaction-action-completed"
+    },
+    {
+      "action": "start",
+      "exit_code": 0,
+      "status": "prepared-transaction-action-completed"
+    }
+  ],
+  "journal_phase": "runtime-ready-final-app-verification-pending",
+  "shadow_key_rootguard_bytes_unchanged": true,
+  "containers": [
+    {
+      "name": "/dell-nas-jellyfin-1",
+      "id": "c7db70188968ec3c8896c5110e71f5b23d9e0284cd6c9128173148d509305ad9",
+      "image": "sha256:fea863d0cd9ec445985d9c75fc6ed64e38a1d2766cf0c250a33d553f4fc1b771",
+      "running": true,
+      "health": "healthy"
+    }
+  ],
+  "data_uuid": "5b19837c-128c-498a-b79d-563db810c34a",
+  "public_uri": "http://192.168.19.60:8096",
+  "no_OMV_or_SMB_stop_or_network_action": true
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "targets": [
+      "192.168.19.10:9100"
+    ],
+    "labels": {
+      "role": "data-prod-db",
+      "zone": "prod",
+      "vmid": "200"
+    }
+  },
+  {
+    "targets": [
+      "192.168.19.11:9100"
+    ],
+    "labels": {
+      "role": "data-prod-infra",
+      "zone": "prod",
+      "vmid": "201"
+    }
+  },
+  {
+    "targets": [
+      "192.168.19.20:9100"
+    ],
+    "labels": {
+      "role": "data-test",
+      "zone": "test",
+      "vmid": "210"
+    }
+  },
+  {
+    "targets": [
+      "192.168.19.30:9100"
+    ],
+    "labels": {
+      "role": "publish-service",
+      "zone": "management",
+      "vmid": "220"
+    }
+  },
+  {
+    "targets": [
+      "192.168.19.40:9100"
+    ],
+    "labels": {
+      "role": "java-prod-01",
+      "zone": "prod",
+      "vmid": "230"
+    }
+  },
+  {
+    "targets": [
+      "192.168.19.45:9100"
+    ],
+    "labels": {
+      "role": "java-test-01",
+      "zone": "test",
+      "vmid": "240"
+    }
+  },
+  {
+    "targets": [
+      "192.168.19.50:9100"
+    ],
+    "labels": {
+      "role": "penpot-service",
+      "zone": "tools",
+      "vmid": "250"
+    }
+  },
+  {
+    "targets": [
+      "192.168.19.60:9100"
+    ],
+    "labels": {
+      "role": "nas-media",
+      "zone": "home",
+      "vmid": "260"
+    }
+  },
+  {
+    "targets": [
+      "192.168.19.70:9100"
+    ],
+    "labels": {
+      "role": "ops-service",
+      "zone": "management",
+      "vmid": "270"
+    }
+  }
+]

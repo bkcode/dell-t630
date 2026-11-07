@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-06T11:08:20.760848",
+  "structure_review": "fresh 18 named tables, source/entity differences reviewed; no source DML; independent host-bound accounts",
+  "result": {
+    "exit_code": 1,
+    "stdout": "{\"status\": \"target-test-structure-and-synthetic-seed-initialized\", \"target_ip\": \"10.63.20.10\", \"application_table_count\": 18, \"dba_registry_tables\": 1, \"schema_sha256\": \"db917a71003303cd2c59f656513f73f4dddafc24a0972a49b4114e83409e0ea3\", \"sql_package_sha256\": \"ce51b901dba800de0b58a65a9cf93ff0258255692305a540386f09b4259b0add\", \"accounts_host\": \"10.63.20.20\", \"runtime_privileges\": [\"SELECT\", \"INSERT\", \"UPDATE\", \"DELETE\"], \"source_rows_copied\": false, \"source_sql_writes\": false, \"runtime_started\": false, \"nacos_configs_ready\": false}\n{\"status\": \"failed\", \"error_category\": \"RuntimeError\", \"message\": \"Nacos HTTP status 404\"}\n",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nTraceback (most recent call last):\n  File \"<string>\", line 11, in <module>\n    subprocess.run([\"python3\",str(p/\"publish-test-nacos.py\"),\"--package\",str(p),\"--data-bundle\",\"/opt/dell/data/test-data\",\"--apply\",\"--output\",str(p/\"nacos-result.json\")],check=True)\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.13/subprocess.py\", line 577, in run\n    raise CalledProcessError(retcode, process.args,\n                             output=stdout, stderr=stderr)\nsubprocess.CalledProcessError: Command '['python3', '/root/dell-java-test-init/publish-test-nacos.py', '--package', '/root/dell-java-test-init', '--data-bundle', '/opt/dell/data/test-data', '--apply', '--output', '/root/dell-java-test-init/nacos-result.json']' returned non-zero exit status 1.\n",
+    "target": {
+      "vmid": 210,
+      "ip": "10.63.20.10",
+      "host_key_alias": "dell-vm210",
+      "host_key_fingerprint": "SHA256:8bBCQbBKGmZAw5q2AgT2vXHsyr2aFJktLqs/tDZ9SiA",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  }
+}

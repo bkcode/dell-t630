@@ -1,0 +1,84 @@
+# 访问入口与日常操作
+
+本页不包含密码、token、Webhook或私钥内容。当前交付是局域网基础设施、测试五服务、Penpot/Nexus和家庭NAS；正式Java业务按用户决定暂未启动。最终执行状态以[实施进展](09-implementation-progress.md)、[当前交接](11-live-handoff.md)和[验收](06-acceptance.md)为准。
+
+## 局域网入口
+
+| 服务 | 入口 | 当前用途 |
+| --- | --- | --- |
+| PVE | https://192.168.21.22:8006 | 宿主管理，管理SSH仍为22 |
+| Penpot | http://192.168.21.22:9001/ | Git改造版，新目标独立身份；3活动设计已迁入 |
+| Nexus | http://192.168.21.22:8081/ | 新账号与hosted仓库；旧上游认证未迁入 |
+| OMV | http://192.168.21.22:9080/ | 家庭NAS管理 |
+| Jellyfin | http://192.168.21.22:8096/ | 家庭媒体，已验证合成视频协议DirectPlay |
+| SMB | `smb://192.168.21.22/media`、`/games`、`/incoming` | 写入与只读账号分离，匿名拒绝 |
+| Java测试 | http://192.168.21.22:19999 | 有限五服务API测试入口 |
+| Grafana | http://localhost:13000/ | 经SSH隧道，不另增PVE公网/LAN管理端口 |
+
+上述应用HTTP是本期用户接受的LAN阶段。公网域名、HTTPS、SMTP与新Cloudflare入口未配置；原CF容器和账户侧配置保持。PVE 9999已按批准规则保留给正式网关，但本期没有正式业务进程监听，不能当已上线入口。
+
+测试API采用真实服务前缀：`/finger-auth/api/v1/auth/captcha`、`/finger-auth/oauth2/token`、`/finger-bff-system/sys-api/...`。OIDC标准根端点`/.well-known/openid-configuration`、`/oauth2/jwks`仍可用。测试文件返回`/finger-bff-system/dell-test-files/...`且需要有效Bearer；不应通过修改白名单绕过认证。
+
+## 角色与内网边界
+
+| VMID | 角色 | IP | 状态范围 |
+| --- | --- | --- | --- |
+| 100 | cf-tunnel，现有CT | 既有LAN DHCP地址 | 保留原流程，受保护备份只在PVE |
+| 200 | data-prod-db | 10.63.10.10 | 正式MySQL，业务数据空；Nacos外置元库 |
+| 201 | data-prod-infra | 10.63.10.11 | 正式Redis/RabbitMQ/Nacos |
+| 210 | data-test | 10.63.20.10 | 独立测试数据；18表与合成账号，未迁真实业务行 |
+| 220 | publish-service | 10.63.30.10 | 工具链、受限测试发布CLI |
+| 221 | artifact-service | 10.63.30.20 | Nexus新实例，hosted数据应用导入 |
+| 230/231/232 | java-prod-01/02/03 | 10.63.10.20/21/22 | 三节点JDK/nonroot运行基础，正式业务未启动 |
+| 240 | java-test-01 | 10.63.20.20 | 当前A20261106T121030五服务，root600/LoadCredential |
+| 250 | penpot-service | 10.63.30.30 | 11服务健康监督、Git/素材/MCP验收 |
+| 260 | nas-media | 10.63.40.10 | OMV/Jellyfin/SMB，2TiB独占虚拟数据盘 |
+| 270 | ops-service | 10.63.30.40 | Prometheus/Grafana/Alertmanager/Blackbox，内部Lark白名单已生效 |
+
+私网直接路由并未开放给全部LAN；管理通过PVE SSH中转，不能因Mac Python后台errno65而扩大宿主防火墙。生产与测试跨区访问默认拒绝，Ops跨区只取已批准9100，本机应用健康由各guest采到textfile，不额外打开数据/HTTP管理面。
+
+Grafana隧道可按需建立（若本任务现有13000已占用，直接访问即可）：
+
+```bash
+ssh -N -i ~/.ssh/yang_local_rsa \
+  -o IdentitiesOnly=yes -o BatchMode=yes \
+  -o StrictHostKeyChecking=yes \
+  -o UserKnownHostsFile=/Users/yangzhaohui/work/www/harness/dell/private/known_hosts \
+  -L 127.0.0.1:13000:10.63.30.40:3000 root@192.168.21.22
+```
+
+该隧道依赖终端/进程存活，不代表新公开监控域名。来宾管理用ub，严格host key和中转实现见`scripts/control.py`；不要复制客户端私钥或用关闭host key检查替代信任。
+
+## 凭据位置
+
+| 对象 | 受保护位置 |
+| --- | --- |
+| 数据组件 | Mac `private/data/bundles/<角色>/secrets/` 与各guest受控安装包 |
+| Java合成管理员/测试client | Mac `private/java/secrets/`；测试账号FNTEST0001 |
+| Nexus新admin/reader/test publisher | Mac `private/nexus/new-secrets/` 与221 `/root/dell-nexus-secrets/` |
+| Penpot新owner | 250 `/etc/penpot/new-identities.json`，owner@dell.local |
+| Penpot新worker/MCP | 250 `/etc/penpot/worker-credentials.json`及ID映射文件 |
+| NAS新账号 | Mac `private/nas/credentials-metadata.json`索引到600文件 |
+| Grafana | Mac `private/ops/bundle/secrets/grafana-admin-password`，账号dell_admin |
+| Lark | Mac `private/notifications/lark-webhook`及270 native LoadCredential；实际值不写本页 |
+| 发布专用私钥 | **仅220** `/var/lib/dell-publisher/.ssh/test240_ed25519`；不得导出Mac |
+
+目录700、秘密文件600；这些文件不进入普通仓库/日志/截图。旧Penpot账号/session/MCP key没有迁入；客户端旧MCP连接可能仍指Mac源，不能把服务端已验收当客户端配置已自动切换。
+
+## 发布与回退
+
+现行发布流程：[受限发布说明](infra/publisher/README.md)及[验收](infra/publisher/ACCEPTANCE.md)。只允许220的独立publisher向240使用固定协议暂存manifest/JAR/YAML、激活、回退和查询；它不提供root shell、SFTP、端口转发或任意脚本上传。只支持本期测试五服务，不扩到正式节点。
+
+持久配置root:root0600，经systemd LoadCredential只读交给finger；应用日志与上传写在各自`/var/log/finger`、`/var/lib/finger`。回退仅应用制品和配置，不回退SQL、Nacos或新用户数据。旧dataId/release保留；禁止覆盖同ID或把数据库变化当JAR回退。
+
+服务器实际固定部署代码以`infra/publisher/deployed/vm240`及`publisher-installed-code.json`为准。本地停止策略候选仍pending未部署；不得把候选30项测试和active27项混作一版，重新安装须重新核对。
+
+## 备份与限制
+
+当前初始副本：OS基线+CI侧文件、Nacos元库/Redis RDB/Rabbit definitions、Grafana SQLite/配置、Penpot官方应用包、Nexus hosted资产均有私有保留与相应恢复/导入证据。Mac是临时独立副本目的地，日常持续调度/容量/保留与长期恢复硬件仍需另行定案；不能宣称已达到候选RPO/RTO。
+
+CF归档仅留PVE；发布私钥仅220。Rabbit definitions不含消息，当前Redis初始快照0keys，当前正式业务空，不等于真实业务恢复。NAS家庭媒体不作正式业务备份目标。不要直接打包整个private目录混入CF/无关源身份或越过私钥范围。
+
+本期用户明确只启用**服务器内部Lark**；Mac外部探针因本地网络隐私阻拦已停用并移除实际登录任务，误告警已更正。T630整机故障会同时停止机内监控；不宣称独立全天候外部告警。Mac探针源码/诊断仅保留审计，本期不继续申请Python网络权限。
+
+真实电视/PS4/PS5工具、4K/HDR/字幕音轨、GPU转码及生产并发SLO未验；当前验证覆盖SMB权限/合成文件完整性和合成影片DirectPlay协议，不承诺主机直接从NAS运行游戏。

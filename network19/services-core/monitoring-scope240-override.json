@@ -1,0 +1,7 @@
+{
+  "vmid": 240,
+  "path": "/etc/dell-guest-monitoring/health.json",
+  "source_file": "monitoring-scope240-health.json",
+  "source_sha256": "19cf8220828cdfe83bd737fd137cdc92ae10aa6c6f60d6f81c9dd67bbc118380",
+  "reason": "user explicitly no Java apps; candidates remain inactive"
+}

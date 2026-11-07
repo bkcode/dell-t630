@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-06T00:18:45.303909+08:00",
+  "scope": "template-clone-only-not-role-deployment",
+  "clones": [
+    {
+      "exit_code": 0,
+      "stdout": "ub\ndell-linux-clone-test\nd5ec0ad4357d44e69e4cf3702de72d5a\n{\n  \"boot_status_code\": \"enabled-by-generator\",\n  \"datasource\": \"nocloud\",\n  \"detail\": \"DataSourceNoCloud [seed=/dev/sr0]\",\n  \"errors\": [],\n  \"extended_status\": \"done\",\n  \"init\": {\n    \"errors\": [],\n    \"finished\": 15.69,\n    \"recoverable_errors\": {},\n    \"start\": 10.31\n  },\n  \"init-local\": {\n    \"errors\": [],\n    \"finished\": 6.51,\n    \"recoverable_errors\": {},\n    \"start\": 5.62\n  },\n  \"last_update\": \"Thu, 01 Jan 1970 00:00:17 +0000\",\n  \"modules-config\": {\n    \"errors\": [],\n    \"finished\": 16.3,\n    \"recoverable_errors\": {},\n    \"start\": 15.82\n  },\n  \"modules-final\": {\n    \"errors\": [],\n    \"finished\": 17.81,\n    \"recoverable_errors\": {},\n    \"start\": 16.36\n  },\n  \"recoverable_errors\": {},\n  \"stage\": null,\n  \"status\": \"done\"\n}\nactive\nNTPSynchronized=yes\ntemplate=tpl-linux-base\nos=debian13\narchitecture=amd64\n",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+      "target": {
+        "vmid": 9002,
+        "ip": "192.168.21.213",
+        "host_key_alias": "dell-vm9002",
+        "host_key_fingerprint": "SHA256:Ic74ndni+38TBLSiYxQIj4AkfaRnyaQbnxKW6smII3w",
+        "trust_source": "PVE QGA over known SSH host"
+      }
+    },
+    {
+      "exit_code": 0,
+      "stdout": "ub\ndell-docker-clone-test\nb82e202eaa254246b5a9763f7832b42f\n{\n  \"boot_status_code\": \"enabled-by-generator\",\n  \"datasource\": \"nocloud\",\n  \"detail\": \"DataSourceNoCloud [seed=/dev/sr0]\",\n  \"errors\": [\n    \"('ntp', ProcessExecutionError(\\\"Unexpected error while running command.\\\\nCommand: ['systemctl', 'reload-or-restart', 'systemd-timesyncd']\\\\nExit code: 5\\\\nReason: -\\\\nStdout: \\\\nStderr: Failed to reload-or-restart systemd-timesyncd.service: Unit systemd-timesyncd.service not found.\\\"))\"\n  ],\n  \"extended_status\": \"error - done\",\n  \"init\": {\n    \"errors\": [],\n    \"finished\": 11.16,\n    \"recoverable_errors\": {},\n    \"start\": 10.02\n  },\n  \"init-local\": {\n    \"errors\": [],\n    \"finished\": 6.66,\n    \"recoverable_errors\": {},\n    \"start\": 5.83\n  },\n  \"last_update\": \"Thu, 01 Jan 1970 00:00:15 +0000\",\n  \"modules-config\": {\n    \"errors\": [\n      \"('ntp', ProcessExecutionError(\\\"Unexpected error while running command.\\\\nCommand: ['systemctl', 'reload-or-restart', 'systemd-timesyncd']\\\\nExit code: 5\\\\nReason: -\\\\nStdout: \\\\nStderr: Failed to reload-or-restart systemd-timesyncd.service: Unit systemd-timesyncd.service not found.\\\"))\"\n    ],\n    \"finished\": 11.72,\n    \"recoverable_errors\": {\n      \"ERROR\": [\n        \"Failed to reload/start ntp service: Unexpected error while running command.\\nCommand: ['systemctl', 'reload-or-restart', 'systemd-timesyncd']\\nExit code: 5\\nReason: -\\nStdout: \\nStderr: Failed to reload-or-restart systemd-timesyncd.service: Unit systemd-timesyncd.service not found.\"\n      ],\n      \"WARNING\": [\n        \"Running module ntp (<module 'cloudinit.config.cc_ntp' from '/usr/lib/python3/dist-packages/cloudinit/config/cc_ntp.py'>) failed\"\n      ]\n    },\n    \"start\": 11.37\n  },\n  \"modules-final\": {\n    \"errors\": [],\n    \"finished\": 15.93,\n    \"recoverable_errors\": {},\n    \"start\": 14.08\n  },\n  \"recoverable_errors\": {\n    \"ERROR\": [\n      \"Failed to reload/start ntp service: Unexpected error while running command.\\nCommand: ['systemctl', 'reload-or-restart', 'systemd-timesyncd']\\nExit code: 5\\nReason: -\\nStdout: \\nStderr: Failed to reload-or-restart systemd-timesyncd.service: Unit systemd-timesyncd.service not found.\"\n    ],\n    \"WARNING\": [\n      \"Running module ntp (<module 'cloudinit.config.cc_ntp' from '/usr/lib/python3/dist-packages/cloudinit/config/cc_ntp.py'>) failed\"\n    ]\n  },\n  \"stage\": null,\n  \"status\": \"error\"\n}\nactive\nNTPSynchronized=yes\ntemplate=tpl-docker-base\nos=debian13\narchitecture=amd64\n29.9.3\nDocker Compose version v5.7.0\n/usr/bin/docker\n",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+      "target": {
+        "vmid": 9003,
+        "ip": "192.168.21.215",
+        "host_key_alias": "dell-vm9003",
+        "host_key_fingerprint": "SHA256:GCPfr2KlIZoGEtXb7p7Nw+rxxw+/p5ToM6NQNGn3O20",
+        "trust_source": "PVE QGA over known SSH host"
+      }
+    }
+  ]
+}

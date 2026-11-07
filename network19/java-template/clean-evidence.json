@@ -1,0 +1,36 @@
+{
+  "at": "2026-11-06T17:33:18.411940+08:00",
+  "scope": "root-reviewed9011-clean-only-no-shutdown",
+  "exit_code": 0,
+  "result": {
+    "at": "2026-11-06T09:33:18.387226+00:00",
+    "status": "9011-cleaned-do-not-reboot-await-root-template",
+    "machine_id_before_sha256": "90223fd2fa6829f2f243919fa213f65f18bcb80528140b6500db843051aee4e5",
+    "machine_id_nextboot_reset": true,
+    "host_SSH_keys_absent": true,
+    "root_ub_authorized_keys_absent": true,
+    "CI_seed_gone": true,
+    "CI_instances_gone": true,
+    "business_dirs_absent": true,
+    "static_19_197_disk_config_paths": [],
+    "generic_hostname_on_disk": true,
+    "ssh_deletekeys_nextclone": true,
+    "verify_code_preserved": true,
+    "exporter_still_parked": true,
+    "remaining_opt_top_level": [],
+    "removed_paths": [
+      "/root/.ssh/authorized_keys",
+      "/home/ub/.ssh/authorized_keys",
+      "/etc/ssh/ssh_host_ed25519_key.pub",
+      "/etc/ssh/ssh_host_ed25519_key",
+      "/etc/ssh/ssh_host_rsa_key.pub",
+      "/etc/ssh/ssh_host_rsa_key",
+      "/etc/ssh/ssh_host_ecdsa_key",
+      "/etc/ssh/ssh_host_ecdsa_key.pub"
+    ],
+    "no_reboot_or_shutdown_performed": true,
+    "runtime_builder_IP_kept_until_root_shutdown": true,
+    "preclean_nonroot_smoke": "java21-clean-nonroot-acceptance-passed"
+  },
+  "PVE_or_other_guest_writes": false
+}

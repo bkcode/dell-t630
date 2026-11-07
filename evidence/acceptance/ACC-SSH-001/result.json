@@ -1,0 +1,31 @@
+{
+  "id": "ACC-SSH-001",
+  "status": "passed",
+  "executed_at": "2026-11-06T00:19:10.391407+08:00",
+  "timezone": "Asia/Shanghai",
+  "operator": "root-task-manager",
+  "plan_sha256": "7436ac2f544323d5fc5fe909298f1238ae42a7fea7638e4a9d3ff26ecb31438e",
+  "preconditions_checked": true,
+  "observations": [
+    "Specified key authenticated root to expected PVE host192.168.21.22; identity and hostname returned successfully.",
+    "Host key checking was not disabled; no private key was copied."
+  ],
+  "artifacts": [
+    "evidence/pve-audit-2026-11-05.json"
+  ],
+  "limitations": [
+    "This case covers PVE management SSH only; target role ub login is separately accepted."
+  ],
+  "reviewed_by": "root-task-manager",
+  "target": {
+    "host": "192.168.21.22",
+    "environment": "managed-PVE-implementation",
+    "vmid": null
+  },
+  "commands_or_steps": [
+    "See linked execution artifact and operator observations"
+  ],
+  "exit_codes": [
+    0
+  ]
+}

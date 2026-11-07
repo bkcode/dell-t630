@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-06T09:18:29.227863+00:00",
+  "result": {
+    "status": "passed",
+    "Nacos201_to_MySQL200_new19_source_identity": true,
+    "matching_connections": 2,
+    "old_IP_source_remaining": false,
+    "auth_or_SQL_values_emitted": false,
+    "writes": 0
+  }
+}

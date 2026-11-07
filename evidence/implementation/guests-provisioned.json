@@ -1,0 +1,85 @@
+{
+  "at": "2026-11-06T05:26:02.668532",
+  "roles": [
+    {
+      "name": "data-test",
+      "vmid": 210,
+      "configured_ip": "10.63.20.10",
+      "state": "stopped",
+      "system_storage": "store",
+      "data_disk_gib": 40
+    },
+    {
+      "name": "publish-service",
+      "vmid": 220,
+      "configured_ip": "10.63.30.10",
+      "state": "stopped",
+      "system_storage": "store",
+      "data_disk_gib": 100
+    },
+    {
+      "name": "artifact-service",
+      "vmid": 221,
+      "configured_ip": "10.63.30.20",
+      "state": "stopped",
+      "system_storage": "store",
+      "data_disk_gib": 100
+    },
+    {
+      "name": "java-prod-01",
+      "vmid": 230,
+      "configured_ip": "10.63.10.20",
+      "state": "stopped",
+      "system_storage": "store",
+      "data_disk_gib": null
+    },
+    {
+      "name": "java-prod-02",
+      "vmid": 231,
+      "configured_ip": "10.63.10.21",
+      "state": "stopped",
+      "system_storage": "store",
+      "data_disk_gib": null
+    },
+    {
+      "name": "java-prod-03",
+      "vmid": 232,
+      "configured_ip": "10.63.10.22",
+      "state": "stopped",
+      "system_storage": "store",
+      "data_disk_gib": null
+    },
+    {
+      "name": "java-test-01",
+      "vmid": 240,
+      "configured_ip": "10.63.20.20",
+      "state": "stopped",
+      "system_storage": "store",
+      "data_disk_gib": null
+    },
+    {
+      "name": "penpot-service",
+      "vmid": 250,
+      "configured_ip": "10.63.30.30",
+      "state": "stopped",
+      "system_storage": "store",
+      "data_disk_gib": 100
+    },
+    {
+      "name": "nas-media",
+      "vmid": 260,
+      "configured_ip": "10.63.40.10",
+      "state": "stopped",
+      "system_storage": "store",
+      "data_disk_gib": 2048
+    },
+    {
+      "name": "ops-service",
+      "vmid": 270,
+      "configured_ip": "10.63.30.40",
+      "state": "stopped",
+      "system_storage": "store",
+      "data_disk_gib": 32
+    }
+  ]
+}

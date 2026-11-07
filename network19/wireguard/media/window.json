@@ -1,0 +1,6 @@
+{
+  "nonce": "d4f269ae477f479b9d240ff52b560812",
+  "role": 260,
+  "target": "192.168.19.60",
+  "authorized_scope": "onlyVPN-source-recognition append; no account or privilege change"
+}

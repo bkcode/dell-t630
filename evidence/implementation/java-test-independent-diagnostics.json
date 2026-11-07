@@ -1,0 +1,181 @@
+{
+  "collected_at": "2026-11-06T11:16:35.787035+08:00",
+  "scope": "guest240-read-only-during-manager-activation",
+  "activation_repeated": false,
+  "service_or_configuration_changed": false,
+  "services": [
+    {
+      "service": "finger-gateway-mobile",
+      "unit": "dell-finger-finger-gateway-mobile.service",
+      "port": 9999,
+      "systemd": {
+        "MainPID": "0",
+        "Result": "exit-code",
+        "NRestarts": "3",
+        "ExecMainStatus": "1",
+        "User": "finger",
+        "Group": "finger",
+        "ActiveState": "failed",
+        "SubState": "failed"
+      },
+      "health_error_type": "URLError",
+      "log_diagnostics": {
+        "raw_log_saved": false,
+        "log_exists": true,
+        "log_bytes": 11245,
+        "exception_classes": {
+          "org.springframework.beans.factory.support.BeanDefinitionOverrideException": 3
+        },
+        "categories": [
+          "context-start-failed"
+        ],
+        "missing_tables": [],
+        "missing_columns": [],
+        "missing_property_keys": [],
+        "failed_bean_names": [],
+        "started_marker_present": false,
+        "log_sample_complete": true
+      }
+    },
+    {
+      "service": "finger-auth",
+      "unit": "dell-finger-finger-auth.service",
+      "port": 10000,
+      "systemd": {
+        "MainPID": "2397",
+        "Result": "success",
+        "NRestarts": "0",
+        "ExecMainStatus": "0",
+        "User": "finger",
+        "Group": "finger",
+        "ActiveState": "active",
+        "SubState": "running"
+      },
+      "http_status": 200,
+      "health_status": "UP",
+      "health_components": {},
+      "log_diagnostics": {
+        "raw_log_saved": false,
+        "log_exists": true,
+        "log_bytes": 12931,
+        "exception_classes": {},
+        "categories": [],
+        "missing_tables": [],
+        "missing_columns": [],
+        "missing_property_keys": [],
+        "failed_bean_names": [],
+        "started_marker_present": true,
+        "log_sample_complete": true
+      }
+    },
+    {
+      "service": "finger-service-system",
+      "unit": "dell-finger-finger-service-system.service",
+      "port": 10210,
+      "systemd": {
+        "MainPID": "2025",
+        "Result": "success",
+        "NRestarts": "0",
+        "ExecMainStatus": "0",
+        "User": "finger",
+        "Group": "finger",
+        "ActiveState": "active",
+        "SubState": "running"
+      },
+      "http_status": 200,
+      "health_status": "UP",
+      "health_components": {},
+      "log_diagnostics": {
+        "raw_log_saved": false,
+        "log_exists": true,
+        "log_bytes": 11547,
+        "exception_classes": {},
+        "categories": [],
+        "missing_tables": [],
+        "missing_columns": [],
+        "missing_property_keys": [],
+        "failed_bean_names": [],
+        "started_marker_present": true,
+        "log_sample_complete": true
+      }
+    },
+    {
+      "service": "finger-service-coms",
+      "unit": "dell-finger-finger-service-coms.service",
+      "port": 10202,
+      "systemd": {
+        "MainPID": "2198",
+        "Result": "success",
+        "NRestarts": "0",
+        "ExecMainStatus": "0",
+        "User": "finger",
+        "Group": "finger",
+        "ActiveState": "active",
+        "SubState": "running"
+      },
+      "http_status": 200,
+      "health_status": "UP",
+      "health_components": {},
+      "log_diagnostics": {
+        "raw_log_saved": false,
+        "log_exists": true,
+        "log_bytes": 12303,
+        "exception_classes": {},
+        "categories": [],
+        "missing_tables": [],
+        "missing_columns": [],
+        "missing_property_keys": [],
+        "failed_bean_names": [],
+        "started_marker_present": true,
+        "log_sample_complete": true
+      }
+    },
+    {
+      "service": "finger-bff-system",
+      "unit": "dell-finger-finger-bff-system.service",
+      "port": 10104,
+      "systemd": {
+        "MainPID": "2614",
+        "Result": "success",
+        "NRestarts": "0",
+        "ExecMainStatus": "0",
+        "User": "finger",
+        "Group": "finger",
+        "ActiveState": "deactivating",
+        "SubState": "stop-sigterm"
+      },
+      "health_error_type": "URLError",
+      "log_diagnostics": {
+        "raw_log_saved": false,
+        "log_exists": true,
+        "log_bytes": 24184,
+        "exception_classes": {},
+        "categories": [],
+        "missing_tables": [],
+        "missing_columns": [],
+        "missing_property_keys": [],
+        "failed_bean_names": [],
+        "started_marker_present": true,
+        "log_sample_complete": true
+      }
+    }
+  ],
+  "raw_logs_saved": false,
+  "gateway_conflict_detail": {
+    "at": "2026-11-06T11:17:17.488766+08:00",
+    "service": "finger-gateway-mobile",
+    "error_category": "bean-definition-override",
+    "conflicting_bean_names": [
+      "redisTemplate"
+    ],
+    "configuration_class_resources": [
+      "com/sargia/finger/common/redis/RedisConfig.class",
+      "org/redisson/spring/starter/RedissonAutoConfigurationV2.class"
+    ],
+    "mentioned_spring_property_keys": [
+      "spring.main.allow-bean-definition-overriding",
+      "spring.starter."
+    ],
+    "raw_log_saved": false
+  }
+}

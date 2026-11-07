@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-07T09:39:34.995076+08:00",
+  "user_statement": "授权短时停机合并",
+  "authorization_scope": "Nexus short planned outage, source221 clean stop/coldPVEbackup/shutdown;220 restart6CPU8GiB;unique original disk andIP31service handover;validation then221retirement;rollback ifneeded",
+  "previous_automatic_rejection_now_has_explicit_informed_user_approval": true,
+  "preserved": "serviceIP31/account/EULA/dataUUID, no wholebackup220 or publisherkeyexport, noJava business deployment",
+  "status": "authorized-management-preflight-unreachable-no-migration-started",
+  "observed_at": "2026-11-07T09:42:01.372813+08:00",
+  "management_probe": {
+    "local_IP": "192.168.21.116",
+    "router21_1": "reachable",
+    "PVE21_22": "no ARP reply;22/8006closed or unreachable",
+    "GW21_23": "no ARP reply;SSH unreachable",
+    "guest19_30_31": "SSH unreachable"
+  },
+  "migration_service_stop_or_VM_restart_disk_move_performed": false
+}

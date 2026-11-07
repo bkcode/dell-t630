@@ -1,0 +1,17 @@
+{
+  "scope": "artifact-transfer-only",
+  "records": [
+    {
+      "file": "custom-penpot-amd64-images.tar",
+      "bytes": 2637143552,
+      "sha256": "6d27b16c5bd9e9cecbd4c825734ac2e1bc9cee2d10a8f38d5f26da32bd7036d1",
+      "path": "/mnt/pve/store/dell-artifacts/amd64/custom-penpot-amd64-images.tar"
+    },
+    {
+      "file": "target-amd64-extras-images.tar",
+      "bytes": 3746444288,
+      "sha256": "257cccab4640234caa9250129b4652e2f76e4f7dfbb876b75af461aa8200ad72",
+      "path": "/mnt/pve/store/dell-artifacts/amd64/target-amd64-extras-images.tar"
+    }
+  ]
+}

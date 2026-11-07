@@ -1,0 +1,6 @@
+{
+  "status": "PVE-active-plan-synced-legacy-loader-remains-masked",
+  "plan_SHA": "a0d1060099a4e0f7d2be8762e60047cccef98d915bba23e4d2e0c16fb461de90",
+  "legacy_sources_gated": [],
+  "secret_or_service_configuration_changed": false
+}

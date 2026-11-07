@@ -1,0 +1,446 @@
+{
+  "scope": "read-only-data-private-guest-preflight",
+  "roles": [
+    {
+      "vmid": 200,
+      "name": "data-prod-db",
+      "target": {
+        "vmid": 200,
+        "ip": "10.63.10.10",
+        "host_key_alias": "dell-vm200",
+        "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "metadata": {
+        "hostname": "data-prod-db",
+        "product_uuid": "c7ef9dfd-7515-4b52-a1a1-793daf644cf8",
+        "arch": "x86_64",
+        "pve_present": false,
+        "addresses": [
+          {
+            "ifindex": 1,
+            "ifname": "lo",
+            "flags": [
+              "LOOPBACK",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 65536,
+            "qdisc": "noqueue",
+            "operstate": "UNKNOWN",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "loopback",
+            "address": "00:00:00:00:00:00",
+            "broadcast": "00:00:00:00:00:00",
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "127.0.0.1",
+                "prefixlen": 8,
+                "scope": "host",
+                "label": "lo",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              },
+              {
+                "family": "inet6",
+                "local": "::1",
+                "prefixlen": 128,
+                "scope": "host",
+                "noprefixroute": true,
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          },
+          {
+            "ifindex": 2,
+            "ifname": "eth0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "fq_codel",
+            "operstate": "UP",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "bc:24:11:1c:62:00",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "altnames": [
+              "enp0s18",
+              "enxbc24111c6200"
+            ],
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "10.63.10.10",
+                "prefixlen": 24,
+                "broadcast": "10.63.10.255",
+                "scope": "global",
+                "label": "eth0",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              },
+              {
+                "family": "inet6",
+                "local": "fe80::be24:11ff:fe1c:6200",
+                "prefixlen": 64,
+                "scope": "link",
+                "protocol": "kernel_ll",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          },
+          {
+            "ifindex": 3,
+            "ifname": "docker0",
+            "flags": [
+              "NO-CARRIER",
+              "BROADCAST",
+              "MULTICAST",
+              "UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "noqueue",
+            "operstate": "DOWN",
+            "group": "default",
+            "link_type": "ether",
+            "address": "86:22:2a:6c:44:90",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "172.17.0.1",
+                "prefixlen": 16,
+                "broadcast": "172.17.255.255",
+                "scope": "global",
+                "label": "docker0",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          }
+        ],
+        "mount": {
+          "filesystems": [
+            {
+              "target": "/srv/dell-data",
+              "source": "/dev/sda",
+              "uuid": "d61c0e22-941e-447a-9e9a-1e9e50deb02f",
+              "fstype": "ext4",
+              "options": "rw,relatime,stripe=16"
+            }
+          ]
+        },
+        "docker": {
+          "exit_code": 0,
+          "stdout": "29.9.3 x86_64"
+        },
+        "active_business_containers": {
+          "exit_code": 0,
+          "stdout": ""
+        }
+      }
+    },
+    {
+      "vmid": 201,
+      "name": "data-prod-infra",
+      "target": {
+        "vmid": 201,
+        "ip": "10.63.10.11",
+        "host_key_alias": "dell-vm201",
+        "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "metadata": {
+        "hostname": "data-prod-infra",
+        "product_uuid": "35cbe96d-d7be-4ba4-9e0f-812e47c47d86",
+        "arch": "x86_64",
+        "pve_present": false,
+        "addresses": [
+          {
+            "ifindex": 1,
+            "ifname": "lo",
+            "flags": [
+              "LOOPBACK",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 65536,
+            "qdisc": "noqueue",
+            "operstate": "UNKNOWN",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "loopback",
+            "address": "00:00:00:00:00:00",
+            "broadcast": "00:00:00:00:00:00",
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "127.0.0.1",
+                "prefixlen": 8,
+                "scope": "host",
+                "label": "lo",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              },
+              {
+                "family": "inet6",
+                "local": "::1",
+                "prefixlen": 128,
+                "scope": "host",
+                "noprefixroute": true,
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          },
+          {
+            "ifindex": 2,
+            "ifname": "eth0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "fq_codel",
+            "operstate": "UP",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "bc:24:11:1c:bb:93",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "altnames": [
+              "enp0s18",
+              "enxbc24111cbb93"
+            ],
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "10.63.10.11",
+                "prefixlen": 24,
+                "broadcast": "10.63.10.255",
+                "scope": "global",
+                "label": "eth0",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              },
+              {
+                "family": "inet6",
+                "local": "fe80::be24:11ff:fe1c:bb93",
+                "prefixlen": 64,
+                "scope": "link",
+                "protocol": "kernel_ll",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          },
+          {
+            "ifindex": 3,
+            "ifname": "docker0",
+            "flags": [
+              "NO-CARRIER",
+              "BROADCAST",
+              "MULTICAST",
+              "UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "noqueue",
+            "operstate": "DOWN",
+            "group": "default",
+            "link_type": "ether",
+            "address": "f2:7a:d9:cf:01:ea",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "172.17.0.1",
+                "prefixlen": 16,
+                "broadcast": "172.17.255.255",
+                "scope": "global",
+                "label": "docker0",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          }
+        ],
+        "mount": {
+          "filesystems": [
+            {
+              "target": "/srv/dell-data",
+              "source": "/dev/sdb",
+              "uuid": "b85156c2-dac8-4b33-ab25-460aaf676c57",
+              "fstype": "ext4",
+              "options": "rw,relatime,stripe=16"
+            }
+          ]
+        },
+        "docker": {
+          "exit_code": 0,
+          "stdout": "29.9.3 x86_64"
+        },
+        "active_business_containers": {
+          "exit_code": 0,
+          "stdout": ""
+        }
+      }
+    },
+    {
+      "vmid": 210,
+      "name": "data-test",
+      "target": {
+        "vmid": 210,
+        "ip": "10.63.20.10",
+        "host_key_alias": "dell-vm210",
+        "host_key_fingerprint": "SHA256:8bBCQbBKGmZAw5q2AgT2vXHsyr2aFJktLqs/tDZ9SiA",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "metadata": {
+        "hostname": "data-test",
+        "product_uuid": "b6cc2ac1-b2c3-409b-bbbd-e963736f2409",
+        "arch": "x86_64",
+        "pve_present": false,
+        "addresses": [
+          {
+            "ifindex": 1,
+            "ifname": "lo",
+            "flags": [
+              "LOOPBACK",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 65536,
+            "qdisc": "noqueue",
+            "operstate": "UNKNOWN",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "loopback",
+            "address": "00:00:00:00:00:00",
+            "broadcast": "00:00:00:00:00:00",
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "127.0.0.1",
+                "prefixlen": 8,
+                "scope": "host",
+                "label": "lo",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              },
+              {
+                "family": "inet6",
+                "local": "::1",
+                "prefixlen": 128,
+                "scope": "host",
+                "noprefixroute": true,
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          },
+          {
+            "ifindex": 2,
+            "ifname": "eth0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "fq_codel",
+            "operstate": "UP",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "bc:24:11:5d:2d:98",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "altnames": [
+              "enp0s18",
+              "enxbc24115d2d98"
+            ],
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "10.63.20.10",
+                "prefixlen": 24,
+                "broadcast": "10.63.20.255",
+                "scope": "global",
+                "label": "eth0",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              },
+              {
+                "family": "inet6",
+                "local": "fe80::be24:11ff:fe5d:2d98",
+                "prefixlen": 64,
+                "scope": "link",
+                "protocol": "kernel_ll",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          },
+          {
+            "ifindex": 3,
+            "ifname": "docker0",
+            "flags": [
+              "NO-CARRIER",
+              "BROADCAST",
+              "MULTICAST",
+              "UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "noqueue",
+            "operstate": "DOWN",
+            "group": "default",
+            "link_type": "ether",
+            "address": "82:75:1c:e0:fb:67",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "172.17.0.1",
+                "prefixlen": 16,
+                "broadcast": "172.17.255.255",
+                "scope": "global",
+                "label": "docker0",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          }
+        ],
+        "mount": {
+          "filesystems": [
+            {
+              "target": "/srv/dell-data",
+              "source": "/dev/sdb",
+              "uuid": "dd1773f9-aa48-4401-a9c8-caf0f66845f3",
+              "fstype": "ext4",
+              "options": "rw,relatime"
+            }
+          ]
+        },
+        "docker": {
+          "exit_code": 0,
+          "stdout": "29.9.3 x86_64"
+        },
+        "active_business_containers": {
+          "exit_code": 0,
+          "stdout": ""
+        }
+      }
+    }
+  ]
+}

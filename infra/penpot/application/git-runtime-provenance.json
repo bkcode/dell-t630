@@ -1,0 +1,17 @@
+{
+  "git_head": "ff1783e7865af7aae571c985f03e057631b7af63",
+  "worktree_clean": true,
+  "preserved_local_commits": 2,
+  "frontend_image_id": "sha256:bd020fb6bddfd77449c26f76ee04ca7b2b50a0ffe8562ebc7b9e294bfcd38b89",
+  "frontend_revision_label_matches": true,
+  "reused_source": {
+    "worker": {
+      "git_code_files_matching": 17,
+      "unchanged_compiled_artifact_reused": true
+    },
+    "import": {
+      "git_code_files_matching": 10,
+      "unchanged_compiled_artifact_reused": true
+    }
+  }
+}

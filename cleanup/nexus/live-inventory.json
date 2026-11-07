@@ -1,0 +1,390 @@
+[
+  {
+    "at": "2026-11-06T17:05:43.091918+00:00",
+    "vmid": 220,
+    "hostname": "publish-service",
+    "OS": {
+      "PRETTY_NAME": "Debian GNU/Linux 13 (trixie)",
+      "VERSION_ID": "13",
+      "ID": "debian"
+    },
+    "arch": "x86_64",
+    "CPU_count": 4,
+    "memory": {
+      "MemTotal": 4112367616,
+      "MemAvailable": 3737382912,
+      "SwapTotal": 0,
+      "SwapFree": 0
+    },
+    "load_average": [
+      0.08740234375,
+      0.044921875,
+      0.0048828125
+    ],
+    "physical_interfaces": [
+      {
+        "name": "eth0",
+        "MAC": "bc:24:11:2a:01:ad",
+        "ipv4": [
+          {
+            "ip": "192.168.19.30",
+            "prefix": 24
+          }
+        ]
+      }
+    ],
+    "root_disk": {
+      "capacity_bytes": 33603391488,
+      "available_bytes": 28854665216
+    },
+    "role_data_mount": {
+      "mounted": true,
+      "filesystems": [
+        {
+          "target": "/srv/dell-build",
+          "source": "/dev/sdb",
+          "fstype": "ext4",
+          "uuid": "16dc6067-56ef-4687-a314-edc6421f9ed4"
+        }
+      ],
+      "capacity_bytes": 105089261568,
+      "available_bytes": 105039319040
+    },
+    "docker_binary": null,
+    "private_key_or_secret_contents_read": false,
+    "mutations": false,
+    "user_groups": {
+      "ub": "uid=1000(ub) gid=1000(ub) groups=1000(ub),27(sudo)",
+      "publisher": "uid=999(publisher) gid=989(publisher) groups=989(publisher)"
+    },
+    "packages": {
+      "docker-ce": "not-installed",
+      "docker-ce-cli": "not-installed",
+      "containerd.io": "not-installed",
+      "docker-compose-plugin": "not-installed",
+      "openjdk-21-jdk-headless": "ii  21.0.13+9-1~deb13u2"
+    },
+    "units": {
+      "docker.service": {
+        "Type": "",
+        "Restart": "no",
+        "MainPID": "0",
+        "BindsTo": "",
+        "RequiresMountsFor": "",
+        "ActiveState": "inactive",
+        "SubState": "dead",
+        "FragmentPath": "",
+        "DropInPaths": "",
+        "UnitFileState": ""
+      },
+      "prometheus-node-exporter.service": {
+        "Type": "simple",
+        "Restart": "on-failure",
+        "MainPID": "4201",
+        "BindsTo": "",
+        "RequiresMountsFor": "",
+        "ActiveState": "active",
+        "SubState": "running",
+        "FragmentPath": "/usr/lib/systemd/system/prometheus-node-exporter.service",
+        "DropInPaths": "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+        "UnitFileState": "enabled"
+      },
+      "dell-guest-health.service": {
+        "Type": "oneshot",
+        "Restart": "no",
+        "MainPID": "0",
+        "BindsTo": "",
+        "RequiresMountsFor": "",
+        "ActiveState": "inactive",
+        "SubState": "dead",
+        "FragmentPath": "/etc/systemd/system/dell-guest-health.service",
+        "DropInPaths": "",
+        "UnitFileState": "static"
+      }
+    },
+    "publisher_key_metadata_only": {
+      "exists": true,
+      "uid": 999,
+      "gid": 989,
+      "mode": "0o600",
+      "size_bytes": 419,
+      "symlink": false
+    },
+    "publisher_client": {
+      "exists": true,
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "size_bytes": 4445,
+      "symlink": false,
+      "sha256": "d674598542a73556f31d85d4f5c6bbdd55d66dddb9acb4d84cb7587e4f532969"
+    },
+    "publisher_client_public_literals": {
+      "contains19_45": true,
+      "contains19_31": false,
+      "contains_old10_63": false
+    },
+    "busy_build_process_counts": {
+      "java": 0,
+      "node": 0,
+      "gradle": 0,
+      "pnpm": 0
+    },
+    "nexus_paths_already_exist": {
+      "/opt/dell/nexus": false,
+      "/etc/nexus.env": false,
+      "/srv/nexus": false,
+      "/root/dell-nexus-secrets": false
+    }
+  },
+  {
+    "at": "2026-11-06T17:05:43.115568+00:00",
+    "vmid": 221,
+    "hostname": "artifact-service",
+    "OS": {
+      "PRETTY_NAME": "Debian GNU/Linux 13 (trixie)",
+      "VERSION_ID": "13",
+      "ID": "debian"
+    },
+    "arch": "x86_64",
+    "CPU_count": 2,
+    "memory": {
+      "MemTotal": 4112924672,
+      "MemAvailable": 2262106112,
+      "SwapTotal": 0,
+      "SwapFree": 0
+    },
+    "load_average": [
+      0.029296875,
+      0.0830078125,
+      0.08349609375
+    ],
+    "physical_interfaces": [
+      {
+        "name": "eth0",
+        "MAC": "bc:24:11:ec:e1:6f",
+        "ipv4": [
+          {
+            "ip": "192.168.19.31",
+            "prefix": 24
+          }
+        ]
+      }
+    ],
+    "root_disk": {
+      "capacity_bytes": 33603391488,
+      "available_bytes": 26361876480
+    },
+    "role_data_mount": {
+      "mounted": true,
+      "filesystems": [
+        {
+          "target": "/srv/nexus",
+          "source": "/dev/sdb",
+          "fstype": "ext4",
+          "uuid": "239dc45a-b1f3-408b-a8ef-7afa77b52204"
+        }
+      ],
+      "capacity_bytes": 105089261568,
+      "available_bytes": 104999108608
+    },
+    "docker_binary": "/usr/bin/docker",
+    "private_key_or_secret_contents_read": false,
+    "mutations": false,
+    "user_groups": {
+      "ub": "uid=1000(ub) gid=1000(ub) groups=1000(ub),27(sudo)"
+    },
+    "packages": {
+      "docker-ce": "ii  5:29.9.3-1~debian.13~trixie",
+      "docker-ce-cli": "ii  5:29.9.3-1~debian.13~trixie",
+      "containerd.io": "ii  2.4.2-3~debian.13~trixie",
+      "docker-compose-plugin": "ii  5.7.0-1~debian.13~trixie",
+      "openjdk-21-jdk-headless": "not-installed"
+    },
+    "units": {
+      "docker.service": {
+        "Type": "notify",
+        "Restart": "always",
+        "MainPID": "739",
+        "BindsTo": "",
+        "RequiresMountsFor": "",
+        "ActiveState": "active",
+        "SubState": "running",
+        "FragmentPath": "/usr/lib/systemd/system/docker.service",
+        "DropInPaths": "",
+        "UnitFileState": "enabled"
+      },
+      "dell-nexus.service": {
+        "Type": "simple",
+        "Restart": "on-failure",
+        "MainPID": "127067",
+        "BindsTo": "srv-nexus.mount docker.service",
+        "RequiresMountsFor": "/srv/nexus",
+        "ActiveState": "active",
+        "SubState": "running",
+        "FragmentPath": "/etc/systemd/system/dell-nexus.service",
+        "DropInPaths": "",
+        "UnitFileState": "enabled"
+      }
+    },
+    "data_ownership": {
+      "exists": true,
+      "uid": 200,
+      "gid": 200,
+      "mode": "0o750",
+      "size_bytes": 4096,
+      "symlink": false
+    },
+    "data_bytes": 38490112,
+    "docker_storage_bytes": 4511469568,
+    "nexus_secret_metadata_only": {
+      "admin": {
+        "exists": true,
+        "uid": 0,
+        "gid": 0,
+        "mode": "0o600",
+        "size_bytes": 49,
+        "symlink": false
+      },
+      "reader": {
+        "exists": true,
+        "uid": 0,
+        "gid": 0,
+        "mode": "0o600",
+        "size_bytes": 49,
+        "symlink": false
+      },
+      "publisher": {
+        "exists": true,
+        "uid": 0,
+        "gid": 0,
+        "mode": "0o600",
+        "size_bytes": 49,
+        "symlink": false
+      }
+    },
+    "assignment": {
+      "role": "artifact-service",
+      "expected_guest_ip": "192.168.19.31",
+      "expected_hostname": "artifact-service",
+      "assignment_source": "manager supplied guest address; live verification required",
+      "storage": {
+        "mode": "dedicated",
+        "data_path": "/srv/nexus/data",
+        "mountpoint": "/srv/nexus",
+        "filesystem_uuid": "239dc45a-b1f3-408b-a8ef-7afa77b52204"
+      }
+    },
+    "fresh_marker_nonsecret": {
+      "mode": "new-instance-application-export-import",
+      "expected_guest_ip": "192.168.19.31",
+      "expected_hostname": "artifact-service",
+      "data_path": "/srv/nexus/data",
+      "filesystem_uuid": "239dc45a-b1f3-408b-a8ef-7afa77b52204",
+      "old_h2_or_credentials_imported": false
+    },
+    "public_nexus_env_keys": {
+      "NEXUS_DATA_DIR": "/srv/nexus/data",
+      "NEXUS_BIND_ADDRESS": "192.168.19.31"
+    },
+    "public_runtime_files": {
+      "assignment.json": {
+        "sha256": "d8f47595612539476950a10bab3fe2dee9e1ac02aa714d42959e9a1cd2c2a53c",
+        "uid": 0,
+        "mode": "0o644"
+      },
+      "target_guard.py": {
+        "sha256": "5d138cde0f0457ed0691d8fdcf0bbdea9495fc0c9af05d317d92953da07894cb",
+        "uid": 0,
+        "mode": "0o755",
+        "address_hostname_guard_lines": [
+          "expected = str(ipaddress.ip_address(contract['expected_guest_ip']))",
+          "hostname = contract.get('expected_hostname')",
+          "if hostname and socket.gethostname() != hostname:",
+          "if daemon.get('Name') != socket.gethostname():",
+          "if require_docker_data and canonical(daemon['DockerRootDir']) != target:",
+          "raise RuntimeError('DockerRootDir differs from the assigned data directory')"
+        ]
+      },
+      "manage.py": {
+        "sha256": "522a12a9738802a3cab7312b9a9ada886839e88e173e44313b9263528f55b470",
+        "uid": 0,
+        "mode": "0o644",
+        "address_hostname_guard_lines": [
+          "if marker.get('mode') != 'new-instance-application-export-import' or marker.get('expected_guest_ip') != contract['expected_guest_ip'] or marker.get('expected_hostname') != contract['expected_hostname'] or marker.get('data_path') != contract['storage']['data_path'] or marker.get('filesystem_uuid') != contract['storage']['filesystem_uuid'] or marker.get('old_h2_or_credentials_imported') is not False:"
+        ]
+      },
+      "compose.yaml": {
+        "sha256": "f79df7f4e62aede8716685e5f1378d3565ba8e2635a15b86fafe8643409f5472",
+        "uid": 0,
+        "mode": "0o644"
+      },
+      "compose.mount-gated.yaml": {
+        "sha256": "b8d76cbab113ad349a9525948773d2bc9b3d3507bd0cba7b3683ffa0cb5975ee",
+        "uid": 0,
+        "mode": "0o644"
+      },
+      "application-import.py": {
+        "sha256": "84d39b6addb6e13333b88f9862e1f3c18c7226b1ba2d088d3420130647b535f3",
+        "uid": 0,
+        "mode": "0o755",
+        "address_hostname_guard_lines": [
+          "ORIGIN = 'http://192.168.19.31:8081'"
+        ]
+      },
+      "config/nginx.conf": {
+        "sha256": "a871cd0c70f9adfc28ad2ab6bf0620b6dfda31c1d998283bc0fa6c21495ea21c",
+        "uid": 0,
+        "mode": "0o644"
+      }
+    },
+    "nexus_unit_public_source": "[Unit]\nDescription=Dell Nexus with verified persistent storage\nRequires=docker.service\nBindsTo=docker.service srv-nexus.mount\nAfter=network-online.target docker.service srv-nexus.mount\nRequiresMountsFor=/srv/nexus\nPartOf=docker.service\nStartLimitIntervalSec=600\nStartLimitBurst=5\n\n[Service]\nType=simple\nEnvironment=DELL_MOUNT_GATED=1\nExecStart=/usr/bin/python3 /opt/dell/nexus/manage.py supervise --env-file /etc/nexus.env\nExecStop=/usr/bin/python3 /opt/dell/nexus/manage.py stop --env-file /etc/nexus.env\nRestart=on-failure\nRestartSec=15\nUMask=0077\nTimeoutStartSec=600\nTimeoutStopSec=180\n\n[Install]\nWantedBy=multi-user.target\n",
+    "docker": {
+      "name": "artifact-service",
+      "version": "29.9.3",
+      "driver": "overlay2",
+      "root": "/var/lib/docker",
+      "arch": "x86_64"
+    },
+    "containers": [
+      {
+        "name": "/nexus-nexus-1",
+        "id": "70d4bec45b73e68dee425c6962ba0ec2d1448b03187dfa0dc8369bdc44eb65bb",
+        "image_id": "sha256:2ae4fee2eed85f42c982aa2fc16746a8453c7f79faf2a7ea236855ca8652e001",
+        "image_ref": "sonatype/nexus3@sha256:e190be450888ec912b941579bac90767d73debc3307a26326c8a71132b02951f",
+        "health": "healthy",
+        "running": true,
+        "CPU_cap": 1750000000,
+        "memory_cap": 3221225472,
+        "pids_cap": 1024,
+        "ports": {
+          "8081/tcp": null
+        }
+      },
+      {
+        "name": "/nexus-gateway-1",
+        "id": "bb273c7b5b309671bd34f56c04dc6ae96dc7451105b8f1f19f890968fb4ce69a",
+        "image_id": "sha256:4e5db4761e0ff445f7fd29aad680ad28e8abf7d204895557f145d65535abcc1c",
+        "image_ref": "nginx@sha256:db4f612f385437d11eb26620a4f1d7efb3ff44e1296a3c21540b30454e6e2bf3",
+        "health": "healthy",
+        "running": true,
+        "CPU_cap": 250000000,
+        "memory_cap": 67108864,
+        "pids_cap": 1024,
+        "ports": {
+          "80/tcp": null,
+          "8080/tcp": [
+            {
+              "HostIp": "192.168.19.31",
+              "HostPort": "8081"
+            }
+          ]
+        }
+      }
+    ],
+    "current_container_stats": [
+      "{\"name\":\"nexus-nexus-1\",\"memory\":\"1.246GiB / 3GiB\",\"CPU\":\"0.56%\",\"PIDs\":\"94\"}",
+      "{\"name\":\"nexus-gateway-1\",\"memory\":\"3.574MiB / 64MiB\",\"CPU\":\"0.00%\",\"PIDs\":\"3\"}"
+    ]
+  }
+]

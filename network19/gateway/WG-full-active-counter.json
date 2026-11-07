@@ -1,0 +1,194 @@
+{
+  "at": "2026-11-07T00:33:18.108947+08:00",
+  "mode": "readonly-after-risk-aware-full-WG-confirm",
+  "result": {
+    "pending": false,
+    "watchdog_active": false,
+    "WG_rules": [
+      {
+        "chain": "forward",
+        "handle": 31,
+        "comment": "WG-TrustedVPN-Server19-IPv4",
+        "expr": [
+          {
+            "match": {
+              "op": "==",
+              "left": {
+                "meta": {
+                  "key": "iifname"
+                }
+              },
+              "right": "eth0"
+            }
+          },
+          {
+            "match": {
+              "op": "==",
+              "left": {
+                "meta": {
+                  "key": "oifname"
+                }
+              },
+              "right": "eth1"
+            }
+          },
+          {
+            "match": {
+              "op": "==",
+              "left": {
+                "payload": {
+                  "protocol": "ip",
+                  "field": "saddr"
+                }
+              },
+              "right": {
+                "prefix": {
+                  "addr": "10.66.66.0",
+                  "len": 24
+                }
+              }
+            }
+          },
+          {
+            "match": {
+              "op": "==",
+              "left": {
+                "payload": {
+                  "protocol": "ip",
+                  "field": "daddr"
+                }
+              },
+              "right": {
+                "prefix": {
+                  "addr": "192.168.19.0",
+                  "len": 24
+                }
+              }
+            }
+          },
+          {
+            "mangle": {
+              "key": {
+                "ct": {
+                  "key": "mark"
+                }
+              },
+              "value": 419430405
+            }
+          },
+          {
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            }
+          },
+          {
+            "accept": null
+          }
+        ],
+        "counter": {
+          "packets": 0,
+          "bytes": 0
+        }
+      },
+      {
+        "chain": "input",
+        "handle": 15,
+        "comment": "WG-TrustedVPN-Gateway-IPv4",
+        "expr": [
+          {
+            "match": {
+              "op": "==",
+              "left": {
+                "meta": {
+                  "key": "iifname"
+                }
+              },
+              "right": "eth0"
+            }
+          },
+          {
+            "match": {
+              "op": "==",
+              "left": {
+                "payload": {
+                  "protocol": "ip",
+                  "field": "saddr"
+                }
+              },
+              "right": {
+                "prefix": {
+                  "addr": "10.66.66.0",
+                  "len": 24
+                }
+              }
+            }
+          },
+          {
+            "match": {
+              "op": "==",
+              "left": {
+                "payload": {
+                  "protocol": "ip",
+                  "field": "daddr"
+                }
+              },
+              "right": {
+                "set": [
+                  "192.168.19.1",
+                  "192.168.21.23"
+                ]
+              }
+            }
+          },
+          {
+            "mangle": {
+              "key": {
+                "ct": {
+                  "key": "mark"
+                }
+              },
+              "value": 419430405
+            }
+          },
+          {
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            }
+          },
+          {
+            "accept": null
+          }
+        ],
+        "counter": {
+          "packets": 0,
+          "bytes": 0
+        }
+      }
+    ],
+    "forward_return_mark_sets": [
+      {
+        "set": [
+          419430401,
+          419430402,
+          419430403,
+          419430404,
+          419430405
+        ]
+      }
+    ],
+    "generic_INPUT_mark_guard": [
+      {
+        "op": "!=",
+        "right": 419430405
+      }
+    ],
+    "host_SSH_auth": {
+      "pubkeyauthentication": "yes",
+      "passwordauthentication": "no",
+      "kbdinteractiveauthentication": "no"
+    }
+  },
+  "remote_all_service_access": "pending-user-batch-retest"
+}

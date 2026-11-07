@@ -1,0 +1,56 @@
+{
+  "at": "2026-11-06T11:42:11.506599",
+  "status": "new-prod-local-application-backups-created",
+  "scope": "current fresh Nacos metadata / Redis RDB / Rabbit topology; no production business schema or queue message data",
+  "results": [
+    {
+      "component": "nacos",
+      "result": {
+        "exit_code": 0,
+        "stdout": "{\"status\": \"local-sensitive-backup-created-not-exported\", \"component\": \"nacos\", \"private_directory\": \"/srv/dell-data/_app_backups/f106e23107d34c0bba39a4c006dd1891\", \"coverage\": \"complete selected Nacos external-MySQL metadata DB snapshot, including config/users/roles/permissions; secret files retained separately in controlled vault\", \"files\": [\"mysql.sql.gz\"], \"RPO_RTO_verified\": false, \"cf_included\": false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 200,
+          "ip": "10.63.10.10",
+          "host_key_alias": "dell-vm200",
+          "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      }
+    },
+    {
+      "component": "redis",
+      "result": {
+        "exit_code": 0,
+        "stdout": "{\"status\": \"local-sensitive-backup-created-not-exported\", \"component\": \"redis\", \"private_directory\": \"/srv/dell-data/_app_backups/6c706257613d40228cf2611d94276e26\", \"coverage\": \"Redis RDB point-in-time data only; ACL/password/config files are not included; fork latency/RPO not guaranteed\", \"files\": [\"redis.rdb\"], \"RPO_RTO_verified\": false, \"cf_included\": false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 201,
+          "ip": "10.63.10.11",
+          "host_key_alias": "dell-vm201",
+          "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      }
+    },
+    {
+      "component": "rabbit-topology",
+      "result": {
+        "exit_code": 0,
+        "stdout": "{\"status\": \"local-sensitive-backup-created-not-exported\", \"component\": \"rabbit-topology\", \"private_directory\": \"/srv/dell-data/_app_backups/b260debe1b5a4e0d9ea6657226a927cb\", \"coverage\": \"Rabbit definitions/topology only; includes sensitive password hashes/possible runtime parameters; NO QUEUE MESSAGES or transactional message snapshot\", \"files\": [\"rabbit-definitions.json\"], \"RPO_RTO_verified\": false, \"cf_included\": false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 201,
+          "ip": "10.63.10.11",
+          "host_key_alias": "dell-vm201",
+          "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      }
+    }
+  ],
+  "window": "main manager owns prod changes; no prod apps or concurrent DDL/topology changes",
+  "exported": false,
+  "restored": false,
+  "CF_accessed": false
+}

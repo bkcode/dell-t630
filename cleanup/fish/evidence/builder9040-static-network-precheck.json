@@ -1,0 +1,10 @@
+[
+  {
+    "path": "/etc/netplan/50-cloud-init.yaml",
+    "sha256": "ce9e067f921e0f08bc2850c3bd54282be88c2cfa90ad24b3dc3a38264e7c2593",
+    "comment_headers": [],
+    "cloudinit_mention": false,
+    "generated_mention": false,
+    "only_public_network_keys": true
+  }
+]

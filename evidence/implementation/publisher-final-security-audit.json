@@ -1,0 +1,140 @@
+{
+  "at": "2026-11-06T12:52:01.848311+08:00",
+  "mode": "read-only-final-audit",
+  "scope": "VM220 and VM240 only",
+  "source_key_contents_read": false,
+  "vm240": {
+    "release": "20261106T121030",
+    "policy_baseline_migrated": true,
+    "root_fixed_code_matches_policy": true,
+    "core_hashes": {
+      "finger-gateway-mobile/app.jar": "95233a7dfe887b435e8959569e2827581049d10c7256a7399776311ee1ef4e6a",
+      "finger-gateway-mobile/application.yaml": "01733290e53a44f0782ca8cae0e96d646ac39939a7b56d57b4ee0fe71a5a1981",
+      "finger-auth/app.jar": "b003de47f326fbe8c528a4430a3fa2b3f36b4a94ca302b07534e1062e354addc",
+      "finger-auth/application.yaml": "614bc5c875c50ce423b6ba6fab53b268346651e57c5cc495f0550ed7d5263e76",
+      "finger-service-system/app.jar": "3ddfff8c5cd6d4800c3739a7663eb3bf539935a9427c1a5178b0faa9f5f204f9",
+      "finger-service-system/application.yaml": "c500acb3847f74d4ed53d152b391862f84c7fb13e0637ddb23e4ec80ff42d096",
+      "finger-service-coms/app.jar": "3c124f75c9d1bc20126d2c2567a92a0d15051dee962723d85d7b49d56e712cef",
+      "finger-service-coms/application.yaml": "4ad9bc4a6301e1f1eea94103b4473cefb67f9fa2ae25ceeb52ed1ef2f55bb51e",
+      "finger-bff-system/app.jar": "d6302ef18bb1c526eb1e3add58d94d29060e163758d0bdd6031bd41c89bd1c23",
+      "finger-bff-system/application.yaml": "777c8d47bcda233b326826aa7067305ca09b74b78af69946012f0ffc5041bc73",
+      "manifest.json": "208bc8ecd57465726af7a0d5671fb38ebdc9c000e8f4dcab27eb7196b7e83c0e"
+    },
+    "services": [
+      {
+        "name": "finger-gateway-mobile",
+        "persistent_yaml_root600": true,
+        "fixed_LoadCredential": true,
+        "credential_argv": true,
+        "systemd": {
+          "User": "finger",
+          "Group": "finger",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      {
+        "name": "finger-auth",
+        "persistent_yaml_root600": true,
+        "fixed_LoadCredential": true,
+        "credential_argv": true,
+        "systemd": {
+          "User": "finger",
+          "Group": "finger",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      {
+        "name": "finger-service-system",
+        "persistent_yaml_root600": true,
+        "fixed_LoadCredential": true,
+        "credential_argv": true,
+        "systemd": {
+          "User": "finger",
+          "Group": "finger",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      {
+        "name": "finger-service-coms",
+        "persistent_yaml_root600": true,
+        "fixed_LoadCredential": true,
+        "credential_argv": true,
+        "systemd": {
+          "User": "finger",
+          "Group": "finger",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      {
+        "name": "finger-bff-system",
+        "persistent_yaml_root600": true,
+        "fixed_LoadCredential": true,
+        "credential_argv": true,
+        "systemd": {
+          "User": "finger",
+          "Group": "finger",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      }
+    ],
+    "sshd_effective": {
+      "disableforwarding": "yes",
+      "allowtcpforwarding": "no",
+      "allowagentforwarding": "no",
+      "permittty": "no",
+      "permituserrc": "no",
+      "passwordauthentication": "no",
+      "kbdinteractiveauthentication": "no",
+      "authenticationmethods": "publickey",
+      "authorizedkeysfile": "/etc/ssh/authorized_keys/deployer"
+    },
+    "authorized_key_controls": {
+      "root_owned": true,
+      "from220": true,
+      "restrict": true,
+      "forced_dispatch": true,
+      "raw_key_emitted": false
+    },
+    "native_sudo_negatives": [
+      {
+        "name": "arbitrary-root-command",
+        "exit_code": 1,
+        "denied": true,
+        "raw_output_withheld": true
+      },
+      {
+        "name": "root-helper-extra-argv",
+        "exit_code": 1,
+        "denied": true,
+        "raw_output_withheld": true
+      }
+    ],
+    "deployer_groups": [
+      "deployer"
+    ],
+    "sudoers_native_valid": true,
+    "sshd_native_valid": true
+  },
+  "vm220": {
+    "private_key_owner_mode": true,
+    "fingerprint": "SHA256:CM5jqsVt6VHzApGnyhXaU5Hg45Wvyfh2ng0X1YppvlU",
+    "private_key_read_or_exported": false,
+    "publisher_groups": [
+      "publisher"
+    ]
+  },
+  "ub_strict_reconnect": {
+    "exit_code": 0,
+    "stdout": "ub\njava-test-01\n",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n"
+  },
+  "A_all_core_bytes_match_original": true,
+  "A_manifest_expected_sha": true,
+  "ub_maintained": true,
+  "all_security_checks_pass": true
+}

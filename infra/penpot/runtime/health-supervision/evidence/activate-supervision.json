@@ -1,0 +1,11 @@
+{
+  "collected_at": "2026-11-06T05:24:35.675004+00:00",
+  "phase": "activate-supervision",
+  "exit_code": 0,
+  "result": {
+    "status": "approved-supervised-restart-queued",
+    "services_scope": "fixed11 Penpot250 only",
+    "build_or_pull_requested": false,
+    "source_Git_identity_or_design_write": false
+  }
+}

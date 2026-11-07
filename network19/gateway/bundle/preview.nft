@@ -1,0 +1,49 @@
+table inet dell_gateway19 {
+ set nonpublic { type ipv4_addr; flags interval; elements = { 0.0.0.0/8, 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.0.2.0/24, 192.168.0.0/16, 198.18.0.0/15, 198.51.100.0/24, 203.0.113.0/24, 224.0.0.0/4, 240.0.0.0/4 }; }
+ set management { type ipv4_addr; elements = { 192.168.21.22, 192.168.21.116 }; }
+ chain input { type filter hook input priority 0; policy drop;
+  iifname "lo" accept
+  meta nfproto ipv6 drop
+  ct state invalid drop
+  iifname "eth0" ip saddr 192.168.19.0/24 drop
+  iifname "eth1" ip saddr { 0.0.0.0, 192.168.19.0/24 } udp sport 68 udp dport 67 ip daddr { 255.255.255.255, 192.168.19.255, 192.168.19.1 } accept
+  iifname "eth1" ip saddr != 192.168.19.0/24 drop
+  iifname "eth0" ip saddr 10.66.66.0/24 ip daddr { 192.168.21.23, 192.168.19.1 } ct mark set 0x19000005 counter accept comment "WG-TrustedVPN-Gateway-IPv4"
+  ct state established,related ct mark != 0x19000005 accept
+  iifname "eth0" ip saddr @management ip daddr { 192.168.21.23, 192.168.19.1 } tcp dport 22 accept
+  iifname "eth0" ip saddr @management ip daddr { 192.168.21.23, 192.168.19.1 } icmp type echo-request limit rate 10/second burst 20 packets accept
+  iifname "eth1" ip saddr 192.168.19.0/24 ip daddr 192.168.19.1 udp dport 53 accept
+  iifname "eth1" ip saddr 192.168.19.0/24 ip daddr 192.168.19.1 tcp dport 53 accept
+  counter drop
+ }
+ chain forward { type filter hook forward priority 0; policy drop;
+  meta nfproto ipv6 drop
+  ct state invalid drop
+  iifname "eth0" ip saddr 192.168.19.0/24 drop
+  iifname "eth1" ip saddr != 192.168.19.0/24 drop
+  iifname "eth1" oifname "eth1" counter drop
+  ct state established,related ct mark { 0x19000001, 0x19000002, 0x19000003, 0x19000004, 0x19000005 } accept
+  iifname "eth0" oifname "eth1" ip saddr 10.66.66.0/24 ip daddr 192.168.19.0/24 ct mark set 0x19000005 counter accept comment "WG-TrustedVPN-Server19-IPv4"
+  iifname "eth0" oifname "eth1" ip saddr { 192.168.21.0/24 } ip daddr { 192.168.19.50 } tcp dport { 9001 } ct state new ct mark set 0x19000001 accept
+  iifname "eth0" oifname "eth1" ip saddr { 192.168.21.0/24 } ip daddr { 192.168.19.31 } tcp dport { 8081 } ct state new ct mark set 0x19000001 accept
+  iifname "eth0" oifname "eth1" ip saddr { 192.168.21.0/24 } ip daddr { 192.168.19.60 } tcp dport { 80, 445, 8096 } ct state new ct mark set 0x19000001 accept
+  iifname "eth0" oifname "eth1" ip saddr { 192.168.21.0/24 } ip daddr { 192.168.19.45 } tcp dport { 9999 } ct state new ct mark set 0x19000001 accept
+  iifname "eth0" oifname "eth1" ip saddr { 192.168.21.0/24 } ip daddr { 192.168.19.40 } tcp dport { 9999 } ct state new ct mark set 0x19000001 accept
+  iifname "eth0" oifname "eth1" ip saddr { 192.168.21.0/24 } ip daddr { 192.168.19.70 } tcp dport { 3000 } ct state new ct mark set 0x19000001 accept
+  iifname "eth0" oifname "eth1" ip saddr { 192.168.21.22, 192.168.21.116 } ip daddr { 192.168.19.0/24 } tcp dport { 22, 3306, 5672, 6379, 8848, 9090, 9093, 9100, 9848, 9849, 15672 } ct state new ct mark set 0x19000001 accept
+  iifname "eth1" oifname "eth0" ip saddr 192.168.19.5 ip daddr 192.168.21.0/24 tcp dport { 80, 443, 8081, 8096, 9001, 9999 } ct state new ct mark set 0x19000001 accept
+  iifname "eth1" oifname "eth0" ip saddr 192.168.19.0/24 ip daddr 198.18.0.0/15 tcp dport { 53, 80, 443 } ct state new ct mark set 0x19000002 accept
+  iifname "eth1" oifname "eth0" ip saddr 192.168.19.0/24 ip daddr 198.18.0.0/15 udp dport { 53, 123 } ct state new ct mark set 0x19000002 accept
+  iifname "eth1" oifname "eth0" ip saddr 192.168.19.0/24 ip daddr 198.18.0.0/15 ip protocol icmp ct state new ct mark set 0x19000002 accept
+  iifname "eth1" oifname "eth0" ip saddr 192.168.19.5 ip daddr 198.18.0.0/15 tcp dport 7844 ct state new ct mark set 0x19000003 accept
+  iifname "eth1" oifname "eth0" ip saddr 192.168.19.5 ip daddr 198.18.0.0/15 udp dport 7844 ct state new ct mark set 0x19000003 accept
+  iifname "eth1" oifname "eth0" ip saddr 192.168.19.0/24 ip daddr != @nonpublic tcp dport { 53, 80, 443 } ct state new ct mark set 0x19000001 accept
+  iifname "eth1" oifname "eth0" ip saddr 192.168.19.5 ip daddr != @nonpublic tcp dport 7844 ct state new ct mark set 0x19000001 accept
+  iifname "eth1" oifname "eth0" ip saddr 192.168.19.0/24 ip daddr != @nonpublic udp dport { 53, 123 } ct state new ct mark set 0x19000001 accept
+  iifname "eth1" oifname "eth0" ip saddr 192.168.19.5 ip daddr != @nonpublic udp dport 7844 ct state new ct mark set 0x19000001 accept
+  iifname "eth1" oifname "eth0" ip saddr 192.168.19.30 ip daddr != @nonpublic tcp dport 22 ct state new ct mark set 0x19000001 accept
+  iifname "eth1" oifname "eth0" ip saddr 192.168.19.0/24 ip daddr != @nonpublic ip protocol icmp ct state new ct mark set 0x19000001 accept
+  counter drop
+ }
+ chain output { type filter hook output priority 0; policy accept; }
+}

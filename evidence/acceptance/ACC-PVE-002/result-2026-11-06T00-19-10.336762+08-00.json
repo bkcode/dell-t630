@@ -1,0 +1,21 @@
+{
+  "id": "ACC-PVE-002",
+  "status": "failed",
+  "executed_at": "2026-11-06T00:19:10.336762+08:00",
+  "timezone": "Asia/Shanghai",
+  "operator": "root-task-manager",
+  "plan_sha256": "7436ac2f544323d5fc5fe909298f1238ae42a7fea7638e4a9d3ff26ecb31438e",
+  "preconditions_checked": true,
+  "observations": [
+    "SSD RAID1 is optimal; HDD RAID5 is degraded with slot32:3 rebuilding.",
+    "Controller BBU is Optimal and virtual disk/member mapping is verified."
+  ],
+  "artifacts": [
+    "evidence/implementation/raid-controller.json"
+  ],
+  "limitations": [
+    "Production storage acceptance fails until RAID5 returns Optimal and member returns Online without new errors.",
+    "Root cause of historical slot3 access failure remains unconfirmed."
+  ],
+  "reviewed_by": "root-task-manager"
+}

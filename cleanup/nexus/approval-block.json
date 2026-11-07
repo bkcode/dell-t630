@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-06T17:45:30.726318+00:00",
+  "status": "source-quiesce-not-executed-automatic-approval-rejected",
+  "blocked_action": "stop live dell-nexus.service onVM221 for cold migration baseline",
+  "review_reason": "The user asked about co-location feasibility but did not explicitly authorize this real downtime or migration window after being informed of its impact.",
+  "rejection_timing": "CreateProcess before anycommand in theattempt; no221 baseline, stop, OS ordata action performed",
+  "workaround_or_indirect_stop_attempted": false,
+  "required_next": "root obtains user explicit informed Nexus outage/221coldbackup+shutdown/220restart+data disk andservice IP move authorization",
+  "220_state": "prepared only; noNexus stack/alias31",
+  "source_service_changed_by_rejected_call": false
+}

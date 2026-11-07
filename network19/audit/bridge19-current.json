@@ -1,0 +1,365 @@
+{
+  "status": "offline-candidate-not-applied",
+  "retired_vmids": [
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    231,
+    232,
+    9000,
+    9002,
+    9003,
+    9004,
+    9005,
+    9006,
+    9020,
+    9040,
+    9041,
+    9042,
+    9043,
+    9044,
+    9045
+  ],
+  "temporary_bootstrap_vmids": [],
+  "service_endpoints": {},
+  "inventory_timestamp": "2026-11-07T02:22:40.627630",
+  "rows": [
+    {
+      "vmid": 190,
+      "nic": "net1",
+      "mac": "02:63:19:01:90:01",
+      "ip": "192.168.19.1",
+      "ips": [
+        "192.168.19.1"
+      ],
+      "ports": [
+        "tap190i1",
+        "fwpr190p1"
+      ],
+      "current_bridge": "vmbr19",
+      "template": false,
+      "role": "gateway-LAN"
+    },
+    {
+      "vmid": 200,
+      "nic": "net0",
+      "mac": "bc:24:11:1c:62:00",
+      "ip": "192.168.19.10",
+      "ips": [
+        "192.168.19.10"
+      ],
+      "ports": [
+        "tap200i0",
+        "fwpr200p0"
+      ],
+      "current_bridge": "vmbr19",
+      "template": false,
+      "role": "approved-role"
+    },
+    {
+      "vmid": 201,
+      "nic": "net0",
+      "mac": "bc:24:11:1c:bb:93",
+      "ip": "192.168.19.11",
+      "ips": [
+        "192.168.19.11"
+      ],
+      "ports": [
+        "tap201i0",
+        "fwpr201p0"
+      ],
+      "current_bridge": "vmbr19",
+      "template": false,
+      "role": "approved-role"
+    },
+    {
+      "vmid": 210,
+      "nic": "net0",
+      "mac": "bc:24:11:5d:2d:98",
+      "ip": "192.168.19.20",
+      "ips": [
+        "192.168.19.20"
+      ],
+      "ports": [
+        "tap210i0",
+        "fwpr210p0"
+      ],
+      "current_bridge": "vmbr19",
+      "template": false,
+      "role": "approved-role"
+    },
+    {
+      "vmid": 220,
+      "nic": "net0",
+      "mac": "bc:24:11:2a:01:ad",
+      "ip": "192.168.19.30",
+      "ips": [
+        "192.168.19.30"
+      ],
+      "ports": [
+        "tap220i0",
+        "fwpr220p0"
+      ],
+      "current_bridge": "vmbr19",
+      "template": false,
+      "role": "approved-role"
+    },
+    {
+      "vmid": 221,
+      "nic": "net0",
+      "mac": "bc:24:11:ec:e1:6f",
+      "ip": "192.168.19.31",
+      "ips": [
+        "192.168.19.31"
+      ],
+      "ports": [
+        "tap221i0",
+        "fwpr221p0"
+      ],
+      "current_bridge": "vmbr19",
+      "template": false,
+      "role": "approved-role"
+    },
+    {
+      "vmid": 230,
+      "nic": "net0",
+      "mac": "bc:24:11:1c:20:00",
+      "ip": "192.168.19.40",
+      "ips": [
+        "192.168.19.40"
+      ],
+      "ports": [
+        "tap230i0",
+        "fwpr230p0"
+      ],
+      "current_bridge": "vmbr19",
+      "template": false,
+      "role": "approved-role"
+    },
+    {
+      "vmid": 240,
+      "nic": "net0",
+      "mac": "bc:24:11:65:41:5a",
+      "ip": "192.168.19.45",
+      "ips": [
+        "192.168.19.45"
+      ],
+      "ports": [
+        "tap240i0",
+        "fwpr240p0"
+      ],
+      "current_bridge": "vmbr19",
+      "template": false,
+      "role": "approved-role"
+    },
+    {
+      "vmid": 250,
+      "nic": "net0",
+      "mac": "bc:24:11:78:e9:84",
+      "ip": "192.168.19.50",
+      "ips": [
+        "192.168.19.50"
+      ],
+      "ports": [
+        "tap250i0",
+        "fwpr250p0"
+      ],
+      "current_bridge": "vmbr19",
+      "template": false,
+      "role": "approved-role"
+    },
+    {
+      "vmid": 260,
+      "nic": "net0",
+      "mac": "bc:24:11:a7:3b:73",
+      "ip": "192.168.19.60",
+      "ips": [
+        "192.168.19.60"
+      ],
+      "ports": [
+        "tap260i0",
+        "fwpr260p0"
+      ],
+      "current_bridge": "vmbr19",
+      "template": false,
+      "role": "approved-role"
+    },
+    {
+      "vmid": 270,
+      "nic": "net0",
+      "mac": "bc:24:11:ce:8c:67",
+      "ip": "192.168.19.70",
+      "ips": [
+        "192.168.19.70"
+      ],
+      "ports": [
+        "tap270i0",
+        "fwpr270p0"
+      ],
+      "current_bridge": "vmbr19",
+      "template": false,
+      "role": "approved-role"
+    },
+    {
+      "vmid": 9001,
+      "nic": "net0",
+      "mac": "bc:24:11:7e:96:13",
+      "ip": null,
+      "ips": [],
+      "ports": [
+        "tap9001i0",
+        "fwpr9001p0"
+      ],
+      "current_bridge": "vmbr19",
+      "template": true,
+      "role": "quarantine-DHCP-only"
+    },
+    {
+      "vmid": 9010,
+      "nic": "net0",
+      "mac": "bc:24:11:e8:c9:67",
+      "ip": null,
+      "ips": [],
+      "ports": [
+        "tap9010i0",
+        "fwpr9010p0"
+      ],
+      "current_bridge": "vmbr19",
+      "template": true,
+      "role": "quarantine-DHCP-only"
+    },
+    {
+      "vmid": 9011,
+      "nic": "net0",
+      "mac": "bc:24:11:c3:a1:80",
+      "ip": null,
+      "ips": [],
+      "ports": [
+        "tap9011i0",
+        "fwpr9011p0"
+      ],
+      "current_bridge": "vmbr19",
+      "template": true,
+      "role": "quarantine-DHCP-only"
+    },
+    {
+      "vmid": 100,
+      "nic": "net0",
+      "mac": "bc:24:11:42:04:c1",
+      "ip": "192.168.19.5",
+      "ips": [
+        "192.168.19.5"
+      ],
+      "ports": [
+        "veth100i0",
+        "fwpr100p0"
+      ],
+      "current_bridge": "vmbr19",
+      "template": false,
+      "role": "approved-role"
+    }
+  ],
+  "warnings": [],
+  "peer_tcp_tuple_count": 31,
+  "wan_to_lan_rules": [
+    {
+      "src": [
+        "192.168.21.0/24"
+      ],
+      "dst": "192.168.19.50",
+      "tcp": [
+        9001
+      ]
+    },
+    {
+      "src": [
+        "192.168.21.0/24"
+      ],
+      "dst": "192.168.19.31",
+      "tcp": [
+        8081
+      ]
+    },
+    {
+      "src": [
+        "192.168.21.0/24"
+      ],
+      "dst": "192.168.19.60",
+      "tcp": [
+        80,
+        445,
+        8096
+      ]
+    },
+    {
+      "src": [
+        "192.168.21.0/24"
+      ],
+      "dst": "192.168.19.45",
+      "tcp": [
+        9999
+      ]
+    },
+    {
+      "src": [
+        "192.168.21.0/24"
+      ],
+      "dst": "192.168.19.40",
+      "tcp": [
+        9999
+      ]
+    },
+    {
+      "src": [
+        "192.168.21.0/24"
+      ],
+      "dst": "192.168.19.70",
+      "tcp": [
+        3000
+      ]
+    },
+    {
+      "src": [
+        "192.168.21.22",
+        "192.168.21.116"
+      ],
+      "dst": "192.168.19.0/24",
+      "tcp": [
+        22,
+        3306,
+        5672,
+        6379,
+        8848,
+        9090,
+        9093,
+        9100,
+        9848,
+        9849,
+        15672
+      ]
+    }
+  ],
+  "management_sources": [
+    "192.168.21.22",
+    "192.168.21.116"
+  ],
+  "CF_legacy_LAN_origin_compatibility_enabled": false,
+  "host_guard_bridges": [
+    "vmbr19"
+  ],
+  "direct_attachment_required": true,
+  "old_ops_transition_exception": false,
+  "required_before_apply": [
+    "Parent-owned nft -c with needed nf_tables_bridge/NFT_BRIDGE_META/NF_CONNTRACK_BRIDGE support; no such validation was run by read-only agent.",
+    "Atomic transaction delete/recreate only bridge dell19_acl; rollback table+startup mechanism preserved.",
+    "Confirm source/destination interface aliases and meta ibrname/obrname visibility using dedicated test before real data migration.",
+    "No blanket inet-forward ACCEPT workaround is needed while bridge-nf flags remain0; preserve/recheck them.",
+    "All target NICs must be firewall=0/direct tap-veth before activation; host guard onlyvmbr19. No prospective old-fwbr guard is applied in this stage.",
+    "MAC/IP registry refreshed before clone activation; unknown/template clone remains DHCP-only, never automatic prod role.",
+    "CF internal origin allowlist is unknown and intentionally not granted; parent must add exact approved origins.",
+    "New same-tools arbitrary SSH/other traffic is intentionally not preserved; review any required dependency before cutover."
+  ]
+}

@@ -1,0 +1,1768 @@
+{
+  "started_at": "2026-11-06T14:25:37.562054+08:00",
+  "status": "completed-for-manager-signoff",
+  "scope": "new-target-prod-test-infrastructure-and-test-Java-runtime-only",
+  "source_Mac_credentials_read": false,
+  "service_configuration_or_SQL_modified": false,
+  "password_values_or_hashes_emitted": false,
+  "cross_instance_negative_auth": [
+    {
+      "vmid": 201,
+      "target_ip": "10.63.10.11",
+      "username": "finger_test",
+      "admin_account_tested": false,
+      "attempt_count": 1,
+      "attempt_started_at": "2026-11-06T14:27:01.898416+08:00",
+      "status": "nonstandard-error-no-successful-login",
+      "result": {
+        "http_status": 500,
+        "denied": false,
+        "access_token_returned": false,
+        "attempt_count": 1,
+        "response_body_discarded": true,
+        "credential_values_in_argv_environment_url_or_logs": false
+      },
+      "error_body_token_presence_not_parsed": "Original HTTP error body was discarded without JSON parsing; no successful login response observed. First request was not repeated."
+    },
+    {
+      "vmid": 210,
+      "target_ip": "10.63.20.10",
+      "username": "finger_prod",
+      "admin_account_tested": false,
+      "attempt_count": 1,
+      "attempt_started_at": "2026-11-06T14:30:46.012853+08:00",
+      "status": "nonstandard-error-no-successful-login",
+      "result": {
+        "http_status": 500,
+        "denied": false,
+        "access_token_returned": false,
+        "attempt_count": 1,
+        "response_body_discarded": true,
+        "credential_values_in_argv_environment_url_or_logs": false
+      },
+      "error_body_and_header_token_presence_checked_in_memory": true
+    }
+  ],
+  "bundle_instances": [
+    {
+      "role": "prod-db",
+      "environment": "prod",
+      "service_ip": "10.63.10.10",
+      "mysql_host": "10.63.10.10",
+      "nacos_db": "nacos_prod",
+      "nacos_db_user": "nacos_prod",
+      "nacos_namespace": "9545c5c8-e112-542f-8302-36504e80e90a",
+      "nacos_client_user": "finger_prod",
+      "nacos_client_role": "finger-prod-client",
+      "rabbit_admin_user": "mq_prod_admin",
+      "rabbit_app_user": "finger_prod_mq",
+      "rabbit_vhost": "/finger-prod"
+    },
+    {
+      "role": "prod-infra",
+      "environment": "prod",
+      "service_ip": "10.63.10.11",
+      "mysql_host": "10.63.10.10",
+      "nacos_db": "nacos_prod",
+      "nacos_db_user": "nacos_prod",
+      "nacos_namespace": "9545c5c8-e112-542f-8302-36504e80e90a",
+      "nacos_client_user": "finger_prod",
+      "nacos_client_role": "finger-prod-client",
+      "rabbit_admin_user": "mq_prod_admin",
+      "rabbit_app_user": "finger_prod_mq",
+      "rabbit_vhost": "/finger-prod"
+    },
+    {
+      "role": "test-data",
+      "environment": "test",
+      "service_ip": "10.63.20.10",
+      "mysql_host": "mysql",
+      "nacos_db": "nacos_test",
+      "nacos_db_user": "nacos_test",
+      "nacos_namespace": "10719261-2641-590a-b821-c8484ca955ac",
+      "nacos_client_user": "finger_test",
+      "nacos_client_role": "finger-test-client",
+      "rabbit_admin_user": "mq_test_admin",
+      "rabbit_app_user": "finger_test_mq",
+      "rabbit_vhost": "/finger-test"
+    }
+  ],
+  "new_target_secret_separation": {
+    "mysql-root-password": {
+      "new_target_prod_test_different": true,
+      "both_nonempty": true
+    },
+    "nacos-db-password": {
+      "new_target_prod_test_different": true,
+      "both_nonempty": true
+    },
+    "redis-password": {
+      "new_target_prod_test_different": true,
+      "both_nonempty": true
+    },
+    "rabbit-admin-password": {
+      "new_target_prod_test_different": true,
+      "both_nonempty": true
+    },
+    "rabbit-app-password": {
+      "new_target_prod_test_different": true,
+      "both_nonempty": true
+    },
+    "nacos-admin-password": {
+      "new_target_prod_test_different": true,
+      "both_nonempty": true
+    },
+    "nacos-client-password": {
+      "new_target_prod_test_different": true,
+      "both_nonempty": true
+    },
+    "nacos-auth-token": {
+      "new_target_prod_test_different": true,
+      "both_nonempty": true
+    },
+    "nacos-identity-value": {
+      "new_target_prod_test_different": true,
+      "both_nonempty": true
+    }
+  },
+  "prod_db_infra_nacos_db_secret_expected_shared": true,
+  "live_catalogs": {
+    "200": {
+      "rows": [
+        {
+          "kind": "nacos_user",
+          "enabled": 1,
+          "username": "finger_prod"
+        },
+        {
+          "kind": "nacos_user",
+          "enabled": 1,
+          "username": "nacos"
+        },
+        {
+          "kind": "nacos_role",
+          "role": "finger-prod-client",
+          "username": "finger_prod"
+        },
+        {
+          "kind": "nacos_role",
+          "role": "ROLE_ADMIN",
+          "username": "nacos"
+        },
+        {
+          "kind": "nacos_permission",
+          "role": "finger-prod-client",
+          "action": "rw",
+          "resource": "9545c5c8-e112-542f-8302-36504e80e90a:*:*"
+        },
+        {
+          "kind": "nacos_namespace",
+          "namespace_id": "9545c5c8-e112-542f-8302-36504e80e90a",
+          "namespace_name": "finger-prod"
+        },
+        {
+          "host": "%",
+          "kind": "mysql_account",
+          "user": "nacos_prod"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_prod",
+          "grantee": "'nacos_prod'@'%'",
+          "grantable": "NO",
+          "privilege": "SELECT"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_prod",
+          "grantee": "'nacos_prod'@'%'",
+          "grantable": "NO",
+          "privilege": "INSERT"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_prod",
+          "grantee": "'nacos_prod'@'%'",
+          "grantable": "NO",
+          "privilege": "UPDATE"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_prod",
+          "grantee": "'nacos_prod'@'%'",
+          "grantable": "NO",
+          "privilege": "DELETE"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_prod",
+          "grantee": "'nacos_prod'@'%'",
+          "grantable": "NO",
+          "privilege": "CREATE"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_prod",
+          "grantee": "'nacos_prod'@'%'",
+          "grantable": "NO",
+          "privilege": "DROP"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_prod",
+          "grantee": "'nacos_prod'@'%'",
+          "grantable": "NO",
+          "privilege": "REFERENCES"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_prod",
+          "grantee": "'nacos_prod'@'%'",
+          "grantable": "NO",
+          "privilege": "INDEX"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_prod",
+          "grantee": "'nacos_prod'@'%'",
+          "grantable": "NO",
+          "privilege": "ALTER"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_prod",
+          "grantee": "'nacos_prod'@'%'",
+          "grantable": "NO",
+          "privilege": "CREATE TEMPORARY TABLES"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_prod",
+          "grantee": "'nacos_prod'@'%'",
+          "grantable": "NO",
+          "privilege": "LOCK TABLES"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_prod",
+          "grantee": "'nacos_prod'@'%'",
+          "grantable": "NO",
+          "privilege": "EXECUTE"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_prod",
+          "grantee": "'nacos_prod'@'%'",
+          "grantable": "NO",
+          "privilege": "CREATE VIEW"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_prod",
+          "grantee": "'nacos_prod'@'%'",
+          "grantable": "NO",
+          "privilege": "SHOW VIEW"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_prod",
+          "grantee": "'nacos_prod'@'%'",
+          "grantable": "NO",
+          "privilege": "CREATE ROUTINE"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_prod",
+          "grantee": "'nacos_prod'@'%'",
+          "grantable": "NO",
+          "privilege": "ALTER ROUTINE"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_prod",
+          "grantee": "'nacos_prod'@'%'",
+          "grantable": "NO",
+          "privilege": "EVENT"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_prod",
+          "grantee": "'nacos_prod'@'%'",
+          "grantable": "NO",
+          "privilege": "TRIGGER"
+        },
+        {
+          "kind": "global_privilege",
+          "grantee": "'nacos_prod'@'%'",
+          "grantable": "NO",
+          "privilege": "USAGE"
+        }
+      ],
+      "authentication": "own-new-target-root-via-anonymous-FD3",
+      "credential_values_in_argv_or_environment": false,
+      "SQL_kind": "SELECT-only",
+      "password_or_hash_columns_selected": false
+    },
+    "210": {
+      "rows": [
+        {
+          "kind": "nacos_user",
+          "enabled": 1,
+          "username": "finger_test"
+        },
+        {
+          "kind": "nacos_user",
+          "enabled": 1,
+          "username": "nacos"
+        },
+        {
+          "kind": "nacos_role",
+          "role": "finger-test-client",
+          "username": "finger_test"
+        },
+        {
+          "kind": "nacos_role",
+          "role": "ROLE_ADMIN",
+          "username": "nacos"
+        },
+        {
+          "kind": "nacos_permission",
+          "role": "finger-test-client",
+          "action": "rw",
+          "resource": "10719261-2641-590a-b821-c8484ca955ac:*:*"
+        },
+        {
+          "kind": "nacos_namespace",
+          "namespace_id": "10719261-2641-590a-b821-c8484ca955ac",
+          "namespace_name": "finger-test"
+        },
+        {
+          "host": "%",
+          "kind": "mysql_account",
+          "user": "nacos_test"
+        },
+        {
+          "host": "10.63.20.20",
+          "kind": "mysql_account",
+          "user": "finger_auth_test"
+        },
+        {
+          "host": "10.63.20.20",
+          "kind": "mysql_account",
+          "user": "finger_coms_test"
+        },
+        {
+          "host": "10.63.20.20",
+          "kind": "mysql_account",
+          "user": "finger_system_test"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_test",
+          "grantee": "'nacos_test'@'%'",
+          "grantable": "NO",
+          "privilege": "SELECT"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_test",
+          "grantee": "'nacos_test'@'%'",
+          "grantable": "NO",
+          "privilege": "INSERT"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_test",
+          "grantee": "'nacos_test'@'%'",
+          "grantable": "NO",
+          "privilege": "UPDATE"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_test",
+          "grantee": "'nacos_test'@'%'",
+          "grantable": "NO",
+          "privilege": "DELETE"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_test",
+          "grantee": "'nacos_test'@'%'",
+          "grantable": "NO",
+          "privilege": "CREATE"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_test",
+          "grantee": "'nacos_test'@'%'",
+          "grantable": "NO",
+          "privilege": "DROP"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_test",
+          "grantee": "'nacos_test'@'%'",
+          "grantable": "NO",
+          "privilege": "REFERENCES"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_test",
+          "grantee": "'nacos_test'@'%'",
+          "grantable": "NO",
+          "privilege": "INDEX"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_test",
+          "grantee": "'nacos_test'@'%'",
+          "grantable": "NO",
+          "privilege": "ALTER"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_test",
+          "grantee": "'nacos_test'@'%'",
+          "grantable": "NO",
+          "privilege": "CREATE TEMPORARY TABLES"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_test",
+          "grantee": "'nacos_test'@'%'",
+          "grantable": "NO",
+          "privilege": "LOCK TABLES"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_test",
+          "grantee": "'nacos_test'@'%'",
+          "grantable": "NO",
+          "privilege": "EXECUTE"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_test",
+          "grantee": "'nacos_test'@'%'",
+          "grantable": "NO",
+          "privilege": "CREATE VIEW"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_test",
+          "grantee": "'nacos_test'@'%'",
+          "grantable": "NO",
+          "privilege": "SHOW VIEW"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_test",
+          "grantee": "'nacos_test'@'%'",
+          "grantable": "NO",
+          "privilege": "CREATE ROUTINE"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_test",
+          "grantee": "'nacos_test'@'%'",
+          "grantable": "NO",
+          "privilege": "ALTER ROUTINE"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_test",
+          "grantee": "'nacos_test'@'%'",
+          "grantable": "NO",
+          "privilege": "EVENT"
+        },
+        {
+          "kind": "schema_privilege",
+          "schema": "nacos\\\\_test",
+          "grantee": "'nacos_test'@'%'",
+          "grantable": "NO",
+          "privilege": "TRIGGER"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "user",
+          "schema": "finger_system_test",
+          "grantee": "'finger_system_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "SELECT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "user",
+          "schema": "finger_system_test",
+          "grantee": "'finger_system_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "INSERT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "user",
+          "schema": "finger_system_test",
+          "grantee": "'finger_system_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "UPDATE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "user",
+          "schema": "finger_system_test",
+          "grantee": "'finger_system_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "DELETE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "admin_notice_delivery",
+          "schema": "finger_system_test",
+          "grantee": "'finger_system_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "SELECT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "admin_notice_delivery",
+          "schema": "finger_system_test",
+          "grantee": "'finger_system_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "INSERT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "admin_notice_delivery",
+          "schema": "finger_system_test",
+          "grantee": "'finger_system_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "UPDATE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "admin_notice_delivery",
+          "schema": "finger_system_test",
+          "grantee": "'finger_system_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "DELETE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "permission_role_menu",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "SELECT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "permission_role_menu",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "INSERT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "permission_role_menu",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "UPDATE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "permission_role_menu",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "DELETE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "permission_role",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "SELECT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "permission_role",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "INSERT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "permission_role",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "UPDATE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "permission_role",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "DELETE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "role_permission",
+          "schema": "finger_system_test",
+          "grantee": "'finger_system_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "SELECT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "role_permission",
+          "schema": "finger_system_test",
+          "grantee": "'finger_system_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "INSERT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "role_permission",
+          "schema": "finger_system_test",
+          "grantee": "'finger_system_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "UPDATE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "role_permission",
+          "schema": "finger_system_test",
+          "grantee": "'finger_system_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "DELETE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "oauth2_authorization",
+          "schema": "finger_auth_test",
+          "grantee": "'finger_auth_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "SELECT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "oauth2_authorization",
+          "schema": "finger_auth_test",
+          "grantee": "'finger_auth_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "INSERT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "oauth2_authorization",
+          "schema": "finger_auth_test",
+          "grantee": "'finger_auth_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "UPDATE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "oauth2_authorization",
+          "schema": "finger_auth_test",
+          "grantee": "'finger_auth_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "DELETE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "dict",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "SELECT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "dict",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "INSERT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "dict",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "UPDATE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "dict",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "DELETE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "oauth2_authorization_consent",
+          "schema": "finger_auth_test",
+          "grantee": "'finger_auth_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "SELECT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "oauth2_authorization_consent",
+          "schema": "finger_auth_test",
+          "grantee": "'finger_auth_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "INSERT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "oauth2_authorization_consent",
+          "schema": "finger_auth_test",
+          "grantee": "'finger_auth_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "UPDATE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "oauth2_authorization_consent",
+          "schema": "finger_auth_test",
+          "grantee": "'finger_auth_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "DELETE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "city_info_i18n",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "SELECT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "city_info_i18n",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "INSERT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "city_info_i18n",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "UPDATE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "city_info_i18n",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "DELETE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "file_info",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "SELECT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "file_info",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "INSERT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "file_info",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "UPDATE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "file_info",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "DELETE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "oauth2_registered_client",
+          "schema": "finger_auth_test",
+          "grantee": "'finger_auth_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "SELECT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "oauth2_registered_client",
+          "schema": "finger_auth_test",
+          "grantee": "'finger_auth_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "INSERT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "oauth2_registered_client",
+          "schema": "finger_auth_test",
+          "grantee": "'finger_auth_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "UPDATE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "oauth2_registered_client",
+          "schema": "finger_auth_test",
+          "grantee": "'finger_auth_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "DELETE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "city_info",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "SELECT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "city_info",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "INSERT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "city_info",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "UPDATE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "city_info",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "DELETE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "role_info",
+          "schema": "finger_system_test",
+          "grantee": "'finger_system_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "SELECT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "role_info",
+          "schema": "finger_system_test",
+          "grantee": "'finger_system_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "INSERT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "role_info",
+          "schema": "finger_system_test",
+          "grantee": "'finger_system_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "UPDATE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "role_info",
+          "schema": "finger_system_test",
+          "grantee": "'finger_system_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "DELETE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "country_info",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "SELECT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "country_info",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "INSERT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "country_info",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "UPDATE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "country_info",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "DELETE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "admin_notice",
+          "schema": "finger_system_test",
+          "grantee": "'finger_system_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "SELECT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "admin_notice",
+          "schema": "finger_system_test",
+          "grantee": "'finger_system_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "INSERT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "admin_notice",
+          "schema": "finger_system_test",
+          "grantee": "'finger_system_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "UPDATE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "admin_notice",
+          "schema": "finger_system_test",
+          "grantee": "'finger_system_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "DELETE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "permission_menu_url",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "SELECT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "permission_menu_url",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "INSERT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "permission_menu_url",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "UPDATE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "permission_menu_url",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "DELETE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "country_info_i18n",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "SELECT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "country_info_i18n",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "INSERT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "country_info_i18n",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "UPDATE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "country_info_i18n",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "DELETE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "permission_menu",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "SELECT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "permission_menu",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "INSERT"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "permission_menu",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "UPDATE"
+        },
+        {
+          "kind": "table_privilege",
+          "table": "permission_menu",
+          "schema": "finger_coms_test",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "DELETE"
+        },
+        {
+          "kind": "global_privilege",
+          "grantee": "'finger_system_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "USAGE"
+        },
+        {
+          "kind": "global_privilege",
+          "grantee": "'finger_coms_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "USAGE"
+        },
+        {
+          "kind": "global_privilege",
+          "grantee": "'finger_auth_test'@'10.63.20.20'",
+          "grantable": "NO",
+          "privilege": "USAGE"
+        },
+        {
+          "kind": "global_privilege",
+          "grantee": "'nacos_test'@'%'",
+          "grantable": "NO",
+          "privilege": "USAGE"
+        }
+      ],
+      "authentication": "own-new-target-root-via-anonymous-FD3",
+      "credential_values_in_argv_or_environment": false,
+      "SQL_kind": "SELECT-only",
+      "password_or_hash_columns_selected": false
+    }
+  },
+  "negative_auth_safety_preconditions": {
+    "prod_application_users": [
+      "finger_prod"
+    ],
+    "test_application_users": [
+      "finger_test"
+    ],
+    "official_nacos_admin_excluded_from_application_set": true,
+    "different_expected_usernames": true,
+    "opposite_username_absent": true
+  },
+  "audit_preparation_note": "Initial local assertion counted retained inactive gateway-v1 document. It is intentionally preserved; audit now selects the six documents imported by current release. No credential negative attempt had occurred.",
+  "inactive_retained_nacos_candidate_documents": [
+    "finger-gateway-mobile.yaml"
+  ],
+  "java_runtime_configuration": {
+    "services": [
+      {
+        "service": "finger-service-system",
+        "datasource": {
+          "host": "10.63.20.10",
+          "port": 3306,
+          "schema": "finger_system_test",
+          "user": "finger_system_test",
+          "client_host": "10.63.20.20"
+        },
+        "datasource_absent_when_not_required": false,
+        "nacos_server": "10.63.20.10:8848",
+        "nacos_namespace": "10719261-2641-590a-b821-c8484ca955ac",
+        "nacos_group": "DELL_TEST",
+        "nacos_user": "finger_test",
+        "all_config_imports_mandatory_test_group": true
+      },
+      {
+        "service": "finger-service-coms",
+        "datasource": {
+          "host": "10.63.20.10",
+          "port": 3306,
+          "schema": "finger_coms_test",
+          "user": "finger_coms_test",
+          "client_host": "10.63.20.20"
+        },
+        "datasource_absent_when_not_required": false,
+        "nacos_server": "10.63.20.10:8848",
+        "nacos_namespace": "10719261-2641-590a-b821-c8484ca955ac",
+        "nacos_group": "DELL_TEST",
+        "nacos_user": "finger_test",
+        "all_config_imports_mandatory_test_group": true
+      },
+      {
+        "service": "finger-auth",
+        "datasource": {
+          "host": "10.63.20.10",
+          "port": 3306,
+          "schema": "finger_auth_test",
+          "user": "finger_auth_test",
+          "client_host": "10.63.20.20"
+        },
+        "datasource_absent_when_not_required": false,
+        "nacos_server": "10.63.20.10:8848",
+        "nacos_namespace": "10719261-2641-590a-b821-c8484ca955ac",
+        "nacos_group": "DELL_TEST",
+        "nacos_user": "finger_test",
+        "all_config_imports_mandatory_test_group": true
+      },
+      {
+        "service": "finger-bff-system",
+        "datasource": null,
+        "datasource_absent_when_not_required": true,
+        "nacos_server": "10.63.20.10:8848",
+        "nacos_namespace": "10719261-2641-590a-b821-c8484ca955ac",
+        "nacos_group": "DELL_TEST",
+        "nacos_user": "finger_test",
+        "all_config_imports_mandatory_test_group": true
+      },
+      {
+        "service": "finger-gateway-mobile",
+        "datasource": null,
+        "datasource_absent_when_not_required": true,
+        "nacos_server": "10.63.20.10:8848",
+        "nacos_namespace": "10719261-2641-590a-b821-c8484ca955ac",
+        "nacos_group": "DELL_TEST",
+        "nacos_user": "finger_test",
+        "all_config_imports_mandatory_test_group": true
+      }
+    ],
+    "datasource_configured_count": 3,
+    "sms_keys_empty": {
+      "aws": {
+        "access-key-id": true,
+        "access-key-secret": true
+      },
+      "aliyun": {
+        "access-key-id": true,
+        "access-key-secret": true
+      }
+    },
+    "sargia_provider": {
+      "host": "10.63.20.20",
+      "port": 9,
+      "explicitly_disabled_client": true
+    },
+    "credential_field_classification": [
+      {
+        "config": "finger-service-system",
+        "field": "spring.cloud.nacos.password",
+        "empty": false,
+        "matches_explicit_new_target_credential_or_empty": true
+      },
+      {
+        "config": "finger-service-system",
+        "field": "spring.datasource.password",
+        "empty": false,
+        "matches_explicit_new_target_credential_or_empty": true
+      },
+      {
+        "config": "finger-service-coms",
+        "field": "spring.cloud.nacos.password",
+        "empty": false,
+        "matches_explicit_new_target_credential_or_empty": true
+      },
+      {
+        "config": "finger-service-coms",
+        "field": "spring.datasource.password",
+        "empty": false,
+        "matches_explicit_new_target_credential_or_empty": true
+      },
+      {
+        "config": "finger-auth",
+        "field": "spring.cloud.nacos.password",
+        "empty": false,
+        "matches_explicit_new_target_credential_or_empty": true
+      },
+      {
+        "config": "finger-auth",
+        "field": "spring.datasource.password",
+        "empty": false,
+        "matches_explicit_new_target_credential_or_empty": true
+      },
+      {
+        "config": "finger-auth",
+        "field": "finger.auth.bootstrap.clients.finger-admin.secret",
+        "empty": false,
+        "matches_explicit_new_target_credential_or_empty": true
+      },
+      {
+        "config": "finger-auth",
+        "field": "finger.auth.bootstrap.clients.finger-merchant.secret",
+        "empty": false,
+        "matches_explicit_new_target_credential_or_empty": true
+      },
+      {
+        "config": "finger-auth",
+        "field": "finger.auth.bootstrap.clients.finger-app.secret",
+        "empty": false,
+        "matches_explicit_new_target_credential_or_empty": true
+      },
+      {
+        "config": "finger-auth",
+        "field": "finger.auth.bootstrap.clients.finger-web.secret",
+        "empty": false,
+        "matches_explicit_new_target_credential_or_empty": true
+      },
+      {
+        "config": "finger-bff-system",
+        "field": "spring.cloud.nacos.password",
+        "empty": false,
+        "matches_explicit_new_target_credential_or_empty": true
+      },
+      {
+        "config": "finger-gateway-mobile",
+        "field": "spring.cloud.nacos.password",
+        "empty": false,
+        "matches_explicit_new_target_credential_or_empty": true
+      },
+      {
+        "config": "finger-common.yaml",
+        "field": "redis.password",
+        "empty": false,
+        "matches_explicit_new_target_credential_or_empty": true
+      },
+      {
+        "config": "finger-common.yaml",
+        "field": "spring.data.redis.password",
+        "empty": false,
+        "matches_explicit_new_target_credential_or_empty": true
+      },
+      {
+        "config": "finger-common.yaml",
+        "field": "spring.rabbitmq.password",
+        "empty": false,
+        "matches_explicit_new_target_credential_or_empty": true
+      },
+      {
+        "config": "finger-common.yaml",
+        "field": "sms.aws.access-key-id",
+        "empty": true,
+        "matches_explicit_new_target_credential_or_empty": true
+      },
+      {
+        "config": "finger-common.yaml",
+        "field": "sms.aws.access-key-secret",
+        "empty": true,
+        "matches_explicit_new_target_credential_or_empty": true
+      },
+      {
+        "config": "finger-common.yaml",
+        "field": "sms.aliyun.access-key-id",
+        "empty": true,
+        "matches_explicit_new_target_credential_or_empty": true
+      },
+      {
+        "config": "finger-common.yaml",
+        "field": "sms.aliyun.access-key-secret",
+        "empty": true,
+        "matches_explicit_new_target_credential_or_empty": true
+      }
+    ],
+    "unknown_nonempty_credential_fields": 0,
+    "payment_broker_or_external_provider_config_fields": [],
+    "scope": "externalized new test runtime and six active Nacos documents; not a binary/code-wide secret scan"
+  },
+  "actual_runtime_readback": {
+    "release": "20261106T121030",
+    "configs": [
+      {
+        "service": "finger-service-system",
+        "live_bytes_equal_new_target_prepared_config": true,
+        "root600": true,
+        "unit": {
+          "User": "finger",
+          "ActiveState": "active"
+        }
+      },
+      {
+        "service": "finger-service-coms",
+        "live_bytes_equal_new_target_prepared_config": true,
+        "root600": true,
+        "unit": {
+          "User": "finger",
+          "ActiveState": "active"
+        }
+      },
+      {
+        "service": "finger-auth",
+        "live_bytes_equal_new_target_prepared_config": true,
+        "root600": true,
+        "unit": {
+          "User": "finger",
+          "ActiveState": "active"
+        }
+      },
+      {
+        "service": "finger-bff-system",
+        "live_bytes_equal_new_target_prepared_config": true,
+        "root600": true,
+        "unit": {
+          "User": "finger",
+          "ActiveState": "active"
+        }
+      },
+      {
+        "service": "finger-gateway-mobile",
+        "live_bytes_equal_new_target_prepared_config": true,
+        "root600": true,
+        "unit": {
+          "User": "finger",
+          "ActiveState": "active"
+        }
+      }
+    ],
+    "config_contents_or_digests_emitted": false
+  },
+  "actual_nacos_readback": {
+    "server": "10.63.20.10:8848",
+    "namespace": "10719261-2641-590a-b821-c8484ca955ac",
+    "group": "DELL_TEST",
+    "client": "finger_test",
+    "client_login_succeeded": true,
+    "configs": [
+      {
+        "data_id": "finger-service-coms.yaml",
+        "http_status": 200,
+        "live_bytes_equal_new_target_prepared_config": true
+      },
+      {
+        "data_id": "finger-service-system.yaml",
+        "http_status": 200,
+        "live_bytes_equal_new_target_prepared_config": true
+      },
+      {
+        "data_id": "finger-common.yaml",
+        "http_status": 200,
+        "live_bytes_equal_new_target_prepared_config": true
+      },
+      {
+        "data_id": "finger-gateway-mobile-lan-v2.yaml",
+        "http_status": 200,
+        "live_bytes_equal_new_target_prepared_config": true
+      },
+      {
+        "data_id": "finger-auth.yaml",
+        "http_status": 200,
+        "live_bytes_equal_new_target_prepared_config": true
+      },
+      {
+        "data_id": "finger-bff-system.yaml",
+        "http_status": 200,
+        "live_bytes_equal_new_target_prepared_config": true
+      }
+    ],
+    "contents_or_tokens_or_digests_emitted": false
+  },
+  "normal_nacos_health_before_remaining_negative": {
+    "201": {
+      "readiness_http_status": 200,
+      "own_environment_client_login_http_status": 200,
+      "own_environment_client_token_issued": true,
+      "username": "finger_prod",
+      "credential_or_token_emitted": false,
+      "passed": true
+    },
+    "210": {
+      "readiness_http_status": 200,
+      "own_environment_client_login_http_status": 200,
+      "own_environment_client_token_issued": true,
+      "username": "finger_test",
+      "credential_or_token_emitted": false,
+      "passed": true
+    }
+  },
+  "authentication_response_semantics": {
+    "standard_401_403_observed": [
+      false,
+      false
+    ],
+    "actual_http_statuses": [
+      500,
+      500
+    ],
+    "unexpected_cross_environment_login_succeeded": false,
+    "no_repeat_attempts": true,
+    "no_admin_cross_credential_test": true,
+    "limitation": "Nacos 2.4.3 returns HTTP500 for unknown-user authentication path; this is not relabeled as401/403. Static source attribution is consistent, not a captured runtime stack trace. First error body was discarded without token-field parsing."
+  },
+  "upstream_500_static_attribution": {
+    "version": "2.4.3",
+    "observed_missing_users_confirmed_by_live_SELECT": true,
+    "runtime_exception_trace_read": false,
+    "attribution_kind": "static-path-consistent-inference",
+    "sources": [
+      {
+        "url": "https://raw.githubusercontent.com/alibaba/nacos/2.4.3/plugin-default-impl/nacos-default-auth-plugin/src/main/java/com/alibaba/nacos/plugin/auth/impl/controller/UserController.java",
+        "local": "infra/data/audit-isolation/UserController.java",
+        "lines": [
+          266,
+          272,
+          298
+        ],
+        "finding": "NACOS system login calls authenticate outside the legacy BadCredentialsException catch."
+      },
+      {
+        "url": "https://raw.githubusercontent.com/alibaba/nacos/2.4.3/plugin-default-impl/nacos-default-auth-plugin/src/main/java/com/alibaba/nacos/plugin/auth/impl/authenticate/AbstractAuthenticationManager.java",
+        "local": "infra/data/audit-isolation/AbstractAuthenticationManager.java",
+        "lines": [
+          56,
+          60,
+          62
+        ],
+        "finding": "UserDetailsService lookup precedes the null/password guard."
+      },
+      {
+        "url": "https://raw.githubusercontent.com/alibaba/nacos/2.4.3/plugin-default-impl/nacos-default-auth-plugin/src/main/java/com/alibaba/nacos/plugin/auth/impl/users/NacosUserDetailsServiceImpl.java",
+        "local": "infra/data/audit-isolation/NacosUserDetailsServiceImpl.java",
+        "lines": [
+          73,
+          80,
+          81
+        ],
+        "finding": "Missing username raises UsernameNotFoundException."
+      },
+      {
+        "url": "https://raw.githubusercontent.com/alibaba/nacos/2.4.3/console/src/main/java/com/alibaba/nacos/console/exception/ConsoleExceptionHandler.java",
+        "local": "infra/data/audit-isolation/ConsoleExceptionHandler.java",
+        "lines": [
+          45,
+          48,
+          62,
+          70
+        ],
+        "finding": "AccessException maps403; generic Exception maps500."
+      }
+    ]
+  },
+  "mysql_account_scope_summary": [
+    {
+      "vmid": 200,
+      "account": "nacos_prod",
+      "host": "%",
+      "business_runtime_account": false,
+      "schema_grants_raw_mysql_escaped": [
+        "nacos\\\\_prod"
+      ],
+      "table_names": [],
+      "table_DML": [],
+      "schema_privileges": [
+        "ALTER",
+        "ALTER ROUTINE",
+        "CREATE",
+        "CREATE ROUTINE",
+        "CREATE TEMPORARY TABLES",
+        "CREATE VIEW",
+        "DELETE",
+        "DROP",
+        "EVENT",
+        "EXECUTE",
+        "INDEX",
+        "INSERT",
+        "LOCK TABLES",
+        "REFERENCES",
+        "SELECT",
+        "SHOW VIEW",
+        "TRIGGER",
+        "UPDATE"
+      ],
+      "global_privileges": [
+        "USAGE"
+      ],
+      "grant_option": false,
+      "scope_note": "Nacos infrastructure DB owner within own schema, not a Java runtime user.",
+      "schema_names_normalized_for_display": [
+        "nacos_prod"
+      ]
+    },
+    {
+      "vmid": 210,
+      "account": "nacos_test",
+      "host": "%",
+      "business_runtime_account": false,
+      "schema_grants_raw_mysql_escaped": [
+        "nacos\\\\_test"
+      ],
+      "table_names": [],
+      "table_DML": [],
+      "schema_privileges": [
+        "ALTER",
+        "ALTER ROUTINE",
+        "CREATE",
+        "CREATE ROUTINE",
+        "CREATE TEMPORARY TABLES",
+        "CREATE VIEW",
+        "DELETE",
+        "DROP",
+        "EVENT",
+        "EXECUTE",
+        "INDEX",
+        "INSERT",
+        "LOCK TABLES",
+        "REFERENCES",
+        "SELECT",
+        "SHOW VIEW",
+        "TRIGGER",
+        "UPDATE"
+      ],
+      "global_privileges": [
+        "USAGE"
+      ],
+      "grant_option": false,
+      "scope_note": "Nacos infrastructure DB owner within own schema, not a Java runtime user.",
+      "schema_names_normalized_for_display": [
+        "nacos_test"
+      ]
+    },
+    {
+      "vmid": 210,
+      "account": "finger_auth_test",
+      "host": "10.63.20.20",
+      "business_runtime_account": true,
+      "schema_grants_raw_mysql_escaped": [
+        "finger_auth_test"
+      ],
+      "table_names": [
+        "oauth2_authorization",
+        "oauth2_authorization_consent",
+        "oauth2_registered_client"
+      ],
+      "table_DML": [
+        "DELETE",
+        "INSERT",
+        "SELECT",
+        "UPDATE"
+      ],
+      "schema_privileges": [],
+      "global_privileges": [
+        "USAGE"
+      ],
+      "grant_option": false,
+      "scope_note": "Exact Java240 host, per-table DML only; no runtime DDL or grant option.",
+      "schema_names_normalized_for_display": [
+        "finger_auth_test"
+      ]
+    },
+    {
+      "vmid": 210,
+      "account": "finger_coms_test",
+      "host": "10.63.20.20",
+      "business_runtime_account": true,
+      "schema_grants_raw_mysql_escaped": [
+        "finger_coms_test"
+      ],
+      "table_names": [
+        "city_info",
+        "city_info_i18n",
+        "country_info",
+        "country_info_i18n",
+        "dict",
+        "file_info",
+        "permission_menu",
+        "permission_menu_url",
+        "permission_role",
+        "permission_role_menu"
+      ],
+      "table_DML": [
+        "DELETE",
+        "INSERT",
+        "SELECT",
+        "UPDATE"
+      ],
+      "schema_privileges": [],
+      "global_privileges": [
+        "USAGE"
+      ],
+      "grant_option": false,
+      "scope_note": "Exact Java240 host, per-table DML only; no runtime DDL or grant option.",
+      "schema_names_normalized_for_display": [
+        "finger_coms_test"
+      ]
+    },
+    {
+      "vmid": 210,
+      "account": "finger_system_test",
+      "host": "10.63.20.20",
+      "business_runtime_account": true,
+      "schema_grants_raw_mysql_escaped": [
+        "finger_system_test"
+      ],
+      "table_names": [
+        "admin_notice",
+        "admin_notice_delivery",
+        "role_info",
+        "role_permission",
+        "user"
+      ],
+      "table_DML": [
+        "DELETE",
+        "INSERT",
+        "SELECT",
+        "UPDATE"
+      ],
+      "schema_privileges": [],
+      "global_privileges": [
+        "USAGE"
+      ],
+      "grant_option": false,
+      "scope_note": "Exact Java240 host, per-table DML only; no runtime DDL or grant option.",
+      "schema_names_normalized_for_display": [
+        "finger_system_test"
+      ]
+    }
+  ],
+  "namespace_roles_verified": [
+    {
+      "user": "finger_prod",
+      "role": "finger-prod-client",
+      "namespace": "9545c5c8-e112-542f-8302-36504e80e90a",
+      "resource": "9545c5c8-e112-542f-8302-36504e80e90a:*:*",
+      "action": "rw",
+      "global_admin_role": false
+    },
+    {
+      "user": "finger_test",
+      "role": "finger-test-client",
+      "namespace": "10719261-2641-590a-b821-c8484ca955ac",
+      "resource": "10719261-2641-590a-b821-c8484ca955ac:*:*",
+      "action": "rw",
+      "global_admin_role": false
+    }
+  ],
+  "existing_evidence": {
+    "network": {
+      "path": "evidence/implementation/network-independent-verification.json",
+      "matrix": {
+        "total": 30,
+        "allowed_pass": 10,
+        "denied_pass": 20,
+        "inconclusive_or_failed": 0
+      }
+    },
+    "namespace_other_access_denied": {
+      "paths": [
+        "evidence/implementation/data-deployment-acceptance.json",
+        "evidence/implementation/test-data-deployment.json",
+        "evidence/implementation/rolling-guest-reboot-acceptance.json"
+      ],
+      "prod_and_test_verified": true
+    },
+    "test_runtime_SQL": {
+      "path": "evidence/implementation/java-test-init.json",
+      "account_host": "10.63.20.20",
+      "runtime_privileges": [
+        "SELECT",
+        "INSERT",
+        "UPDATE",
+        "DELETE"
+      ],
+      "source_rows_copied": false
+    },
+    "formal_data_inventory": {
+      "path": "evidence/implementation/data-prod-final-inventory.json",
+      "collected_at": "2026-11-06T11:07:30.855387+08:00",
+      "formal_business_schema_count": 0
+    },
+    "formal_runtime_only": {
+      "user_scope": "Formal230-232 deliver cluster runtime only; business apps are first accepted on test240.",
+      "scope_reference": "AGENTS.md / plan.json latest user decision",
+      "latest_normal_reboot_evidence": "evidence/implementation/rolling-guest-reboot-acceptance.json",
+      "collected_at": "2026-11-06T13:43:42.850934+08:00",
+      "nodes": [
+        {
+          "vmid": 230,
+          "nonroot_java_ok": true,
+          "active_business_units": false
+        },
+        {
+          "vmid": 231,
+          "nonroot_java_ok": true,
+          "active_business_units": false
+        },
+        {
+          "vmid": 232,
+          "nonroot_java_ok": true,
+          "active_business_units": false
+        }
+      ]
+    }
+  },
+  "result_summary": {
+    "new_target_secret_separation": "passed",
+    "separate_instance_namespace_vhost_and_account_scope": "passed",
+    "actual_test_runtime_and_Nacos_config_binding": "passed",
+    "per_table_SQL_DML_and_exact_Java240_account_host": "passed",
+    "existing_30_case_network_isolation": "passed",
+    "cross_environment_auth_permission": "no-successful-login-observed-with-known-missing-account-and-nonstandard500-response",
+    "standard_auth_error_semantics": "limited-not-standard401403",
+    "manager_DATA001_signoff_required": true
+  },
+  "scope_limits": [
+    "No source business data migration is claimed.",
+    "No whole-source test-data sanitization is claimed; current test chain uses fresh schema and synthetic identities.",
+    "No formal business application was started or formal business schema initialized.",
+    "External credential conclusion covers checked new externalized runtime/Nacos documents, not every dependency binary or repository.",
+    "No source Mac credential file, Nacos administrator cross-credential trial, SQL write, service restart or configuration update was performed.",
+    "HTTP500 is preserved; its attribution is a static-source inference, not a captured server exception trace."
+  ],
+  "completed_at": "2026-11-06T14:30:46.756329+08:00",
+  "test_business_password_separation": {
+    "three_service_passwords_pairwise_different": true,
+    "all_different_from_target_test_mysql_root": true,
+    "all_different_from_target_test_nacos_DB_owner": true,
+    "no_formal_business_counterpart_created": true
+  },
+  "ordinary_evidence_secret_literal_scan": {
+    "new_target_secret_files_only": true,
+    "matched_literal_count": 0,
+    "password_hashes_generated_or_recorded": false
+  }
+}

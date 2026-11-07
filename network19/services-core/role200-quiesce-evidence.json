@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-06T09:04:24.236961+00:00",
+  "exit_code": 0,
+  "target": {
+    "vmid": 200,
+    "ip": "10.63.10.10",
+    "host_key_alias": "dell-vm200",
+    "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "result": {
+    "status": "quiesced",
+    "vmid": 200,
+    "unit": "dell-data-prod-db.service",
+    "expected_containers_stopped": 1,
+    "data_deleted_or_OS_changed": false,
+    "Nacos_bootstrap_or_notifications_run": false,
+    "existing_app_backups_checked_before_quiesce": [
+      {
+        "component": "nacos",
+        "file": "mysql.sql.gz",
+        "SHA_matches": true,
+        "retained_in_place_not_exported": true
+      }
+    ]
+  }
+}

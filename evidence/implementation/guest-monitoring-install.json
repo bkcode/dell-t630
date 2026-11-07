@@ -1,0 +1,2109 @@
+{
+  "started_at": "2026-11-06T07:01:12.176517+08:00",
+  "scope": "new-guest-install-only",
+  "allowed_vmids": [
+    200,
+    201,
+    210,
+    220,
+    221,
+    230,
+    231,
+    240,
+    250,
+    260,
+    270,
+    232
+  ],
+  "concurrency": 1,
+  "host_mutated": false,
+  "network_changed": false,
+  "activate_requested": false,
+  "collector_started": false,
+  "source_mac_scheduler_installed": false,
+  "tool_sha256": {
+    "install-guest-baseline.py": "73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf",
+    "collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+    "guest-targets.json": "c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e"
+  },
+  "guests": [
+    {
+      "vmid": 200,
+      "role": "data-prod-db",
+      "target": {
+        "vmid": 200,
+        "ip": "192.168.21.171",
+        "host_key_alias": "dell-vm200",
+        "host_key_fingerprint": "SHA256:DvGgHhP62V5OuMxO7+6rHZPSRU9N2hD+QWmtSe9HdqA",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "started_at": "2026-11-06T07:01:12.177607+08:00",
+      "status": "installed-parked-verified",
+      "preflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"data-prod-db\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"c7ef9dfd-7515-4b52-a1a1-793daf644cf8\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.171\", \"172.17.0.1\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [\"containerd.io=2.4.2-3~debian.13~trixie\", \"docker-ce-cli=5:29.9.3-1~debian.13~trixie\", \"docker-ce=5:29.9.3-1~debian.13~trixie\"], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"docker.service\": {\"active\": \"active\", \"enabled\": \"enabled\"}}, \"listeners_9100\": [], \"installer_receipt\": null}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 200,
+          "ip": "192.168.21.171",
+          "host_key_alias": "dell-vm200",
+          "host_key_fingerprint": "SHA256:DvGgHhP62V5OuMxO7+6rHZPSRU9N2hD+QWmtSe9HdqA",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "before": {
+        "hostname": "data-prod-db",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "c7ef9dfd-7515-4b52-a1a1-793daf644cf8",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.171",
+          "172.17.0.1"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [
+          "containerd.io=2.4.2-3~debian.13~trixie",
+          "docker-ce-cli=5:29.9.3-1~debian.13~trixie",
+          "docker-ce=5:29.9.3-1~debian.13~trixie"
+        ],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "docker.service": {
+            "active": "active",
+            "enabled": "enabled"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": null
+      },
+      "copy_result": {
+        "exit_code": 0,
+        "stdout": "{\"directory\": \"/tmp/dell-monitoring-prep\", \"files_sha256\": {\"install-guest-baseline.py\": \"73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf\", \"collect-guest-health.py\": \"cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1\", \"guest-targets.json\": \"c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e\"}, \"secrets_included\": false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 200,
+          "ip": "192.168.21.171",
+          "host_key_alias": "dell-vm200",
+          "host_key_fingerprint": "SHA256:DvGgHhP62V5OuMxO7+6rHZPSRU9N2hD+QWmtSe9HdqA",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "install_result": {
+        "exit_code": 0,
+        "stdout": "{\"timestamp\": \"2026-11-06T07:01:29.779080+08:00\", \"mode\": \"install-only\", \"role\": \"data-prod-db\", \"vmid\": 200, \"expected_private_ip\": \"10.63.10.10\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 200,
+          "ip": "192.168.21.171",
+          "host_key_alias": "dell-vm200",
+          "host_key_fingerprint": "SHA256:DvGgHhP62V5OuMxO7+6rHZPSRU9N2hD+QWmtSe9HdqA",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "postflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"data-prod-db\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"c7ef9dfd-7515-4b52-a1a1-793daf644cf8\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.171\", \"172.17.0.1\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [\"containerd.io=2.4.2-3~debian.13~trixie\", \"docker-ce-cli=5:29.9.3-1~debian.13~trixie\", \"docker-ce=5:29.9.3-1~debian.13~trixie\"], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"static\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"disabled\"}, \"docker.service\": {\"active\": \"active\", \"enabled\": \"enabled\"}}, \"listeners_9100\": [], \"installer_receipt\": {\"timestamp\": \"2026-11-06T07:01:29.779080+08:00\", \"mode\": \"install-only\", \"role\": \"data-prod-db\", \"vmid\": 200, \"expected_private_ip\": \"10.63.10.10\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 200,
+          "ip": "192.168.21.171",
+          "host_key_alias": "dell-vm200",
+          "host_key_fingerprint": "SHA256:DvGgHhP62V5OuMxO7+6rHZPSRU9N2hD+QWmtSe9HdqA",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "after": {
+        "hostname": "data-prod-db",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "c7ef9dfd-7515-4b52-a1a1-793daf644cf8",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.171",
+          "172.17.0.1"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [
+          "containerd.io=2.4.2-3~debian.13~trixie",
+          "docker-ce-cli=5:29.9.3-1~debian.13~trixie",
+          "docker-ce=5:29.9.3-1~debian.13~trixie"
+        ],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "static"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "disabled"
+          },
+          "docker.service": {
+            "active": "active",
+            "enabled": "enabled"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": {
+          "timestamp": "2026-11-06T07:01:29.779080+08:00",
+          "mode": "install-only",
+          "role": "data-prod-db",
+          "vmid": 200,
+          "expected_private_ip": "10.63.10.10",
+          "exporter_enabled": "masked",
+          "exporter_active": "inactive",
+          "exporter_socket_enabled": "masked",
+          "collector_timer_enabled": "disabled",
+          "collector_timer_active": "inactive",
+          "collector_active": "inactive",
+          "listeners_9100": [],
+          "exporter_enablement_links": [],
+          "socket_enablement_links": [],
+          "notifications_sent": false,
+          "pve_or_ct_targeted": false,
+          "package_version": "1.9.0-1+b4"
+        }
+      },
+      "finished_at": "2026-11-06T07:01:30.741488+08:00",
+      "policy_restored": true,
+      "docker_unchanged": true,
+      "port9100_listening": false,
+      "collector_timer_activated": false
+    },
+    {
+      "vmid": 201,
+      "role": "data-prod-infra",
+      "target": {
+        "vmid": 201,
+        "ip": "192.168.21.177",
+        "host_key_alias": "dell-vm201",
+        "host_key_fingerprint": "SHA256:IVJyMVDW1aYjgf6s3oaE/0GwOmpy05ulDHAy8yggeiA",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "started_at": "2026-11-06T07:01:30.743058+08:00",
+      "status": "installed-parked-verified",
+      "preflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"data-prod-infra\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"35cbe96d-d7be-4ba4-9e0f-812e47c47d86\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.177\", \"172.17.0.1\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [\"containerd.io=2.4.2-3~debian.13~trixie\", \"docker-ce-cli=5:29.9.3-1~debian.13~trixie\", \"docker-ce=5:29.9.3-1~debian.13~trixie\"], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"docker.service\": {\"active\": \"active\", \"enabled\": \"enabled\"}}, \"listeners_9100\": [], \"installer_receipt\": null}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 201,
+          "ip": "192.168.21.177",
+          "host_key_alias": "dell-vm201",
+          "host_key_fingerprint": "SHA256:IVJyMVDW1aYjgf6s3oaE/0GwOmpy05ulDHAy8yggeiA",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "before": {
+        "hostname": "data-prod-infra",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "35cbe96d-d7be-4ba4-9e0f-812e47c47d86",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.177",
+          "172.17.0.1"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [
+          "containerd.io=2.4.2-3~debian.13~trixie",
+          "docker-ce-cli=5:29.9.3-1~debian.13~trixie",
+          "docker-ce=5:29.9.3-1~debian.13~trixie"
+        ],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "docker.service": {
+            "active": "active",
+            "enabled": "enabled"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": null
+      },
+      "copy_result": {
+        "exit_code": 0,
+        "stdout": "{\"directory\": \"/tmp/dell-monitoring-prep\", \"files_sha256\": {\"install-guest-baseline.py\": \"73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf\", \"collect-guest-health.py\": \"cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1\", \"guest-targets.json\": \"c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e\"}, \"secrets_included\": false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 201,
+          "ip": "192.168.21.177",
+          "host_key_alias": "dell-vm201",
+          "host_key_fingerprint": "SHA256:IVJyMVDW1aYjgf6s3oaE/0GwOmpy05ulDHAy8yggeiA",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "install_result": {
+        "exit_code": 0,
+        "stdout": "{\"timestamp\": \"2026-11-06T07:01:47.955992+08:00\", \"mode\": \"install-only\", \"role\": \"data-prod-infra\", \"vmid\": 201, \"expected_private_ip\": \"10.63.10.11\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 201,
+          "ip": "192.168.21.177",
+          "host_key_alias": "dell-vm201",
+          "host_key_fingerprint": "SHA256:IVJyMVDW1aYjgf6s3oaE/0GwOmpy05ulDHAy8yggeiA",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "postflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"data-prod-infra\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"35cbe96d-d7be-4ba4-9e0f-812e47c47d86\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.177\", \"172.17.0.1\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [\"containerd.io=2.4.2-3~debian.13~trixie\", \"docker-ce-cli=5:29.9.3-1~debian.13~trixie\", \"docker-ce=5:29.9.3-1~debian.13~trixie\"], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"static\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"disabled\"}, \"docker.service\": {\"active\": \"active\", \"enabled\": \"enabled\"}}, \"listeners_9100\": [], \"installer_receipt\": {\"timestamp\": \"2026-11-06T07:01:47.955992+08:00\", \"mode\": \"install-only\", \"role\": \"data-prod-infra\", \"vmid\": 201, \"expected_private_ip\": \"10.63.10.11\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 201,
+          "ip": "192.168.21.177",
+          "host_key_alias": "dell-vm201",
+          "host_key_fingerprint": "SHA256:IVJyMVDW1aYjgf6s3oaE/0GwOmpy05ulDHAy8yggeiA",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "after": {
+        "hostname": "data-prod-infra",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "35cbe96d-d7be-4ba4-9e0f-812e47c47d86",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.177",
+          "172.17.0.1"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [
+          "containerd.io=2.4.2-3~debian.13~trixie",
+          "docker-ce-cli=5:29.9.3-1~debian.13~trixie",
+          "docker-ce=5:29.9.3-1~debian.13~trixie"
+        ],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "static"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "disabled"
+          },
+          "docker.service": {
+            "active": "active",
+            "enabled": "enabled"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": {
+          "timestamp": "2026-11-06T07:01:47.955992+08:00",
+          "mode": "install-only",
+          "role": "data-prod-infra",
+          "vmid": 201,
+          "expected_private_ip": "10.63.10.11",
+          "exporter_enabled": "masked",
+          "exporter_active": "inactive",
+          "exporter_socket_enabled": "masked",
+          "collector_timer_enabled": "disabled",
+          "collector_timer_active": "inactive",
+          "collector_active": "inactive",
+          "listeners_9100": [],
+          "exporter_enablement_links": [],
+          "socket_enablement_links": [],
+          "notifications_sent": false,
+          "pve_or_ct_targeted": false,
+          "package_version": "1.9.0-1+b4"
+        }
+      },
+      "finished_at": "2026-11-06T07:01:48.894634+08:00",
+      "policy_restored": true,
+      "docker_unchanged": true,
+      "port9100_listening": false,
+      "collector_timer_activated": false
+    },
+    {
+      "vmid": 210,
+      "role": "data-test",
+      "target": {
+        "vmid": 210,
+        "ip": "192.168.21.153",
+        "host_key_alias": "dell-vm210",
+        "host_key_fingerprint": "SHA256:0NGrIbuCNFPozzA3n4Gf7zE7q8JbG8gmWxLDBFPMnsU",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "started_at": "2026-11-06T07:01:48.896247+08:00",
+      "status": "installed-parked-verified",
+      "preflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"data-test\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"b6cc2ac1-b2c3-409b-bbbd-e963736f2409\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.153\", \"172.17.0.1\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [\"containerd.io=2.4.2-3~debian.13~trixie\", \"docker-ce-cli=5:29.9.3-1~debian.13~trixie\", \"docker-ce=5:29.9.3-1~debian.13~trixie\"], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"docker.service\": {\"active\": \"active\", \"enabled\": \"enabled\"}}, \"listeners_9100\": [], \"installer_receipt\": null}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 210,
+          "ip": "192.168.21.153",
+          "host_key_alias": "dell-vm210",
+          "host_key_fingerprint": "SHA256:0NGrIbuCNFPozzA3n4Gf7zE7q8JbG8gmWxLDBFPMnsU",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "before": {
+        "hostname": "data-test",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "b6cc2ac1-b2c3-409b-bbbd-e963736f2409",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.153",
+          "172.17.0.1"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [
+          "containerd.io=2.4.2-3~debian.13~trixie",
+          "docker-ce-cli=5:29.9.3-1~debian.13~trixie",
+          "docker-ce=5:29.9.3-1~debian.13~trixie"
+        ],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "docker.service": {
+            "active": "active",
+            "enabled": "enabled"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": null
+      },
+      "copy_result": {
+        "exit_code": 0,
+        "stdout": "{\"directory\": \"/tmp/dell-monitoring-prep\", \"files_sha256\": {\"install-guest-baseline.py\": \"73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf\", \"collect-guest-health.py\": \"cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1\", \"guest-targets.json\": \"c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e\"}, \"secrets_included\": false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 210,
+          "ip": "192.168.21.153",
+          "host_key_alias": "dell-vm210",
+          "host_key_fingerprint": "SHA256:0NGrIbuCNFPozzA3n4Gf7zE7q8JbG8gmWxLDBFPMnsU",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "install_result": {
+        "exit_code": 0,
+        "stdout": "{\"timestamp\": \"2026-11-06T07:02:23.844347+08:00\", \"mode\": \"install-only\", \"role\": \"data-test\", \"vmid\": 210, \"expected_private_ip\": \"10.63.20.10\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 210,
+          "ip": "192.168.21.153",
+          "host_key_alias": "dell-vm210",
+          "host_key_fingerprint": "SHA256:0NGrIbuCNFPozzA3n4Gf7zE7q8JbG8gmWxLDBFPMnsU",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "postflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"data-test\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"b6cc2ac1-b2c3-409b-bbbd-e963736f2409\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.153\", \"172.17.0.1\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [\"containerd.io=2.4.2-3~debian.13~trixie\", \"docker-ce-cli=5:29.9.3-1~debian.13~trixie\", \"docker-ce=5:29.9.3-1~debian.13~trixie\"], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"static\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"disabled\"}, \"docker.service\": {\"active\": \"active\", \"enabled\": \"enabled\"}}, \"listeners_9100\": [], \"installer_receipt\": {\"timestamp\": \"2026-11-06T07:02:23.844347+08:00\", \"mode\": \"install-only\", \"role\": \"data-test\", \"vmid\": 210, \"expected_private_ip\": \"10.63.20.10\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 210,
+          "ip": "192.168.21.153",
+          "host_key_alias": "dell-vm210",
+          "host_key_fingerprint": "SHA256:0NGrIbuCNFPozzA3n4Gf7zE7q8JbG8gmWxLDBFPMnsU",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "after": {
+        "hostname": "data-test",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "b6cc2ac1-b2c3-409b-bbbd-e963736f2409",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.153",
+          "172.17.0.1"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [
+          "containerd.io=2.4.2-3~debian.13~trixie",
+          "docker-ce-cli=5:29.9.3-1~debian.13~trixie",
+          "docker-ce=5:29.9.3-1~debian.13~trixie"
+        ],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "static"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "disabled"
+          },
+          "docker.service": {
+            "active": "active",
+            "enabled": "enabled"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": {
+          "timestamp": "2026-11-06T07:02:23.844347+08:00",
+          "mode": "install-only",
+          "role": "data-test",
+          "vmid": 210,
+          "expected_private_ip": "10.63.20.10",
+          "exporter_enabled": "masked",
+          "exporter_active": "inactive",
+          "exporter_socket_enabled": "masked",
+          "collector_timer_enabled": "disabled",
+          "collector_timer_active": "inactive",
+          "collector_active": "inactive",
+          "listeners_9100": [],
+          "exporter_enablement_links": [],
+          "socket_enablement_links": [],
+          "notifications_sent": false,
+          "pve_or_ct_targeted": false,
+          "package_version": "1.9.0-1+b4"
+        }
+      },
+      "finished_at": "2026-11-06T07:02:24.768377+08:00",
+      "policy_restored": true,
+      "docker_unchanged": true,
+      "port9100_listening": false,
+      "collector_timer_activated": false
+    },
+    {
+      "vmid": 220,
+      "role": "publish-service",
+      "target": {
+        "vmid": 220,
+        "ip": "192.168.21.163",
+        "host_key_alias": "dell-vm220",
+        "host_key_fingerprint": "SHA256:5X/KJJzRjVAwgXasAjR9ok7UW+6UhHyr1FdSKkOowBw",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "started_at": "2026-11-06T07:02:24.770020+08:00",
+      "status": "installed-parked-verified",
+      "preflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"publish-service\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"23d777f7-8d20-48f2-87cf-a3cd836a6ad0\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.163\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"docker.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}}, \"listeners_9100\": [], \"installer_receipt\": null}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 220,
+          "ip": "192.168.21.163",
+          "host_key_alias": "dell-vm220",
+          "host_key_fingerprint": "SHA256:5X/KJJzRjVAwgXasAjR9ok7UW+6UhHyr1FdSKkOowBw",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "before": {
+        "hostname": "publish-service",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "23d777f7-8d20-48f2-87cf-a3cd836a6ad0",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.163"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "docker.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": null
+      },
+      "copy_result": {
+        "exit_code": 0,
+        "stdout": "{\"directory\": \"/tmp/dell-monitoring-prep\", \"files_sha256\": {\"install-guest-baseline.py\": \"73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf\", \"collect-guest-health.py\": \"cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1\", \"guest-targets.json\": \"c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e\"}, \"secrets_included\": false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 220,
+          "ip": "192.168.21.163",
+          "host_key_alias": "dell-vm220",
+          "host_key_fingerprint": "SHA256:5X/KJJzRjVAwgXasAjR9ok7UW+6UhHyr1FdSKkOowBw",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "install_result": {
+        "exit_code": 0,
+        "stdout": "{\"timestamp\": \"2026-11-06T07:02:42.960269+08:00\", \"mode\": \"install-only\", \"role\": \"publish-service\", \"vmid\": 220, \"expected_private_ip\": \"10.63.30.10\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 220,
+          "ip": "192.168.21.163",
+          "host_key_alias": "dell-vm220",
+          "host_key_fingerprint": "SHA256:5X/KJJzRjVAwgXasAjR9ok7UW+6UhHyr1FdSKkOowBw",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "postflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"publish-service\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"23d777f7-8d20-48f2-87cf-a3cd836a6ad0\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.163\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"static\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"disabled\"}, \"docker.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}}, \"listeners_9100\": [], \"installer_receipt\": {\"timestamp\": \"2026-11-06T07:02:42.960269+08:00\", \"mode\": \"install-only\", \"role\": \"publish-service\", \"vmid\": 220, \"expected_private_ip\": \"10.63.30.10\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 220,
+          "ip": "192.168.21.163",
+          "host_key_alias": "dell-vm220",
+          "host_key_fingerprint": "SHA256:5X/KJJzRjVAwgXasAjR9ok7UW+6UhHyr1FdSKkOowBw",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "after": {
+        "hostname": "publish-service",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "23d777f7-8d20-48f2-87cf-a3cd836a6ad0",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.163"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "static"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "disabled"
+          },
+          "docker.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": {
+          "timestamp": "2026-11-06T07:02:42.960269+08:00",
+          "mode": "install-only",
+          "role": "publish-service",
+          "vmid": 220,
+          "expected_private_ip": "10.63.30.10",
+          "exporter_enabled": "masked",
+          "exporter_active": "inactive",
+          "exporter_socket_enabled": "masked",
+          "collector_timer_enabled": "disabled",
+          "collector_timer_active": "inactive",
+          "collector_active": "inactive",
+          "listeners_9100": [],
+          "exporter_enablement_links": [],
+          "socket_enablement_links": [],
+          "notifications_sent": false,
+          "pve_or_ct_targeted": false,
+          "package_version": "1.9.0-1+b4"
+        }
+      },
+      "finished_at": "2026-11-06T07:02:43.884937+08:00",
+      "policy_restored": true,
+      "docker_unchanged": true,
+      "port9100_listening": false,
+      "collector_timer_activated": false
+    },
+    {
+      "vmid": 221,
+      "role": "artifact-service",
+      "target": {
+        "vmid": 221,
+        "ip": "192.168.21.247",
+        "host_key_alias": "dell-vm221",
+        "host_key_fingerprint": "SHA256:7N4dWTJAt6KcZZYakrVc/mlUVPannAQRI28dmyMF7uE",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "started_at": "2026-11-06T07:02:43.886694+08:00",
+      "status": "installed-parked-verified",
+      "preflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"artifact-service\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"a13895fe-ad6f-4360-ad30-292327fb66cd\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.247\", \"172.17.0.1\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [\"containerd.io=2.4.2-3~debian.13~trixie\", \"docker-ce-cli=5:29.9.3-1~debian.13~trixie\", \"docker-ce=5:29.9.3-1~debian.13~trixie\"], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"docker.service\": {\"active\": \"active\", \"enabled\": \"enabled\"}}, \"listeners_9100\": [], \"installer_receipt\": null}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 221,
+          "ip": "192.168.21.247",
+          "host_key_alias": "dell-vm221",
+          "host_key_fingerprint": "SHA256:7N4dWTJAt6KcZZYakrVc/mlUVPannAQRI28dmyMF7uE",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "before": {
+        "hostname": "artifact-service",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "a13895fe-ad6f-4360-ad30-292327fb66cd",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.247",
+          "172.17.0.1"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [
+          "containerd.io=2.4.2-3~debian.13~trixie",
+          "docker-ce-cli=5:29.9.3-1~debian.13~trixie",
+          "docker-ce=5:29.9.3-1~debian.13~trixie"
+        ],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "docker.service": {
+            "active": "active",
+            "enabled": "enabled"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": null
+      },
+      "copy_result": {
+        "exit_code": 0,
+        "stdout": "{\"directory\": \"/tmp/dell-monitoring-prep\", \"files_sha256\": {\"install-guest-baseline.py\": \"73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf\", \"collect-guest-health.py\": \"cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1\", \"guest-targets.json\": \"c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e\"}, \"secrets_included\": false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 221,
+          "ip": "192.168.21.247",
+          "host_key_alias": "dell-vm221",
+          "host_key_fingerprint": "SHA256:7N4dWTJAt6KcZZYakrVc/mlUVPannAQRI28dmyMF7uE",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "install_result": {
+        "exit_code": 0,
+        "stdout": "{\"timestamp\": \"2026-11-06T07:03:08.323455+08:00\", \"mode\": \"install-only\", \"role\": \"artifact-service\", \"vmid\": 221, \"expected_private_ip\": \"10.63.30.20\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 221,
+          "ip": "192.168.21.247",
+          "host_key_alias": "dell-vm221",
+          "host_key_fingerprint": "SHA256:7N4dWTJAt6KcZZYakrVc/mlUVPannAQRI28dmyMF7uE",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "postflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"artifact-service\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"a13895fe-ad6f-4360-ad30-292327fb66cd\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.247\", \"172.17.0.1\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [\"containerd.io=2.4.2-3~debian.13~trixie\", \"docker-ce-cli=5:29.9.3-1~debian.13~trixie\", \"docker-ce=5:29.9.3-1~debian.13~trixie\"], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"static\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"disabled\"}, \"docker.service\": {\"active\": \"active\", \"enabled\": \"enabled\"}}, \"listeners_9100\": [], \"installer_receipt\": {\"timestamp\": \"2026-11-06T07:03:08.323455+08:00\", \"mode\": \"install-only\", \"role\": \"artifact-service\", \"vmid\": 221, \"expected_private_ip\": \"10.63.30.20\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 221,
+          "ip": "192.168.21.247",
+          "host_key_alias": "dell-vm221",
+          "host_key_fingerprint": "SHA256:7N4dWTJAt6KcZZYakrVc/mlUVPannAQRI28dmyMF7uE",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "after": {
+        "hostname": "artifact-service",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "a13895fe-ad6f-4360-ad30-292327fb66cd",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.247",
+          "172.17.0.1"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [
+          "containerd.io=2.4.2-3~debian.13~trixie",
+          "docker-ce-cli=5:29.9.3-1~debian.13~trixie",
+          "docker-ce=5:29.9.3-1~debian.13~trixie"
+        ],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "static"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "disabled"
+          },
+          "docker.service": {
+            "active": "active",
+            "enabled": "enabled"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": {
+          "timestamp": "2026-11-06T07:03:08.323455+08:00",
+          "mode": "install-only",
+          "role": "artifact-service",
+          "vmid": 221,
+          "expected_private_ip": "10.63.30.20",
+          "exporter_enabled": "masked",
+          "exporter_active": "inactive",
+          "exporter_socket_enabled": "masked",
+          "collector_timer_enabled": "disabled",
+          "collector_timer_active": "inactive",
+          "collector_active": "inactive",
+          "listeners_9100": [],
+          "exporter_enablement_links": [],
+          "socket_enablement_links": [],
+          "notifications_sent": false,
+          "pve_or_ct_targeted": false,
+          "package_version": "1.9.0-1+b4"
+        }
+      },
+      "finished_at": "2026-11-06T07:03:09.232938+08:00",
+      "policy_restored": true,
+      "docker_unchanged": true,
+      "port9100_listening": false,
+      "collector_timer_activated": false
+    },
+    {
+      "vmid": 230,
+      "role": "java-prod-01",
+      "target": {
+        "vmid": 230,
+        "ip": "192.168.21.235",
+        "host_key_alias": "dell-vm230",
+        "host_key_fingerprint": "SHA256:QDO/Sh54JTBcdOpQPS72Gvtk+wuUjyiEP/KwWFUEO/s",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "started_at": "2026-11-06T07:03:09.234935+08:00",
+      "status": "installed-parked-verified",
+      "preflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"java-prod-01\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"346f97d6-4417-4e89-a3fe-8dbe9fa7039f\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.235\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"docker.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}}, \"listeners_9100\": [], \"installer_receipt\": null}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 230,
+          "ip": "192.168.21.235",
+          "host_key_alias": "dell-vm230",
+          "host_key_fingerprint": "SHA256:QDO/Sh54JTBcdOpQPS72Gvtk+wuUjyiEP/KwWFUEO/s",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "before": {
+        "hostname": "java-prod-01",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "346f97d6-4417-4e89-a3fe-8dbe9fa7039f",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.235"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "docker.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": null
+      },
+      "copy_result": {
+        "exit_code": 0,
+        "stdout": "{\"directory\": \"/tmp/dell-monitoring-prep\", \"files_sha256\": {\"install-guest-baseline.py\": \"73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf\", \"collect-guest-health.py\": \"cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1\", \"guest-targets.json\": \"c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e\"}, \"secrets_included\": false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 230,
+          "ip": "192.168.21.235",
+          "host_key_alias": "dell-vm230",
+          "host_key_fingerprint": "SHA256:QDO/Sh54JTBcdOpQPS72Gvtk+wuUjyiEP/KwWFUEO/s",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "install_result": {
+        "exit_code": 0,
+        "stdout": "{\"timestamp\": \"2026-11-06T07:03:26.886169+08:00\", \"mode\": \"install-only\", \"role\": \"java-prod-01\", \"vmid\": 230, \"expected_private_ip\": \"10.63.10.20\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 230,
+          "ip": "192.168.21.235",
+          "host_key_alias": "dell-vm230",
+          "host_key_fingerprint": "SHA256:QDO/Sh54JTBcdOpQPS72Gvtk+wuUjyiEP/KwWFUEO/s",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "postflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"java-prod-01\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"346f97d6-4417-4e89-a3fe-8dbe9fa7039f\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.235\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"static\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"disabled\"}, \"docker.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}}, \"listeners_9100\": [], \"installer_receipt\": {\"timestamp\": \"2026-11-06T07:03:26.886169+08:00\", \"mode\": \"install-only\", \"role\": \"java-prod-01\", \"vmid\": 230, \"expected_private_ip\": \"10.63.10.20\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 230,
+          "ip": "192.168.21.235",
+          "host_key_alias": "dell-vm230",
+          "host_key_fingerprint": "SHA256:QDO/Sh54JTBcdOpQPS72Gvtk+wuUjyiEP/KwWFUEO/s",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "after": {
+        "hostname": "java-prod-01",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "346f97d6-4417-4e89-a3fe-8dbe9fa7039f",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.235"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "static"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "disabled"
+          },
+          "docker.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": {
+          "timestamp": "2026-11-06T07:03:26.886169+08:00",
+          "mode": "install-only",
+          "role": "java-prod-01",
+          "vmid": 230,
+          "expected_private_ip": "10.63.10.20",
+          "exporter_enabled": "masked",
+          "exporter_active": "inactive",
+          "exporter_socket_enabled": "masked",
+          "collector_timer_enabled": "disabled",
+          "collector_timer_active": "inactive",
+          "collector_active": "inactive",
+          "listeners_9100": [],
+          "exporter_enablement_links": [],
+          "socket_enablement_links": [],
+          "notifications_sent": false,
+          "pve_or_ct_targeted": false,
+          "package_version": "1.9.0-1+b4"
+        }
+      },
+      "finished_at": "2026-11-06T07:03:27.917562+08:00",
+      "policy_restored": true,
+      "docker_unchanged": true,
+      "port9100_listening": false,
+      "collector_timer_activated": false
+    },
+    {
+      "vmid": 231,
+      "role": "java-prod-02",
+      "target": {
+        "vmid": 231,
+        "ip": "192.168.21.221",
+        "host_key_alias": "dell-vm231",
+        "host_key_fingerprint": "SHA256:jBZbSCpKbPGxG70+luD10Fz2zQU5CbRInk0W7sjTqxo",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "started_at": "2026-11-06T07:03:27.919452+08:00",
+      "status": "installed-parked-verified",
+      "preflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"java-prod-02\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"be23e853-0f67-47a4-b0f0-ded11783c5d5\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.221\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"docker.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}}, \"listeners_9100\": [], \"installer_receipt\": null}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 231,
+          "ip": "192.168.21.221",
+          "host_key_alias": "dell-vm231",
+          "host_key_fingerprint": "SHA256:jBZbSCpKbPGxG70+luD10Fz2zQU5CbRInk0W7sjTqxo",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "before": {
+        "hostname": "java-prod-02",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "be23e853-0f67-47a4-b0f0-ded11783c5d5",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.221"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "docker.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": null
+      },
+      "copy_result": {
+        "exit_code": 0,
+        "stdout": "{\"directory\": \"/tmp/dell-monitoring-prep\", \"files_sha256\": {\"install-guest-baseline.py\": \"73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf\", \"collect-guest-health.py\": \"cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1\", \"guest-targets.json\": \"c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e\"}, \"secrets_included\": false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 231,
+          "ip": "192.168.21.221",
+          "host_key_alias": "dell-vm231",
+          "host_key_fingerprint": "SHA256:jBZbSCpKbPGxG70+luD10Fz2zQU5CbRInk0W7sjTqxo",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "install_result": {
+        "exit_code": 0,
+        "stdout": "{\"timestamp\": \"2026-11-06T07:03:46.097509+08:00\", \"mode\": \"install-only\", \"role\": \"java-prod-02\", \"vmid\": 231, \"expected_private_ip\": \"10.63.10.21\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 231,
+          "ip": "192.168.21.221",
+          "host_key_alias": "dell-vm231",
+          "host_key_fingerprint": "SHA256:jBZbSCpKbPGxG70+luD10Fz2zQU5CbRInk0W7sjTqxo",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "postflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"java-prod-02\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"be23e853-0f67-47a4-b0f0-ded11783c5d5\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.221\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"static\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"disabled\"}, \"docker.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}}, \"listeners_9100\": [], \"installer_receipt\": {\"timestamp\": \"2026-11-06T07:03:46.097509+08:00\", \"mode\": \"install-only\", \"role\": \"java-prod-02\", \"vmid\": 231, \"expected_private_ip\": \"10.63.10.21\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 231,
+          "ip": "192.168.21.221",
+          "host_key_alias": "dell-vm231",
+          "host_key_fingerprint": "SHA256:jBZbSCpKbPGxG70+luD10Fz2zQU5CbRInk0W7sjTqxo",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "after": {
+        "hostname": "java-prod-02",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "be23e853-0f67-47a4-b0f0-ded11783c5d5",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.221"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "static"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "disabled"
+          },
+          "docker.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": {
+          "timestamp": "2026-11-06T07:03:46.097509+08:00",
+          "mode": "install-only",
+          "role": "java-prod-02",
+          "vmid": 231,
+          "expected_private_ip": "10.63.10.21",
+          "exporter_enabled": "masked",
+          "exporter_active": "inactive",
+          "exporter_socket_enabled": "masked",
+          "collector_timer_enabled": "disabled",
+          "collector_timer_active": "inactive",
+          "collector_active": "inactive",
+          "listeners_9100": [],
+          "exporter_enablement_links": [],
+          "socket_enablement_links": [],
+          "notifications_sent": false,
+          "pve_or_ct_targeted": false,
+          "package_version": "1.9.0-1+b4"
+        }
+      },
+      "finished_at": "2026-11-06T07:03:47.109628+08:00",
+      "policy_restored": true,
+      "docker_unchanged": true,
+      "port9100_listening": false,
+      "collector_timer_activated": false
+    },
+    {
+      "vmid": 240,
+      "role": "java-test-01",
+      "target": {
+        "vmid": 240,
+        "ip": "192.168.21.112",
+        "host_key_alias": "dell-vm240",
+        "host_key_fingerprint": "SHA256:I/UslFEJaEwF2zaWAwDhPmlSQDY5Yqbv7HE5PGDOaNA",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "started_at": "2026-11-06T07:03:47.111727+08:00",
+      "status": "installed-parked-verified",
+      "preflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"java-test-01\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"777c99fe-072c-408a-ad66-714a0b80e3a0\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.112\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"docker.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}}, \"listeners_9100\": [], \"installer_receipt\": null}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 240,
+          "ip": "192.168.21.112",
+          "host_key_alias": "dell-vm240",
+          "host_key_fingerprint": "SHA256:I/UslFEJaEwF2zaWAwDhPmlSQDY5Yqbv7HE5PGDOaNA",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "before": {
+        "hostname": "java-test-01",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "777c99fe-072c-408a-ad66-714a0b80e3a0",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.112"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "docker.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": null
+      },
+      "copy_result": {
+        "exit_code": 0,
+        "stdout": "{\"directory\": \"/tmp/dell-monitoring-prep\", \"files_sha256\": {\"install-guest-baseline.py\": \"73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf\", \"collect-guest-health.py\": \"cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1\", \"guest-targets.json\": \"c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e\"}, \"secrets_included\": false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 240,
+          "ip": "192.168.21.112",
+          "host_key_alias": "dell-vm240",
+          "host_key_fingerprint": "SHA256:I/UslFEJaEwF2zaWAwDhPmlSQDY5Yqbv7HE5PGDOaNA",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "install_result": {
+        "exit_code": 0,
+        "stdout": "{\"timestamp\": \"2026-11-06T07:04:04.827887+08:00\", \"mode\": \"install-only\", \"role\": \"java-test-01\", \"vmid\": 240, \"expected_private_ip\": \"10.63.20.20\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 240,
+          "ip": "192.168.21.112",
+          "host_key_alias": "dell-vm240",
+          "host_key_fingerprint": "SHA256:I/UslFEJaEwF2zaWAwDhPmlSQDY5Yqbv7HE5PGDOaNA",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "postflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"java-test-01\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"777c99fe-072c-408a-ad66-714a0b80e3a0\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.112\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"static\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"disabled\"}, \"docker.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}}, \"listeners_9100\": [], \"installer_receipt\": {\"timestamp\": \"2026-11-06T07:04:04.827887+08:00\", \"mode\": \"install-only\", \"role\": \"java-test-01\", \"vmid\": 240, \"expected_private_ip\": \"10.63.20.20\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 240,
+          "ip": "192.168.21.112",
+          "host_key_alias": "dell-vm240",
+          "host_key_fingerprint": "SHA256:I/UslFEJaEwF2zaWAwDhPmlSQDY5Yqbv7HE5PGDOaNA",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "after": {
+        "hostname": "java-test-01",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "777c99fe-072c-408a-ad66-714a0b80e3a0",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.112"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "static"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "disabled"
+          },
+          "docker.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": {
+          "timestamp": "2026-11-06T07:04:04.827887+08:00",
+          "mode": "install-only",
+          "role": "java-test-01",
+          "vmid": 240,
+          "expected_private_ip": "10.63.20.20",
+          "exporter_enabled": "masked",
+          "exporter_active": "inactive",
+          "exporter_socket_enabled": "masked",
+          "collector_timer_enabled": "disabled",
+          "collector_timer_active": "inactive",
+          "collector_active": "inactive",
+          "listeners_9100": [],
+          "exporter_enablement_links": [],
+          "socket_enablement_links": [],
+          "notifications_sent": false,
+          "pve_or_ct_targeted": false,
+          "package_version": "1.9.0-1+b4"
+        }
+      },
+      "finished_at": "2026-11-06T07:04:05.829550+08:00",
+      "policy_restored": true,
+      "docker_unchanged": true,
+      "port9100_listening": false,
+      "collector_timer_activated": false
+    },
+    {
+      "vmid": 250,
+      "role": "penpot-service",
+      "target": {
+        "vmid": 250,
+        "ip": "192.168.21.180",
+        "host_key_alias": "dell-vm250",
+        "host_key_fingerprint": "SHA256:CB7xsY1DIoonCx3SaDbWqGUIKaTcy1bCusZpVQccK4U",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "started_at": "2026-11-06T07:04:05.831750+08:00",
+      "status": "installed-parked-verified",
+      "preflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"penpot-service\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"b490a393-d656-4d0e-adfe-edb1a9a4c1be\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.180\", \"172.17.0.1\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [\"containerd.io=2.4.2-3~debian.13~trixie\", \"docker-ce-cli=5:29.9.3-1~debian.13~trixie\", \"docker-ce=5:29.9.3-1~debian.13~trixie\"], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"docker.service\": {\"active\": \"active\", \"enabled\": \"enabled\"}}, \"listeners_9100\": [], \"installer_receipt\": null}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 250,
+          "ip": "192.168.21.180",
+          "host_key_alias": "dell-vm250",
+          "host_key_fingerprint": "SHA256:CB7xsY1DIoonCx3SaDbWqGUIKaTcy1bCusZpVQccK4U",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "before": {
+        "hostname": "penpot-service",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "b490a393-d656-4d0e-adfe-edb1a9a4c1be",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.180",
+          "172.17.0.1"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [
+          "containerd.io=2.4.2-3~debian.13~trixie",
+          "docker-ce-cli=5:29.9.3-1~debian.13~trixie",
+          "docker-ce=5:29.9.3-1~debian.13~trixie"
+        ],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "docker.service": {
+            "active": "active",
+            "enabled": "enabled"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": null
+      },
+      "copy_result": {
+        "exit_code": 0,
+        "stdout": "{\"directory\": \"/tmp/dell-monitoring-prep\", \"files_sha256\": {\"install-guest-baseline.py\": \"73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf\", \"collect-guest-health.py\": \"cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1\", \"guest-targets.json\": \"c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e\"}, \"secrets_included\": false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 250,
+          "ip": "192.168.21.180",
+          "host_key_alias": "dell-vm250",
+          "host_key_fingerprint": "SHA256:CB7xsY1DIoonCx3SaDbWqGUIKaTcy1bCusZpVQccK4U",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "install_result": {
+        "exit_code": 0,
+        "stdout": "{\"timestamp\": \"2026-11-06T07:04:26.348849+08:00\", \"mode\": \"install-only\", \"role\": \"penpot-service\", \"vmid\": 250, \"expected_private_ip\": \"10.63.30.30\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 250,
+          "ip": "192.168.21.180",
+          "host_key_alias": "dell-vm250",
+          "host_key_fingerprint": "SHA256:CB7xsY1DIoonCx3SaDbWqGUIKaTcy1bCusZpVQccK4U",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "postflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"penpot-service\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"b490a393-d656-4d0e-adfe-edb1a9a4c1be\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.180\", \"172.17.0.1\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [\"containerd.io=2.4.2-3~debian.13~trixie\", \"docker-ce-cli=5:29.9.3-1~debian.13~trixie\", \"docker-ce=5:29.9.3-1~debian.13~trixie\"], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"static\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"disabled\"}, \"docker.service\": {\"active\": \"active\", \"enabled\": \"enabled\"}}, \"listeners_9100\": [], \"installer_receipt\": {\"timestamp\": \"2026-11-06T07:04:26.348849+08:00\", \"mode\": \"install-only\", \"role\": \"penpot-service\", \"vmid\": 250, \"expected_private_ip\": \"10.63.30.30\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 250,
+          "ip": "192.168.21.180",
+          "host_key_alias": "dell-vm250",
+          "host_key_fingerprint": "SHA256:CB7xsY1DIoonCx3SaDbWqGUIKaTcy1bCusZpVQccK4U",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "after": {
+        "hostname": "penpot-service",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "b490a393-d656-4d0e-adfe-edb1a9a4c1be",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.180",
+          "172.17.0.1"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [
+          "containerd.io=2.4.2-3~debian.13~trixie",
+          "docker-ce-cli=5:29.9.3-1~debian.13~trixie",
+          "docker-ce=5:29.9.3-1~debian.13~trixie"
+        ],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "static"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "disabled"
+          },
+          "docker.service": {
+            "active": "active",
+            "enabled": "enabled"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": {
+          "timestamp": "2026-11-06T07:04:26.348849+08:00",
+          "mode": "install-only",
+          "role": "penpot-service",
+          "vmid": 250,
+          "expected_private_ip": "10.63.30.30",
+          "exporter_enabled": "masked",
+          "exporter_active": "inactive",
+          "exporter_socket_enabled": "masked",
+          "collector_timer_enabled": "disabled",
+          "collector_timer_active": "inactive",
+          "collector_active": "inactive",
+          "listeners_9100": [],
+          "exporter_enablement_links": [],
+          "socket_enablement_links": [],
+          "notifications_sent": false,
+          "pve_or_ct_targeted": false,
+          "package_version": "1.9.0-1+b4"
+        }
+      },
+      "finished_at": "2026-11-06T07:04:27.365720+08:00",
+      "policy_restored": true,
+      "docker_unchanged": true,
+      "port9100_listening": false,
+      "collector_timer_activated": false
+    },
+    {
+      "vmid": 260,
+      "role": "nas-media",
+      "target": {
+        "vmid": 260,
+        "ip": "192.168.21.172",
+        "host_key_alias": "dell-vm260",
+        "host_key_fingerprint": "SHA256:T9f/CKfKek2AR1pXhJwT58Ys3YoH1I00zqf3Y7a+UxE",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "started_at": "2026-11-06T07:04:27.367986+08:00",
+      "status": "installed-parked-verified",
+      "preflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"nas-media\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"cb49263d-c1ee-4212-aea5-21fb65dbe614\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.172\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"docker.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}}, \"listeners_9100\": [], \"installer_receipt\": null}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 260,
+          "ip": "192.168.21.172",
+          "host_key_alias": "dell-vm260",
+          "host_key_fingerprint": "SHA256:T9f/CKfKek2AR1pXhJwT58Ys3YoH1I00zqf3Y7a+UxE",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "before": {
+        "hostname": "nas-media",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "cb49263d-c1ee-4212-aea5-21fb65dbe614",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.172"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "docker.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": null
+      },
+      "copy_result": {
+        "exit_code": 0,
+        "stdout": "{\"directory\": \"/tmp/dell-monitoring-prep\", \"files_sha256\": {\"install-guest-baseline.py\": \"73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf\", \"collect-guest-health.py\": \"cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1\", \"guest-targets.json\": \"c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e\"}, \"secrets_included\": false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 260,
+          "ip": "192.168.21.172",
+          "host_key_alias": "dell-vm260",
+          "host_key_fingerprint": "SHA256:T9f/CKfKek2AR1pXhJwT58Ys3YoH1I00zqf3Y7a+UxE",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "install_result": {
+        "exit_code": 0,
+        "stdout": "{\"timestamp\": \"2026-11-06T07:04:48.519540+08:00\", \"mode\": \"install-only\", \"role\": \"nas-media\", \"vmid\": 260, \"expected_private_ip\": \"10.63.40.10\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 260,
+          "ip": "192.168.21.172",
+          "host_key_alias": "dell-vm260",
+          "host_key_fingerprint": "SHA256:T9f/CKfKek2AR1pXhJwT58Ys3YoH1I00zqf3Y7a+UxE",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "postflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"nas-media\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"cb49263d-c1ee-4212-aea5-21fb65dbe614\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.172\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"static\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"disabled\"}, \"docker.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}}, \"listeners_9100\": [], \"installer_receipt\": {\"timestamp\": \"2026-11-06T07:04:48.519540+08:00\", \"mode\": \"install-only\", \"role\": \"nas-media\", \"vmid\": 260, \"expected_private_ip\": \"10.63.40.10\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 260,
+          "ip": "192.168.21.172",
+          "host_key_alias": "dell-vm260",
+          "host_key_fingerprint": "SHA256:T9f/CKfKek2AR1pXhJwT58Ys3YoH1I00zqf3Y7a+UxE",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "after": {
+        "hostname": "nas-media",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "cb49263d-c1ee-4212-aea5-21fb65dbe614",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.172"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "static"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "disabled"
+          },
+          "docker.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": {
+          "timestamp": "2026-11-06T07:04:48.519540+08:00",
+          "mode": "install-only",
+          "role": "nas-media",
+          "vmid": 260,
+          "expected_private_ip": "10.63.40.10",
+          "exporter_enabled": "masked",
+          "exporter_active": "inactive",
+          "exporter_socket_enabled": "masked",
+          "collector_timer_enabled": "disabled",
+          "collector_timer_active": "inactive",
+          "collector_active": "inactive",
+          "listeners_9100": [],
+          "exporter_enablement_links": [],
+          "socket_enablement_links": [],
+          "notifications_sent": false,
+          "pve_or_ct_targeted": false,
+          "package_version": "1.9.0-1+b4"
+        }
+      },
+      "finished_at": "2026-11-06T07:04:49.474849+08:00",
+      "policy_restored": true,
+      "docker_unchanged": true,
+      "port9100_listening": false,
+      "collector_timer_activated": false
+    },
+    {
+      "vmid": 270,
+      "role": "ops-service",
+      "target": {
+        "vmid": 270,
+        "ip": "192.168.21.124",
+        "host_key_alias": "dell-vm270",
+        "host_key_fingerprint": "SHA256:at37hIThlyw5rNVQdnJeXA/x3CSl3IrBtMNaA65Ccvc",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "started_at": "2026-11-06T07:04:49.477077+08:00",
+      "status": "installed-parked-verified",
+      "preflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"ops-service\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"86bf0580-1cce-4d42-b555-985ba6990b5a\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.124\", \"172.17.0.1\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [\"containerd.io=2.4.2-3~debian.13~trixie\", \"docker-ce-cli=5:29.9.3-1~debian.13~trixie\", \"docker-ce=5:29.9.3-1~debian.13~trixie\"], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"docker.service\": {\"active\": \"active\", \"enabled\": \"enabled\"}}, \"listeners_9100\": [], \"installer_receipt\": null}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 270,
+          "ip": "192.168.21.124",
+          "host_key_alias": "dell-vm270",
+          "host_key_fingerprint": "SHA256:at37hIThlyw5rNVQdnJeXA/x3CSl3IrBtMNaA65Ccvc",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "before": {
+        "hostname": "ops-service",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "86bf0580-1cce-4d42-b555-985ba6990b5a",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.124",
+          "172.17.0.1"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [
+          "containerd.io=2.4.2-3~debian.13~trixie",
+          "docker-ce-cli=5:29.9.3-1~debian.13~trixie",
+          "docker-ce=5:29.9.3-1~debian.13~trixie"
+        ],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "docker.service": {
+            "active": "active",
+            "enabled": "enabled"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": null
+      },
+      "copy_result": {
+        "exit_code": 0,
+        "stdout": "{\"directory\": \"/tmp/dell-monitoring-prep\", \"files_sha256\": {\"install-guest-baseline.py\": \"73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf\", \"collect-guest-health.py\": \"cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1\", \"guest-targets.json\": \"c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e\"}, \"secrets_included\": false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 270,
+          "ip": "192.168.21.124",
+          "host_key_alias": "dell-vm270",
+          "host_key_fingerprint": "SHA256:at37hIThlyw5rNVQdnJeXA/x3CSl3IrBtMNaA65Ccvc",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "install_result": {
+        "exit_code": 0,
+        "stdout": "{\"timestamp\": \"2026-11-06T07:05:06.592667+08:00\", \"mode\": \"install-only\", \"role\": \"ops-service\", \"vmid\": 270, \"expected_private_ip\": \"10.63.30.40\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 270,
+          "ip": "192.168.21.124",
+          "host_key_alias": "dell-vm270",
+          "host_key_fingerprint": "SHA256:at37hIThlyw5rNVQdnJeXA/x3CSl3IrBtMNaA65Ccvc",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "postflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"ops-service\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"86bf0580-1cce-4d42-b555-985ba6990b5a\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.124\", \"172.17.0.1\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [\"containerd.io=2.4.2-3~debian.13~trixie\", \"docker-ce-cli=5:29.9.3-1~debian.13~trixie\", \"docker-ce=5:29.9.3-1~debian.13~trixie\"], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"static\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"disabled\"}, \"docker.service\": {\"active\": \"active\", \"enabled\": \"enabled\"}}, \"listeners_9100\": [], \"installer_receipt\": {\"timestamp\": \"2026-11-06T07:05:06.592667+08:00\", \"mode\": \"install-only\", \"role\": \"ops-service\", \"vmid\": 270, \"expected_private_ip\": \"10.63.30.40\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 270,
+          "ip": "192.168.21.124",
+          "host_key_alias": "dell-vm270",
+          "host_key_fingerprint": "SHA256:at37hIThlyw5rNVQdnJeXA/x3CSl3IrBtMNaA65Ccvc",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "after": {
+        "hostname": "ops-service",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "86bf0580-1cce-4d42-b555-985ba6990b5a",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.124",
+          "172.17.0.1"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [
+          "containerd.io=2.4.2-3~debian.13~trixie",
+          "docker-ce-cli=5:29.9.3-1~debian.13~trixie",
+          "docker-ce=5:29.9.3-1~debian.13~trixie"
+        ],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "static"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "disabled"
+          },
+          "docker.service": {
+            "active": "active",
+            "enabled": "enabled"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": {
+          "timestamp": "2026-11-06T07:05:06.592667+08:00",
+          "mode": "install-only",
+          "role": "ops-service",
+          "vmid": 270,
+          "expected_private_ip": "10.63.30.40",
+          "exporter_enabled": "masked",
+          "exporter_active": "inactive",
+          "exporter_socket_enabled": "masked",
+          "collector_timer_enabled": "disabled",
+          "collector_timer_active": "inactive",
+          "collector_active": "inactive",
+          "listeners_9100": [],
+          "exporter_enablement_links": [],
+          "socket_enablement_links": [],
+          "notifications_sent": false,
+          "pve_or_ct_targeted": false,
+          "package_version": "1.9.0-1+b4"
+        }
+      },
+      "finished_at": "2026-11-06T07:05:07.522338+08:00",
+      "policy_restored": true,
+      "docker_unchanged": true,
+      "port9100_listening": false,
+      "collector_timer_activated": false
+    },
+    {
+      "vmid": 232,
+      "role": "java-prod-03",
+      "target": {
+        "vmid": 232,
+        "ip": "192.168.21.148",
+        "host_key_alias": "dell-vm232",
+        "host_key_fingerprint": "SHA256:NYSxfiyZ2e0BikkyhtomHu3fAgTxdYCcbfq2rc8kARs",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "started_at": "2026-11-06T07:05:07.524655+08:00",
+      "status": "installed-parked-verified",
+      "preflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"java-prod-03\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"01f0df48-0fac-4246-9a52-16f8a646a1c5\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.148\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}, \"docker.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}}, \"listeners_9100\": [], \"installer_receipt\": null}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 232,
+          "ip": "192.168.21.148",
+          "host_key_alias": "dell-vm232",
+          "host_key_fingerprint": "SHA256:NYSxfiyZ2e0BikkyhtomHu3fAgTxdYCcbfq2rc8kARs",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "before": {
+        "hostname": "java-prod-03",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "01f0df48-0fac-4246-9a52-16f8a646a1c5",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.148"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "not-found"
+          },
+          "docker.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": null
+      },
+      "copy_result": {
+        "exit_code": 0,
+        "stdout": "{\"directory\": \"/tmp/dell-monitoring-prep\", \"files_sha256\": {\"install-guest-baseline.py\": \"73c000f8868ed6e3be4dbfc311b10005d868bd90b959a51a1b54398499ee59cf\", \"collect-guest-health.py\": \"cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1\", \"guest-targets.json\": \"c9ee807084647095acabaefd2054c9ba71c1faa317bf6f1eb084bd36335a8f0e\"}, \"secrets_included\": false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 232,
+          "ip": "192.168.21.148",
+          "host_key_alias": "dell-vm232",
+          "host_key_fingerprint": "SHA256:NYSxfiyZ2e0BikkyhtomHu3fAgTxdYCcbfq2rc8kARs",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "install_result": {
+        "exit_code": 0,
+        "stdout": "{\"timestamp\": \"2026-11-06T07:05:30.968767+08:00\", \"mode\": \"install-only\", \"role\": \"java-prod-03\", \"vmid\": 232, \"expected_private_ip\": \"10.63.10.22\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 232,
+          "ip": "192.168.21.148",
+          "host_key_alias": "dell-vm232",
+          "host_key_fingerprint": "SHA256:NYSxfiyZ2e0BikkyhtomHu3fAgTxdYCcbfq2rc8kARs",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "postflight_result": {
+        "exit_code": 0,
+        "stdout": "{\"hostname\": \"java-prod-03\", \"os_id\": \"debian\", \"os_version\": \"13\", \"architecture\": \"x86_64\", \"virtualization\": \"kvm\", \"product_uuid\": \"01f0df48-0fac-4246-9a52-16f8a646a1c5\", \"pve_filesystem_present\": false, \"ipv4_addresses\": [\"127.0.0.1\", \"192.168.21.148\"], \"policy\": {\"exists\": false}, \"policy_recovery_records\": [], \"docker_packages\": [], \"units\": {\"prometheus-node-exporter.service\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"prometheus-node-exporter.socket\": {\"active\": \"inactive\", \"enabled\": \"masked\"}, \"dell-guest-health.service\": {\"active\": \"inactive\", \"enabled\": \"static\"}, \"dell-guest-health.timer\": {\"active\": \"inactive\", \"enabled\": \"disabled\"}, \"docker.service\": {\"active\": \"inactive\", \"enabled\": \"not-found\"}}, \"listeners_9100\": [], \"installer_receipt\": {\"timestamp\": \"2026-11-06T07:05:30.968767+08:00\", \"mode\": \"install-only\", \"role\": \"java-prod-03\", \"vmid\": 232, \"expected_private_ip\": \"10.63.10.22\", \"exporter_enabled\": \"masked\", \"exporter_active\": \"inactive\", \"exporter_socket_enabled\": \"masked\", \"collector_timer_enabled\": \"disabled\", \"collector_timer_active\": \"inactive\", \"collector_active\": \"inactive\", \"listeners_9100\": [], \"exporter_enablement_links\": [], \"socket_enablement_links\": [], \"notifications_sent\": false, \"pve_or_ct_targeted\": false, \"package_version\": \"1.9.0-1+b4\"}}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 232,
+          "ip": "192.168.21.148",
+          "host_key_alias": "dell-vm232",
+          "host_key_fingerprint": "SHA256:NYSxfiyZ2e0BikkyhtomHu3fAgTxdYCcbfq2rc8kARs",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "after": {
+        "hostname": "java-prod-03",
+        "os_id": "debian",
+        "os_version": "13",
+        "architecture": "x86_64",
+        "virtualization": "kvm",
+        "product_uuid": "01f0df48-0fac-4246-9a52-16f8a646a1c5",
+        "pve_filesystem_present": false,
+        "ipv4_addresses": [
+          "127.0.0.1",
+          "192.168.21.148"
+        ],
+        "policy": {
+          "exists": false
+        },
+        "policy_recovery_records": [],
+        "docker_packages": [],
+        "units": {
+          "prometheus-node-exporter.service": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "prometheus-node-exporter.socket": {
+            "active": "inactive",
+            "enabled": "masked"
+          },
+          "dell-guest-health.service": {
+            "active": "inactive",
+            "enabled": "static"
+          },
+          "dell-guest-health.timer": {
+            "active": "inactive",
+            "enabled": "disabled"
+          },
+          "docker.service": {
+            "active": "inactive",
+            "enabled": "not-found"
+          }
+        },
+        "listeners_9100": [],
+        "installer_receipt": {
+          "timestamp": "2026-11-06T07:05:30.968767+08:00",
+          "mode": "install-only",
+          "role": "java-prod-03",
+          "vmid": 232,
+          "expected_private_ip": "10.63.10.22",
+          "exporter_enabled": "masked",
+          "exporter_active": "inactive",
+          "exporter_socket_enabled": "masked",
+          "collector_timer_enabled": "disabled",
+          "collector_timer_active": "inactive",
+          "collector_active": "inactive",
+          "listeners_9100": [],
+          "exporter_enablement_links": [],
+          "socket_enablement_links": [],
+          "notifications_sent": false,
+          "pve_or_ct_targeted": false,
+          "package_version": "1.9.0-1+b4"
+        }
+      },
+      "finished_at": "2026-11-06T07:05:31.918299+08:00",
+      "policy_restored": true,
+      "docker_unchanged": true,
+      "port9100_listening": false,
+      "collector_timer_activated": false
+    }
+  ],
+  "status": "12-new-guests-installed-parked-verified",
+  "finished_at": "2026-11-06T07:05:31.920668+08:00"
+}

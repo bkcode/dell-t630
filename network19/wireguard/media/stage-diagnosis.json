@@ -1,0 +1,34 @@
+{
+  "role": 260,
+  "status": "read-only-stage-rejection-diagnosis",
+  "units": {
+    "dell-nas-jellyfin.service": {
+      "MainPID": "22951",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "docker.service": {
+      "MainPID": "869",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "smbd.service": {
+      "MainPID": "26302",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "openmediavault-engined.service": {
+      "MainPID": "824",
+      "ActiveState": "active",
+      "SubState": "running"
+    }
+  },
+  "guard": "passed",
+  "SMB-parameter-transform": "passed",
+  "JFXML-transform": {
+    "class": "ValueError",
+    "reason": "Unknown closing tag indentation"
+  },
+  "fixture-hashes": "passed",
+  "private_stage_dirs": []
+}

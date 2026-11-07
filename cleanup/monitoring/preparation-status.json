@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-07T01:51:50.604913+08:00",
+  "status": "sourceprepare-complete-not-applied",
+  "future": {
+    "permanent_roles": 11,
+    "guest_exporters": 9,
+    "Ops_other_targets": 5,
+    "total": 14,
+    "Nexus_alias_not_separate_scrape": true
+  },
+  "readiness_at_capture": {
+    "alias31_live_at_capture": false,
+    "Nexus_active_at_capture": false,
+    "full_profile_ready_live": false
+  },
+  "collector_strategy": "unchanged live code already validates actual local IPs; deployment uses exact original-MAC actual intersection of approved30/31 plusloopback; no arbitraryCIDR/remote-address whitelist",
+  "native_check": "actualpromtool stdin-equivalent9groups exit0; actualfileSD commit/14UP pending futuredeployment",
+  "candidate_apply_rollback": "AST checked, plan modes only executed; mutation/rollback modes not runtime-exercised",
+  "current_guest_or_PVE_changes": false,
+  "current_mainplan_or_source_overwrites": false,
+  "PVE_push": "automatic fullVM enumeration/QGA270 unchanged; dedicatedCF100 query preserved",
+  "preserved": [
+    "WireGuard full10/24 trust by not modifying networkrules",
+    "hostforward0 readback",
+    "data auth/Env/secrets not read or changed",
+    "Ops package exclusion does notexclude monitoringconfig",
+    "shell preference pending defaultBash"
+  ],
+  "scope": "onlycleanup/monitoring workspace files written"
+}

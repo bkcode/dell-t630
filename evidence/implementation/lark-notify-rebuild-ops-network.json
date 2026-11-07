@@ -1,0 +1,52 @@
+{
+  "at": "2026-11-06T14:18:18.663763+08:00",
+  "action": "rebuild-ops-network",
+  "target": "ops270",
+  "status": "passed",
+  "secret_values_emitted": false,
+  "private_webhook_on_argv_or_env": false,
+  "code_sha256": {
+    "bridge.py": "e4b251653d0ae9822351928d3f04b6d4a0833edbe50ce3e6057edc7de7182f80",
+    "configuration.py": "18217358ee2c81f0f3a6404ebd95c6e6a4d5a982587175596f73b698e493fb20",
+    "install270.py": "8f3b544116e049cc76bbe778a806b87ce00cbe1ae3521e842d83497629b4d726",
+    "acceptance270.py": "e3b4229612c54962ba76d83ca5188eb237fcfa481f9985671d541abef7f033fc",
+    "rebuild270-network.py": "058193b00439bdaaaf4e5d30cc1f2f2e2df0db69b9ce22d7a5b0c4e60f68edea",
+    "dell-lark-notify.service": "682831587cd2d624aec40efb2651e0020a3c64b2630f5b6df88200aae0fc6fbf"
+  },
+  "copy": {
+    "tools_copied": 6,
+    "secret_material_in_tool_archive": false
+  },
+  "exit_code": 0,
+  "result": {
+    "status": "static-ops-network-and-secret-verified",
+    "scope": "ops270-four-service-network-and-secret-only",
+    "before": {
+      "containers": 4,
+      "targets_up": 17,
+      "targets_total": 17,
+      "grafana_database": "ok",
+      "grafana_admin_login": "passed"
+    },
+    "source_uuid": "01b1f302-27be-4fbd-b4af-b8e782d85dea",
+    "backup_directory": "/root/dell-ops-network-before-17d811cd2f0341c7a7cb6ce8f8ca48bc",
+    "webhook_read": false,
+    "messages_sent": false,
+    "pve_modified": false,
+    "data_volumes_removed": false,
+    "after": {
+      "containers": 4,
+      "targets_up": 17,
+      "targets_total": 17,
+      "grafana_database": "ok",
+      "grafana_admin_login": "passed"
+    },
+    "static_addresses": {
+      "prometheus": "172.18.0.2",
+      "alertmanager": "172.18.0.3",
+      "blackbox": "172.18.0.4",
+      "grafana": "172.18.0.5"
+    },
+    "secret_mount": "read-only /run/secrets/lark-bridge-token; content withheld"
+  }
+}

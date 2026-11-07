@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-06T06:24:01.977407",
+  "iso": "/mnt/pve/store/template/iso/dell-artifacts-20261106.iso",
+  "volume": "store:iso/dell-artifacts-20261106.iso",
+  "bytes": 13499936768,
+  "sha256": "896ee9ba42b3172a7f1c03e899dafd6dd65766b0dedf2ad020bcce99206573e9",
+  "contains": "only reviewed public container archives and reviewed Java JARs; no runtime configs or secrets"
+}

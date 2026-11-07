@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-06T18:20:35.254449+08:00",
+  "status": "current-user-scope-achieved",
+  "root": "/Users/yangzhaohui/work/www/harness/dell",
+  "required_current_cases_passed": 25,
+  "CF_public_origin_pending": 1,
+  "roles_running": 14,
+  "node_and_Ops_targets_UP": 17,
+  "Java_business_services_active": 0,
+  "single_accepted_Java_template": 9011,
+  "dedicated_QA9012": "destroyed",
+  "original_QA_templates_and_source_environments": "preserved",
+  "host": "21.22 management/L2 only,no NAT or L3forward",
+  "SHA256_plan": "a0d1060099a4e0f7d2be8762e60047cccef98d915bba23e4d2e0c16fb461de90",
+  "evidence": [
+    "network19/evidence/final-live-network-identity.json",
+    "network19/evidence/maintenance-ended.json",
+    "network19/audit/network19-acceptance.json",
+    "network19/java-template/QA-closeout.json"
+  ],
+  "task_rows_manager_verified": 7,
+  "document_validation": "network19/evidence/document-validation-final.json",
+  "all_current_required_cases_passed": true
+}

@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-06T12:18:02.577824",
+  "eula_explicit_user_authorization": "nexus-eula-accepted.json",
+  "result": {
+    "exit_code": 0,
+    "stdout": "{\"status\": \"synthetic-publication-read-and-privileges-verified\", \"coordinate\": \"com.dell.acceptance:repo-persistence:20261106041801\", \"jar_path\": \"com/dell/acceptance/repo-persistence/20261106041801/repo-persistence-20261106041801.jar\", \"jar_sha256\": \"baa80d112a9a144b7ffbb3e71bc202b0e231eb71c9a0ef0154dcc55b2865ea59\", \"jar_bytes\": 311, \"anonymous_read_denied\": true, \"reader_write_status\": 403, \"publisher_delete_status\": 403, \"external_upstream_used\": false, \"source_repository_written\": false, \"fixture_retained_for_restart_verification\": true}\n",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+    "target": {
+      "vmid": 220,
+      "ip": "10.63.30.10",
+      "host_key_alias": "dell-vm220",
+      "host_key_fingerprint": "SHA256:2PFQYC3uPSg/sMihWZZ7R1vgkKKozJbTwTjf6VNWwG4",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  }
+}

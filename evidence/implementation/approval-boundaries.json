@@ -1,0 +1,52 @@
+{
+  "updated_at": "2026-11-06T10:38:24.872936+08:00",
+  "network": {
+    "status": "explicit-user-approved-and-applied",
+    "review": "automatic-review-rejected",
+    "reason": "Persistent root PVE routing/firewall/NAT and port exposure need informed exact approval; broad implementation request did not cover exact rules according to reviewer.",
+    "files": [
+      "infra/internal-bridges.conf",
+      "infra/dell-network.nft",
+      "infra/provision_network.py",
+      "infra/apply_guest_firewall.py"
+    ],
+    "requested_networks": [
+      "10.63.10.0/24",
+      "10.63.20.0/24",
+      "10.63.30.0/24",
+      "10.63.40.0/24"
+    ],
+    "requested_lan_ports": [
+      9001,
+      8081,
+      9080,
+      445,
+      8096,
+      9999,
+      19999
+    ],
+    "host_rules_applied": true,
+    "safe_independent_work": "template validation on healthy SSD using unchanged existing LAN DHCP",
+    "approval_evidence": "evidence/implementation/user-decisions-2026-11-06.json"
+  },
+  "external_artifact_auth": {
+    "status": "unverified-not-attempted-after-rejection",
+    "reason": "External nexus.imnull.com authenticated credential use not explicitly trusted/authorized by automatic reviewer.",
+    "credentials_sent": false,
+    "safe_independent_work": "local source and cache inspection; isolated offline build without credentials or external network"
+  },
+  "cf_backup_export": {
+    "status": "user-selected-PVE-local-only",
+    "review": "automatic-review-rejected",
+    "reason": "Archive may contain Cloudflare session/token material; export to Mac not specifically authorized according to reviewer.",
+    "archive_exported": false,
+    "safer_alternative": "PVE-local protected backup only; no sensitive payload leaves host",
+    "decision": "CF 备份仅保留在 PVE 本机"
+  },
+  "restricted_publisher_transport": {
+    "status": "explicit-user-authorization-received",
+    "previous_attempt": "auto-review-rejected-before-execution",
+    "decision_evidence": "user-decisions-2026-11-06.json#restricted_publisher_transport",
+    "scope": "220→240 only SSH/deployer/forcedcommand/single root helper; LoadCredential metadata adoption and deploy rollback exercise"
+  }
+}

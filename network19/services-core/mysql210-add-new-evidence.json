@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-06T08:36:53.929357+00:00",
+  "exit_code": 1,
+  "result": {
+    "status": "refused-or-failed",
+    "exit_code": 1,
+    "source_plan_old_exact_grants_matched": true,
+    "accounts_completed": 0,
+    "DML_table_count": 18,
+    "auth_unchanged_private_comparison": false,
+    "old_Host_retained": true,
+    "Nacos_percent_accounts_unchanged": false,
+    "OS_or_service_or_IP_changed": false,
+    "auth_hash_password_or_raw_SQL_in_output_or_ledger": false
+  }
+}

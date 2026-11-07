@@ -1,0 +1,36 @@
+{
+  "unit": "Result=success\nNRestarts=0\nActiveState=active\nSubState=running\n",
+  "containers": [
+    {
+      "service": "nacos",
+      "configured_user": "",
+      "state": "running",
+      "health": "healthy",
+      "exit_code": 0,
+      "oom": false,
+      "started_at": "2026-11-06T02:56:05.343707905Z",
+      "logs": "\n2026-11-06 10:56:26,573 WARN You are asking Spring Security to ignore Mvc [pattern='/prometheus/namespaceId/{namespaceId}/service/{service}']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.\n\n2026-11-06 10:56:26,573 INFO Will not secure Mvc [pattern='/prometheus/namespaceId/{namespaceId}/service/{service}']\n\n2026-11-06 10:56:26,811 INFO Tomcat started on port(s): 8848 (http) with context path '/nacos'\n\n2026-11-06 10:56:26,843 INFO No TaskScheduler/ScheduledExecutorService bean found for scheduled processing\n\n2026-11-06 10:56:26,903 INFO Nacos started successfully in stand alone mode. use external storage\n\n2026-11-06 10:56:31,464 INFO Initializing Servlet 'dispatcherServlet'\n\n2026-11-06 10:56:31,468 INFO Completed initialization in 4 ms\n\n"
+    },
+    {
+      "service": "rabbitmq",
+      "configured_user": "",
+      "state": "running",
+      "health": "healthy",
+      "exit_code": 0,
+      "oom": false,
+      "started_at": "2026-11-06T02:56:05.71655366Z",
+      "logs": "\u001b[38;5;214m2026-11-06 02:56:14.055198+00:00 [warning] <0.660.0>     \"deprecated_features.permit.management_metrics_collection = false\"\u001b[0m\n2026-11-06 02:56:17.725868+00:00 [info] <0.697.0> Management plugin: HTTP (non-TLS) listener started on port 15672\u001b[0m\n2026-11-06 02:56:17.726166+00:00 [info] <0.727.0> Statistics database started.\u001b[0m\n2026-11-06 02:56:17.726308+00:00 [info] <0.726.0> Starting worker pool 'management_worker_pool' with 3 processes in it\u001b[0m\n2026-11-06 02:56:17.741345+00:00 [info] <0.745.0> Prometheus metrics: HTTP (non-TLS) listener started on port 15692\u001b[0m\n2026-11-06 02:56:17.741594+00:00 [info] <0.631.0> Ready to start client connection listeners\u001b[0m\n2026-11-06 02:56:17.745539+00:00 [info] <0.789.0> started TCP listener on [::]:5672\u001b[0m\n completed with 5 plugins.\n2026-11-06 02:56:18.002468+00:00 [info] <0.631.0> Server startup complete; 5 plugins started.\u001b[0m\n2026-11-06 02:56:18.002468+00:00 [info] <0.631.0>  * rabbitmq_prometheus\u001b[0m\n2026-11-06 02:56:18.002468+00:00 [info] <0.631.0>  * rabbitmq_federation\u001b[0m\n2026-11-06 02:56:18.002468+00:00 [info] <0.631.0>  * rabbitmq_management\u001b[0m\n2026-11-06 02:56:18.002468+00:00 [info] <0.631.0>  * rabbitmq_management_agent\u001b[0m\n2026-11-06 02:56:18.002468+00:00 [info] <0.631.0>  * rabbitmq_web_dispatch\u001b[0m\n2026-11-06 02:56:18.047637+00:00 [info] <0.9.0> Time to start RabbitMQ: 11314 ms\u001b[0m\n"
+    },
+    {
+      "service": "redis",
+      "configured_user": "",
+      "state": "running",
+      "health": "healthy",
+      "exit_code": 0,
+      "oom": false,
+      "started_at": "2026-11-06T02:56:05.007054541Z",
+      "logs": "1:M 06 Nov 2026 02:56:05.376 * Increased maximum number of open files to 10032 (it was originally set to 1024).\n1:M 06 Nov 2026 02:56:05.376 * monotonic clock: POSIX clock_gettime\n1:M 06 Nov 2026 02:56:05.377 * Running mode=standalone, port=6379.\n1:M 06 Nov 2026 02:56:05.378 * Server initialized\n1:M 06 Nov 2026 02:56:05.380 * Reading RDB base file on AOF loading...\n1:M 06 Nov 2026 02:56:05.380 * Loading RDB produced by version 7.4.4\n1:M 06 Nov 2026 02:56:05.380 * RDB age 627 seconds\n1:M 06 Nov 2026 02:56:05.380 * RDB memory usage when created 0.90 Mb\n1:M 06 Nov 2026 02:56:05.380 * RDB is base AOF\n1:M 06 Nov 2026 02:56:05.380 * Done loading RDB, keys loaded: 0, keys expired: 0.\n1:M 06 Nov 2026 02:56:05.381 * DB loaded from base file appendonly.aof.1.base.rdb: 0.002 seconds\n1:M 06 Nov 2026 02:56:05.381 * DB loaded from incr file appendonly.aof.1.incr.aof: 0.001 seconds\n1:M 06 Nov 2026 02:56:05.381 * DB loaded from append only file: 0.003 seconds\n1:M 06 Nov 2026 02:56:05.382 * Opening AOF incr file appendonly.aof.1.incr.aof on server start\n1:M 06 Nov 2026 02:56:05.382 * Ready to accept connections tcp\n"
+    }
+  ],
+  "overcommit": "1"
+}

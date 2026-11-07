@@ -1,0 +1,35 @@
+{
+  "id": "ACC-DOC-002",
+  "status": "passed",
+  "executed_at": "2026-11-05T23:16:01.993956+08:00",
+  "timezone": "Asia/Shanghai",
+  "operator": "root-task-manager",
+  "target": {
+    "host": "local-document-set",
+    "vmid": null,
+    "environment": "documentation"
+  },
+  "plan_sha256": "56d28237cf0f2bc1929abb9f0e67028ca2713e1d671bfc1167903a089aeace5d",
+  "preconditions_checked": true,
+  "commands_or_steps": [
+    "python3 scripts/validate_docs.py --json",
+    "Manager source review and cross-agent review; corrections applied"
+  ],
+  "exit_codes": [
+    0
+  ],
+  "observations": [
+    "Role/resource plan, local links, acceptance schema and statuses reviewed.",
+    "No deployment or recovery acceptance inferred from documentation.",
+    "No private key, password, token or unredacted environment payload included."
+  ],
+  "artifacts": [
+    "evidence/document-verification.md",
+    "evidence/document-validation.json"
+  ],
+  "limitations": [
+    "Offline validation does not prove external URL availability or target service readiness."
+  ],
+  "reviewed_by": "root-task-manager",
+  "plan_snapshot": "evidence/plans/plan-documentation-approved.json"
+}

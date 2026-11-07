@@ -1,0 +1,151 @@
+{
+  "collected_at": "2026-11-06T05:51:28.950073+08:00",
+  "scope": "temporary-LAN-guest-system-storage-preparation",
+  "host_network_mutated": false,
+  "roles": [
+    {
+      "target": {
+        "vmid": 200,
+        "ip": "192.168.21.171",
+        "host_key_alias": "dell-vm200",
+        "host_key_fingerprint": "SHA256:DvGgHhP62V5OuMxO7+6rHZPSRU9N2hD+QWmtSe9HdqA",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "data-prod-db",
+      "status": "failed",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nTraceback (most recent call last):\n  File \"<stdin>\", line 16, in <module>\n  File \"/usr/lib/python3.13/subprocess.py\", line 577, in run\n    raise CalledProcessError(retcode, process.args,\n                             output=stdout, stderr=stderr)\nsubprocess.CalledProcessError: Command '['ip', '-6', 'route', 'flush', 'dev', 'eth0']' returned non-zero exit status 2.\n"
+    },
+    {
+      "target": {
+        "vmid": 201,
+        "ip": "192.168.21.177",
+        "host_key_alias": "dell-vm201",
+        "host_key_fingerprint": "SHA256:IVJyMVDW1aYjgf6s3oaE/0GwOmpy05ulDHAy8yggeiA",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "data-prod-infra",
+      "status": "failed",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nTraceback (most recent call last):\n  File \"<stdin>\", line 16, in <module>\n  File \"/usr/lib/python3.13/subprocess.py\", line 577, in run\n    raise CalledProcessError(retcode, process.args,\n                             output=stdout, stderr=stderr)\nsubprocess.CalledProcessError: Command '['ip', '-6', 'route', 'flush', 'dev', 'eth0']' returned non-zero exit status 2.\n"
+    },
+    {
+      "target": {
+        "vmid": 210,
+        "ip": "192.168.21.153",
+        "host_key_alias": "dell-vm210",
+        "host_key_fingerprint": "SHA256:0NGrIbuCNFPozzA3n4Gf7zE7q8JbG8gmWxLDBFPMnsU",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "data-test",
+      "status": "failed",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nTraceback (most recent call last):\n  File \"<stdin>\", line 16, in <module>\n  File \"/usr/lib/python3.13/subprocess.py\", line 577, in run\n    raise CalledProcessError(retcode, process.args,\n                             output=stdout, stderr=stderr)\nsubprocess.CalledProcessError: Command '['ip', '-6', 'route', 'flush', 'dev', 'eth0']' returned non-zero exit status 2.\n"
+    },
+    {
+      "target": {
+        "vmid": 220,
+        "ip": "192.168.21.163",
+        "host_key_alias": "dell-vm220",
+        "host_key_fingerprint": "SHA256:5X/KJJzRjVAwgXasAjR9ok7UW+6UhHyr1FdSKkOowBw",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "publish-service",
+      "status": "failed",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nTraceback (most recent call last):\n  File \"<stdin>\", line 16, in <module>\n  File \"/usr/lib/python3.13/subprocess.py\", line 577, in run\n    raise CalledProcessError(retcode, process.args,\n                             output=stdout, stderr=stderr)\nsubprocess.CalledProcessError: Command '['ip', '-6', 'route', 'flush', 'dev', 'eth0']' returned non-zero exit status 2.\n"
+    },
+    {
+      "target": {
+        "vmid": 221,
+        "ip": "192.168.21.247",
+        "host_key_alias": "dell-vm221",
+        "host_key_fingerprint": "SHA256:7N4dWTJAt6KcZZYakrVc/mlUVPannAQRI28dmyMF7uE",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "artifact-service",
+      "status": "failed",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nTraceback (most recent call last):\n  File \"<stdin>\", line 16, in <module>\n  File \"/usr/lib/python3.13/subprocess.py\", line 577, in run\n    raise CalledProcessError(retcode, process.args,\n                             output=stdout, stderr=stderr)\nsubprocess.CalledProcessError: Command '['ip', '-6', 'route', 'flush', 'dev', 'eth0']' returned non-zero exit status 2.\n"
+    },
+    {
+      "target": {
+        "vmid": 230,
+        "ip": "192.168.21.235",
+        "host_key_alias": "dell-vm230",
+        "host_key_fingerprint": "SHA256:QDO/Sh54JTBcdOpQPS72Gvtk+wuUjyiEP/KwWFUEO/s",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "java-prod-01",
+      "status": "failed",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nTraceback (most recent call last):\n  File \"<stdin>\", line 16, in <module>\n  File \"/usr/lib/python3.13/subprocess.py\", line 577, in run\n    raise CalledProcessError(retcode, process.args,\n                             output=stdout, stderr=stderr)\nsubprocess.CalledProcessError: Command '['ip', '-6', 'route', 'flush', 'dev', 'eth0']' returned non-zero exit status 2.\n"
+    },
+    {
+      "target": {
+        "vmid": 231,
+        "ip": "192.168.21.221",
+        "host_key_alias": "dell-vm231",
+        "host_key_fingerprint": "SHA256:jBZbSCpKbPGxG70+luD10Fz2zQU5CbRInk0W7sjTqxo",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "java-prod-02",
+      "status": "failed",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nTraceback (most recent call last):\n  File \"<stdin>\", line 16, in <module>\n  File \"/usr/lib/python3.13/subprocess.py\", line 577, in run\n    raise CalledProcessError(retcode, process.args,\n                             output=stdout, stderr=stderr)\nsubprocess.CalledProcessError: Command '['ip', '-6', 'route', 'flush', 'dev', 'eth0']' returned non-zero exit status 2.\n"
+    },
+    {
+      "target": {
+        "vmid": 232,
+        "ip": "192.168.21.148",
+        "host_key_alias": "dell-vm232",
+        "host_key_fingerprint": "SHA256:NYSxfiyZ2e0BikkyhtomHu3fAgTxdYCcbfq2rc8kARs",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "java-prod-03",
+      "status": "failed",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nTraceback (most recent call last):\n  File \"<stdin>\", line 16, in <module>\n  File \"/usr/lib/python3.13/subprocess.py\", line 577, in run\n    raise CalledProcessError(retcode, process.args,\n                             output=stdout, stderr=stderr)\nsubprocess.CalledProcessError: Command '['ip', '-6', 'route', 'flush', 'dev', 'eth0']' returned non-zero exit status 2.\n"
+    },
+    {
+      "target": {
+        "vmid": 240,
+        "ip": "192.168.21.112",
+        "host_key_alias": "dell-vm240",
+        "host_key_fingerprint": "SHA256:I/UslFEJaEwF2zaWAwDhPmlSQDY5Yqbv7HE5PGDOaNA",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "java-test-01",
+      "status": "failed",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nTraceback (most recent call last):\n  File \"<stdin>\", line 16, in <module>\n  File \"/usr/lib/python3.13/subprocess.py\", line 577, in run\n    raise CalledProcessError(retcode, process.args,\n                             output=stdout, stderr=stderr)\nsubprocess.CalledProcessError: Command '['ip', '-6', 'route', 'flush', 'dev', 'eth0']' returned non-zero exit status 2.\n"
+    },
+    {
+      "target": {
+        "vmid": 250,
+        "ip": "192.168.21.180",
+        "host_key_alias": "dell-vm250",
+        "host_key_fingerprint": "SHA256:CB7xsY1DIoonCx3SaDbWqGUIKaTcy1bCusZpVQccK4U",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "penpot-service",
+      "status": "failed",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nTraceback (most recent call last):\n  File \"<stdin>\", line 16, in <module>\n  File \"/usr/lib/python3.13/subprocess.py\", line 577, in run\n    raise CalledProcessError(retcode, process.args,\n                             output=stdout, stderr=stderr)\nsubprocess.CalledProcessError: Command '['ip', '-6', 'route', 'flush', 'dev', 'eth0']' returned non-zero exit status 2.\n"
+    },
+    {
+      "target": {
+        "vmid": 260,
+        "ip": "192.168.21.172",
+        "host_key_alias": "dell-vm260",
+        "host_key_fingerprint": "SHA256:T9f/CKfKek2AR1pXhJwT58Ys3YoH1I00zqf3Y7a+UxE",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "nas-media",
+      "status": "failed",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nTraceback (most recent call last):\n  File \"<stdin>\", line 16, in <module>\n  File \"/usr/lib/python3.13/subprocess.py\", line 577, in run\n    raise CalledProcessError(retcode, process.args,\n                             output=stdout, stderr=stderr)\nsubprocess.CalledProcessError: Command '['ip', '-6', 'route', 'flush', 'dev', 'eth0']' returned non-zero exit status 2.\n"
+    },
+    {
+      "target": {
+        "vmid": 270,
+        "ip": "192.168.21.124",
+        "host_key_alias": "dell-vm270",
+        "host_key_fingerprint": "SHA256:at37hIThlyw5rNVQdnJeXA/x3CSl3IrBtMNaA65Ccvc",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "name": "ops-service",
+      "status": "failed",
+      "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nTraceback (most recent call last):\n  File \"<stdin>\", line 16, in <module>\n  File \"/usr/lib/python3.13/subprocess.py\", line 577, in run\n    raise CalledProcessError(retcode, process.args,\n                             output=stdout, stderr=stderr)\nsubprocess.CalledProcessError: Command '['ip', '-6', 'route', 'flush', 'dev', 'eth0']' returned non-zero exit status 2.\n"
+    }
+  ]
+}

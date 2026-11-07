@@ -1,0 +1,13 @@
+{
+  "vmid": 231,
+  "hostname": "java-prod-02",
+  "old_ip": "10.63.10.21",
+  "old_gateway": "10.63.10.1",
+  "new_ip": "192.168.19.41",
+  "prefix": 24,
+  "gateway": "192.168.19.1",
+  "DNS": "192.168.19.1",
+  "MAC": "bc:24:11:e9:e5:cc",
+  "old_PVE_net0": "virtio=BC:24:11:E9:E5:CC,bridge=vmbr10",
+  "new_PVE_net0": "virtio=BC:24:11:E9:E5:CC,bridge=vmbr19,firewall=0"
+}

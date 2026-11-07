@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-06T16:37:34.559685+08:00",
+  "scope": "approved190-sameUID-file-and-test-only-no-listener",
+  "result": {
+    "checks": [
+      {
+        "name": "nonroot-lease-write",
+        "exit_code": 0,
+        "output": "{\"same_uid_write_open\": true, \"file_unchanged_empty\": true}\nRunning as unit: dell-gateway19-nonroot-lease-write.service; invocation ID: 82cb913496ef496da993c9044fecf532\nFinished with result: success\nMain processes terminated with: code=exited, status=0/SUCCESS\nService runtime: 109ms\nCPU time consumed: 95ms\nMemory peak: 3.9M (swap: 0B)\n"
+      },
+      {
+        "name": "nonroot-dnsmasq-test",
+        "exit_code": 0,
+        "output": "Running as unit: dell-gateway19-nonroot-dnsmasq-test.service\ndnsmasq: syntax check OK.\nFinished with result: success\nMain processes terminated with: code=exited, status=0/SUCCESS\nService runtime: 60ms\nCPU time consumed: 42ms\nMemory peak: 1.8M (swap: 0B)\n"
+      }
+    ],
+    "status": "same-uid-exact-FS-probes-passed",
+    "misc_owner_mode_unchanged": true,
+    "lease_metadata": {
+      "uid": 999,
+      "gid": 65534,
+      "mode": "0o600",
+      "size": 0
+    },
+    "forward_still_zero": true,
+    "DNS_DHCP_bound_by_probe": false
+  },
+  "actual_identity_resolution": {
+    "user": "dnsmasq",
+    "uid": 999,
+    "primary_gid": 65534,
+    "primary_group": "nogroup",
+    "runtime_resolution": "pwd/grpactual"
+  }
+}

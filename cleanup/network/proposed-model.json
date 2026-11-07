@@ -1,0 +1,67 @@
+{
+  "status": "proposed-alias-preserving-consolidation-not-active",
+  "owner": {
+    "vmid": 220,
+    "hostname": "publish-service",
+    "primary_ip": "192.168.19.30",
+    "additional_ips": [
+      "192.168.19.31"
+    ],
+    "NIC": "net0",
+    "MAC": "bc:24:11:2a:01:ad",
+    "vcpu": 6,
+    "memory_gib": 8
+  },
+  "service_endpoints": {
+    "artifact-service": {
+      "vmid": 220,
+      "ip": "192.168.19.31",
+      "tcp": [
+        8081
+      ]
+    }
+  },
+  "retired_vmids": [
+    101,
+    104,
+    221,
+    231,
+    232,
+    9000,
+    9002,
+    9003,
+    9004,
+    9005,
+    9006,
+    9020
+  ],
+  "retained_java_vmids": [
+    230,
+    240
+  ],
+  "policy_invariants": {
+    "WireGuard_full_10.66.66.0/24": "unchanged",
+    "gateway_NAT": "none",
+    "PVE_L3_forwarding": false,
+    "no_application_or_secret_deployment_by_this_package": true
+  },
+  "monitoring": "root must freeze270 actual targets before any mutation",
+  "temporary_bootstrap_vmids": [
+    9040,
+    9041,
+    9042,
+    9043,
+    9044,
+    9045
+  ],
+  "temporary_bootstrap_ipv4": {
+    "9040": "192.168.19.197",
+    "9041": "192.168.19.198",
+    "9042": "192.168.19.199",
+    "9043": "192.168.19.197",
+    "9044": "192.168.19.198",
+    "9045": "192.168.19.199"
+  },
+  "temporary_policy": "Only9040..9045; L2 bootstrap only, no permanent190DNS or autoOpspeer; delete registration after source/QA stop and before IP reuse",
+  "temporary_IP_reuse_gate": "builder9040/41/42 must stop and leave active static registry before QA9043/44/45 reuses197/198/199; never register both owners concurrently"
+}

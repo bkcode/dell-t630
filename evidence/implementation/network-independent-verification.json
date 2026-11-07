@@ -1,0 +1,6735 @@
+{
+  "schema_version": 1,
+  "scope": "independent-read-only-network-and-raid-verification",
+  "host_observation": {
+    "cf_backup": {
+      "path": "/root/dell-bootstrap/protected-cf-backups/vzdump-lxc-100-2026_11_06-06_44_43.tar.zst",
+      "exists": true,
+      "bytes": 244256662,
+      "mode": "0o600",
+      "host": "192.168.21.22",
+      "location": "same-PVE-host-only",
+      "payload_read": false,
+      "external_backup_verified": false
+    },
+    "trusted_pveproxy_certificate_sha256": "28726b6626dd77fa0db7c4f2d299129a105ac1934ec216fa7a6d5cd7beab59d7",
+    "collected_at": "2026-11-06T10:32:38.884695+08:00",
+    "host": "192.168.21.22",
+    "checks": [
+      {
+        "id": "identity",
+        "command": "hostname",
+        "exit_code": 0,
+        "result": "pve"
+      },
+      {
+        "id": "addresses",
+        "command": "ip -j address show",
+        "exit_code": 0,
+        "result": [
+          {
+            "ifindex": 1,
+            "ifname": "lo",
+            "flags": [
+              "LOOPBACK",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 65536,
+            "qdisc": "noqueue",
+            "operstate": "UNKNOWN",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "loopback",
+            "address": "00:00:00:00:00:00",
+            "broadcast": "00:00:00:00:00:00",
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "127.0.0.1",
+                "prefixlen": 8,
+                "scope": "host",
+                "label": "lo",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              },
+              {
+                "family": "inet6",
+                "local": "::1",
+                "prefixlen": 128,
+                "scope": "host",
+                "noprefixroute": true,
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          },
+          {
+            "ifindex": 2,
+            "ifname": "eno1",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "mq",
+            "master": "vmbr0",
+            "operstate": "UP",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "44:a8:42:38:c1:1b",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "altnames": [
+              "enp1s0f0"
+            ],
+            "addr_info": []
+          },
+          {
+            "ifindex": 3,
+            "ifname": "eno2",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST"
+            ],
+            "mtu": 1500,
+            "qdisc": "noop",
+            "operstate": "DOWN",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "44:a8:42:38:c1:1c",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "altnames": [
+              "enp1s0f1"
+            ],
+            "addr_info": []
+          },
+          {
+            "ifindex": 4,
+            "ifname": "vmbr0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "noqueue",
+            "operstate": "UP",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "44:a8:42:38:c1:1b",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "192.168.21.22",
+                "prefixlen": 24,
+                "scope": "global",
+                "label": "vmbr0",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              },
+              {
+                "family": "inet6",
+                "local": "fe80::46a8:42ff:fe38:c11b",
+                "prefixlen": 64,
+                "scope": "link",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          },
+          {
+            "ifindex": 5,
+            "link_index": 2,
+            "ifname": "veth100i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "noqueue",
+            "master": "fwbr100i0",
+            "operstate": "UP",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "fe:7d:84:36:7f:ee",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "link_netnsid": 0,
+            "addr_info": []
+          },
+          {
+            "ifindex": 6,
+            "ifname": "fwbr100i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "noqueue",
+            "operstate": "UP",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "52:dc:7a:98:02:91",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": []
+          },
+          {
+            "ifindex": 7,
+            "link": "fwln100i0",
+            "ifname": "fwpr100p0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "noqueue",
+            "master": "vmbr0",
+            "operstate": "UP",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "56:79:95:30:47:53",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": []
+          },
+          {
+            "ifindex": 8,
+            "link": "fwpr100p0",
+            "ifname": "fwln100i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "noqueue",
+            "master": "fwbr100i0",
+            "operstate": "UP",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "52:dc:7a:98:02:91",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": []
+          },
+          {
+            "ifindex": 37,
+            "ifname": "vmbr10",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "noqueue",
+            "operstate": "UP",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "7e:bd:75:d0:e5:82",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "10.63.10.1",
+                "prefixlen": 24,
+                "scope": "global",
+                "label": "vmbr10",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              },
+              {
+                "family": "inet6",
+                "local": "fe80::f41b:adff:fe4b:b7f1",
+                "prefixlen": 64,
+                "scope": "link",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          },
+          {
+            "ifindex": 38,
+            "ifname": "vmbr20",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "noqueue",
+            "operstate": "UP",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "7a:b4:28:8e:01:b7",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "10.63.20.1",
+                "prefixlen": 24,
+                "scope": "global",
+                "label": "vmbr20",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              },
+              {
+                "family": "inet6",
+                "local": "fe80::b003:14ff:fe22:60fa",
+                "prefixlen": 64,
+                "scope": "link",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          },
+          {
+            "ifindex": 39,
+            "ifname": "vmbr30",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "noqueue",
+            "operstate": "UP",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "6e:29:b8:b9:56:10",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "10.63.30.1",
+                "prefixlen": 24,
+                "scope": "global",
+                "label": "vmbr30",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              },
+              {
+                "family": "inet6",
+                "local": "fe80::c46e:bdff:feab:2784",
+                "prefixlen": 64,
+                "scope": "link",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          },
+          {
+            "ifindex": 40,
+            "ifname": "vmbr40",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "noqueue",
+            "operstate": "UP",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "f2:19:a4:1c:9b:9b",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "10.63.40.1",
+                "prefixlen": 24,
+                "scope": "global",
+                "label": "vmbr40",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              },
+              {
+                "family": "inet6",
+                "local": "fe80::9c66:b7ff:fee7:f41b",
+                "prefixlen": 64,
+                "scope": "link",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          },
+          {
+            "ifindex": 41,
+            "ifname": "tap200i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "pfifo_fast",
+            "master": "vmbr10",
+            "operstate": "UNKNOWN",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "7e:bd:75:d0:e5:82",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": []
+          },
+          {
+            "ifindex": 42,
+            "ifname": "tap201i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "pfifo_fast",
+            "master": "vmbr10",
+            "operstate": "UNKNOWN",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "a2:c9:30:29:d0:da",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": []
+          },
+          {
+            "ifindex": 43,
+            "ifname": "tap210i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "pfifo_fast",
+            "master": "vmbr20",
+            "operstate": "UNKNOWN",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "7a:b4:28:8e:01:b7",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": []
+          },
+          {
+            "ifindex": 44,
+            "ifname": "tap220i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "pfifo_fast",
+            "master": "vmbr30",
+            "operstate": "UNKNOWN",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "6e:29:b8:b9:56:10",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": []
+          },
+          {
+            "ifindex": 45,
+            "ifname": "tap221i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "pfifo_fast",
+            "master": "vmbr30",
+            "operstate": "UNKNOWN",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "aa:0c:96:85:8d:79",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": []
+          },
+          {
+            "ifindex": 46,
+            "ifname": "tap250i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "pfifo_fast",
+            "master": "vmbr30",
+            "operstate": "UNKNOWN",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "7e:6d:94:b3:ab:97",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": []
+          },
+          {
+            "ifindex": 47,
+            "ifname": "tap260i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "pfifo_fast",
+            "master": "vmbr40",
+            "operstate": "UNKNOWN",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "f2:19:a4:1c:9b:9b",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": []
+          },
+          {
+            "ifindex": 48,
+            "ifname": "tap270i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "pfifo_fast",
+            "master": "vmbr30",
+            "operstate": "UNKNOWN",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "b2:6b:c5:78:69:f9",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": []
+          },
+          {
+            "ifindex": 49,
+            "ifname": "tap230i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "pfifo_fast",
+            "master": "vmbr10",
+            "operstate": "UNKNOWN",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "0e:9d:08:82:d0:12",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": []
+          },
+          {
+            "ifindex": 50,
+            "ifname": "tap231i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "pfifo_fast",
+            "master": "vmbr10",
+            "operstate": "UNKNOWN",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "02:de:95:5b:0c:37",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": []
+          },
+          {
+            "ifindex": 51,
+            "ifname": "tap232i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "pfifo_fast",
+            "master": "vmbr10",
+            "operstate": "UNKNOWN",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "7e:d5:b9:68:b6:75",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": []
+          },
+          {
+            "ifindex": 52,
+            "ifname": "tap240i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "qdisc": "pfifo_fast",
+            "master": "vmbr20",
+            "operstate": "UNKNOWN",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "72:aa:89:4f:c1:30",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": []
+          }
+        ]
+      },
+      {
+        "id": "routes-v4",
+        "command": "ip -j route show",
+        "exit_code": 0,
+        "result": [
+          {
+            "dst": "default",
+            "gateway": "192.168.21.1",
+            "dev": "vmbr0",
+            "protocol": "kernel",
+            "flags": [
+              "onlink"
+            ]
+          },
+          {
+            "dst": "10.63.10.0/24",
+            "dev": "vmbr10",
+            "protocol": "kernel",
+            "scope": "link",
+            "prefsrc": "10.63.10.1",
+            "flags": []
+          },
+          {
+            "dst": "10.63.20.0/24",
+            "dev": "vmbr20",
+            "protocol": "kernel",
+            "scope": "link",
+            "prefsrc": "10.63.20.1",
+            "flags": []
+          },
+          {
+            "dst": "10.63.30.0/24",
+            "dev": "vmbr30",
+            "protocol": "kernel",
+            "scope": "link",
+            "prefsrc": "10.63.30.1",
+            "flags": []
+          },
+          {
+            "dst": "10.63.40.0/24",
+            "dev": "vmbr40",
+            "protocol": "kernel",
+            "scope": "link",
+            "prefsrc": "10.63.40.1",
+            "flags": []
+          },
+          {
+            "dst": "192.168.21.0/24",
+            "dev": "vmbr0",
+            "protocol": "kernel",
+            "scope": "link",
+            "prefsrc": "192.168.21.22",
+            "flags": []
+          }
+        ]
+      },
+      {
+        "id": "routes-v6",
+        "command": "ip -j -6 route show",
+        "exit_code": 0,
+        "result": [
+          {
+            "dst": "fe80::/64",
+            "dev": "vmbr0",
+            "protocol": "kernel",
+            "metric": 256,
+            "flags": [],
+            "pref": "medium"
+          },
+          {
+            "dst": "fe80::/64",
+            "dev": "vmbr10",
+            "protocol": "kernel",
+            "metric": 256,
+            "flags": [],
+            "pref": "medium"
+          },
+          {
+            "dst": "fe80::/64",
+            "dev": "vmbr20",
+            "protocol": "kernel",
+            "metric": 256,
+            "flags": [],
+            "pref": "medium"
+          },
+          {
+            "dst": "fe80::/64",
+            "dev": "vmbr30",
+            "protocol": "kernel",
+            "metric": 256,
+            "flags": [],
+            "pref": "medium"
+          },
+          {
+            "dst": "fe80::/64",
+            "dev": "vmbr40",
+            "protocol": "kernel",
+            "metric": 256,
+            "flags": [],
+            "pref": "medium"
+          },
+          {
+            "dst": "default",
+            "gateway": "fe80::ced8:43ff:fec5:416e",
+            "dev": "vmbr0",
+            "metric": 1024,
+            "flags": [],
+            "pref": "medium"
+          }
+        ]
+      },
+      {
+        "id": "bridge-links",
+        "command": "bridge -j link show",
+        "exit_code": 0,
+        "result": [
+          {
+            "ifindex": 2,
+            "ifname": "eno1",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "master": "vmbr0",
+            "state": "forwarding",
+            "priority": 32,
+            "cost": 5
+          },
+          {
+            "ifindex": 5,
+            "link": "eno1",
+            "ifname": "veth100i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "master": "fwbr100i0",
+            "state": "forwarding",
+            "priority": 32,
+            "cost": 2
+          },
+          {
+            "ifindex": 7,
+            "link": "fwln100i0",
+            "ifname": "fwpr100p0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "master": "vmbr0",
+            "state": "forwarding",
+            "priority": 32,
+            "cost": 2
+          },
+          {
+            "ifindex": 8,
+            "link": "fwpr100p0",
+            "ifname": "fwln100i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "master": "fwbr100i0",
+            "state": "forwarding",
+            "priority": 32,
+            "cost": 2
+          },
+          {
+            "ifindex": 41,
+            "ifname": "tap200i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "master": "vmbr10",
+            "state": "forwarding",
+            "priority": 32,
+            "cost": 2
+          },
+          {
+            "ifindex": 42,
+            "ifname": "tap201i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "master": "vmbr10",
+            "state": "forwarding",
+            "priority": 32,
+            "cost": 2
+          },
+          {
+            "ifindex": 43,
+            "ifname": "tap210i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "master": "vmbr20",
+            "state": "forwarding",
+            "priority": 32,
+            "cost": 2
+          },
+          {
+            "ifindex": 44,
+            "ifname": "tap220i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "master": "vmbr30",
+            "state": "forwarding",
+            "priority": 32,
+            "cost": 2
+          },
+          {
+            "ifindex": 45,
+            "ifname": "tap221i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "master": "vmbr30",
+            "state": "forwarding",
+            "priority": 32,
+            "cost": 2
+          },
+          {
+            "ifindex": 46,
+            "ifname": "tap250i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "master": "vmbr30",
+            "state": "forwarding",
+            "priority": 32,
+            "cost": 2
+          },
+          {
+            "ifindex": 47,
+            "ifname": "tap260i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "master": "vmbr40",
+            "state": "forwarding",
+            "priority": 32,
+            "cost": 2
+          },
+          {
+            "ifindex": 48,
+            "ifname": "tap270i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "master": "vmbr30",
+            "state": "forwarding",
+            "priority": 32,
+            "cost": 2
+          },
+          {
+            "ifindex": 49,
+            "ifname": "tap230i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "master": "vmbr10",
+            "state": "forwarding",
+            "priority": 32,
+            "cost": 2
+          },
+          {
+            "ifindex": 50,
+            "ifname": "tap231i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "master": "vmbr10",
+            "state": "forwarding",
+            "priority": 32,
+            "cost": 2
+          },
+          {
+            "ifindex": 51,
+            "ifname": "tap232i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "master": "vmbr10",
+            "state": "forwarding",
+            "priority": 32,
+            "cost": 2
+          },
+          {
+            "ifindex": 52,
+            "ifname": "tap240i0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "PROMISC",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 1500,
+            "master": "vmbr20",
+            "state": "forwarding",
+            "priority": 32,
+            "cost": 2
+          }
+        ]
+      },
+      {
+        "id": "forwarding",
+        "command": "sysctl net.ipv4.ip_forward net.ipv6.conf.all.forwarding",
+        "exit_code": 0,
+        "result": "net.ipv4.ip_forward = 1\nnet.ipv6.conf.all.forwarding = 0"
+      },
+      {
+        "id": "filter-table",
+        "command": "nft -j list table inet dell_filter",
+        "exit_code": 0,
+        "result": {
+          "nftables": [
+            {
+              "metainfo": {
+                "version": "1.0.6",
+                "release_name": "Lester Gooch #5",
+                "json_schema_version": 1
+              }
+            },
+            {
+              "table": {
+                "family": "inet",
+                "name": "dell_filter",
+                "handle": 19
+              }
+            },
+            {
+              "set": {
+                "family": "inet",
+                "name": "managed",
+                "table": "dell_filter",
+                "type": "ifname",
+                "handle": 3,
+                "elem": [
+                  "vmbr10",
+                  "vmbr20",
+                  "vmbr30",
+                  "vmbr40"
+                ]
+              }
+            },
+            {
+              "chain": {
+                "family": "inet",
+                "table": "dell_filter",
+                "name": "input",
+                "handle": 1,
+                "type": "filter",
+                "hook": "input",
+                "prio": 0,
+                "policy": "accept"
+              }
+            },
+            {
+              "chain": {
+                "family": "inet",
+                "table": "dell_filter",
+                "name": "forward",
+                "handle": 2,
+                "type": "filter",
+                "hook": "forward",
+                "prio": 0,
+                "policy": "accept"
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "input",
+                "handle": 4,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "in",
+                      "left": {
+                        "ct": {
+                          "key": "state"
+                        }
+                      },
+                      "right": [
+                        "established",
+                        "related"
+                      ]
+                    }
+                  },
+                  {
+                    "accept": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "input",
+                "handle": 5,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "@managed"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "protocol"
+                        }
+                      },
+                      "right": "icmp"
+                    }
+                  },
+                  {
+                    "accept": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "input",
+                "handle": 6,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "@managed"
+                    }
+                  },
+                  {
+                    "counter": {
+                      "packets": 45,
+                      "bytes": 2520
+                    }
+                  },
+                  {
+                    "drop": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 7,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr10"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "!=",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": {
+                        "prefix": {
+                          "addr": "10.63.10.0",
+                          "len": 24
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "drop": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 8,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr20"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "!=",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": {
+                        "prefix": {
+                          "addr": "10.63.20.0",
+                          "len": 24
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "drop": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 9,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr30"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "!=",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": {
+                        "prefix": {
+                          "addr": "10.63.30.0",
+                          "len": 24
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "drop": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 10,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr40"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "!=",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": {
+                        "prefix": {
+                          "addr": "10.63.40.0",
+                          "len": 24
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "drop": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 11,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "nfproto"
+                        }
+                      },
+                      "right": "ipv6"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "@managed"
+                    }
+                  },
+                  {
+                    "drop": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 12,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "nfproto"
+                        }
+                      },
+                      "right": "ipv6"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "oifname"
+                        }
+                      },
+                      "right": "@managed"
+                    }
+                  },
+                  {
+                    "drop": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 13,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "in",
+                      "left": {
+                        "ct": {
+                          "key": "state"
+                        }
+                      },
+                      "right": [
+                        "established",
+                        "related"
+                      ]
+                    }
+                  },
+                  {
+                    "accept": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 14,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr10"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "oifname"
+                        }
+                      },
+                      "right": "vmbr10"
+                    }
+                  },
+                  {
+                    "accept": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 15,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr20"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "oifname"
+                        }
+                      },
+                      "right": "vmbr20"
+                    }
+                  },
+                  {
+                    "accept": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 16,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr30"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "oifname"
+                        }
+                      },
+                      "right": "vmbr30"
+                    }
+                  },
+                  {
+                    "accept": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 17,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr40"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "oifname"
+                        }
+                      },
+                      "right": "vmbr40"
+                    }
+                  },
+                  {
+                    "accept": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 19,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr30"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": "10.63.30.10"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "oifname"
+                        }
+                      },
+                      "right": {
+                        "set": [
+                          "vmbr10",
+                          "vmbr20"
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "tcp",
+                          "field": "dport"
+                        }
+                      },
+                      "right": 22
+                    }
+                  },
+                  {
+                    "accept": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 20,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr30"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": "10.63.30.40"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "oifname"
+                        }
+                      },
+                      "right": "@managed"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "tcp",
+                          "field": "dport"
+                        }
+                      },
+                      "right": 9100
+                    }
+                  },
+                  {
+                    "accept": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 22,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": {
+                        "set": [
+                          "vmbr10",
+                          "vmbr20"
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "daddr"
+                        }
+                      },
+                      "right": "10.63.30.20"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "tcp",
+                          "field": "dport"
+                        }
+                      },
+                      "right": 8081
+                    }
+                  },
+                  {
+                    "accept": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 23,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr0"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": {
+                        "prefix": {
+                          "addr": "192.168.21.0",
+                          "len": 24
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "daddr"
+                        }
+                      },
+                      "right": "10.63.30.30"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "tcp",
+                          "field": "dport"
+                        }
+                      },
+                      "right": 9001
+                    }
+                  },
+                  {
+                    "accept": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 24,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr0"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": {
+                        "prefix": {
+                          "addr": "192.168.21.0",
+                          "len": 24
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "daddr"
+                        }
+                      },
+                      "right": "10.63.30.20"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "tcp",
+                          "field": "dport"
+                        }
+                      },
+                      "right": 8081
+                    }
+                  },
+                  {
+                    "accept": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 25,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr0"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": {
+                        "prefix": {
+                          "addr": "192.168.21.0",
+                          "len": 24
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "daddr"
+                        }
+                      },
+                      "right": "10.63.40.10"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "tcp",
+                          "field": "dport"
+                        }
+                      },
+                      "right": 80
+                    }
+                  },
+                  {
+                    "accept": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 26,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr0"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": {
+                        "prefix": {
+                          "addr": "192.168.21.0",
+                          "len": 24
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "daddr"
+                        }
+                      },
+                      "right": "10.63.40.10"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "tcp",
+                          "field": "dport"
+                        }
+                      },
+                      "right": 445
+                    }
+                  },
+                  {
+                    "accept": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 27,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr0"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": {
+                        "prefix": {
+                          "addr": "192.168.21.0",
+                          "len": 24
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "daddr"
+                        }
+                      },
+                      "right": "10.63.40.10"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "tcp",
+                          "field": "dport"
+                        }
+                      },
+                      "right": 8096
+                    }
+                  },
+                  {
+                    "accept": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 28,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr0"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": {
+                        "prefix": {
+                          "addr": "192.168.21.0",
+                          "len": 24
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "daddr"
+                        }
+                      },
+                      "right": "10.63.10.20"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "tcp",
+                          "field": "dport"
+                        }
+                      },
+                      "right": 9999
+                    }
+                  },
+                  {
+                    "accept": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 29,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr0"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": {
+                        "prefix": {
+                          "addr": "192.168.21.0",
+                          "len": 24
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "daddr"
+                        }
+                      },
+                      "right": "10.63.20.20"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "tcp",
+                          "field": "dport"
+                        }
+                      },
+                      "right": 9999
+                    }
+                  },
+                  {
+                    "accept": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 30,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "@managed"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "oifname"
+                        }
+                      },
+                      "right": "vmbr0"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "daddr"
+                        }
+                      },
+                      "right": {
+                        "prefix": {
+                          "addr": "192.168.21.0",
+                          "len": 24
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "drop": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 32,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "@managed"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "oifname"
+                        }
+                      },
+                      "right": "vmbr0"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "tcp",
+                          "field": "dport"
+                        }
+                      },
+                      "right": {
+                        "set": [
+                          53,
+                          80,
+                          443
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "accept": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 33,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr30"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": "10.63.30.10"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "oifname"
+                        }
+                      },
+                      "right": "vmbr0"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "tcp",
+                          "field": "dport"
+                        }
+                      },
+                      "right": 22
+                    }
+                  },
+                  {
+                    "accept": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 35,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "@managed"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "oifname"
+                        }
+                      },
+                      "right": "vmbr0"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "udp",
+                          "field": "dport"
+                        }
+                      },
+                      "right": {
+                        "set": [
+                          53,
+                          123
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "accept": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 36,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "@managed"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "oifname"
+                        }
+                      },
+                      "right": "vmbr0"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "protocol"
+                        }
+                      },
+                      "right": "icmp"
+                    }
+                  },
+                  {
+                    "accept": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 37,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "@managed"
+                    }
+                  },
+                  {
+                    "counter": {
+                      "packets": 0,
+                      "bytes": 0
+                    }
+                  },
+                  {
+                    "drop": null
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "inet",
+                "table": "dell_filter",
+                "chain": "forward",
+                "handle": 38,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "oifname"
+                        }
+                      },
+                      "right": "@managed"
+                    }
+                  },
+                  {
+                    "counter": {
+                      "packets": 0,
+                      "bytes": 0
+                    }
+                  },
+                  {
+                    "drop": null
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "nat-table",
+        "command": "nft -j list table ip dell_nat",
+        "exit_code": 0,
+        "result": {
+          "nftables": [
+            {
+              "metainfo": {
+                "version": "1.0.6",
+                "release_name": "Lester Gooch #5",
+                "json_schema_version": 1
+              }
+            },
+            {
+              "table": {
+                "family": "ip",
+                "name": "dell_nat",
+                "handle": 20
+              }
+            },
+            {
+              "chain": {
+                "family": "ip",
+                "table": "dell_nat",
+                "name": "prerouting",
+                "handle": 1,
+                "type": "nat",
+                "hook": "prerouting",
+                "prio": -100,
+                "policy": "accept"
+              }
+            },
+            {
+              "chain": {
+                "family": "ip",
+                "table": "dell_nat",
+                "name": "postrouting",
+                "handle": 2,
+                "type": "nat",
+                "hook": "postrouting",
+                "prio": 100,
+                "policy": "accept"
+              }
+            },
+            {
+              "rule": {
+                "family": "ip",
+                "table": "dell_nat",
+                "chain": "prerouting",
+                "handle": 3,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr0"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": {
+                        "prefix": {
+                          "addr": "192.168.21.0",
+                          "len": 24
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "daddr"
+                        }
+                      },
+                      "right": "192.168.21.22"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "tcp",
+                          "field": "dport"
+                        }
+                      },
+                      "right": 9001
+                    }
+                  },
+                  {
+                    "dnat": {
+                      "addr": "10.63.30.30",
+                      "port": 9001
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "ip",
+                "table": "dell_nat",
+                "chain": "prerouting",
+                "handle": 4,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr0"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": {
+                        "prefix": {
+                          "addr": "192.168.21.0",
+                          "len": 24
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "daddr"
+                        }
+                      },
+                      "right": "192.168.21.22"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "tcp",
+                          "field": "dport"
+                        }
+                      },
+                      "right": 8081
+                    }
+                  },
+                  {
+                    "dnat": {
+                      "addr": "10.63.30.20",
+                      "port": 8081
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "ip",
+                "table": "dell_nat",
+                "chain": "prerouting",
+                "handle": 5,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr0"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": {
+                        "prefix": {
+                          "addr": "192.168.21.0",
+                          "len": 24
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "daddr"
+                        }
+                      },
+                      "right": "192.168.21.22"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "tcp",
+                          "field": "dport"
+                        }
+                      },
+                      "right": 9080
+                    }
+                  },
+                  {
+                    "dnat": {
+                      "addr": "10.63.40.10",
+                      "port": 80
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "ip",
+                "table": "dell_nat",
+                "chain": "prerouting",
+                "handle": 6,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr0"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": {
+                        "prefix": {
+                          "addr": "192.168.21.0",
+                          "len": 24
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "daddr"
+                        }
+                      },
+                      "right": "192.168.21.22"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "tcp",
+                          "field": "dport"
+                        }
+                      },
+                      "right": 445
+                    }
+                  },
+                  {
+                    "dnat": {
+                      "addr": "10.63.40.10",
+                      "port": 445
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "ip",
+                "table": "dell_nat",
+                "chain": "prerouting",
+                "handle": 7,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr0"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": {
+                        "prefix": {
+                          "addr": "192.168.21.0",
+                          "len": 24
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "daddr"
+                        }
+                      },
+                      "right": "192.168.21.22"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "tcp",
+                          "field": "dport"
+                        }
+                      },
+                      "right": 8096
+                    }
+                  },
+                  {
+                    "dnat": {
+                      "addr": "10.63.40.10",
+                      "port": 8096
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "ip",
+                "table": "dell_nat",
+                "chain": "prerouting",
+                "handle": 8,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr0"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": {
+                        "prefix": {
+                          "addr": "192.168.21.0",
+                          "len": 24
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "daddr"
+                        }
+                      },
+                      "right": "192.168.21.22"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "tcp",
+                          "field": "dport"
+                        }
+                      },
+                      "right": 9999
+                    }
+                  },
+                  {
+                    "dnat": {
+                      "addr": "10.63.10.20",
+                      "port": 9999
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "ip",
+                "table": "dell_nat",
+                "chain": "prerouting",
+                "handle": 9,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "iifname"
+                        }
+                      },
+                      "right": "vmbr0"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": {
+                        "prefix": {
+                          "addr": "192.168.21.0",
+                          "len": 24
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "daddr"
+                        }
+                      },
+                      "right": "192.168.21.22"
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "tcp",
+                          "field": "dport"
+                        }
+                      },
+                      "right": 19999
+                    }
+                  },
+                  {
+                    "dnat": {
+                      "addr": "10.63.20.20",
+                      "port": 9999
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "rule": {
+                "family": "ip",
+                "table": "dell_nat",
+                "chain": "postrouting",
+                "handle": 10,
+                "expr": [
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "payload": {
+                          "protocol": "ip",
+                          "field": "saddr"
+                        }
+                      },
+                      "right": {
+                        "prefix": {
+                          "addr": "10.63.0.0",
+                          "len": 16
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "match": {
+                      "op": "==",
+                      "left": {
+                        "meta": {
+                          "key": "oifname"
+                        }
+                      },
+                      "right": "vmbr0"
+                    }
+                  },
+                  {
+                    "masquerade": null
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "network-service",
+        "command": "systemctl show dell-network.service -p ActiveState -p SubState -p UnitFileState",
+        "exit_code": 0,
+        "result": "ActiveState=active\nSubState=exited\nUnitFileState=enabled"
+      },
+      {
+        "id": "pveproxy-service",
+        "command": "systemctl is-active pveproxy",
+        "exit_code": 0,
+        "result": "active"
+      },
+      {
+        "id": "cf100-status",
+        "command": "pct status 100",
+        "exit_code": 0,
+        "result": "status: running"
+      },
+      {
+        "id": "cf100-process",
+        "command": "pct exec 100 -- systemctl show cloudflared -p MainPID -p ActiveState -p SubState -p ExecMainStartTimestamp -p ExecMainStartTimestampMonotonic",
+        "exit_code": 0,
+        "result": "MainPID=171\nExecMainStartTimestamp=Thu 2026-11-05 12:51:23 UTC\nExecMainStartTimestampMonotonic=66258716\nActiveState=active\nSubState=running"
+      }
+    ],
+    "raid": {
+      "controller": {
+        "exit_code": 0,
+        "status": "Optimal",
+        "virtual_disks": [
+          {
+            "DG/VD": "0/0",
+            "TYPE": "RAID1",
+            "State": "Optl",
+            "Access": "RW",
+            "Consist": "Yes",
+            "Cache": "RWBD",
+            "Cac": "-",
+            "sCC": "OFF",
+            "Size": "446.625 GB",
+            "Name": ""
+          },
+          {
+            "DG/VD": "1/1",
+            "TYPE": "RAID5",
+            "State": "Optl",
+            "Access": "RW",
+            "Consist": "Yes",
+            "Cache": "RWBD",
+            "Cac": "-",
+            "sCC": "OFF",
+            "Size": "7.276 TB",
+            "Name": ""
+          }
+        ],
+        "physical_disks": [
+          {
+            "EID:Slt": "32:0",
+            "DID": 0,
+            "State": "Onln",
+            "DG": 0,
+            "Size": "446.625 GB",
+            "Intf": "SATA",
+            "Med": "SSD",
+            "SED": "N",
+            "PI": "N",
+            "SeSz": "512B",
+            "Model": "INTEL SSDSC2BB480G6",
+            "Sp": "U",
+            "Type": "-"
+          },
+          {
+            "EID:Slt": "32:1",
+            "DID": 1,
+            "State": "Onln",
+            "DG": 0,
+            "Size": "446.625 GB",
+            "Intf": "SATA",
+            "Med": "SSD",
+            "SED": "N",
+            "PI": "N",
+            "SeSz": "512B",
+            "Model": "INTEL SSDSC2BB480G6L",
+            "Sp": "U",
+            "Type": "-"
+          },
+          {
+            "EID:Slt": "32:2",
+            "DID": 2,
+            "State": "Onln",
+            "DG": 1,
+            "Size": "3.637 TB",
+            "Intf": "SAS",
+            "Med": "HDD",
+            "SED": "N",
+            "PI": "N",
+            "SeSz": "512B",
+            "Model": "ST4000NM0295    ",
+            "Sp": "U",
+            "Type": "-"
+          },
+          {
+            "EID:Slt": "32:3",
+            "DID": 3,
+            "State": "Onln",
+            "DG": 1,
+            "Size": "3.637 TB",
+            "Intf": "SAS",
+            "Med": "HDD",
+            "SED": "N",
+            "PI": "N",
+            "SeSz": "512B",
+            "Model": "ST4000NM0295    ",
+            "Sp": "U",
+            "Type": "-"
+          },
+          {
+            "EID:Slt": "32:7",
+            "DID": 7,
+            "State": "Onln",
+            "DG": 1,
+            "Size": "3.637 TB",
+            "Intf": "SAS",
+            "Med": "HDD",
+            "SED": "N",
+            "PI": "N",
+            "SeSz": "512B",
+            "Model": "ST4000NM0295    ",
+            "Sp": "U",
+            "Type": "-"
+          }
+        ]
+      },
+      "physical": {
+        "exit_code": 0,
+        "error_counters": [
+          {
+            "drive": "Drive /c0/e32/s0",
+            "Media Error Count": 0,
+            "Other Error Count": 0,
+            "Predictive Failure Count": 0,
+            "S.M.A.R.T alert flagged by drive": "No"
+          },
+          {
+            "drive": "Drive /c0/e32/s1",
+            "Media Error Count": 0,
+            "Other Error Count": 0,
+            "Predictive Failure Count": 0,
+            "S.M.A.R.T alert flagged by drive": "No"
+          },
+          {
+            "drive": "Drive /c0/e32/s2",
+            "Media Error Count": 0,
+            "Other Error Count": 0,
+            "Predictive Failure Count": 0,
+            "S.M.A.R.T alert flagged by drive": "No"
+          },
+          {
+            "drive": "Drive /c0/e32/s3",
+            "Media Error Count": 0,
+            "Other Error Count": 0,
+            "Predictive Failure Count": 0,
+            "S.M.A.R.T alert flagged by drive": "No"
+          },
+          {
+            "drive": "Drive /c0/e32/s7",
+            "Media Error Count": 0,
+            "Other Error Count": 0,
+            "Predictive Failure Count": 0,
+            "S.M.A.R.T alert flagged by drive": "No"
+          }
+        ]
+      },
+      "bbu": {
+        "exit_code": 0,
+        "BBU_Info": {
+          "Voltage": "3916 mV",
+          "Temperature": "46 C",
+          "Battery State": "Optimal"
+        },
+        "BBU_Firmware_Status": {
+          "Voltage": "OK",
+          "Temperature": "OK",
+          "Learn Cycle Active": "No",
+          "Replacement required": "No",
+          "Remaining Capacity Low": "No"
+        },
+        "GasGaugeStatus": {
+          "Relative State of Charge": "100%"
+        }
+      }
+    },
+    "read_only": true
+  },
+  "management_reachability": [
+    {
+      "source": "Mac-local-client",
+      "host": "192.168.21.22",
+      "port": 22,
+      "checked_at": "2026-11-06T10:32:38.939400+08:00",
+      "error_type": "OSError"
+    },
+    {
+      "source": "Mac-local-client",
+      "host": "192.168.21.22",
+      "port": 8006,
+      "checked_at": "2026-11-06T10:32:38.951039+08:00",
+      "error_type": "OSError"
+    }
+  ],
+  "guest_tcp_checks": [
+    {
+      "case": "java-prod-01->data-prod-db:22",
+      "expected": "allow",
+      "port": 22,
+      "status": "passed-observed-allow",
+      "observation": {
+        "at": "2026-11-06T10:37:57.304176+08:00",
+        "source_role": "java-prod-01",
+        "source_ip": "10.63.10.20",
+        "destination": "10.63.10.10",
+        "port": 22,
+        "route": {
+          "dst": "10.63.10.10",
+          "dev": "eth0",
+          "prefsrc": "10.63.10.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 0,
+        "connect_errno_name": null,
+        "result": "connected",
+        "elapsed_seconds": 0.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T10:37:56.394150+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T10:37:57.568526+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 0,
+      "limitations": [
+        "Shared rule counters are not a per-flow packet trace. SSH destination is known listening; refusal is never treated as ACL denial."
+      ]
+    },
+    {
+      "case": "publish-service->java-prod-01:22",
+      "expected": "allow",
+      "port": 22,
+      "status": "passed-observed-allow",
+      "observation": {
+        "at": "2026-11-06T10:37:58.711663+08:00",
+        "source_role": "publish-service",
+        "source_ip": "10.63.30.10",
+        "destination": "10.63.10.20",
+        "port": 22,
+        "route": {
+          "dst": "10.63.10.20",
+          "gateway": "10.63.30.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.30.10",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 0,
+        "connect_errno_name": null,
+        "result": "connected",
+        "elapsed_seconds": 0.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T10:37:57.793469+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T10:37:59.008374+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 0,
+      "limitations": [
+        "Shared rule counters are not a per-flow packet trace. SSH destination is known listening; refusal is never treated as ACL denial."
+      ]
+    },
+    {
+      "case": "publish-service->java-test-01:22",
+      "expected": "allow",
+      "port": 22,
+      "status": "passed-observed-allow",
+      "observation": {
+        "at": "2026-11-06T10:37:59.750872+08:00",
+        "source_role": "publish-service",
+        "source_ip": "10.63.30.10",
+        "destination": "10.63.20.20",
+        "port": 22,
+        "route": {
+          "dst": "10.63.20.20",
+          "gateway": "10.63.30.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.30.10",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 0,
+        "connect_errno_name": null,
+        "result": "connected",
+        "elapsed_seconds": 0.001,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T10:37:59.246785+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T10:38:00.014494+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 0,
+      "limitations": [
+        "Shared rule counters are not a per-flow packet trace. SSH destination is known listening; refusal is never treated as ACL denial."
+      ]
+    },
+    {
+      "case": "artifact-service->penpot-service:22",
+      "expected": "allow",
+      "port": 22,
+      "status": "passed-observed-allow",
+      "observation": {
+        "at": "2026-11-06T10:38:01.113268+08:00",
+        "source_role": "artifact-service",
+        "source_ip": "10.63.30.20",
+        "destination": "10.63.30.30",
+        "port": 22,
+        "route": {
+          "dst": "10.63.30.30",
+          "dev": "eth0",
+          "prefsrc": "10.63.30.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 0,
+        "connect_errno_name": null,
+        "result": "connected",
+        "elapsed_seconds": 0.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T10:38:00.254863+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T10:38:01.365078+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 0,
+      "limitations": [
+        "Shared rule counters are not a per-flow packet trace. SSH destination is known listening; refusal is never treated as ACL denial."
+      ]
+    },
+    {
+      "case": "artifact-service->java-prod-01:22",
+      "expected": "deny",
+      "port": 22,
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "observation": {
+        "at": "2026-11-06T10:38:05.107989+08:00",
+        "source_role": "artifact-service",
+        "source_ip": "10.63.30.20",
+        "destination": "10.63.10.20",
+        "port": 22,
+        "route": {
+          "dst": "10.63.10.20",
+          "gateway": "10.63.30.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.30.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T10:38:01.609626+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T10:38:05.352959+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 3,
+              "bytes": 180
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared rule counters are not a per-flow packet trace. SSH destination is known listening; refusal is never treated as ACL denial."
+      ]
+    },
+    {
+      "case": "data-test->java-prod-01:22",
+      "expected": "deny",
+      "port": 22,
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "observation": {
+        "at": "2026-11-06T10:38:09.476029+08:00",
+        "source_role": "data-test",
+        "source_ip": "10.63.20.10",
+        "destination": "10.63.10.20",
+        "port": 22,
+        "route": {
+          "dst": "10.63.10.20",
+          "gateway": "10.63.20.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.20.10",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.006,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T10:38:05.581553+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 3,
+              "bytes": 180
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T10:38:09.728940+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 6,
+              "bytes": 360
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared rule counters are not a per-flow packet trace. SSH destination is known listening; refusal is never treated as ACL denial."
+      ]
+    },
+    {
+      "case": "data-test->data-prod-db:22",
+      "expected": "deny",
+      "port": 22,
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "observation": {
+        "at": "2026-11-06T10:38:13.473500+08:00",
+        "source_role": "data-test",
+        "source_ip": "10.63.20.10",
+        "destination": "10.63.10.10",
+        "port": 22,
+        "route": {
+          "dst": "10.63.10.10",
+          "gateway": "10.63.20.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.20.10",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.004,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T10:38:09.956918+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 6,
+              "bytes": 360
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T10:38:13.720988+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 9,
+              "bytes": 540
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared rule counters are not a per-flow packet trace. SSH destination is known listening; refusal is never treated as ACL denial."
+      ]
+    },
+    {
+      "case": "nas-media->java-prod-01:22",
+      "expected": "deny",
+      "port": 22,
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "observation": {
+        "at": "2026-11-06T10:38:17.889276+08:00",
+        "source_role": "nas-media",
+        "source_ip": "10.63.40.10",
+        "destination": "10.63.10.20",
+        "port": 22,
+        "route": {
+          "dst": "10.63.10.20",
+          "gateway": "10.63.40.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.40.10",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.006,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T10:38:13.964027+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 9,
+              "bytes": 540
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T10:38:18.122346+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 12,
+              "bytes": 720
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared rule counters are not a per-flow packet trace. SSH destination is known listening; refusal is never treated as ACL denial."
+      ]
+    },
+    {
+      "case": "nas-media->data-prod-db:22",
+      "expected": "deny",
+      "port": 22,
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "observation": {
+        "at": "2026-11-06T10:38:21.881219+08:00",
+        "source_role": "nas-media",
+        "source_ip": "10.63.40.10",
+        "destination": "10.63.10.10",
+        "port": 22,
+        "route": {
+          "dst": "10.63.10.10",
+          "gateway": "10.63.40.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.40.10",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.004,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T10:38:18.351210+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 12,
+              "bytes": 720
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T10:38:22.123015+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 15,
+              "bytes": 900
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared rule counters are not a per-flow packet trace. SSH destination is known listening; refusal is never treated as ACL denial."
+      ]
+    },
+    {
+      "case": "java-prod-01->data-test:22",
+      "expected": "deny",
+      "port": 22,
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "observation": {
+        "at": "2026-11-06T10:38:26.245759+08:00",
+        "source_role": "java-prod-01",
+        "source_ip": "10.63.10.20",
+        "destination": "10.63.20.10",
+        "port": 22,
+        "route": {
+          "dst": "10.63.20.10",
+          "gateway": "10.63.10.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.10.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T10:38:22.363474+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 15,
+              "bytes": 900
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T10:38:26.522324+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared rule counters are not a per-flow packet trace. SSH destination is known listening; refusal is never treated as ACL denial."
+      ]
+    }
+  ],
+  "status": "host-ssh-data-port-and-ops-metrics-readonly-verification-completed",
+  "limitations": [
+    "No host writes, listeners, business payloads or Cloudflare configuration changes performed.",
+    "CF backup remains on same PVE host; no independent backup or restore claimed.",
+    "Guest connectivity checks await private-guest-access.json; closed ports cannot prove ACL denial."
+  ],
+  "management_cli_probes": [
+    {
+      "checked_at": "2026-11-06T10:37:55.320707+08:00",
+      "source": "Mac-local-client",
+      "host": "192.168.21.22",
+      "port": 22,
+      "command": "nc -vz -w 5 192.168.21.22 22",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Connection to 192.168.21.22 port 22 [tcp/ssh] succeeded!",
+      "scope": "TCP reachability only; no TLS weakening, credentials or admin login used"
+    },
+    {
+      "checked_at": "2026-11-06T10:37:55.333262+08:00",
+      "source": "Mac-local-client",
+      "host": "192.168.21.22",
+      "port": 8006,
+      "command": "nc -vz -w 5 192.168.21.22 8006",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Connection to 192.168.21.22 port 8006 [tcp/*] succeeded!",
+      "scope": "TCP reachability only; no TLS weakening, credentials or admin login used"
+    }
+  ],
+  "management_probe_limitations": "Earlier direct Python sockets raised OSError in this client environment; trusted SSH and subsequent nc succeeded. The OSError samples are retained and are not endpoint-failure evidence.",
+  "known_listening_ssh_targets": [
+    {
+      "role": "java-prod-01",
+      "ip": "10.63.10.20",
+      "port": 22,
+      "connected": true
+    },
+    {
+      "role": "data-prod-db",
+      "ip": "10.63.10.10",
+      "port": 22,
+      "connected": true
+    }
+  ],
+  "updated_at": "2026-11-06T11:25:48.410326+08:00",
+  "pending_checks": [
+    "Actual activated Java registration/discovery, configured DNS/public egress and external LAN/Tunnel app endpoint tests are separate from completed TCP matrix.",
+    "Dynamic routed IPv6 checks not performed; current topology has IPv6 forwarding disabled and managed IPv6 drops before established.",
+    "Prior numeric CF PID sample is unavailable to this verifier; current PID171 start predates network apply.",
+    "Known CF backup remains same-host only; independent copy and restore are not verified."
+  ],
+  "summary": {
+    "managed_bridges": {
+      "vmbr10": {
+        "present": true,
+        "gateway_address_expected": "10.63.10.1",
+        "gateway_address_observed": true,
+        "operstate": "UP"
+      },
+      "vmbr20": {
+        "present": true,
+        "gateway_address_expected": "10.63.20.1",
+        "gateway_address_observed": true,
+        "operstate": "UP"
+      },
+      "vmbr30": {
+        "present": true,
+        "gateway_address_expected": "10.63.30.1",
+        "gateway_address_observed": true,
+        "operstate": "UP"
+      },
+      "vmbr40": {
+        "present": true,
+        "gateway_address_expected": "10.63.40.1",
+        "gateway_address_observed": true,
+        "operstate": "UP"
+      }
+    },
+    "all_four_gateways_verified": true,
+    "management_default_route": {
+      "dst": "default",
+      "gateway": "192.168.21.1",
+      "dev": "vmbr0",
+      "protocol": "kernel",
+      "flags": [
+        "onlink"
+      ]
+    },
+    "management_default_route_preserved": true,
+    "forwarding": "net.ipv4.ip_forward = 1\nnet.ipv6.conf.all.forwarding = 0",
+    "dedicated_chain_policies": {
+      "input": "accept",
+      "forward": "accept"
+    },
+    "ipv6_drop_before_established": true,
+    "ops_to_guest_9100": {
+      "allow_policy_present": true,
+      "rule_handles": [
+        20
+      ],
+      "dynamic_runtime_acceptance": "passed",
+      "tested_guests": 12
+    },
+    "lan_dnat": [
+      {
+        "handle": 3,
+        "incoming_interface": "vmbr0",
+        "allowed_source": {
+          "prefix": {
+            "addr": "192.168.21.0",
+            "len": 24
+          }
+        },
+        "host_address": "192.168.21.22",
+        "host_port": 9001,
+        "destination": {
+          "addr": "10.63.30.30",
+          "port": 9001
+        }
+      },
+      {
+        "handle": 4,
+        "incoming_interface": "vmbr0",
+        "allowed_source": {
+          "prefix": {
+            "addr": "192.168.21.0",
+            "len": 24
+          }
+        },
+        "host_address": "192.168.21.22",
+        "host_port": 8081,
+        "destination": {
+          "addr": "10.63.30.20",
+          "port": 8081
+        }
+      },
+      {
+        "handle": 5,
+        "incoming_interface": "vmbr0",
+        "allowed_source": {
+          "prefix": {
+            "addr": "192.168.21.0",
+            "len": 24
+          }
+        },
+        "host_address": "192.168.21.22",
+        "host_port": 9080,
+        "destination": {
+          "addr": "10.63.40.10",
+          "port": 80
+        }
+      },
+      {
+        "handle": 6,
+        "incoming_interface": "vmbr0",
+        "allowed_source": {
+          "prefix": {
+            "addr": "192.168.21.0",
+            "len": 24
+          }
+        },
+        "host_address": "192.168.21.22",
+        "host_port": 445,
+        "destination": {
+          "addr": "10.63.40.10",
+          "port": 445
+        }
+      },
+      {
+        "handle": 7,
+        "incoming_interface": "vmbr0",
+        "allowed_source": {
+          "prefix": {
+            "addr": "192.168.21.0",
+            "len": 24
+          }
+        },
+        "host_address": "192.168.21.22",
+        "host_port": 8096,
+        "destination": {
+          "addr": "10.63.40.10",
+          "port": 8096
+        }
+      },
+      {
+        "handle": 8,
+        "incoming_interface": "vmbr0",
+        "allowed_source": {
+          "prefix": {
+            "addr": "192.168.21.0",
+            "len": 24
+          }
+        },
+        "host_address": "192.168.21.22",
+        "host_port": 9999,
+        "destination": {
+          "addr": "10.63.10.20",
+          "port": 9999
+        }
+      },
+      {
+        "handle": 9,
+        "incoming_interface": "vmbr0",
+        "allowed_source": {
+          "prefix": {
+            "addr": "192.168.21.0",
+            "len": 24
+          }
+        },
+        "host_address": "192.168.21.22",
+        "host_port": 19999,
+        "destination": {
+          "addr": "10.63.20.20",
+          "port": 9999
+        }
+      }
+    ],
+    "management_ports_not_dnat": true,
+    "management_tcp_reachable": true,
+    "cf100": {
+      "main_pid": 171,
+      "active": true,
+      "process_started_at": "2026-11-05T20:51:23+08:00",
+      "network_applied_at": "2026-11-06T10:29:04.507565+08:00",
+      "process_started_before_network_change": true,
+      "prior_numeric_pid_sample_available": false,
+      "continuity_evidence": "Current process start predates network apply; prior numeric PID not available to independent verifier."
+    },
+    "cf_backup": {
+      "same_host_file_exists": true,
+      "same_host_bytes": 244256662,
+      "independent_fault_domain_verified": false,
+      "payload_read_or_exported": false
+    },
+    "ssh_zone_cases": {
+      "count": 10,
+      "passed_observed_allow": 4,
+      "passed_observed_deny": 6,
+      "inconclusive": 0
+    },
+    "raid_controller_status": "Optimal",
+    "real_data_port_matrix": {
+      "total": 30,
+      "allowed_pass": 10,
+      "denied_pass": 20,
+      "inconclusive_or_failed": 0
+    }
+  },
+  "production_data_readiness_probe": {
+    "at": "2026-11-06T10:41:39.427864+08:00",
+    "observations": [
+      {
+        "label": "mysql",
+        "source_role": "java-prod-01",
+        "source_ip": "10.63.10.20",
+        "destination": "10.63.10.10",
+        "port": 3306,
+        "connect_errno": 111,
+        "connect_errno_name": "ECONNREFUSED",
+        "connected": false,
+        "elapsed_seconds": 0.001,
+        "business_payload_sent": false
+      },
+      {
+        "label": "redis",
+        "source_role": "java-prod-01",
+        "source_ip": "10.63.10.20",
+        "destination": "10.63.10.11",
+        "port": 6379,
+        "connect_errno": 111,
+        "connect_errno_name": "ECONNREFUSED",
+        "connected": false,
+        "elapsed_seconds": 0.001,
+        "business_payload_sent": false
+      },
+      {
+        "label": "rabbitmq",
+        "source_role": "java-prod-01",
+        "source_ip": "10.63.10.20",
+        "destination": "10.63.10.11",
+        "port": 5672,
+        "connect_errno": 111,
+        "connect_errno_name": "ECONNREFUSED",
+        "connected": false,
+        "elapsed_seconds": 0.001,
+        "business_payload_sent": false
+      },
+      {
+        "label": "nacos-http",
+        "source_role": "java-prod-01",
+        "source_ip": "10.63.10.20",
+        "destination": "10.63.10.11",
+        "port": 8848,
+        "connect_errno": 111,
+        "connect_errno_name": "ECONNREFUSED",
+        "connected": false,
+        "elapsed_seconds": 0.001,
+        "business_payload_sent": false
+      },
+      {
+        "label": "nacos-client-grpc",
+        "source_role": "java-prod-01",
+        "source_ip": "10.63.10.20",
+        "destination": "10.63.10.11",
+        "port": 9848,
+        "connect_errno": 111,
+        "connect_errno_name": "ECONNREFUSED",
+        "connected": false,
+        "elapsed_seconds": 0.001,
+        "business_payload_sent": false
+      }
+    ]
+  },
+  "known_listening_data_targets": [
+    {
+      "role": "data-prod-db",
+      "ip": "10.63.10.10",
+      "port": 3306,
+      "connected": true
+    },
+    {
+      "role": "data-prod-infra",
+      "ip": "10.63.10.11",
+      "port": 6379,
+      "connected": true
+    },
+    {
+      "role": "data-prod-infra",
+      "ip": "10.63.10.11",
+      "port": 5672,
+      "connected": true
+    },
+    {
+      "role": "data-prod-infra",
+      "ip": "10.63.10.11",
+      "port": 8848,
+      "connected": true
+    },
+    {
+      "role": "data-prod-infra",
+      "ip": "10.63.10.11",
+      "port": 9848,
+      "connected": true
+    },
+    {
+      "role": "data-test",
+      "ip": "10.63.20.10",
+      "port": 3306,
+      "connected": true
+    },
+    {
+      "role": "data-test",
+      "ip": "10.63.20.10",
+      "port": 6379,
+      "connected": true
+    },
+    {
+      "role": "data-test",
+      "ip": "10.63.20.10",
+      "port": 5672,
+      "connected": true
+    },
+    {
+      "role": "data-test",
+      "ip": "10.63.20.10",
+      "port": 8848,
+      "connected": true
+    },
+    {
+      "role": "data-test",
+      "ip": "10.63.20.10",
+      "port": 9848,
+      "connected": true
+    }
+  ],
+  "data_port_checks": [
+    {
+      "case": "java-prod-01->data-prod-db:3306",
+      "expected": "allow",
+      "status": "passed-observed-allow",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:09:10.373994+08:00",
+        "source_role": "java-prod-01",
+        "source_ip": "10.63.10.20",
+        "destination": "10.63.10.10",
+        "port": 3306,
+        "route": {
+          "dst": "10.63.10.10",
+          "dev": "eth0",
+          "prefsrc": "10.63.10.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 0,
+        "connect_errno_name": null,
+        "result": "connected",
+        "elapsed_seconds": 0.001,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:09:09.450801+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:09:10.626212+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 0,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "java-prod-01->data-prod-infra:6379",
+      "expected": "allow",
+      "status": "passed-observed-allow",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:09:11.359142+08:00",
+        "source_role": "java-prod-01",
+        "source_ip": "10.63.10.20",
+        "destination": "10.63.10.11",
+        "port": 6379,
+        "route": {
+          "dst": "10.63.10.11",
+          "dev": "eth0",
+          "prefsrc": "10.63.10.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 0,
+        "connect_errno_name": null,
+        "result": "connected",
+        "elapsed_seconds": 0.001,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:09:10.870839+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:09:11.607055+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 0,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "java-prod-01->data-prod-infra:5672",
+      "expected": "allow",
+      "status": "passed-observed-allow",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:09:12.371239+08:00",
+        "source_role": "java-prod-01",
+        "source_ip": "10.63.10.20",
+        "destination": "10.63.10.11",
+        "port": 5672,
+        "route": {
+          "dst": "10.63.10.11",
+          "dev": "eth0",
+          "prefsrc": "10.63.10.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 0,
+        "connect_errno_name": null,
+        "result": "connected",
+        "elapsed_seconds": 0.001,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:09:11.848234+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:09:12.616216+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 0,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "java-prod-01->data-prod-infra:8848",
+      "expected": "allow",
+      "status": "passed-observed-allow",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:09:13.373467+08:00",
+        "source_role": "java-prod-01",
+        "source_ip": "10.63.10.20",
+        "destination": "10.63.10.11",
+        "port": 8848,
+        "route": {
+          "dst": "10.63.10.11",
+          "dev": "eth0",
+          "prefsrc": "10.63.10.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 0,
+        "connect_errno_name": null,
+        "result": "connected",
+        "elapsed_seconds": 0.001,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:09:12.853753+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:09:13.619120+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 0,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "java-prod-01->data-prod-infra:9848",
+      "expected": "allow",
+      "status": "passed-observed-allow",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:09:14.380819+08:00",
+        "source_role": "java-prod-01",
+        "source_ip": "10.63.10.20",
+        "destination": "10.63.10.11",
+        "port": 9848,
+        "route": {
+          "dst": "10.63.10.11",
+          "dev": "eth0",
+          "prefsrc": "10.63.10.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 0,
+        "connect_errno_name": null,
+        "result": "connected",
+        "elapsed_seconds": 0.001,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:09:13.861342+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:09:14.630561+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 0,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "java-test-01->data-test:3306",
+      "expected": "allow",
+      "status": "passed-observed-allow",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:09:15.756003+08:00",
+        "source_role": "java-test-01",
+        "source_ip": "10.63.20.20",
+        "destination": "10.63.20.10",
+        "port": 3306,
+        "route": {
+          "dst": "10.63.20.10",
+          "dev": "eth0",
+          "prefsrc": "10.63.20.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 0,
+        "connect_errno_name": null,
+        "result": "connected",
+        "elapsed_seconds": 0.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:09:14.872194+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:09:16.002897+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 0,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "java-test-01->data-test:6379",
+      "expected": "allow",
+      "status": "passed-observed-allow",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:09:16.779113+08:00",
+        "source_role": "java-test-01",
+        "source_ip": "10.63.20.20",
+        "destination": "10.63.20.10",
+        "port": 6379,
+        "route": {
+          "dst": "10.63.20.10",
+          "dev": "eth0",
+          "prefsrc": "10.63.20.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 0,
+        "connect_errno_name": null,
+        "result": "connected",
+        "elapsed_seconds": 0.001,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:09:16.242305+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:09:17.045072+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 0,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "java-test-01->data-test:5672",
+      "expected": "allow",
+      "status": "passed-observed-allow",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:09:17.789967+08:00",
+        "source_role": "java-test-01",
+        "source_ip": "10.63.20.20",
+        "destination": "10.63.20.10",
+        "port": 5672,
+        "route": {
+          "dst": "10.63.20.10",
+          "dev": "eth0",
+          "prefsrc": "10.63.20.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 0,
+        "connect_errno_name": null,
+        "result": "connected",
+        "elapsed_seconds": 0.001,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:09:17.277690+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:09:18.042292+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 0,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "java-test-01->data-test:8848",
+      "expected": "allow",
+      "status": "passed-observed-allow",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:09:18.798236+08:00",
+        "source_role": "java-test-01",
+        "source_ip": "10.63.20.20",
+        "destination": "10.63.20.10",
+        "port": 8848,
+        "route": {
+          "dst": "10.63.20.10",
+          "dev": "eth0",
+          "prefsrc": "10.63.20.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 0,
+        "connect_errno_name": null,
+        "result": "connected",
+        "elapsed_seconds": 0.001,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:09:18.277571+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:09:19.005352+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 0,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "java-test-01->data-test:9848",
+      "expected": "allow",
+      "status": "passed-observed-allow",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:09:19.750476+08:00",
+        "source_role": "java-test-01",
+        "source_ip": "10.63.20.20",
+        "destination": "10.63.20.10",
+        "port": 9848,
+        "route": {
+          "dst": "10.63.20.10",
+          "dev": "eth0",
+          "prefsrc": "10.63.20.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 0,
+        "connect_errno_name": null,
+        "result": "connected",
+        "elapsed_seconds": 0.001,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:09:19.226295+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:09:20.001567+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 0,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "java-test-01->data-prod-db:3306",
+      "expected": "deny",
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:09:23.740948+08:00",
+        "source_role": "java-test-01",
+        "source_ip": "10.63.20.20",
+        "destination": "10.63.10.10",
+        "port": 3306,
+        "route": {
+          "dst": "10.63.10.10",
+          "gateway": "10.63.20.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.20.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.004,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:09:20.236701+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 18,
+              "bytes": 1080
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:09:23.984177+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 21,
+              "bytes": 1260
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "java-test-01->data-prod-infra:6379",
+      "expected": "deny",
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:09:27.700244+08:00",
+        "source_role": "java-test-01",
+        "source_ip": "10.63.20.20",
+        "destination": "10.63.10.11",
+        "port": 6379,
+        "route": {
+          "dst": "10.63.10.11",
+          "gateway": "10.63.20.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.20.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:09:24.222023+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 21,
+              "bytes": 1260
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:09:27.955624+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 24,
+              "bytes": 1440
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "java-test-01->data-prod-infra:5672",
+      "expected": "deny",
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:09:31.716879+08:00",
+        "source_role": "java-test-01",
+        "source_ip": "10.63.20.20",
+        "destination": "10.63.10.11",
+        "port": 5672,
+        "route": {
+          "dst": "10.63.10.11",
+          "gateway": "10.63.20.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.20.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:09:28.188090+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 24,
+              "bytes": 1440
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:09:31.971961+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 27,
+              "bytes": 1620
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "java-test-01->data-prod-infra:8848",
+      "expected": "deny",
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:09:35.702642+08:00",
+        "source_role": "java-test-01",
+        "source_ip": "10.63.20.20",
+        "destination": "10.63.10.11",
+        "port": 8848,
+        "route": {
+          "dst": "10.63.10.11",
+          "gateway": "10.63.20.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.20.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:09:32.222467+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 27,
+              "bytes": 1620
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:09:35.949376+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 30,
+              "bytes": 1800
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "java-test-01->data-prod-infra:9848",
+      "expected": "deny",
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:09:39.703956+08:00",
+        "source_role": "java-test-01",
+        "source_ip": "10.63.20.20",
+        "destination": "10.63.10.11",
+        "port": 9848,
+        "route": {
+          "dst": "10.63.10.11",
+          "gateway": "10.63.20.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.20.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:09:36.191591+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 30,
+              "bytes": 1800
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:09:40.205807+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 33,
+              "bytes": 1980
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "nas-media->data-prod-db:3306",
+      "expected": "deny",
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:09:44.389424+08:00",
+        "source_role": "nas-media",
+        "source_ip": "10.63.40.10",
+        "destination": "10.63.10.10",
+        "port": 3306,
+        "route": {
+          "dst": "10.63.10.10",
+          "gateway": "10.63.40.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.40.10",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:09:40.436811+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 33,
+              "bytes": 1980
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:09:44.630317+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 36,
+              "bytes": 2160
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "nas-media->data-prod-infra:6379",
+      "expected": "deny",
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:09:48.377214+08:00",
+        "source_role": "nas-media",
+        "source_ip": "10.63.40.10",
+        "destination": "10.63.10.11",
+        "port": 6379,
+        "route": {
+          "dst": "10.63.10.11",
+          "gateway": "10.63.40.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.40.10",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:09:44.866412+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 36,
+              "bytes": 2160
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:09:48.631084+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 39,
+              "bytes": 2340
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "nas-media->data-prod-infra:5672",
+      "expected": "deny",
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:09:52.409372+08:00",
+        "source_role": "nas-media",
+        "source_ip": "10.63.40.10",
+        "destination": "10.63.10.11",
+        "port": 5672,
+        "route": {
+          "dst": "10.63.10.11",
+          "gateway": "10.63.40.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.40.10",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:09:48.864868+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 39,
+              "bytes": 2340
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:09:52.640758+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 42,
+              "bytes": 2520
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "nas-media->data-prod-infra:8848",
+      "expected": "deny",
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:09:56.387387+08:00",
+        "source_role": "nas-media",
+        "source_ip": "10.63.40.10",
+        "destination": "10.63.10.11",
+        "port": 8848,
+        "route": {
+          "dst": "10.63.10.11",
+          "gateway": "10.63.40.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.40.10",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:09:52.846005+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 42,
+              "bytes": 2520
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:09:57.073422+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 45,
+              "bytes": 2700
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "nas-media->data-prod-infra:9848",
+      "expected": "deny",
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:10:00.858995+08:00",
+        "source_role": "nas-media",
+        "source_ip": "10.63.40.10",
+        "destination": "10.63.10.11",
+        "port": 9848,
+        "route": {
+          "dst": "10.63.10.11",
+          "gateway": "10.63.40.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.40.10",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.004,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:09:57.317078+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 45,
+              "bytes": 2700
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:10:01.111242+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 48,
+              "bytes": 2880
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "artifact-service->data-prod-db:3306",
+      "expected": "deny",
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:10:05.260366+08:00",
+        "source_role": "artifact-service",
+        "source_ip": "10.63.30.20",
+        "destination": "10.63.10.10",
+        "port": 3306,
+        "route": {
+          "dst": "10.63.10.10",
+          "gateway": "10.63.30.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.30.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:10:01.347109+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 48,
+              "bytes": 2880
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:10:05.527299+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 51,
+              "bytes": 3060
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "artifact-service->data-prod-infra:6379",
+      "expected": "deny",
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:10:09.267613+08:00",
+        "source_role": "artifact-service",
+        "source_ip": "10.63.30.20",
+        "destination": "10.63.10.11",
+        "port": 6379,
+        "route": {
+          "dst": "10.63.10.11",
+          "gateway": "10.63.30.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.30.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:10:05.771145+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 51,
+              "bytes": 3060
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:10:09.527139+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 54,
+              "bytes": 3240
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "artifact-service->data-prod-infra:5672",
+      "expected": "deny",
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:10:13.254158+08:00",
+        "source_role": "artifact-service",
+        "source_ip": "10.63.30.20",
+        "destination": "10.63.10.11",
+        "port": 5672,
+        "route": {
+          "dst": "10.63.10.11",
+          "gateway": "10.63.30.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.30.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:10:09.767029+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 54,
+              "bytes": 3240
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:10:14.080197+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 57,
+              "bytes": 3420
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "artifact-service->data-prod-infra:8848",
+      "expected": "deny",
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:10:17.820547+08:00",
+        "source_role": "artifact-service",
+        "source_ip": "10.63.30.20",
+        "destination": "10.63.10.11",
+        "port": 8848,
+        "route": {
+          "dst": "10.63.10.11",
+          "gateway": "10.63.30.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.30.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:10:14.311358+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 57,
+              "bytes": 3420
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:10:18.072296+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 60,
+              "bytes": 3600
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "artifact-service->data-prod-infra:9848",
+      "expected": "deny",
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:10:21.758418+08:00",
+        "source_role": "artifact-service",
+        "source_ip": "10.63.30.20",
+        "destination": "10.63.10.11",
+        "port": 9848,
+        "route": {
+          "dst": "10.63.10.11",
+          "gateway": "10.63.30.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.30.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:10:18.316878+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 60,
+              "bytes": 3600
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:10:22.020552+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 63,
+              "bytes": 3780
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "java-prod-01->data-test:3306",
+      "expected": "deny",
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:10:26.142672+08:00",
+        "source_role": "java-prod-01",
+        "source_ip": "10.63.10.20",
+        "destination": "10.63.20.10",
+        "port": 3306,
+        "route": {
+          "dst": "10.63.20.10",
+          "gateway": "10.63.10.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.10.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:10:22.258974+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 63,
+              "bytes": 3780
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:10:26.400983+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 66,
+              "bytes": 3960
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "java-prod-01->data-test:6379",
+      "expected": "deny",
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:10:30.118689+08:00",
+        "source_role": "java-prod-01",
+        "source_ip": "10.63.10.20",
+        "destination": "10.63.20.10",
+        "port": 6379,
+        "route": {
+          "dst": "10.63.20.10",
+          "gateway": "10.63.10.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.10.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:10:26.641795+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 66,
+              "bytes": 3960
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:10:30.709131+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 69,
+              "bytes": 4140
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "java-prod-01->data-test:5672",
+      "expected": "deny",
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:10:34.802560+08:00",
+        "source_role": "java-prod-01",
+        "source_ip": "10.63.10.20",
+        "destination": "10.63.20.10",
+        "port": 5672,
+        "route": {
+          "dst": "10.63.20.10",
+          "gateway": "10.63.10.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.10.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.003,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:10:31.258208+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 69,
+              "bytes": 4140
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:10:35.045095+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 72,
+              "bytes": 4320
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "java-prod-01->data-test:8848",
+      "expected": "deny",
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:10:38.857747+08:00",
+        "source_role": "java-prod-01",
+        "source_ip": "10.63.10.20",
+        "destination": "10.63.20.10",
+        "port": 8848,
+        "route": {
+          "dst": "10.63.20.10",
+          "gateway": "10.63.10.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.10.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.004,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:10:35.290029+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 72,
+              "bytes": 4320
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:10:39.124586+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 75,
+              "bytes": 4500
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    },
+    {
+      "case": "java-prod-01->data-test:9848",
+      "expected": "deny",
+      "status": "passed-observed-deny-with-shared-counter-evidence",
+      "known_target_listening": true,
+      "observation": {
+        "at": "2026-11-06T11:10:42.871238+08:00",
+        "source_role": "java-prod-01",
+        "source_ip": "10.63.10.20",
+        "destination": "10.63.20.10",
+        "port": 9848,
+        "route": {
+          "dst": "10.63.20.10",
+          "gateway": "10.63.10.1",
+          "dev": "eth0",
+          "prefsrc": "10.63.10.20",
+          "flags": [],
+          "uid": 1000,
+          "cache": []
+        },
+        "connect_errno": 11,
+        "connect_errno_name": "EAGAIN",
+        "result": "timeout",
+        "elapsed_seconds": 3.008,
+        "business_payload_sent": false
+      },
+      "forward_counter_before": {
+        "at": "2026-11-06T11:10:39.356299+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 75,
+              "bytes": 4500
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "forward_counter_after": {
+        "at": "2026-11-06T11:10:43.131728+08:00",
+        "rows": [
+          {
+            "handle": 37,
+            "counter": {
+              "packets": 78,
+              "bytes": 4680
+            },
+            "verdict": "drop"
+          },
+          {
+            "handle": 38,
+            "counter": {
+              "packets": 0,
+              "bytes": 0
+            },
+            "verdict": "drop"
+          }
+        ]
+      },
+      "shared_drop_counter_delta": 3,
+      "limitations": [
+        "Shared counters are not per-flow packet trace; no database authentication or business payload performed."
+      ]
+    }
+  ],
+  "ops_guest_metrics_checks": {
+    "at": "2026-11-06T11:10:49.491964+08:00",
+    "source_role": "ops-service",
+    "source_ip": "10.63.30.40",
+    "observations": [
+      {
+        "role": "data-prod-db",
+        "ip": "10.63.10.10",
+        "port": 9100,
+        "path": "/metrics",
+        "body_saved": false,
+        "http_status": 200,
+        "sample_count": 1481,
+        "node_exporter_build_info_observed": true,
+        "status": "passed-http-metrics-observed",
+        "elapsed_seconds": 0.586
+      },
+      {
+        "role": "data-prod-infra",
+        "ip": "10.63.10.11",
+        "port": 9100,
+        "path": "/metrics",
+        "body_saved": false,
+        "http_status": 200,
+        "sample_count": 1509,
+        "node_exporter_build_info_observed": true,
+        "status": "passed-http-metrics-observed",
+        "elapsed_seconds": 0.454
+      },
+      {
+        "role": "data-test",
+        "ip": "10.63.20.10",
+        "port": 9100,
+        "path": "/metrics",
+        "body_saved": false,
+        "http_status": 200,
+        "sample_count": 1501,
+        "node_exporter_build_info_observed": true,
+        "status": "passed-http-metrics-observed",
+        "elapsed_seconds": 0.526
+      },
+      {
+        "role": "publish-service",
+        "ip": "10.63.30.10",
+        "port": 9100,
+        "path": "/metrics",
+        "body_saved": false,
+        "http_status": 200,
+        "sample_count": 1295,
+        "node_exporter_build_info_observed": true,
+        "status": "passed-http-metrics-observed",
+        "elapsed_seconds": 0.345
+      },
+      {
+        "role": "artifact-service",
+        "ip": "10.63.30.20",
+        "port": 9100,
+        "path": "/metrics",
+        "body_saved": false,
+        "http_status": 200,
+        "sample_count": 1387,
+        "node_exporter_build_info_observed": true,
+        "status": "passed-http-metrics-observed",
+        "elapsed_seconds": 0.444
+      },
+      {
+        "role": "java-prod-01",
+        "ip": "10.63.10.20",
+        "port": 9100,
+        "path": "/metrics",
+        "body_saved": false,
+        "http_status": 200,
+        "sample_count": 1317,
+        "node_exporter_build_info_observed": true,
+        "status": "passed-http-metrics-observed",
+        "elapsed_seconds": 0.69
+      },
+      {
+        "role": "java-prod-02",
+        "ip": "10.63.10.21",
+        "port": 9100,
+        "path": "/metrics",
+        "body_saved": false,
+        "http_status": 200,
+        "sample_count": 1307,
+        "node_exporter_build_info_observed": true,
+        "status": "passed-http-metrics-observed",
+        "elapsed_seconds": 0.402
+      },
+      {
+        "role": "java-prod-03",
+        "ip": "10.63.10.22",
+        "port": 9100,
+        "path": "/metrics",
+        "body_saved": false,
+        "http_status": 200,
+        "sample_count": 1307,
+        "node_exporter_build_info_observed": true,
+        "status": "passed-http-metrics-observed",
+        "elapsed_seconds": 0.423
+      },
+      {
+        "role": "java-test-01",
+        "ip": "10.63.20.20",
+        "port": 9100,
+        "path": "/metrics",
+        "body_saved": false,
+        "http_status": 200,
+        "sample_count": 1263,
+        "node_exporter_build_info_observed": true,
+        "status": "passed-http-metrics-observed",
+        "elapsed_seconds": 0.343
+      },
+      {
+        "role": "penpot-service",
+        "ip": "10.63.30.30",
+        "port": 9100,
+        "path": "/metrics",
+        "body_saved": false,
+        "http_status": 200,
+        "sample_count": 1403,
+        "node_exporter_build_info_observed": true,
+        "status": "passed-http-metrics-observed",
+        "elapsed_seconds": 0.373
+      },
+      {
+        "role": "nas-media",
+        "ip": "10.63.40.10",
+        "port": 9100,
+        "path": "/metrics",
+        "body_saved": false,
+        "http_status": 200,
+        "sample_count": 1638,
+        "node_exporter_build_info_observed": true,
+        "status": "passed-http-metrics-observed",
+        "elapsed_seconds": 0.606
+      },
+      {
+        "role": "ops-service",
+        "ip": "10.63.30.40",
+        "port": 9100,
+        "path": "/metrics",
+        "body_saved": false,
+        "http_status": 200,
+        "sample_count": 1624,
+        "node_exporter_build_info_observed": true,
+        "status": "passed-http-metrics-observed",
+        "elapsed_seconds": 0.552
+      }
+    ],
+    "metric_bodies_saved": false
+  }
+}

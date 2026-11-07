@@ -1,0 +1,140 @@
+{
+  "at": "2026-11-06T16:10:49.474507+00:00",
+  "role": 260,
+  "ip": "192.168.19.60",
+  "read_only": true,
+  "effective_shares": {
+    "media": {
+      "hosts allow": "192.168.21.0/24 192.168.19.0/24 127.0.0.1",
+      "hosts deny": "",
+      "valid users": "naswriter nasreader",
+      "read list": "nasreader",
+      "write list": "naswriter",
+      "read only": "No",
+      "guest ok": "No"
+    },
+    "games": {
+      "hosts allow": "192.168.21.0/24 192.168.19.0/24 127.0.0.1",
+      "hosts deny": "",
+      "valid users": "naswriter nasreader",
+      "read list": "nasreader",
+      "write list": "naswriter",
+      "read only": "No",
+      "guest ok": "No"
+    },
+    "incoming": {
+      "hosts allow": "192.168.21.0/24 192.168.19.0/24 127.0.0.1",
+      "hosts deny": "",
+      "valid users": "naswriter nasreader",
+      "read list": "nasreader",
+      "write list": "naswriter",
+      "read only": "No",
+      "guest ok": "No"
+    }
+  },
+  "OMV_share_network_fields": {
+    "media": {
+      "uuid": "32e8c383-753a-48b4-b397-9adf490bb0e1",
+      "sharedfolderref": "4d1b0107-5fdc-40d9-aad2-7f5726e2f43c",
+      "hostsallow": "192.168.21.0/24 192.168.19.0/24 127.0.0.1",
+      "hostsdeny": "",
+      "readonly": false,
+      "guest": "no"
+    },
+    "games": {
+      "uuid": "86815a17-f9cd-4c0e-b548-4266949b75d4",
+      "sharedfolderref": "75bc36d3-dcf6-4787-b6e2-779365b18cf8",
+      "hostsallow": "192.168.21.0/24 192.168.19.0/24 127.0.0.1",
+      "hostsdeny": "",
+      "readonly": false,
+      "guest": "no"
+    },
+    "incoming": {
+      "uuid": "c9c8d068-e056-4ed3-be78-775118367582",
+      "sharedfolderref": "0053215c-e4e3-4e83-b736-c23fdaba3d49",
+      "hostsallow": "192.168.21.0/24 192.168.19.0/24 127.0.0.1",
+      "hostsdeny": "",
+      "readonly": false,
+      "guest": "no"
+    }
+  },
+  "official_SMB_setShare_parameter_fields": [
+    "audit",
+    "browseable",
+    "comment",
+    "easupport",
+    "enable",
+    "extraoptions",
+    "guest",
+    "hidedotfiles",
+    "hostsallow",
+    "hostsdeny",
+    "inheritacls",
+    "inheritpermissions",
+    "readonly",
+    "recyclebin",
+    "recyclemaxage",
+    "recyclemaxsize",
+    "sharedfolderref",
+    "storedosattributes",
+    "timemachine",
+    "uuid"
+  ],
+  "Jellyfin_network_fields": {
+    "LocalNetworkSubnets": [
+      "192.168.19.0/24",
+      "192.168.21.0/24",
+      "127.0.0.0/8",
+      "172.18.0.1/32"
+    ],
+    "EnableRemoteAccess": "false",
+    "EnableUPnP": "false",
+    "LocalNetworkAddresses": null,
+    "KnownProxies": null,
+    "RemoteIPFilter": null,
+    "IsRemoteIPFilterBlacklist": "false"
+  },
+  "Jellyfin_XML_metadata": {
+    "path": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a/appdata/jellyfin/config/config/network.xml",
+    "uid": 2000,
+    "gid": 2000,
+    "mode": "0o644"
+  },
+  "units": {
+    "dell-nas-jellyfin.service": {
+      "MainPID": "22951",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "smbd.service": {
+      "MainPID": "26302",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "openmediavault-engined.service": {
+      "MainPID": "824",
+      "ActiveState": "active",
+      "SubState": "running"
+    }
+  },
+  "container": {
+    "id": "c7db70188968ec3c8896c5110e71f5b23d9e0284cd6c9128173148d509305ad9",
+    "image": "sha256:fea863d0cd9ec445985d9c75fc6ed64e38a1d2766cf0c250a33d553f4fc1b771",
+    "pid": 23018,
+    "started_at": "2026-11-06T09:24:57.154004113Z",
+    "running": true,
+    "health": "healthy"
+  },
+  "data_mount": {
+    "filesystems": [
+      {
+        "target": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a",
+        "source": "/dev/sdb1",
+        "fstype": "ext4",
+        "uuid": "5b19837c-128c-498a-b79d-563db810c34a"
+      }
+    ]
+  },
+  "Env_Cmd_health_logs_private_credentials_read": false,
+  "mutations": false
+}

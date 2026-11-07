@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "at": "2026-11-06T11:33:55.838755+08:00",
+  "status": "gateway-bootstrap-and-approved-five-service-test-e2e-verified",
+  "artifact": {
+    "path": "/Users/yangzhaohui/work/www/harness/dell/private/java-build/artifacts/gateway-redis-import-fix-20261106/finger-gateway-mobile-0.0.1.jar",
+    "bytes": 91220829,
+    "sha256": "95233a7dfe887b435e8959569e2827581049d10c7256a7399776311ee1ef4e6a"
+  },
+  "patch_manifest": "private/java-build/gateway-redis-import-patch-manifest.json",
+  "production_patch": "infra/java/patches/GatewayRedisConfiguration.kt",
+  "production_patch_sha256": "11ea42759d329b192efcbf1b8be1f25c56518d61944f5508b386ef5b9c82cee3",
+  "compiled_configuration_class_sha256": "ac3a198c8afa060e4c988376b454d4f606d0677577e26d230cc95d345827d888",
+  "root_cause": {
+    "bean": "redisTemplate",
+    "providers": [
+      "com.sargia.finger.common.redis.RedisConfig",
+      "org.redisson.spring.starter.RedissonAutoConfigurationV2"
+    ],
+    "effective_common_redis_sha256": "0285f1638de714dffdb14f8d6adb038963b8d8d2ffb868632e12866e97a67182",
+    "cached_binary_lacks_missing_bean_condition": true,
+    "current_original_shared_source_has_condition": true
+  },
+  "fix": "Gateway user configuration explicitly imports shared RedisConfig before deferred fallback configuration; JSON serializers preserved; Redisson retained.",
+  "focused_regression": {
+    "baseline": "private/java-build/logs/gateway-redis-deferred-baseline-20261106.json",
+    "fixed": "private/java-build/logs/gateway-redis-deferred-fixed-20261106.json",
+    "fixed_test_count": 2,
+    "baseline_expected_override_failure": true,
+    "global_override_setting": false,
+    "initial_manual_registration_test": "Superseded by actual DeferredImportSelector phase; prior logs retained."
+  },
+  "build_evidence": "private/java-build/logs/finger-gateway-mobile-bootjar-gateway-redis-import-fix.json",
+  "dependency_consistency": {
+    "all_embedded_libraries_unchanged_from_baseline": true,
+    "library_count": 162,
+    "internal_names_compared": 20,
+    "shared_internal_conflicts": {},
+    "new_gateway_internal": {
+      "common-core-1.0.0-plain.jar": "3994cdaf3de60009c6205d219ecc3ad9eae1988011aea08d816e083e0050b447",
+      "common-redis-1.0.0.jar": "0285f1638de714dffdb14f8d6adb038963b8d8d2ffb868632e12866e97a67182"
+    }
+  },
+  "runtime_profiles_in_jar": [],
+  "original_sources_modified": false,
+  "shared_library_modified": false,
+  "external_network_used": false,
+  "registry_credentials_used": false,
+  "publish_executed": false,
+  "target_service_or_config_modified": false,
+  "runtime_acceptance": "Gateway startup and approved test captcha/login/roles/file process-persistence scope verified; formal business remains disabled.",
+  "target_runtime_bootstrap": {
+    "status": "verified-startup-no-bean-conflict",
+    "release_id": "20261106T113449",
+    "manager_activation_evidence": "evidence/implementation/java-test-activation.json",
+    "independent_health_evidence": "evidence/implementation/java-test-business-first-fetch-failure.json",
+    "scope": "Gateway Spring startup is fixed; later valid-token route403 is a separately diagnosed deployment-prefix contract issue.",
+    "latest_verified_release": "20261106T121030"
+  },
+  "approved_business_e2e_evidence": "evidence/implementation/java-test-business-acceptance.json"
+}

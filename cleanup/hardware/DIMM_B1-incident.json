@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-07T10:03:47.430060+08:00",
+  "evidence": "user iDRAC recent-events screenshot",
+  "BMC_display_timestamp": "Sat Nov 07 2026 00:02:38",
+  "BMC_timezone_not_verified": true,
+  "observed_events": [
+    "Multi-bit memory errors detected on a memory device at location(s) DIMM_B1.",
+    "Correctable memory error rate exceeded for DIMM_B1."
+  ],
+  "interpretation": "Uncorrectable/multi-bit memory path error and correctable rate threshold onB1; may destabilizeOS/apps; exact physical poweroffcause not proven by recentevents alone",
+  "slot": "T630 CPU2 channel0 B1 per official owner manual",
+  "suspects": "DIMM module/contact/slot/channel/memorycontroller; no single component condemnation without isolation",
+  "migration_authorized": true,
+  "migration_started": false,
+  "next_gate": "Preserve SEL/Lifecycle logs, inspectB1 inventory and qualified offlinehardwarediagnostics before data relocation",
+  "no_host_power_or_DIMM_action_performed_by_assistant": true,
+  "sources": [
+    "https://www.dell.com/support/kbdoc/en-au/000304931/powerege-general-memory?lang=en",
+    "https://www.dell.com/support/manuals/en-in/poweredge-t630/t630_om/system-memory?guid=guid-77d112e3-72cf-40bf-bcf6-6a61e3a2520d&lang=en-us",
+    "https://www.dell.com/support/manuals/en-hk/poweredge-t630/t630_om/removing-memory-modules?guid=guid-8959921e-87a0-427a-a8ec-be39acf26bc3&lang=en-us"
+  ],
+  "resume_request": {
+    "at": "2026-11-07T10:16:02.200297+08:00",
+    "user_statement": "22 已开机，重新开始合并",
+    "authorization": "existing Nexus merge maintenance authorization remains valid",
+    "observed": "iDRAC21.21:443 and router21.1 reachable; PVE21.22 SSH22/UI8006 and GW21.23 SSH22 still unreachable at10:15:26+08",
+    "PVE_remote_command_executed": false,
+    "migration_started": false,
+    "next": "user checks virtual console POST/PVE login; then trustedSSH hardware/storage freshness before merge",
+    "connectivity_evidence": "cleanup/hardware/resume-connectivity-20261107.json"
+  },
+  "boot_console_evidence": {
+    "at": "2026-11-07T10:23:06.075649+08:00",
+    "source": "user screenshot codex-clipboard-79c444b5-b5b1-4dcd-88ef-216adc57fb1b.png",
+    "code": "UEFI0058",
+    "meaning": "POST reports uncorrectable memory error and instructs identifying DIMM via SEL then replacing it",
+    "state": "halted at firmware F1/F2/F10/F11 prompt before normal OS boot",
+    "suspected_location_from_prior_SEL": "DIMM_B1; current screenshot itself does not name slot",
+    "F1_not_pressed_by_assistant": true,
+    "migration_started": false,
+    "next": "preserve SEL; offline DIMM assessment/reseat or correct replacement; memory diagnostics before data migration"
+  }
+}

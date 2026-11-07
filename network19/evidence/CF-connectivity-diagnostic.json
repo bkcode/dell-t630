@@ -1,0 +1,28 @@
+{
+  "journal_whitelist_categories": {
+    "INF": 114,
+    "quic": 25,
+    "http2": 6,
+    "ERR": 21,
+    "DNS": 10,
+    "Failed to dial": 5,
+    "timeout": 8,
+    "retrying": 5
+  },
+  "journal_IP_only": {
+    "198.18.5.144": 9,
+    "198.18.5.145": 7,
+    "192.168.19.5": 4,
+    "127.0.0.1": 2
+  },
+  "raw_logs_and_tokens_emitted": false,
+  "region1.v2.argotunnel.com": [
+    "198.18.5.144"
+  ],
+  "region2.v2.argotunnel.com": [
+    "198.18.5.145"
+  ],
+  "cfd-features.argotunnel.com": [
+    "198.18.6.102"
+  ]
+}

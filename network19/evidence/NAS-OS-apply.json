@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-06T17:15:30.347568",
+  "vmid": 260,
+  "old_net0": "virtio=BC:24:11:A7:3B:73,bridge=vmbr40",
+  "new_net0": "virtio=BC:24:11:A7:3B:73,bridge=vmbr19,firewall=0",
+  "status": "NAS-official-OMV-network19-committed-app-still-quiesced",
+  "QGA_OMV_commit": {
+    "exitcode": 0,
+    "exited": 1,
+    "out-data": "{\"role\": 260, \"status\": \"NAS-OS-network-apply-completed\", \"secret_values_or_hashes_emitted\": false}\n",
+    "out-truncated": 0
+  },
+  "strict_SSH": {
+    "exit_code": 0,
+    "stdout": "ub\nnas-media\nlo               UNKNOWN        127.0.0.1/8 \nens18            UP             192.168.19.60/24 \nbr-e3e97ae6b2b4  DOWN           172.18.0.1/16 \ndocker0          DOWN           172.17.0.1/16 \ndefault via 192.168.19.1 dev ens18 proto static \n172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown \n172.18.0.0/16 dev br-e3e97ae6b2b4 proto kernel scope link src 172.18.0.1 linkdown \n192.168.19.0/24 dev ens18 proto kernel scope link src 192.168.19.60 \nLink 2 (ens18): 192.168.19.1\nactive\nactive\n",
+    "stderr": "",
+    "target": {
+      "vmid": 260,
+      "ip": "192.168.19.60",
+      "host_key_alias": "dell-vm260",
+      "host_key_fingerprint": "SHA256:jYNEYlwXnr4412nGU/Dg616AhDW8eZz3UDIxn4pP7c0",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  }
+}

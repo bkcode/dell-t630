@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-06T12:53:18.577248+08:00",
+  "mode": "read-only-LAN-public-metadata-smoke",
+  "current_A": "20261106T121030",
+  "no_authentication_or_business_write": true,
+  "oidc": {
+    "passed": false,
+    "error_category": "URLError"
+  },
+  "jwks": {
+    "passed": false,
+    "error_category": "URLError"
+  },
+  "passed": false,
+  "underlying_error_check": {
+    "endpoint": "/.well-known/openid-configuration",
+    "reason_class": "OSError",
+    "errno": 65
+  },
+  "parent_classification": "Mac Python execution-surface restriction; native nc/curl LAN reachability independently passed",
+  "native_reachability_evidence": "LAN-entrypoint-cli-probes.json",
+  "not_evidence_of_host_failure": true,
+  "native_public_metadata_smoke_owner": "root"
+}

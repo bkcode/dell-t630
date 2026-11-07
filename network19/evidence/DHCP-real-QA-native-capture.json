@@ -1,0 +1,40 @@
+{
+  "QA": {
+    "IP": {
+      "family": "inet",
+      "local": "192.168.19.229",
+      "prefixlen": 24,
+      "metric": 100,
+      "broadcast": "192.168.19.255",
+      "scope": "global",
+      "dynamic": true,
+      "label": "eth0",
+      "valid_life_time": 3600,
+      "preferred_life_time": 3600
+    },
+    "default": [
+      {
+        "dst": "default",
+        "gateway": "192.168.19.1",
+        "dev": "eth0",
+        "protocol": "dhcp",
+        "prefsrc": "192.168.19.229",
+        "metric": 100,
+        "flags": []
+      }
+    ],
+    "DNS": "Link 2 (eth0): 192.168.19.1"
+  },
+  "native_passive_capture_phases": [
+    "Release",
+    "Discover",
+    "Offer",
+    "Request",
+    "ACK"
+  ],
+  "full_DORA_seen": true,
+  "pcap_stays_PVE_only": true,
+  "only_QA_run_state_changed": true,
+  "no_fake_source_packets": true,
+  "at": "2026-11-06T17:49:01.950671"
+}

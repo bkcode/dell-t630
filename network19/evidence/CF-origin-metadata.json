@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-06T16:18:55.579643",
+  "result": {
+    "status": "readonly-CF-origin-metadata-scan",
+    "journal_exit": 0,
+    "config_matching_lines": 0,
+    "sanitized_origins": [],
+    "cloudflared_active": true,
+    "configuration_complete": false,
+    "token_or_backup_payload_read_or_exported": false,
+    "limitation": "absence in retained logs is not absence of remote managed ingress"
+  }
+}

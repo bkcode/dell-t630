@@ -1,0 +1,108 @@
+{
+  "status": "recipes-not-applied",
+  "files": [
+    {
+      "vmid": 200,
+      "path": "/opt/dell/data/prod-db/.env",
+      "source_sha256": "f9bde087083689422b491eeda8e8a513e8b4216d0dc535363adcf540deb7e6bd",
+      "exact_env_keys": {
+        "SERVICE_IP": {
+          "old": "10.63.10.10",
+          "new": "192.168.19.10"
+        },
+        "MYSQL_HOST": {
+          "old": "10.63.10.10",
+          "new": "192.168.19.10"
+        }
+      },
+      "other_lines_preserve_bytes": true,
+      "mode": "0600 root/owner unchanged",
+      "MYSQL_HOST_mysql_unchanged": false,
+      "Nacos_percent_ownDB_accounts_password_namespace_vhost_unchanged": true
+    },
+    {
+      "vmid": 201,
+      "path": "/opt/dell/data/prod-infra/.env",
+      "source_sha256": "954f317d5a9f62ca5b0d9efc699f506828b6340e490ccf6cb041584359bfe19d",
+      "exact_env_keys": {
+        "SERVICE_IP": {
+          "old": "10.63.10.11",
+          "new": "192.168.19.11"
+        },
+        "MYSQL_HOST": {
+          "old": "10.63.10.10",
+          "new": "192.168.19.10"
+        }
+      },
+      "other_lines_preserve_bytes": true,
+      "mode": "0600 root/owner unchanged",
+      "MYSQL_HOST_mysql_unchanged": false,
+      "Nacos_percent_ownDB_accounts_password_namespace_vhost_unchanged": true
+    },
+    {
+      "vmid": 210,
+      "path": "/opt/dell/data/test-data/.env",
+      "source_sha256": "e07cdd66a960976179121b66859f240f5d11bf6f18538dca7f2fe0ca838a95d1",
+      "exact_env_keys": {
+        "SERVICE_IP": {
+          "old": "10.63.20.10",
+          "new": "192.168.19.20"
+        }
+      },
+      "other_lines_preserve_bytes": true,
+      "mode": "0600 root/owner unchanged",
+      "MYSQL_HOST_mysql_unchanged": true,
+      "Nacos_percent_ownDB_accounts_password_namespace_vhost_unchanged": true
+    },
+    {
+      "vmid": 270,
+      "path": "/opt/dell/ops/.env",
+      "source_sha256": "81109b6856c4d44a7d93f4d8b421dca6bd8ab9ef265b8217dfac9d0e3fbe8bcc",
+      "exact_env_keys": {
+        "SERVICE_IP": {
+          "old": "10.63.30.40",
+          "new": "192.168.19.70"
+        }
+      },
+      "other_lines_preserve_bytes": true
+    },
+    {
+      "vmid": 270,
+      "path": "/opt/dell/ops/config/prometheus/targets/http-services.json",
+      "source_sha256": "736b5f1d7c6d376fd8a8c7305ec5b41b1dd81910a8329febc67259067eb03cb1",
+      "action": "unchanged; grafana/alertmanager/prometheus Docker service names remain",
+      "no_new_external_probe": true
+    },
+    {
+      "vmid": 270,
+      "path": "/opt/dell/ops/config/prometheus/targets/guest-node.json",
+      "source_sha256": "ee3980ee68f72ce1b10c97b71d92e3060cf7c9550099ca605fdb7b1dd921dab6",
+      "prepared_public_path": "prepared/ops/guest-node.json",
+      "new_sha256": "b2d2898c56523d3e06af1af130e2068c7346d5e546a54e23c8d5d9be02a03612",
+      "only_target_host_changed": true
+    }
+  ],
+  "Data_guards": "manage preflight reads env SERVICE_IP dynamically; mount UUID/paths unchanged. No generic deploy/bootstrap-Nacos rerun.",
+  "Ops_guards": "SERVICE_IP dynamic; existing Lark marker, renderer and token checks preserved. Do not rerun prepare/install/send.",
+  "PVE_textfile": {
+    "source": "/root/dell-bootstrap/pve-push-metrics.py",
+    "delivery": "QGA VMID270, not old IP",
+    "destination": "/var/lib/prometheus/node-exporter-textfile/dell-pve.prom",
+    "known_source_IP_literals": 0,
+    "action": "root verify actual installed source hash and next QGA timestamp; no address replacement inferred"
+  },
+  "Lark_invariants": {
+    "bind": "172.18.0.1:19093",
+    "allowed_source": "172.18.0.3",
+    "network": "172.18.0.0/16",
+    "fixed_service_IPs": {
+      "prometheus": "172.18.0.2",
+      "alertmanager": "172.18.0.3",
+      "blackbox": "172.18.0.4",
+      "grafana": "172.18.0.5"
+    },
+    "all_credentials_mode_and_active_renderer_unchanged": true,
+    "outbound_test_send": false,
+    "maintenance_silence": "root-owned network19/evidence/maintenance-silence.json"
+  }
+}

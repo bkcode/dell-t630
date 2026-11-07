@@ -1,0 +1,3661 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-11-06T13:26:03.557917+08:00",
+  "scope": "normal10-assigned-guest-rolling-reboots-only",
+  "pve_power_or_host_mutation": false,
+  "source_mac_services_touched": false,
+  "status": "passed",
+  "preflight": [
+    {
+      "at": "2026-11-06T13:26:04.863899+08:00",
+      "hostname": "publish-service",
+      "ipv4": [
+        "10.63.30.10"
+      ],
+      "boot_id": "fbe58722-7f3f-492d-ba7a-00bec5524604",
+      "machine_id": "23d777f78d2048f287cfa3cd836a6ad0",
+      "host_key_fingerprint": "SHA256:2PFQYC3uPSg/sMihWZZ7R1vgkKKozJbTwTjf6VNWwG4",
+      "filesystems": [
+        {
+          "target": "/",
+          "source": "/dev/sda1",
+          "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+          "fstype": "ext4",
+          "options": "rw,relatime,discard,errors=remount-ro",
+          "children": [
+            {
+              "target": "/srv/dell-build",
+              "source": "/dev/sdb",
+              "uuid": "16dc6067-56ef-4687-a314-edc6421f9ed4",
+              "fstype": "ext4",
+              "options": "rw,relatime"
+            }
+          ]
+        }
+      ],
+      "ntp": {
+        "Timezone": "Etc/UTC",
+        "NTP": "yes",
+        "NTPSynchronized": "yes"
+      },
+      "units": {
+        "ssh.service": {
+          "MainPID": "777",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "749",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "prometheus-node-exporter.service": {
+          "MainPID": "1198",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "failed_units": [],
+      "ssh_login_user_confirmed_by_transport": "ub",
+      "environment_or_logs_read": false,
+      "publisher": {
+        "status_exit_code": 0,
+        "frame_ok": true,
+        "payload": {
+          "current_release": "20261106T121030",
+          "managed_release_ids": [
+            "20261106T061002",
+            "20261106T113449",
+            "20261106T121030",
+            "20261106T124000"
+          ],
+          "services": [
+            {
+              "service": "finger-service-system",
+              "systemd_active": true,
+              "health_up": true
+            },
+            {
+              "service": "finger-service-coms",
+              "systemd_active": true,
+              "health_up": true
+            },
+            {
+              "service": "finger-auth",
+              "systemd_active": true,
+              "health_up": true
+            },
+            {
+              "service": "finger-bff-system",
+              "systemd_active": true,
+              "health_up": true
+            },
+            {
+              "service": "finger-gateway-mobile",
+              "systemd_active": true,
+              "health_up": true
+            }
+          ],
+          "target": "test240",
+          "database_or_nacos_rollback": false,
+          "busy": false,
+          "last_transaction": {
+            "action": "stage",
+            "release_id": "20261106T121030",
+            "status": "failed",
+            "target": "test240",
+            "database_or_nacos_changed": false,
+            "received_executable_script": false,
+            "current_release_after_failure": "20261106T121030"
+          }
+        },
+        "key_mode": "0o600",
+        "key_owner": "publisher",
+        "key_fingerprint": "SHA256:CM5jqsVt6VHzApGnyhXaU5Hg45Wvyfh2ng0X1YppvlU",
+        "private_key_contents_read": false
+      },
+      "vmid": 220
+    },
+    {
+      "at": "2026-11-06T13:26:07.913778+08:00",
+      "hostname": "java-test-01",
+      "ipv4": [
+        "10.63.20.20"
+      ],
+      "boot_id": "e4ee2709-baa3-4a55-b120-a7702bb0263b",
+      "machine_id": "777c99fe072c408aad66714a0b80e3a0",
+      "host_key_fingerprint": "SHA256:a5slwmQWq1U2AaeY9965RUYU63BxMymRus8IA9WydNQ",
+      "filesystems": [
+        {
+          "target": "/",
+          "source": "/dev/sda1",
+          "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+          "fstype": "ext4",
+          "options": "rw,relatime,discard,errors=remount-ro"
+        }
+      ],
+      "ntp": {
+        "Timezone": "Etc/UTC",
+        "NTP": "yes",
+        "NTPSynchronized": "yes"
+      },
+      "units": {
+        "ssh.service": {
+          "MainPID": "763",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "731",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "prometheus-node-exporter.service": {
+          "MainPID": "1180",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-finger-finger-service-system.service": {
+          "MainPID": "28001",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-finger-finger-service-coms.service": {
+          "MainPID": "28171",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-finger-finger-auth.service": {
+          "MainPID": "28357",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-finger-finger-bff-system.service": {
+          "MainPID": "28591",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-finger-finger-gateway-mobile.service": {
+          "MainPID": "28833",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "failed_units": [],
+      "ssh_login_user_confirmed_by_transport": "ub",
+      "environment_or_logs_read": false,
+      "vmid": 240
+    },
+    {
+      "at": "2026-11-06T13:26:09.357071+08:00",
+      "hostname": "java-prod-01",
+      "ipv4": [
+        "10.63.10.20"
+      ],
+      "boot_id": "db8c2eff-2717-4760-9272-96a2713d82d6",
+      "machine_id": "346f97d644174e89a3fe8dbe9fa7039f",
+      "host_key_fingerprint": "SHA256:SsWkQtSVu/3sssyrmVMb13r8r9/zQhWeEH3ZQ/CzCDM",
+      "filesystems": [
+        {
+          "target": "/",
+          "source": "/dev/sda1",
+          "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+          "fstype": "ext4",
+          "options": "rw,relatime,discard,errors=remount-ro"
+        }
+      ],
+      "ntp": {
+        "Timezone": "Etc/UTC",
+        "NTP": "yes",
+        "NTPSynchronized": "yes"
+      },
+      "units": {
+        "ssh.service": {
+          "MainPID": "781",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "760",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "prometheus-node-exporter.service": {
+          "MainPID": "1213",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "failed_units": [],
+      "ssh_login_user_confirmed_by_transport": "ub",
+      "environment_or_logs_read": false,
+      "nonroot_java": {
+        "uid": 999,
+        "exit_code": 0,
+        "version": "21.0.13"
+      },
+      "active_business_units": [],
+      "vmid": 230
+    },
+    {
+      "at": "2026-11-06T13:26:10.765662+08:00",
+      "hostname": "java-prod-02",
+      "ipv4": [
+        "10.63.10.21"
+      ],
+      "boot_id": "ca8f913b-d97e-4b44-8b1e-d76794f55293",
+      "machine_id": "be23e8530f6747a4b0f0ded11783c5d5",
+      "host_key_fingerprint": "SHA256:F4FTk8hT14QASJ/nWmjUBtxP4h9dthfE8/8MOdnmLUQ",
+      "filesystems": [
+        {
+          "target": "/",
+          "source": "/dev/sda1",
+          "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+          "fstype": "ext4",
+          "options": "rw,relatime,discard,errors=remount-ro"
+        }
+      ],
+      "ntp": {
+        "Timezone": "Etc/UTC",
+        "NTP": "yes",
+        "NTPSynchronized": "yes"
+      },
+      "units": {
+        "ssh.service": {
+          "MainPID": "788",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "759",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "prometheus-node-exporter.service": {
+          "MainPID": "1210",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "failed_units": [],
+      "ssh_login_user_confirmed_by_transport": "ub",
+      "environment_or_logs_read": false,
+      "nonroot_java": {
+        "uid": 999,
+        "exit_code": 0,
+        "version": "21.0.13"
+      },
+      "active_business_units": [],
+      "vmid": 231
+    },
+    {
+      "at": "2026-11-06T13:26:12.270299+08:00",
+      "hostname": "java-prod-03",
+      "ipv4": [
+        "10.63.10.22"
+      ],
+      "boot_id": "9e345639-021f-46df-8e61-2302e369292c",
+      "machine_id": "01f0df480fac42469a5216f8a646a1c5",
+      "host_key_fingerprint": "SHA256:hp5JQlxhH7LG5ItvhzzLzHGbky5d+dghbTNsEfdNabo",
+      "filesystems": [
+        {
+          "target": "/",
+          "source": "/dev/sda1",
+          "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+          "fstype": "ext4",
+          "options": "rw,relatime,discard,errors=remount-ro"
+        }
+      ],
+      "ntp": {
+        "Timezone": "Etc/UTC",
+        "NTP": "yes",
+        "NTPSynchronized": "yes"
+      },
+      "units": {
+        "ssh.service": {
+          "MainPID": "781",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "760",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "prometheus-node-exporter.service": {
+          "MainPID": "1210",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "failed_units": [],
+      "ssh_login_user_confirmed_by_transport": "ub",
+      "environment_or_logs_read": false,
+      "nonroot_java": {
+        "uid": 999,
+        "exit_code": 0,
+        "version": "21.0.13"
+      },
+      "active_business_units": [],
+      "vmid": 232
+    },
+    {
+      "at": "2026-11-06T13:26:13.790465+08:00",
+      "hostname": "ops-service",
+      "ipv4": [
+        "10.63.30.40",
+        "172.17.0.1",
+        "172.18.0.1"
+      ],
+      "boot_id": "645b0a1f-ae88-4887-a42d-933f7bb3525a",
+      "machine_id": "86bf05801cce4d42b555985ba6990b5a",
+      "host_key_fingerprint": "SHA256:OjP5q9f3WXxGcoOHs23VlnOf258C6T+nNAxTiYoyf0g",
+      "filesystems": [
+        {
+          "target": "/",
+          "source": "/dev/sdb1",
+          "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+          "fstype": "ext4",
+          "options": "rw,relatime,discard,errors=remount-ro",
+          "children": [
+            {
+              "target": "/srv/dell-data",
+              "source": "/dev/sda",
+              "uuid": "01b1f302-27be-4fbd-b4af-b8e782d85dea",
+              "fstype": "ext4",
+              "options": "rw,relatime"
+            }
+          ]
+        }
+      ],
+      "ntp": {
+        "Timezone": "Etc/UTC",
+        "NTP": "yes",
+        "NTPSynchronized": "yes"
+      },
+      "units": {
+        "ssh.service": {
+          "MainPID": "757",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "713",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "prometheus-node-exporter.service": {
+          "MainPID": "1434",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-ops.service": {
+          "MainPID": "10543",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "failed_units": [
+        "dell-ops-first-deploy.service"
+      ],
+      "ssh_login_user_confirmed_by_transport": "ub",
+      "environment_or_logs_read": false,
+      "vmid": 270
+    },
+    {
+      "at": "2026-11-06T13:26:15.375785+08:00",
+      "hostname": "data-prod-db",
+      "ipv4": [
+        "10.63.10.10",
+        "172.17.0.1",
+        "172.18.0.1"
+      ],
+      "boot_id": "79478156-c6b5-456b-9bd7-b2c28875863b",
+      "machine_id": "c7ef9dfd75154b52a1a1793daf644cf8",
+      "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+      "filesystems": [
+        {
+          "target": "/",
+          "source": "/dev/sdb1",
+          "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+          "fstype": "ext4",
+          "options": "rw,relatime,discard,errors=remount-ro",
+          "children": [
+            {
+              "target": "/srv/dell-data",
+              "source": "/dev/sda",
+              "uuid": "d61c0e22-941e-447a-9e9a-1e9e50deb02f",
+              "fstype": "ext4",
+              "options": "rw,relatime,stripe=16"
+            }
+          ]
+        }
+      ],
+      "ntp": {
+        "Timezone": "Etc/UTC",
+        "NTP": "yes",
+        "NTPSynchronized": "yes"
+      },
+      "units": {
+        "ssh.service": {
+          "MainPID": "803",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "771",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "prometheus-node-exporter.service": {
+          "MainPID": "1503",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-data-prod-db.service": {
+          "MainPID": "5253",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "failed_units": [],
+      "ssh_login_user_confirmed_by_transport": "ub",
+      "environment_or_logs_read": false,
+      "vmid": 200
+    },
+    {
+      "at": "2026-11-06T13:26:16.687477+08:00",
+      "hostname": "data-prod-infra",
+      "ipv4": [
+        "10.63.10.11",
+        "172.17.0.1",
+        "172.18.0.1"
+      ],
+      "boot_id": "7bfd43a3-c338-4bc7-8b33-47a839966591",
+      "machine_id": "35cbe96dd7be4ba49e0f812e47c47d86",
+      "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+      "filesystems": [
+        {
+          "target": "/",
+          "source": "/dev/sda1",
+          "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+          "fstype": "ext4",
+          "options": "rw,relatime,discard,errors=remount-ro",
+          "children": [
+            {
+              "target": "/srv/dell-data",
+              "source": "/dev/sdb",
+              "uuid": "b85156c2-dac8-4b33-ab25-460aaf676c57",
+              "fstype": "ext4",
+              "options": "rw,relatime,stripe=16"
+            }
+          ]
+        }
+      ],
+      "ntp": {
+        "Timezone": "Etc/UTC",
+        "NTP": "yes",
+        "NTPSynchronized": "yes"
+      },
+      "units": {
+        "ssh.service": {
+          "MainPID": "784",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "748",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "prometheus-node-exporter.service": {
+          "MainPID": "1472",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-data-prod-infra.service": {
+          "MainPID": "17620",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "failed_units": [],
+      "ssh_login_user_confirmed_by_transport": "ub",
+      "environment_or_logs_read": false,
+      "vmid": 201
+    },
+    {
+      "at": "2026-11-06T13:26:17.991140+08:00",
+      "hostname": "data-test",
+      "ipv4": [
+        "10.63.20.10",
+        "172.17.0.1",
+        "172.18.0.1"
+      ],
+      "boot_id": "d8417482-8fd4-4457-b868-ade2449e9e21",
+      "machine_id": "b6cc2ac1b2c3409bbbbde963736f2409",
+      "host_key_fingerprint": "SHA256:8bBCQbBKGmZAw5q2AgT2vXHsyr2aFJktLqs/tDZ9SiA",
+      "filesystems": [
+        {
+          "target": "/",
+          "source": "/dev/sda1",
+          "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+          "fstype": "ext4",
+          "options": "rw,relatime,discard,errors=remount-ro",
+          "children": [
+            {
+              "target": "/srv/dell-data",
+              "source": "/dev/sdb",
+              "uuid": "dd1773f9-aa48-4401-a9c8-caf0f66845f3",
+              "fstype": "ext4",
+              "options": "rw,relatime"
+            }
+          ]
+        }
+      ],
+      "ntp": {
+        "Timezone": "Etc/UTC",
+        "NTP": "yes",
+        "NTPSynchronized": "yes"
+      },
+      "units": {
+        "ssh.service": {
+          "MainPID": "745",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "721",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "prometheus-node-exporter.service": {
+          "MainPID": "1439",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-data-test-data.service": {
+          "MainPID": "7369",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "failed_units": [],
+      "ssh_login_user_confirmed_by_transport": "ub",
+      "environment_or_logs_read": false,
+      "vmid": 210
+    },
+    {
+      "at": "2026-11-06T13:26:19.667411+08:00",
+      "hostname": "nas-media",
+      "ipv4": [
+        "10.63.40.10",
+        "172.17.0.1",
+        "172.18.0.1"
+      ],
+      "boot_id": "04271026-882b-4a61-9ecb-c8c52a784d53",
+      "machine_id": "cb49263dc1ee4212aea521fb65dbe614",
+      "host_key_fingerprint": "SHA256:jYNEYlwXnr4412nGU/Dg616AhDW8eZz3UDIxn4pP7c0",
+      "filesystems": [
+        {
+          "target": "/",
+          "source": "/dev/sdb1",
+          "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+          "fstype": "ext4",
+          "options": "rw,relatime,discard,errors=remount-ro",
+          "children": [
+            {
+              "target": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a",
+              "source": "/dev/sda1",
+              "uuid": "5b19837c-128c-498a-b79d-563db810c34a",
+              "fstype": "ext4",
+              "options": "rw,relatime,quota,usrquota,grpquota"
+            }
+          ]
+        }
+      ],
+      "ntp": {
+        "Timezone": "Etc/UTC",
+        "NTP": "yes",
+        "NTPSynchronized": "yes"
+      },
+      "units": {
+        "ssh.service": {
+          "MainPID": "2322",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "693",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "prometheus-node-exporter.service": {
+          "MainPID": "769",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "nginx.service": {
+          "MainPID": "761",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "openmediavault-engined.service": {
+          "MainPID": "811",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "smbd.service": {
+          "MainPID": "827",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "docker.service": {
+          "MainPID": "840",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-nas-jellyfin.service": {
+          "MainPID": "1110",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "failed_units": [],
+      "ssh_login_user_confirmed_by_transport": "ub",
+      "environment_or_logs_read": false,
+      "vmid": 260
+    }
+  ],
+  "reboots": [
+    {
+      "vmid": 230,
+      "started_at": "2026-11-06T13:29:39.970980+08:00",
+      "before": {
+        "probe_ok": true,
+        "hostname": "java-prod-01",
+        "ipv4": [
+          "127.0.0.1",
+          "10.63.10.20"
+        ],
+        "boot_id": "db8c2eff-2717-4760-9272-96a2713d82d6",
+        "machine_id": "346f97d644174e89a3fe8dbe9fa7039f",
+        "host_key_fingerprint": "SHA256:SsWkQtSVu/3sssyrmVMb13r8r9/zQhWeEH3ZQ/CzCDM",
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,errors=remount-ro"
+          }
+        ],
+        "ntp": {
+          "Timezone": "Etc/UTC",
+          "NTP": "yes",
+          "NTPSynchronized": "yes"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "781",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "760",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "1213",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "strict_ub_ssh": true,
+        "health_ok": true,
+        "nonroot_java": {
+          "uid": 999,
+          "exit_code": 0,
+          "version": "21.0.13"
+        },
+        "active_business_units": false
+      },
+      "reboot_command": "sudo -n systemctl reboot",
+      "status": "passed",
+      "reboot_transport_exit_code": 0,
+      "reboot_transport_stderr_present": true,
+      "after": {
+        "probe_ok": true,
+        "hostname": "java-prod-01",
+        "ipv4": [
+          "127.0.0.1",
+          "10.63.10.20"
+        ],
+        "boot_id": "e934c5e2-760a-47b6-8472-4cb10b991552",
+        "machine_id": "346f97d644174e89a3fe8dbe9fa7039f",
+        "host_key_fingerprint": "SHA256:SsWkQtSVu/3sssyrmVMb13r8r9/zQhWeEH3ZQ/CzCDM",
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,errors=remount-ro"
+          }
+        ],
+        "ntp": {
+          "Timezone": "Etc/UTC",
+          "NTP": "yes",
+          "NTPSynchronized": "yes"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "738",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "714",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "748",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "strict_ub_ssh": true,
+        "health_ok": true,
+        "nonroot_java": {
+          "uid": 999,
+          "exit_code": 0,
+          "version": "21.0.13"
+        },
+        "active_business_units": false
+      },
+      "health_probe_attempts": 5,
+      "completed_at": "2026-11-06T13:30:31.975795+08:00"
+    },
+    {
+      "vmid": 231,
+      "started_at": "2026-11-06T13:30:33.381613+08:00",
+      "before": {
+        "probe_ok": true,
+        "hostname": "java-prod-02",
+        "ipv4": [
+          "127.0.0.1",
+          "10.63.10.21"
+        ],
+        "boot_id": "ca8f913b-d97e-4b44-8b1e-d76794f55293",
+        "machine_id": "be23e8530f6747a4b0f0ded11783c5d5",
+        "host_key_fingerprint": "SHA256:F4FTk8hT14QASJ/nWmjUBtxP4h9dthfE8/8MOdnmLUQ",
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,errors=remount-ro"
+          }
+        ],
+        "ntp": {
+          "Timezone": "Etc/UTC",
+          "NTP": "yes",
+          "NTPSynchronized": "yes"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "788",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "759",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "1210",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "strict_ub_ssh": true,
+        "health_ok": true,
+        "nonroot_java": {
+          "uid": 999,
+          "exit_code": 0,
+          "version": "21.0.13"
+        },
+        "active_business_units": false
+      },
+      "reboot_command": "sudo -n systemctl reboot",
+      "status": "passed",
+      "reboot_transport_exit_code": 0,
+      "reboot_transport_stderr_present": true,
+      "after": {
+        "probe_ok": true,
+        "hostname": "java-prod-02",
+        "ipv4": [
+          "127.0.0.1",
+          "10.63.10.21"
+        ],
+        "boot_id": "049426c1-78b7-46c2-8e3c-9c86140bb392",
+        "machine_id": "be23e8530f6747a4b0f0ded11783c5d5",
+        "host_key_fingerprint": "SHA256:F4FTk8hT14QASJ/nWmjUBtxP4h9dthfE8/8MOdnmLUQ",
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,errors=remount-ro"
+          }
+        ],
+        "ntp": {
+          "Timezone": "Etc/UTC",
+          "NTP": "yes",
+          "NTPSynchronized": "yes"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "733",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "715",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "754",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "strict_ub_ssh": true,
+        "health_ok": true,
+        "nonroot_java": {
+          "uid": 999,
+          "exit_code": 0,
+          "version": "21.0.13"
+        },
+        "active_business_units": false
+      },
+      "health_probe_attempts": 5,
+      "completed_at": "2026-11-06T13:31:25.331739+08:00"
+    },
+    {
+      "vmid": 232,
+      "started_at": "2026-11-06T13:31:26.858201+08:00",
+      "before": {
+        "probe_ok": true,
+        "hostname": "java-prod-03",
+        "ipv4": [
+          "127.0.0.1",
+          "10.63.10.22"
+        ],
+        "boot_id": "9e345639-021f-46df-8e61-2302e369292c",
+        "machine_id": "01f0df480fac42469a5216f8a646a1c5",
+        "host_key_fingerprint": "SHA256:hp5JQlxhH7LG5ItvhzzLzHGbky5d+dghbTNsEfdNabo",
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,errors=remount-ro"
+          }
+        ],
+        "ntp": {
+          "Timezone": "Etc/UTC",
+          "NTP": "yes",
+          "NTPSynchronized": "yes"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "781",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "760",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "1210",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "strict_ub_ssh": true,
+        "health_ok": true,
+        "nonroot_java": {
+          "uid": 999,
+          "exit_code": 0,
+          "version": "21.0.13"
+        },
+        "active_business_units": false
+      },
+      "reboot_command": "sudo -n systemctl reboot",
+      "status": "passed",
+      "reboot_transport_exit_code": 0,
+      "reboot_transport_stderr_present": true,
+      "after": {
+        "probe_ok": true,
+        "hostname": "java-prod-03",
+        "ipv4": [
+          "127.0.0.1",
+          "10.63.10.22"
+        ],
+        "boot_id": "936d6470-b7ad-431c-a8bd-fb31820cea15",
+        "machine_id": "01f0df480fac42469a5216f8a646a1c5",
+        "host_key_fingerprint": "SHA256:hp5JQlxhH7LG5ItvhzzLzHGbky5d+dghbTNsEfdNabo",
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,errors=remount-ro"
+          }
+        ],
+        "ntp": {
+          "Timezone": "Etc/UTC",
+          "NTP": "yes",
+          "NTPSynchronized": "yes"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "735",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "715",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "748",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "strict_ub_ssh": true,
+        "health_ok": true,
+        "nonroot_java": {
+          "uid": 999,
+          "exit_code": 0,
+          "version": "21.0.13"
+        },
+        "active_business_units": false
+      },
+      "health_probe_attempts": 5,
+      "completed_at": "2026-11-06T13:32:19.136011+08:00"
+    },
+    {
+      "vmid": 220,
+      "started_at": "2026-11-06T13:32:40.218600+08:00",
+      "before": {
+        "probe_ok": true,
+        "hostname": "publish-service",
+        "ipv4": [
+          "127.0.0.1",
+          "10.63.30.10"
+        ],
+        "boot_id": "fbe58722-7f3f-492d-ba7a-00bec5524604",
+        "machine_id": "23d777f78d2048f287cfa3cd836a6ad0",
+        "host_key_fingerprint": "SHA256:2PFQYC3uPSg/sMihWZZ7R1vgkKKozJbTwTjf6VNWwG4",
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,errors=remount-ro",
+            "children": [
+              {
+                "target": "/srv/dell-build",
+                "source": "/dev/sdb",
+                "uuid": "16dc6067-56ef-4687-a314-edc6421f9ed4",
+                "fstype": "ext4",
+                "options": "rw,relatime"
+              }
+            ]
+          }
+        ],
+        "ntp": {
+          "Timezone": "Etc/UTC",
+          "NTP": "yes",
+          "NTPSynchronized": "yes"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "777",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "749",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "1198",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "strict_ub_ssh": true,
+        "health_ok": true,
+        "publisher": {
+          "status_exit_code": 0,
+          "frame_ok": true,
+          "payload": {
+            "current_release": "20261106T121030",
+            "managed_release_ids": [
+              "20261106T061002",
+              "20261106T113449",
+              "20261106T121030",
+              "20261106T124000"
+            ],
+            "services": [
+              {
+                "service": "finger-service-system",
+                "systemd_active": true,
+                "health_up": true
+              },
+              {
+                "service": "finger-service-coms",
+                "systemd_active": true,
+                "health_up": true
+              },
+              {
+                "service": "finger-auth",
+                "systemd_active": true,
+                "health_up": true
+              },
+              {
+                "service": "finger-bff-system",
+                "systemd_active": true,
+                "health_up": true
+              },
+              {
+                "service": "finger-gateway-mobile",
+                "systemd_active": true,
+                "health_up": true
+              }
+            ],
+            "target": "test240",
+            "database_or_nacos_rollback": false,
+            "busy": false,
+            "last_transaction": {
+              "action": "stage",
+              "release_id": "20261106T121030",
+              "status": "failed",
+              "target": "test240",
+              "database_or_nacos_changed": false,
+              "received_executable_script": false,
+              "current_release_after_failure": "20261106T121030"
+            }
+          },
+          "key_mode": "0o600",
+          "key_owner": "publisher",
+          "key_fingerprint": "SHA256:CM5jqsVt6VHzApGnyhXaU5Hg45Wvyfh2ng0X1YppvlU",
+          "private_key_contents_read": false
+        }
+      },
+      "reboot_command": "sudo -n systemctl reboot",
+      "status": "passed",
+      "reboot_transport_exit_code": 0,
+      "reboot_transport_stderr_present": true,
+      "after": {
+        "probe_ok": true,
+        "hostname": "publish-service",
+        "ipv4": [
+          "127.0.0.1",
+          "10.63.30.10"
+        ],
+        "boot_id": "1667f3b9-66d2-419c-86dd-af37f6f57c7a",
+        "machine_id": "23d777f78d2048f287cfa3cd836a6ad0",
+        "host_key_fingerprint": "SHA256:2PFQYC3uPSg/sMihWZZ7R1vgkKKozJbTwTjf6VNWwG4",
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,errors=remount-ro",
+            "children": [
+              {
+                "target": "/srv/dell-build",
+                "source": "/dev/sdb",
+                "uuid": "16dc6067-56ef-4687-a314-edc6421f9ed4",
+                "fstype": "ext4",
+                "options": "rw,relatime"
+              }
+            ]
+          }
+        ],
+        "ntp": {
+          "Timezone": "Etc/UTC",
+          "NTP": "yes",
+          "NTPSynchronized": "yes"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "726",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "704",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "737",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "strict_ub_ssh": true,
+        "health_ok": true,
+        "publisher": {
+          "status_exit_code": 0,
+          "frame_ok": true,
+          "payload": {
+            "current_release": "20261106T121030",
+            "managed_release_ids": [
+              "20261106T061002",
+              "20261106T113449",
+              "20261106T121030",
+              "20261106T124000"
+            ],
+            "services": [
+              {
+                "service": "finger-service-system",
+                "systemd_active": true,
+                "health_up": true
+              },
+              {
+                "service": "finger-service-coms",
+                "systemd_active": true,
+                "health_up": true
+              },
+              {
+                "service": "finger-auth",
+                "systemd_active": true,
+                "health_up": true
+              },
+              {
+                "service": "finger-bff-system",
+                "systemd_active": true,
+                "health_up": true
+              },
+              {
+                "service": "finger-gateway-mobile",
+                "systemd_active": true,
+                "health_up": true
+              }
+            ],
+            "target": "test240",
+            "database_or_nacos_rollback": false,
+            "busy": false,
+            "last_transaction": {
+              "action": "stage",
+              "release_id": "20261106T121030",
+              "status": "failed",
+              "target": "test240",
+              "database_or_nacos_changed": false,
+              "received_executable_script": false,
+              "current_release_after_failure": "20261106T121030"
+            }
+          },
+          "key_mode": "0o600",
+          "key_owner": "publisher",
+          "key_fingerprint": "SHA256:CM5jqsVt6VHzApGnyhXaU5Hg45Wvyfh2ng0X1YppvlU",
+          "private_key_contents_read": false
+        }
+      },
+      "health_probe_attempts": 5,
+      "completed_at": "2026-11-06T13:33:36.355634+08:00"
+    },
+    {
+      "vmid": 270,
+      "started_at": "2026-11-06T13:33:39.621356+08:00",
+      "before": {
+        "probe_ok": true,
+        "hostname": "ops-service",
+        "ipv4": [
+          "127.0.0.1",
+          "10.63.30.40",
+          "172.17.0.1",
+          "172.18.0.1"
+        ],
+        "boot_id": "645b0a1f-ae88-4887-a42d-933f7bb3525a",
+        "machine_id": "86bf05801cce4d42b555985ba6990b5a",
+        "host_key_fingerprint": "SHA256:OjP5q9f3WXxGcoOHs23VlnOf258C6T+nNAxTiYoyf0g",
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sdb1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,errors=remount-ro",
+            "children": [
+              {
+                "target": "/srv/dell-data",
+                "source": "/dev/sda",
+                "uuid": "01b1f302-27be-4fbd-b4af-b8e782d85dea",
+                "fstype": "ext4",
+                "options": "rw,relatime"
+              }
+            ]
+          }
+        ],
+        "ntp": {
+          "Timezone": "Etc/UTC",
+          "NTP": "yes",
+          "NTPSynchronized": "yes"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "757",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "713",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "1434",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-ops.service": {
+            "MainPID": "10543",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [
+          "dell-ops-first-deploy.service"
+        ],
+        "strict_ub_ssh": true,
+        "health_ok": true,
+        "manager_health_exit_code": 0,
+        "manager_health": {
+          "timestamp": "2026-11-06T05:33:39.514929+00:00",
+          "role": "ops-service",
+          "service_ip": "10.63.30.40",
+          "containers": [
+            {
+              "service": "alertmanager",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            },
+            {
+              "service": "blackbox",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            },
+            {
+              "service": "grafana",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            },
+            {
+              "service": "prometheus",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            }
+          ],
+          "http_readiness": "passed",
+          "grafana_admin_login": "passed",
+          "prometheus_reported_targets": 17,
+          "reported_up": 17,
+          "reported_down": 0,
+          "coverage": "guest metrics/HTTP require separate endpoint and ACL acceptance",
+          "pve_host_metrics": "pending-separate-authorized-interface",
+          "external_notifications": "not-configured-not-tested",
+          "readiness_scope": "ops-components-only"
+        },
+        "targets": [
+          {
+            "job": "blackbox-exporter",
+            "instance": "blackbox:9115",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.30.20:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.10.22:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.30.30:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.40.10:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.10.20:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.10.21:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.10.11:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.20.10:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.20.20:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.30.10:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.30.40:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.10.10:9100",
+            "health": "up"
+          },
+          {
+            "job": "http-health",
+            "instance": "http://grafana:3000/api/health",
+            "health": "up"
+          },
+          {
+            "job": "http-health",
+            "instance": "http://alertmanager:9093/-/ready",
+            "health": "up"
+          },
+          {
+            "job": "http-health",
+            "instance": "http://prometheus:9090/-/ready",
+            "health": "up"
+          },
+          {
+            "job": "prometheus",
+            "instance": "localhost:9090",
+            "health": "up"
+          }
+        ],
+        "pve_collector_age_seconds": [
+          49.2
+        ]
+      },
+      "reboot_command": "sudo -n systemctl reboot",
+      "status": "passed",
+      "reboot_transport_exit_code": 0,
+      "reboot_transport_stderr_present": true,
+      "after": {
+        "probe_ok": true,
+        "hostname": "ops-service",
+        "ipv4": [
+          "127.0.0.1",
+          "10.63.30.40",
+          "172.17.0.1",
+          "172.18.0.1"
+        ],
+        "boot_id": "ab4328f5-f925-4c60-9865-afd3b7dffb86",
+        "machine_id": "86bf05801cce4d42b555985ba6990b5a",
+        "host_key_fingerprint": "SHA256:OjP5q9f3WXxGcoOHs23VlnOf258C6T+nNAxTiYoyf0g",
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,errors=remount-ro",
+            "children": [
+              {
+                "target": "/srv/dell-data",
+                "source": "/dev/sdb",
+                "uuid": "01b1f302-27be-4fbd-b4af-b8e782d85dea",
+                "fstype": "ext4",
+                "options": "rw,relatime"
+              }
+            ]
+          }
+        ],
+        "ntp": {
+          "Timezone": "Etc/UTC",
+          "NTP": "yes",
+          "NTPSynchronized": "yes"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "697",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "669",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "717",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-ops.service": {
+            "MainPID": "1053",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "strict_ub_ssh": true,
+        "health_ok": true,
+        "manager_health_exit_code": 0,
+        "manager_health": {
+          "timestamp": "2026-11-06T05:35:13.298165+00:00",
+          "role": "ops-service",
+          "service_ip": "10.63.30.40",
+          "containers": [
+            {
+              "service": "alertmanager",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            },
+            {
+              "service": "blackbox",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            },
+            {
+              "service": "grafana",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            },
+            {
+              "service": "prometheus",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            }
+          ],
+          "http_readiness": "passed",
+          "grafana_admin_login": "passed",
+          "prometheus_reported_targets": 17,
+          "reported_up": 17,
+          "reported_down": 0,
+          "coverage": "guest metrics/HTTP require separate endpoint and ACL acceptance",
+          "pve_host_metrics": "pending-separate-authorized-interface",
+          "external_notifications": "not-configured-not-tested",
+          "readiness_scope": "ops-components-only"
+        },
+        "targets": [
+          {
+            "job": "blackbox-exporter",
+            "instance": "blackbox:9115",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.10.22:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.20.20:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.40.10:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.10.21:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.30.40:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.10.10:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.10.11:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.30.20:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.10.20:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.30.30:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.20.10:9100",
+            "health": "up"
+          },
+          {
+            "job": "guest-node",
+            "instance": "10.63.30.10:9100",
+            "health": "up"
+          },
+          {
+            "job": "http-health",
+            "instance": "http://prometheus:9090/-/ready",
+            "health": "up"
+          },
+          {
+            "job": "http-health",
+            "instance": "http://grafana:3000/api/health",
+            "health": "up"
+          },
+          {
+            "job": "http-health",
+            "instance": "http://alertmanager:9093/-/ready",
+            "health": "up"
+          },
+          {
+            "job": "prometheus",
+            "instance": "localhost:9090",
+            "health": "up"
+          }
+        ],
+        "pve_collector_age_seconds": [
+          81.8
+        ]
+      },
+      "health_probe_attempts": 9,
+      "completed_at": "2026-11-06T13:35:13.461805+08:00"
+    },
+    {
+      "vmid": 200,
+      "started_at": "2026-11-06T13:35:52.927178+08:00",
+      "before": {
+        "probe_ok": true,
+        "hostname": "data-prod-db",
+        "ipv4": [
+          "127.0.0.1",
+          "10.63.10.10",
+          "172.17.0.1",
+          "172.18.0.1"
+        ],
+        "boot_id": "79478156-c6b5-456b-9bd7-b2c28875863b",
+        "machine_id": "c7ef9dfd75154b52a1a1793daf644cf8",
+        "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sdb1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,errors=remount-ro",
+            "children": [
+              {
+                "target": "/srv/dell-data",
+                "source": "/dev/sda",
+                "uuid": "d61c0e22-941e-447a-9e9a-1e9e50deb02f",
+                "fstype": "ext4",
+                "options": "rw,relatime,stripe=16"
+              }
+            ]
+          }
+        ],
+        "ntp": {
+          "Timezone": "Etc/UTC",
+          "NTP": "yes",
+          "NTPSynchronized": "yes"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "803",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "771",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "1503",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-data-prod-db.service": {
+            "MainPID": "5253",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "strict_ub_ssh": true,
+        "health_ok": true,
+        "manager_health_exit_code": 0,
+        "manager_health": {
+          "timestamp": "2026-11-06T05:35:52.848645+00:00",
+          "role": "prod-db",
+          "service_ip": "10.63.10.10",
+          "containers": [
+            {
+              "service": "mysql",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            }
+          ],
+          "business_data_migration_status": "not-checked-by-this-health-probe",
+          "readiness_scope": "infrastructure-only"
+        }
+      },
+      "reboot_command": "sudo -n systemctl reboot",
+      "status": "passed",
+      "reboot_transport_exit_code": 0,
+      "reboot_transport_stderr_present": true,
+      "after": {
+        "probe_ok": true,
+        "hostname": "data-prod-db",
+        "ipv4": [
+          "127.0.0.1",
+          "10.63.10.10",
+          "172.18.0.1",
+          "172.17.0.1"
+        ],
+        "boot_id": "f201577b-9035-4adf-b8fe-30b4025ab41d",
+        "machine_id": "c7ef9dfd75154b52a1a1793daf644cf8",
+        "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sdb1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,errors=remount-ro",
+            "children": [
+              {
+                "target": "/srv/dell-data",
+                "source": "/dev/sda",
+                "uuid": "d61c0e22-941e-447a-9e9a-1e9e50deb02f",
+                "fstype": "ext4",
+                "options": "rw,relatime,stripe=16"
+              }
+            ]
+          }
+        ],
+        "ntp": {
+          "Timezone": "Etc/UTC",
+          "NTP": "yes",
+          "NTPSynchronized": "yes"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "752",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "732",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "792",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-data-prod-db.service": {
+            "MainPID": "1130",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "strict_ub_ssh": true,
+        "health_ok": true,
+        "manager_health_exit_code": 0,
+        "manager_health": {
+          "timestamp": "2026-11-06T05:36:31.219089+00:00",
+          "role": "prod-db",
+          "service_ip": "10.63.10.10",
+          "containers": [
+            {
+              "service": "mysql",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            }
+          ],
+          "business_data_migration_status": "not-checked-by-this-health-probe",
+          "readiness_scope": "infrastructure-only"
+        }
+      },
+      "health_probe_attempts": 4,
+      "dependent_guest_health": {
+        "vmid": 201,
+        "attempts": 1,
+        "result": {
+          "probe_ok": true,
+          "hostname": "data-prod-infra",
+          "ipv4": [
+            "127.0.0.1",
+            "10.63.10.11",
+            "172.17.0.1",
+            "172.18.0.1"
+          ],
+          "boot_id": "7bfd43a3-c338-4bc7-8b33-47a839966591",
+          "machine_id": "35cbe96dd7be4ba49e0f812e47c47d86",
+          "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+          "filesystems": [
+            {
+              "target": "/",
+              "source": "/dev/sda1",
+              "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+              "fstype": "ext4",
+              "options": "rw,relatime,discard,errors=remount-ro",
+              "children": [
+                {
+                  "target": "/srv/dell-data",
+                  "source": "/dev/sdb",
+                  "uuid": "b85156c2-dac8-4b33-ab25-460aaf676c57",
+                  "fstype": "ext4",
+                  "options": "rw,relatime,stripe=16"
+                }
+              ]
+            }
+          ],
+          "ntp": {
+            "Timezone": "Etc/UTC",
+            "NTP": "yes",
+            "NTPSynchronized": "yes"
+          },
+          "units": {
+            "ssh.service": {
+              "MainPID": "784",
+              "LoadState": "loaded",
+              "ActiveState": "active",
+              "SubState": "running"
+            },
+            "qemu-guest-agent.service": {
+              "MainPID": "748",
+              "LoadState": "loaded",
+              "ActiveState": "active",
+              "SubState": "running"
+            },
+            "prometheus-node-exporter.service": {
+              "MainPID": "1472",
+              "LoadState": "loaded",
+              "ActiveState": "active",
+              "SubState": "running"
+            },
+            "dell-data-prod-infra.service": {
+              "MainPID": "17620",
+              "LoadState": "loaded",
+              "ActiveState": "active",
+              "SubState": "running"
+            }
+          },
+          "failed_units": [],
+          "strict_ub_ssh": true,
+          "health_ok": true,
+          "manager_health_exit_code": 0,
+          "manager_health": {
+            "timestamp": "2026-11-06T05:36:33.739247+00:00",
+            "role": "prod-infra",
+            "service_ip": "10.63.10.11",
+            "containers": [
+              {
+                "service": "nacos",
+                "state": "running",
+                "health": "healthy",
+                "restart_count": 0
+              },
+              {
+                "service": "rabbitmq",
+                "state": "running",
+                "health": "healthy",
+                "restart_count": 0
+              },
+              {
+                "service": "redis",
+                "state": "running",
+                "health": "healthy",
+                "restart_count": 0
+              }
+            ],
+            "business_data_migration_status": "not-checked-by-this-health-probe",
+            "readiness_scope": "infrastructure-only",
+            "nacos": {
+              "admin_login": true,
+              "client_login": true,
+              "namespace_present": true,
+              "client_namespace_read": true,
+              "other_namespace_denied": true
+            },
+            "rabbitmq": {
+              "app_authentication": true,
+              "vhost_access": true,
+              "messages_published": 0
+            }
+          }
+        }
+      },
+      "completed_at": "2026-11-06T13:36:34.396891+08:00"
+    },
+    {
+      "vmid": 201,
+      "started_at": "2026-11-06T13:36:36.918874+08:00",
+      "before": {
+        "probe_ok": true,
+        "hostname": "data-prod-infra",
+        "ipv4": [
+          "127.0.0.1",
+          "10.63.10.11",
+          "172.17.0.1",
+          "172.18.0.1"
+        ],
+        "boot_id": "7bfd43a3-c338-4bc7-8b33-47a839966591",
+        "machine_id": "35cbe96dd7be4ba49e0f812e47c47d86",
+        "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,errors=remount-ro",
+            "children": [
+              {
+                "target": "/srv/dell-data",
+                "source": "/dev/sdb",
+                "uuid": "b85156c2-dac8-4b33-ab25-460aaf676c57",
+                "fstype": "ext4",
+                "options": "rw,relatime,stripe=16"
+              }
+            ]
+          }
+        ],
+        "ntp": {
+          "Timezone": "Etc/UTC",
+          "NTP": "yes",
+          "NTPSynchronized": "yes"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "784",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "748",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "1472",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-data-prod-infra.service": {
+            "MainPID": "17620",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "strict_ub_ssh": true,
+        "health_ok": true,
+        "manager_health_exit_code": 0,
+        "manager_health": {
+          "timestamp": "2026-11-06T05:36:36.285587+00:00",
+          "role": "prod-infra",
+          "service_ip": "10.63.10.11",
+          "containers": [
+            {
+              "service": "nacos",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            },
+            {
+              "service": "rabbitmq",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            },
+            {
+              "service": "redis",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            }
+          ],
+          "business_data_migration_status": "not-checked-by-this-health-probe",
+          "readiness_scope": "infrastructure-only",
+          "nacos": {
+            "admin_login": true,
+            "client_login": true,
+            "namespace_present": true,
+            "client_namespace_read": true,
+            "other_namespace_denied": true
+          },
+          "rabbitmq": {
+            "app_authentication": true,
+            "vhost_access": true,
+            "messages_published": 0
+          }
+        }
+      },
+      "reboot_command": "sudo -n systemctl reboot",
+      "status": "passed",
+      "reboot_transport_exit_code": 0,
+      "reboot_transport_stderr_present": true,
+      "after": {
+        "probe_ok": true,
+        "hostname": "data-prod-infra",
+        "ipv4": [
+          "127.0.0.1",
+          "10.63.10.11",
+          "172.17.0.1",
+          "172.18.0.1"
+        ],
+        "boot_id": "74f3ca37-846e-4e2c-8f3b-8a8aaff2dd3c",
+        "machine_id": "35cbe96dd7be4ba49e0f812e47c47d86",
+        "host_key_fingerprint": "SHA256:Gxp98ng30De+EdZvJleGP3p57D+LUrkNDbZE+tWSeDs",
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,errors=remount-ro",
+            "children": [
+              {
+                "target": "/srv/dell-data",
+                "source": "/dev/sdb",
+                "uuid": "b85156c2-dac8-4b33-ab25-460aaf676c57",
+                "fstype": "ext4",
+                "options": "rw,relatime,stripe=16"
+              }
+            ]
+          }
+        ],
+        "ntp": {
+          "Timezone": "Etc/UTC",
+          "NTP": "yes",
+          "NTPSynchronized": "yes"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "718",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "702",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "760",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-data-prod-infra.service": {
+            "MainPID": "1128",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "strict_ub_ssh": true,
+        "health_ok": true,
+        "manager_health_exit_code": 0,
+        "manager_health": {
+          "timestamp": "2026-11-06T05:37:31.164105+00:00",
+          "role": "prod-infra",
+          "service_ip": "10.63.10.11",
+          "containers": [
+            {
+              "service": "nacos",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            },
+            {
+              "service": "rabbitmq",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            },
+            {
+              "service": "redis",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            }
+          ],
+          "business_data_migration_status": "not-checked-by-this-health-probe",
+          "readiness_scope": "infrastructure-only",
+          "nacos": {
+            "admin_login": true,
+            "client_login": true,
+            "namespace_present": true,
+            "client_namespace_read": true,
+            "other_namespace_denied": true
+          },
+          "rabbitmq": {
+            "app_authentication": true,
+            "vhost_access": true,
+            "messages_published": 0
+          }
+        }
+      },
+      "health_probe_attempts": 5,
+      "completed_at": "2026-11-06T13:37:32.115830+08:00"
+    },
+    {
+      "vmid": 210,
+      "started_at": "2026-11-06T13:37:35.175356+08:00",
+      "before": {
+        "probe_ok": true,
+        "hostname": "data-test",
+        "ipv4": [
+          "127.0.0.1",
+          "10.63.20.10",
+          "172.17.0.1",
+          "172.18.0.1"
+        ],
+        "boot_id": "d8417482-8fd4-4457-b868-ade2449e9e21",
+        "machine_id": "b6cc2ac1b2c3409bbbbde963736f2409",
+        "host_key_fingerprint": "SHA256:8bBCQbBKGmZAw5q2AgT2vXHsyr2aFJktLqs/tDZ9SiA",
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,errors=remount-ro",
+            "children": [
+              {
+                "target": "/srv/dell-data",
+                "source": "/dev/sdb",
+                "uuid": "dd1773f9-aa48-4401-a9c8-caf0f66845f3",
+                "fstype": "ext4",
+                "options": "rw,relatime"
+              }
+            ]
+          }
+        ],
+        "ntp": {
+          "Timezone": "Etc/UTC",
+          "NTP": "yes",
+          "NTPSynchronized": "yes"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "745",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "721",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "1439",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-data-test-data.service": {
+            "MainPID": "7369",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "strict_ub_ssh": true,
+        "health_ok": true,
+        "manager_health_exit_code": 0,
+        "manager_health": {
+          "timestamp": "2026-11-06T05:37:34.612738+00:00",
+          "role": "test-data",
+          "service_ip": "10.63.20.10",
+          "containers": [
+            {
+              "service": "mysql",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            },
+            {
+              "service": "nacos",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            },
+            {
+              "service": "rabbitmq",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            },
+            {
+              "service": "redis",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            }
+          ],
+          "business_data_migration_status": "not-checked-by-this-health-probe",
+          "readiness_scope": "infrastructure-only",
+          "nacos": {
+            "admin_login": true,
+            "client_login": true,
+            "namespace_present": true,
+            "client_namespace_read": true,
+            "other_namespace_denied": true
+          },
+          "rabbitmq": {
+            "app_authentication": true,
+            "vhost_access": true,
+            "messages_published": 0
+          }
+        }
+      },
+      "reboot_command": "sudo -n systemctl reboot",
+      "status": "passed",
+      "reboot_transport_exit_code": 0,
+      "reboot_transport_stderr_present": true,
+      "after": {
+        "probe_ok": true,
+        "hostname": "data-test",
+        "ipv4": [
+          "127.0.0.1",
+          "10.63.20.10",
+          "172.17.0.1",
+          "172.18.0.1"
+        ],
+        "boot_id": "4edf0220-19e0-43d9-808b-4a142a8ac139",
+        "machine_id": "b6cc2ac1b2c3409bbbbde963736f2409",
+        "host_key_fingerprint": "SHA256:8bBCQbBKGmZAw5q2AgT2vXHsyr2aFJktLqs/tDZ9SiA",
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,errors=remount-ro",
+            "children": [
+              {
+                "target": "/srv/dell-data",
+                "source": "/dev/sdb",
+                "uuid": "dd1773f9-aa48-4401-a9c8-caf0f66845f3",
+                "fstype": "ext4",
+                "options": "rw,relatime"
+              }
+            ]
+          }
+        ],
+        "ntp": {
+          "Timezone": "Etc/UTC",
+          "NTP": "yes",
+          "NTPSynchronized": "yes"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "699",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "672",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "727",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-data-test-data.service": {
+            "MainPID": "1150",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "strict_ub_ssh": true,
+        "health_ok": true,
+        "manager_health_exit_code": 0,
+        "manager_health": {
+          "timestamp": "2026-11-06T05:39:28.831513+00:00",
+          "role": "test-data",
+          "service_ip": "10.63.20.10",
+          "containers": [
+            {
+              "service": "mysql",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            },
+            {
+              "service": "nacos",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            },
+            {
+              "service": "rabbitmq",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            },
+            {
+              "service": "redis",
+              "state": "running",
+              "health": "healthy",
+              "restart_count": 0
+            }
+          ],
+          "business_data_migration_status": "not-checked-by-this-health-probe",
+          "readiness_scope": "infrastructure-only",
+          "nacos": {
+            "admin_login": true,
+            "client_login": true,
+            "namespace_present": true,
+            "client_namespace_read": true,
+            "other_namespace_denied": true
+          },
+          "rabbitmq": {
+            "app_authentication": true,
+            "vhost_access": true,
+            "messages_published": 0
+          }
+        }
+      },
+      "health_probe_attempts": 11,
+      "dependent_guest_health": {
+        "vmid": 240,
+        "attempts": 1,
+        "result": {
+          "probe_ok": true,
+          "hostname": "java-test-01",
+          "ipv4": [
+            "127.0.0.1",
+            "10.63.20.20"
+          ],
+          "boot_id": "e4ee2709-baa3-4a55-b120-a7702bb0263b",
+          "machine_id": "777c99fe072c408aad66714a0b80e3a0",
+          "host_key_fingerprint": "SHA256:a5slwmQWq1U2AaeY9965RUYU63BxMymRus8IA9WydNQ",
+          "filesystems": [
+            {
+              "target": "/",
+              "source": "/dev/sda1",
+              "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+              "fstype": "ext4",
+              "options": "rw,relatime,discard,errors=remount-ro"
+            }
+          ],
+          "ntp": {
+            "Timezone": "Etc/UTC",
+            "NTP": "yes",
+            "NTPSynchronized": "yes"
+          },
+          "units": {
+            "ssh.service": {
+              "MainPID": "763",
+              "LoadState": "loaded",
+              "ActiveState": "active",
+              "SubState": "running"
+            },
+            "qemu-guest-agent.service": {
+              "MainPID": "731",
+              "LoadState": "loaded",
+              "ActiveState": "active",
+              "SubState": "running"
+            },
+            "prometheus-node-exporter.service": {
+              "MainPID": "1180",
+              "LoadState": "loaded",
+              "ActiveState": "active",
+              "SubState": "running"
+            },
+            "dell-finger-finger-service-system.service": {
+              "MainPID": "28001",
+              "LoadState": "loaded",
+              "ActiveState": "active",
+              "SubState": "running"
+            },
+            "dell-finger-finger-service-coms.service": {
+              "MainPID": "28171",
+              "LoadState": "loaded",
+              "ActiveState": "active",
+              "SubState": "running"
+            },
+            "dell-finger-finger-auth.service": {
+              "MainPID": "28357",
+              "LoadState": "loaded",
+              "ActiveState": "active",
+              "SubState": "running"
+            },
+            "dell-finger-finger-bff-system.service": {
+              "MainPID": "28591",
+              "LoadState": "loaded",
+              "ActiveState": "active",
+              "SubState": "running"
+            },
+            "dell-finger-finger-gateway-mobile.service": {
+              "MainPID": "28833",
+              "LoadState": "loaded",
+              "ActiveState": "active",
+              "SubState": "running"
+            }
+          },
+          "failed_units": [],
+          "strict_ub_ssh": true,
+          "health_ok": true,
+          "java_health": [
+            {
+              "service": "finger-service-system",
+              "health_up": true
+            },
+            {
+              "service": "finger-service-coms",
+              "health_up": true
+            },
+            {
+              "service": "finger-auth",
+              "health_up": true
+            },
+            {
+              "service": "finger-bff-system",
+              "health_up": true
+            },
+            {
+              "service": "finger-gateway-mobile",
+              "health_up": true
+            }
+          ],
+          "current_release": "20261106T121030",
+          "config_credentials": [
+            {
+              "service": "finger-service-system",
+              "mode": "0o600",
+              "uid": 0,
+              "gid": 0,
+              "loadcredential_present": true,
+              "unit_user": "finger"
+            },
+            {
+              "service": "finger-service-coms",
+              "mode": "0o600",
+              "uid": 0,
+              "gid": 0,
+              "loadcredential_present": true,
+              "unit_user": "finger"
+            },
+            {
+              "service": "finger-auth",
+              "mode": "0o600",
+              "uid": 0,
+              "gid": 0,
+              "loadcredential_present": true,
+              "unit_user": "finger"
+            },
+            {
+              "service": "finger-bff-system",
+              "mode": "0o600",
+              "uid": 0,
+              "gid": 0,
+              "loadcredential_present": true,
+              "unit_user": "finger"
+            },
+            {
+              "service": "finger-gateway-mobile",
+              "mode": "0o600",
+              "uid": 0,
+              "gid": 0,
+              "loadcredential_present": true,
+              "unit_user": "finger"
+            }
+          ],
+          "retained_fixture_sha256": "45add9f27a1f9f4c770d173cec808f6772c31381b036ff136b7593796fec1989"
+        }
+      },
+      "completed_at": "2026-11-06T13:39:32.234725+08:00"
+    },
+    {
+      "vmid": 240,
+      "started_at": "2026-11-06T13:39:33.900364+08:00",
+      "before": {
+        "probe_ok": true,
+        "hostname": "java-test-01",
+        "ipv4": [
+          "127.0.0.1",
+          "10.63.20.20"
+        ],
+        "boot_id": "e4ee2709-baa3-4a55-b120-a7702bb0263b",
+        "machine_id": "777c99fe072c408aad66714a0b80e3a0",
+        "host_key_fingerprint": "SHA256:a5slwmQWq1U2AaeY9965RUYU63BxMymRus8IA9WydNQ",
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,errors=remount-ro"
+          }
+        ],
+        "ntp": {
+          "Timezone": "Etc/UTC",
+          "NTP": "yes",
+          "NTPSynchronized": "yes"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "763",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "731",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "1180",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-finger-finger-service-system.service": {
+            "MainPID": "28001",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-finger-finger-service-coms.service": {
+            "MainPID": "28171",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-finger-finger-auth.service": {
+            "MainPID": "28357",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-finger-finger-bff-system.service": {
+            "MainPID": "28591",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-finger-finger-gateway-mobile.service": {
+            "MainPID": "28833",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "strict_ub_ssh": true,
+        "health_ok": true,
+        "java_health": [
+          {
+            "service": "finger-service-system",
+            "health_up": true
+          },
+          {
+            "service": "finger-service-coms",
+            "health_up": true
+          },
+          {
+            "service": "finger-auth",
+            "health_up": true
+          },
+          {
+            "service": "finger-bff-system",
+            "health_up": true
+          },
+          {
+            "service": "finger-gateway-mobile",
+            "health_up": true
+          }
+        ],
+        "current_release": "20261106T121030",
+        "config_credentials": [
+          {
+            "service": "finger-service-system",
+            "mode": "0o600",
+            "uid": 0,
+            "gid": 0,
+            "loadcredential_present": true,
+            "unit_user": "finger"
+          },
+          {
+            "service": "finger-service-coms",
+            "mode": "0o600",
+            "uid": 0,
+            "gid": 0,
+            "loadcredential_present": true,
+            "unit_user": "finger"
+          },
+          {
+            "service": "finger-auth",
+            "mode": "0o600",
+            "uid": 0,
+            "gid": 0,
+            "loadcredential_present": true,
+            "unit_user": "finger"
+          },
+          {
+            "service": "finger-bff-system",
+            "mode": "0o600",
+            "uid": 0,
+            "gid": 0,
+            "loadcredential_present": true,
+            "unit_user": "finger"
+          },
+          {
+            "service": "finger-gateway-mobile",
+            "mode": "0o600",
+            "uid": 0,
+            "gid": 0,
+            "loadcredential_present": true,
+            "unit_user": "finger"
+          }
+        ],
+        "retained_fixture_sha256": "45add9f27a1f9f4c770d173cec808f6772c31381b036ff136b7593796fec1989"
+      },
+      "reboot_command": "sudo -n systemctl reboot",
+      "status": "passed",
+      "reboot_transport_exit_code": 0,
+      "reboot_transport_stderr_present": true,
+      "after": {
+        "probe_ok": true,
+        "hostname": "java-test-01",
+        "ipv4": [
+          "127.0.0.1",
+          "10.63.20.20"
+        ],
+        "boot_id": "a9784f68-0b5f-401d-a1af-5a1dc88f2cf2",
+        "machine_id": "777c99fe072c408aad66714a0b80e3a0",
+        "host_key_fingerprint": "SHA256:a5slwmQWq1U2AaeY9965RUYU63BxMymRus8IA9WydNQ",
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,errors=remount-ro"
+          }
+        ],
+        "ntp": {
+          "Timezone": "Etc/UTC",
+          "NTP": "yes",
+          "NTPSynchronized": "yes"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "725",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "695",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "735",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-finger-finger-service-system.service": {
+            "MainPID": "688",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-finger-finger-service-coms.service": {
+            "MainPID": "687",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-finger-finger-auth.service": {
+            "MainPID": "680",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-finger-finger-bff-system.service": {
+            "MainPID": "681",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-finger-finger-gateway-mobile.service": {
+            "MainPID": "686",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "strict_ub_ssh": true,
+        "health_ok": true,
+        "java_health": [
+          {
+            "service": "finger-service-system",
+            "health_up": true
+          },
+          {
+            "service": "finger-service-coms",
+            "health_up": true
+          },
+          {
+            "service": "finger-auth",
+            "health_up": true
+          },
+          {
+            "service": "finger-bff-system",
+            "health_up": true
+          },
+          {
+            "service": "finger-gateway-mobile",
+            "health_up": true
+          }
+        ],
+        "current_release": "20261106T121030",
+        "config_credentials": [
+          {
+            "service": "finger-service-system",
+            "mode": "0o600",
+            "uid": 0,
+            "gid": 0,
+            "loadcredential_present": true,
+            "unit_user": "finger"
+          },
+          {
+            "service": "finger-service-coms",
+            "mode": "0o600",
+            "uid": 0,
+            "gid": 0,
+            "loadcredential_present": true,
+            "unit_user": "finger"
+          },
+          {
+            "service": "finger-auth",
+            "mode": "0o600",
+            "uid": 0,
+            "gid": 0,
+            "loadcredential_present": true,
+            "unit_user": "finger"
+          },
+          {
+            "service": "finger-bff-system",
+            "mode": "0o600",
+            "uid": 0,
+            "gid": 0,
+            "loadcredential_present": true,
+            "unit_user": "finger"
+          },
+          {
+            "service": "finger-gateway-mobile",
+            "mode": "0o600",
+            "uid": 0,
+            "gid": 0,
+            "loadcredential_present": true,
+            "unit_user": "finger"
+          }
+        ],
+        "retained_fixture_sha256": "45add9f27a1f9f4c770d173cec808f6772c31381b036ff136b7593796fec1989"
+      },
+      "health_probe_attempts": 14,
+      "completed_at": "2026-11-06T13:41:47.999260+08:00"
+    },
+    {
+      "vmid": 260,
+      "started_at": "2026-11-06T13:41:50.157835+08:00",
+      "before": {
+        "probe_ok": true,
+        "hostname": "nas-media",
+        "ipv4": [
+          "127.0.0.1",
+          "10.63.40.10",
+          "172.17.0.1",
+          "172.18.0.1"
+        ],
+        "boot_id": "04271026-882b-4a61-9ecb-c8c52a784d53",
+        "machine_id": "cb49263dc1ee4212aea521fb65dbe614",
+        "host_key_fingerprint": "SHA256:jYNEYlwXnr4412nGU/Dg616AhDW8eZz3UDIxn4pP7c0",
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sdb1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,errors=remount-ro",
+            "children": [
+              {
+                "target": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a",
+                "source": "/dev/sda1",
+                "uuid": "5b19837c-128c-498a-b79d-563db810c34a",
+                "fstype": "ext4",
+                "options": "rw,relatime,quota,usrquota,grpquota"
+              }
+            ]
+          }
+        ],
+        "ntp": {
+          "Timezone": "Etc/UTC",
+          "NTP": "yes",
+          "NTPSynchronized": "yes"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "2322",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "693",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "769",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "nginx.service": {
+            "MainPID": "761",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "openmediavault-engined.service": {
+            "MainPID": "811",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "smbd.service": {
+            "MainPID": "827",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "840",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-nas-jellyfin.service": {
+            "MainPID": "1110",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "strict_ub_ssh": true,
+        "health_ok": true,
+        "nas_http": {
+          "omv": {
+            "status": 200,
+            "healthy": true
+          },
+          "jellyfin": {
+            "status": 200,
+            "healthy": true
+          }
+        },
+        "smb_tcp445": true,
+        "smb_retained_fixtures": [
+          {
+            "share": "media",
+            "read_exit_code": 0,
+            "bytes": 1048576,
+            "sha256_matches": true,
+            "writes_performed": false
+          },
+          {
+            "share": "games",
+            "read_exit_code": 0,
+            "bytes": 1048576,
+            "sha256_matches": true,
+            "writes_performed": false
+          },
+          {
+            "share": "incoming",
+            "read_exit_code": 0,
+            "bytes": 1048576,
+            "sha256_matches": true,
+            "writes_performed": false
+          }
+        ]
+      },
+      "reboot_command": "sudo -n systemctl reboot",
+      "status": "passed",
+      "reboot_transport_exit_code": 0,
+      "reboot_transport_stderr_present": false,
+      "after": {
+        "probe_ok": true,
+        "hostname": "nas-media",
+        "ipv4": [
+          "127.0.0.1",
+          "10.63.40.10",
+          "172.18.0.1",
+          "172.17.0.1"
+        ],
+        "boot_id": "ee803cd4-d20b-4beb-b1d7-688092cc262b",
+        "machine_id": "cb49263dc1ee4212aea521fb65dbe614",
+        "host_key_fingerprint": "SHA256:jYNEYlwXnr4412nGU/Dg616AhDW8eZz3UDIxn4pP7c0",
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,errors=remount-ro",
+            "children": [
+              {
+                "target": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a",
+                "source": "/dev/sdb1",
+                "uuid": "5b19837c-128c-498a-b79d-563db810c34a",
+                "fstype": "ext4",
+                "options": "rw,relatime"
+              }
+            ]
+          }
+        ],
+        "ntp": {
+          "Timezone": "Etc/UTC",
+          "NTP": "yes",
+          "NTPSynchronized": "yes"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "756",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "692",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "770",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "nginx.service": {
+            "MainPID": "762",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "openmediavault-engined.service": {
+            "MainPID": "824",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "smbd.service": {
+            "MainPID": "852",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "869",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-nas-jellyfin.service": {
+            "MainPID": "1154",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "strict_ub_ssh": true,
+        "health_ok": true,
+        "nas_http": {
+          "omv": {
+            "status": 200,
+            "healthy": true
+          },
+          "jellyfin": {
+            "status": 200,
+            "healthy": true
+          }
+        },
+        "smb_tcp445": true,
+        "smb_retained_fixtures": [
+          {
+            "share": "media",
+            "read_exit_code": 0,
+            "bytes": 1048576,
+            "sha256_matches": true,
+            "writes_performed": false
+          },
+          {
+            "share": "games",
+            "read_exit_code": 0,
+            "bytes": 1048576,
+            "sha256_matches": true,
+            "writes_performed": false
+          },
+          {
+            "share": "incoming",
+            "read_exit_code": 0,
+            "bytes": 1048576,
+            "sha256_matches": true,
+            "writes_performed": false
+          }
+        ]
+      },
+      "health_probe_attempts": 5,
+      "completed_at": "2026-11-06T13:42:47.774847+08:00"
+    }
+  ],
+  "excluded": [
+    100,
+    221,
+    250
+  ],
+  "ops_historical_unit_diagnostic": {
+    "unit": "dell-ops-first-deploy.service",
+    "Transient": "yes",
+    "FragmentPath": "/run/systemd/transient/dell-ops-first-deploy.service",
+    "Result": "exit-code",
+    "MainPID": 0,
+    "started_utc": "2026-11-06T02:37:14Z",
+    "exited_utc": "2026-11-06T02:37:28Z",
+    "current_supervisor": "dell-ops.service",
+    "current_supervisor_Result": "success",
+    "reset_or_mask_performed": false,
+    "source": "strict ub SSH systemctl show before reboot"
+  },
+  "final_readonly_audit": {
+    "at": "2026-11-06T13:43:31.411709+08:00",
+    "source_config_or_private_key_contents_emitted": false,
+    "publisher220": {
+      "probe_ok": true,
+      "hostname": "publish-service",
+      "ipv4": [
+        "127.0.0.1",
+        "10.63.30.10"
+      ],
+      "boot_id": "1667f3b9-66d2-419c-86dd-af37f6f57c7a",
+      "machine_id": "23d777f78d2048f287cfa3cd836a6ad0",
+      "host_key_fingerprint": "SHA256:2PFQYC3uPSg/sMihWZZ7R1vgkKKozJbTwTjf6VNWwG4",
+      "filesystems": [
+        {
+          "target": "/",
+          "source": "/dev/sda1",
+          "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+          "fstype": "ext4",
+          "options": "rw,relatime,discard,errors=remount-ro",
+          "children": [
+            {
+              "target": "/srv/dell-build",
+              "source": "/dev/sdb",
+              "uuid": "16dc6067-56ef-4687-a314-edc6421f9ed4",
+              "fstype": "ext4",
+              "options": "rw,relatime"
+            }
+          ]
+        }
+      ],
+      "ntp": {
+        "Timezone": "Etc/UTC",
+        "NTP": "yes",
+        "NTPSynchronized": "yes"
+      },
+      "units": {
+        "ssh.service": {
+          "MainPID": "726",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "704",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "prometheus-node-exporter.service": {
+          "MainPID": "737",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "failed_units": [],
+      "strict_ub_ssh": true,
+      "health_ok": true,
+      "publisher": {
+        "status_exit_code": 0,
+        "frame_ok": true,
+        "payload": {
+          "current_release": "20261106T121030",
+          "managed_release_ids": [
+            "20261106T061002",
+            "20261106T113449",
+            "20261106T121030",
+            "20261106T124000"
+          ],
+          "services": [
+            {
+              "service": "finger-service-system",
+              "systemd_active": true,
+              "health_up": true
+            },
+            {
+              "service": "finger-service-coms",
+              "systemd_active": true,
+              "health_up": true
+            },
+            {
+              "service": "finger-auth",
+              "systemd_active": true,
+              "health_up": true
+            },
+            {
+              "service": "finger-bff-system",
+              "systemd_active": true,
+              "health_up": true
+            },
+            {
+              "service": "finger-gateway-mobile",
+              "systemd_active": true,
+              "health_up": true
+            }
+          ],
+          "target": "test240",
+          "database_or_nacos_rollback": false,
+          "busy": false,
+          "last_transaction": {
+            "action": "stage",
+            "release_id": "20261106T121030",
+            "status": "failed",
+            "target": "test240",
+            "database_or_nacos_changed": false,
+            "received_executable_script": false,
+            "current_release_after_failure": "20261106T121030"
+          }
+        },
+        "key_mode": "0o600",
+        "key_owner": "publisher",
+        "key_fingerprint": "SHA256:CM5jqsVt6VHzApGnyhXaU5Hg45Wvyfh2ng0X1YppvlU",
+        "private_key_contents_read": false
+      }
+    },
+    "publisher240_transport": {
+      "sshd_effective": {
+        "disableforwarding": "yes",
+        "allowtcpforwarding": "no",
+        "allowagentforwarding": "no",
+        "permittty": "no",
+        "permituserrc": "no",
+        "passwordauthentication": "no",
+        "kbdinteractiveauthentication": "no",
+        "authenticationmethods": "publickey",
+        "authorizedkeysfile": "/etc/ssh/authorized_keys/deployer"
+      },
+      "matches_pre_reboot_audit": true,
+      "authorized_key_controls": {
+        "root_owned": true,
+        "not_group_or_world_writable": true,
+        "regular_file": true,
+        "from220": true,
+        "restrict": true,
+        "forced_dispatch": true,
+        "raw_key_emitted": false
+      },
+      "deployer_groups": [
+        "deployer"
+      ],
+      "native_sshd_valid": true,
+      "native_sudoers_valid": true,
+      "negative_command_execution_repeated": false,
+      "passed": true
+    },
+    "pids_after_boot": {
+      "200": {
+        "containers": [
+          {
+            "service": "mysql",
+            "container_id": "da9ff74e37fe8bec70402b7fdfb938fb385efdf35968aa99fd2e5e5c6ebe8508",
+            "pid": 1277,
+            "state": "running",
+            "health": "healthy",
+            "pids_limit": 1024,
+            "cgroup_pids_max": "1024"
+          }
+        ],
+        "passed": true,
+        "environment_or_health_logs_read": false
+      },
+      "201": {
+        "containers": [
+          {
+            "service": "nacos",
+            "container_id": "32bf052df7fee409f29d3a1c4aa70d9de9520177a13076db6e667bbff92e21b3",
+            "pid": 1498,
+            "state": "running",
+            "health": "healthy",
+            "pids_limit": 1024,
+            "cgroup_pids_max": "1024"
+          },
+          {
+            "service": "rabbitmq",
+            "container_id": "fed3a9a2f2af3f279c2299790c81d481307beeda29043326f909ceba2b083136",
+            "pid": 1593,
+            "state": "running",
+            "health": "healthy",
+            "pids_limit": 1024,
+            "cgroup_pids_max": "1024"
+          },
+          {
+            "service": "redis",
+            "container_id": "3efb43d65fa7b4bac75fe872f55f793a575929f9aea7cd3bf07419d11c5715a2",
+            "pid": 1400,
+            "state": "running",
+            "health": "healthy",
+            "pids_limit": 1024,
+            "cgroup_pids_max": "1024"
+          }
+        ],
+        "passed": true,
+        "environment_or_health_logs_read": false
+      },
+      "210": {
+        "containers": [
+          {
+            "service": "nacos",
+            "container_id": "6227b8ca05dc5ba12e2852a9d37db2a0d53cbc1904891a28feca678a7e14887c",
+            "pid": 2000,
+            "state": "running",
+            "health": "healthy",
+            "pids_limit": 1024,
+            "cgroup_pids_max": "1024"
+          },
+          {
+            "service": "mysql",
+            "container_id": "ed912936fe76c0212c634c267224328e7c96d947d87d5b527ac1b85b9c4bc837",
+            "pid": 1403,
+            "state": "running",
+            "health": "healthy",
+            "pids_limit": 1024,
+            "cgroup_pids_max": "1024"
+          },
+          {
+            "service": "rabbitmq",
+            "container_id": "87cba48d30e0dd296cf3599280957cca697deee36c6661964502c4576737cfd5",
+            "pid": 1489,
+            "state": "running",
+            "health": "healthy",
+            "pids_limit": 1024,
+            "cgroup_pids_max": "1024"
+          },
+          {
+            "service": "redis",
+            "container_id": "63c79477eef56371abf57fcc6e402a8574cb636e63fa77f769128e172c78ef1b",
+            "pid": 1324,
+            "state": "running",
+            "health": "healthy",
+            "pids_limit": 1024,
+            "cgroup_pids_max": "1024"
+          }
+        ],
+        "passed": true,
+        "environment_or_health_logs_read": false
+      },
+      "270": {
+        "containers": [
+          {
+            "service": "grafana",
+            "container_id": "8a1d009421d86ea35a27b9737155b296e868c70329e693b4d47a95e104614395",
+            "pid": 1525,
+            "state": "running",
+            "health": "healthy",
+            "pids_limit": 1024,
+            "cgroup_pids_max": "1024"
+          },
+          {
+            "service": "blackbox",
+            "container_id": "5f6a796993d6346b6c494f9aac42f645de660d581491e1d4dc160dbb38e45ac4",
+            "pid": 1383,
+            "state": "running",
+            "health": "healthy",
+            "pids_limit": 1024,
+            "cgroup_pids_max": "1024"
+          },
+          {
+            "service": "alertmanager",
+            "container_id": "abae77fceaf1763df4a28538a3098395be3bffff089887550dca88252c95e374",
+            "pid": 1444,
+            "state": "running",
+            "health": "healthy",
+            "pids_limit": 1024,
+            "cgroup_pids_max": "1024"
+          },
+          {
+            "service": "prometheus",
+            "container_id": "b7b98a0d77f8fe1dee547a59c326ffe2ecdd59e604e6c929533761892e84b848",
+            "pid": 1276,
+            "state": "running",
+            "health": "healthy",
+            "pids_limit": 1024,
+            "cgroup_pids_max": "1024"
+          }
+        ],
+        "passed": true,
+        "environment_or_health_logs_read": false
+      }
+    },
+    "ops_final": {
+      "probe_ok": true,
+      "hostname": "ops-service",
+      "ipv4": [
+        "127.0.0.1",
+        "10.63.30.40",
+        "172.17.0.1",
+        "172.18.0.1"
+      ],
+      "boot_id": "ab4328f5-f925-4c60-9865-afd3b7dffb86",
+      "machine_id": "86bf05801cce4d42b555985ba6990b5a",
+      "host_key_fingerprint": "SHA256:OjP5q9f3WXxGcoOHs23VlnOf258C6T+nNAxTiYoyf0g",
+      "filesystems": [
+        {
+          "target": "/",
+          "source": "/dev/sda1",
+          "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+          "fstype": "ext4",
+          "options": "rw,relatime,discard,errors=remount-ro",
+          "children": [
+            {
+              "target": "/srv/dell-data",
+              "source": "/dev/sdb",
+              "uuid": "01b1f302-27be-4fbd-b4af-b8e782d85dea",
+              "fstype": "ext4",
+              "options": "rw,relatime"
+            }
+          ]
+        }
+      ],
+      "ntp": {
+        "Timezone": "Etc/UTC",
+        "NTP": "yes",
+        "NTPSynchronized": "yes"
+      },
+      "units": {
+        "ssh.service": {
+          "MainPID": "697",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "669",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "prometheus-node-exporter.service": {
+          "MainPID": "717",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-ops.service": {
+          "MainPID": "1053",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "failed_units": [],
+      "strict_ub_ssh": true,
+      "health_ok": true,
+      "manager_health_exit_code": 0,
+      "manager_health": {
+        "timestamp": "2026-11-06T05:43:42.732254+00:00",
+        "role": "ops-service",
+        "service_ip": "10.63.30.40",
+        "containers": [
+          {
+            "service": "alertmanager",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          },
+          {
+            "service": "blackbox",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          },
+          {
+            "service": "grafana",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          },
+          {
+            "service": "prometheus",
+            "state": "running",
+            "health": "healthy",
+            "restart_count": 0
+          }
+        ],
+        "http_readiness": "passed",
+        "grafana_admin_login": "passed",
+        "prometheus_reported_targets": 17,
+        "reported_up": 17,
+        "reported_down": 0,
+        "coverage": "guest metrics/HTTP require separate endpoint and ACL acceptance",
+        "pve_host_metrics": "pending-separate-authorized-interface",
+        "external_notifications": "not-configured-not-tested",
+        "readiness_scope": "ops-components-only"
+      },
+      "targets": [
+        {
+          "job": "blackbox-exporter",
+          "instance": "blackbox:9115",
+          "health": "up"
+        },
+        {
+          "job": "guest-node",
+          "instance": "10.63.30.40:9100",
+          "health": "up"
+        },
+        {
+          "job": "guest-node",
+          "instance": "10.63.10.10:9100",
+          "health": "up"
+        },
+        {
+          "job": "guest-node",
+          "instance": "10.63.10.11:9100",
+          "health": "up"
+        },
+        {
+          "job": "guest-node",
+          "instance": "10.63.30.20:9100",
+          "health": "up"
+        },
+        {
+          "job": "guest-node",
+          "instance": "10.63.10.20:9100",
+          "health": "up"
+        },
+        {
+          "job": "guest-node",
+          "instance": "10.63.30.30:9100",
+          "health": "up"
+        },
+        {
+          "job": "guest-node",
+          "instance": "10.63.20.10:9100",
+          "health": "up"
+        },
+        {
+          "job": "guest-node",
+          "instance": "10.63.30.10:9100",
+          "health": "up"
+        },
+        {
+          "job": "guest-node",
+          "instance": "10.63.10.22:9100",
+          "health": "up"
+        },
+        {
+          "job": "guest-node",
+          "instance": "10.63.20.20:9100",
+          "health": "up"
+        },
+        {
+          "job": "guest-node",
+          "instance": "10.63.40.10:9100",
+          "health": "up"
+        },
+        {
+          "job": "guest-node",
+          "instance": "10.63.10.21:9100",
+          "health": "up"
+        },
+        {
+          "job": "http-health",
+          "instance": "http://grafana:3000/api/health",
+          "health": "up"
+        },
+        {
+          "job": "http-health",
+          "instance": "http://alertmanager:9093/-/ready",
+          "health": "up"
+        },
+        {
+          "job": "http-health",
+          "instance": "http://prometheus:9090/-/ready",
+          "health": "up"
+        },
+        {
+          "job": "prometheus",
+          "instance": "localhost:9090",
+          "health": "up"
+        }
+      ],
+      "pve_collector_age_seconds": [
+        44.6
+      ]
+    },
+    "ops_final_metric_proof": {
+      "pve_collector_age_seconds": [
+        44.6
+      ],
+      "target_count": 17,
+      "all_targets_up": true,
+      "static_manager_scope_string_does_not_override_live_collector_query": true
+    }
+  },
+  "completed_at": "2026-11-06T13:43:42.850934+08:00",
+  "accepted_guest_count": 10,
+  "normal_guest_reboots_only": true,
+  "host_power_failure_or_RPO_RTO_not_tested": true,
+  "all_unassigned_guests_excluded": true,
+  "runner_sha256": "3851f4d0b753e562c39ccd559680b73f31fdf9e280e877989eb05853302f929c",
+  "readiness_limitations": [
+    "Normal guest reboot acceptance only; no PVE host restart or host power failure was induced.",
+    "NAS is household media/game file sharing, not an independent formal backup destination.",
+    "Formal Java nodes retain runtime-only status; no formal business application was started.",
+    "No new business fixture writes; NAS prior synthetic samples were read only.",
+    "Transient first-deploy historical failure was recorded before reboot and disappeared naturally after reboot; no reset or masking."
+  ]
+}

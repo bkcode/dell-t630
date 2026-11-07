@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-06T16:30:16.297965",
+  "result": {
+    "exit_code": 0,
+    "stdout": "{\"status\": \"staged-old-network-active\", \"interface\": \"eth0\", \"nonce\": \"63208f22d65147db9582b5d5fba433f9\", \"network_changed\": false}\n",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+    "target": {
+      "vmid": 230,
+      "ip": "10.63.10.20",
+      "host_key_alias": "dell-vm230",
+      "host_key_fingerprint": "SHA256:SsWkQtSVu/3sssyrmVMb13r8r9/zQhWeEH3ZQ/CzCDM",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  },
+  "network_not_yet_changed": true
+}

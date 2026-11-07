@@ -1,0 +1,21 @@
+[Unit]
+Description=Read-only local guest service and HTTP health textfile
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=prometheus
+Group=prometheus
+ExecCondition=/usr/bin/python3 /opt/dell/guest-monitoring/install-guest-baseline.py --check-private-ip --role ops-service
+ExecStart=/usr/bin/python3 /opt/dell/guest-monitoring/collect-guest-health.py
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+ReadWritePaths=/var/lib/prometheus/node-exporter-textfile
+CapabilityBoundingSet=
+MemoryMax=64M
+CPUQuota=10%
+TasksMax=32
+TimeoutStartSec=45

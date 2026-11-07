@@ -1,0 +1,64 @@
+{
+  "at": "2026-11-07T01:38:31.631242+08:00",
+  "status": "local-model-candidates-and-fixtures-only-not-applied",
+  "test_count": 22,
+  "tests_output": "......................\n----------------------------------------------------------------------\nRan 22 tests in 0.022s\n\nOK",
+  "base_sources_unchanged": true,
+  "current_plan_or_config_modified": false,
+  "PVE_OW_190_other_guest_access_or_writes": false,
+  "candidates": {
+    "control.py": {
+      "intended_target": "dell/scripts/control.py",
+      "base_sha256": "cebbb0908bb916169182d6b2700f511aff89e5130c08d070aaf94e8a46068c4f",
+      "candidate_sha256": "9e61ffe58c478a4d126052df2efb2c469dd26f01533555fb0cebd4ef74652987",
+      "diff": "dell/cleanup/network/diffs/control.py.diff"
+    },
+    "render-bridge-acl.py": {
+      "intended_target": "dell/network19/audit/render-bridge-acl.py",
+      "base_sha256": "d0f2282ce5013d79c9e7dc395367243af37b5b68ae75e5e332b30fcf73f3627d",
+      "candidate_sha256": "7a51f8be6c213719050acf461a3f66cfed27a7ddb7095d4460a28322c42921a0",
+      "diff": "dell/cleanup/network/diffs/render-bridge-acl.py.diff"
+    },
+    "gateway-policy.py": {
+      "intended_target": "dell/network19/gateway/policy.py",
+      "base_sha256": "bd237ff8c6417306af7cf0a9e3106d0426f5ca6bb54f072984dd9e89638708da",
+      "candidate_sha256": "06a3ef24a6aaa4412eaa3e01644c3d608091701984d600db446601a698ce1c97",
+      "diff": "dell/cleanup/network/diffs/gateway-policy.py.diff"
+    }
+  },
+  "native_nft_dnsmasq_checks": "not executed; parent must freeze live registry/270 targets and approve maintenance window",
+  "alias_owner_model": {
+    "vmid": 220,
+    "primary": "192.168.19.30",
+    "additional_ips": [
+      "192.168.19.31"
+    ],
+    "logical_service": "artifact-service",
+    "endpoint": "192.168.19.31:8081"
+  },
+  "gateway_fwd_candidate_vs_current": "byte-identical in fixture; only DNS hosts compiler differs",
+  "DNS_approved_retired_vmids": [
+    101,
+    104,
+    231,
+    232,
+    9000,
+    9002,
+    9003,
+    9004,
+    9005,
+    9006,
+    9020
+  ],
+  "logical_artifact31_retained": true,
+  "temporary_builders_no_permanent_DNS": [
+    9040,
+    9041,
+    9042,
+    9043,
+    9044,
+    9045
+  ],
+  "temporary_identity_raw_flag_supported": true,
+  "temporary_active_IP_reuse_duplicate_rejected": true
+}

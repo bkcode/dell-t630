@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-06T13:49:27.030043",
+  "status": "user-LaunchAgent-installed-and-bootstrapped",
+  "label": "com.dell.t630.external-probe",
+  "plist": "/Users/yangzhaohui/Library/LaunchAgents/com.dell.t630.external-probe.plist",
+  "mode": "0o600",
+  "interval_seconds": 60,
+  "run_at_load": true,
+  "privilege": "current GUI user; no sudo/LaunchDaemon",
+  "scope": "fixed7 anonymous nc/curl LAN endpoints; Lark state transitions using private credential file",
+  "service_in_domain": true,
+  "limitations": "requires Mac awake, GUI login and networking; not24h independent hardware"
+}

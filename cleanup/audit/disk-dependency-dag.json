@@ -1,0 +1,2551 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-07T01:17:44.585912+08:00",
+  "status": "read-only-audit-complete-no-deletion",
+  "basis_files": [
+    "pve-storage-inventory.json",
+    "qemu-image-headers.json",
+    "running-filesystems.json",
+    "opaque-config-flags.json"
+  ],
+  "captured_times": {
+    "PVEconfig": "2026-11-06T17:04:21.487638+00:00",
+    "qemu_headers": "2026-11-06T17:10:18.594360+00:00",
+    "running_FS_UUID": "2026-11-06T17:10:57.077202+00:00"
+  },
+  "candidate_vmids": [
+    101,
+    104,
+    102,
+    103,
+    105,
+    106,
+    9000,
+    9002,
+    9003,
+    9004,
+    9005,
+    9006,
+    9020,
+    231,
+    232
+  ],
+  "protected_vmids": [
+    100,
+    190,
+    200,
+    201,
+    210,
+    220,
+    221,
+    230,
+    240,
+    250,
+    260,
+    270,
+    9001,
+    9010,
+    9011
+  ],
+  "never_delete_or_export_CF100": true,
+  "never_wholebackup_or_snapshot_220_publisher_key_boundary": true,
+  "Nexus221_future_only_retained_until_merge_verified": true,
+  "snapshots": {
+    "PVE_real_count": 0,
+    "qcow_internal_count": 0,
+    "current_is_not_a_recovery_snapshot": true
+  },
+  "volumes": [
+    {
+      "volid": "local-lvm:base-102-disk-0",
+      "path": "/dev/pve/base-102-disk-0",
+      "realpath": "/dev/dm-14",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 102,
+      "format": "raw",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:base-103-disk-0",
+      "path": "/dev/pve/base-103-disk-0",
+      "realpath": "/dev/pve/base-103-disk-0",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 103,
+      "format": "raw",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": false,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:base-105-disk-0",
+      "path": "/dev/pve/base-105-disk-0",
+      "realpath": "/dev/pve/base-105-disk-0",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 105,
+      "format": "raw",
+      "virtual_bytes": 42949672960,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": false,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:base-106-disk-0",
+      "path": "/dev/pve/base-106-disk-0",
+      "realpath": "/dev/pve/base-106-disk-0",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 106,
+      "format": "raw",
+      "virtual_bytes": 17179869184,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": false,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:base-9001-disk-0",
+      "path": "/dev/pve/base-9001-disk-0",
+      "realpath": "/dev/dm-22",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 9001,
+      "format": "raw",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:base-9010-disk-0",
+      "path": "/dev/pve/base-9010-disk-0",
+      "realpath": "/dev/dm-17",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 9010,
+      "format": "raw",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-100-disk-0",
+      "path": "/dev/pve/vm-100-disk-0",
+      "realpath": "/dev/dm-11",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 100,
+      "format": "raw",
+      "virtual_bytes": 4294967296,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-101-cloudinit",
+      "path": "/dev/pve/vm-101-cloudinit",
+      "realpath": "/dev/dm-12",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 101,
+      "format": "raw",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-101-disk-0",
+      "path": "/dev/pve/vm-101-disk-0",
+      "realpath": "/dev/dm-13",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 101,
+      "format": "raw",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-102-cloudinit",
+      "path": "/dev/pve/vm-102-cloudinit",
+      "realpath": "/dev/dm-6",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 102,
+      "format": "raw",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-103-cloudinit",
+      "path": "/dev/pve/vm-103-cloudinit",
+      "realpath": "/dev/dm-7",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 103,
+      "format": "raw",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-104-cloudinit",
+      "path": "/dev/pve/vm-104-cloudinit",
+      "realpath": "/dev/dm-8",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 104,
+      "format": "raw",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-104-disk-0",
+      "path": "/dev/pve/vm-104-disk-0",
+      "realpath": "/dev/dm-9",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 104,
+      "format": "raw",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-105-cloudinit",
+      "path": "/dev/pve/vm-105-cloudinit",
+      "realpath": "/dev/dm-10",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 105,
+      "format": "raw",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-200-cloudinit",
+      "path": "/dev/pve/vm-200-cloudinit",
+      "realpath": "/dev/dm-31",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 200,
+      "format": "raw",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-200-disk-0",
+      "path": "/dev/pve/vm-200-disk-0",
+      "realpath": "/dev/dm-32",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 200,
+      "format": "raw",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-200-disk-1",
+      "path": "/dev/pve/vm-200-disk-1",
+      "realpath": "/dev/dm-33",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 200,
+      "format": "raw",
+      "virtual_bytes": 85899345920,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-201-cloudinit",
+      "path": "/dev/pve/vm-201-cloudinit",
+      "realpath": "/dev/dm-34",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 201,
+      "format": "raw",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-201-disk-0",
+      "path": "/dev/pve/vm-201-disk-0",
+      "realpath": "/dev/dm-35",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 201,
+      "format": "raw",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-201-disk-1",
+      "path": "/dev/pve/vm-201-disk-1",
+      "realpath": "/dev/dm-36",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 201,
+      "format": "raw",
+      "virtual_bytes": 25769803776,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-9000-cloudinit",
+      "path": "/dev/pve/vm-9000-cloudinit",
+      "realpath": "/dev/dm-15",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 9000,
+      "format": "raw",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-9000-disk-0",
+      "path": "/dev/pve/vm-9000-disk-0",
+      "realpath": "/dev/dm-16",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 9000,
+      "format": "raw",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-9001-cloudinit",
+      "path": "/dev/pve/vm-9001-cloudinit",
+      "realpath": "/dev/dm-18",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 9001,
+      "format": "raw",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-9002-cloudinit",
+      "path": "/dev/pve/vm-9002-cloudinit",
+      "realpath": "/dev/dm-19",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 9002,
+      "format": "raw",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-9002-disk-0",
+      "path": "/dev/pve/vm-9002-disk-0",
+      "realpath": "/dev/dm-21",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 9002,
+      "format": "raw",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-9003-cloudinit",
+      "path": "/dev/pve/vm-9003-cloudinit",
+      "realpath": "/dev/dm-23",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 9003,
+      "format": "raw",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-9003-disk-0",
+      "path": "/dev/pve/vm-9003-disk-0",
+      "realpath": "/dev/dm-24",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 9003,
+      "format": "raw",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-9004-cloudinit",
+      "path": "/dev/pve/vm-9004-cloudinit",
+      "realpath": "/dev/dm-25",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 9004,
+      "format": "raw",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-9004-disk-0",
+      "path": "/dev/pve/vm-9004-disk-0",
+      "realpath": "/dev/dm-26",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 9004,
+      "format": "raw",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-9005-cloudinit",
+      "path": "/dev/pve/vm-9005-cloudinit",
+      "realpath": "/dev/dm-27",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 9005,
+      "format": "raw",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-9005-disk-0",
+      "path": "/dev/pve/vm-9005-disk-0",
+      "realpath": "/dev/dm-28",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 9005,
+      "format": "raw",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-9006-cloudinit",
+      "path": "/dev/pve/vm-9006-cloudinit",
+      "realpath": "/dev/dm-29",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 9006,
+      "format": "raw",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-9006-disk-0",
+      "path": "/dev/pve/vm-9006-disk-0",
+      "realpath": "/dev/dm-30",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 9006,
+      "format": "raw",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "local-lvm:vm-9010-cloudinit",
+      "path": "/dev/pve/vm-9010-cloudinit",
+      "realpath": "/dev/dm-20",
+      "storage": "local-lvm",
+      "owner_vmid_from_storage": 9010,
+      "format": "raw",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": null,
+      "raw_block_device": true,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    },
+    {
+      "volid": "store:103/base-103-disk-0.qcow2",
+      "path": "/mnt/pve/store/images/103/base-103-disk-0.qcow2",
+      "realpath": "/mnt/pve/store/images/103/base-103-disk-0.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 103,
+      "format": "qcow2",
+      "virtual_bytes": 107374182400,
+      "file_allocated_bytes": 24158208,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:103/base-103-disk-0.qcow2/104/vm-104-disk-0.qcow2",
+      "path": "/mnt/pve/store/images/104/vm-104-disk-0.qcow2",
+      "realpath": "/mnt/pve/store/images/104/vm-104-disk-0.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 104,
+      "format": "qcow2",
+      "virtual_bytes": 107374182400,
+      "file_allocated_bytes": 2564096,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:190/vm-190-cloudinit.qcow2",
+      "path": "/mnt/pve/store/images/190/vm-190-cloudinit.qcow2",
+      "realpath": "/mnt/pve/store/images/190/vm-190-cloudinit.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 190,
+      "format": "qcow2",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": 630784,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:190/vm-190-disk-0.qcow2",
+      "path": "/mnt/pve/store/images/190/vm-190-disk-0.qcow2",
+      "realpath": "/mnt/pve/store/images/190/vm-190-disk-0.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 190,
+      "format": "qcow2",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": 2207715328,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:210/vm-210-cloudinit.qcow2",
+      "path": "/mnt/pve/store/images/210/vm-210-cloudinit.qcow2",
+      "realpath": "/mnt/pve/store/images/210/vm-210-cloudinit.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 210,
+      "format": "qcow2",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": 630784,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:210/vm-210-disk-0.qcow2",
+      "path": "/mnt/pve/store/images/210/vm-210-disk-0.qcow2",
+      "realpath": "/mnt/pve/store/images/210/vm-210-disk-0.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 210,
+      "format": "qcow2",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": 5528887296,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:210/vm-210-disk-1.qcow2",
+      "path": "/mnt/pve/store/images/210/vm-210-disk-1.qcow2",
+      "realpath": "/mnt/pve/store/images/210/vm-210-disk-1.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 210,
+      "format": "qcow2",
+      "virtual_bytes": 42949672960,
+      "file_allocated_bytes": 751124480,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:220/vm-220-cloudinit.qcow2",
+      "path": "/mnt/pve/store/images/220/vm-220-cloudinit.qcow2",
+      "realpath": "/mnt/pve/store/images/220/vm-220-cloudinit.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 220,
+      "format": "qcow2",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": 630784,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:220/vm-220-disk-0.qcow2",
+      "path": "/mnt/pve/store/images/220/vm-220-disk-0.qcow2",
+      "realpath": "/mnt/pve/store/images/220/vm-220-disk-0.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 220,
+      "format": "qcow2",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": 4405374976,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:220/vm-220-disk-1.qcow2",
+      "path": "/mnt/pve/store/images/220/vm-220-disk-1.qcow2",
+      "realpath": "/mnt/pve/store/images/220/vm-220-disk-1.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 220,
+      "format": "qcow2",
+      "virtual_bytes": 107374182400,
+      "file_allocated_bytes": 59125760,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:221/vm-221-cloudinit.qcow2",
+      "path": "/mnt/pve/store/images/221/vm-221-cloudinit.qcow2",
+      "realpath": "/mnt/pve/store/images/221/vm-221-cloudinit.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 221,
+      "format": "qcow2",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": 630784,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:221/vm-221-disk-0.qcow2",
+      "path": "/mnt/pve/store/images/221/vm-221-disk-0.qcow2",
+      "realpath": "/mnt/pve/store/images/221/vm-221-disk-0.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 221,
+      "format": "qcow2",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": 6848970752,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:221/vm-221-disk-1.qcow2",
+      "path": "/mnt/pve/store/images/221/vm-221-disk-1.qcow2",
+      "realpath": "/mnt/pve/store/images/221/vm-221-disk-1.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 221,
+      "format": "qcow2",
+      "virtual_bytes": 107374182400,
+      "file_allocated_bytes": 199077888,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:230/vm-230-cloudinit.qcow2",
+      "path": "/mnt/pve/store/images/230/vm-230-cloudinit.qcow2",
+      "realpath": "/mnt/pve/store/images/230/vm-230-cloudinit.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 230,
+      "format": "qcow2",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": 630784,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:230/vm-230-disk-0.qcow2",
+      "path": "/mnt/pve/store/images/230/vm-230-disk-0.qcow2",
+      "realpath": "/mnt/pve/store/images/230/vm-230-disk-0.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 230,
+      "format": "qcow2",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": 2560897024,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:231/vm-231-cloudinit.qcow2",
+      "path": "/mnt/pve/store/images/231/vm-231-cloudinit.qcow2",
+      "realpath": "/mnt/pve/store/images/231/vm-231-cloudinit.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 231,
+      "format": "qcow2",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": 630784,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:231/vm-231-disk-0.qcow2",
+      "path": "/mnt/pve/store/images/231/vm-231-disk-0.qcow2",
+      "realpath": "/mnt/pve/store/images/231/vm-231-disk-0.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 231,
+      "format": "qcow2",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": 2537037824,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:232/vm-232-cloudinit.qcow2",
+      "path": "/mnt/pve/store/images/232/vm-232-cloudinit.qcow2",
+      "realpath": "/mnt/pve/store/images/232/vm-232-cloudinit.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 232,
+      "format": "qcow2",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": 630784,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:232/vm-232-disk-0.qcow2",
+      "path": "/mnt/pve/store/images/232/vm-232-disk-0.qcow2",
+      "realpath": "/mnt/pve/store/images/232/vm-232-disk-0.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 232,
+      "format": "qcow2",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": 2543202304,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:240/vm-240-cloudinit.qcow2",
+      "path": "/mnt/pve/store/images/240/vm-240-cloudinit.qcow2",
+      "realpath": "/mnt/pve/store/images/240/vm-240-cloudinit.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 240,
+      "format": "qcow2",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": 630784,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:240/vm-240-disk-0.qcow2",
+      "path": "/mnt/pve/store/images/240/vm-240-disk-0.qcow2",
+      "realpath": "/mnt/pve/store/images/240/vm-240-disk-0.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 240,
+      "format": "qcow2",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": 7221522432,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:250/vm-250-cloudinit.qcow2",
+      "path": "/mnt/pve/store/images/250/vm-250-cloudinit.qcow2",
+      "realpath": "/mnt/pve/store/images/250/vm-250-cloudinit.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 250,
+      "format": "qcow2",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": 630784,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:250/vm-250-disk-0.qcow2",
+      "path": "/mnt/pve/store/images/250/vm-250-disk-0.qcow2",
+      "realpath": "/mnt/pve/store/images/250/vm-250-disk-0.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 250,
+      "format": "qcow2",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": 3121635328,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:250/vm-250-disk-1.qcow2",
+      "path": "/mnt/pve/store/images/250/vm-250-disk-1.qcow2",
+      "realpath": "/mnt/pve/store/images/250/vm-250-disk-1.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 250,
+      "format": "qcow2",
+      "virtual_bytes": 107374182400,
+      "file_allocated_bytes": 11881721856,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:260/vm-260-cloudinit.qcow2",
+      "path": "/mnt/pve/store/images/260/vm-260-cloudinit.qcow2",
+      "realpath": "/mnt/pve/store/images/260/vm-260-cloudinit.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 260,
+      "format": "qcow2",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": 630784,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:260/vm-260-disk-0.qcow2",
+      "path": "/mnt/pve/store/images/260/vm-260-disk-0.qcow2",
+      "realpath": "/mnt/pve/store/images/260/vm-260-disk-0.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 260,
+      "format": "qcow2",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": 5159968768,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:260/vm-260-disk-1.qcow2",
+      "path": "/mnt/pve/store/images/260/vm-260-disk-1.qcow2",
+      "realpath": "/mnt/pve/store/images/260/vm-260-disk-1.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 260,
+      "format": "qcow2",
+      "virtual_bytes": 2199023255552,
+      "file_allocated_bytes": 539758592,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:270/vm-270-cloudinit.qcow2",
+      "path": "/mnt/pve/store/images/270/vm-270-cloudinit.qcow2",
+      "realpath": "/mnt/pve/store/images/270/vm-270-cloudinit.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 270,
+      "format": "qcow2",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": 630784,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:270/vm-270-disk-0.qcow2",
+      "path": "/mnt/pve/store/images/270/vm-270-disk-0.qcow2",
+      "realpath": "/mnt/pve/store/images/270/vm-270-disk-0.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 270,
+      "format": "qcow2",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": 6088781824,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:270/vm-270-disk-1.qcow2",
+      "path": "/mnt/pve/store/images/270/vm-270-disk-1.qcow2",
+      "realpath": "/mnt/pve/store/images/270/vm-270-disk-1.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 270,
+      "format": "qcow2",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": 1145171968,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:9011/base-9011-disk-0.qcow2",
+      "path": "/mnt/pve/store/images/9011/base-9011-disk-0.qcow2",
+      "realpath": "/mnt/pve/store/images/9011/base-9011-disk-0.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 9011,
+      "format": "qcow2",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": 2502955008,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:9011/vm-9011-cloudinit.qcow2",
+      "path": "/mnt/pve/store/images/9011/vm-9011-cloudinit.qcow2",
+      "realpath": "/mnt/pve/store/images/9011/vm-9011-cloudinit.qcow2",
+      "storage": "store",
+      "owner_vmid_from_storage": 9011,
+      "format": "qcow2",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": 630784,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:9020/vm-9020-cloudinit.raw",
+      "path": "/mnt/pve/store/images/9020/vm-9020-cloudinit.raw",
+      "realpath": "/mnt/pve/store/images/9020/vm-9020-cloudinit.raw",
+      "storage": "store",
+      "owner_vmid_from_storage": 9020,
+      "format": "raw",
+      "virtual_bytes": 4194304,
+      "file_allocated_bytes": 364544,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:9020/vm-9020-disk-0.raw",
+      "path": "/mnt/pve/store/images/9020/vm-9020-disk-0.raw",
+      "realpath": "/mnt/pve/store/images/9020/vm-9020-disk-0.raw",
+      "storage": "store",
+      "owner_vmid_from_storage": 9020,
+      "format": "raw",
+      "virtual_bytes": 34359738368,
+      "file_allocated_bytes": 1231523840,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": 0
+    },
+    {
+      "volid": "store:iso/dell-artifacts-20261106.iso",
+      "path": "/mnt/pve/store/template/iso/dell-artifacts-20261106.iso",
+      "realpath": "/mnt/pve/store/template/iso/dell-artifacts-20261106.iso",
+      "storage": "store",
+      "owner_vmid_from_storage": null,
+      "format": null,
+      "virtual_bytes": null,
+      "file_allocated_bytes": null,
+      "raw_block_device": false,
+      "path_exists_at_capture": true,
+      "header_read_exit": null
+    }
+  ],
+  "VM_volume_references": [
+    {
+      "vmid": 100,
+      "scope": "current",
+      "key": "rootfs",
+      "volid": "local-lvm:vm-100-disk-0",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "size": "4G"
+      }
+    },
+    {
+      "vmid": 101,
+      "scope": "current",
+      "key": "ide0",
+      "volid": "local-lvm:vm-101-cloudinit",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 101,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "local-lvm:vm-101-disk-0",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 102,
+      "scope": "current",
+      "key": "ide0",
+      "volid": "local-lvm:vm-102-cloudinit",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 102,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "local-lvm:base-102-disk-0",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 103,
+      "scope": "current",
+      "key": "ide0",
+      "volid": "local-lvm:vm-103-cloudinit",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom"
+      }
+    },
+    {
+      "vmid": 103,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "local-lvm:base-103-disk-0",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 103,
+      "scope": "current",
+      "key": "scsi1",
+      "volid": "store:103/base-103-disk-0.qcow2",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "iothread": "1",
+        "size": "100G"
+      }
+    },
+    {
+      "vmid": 104,
+      "scope": "current",
+      "key": "ide0",
+      "volid": "local-lvm:vm-104-cloudinit",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 104,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "local-lvm:vm-104-disk-0",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 104,
+      "scope": "current",
+      "key": "scsi1",
+      "volid": "store:103/base-103-disk-0.qcow2/104/vm-104-disk-0.qcow2",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "iothread": "1",
+        "size": "100G"
+      }
+    },
+    {
+      "vmid": 105,
+      "scope": "current",
+      "key": "ide0",
+      "volid": "local-lvm:vm-105-cloudinit",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 105,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "local-lvm:base-105-disk-0",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "iothread": "1",
+        "size": "40G"
+      }
+    },
+    {
+      "vmid": 106,
+      "scope": "current",
+      "key": "virtio0",
+      "volid": "local-lvm:base-106-disk-0",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "size": "16G"
+      }
+    },
+    {
+      "vmid": 190,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "store:190/vm-190-cloudinit.qcow2",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 190,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "store:190/vm-190-disk-0.qcow2",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 200,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "local-lvm:vm-200-cloudinit",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 200,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "local-lvm:vm-200-disk-0",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 200,
+      "scope": "current",
+      "key": "scsi1",
+      "volid": "local-lvm:vm-200-disk-1",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "80G"
+      }
+    },
+    {
+      "vmid": 200,
+      "scope": "current",
+      "key": "scsi2",
+      "volid": "store:iso/dell-artifacts-20261106.iso",
+      "cloudinit": false,
+      "shared_CDROM": true,
+      "options": {
+        "media": "cdrom",
+        "size": "13183532K"
+      }
+    },
+    {
+      "vmid": 201,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "local-lvm:vm-201-cloudinit",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 201,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "local-lvm:vm-201-disk-0",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 201,
+      "scope": "current",
+      "key": "scsi1",
+      "volid": "local-lvm:vm-201-disk-1",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "24G"
+      }
+    },
+    {
+      "vmid": 201,
+      "scope": "current",
+      "key": "scsi2",
+      "volid": "store:iso/dell-artifacts-20261106.iso",
+      "cloudinit": false,
+      "shared_CDROM": true,
+      "options": {
+        "media": "cdrom",
+        "size": "13183532K"
+      }
+    },
+    {
+      "vmid": 210,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "store:210/vm-210-cloudinit.qcow2",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 210,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "store:210/vm-210-disk-0.qcow2",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 210,
+      "scope": "current",
+      "key": "scsi1",
+      "volid": "store:210/vm-210-disk-1.qcow2",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "40G"
+      }
+    },
+    {
+      "vmid": 210,
+      "scope": "current",
+      "key": "scsi2",
+      "volid": "store:iso/dell-artifacts-20261106.iso",
+      "cloudinit": false,
+      "shared_CDROM": true,
+      "options": {
+        "media": "cdrom",
+        "size": "13183532K"
+      }
+    },
+    {
+      "vmid": 220,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "store:220/vm-220-cloudinit.qcow2",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 220,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "store:220/vm-220-disk-0.qcow2",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 220,
+      "scope": "current",
+      "key": "scsi1",
+      "volid": "store:220/vm-220-disk-1.qcow2",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "100G"
+      }
+    },
+    {
+      "vmid": 220,
+      "scope": "current",
+      "key": "scsi2",
+      "volid": "store:iso/dell-artifacts-20261106.iso",
+      "cloudinit": false,
+      "shared_CDROM": true,
+      "options": {
+        "media": "cdrom",
+        "size": "13183532K"
+      }
+    },
+    {
+      "vmid": 221,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "store:221/vm-221-cloudinit.qcow2",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 221,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "store:221/vm-221-disk-0.qcow2",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 221,
+      "scope": "current",
+      "key": "scsi1",
+      "volid": "store:221/vm-221-disk-1.qcow2",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "100G"
+      }
+    },
+    {
+      "vmid": 221,
+      "scope": "current",
+      "key": "scsi2",
+      "volid": "store:iso/dell-artifacts-20261106.iso",
+      "cloudinit": false,
+      "shared_CDROM": true,
+      "options": {
+        "media": "cdrom",
+        "size": "13183532K"
+      }
+    },
+    {
+      "vmid": 230,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "store:230/vm-230-cloudinit.qcow2",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 230,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "store:230/vm-230-disk-0.qcow2",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 230,
+      "scope": "current",
+      "key": "scsi2",
+      "volid": "store:iso/dell-artifacts-20261106.iso",
+      "cloudinit": false,
+      "shared_CDROM": true,
+      "options": {
+        "media": "cdrom",
+        "size": "13183532K"
+      }
+    },
+    {
+      "vmid": 231,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "store:231/vm-231-cloudinit.qcow2",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 231,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "store:231/vm-231-disk-0.qcow2",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 231,
+      "scope": "current",
+      "key": "scsi2",
+      "volid": "store:iso/dell-artifacts-20261106.iso",
+      "cloudinit": false,
+      "shared_CDROM": true,
+      "options": {
+        "media": "cdrom",
+        "size": "13183532K"
+      }
+    },
+    {
+      "vmid": 232,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "store:232/vm-232-cloudinit.qcow2",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 232,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "store:232/vm-232-disk-0.qcow2",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 232,
+      "scope": "current",
+      "key": "scsi2",
+      "volid": "store:iso/dell-artifacts-20261106.iso",
+      "cloudinit": false,
+      "shared_CDROM": true,
+      "options": {
+        "media": "cdrom",
+        "size": "13183532K"
+      }
+    },
+    {
+      "vmid": 240,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "store:240/vm-240-cloudinit.qcow2",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 240,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "store:240/vm-240-disk-0.qcow2",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 240,
+      "scope": "current",
+      "key": "scsi2",
+      "volid": "store:iso/dell-artifacts-20261106.iso",
+      "cloudinit": false,
+      "shared_CDROM": true,
+      "options": {
+        "media": "cdrom",
+        "size": "13183532K"
+      }
+    },
+    {
+      "vmid": 250,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "store:250/vm-250-cloudinit.qcow2",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 250,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "store:250/vm-250-disk-0.qcow2",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 250,
+      "scope": "current",
+      "key": "scsi1",
+      "volid": "store:250/vm-250-disk-1.qcow2",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "100G"
+      }
+    },
+    {
+      "vmid": 250,
+      "scope": "current",
+      "key": "scsi2",
+      "volid": "store:iso/dell-artifacts-20261106.iso",
+      "cloudinit": false,
+      "shared_CDROM": true,
+      "options": {
+        "media": "cdrom",
+        "size": "13183532K"
+      }
+    },
+    {
+      "vmid": 260,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "store:260/vm-260-cloudinit.qcow2",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 260,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "store:260/vm-260-disk-0.qcow2",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 260,
+      "scope": "current",
+      "key": "scsi1",
+      "volid": "store:260/vm-260-disk-1.qcow2",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "2T"
+      }
+    },
+    {
+      "vmid": 260,
+      "scope": "current",
+      "key": "scsi2",
+      "volid": "store:iso/dell-artifacts-20261106.iso",
+      "cloudinit": false,
+      "shared_CDROM": true,
+      "options": {
+        "media": "cdrom",
+        "size": "13183532K"
+      }
+    },
+    {
+      "vmid": 270,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "store:270/vm-270-cloudinit.qcow2",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 270,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "store:270/vm-270-disk-0.qcow2",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 270,
+      "scope": "current",
+      "key": "scsi1",
+      "volid": "store:270/vm-270-disk-1.qcow2",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 270,
+      "scope": "current",
+      "key": "scsi2",
+      "volid": "store:iso/dell-artifacts-20261106.iso",
+      "cloudinit": false,
+      "shared_CDROM": true,
+      "options": {
+        "media": "cdrom",
+        "size": "13183532K"
+      }
+    },
+    {
+      "vmid": 9000,
+      "scope": "current",
+      "key": "ide0",
+      "volid": "local-lvm:vm-9000-cloudinit",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 9000,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "local-lvm:vm-9000-disk-0",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 9001,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "local-lvm:vm-9001-cloudinit",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom"
+      }
+    },
+    {
+      "vmid": 9001,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "local-lvm:base-9001-disk-0",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 9002,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "local-lvm:vm-9002-cloudinit",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 9002,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "local-lvm:vm-9002-disk-0",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 9003,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "local-lvm:vm-9003-cloudinit",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 9003,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "local-lvm:vm-9003-disk-0",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 9004,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "local-lvm:vm-9004-cloudinit",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 9004,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "local-lvm:vm-9004-disk-0",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 9005,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "local-lvm:vm-9005-cloudinit",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 9005,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "local-lvm:vm-9005-disk-0",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 9006,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "local-lvm:vm-9006-cloudinit",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 9006,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "local-lvm:vm-9006-disk-0",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 9010,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "local-lvm:vm-9010-cloudinit",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom"
+      }
+    },
+    {
+      "vmid": 9010,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "local-lvm:base-9010-disk-0",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 9011,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "store:9011/vm-9011-cloudinit.qcow2",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 9011,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "store:9011/base-9011-disk-0.qcow2",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    },
+    {
+      "vmid": 9020,
+      "scope": "current",
+      "key": "ide2",
+      "volid": "store:9020/vm-9020-cloudinit.raw",
+      "cloudinit": true,
+      "shared_CDROM": false,
+      "options": {
+        "media": "cdrom",
+        "size": "4M"
+      }
+    },
+    {
+      "vmid": 9020,
+      "scope": "current",
+      "key": "scsi0",
+      "volid": "store:9020/vm-9020-disk-0.raw",
+      "cloudinit": false,
+      "shared_CDROM": false,
+      "options": {
+        "discard": "on",
+        "iothread": "1",
+        "size": "32G"
+      }
+    }
+  ],
+  "required_backing_edges": [
+    {
+      "child_volids": [
+        "store:103/base-103-disk-0.qcow2/104/vm-104-disk-0.qcow2"
+      ],
+      "child_path": "/mnt/pve/store/images/104/vm-104-disk-0.qcow2",
+      "parent_volids": [
+        "store:103/base-103-disk-0.qcow2"
+      ],
+      "parent_path": "/mnt/pve/store/images/103/base-103-disk-0.qcow2",
+      "kind": "qcow2-required-backing",
+      "hard_dependency": true
+    }
+  ],
+  "lvm_origin_lineage": [
+    {
+      "child": "local-lvm:vm-104-disk-0",
+      "origin": "local-lvm:base-103-disk-0",
+      "child_LV": "vm-104-disk-0",
+      "origin_LV": "base-103-disk-0",
+      "child_vg": "pve",
+      "child_pool": "data",
+      "origin_pool": "data",
+      "normal_thin_snapshot_lineage": true,
+      "hard_external_backing_dependency": false,
+      "interpretation": "Normal thin snapshot origin lineage shares pool blocks; not the qcow2 external-file requirement. Conservative removal still child beforeorigin."
+    }
+  ],
+  "retained_to_candidate_required_edges": [],
+  "shared_media": [
+    {
+      "volid": "store:iso/dell-artifacts-20261106.iso",
+      "users": [
+        200,
+        201,
+        210,
+        220,
+        221,
+        230,
+        231,
+        232,
+        240,
+        250,
+        260,
+        270
+      ],
+      "path": "/mnt/pve/store/template/iso/dell-artifacts-20261106.iso",
+      "delete_with_candidate": false
+    }
+  ],
+  "unreferenced_PVE_images": [],
+  "unregistered_directory_images": 0,
+  "opaque_disk_args_or_passthrough_fields": [],
+  "candidate_decisions": [
+    {
+      "vmid": 101,
+      "name": "data-docker-base-tpl",
+      "state": "stopped",
+      "template": false,
+      "disk_dependency_verdict": "DEPENDENCY-CLEAR-stopped-backup-prerequisite",
+      "delete_authorized_or_executed_by_auditor": false,
+      "can_delete_now": false,
+      "conditions": [
+        "No retained or required child reference found in audited metadata.",
+        "Parent-only exactVMID action after approved PVE-only backup/restore-readiness check and fresh dependency recheck."
+      ],
+      "dependent_vmids": [],
+      "retained_dependent_vmids": [],
+      "lvm_origin_children": [],
+      "owned_volids": [
+        "local-lvm:vm-101-cloudinit",
+        "local-lvm:vm-101-disk-0"
+      ],
+      "shared_CDROMs_excluded_from_delete": [],
+      "PVE_real_snapshots": [],
+      "pending_disk_changes": [],
+      "logical_owned_capacity_bytes": 34363932672,
+      "known_dir_file_allocated_bytes": 0,
+      "thin_physical_reclaim_not_exactly_computable_from_perLV_percent": true,
+      "backup_before_delete_recommended": true
+    },
+    {
+      "vmid": 104,
+      "name": "publish",
+      "state": "stopped",
+      "template": false,
+      "disk_dependency_verdict": "DEPENDENCY-CLEAR-stopped-backup-prerequisite",
+      "delete_authorized_or_executed_by_auditor": false,
+      "can_delete_now": false,
+      "conditions": [
+        "No retained or required child reference found in audited metadata.",
+        "Parent-only exactVMID action after approved PVE-only backup/restore-readiness check and fresh dependency recheck."
+      ],
+      "dependent_vmids": [],
+      "retained_dependent_vmids": [],
+      "lvm_origin_children": [],
+      "owned_volids": [
+        "local-lvm:vm-104-cloudinit",
+        "local-lvm:vm-104-disk-0",
+        "store:103/base-103-disk-0.qcow2/104/vm-104-disk-0.qcow2"
+      ],
+      "shared_CDROMs_excluded_from_delete": [],
+      "PVE_real_snapshots": [],
+      "pending_disk_changes": [],
+      "logical_owned_capacity_bytes": 141738115072,
+      "known_dir_file_allocated_bytes": 2564096,
+      "thin_physical_reclaim_not_exactly_computable_from_perLV_percent": true,
+      "backup_before_delete_recommended": true
+    },
+    {
+      "vmid": 102,
+      "name": "data-docker-tpl2",
+      "state": "stopped",
+      "template": true,
+      "disk_dependency_verdict": "DEPENDENCY-CLEAR-stopped-backup-prerequisite",
+      "delete_authorized_or_executed_by_auditor": false,
+      "can_delete_now": false,
+      "conditions": [
+        "No retained or required child reference found in audited metadata.",
+        "Parent-only exactVMID action after approved PVE-only backup/restore-readiness check and fresh dependency recheck."
+      ],
+      "dependent_vmids": [],
+      "retained_dependent_vmids": [],
+      "lvm_origin_children": [],
+      "owned_volids": [
+        "local-lvm:base-102-disk-0",
+        "local-lvm:vm-102-cloudinit"
+      ],
+      "shared_CDROMs_excluded_from_delete": [],
+      "PVE_real_snapshots": [],
+      "pending_disk_changes": [],
+      "logical_owned_capacity_bytes": 34363932672,
+      "known_dir_file_allocated_bytes": 0,
+      "thin_physical_reclaim_not_exactly_computable_from_perLV_percent": true,
+      "backup_before_delete_recommended": true
+    },
+    {
+      "vmid": 103,
+      "name": "publish-base-tpl",
+      "state": "stopped",
+      "template": true,
+      "disk_dependency_verdict": "BLOCKED-until104-retired",
+      "delete_authorized_or_executed_by_auditor": false,
+      "can_delete_now": false,
+      "conditions": [
+        "104100Gqcow2 hard-requires103base; nativePVE parent and qemu header agree.",
+        "Parent-only exactVMID action after approved PVE-only backup/restore-readiness check and fresh dependency recheck."
+      ],
+      "dependent_vmids": [],
+      "retained_dependent_vmids": [],
+      "lvm_origin_children": [
+        "local-lvm:vm-104-disk-0"
+      ],
+      "owned_volids": [
+        "local-lvm:base-103-disk-0",
+        "local-lvm:vm-103-cloudinit",
+        "store:103/base-103-disk-0.qcow2"
+      ],
+      "shared_CDROMs_excluded_from_delete": [],
+      "PVE_real_snapshots": [],
+      "pending_disk_changes": [],
+      "logical_owned_capacity_bytes": 141738115072,
+      "known_dir_file_allocated_bytes": 24158208,
+      "thin_physical_reclaim_not_exactly_computable_from_perLV_percent": true,
+      "backup_before_delete_recommended": true
+    },
+    {
+      "vmid": 105,
+      "name": "java-running-base-tpl",
+      "state": "stopped",
+      "template": true,
+      "disk_dependency_verdict": "DEPENDENCY-CLEAR-stopped-backup-prerequisite",
+      "delete_authorized_or_executed_by_auditor": false,
+      "can_delete_now": false,
+      "conditions": [
+        "No retained or required child reference found in audited metadata.",
+        "Parent-only exactVMID action after approved PVE-only backup/restore-readiness check and fresh dependency recheck."
+      ],
+      "dependent_vmids": [],
+      "retained_dependent_vmids": [],
+      "lvm_origin_children": [],
+      "owned_volids": [
+        "local-lvm:base-105-disk-0",
+        "local-lvm:vm-105-cloudinit"
+      ],
+      "shared_CDROMs_excluded_from_delete": [],
+      "PVE_real_snapshots": [],
+      "pending_disk_changes": [],
+      "logical_owned_capacity_bytes": 42953867264,
+      "known_dir_file_allocated_bytes": 0,
+      "thin_physical_reclaim_not_exactly_computable_from_perLV_percent": true,
+      "backup_before_delete_recommended": true
+    },
+    {
+      "vmid": 106,
+      "name": "windoge-template",
+      "state": "stopped",
+      "template": true,
+      "disk_dependency_verdict": "DEPENDENCY-CLEAR-stopped-backup-prerequisite",
+      "delete_authorized_or_executed_by_auditor": false,
+      "can_delete_now": false,
+      "conditions": [
+        "No retained or required child reference found in audited metadata.",
+        "Parent-only exactVMID action after approved PVE-only backup/restore-readiness check and fresh dependency recheck."
+      ],
+      "dependent_vmids": [],
+      "retained_dependent_vmids": [],
+      "lvm_origin_children": [],
+      "owned_volids": [
+        "local-lvm:base-106-disk-0"
+      ],
+      "shared_CDROMs_excluded_from_delete": [],
+      "PVE_real_snapshots": [],
+      "pending_disk_changes": [],
+      "logical_owned_capacity_bytes": 17179869184,
+      "known_dir_file_allocated_bytes": 0,
+      "thin_physical_reclaim_not_exactly_computable_from_perLV_percent": true,
+      "backup_before_delete_recommended": true
+    },
+    {
+      "vmid": 9000,
+      "name": "dell-template-inspect",
+      "state": "stopped",
+      "template": false,
+      "disk_dependency_verdict": "DEPENDENCY-CLEAR-stopped-backup-prerequisite",
+      "delete_authorized_or_executed_by_auditor": false,
+      "can_delete_now": false,
+      "conditions": [
+        "No retained or required child reference found in audited metadata.",
+        "Parent-only exactVMID action after approved PVE-only backup/restore-readiness check and fresh dependency recheck."
+      ],
+      "dependent_vmids": [],
+      "retained_dependent_vmids": [],
+      "lvm_origin_children": [],
+      "owned_volids": [
+        "local-lvm:vm-9000-cloudinit",
+        "local-lvm:vm-9000-disk-0"
+      ],
+      "shared_CDROMs_excluded_from_delete": [],
+      "PVE_real_snapshots": [],
+      "pending_disk_changes": [],
+      "logical_owned_capacity_bytes": 34363932672,
+      "known_dir_file_allocated_bytes": 0,
+      "thin_physical_reclaim_not_exactly_computable_from_perLV_percent": true,
+      "backup_before_delete_recommended": true
+    },
+    {
+      "vmid": 9002,
+      "name": "dell-linux-clone-test",
+      "state": "stopped",
+      "template": false,
+      "disk_dependency_verdict": "DEPENDENCY-CLEAR-stopped-backup-prerequisite",
+      "delete_authorized_or_executed_by_auditor": false,
+      "can_delete_now": false,
+      "conditions": [
+        "No retained or required child reference found in audited metadata.",
+        "Parent-only exactVMID action after approved PVE-only backup/restore-readiness check and fresh dependency recheck."
+      ],
+      "dependent_vmids": [],
+      "retained_dependent_vmids": [],
+      "lvm_origin_children": [],
+      "owned_volids": [
+        "local-lvm:vm-9002-cloudinit",
+        "local-lvm:vm-9002-disk-0"
+      ],
+      "shared_CDROMs_excluded_from_delete": [],
+      "PVE_real_snapshots": [],
+      "pending_disk_changes": [],
+      "logical_owned_capacity_bytes": 34363932672,
+      "known_dir_file_allocated_bytes": 0,
+      "thin_physical_reclaim_not_exactly_computable_from_perLV_percent": true,
+      "backup_before_delete_recommended": true
+    },
+    {
+      "vmid": 9003,
+      "name": "dell-docker-clone-test",
+      "state": "stopped",
+      "template": false,
+      "disk_dependency_verdict": "DEPENDENCY-CLEAR-stopped-backup-prerequisite",
+      "delete_authorized_or_executed_by_auditor": false,
+      "can_delete_now": false,
+      "conditions": [
+        "No retained or required child reference found in audited metadata.",
+        "Parent-only exactVMID action after approved PVE-only backup/restore-readiness check and fresh dependency recheck."
+      ],
+      "dependent_vmids": [],
+      "retained_dependent_vmids": [],
+      "lvm_origin_children": [],
+      "owned_volids": [
+        "local-lvm:vm-9003-cloudinit",
+        "local-lvm:vm-9003-disk-0"
+      ],
+      "shared_CDROMs_excluded_from_delete": [],
+      "PVE_real_snapshots": [],
+      "pending_disk_changes": [],
+      "logical_owned_capacity_bytes": 34363932672,
+      "known_dir_file_allocated_bytes": 0,
+      "thin_physical_reclaim_not_exactly_computable_from_perLV_percent": true,
+      "backup_before_delete_recommended": true
+    },
+    {
+      "vmid": 9004,
+      "name": "dell-docker-clone-a",
+      "state": "stopped",
+      "template": false,
+      "disk_dependency_verdict": "DEPENDENCY-CLEAR-stopped-backup-prerequisite",
+      "delete_authorized_or_executed_by_auditor": false,
+      "can_delete_now": false,
+      "conditions": [
+        "No retained or required child reference found in audited metadata.",
+        "Parent-only exactVMID action after approved PVE-only backup/restore-readiness check and fresh dependency recheck."
+      ],
+      "dependent_vmids": [],
+      "retained_dependent_vmids": [],
+      "lvm_origin_children": [],
+      "owned_volids": [
+        "local-lvm:vm-9004-cloudinit",
+        "local-lvm:vm-9004-disk-0"
+      ],
+      "shared_CDROMs_excluded_from_delete": [],
+      "PVE_real_snapshots": [],
+      "pending_disk_changes": [],
+      "logical_owned_capacity_bytes": 34363932672,
+      "known_dir_file_allocated_bytes": 0,
+      "thin_physical_reclaim_not_exactly_computable_from_perLV_percent": true,
+      "backup_before_delete_recommended": true
+    },
+    {
+      "vmid": 9005,
+      "name": "dell-linux-clone-b",
+      "state": "stopped",
+      "template": false,
+      "disk_dependency_verdict": "DEPENDENCY-CLEAR-stopped-backup-prerequisite",
+      "delete_authorized_or_executed_by_auditor": false,
+      "can_delete_now": false,
+      "conditions": [
+        "No retained or required child reference found in audited metadata.",
+        "Parent-only exactVMID action after approved PVE-only backup/restore-readiness check and fresh dependency recheck."
+      ],
+      "dependent_vmids": [],
+      "retained_dependent_vmids": [],
+      "lvm_origin_children": [],
+      "owned_volids": [
+        "local-lvm:vm-9005-cloudinit",
+        "local-lvm:vm-9005-disk-0"
+      ],
+      "shared_CDROMs_excluded_from_delete": [],
+      "PVE_real_snapshots": [],
+      "pending_disk_changes": [],
+      "logical_owned_capacity_bytes": 34363932672,
+      "known_dir_file_allocated_bytes": 0,
+      "thin_physical_reclaim_not_exactly_computable_from_perLV_percent": true,
+      "backup_before_delete_recommended": true
+    },
+    {
+      "vmid": 9006,
+      "name": "dell-docker-clone-b",
+      "state": "stopped",
+      "template": false,
+      "disk_dependency_verdict": "DEPENDENCY-CLEAR-stopped-backup-prerequisite",
+      "delete_authorized_or_executed_by_auditor": false,
+      "can_delete_now": false,
+      "conditions": [
+        "No retained or required child reference found in audited metadata.",
+        "Parent-only exactVMID action after approved PVE-only backup/restore-readiness check and fresh dependency recheck."
+      ],
+      "dependent_vmids": [],
+      "retained_dependent_vmids": [],
+      "lvm_origin_children": [],
+      "owned_volids": [
+        "local-lvm:vm-9006-cloudinit",
+        "local-lvm:vm-9006-disk-0"
+      ],
+      "shared_CDROMs_excluded_from_delete": [],
+      "PVE_real_snapshots": [],
+      "pending_disk_changes": [],
+      "logical_owned_capacity_bytes": 34363932672,
+      "known_dir_file_allocated_bytes": 0,
+      "thin_physical_reclaim_not_exactly_computable_from_perLV_percent": true,
+      "backup_before_delete_recommended": true
+    },
+    {
+      "vmid": 9020,
+      "name": "dell-restore-baseline",
+      "state": "stopped",
+      "template": false,
+      "disk_dependency_verdict": "DEPENDENCY-CLEAR-stopped-backup-prerequisite",
+      "delete_authorized_or_executed_by_auditor": false,
+      "can_delete_now": false,
+      "conditions": [
+        "No retained or required child reference found in audited metadata.",
+        "Parent-only exactVMID action after approved PVE-only backup/restore-readiness check and fresh dependency recheck."
+      ],
+      "dependent_vmids": [],
+      "retained_dependent_vmids": [],
+      "lvm_origin_children": [],
+      "owned_volids": [
+        "store:9020/vm-9020-cloudinit.raw",
+        "store:9020/vm-9020-disk-0.raw"
+      ],
+      "shared_CDROMs_excluded_from_delete": [],
+      "PVE_real_snapshots": [],
+      "pending_disk_changes": [],
+      "logical_owned_capacity_bytes": 34363932672,
+      "known_dir_file_allocated_bytes": 1231888384,
+      "thin_physical_reclaim_not_exactly_computable_from_perLV_percent": false,
+      "backup_before_delete_recommended": true
+    },
+    {
+      "vmid": 231,
+      "name": "java-prod-02",
+      "state": "running",
+      "template": false,
+      "disk_dependency_verdict": "CONDITIONAL-pending-user-scope-stop-backup",
+      "delete_authorized_or_executed_by_auditor": false,
+      "can_delete_now": false,
+      "conditions": [
+        "Currentlyrunning; parent waiting for production/testeach1 confirmation.",
+        "Only mount/header metadata reviewed; no claim that guest disk is absolutely empty.",
+        "Parent-only exactVMID action after approved PVE-only backup/restore-readiness check and fresh dependency recheck."
+      ],
+      "dependent_vmids": [],
+      "retained_dependent_vmids": [],
+      "lvm_origin_children": [],
+      "owned_volids": [
+        "store:231/vm-231-cloudinit.qcow2",
+        "store:231/vm-231-disk-0.qcow2"
+      ],
+      "shared_CDROMs_excluded_from_delete": [
+        "store:iso/dell-artifacts-20261106.iso"
+      ],
+      "PVE_real_snapshots": [],
+      "pending_disk_changes": [],
+      "logical_owned_capacity_bytes": 34363932672,
+      "known_dir_file_allocated_bytes": 2537668608,
+      "thin_physical_reclaim_not_exactly_computable_from_perLV_percent": false,
+      "backup_before_delete_recommended": true
+    },
+    {
+      "vmid": 232,
+      "name": "java-prod-03",
+      "state": "running",
+      "template": false,
+      "disk_dependency_verdict": "CONDITIONAL-pending-user-scope-stop-backup",
+      "delete_authorized_or_executed_by_auditor": false,
+      "can_delete_now": false,
+      "conditions": [
+        "Currentlyrunning; parent waiting for production/testeach1 confirmation.",
+        "Only mount/header metadata reviewed; no claim that guest disk is absolutely empty.",
+        "Parent-only exactVMID action after approved PVE-only backup/restore-readiness check and fresh dependency recheck."
+      ],
+      "dependent_vmids": [],
+      "retained_dependent_vmids": [],
+      "lvm_origin_children": [],
+      "owned_volids": [
+        "store:232/vm-232-cloudinit.qcow2",
+        "store:232/vm-232-disk-0.qcow2"
+      ],
+      "shared_CDROMs_excluded_from_delete": [
+        "store:iso/dell-artifacts-20261106.iso"
+      ],
+      "PVE_real_snapshots": [],
+      "pending_disk_changes": [],
+      "logical_owned_capacity_bytes": 34363932672,
+      "known_dir_file_allocated_bytes": 2543833088,
+      "thin_physical_reclaim_not_exactly_computable_from_perLV_percent": false,
+      "backup_before_delete_recommended": true
+    }
+  ],
+  "recommended_parent_order": {
+    "backup_phase": "PVE-only root700 directory/file600; verify all candidate archives before irreversible removal; do not include100/220.",
+    "leaf_wave": [
+      9000,
+      9002,
+      9003,
+      9004,
+      9005,
+      9006,
+      9020,
+      101,
+      104
+    ],
+    "old_template_wave_after_children": [
+      102,
+      103,
+      105,
+      106
+    ],
+    "separate_user_confirmation_gate": [
+      231,
+      232
+    ],
+    "hard_order_pairs": [
+      [
+        104,
+        103
+      ]
+    ],
+    "future_not_in_current_delete_list": [
+      221
+    ],
+    "never_use_manual_glob_delete": true
+  },
+  "capacity": {
+    "storages": [
+      {
+        "storage": "local",
+        "type": "dir",
+        "content": "backup,iso,vztmpl",
+        "active": 1,
+        "enabled": 1,
+        "total": 100861726720,
+        "used": 10951020544,
+        "avail": 84739969024,
+        "shared": 0,
+        "capacity_GiB": {
+          "total": 93.935,
+          "used": 10.199,
+          "avail": 78.92
+        }
+      },
+      {
+        "storage": "local-lvm",
+        "type": "lvmthin",
+        "content": "rootdir,images",
+        "active": 1,
+        "enabled": 1,
+        "total": 342641082368,
+        "used": 66917803386,
+        "avail": 275723278982,
+        "shared": 0,
+        "capacity_GiB": {
+          "total": 319.109,
+          "used": 62.322,
+          "avail": 256.787
+        }
+      },
+      {
+        "storage": "store",
+        "type": "dir",
+        "content": "iso,images,backup,rootdir,snippets,vztmpl",
+        "active": 1,
+        "enabled": 1,
+        "total": 7936199327744,
+        "used": 97946451968,
+        "avail": 7438213636096,
+        "shared": 0,
+        "capacity_GiB": {
+          "total": 7391.162,
+          "used": 91.22,
+          "avail": 6927.376
+        }
+      }
+    ],
+    "candidate_logical_owned_capacity_GiB": 672.055,
+    "candidate_known_directory_allocated_GiB": 5.905,
+    "candidate_thin_pool_exact_reclaim_GiB": null,
+    "why_no_exact_reclaim": "ThinLV data_percent includes shared blocks; inactiveLvs have no percent, and logical provisionedcapacity is not freeablephysicalspace. No thin metadata activation/dump/trim performed.",
+    "PVE_only_backup_destination_proposal": "/mnt/pve/store/dell-cleanup-backups/YYYYMMDDTHHMMSS",
+    "proposed_directory_mode": "0700 root:root",
+    "proposed_archive_and_logs_mode": "0600 root:root",
+    "uncompressed_candidate_logical_upperbound_GiB": 672.055,
+    "archive_created": false
+  },
+  "limitations": [
+    "Disk/header/UUID metadata only; no guest datafile read, and no proof that older or231/232userdisks contain no neededfiles.",
+    "No gueststart/stop/delete/backup, no qcow repair/rebase/convert/resize, no LVM remove/activate/trim, no CFguestexec.",
+    "Some stoppedLVMbase LVdevice paths absent becauseinactive; lvs metadata existence is authoritative, not a missingdisk declaration.",
+    "RootFS UUID is shared across several clones and must not be used asunique VMidentity or deletion ownership.",
+    "Directory qemu-img -U observations can race writes; parent rechecks exactrefs/snapshots/backing immediately before deletion.",
+    "PVE-only backups sharehost faultdomain and are not independent disaster recovery.",
+    "Cleanup software/ACL/scrape/IPregistry/budget updates are parent followup, not performed by audit."
+  ],
+  "user_cleanup_authorization": "Parent reports explicit cleanup authorization; auditor remains read-only, Java each1 details are still parent clarification gate.",
+  "coverage_summary": {
+    "all_objects": 30,
+    "PVE_storage_images": 68,
+    "resolved_volume_refs": 69,
+    "directory_image_headers": 34,
+    "unreferenced_storage_images": 0,
+    "unregistered_dir_image_headers": 0,
+    "actual_PVE_snapshot_count_all_objects": 0,
+    "pending_disk_change_count": 0,
+    "API_failures": 0,
+    "header_failures": 0
+  },
+  "current_running_vmids": [
+    100,
+    190,
+    200,
+    201,
+    210,
+    220,
+    221,
+    230,
+    231,
+    232,
+    240,
+    250,
+    260,
+    270
+  ],
+  "current_running_candidate_vmids": [
+    231,
+    232
+  ],
+  "existing_backups_verified_this_audit": false
+}

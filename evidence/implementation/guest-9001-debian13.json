@@ -1,0 +1,14 @@
+{
+  "exit_code": 0,
+  "stdout": "ub\nlocalhost\n{\n  \"boot_status_code\": \"enabled-by-generator\",\n  \"datasource\": \"nocloud\",\n  \"detail\": \"DataSourceNoCloud [seed=/dev/sr0]\",\n  \"errors\": [],\n  \"extended_status\": \"done\",\n  \"init\": {\n    \"errors\": [],\n    \"finished\": 12.2,\n    \"recoverable_errors\": {},\n    \"start\": 11.35\n  },\n  \"init-local\": {\n    \"errors\": [],\n    \"finished\": 7.61,\n    \"recoverable_errors\": {},\n    \"start\": 6.38\n  },\n  \"last_update\": \"Thu, 01 Jan 1970 00:00:38 +0000\",\n  \"modules-config\": {\n    \"errors\": [],\n    \"finished\": 13.02,\n    \"recoverable_errors\": {},\n    \"start\": 12.53\n  },\n  \"modules-final\": {\n    \"errors\": [],\n    \"finished\": 38.21,\n    \"recoverable_errors\": {},\n    \"start\": 13.09\n  },\n  \"recoverable_errors\": {},\n  \"stage\": null,\n  \"status\": \"done\"\n}\nactive\nNTPSynchronized=yes\n",
+  "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+  "target": {
+    "vmid": 9001,
+    "ip": "192.168.21.165",
+    "host_key_alias": "dell-vm9001",
+    "host_key_fingerprint": "SHA256:ZdYtFbrzXaNAFnMuQjsfL8fN4JvbPur6/01qfGnAc80",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "collected_at": "2026-11-06T00:11:39.335301+08:00",
+  "mode": "read-only"
+}

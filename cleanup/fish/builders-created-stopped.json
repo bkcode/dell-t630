@@ -1,0 +1,26 @@
+[
+  {
+    "vmid": 9040,
+    "source_template": 9010,
+    "name": "fish-build-linux",
+    "IP": "192.168.19.197",
+    "net0": "virtio=BC:24:11:8F:30:C7,bridge=vmbr19,firewall=0",
+    "state": "stopped-await-L2-registry"
+  },
+  {
+    "vmid": 9041,
+    "source_template": 9001,
+    "name": "fish-build-docker",
+    "IP": "192.168.19.198",
+    "net0": "virtio=BC:24:11:A6:72:55,bridge=vmbr19,firewall=0",
+    "state": "stopped-await-L2-registry"
+  },
+  {
+    "vmid": 9042,
+    "source_template": 9011,
+    "name": "fish-build-java",
+    "IP": "192.168.19.199",
+    "net0": "virtio=BC:24:11:DB:14:EC,bridge=vmbr19,firewall=0",
+    "state": "stopped-await-L2-registry"
+  }
+]

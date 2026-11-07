@@ -1,0 +1,33 @@
+{
+  "id": "ACC-DOCKER-001",
+  "status": "passed",
+  "executed_at": "2026-11-06T14:47:31.064488+08:00",
+  "timezone": "Asia/Shanghai",
+  "operator": "root-task-manager",
+  "plan_sha256": "2090547eae7c1562a4a20814fefdd90b033137d4549f0aff079763ad4e4ec902",
+  "preconditions_checked": true,
+  "target": {
+    "host": "192.168.21.22",
+    "environment": "managed-PVE-implementation",
+    "vmid": null
+  },
+  "commands_or_steps": [
+    "See linked execution artifact and operator observations"
+  ],
+  "exit_codes": [
+    0
+  ],
+  "observations": [
+    "最终7Docker来宾的26生产容器均running/healthy/linux-amd64，26不可变引用（官方digest/自建精确image ID），PIDs明确与整改一致",
+    "CPU/内存cap及local10m×3日志、持久挂载UUID/无Mac或docker.sock/非privileged已复扫；各角色内存预算与plan一致",
+    "Penpot由oneshot补notify持续监督+11真实探针，精确frontend故障自动恢复/guest boot；各栈挂载/停止门禁与资源持久已验"
+  ],
+  "artifacts": [
+    "evidence/implementation/container-runtime-post-remediation-audit.json"
+  ],
+  "limitations": [
+    "CPU cap是共享上限不是预留，210=2.5/2vCPU、250=12.5/6vCPU不等于并发能力；生产负载SLO未测；独立NAS QA明确排除"
+  ],
+  "reviewed_by": "root-task-manager",
+  "plan_snapshot": "evidence/plans/plan-2090547eae7c1562.json"
+}

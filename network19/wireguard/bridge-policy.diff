@@ -1,0 +1,10 @@
+--- 
++++ 
+@@ -83,6 +83,7 @@
+     ip saddr 192.168.21.0/24 ip daddr 192.168.19.40 tcp dport 9999 counter accept comment "manager-WAN-to-LAN-4"
+     ip saddr 192.168.21.0/24 ip daddr 192.168.19.70 tcp dport 3000 counter accept comment "manager-WAN-to-LAN-5"
+     ip saddr { 192.168.21.22, 192.168.21.116 } ip daddr 192.168.19.0/24 tcp dport { 22, 3306, 5672, 6379, 8848, 9090, 9093, 9100, 9848, 9849, 15672 } counter accept comment "manager-WAN-to-LAN-6"
++    ip saddr 10.66.66.0/24 ip daddr 192.168.19.50 tcp dport 9001 counter accept comment "WireGuard-Penpot-only"
+     counter drop comment "gateway-ingress-denied"
+   }
+   chain from_guest {

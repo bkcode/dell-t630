@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-06T14:47:31.096544",
+  "status": "selected-new-environment-container-recreation-persistence-verified",
+  "sources": [
+    "evidence/implementation/data-deployment-acceptance.json",
+    "evidence/implementation/test-data-deployment.json",
+    "evidence/implementation/rolling-guest-reboot-acceptance.json",
+    "infra/nexus/rebuild-acceptance-result.json",
+    "infra/penpot/runtime/health-supervision/evidence/frontend-fault-recovery-proof.json",
+    "infra/penpot/runtime/health-supervision/evidence/post-reboot-snapshot-comparison.json",
+    "evidence/implementation/lark-notify-rebuild-ops-network.json",
+    "evidence/implementation/container-runtime-post-remediation-audit.json"
+  ],
+  "scope": "approved new target app data/fixtures, explicit recreated IDs and preserved volume/data hashes; source Mac preserved",
+  "limitations": [
+    "Controlled fixture/recreation success does not prove independent physical-host disaster recovery",
+    "No real financial/Broker/notification business workload was run; prod business data empty",
+    "NAS real media volume was not unmounted or deleted"
+  ]
+}

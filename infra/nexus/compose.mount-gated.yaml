@@ -1,0 +1,5 @@
+services:
+  nexus:
+    restart: 'no'
+  gateway:
+    restart: 'no'

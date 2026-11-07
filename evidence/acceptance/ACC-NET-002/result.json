@@ -1,0 +1,33 @@
+{
+  "id": "ACC-NET-002",
+  "status": "passed",
+  "executed_at": "2026-11-06T11:12:58.597236+08:00",
+  "timezone": "Asia/Shanghai",
+  "operator": "root-task-manager",
+  "plan_sha256": "c5c487985880b9ed9f191221ef8c553116cd8d8c04e6564edccefb2b947eef26",
+  "preconditions_checked": true,
+  "target": {
+    "host": "192.168.21.22",
+    "environment": "managed-PVE-implementation",
+    "vmid": null
+  },
+  "commands_or_steps": [
+    "See linked execution artifact and operator observations"
+  ],
+  "exit_codes": [
+    0
+  ],
+  "observations": [
+    "有效nft/四桥/IPv4转发及管理入口已核对；私网受管接口IPv6禁用且跨区IPv6拒绝",
+    "数据端口矩阵30项：10允许、20拒绝，先确认目标监听；拒绝伴随drop计数增加",
+    "测试Java到测试数据五端口成功，测试到正式五端口拒绝；正式Java到正式数据五端口成功；Ops到12台9100均HTTP200"
+  ],
+  "artifacts": [
+    "evidence/implementation/network-independent-verification.json"
+  ],
+  "limitations": [
+    "共享drop计数不能替代逐流抓包；仅覆盖登记的路径和采集时点"
+  ],
+  "reviewed_by": "root-task-manager",
+  "plan_snapshot": "evidence/plans/plan-c5c487985880b9ed.json"
+}

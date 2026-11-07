@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "at": "2026-11-06T05:48:27.846238+00:00",
+  "transport": "native curl -q --noproxy *",
+  "checks": {
+    "frontend": {
+      "HTTP_status": "200",
+      "curl_exit_code": 0,
+      "bytes": 283404,
+      "sha256": "a03e85c4ba82536333a67951dde6b9fc5aded497d918ff3d3c48b7eaf799793e",
+      "HTTP_body_emitted": false,
+      "same_SHA_as_Git_deployment_acceptance": true
+    },
+    "git_login_helper": {
+      "HTTP_status": "200",
+      "curl_exit_code": 0,
+      "bytes": 2474,
+      "sha256": "feb3ff7542b366c5d0670272a7e12d108debcaf79b9184340668f875dc30d162",
+      "HTTP_body_emitted": false,
+      "same_SHA_as_Git_deployment_acceptance": true
+    },
+    "git_sidebar": {
+      "HTTP_status": "200",
+      "curl_exit_code": 0,
+      "bytes": 215,
+      "sha256": "5c1c8342295982507e3a273d1b54ad3d05555bf57099c1a8ad33823806e82953",
+      "HTTP_body_emitted": false,
+      "same_SHA_as_Git_deployment_acceptance": true
+    },
+    "browser_defaults": {
+      "HTTP_status": "200",
+      "curl_exit_code": 0,
+      "bytes": 27,
+      "sha256": "267d12ab4d1b3931ee181730d77cc711d5acf0856f360da5acbe8bf85a578334",
+      "HTTP_body_emitted": false,
+      "same_SHA_as_Git_deployment_acceptance": true,
+      "password_empty": true
+    },
+    "backend_ready": {
+      "HTTP_status": "200",
+      "curl_exit_code": 0,
+      "bytes": 2,
+      "sha256": "565339bc4d33d72817b583024112eb7f5cdf3e5eef0252d6ec1b9c9a94e12bb3",
+      "HTTP_body_emitted": false,
+      "body_exact_OK": true
+    }
+  },
+  "source_Mac_runtime_read_or_changed": false,
+  "credentials_used": false
+}

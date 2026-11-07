@@ -1,0 +1,15 @@
+{
+  "vmid": 230,
+  "nonce": "b1033ced3323436e92af9bf20e6638a7",
+  "health_or_collector_written": false,
+  "business_or_exporter_restart": false,
+  "Nexus_lifecycle_package_or_credentials_touched": false,
+  "checks": {
+    "private_IP_ExecCondition_passed": true,
+    "collector_read_access_passed": true,
+    "collector_did_not_write_metrics": true
+  },
+  "status": "committed-ten-role-pair",
+  "exporter_PID_start_state_unchanged": true,
+  "timer_activation_unchanged": true
+}

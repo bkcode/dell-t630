@@ -1,0 +1,12 @@
+{
+  "exit_code": 0,
+  "stdout": "{\"role\": 260, \"status\": \"NAS-OS-network-stage-completed\", \"secret_values_or_hashes_emitted\": false}\n",
+  "stderr": "",
+  "target": {
+    "vmid": 260,
+    "ip": "10.63.40.10",
+    "host_key_alias": "dell-vm260",
+    "host_key_fingerprint": "SHA256:jYNEYlwXnr4412nGU/Dg616AhDW8eZz3UDIxn4pP7c0",
+    "trust_source": "PVE QGA over known SSH host"
+  }
+}

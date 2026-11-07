@@ -1,0 +1,10 @@
+{
+  "collected_at": "2026-11-06T04:05:57.300363+00:00",
+  "vmid": 200,
+  "component": "nacos",
+  "exit_code": 0,
+  "stdout": "{\"status\": \"preflight-passed\", \"metadata\": {\"vmid\": 200, \"component\": \"nacos\", \"input_bytes\": 3300, \"input_hash_matches\": true, \"image\": \"mysql:8.4.5@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840\", \"platform\": \"linux/amd64\", \"free_bytes\": 83714441216, \"mem_available_bytes\": 14933118976, \"live_container_count\": 1, \"table_count\": 12, \"table_row_counts\": {\"config_info\": 0, \"config_info_aggr\": 0, \"config_info_beta\": 0, \"config_info_tag\": 0, \"config_tags_relation\": 0, \"group_capacity\": 0, \"his_config_info\": 4, \"permissions\": 1, \"roles\": 2, \"tenant_capacity\": 0, \"tenant_info\": 1, \"users\": 2}, \"full_row_normalization_supported\": true}, \"snapshot_content_exported\": false}\n",
+  "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+  "snapshot_content_exported": false,
+  "CF_accessed": false
+}

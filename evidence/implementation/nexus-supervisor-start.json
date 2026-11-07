@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-06T11:22:05.890482",
+  "result": {
+    "exit_code": 0,
+    "stdout": "Type=simple\nMainPID=4538\nNRestarts=0\nActiveState=active\nSubState=running\n",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+    "target": {
+      "vmid": 221,
+      "ip": "10.63.30.20",
+      "host_key_alias": "dell-vm221",
+      "host_key_fingerprint": "SHA256:ky2Wn7M2CKgUqHaj65c4KnqphO6d3zh6sGEoYYzomWo",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  },
+  "eula": "pending-user-authorization-no-acceptance-request-sent"
+}

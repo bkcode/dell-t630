@@ -1,0 +1,7 @@
+{
+  "name": "nas-media",
+  "os": "linux",
+  "arch": "x86_64",
+  "driver": "overlayfs",
+  "root_dir": "/var/lib/docker"
+}

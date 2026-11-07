@@ -1,0 +1,75 @@
+{
+  "recorded_at": "2026-11-06T10:28:56.381308+08:00",
+  "source": "user explicit question replies",
+  "network": {
+    "approved": true,
+    "user_reply": "明确授权上述宿主网络变更",
+    "bridges": [
+      "10.63.10.0/24",
+      "10.63.20.0/24",
+      "10.63.30.0/24",
+      "10.63.40.0/24"
+    ],
+    "lan_ports": [
+      9001,
+      8081,
+      9080,
+      445,
+      8096,
+      9999,
+      19999
+    ],
+    "management_unchanged": [
+      "192.168.21.22:22",
+      "192.168.21.22:8006"
+    ]
+  },
+  "cf_backup_export": {
+    "approved": false,
+    "user_reply": "CF 备份仅保留在 PVE 本机"
+  },
+  "production_data": {
+    "mode": "empty",
+    "user_reply": "正式环境先建空库；本机数据仅用于测试迁移"
+  },
+  "public_domain_and_backup": {
+    "user_reply": "暂时没有",
+    "delivery": "LAN first; provisional independent backups under this Mac dell/private/backups; availability limitations recorded"
+  },
+  "penpot_nexus_migration": {
+    "recorded_at": "2026-11-06T11:07:06.662281",
+    "user_answer": "使用 git 拉取项目(因为改造过)，数据通过导出导入的方式进行迁移",
+    "execution": "preserve modified Git source; application export/import; target generates new independent deployment and account secrets; source retained"
+  },
+  "production_java_delivery": {
+    "recorded_at": "2026-11-06T11:59:29.534956",
+    "user_answer": "本次只交付正式集群运行环境，业务应用先在测试环境验收",
+    "scope": "production three-node JDK/runtime base only; five selected business services validate in test; no production business apps started"
+  },
+  "nexus_eula": {
+    "recorded_at": "2026-11-06T12:15:21.223277",
+    "target": "VM221 fresh Nexus3.84.0-03",
+    "user_answer": "我已阅读并同意该 EULA，授权在新实例接受",
+    "terms_url": "https://links.sonatype.com/products/nxrm/ce-eula",
+    "authorized": true
+  },
+  "restricted_publisher_transport": {
+    "recorded_at": "2026-11-06T12:27:47.961273",
+    "user_answer": "明确授权上述220→240受限发布链安装与测试演练",
+    "source": "informed exact SSH/deployer/forcedcommand/NOPASSWD/LoadCredential/deploy-rollback risk question",
+    "scope": "only VM220→testVM240; preserve ub management; no production business deployment",
+    "authorized": true
+  },
+  "notifications": {
+    "recorded_at": "2026-11-06T13:10:49.691796",
+    "user_answer": "可以配置lark通知（提供的Webhook按秘密保存，不复制到证据）",
+    "channel": "lark-custom-bot",
+    "secret_file": "private/notifications/lark-webhook",
+    "authorized": "configure alert notifications and controlled firing/resolved acceptance messages",
+    "external_probe_scope": {
+      "recorded_at": "2026-11-06T14:05:19.711314",
+      "user_answer": "本期仅服务器内部 Lark，Mac 外部探针保持停用",
+      "action": "Mac live/diagnostic jobs absent, installed plist absent; no further local-network permission request or gateway fault exercise this phase"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "ACC-NET-001",
+  "status": "passed",
+  "executed_at": "2026-11-06T12:47:57.439043+08:00",
+  "timezone": "Asia/Shanghai",
+  "operator": "root-task-manager",
+  "plan_sha256": "4da2b208f17e14d048b86b5453abae58a829b0989a90f09a8ff54e8334318380",
+  "preconditions_checked": true,
+  "target": {
+    "host": "192.168.21.22",
+    "environment": "managed-PVE-implementation",
+    "vmid": null
+  },
+  "commands_or_steps": [
+    "See linked execution artifact and operator observations"
+  ],
+  "exit_codes": [
+    0
+  ],
+  "observations": [
+    "四新私网与12角色地址/MAC在plan及PVE配置/私网SSH证据登记，桥为本次创建不使用LAN DHCP；PVE.22与旧发布.23明确分离",
+    "测试Nacos客户端在目标namespace/DELL_TEST观察到五服务healthy/enabled，IP10.63.20.20和全部实际端口匹配，业务发现/Feign链已成功",
+    "测试节点官方Debian域名解析及严格CA/hostname校验TLS1.3出网通过；Nacos9848和数据/跨区正反矩阵另有实际证据"
+  ],
+  "artifacts": [
+    "evidence/implementation/java-test-discovery-dns.json"
+  ],
+  "limitations": [
+    "本期正式无业务实例注册符合用户运行基础交付范围；不包含未配置公网域名/HTTPS"
+  ],
+  "reviewed_by": "root-task-manager",
+  "plan_snapshot": "evidence/plans/plan-4da2b208f17e14d0.json"
+}

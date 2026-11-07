@@ -1,0 +1,36 @@
+--- before/install-guest-baseline.py
++++ after/install-guest-baseline.py
+@@ -91,7 +91,7 @@
+     row=next(x for x in catalog['roles'] if x['role']==role)
+     if row['hostname']!=role:raise RuntimeError('catalog hostname mismatch')
+     ip=ipaddress.IPv4Address(row['private_ip'])
+-    if ip not in ipaddress.ip_network('10.63.0.0/16') or row['prefixlen']!=24:raise RuntimeError('invalid assigned private subnet')
++    if ip not in ipaddress.ip_network('192.168.19.0/24') or row['prefixlen']!=24:raise RuntimeError('invalid assigned private subnet')
+     return row
+ 
+ def guest_gate(role,require_root=True):
+@@ -113,7 +113,7 @@
+ 
+ def require_private_ip(row):
+     p=command(['ip','-j','address','show'],'read local addresses',timeout=10)
+-    if not private_address_present(row,json.loads(p.stdout)):raise RuntimeError('assigned 10.63 private IP is not configured on an UP guest interface')
++    if not private_address_present(row,json.loads(p.stdout)):raise RuntimeError('assigned network19 private IP is not configured on an UP guest interface')
+ 
+ def listeners(output,port=9100):
+     return sorted({token for line in output.splitlines() for token in line.split() if ':' in token and token.rsplit(':',1)[-1]==str(port)})
+@@ -150,7 +150,6 @@
+       'data-prod-infra':['dell-data-prod-infra.service'],
+       'data-test':['dell-data-test-data.service'],
+       'artifact-service':['dell-nexus.service'],
+-      'java-test-01':['dell-finger-'+name+'.service' for name in names],
+       'penpot-service':['dell-penpot.service'],
+       'nas-media':['openmediavault-engined.service','nginx.service','smbd.service','dell-nas-jellyfin.service'],
+       'ops-service':['dell-ops.service','dell-lark-notify.service']}
+@@ -158,7 +157,6 @@
+       'data-prod-infra':[(8848,'/nacos/v1/console/health/readiness','nacos-readiness')],
+       'data-test':[(8848,'/nacos/v1/console/health/readiness','nacos-readiness')],
+       'artifact-service':[(8081,'/service/rest/v1/status','nexus-status')],
+-      'java-test-01':[(port,'/actuator/health',name+'-health') for port,name in zip([10210,10202,10000,10104,9999],names)],
+       'penpot-service':[(9001,'/','penpot-frontend')],
+       'nas-media':[(80,'/','omv-web'),(8096,'/health','jellyfin-health')],
+       'ops-service':[(9090,'/-/ready','prometheus-readiness'),(9093,'/-/ready','alertmanager-readiness'),(3000,'/api/health','grafana-health')]}

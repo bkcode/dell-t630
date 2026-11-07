@@ -1,0 +1,33 @@
+{
+  "id": "ACC-ART-001",
+  "status": "passed",
+  "executed_at": "2026-11-06T13:24:12.762787+08:00",
+  "timezone": "Asia/Shanghai",
+  "operator": "root-task-manager",
+  "plan_sha256": "4da2b208f17e14d048b86b5453abae58a829b0989a90f09a8ff54e8334318380",
+  "preconditions_checked": true,
+  "target": {
+    "host": "192.168.21.22",
+    "environment": "managed-PVE-implementation",
+    "vmid": null
+  },
+  "commands_or_steps": [
+    "See linked execution artifact and operator observations"
+  ],
+  "exit_codes": [
+    0
+  ],
+  "observations": [
+    "新独立Nexus已按用户授权接受EULA；49GAV/234主制品SHA迁入，35元数据原生再生/1076校验有效，幂等重试无新增",
+    "220专库发布、runtime230以finger和只读身份下载SHA通过，运行机未接收发布凭据；测试发布身份正式仓库PUT403，legacy写删403",
+    "仅Nexus/gateway重建并guest221重启后数据UUID/新身份/组角色/EULA保持，合成311B JAR与234主制品再次SHA一致"
+  ],
+  "artifacts": [
+    "infra/nexus/rebuild-acceptance-result.json"
+  ],
+  "limitations": [
+    "3项动态latest/release按存量版本再生与源不同已记录；固定版本主文件未变；未开放旧proxy公网认证"
+  ],
+  "reviewed_by": "root-task-manager",
+  "plan_snapshot": "evidence/plans/plan-4da2b208f17e14d0.json"
+}

@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-06T10:57:09.009806+08:00",
+  "url": "http://localhost:13000/api/health",
+  "scope": "Mac-loopback-SSH-tunnel-to-private-Grafana",
+  "database": "ok",
+  "version": "13.3.0",
+  "status": "passed"
+}

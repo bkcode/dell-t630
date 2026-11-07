@@ -1,0 +1,45 @@
+{
+  "version": "2.18.5",
+  "source_postgres_version": "15.19",
+  "platform": "linux/amd64",
+  "verified_at": "2026-11-05T23:42:05.788617+08:00",
+  "method": "docker image inspect source RepoDigests + docker buildx imagetools inspect --raw",
+  "images": {
+    "frontend": {
+      "source_index": "penpotapp/frontend@sha256:9bc0c288985d2d18a2c3e7b849d8edda317e1bfd99ec6dd494e5bfdcfe411f06",
+      "target": "penpotapp/frontend@sha256:d5bec7ab86328a2bce02b331291eab5833dcb56e403428ad07ccd6740be73735"
+    },
+    "backend": {
+      "source_index": "penpotapp/backend@sha256:20d2325ec8e00f4be5f65e543d5618b585598facff404cf06446e91b5ead9036",
+      "target": "penpotapp/backend@sha256:3d3d1eeb5a488efd31ec22038374eb6b52dccc21532047c2e508a18193f3e71f"
+    },
+    "exporter": {
+      "source_index": "penpotapp/exporter@sha256:8c341d6d40f234d33e4272f87c6f53fdde839546e4c758872cebf175bddb8c71",
+      "target": "penpotapp/exporter@sha256:48b66f774d338f0ed25d58c6d42f9f107a99170f67bf75ce76361d3dc9e6e27b"
+    },
+    "admin-console": {
+      "source_index": "penpotapp/admin-console@sha256:5935b5adbf33eb7abaabfab657fe8f5d465cac08e62e340f932ddb35ce0f311f",
+      "target": "penpotapp/admin-console@sha256:679bada92344ad5ebd1ee68b5067d63592383a050e3e5da63d106b259e1b0ac9"
+    },
+    "mcp": {
+      "source_index": "penpotapp/mcp@sha256:61fc7b2b727593670159966998fb197b2d282330ec7dbffc09a3e6374e0ce39d",
+      "target": "penpotapp/mcp@sha256:6b39db0ca73d0a50a8afa264676d8ab9f455e87d426cff276d31b2a84a0447c5"
+    },
+    "postgres": {
+      "source_index": "postgres@sha256:40e8c839f86c404f9bd1c456bb83f11b205f2cd95d753b34c2d074e89ecee786",
+      "target": "postgres@sha256:7da5d534f1ffcdb2f69efa6e466a7a29ff89eefd611c7b50c4d69aa77fd4a822"
+    },
+    "valkey": {
+      "source_index": "valkey/valkey@sha256:8f836008e0986c36adf50da714c7060cf689dbb335f61fe077939d90fa650809",
+      "target": "valkey/valkey@sha256:757b7e559b14512bcc252949b13b717385d9381ed42e6b325982d03f4a5c8e8e"
+    },
+    "dns": {
+      "source_index": "adguard/dnsproxy@sha256:4d65bafbf246b206a1af35d4263a86c35451d957458c7836304199f1cd2c1535",
+      "target": "adguard/dnsproxy@sha256:29a27f0a695fa0ae97c56e61343bb7fb820b555e7069b87562a0d5b6fabaea6f"
+    },
+    "mailpit": {
+      "source_index": "axllent/mailpit@sha256:9b3a463be15354c0f0eba91697d80e3e0d8a5623ef0e627cacc836bc17fd5231",
+      "target": "axllent/mailpit@sha256:18156f9ee243aa339170ac33d09d6d5a80b10d9e06b265f90f223a777a8f4b73"
+    }
+  }
+}

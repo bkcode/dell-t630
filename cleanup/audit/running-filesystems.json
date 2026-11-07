@@ -1,0 +1,294 @@
+{
+  "captured_at": "2026-11-06T17:10:57.077202+00:00",
+  "scope": "running-QEMU filesystem mount/UUID metadata only",
+  "rows": [
+    {
+      "vmid": 190,
+      "host_exit": 0,
+      "guest_exit": 0,
+      "metadata": {
+        "hostname": "network-gateway",
+        "findmnt_exit": 0,
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4"
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 200,
+      "host_exit": 0,
+      "guest_exit": 0,
+      "metadata": {
+        "hostname": "data-prod-db",
+        "findmnt_exit": 0,
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sdb1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "children": [
+              {
+                "target": "/srv/dell-data",
+                "source": "/dev/sda",
+                "uuid": "d61c0e22-941e-447a-9e9a-1e9e50deb02f",
+                "fstype": "ext4"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 201,
+      "host_exit": 0,
+      "guest_exit": 0,
+      "metadata": {
+        "hostname": "data-prod-infra",
+        "findmnt_exit": 0,
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "children": [
+              {
+                "target": "/srv/dell-data",
+                "source": "/dev/sdb",
+                "uuid": "b85156c2-dac8-4b33-ab25-460aaf676c57",
+                "fstype": "ext4"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 210,
+      "host_exit": 0,
+      "guest_exit": 0,
+      "metadata": {
+        "hostname": "data-test",
+        "findmnt_exit": 0,
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "children": [
+              {
+                "target": "/srv/dell-data",
+                "source": "/dev/sdb",
+                "uuid": "dd1773f9-aa48-4401-a9c8-caf0f66845f3",
+                "fstype": "ext4"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 220,
+      "host_exit": 0,
+      "guest_exit": 0,
+      "metadata": {
+        "hostname": "publish-service",
+        "findmnt_exit": 0,
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "children": [
+              {
+                "target": "/srv/dell-build",
+                "source": "/dev/sdb",
+                "uuid": "16dc6067-56ef-4687-a314-edc6421f9ed4",
+                "fstype": "ext4"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 221,
+      "host_exit": 0,
+      "guest_exit": 0,
+      "metadata": {
+        "hostname": "artifact-service",
+        "findmnt_exit": 0,
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "children": [
+              {
+                "target": "/srv/nexus",
+                "source": "/dev/sdb",
+                "uuid": "239dc45a-b1f3-408b-a8ef-7afa77b52204",
+                "fstype": "ext4"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 230,
+      "host_exit": 0,
+      "guest_exit": 0,
+      "metadata": {
+        "hostname": "java-prod-01",
+        "findmnt_exit": 0,
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4"
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 231,
+      "host_exit": 0,
+      "guest_exit": 0,
+      "metadata": {
+        "hostname": "java-prod-02",
+        "findmnt_exit": 0,
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4"
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 232,
+      "host_exit": 0,
+      "guest_exit": 0,
+      "metadata": {
+        "hostname": "java-prod-03",
+        "findmnt_exit": 0,
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4"
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 240,
+      "host_exit": 0,
+      "guest_exit": 0,
+      "metadata": {
+        "hostname": "java-test-01",
+        "findmnt_exit": 0,
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4"
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 250,
+      "host_exit": 0,
+      "guest_exit": 0,
+      "metadata": {
+        "hostname": "penpot-service",
+        "findmnt_exit": 0,
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "children": [
+              {
+                "target": "/srv/penpot",
+                "source": "/dev/sdb",
+                "uuid": "ccccda03-bffd-4054-afd3-e0e22f0c607e",
+                "fstype": "ext4"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 260,
+      "host_exit": 0,
+      "guest_exit": 0,
+      "metadata": {
+        "hostname": "nas-media",
+        "findmnt_exit": 0,
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "children": [
+              {
+                "target": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a",
+                "source": "/dev/sdb1",
+                "uuid": "5b19837c-128c-498a-b79d-563db810c34a",
+                "fstype": "ext4"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "vmid": 270,
+      "host_exit": 0,
+      "guest_exit": 0,
+      "metadata": {
+        "hostname": "ops-service",
+        "findmnt_exit": 0,
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+            "fstype": "ext4",
+            "children": [
+              {
+                "target": "/srv/dell-data",
+                "source": "/dev/sdb",
+                "uuid": "01b1f302-27be-4fbd-b4af-b8e782d85dea",
+                "fstype": "ext4"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "CF100_not_execed": true,
+  "stopped_guests_not_started": true,
+  "guest_data_files_read": false
+}

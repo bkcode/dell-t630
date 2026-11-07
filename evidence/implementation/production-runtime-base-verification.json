@@ -1,0 +1,92 @@
+{
+  "at": "2026-11-06T12:06:01.705846",
+  "status": "three-production-JDK-bases-verified-nonroot-font-runtime",
+  "scope": "runtime only per user; no production business applications started",
+  "results": [
+    {
+      "vmid": 230,
+      "role": "java-prod-01",
+      "runtime_result": {
+        "exit_code": 0,
+        "stdout": "{\"java_version\":\"21.0.13\",\"architecture\":\"amd64\",\"user\":\"finger\",\"headless_font_and_PNG\":true,\"PNG_sha256\":\"32c5271257d543fd3a92b72fa5c71a692fc375bb93fb52d02e9dab60d58a7ac1\",\"business_application_started\":false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 230,
+          "ip": "10.63.10.20",
+          "host_key_alias": "dell-vm230",
+          "host_key_fingerprint": "SHA256:SsWkQtSVu/3sssyrmVMb13r8r9/zQhWeEH3ZQ/CzCDM",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "OS_health": {
+        "exit_code": 0,
+        "stdout": "java-prod-01\nNTPSynchronized=yes\nrunning\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 230,
+          "ip": "10.63.10.20",
+          "host_key_alias": "dell-vm230",
+          "host_key_fingerprint": "SHA256:SsWkQtSVu/3sssyrmVMb13r8r9/zQhWeEH3ZQ/CzCDM",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      }
+    },
+    {
+      "vmid": 231,
+      "role": "java-prod-02",
+      "runtime_result": {
+        "exit_code": 0,
+        "stdout": "{\"java_version\":\"21.0.13\",\"architecture\":\"amd64\",\"user\":\"finger\",\"headless_font_and_PNG\":true,\"PNG_sha256\":\"32c5271257d543fd3a92b72fa5c71a692fc375bb93fb52d02e9dab60d58a7ac1\",\"business_application_started\":false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 231,
+          "ip": "10.63.10.21",
+          "host_key_alias": "dell-vm231",
+          "host_key_fingerprint": "SHA256:F4FTk8hT14QASJ/nWmjUBtxP4h9dthfE8/8MOdnmLUQ",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "OS_health": {
+        "exit_code": 0,
+        "stdout": "java-prod-02\nNTPSynchronized=yes\nrunning\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 231,
+          "ip": "10.63.10.21",
+          "host_key_alias": "dell-vm231",
+          "host_key_fingerprint": "SHA256:F4FTk8hT14QASJ/nWmjUBtxP4h9dthfE8/8MOdnmLUQ",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      }
+    },
+    {
+      "vmid": 232,
+      "role": "java-prod-03",
+      "runtime_result": {
+        "exit_code": 0,
+        "stdout": "{\"java_version\":\"21.0.13\",\"architecture\":\"amd64\",\"user\":\"finger\",\"headless_font_and_PNG\":true,\"PNG_sha256\":\"32c5271257d543fd3a92b72fa5c71a692fc375bb93fb52d02e9dab60d58a7ac1\",\"business_application_started\":false}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 232,
+          "ip": "10.63.10.22",
+          "host_key_alias": "dell-vm232",
+          "host_key_fingerprint": "SHA256:hp5JQlxhH7LG5ItvhzzLzHGbky5d+dghbTNsEfdNabo",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      },
+      "OS_health": {
+        "exit_code": 0,
+        "stdout": "java-prod-03\nNTPSynchronized=yes\nrunning\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 232,
+          "ip": "10.63.10.22",
+          "host_key_alias": "dell-vm232",
+          "host_key_fingerprint": "SHA256:hp5JQlxhH7LG5ItvhzzLzHGbky5d+dghbTNsEfdNabo",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      }
+    }
+  ],
+  "package_evidence": "jdk-harfbuzz-base-completion.json"
+}

@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "checks": {
+    "worker_import_idle": true,
+    "original_three_file_stats_revn_and_full_data_hash_unchanged": true,
+    "all_973_current_media_paths_and_bytes_unchanged": true,
+    "all_original_971_media_SHA_present": true,
+    "new_identity_and_assignment_file_hashes_unchanged": true,
+    "Git_same_clean_ff1783e": true,
+    "old_base_unit_bytes_unchanged": true,
+    "all_11_running_healthy": true,
+    "boot_id_changed": true
+  },
+  "source_original_media": 971,
+  "current_media_baseline": 973,
+  "media_files_after": 973,
+  "original_designs": 3,
+  "design_writes": 0,
+  "secret_values_emitted": false
+}

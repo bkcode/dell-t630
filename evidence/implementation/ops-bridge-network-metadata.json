@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-06T13:10:49.690274",
+  "result": [
+    {
+      "name": "dell-ops_default",
+      "internal": false,
+      "ipam": [
+        {
+          "Subnet": "172.18.0.0/16",
+          "Gateway": "172.18.0.1"
+        }
+      ],
+      "containers": [
+        {
+          "name": "dell-ops-blackbox-1",
+          "IPv4": "172.18.0.4/16"
+        },
+        {
+          "name": "dell-ops-prometheus-1",
+          "IPv4": "172.18.0.2/16"
+        },
+        {
+          "name": "dell-ops-grafana-1",
+          "IPv4": "172.18.0.5/16"
+        },
+        {
+          "name": "dell-ops-alertmanager-1",
+          "IPv4": "172.18.0.3/16"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "status": "optional-read-only-probe-no-scheduler-installed",
+  "endpoints": [
+    {
+      "name": "pve-ssh-port",
+      "url": "tcp://192.168.21.22:22",
+      "enabled": true,
+      "scope": "TCP-port-only"
+    },
+    {
+      "name": "pve-ui-port",
+      "url": "tcp://192.168.21.22:8006",
+      "enabled": true,
+      "scope": "TCP-port-only"
+    },
+    {
+      "name": "ops-grafana-candidate",
+      "url": "http://10.63.30.40:3000/api/health",
+      "enabled": false,
+      "scope": "requires-approved-routing-or-explicit-SSH-forward"
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "at": "2026-11-06T11:37:46.718730",
+  "status": "assigned-VM-start-stop-order-applied-no-reboot",
+  "scope": "12 new assigned VMs only; no reboot or existing guest/template changes",
+  "roles": [
+    {
+      "vmid": 200,
+      "before": {
+        "name": "data-prod-db",
+        "onboot": "0"
+      },
+      "after": {
+        "name": "data-prod-db",
+        "onboot": "1",
+        "startup": "order=10,up=60,down=120"
+      }
+    },
+    {
+      "vmid": 201,
+      "before": {
+        "name": "data-prod-infra",
+        "onboot": "0"
+      },
+      "after": {
+        "name": "data-prod-infra",
+        "onboot": "1",
+        "startup": "order=11,up=90,down=120"
+      }
+    },
+    {
+      "vmid": 210,
+      "before": {
+        "name": "data-test",
+        "onboot": "0"
+      },
+      "after": {
+        "name": "data-test",
+        "onboot": "1",
+        "startup": "order=12,up=90,down=120"
+      }
+    },
+    {
+      "vmid": 270,
+      "before": {
+        "name": "ops-service",
+        "onboot": "0"
+      },
+      "after": {
+        "name": "ops-service",
+        "onboot": "1",
+        "startup": "order=20,up=30,down=60"
+      }
+    },
+    {
+      "vmid": 221,
+      "before": {
+        "name": "artifact-service",
+        "onboot": "0"
+      },
+      "after": {
+        "name": "artifact-service",
+        "onboot": "1",
+        "startup": "order=21,up=90,down=180"
+      }
+    },
+    {
+      "vmid": 250,
+      "before": {
+        "name": "penpot-service",
+        "onboot": "0"
+      },
+      "after": {
+        "name": "penpot-service",
+        "onboot": "1",
+        "startup": "order=22,up=90,down=180"
+      }
+    },
+    {
+      "vmid": 220,
+      "before": {
+        "name": "publish-service",
+        "onboot": "0"
+      },
+      "after": {
+        "name": "publish-service",
+        "onboot": "1",
+        "startup": "order=30,up=15,down=60"
+      }
+    },
+    {
+      "vmid": 230,
+      "before": {
+        "name": "java-prod-01",
+        "onboot": "0"
+      },
+      "after": {
+        "name": "java-prod-01",
+        "onboot": "1",
+        "startup": "order=40,up=15,down=120"
+      }
+    },
+    {
+      "vmid": 231,
+      "before": {
+        "name": "java-prod-02",
+        "onboot": "0"
+      },
+      "after": {
+        "name": "java-prod-02",
+        "onboot": "1",
+        "startup": "order=41,up=15,down=120"
+      }
+    },
+    {
+      "vmid": 232,
+      "before": {
+        "name": "java-prod-03",
+        "onboot": "0"
+      },
+      "after": {
+        "name": "java-prod-03",
+        "onboot": "1",
+        "startup": "order=42,up=15,down=120"
+      }
+    },
+    {
+      "vmid": 240,
+      "before": {
+        "name": "java-test-01",
+        "onboot": "0"
+      },
+      "after": {
+        "name": "java-test-01",
+        "onboot": "1",
+        "startup": "order=43,up=30,down=180"
+      }
+    },
+    {
+      "vmid": 260,
+      "before": {
+        "name": "nas-media",
+        "onboot": "0"
+      },
+      "after": {
+        "name": "nas-media",
+        "onboot": "1",
+        "startup": "order=50,up=30,down=120"
+      }
+    }
+  ],
+  "limitations": [
+    "Startup delays are sequencing only; whole-host reboot and application recovery not yet tested"
+  ]
+}

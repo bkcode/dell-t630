@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-07T02:00:56.808575+08:00",
+  "status": "prepared-native10-not-applied",
+  "future_target_count": 15,
+  "Nexus221_running_monitor_preserved": true,
+  "only231232_removed": true,
+  "fixed12or10CAS_and_retained9_full_successor_checked": true,
+  "full_manifest_unchanged": true,
+  "270files_or_services_not_changed": true,
+  "Nexus_stop_authorization_pending_not_bypassed": true
+}

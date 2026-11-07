@@ -1,0 +1,489 @@
+{
+  "schema_version": 1,
+  "collected_at": "2026-11-05T23:35:58.739385+08:00",
+  "timezone": "Asia/Shanghai",
+  "host": "192.168.21.22",
+  "mode": "read-only",
+  "checks": [
+    {
+      "id": "management-tool-paths",
+      "command": "shutil.which known utilities",
+      "status": "command-succeeded",
+      "paths": {
+        "ipmitool": null,
+        "racadm": null,
+        "idracadm7": null,
+        "perccli": null,
+        "perccli64": null,
+        "storcli": null,
+        "storcli64": null,
+        "MegaCli": null,
+        "MegaCli64": null,
+        "omreport": null,
+        "smartctl": "/usr/sbin/smartctl",
+        "dmidecode": "/usr/sbin/dmidecode",
+        "lspci": "/usr/bin/lspci",
+        "ip": "/usr/sbin/ip",
+        "bridge": "/usr/sbin/bridge",
+        "nft": "/usr/sbin/nft",
+        "iptables": "/usr/sbin/iptables"
+      }
+    },
+    {
+      "id": "packages",
+      "command": "dpkg-query -W -f=${Package} ${Version}\n",
+      "exit_code": 0,
+      "stdout": "",
+      "status": "command-succeeded"
+    },
+    {
+      "id": "kernel-ipmi-raid",
+      "command": "bash -c lsmod | rg -i \"ipmi|megaraid\"",
+      "exit_code": 127,
+      "stdout": "bash: line 1: rg: command not found",
+      "status": "command-failed"
+    },
+    {
+      "id": "devices",
+      "command": "bash -c ls -ld /dev/ipmi* /dev/megaraid_sas_ioctl_node /proc/driver/megaraid_sas /sys/class/scsi_host/host* 2>/dev/null",
+      "exit_code": 2,
+      "stdout": "crw------- 1 root root 240, 0 Nov  5 20:50 /dev/ipmi0\ncrw------- 1 root root 242, 0 Nov  5 20:50 /dev/megaraid_sas_ioctl_node\nlrwxrwxrwx 1 root root      0 Nov  5 20:50 /sys/class/scsi_host/host0 -> ../../devices/pci0000:00/0000:00:01.0/0000:03:00.0/host0/scsi_host/host0\nlrwxrwxrwx 1 root root      0 Nov  5 20:50 /sys/class/scsi_host/host1 -> ../../devices/pci0000:00/0000:00:11.4/ata1/host1/scsi_host/host1\nlrwxrwxrwx 1 root root      0 Nov  5 20:50 /sys/class/scsi_host/host10 -> ../../devices/pci0000:00/0000:00:1f.2/ata10/host10/scsi_host/host10\nlrwxrwxrwx 1 root root      0 Nov  5 20:50 /sys/class/scsi_host/host2 -> ../../devices/pci0000:00/0000:00:11.4/ata2/host2/scsi_host/host2\nlrwxrwxrwx 1 root root      0 Nov  5 20:50 /sys/class/scsi_host/host3 -> ../../devices/pci0000:00/0000:00:11.4/ata3/host3/scsi_host/host3\nlrwxrwxrwx 1 root root      0 Nov  5 20:50 /sys/class/scsi_host/host4 -> ../../devices/pci0000:00/0000:00:11.4/ata4/host4/scsi_host/host4\nlrwxrwxrwx 1 root root      0 Nov  5 20:50 /sys/class/scsi_host/host5 -> ../../devices/pci0000:00/0000:00:1f.2/ata5/host5/scsi_host/host5\nlrwxrwxrwx 1 root root      0 Nov  5 20:50 /sys/class/scsi_host/host6 -> ../../devices/pci0000:00/0000:00:1f.2/ata6/host6/scsi_host/host6\nlrwxrwxrwx 1 root root      0 Nov  5 20:50 /sys/class/scsi_host/host7 -> ../../devices/pci0000:00/0000:00:1f.2/ata7/host7/scsi_host/host7\nlrwxrwxrwx 1 root root      0 Nov  5 20:50 /sys/class/scsi_host/host8 -> ../../devices/pci0000:00/0000:00:1f.2/ata8/host8/scsi_host/host8\nlrwxrwxrwx 1 root root      0 Nov  5 20:50 /sys/class/scsi_host/host9 -> ../../devices/pci0000:00/0000:00:1f.2/ata9/host9/scsi_host/host9",
+      "status": "command-failed"
+    },
+    {
+      "id": "pci-storage",
+      "command": "bash -c lspci -nn | rg -i \"RAID|SAS|SATA|Ethernet\"",
+      "exit_code": 127,
+      "stdout": "bash: line 1: rg: command not found",
+      "status": "command-failed"
+    },
+    {
+      "id": "ip4-links",
+      "command": "ip -br addr",
+      "exit_code": 0,
+      "stdout": "lo               UNKNOWN        127.0.0.1/8 ::1/128 \neno1             UP             \neno2             DOWN           \nvmbr0            UP             192.168.21.22/24 fe80::46a8:42ff:fe38:c11b/64 \nveth100i0@if2    UP             \nfwbr100i0        UP             \nfwpr100p0@fwln100i0 UP             \nfwln100i0@fwpr100p0 UP             ",
+      "status": "command-succeeded"
+    },
+    {
+      "id": "routes",
+      "command": "ip route",
+      "exit_code": 0,
+      "stdout": "default via 192.168.21.1 dev vmbr0 proto kernel onlink \n192.168.21.0/24 dev vmbr0 proto kernel scope link src 192.168.21.22 ",
+      "status": "command-succeeded"
+    },
+    {
+      "id": "routes6",
+      "command": "ip -6 route",
+      "exit_code": 0,
+      "stdout": "fe80::/64 dev vmbr0 proto kernel metric 256 pref medium\ndefault via fe80::ced8:43ff:fec5:416e dev vmbr0 metric 1024 pref medium",
+      "status": "command-succeeded"
+    },
+    {
+      "id": "neighbors",
+      "command": "ip neigh show",
+      "exit_code": 0,
+      "stdout": "192.168.21.116 dev vmbr0 lladdr ea:dd:85:78:d9:b5 DELAY \n192.168.21.164 dev vmbr0 lladdr d2:2f:8f:c2:04:78 DELAY \n192.168.21.1 dev vmbr0 lladdr cc:d8:43:c5:41:6e REACHABLE \nfe80::be24:11ff:fe42:4c1 dev vmbr0 lladdr bc:24:11:42:04:c1 STALE \nfe80::ced8:43ff:fec5:416e dev vmbr0 lladdr cc:d8:43:c5:41:6e router STALE ",
+      "status": "command-succeeded"
+    },
+    {
+      "id": "bridges",
+      "command": "bridge link show",
+      "exit_code": 0,
+      "stdout": "2: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master vmbr0 state forwarding priority 32 cost 5 \n5: veth100i0@eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master fwbr100i0 state forwarding priority 32 cost 2 \n7: fwpr100p0@fwln100i0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master vmbr0 state forwarding priority 32 cost 2 \n8: fwln100i0@fwpr100p0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master fwbr100i0 state forwarding priority 32 cost 2 ",
+      "status": "command-succeeded"
+    },
+    {
+      "id": "bridge-vlans",
+      "command": "bridge vlan show",
+      "exit_code": 0,
+      "stdout": "port              vlan-id  \neno1              1 PVID Egress Untagged\nvmbr0             1 PVID Egress Untagged\nveth100i0         1 PVID Egress Untagged\nfwbr100i0         1 PVID Egress Untagged\nfwpr100p0         1 PVID Egress Untagged\nfwln100i0         1 PVID Egress Untagged",
+      "status": "command-succeeded"
+    },
+    {
+      "id": "forwarding",
+      "command": "sysctl net.ipv4.ip_forward net.ipv6.conf.all.forwarding",
+      "exit_code": 0,
+      "stdout": "net.ipv4.ip_forward = 0\nnet.ipv6.conf.all.forwarding = 0",
+      "status": "command-succeeded"
+    },
+    {
+      "id": "gateway-ping",
+      "command": "ping -c 2 -W 1 192.168.21.1",
+      "exit_code": 0,
+      "stdout": "PING 192.168.21.1 (192.168.21.1) 56(84) bytes of data.\n64 bytes from 192.168.21.1: icmp_seq=1 ttl=64 time=0.223 ms\n64 bytes from 192.168.21.1: icmp_seq=2 ttl=64 time=0.212 ms\n\n--- 192.168.21.1 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1046ms\nrtt min/avg/max/mdev = 0.212/0.217/0.223/0.005 ms",
+      "status": "command-succeeded"
+    },
+    {
+      "id": "firewall",
+      "command": "pve-firewall status",
+      "exit_code": 0,
+      "stdout": "Status: disabled/running",
+      "status": "command-succeeded"
+    },
+    {
+      "id": "cluster-vms",
+      "command": "pvesh get /cluster/resources --type vm --output-format json",
+      "exit_code": 0,
+      "stdout": "[{\"cpu\":0.00228134928167726,\"disk\":742592512,\"diskread\":523194368,\"diskwrite\":5537792,\"id\":\"lxc/100\",\"maxcpu\":1,\"maxdisk\":4143677440,\"maxmem\":536870912,\"mem\":35840000,\"name\":\"cf-tunnel\",\"netin\":5671659,\"netout\":3073461,\"node\":\"pve\",\"status\":\"running\",\"template\":0,\"type\":\"lxc\",\"uptime\":9872,\"vmid\":100},{\"cpu\":0,\"disk\":0,\"diskread\":0,\"diskwrite\":0,\"id\":\"qemu/101\",\"maxcpu\":4,\"maxdisk\":34359738368,\"maxmem\":8589934592,\"mem\":0,\"name\":\"data-docker-base-tpl\",\"netin\":0,\"netout\":0,\"node\":\"pve\",\"status\":\"stopped\",\"template\":0,\"type\":\"qemu\",\"uptime\":0,\"vmid\":101},{\"cpu\":0,\"disk\":0,\"diskread\":0,\"diskwrite\":0,\"id\":\"qemu/102\",\"maxcpu\":4,\"maxdisk\":34359738368,\"maxmem\":8589934592,\"mem\":0,\"name\":\"data-docker-tpl2\",\"netin\":0,\"netout\":0,\"node\":\"pve\",\"status\":\"stopped\",\"template\":1,\"type\":\"qemu\",\"uptime\":0,\"vmid\":102},{\"cpu\":0,\"disk\":0,\"diskread\":0,\"diskwrite\":0,\"id\":\"qemu/103\",\"maxcpu\":4,\"maxdisk\":34359738368,\"maxmem\":8589934592,\"mem\":0,\"name\":\"publish-base-tpl\",\"netin\":0,\"netout\":0,\"node\":\"pve\",\"status\":\"stopped\",\"template\":1,\"type\":\"qemu\",\"uptime\":0,\"vmid\":103},{\"cpu\":0,\"disk\":0,\"diskread\":0,\"diskwrite\":0,\"id\":\"qemu/104\",\"maxcpu\":4,\"maxdisk\":34359738368,\"maxmem\":8589934592,\"mem\":0,\"name\":\"publish\",\"netin\":0,\"netout\":0,\"node\":\"pve\",\"status\":\"stopped\",\"template\":0,\"type\":\"qemu\",\"uptime\":0,\"vmid\":104},{\"cpu\":0,\"disk\":0,\"diskread\":0,\"diskwrite\":0,\"id\":\"qemu/105\",\"maxcpu\":8,\"maxdisk\":42949672960,\"maxmem\":17179869184,\"mem\":0,\"name\":\"java-running-base-tpl\",\"netin\":0,\"netout\":0,\"node\":\"pve\",\"status\":\"stopped\",\"template\":1,\"type\":\"qemu\",\"uptime\":0,\"vmid\":105},{\"cpu\":0,\"disk\":0,\"diskread\":0,\"diskwrite\":0,\"id\":\"qemu/106\",\"maxcpu\":2,\"maxdisk\":17179869184,\"maxmem\":4294967296,\"mem\":0,\"name\":\"windoge-template\",\"netin\":0,\"netout\":0,\"node\":\"pve\",\"status\":\"stopped\",\"template\":1,\"type\":\"qemu\",\"uptime\":0,\"vmid\":106}]",
+      "status": "command-succeeded"
+    },
+    {
+      "id": "read-interfaces",
+      "command": "cat /etc/network/interfaces",
+      "exit_code": 0,
+      "stdout": "auto lo\niface lo inet loopback\n\niface eno1 inet manual\n\nauto vmbr0\niface vmbr0 inet static\n\taddress 192.168.21.22/24\n\tgateway 192.168.21.1\n\tbridge-ports eno1\n\tbridge-stp off\n\tbridge-fd 0\n\niface eno2 inet manual\n\n\niface vmbr0 inet6 auto\n    post-up ip -6 route add default via fe80::ced8:43ff:fec5:416e dev vmbr0\n    pre-down ip -6 route del default via fe80::ced8:43ff:fec5:416e dev vmbr0\n\nsource /etc/network/interfaces.d/*",
+      "status": "command-succeeded"
+    },
+    {
+      "id": "read-route",
+      "command": "cat /proc/net/route",
+      "exit_code": 0,
+      "stdout": "Iface\tDestination\tGateway \tFlags\tRefCnt\tUse\tMetric\tMask\t\tMTU\tWindow\tIRTT                                                       \nvmbr0\t00000000\t0115A8C0\t0003\t0\t0\t0\t00000000\t0\t0\t0                                                                              \nvmbr0\t0015A8C0\t00000000\t0001\t0\t0\t0\t00FFFFFF\t0\t0\t0                                                                              ",
+      "status": "command-succeeded"
+    },
+    {
+      "id": "list-/sys/class/scsi_host",
+      "command": "directory inventory /sys/class/scsi_host",
+      "status": "command-succeeded",
+      "entries": [
+        {
+          "path": "/sys/class/scsi_host/host0",
+          "is_directory": true,
+          "is_symlink": true
+        },
+        {
+          "path": "/sys/class/scsi_host/host1",
+          "is_directory": true,
+          "is_symlink": true
+        },
+        {
+          "path": "/sys/class/scsi_host/host10",
+          "is_directory": true,
+          "is_symlink": true
+        },
+        {
+          "path": "/sys/class/scsi_host/host2",
+          "is_directory": true,
+          "is_symlink": true
+        },
+        {
+          "path": "/sys/class/scsi_host/host3",
+          "is_directory": true,
+          "is_symlink": true
+        },
+        {
+          "path": "/sys/class/scsi_host/host4",
+          "is_directory": true,
+          "is_symlink": true
+        },
+        {
+          "path": "/sys/class/scsi_host/host5",
+          "is_directory": true,
+          "is_symlink": true
+        },
+        {
+          "path": "/sys/class/scsi_host/host6",
+          "is_directory": true,
+          "is_symlink": true
+        },
+        {
+          "path": "/sys/class/scsi_host/host7",
+          "is_directory": true,
+          "is_symlink": true
+        },
+        {
+          "path": "/sys/class/scsi_host/host8",
+          "is_directory": true,
+          "is_symlink": true
+        },
+        {
+          "path": "/sys/class/scsi_host/host9",
+          "is_directory": true,
+          "is_symlink": true
+        }
+      ]
+    },
+    {
+      "id": "list-/sys/class/enclosure",
+      "command": "directory inventory /sys/class/enclosure",
+      "status": "command-succeeded",
+      "entries": []
+    },
+    {
+      "id": "list-/proc/driver/megaraid_sas",
+      "command": "directory inventory /proc/driver/megaraid_sas",
+      "status": "command-succeeded",
+      "entries": []
+    },
+    {
+      "id": "list-/opt",
+      "command": "directory inventory /opt",
+      "status": "command-succeeded",
+      "entries": []
+    },
+    {
+      "id": "list-/opt/dell",
+      "command": "directory inventory /opt/dell",
+      "status": "command-succeeded",
+      "entries": []
+    },
+    {
+      "id": "list-/opt/MegaRAID",
+      "command": "directory inventory /opt/MegaRAID",
+      "status": "command-succeeded",
+      "entries": []
+    },
+    {
+      "id": "list-/usr/local/sbin",
+      "command": "directory inventory /usr/local/sbin",
+      "status": "command-succeeded",
+      "entries": []
+    },
+    {
+      "id": "list-/etc/pve/sdn",
+      "command": "directory inventory /etc/pve/sdn",
+      "status": "command-succeeded",
+      "entries": [
+        {
+          "path": "/etc/pve/sdn/fabrics",
+          "is_directory": true,
+          "is_symlink": false
+        }
+      ]
+    },
+    {
+      "id": "list-/etc/network/interfaces.d",
+      "command": "directory inventory /etc/network/interfaces.d",
+      "status": "command-succeeded",
+      "entries": []
+    },
+    {
+      "id": "sysfs-host0",
+      "command": "read known host attributes",
+      "status": "command-succeeded",
+      "attributes": {
+        "proc_name": "megaraid_sas",
+        "state": "running",
+        "unique_id": "768",
+        "host_busy": "0",
+        "can_queue": "916"
+      }
+    },
+    {
+      "id": "sysfs-host1",
+      "command": "read known host attributes",
+      "status": "command-succeeded",
+      "attributes": {
+        "proc_name": "ahci",
+        "state": "running",
+        "unique_id": "1",
+        "host_busy": "0",
+        "can_queue": "32"
+      }
+    },
+    {
+      "id": "sysfs-host10",
+      "command": "read known host attributes",
+      "status": "command-succeeded",
+      "attributes": {
+        "proc_name": "ahci",
+        "state": "running",
+        "unique_id": "10",
+        "host_busy": "0",
+        "can_queue": "32"
+      }
+    },
+    {
+      "id": "sysfs-host2",
+      "command": "read known host attributes",
+      "status": "command-succeeded",
+      "attributes": {
+        "proc_name": "ahci",
+        "state": "running",
+        "unique_id": "2",
+        "host_busy": "0",
+        "can_queue": "32"
+      }
+    },
+    {
+      "id": "sysfs-host3",
+      "command": "read known host attributes",
+      "status": "command-succeeded",
+      "attributes": {
+        "proc_name": "ahci",
+        "state": "running",
+        "unique_id": "3",
+        "host_busy": "0",
+        "can_queue": "32"
+      }
+    },
+    {
+      "id": "sysfs-host4",
+      "command": "read known host attributes",
+      "status": "command-succeeded",
+      "attributes": {
+        "proc_name": "ahci",
+        "state": "running",
+        "unique_id": "4",
+        "host_busy": "0",
+        "can_queue": "32"
+      }
+    },
+    {
+      "id": "sysfs-host5",
+      "command": "read known host attributes",
+      "status": "command-succeeded",
+      "attributes": {
+        "proc_name": "ahci",
+        "state": "running",
+        "unique_id": "5",
+        "host_busy": "0",
+        "can_queue": "32"
+      }
+    },
+    {
+      "id": "sysfs-host6",
+      "command": "read known host attributes",
+      "status": "command-succeeded",
+      "attributes": {
+        "proc_name": "ahci",
+        "state": "running",
+        "unique_id": "6",
+        "host_busy": "0",
+        "can_queue": "32"
+      }
+    },
+    {
+      "id": "sysfs-host7",
+      "command": "read known host attributes",
+      "status": "command-succeeded",
+      "attributes": {
+        "proc_name": "ahci",
+        "state": "running",
+        "unique_id": "7",
+        "host_busy": "0",
+        "can_queue": "32"
+      }
+    },
+    {
+      "id": "sysfs-host8",
+      "command": "read known host attributes",
+      "status": "command-succeeded",
+      "attributes": {
+        "proc_name": "ahci",
+        "state": "running",
+        "unique_id": "8",
+        "host_busy": "0",
+        "can_queue": "32"
+      }
+    },
+    {
+      "id": "sysfs-host9",
+      "command": "read known host attributes",
+      "status": "command-succeeded",
+      "attributes": {
+        "proc_name": "ahci",
+        "state": "running",
+        "unique_id": "9",
+        "host_busy": "0",
+        "can_queue": "32"
+      }
+    },
+    {
+      "id": "kernel-ipmi-raid-fallback",
+      "command": "lsmod",
+      "status": "command-succeeded",
+      "exit_code": 0,
+      "stdout": "ipmi_ssif              45056  0\nipmi_si                86016  0\nacpi_ipmi              20480  1 acpi_power_meter\nipmi_devintf           16384  0\nipmi_msghandler        81920  4 ipmi_devintf,ipmi_si,acpi_ipmi,ipmi_ssif\nmegaraid_sas          192512  6"
+    },
+    {
+      "id": "pci-storage-fallback",
+      "command": "lspci -nn",
+      "status": "command-succeeded",
+      "exit_code": 0,
+      "stdout": "00:11.4 SATA controller [0106]: Intel Corporation C610/X99 series chipset sSATA Controller [AHCI mode] [8086:8d62] (rev 05)\n00:1f.2 SATA controller [0106]: Intel Corporation C610/X99 series chipset 6-Port SATA Controller [AHCI mode] [8086:8d02] (rev 05)\n01:00.0 Ethernet controller [0200]: Intel Corporation I350 Gigabit Network Connection [8086:1521] (rev 01)\n01:00.1 Ethernet controller [0200]: Intel Corporation I350 Gigabit Network Connection [8086:1521] (rev 01)\n03:00.0 RAID bus controller [0104]: Broadcom / LSI MegaRAID SAS-3 3108 [Invader] [1000:005d] (rev 02)\n06:00.0 PCI bridge [0604]: Renesas Technology Corp. SH7758 PCIe Switch [PS] [1912:001d]\n07:00.0 PCI bridge [0604]: Renesas Technology Corp. SH7758 PCIe Switch [PS] [1912:001d]\n08:00.0 PCI bridge [0604]: Renesas Technology Corp. SH7758 PCIe-PCI Bridge [PPB] [1912:001a]"
+    },
+    {
+      "id": "nft-ruleset",
+      "command": "nft list ruleset",
+      "status": "command-succeeded",
+      "exit_code": 0,
+      "stdout": ""
+    },
+    {
+      "id": "iptables-rules",
+      "command": "iptables-save",
+      "status": "command-succeeded",
+      "exit_code": 0,
+      "stdout": "# Generated by iptables-save v1.8.9 on Thu Nov  5 23:36:33 2026\n*raw\n:PREROUTING ACCEPT [57032:19119999]\n:OUTPUT ACCEPT [46796:20707104]\nCOMMIT\n# Completed on Thu Nov  5 23:36:33 2026\n# Generated by iptables-save v1.8.9 on Thu Nov  5 23:36:33 2026\n*filter\n:INPUT ACCEPT [43541:14429290]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [46796:20707104]\nCOMMIT\n# Completed on Thu Nov  5 23:36:33 2026"
+    },
+    {
+      "id": "ip6tables-rules",
+      "command": "ip6tables-save",
+      "status": "command-succeeded",
+      "exit_code": 0,
+      "stdout": "# Generated by ip6tables-save v1.8.9 on Thu Nov  5 23:36:33 2026\n*raw\n:PREROUTING ACCEPT [2714:822171]\n:OUTPUT ACCEPT [7:808]\nCOMMIT\n# Completed on Thu Nov  5 23:36:33 2026\n# Generated by ip6tables-save v1.8.9 on Thu Nov  5 23:36:33 2026\n*filter\n:INPUT ACCEPT [25:3896]\n:FORWARD ACCEPT [0:0]\n:OUTPUT ACCEPT [7:808]\nCOMMIT\n# Completed on Thu Nov  5 23:36:33 2026"
+    },
+    {
+      "id": "bmc-sysfs",
+      "command": "read known IPMI sysfs attributes",
+      "status": "command-succeeded",
+      "values": {}
+    },
+    {
+      "id": "kernel-controller-messages",
+      "command": "dmesg",
+      "status": "command-succeeded",
+      "exit_code": 0,
+      "stdout": "[    0.372810] setup_percpu: NR_CPUS:8192 nr_cpumask_bits:56 nr_cpu_ids:56 nr_node_ids:2\n[    0.378601] percpu: Embedded 86 pages/cpu s229376 r8192 d114688 u524288\n[    0.905254] Dentry cache hash table entries: 8388608 (order: 14, 67108864 bytes, vmalloc hugepage)\n[    0.914218] Inode-cache hash table entries: 4194304 (order: 13, 33554432 bytes, vmalloc hugepage)\n[    0.914571] Mount-cache hash table entries: 131072 (order: 8, 1048576 bytes, vmalloc)\n[    0.914866] Mountpoint-cache hash table entries: 131072 (order: 8, 1048576 bytes, vmalloc)\n[    1.278972] PCI: pci_cache_line_size set to 64 bytes\n[    1.282451] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)\n[    2.115835] megaraid_sas 0000:03:00.0: BAR:0x1  BAR's base_addr(phys):0x0000000091e00000  mapped virt_addr:0x00000000dfc34058\n[    2.115841] megaraid_sas 0000:03:00.0: FW now in Ready state\n[    2.115843] megaraid_sas 0000:03:00.0: 63 bit DMA mask and 32 bit consistent mask\n[    2.116630] megaraid_sas 0000:03:00.0: firmware supports msix\t: (96)\n[    2.117894] megaraid_sas 0000:03:00.0: requested/available msix 57/57 poll_queue 0\n[    2.117907] megaraid_sas 0000:03:00.0: current msix/online cpus\t: (57/56)\n[    2.117909] megaraid_sas 0000:03:00.0: RDPQ mode\t: (disabled)\n[    2.117912] megaraid_sas 0000:03:00.0: Current firmware supports maximum commands: 928\t LDIO threshold: 0\n[    2.121486] megaraid_sas 0000:03:00.0: Performance mode :Latency (latency index = 1)\n[    2.121490] megaraid_sas 0000:03:00.0: FW supports sync cache\t: No\n[    2.121493] megaraid_sas 0000:03:00.0: megasas_disable_intr_fusion is called outbound_intr_mask:0x40000009\n[    2.167241] megaraid_sas 0000:03:00.0: FW provided supportMaxExtLDs: 1\tmax_lds: 64\n[    2.167245] megaraid_sas 0000:03:00.0: controller type\t: MR(1024MB)\n[    2.167247] megaraid_sas 0000:03:00.0: Online Controller Reset(OCR)\t: Enabled\n[    2.167249] megaraid_sas 0000:03:00.0: Secure JBOD support\t: No\n[    2.167250] megaraid_sas 0000:03:00.0: NVMe passthru support\t: No\n[    2.167252] megaraid_sas 0000:03:00.0: FW provided TM TaskAbort/Reset timeout\t: 0 secs/0 secs\n[    2.167254] megaraid_sas 0000:03:00.0: JBOD sequence map support\t: No\n[    2.167255] megaraid_sas 0000:03:00.0: PCI Lane Margining support\t: No\n[    2.197458] megaraid_sas 0000:03:00.0: megasas_enable_intr_fusion is called outbound_intr_mask:0x40000000\n[    2.197462] megaraid_sas 0000:03:00.0: INIT adapter done\n[    2.197463] megaraid_sas 0000:03:00.0: JBOD sequence map is disabled megasas_setup_jbod_map 5796\n[    2.204974] megaraid_sas 0000:03:00.0: pci id\t\t: (0x1000)/(0x005d)/(0x1028)/(0x1f43)\n[    2.204978] megaraid_sas 0000:03:00.0: unevenspan support\t: yes\n[    2.204979] megaraid_sas 0000:03:00.0: firmware crash dump\t: no\n[    2.204980] megaraid_sas 0000:03:00.0: JBOD sequence map\t: disabled\n[    2.205143] megaraid_sas 0000:03:00.0: Max firmware commands: 927 shared with default hw_queues = 56 poll_queues 0\n[    2.205145] scsi host0: Avago SAS based MegaRAID driver\n[    2.236502] scsi 0:2:0:0: Direct-Access     DELL     PERC H730 Adp    4.27 PQ: 0 ANSI: 5\n[    2.236891] scsi 0:2:1:0: Direct-Access     DELL     PERC H730 Adp    4.27 PQ: 0 ANSI: 5\n[    2.273617] sd 0:2:0:0: [sda] Write cache: disabled, read cache: enabled, doesn't support DPO or FUA\n[    2.273688] sd 0:2:1:0: [sdb] Write cache: disabled, read cache: enabled, doesn't support DPO or FUA\n[    5.636233] raid6: avx2x4   gen() 29509 MB/s\n[    5.653233] raid6: avx2x2   gen() 30574 MB/s\n[    5.670233] raid6: avx2x1   gen() 27071 MB/s\n[    5.670234] raid6: using algorithm avx2x2 gen() 30574 MB/s\n[    5.687232] raid6: .... xor() 17998 MB/s, rmw enabled\n[    5.687233] raid6: using avx2x2 recovery algorithm\n[    7.144908] IPMI message handler: version 39.2\n[    7.150623] ipmi device interface\n[    7.157801] ipmi_si: IPMI System Interface driver\n[    7.157832] ipmi_si dmi-ipmi-si.0: ipmi_platform: probing via SMBIOS\n[    7.157836] ipmi_platform: ipmi_si: SMBIOS: io 0xca8 regsize 1 spacing 4 irq 10\n[    7.157843] ipmi_si: Adding SMBIOS-specified kcs state machine\n[    7.157963] ipmi_si: Trying SMBIOS-specified kcs state machine at i/o address 0xca8, slave address 0x20, irq 10\n[    7.266278] ipmi_si dmi-ipmi-si.0: The BMC does not support setting the recv irq bit, compensating, but the BMC needs to be fixed.\n[    7.282417] ipmi_si dmi-ipmi-si.0: Using irq 10\n[    7.303890] ipmi_si dmi-ipmi-si.0: IPMI message handler: Found new BMC (man_id: 0x0002a2, prod_id: 0x0100, dev_id: 0x20)\n[    7.325334] ipmi_si dmi-ipmi-si.0: IPMI kcs interface initialized\n[    7.336667] ipmi_ssif: IPMI SSIF Interface driver\n[    9.205287] power_meter ACPI000D:00: Waiting for ACPI IPMI timeout\n[    9.205517] ACPI Error: AE_NOT_EXIST, Returned by Handler for [IPMI] (20230628/evregion-301)\n[    9.205523] ACPI Error: Region IPMI (ID=7) has no handler (20230628/exfldio-261)"
+    }
+  ],
+  "supplemental_collected_at": "2026-11-05T23:36:33.241201+08:00",
+  "scope": {
+    "host_mutations_performed": false,
+    "installed_packages": false,
+    "loaded_modules": false,
+    "changed_routes_firewall_or_storage": false,
+    "lan_scan_performed": false,
+    "network_probe_targets": [
+      "192.168.21.1"
+    ],
+    "credential_values_collected": false
+  },
+  "summary": {
+    "raid_acceptance": "pending-controller-readout",
+    "cloning_readiness": "no-read-only-evidence-of-current-host-failure; manager may proceed with isolated clones while RAID gate remains pending",
+    "formal_data_readiness": "not-accepted-until-RAID-members-health-cache-protection-evidence",
+    "gateway": "192.168.21.1 reachable; ICMP 2/2, no packet loss",
+    "isolated_bridge_reuse": "none found; only vmbr0 and CT100 firewall plumbing",
+    "forwarding": "IPv4 and IPv6 forwarding both 0",
+    "firewall": "PVE disabled/running; nft empty; iptables/ip6tables default ACCEPT",
+    "management_tools_present": false,
+    "local_ipmi_device_present": true,
+    "megaraid_ioctl_present": true
+  },
+  "proposed_manager_action": {
+    "action": "Manager may prepare Dell official PERCCLI binary; subagent did not install or download on host",
+    "vendor_page": "https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=j91yg",
+    "download_url": "https://dl.dell.com/FOLDER07576010M/1/PERCCLI_7.1623.00_A11_Linux.tar.gz",
+    "version": "7.1623.0.0 A11",
+    "sha256": "0431bbeef55e772d8bcac10a4624918e5b5b70409137ebda2816921825f43e7b",
+    "compatibility": "Dell lists H730/T630; Proxmox 8 is not listed, executable compatibility pending",
+    "read_only_commands": [
+      "perccli64 /c0 show all",
+      "perccli64 /c0/vall show all",
+      "perccli64 /c0/eall/sall show all",
+      "perccli64 /c0/bbu show all"
+    ],
+    "bbu_reference": "https://www.dell.com/support/manuals/en-us/poweredge-rc-h730/perc_cli_rg/bbu-commands?guid=guid-c9a393cc-2400-4488-b60d-4dbfb4812141"
+  },
+  "limitations": [
+    "No iDRAC remote credentials requested, read or output.",
+    "No vendor management executable available during this collection.",
+    "Existing /dev/ipmi0 is a potential local no-password management channel; usable IPMI commands not exercised because ipmitool is absent.",
+    "RAID levels, drive-group membership, degradation/rebuild state, physical media-error counters and BBU/cache protection remain unverified.",
+    "No DHCP lease or router configuration access; no free IP or VLAN support conclusion.",
+    "No LAN-wide scan, benchmark, guest start/clone or production data writes.",
+    "Initial rg-based diagnostics failed because rg is absent on PVE; fallback lsmod/lspci reads succeeded and prior failure records are preserved."
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-11-06T07:07:45.220187+00:00",
+  "status": "approved-QA-data-failclosed-scope-passed",
+  "target_vmid": 260,
+  "nonce": "b5b52c6b0565410ba9c510728ba13f54",
+  "QA_UUID": "498b2c5a-d912-4884-a9f9-9a460cd2b264",
+  "case_results": {
+    "A_original_guard_exit0_and_internal3x200_healthy": true,
+    "B1_only_QA_unmount_original_guard_exit1_root_tree_unchanged": true,
+    "B2_only_QA_loop_detach_start_exit1_dependency_no_running_QA": true,
+    "C_same_file_UUID_canary_internal3x200_healthy_after_one_approved_controller_correction": true,
+    "complete_QA_cleanup": true,
+    "real_NAS_PIDs_IDs_StartedAt_hashes_samples_unchanged_every_stage": true
+  },
+  "resources": {
+    "CPU": 0.25,
+    "memory_MiB": 512,
+    "pids_limit": 128,
+    "network": "internal QA-only",
+    "published_ports": 0,
+    "A_observed_memory_peak_bytes": 132481024,
+    "A_observed_pids_peak": 28
+  },
+  "failure_signals": {
+    "B1_guard_exit": 1,
+    "B1_reason": "data filesystem is not mounted",
+    "B2_systemctl_start_exit": 1,
+    "B2_job_result": "dependency",
+    "B2_elapsed_seconds": 0.416,
+    "job_management_timeout_seconds": 20,
+    "client_timeout": false,
+    "local_failure_signals_observed": true,
+    "journal_metadata_without_MESSAGE": true,
+    "notification_delivery_tested": false,
+    "production_monitoring_modified": false,
+    "messages_sent_by_this_task": 0
+  },
+  "cleanup": {
+    "failures": [],
+    "real_NAS_continuity_unchanged": true,
+    "own_container_removed": true,
+    "own_mount_absent": true,
+    "own_loop_absent": true,
+    "own_unit_file_absent": true,
+    "own_loopfile_and_nonce_directories_removed": true
+  },
+  "history_preserved": {
+    "old_nonce_A_failed_and_cleaned": "3d7d910a5c6b4ae7906819363460ed20",
+    "initial_native_type_check_false_and_shell_missing_set_e_A_order_deviation": true,
+    "normalized_native_all_true_exit0_before_B": true,
+    "failed_precheck_never_calls_phase_regression": true,
+    "initial_C_failed_retained": true,
+    "original_C_old_snapshot_frame_captured": false,
+    "race_cause": "metadata plus static control-flow inference",
+    "C_correction_once_authorized_and_used": true,
+    "corrected_run_observed_old_exited_grace_seconds": 0.434,
+    "new_exit_or_OOM_still_hard_failure": true
+  },
+  "local_tests_passed": 9,
+  "real_2TiB_unmounted_or_modified": false,
+  "production_guard_unit_compose_env_OMV_changed": false,
+  "PVE_250_source_changed": false,
+  "scope_limits": [
+    "Only dedicated QA loop filesystem/profile; real2TiB/SMB/OMV device-loss not injected",
+    "QA used minimum-gib1 parameter, real production1800 default unchanged",
+    "Local failure signal proven; QA notification delivery not tested or connected by this task"
+  ],
+  "evidence_directory": "infra/nas/sys001-missing-mount/evidence/b5b52c6b0565410ba9c510728ba13f54"
+}

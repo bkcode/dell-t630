@@ -1,0 +1,19 @@
+{
+  "source": "infra/java/runtime/deploy-test-chain.py",
+  "source_sha256": "2c2f3a443067097aec46705a68fa22c7b139d142f1373bbdef54e5c712435dea",
+  "prepared_sha256": "2e8822ee99dd60dd9af53840b23b7b118ce0b6254f59954a68fb5d4ec52a37fb",
+  "changes": [
+    "persistent YAML root:root0600",
+    "systemd LoadCredential with file:%d/application.yaml",
+    "sensitive errors suppressed",
+    "no redirect health",
+    "stop/pointer/start recovery transaction",
+    "precheck previous fixed units"
+  ],
+  "target240_modified": false,
+  "prepared_status": "pending-local-quiescence-candidate-never-deployed",
+  "candidate_stop_policy": "nonzero stop can continue only after inactive/failed, MainPID0, and empty/removed cgroup verification; this policy remains unapproved and uninstalled",
+  "active_deployed_sha256": "8beb4586ce4504252e5076f5852bf4f19a50481747eb2f0d8e47af5094cf41ff",
+  "active_code_reference": "deployed/vm240/fixed-deploy-test-chain.py",
+  "candidate_deployed": false
+}

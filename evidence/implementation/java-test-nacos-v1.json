@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-06T11:10:20.919763",
+  "result": {
+    "exit_code": 0,
+    "stdout": "{\"status\": \"target-test-nacos-configs-published-and-hash-verified\", \"target_ip\": \"10.63.20.10\", \"nacos_configs_ready\": true, \"group\": \"DELL_TEST\", \"config_count\": 6, \"configs\": [{\"data_id\": \"finger-common.yaml\", \"sha256\": \"7a73a4e39a20b4e5faad09402d2866c91da6ee4ca9f7fb051937fb83cceafbf4\"}, {\"data_id\": \"finger-auth.yaml\", \"sha256\": \"ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356\"}, {\"data_id\": \"finger-service-system.yaml\", \"sha256\": \"ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356\"}, {\"data_id\": \"finger-service-coms.yaml\", \"sha256\": \"ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356\"}, {\"data_id\": \"finger-bff-system.yaml\", \"sha256\": \"ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356\"}, {\"data_id\": \"finger-gateway-mobile.yaml\", \"sha256\": \"1af0f99bbba64a3677b3bc86811c10571a2aef66dc4072a41f9d967141171e40\"}], \"runtime_started\": false, \"credential_values_emitted\": false}\n",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+    "target": {
+      "vmid": 210,
+      "ip": "10.63.20.10",
+      "host_key_alias": "dell-vm210",
+      "host_key_fingerprint": "SHA256:8bBCQbBKGmZAw5q2AgT2vXHsyr2aFJktLqs/tDZ9SiA",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  }
+}

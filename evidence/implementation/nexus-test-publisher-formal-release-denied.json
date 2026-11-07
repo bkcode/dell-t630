@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-06T12:33:23.344166",
+  "result": {
+    "exit_code": 0,
+    "stdout": "{\"source\": \"publish-service\", \"identity\": \"dell-publisher\", \"formal_release_write_status\": 403, \"formal_release_write_denied\": true, \"credential_values_emitted\": false, \"existing_artifacts_modified\": false}\n",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+    "target": {
+      "vmid": 220,
+      "ip": "10.63.30.10",
+      "host_key_alias": "dell-vm220",
+      "host_key_fingerprint": "SHA256:2PFQYC3uPSg/sMihWZZ7R1vgkKKozJbTwTjf6VNWwG4",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "at": "2026-11-06T09:13:41.504647+00:00",
+  "exit_code": 1,
+  "result": {
+    "status": "stop-disable-verification-failed",
+    "app_count": 5,
+    "unit_checks": [
+      {
+        "unit": "dell-finger-finger-gateway-mobile.service",
+        "active": "failed",
+        "mainPID0": true,
+        "enabled": "",
+        "cgroup_empty": true
+      },
+      {
+        "unit": "dell-finger-finger-bff-system.service",
+        "active": "failed",
+        "mainPID0": true,
+        "enabled": "",
+        "cgroup_empty": true
+      },
+      {
+        "unit": "dell-finger-finger-auth.service",
+        "active": "failed",
+        "mainPID0": true,
+        "enabled": "",
+        "cgroup_empty": true
+      },
+      {
+        "unit": "dell-finger-finger-service-coms.service",
+        "active": "failed",
+        "mainPID0": true,
+        "enabled": "",
+        "cgroup_empty": true
+      },
+      {
+        "unit": "dell-finger-finger-service-system.service",
+        "active": "failed",
+        "mainPID0": true,
+        "enabled": "",
+        "cgroup_empty": true
+      }
+    ],
+    "active_immutable_release_manifest_unchanged": true,
+    "existing_root600_configs_preserved": true,
+    "fresh_Nacos_dataIds_published": false,
+    "release_activated": false,
+    "business_E2E_or_restarts_performed": false,
+    "credentials_or_policy_values_emitted": false
+  }
+}

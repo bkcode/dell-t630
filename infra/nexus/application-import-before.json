@@ -1,0 +1,154 @@
+{
+  "repositories": [
+    {
+      "name": "maven-releases",
+      "type": "hosted",
+      "format": "maven2"
+    },
+    {
+      "name": "maven-snapshots",
+      "type": "hosted",
+      "format": "maven2"
+    },
+    {
+      "name": "maven-central",
+      "type": "proxy",
+      "format": "maven2"
+    },
+    {
+      "name": "maven-public",
+      "type": "group",
+      "format": "maven2"
+    },
+    {
+      "name": "nuget-hosted",
+      "type": "hosted",
+      "format": "nuget"
+    },
+    {
+      "name": "nuget.org-proxy",
+      "type": "proxy",
+      "format": "nuget"
+    },
+    {
+      "name": "nuget-group",
+      "type": "group",
+      "format": "nuget"
+    },
+    {
+      "name": "finger-releases",
+      "type": "hosted",
+      "format": "maven2"
+    },
+    {
+      "name": "finger-snapshots",
+      "type": "hosted",
+      "format": "maven2"
+    },
+    {
+      "name": "dell-acceptance",
+      "type": "hosted",
+      "format": "maven2"
+    },
+    {
+      "name": "finger-public",
+      "type": "group",
+      "format": "maven2"
+    }
+  ],
+  "group": {
+    "name": "finger-public",
+    "format": "maven2",
+    "url": "http://127.0.0.1:8081/repository/finger-public",
+    "online": true,
+    "storage": {
+      "blobStoreName": "default",
+      "strictContentTypeValidation": true
+    },
+    "group": {
+      "memberNames": [
+        "finger-releases",
+        "finger-snapshots"
+      ]
+    },
+    "type": "group"
+  },
+  "roles": [
+    {
+      "id": "dell-artifact-publisher",
+      "name": "dell-artifact-publisher",
+      "privileges": [
+        "nx-repository-view-maven2-finger-releases-edit",
+        "nx-repository-view-maven2-finger-releases-add",
+        "nx-repository-view-maven2-finger-public-browse",
+        "nx-repository-view-maven2-dell-acceptance-read",
+        "nx-repository-view-maven2-finger-public-read",
+        "nx-repository-view-maven2-finger-snapshots-add",
+        "nx-repository-view-maven2-dell-acceptance-add",
+        "nx-repository-view-maven2-finger-snapshots-edit",
+        "nx-repository-view-maven2-dell-acceptance-browse",
+        "nx-repository-view-maven2-finger-releases-browse",
+        "nx-repository-view-maven2-finger-releases-read",
+        "nx-repository-view-maven2-finger-snapshots-browse",
+        "nx-repository-view-maven2-dell-acceptance-edit",
+        "nx-repository-view-maven2-finger-snapshots-read"
+      ],
+      "roles": []
+    },
+    {
+      "id": "dell-artifact-reader",
+      "name": "dell-artifact-reader",
+      "privileges": [
+        "nx-repository-view-maven2-dell-acceptance-browse",
+        "nx-repository-view-maven2-finger-public-browse",
+        "nx-repository-view-maven2-finger-releases-browse",
+        "nx-repository-view-maven2-finger-releases-read",
+        "nx-repository-view-maven2-finger-snapshots-browse",
+        "nx-repository-view-maven2-dell-acceptance-read",
+        "nx-repository-view-maven2-finger-public-read",
+        "nx-repository-view-maven2-finger-snapshots-read"
+      ],
+      "roles": []
+    }
+  ],
+  "users": [
+    {
+      "userId": "dell-publisher",
+      "roles": [
+        "dell-artifact-publisher"
+      ]
+    },
+    {
+      "userId": "dell-reader",
+      "roles": [
+        "dell-artifact-reader"
+      ]
+    }
+  ],
+  "container_networks": {
+    "nexus_backend": {
+      "IPAMConfig": null,
+      "Links": null,
+      "Aliases": [
+        "nexus-nexus-1",
+        "nexus"
+      ],
+      "DriverOpts": null,
+      "GwPriority": 0,
+      "NetworkID": "169f64db65ecb5ab863cd4329901a92d46416d7936615e8be6ae3d5fbc86ff3a",
+      "EndpointID": "d0384ea69edfc7f69222b855b36ec402c41814815f0435a8ab7ab42e5eddfc34",
+      "Gateway": "",
+      "IPAddress": "172.18.0.2",
+      "MacAddress": "9e:75:04:e8:c5:7a",
+      "IPPrefixLen": 16,
+      "IPv6Gateway": "",
+      "GlobalIPv6Address": "",
+      "GlobalIPv6PrefixLen": 0,
+      "DNSNames": [
+        "nexus-nexus-1",
+        "nexus",
+        "b95415524f58"
+      ]
+    }
+  }
+}

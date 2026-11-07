@@ -1,0 +1,59 @@
+{
+  "first_tool": "high_level_overview",
+  "api_info_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "type": {
+        "type": "string",
+        "minLength": 1
+      },
+      "member": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "type"
+    ]
+  },
+  "docs": {
+    "Page": {
+      "isError": false,
+      "text": "Interface Page\n==============\n\nPage represents a page in the Penpot application.\nIt includes properties for the page's identifier and name, as well as methods for managing shapes on the page.\n\n```\ninterface Page {\n    id: string;\n    name: string;\n    rulerGuides: RulerGuide[];\n    root: Shape;\n    remove(): void;\n    getShapeById(id: string): Shape | null;\n    findShapes(\n        criteria?: {\n            name?: string;\n            nameLike?: string;\n            type?:\n                | \"boolean\"\n                | \"path\"\n                | \"ellipse\"\n                | \"image\"\n                | \"text\"\n                | \"group\"\n                | \"board\"\n                | \"rectangle\"\n                | \"svg-raw\";\n        },\n    ): Shape[];\n    flows: Flow[];\n    createFlow(name: string, board: Board): Flow;\n    removeFlow(flow: Flow): void;\n    addRulerGuide(\n        orientation: RulerGuideOrientation,\n        value: number,\n        board?: Board,\n    ): RulerGuide;\n    removeRulerGuide(guide: RulerGuide): void;\n    addCommentThread(content: string, position: Point): Promise<CommentThread>;\n    removeCommentThread(commentThread: CommentThread): Promise<void>;\n    findCommentThreads(\n        criteria?: { onlyYours: boolean; showResolved: boolean },\n    ): Promise<CommentThread[]>;\n    getPluginData(key: string): string;\n    setPluginData(key: string, value: string): void;\n    getPluginDataKeys(): string[];\n    getSharedPluginData(namespace: string, key: string): string;\n    setSharedPluginData(namespace: string, key: string, value: string): void;\n    getSharedPluginDataKeys(namespace: string): string[];\n}\n```\n\nHierarchy (View Summary)\n\n* PluginData\n  + Page\n\nReferenced by: Context, EventsMap, File, Flow, Penpot\n\nMember details not provided (too long). Call this tool with a member name for more information."
+    },
+    "File": {
+      "isError": false,
+      "text": "Interface File\n==============\n\nFile represents a file in the Penpot application.\nIt includes properties for the file's identifier, name, and revision number.\n\n```\ninterface File {\n    id: string;\n    name: string;\n    revn: number;\n    pages: Page[];\n    export(\n        exportType: \"penpot\" | \"zip\",\n        libraryExportType?: \"all\" | \"merge\" | \"detach\",\n    ): Promise<Uint8Array<ArrayBufferLike>>;\n    findVersions(criteria?: { createdBy: User }): Promise<FileVersion[]>;\n    saveVersion(label: string): Promise<FileVersion>;\n    validate(): FileValidationError[];\n    getPluginData(key: string): string;\n    setPluginData(key: string, value: string): void;\n    getPluginDataKeys(): string[];\n    getSharedPluginData(namespace: string, key: string): string;\n    setSharedPluginData(namespace: string, key: string, value: string): void;\n    getSharedPluginDataKeys(namespace: string): string[];\n}\n```\n\nHierarchy (View Summary)\n\n* PluginData\n  + File\n\nReferenced by: Context, EventsMap, Penpot\n\nMember details not provided (too long). Call this tool with a member name for more information."
+    },
+    "PenpotPage": {
+      "isError": false,
+      "text": "Tool execution failed: Error: API type \"PenpotPage\" not found"
+    },
+    "PenpotFile": {
+      "isError": false,
+      "text": "Tool execution failed: Error: API type \"PenpotFile\" not found"
+    },
+    "PenpotUtils": {
+      "isError": false,
+      "text": "Tool execution failed: Error: API type \"PenpotUtils\" not found"
+    }
+  },
+  "state": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"result\": {\n    \"fileId\": \"13a31dab-5204-818d-8008-e7004b9343a1\",\n    \"fileName\": \"Dell dedicated MCP acceptance\",\n    \"pageId\": \"13a31dab-5204-818d-8008-e7004b9343a2\",\n    \"pageName\": \"Page 1\",\n    \"selectionCount\": 0,\n    \"topLevel\": {\n      \"id\": \"00000000-0000-0000-0000-000000000000\",\n      \"name\": \"Root Frame\",\n      \"type\": \"board\",\n      \"children\": []\n    }\n  },\n  \"log\": \"\"\n}"
+      }
+    ]
+  },
+  "tokens": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"result\": {},\n  \"log\": \"\"\n}"
+      }
+    ]
+  },
+  "mutations": 0,
+  "default_connector_used": false
+}

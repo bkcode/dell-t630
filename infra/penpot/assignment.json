@@ -1,0 +1,12 @@
+{
+  "role": "penpot-service",
+  "expected_guest_ip": "10.63.30.30",
+  "expected_hostname": "penpot-service",
+  "assignment_source": "manager supplied guest address; live verification required",
+  "storage": {
+    "mode": "dedicated",
+    "data_path": "/srv/penpot/docker",
+    "mountpoint": "/srv/penpot",
+    "filesystem_uuid": "ccccda03-bffd-4054-afd3-e0e22f0c607e"
+  }
+}

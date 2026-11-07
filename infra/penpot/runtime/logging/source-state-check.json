@@ -1,0 +1,318 @@
+{
+  "checked_at": "2026-11-06T07:25:12.956452+08:00",
+  "reference": "reviewed artifact receipt source_after",
+  "unchanged": true,
+  "source_snapshot": {
+    "containers": {
+      "/nacos": {
+        "name": "/nacos",
+        "id": "61cfa904c75240b900e5ec2b443f58ff05f5e906d29d3638b3656f422d4aed49",
+        "image_id": "sha256:e7e48cb036c4e72bbb37b2fa04557e1fca192392eb954120e7b0b785fa08ae6f",
+        "image_reference": "nacos/nacos-server:v2.4.3",
+        "running": true,
+        "oom_killed": false,
+        "restarts": 0,
+        "started_at": "2026-11-04T13:04:18.757028255Z",
+        "health": null
+      },
+      "/mysql": {
+        "name": "/mysql",
+        "id": "1fee5c4074fac7f6fe309a7ecd24ef882a1b038c1890f13aef5fa04453105788",
+        "image_id": "sha256:b2f81adb2f3335ee77c6a74a6099bea0c5dca5b51ed01cd84c7966d826992764",
+        "image_reference": "mysql:8.4.5",
+        "running": true,
+        "oom_killed": false,
+        "restarts": 0,
+        "started_at": "2026-11-04T13:04:18.765822244Z",
+        "health": null
+      },
+      "/redis": {
+        "name": "/redis",
+        "id": "19755277cfa7774a1de50bf4c4f50127a5d5eb8e0954d2b94f4f835957a2c33d",
+        "image_id": "sha256:b8bbd8ea40e06ac580453a51bac3341e29a492b75ea7cd1b517e82a421a0b926",
+        "image_reference": "redis:7.4.4",
+        "running": true,
+        "oom_killed": false,
+        "restarts": 0,
+        "started_at": "2026-11-04T13:04:18.7686016Z",
+        "health": null
+      },
+      "/rabbitmq": {
+        "name": "/rabbitmq",
+        "id": "676fa938c3eba6cfe2045970a7405c22e7ec4b304686812deb58f40eaac6e7ef",
+        "image_id": "sha256:7c0ce624561b1eba19a1fc35008450a0b6bd2c08fa8088ce46d7bc39415130a8",
+        "image_reference": "rabbitmq:3-management",
+        "running": true,
+        "oom_killed": false,
+        "restarts": 0,
+        "started_at": "2026-11-04T13:04:18.760844328Z",
+        "health": null
+      },
+      "/nexus3": {
+        "name": "/nexus3",
+        "id": "4ee8299f444554c33b2a2dc7d6c53eb4e23df7586476dc53e6abf5cc83e8424f",
+        "image_id": "sha256:e90bcee9a286ce698455ba1524f811390b9f77d18e893986ac20b65346cb81d4",
+        "image_reference": "sonatype/nexus3",
+        "running": true,
+        "oom_killed": false,
+        "restarts": 0,
+        "started_at": "2026-11-04T13:04:18.754667194Z",
+        "health": null
+      },
+      "/nginx": {
+        "name": "/nginx",
+        "id": "f52a8a22e7b04535253c4379e63a096146aae20b5b2e48a07802dcc00adb4963",
+        "image_id": "sha256:f46d9988131118c112be07525503d4a7cda698d90c7e39d62be70ea202a9a0f2",
+        "image_reference": "nginx:latest",
+        "running": true,
+        "oom_killed": false,
+        "restarts": 0,
+        "started_at": "2026-11-04T13:04:18.71366823Z",
+        "health": null
+      },
+      "/penpot-penpot-frontend-1": {
+        "name": "/penpot-penpot-frontend-1",
+        "id": "0baef97331827c824e89ff303c1e700f4b6f36afa101e39a85c063956d862623",
+        "image_id": "sha256:a1a9c9bb90b93f3cff334448648be90fc3ca7e315840298772f43b24306f5c82",
+        "image_reference": "penpot-frontend-selfhost:local",
+        "running": true,
+        "oom_killed": false,
+        "restarts": 0,
+        "started_at": "2026-11-04T12:42:15.234179422Z",
+        "health": null
+      },
+      "/penpot-penpot-backend-1": {
+        "name": "/penpot-penpot-backend-1",
+        "id": "409d564f9de683079f048572d86a9fd41859a5cc70367a0716f7b9b86adf278f",
+        "image_id": "sha256:28dd4e06b33a70d9ace1b3589def985cddd3f5b49b4964d06a5093381356ee7c",
+        "image_reference": "penpotapp/backend:2.18.5",
+        "running": true,
+        "oom_killed": false,
+        "restarts": 0,
+        "started_at": "2026-11-04T12:42:14.106480088Z",
+        "health": null
+      },
+      "/penpot-penpot-exporter-1": {
+        "name": "/penpot-penpot-exporter-1",
+        "id": "50dcad169d95e62250723f97ebf240ec3d5591b2228ab08ad5ca5c1ce7b6741f",
+        "image_id": "sha256:9918a73bb7c720252df3124bf674ade2493f970e8f63e711a442432d810c2e58",
+        "image_reference": "penpotapp/exporter:2.18.5",
+        "running": true,
+        "oom_killed": false,
+        "restarts": 0,
+        "started_at": "2026-11-04T12:42:15.304331589Z",
+        "health": null
+      },
+      "/penpot-penpot-admin-console-1": {
+        "name": "/penpot-penpot-admin-console-1",
+        "id": "26fe6a3fc9cfa9a03f0e6c4dce519278cc5c58c3c1b35c72fe983d5562092fac",
+        "image_id": "sha256:cdd0cddbd829b9aa3ce55b8622f9884c12b094bdcbdc6f1036f0f260a954570d",
+        "image_reference": "penpotapp/admin-console:2.18.5",
+        "running": true,
+        "oom_killed": false,
+        "restarts": 0,
+        "started_at": "2026-11-04T12:42:15.358799797Z",
+        "health": null
+      },
+      "/penpot-penpot-mcp-1": {
+        "name": "/penpot-penpot-mcp-1",
+        "id": "ac619100a461903de6535bac69e7ef14f81b16d933e488a64b56f18eade5280f",
+        "image_id": "sha256:f6c48cf9e9923ac1a30bc46393bf94b78c9970be66469650ac576f26e05ac36f",
+        "image_reference": "penpotapp/mcp:2.18.5",
+        "running": true,
+        "oom_killed": false,
+        "restarts": 0,
+        "started_at": "2026-11-04T12:42:13.301979671Z",
+        "health": null
+      },
+      "/penpot-penpot-worker-1": {
+        "name": "/penpot-penpot-worker-1",
+        "id": "183a8b9f0096f49851caf952f7d5c52575779c6b3a15d66a173b2ba702a0e7ea",
+        "image_id": "sha256:289d99c39712b9bbcb12ee4343571233421523f471c05c9f4fb8e6f3b26b9bb0",
+        "image_reference": "penpot-resident-worker:local",
+        "running": true,
+        "oom_killed": false,
+        "restarts": 0,
+        "started_at": "2026-11-04T12:42:13.320524546Z",
+        "health": "healthy"
+      },
+      "/penpot-penpot-import-1": {
+        "name": "/penpot-penpot-import-1",
+        "id": "2ee2ba25a906bffde3ba606789637ab66e59672570836186ed6765fdf5487f25",
+        "image_id": "sha256:2ee54c62207d15e6f063db95870c76442b1ba757b47ebaf72863051b86238294",
+        "image_reference": "penpot-mcp-file-import:local",
+        "running": true,
+        "oom_killed": false,
+        "restarts": 0,
+        "started_at": "2026-11-04T12:42:15.473813922Z",
+        "health": "healthy"
+      },
+      "/penpot-penpot-postgres-1": {
+        "name": "/penpot-penpot-postgres-1",
+        "id": "1cabd374862fb4a26ca1fd6de6d96c9b79ba2a5295ebc2801f163cafc2ffad68",
+        "image_id": "sha256:04fba66fe1804636acd8ce729a27cb6f0a5dbe591c8898433aeb6444d7267bfd",
+        "image_reference": "postgres:15",
+        "running": true,
+        "oom_killed": false,
+        "restarts": 0,
+        "started_at": "2026-11-04T12:42:14.54120588Z",
+        "health": "healthy"
+      },
+      "/penpot-penpot-valkey-1": {
+        "name": "/penpot-penpot-valkey-1",
+        "id": "64d4d31fffff4d18cbaec25719825a469613c52d294f8d680d901bde95eca507",
+        "image_id": "sha256:76ec93b657e31d13a44a4a26daef4d50b5efa3ace97d07b37a2c771a3f5409bf",
+        "image_reference": "valkey/valkey:8.1",
+        "running": true,
+        "oom_killed": false,
+        "restarts": 0,
+        "started_at": "2026-11-04T12:42:15.022630922Z",
+        "health": "healthy"
+      },
+      "/penpot-penpot-dns-1": {
+        "name": "/penpot-penpot-dns-1",
+        "id": "8ac008d312c3fabf8b8e6dc67a6a5e1ee9129ca8daec9959c896b22fdf4e2ec4",
+        "image_id": "sha256:00d31b9fc97c28510895f64a5139e16d93df5eaa2c2f9a776eacea7a3125abaa",
+        "image_reference": "adguard/dnsproxy:v0.86.0@sha256:4d65bafbf246b206a1af35d4263a86c35451d957458c7836304199f1cd2c1535",
+        "running": true,
+        "oom_killed": false,
+        "restarts": 0,
+        "started_at": "2026-11-04T12:42:15.462119089Z",
+        "health": null
+      },
+      "/penpot-penpot-mailpit-1": {
+        "name": "/penpot-penpot-mailpit-1",
+        "id": "c137da25e9fc1799235ee5e3ec35cf22933d0d2ab136aaef4ee497179d997621",
+        "image_id": "sha256:245e558b2e440962f2d646b6415fbb99b38761dc8a170e6646edf1113779965f",
+        "image_reference": "axllent/mailpit:v1",
+        "running": true,
+        "oom_killed": false,
+        "restarts": 0,
+        "started_at": "2026-11-04T12:42:14.760573755Z",
+        "health": "healthy"
+      }
+    },
+    "source_tags": {
+      "adguard/dnsproxy:v0.86.0@sha256:4d65bafbf246b206a1af35d4263a86c35451d957458c7836304199f1cd2c1535": {
+        "id": "sha256:00d31b9fc97c28510895f64a5139e16d93df5eaa2c2f9a776eacea7a3125abaa",
+        "architecture": "arm64",
+        "repo_tags": [
+          "adguard/dnsproxy:v0.86.0"
+        ]
+      },
+      "axllent/mailpit:v1": {
+        "id": "sha256:245e558b2e440962f2d646b6415fbb99b38761dc8a170e6646edf1113779965f",
+        "architecture": "arm64",
+        "repo_tags": [
+          "axllent/mailpit:v1"
+        ]
+      },
+      "mysql:8.4.5": {
+        "id": "sha256:b2f81adb2f3335ee77c6a74a6099bea0c5dca5b51ed01cd84c7966d826992764",
+        "architecture": "arm64",
+        "repo_tags": [
+          "mysql:8.4.5"
+        ]
+      },
+      "nacos/nacos-server:v2.4.3": {
+        "id": "sha256:e7e48cb036c4e72bbb37b2fa04557e1fca192392eb954120e7b0b785fa08ae6f",
+        "architecture": "arm64",
+        "repo_tags": [
+          "nacos/nacos-server:v2.4.3"
+        ]
+      },
+      "nginx:latest": {
+        "id": "sha256:f46d9988131118c112be07525503d4a7cda698d90c7e39d62be70ea202a9a0f2",
+        "architecture": "arm64",
+        "repo_tags": [
+          "nginx:latest"
+        ]
+      },
+      "penpot-frontend-selfhost:local": {
+        "id": "sha256:a1a9c9bb90b93f3cff334448648be90fc3ca7e315840298772f43b24306f5c82",
+        "architecture": "arm64",
+        "repo_tags": [
+          "penpot-frontend-selfhost:local"
+        ]
+      },
+      "penpot-mcp-file-import:local": {
+        "id": "sha256:2ee54c62207d15e6f063db95870c76442b1ba757b47ebaf72863051b86238294",
+        "architecture": "arm64",
+        "repo_tags": [
+          "penpot-mcp-file-import:local"
+        ]
+      },
+      "penpot-resident-worker:local": {
+        "id": "sha256:289d99c39712b9bbcb12ee4343571233421523f471c05c9f4fb8e6f3b26b9bb0",
+        "architecture": "arm64",
+        "repo_tags": [
+          "penpot-resident-worker:local"
+        ]
+      },
+      "penpotapp/admin-console:2.18.5": {
+        "id": "sha256:cdd0cddbd829b9aa3ce55b8622f9884c12b094bdcbdc6f1036f0f260a954570d",
+        "architecture": "arm64",
+        "repo_tags": [
+          "penpotapp/admin-console:2.18.5"
+        ]
+      },
+      "penpotapp/backend:2.18.5": {
+        "id": "sha256:28dd4e06b33a70d9ace1b3589def985cddd3f5b49b4964d06a5093381356ee7c",
+        "architecture": "arm64",
+        "repo_tags": [
+          "penpotapp/backend:2.18.5"
+        ]
+      },
+      "penpotapp/exporter:2.18.5": {
+        "id": "sha256:9918a73bb7c720252df3124bf674ade2493f970e8f63e711a442432d810c2e58",
+        "architecture": "arm64",
+        "repo_tags": [
+          "penpotapp/exporter:2.18.5"
+        ]
+      },
+      "penpotapp/mcp:2.18.5": {
+        "id": "sha256:f6c48cf9e9923ac1a30bc46393bf94b78c9970be66469650ac576f26e05ac36f",
+        "architecture": "arm64",
+        "repo_tags": [
+          "penpotapp/mcp:2.18.5"
+        ]
+      },
+      "postgres:15": {
+        "id": "sha256:04fba66fe1804636acd8ce729a27cb6f0a5dbe591c8898433aeb6444d7267bfd",
+        "architecture": "arm64",
+        "repo_tags": [
+          "postgres:15"
+        ]
+      },
+      "rabbitmq:3-management": {
+        "id": "sha256:7c0ce624561b1eba19a1fc35008450a0b6bd2c08fa8088ce46d7bc39415130a8",
+        "architecture": "arm64",
+        "repo_tags": [
+          "rabbitmq:3-management"
+        ]
+      },
+      "redis:7.4.4": {
+        "id": "sha256:b8bbd8ea40e06ac580453a51bac3341e29a492b75ea7cd1b517e82a421a0b926",
+        "architecture": "arm64",
+        "repo_tags": [
+          "redis:7.4.4"
+        ]
+      },
+      "sonatype/nexus3": {
+        "id": "sha256:e90bcee9a286ce698455ba1524f811390b9f77d18e893986ac20b65346cb81d4",
+        "architecture": "arm64",
+        "repo_tags": [
+          "sonatype/nexus3:latest"
+        ]
+      },
+      "valkey/valkey:8.1": {
+        "id": "sha256:76ec93b657e31d13a44a4a26daef4d50b5efa3ace97d07b37a2c771a3f5409bf",
+        "architecture": "arm64",
+        "repo_tags": [
+          "valkey/valkey:8.1"
+        ]
+      }
+    }
+  },
+  "original_archive_sha256": "6d27b16c5bd9e9cecbd4c825734ac2e1bc9cee2d10a8f38d5f26da32bd7036d1"
+}

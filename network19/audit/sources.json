@@ -1,0 +1,45 @@
+{
+  "retrieved_at": "2026-11-06T16:01:43.063077+08:00",
+  "primary_sources_only": true,
+  "sources": [
+    {
+      "title": "Proxmox VE8 Administration Guide / Firewall",
+      "url": "https://pve.proxmox.com/pve-docs-8/chapter-pve-firewall.html",
+      "retrieved_from": "https://pve.proxmox.com/pve-docs-8/pve-admin-guide.html",
+      "facts_used": [
+        "Per-VM IN/OUT rules and ipfilter-netN/MAC filtering support vNIC boundary enforcement.",
+        "Legacy host FORWARD/VNet rules are not supported by pve-firewall.",
+        "The8.x guide describes the newer nft backend as technology preview and requiring guest restart when changing backend."
+      ]
+    },
+    {
+      "title": "Proxmox VE8 QEMU Guest Agent",
+      "url": "https://pve.proxmox.com/pve-docs-8/chapter-qm.html#qm_qemu_agent",
+      "facts_used": [
+        "Guest agent exchanges information/commands over a host-to-guest channel; retain console fallback."
+      ]
+    },
+    {
+      "title": "OpenWrt Static routes",
+      "url": "https://openwrt.org/docs/guide-user/network/routing/routes_configuration",
+      "facts_used": [
+        "Static route configuration selects target, gateway and logical interface; actual OW policies remain uninspected."
+      ]
+    },
+    {
+      "title": "Linux kernel bridge documentation",
+      "url": "https://docs.kernel.org/networking/bridge.html",
+      "facts_used": [
+        "Bridge forwards Ethernet frames; bridge netfilter can observe/filter bridged packets."
+      ]
+    },
+    {
+      "title": "Debian13 interfaces(5)",
+      "url": "https://manpages.debian.org/trixie/ifupdown/interfaces.5.en.html",
+      "facts_used": [
+        "Manual address-family configuration does not assign a static address by itself; actual IPv6 state must be checked."
+      ]
+    }
+  ],
+  "source_inference_separation": "Topology/sequence/ACL/rollback are proposed engineering design, not proof of deployment. PVE runtime facts come from whitelisted local SSH evidence."
+}

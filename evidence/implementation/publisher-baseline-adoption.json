@@ -1,0 +1,16 @@
+{
+  "exit_code": 0,
+  "result": {
+    "status": "baseline-metadata-migrated-health-verified",
+    "release_id": "20261106T121030",
+    "core_bytes_unchanged": true,
+    "namespace_id": "10719261-2641-590a-b821-c8484ca955ac",
+    "persistent_yaml_mode": "root:root0600",
+    "LoadCredential": true,
+    "database_or_nacos_changed": false,
+    "backup_metadata_directory": "/opt/finger/publisher-state/baseline-metadata-eb96be55d6074d2a8eebc0550eb0e778"
+  },
+  "stderr_withheld": true,
+  "evidence_recorded_at": "2026-11-06T12:39:14.902739+08:00",
+  "command": "manager-only adopt-baseline240.py --apply-reviewed240-window --expected-release 20261106T121030 --expected-manifest-sha256 208bc8ecd57465726af7a0d5671fb38ebdc9c000e8f4dcab27eb7196b7e83c0e"
+}

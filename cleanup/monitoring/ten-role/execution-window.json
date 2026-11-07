@@ -1,0 +1,1446 @@
+{
+  "started_at": "2026-11-07T02:26:21.159894+08:00",
+  "authorization": "explicitparent10guestpairwindow",
+  "status": "passed-ten-role-pairs-source-15UP",
+  "roles": [
+    {
+      "vmid": 200,
+      "started_at": "2026-11-07T02:26:21.160070+08:00",
+      "before": {
+        "hostname": "data-prod-db",
+        "units": {
+          "ssh.service": {
+            "MainPID": "752",
+            "ExecMainStartTimestampMonotonic": "8257446",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "732",
+            "ExecMainStartTimestampMonotonic": "8175923",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "136772",
+            "ExecMainStartTimestampMonotonic": "12707578998",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "783",
+            "ExecMainStartTimestampMonotonic": "8735805",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-data-prod-db.service": {
+            "MainPID": "136092",
+            "ExecMainStartTimestampMonotonic": "12695427940",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          "b1a1e926f9ca92d717dbb903a313315a74749f7a942528096cb57cea8abee0ca 136243 2026-11-06T09:07:40.840743494Z running healthy"
+        ],
+        "files": {
+          "/opt/dell/guest-monitoring/guest-targets.json": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "/opt/dell/guest-monitoring/install-guest-baseline.py": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "/etc/dell-guest-monitoring/health.json": "bfecc990f0c4afb384a9c43f4b5461cc0f1f01f902c16c7e674e079f5e3ad0eb"
+        },
+        "timer": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled"
+        }
+      },
+      "status": "passed",
+      "apply_exit": 0,
+      "receipt": {
+        "vmid": 200,
+        "nonce": "10eb02c56dd54c2aa75ae023ceb58418",
+        "health_or_collector_written": false,
+        "business_or_exporter_restart": false,
+        "Nexus_lifecycle_package_or_credentials_touched": false,
+        "checks": {
+          "private_IP_ExecCondition_passed": true,
+          "collector_read_access_passed": true,
+          "collector_did_not_write_metrics": true
+        },
+        "status": "committed-ten-role-pair",
+        "exporter_PID_start_state_unchanged": true,
+        "timer_activation_unchanged": true
+      },
+      "after": {
+        "hostname": "data-prod-db",
+        "units": {
+          "ssh.service": {
+            "MainPID": "752",
+            "ExecMainStartTimestampMonotonic": "8257446",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "732",
+            "ExecMainStartTimestampMonotonic": "8175923",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "136772",
+            "ExecMainStartTimestampMonotonic": "12707578998",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "783",
+            "ExecMainStartTimestampMonotonic": "8735805",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-data-prod-db.service": {
+            "MainPID": "136092",
+            "ExecMainStartTimestampMonotonic": "12695427940",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          "b1a1e926f9ca92d717dbb903a313315a74749f7a942528096cb57cea8abee0ca 136243 2026-11-06T09:07:40.840743494Z running healthy"
+        ],
+        "files": {
+          "/opt/dell/guest-monitoring/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+          "/opt/dell/guest-monitoring/install-guest-baseline.py": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789",
+          "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "/etc/dell-guest-monitoring/health.json": "bfecc990f0c4afb384a9c43f4b5461cc0f1f01f902c16c7e674e079f5e3ad0eb"
+        },
+        "timer": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled"
+        }
+      },
+      "completed_at": "2026-11-07T02:26:24.940979+08:00",
+      "services_Exporter_containers_timer_unchanged": true,
+      "health_collector_unchanged": true
+    },
+    {
+      "vmid": 201,
+      "started_at": "2026-11-07T02:26:24.941760+08:00",
+      "before": {
+        "hostname": "data-prod-infra",
+        "units": {
+          "ssh.service": {
+            "MainPID": "718",
+            "ExecMainStartTimestampMonotonic": "8622759",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "702",
+            "ExecMainStartTimestampMonotonic": "8537050",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "170926",
+            "ExecMainStartTimestampMonotonic": "12848560838",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "752",
+            "ExecMainStartTimestampMonotonic": "9048386",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-data-prod-infra.service": {
+            "MainPID": "169147",
+            "ExecMainStartTimestampMonotonic": "12817015279",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          "3d3000b2a67c396ec5647892e12f9441fbbddb19aa0882cca447a2f403bc43f0 169414 2026-11-06T09:10:25.56257888Z running healthy",
+          "b940153fac95f736fb49a32ccd7f9143dced2eddd62944f4ef810e2c30a771a5 169314 2026-11-06T09:10:25.21329908Z running healthy",
+          "ff4c025af4b222512bfd2975790d40144c5d6b38c435888adc06e2a0be9d8e61 169521 2026-11-06T09:10:25.923495911Z running healthy"
+        ],
+        "files": {
+          "/opt/dell/guest-monitoring/guest-targets.json": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "/opt/dell/guest-monitoring/install-guest-baseline.py": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "/etc/dell-guest-monitoring/health.json": "b27a081ab737d13b5d0b5c67b60f7f45b25d016f3936dedcd9c1fdf13f11e412"
+        },
+        "timer": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled"
+        }
+      },
+      "status": "passed",
+      "apply_exit": 0,
+      "receipt": {
+        "vmid": 201,
+        "nonce": "fc199615190a4f4fb492257965fbe1c4",
+        "health_or_collector_written": false,
+        "business_or_exporter_restart": false,
+        "Nexus_lifecycle_package_or_credentials_touched": false,
+        "checks": {
+          "private_IP_ExecCondition_passed": true,
+          "collector_read_access_passed": true,
+          "collector_did_not_write_metrics": true
+        },
+        "status": "committed-ten-role-pair",
+        "exporter_PID_start_state_unchanged": true,
+        "timer_activation_unchanged": true
+      },
+      "after": {
+        "hostname": "data-prod-infra",
+        "units": {
+          "ssh.service": {
+            "MainPID": "718",
+            "ExecMainStartTimestampMonotonic": "8622759",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "702",
+            "ExecMainStartTimestampMonotonic": "8537050",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "170926",
+            "ExecMainStartTimestampMonotonic": "12848560838",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "752",
+            "ExecMainStartTimestampMonotonic": "9048386",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-data-prod-infra.service": {
+            "MainPID": "169147",
+            "ExecMainStartTimestampMonotonic": "12817015279",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          "3d3000b2a67c396ec5647892e12f9441fbbddb19aa0882cca447a2f403bc43f0 169414 2026-11-06T09:10:25.56257888Z running healthy",
+          "b940153fac95f736fb49a32ccd7f9143dced2eddd62944f4ef810e2c30a771a5 169314 2026-11-06T09:10:25.21329908Z running healthy",
+          "ff4c025af4b222512bfd2975790d40144c5d6b38c435888adc06e2a0be9d8e61 169521 2026-11-06T09:10:25.923495911Z running healthy"
+        ],
+        "files": {
+          "/opt/dell/guest-monitoring/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+          "/opt/dell/guest-monitoring/install-guest-baseline.py": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789",
+          "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "/etc/dell-guest-monitoring/health.json": "b27a081ab737d13b5d0b5c67b60f7f45b25d016f3936dedcd9c1fdf13f11e412"
+        },
+        "timer": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled"
+        }
+      },
+      "completed_at": "2026-11-07T02:26:28.657581+08:00",
+      "services_Exporter_containers_timer_unchanged": true,
+      "health_collector_unchanged": true
+    },
+    {
+      "vmid": 210,
+      "started_at": "2026-11-07T02:26:28.658529+08:00",
+      "before": {
+        "hostname": "data-test",
+        "units": {
+          "ssh.service": {
+            "MainPID": "699",
+            "ExecMainStartTimestampMonotonic": "13526053",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "672",
+            "ExecMainStartTimestampMonotonic": "13236455",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "190159",
+            "ExecMainStartTimestampMonotonic": "13418186114",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "735",
+            "ExecMainStartTimestampMonotonic": "14840607",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-data-test-data.service": {
+            "MainPID": "187589",
+            "ExecMainStartTimestampMonotonic": "13360459431",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          "4d955f668d96330c7d9cbe676ec41722a1d3c67038a52d89f0c3f8f11866ce58 187911 2026-11-06T09:20:30.722200722Z running healthy",
+          "5bd9a27fd4051994494eed423d84e50862ef91918ffbfa4834df14de2a8f2e4c 188305 2026-11-06T09:20:36.205996646Z running healthy",
+          "b5d49893d99c73d425f0af035dce837f1467a096841d7bbae3f7d5381ce3df22 187738 2026-11-06T09:20:29.734437085Z running healthy",
+          "df4e9d159f5903e42ab4e6c2c092d2d454ac55a76c226fc8a07fe44c72b41ef6 187829 2026-11-06T09:20:30.31012915Z running healthy"
+        ],
+        "files": {
+          "/opt/dell/guest-monitoring/guest-targets.json": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "/opt/dell/guest-monitoring/install-guest-baseline.py": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "/etc/dell-guest-monitoring/health.json": "2a9563cf2b980e4ea457c5b6938b8687a373ab89cca9cd74e3713db6ccdc7c50"
+        },
+        "timer": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled"
+        }
+      },
+      "status": "passed",
+      "apply_exit": 0,
+      "receipt": {
+        "vmid": 210,
+        "nonce": "b37d9bde4cf2495e81d270d2df52bc07",
+        "health_or_collector_written": false,
+        "business_or_exporter_restart": false,
+        "Nexus_lifecycle_package_or_credentials_touched": false,
+        "checks": {
+          "private_IP_ExecCondition_passed": true,
+          "collector_read_access_passed": true,
+          "collector_did_not_write_metrics": true
+        },
+        "status": "committed-ten-role-pair",
+        "exporter_PID_start_state_unchanged": true,
+        "timer_activation_unchanged": true
+      },
+      "after": {
+        "hostname": "data-test",
+        "units": {
+          "ssh.service": {
+            "MainPID": "699",
+            "ExecMainStartTimestampMonotonic": "13526053",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "672",
+            "ExecMainStartTimestampMonotonic": "13236455",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "190159",
+            "ExecMainStartTimestampMonotonic": "13418186114",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "735",
+            "ExecMainStartTimestampMonotonic": "14840607",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-data-test-data.service": {
+            "MainPID": "187589",
+            "ExecMainStartTimestampMonotonic": "13360459431",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          "4d955f668d96330c7d9cbe676ec41722a1d3c67038a52d89f0c3f8f11866ce58 187911 2026-11-06T09:20:30.722200722Z running healthy",
+          "5bd9a27fd4051994494eed423d84e50862ef91918ffbfa4834df14de2a8f2e4c 188305 2026-11-06T09:20:36.205996646Z running healthy",
+          "b5d49893d99c73d425f0af035dce837f1467a096841d7bbae3f7d5381ce3df22 187738 2026-11-06T09:20:29.734437085Z running healthy",
+          "df4e9d159f5903e42ab4e6c2c092d2d454ac55a76c226fc8a07fe44c72b41ef6 187829 2026-11-06T09:20:30.31012915Z running healthy"
+        ],
+        "files": {
+          "/opt/dell/guest-monitoring/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+          "/opt/dell/guest-monitoring/install-guest-baseline.py": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789",
+          "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "/etc/dell-guest-monitoring/health.json": "2a9563cf2b980e4ea457c5b6938b8687a373ab89cca9cd74e3713db6ccdc7c50"
+        },
+        "timer": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled"
+        }
+      },
+      "completed_at": "2026-11-07T02:26:32.321153+08:00",
+      "services_Exporter_containers_timer_unchanged": true,
+      "health_collector_unchanged": true
+    },
+    {
+      "vmid": 220,
+      "started_at": "2026-11-07T02:26:32.322029+08:00",
+      "before": {
+        "hostname": "publish-service",
+        "units": {
+          "ssh.service": {
+            "MainPID": "726",
+            "ExecMainStartTimestampMonotonic": "14412170",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "704",
+            "ExecMainStartTimestampMonotonic": "14268631",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "4201",
+            "ExecMainStartTimestampMonotonic": "13948467176",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "10280",
+            "ExecMainStartTimestampMonotonic": "42473425520",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-nexus.service": {
+            "MainPID": "0",
+            "ExecMainStartTimestampMonotonic": "0",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead"
+          }
+        },
+        "containers": [],
+        "files": {
+          "/opt/dell/guest-monitoring/guest-targets.json": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "/opt/dell/guest-monitoring/install-guest-baseline.py": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "/etc/dell-guest-monitoring/health.json": "90e624a3cf03eeacfc302d7d47711c3c71b9e93b41e654dd1698623656014320"
+        },
+        "timer": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled"
+        }
+      },
+      "status": "passed",
+      "apply_exit": 0,
+      "receipt": {
+        "vmid": 220,
+        "nonce": "5397562a14164f7283063341ee8c1e49",
+        "health_or_collector_written": false,
+        "business_or_exporter_restart": false,
+        "Nexus_lifecycle_package_or_credentials_touched": false,
+        "checks": {
+          "private_IP_ExecCondition_passed": true,
+          "collector_read_access_passed": true,
+          "collector_did_not_write_metrics": true
+        },
+        "status": "committed-ten-role-pair",
+        "exporter_PID_start_state_unchanged": true,
+        "timer_activation_unchanged": true
+      },
+      "after": {
+        "hostname": "publish-service",
+        "units": {
+          "ssh.service": {
+            "MainPID": "726",
+            "ExecMainStartTimestampMonotonic": "14412170",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "704",
+            "ExecMainStartTimestampMonotonic": "14268631",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "4201",
+            "ExecMainStartTimestampMonotonic": "13948467176",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "10280",
+            "ExecMainStartTimestampMonotonic": "42473425520",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-nexus.service": {
+            "MainPID": "0",
+            "ExecMainStartTimestampMonotonic": "0",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead"
+          }
+        },
+        "containers": [],
+        "files": {
+          "/opt/dell/guest-monitoring/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+          "/opt/dell/guest-monitoring/install-guest-baseline.py": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789",
+          "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "/etc/dell-guest-monitoring/health.json": "90e624a3cf03eeacfc302d7d47711c3c71b9e93b41e654dd1698623656014320"
+        },
+        "timer": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled"
+        }
+      },
+      "completed_at": "2026-11-07T02:26:35.503284+08:00",
+      "services_Exporter_containers_timer_unchanged": true,
+      "health_collector_unchanged": true
+    },
+    {
+      "vmid": 221,
+      "started_at": "2026-11-07T02:26:35.504303+08:00",
+      "before": {
+        "hostname": "artifact-service",
+        "units": {
+          "ssh.service": {
+            "MainPID": "702",
+            "ExecMainStartTimestampMonotonic": "15001577",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "677",
+            "ExecMainStartTimestampMonotonic": "14741852",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "139523",
+            "ExecMainStartTimestampMonotonic": "17270920727",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "739",
+            "ExecMainStartTimestampMonotonic": "16301512",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-nexus.service": {
+            "MainPID": "127067",
+            "ExecMainStartTimestampMonotonic": "15796527436",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          "70d4bec45b73e68dee425c6962ba0ec2d1448b03187dfa0dc8369bdc44eb65bb 127238 2026-11-06T09:09:49.07710254Z running healthy",
+          "bb273c7b5b309671bd34f56c04dc6ae96dc7451105b8f1f19f890968fb4ce69a 127695 2026-11-06T09:10:44.864614102Z running healthy"
+        ],
+        "files": {
+          "/opt/dell/guest-monitoring/guest-targets.json": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "/opt/dell/guest-monitoring/install-guest-baseline.py": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "/etc/dell-guest-monitoring/health.json": "37ebb565de493c1454b36947ff492d3dd64bfb0ae2583583f0eb86ec159aac75"
+        },
+        "timer": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled"
+        }
+      },
+      "status": "passed",
+      "apply_exit": 0,
+      "receipt": {
+        "vmid": 221,
+        "nonce": "85c71e3c4bd24218b0dbe6def655764d",
+        "health_or_collector_written": false,
+        "business_or_exporter_restart": false,
+        "Nexus_lifecycle_package_or_credentials_touched": false,
+        "checks": {
+          "private_IP_ExecCondition_passed": true,
+          "collector_read_access_passed": true,
+          "collector_did_not_write_metrics": true
+        },
+        "status": "committed-ten-role-pair",
+        "exporter_PID_start_state_unchanged": true,
+        "timer_activation_unchanged": true
+      },
+      "after": {
+        "hostname": "artifact-service",
+        "units": {
+          "ssh.service": {
+            "MainPID": "702",
+            "ExecMainStartTimestampMonotonic": "15001577",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "677",
+            "ExecMainStartTimestampMonotonic": "14741852",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "139523",
+            "ExecMainStartTimestampMonotonic": "17270920727",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "739",
+            "ExecMainStartTimestampMonotonic": "16301512",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-nexus.service": {
+            "MainPID": "127067",
+            "ExecMainStartTimestampMonotonic": "15796527436",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          "70d4bec45b73e68dee425c6962ba0ec2d1448b03187dfa0dc8369bdc44eb65bb 127238 2026-11-06T09:09:49.07710254Z running healthy",
+          "bb273c7b5b309671bd34f56c04dc6ae96dc7451105b8f1f19f890968fb4ce69a 127695 2026-11-06T09:10:44.864614102Z running healthy"
+        ],
+        "files": {
+          "/opt/dell/guest-monitoring/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+          "/opt/dell/guest-monitoring/install-guest-baseline.py": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789",
+          "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "/etc/dell-guest-monitoring/health.json": "37ebb565de493c1454b36947ff492d3dd64bfb0ae2583583f0eb86ec159aac75"
+        },
+        "timer": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled"
+        }
+      },
+      "completed_at": "2026-11-07T02:26:39.873707+08:00",
+      "services_Exporter_containers_timer_unchanged": true,
+      "health_collector_unchanged": true
+    },
+    {
+      "vmid": 230,
+      "started_at": "2026-11-07T02:26:39.874743+08:00",
+      "before": {
+        "hostname": "java-prod-01",
+        "units": {
+          "ssh.service": {
+            "MainPID": "736",
+            "ExecMainStartTimestampMonotonic": "12115502",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "714",
+            "ExecMainStartTimestampMonotonic": "11983975",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "770",
+            "ExecMainStartTimestampMonotonic": "12853028",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "0",
+            "ExecMainStartTimestampMonotonic": "0",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead"
+          }
+        },
+        "containers": [],
+        "files": {
+          "/opt/dell/guest-monitoring/guest-targets.json": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "/opt/dell/guest-monitoring/install-guest-baseline.py": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "/etc/dell-guest-monitoring/health.json": "46dda1ad99b21bb945f3b81cfde97a3b14121b8c81c58a603cacd67c94c7b189"
+        },
+        "timer": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled"
+        }
+      },
+      "status": "passed",
+      "apply_exit": 0,
+      "receipt": {
+        "vmid": 230,
+        "nonce": "b1033ced3323436e92af9bf20e6638a7",
+        "health_or_collector_written": false,
+        "business_or_exporter_restart": false,
+        "Nexus_lifecycle_package_or_credentials_touched": false,
+        "checks": {
+          "private_IP_ExecCondition_passed": true,
+          "collector_read_access_passed": true,
+          "collector_did_not_write_metrics": true
+        },
+        "status": "committed-ten-role-pair",
+        "exporter_PID_start_state_unchanged": true,
+        "timer_activation_unchanged": true
+      },
+      "after": {
+        "hostname": "java-prod-01",
+        "units": {
+          "ssh.service": {
+            "MainPID": "736",
+            "ExecMainStartTimestampMonotonic": "12115502",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "714",
+            "ExecMainStartTimestampMonotonic": "11983975",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "770",
+            "ExecMainStartTimestampMonotonic": "12853028",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "0",
+            "ExecMainStartTimestampMonotonic": "0",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead"
+          }
+        },
+        "containers": [],
+        "files": {
+          "/opt/dell/guest-monitoring/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+          "/opt/dell/guest-monitoring/install-guest-baseline.py": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789",
+          "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "/etc/dell-guest-monitoring/health.json": "46dda1ad99b21bb945f3b81cfde97a3b14121b8c81c58a603cacd67c94c7b189"
+        },
+        "timer": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled"
+        }
+      },
+      "completed_at": "2026-11-07T02:26:42.838628+08:00",
+      "services_Exporter_containers_timer_unchanged": true,
+      "health_collector_unchanged": true
+    },
+    {
+      "vmid": 240,
+      "started_at": "2026-11-07T02:26:42.839638+08:00",
+      "before": {
+        "hostname": "java-test-01",
+        "units": {
+          "ssh.service": {
+            "MainPID": "725",
+            "ExecMainStartTimestampMonotonic": "17160834",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "695",
+            "ExecMainStartTimestampMonotonic": "16805727",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "56717",
+            "ExecMainStartTimestampMonotonic": "13476292153",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "0",
+            "ExecMainStartTimestampMonotonic": "0",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead"
+          },
+          "dell-finger-finger-service-system.service": {
+            "MainPID": "0",
+            "ExecMainStartTimestampMonotonic": "0",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead"
+          },
+          "dell-finger-finger-service-coms.service": {
+            "MainPID": "0",
+            "ExecMainStartTimestampMonotonic": "0",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead"
+          },
+          "dell-finger-finger-auth.service": {
+            "MainPID": "0",
+            "ExecMainStartTimestampMonotonic": "0",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead"
+          },
+          "dell-finger-finger-bff-system.service": {
+            "MainPID": "0",
+            "ExecMainStartTimestampMonotonic": "0",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead"
+          },
+          "dell-finger-finger-gateway-mobile.service": {
+            "MainPID": "0",
+            "ExecMainStartTimestampMonotonic": "0",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead"
+          }
+        },
+        "containers": [],
+        "files": {
+          "/opt/dell/guest-monitoring/guest-targets.json": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "/opt/dell/guest-monitoring/install-guest-baseline.py": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "/etc/dell-guest-monitoring/health.json": "b19b5e4e0eb585ea6361a36ae781293a5b0d4e7640c714a740b2eb71dce67484"
+        },
+        "timer": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled"
+        }
+      },
+      "status": "passed",
+      "apply_exit": 0,
+      "receipt": {
+        "vmid": 240,
+        "nonce": "94a43b17c3cf4f05a5d6b9a5b1951b99",
+        "health_or_collector_written": false,
+        "business_or_exporter_restart": false,
+        "Nexus_lifecycle_package_or_credentials_touched": false,
+        "checks": {
+          "private_IP_ExecCondition_passed": true,
+          "collector_read_access_passed": true,
+          "collector_did_not_write_metrics": true
+        },
+        "status": "committed-ten-role-pair",
+        "exporter_PID_start_state_unchanged": true,
+        "timer_activation_unchanged": true
+      },
+      "after": {
+        "hostname": "java-test-01",
+        "units": {
+          "ssh.service": {
+            "MainPID": "725",
+            "ExecMainStartTimestampMonotonic": "17160834",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "695",
+            "ExecMainStartTimestampMonotonic": "16805727",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "56717",
+            "ExecMainStartTimestampMonotonic": "13476292153",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "0",
+            "ExecMainStartTimestampMonotonic": "0",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead"
+          },
+          "dell-finger-finger-service-system.service": {
+            "MainPID": "0",
+            "ExecMainStartTimestampMonotonic": "0",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead"
+          },
+          "dell-finger-finger-service-coms.service": {
+            "MainPID": "0",
+            "ExecMainStartTimestampMonotonic": "0",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead"
+          },
+          "dell-finger-finger-auth.service": {
+            "MainPID": "0",
+            "ExecMainStartTimestampMonotonic": "0",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead"
+          },
+          "dell-finger-finger-bff-system.service": {
+            "MainPID": "0",
+            "ExecMainStartTimestampMonotonic": "0",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead"
+          },
+          "dell-finger-finger-gateway-mobile.service": {
+            "MainPID": "0",
+            "ExecMainStartTimestampMonotonic": "0",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead"
+          }
+        },
+        "containers": [],
+        "files": {
+          "/opt/dell/guest-monitoring/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+          "/opt/dell/guest-monitoring/install-guest-baseline.py": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789",
+          "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "/etc/dell-guest-monitoring/health.json": "b19b5e4e0eb585ea6361a36ae781293a5b0d4e7640c714a740b2eb71dce67484"
+        },
+        "timer": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled"
+        }
+      },
+      "completed_at": "2026-11-07T02:26:45.976220+08:00",
+      "services_Exporter_containers_timer_unchanged": true,
+      "health_collector_unchanged": true
+    },
+    {
+      "vmid": 250,
+      "started_at": "2026-11-07T02:26:45.977383+08:00",
+      "before": {
+        "hostname": "penpot-service",
+        "units": {
+          "ssh.service": {
+            "MainPID": "750",
+            "ExecMainStartTimestampMonotonic": "12180873",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "731",
+            "ExecMainStartTimestampMonotonic": "11952428",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "973208",
+            "ExecMainStartTimestampMonotonic": "14627357371",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "791",
+            "ExecMainStartTimestampMonotonic": "13537427",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-penpot.service": {
+            "MainPID": "2893458",
+            "ExecMainStartTimestampMonotonic": "43403233792",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          "4611f0d09e79410ae4bab0ff75a008bb1bdbe6dfc0a76175726d632355831df5 2894563 2026-11-06T17:43:17.13787762Z running healthy",
+          "81bec808dfa5ad48bdd7fc73f3da737d3f9c0a5c9acb814e7be1761e3d7954e4 2894433 2026-11-06T17:43:16.482255054Z running healthy",
+          "896b4b365781d4ce0922b7a250fc277fcb1de2b34cdb5cca76578352de76239b 2894001 2026-11-06T17:43:12.735673495Z running healthy",
+          "90aacbc3b78e9b1c07771b55013e3b62c5634df8c777545c4229558f974b01ed 2894846 2026-11-06T17:43:18.267099642Z running healthy",
+          "96c4fb2d14c0747697b232b2435dbaf1ba58c25850be1f8e84a2f4acfd6cff49 2894665 2026-11-06T17:43:17.543928441Z running healthy",
+          "989309f28c5aaf2db549888b842dd256ca92371664c5baf5ad8b1ce4829f5644 2894499 2026-11-06T17:43:16.795237826Z running healthy",
+          "aa9c599b0dd027b4f8056f8adf283d6ebb07f861569af13478c68305d53ccbaf 2894212 2026-11-06T17:43:13.822995225Z running healthy",
+          "b223cafa5cb2450dc520513f71e999ba6550c0cf894a514c4d520e72c33f39d9 2894148 2026-11-06T17:43:13.479339637Z running healthy",
+          "b6ac0e7fd316f8b53df1d8853d5614049fa5d180f8f9b5f84e3baa448f481c17 2894277 2026-11-06T17:43:14.214438168Z running healthy",
+          "bdd8e421ad746ddecc7950b390c21c046f6622914eed89cf3fc9e5f52fca31cb 2894755 2026-11-06T17:43:17.927219274Z running healthy",
+          "d08ee10d5b4ce72de16ca148218a85edda276963b6e0d665517a763801a9616e 2894080 2026-11-06T17:43:13.095892443Z running healthy"
+        ],
+        "files": {
+          "/opt/dell/guest-monitoring/guest-targets.json": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "/opt/dell/guest-monitoring/install-guest-baseline.py": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "/etc/dell-guest-monitoring/health.json": "27c4a99c65a477bd4b63cfd75b3b35cbdba3d50b5ed605b584fc86d3356784a9"
+        },
+        "timer": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled"
+        }
+      },
+      "status": "passed",
+      "apply_exit": 0,
+      "receipt": {
+        "vmid": 250,
+        "nonce": "7e8af177a5ed4b37ae75d001ff982aa7",
+        "health_or_collector_written": false,
+        "business_or_exporter_restart": false,
+        "Nexus_lifecycle_package_or_credentials_touched": false,
+        "checks": {
+          "private_IP_ExecCondition_passed": true,
+          "collector_read_access_passed": true,
+          "collector_did_not_write_metrics": true
+        },
+        "status": "committed-ten-role-pair",
+        "exporter_PID_start_state_unchanged": true,
+        "timer_activation_unchanged": true
+      },
+      "after": {
+        "hostname": "penpot-service",
+        "units": {
+          "ssh.service": {
+            "MainPID": "750",
+            "ExecMainStartTimestampMonotonic": "12180873",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "731",
+            "ExecMainStartTimestampMonotonic": "11952428",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "973208",
+            "ExecMainStartTimestampMonotonic": "14627357371",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "791",
+            "ExecMainStartTimestampMonotonic": "13537427",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-penpot.service": {
+            "MainPID": "2893458",
+            "ExecMainStartTimestampMonotonic": "43403233792",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          "4611f0d09e79410ae4bab0ff75a008bb1bdbe6dfc0a76175726d632355831df5 2894563 2026-11-06T17:43:17.13787762Z running healthy",
+          "81bec808dfa5ad48bdd7fc73f3da737d3f9c0a5c9acb814e7be1761e3d7954e4 2894433 2026-11-06T17:43:16.482255054Z running healthy",
+          "896b4b365781d4ce0922b7a250fc277fcb1de2b34cdb5cca76578352de76239b 2894001 2026-11-06T17:43:12.735673495Z running healthy",
+          "90aacbc3b78e9b1c07771b55013e3b62c5634df8c777545c4229558f974b01ed 2894846 2026-11-06T17:43:18.267099642Z running healthy",
+          "96c4fb2d14c0747697b232b2435dbaf1ba58c25850be1f8e84a2f4acfd6cff49 2894665 2026-11-06T17:43:17.543928441Z running healthy",
+          "989309f28c5aaf2db549888b842dd256ca92371664c5baf5ad8b1ce4829f5644 2894499 2026-11-06T17:43:16.795237826Z running healthy",
+          "aa9c599b0dd027b4f8056f8adf283d6ebb07f861569af13478c68305d53ccbaf 2894212 2026-11-06T17:43:13.822995225Z running healthy",
+          "b223cafa5cb2450dc520513f71e999ba6550c0cf894a514c4d520e72c33f39d9 2894148 2026-11-06T17:43:13.479339637Z running healthy",
+          "b6ac0e7fd316f8b53df1d8853d5614049fa5d180f8f9b5f84e3baa448f481c17 2894277 2026-11-06T17:43:14.214438168Z running healthy",
+          "bdd8e421ad746ddecc7950b390c21c046f6622914eed89cf3fc9e5f52fca31cb 2894755 2026-11-06T17:43:17.927219274Z running healthy",
+          "d08ee10d5b4ce72de16ca148218a85edda276963b6e0d665517a763801a9616e 2894080 2026-11-06T17:43:13.095892443Z running healthy"
+        ],
+        "files": {
+          "/opt/dell/guest-monitoring/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+          "/opt/dell/guest-monitoring/install-guest-baseline.py": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789",
+          "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "/etc/dell-guest-monitoring/health.json": "27c4a99c65a477bd4b63cfd75b3b35cbdba3d50b5ed605b584fc86d3356784a9"
+        },
+        "timer": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled"
+        }
+      },
+      "completed_at": "2026-11-07T02:26:50.668717+08:00",
+      "services_Exporter_containers_timer_unchanged": true,
+      "health_collector_unchanged": true
+    },
+    {
+      "vmid": 260,
+      "started_at": "2026-11-07T02:26:50.669918+08:00",
+      "before": {
+        "hostname": "nas-media",
+        "units": {
+          "ssh.service": {
+            "MainPID": "756",
+            "ExecMainStartTimestampMonotonic": "12128479",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "692",
+            "ExecMainStartTimestampMonotonic": "11311965",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "23911",
+            "ExecMainStartTimestampMonotonic": "13953087414",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "869",
+            "ExecMainStartTimestampMonotonic": "16948139",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "nginx.service": {
+            "MainPID": "762",
+            "ExecMainStartTimestampMonotonic": "12380000",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "openmediavault-engined.service": {
+            "MainPID": "824",
+            "ExecMainStartTimestampMonotonic": "15190001",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "smbd.service": {
+            "MainPID": "52945",
+            "ExecMainStartTimestampMonotonic": "39420098513",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-nas-jellyfin.service": {
+            "MainPID": "53071",
+            "ExecMainStartTimestampMonotonic": "39423722431",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          "c7db70188968ec3c8896c5110e71f5b23d9e0284cd6c9128173148d509305ad9 53139 2026-11-06T16:39:03.613171998Z running healthy"
+        ],
+        "files": {
+          "/opt/dell/guest-monitoring/guest-targets.json": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "/opt/dell/guest-monitoring/install-guest-baseline.py": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "/etc/dell-guest-monitoring/health.json": "272796f6f1e1c2c02d8ac3180bf5a984fbde48faf27645b17b8940665f9d972f"
+        },
+        "timer": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled"
+        }
+      },
+      "status": "passed",
+      "apply_exit": 0,
+      "receipt": {
+        "vmid": 260,
+        "nonce": "a1b68084c05a440da610bedc302780dd",
+        "health_or_collector_written": false,
+        "business_or_exporter_restart": false,
+        "Nexus_lifecycle_package_or_credentials_touched": false,
+        "checks": {
+          "private_IP_ExecCondition_passed": true,
+          "collector_read_access_passed": true,
+          "collector_did_not_write_metrics": true
+        },
+        "status": "committed-ten-role-pair",
+        "exporter_PID_start_state_unchanged": true,
+        "timer_activation_unchanged": true
+      },
+      "after": {
+        "hostname": "nas-media",
+        "units": {
+          "ssh.service": {
+            "MainPID": "756",
+            "ExecMainStartTimestampMonotonic": "12128479",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "692",
+            "ExecMainStartTimestampMonotonic": "11311965",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "23911",
+            "ExecMainStartTimestampMonotonic": "13953087414",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "869",
+            "ExecMainStartTimestampMonotonic": "16948139",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "nginx.service": {
+            "MainPID": "762",
+            "ExecMainStartTimestampMonotonic": "12380000",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "openmediavault-engined.service": {
+            "MainPID": "824",
+            "ExecMainStartTimestampMonotonic": "15190001",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "smbd.service": {
+            "MainPID": "52945",
+            "ExecMainStartTimestampMonotonic": "39420098513",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-nas-jellyfin.service": {
+            "MainPID": "53071",
+            "ExecMainStartTimestampMonotonic": "39423722431",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          "c7db70188968ec3c8896c5110e71f5b23d9e0284cd6c9128173148d509305ad9 53139 2026-11-06T16:39:03.613171998Z running healthy"
+        ],
+        "files": {
+          "/opt/dell/guest-monitoring/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+          "/opt/dell/guest-monitoring/install-guest-baseline.py": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789",
+          "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "/etc/dell-guest-monitoring/health.json": "272796f6f1e1c2c02d8ac3180bf5a984fbde48faf27645b17b8940665f9d972f"
+        },
+        "timer": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled"
+        }
+      },
+      "completed_at": "2026-11-07T02:26:54.703863+08:00",
+      "services_Exporter_containers_timer_unchanged": true,
+      "health_collector_unchanged": true
+    },
+    {
+      "vmid": 270,
+      "started_at": "2026-11-07T02:26:54.705230+08:00",
+      "before": {
+        "hostname": "ops-service",
+        "units": {
+          "ssh.service": {
+            "MainPID": "697",
+            "ExecMainStartTimestampMonotonic": "13965136",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "669",
+            "ExecMainStartTimestampMonotonic": "13660637",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "181227",
+            "ExecMainStartTimestampMonotonic": "15245286813",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "726",
+            "ExecMainStartTimestampMonotonic": "15257189",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-ops.service": {
+            "MainPID": "179827",
+            "ExecMainStartTimestampMonotonic": "15212932221",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-lark-notify.service": {
+            "MainPID": "40894",
+            "ExecMainStartTimestampMonotonic": "3031600278",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          "8009eeb2630f85c847f06237474da399d9b274331b91737412f643f437929562 180117 2026-11-06T09:47:22.802302164Z running healthy",
+          "a68edc8573b74bb09839330b23affd02cb8a8c527d4fc6cea45a8e559fc7fc23 180201 2026-11-06T09:47:23.10702086Z running healthy",
+          "b13dec160fe0b3239a41f701c782b0f2b26b9476a397f0e6929d43e22b1490ab 180053 2026-11-06T09:47:22.513086715Z running healthy",
+          "dcaf85ebca29fc03663d4d825b728173326f12260a4ddd2950236e4221060a34 179969 2026-11-06T09:47:22.14783768Z running healthy"
+        ],
+        "files": {
+          "/opt/dell/guest-monitoring/guest-targets.json": "fdf3b3ce4414d7e571e78c17dcb54c4b830d1689a0f34d803a6249f7ed74c53c",
+          "/opt/dell/guest-monitoring/install-guest-baseline.py": "4ce25d046aaa07da17626bb8d53da9e45c11bf0c88d22f79201eb5c59a26b3b5",
+          "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "/etc/dell-guest-monitoring/health.json": "dc65c27cc8367f1332ca26250f898c6c1c2ae689cae6ae5ad87122ba29088a7d"
+        },
+        "timer": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled"
+        }
+      },
+      "status": "passed",
+      "apply_exit": 0,
+      "receipt": {
+        "vmid": 270,
+        "nonce": "40665f81a5bd41d6b56c4ca4551acf29",
+        "health_or_collector_written": false,
+        "business_or_exporter_restart": false,
+        "Nexus_lifecycle_package_or_credentials_touched": false,
+        "checks": {
+          "private_IP_ExecCondition_passed": true,
+          "collector_read_access_passed": true,
+          "collector_did_not_write_metrics": true
+        },
+        "status": "committed-ten-role-pair",
+        "exporter_PID_start_state_unchanged": true,
+        "timer_activation_unchanged": true
+      },
+      "after": {
+        "hostname": "ops-service",
+        "units": {
+          "ssh.service": {
+            "MainPID": "697",
+            "ExecMainStartTimestampMonotonic": "13965136",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "669",
+            "ExecMainStartTimestampMonotonic": "13660637",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "181227",
+            "ExecMainStartTimestampMonotonic": "15245286813",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "726",
+            "ExecMainStartTimestampMonotonic": "15257189",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-ops.service": {
+            "MainPID": "179827",
+            "ExecMainStartTimestampMonotonic": "15212932221",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-lark-notify.service": {
+            "MainPID": "40894",
+            "ExecMainStartTimestampMonotonic": "3031600278",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "containers": [
+          "8009eeb2630f85c847f06237474da399d9b274331b91737412f643f437929562 180117 2026-11-06T09:47:22.802302164Z running healthy",
+          "a68edc8573b74bb09839330b23affd02cb8a8c527d4fc6cea45a8e559fc7fc23 180201 2026-11-06T09:47:23.10702086Z running healthy",
+          "b13dec160fe0b3239a41f701c782b0f2b26b9476a397f0e6929d43e22b1490ab 180053 2026-11-06T09:47:22.513086715Z running healthy",
+          "dcaf85ebca29fc03663d4d825b728173326f12260a4ddd2950236e4221060a34 179969 2026-11-06T09:47:22.14783768Z running healthy"
+        ],
+        "files": {
+          "/opt/dell/guest-monitoring/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+          "/opt/dell/guest-monitoring/install-guest-baseline.py": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789",
+          "/opt/dell/guest-monitoring/collect-guest-health.py": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "/etc/dell-guest-monitoring/health.json": "dc65c27cc8367f1332ca26250f898c6c1c2ae689cae6ae5ad87122ba29088a7d"
+        },
+        "timer": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled"
+        }
+      },
+      "completed_at": "2026-11-07T02:26:58.816520+08:00",
+      "services_Exporter_containers_timer_unchanged": true,
+      "health_collector_unchanged": true
+    }
+  ],
+  "mainplan_modified": false,
+  "Nexus_lifecycle_or_profile_migration": false,
+  "completed_at": "2026-11-07T02:28:53.374964+08:00",
+  "source_sync": {
+    "status": "passed",
+    "files": [
+      "infra/ops/guest-baseline/guest-targets.json",
+      "infra/ops/guest-baseline/install-guest-baseline.py"
+    ],
+    "newer_role_health_profile_preserved": true,
+    "221Nexus_profile_preserved": true,
+    "220Nexus_profile_added": false,
+    "backup": "source-backups/a9637e83dcbc438baa93bf8123dc33db"
+  },
+  "final_Prometheus_receipt": "final-Prometheus-readback.json"
+}

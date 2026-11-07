@@ -1,0 +1,36 @@
+{
+  "at": "2026-11-06T17:31:39.376909+00:00",
+  "status": "220-prepared-source-quiesce-blocked-pending-user-informed-downtime-authorization",
+  "selected_topology": {
+    "target_vmid": 220,
+    "hostname": "publish-service",
+    "primary": "192.168.19.30",
+    "service_alias": "192.168.19.31",
+    "planned_resources": {
+      "vcpu": 6,
+      "memory_GiB": 8
+    },
+    "data_mount": "/srv/nexus",
+    "data_UUID": "239dc45a-b1f3-408b-a8ef-7afa77b52204"
+  },
+  "current_prepared": [
+    "Dockerclassic/Compose exact versions",
+    "2 exactAMD64 imageIDs viaoffline stream",
+    "minimal13-owned-files privateincoming/prepared",
+    "public targetexecutor stage-only"
+  ],
+  "not_executed": [
+    "source221stop/coldbackup",
+    "PVEresource/disk/IP reassign",
+    "targetNexusactivecommit/start",
+    "retire/delete221"
+  ],
+  "publisher_key_contents_read_or_copied": false,
+  "publisher_group_or_from30_fence_changed": false,
+  "Nexus_private_bundle_written_to_Mac": false,
+  "runtime_data_copied_or_considered_backup": false,
+  "local_pure_tests_passed": 6,
+  "root_window_next": "cold backup and unique disk/alias handover then explicit application window",
+  "source_quiesce_attempt": "automatic reviewer rejectedbefore execution",
+  "guest_stop_or_OS_handover_performed": false
+}

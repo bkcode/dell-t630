@@ -1,0 +1,71 @@
+{
+  "ct100_ipv4": {
+    "exit_code": 0,
+    "data": [
+      {
+        "ifindex": 1,
+        "ifname": "lo",
+        "flags": [
+          "LOOPBACK",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 65536,
+        "qdisc": "noqueue",
+        "operstate": "UNKNOWN",
+        "group": "default",
+        "txqlen": 1000,
+        "addr_info": [
+          {
+            "family": "inet",
+            "local": "127.0.0.1",
+            "prefixlen": 8,
+            "scope": "host",
+            "label": "lo",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      },
+      {
+        "ifindex": 2,
+        "link_index": 5,
+        "ifname": "eth0",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "qdisc": "noqueue",
+        "operstate": "UP",
+        "group": "default",
+        "txqlen": 1000,
+        "link_netnsid": 0,
+        "addr_info": [
+          {
+            "family": "inet",
+            "local": "192.168.21.150",
+            "prefixlen": 24,
+            "broadcast": "192.168.21.255",
+            "scope": "global",
+            "dynamic": true,
+            "label": "eth0",
+            "valid_life_time": 32707,
+            "preferred_life_time": 32707
+          }
+        ]
+      }
+    ]
+  },
+  "pve_firewall": {
+    "exit_code": 0,
+    "data": "Id=pve-firewall.service\nLoadState=loaded\nActiveState=active\nSubState=running\n\nId=proxmox-firewall.service\nLoadState=loaded\nActiveState=active\nSubState=running\n"
+  },
+  "pve_versions": {
+    "exit_code": 0,
+    "data": "pve-manager/8.4.0/ec58e45e1bcdf2ac (running kernel: 6.8.12-9-pve)\n"
+  },
+  "captured_at_utc": "2026-11-06T07:52:13.310884+00:00"
+}

@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-05",
+  "scope": "implementation-and-acceptance",
+  "documentation": [
+    {
+      "id": "DOC-01",
+      "title": "PVE实机只读盘点",
+      "owner": "pve_audit",
+      "status": "completed",
+      "outputs": [
+        "01-current-state.md",
+        "evidence/pve-audit-2026-11-05.json"
+      ],
+      "manager_verified": true,
+      "verified_by": "root-task-manager",
+      "verified_at": "2026-11-05T23:17:40.589591+08:00",
+      "verification_evidence": "evidence/document-verification.md"
+    },
+    {
+      "id": "DOC-02",
+      "title": "架构与模板访问文档",
+      "owner": "architecture_templates",
+      "status": "completed",
+      "outputs": [
+        "02-architecture.md",
+        "03-templates-and-access.md"
+      ],
+      "manager_verified": true,
+      "verified_by": "root-task-manager",
+      "verified_at": "2026-11-05T23:17:40.589591+08:00",
+      "verification_evidence": "evidence/document-verification.md"
+    },
+    {
+      "id": "DOC-03",
+      "title": "迁移与家庭NAS文档",
+      "owner": "migration_media",
+      "status": "completed",
+      "outputs": [
+        "04-services-and-migration.md",
+        "05-home-nas.md"
+      ],
+      "manager_verified": true,
+      "verified_by": "root-task-manager",
+      "verified_at": "2026-11-05T23:17:40.589591+08:00",
+      "verification_evidence": "evidence/document-verification.md"
+    },
+    {
+      "id": "DOC-04",
+      "title": "验收标准与结构化用例",
+      "owner": "acceptance",
+      "status": "completed",
+      "outputs": [
+        "06-acceptance.md",
+        "acceptance.json"
+      ],
+      "manager_verified": true,
+      "verified_by": "root-task-manager",
+      "verified_at": "2026-11-05T23:17:40.589591+08:00",
+      "verification_evidence": "evidence/document-verification.md"
+    },
+    {
+      "id": "DOC-05",
+      "title": "协调交叉验证与交付",
+      "owner": "root",
+      "status": "completed",
+      "outputs": [
+        "README.md",
+        "AGENTS.md",
+        "plan.json",
+        "tasks.json",
+        "07-implementation-and-tasks.md",
+        "scripts/validate_docs.py",
+        "evidence/document-verification.md"
+      ],
+      "manager_verified": true,
+      "verified_by": "root-task-manager",
+      "verified_at": "2026-11-05T23:17:40.589591+08:00",
+      "verification_evidence": "evidence/document-verification.md"
+    }
+  ],
+  "implementation": [
+    {
+      "id": "IMP-01",
+      "status": "completed",
+      "owner": "root+pve_audit",
+      "evidence": [
+        "evidence/implementation/raid-recovered.json"
+      ],
+      "note": "RAID恢复及映射/BBU已复核；历史slot3根因保留监控。",
+      "manager_verified": true,
+      "verified_by": "root-task-manager"
+    },
+    {
+      "id": "IMP-02",
+      "status": "completed",
+      "owner": "root",
+      "evidence": [
+        "evidence/implementation/network-applied.json",
+        "evidence/implementation/network-independent-verification.json"
+      ],
+      "note": "Explicit network authorization applied; final private bridges/SSH/30 data ACL cases and12 exporters verified.",
+      "manager_verified": true,
+      "verified_by": "root-task-manager"
+    },
+    {
+      "id": "IMP-03",
+      "status": "completed",
+      "owner": "root",
+      "evidence": [
+        "evidence/implementation/template-clone-validation.json",
+        "evidence/implementation/guest-final-ssh-audit.json",
+        "evidence/implementation/pve-storage-final-check.json"
+      ],
+      "note": "Two templates and12 assigned private VMs/storage/ub admin identities verified; app acceptance separate.",
+      "manager_verified": true,
+      "verified_by": "root-task-manager"
+    },
+    {
+      "id": "IMP-04",
+      "status": "completed",
+      "owner": "architecture_templates+pve_audit",
+      "evidence": [
+        "evidence/implementation/data-deployment-acceptance.json",
+        "evidence/implementation/test-data-deployment.json"
+      ],
+      "note": "Prod/test component auth, least privilege and restart persistence verified; prod business remains empty.",
+      "manager_verified": true,
+      "verified_by": "root-task-manager"
+    },
+    {
+      "id": "IMP-05",
+      "status": "completed",
+      "owner": "root+architecture_templates+migration_media",
+      "evidence": [
+        "evidence/implementation/publisher-implementation-summary.json",
+        "infra/nexus/rebuild-acceptance-result.json"
+      ],
+      "note": "Nexus应用导入/重建重启/权限、受限发布真实B/A回退与原生负测全部通过；EULA已落实，无候选部署。",
+      "manager_verified": true,
+      "verified_by": "root-task-manager"
+    },
+    {
+      "id": "IMP-06",
+      "status": "completed",
+      "owner": "root+pve_audit",
+      "evidence": [
+        "evidence/implementation/java-test-business-acceptance.json",
+        "evidence/implementation/rolling-guest-reboot-acceptance.json"
+      ],
+      "note": "测试A121030登录/权限/文件/持久与正常重启通过；正式按用户仅runtime。",
+      "manager_verified": true,
+      "verified_by": "root-task-manager"
+    },
+    {
+      "id": "IMP-07",
+      "status": "completed",
+      "owner": "migration_media+acceptance",
+      "evidence": [
+        "infra/penpot/application/acceptance-summary.json",
+        "infra/penpot/runtime/health-supervision/runtime-status.json"
+      ],
+      "note": "Git新身份+官方应用包3设计/971原媒体、MCP/async/往返通过；11健康notify自动故障恢复/guest重启通过。",
+      "manager_verified": true,
+      "verified_by": "root-task-manager"
+    },
+    {
+      "id": "IMP-08",
+      "status": "completed",
+      "owner": "acceptance",
+      "evidence": [
+        "infra/nas/runtime-status.json",
+        "evidence/implementation/system-recovery-final-summary.json"
+      ],
+      "note": "NAS软件/权限/正常重启与隔离缺挂载阻断-恢复-清理全部通过；真实设备/SLO后续。",
+      "manager_verified": true,
+      "verified_by": "root-task-manager"
+    },
+    {
+      "id": "IMP-09",
+      "status": "completed",
+      "owner": "root+architecture_templates",
+      "evidence": [
+        "evidence/implementation/lark-notify-final-audit.json",
+        "evidence/implementation/guest-role-health-activation.json",
+        "infra/backup/full-snapshot-restore/runtime-status.json",
+        "evidence/implementation/prod-initial-private-Mac-backups.json"
+      ],
+      "note": "机内Lark双phase/active、监控与初始恢复副本已验；Mac外部用户明确停用，长期独立调度/RPO后续。",
+      "manager_verified": true,
+      "verified_by": "root-task-manager"
+    },
+    {
+      "id": "IMP-10",
+      "status": "completed",
+      "owner": "root",
+      "evidence": [
+        "evidence/implementation/current-phase-manager-signoff.json",
+        "evidence/implementation/final-operational-snapshot.json"
+      ],
+      "note": "本期26/26required签收，12future/manual保持pending，最终26容器/5LAN入口健康。",
+      "manager_verified": true,
+      "verified_by": "root-task-manager"
+    }
+  ],
+  "updated_at": "2026-11-06T15:07:33.695773",
+  "implementation_note": "26本期required真实通过；12未来或人工pending保留，不宣称全部38或生产业务上线。",
+  "overall_status": "current-phase-complete-future-scope-retained"
+}

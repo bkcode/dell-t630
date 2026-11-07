@@ -1,0 +1,37 @@
+{
+  "at": "2026-11-06T00:15:49.450673+08:00",
+  "templates": [
+    {
+      "vmid": 9010,
+      "template": "tpl-linux-base",
+      "before_finalization": {
+        "exit_code": 0,
+        "stdout": "cloud-init\t25.1.4-1+deb13u1\nopenssh-server\t1:10.0p1-7+deb13u4\npython3\t3.13.5-1\nqemu-guest-agent\t1:10.0.13+ds-0+deb13u1\nsudo\t1.9.16p2-3+deb13u2\n78f3e6a895ff4e0281e8c9dd533018fb\nactive\nNTPSynchronized=yes\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 9010,
+          "ip": "192.168.21.129",
+          "host_key_alias": "dell-vm9010",
+          "host_key_fingerprint": "SHA256:1rZwFIrwdg7Zzfg960SozCQCjQPExgI8lygg1G7KtxA",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      }
+    },
+    {
+      "vmid": 9001,
+      "template": "tpl-docker-base",
+      "before_finalization": {
+        "exit_code": 0,
+        "stdout": "cloud-init\t25.1.4-1+deb13u1\nopenssh-server\t1:10.0p1-7+deb13u4\npython3\t3.13.5-1\nqemu-guest-agent\t1:10.0.13+ds-0+deb13u1\nsudo\t1.9.16p2-3+deb13u2\n63dd51ad38a54622b47f58e83d110b39\nactive\nNTPSynchronized=yes\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 9001,
+          "ip": "192.168.21.165",
+          "host_key_alias": "dell-vm9001",
+          "host_key_fingerprint": "SHA256:ZdYtFbrzXaNAFnMuQjsfL8fN4JvbPur6/01qfGnAc80",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "at": "2026-11-07T02:28:28.371084+08:00",
+  "delta": {
+    "status": "offline-DNS-only-delta-approved-shape",
+    "removed": [
+      [
+        "data-docker-base-tpl",
+        "192.168.19.101"
+      ],
+      [
+        "dell-docker-clone-a",
+        "192.168.19.193"
+      ],
+      [
+        "dell-docker-clone-b",
+        "192.168.19.195"
+      ],
+      [
+        "dell-docker-clone-test",
+        "192.168.19.192"
+      ],
+      [
+        "dell-linux-clone-b",
+        "192.168.19.194"
+      ],
+      [
+        "dell-linux-clone-test",
+        "192.168.19.191"
+      ],
+      [
+        "dell-restore-baseline",
+        "192.168.19.196"
+      ],
+      [
+        "dell-template-inspect",
+        "192.168.19.190"
+      ],
+      [
+        "java-prod-02",
+        "192.168.19.41"
+      ],
+      [
+        "java-prod-03",
+        "192.168.19.42"
+      ],
+      [
+        "publish-legacy",
+        "192.168.19.104"
+      ]
+    ],
+    "retained_logical_aliases": [
+      [
+        "artifact-service",
+        "192.168.19.31"
+      ],
+      [
+        "publish-service",
+        "192.168.19.30"
+      ]
+    ],
+    "nft_or_network_change_permitted": false,
+    "native_dnsmasq_test_and_controlled_unit_restart": "pending-parent-window",
+    "lease_file": "preserve existing; never truncate/rotate"
+  },
+  "old_config_sha256": "5abf9ef1073dfc2c741732ab5bd0b4141487cc4b349249bce0f2a5b3c5241bd1",
+  "old_dns_sha256": "e0894efca1f397dc0b297e186c22fab8a64c99db497c3be67c1bfb78b1ed3c1b",
+  "expected_nft_bytes_unchanged": true,
+  "WireGuard_full_unchanged": true
+}

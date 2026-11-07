@@ -1,0 +1,12 @@
+{
+  "exit_code": 0,
+  "stdout": "{\"exit\": 0, \"top_level_keys\": [\"timestamp\", \"version\", \"smb_conf\", \"sessions\", \"tcons\", \"open_files\"], \"session_count\": 0, \"tcon_count\": 0, \"open_file_count\": 0, \"bytelock_count\": 0}\n",
+  "stderr": "",
+  "target": {
+    "vmid": 260,
+    "ip": "10.63.40.10",
+    "host_key_alias": "dell-vm260",
+    "host_key_fingerprint": "SHA256:jYNEYlwXnr4412nGU/Dg616AhDW8eZz3UDIxn4pP7c0",
+    "trust_source": "PVE QGA over known SSH host"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "at": "2026-11-06T16:42:51.962218+08:00",
+  "result": {
+    "at": 1793954571.8789048,
+    "status": "read-only-gateway-metadata-and-ownDNS",
+    "DNS_short_queries": {
+      "udp": {
+        "A": [
+          "192.168.19.70"
+        ],
+        "matches_migration_plan": true
+      },
+      "tcp": {
+        "A": [
+          "192.168.19.70"
+        ],
+        "matches_migration_plan": true
+      }
+    },
+    "DNS_query_scope": "gateway-local socket only, not external-LAN-client proof",
+    "dnsmasq_unit": {
+      "MainPID": "2900",
+      "CapabilityBoundingSet": "cap_net_bind_service cap_net_admin cap_net_raw",
+      "AmbientCapabilities": "cap_net_bind_service cap_net_admin cap_net_raw",
+      "User": "dnsmasq",
+      "Group": "nogroup",
+      "ReadWritePaths": "/var/lib/misc/dnsmasq.leases",
+      "ProtectSystem": "strict",
+      "NoNewPrivileges": "yes",
+      "ActiveState": "active"
+    },
+    "dnsmasq_process_metadata": {
+      "Uid": "999\t999\t999\t999",
+      "Gid": "65534\t65534\t65534\t65534",
+      "CapEff": "0000000000003400",
+      "CapAmb": "0000000000003400",
+      "NoNewPrivs": "1"
+    },
+    "lease_owner_mode": {
+      "uid": 999,
+      "gid": 65534,
+      "mode": "0o600"
+    },
+    "chains": [
+      {
+        "family": "inet",
+        "table": "dell_gateway19",
+        "name": "input",
+        "type": "filter",
+        "hook": "input",
+        "policy": "drop"
+      },
+      {
+        "family": "inet",
+        "table": "dell_gateway19",
+        "name": "forward",
+        "type": "filter",
+        "hook": "forward",
+        "policy": "drop"
+      },
+      {
+        "family": "inet",
+        "table": "dell_gateway19",
+        "name": "output",
+        "type": "filter",
+        "hook": "output",
+        "policy": "accept"
+      }
+    ],
+    "no_NAT": true,
+    "routes": [
+      {
+        "dst": "default",
+        "gateway": "192.168.21.1",
+        "dev": "eth0",
+        "protocol": "static",
+        "metric": 100,
+        "flags": []
+      },
+      {
+        "dst": "192.168.19.0/24",
+        "dev": "eth1",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "192.168.19.1",
+        "flags": []
+      },
+      {
+        "dst": "192.168.21.0/24",
+        "dev": "eth0",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "192.168.21.23",
+        "flags": []
+      }
+    ],
+    "IPv6_addresses": [
+      {
+        "ifindex": 1,
+        "ifname": "lo",
+        "flags": [
+          "LOOPBACK",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 65536,
+        "operstate": "UNKNOWN",
+        "txqlen": 1000,
+        "addr_info": [
+          {
+            "family": "inet6",
+            "local": "::1",
+            "prefixlen": 128,
+            "scope": "host",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      }
+    ],
+    "pending_transaction": false,
+    "rollback_timer_active": false,
+    "failed_units": [],
+    "forwarding": {
+      "net.ipv4.ip_forward": "1",
+      "net.ipv4.conf.all.forwarding": "1",
+      "net.ipv4.conf.eth0.forwarding": "1",
+      "net.ipv4.conf.eth1.forwarding": "1"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "ACC-NAS-002",
+  "status": "passed",
+  "executed_at": "2026-11-06T12:03:20.059951+08:00",
+  "timezone": "Asia/Shanghai",
+  "operator": "root-task-manager",
+  "plan_sha256": "62033457a32b74cbb68597ab0a7fdaab50b18716c5be20559e2f20931ea318dd",
+  "preconditions_checked": true,
+  "target": {
+    "host": "192.168.21.22",
+    "environment": "managed-PVE-implementation",
+    "vmid": null
+  },
+  "commands_or_steps": [
+    "See linked execution artifact and operator observations"
+  ],
+  "exit_codes": [
+    0
+  ],
+  "observations": [
+    "media/games/incoming三共享writer真实写入/重命名/删除成功，reader创建/修改/重命名/删除均NT_STATUS_ACCESS_DENIED，匿名拒绝",
+    "拒绝后原样本SHA逐项保持；smbclient删除拒绝可能exit0，按协议状态判断而非仅退出码",
+    "Jellyfin实际UID2000只挂media只读，config/cache可写，无games/incoming挂载或目录访问"
+  ],
+  "artifacts": [
+    "evidence/implementation/nas002-detailed-permissions.json"
+  ],
+  "limitations": [
+    "保留列明合成样本供后续人工设备验证；管理员删除能力已实测；不包含实际PS4/PS5工具兼容性"
+  ],
+  "reviewed_by": "root-task-manager",
+  "plan_snapshot": "evidence/plans/plan-62033457a32b74cb.json"
+}

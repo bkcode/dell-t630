@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "scope": "local-document-validation-only",
+  "stats": {
+    "roles": 13,
+    "guest_memory_gib": 116.5,
+    "vcpu": 53,
+    "host_reserve_gib": 8.5,
+    "acceptance_cases": 38,
+    "documentation_passed": 2,
+    "implementation_pending": 12,
+    "pve_checks": 42,
+    "local_links_checked": 222,
+    "external_links_listed": 38
+  },
+  "errors": [],
+  "warnings": [
+    "vCPU exceeds physical cores; concurrent workload capacity is unverified",
+    "PVE check cluster-status exit=2; see scope/limitations",
+    "External URL availability is not tested by this offline validator"
+  ],
+  "verified_at": "2026-11-06T15:09:15.338135",
+  "current_phase_required_passed": 26,
+  "future_or_manual_pending": 12
+}

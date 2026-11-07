@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-06T13:50:43.445778",
+  "status": "external-Mac-Lark-fixed-acceptance-firing-resolved-acknowledged",
+  "run": "1879162ffb05a994",
+  "phases": {
+    "firing": {
+      "acknowledged": true,
+      "attempts": 1,
+      "checked_at": "2026-11-06T05:50:10.596943+00:00",
+      "payload_sha256": "e2e5b54812823cb2220c3a485c9e0ae64628ed725d3284a1c4eb95ed39ba3c44"
+    },
+    "resolved": {
+      "acknowledged": true,
+      "attempts": 1,
+      "checked_at": "2026-11-06T05:50:43.336080+00:00",
+      "payload_sha256": "df448b3b17863c33a33588b265e862ee185c49e0c9aeeafc9b097cd7189f4340"
+    }
+  },
+  "target": "user-provided private Lark custom-bot credential",
+  "messages_explicitly_marked_acceptance": true,
+  "real_PVE_or_services_interrupted": false,
+  "private_webhook_value_in_evidence": false,
+  "production_probe_state_changed_by_acceptance": false,
+  "human_read_receipt_claimed": false
+}

@@ -1,0 +1,116 @@
+{
+  "collected_at": "2026-11-06T04:02:08.791037+00:00",
+  "vmid": 260,
+  "result": {
+    "status": "passed",
+    "nonce": "5193233d83fe453eb9aa1290e404b1bc",
+    "checks": [
+      {
+        "share": "media",
+        "fixture_name": "dell-permission-5193233d83fe453eb9aa1290e404b1bc.bin",
+        "fixture_sha256": "8f106c67b7b0f9ba8fc55ca569989fd955237e2c480ab3d36b63db7229dae35d",
+        "fixture_bytes": 65597,
+        "reader_read_hash_matches": true,
+        "reader_denials": {
+          "create": {
+            "access_denied": true,
+            "client_returncode": 1,
+            "original_still_matches": true
+          },
+          "modify": {
+            "access_denied": true,
+            "client_returncode": 1,
+            "original_still_matches": true
+          },
+          "rename": {
+            "access_denied": true,
+            "client_returncode": 1,
+            "original_still_matches": true
+          },
+          "delete": {
+            "access_denied": true,
+            "client_returncode": 0,
+            "original_still_matches": true
+          }
+        },
+        "writer_rename_success": true,
+        "writer_delete_success": true,
+        "retained_fixture_hash_matches": true
+      },
+      {
+        "share": "games",
+        "fixture_name": "dell-permission-5193233d83fe453eb9aa1290e404b1bc.bin",
+        "fixture_sha256": "8f106c67b7b0f9ba8fc55ca569989fd955237e2c480ab3d36b63db7229dae35d",
+        "fixture_bytes": 65597,
+        "reader_read_hash_matches": true,
+        "reader_denials": {
+          "create": {
+            "access_denied": true,
+            "client_returncode": 1,
+            "original_still_matches": true
+          },
+          "modify": {
+            "access_denied": true,
+            "client_returncode": 1,
+            "original_still_matches": true
+          },
+          "rename": {
+            "access_denied": true,
+            "client_returncode": 1,
+            "original_still_matches": true
+          },
+          "delete": {
+            "access_denied": true,
+            "client_returncode": 0,
+            "original_still_matches": true
+          }
+        },
+        "writer_rename_success": true,
+        "writer_delete_success": true,
+        "retained_fixture_hash_matches": true
+      },
+      {
+        "share": "incoming",
+        "fixture_name": "dell-permission-5193233d83fe453eb9aa1290e404b1bc.bin",
+        "fixture_sha256": "8f106c67b7b0f9ba8fc55ca569989fd955237e2c480ab3d36b63db7229dae35d",
+        "fixture_bytes": 65597,
+        "reader_read_hash_matches": true,
+        "reader_denials": {
+          "create": {
+            "access_denied": true,
+            "client_returncode": 1,
+            "original_still_matches": true
+          },
+          "modify": {
+            "access_denied": true,
+            "client_returncode": 1,
+            "original_still_matches": true
+          },
+          "rename": {
+            "access_denied": true,
+            "client_returncode": 1,
+            "original_still_matches": true
+          },
+          "delete": {
+            "access_denied": true,
+            "client_returncode": 0,
+            "original_still_matches": true
+          }
+        },
+        "writer_rename_success": true,
+        "writer_delete_success": true,
+        "retained_fixture_hash_matches": true
+      }
+    ],
+    "jellyfin_boundary": {
+      "mount_set_exact": true,
+      "media_read_only": true,
+      "no_games_incoming_mounts": true,
+      "runtime_user": "2000:2000",
+      "container_media_readable_unwritable_games_incoming_absent": true
+    },
+    "only_new_nonce_objects_touched": true,
+    "fixtures_retained": true,
+    "secrets_or_content_emitted": false
+  }
+}

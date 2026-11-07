@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-06T08:43:58.541467+00:00",
+  "new_target": {
+    "vmid": 230,
+    "ip": "192.168.19.40",
+    "host_key_alias": "dell-vm230",
+    "host_key_fingerprint": "SHA256:SsWkQtSVu/3sssyrmVMb13r8r9/zQhWeEH3ZQ/CzCDM",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "exit_code": 0,
+  "result": {
+    "status": "applied-and-local-monitoring-verified",
+    "vmid": 230,
+    "at": "2026-11-06T08:43:58.549074+00:00",
+    "listener": [
+      "192.168.19.40:9100"
+    ],
+    "timer_original_activation_restored": true,
+    "collector_access_checked_no_notification": true,
+    "apps_started_or_restarted": false,
+    "prometheus_targetUP_and_textfile_freshness": "root coordinator must verify after scheduled collection",
+    "old_files_backup": "/root/dell-network19/monitoring/230",
+    "OS_not_changed_by_helper": true
+  }
+}

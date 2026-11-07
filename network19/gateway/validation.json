@@ -1,0 +1,82 @@
+{
+  "at": "2026-11-06T16:46:04.573196+08:00",
+  "status": "explicit-risk-aware-full-trustedVPN-hot-confirmed-user-batch-retest-pending",
+  "offline_tests": 40,
+  "offline_summary": [
+    "----------------------------------------------------------------------",
+    "Ran 22 tests in 0.012s",
+    "",
+    "OK"
+  ],
+  "active_sources_sha256": {
+    "audit.py": "a59ebc4f82ca8718e3c37119b738a82cea88c9167aff4921ec52af072e692bc9",
+    "test_gateway.py": "85b70d7c3803b25cae924127f9fa0a074855edcb2a5b6b16ae7e5d1604adee3c",
+    "policy.py": "bd237ff8c6417306af7cf0a9e3106d0426f5ca6bb54f072984dd9e89638708da",
+    "standby.py": "166eff52e9dca7969ee3fb618c7e550f96fc361c58ba3b6f8f00f2fc7adb17b2",
+    "validate-native.py": "4ac99ac067f07e4b7fe6a1e433432bb50fa737b3a68ae5ca11dc4f040cd9c605",
+    "reboot190.py": "9fd6a58c850b235bea1cb77ebc6e0fdf27ff07a6b6989139df02b8f34fdd3cff",
+    "validate-hot.py": "1a39206094937a94acc81ae303bbee8a91032512577fc049e2f15d3bd8ac38e0",
+    "manage.py": "cc0a50258dbf4abf2621cb7b06b5637413a38462aacd5640ab1ce5a1b9a79074",
+    "manager.py": "a498cb335dae983cd976bbe9b898cd52268b0152a713d81ae91220abcc478ce1",
+    "prepare.py": "203cc30ce8d5ab93086b40f63c05ec0350a29ea887e85575751d9d404eee208a"
+  },
+  "native_checks": "native-parse-evidence.json",
+  "sameUID_lease_probe": "lease-probe-evidence.json",
+  "confirmed_receipt": "live-confirm.json",
+  "active_audit": "active-audit.json",
+  "initial_failure_retained": true,
+  "cross_LAN_packet_verified_by_this_agent": false,
+  "DHCP_WAN_negative_packet_verified": false,
+  "VM_reboot_performed": false,
+  "PVE_OW_other_guest_writes": false,
+  "updated_at": "2026-11-06T17:02:41.366657+08:00",
+  "hot_native_check": "hot-native-check.json",
+  "hot_confirm": "live-confirm.json",
+  "hot_service_PIDs_unchanged": true,
+  "first_hot_failure_retained": true,
+  "OW_changed": false,
+  "DNS_upstream_changed": false,
+  "reboot_performed": true,
+  "reboot_evidence": "reboot-evidence.json",
+  "same_hostkey_after_reboot": true,
+  "postboot_NTP": "NTP=yes;NTPSynchronized=yes",
+  "postboot_NTP_evidence": "postboot-NTP.json",
+  "parent_canary_evidence": "230 SSH/DNS/exporter and FakeIP HTTPS200 confirmed by root",
+  "parent_CF_transport": "CF-post-fakeIP-check.json active/registered; token unchanged",
+  "CF_origins_E2E": "not inferred from transport registration",
+  "WG_updated_at": "2026-11-07T00:19:27.283259+08:00",
+  "WG_scope": {
+    "source": "10.66.66.0/24",
+    "destination": "192.168.19.0/24",
+    "protocols": "all IPv4 with invalid/antiSpoof preserved",
+    "gateway_local_addresses": [
+      "192.168.21.23",
+      "192.168.19.1"
+    ],
+    "authentication_changed": false,
+    "NAT": false,
+    "authorization": "new explicit full-server consent after risk disclosure"
+  },
+  "WG_transaction": {
+    "nonce": "51b88f705606416eb2679482c9af1ab4",
+    "confirmed": true,
+    "pending": false,
+    "watchdog_active": false,
+    "persistent_service_PIDs_unchanged": true
+  },
+  "WG_counter_initial_sample": {
+    "packets": 0,
+    "bytes": 0,
+    "comment": "WG-Penpot-TCP9001"
+  },
+  "WG_remote_HTTP": "pending-user-batch-retest",
+  "broad_rejected_direction_applied": false,
+  "WG_full_updated_at": "2026-11-07T00:34:31.574163+08:00",
+  "WG_full_counter_initial_sample": {
+    "forward_packets": 0,
+    "INPUT_packets": 0,
+    "evidence": "WG-full-active-counter.json"
+  },
+  "previous_broad_rejected_direction_applied": false,
+  "new_risk_aware_full_authorization_applied": true
+}

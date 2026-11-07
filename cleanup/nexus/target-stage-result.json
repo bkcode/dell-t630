@@ -1,0 +1,7 @@
+{
+  "role": 220,
+  "status": "Nexus-relocation-stage-completed",
+  "service_alias": "192.168.19.31",
+  "hostname": "publish-service",
+  "secret_values_or_private_hashes_emitted": false
+}

@@ -1,0 +1,1909 @@
+{
+  "collected_at": "2026-11-06T08:02:13.197198+00:00",
+  "scope": "current installed runtime only; no PVE/OW/mutations/notifications",
+  "roles": [
+    {
+      "vmid": 200,
+      "hostname": "data-prod-db",
+      "IP_addresses": [
+        "127.0.0.1",
+        "10.63.10.10",
+        "172.18.0.1",
+        "172.17.0.1"
+      ],
+      "files": {
+        "/opt/dell/data/prod-db/.env": {
+          "exists": true,
+          "sha256": "f9bde087083689422b491eeda8e8a513e8b4216d0dc535363adcf540deb7e6bd",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600",
+          "IP_literals": [
+            "10.63.10.10"
+          ]
+        },
+        "/opt/dell/data/prod-db/compose.yaml": {
+          "exists": true,
+          "sha256": "5039f612b888cb3a944beed1027b1e071dfa4b4d21cf6b334904f593438841c3",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600",
+          "IP_literals": [],
+          "captured_public_source": "baselines/vm200/2-compose.yaml"
+        },
+        "/opt/dell/data/prod-db/scripts/manage.py": {
+          "exists": true,
+          "sha256": "099151f272b2ad273e60fa0be7a37a3c6d2b3073017eacc6ae7a4f60a8cb56d3",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "IP_literals": [],
+          "captured_public_source": "baselines/vm200/0-manage.py"
+        },
+        "/opt/dell/data/prod-db/scripts/acceptance.py": {
+          "exists": true,
+          "sha256": "79077300d3643f9b338da0858a8357b22e77a1bf2d9db50d2193f186555ae8c1",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "IP_literals": [
+            "127.0.0.1"
+          ],
+          "captured_public_source": "baselines/vm200/1-acceptance.py"
+        },
+        "/opt/dell/data/prod-db/config/rabbitmq.conf": {
+          "exists": true,
+          "sha256": "336e462505c4fd1caf5c7280e35323c6b7f44783d0f9507f729b3bc25257ab8f",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600",
+          "IP_literals": []
+        },
+        "/etc/dell-guest-monitoring/health.json": {
+          "exists": true,
+          "sha256": "be74665d2936306485c287325935210639c0ad835d2b0336f5536d29d139558c",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.10.10"
+          ]
+        },
+        "/opt/dell/guest-monitoring/collect-guest-health.py": {
+          "exists": true,
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "IP_literals": []
+        },
+        "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf": {
+          "exists": true,
+          "sha256": "0456740522e112ffd1f09e4d32cf4a9ab421875e27570bae855bda329a57d6f0",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.10.10"
+          ]
+        }
+      },
+      "env_safe": {
+        "ROLE": "prod-db",
+        "ENVIRONMENT": "prod",
+        "SERVICE_IP": "10.63.10.10",
+        "MYSQL_HOST": "10.63.10.10",
+        "NACOS_DB_NAME": "nacos_prod",
+        "NACOS_DB_USER": "nacos_prod",
+        "NACOS_CLIENT_USER": "finger_prod",
+        "NACOS_CLIENT_ROLE": "finger-prod-client",
+        "RABBIT_VHOST": "/finger-prod",
+        "DATA_ROOT": "/srv/dell-data/prod-db",
+        "DATA_MOUNTPOINT": "/srv/dell-data",
+        "DATA_FS_UUID": "d61c0e22-941e-447a-9e9a-1e9e50deb02f",
+        "INSTALL_DIR": "/opt/dell/data/prod-db"
+      },
+      "selected_JSON": {
+        "/etc/dell-guest-monitoring/health.json": {
+          "role": "data-prod-db",
+          "private_ip": "10.63.10.10",
+          "services": [
+            "dell-data-prod-db.service",
+            "prometheus-node-exporter.service",
+            "qemu-guest-agent.service",
+            "ssh.service"
+          ]
+        }
+      },
+      "units": {
+        "prometheus-node-exporter.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/usr/lib/systemd/system/prometheus-node-exporter.service"
+        },
+        "dell-guest-health.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": "/etc/systemd/system/dell-guest-health.service"
+        }
+      },
+      "no_mutations": true,
+      "secret_values_returned": false,
+      "env_key_names": [
+        "DATA_FS_UUID",
+        "DATA_MOUNTPOINT",
+        "DATA_ROOT",
+        "ENVIRONMENT",
+        "INSTALL_DIR",
+        "MYSQL_HOST",
+        "NACOS_CLIENT_ROLE",
+        "NACOS_CLIENT_USER",
+        "NACOS_DB_NAME",
+        "NACOS_DB_USER",
+        "NACOS_NAMESPACE_ID",
+        "RABBIT_ADMIN_USER",
+        "RABBIT_APP_USER",
+        "RABBIT_VHOST",
+        "ROLE",
+        "SERVICE_IP"
+      ],
+      "namespace_preservation_sha256": "b9b716339519993d81d25fd14cd169409a048ec470f48293c6a407ac992a2b3e",
+      "JSON_key_names": {
+        "/etc/dell-guest-monitoring/health.json": [
+          "candidate_http_checks",
+          "candidate_service_units",
+          "http_checks",
+          "notes",
+          "private_ip",
+          "role",
+          "services",
+          "textfile_directory"
+        ]
+      }
+    },
+    {
+      "vmid": 201,
+      "hostname": "data-prod-infra",
+      "IP_addresses": [
+        "127.0.0.1",
+        "10.63.10.11",
+        "172.17.0.1",
+        "172.18.0.1"
+      ],
+      "files": {
+        "/opt/dell/data/prod-infra/.env": {
+          "exists": true,
+          "sha256": "954f317d5a9f62ca5b0d9efc699f506828b6340e490ccf6cb041584359bfe19d",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600",
+          "IP_literals": [
+            "10.63.10.10",
+            "10.63.10.11"
+          ]
+        },
+        "/opt/dell/data/prod-infra/compose.yaml": {
+          "exists": true,
+          "sha256": "b1f5178a320b55cc7b9478fc23f436d5eb2047eee38030e697abe196c679dccf",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600",
+          "IP_literals": [
+            "127.0.0.1"
+          ],
+          "captured_public_source": "baselines/vm201/2-compose.yaml"
+        },
+        "/opt/dell/data/prod-infra/scripts/manage.py": {
+          "exists": true,
+          "sha256": "b86e6c8339fc3ebc9151258849d78276d91e179692be588ce5bcdd344b341a10",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "IP_literals": [],
+          "captured_public_source": "baselines/vm201/0-manage.py"
+        },
+        "/opt/dell/data/prod-infra/scripts/acceptance.py": {
+          "exists": true,
+          "sha256": "79077300d3643f9b338da0858a8357b22e77a1bf2d9db50d2193f186555ae8c1",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "IP_literals": [
+            "127.0.0.1"
+          ],
+          "captured_public_source": "baselines/vm201/1-acceptance.py"
+        },
+        "/opt/dell/data/prod-infra/config/rabbitmq.conf": {
+          "exists": true,
+          "sha256": "336e462505c4fd1caf5c7280e35323c6b7f44783d0f9507f729b3bc25257ab8f",
+          "uid": 999,
+          "gid": 999,
+          "mode": "0o600",
+          "IP_literals": []
+        },
+        "/etc/dell-guest-monitoring/health.json": {
+          "exists": true,
+          "sha256": "8276d352a8c1c0fba721c305c03992b0d8c968db9d5408df1e1f7d75d3f0fd5a",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.10.11"
+          ]
+        },
+        "/opt/dell/guest-monitoring/collect-guest-health.py": {
+          "exists": true,
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "IP_literals": []
+        },
+        "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf": {
+          "exists": true,
+          "sha256": "b2bbd80dedc1caa2d06a1a6fd19c724e4a0b7c29758374ceb602422e26402e24",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.10.11"
+          ]
+        }
+      },
+      "env_safe": {
+        "ROLE": "prod-infra",
+        "ENVIRONMENT": "prod",
+        "SERVICE_IP": "10.63.10.11",
+        "MYSQL_HOST": "10.63.10.10",
+        "NACOS_DB_NAME": "nacos_prod",
+        "NACOS_DB_USER": "nacos_prod",
+        "NACOS_CLIENT_USER": "finger_prod",
+        "NACOS_CLIENT_ROLE": "finger-prod-client",
+        "RABBIT_VHOST": "/finger-prod",
+        "DATA_ROOT": "/srv/dell-data/prod-infra",
+        "DATA_MOUNTPOINT": "/srv/dell-data",
+        "DATA_FS_UUID": "b85156c2-dac8-4b33-ab25-460aaf676c57",
+        "INSTALL_DIR": "/opt/dell/data/prod-infra"
+      },
+      "selected_JSON": {
+        "/etc/dell-guest-monitoring/health.json": {
+          "role": "data-prod-infra",
+          "private_ip": "10.63.10.11",
+          "services": [
+            "dell-data-prod-infra.service",
+            "prometheus-node-exporter.service",
+            "qemu-guest-agent.service",
+            "ssh.service"
+          ]
+        }
+      },
+      "units": {
+        "prometheus-node-exporter.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/usr/lib/systemd/system/prometheus-node-exporter.service"
+        },
+        "dell-guest-health.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": "/etc/systemd/system/dell-guest-health.service"
+        }
+      },
+      "no_mutations": true,
+      "secret_values_returned": false,
+      "env_key_names": [
+        "DATA_FS_UUID",
+        "DATA_MOUNTPOINT",
+        "DATA_ROOT",
+        "ENVIRONMENT",
+        "INSTALL_DIR",
+        "MYSQL_HOST",
+        "NACOS_CLIENT_ROLE",
+        "NACOS_CLIENT_USER",
+        "NACOS_DB_NAME",
+        "NACOS_DB_USER",
+        "NACOS_NAMESPACE_ID",
+        "RABBIT_ADMIN_USER",
+        "RABBIT_APP_USER",
+        "RABBIT_VHOST",
+        "ROLE",
+        "SERVICE_IP"
+      ],
+      "namespace_preservation_sha256": "b9b716339519993d81d25fd14cd169409a048ec470f48293c6a407ac992a2b3e",
+      "JSON_key_names": {
+        "/etc/dell-guest-monitoring/health.json": [
+          "candidate_http_checks",
+          "candidate_service_units",
+          "http_checks",
+          "notes",
+          "private_ip",
+          "role",
+          "services",
+          "textfile_directory"
+        ]
+      }
+    },
+    {
+      "vmid": 210,
+      "hostname": "data-test",
+      "IP_addresses": [
+        "127.0.0.1",
+        "10.63.20.10",
+        "172.17.0.1",
+        "172.18.0.1"
+      ],
+      "files": {
+        "/opt/dell/data/test-data/.env": {
+          "exists": true,
+          "sha256": "e07cdd66a960976179121b66859f240f5d11bf6f18538dca7f2fe0ca838a95d1",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600",
+          "IP_literals": [
+            "10.63.20.10"
+          ]
+        },
+        "/opt/dell/data/test-data/compose.yaml": {
+          "exists": true,
+          "sha256": "5a2a1c24f08dec6a06485450f47fa02e33a9d38c7573626be31394298e363e37",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600",
+          "IP_literals": [
+            "127.0.0.1"
+          ],
+          "captured_public_source": "baselines/vm210/2-compose.yaml"
+        },
+        "/opt/dell/data/test-data/scripts/manage.py": {
+          "exists": true,
+          "sha256": "b86e6c8339fc3ebc9151258849d78276d91e179692be588ce5bcdd344b341a10",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "IP_literals": [],
+          "captured_public_source": "baselines/vm210/0-manage.py"
+        },
+        "/opt/dell/data/test-data/scripts/acceptance.py": {
+          "exists": true,
+          "sha256": "79077300d3643f9b338da0858a8357b22e77a1bf2d9db50d2193f186555ae8c1",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "IP_literals": [
+            "127.0.0.1"
+          ],
+          "captured_public_source": "baselines/vm210/1-acceptance.py"
+        },
+        "/opt/dell/data/test-data/config/rabbitmq.conf": {
+          "exists": true,
+          "sha256": "21125cae7b1189eec11ee6c2ef81ca45a1452b973ec1093a25cdeb2ca6887499",
+          "uid": 999,
+          "gid": 999,
+          "mode": "0o600",
+          "IP_literals": []
+        },
+        "/etc/dell-guest-monitoring/health.json": {
+          "exists": true,
+          "sha256": "fe2544e268b9ad3e9e2e6cd4b9325a9a5f2886ca1a4f89c8a0e6922635f897b1",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.20.10"
+          ]
+        },
+        "/opt/dell/guest-monitoring/collect-guest-health.py": {
+          "exists": true,
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "IP_literals": []
+        },
+        "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf": {
+          "exists": true,
+          "sha256": "5ee948d665b720ee33e3de8031f8321c4104c63af1810f938755d69dbdd74a83",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.20.10"
+          ]
+        }
+      },
+      "env_safe": {
+        "ROLE": "test-data",
+        "ENVIRONMENT": "test",
+        "SERVICE_IP": "10.63.20.10",
+        "MYSQL_HOST": "mysql",
+        "NACOS_DB_NAME": "nacos_test",
+        "NACOS_DB_USER": "nacos_test",
+        "NACOS_CLIENT_USER": "finger_test",
+        "NACOS_CLIENT_ROLE": "finger-test-client",
+        "RABBIT_VHOST": "/finger-test",
+        "DATA_ROOT": "/srv/dell-data/test-data",
+        "DATA_MOUNTPOINT": "/srv/dell-data",
+        "DATA_FS_UUID": "dd1773f9-aa48-4401-a9c8-caf0f66845f3",
+        "INSTALL_DIR": "/opt/dell/data/test-data"
+      },
+      "selected_JSON": {
+        "/etc/dell-guest-monitoring/health.json": {
+          "role": "data-test",
+          "private_ip": "10.63.20.10",
+          "services": [
+            "dell-data-test-data.service",
+            "prometheus-node-exporter.service",
+            "qemu-guest-agent.service",
+            "ssh.service"
+          ]
+        }
+      },
+      "units": {
+        "prometheus-node-exporter.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/usr/lib/systemd/system/prometheus-node-exporter.service"
+        },
+        "dell-guest-health.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": "/etc/systemd/system/dell-guest-health.service"
+        }
+      },
+      "no_mutations": true,
+      "secret_values_returned": false,
+      "env_key_names": [
+        "DATA_FS_UUID",
+        "DATA_MOUNTPOINT",
+        "DATA_ROOT",
+        "ENVIRONMENT",
+        "INSTALL_DIR",
+        "MYSQL_HOST",
+        "NACOS_CLIENT_ROLE",
+        "NACOS_CLIENT_USER",
+        "NACOS_DB_NAME",
+        "NACOS_DB_USER",
+        "NACOS_NAMESPACE_ID",
+        "RABBIT_ADMIN_USER",
+        "RABBIT_APP_USER",
+        "RABBIT_VHOST",
+        "ROLE",
+        "SERVICE_IP"
+      ],
+      "namespace_preservation_sha256": "7f76f5a8a0a079dd94359988d6941a4a14e743b8c7b78e65e0b124cc68b758c3",
+      "JSON_key_names": {
+        "/etc/dell-guest-monitoring/health.json": [
+          "candidate_http_checks",
+          "candidate_service_units",
+          "http_checks",
+          "notes",
+          "private_ip",
+          "role",
+          "services",
+          "textfile_directory"
+        ]
+      }
+    },
+    {
+      "vmid": 220,
+      "hostname": "publish-service",
+      "IP_addresses": [
+        "127.0.0.1",
+        "10.63.30.10"
+      ],
+      "files": {
+        "/var/lib/dell-publisher/.ssh/test240_ed25519": {
+          "exists": true,
+          "uid": 999,
+          "mode": "0o600",
+          "contents_not_read": true
+        },
+        "/etc/dell-publisher/known_hosts": {
+          "exists": true,
+          "uid": 0,
+          "mode": "0o644",
+          "contents_not_read": true
+        },
+        "/usr/local/bin/dell-publish": {
+          "exists": true,
+          "sha256": "27f20c96914c5374a3a8775adaca43157b2e76bba5f673503e3881992b8d0170",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "IP_literals": [
+            "10.63.20.20",
+            "10.63.30.10"
+          ],
+          "captured_public_source": "baselines/vm220/0-dell-publish"
+        },
+        "/etc/dell-publisher/client-test240.json": {
+          "exists": true,
+          "sha256": "0fe2ce728ffa3ef5ec6c85f1c490d71d594a312860ff0de817e3c8d294a1c7f3",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.20.20",
+            "10.63.30.10"
+          ]
+        },
+        "/etc/dell-guest-monitoring/health.json": {
+          "exists": true,
+          "sha256": "4480eebf78b274affc7c4a068b28e435cc2b3ee55c1dea652572de783c667f19",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.30.10"
+          ]
+        },
+        "/opt/dell/guest-monitoring/collect-guest-health.py": {
+          "exists": true,
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "IP_literals": []
+        },
+        "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf": {
+          "exists": true,
+          "sha256": "c03328ace75205926f648497c084bd5c1cdc6b58ae61f1c985b77fa49b1d2d50",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.30.10"
+          ]
+        }
+      },
+      "env_safe": {},
+      "selected_JSON": {
+        "/etc/dell-publisher/client-test240.json": {
+          "target_host": "10.63.20.20",
+          "target_user": "deployer",
+          "host_key_alias": "dell-test240-publisher",
+          "source_ip": "10.63.30.10"
+        },
+        "/etc/dell-guest-monitoring/health.json": {
+          "role": "publish-service",
+          "private_ip": "10.63.30.10",
+          "services": [
+            "ssh.service",
+            "qemu-guest-agent.service",
+            "prometheus-node-exporter.service"
+          ]
+        }
+      },
+      "units": {
+        "prometheus-node-exporter.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/usr/lib/systemd/system/prometheus-node-exporter.service"
+        },
+        "dell-guest-health.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": "/etc/systemd/system/dell-guest-health.service"
+        }
+      },
+      "no_mutations": true,
+      "secret_values_returned": false,
+      "JSON_key_names": {
+        "/etc/dell-guest-monitoring/health.json": [
+          "candidate_http_checks",
+          "candidate_service_units",
+          "http_checks",
+          "notes",
+          "private_ip",
+          "role",
+          "services",
+          "textfile_directory"
+        ]
+      }
+    },
+    {
+      "vmid": 230,
+      "hostname": "java-prod-01",
+      "IP_addresses": [
+        "127.0.0.1",
+        "10.63.10.20"
+      ],
+      "files": {
+        "/etc/dell-guest-monitoring/health.json": {
+          "exists": true,
+          "sha256": "ff02fe9634b7a61df8a4675eb92ca9c33b79899539deb6329fc2816fb087ab54",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.10.20",
+            "127.0.0.1"
+          ]
+        },
+        "/opt/dell/guest-monitoring/collect-guest-health.py": {
+          "exists": true,
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "IP_literals": []
+        },
+        "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf": {
+          "exists": true,
+          "sha256": "43211d42ed8a36e35bbab64b705162f4d7a2b76ecb786283cd47263c83d56fbc",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.10.20"
+          ]
+        }
+      },
+      "env_safe": {},
+      "selected_JSON": {
+        "/etc/dell-guest-monitoring/health.json": {
+          "role": "java-prod-01",
+          "private_ip": "10.63.10.20",
+          "services": [
+            "ssh.service",
+            "qemu-guest-agent.service",
+            "prometheus-node-exporter.service"
+          ]
+        }
+      },
+      "units": {
+        "prometheus-node-exporter.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/usr/lib/systemd/system/prometheus-node-exporter.service"
+        },
+        "dell-guest-health.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": "/etc/systemd/system/dell-guest-health.service"
+        },
+        "dell-finger-finger-gateway-mobile.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": ""
+        },
+        "dell-finger-finger-auth.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": ""
+        },
+        "dell-finger-finger-service-system.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": ""
+        },
+        "dell-finger-finger-service-coms.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": ""
+        },
+        "dell-finger-finger-bff-system.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": ""
+        }
+      },
+      "no_mutations": true,
+      "secret_values_returned": false,
+      "JSON_key_names": {
+        "/etc/dell-guest-monitoring/health.json": [
+          "candidate_http_checks",
+          "candidate_service_units",
+          "http_checks",
+          "notes",
+          "private_ip",
+          "role",
+          "services",
+          "textfile_directory"
+        ]
+      }
+    },
+    {
+      "vmid": 231,
+      "hostname": "java-prod-02",
+      "IP_addresses": [
+        "127.0.0.1",
+        "10.63.10.21"
+      ],
+      "files": {
+        "/etc/dell-guest-monitoring/health.json": {
+          "exists": true,
+          "sha256": "4a0280628c7aac1dc05902434e844b75ffde3628f0df959101b217b0a800c1df",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.10.21",
+            "127.0.0.1"
+          ]
+        },
+        "/opt/dell/guest-monitoring/collect-guest-health.py": {
+          "exists": true,
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "IP_literals": []
+        },
+        "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf": {
+          "exists": true,
+          "sha256": "fc9da29c0426886c36b75bb1c9f764c00a661edbd539236dfc81d2585c13943c",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.10.21"
+          ]
+        }
+      },
+      "env_safe": {},
+      "selected_JSON": {
+        "/etc/dell-guest-monitoring/health.json": {
+          "role": "java-prod-02",
+          "private_ip": "10.63.10.21",
+          "services": [
+            "ssh.service",
+            "qemu-guest-agent.service",
+            "prometheus-node-exporter.service"
+          ]
+        }
+      },
+      "units": {
+        "prometheus-node-exporter.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/usr/lib/systemd/system/prometheus-node-exporter.service"
+        },
+        "dell-guest-health.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": "/etc/systemd/system/dell-guest-health.service"
+        },
+        "dell-finger-finger-gateway-mobile.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": ""
+        },
+        "dell-finger-finger-auth.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": ""
+        },
+        "dell-finger-finger-service-system.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": ""
+        },
+        "dell-finger-finger-service-coms.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": ""
+        },
+        "dell-finger-finger-bff-system.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": ""
+        }
+      },
+      "no_mutations": true,
+      "secret_values_returned": false,
+      "JSON_key_names": {
+        "/etc/dell-guest-monitoring/health.json": [
+          "candidate_http_checks",
+          "candidate_service_units",
+          "http_checks",
+          "notes",
+          "private_ip",
+          "role",
+          "services",
+          "textfile_directory"
+        ]
+      }
+    },
+    {
+      "vmid": 232,
+      "hostname": "java-prod-03",
+      "IP_addresses": [
+        "127.0.0.1",
+        "10.63.10.22"
+      ],
+      "files": {
+        "/etc/dell-guest-monitoring/health.json": {
+          "exists": true,
+          "sha256": "51fc6ba7c33deeb820f9c8b94a85c89ff0b533570d3e3f5219965b52707ef913",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.10.22",
+            "127.0.0.1"
+          ]
+        },
+        "/opt/dell/guest-monitoring/collect-guest-health.py": {
+          "exists": true,
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "IP_literals": []
+        },
+        "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf": {
+          "exists": true,
+          "sha256": "6264a953c8da297ceb5671f4fd89eeba8b1452effc888ad7d795b3ff8348784e",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.10.22"
+          ]
+        }
+      },
+      "env_safe": {},
+      "selected_JSON": {
+        "/etc/dell-guest-monitoring/health.json": {
+          "role": "java-prod-03",
+          "private_ip": "10.63.10.22",
+          "services": [
+            "ssh.service",
+            "qemu-guest-agent.service",
+            "prometheus-node-exporter.service"
+          ]
+        }
+      },
+      "units": {
+        "prometheus-node-exporter.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/usr/lib/systemd/system/prometheus-node-exporter.service"
+        },
+        "dell-guest-health.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": "/etc/systemd/system/dell-guest-health.service"
+        },
+        "dell-finger-finger-gateway-mobile.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": ""
+        },
+        "dell-finger-finger-auth.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": ""
+        },
+        "dell-finger-finger-service-system.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": ""
+        },
+        "dell-finger-finger-service-coms.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": ""
+        },
+        "dell-finger-finger-bff-system.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "FragmentPath": ""
+        }
+      },
+      "no_mutations": true,
+      "secret_values_returned": false,
+      "JSON_key_names": {
+        "/etc/dell-guest-monitoring/health.json": [
+          "candidate_http_checks",
+          "candidate_service_units",
+          "http_checks",
+          "notes",
+          "private_ip",
+          "role",
+          "services",
+          "textfile_directory"
+        ]
+      }
+    },
+    {
+      "vmid": 240,
+      "hostname": "java-test-01",
+      "IP_addresses": [
+        "127.0.0.1",
+        "10.63.20.20"
+      ],
+      "files": {
+        "/usr/local/libexec/dell-publish-test240": {
+          "exists": true,
+          "sha256": "98f5c4d460cfa251aaebbe5ef4791f728762b546031d43b263d208a22a2f6f06",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "IP_literals": [
+            "10.63.20.20"
+          ],
+          "captured_public_source": "baselines/vm240/0-dell-publish-test240"
+        },
+        "/usr/local/libexec/dell-publisher-dispatch": {
+          "exists": true,
+          "sha256": "8e327e157500feb7202e3afedc3a24e42573c1f6e7bafe0645187beda8a49193",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "IP_literals": [
+            "10.63.20.20",
+            "10.63.30.10"
+          ],
+          "captured_public_source": "baselines/vm240/1-dell-publisher-dispatch"
+        },
+        "/usr/local/libexec/dell-publisher/publisher_protocol.py": {
+          "exists": true,
+          "sha256": "382d761e1d5dce4323fb2d30375bd1c76353044290c3d6c924eb9892accca910",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.20.10",
+            "10.63.20.20",
+            "192.168.21.22"
+          ],
+          "captured_public_source": "baselines/vm240/2-publisher_protocol.py"
+        },
+        "/usr/local/libexec/dell/deploy-test-chain.py": {
+          "exists": true,
+          "sha256": "8beb4586ce4504252e5076f5852bf4f19a50481747eb2f0d8e47af5094cf41ff",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "IP_literals": [
+            "10.63.20.10",
+            "10.63.20.20",
+            "192.168.21.22"
+          ],
+          "captured_public_source": "baselines/vm240/3-deploy-test-chain.py"
+        },
+        "/etc/dell-publisher/test240-policy.json": {
+          "exists": true,
+          "sha256": "28c2c8191e9d500feb3b45e8fac1f29ed47b12f5a26e1913714e427ec558082a",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600",
+          "IP_literals": [
+            "10.63.20.20"
+          ]
+        },
+        "/root/dell-java-test-readiness.json": {
+          "exists": true,
+          "sha256": "8aa359451b9a90e5ee692c6dc87fd7c9720f3a3217be02746351754b1c60cddc",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600",
+          "IP_literals": [
+            "10.63.20.10",
+            "10.63.20.20"
+          ]
+        },
+        "/etc/ssh/sshd_config.d/60-dell-publisher.conf": {
+          "exists": false
+        },
+        "/etc/sudoers.d/dell-publisher": {
+          "exists": false
+        },
+        "/etc/ssh/authorized_keys/deployer": {
+          "exists": true,
+          "sha256": "6e2ef43e80a5d7ff4c4a4f55b40cd3fcdd2a24372ea440de9a6aae27ba1bc7ee",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.30.10"
+          ]
+        },
+        "/etc/dell-guest-monitoring/health.json": {
+          "exists": true,
+          "sha256": "65ef2c87c17f8a02f756c25bf8ee6c1cb9fc30c033b284832f6a02a70d50757d",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.20.20",
+            "127.0.0.1"
+          ]
+        },
+        "/opt/dell/guest-monitoring/collect-guest-health.py": {
+          "exists": true,
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "IP_literals": []
+        },
+        "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf": {
+          "exists": true,
+          "sha256": "e9546f3c326c0b52b5fd5ceb9057fed4bbe5f54d516eddf4887b0c86a386e77d",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.20.20"
+          ]
+        }
+      },
+      "env_safe": {},
+      "selected_JSON": {
+        "/etc/dell-publisher/test240-policy.json": {
+          "target_hostname": "java-test-01",
+          "target_ip": "10.63.20.20",
+          "baseline_migrated": true,
+          "fixed_deployer_sha256": "8beb4586ce4504252e5076f5852bf4f19a50481747eb2f0d8e47af5094cf41ff"
+        },
+        "/root/dell-java-test-readiness.json": {
+          "target_ip": "10.63.20.20",
+          "database_schemas_ready": true,
+          "nacos_configs_ready": true,
+          "network_policy_ready": true,
+          "issuer_candidate_acknowledged": true
+        },
+        "/etc/dell-guest-monitoring/health.json": {
+          "role": "java-test-01",
+          "private_ip": "10.63.20.20",
+          "services": [
+            "ssh.service",
+            "qemu-guest-agent.service",
+            "prometheus-node-exporter.service",
+            "dell-finger-finger-service-system.service",
+            "dell-finger-finger-service-coms.service",
+            "dell-finger-finger-auth.service",
+            "dell-finger-finger-bff-system.service",
+            "dell-finger-finger-gateway-mobile.service"
+          ]
+        }
+      },
+      "units": {
+        "prometheus-node-exporter.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/usr/lib/systemd/system/prometheus-node-exporter.service"
+        },
+        "dell-guest-health.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "activating",
+          "SubState": "start",
+          "FragmentPath": "/etc/systemd/system/dell-guest-health.service"
+        },
+        "dell-finger-finger-gateway-mobile.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/etc/systemd/system/dell-finger-finger-gateway-mobile.service"
+        },
+        "dell-finger-finger-auth.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/etc/systemd/system/dell-finger-finger-auth.service"
+        },
+        "dell-finger-finger-service-system.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/etc/systemd/system/dell-finger-finger-service-system.service"
+        },
+        "dell-finger-finger-service-coms.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/etc/systemd/system/dell-finger-finger-service-coms.service"
+        },
+        "dell-finger-finger-bff-system.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/etc/systemd/system/dell-finger-finger-bff-system.service"
+        }
+      },
+      "no_mutations": true,
+      "secret_values_returned": false,
+      "selected_JSON_keys": {
+        "/etc/dell-publisher/test240-policy.json": [
+          "baseline_migrated",
+          "baseline_release",
+          "fixed_deployer_sha256",
+          "namespace_id",
+          "persistent_secret_mode",
+          "runtime_secret_transport",
+          "target_hostname",
+          "target_ip"
+        ],
+        "/root/dell-java-test-readiness.json": [
+          "at",
+          "database_evidence",
+          "database_schemas_ready",
+          "issuer_candidate_acknowledged",
+          "issuer_scope",
+          "nacos_configs_ready",
+          "nacos_evidence",
+          "network_evidence_sha256",
+          "network_policy_ready",
+          "target_ip"
+        ]
+      },
+      "current_release": "/opt/finger/releases/test/20261106T121030",
+      "managed_release_ids": [
+        "20261106T061002",
+        "20261106T113449",
+        "20261106T124000",
+        "20261106T121030"
+      ],
+      "release_manifest": {
+        "schema_version": 1,
+        "release_id": "20261106T121030",
+        "target_hostname": "java-test-01",
+        "target_ip": "10.63.20.20",
+        "data_ip": "10.63.20.10",
+        "issuer": "http://192.168.21.22:19999",
+        "profile": "dell-test",
+        "services": [
+          {
+            "name": "finger-gateway-mobile",
+            "port": 9999,
+            "jar_sha256": "95233a7dfe887b435e8959569e2827581049d10c7256a7399776311ee1ef4e6a",
+            "config_sha256": "01733290e53a44f0782ca8cae0e96d646ac39939a7b56d57b4ee0fe71a5a1981",
+            "xms_mib": 128,
+            "xmx_mib": 512,
+            "metaspace_mib": 256,
+            "memory_max_mib": 1024
+          },
+          {
+            "name": "finger-auth",
+            "port": 10000,
+            "jar_sha256": "b003de47f326fbe8c528a4430a3fa2b3f36b4a94ca302b07534e1062e354addc",
+            "config_sha256": "614bc5c875c50ce423b6ba6fab53b268346651e57c5cc495f0550ed7d5263e76",
+            "xms_mib": 128,
+            "xmx_mib": 768,
+            "metaspace_mib": 256,
+            "memory_max_mib": 1536
+          },
+          {
+            "name": "finger-service-system",
+            "port": 10210,
+            "jar_sha256": "3ddfff8c5cd6d4800c3739a7663eb3bf539935a9427c1a5178b0faa9f5f204f9",
+            "config_sha256": "c500acb3847f74d4ed53d152b391862f84c7fb13e0637ddb23e4ec80ff42d096",
+            "xms_mib": 128,
+            "xmx_mib": 512,
+            "metaspace_mib": 256,
+            "memory_max_mib": 1024
+          },
+          {
+            "name": "finger-service-coms",
+            "port": 10202,
+            "jar_sha256": "3c124f75c9d1bc20126d2c2567a92a0d15051dee962723d85d7b49d56e712cef",
+            "config_sha256": "4ad9bc4a6301e1f1eea94103b4473cefb67f9fa2ae25ceeb52ed1ef2f55bb51e",
+            "xms_mib": 128,
+            "xmx_mib": 768,
+            "metaspace_mib": 256,
+            "memory_max_mib": 1536
+          },
+          {
+            "name": "finger-bff-system",
+            "port": 10104,
+            "jar_sha256": "d6302ef18bb1c526eb1e3add58d94d29060e163758d0bdd6031bd41c89bd1c23",
+            "config_sha256": "777c8d47bcda233b326826aa7067305ca09b74b78af69946012f0ffc5041bc73",
+            "xms_mib": 128,
+            "xmx_mib": 768,
+            "metaspace_mib": 256,
+            "memory_max_mib": 1536
+          }
+        ]
+      },
+      "release_files": {
+        "/opt/finger/current-test/finger-gateway-mobile/application.yaml": {
+          "sha256": "01733290e53a44f0782ca8cae0e96d646ac39939a7b56d57b4ee0fe71a5a1981",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600"
+        },
+        "/opt/finger/current-test/finger-gateway-mobile/app.jar": {
+          "sha256": "95233a7dfe887b435e8959569e2827581049d10c7256a7399776311ee1ef4e6a",
+          "uid": 0,
+          "gid": 989,
+          "mode": "0o644"
+        },
+        "/opt/finger/current-test/finger-gateway-mobile/unit.service": {
+          "sha256": "dd117c3bd3f679ee3629d499207ee678c516ecc5581c0b9b120d438799a17674",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644"
+        },
+        "/opt/finger/current-test/finger-auth/application.yaml": {
+          "sha256": "614bc5c875c50ce423b6ba6fab53b268346651e57c5cc495f0550ed7d5263e76",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600"
+        },
+        "/opt/finger/current-test/finger-auth/app.jar": {
+          "sha256": "b003de47f326fbe8c528a4430a3fa2b3f36b4a94ca302b07534e1062e354addc",
+          "uid": 0,
+          "gid": 989,
+          "mode": "0o644"
+        },
+        "/opt/finger/current-test/finger-auth/unit.service": {
+          "sha256": "346c1f6b31a08aae99e2727cee708c0202072c8414bc2ba5d471cf6fc89efff3",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644"
+        },
+        "/opt/finger/current-test/finger-service-system/application.yaml": {
+          "sha256": "c500acb3847f74d4ed53d152b391862f84c7fb13e0637ddb23e4ec80ff42d096",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600"
+        },
+        "/opt/finger/current-test/finger-service-system/app.jar": {
+          "sha256": "3ddfff8c5cd6d4800c3739a7663eb3bf539935a9427c1a5178b0faa9f5f204f9",
+          "uid": 0,
+          "gid": 989,
+          "mode": "0o644"
+        },
+        "/opt/finger/current-test/finger-service-system/unit.service": {
+          "sha256": "2d09bb522d358a53286eac398e7d960e264779283f0f56d66dac00e6f575f2d9",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644"
+        },
+        "/opt/finger/current-test/finger-service-coms/application.yaml": {
+          "sha256": "4ad9bc4a6301e1f1eea94103b4473cefb67f9fa2ae25ceeb52ed1ef2f55bb51e",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600"
+        },
+        "/opt/finger/current-test/finger-service-coms/app.jar": {
+          "sha256": "3c124f75c9d1bc20126d2c2567a92a0d15051dee962723d85d7b49d56e712cef",
+          "uid": 0,
+          "gid": 989,
+          "mode": "0o644"
+        },
+        "/opt/finger/current-test/finger-service-coms/unit.service": {
+          "sha256": "0acb7dbf6ea595ae17fac660837e058326eae61de4cd481e7fb51e3fd1178ded",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644"
+        },
+        "/opt/finger/current-test/finger-bff-system/application.yaml": {
+          "sha256": "777c8d47bcda233b326826aa7067305ca09b74b78af69946012f0ffc5041bc73",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600"
+        },
+        "/opt/finger/current-test/finger-bff-system/app.jar": {
+          "sha256": "d6302ef18bb1c526eb1e3add58d94d29060e163758d0bdd6031bd41c89bd1c23",
+          "uid": 0,
+          "gid": 989,
+          "mode": "0o644"
+        },
+        "/opt/finger/current-test/finger-bff-system/unit.service": {
+          "sha256": "db6ded85922dbb8738bea594678490d7b8d351cd819c0a59ecdeb4b14f3d04e7",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644"
+        }
+      },
+      "application_safe": {
+        "finger-gateway-mobile": {
+          "server": {
+            "address": "10.63.20.20",
+            "port": 9999
+          },
+          "application_name": "finger-gateway-mobile",
+          "profile": "dell-test",
+          "imports": [
+            "nacos:finger-common.yaml?group=DELL_TEST&refreshEnabled=false",
+            "nacos:finger-gateway-mobile-lan-v2.yaml?group=DELL_TEST&refreshEnabled=false"
+          ],
+          "Nacos_server": "10.63.20.10:8848",
+          "Nacos_discovery_ip": "10.63.20.20",
+          "datasource_url": null,
+          "datasource_username": null,
+          "issuer": null,
+          "COMS_upload": {},
+          "redis_host": null,
+          "rabbit_host": null,
+          "rabbit_vhost": null
+        },
+        "finger-auth": {
+          "server": {
+            "address": "10.63.20.20",
+            "port": 10000
+          },
+          "application_name": "finger-auth",
+          "profile": "dell-test",
+          "imports": [
+            "nacos:finger-common.yaml?group=DELL_TEST&refreshEnabled=false",
+            "nacos:finger-auth.yaml?group=DELL_TEST&refreshEnabled=false"
+          ],
+          "Nacos_server": "10.63.20.10:8848",
+          "Nacos_discovery_ip": "10.63.20.20",
+          "datasource_url": "jdbc:mysql://10.63.20.10:3306/finger_auth_test?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai",
+          "datasource_username": "finger_auth_test",
+          "issuer": "http://192.168.21.22:19999",
+          "COMS_upload": {},
+          "redis_host": null,
+          "rabbit_host": null,
+          "rabbit_vhost": null
+        },
+        "finger-service-system": {
+          "server": {
+            "address": "10.63.20.20",
+            "port": 10210
+          },
+          "application_name": "finger-service-system",
+          "profile": "dell-test",
+          "imports": [
+            "nacos:finger-common.yaml?group=DELL_TEST&refreshEnabled=false",
+            "nacos:finger-service-system.yaml?group=DELL_TEST&refreshEnabled=false"
+          ],
+          "Nacos_server": "10.63.20.10:8848",
+          "Nacos_discovery_ip": "10.63.20.20",
+          "datasource_url": "jdbc:mysql://10.63.20.10:3306/finger_system_test?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai",
+          "datasource_username": "finger_system_test",
+          "issuer": null,
+          "COMS_upload": {},
+          "redis_host": null,
+          "rabbit_host": null,
+          "rabbit_vhost": null
+        },
+        "finger-service-coms": {
+          "server": {
+            "address": "10.63.20.20",
+            "port": 10202
+          },
+          "application_name": "finger-service-coms",
+          "profile": "dell-test",
+          "imports": [
+            "nacos:finger-common.yaml?group=DELL_TEST&refreshEnabled=false",
+            "nacos:finger-service-coms.yaml?group=DELL_TEST&refreshEnabled=false"
+          ],
+          "Nacos_server": "10.63.20.10:8848",
+          "Nacos_discovery_ip": "10.63.20.20",
+          "datasource_url": "jdbc:mysql://10.63.20.10:3306/finger_coms_test?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai",
+          "datasource_username": "finger_coms_test",
+          "issuer": null,
+          "COMS_upload": {
+            "path": "/var/lib/finger/finger-service-coms/uploads",
+            "domain": "http://192.168.21.22:19999/finger-bff-system/dell-test-files"
+          },
+          "redis_host": null,
+          "rabbit_host": null,
+          "rabbit_vhost": null
+        },
+        "finger-bff-system": {
+          "server": {
+            "address": "10.63.20.20",
+            "port": 10104
+          },
+          "application_name": "finger-bff-system",
+          "profile": "dell-test",
+          "imports": [
+            "nacos:finger-common.yaml?group=DELL_TEST&refreshEnabled=false",
+            "nacos:finger-bff-system.yaml?group=DELL_TEST&refreshEnabled=false"
+          ],
+          "Nacos_server": "10.63.20.10:8848",
+          "Nacos_discovery_ip": "10.63.20.20",
+          "datasource_url": null,
+          "datasource_username": null,
+          "issuer": null,
+          "COMS_upload": {},
+          "redis_host": null,
+          "rabbit_host": null,
+          "rabbit_vhost": null
+        }
+      },
+      "SSH_contract": {
+        "/etc/ssh/authorized_keys/deployer": {
+          "ip_literals": [
+            "10.63.30.10"
+          ],
+          "forced_command_present": true,
+          "private_key_not_read": true
+        }
+      },
+      "JSON_key_names": {
+        "/etc/dell-guest-monitoring/health.json": [
+          "candidate_http_checks",
+          "candidate_service_units",
+          "http_checks",
+          "notes",
+          "private_ip",
+          "role",
+          "services",
+          "textfile_directory"
+        ]
+      }
+    },
+    {
+      "vmid": 270,
+      "hostname": "ops-service",
+      "IP_addresses": [
+        "127.0.0.1",
+        "10.63.30.40",
+        "172.17.0.1",
+        "172.18.0.1"
+      ],
+      "files": {
+        "/opt/dell/ops/.env": {
+          "exists": true,
+          "sha256": "81109b6856c4d44a7d93f4d8b421dca6bd8ab9ef265b8217dfac9d0e3fbe8bcc",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600",
+          "IP_literals": [
+            "10.63.30.40"
+          ]
+        },
+        "/opt/dell/ops/compose.yaml": {
+          "exists": true,
+          "sha256": "c0d1783ae4d393355d5beb3d4dd0587917eb7d2b5d386ac915ec70185f467f80",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "127.0.0.1",
+            "172.18.0.0",
+            "172.18.0.1",
+            "172.18.0.2",
+            "172.18.0.3",
+            "172.18.0.4",
+            "172.18.0.5"
+          ]
+        },
+        "/opt/dell/ops/scripts/manage.py": {
+          "exists": true,
+          "sha256": "a5de4cb7013fe56c5df9b2b30148f43e470438df4ecb3754429ab0cbe3575ed9",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o700",
+          "IP_literals": [],
+          "captured_public_source": "baselines/vm270/0-manage.py"
+        },
+        "/opt/dell/ops/config/prometheus/prometheus.yml": {
+          "exists": true,
+          "sha256": "35b0a682e8cef2802cd871982e442614e67ae3313f39945ace2591879f508c04",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": []
+        },
+        "/opt/dell/ops/config/alertmanager/alertmanager.yml": {
+          "exists": true,
+          "sha256": "ace6e36ff16e86b487523d141859f0bd150883d9e73e05a86c06d0d38a38cd53",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "172.18.0.1"
+          ]
+        },
+        "/opt/dell/ops/lark-notify-state.json": {
+          "exists": true,
+          "sha256": "dfff742a011201e7379ca6d1d108b6062fea6364f4ea636c73893fdb55ffc840",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600",
+          "IP_literals": []
+        },
+        "/etc/dell-lark-notify/policy.json": {
+          "exists": true,
+          "sha256": "d419e2d86d1975f8b0a64ee73fa824f66f3a3b73b5268f32630bcb44940c2733",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "172.18.0.1",
+            "172.18.0.3"
+          ]
+        },
+        "/etc/systemd/system/dell-lark-notify.service": {
+          "exists": true,
+          "sha256": "682831587cd2d624aec40efb2651e0020a3c64b2630f5b6df88200aae0fc6fbf",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": []
+        },
+        "/opt/dell/ops/config/prometheus/targets/http-services.json": {
+          "exists": true,
+          "sha256": "736b5f1d7c6d376fd8a8c7305ec5b41b1dd81910a8329febc67259067eb03cb1",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": []
+        },
+        "/opt/dell/ops/config/prometheus/targets/guest-node.json": {
+          "exists": true,
+          "sha256": "ee3980ee68f72ce1b10c97b71d92e3060cf7c9550099ca605fdb7b1dd921dab6",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.10.10",
+            "10.63.10.11",
+            "10.63.10.20",
+            "10.63.10.21",
+            "10.63.10.22",
+            "10.63.20.10",
+            "10.63.20.20",
+            "10.63.30.10",
+            "10.63.30.20",
+            "10.63.30.30",
+            "10.63.30.40",
+            "10.63.40.10"
+          ]
+        },
+        "/usr/local/libexec/dell-lark-notify/bridge.py": {
+          "exists": true,
+          "sha256": "e4b251653d0ae9822351928d3f04b6d4a0833edbe50ce3e6057edc7de7182f80",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "172.18.0.1",
+            "172.18.0.3"
+          ],
+          "captured_public_source": "baselines/vm270/1-bridge.py"
+        },
+        "/usr/local/libexec/dell-lark-notify/configuration.py": {
+          "exists": false
+        },
+        "/etc/dell-guest-monitoring/health.json": {
+          "exists": true,
+          "sha256": "6327578c371729d8d3ddb44afa4cdd535c3105c3012cd206b9dc82cbab2ec00e",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.30.40"
+          ]
+        },
+        "/opt/dell/guest-monitoring/collect-guest-health.py": {
+          "exists": true,
+          "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "IP_literals": []
+        },
+        "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf": {
+          "exists": true,
+          "sha256": "7ae68e17c871e7ce2ae06f428d81abff1732a02e3a762b9bc8a0f9f00c34db66",
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "IP_literals": [
+            "10.63.30.40"
+          ]
+        }
+      },
+      "env_safe": {
+        "ROLE": "ops-service",
+        "SERVICE_IP": "10.63.30.40",
+        "INSTALL_DIR": "/opt/dell/ops",
+        "DATA_MOUNTPOINT": "/srv/dell-data",
+        "DATA_ROOT": "/srv/dell-data/ops",
+        "DATA_FS_UUID": "01b1f302-27be-4fbd-b4af-b8e782d85dea"
+      },
+      "selected_JSON": {
+        "/opt/dell/ops/config/prometheus/targets/http-services.json": [
+          {
+            "targets": [
+              "http://grafana:3000/api/health"
+            ],
+            "labels": {
+              "role": "ops-service",
+              "check": "grafana-health",
+              "scope": "service-http"
+            }
+          },
+          {
+            "targets": [
+              "http://alertmanager:9093/-/ready"
+            ],
+            "labels": {
+              "role": "ops-service",
+              "check": "alertmanager-ready",
+              "scope": "service-http"
+            }
+          },
+          {
+            "targets": [
+              "http://prometheus:9090/-/ready"
+            ],
+            "labels": {
+              "role": "ops-service",
+              "check": "prometheus-ready",
+              "scope": "service-http"
+            }
+          }
+        ],
+        "/opt/dell/ops/config/prometheus/targets/guest-node.json": [
+          {
+            "targets": [
+              "10.63.10.10:9100"
+            ],
+            "labels": {
+              "role": "data-prod-db",
+              "zone": "prod",
+              "vmid": "200"
+            }
+          },
+          {
+            "targets": [
+              "10.63.10.11:9100"
+            ],
+            "labels": {
+              "role": "data-prod-infra",
+              "zone": "prod",
+              "vmid": "201"
+            }
+          },
+          {
+            "targets": [
+              "10.63.20.10:9100"
+            ],
+            "labels": {
+              "role": "data-test",
+              "zone": "test",
+              "vmid": "210"
+            }
+          },
+          {
+            "targets": [
+              "10.63.30.10:9100"
+            ],
+            "labels": {
+              "role": "publish-service",
+              "zone": "management",
+              "vmid": "220"
+            }
+          },
+          {
+            "targets": [
+              "10.63.30.20:9100"
+            ],
+            "labels": {
+              "role": "artifact-service",
+              "zone": "tools",
+              "vmid": "221"
+            }
+          },
+          {
+            "targets": [
+              "10.63.10.20:9100"
+            ],
+            "labels": {
+              "role": "java-prod-01",
+              "zone": "prod",
+              "vmid": "230"
+            }
+          },
+          {
+            "targets": [
+              "10.63.10.21:9100"
+            ],
+            "labels": {
+              "role": "java-prod-02",
+              "zone": "prod",
+              "vmid": "231"
+            }
+          },
+          {
+            "targets": [
+              "10.63.10.22:9100"
+            ],
+            "labels": {
+              "role": "java-prod-03",
+              "zone": "prod",
+              "vmid": "232"
+            }
+          },
+          {
+            "targets": [
+              "10.63.20.20:9100"
+            ],
+            "labels": {
+              "role": "java-test-01",
+              "zone": "test",
+              "vmid": "240"
+            }
+          },
+          {
+            "targets": [
+              "10.63.30.30:9100"
+            ],
+            "labels": {
+              "role": "penpot-service",
+              "zone": "tools",
+              "vmid": "250"
+            }
+          },
+          {
+            "targets": [
+              "10.63.40.10:9100"
+            ],
+            "labels": {
+              "role": "nas-media",
+              "zone": "home",
+              "vmid": "260"
+            }
+          },
+          {
+            "targets": [
+              "10.63.30.40:9100"
+            ],
+            "labels": {
+              "role": "ops-service",
+              "zone": "management",
+              "vmid": "270"
+            }
+          }
+        ],
+        "/opt/dell/ops/lark-notify-state.json": {
+          "mode": "active"
+        },
+        "/etc/dell-lark-notify/policy.json": {
+          "mode": "active",
+          "allowed_source": "172.18.0.3"
+        },
+        "/etc/dell-guest-monitoring/health.json": {
+          "role": "ops-service",
+          "private_ip": "10.63.30.40",
+          "services": [
+            "dell-ops.service",
+            "prometheus-node-exporter.service",
+            "qemu-guest-agent.service",
+            "ssh.service",
+            "dell-lark-notify.service"
+          ]
+        }
+      },
+      "units": {
+        "prometheus-node-exporter.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/usr/lib/systemd/system/prometheus-node-exporter.service"
+        },
+        "dell-guest-health.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "activating",
+          "SubState": "condition",
+          "FragmentPath": "/etc/systemd/system/dell-guest-health.service"
+        },
+        "dell-ops.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/etc/systemd/system/dell-ops.service"
+        },
+        "dell-lark-notify.service": {
+          "LoadCredential": "[unprintable]",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/etc/systemd/system/dell-lark-notify.service"
+        }
+      },
+      "no_mutations": true,
+      "secret_values_returned": false,
+      "env_key_names": [
+        "DATA_FS_UUID",
+        "DATA_MOUNTPOINT",
+        "DATA_ROOT",
+        "GRAFANA_ADMIN_USER",
+        "GRAFANA_COOKIE_SECURE",
+        "GRAFANA_ROOT_URL",
+        "INSTALL_DIR",
+        "ROLE",
+        "SERVICE_IP"
+      ],
+      "JSON_key_names": {
+        "/opt/dell/ops/lark-notify-state.json": [
+          "generic_prepare",
+          "mode",
+          "owner"
+        ],
+        "/etc/dell-lark-notify/policy.json": [
+          "allowed_source",
+          "bind_host",
+          "bind_port",
+          "mode"
+        ],
+        "/etc/dell-guest-monitoring/health.json": [
+          "candidate_http_checks",
+          "candidate_service_units",
+          "http_checks",
+          "notes",
+          "private_ip",
+          "role",
+          "services",
+          "textfile_directory"
+        ]
+      },
+      "AM_no_send_metadata": {
+        "sha256": "ace6e36ff16e86b487523d141859f0bd150883d9e73e05a86c06d0d38a38cd53",
+        "bridge_URL_present": true,
+        "outbound_config_not_called": true
+      }
+    }
+  ]
+}

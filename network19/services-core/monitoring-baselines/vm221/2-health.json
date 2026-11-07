@@ -1,0 +1,27 @@
+{
+  "role": "artifact-service",
+  "private_ip": "10.63.30.20",
+  "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+  "services": [
+    "ssh.service",
+    "qemu-guest-agent.service",
+    "prometheus-node-exporter.service",
+    "dell-nexus.service"
+  ],
+  "http_checks": [
+    {
+      "name": "nexus-status",
+      "url": "http://10.63.30.20:8081/service/rest/v1/status"
+    }
+  ],
+  "candidate_service_units": [
+    "docker.service"
+  ],
+  "candidate_http_checks": [
+    {
+      "name": "nexus-status",
+      "url": "http://10.63.30.20:8081/service/rest/v1/status"
+    }
+  ],
+  "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+}

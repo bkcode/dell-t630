@@ -1,0 +1,37 @@
+{
+  "at": "2026-11-06T16:35:13.186949+08:00",
+  "mode": "read-only-dnsmasq-permission-RCA",
+  "result": {
+    "dnsmasq_user": 999,
+    "dnsmasq_group": 65534,
+    "/var/lib/dell-gateway19-dhcp": {
+      "uid": 999,
+      "gid": 65534,
+      "mode": "0o750",
+      "size": 4096
+    },
+    "/var/lib/dell-gateway19-dhcp/leases": {
+      "exists": false
+    },
+    "/var/lib/misc": {
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "size": 4096
+    },
+    "/var/lib/misc/dnsmasq.leases": {
+      "exists": false
+    },
+    "/etc/apparmor.d/usr.sbin.dnsmasq": {
+      "exists": false
+    },
+    "apparmor_kernel": "Y",
+    "deny_events": [
+      {
+        "uid": "0",
+        "comm": "dnsmasq",
+        "message": "dnsmasq: cannot open or create lease file /var/lib/dell-gateway19-dhcp/leases: Permission denied"
+      }
+    ]
+  }
+}

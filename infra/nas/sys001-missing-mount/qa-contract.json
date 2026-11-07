@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "status": "approved-v2-executed-and-cleaned",
+  "target": {
+    "vmid": 260,
+    "hostname": "nas-media",
+    "ip": "10.63.40.10"
+  },
+  "production_guard": {
+    "path": "/usr/local/libexec/dell-nas-check-data",
+    "sha256": "5ba9fd7cfc37d1e7398a454dff0151c516b15a15b93b3c37061f0486d01120fc",
+    "QA_arguments": [
+      "--mountpoint",
+      "<new-nonce-mountpoint>",
+      "--uuid",
+      "<new-loop-ext4-UUID>",
+      "--minimum-gib",
+      "1"
+    ],
+    "bytes_modified": false,
+    "copied_or_mocked": false
+  },
+  "real_data_protected": {
+    "mountpoint": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a",
+    "UUID": "5b19837c-128c-498a-b79d-563db810c34a",
+    "unit": "dell-nas-jellyfin.service",
+    "unit_sha256": "847a04928bf0d5d831e4cc8c7afe5490b61c7a5cc2d7ad7e570ca1fc7ed017ff",
+    "compose_path": "/opt/dell/nas/compose.yaml",
+    "compose_sha256": "f57289cc286a4b2991f0c0709f3ef41336931a2041c8d8a051a87e9a434d86a7",
+    "never_unmount_format_or_modify": true
+  },
+  "QA_scope": {
+    "control_directory": "/var/lib/dell-nas-sys001/<nonce>",
+    "loopfile": "/var/lib/dell-nas-sys001/<nonce>/scratch.ext4",
+    "loopfile_bytes": 4294967296,
+    "mountpoint": "/srv/dell-nas-sys001/<nonce>/mount",
+    "unit": "dell-nas-sys001-<nonce>.service",
+    "project": "dell-nas-sys001-<nonce>",
+    "publish": "none: exact zero host PortBindings; no host-port readiness test",
+    "image_reference": "jellyfin/jellyfin@sha256:fea863d0cd9ec445985d9c75fc6ed64e38a1d2766cf0c250a33d553f4fc1b771",
+    "image_id": "sha256:fea863d0cd9ec445985d9c75fc6ed64e38a1d2766cf0c250a33d553f4fc1b771",
+    "image_arch": "amd64",
+    "pull": "never",
+    "CPUs": 0.25,
+    "memory_bytes": 536870912,
+    "memory_swap_bytes": 536870912,
+    "pids_limit": 128,
+    "user": "2000:2000 existing Jellyfin identity; no account creation",
+    "network": "new QA-only internal bridge, no host network or real NAS network",
+    "runtime_restart": "no; no enable at boot",
+    "real_service_restart_or_recreate": false,
+    "ready": "inside exact QA container curl127.0.0.1:8096/health status200 three consecutive times AND Docker healthy"
+  },
+  "resource_gates": {
+    "observed_MemAvailable_bytes": 3270025216,
+    "minimum_MemAvailable_before_bytes": 1610612736,
+    "minimum_MemAvailable_during_bytes": 1073741824,
+    "observed_root_available_bytes": 27873939456,
+    "minimum_root_available_before_bytes": 8589934592,
+    "all_values_recheck_before_execution": true
+  },
+  "missing_mount_mechanics": {
+    "case_B1": "only unmount QA scratch, directly invoke exact installed guard; require exit1 and no rootfs writes",
+    "case_B2": "controlled QA service start after missing QA scratch; no persistent .mount/fstab; if dynamic dependency can auto-remount, separate deliberate detach of this exact QA loop is proposed and must be explicitly accepted by manager",
+    "never_mask_production_mount_or_unit": true,
+    "never_lazy_or_force_unmount": true,
+    "restore_same_backing_file_same_UUID": true,
+    "B2_pass_criteria": "QA unit non-active plus no running QA container; explicit nonzero start, 20s job boundary and no exposed-root-directory writes; no host-port criterion"
+  },
+  "phase_statuses": {
+    "scratch-create": "passed-approved-QA-scope",
+    "positive-ready": "passed-approved-QA-scope",
+    "unmount-negative": "passed-approved-QA-scope",
+    "same-UUID-recovery": "passed-approved-QA-scope",
+    "cleanup": "passed-approved-QA-scope",
+    "real-NAS-continuity": "passed-approved-QA-scope"
+  },
+  "current_execution": {
+    "only_readonly_target_metadata": false,
+    "mount_mkfs_or_unit_container_creation": true,
+    "PVE_or_250_or_source_access_or_change": false,
+    "approved_single_new_nonce": true,
+    "all_own_QA_resources_cleaned": true,
+    "real_services_unchanged": true
+  },
+  "revision": 2
+}

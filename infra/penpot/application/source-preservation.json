@@ -1,0 +1,9 @@
+{
+  "source_container_and_tag_count": 17,
+  "source_running_state_restart_oom_and_image_tags_unchanged": true,
+  "source_git_head": "ff1783e7865af7aae571c985f03e057631b7af63",
+  "source_worktree_clean": true,
+  "source_design_writes_by_migration_agent": 0,
+  "old_deployment_credentials_exported_to_target": false,
+  "authentication_used_only_on_source_loopback": true
+}

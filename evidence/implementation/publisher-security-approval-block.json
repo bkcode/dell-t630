@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-06T12:27:48.911680+08:00",
+  "status": "blocked-before-execution",
+  "action": "persistent220-client240-deployer-sshd-sudoers-fixed-code-and-ssh-reload",
+  "source": "automatic approval reviewer",
+  "reason": "security-sensitive remote change requires informed explicit user approval; agent message authorization insufficient",
+  "process_started": false,
+  "target240_changed": false,
+  "client220_installed": false,
+  "workaround_attempted": false,
+  "local_preparation_completed": true,
+  "resume_only_after_user_approval": true
+}

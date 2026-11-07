@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-06T06:30:51.836780+08:00",
+  "scope": "base-tools-only",
+  "exit_code": 0,
+  "stdout": "ExecMainStatus=0\nActiveState=inactive\nSubState=dead\nDownloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)\nDownloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)\nDownloading uvicorn-0.54.0-py3-none-any.whl (87 kB)\nDownloading click-8.5.0-py3-none-any.whl (125 kB)\nDownloading certifi-2026.10.23-py3-none-any.whl (135 kB)\nDownloading pycparser-3.12-py3-none-any.whl (62 kB)\nInstalling collected packages: typing-extensions, rpds-py, python-multipart, python-dotenv, pyjwt, pycparser, idna, httpx-sse, h11, click, certifi, attrs, annotated-types, uvicorn, typing-inspection, referencing, pydantic-core, httpcore, cffi, anyio, starlette, pydantic, jsonschema-specifications, httpx, cryptography, sse-starlette, pydantic-settings, jsonschema, mcp\n\nSuccessfully installed annotated-types-0.8.0 anyio-4.16.0 attrs-26.1.0 certifi-2026.10.23 cffi-2.1.1 click-8.5.0 cryptography-50.0.2 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 httpx-sse-0.4.3 idna-3.20 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 mcp-1.26.0 pycparser-3.12 pydantic-2.14.3 pydantic-core-2.50.4 pydantic-settings-2.16.2 pyjwt-2.15.1 python-dotenv-1.2.4 python-multipart-0.0.33 referencing-0.37.0 rpds-py-2026.9.1 sse-starlette-3.6.0 starlette-1.10.0 typing-extensions-4.16.0 typing-inspection-0.4.5 uvicorn-0.54.0\n{\"java\": \"openjdk version \\\"21.0.13\\\" 2026-10-20\", \"git\": \"git version 2.47.3\", \"rsync\": \"rsync  version 3.5.0  protocol version 32\", \"python\": \"Python 3.13.5\", \"node\": \"v22.23.4\", \"pnpm8\": \"8.15.9\", \"pnpm10\": \"10.33.2\", \"mcp\": \"1.26.0\", \"applications_started\": false, \"git_credentials_installed\": false}\n{\n  \"java\": \"openjdk version \\\"21.0.13\\\" 2026-10-20\",\n  \"git\": \"git version 2.47.3\",\n  \"rsync\": \"rsync  version 3.5.0  protocol version 32\",\n  \"python\": \"Python 3.13.5\",\n  \"node\": \"v22.23.4\",\n  \"pnpm8\": \"8.15.9\",\n  \"pnpm10\": \"10.33.2\",\n  \"mcp\": \"1.26.0\",\n  \"applications_started\": false,\n  \"git_credentials_installed\": false\n}\n",
+  "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+  "target": {
+    "vmid": 220,
+    "ip": "192.168.21.163",
+    "host_key_alias": "dell-vm220",
+    "host_key_fingerprint": "SHA256:5X/KJJzRjVAwgXasAjR9ok7UW+6UhHyr1FdSKkOowBw",
+    "trust_source": "PVE QGA over known SSH host"
+  }
+}

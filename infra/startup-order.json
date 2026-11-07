@@ -1,0 +1,78 @@
+{
+  "scope": "12 new assigned VMs only; no reboot or existing guest/template changes",
+  "purpose": "start data before Java and stop Java before data; delays do not replace application health checks",
+  "roles": [
+    {
+      "vmid": 200,
+      "order": 10,
+      "up_seconds": 60,
+      "down_seconds": 120
+    },
+    {
+      "vmid": 201,
+      "order": 11,
+      "up_seconds": 90,
+      "down_seconds": 120
+    },
+    {
+      "vmid": 210,
+      "order": 12,
+      "up_seconds": 90,
+      "down_seconds": 120
+    },
+    {
+      "vmid": 270,
+      "order": 20,
+      "up_seconds": 30,
+      "down_seconds": 60
+    },
+    {
+      "vmid": 221,
+      "order": 21,
+      "up_seconds": 90,
+      "down_seconds": 180
+    },
+    {
+      "vmid": 250,
+      "order": 22,
+      "up_seconds": 90,
+      "down_seconds": 180
+    },
+    {
+      "vmid": 220,
+      "order": 30,
+      "up_seconds": 15,
+      "down_seconds": 60
+    },
+    {
+      "vmid": 230,
+      "order": 40,
+      "up_seconds": 15,
+      "down_seconds": 120
+    },
+    {
+      "vmid": 231,
+      "order": 41,
+      "up_seconds": 15,
+      "down_seconds": 120
+    },
+    {
+      "vmid": 232,
+      "order": 42,
+      "up_seconds": 15,
+      "down_seconds": 120
+    },
+    {
+      "vmid": 240,
+      "order": 43,
+      "up_seconds": 30,
+      "down_seconds": 180
+    },
+    {
+      "vmid": 260,
+      "order": 50,
+      "up_seconds": 30,
+      "down_seconds": 120
+    }
+  ]
+}

@@ -1,0 +1,334 @@
+{
+  "at": "2026-11-06T12:40:12.260191+08:00",
+  "baseline_A": "20261106T121030",
+  "release_B": "20261106T124000",
+  "target": "test240",
+  "database_or_nacos_rollback": false,
+  "key_exported": false,
+  "status": "release-exercise-passed",
+  "initial_status": {
+    "exit_code": 0,
+    "response": {
+      "ok": true,
+      "result": {
+        "current_release": "20261106T121030",
+        "managed_release_ids": [
+          "20261106T061002",
+          "20261106T113449",
+          "20261106T121030"
+        ],
+        "services": [
+          {
+            "service": "finger-service-system",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-service-coms",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-auth",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-bff-system",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-gateway-mobile",
+            "systemd_active": true,
+            "health_up": true
+          }
+        ],
+        "target": "test240",
+        "database_or_nacos_rollback": false,
+        "busy": false,
+        "last_transaction": null
+      }
+    }
+  },
+  "B_preparation": {
+    "transfer": {
+      "copied_to": "publisher220",
+      "release_id": "20261106T124000",
+      "members": 11,
+      "private_key_read": false,
+      "config_values_emitted": false
+    },
+    "source_A_core_manifest_sha256": "208bc8ecd57465726af7a0d5671fb38ebdc9c000e8f4dcab27eb7196b7e83c0e",
+    "B_manifest_sha256": "514166f4b5b029d246c32ff18378792e466f8ba7898af34b570e85ff10a7ad41",
+    "jar_yaml_bytes_identical_to_A": true,
+    "archive_bytes": 536442880
+  },
+  "stage_B": {
+    "exit_code": 0,
+    "response": {
+      "ok": true,
+      "result": {
+        "action": "stage",
+        "release_id": "20261106T124000",
+        "status": "staged-not-activated",
+        "target": "test240",
+        "database_or_nacos_changed": false,
+        "received_executable_script": false
+      }
+    }
+  },
+  "status_during_activate": {
+    "exit_code": 0,
+    "response": {
+      "ok": true,
+      "result": {
+        "current_release": "20261106T121030",
+        "managed_release_ids": [
+          "20261106T061002",
+          "20261106T113449",
+          "20261106T121030",
+          "20261106T124000"
+        ],
+        "services": [
+          {
+            "service": "finger-service-system",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-service-coms",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-auth",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-bff-system",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-gateway-mobile",
+            "systemd_active": true,
+            "health_up": true
+          }
+        ],
+        "target": "test240",
+        "database_or_nacos_rollback": false,
+        "busy": true,
+        "last_transaction": {
+          "action": "activate",
+          "release_id": "20261106T124000",
+          "status": "running",
+          "target": "test240",
+          "database_or_nacos_changed": false,
+          "received_executable_script": false
+        },
+        "busy_transaction": {
+          "transaction_id": "319dcdf00adf46559201c9f113008c0e",
+          "action": "activate",
+          "release_id": "20261106T124000"
+        }
+      }
+    }
+  },
+  "activate_B": {
+    "exit_code": 0,
+    "response": {
+      "ok": true,
+      "result": {
+        "action": "activate",
+        "release_id": "20261106T124000",
+        "status": "activated-health-verified",
+        "target": "test240",
+        "database_or_nacos_changed": false,
+        "received_executable_script": false,
+        "previous_release": "20261106T121030",
+        "services": [
+          {
+            "service": "finger-service-system",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-service-coms",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-auth",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-bff-system",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-gateway-mobile",
+            "systemd_active": true,
+            "health_up": true
+          }
+        ]
+      }
+    }
+  },
+  "B_status": {
+    "exit_code": 0,
+    "response": {
+      "ok": true,
+      "result": {
+        "current_release": "20261106T124000",
+        "managed_release_ids": [
+          "20261106T061002",
+          "20261106T113449",
+          "20261106T121030",
+          "20261106T124000"
+        ],
+        "services": [
+          {
+            "service": "finger-service-system",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-service-coms",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-auth",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-bff-system",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-gateway-mobile",
+            "systemd_active": true,
+            "health_up": true
+          }
+        ],
+        "target": "test240",
+        "database_or_nacos_rollback": false,
+        "busy": false,
+        "last_transaction": {
+          "action": "activate",
+          "release_id": "20261106T124000",
+          "status": "activated-health-verified",
+          "target": "test240",
+          "database_or_nacos_changed": false,
+          "received_executable_script": false,
+          "previous_release": "20261106T121030"
+        }
+      }
+    }
+  },
+  "rollback_A": {
+    "exit_code": 0,
+    "response": {
+      "ok": true,
+      "result": {
+        "action": "rollback",
+        "release_id": "20261106T121030",
+        "status": "rollback-health-verified",
+        "target": "test240",
+        "database_or_nacos_changed": false,
+        "received_executable_script": false,
+        "previous_release": "20261106T124000",
+        "services": [
+          {
+            "service": "finger-service-system",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-service-coms",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-auth",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-bff-system",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-gateway-mobile",
+            "systemd_active": true,
+            "health_up": true
+          }
+        ]
+      }
+    }
+  },
+  "final_status": {
+    "exit_code": 0,
+    "response": {
+      "ok": true,
+      "result": {
+        "current_release": "20261106T121030",
+        "managed_release_ids": [
+          "20261106T061002",
+          "20261106T113449",
+          "20261106T121030",
+          "20261106T124000"
+        ],
+        "services": [
+          {
+            "service": "finger-service-system",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-service-coms",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-auth",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-bff-system",
+            "systemd_active": true,
+            "health_up": true
+          },
+          {
+            "service": "finger-gateway-mobile",
+            "systemd_active": true,
+            "health_up": true
+          }
+        ],
+        "target": "test240",
+        "database_or_nacos_rollback": false,
+        "busy": false,
+        "last_transaction": {
+          "action": "rollback",
+          "release_id": "20261106T121030",
+          "status": "rollback-health-verified",
+          "target": "test240",
+          "database_or_nacos_changed": false,
+          "received_executable_script": false,
+          "previous_release": "20261106T124000"
+        }
+      }
+    }
+  },
+  "all_five_health_up": true,
+  "returned_to_A": true,
+  "status_busy_verified": true
+}

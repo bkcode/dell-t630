@@ -1,0 +1,3887 @@
+{
+  "schema_version": 1,
+  "collected_at": "2026-11-06T04:37:21.366578+00:00",
+  "scope_vmids": [
+    200,
+    201,
+    210,
+    221,
+    250,
+    260,
+    270
+  ],
+  "execution_type": "read-only",
+  "status": "completed-with-findings",
+  "collector_sha256": "f12632d732d5db468a9b48fda1ff83b68dc83391739b6ad4a620badeffbaea33",
+  "forbidden_fields_requested": false,
+  "limits_are_caps_not_reservations": true,
+  "guests": [
+    {
+      "collected_at": "2026-11-06T04:34:32.537689+00:00",
+      "hostname": "data-prod-db",
+      "docker": {
+        "server_version": "29.9.3",
+        "operating_system": "Debian GNU/Linux 13 (trixie)",
+        "os_type": "linux",
+        "architecture": "x86_64",
+        "root_dir": "/var/lib/docker",
+        "logging_driver": "local",
+        "storage_driver": "overlay2",
+        "ncpu": 6,
+        "memory_total_bytes": 16776515584
+      },
+      "containers": [
+        {
+          "id": "1ab31359642069a7bd4f36a9db0632be9f8d1263778e373f846a58e126e8f577",
+          "name": "/dell-data-prod-db-mysql-1",
+          "image_id": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+          "image_reference": "mysql:8.4.5@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T02:45:12.30631388Z",
+            "health": "healthy"
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 5000000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 12884901888,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 12884901888,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "3306/tcp": [
+              {
+                "HostIp": "10.63.10.10",
+                "HostPort": "3306"
+              }
+            ],
+            "33060/tcp": null
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": null,
+            "read_only_rootfs": false,
+            "network_mode": "dell-data-prod-db_default",
+            "pid_mode": ""
+          },
+          "mounts": [
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/prod-db/vendor/nacos-mysql-schema-2.4.3.sql",
+              "destination": "/docker-entrypoint-initdb.d/10-nacos.sql",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/prod-db/scripts/mysql-health.sh",
+              "destination": "/opt/health/mysql-health.sh",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/prod-db/secrets/mysql-root-password",
+              "destination": "/run/secrets/mysql-root-password",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/prod-db/secrets/nacos-db-password",
+              "destination": "/run/secrets/nacos-db-password",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/srv/dell-data/prod-db/mysql",
+              "destination": "/var/lib/mysql",
+              "rw": true,
+              "under_role_persistent_mount": true
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/prod-db/config/mysql.cnf",
+              "destination": "/etc/mysql/conf.d/dell.cnf",
+              "rw": false,
+              "under_role_persistent_mount": false
+            }
+          ],
+          "networks": [
+            {
+              "name": "dell-data-prod-db_default",
+              "ip_address": "172.18.0.2"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "mysql@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "mysql",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 5.0,
+            "memory_cap_gib": 12.0,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [
+              "/var/lib/mysql"
+            ],
+            "config_and_secret_mount_values_not_read": true
+          }
+        }
+      ],
+      "systemd_units": {
+        "docker.service": {
+          "Restart": "always",
+          "Id": "docker.service",
+          "Requires": "system.slice docker.socket sysinit.target",
+          "BindsTo": "",
+          "After": "firewalld.service network-online.target containerd.service system.slice docker.socket basic.target time-set.target sysinit.target nss-lookup.target systemd-journald.socket",
+          "RequiresMountsFor": "",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        },
+        "dell-data-prod-db.service": {
+          "Restart": "on-failure",
+          "Id": "dell-data-prod-db.service",
+          "Requires": "docker.service sysinit.target system.slice -.mount \"srv-dell\\\\x2ddata.mount\"",
+          "BindsTo": "docker.service \"srv-dell\\\\x2ddata.mount\"",
+          "After": "network-online.target system.slice sysinit.target basic.target -.mount systemd-journald.socket docker.service \"srv-dell\\\\x2ddata.mount\"",
+          "RequiresMountsFor": "/srv/dell-data /opt/dell/data/prod-db",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        }
+      },
+      "persistent_mount": {
+        "filesystems": [
+          {
+            "target": "/srv/dell-data",
+            "source": "/dev/sda",
+            "fstype": "ext4",
+            "uuid": "d61c0e22-941e-447a-9e9a-1e9e50deb02f",
+            "options": "rw,relatime,stripe=16"
+          }
+        ]
+      },
+      "forbidden_fields_not_requested": [
+        "Env",
+        "Cmd",
+        "Health.Test",
+        "Health.Log",
+        "Labels",
+        "container logs"
+      ],
+      "read_only": true,
+      "collection_status": "collected",
+      "vmid": 200,
+      "role": "data-prod-db",
+      "budget": {
+        "vcpu": 6,
+        "memory_gib": 16,
+        "mountpoint": "/srv/dell-data",
+        "expected_filesystem_uuid": "d61c0e22-941e-447a-9e9a-1e9e50deb02f"
+      },
+      "persistent_mount_matches_plan": true,
+      "budget_assessment": {
+        "vm_vcpu": 6,
+        "vm_memory_gib": 16,
+        "cpu_caps_sum_vcpu": 5.0,
+        "memory_caps_sum_gib": 12.0,
+        "memory_headroom_gib_at_container_caps": 4.0,
+        "all_containers_have_cpu_cap": true,
+        "all_containers_have_memory_cap": true,
+        "each_cpu_cap_within_VM_vcpu": true,
+        "each_memory_cap_within_VM_memory": true,
+        "memory_cap_sum_within_VM": true,
+        "cpu_cap_sum_within_VM_vcpu": true,
+        "CPU_caps_are_shared_not_reservations": true,
+        "reservation_or_concurrency_SLO_proven": false,
+        "observed_Docker_ncpu_matches_plan": true,
+        "memory_cap_sum_within_observed_Docker_memory": true
+      },
+      "restart_gate_assessment": {
+        "systemd_unit": "dell-data-prod-db.service",
+        "unit_active": true,
+        "unit_substate": "running",
+        "unit_restart": "on-failure",
+        "container_restart_policies": [
+          "no"
+        ],
+        "role_mount_declared_in_RequiresMountsFor": true,
+        "has_mount_BindsTo": true,
+        "has_docker_BindsTo": true,
+        "has_docker_Requires": true,
+        "failure_recovery_retested_in_this_readonly_audit": false
+      }
+    },
+    {
+      "collected_at": "2026-11-06T04:34:34.094343+00:00",
+      "hostname": "data-prod-infra",
+      "docker": {
+        "server_version": "29.9.3",
+        "operating_system": "Debian GNU/Linux 13 (trixie)",
+        "os_type": "linux",
+        "architecture": "x86_64",
+        "root_dir": "/var/lib/docker",
+        "logging_driver": "local",
+        "storage_driver": "overlay2",
+        "ncpu": 4,
+        "memory_total_bytes": 8333938688
+      },
+      "containers": [
+        {
+          "id": "1fc3ec90a23008f6108f3e83f34fdda4c53099edf844ad80dc27b2d4ed5c6432",
+          "name": "/dell-data-prod-infra-redis-1",
+          "image_id": "sha256:17c1c1b96fd1685968790c7fcab311e5bc49c809efe9744af262640a559c4cf2",
+          "image_reference": "redis:7.4.4@sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T03:04:13.740627097Z",
+            "health": "healthy"
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 1000000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 2147483648,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 2147483648,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "6379/tcp": [
+              {
+                "HostIp": "10.63.10.11",
+                "HostPort": "6379"
+              }
+            ]
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": null,
+            "read_only_rootfs": false,
+            "network_mode": "dell-data-prod-infra_default",
+            "pid_mode": ""
+          },
+          "mounts": [
+            {
+              "type": "bind",
+              "source": "/srv/dell-data/prod-infra/redis",
+              "destination": "/data",
+              "rw": true,
+              "under_role_persistent_mount": true
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/prod-infra/scripts/redis-entrypoint.sh",
+              "destination": "/opt/bootstrap/redis-entrypoint.sh",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/prod-infra/scripts/redis-health.sh",
+              "destination": "/opt/health/redis-health.sh",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/prod-infra/secrets/redis-password",
+              "destination": "/run/secrets/redis-password",
+              "rw": false,
+              "under_role_persistent_mount": false
+            }
+          ],
+          "networks": [
+            {
+              "name": "dell-data-prod-infra_default",
+              "ip_address": "172.18.0.2"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:17c1c1b96fd1685968790c7fcab311e5bc49c809efe9744af262640a559c4cf2",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "redis@sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "redis",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 1.0,
+            "memory_cap_gib": 2.0,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [
+              "/data"
+            ],
+            "config_and_secret_mount_values_not_read": true
+          }
+        },
+        {
+          "id": "7f71dfb53684993f7467216ac1a77e4f88af566da4b780ba8b555e15497a3f8e",
+          "name": "/dell-data-prod-infra-rabbitmq-1",
+          "image_id": "sha256:de912cbbf07f938bb8aaa5682464a73a00c6a996efdf0880423aeb4eae006c34",
+          "image_reference": "rabbitmq:3.13.7-management@sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T03:04:14.462223208Z",
+            "health": "healthy"
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 1000000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 1610612736,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 1610612736,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "15671/tcp": null,
+            "15672/tcp": [
+              {
+                "HostIp": "10.63.10.11",
+                "HostPort": "15672"
+              }
+            ],
+            "15691/tcp": null,
+            "15692/tcp": null,
+            "25672/tcp": null,
+            "4369/tcp": null,
+            "5671/tcp": null,
+            "5672/tcp": [
+              {
+                "HostIp": "10.63.10.11",
+                "HostPort": "5672"
+              }
+            ]
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": null,
+            "read_only_rootfs": false,
+            "network_mode": "dell-data-prod-infra_default",
+            "pid_mode": ""
+          },
+          "mounts": [
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/prod-infra/config/rabbitmq.conf",
+              "destination": "/etc/rabbitmq/rabbitmq.conf",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/prod-infra/secrets/rabbit-definitions.json",
+              "destination": "/run/secrets/rabbit-definitions.json",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/srv/dell-data/prod-infra/rabbitmq",
+              "destination": "/var/lib/rabbitmq",
+              "rw": true,
+              "under_role_persistent_mount": true
+            }
+          ],
+          "networks": [
+            {
+              "name": "dell-data-prod-infra_default",
+              "ip_address": "172.18.0.4"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:de912cbbf07f938bb8aaa5682464a73a00c6a996efdf0880423aeb4eae006c34",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "rabbitmq@sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "rabbitmq",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 1.0,
+            "memory_cap_gib": 1.5,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [
+              "/var/lib/rabbitmq"
+            ],
+            "config_and_secret_mount_values_not_read": true
+          }
+        },
+        {
+          "id": "95657f464981f82a6acecafd265b219d3beef1e843c45a423193577637b55c61",
+          "name": "/dell-data-prod-infra-nacos-1",
+          "image_id": "sha256:fc86d4833afb7abc64006f04c715946303f6b15d694c2f05c2895a27d967ed88",
+          "image_reference": "nacos/nacos-server:v2.4.3@sha256:c8dc1db0ac6a345b62bad4e76963d25237a90bf45704795e7cb4d1d972b024a3",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T03:04:14.099173367Z",
+            "health": "healthy"
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 2000000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 1610612736,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 1610612736,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "8848/tcp": [
+              {
+                "HostIp": "10.63.10.11",
+                "HostPort": "8848"
+              }
+            ],
+            "9848/tcp": [
+              {
+                "HostIp": "10.63.10.11",
+                "HostPort": "9848"
+              }
+            ]
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": null,
+            "read_only_rootfs": false,
+            "network_mode": "dell-data-prod-infra_default",
+            "pid_mode": ""
+          },
+          "mounts": [
+            {
+              "type": "bind",
+              "source": "/srv/dell-data/prod-infra/nacos/data",
+              "destination": "/home/nacos/data",
+              "rw": true,
+              "under_role_persistent_mount": true
+            },
+            {
+              "type": "bind",
+              "source": "/srv/dell-data/prod-infra/nacos/logs",
+              "destination": "/home/nacos/logs",
+              "rw": true,
+              "under_role_persistent_mount": true
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/prod-infra/scripts/nacos-entrypoint.sh",
+              "destination": "/opt/bootstrap/nacos-entrypoint.sh",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/prod-infra/secrets/nacos-auth-token",
+              "destination": "/run/secrets/nacos-auth-token",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/prod-infra/secrets/nacos-db-password",
+              "destination": "/run/secrets/nacos-db-password",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/prod-infra/secrets/nacos-identity-value",
+              "destination": "/run/secrets/nacos-identity-value",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/prod-infra/vendor/nacos-application-2.4.3.properties",
+              "destination": "/home/nacos/conf/application.properties",
+              "rw": false,
+              "under_role_persistent_mount": false
+            }
+          ],
+          "networks": [
+            {
+              "name": "dell-data-prod-infra_default",
+              "ip_address": "172.18.0.3"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:fc86d4833afb7abc64006f04c715946303f6b15d694c2f05c2895a27d967ed88",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "nacos/nacos-server@sha256:c8dc1db0ac6a345b62bad4e76963d25237a90bf45704795e7cb4d1d972b024a3"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "nacos",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 2.0,
+            "memory_cap_gib": 1.5,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [
+              "/home/nacos/data",
+              "/home/nacos/logs"
+            ],
+            "config_and_secret_mount_values_not_read": true
+          }
+        }
+      ],
+      "systemd_units": {
+        "docker.service": {
+          "Restart": "always",
+          "Id": "docker.service",
+          "Requires": "docker.socket system.slice sysinit.target",
+          "BindsTo": "",
+          "After": "time-set.target firewalld.service network-online.target system.slice docker.socket systemd-journald.socket basic.target sysinit.target containerd.service nss-lookup.target",
+          "RequiresMountsFor": "",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        },
+        "dell-data-prod-infra.service": {
+          "Restart": "on-failure",
+          "Id": "dell-data-prod-infra.service",
+          "Requires": "system.slice -.mount sysinit.target \"srv-dell\\\\x2ddata.mount\" docker.service",
+          "BindsTo": "\"srv-dell\\\\x2ddata.mount\" docker.service",
+          "After": "network-online.target sysinit.target -.mount basic.target \"srv-dell\\\\x2ddata.mount\" docker.service system.slice systemd-journald.socket",
+          "RequiresMountsFor": "/opt/dell/data/prod-infra /srv/dell-data",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        }
+      },
+      "persistent_mount": {
+        "filesystems": [
+          {
+            "target": "/srv/dell-data",
+            "source": "/dev/sdb",
+            "fstype": "ext4",
+            "uuid": "b85156c2-dac8-4b33-ab25-460aaf676c57",
+            "options": "rw,relatime,stripe=16"
+          }
+        ]
+      },
+      "forbidden_fields_not_requested": [
+        "Env",
+        "Cmd",
+        "Health.Test",
+        "Health.Log",
+        "Labels",
+        "container logs"
+      ],
+      "read_only": true,
+      "collection_status": "collected",
+      "vmid": 201,
+      "role": "data-prod-infra",
+      "budget": {
+        "vcpu": 4,
+        "memory_gib": 8,
+        "mountpoint": "/srv/dell-data",
+        "expected_filesystem_uuid": "b85156c2-dac8-4b33-ab25-460aaf676c57"
+      },
+      "persistent_mount_matches_plan": true,
+      "budget_assessment": {
+        "vm_vcpu": 4,
+        "vm_memory_gib": 8,
+        "cpu_caps_sum_vcpu": 4.0,
+        "memory_caps_sum_gib": 5.0,
+        "memory_headroom_gib_at_container_caps": 3.0,
+        "all_containers_have_cpu_cap": true,
+        "all_containers_have_memory_cap": true,
+        "each_cpu_cap_within_VM_vcpu": true,
+        "each_memory_cap_within_VM_memory": true,
+        "memory_cap_sum_within_VM": true,
+        "cpu_cap_sum_within_VM_vcpu": true,
+        "CPU_caps_are_shared_not_reservations": true,
+        "reservation_or_concurrency_SLO_proven": false,
+        "observed_Docker_ncpu_matches_plan": true,
+        "memory_cap_sum_within_observed_Docker_memory": true
+      },
+      "restart_gate_assessment": {
+        "systemd_unit": "dell-data-prod-infra.service",
+        "unit_active": true,
+        "unit_substate": "running",
+        "unit_restart": "on-failure",
+        "container_restart_policies": [
+          "no"
+        ],
+        "role_mount_declared_in_RequiresMountsFor": true,
+        "has_mount_BindsTo": true,
+        "has_docker_BindsTo": true,
+        "has_docker_Requires": true,
+        "failure_recovery_retested_in_this_readonly_audit": false
+      }
+    },
+    {
+      "collected_at": "2026-11-06T04:34:35.688449+00:00",
+      "hostname": "data-test",
+      "docker": {
+        "server_version": "29.9.3",
+        "operating_system": "Debian GNU/Linux 13 (trixie)",
+        "os_type": "linux",
+        "architecture": "x86_64",
+        "root_dir": "/var/lib/docker",
+        "logging_driver": "local",
+        "storage_driver": "overlay2",
+        "ncpu": 2,
+        "memory_total_bytes": 4112924672
+      },
+      "containers": [
+        {
+          "id": "1e32c610136730142486270496876ef9af4a9c3cc6b2ec2c13e3402936e8ba1e",
+          "name": "/dell-data-test-data-nacos-1",
+          "image_id": "sha256:fc86d4833afb7abc64006f04c715946303f6b15d694c2f05c2895a27d967ed88",
+          "image_reference": "nacos/nacos-server:v2.4.3@sha256:c8dc1db0ac6a345b62bad4e76963d25237a90bf45704795e7cb4d1d972b024a3",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T03:05:44.03579927Z",
+            "health": "healthy"
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 1000000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 1073741824,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 1073741824,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "8848/tcp": [
+              {
+                "HostIp": "10.63.20.10",
+                "HostPort": "8848"
+              }
+            ],
+            "9848/tcp": [
+              {
+                "HostIp": "10.63.20.10",
+                "HostPort": "9848"
+              }
+            ]
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": null,
+            "read_only_rootfs": false,
+            "network_mode": "dell-data-test-data_default",
+            "pid_mode": ""
+          },
+          "mounts": [
+            {
+              "type": "bind",
+              "source": "/srv/dell-data/test-data/nacos/data",
+              "destination": "/home/nacos/data",
+              "rw": true,
+              "under_role_persistent_mount": true
+            },
+            {
+              "type": "bind",
+              "source": "/srv/dell-data/test-data/nacos/logs",
+              "destination": "/home/nacos/logs",
+              "rw": true,
+              "under_role_persistent_mount": true
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/test-data/scripts/nacos-entrypoint.sh",
+              "destination": "/opt/bootstrap/nacos-entrypoint.sh",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/test-data/secrets/nacos-auth-token",
+              "destination": "/run/secrets/nacos-auth-token",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/test-data/secrets/nacos-db-password",
+              "destination": "/run/secrets/nacos-db-password",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/test-data/secrets/nacos-identity-value",
+              "destination": "/run/secrets/nacos-identity-value",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/test-data/vendor/nacos-application-2.4.3.properties",
+              "destination": "/home/nacos/conf/application.properties",
+              "rw": false,
+              "under_role_persistent_mount": false
+            }
+          ],
+          "networks": [
+            {
+              "name": "dell-data-test-data_default",
+              "ip_address": "172.18.0.5"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:fc86d4833afb7abc64006f04c715946303f6b15d694c2f05c2895a27d967ed88",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "nacos/nacos-server@sha256:c8dc1db0ac6a345b62bad4e76963d25237a90bf45704795e7cb4d1d972b024a3"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "nacos",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 1.0,
+            "memory_cap_gib": 1.0,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [
+              "/home/nacos/data",
+              "/home/nacos/logs"
+            ],
+            "config_and_secret_mount_values_not_read": true
+          }
+        },
+        {
+          "id": "3695c8f5e67305d622e5370d9c4c8157911baf762a3325fa93d614061b1452c6",
+          "name": "/dell-data-test-data-rabbitmq-1",
+          "image_id": "sha256:de912cbbf07f938bb8aaa5682464a73a00c6a996efdf0880423aeb4eae006c34",
+          "image_reference": "rabbitmq:3.13.7-management@sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T03:05:38.52390545Z",
+            "health": "healthy"
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 500000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 536870912,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 536870912,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "15671/tcp": null,
+            "15672/tcp": [
+              {
+                "HostIp": "10.63.20.10",
+                "HostPort": "15672"
+              }
+            ],
+            "15691/tcp": null,
+            "15692/tcp": null,
+            "25672/tcp": null,
+            "4369/tcp": null,
+            "5671/tcp": null,
+            "5672/tcp": [
+              {
+                "HostIp": "10.63.20.10",
+                "HostPort": "5672"
+              }
+            ]
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": null,
+            "read_only_rootfs": false,
+            "network_mode": "dell-data-test-data_default",
+            "pid_mode": ""
+          },
+          "mounts": [
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/test-data/config/rabbitmq.conf",
+              "destination": "/etc/rabbitmq/rabbitmq.conf",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/test-data/secrets/rabbit-definitions.json",
+              "destination": "/run/secrets/rabbit-definitions.json",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/srv/dell-data/test-data/rabbitmq",
+              "destination": "/var/lib/rabbitmq",
+              "rw": true,
+              "under_role_persistent_mount": true
+            }
+          ],
+          "networks": [
+            {
+              "name": "dell-data-test-data_default",
+              "ip_address": "172.18.0.4"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:de912cbbf07f938bb8aaa5682464a73a00c6a996efdf0880423aeb4eae006c34",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "rabbitmq@sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "rabbitmq",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 0.5,
+            "memory_cap_gib": 0.5,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [
+              "/var/lib/rabbitmq"
+            ],
+            "config_and_secret_mount_values_not_read": true
+          }
+        },
+        {
+          "id": "7bccd526194a68723b6fba1dfa7e1626a22abd88358cd540a2522c6a54d263c7",
+          "name": "/dell-data-test-data-mysql-1",
+          "image_id": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+          "image_reference": "mysql:8.4.5@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T03:05:38.211829792Z",
+            "health": "healthy"
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 750000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 939524096,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 939524096,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "3306/tcp": [
+              {
+                "HostIp": "10.63.20.10",
+                "HostPort": "3306"
+              }
+            ],
+            "33060/tcp": null
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": null,
+            "read_only_rootfs": false,
+            "network_mode": "dell-data-test-data_default",
+            "pid_mode": ""
+          },
+          "mounts": [
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/test-data/vendor/nacos-mysql-schema-2.4.3.sql",
+              "destination": "/docker-entrypoint-initdb.d/10-nacos.sql",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/test-data/scripts/mysql-health.sh",
+              "destination": "/opt/health/mysql-health.sh",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/test-data/secrets/mysql-root-password",
+              "destination": "/run/secrets/mysql-root-password",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/test-data/secrets/nacos-db-password",
+              "destination": "/run/secrets/nacos-db-password",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/srv/dell-data/test-data/mysql",
+              "destination": "/var/lib/mysql",
+              "rw": true,
+              "under_role_persistent_mount": true
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/test-data/config/mysql.cnf",
+              "destination": "/etc/mysql/conf.d/dell.cnf",
+              "rw": false,
+              "under_role_persistent_mount": false
+            }
+          ],
+          "networks": [
+            {
+              "name": "dell-data-test-data_default",
+              "ip_address": "172.18.0.3"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "mysql@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "mysql",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 0.75,
+            "memory_cap_gib": 0.875,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [
+              "/var/lib/mysql"
+            ],
+            "config_and_secret_mount_values_not_read": true
+          }
+        },
+        {
+          "id": "55bac7f288b3871eb784018291b0eb5ec572120b61c72f635ef11eaa2cef46f6",
+          "name": "/dell-data-test-data-redis-1",
+          "image_id": "sha256:17c1c1b96fd1685968790c7fcab311e5bc49c809efe9744af262640a559c4cf2",
+          "image_reference": "redis:7.4.4@sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T03:05:37.940469798Z",
+            "health": "healthy"
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 250000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 268435456,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 268435456,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "6379/tcp": [
+              {
+                "HostIp": "10.63.20.10",
+                "HostPort": "6379"
+              }
+            ]
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": null,
+            "read_only_rootfs": false,
+            "network_mode": "dell-data-test-data_default",
+            "pid_mode": ""
+          },
+          "mounts": [
+            {
+              "type": "bind",
+              "source": "/srv/dell-data/test-data/redis",
+              "destination": "/data",
+              "rw": true,
+              "under_role_persistent_mount": true
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/test-data/scripts/redis-entrypoint.sh",
+              "destination": "/opt/bootstrap/redis-entrypoint.sh",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/test-data/scripts/redis-health.sh",
+              "destination": "/opt/health/redis-health.sh",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/data/test-data/secrets/redis-password",
+              "destination": "/run/secrets/redis-password",
+              "rw": false,
+              "under_role_persistent_mount": false
+            }
+          ],
+          "networks": [
+            {
+              "name": "dell-data-test-data_default",
+              "ip_address": "172.18.0.2"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:17c1c1b96fd1685968790c7fcab311e5bc49c809efe9744af262640a559c4cf2",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "redis@sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "redis",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 0.25,
+            "memory_cap_gib": 0.25,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [
+              "/data"
+            ],
+            "config_and_secret_mount_values_not_read": true
+          }
+        }
+      ],
+      "systemd_units": {
+        "docker.service": {
+          "Restart": "always",
+          "Id": "docker.service",
+          "Requires": "sysinit.target system.slice docker.socket",
+          "BindsTo": "",
+          "After": "systemd-journald.socket firewalld.service containerd.service nss-lookup.target network-online.target docker.socket basic.target time-set.target system.slice sysinit.target",
+          "RequiresMountsFor": "",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        },
+        "dell-data-test-data.service": {
+          "Restart": "on-failure",
+          "Id": "dell-data-test-data.service",
+          "Requires": "sysinit.target system.slice \"srv-dell\\\\x2ddata.mount\" -.mount docker.service",
+          "BindsTo": "docker.service \"srv-dell\\\\x2ddata.mount\"",
+          "After": "network-online.target \"srv-dell\\\\x2ddata.mount\" basic.target sysinit.target systemd-journald.socket docker.service system.slice -.mount",
+          "RequiresMountsFor": "/srv/dell-data /opt/dell/data/test-data",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        }
+      },
+      "persistent_mount": {
+        "filesystems": [
+          {
+            "target": "/srv/dell-data",
+            "source": "/dev/sdb",
+            "fstype": "ext4",
+            "uuid": "dd1773f9-aa48-4401-a9c8-caf0f66845f3",
+            "options": "rw,relatime"
+          }
+        ]
+      },
+      "forbidden_fields_not_requested": [
+        "Env",
+        "Cmd",
+        "Health.Test",
+        "Health.Log",
+        "Labels",
+        "container logs"
+      ],
+      "read_only": true,
+      "collection_status": "collected",
+      "vmid": 210,
+      "role": "data-test",
+      "budget": {
+        "vcpu": 2,
+        "memory_gib": 4,
+        "mountpoint": "/srv/dell-data",
+        "expected_filesystem_uuid": "dd1773f9-aa48-4401-a9c8-caf0f66845f3"
+      },
+      "persistent_mount_matches_plan": true,
+      "budget_assessment": {
+        "vm_vcpu": 2,
+        "vm_memory_gib": 4,
+        "cpu_caps_sum_vcpu": 2.5,
+        "memory_caps_sum_gib": 2.625,
+        "memory_headroom_gib_at_container_caps": 1.375,
+        "all_containers_have_cpu_cap": true,
+        "all_containers_have_memory_cap": true,
+        "each_cpu_cap_within_VM_vcpu": true,
+        "each_memory_cap_within_VM_memory": true,
+        "memory_cap_sum_within_VM": true,
+        "cpu_cap_sum_within_VM_vcpu": false,
+        "CPU_caps_are_shared_not_reservations": true,
+        "reservation_or_concurrency_SLO_proven": false,
+        "observed_Docker_ncpu_matches_plan": true,
+        "memory_cap_sum_within_observed_Docker_memory": true
+      },
+      "restart_gate_assessment": {
+        "systemd_unit": "dell-data-test-data.service",
+        "unit_active": true,
+        "unit_substate": "running",
+        "unit_restart": "on-failure",
+        "container_restart_policies": [
+          "no"
+        ],
+        "role_mount_declared_in_RequiresMountsFor": true,
+        "has_mount_BindsTo": true,
+        "has_docker_BindsTo": true,
+        "has_docker_Requires": true,
+        "failure_recovery_retested_in_this_readonly_audit": false
+      }
+    },
+    {
+      "collected_at": "2026-11-06T04:34:37.175769+00:00",
+      "hostname": "artifact-service",
+      "docker": {
+        "server_version": "29.9.3",
+        "operating_system": "Debian GNU/Linux 13 (trixie)",
+        "os_type": "linux",
+        "architecture": "x86_64",
+        "root_dir": "/var/lib/docker",
+        "logging_driver": "local",
+        "storage_driver": "overlay2",
+        "ncpu": 2,
+        "memory_total_bytes": 4112920576
+      },
+      "containers": [
+        {
+          "id": "2ad1f92273da7cf54133a190605422e8401aaa2c60dde50583e004c693f46225",
+          "name": "/nexus-gateway-1",
+          "image_id": "sha256:4e5db4761e0ff445f7fd29aad680ad28e8abf7d204895557f145d65535abcc1c",
+          "image_reference": "nginx@sha256:db4f612f385437d11eb26620a4f1d7efb3ff44e1296a3c21540b30454e6e2bf3",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T03:22:55.726076459Z",
+            "health": "healthy"
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 250000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 67108864,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 67108864,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "80/tcp": null,
+            "8080/tcp": [
+              {
+                "HostIp": "0.0.0.0",
+                "HostPort": "8081"
+              }
+            ]
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": null,
+            "read_only_rootfs": true,
+            "network_mode": "nexus_backend",
+            "pid_mode": ""
+          },
+          "mounts": [
+            {
+              "type": "bind",
+              "source": "/opt/dell/nexus/config/nginx.conf",
+              "destination": "/etc/nginx/conf.d/default.conf",
+              "rw": false,
+              "under_role_persistent_mount": false
+            }
+          ],
+          "networks": [
+            {
+              "name": "nexus_backend",
+              "ip_address": "172.18.0.3"
+            },
+            {
+              "name": "nexus_ingress",
+              "ip_address": "172.19.0.2"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:4e5db4761e0ff445f7fd29aad680ad28e8abf7d204895557f145d65535abcc1c",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "nginx@sha256:db4f612f385437d11eb26620a4f1d7efb3ff44e1296a3c21540b30454e6e2bf3"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "gateway",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 0.25,
+            "memory_cap_gib": 0.0625,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [],
+            "config_and_secret_mount_values_not_read": true
+          }
+        },
+        {
+          "id": "b95415524f58ae4c3d804b2915a5cc9897f38d685fafe4580bb217104c2d41a4",
+          "name": "/nexus-nexus-1",
+          "image_id": "sha256:2ae4fee2eed85f42c982aa2fc16746a8453c7f79faf2a7ea236855ca8652e001",
+          "image_reference": "sonatype/nexus3@sha256:e190be450888ec912b941579bac90767d73debc3307a26326c8a71132b02951f",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T03:22:06.021706159Z",
+            "health": "healthy"
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 1750000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 3221225472,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 6442450944,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "8081/tcp": null
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": null,
+            "read_only_rootfs": false,
+            "network_mode": "nexus_backend",
+            "pid_mode": ""
+          },
+          "mounts": [
+            {
+              "type": "bind",
+              "source": "/srv/nexus/data",
+              "destination": "/nexus-data",
+              "rw": true,
+              "under_role_persistent_mount": true
+            }
+          ],
+          "networks": [
+            {
+              "name": "nexus_backend",
+              "ip_address": "172.18.0.2"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:2ae4fee2eed85f42c982aa2fc16746a8453c7f79faf2a7ea236855ca8652e001",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "sonatype/nexus3@sha256:e190be450888ec912b941579bac90767d73debc3307a26326c8a71132b02951f"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "nexus",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 1.75,
+            "memory_cap_gib": 3.0,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [
+              "/nexus-data"
+            ],
+            "config_and_secret_mount_values_not_read": true
+          }
+        }
+      ],
+      "systemd_units": {
+        "docker.service": {
+          "Restart": "always",
+          "Id": "docker.service",
+          "Requires": "sysinit.target system.slice docker.socket",
+          "BindsTo": "",
+          "After": "network-online.target docker.socket basic.target firewalld.service systemd-journald.socket nss-lookup.target containerd.service sysinit.target system.slice time-set.target",
+          "RequiresMountsFor": "",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        },
+        "dell-nexus.service": {
+          "Restart": "on-failure",
+          "Id": "dell-nexus.service",
+          "Requires": "sysinit.target srv-nexus.mount docker.service system.slice -.mount",
+          "BindsTo": "docker.service srv-nexus.mount",
+          "After": "system.slice basic.target systemd-journald.socket network-online.target sysinit.target -.mount srv-nexus.mount docker.service",
+          "RequiresMountsFor": "/srv/nexus",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        }
+      },
+      "persistent_mount": {
+        "filesystems": [
+          {
+            "target": "/srv/nexus",
+            "source": "/dev/sdb",
+            "fstype": "ext4",
+            "uuid": "239dc45a-b1f3-408b-a8ef-7afa77b52204",
+            "options": "rw,relatime"
+          }
+        ]
+      },
+      "forbidden_fields_not_requested": [
+        "Env",
+        "Cmd",
+        "Health.Test",
+        "Health.Log",
+        "Labels",
+        "container logs"
+      ],
+      "read_only": true,
+      "collection_status": "collected",
+      "vmid": 221,
+      "role": "artifact-service",
+      "budget": {
+        "vcpu": 2,
+        "memory_gib": 4,
+        "mountpoint": "/srv/nexus",
+        "expected_filesystem_uuid": "239dc45a-b1f3-408b-a8ef-7afa77b52204"
+      },
+      "persistent_mount_matches_plan": true,
+      "budget_assessment": {
+        "vm_vcpu": 2,
+        "vm_memory_gib": 4,
+        "cpu_caps_sum_vcpu": 2.0,
+        "memory_caps_sum_gib": 3.0625,
+        "memory_headroom_gib_at_container_caps": 0.9375,
+        "all_containers_have_cpu_cap": true,
+        "all_containers_have_memory_cap": true,
+        "each_cpu_cap_within_VM_vcpu": true,
+        "each_memory_cap_within_VM_memory": true,
+        "memory_cap_sum_within_VM": true,
+        "cpu_cap_sum_within_VM_vcpu": true,
+        "CPU_caps_are_shared_not_reservations": true,
+        "reservation_or_concurrency_SLO_proven": false,
+        "observed_Docker_ncpu_matches_plan": true,
+        "memory_cap_sum_within_observed_Docker_memory": true
+      },
+      "restart_gate_assessment": {
+        "systemd_unit": "dell-nexus.service",
+        "unit_active": true,
+        "unit_substate": "running",
+        "unit_restart": "on-failure",
+        "container_restart_policies": [
+          "no"
+        ],
+        "role_mount_declared_in_RequiresMountsFor": true,
+        "has_mount_BindsTo": true,
+        "has_docker_BindsTo": true,
+        "has_docker_Requires": true,
+        "failure_recovery_retested_in_this_readonly_audit": false
+      }
+    },
+    {
+      "collected_at": "2026-11-06T04:35:49.168595+00:00",
+      "hostname": "penpot-service",
+      "docker": {
+        "server_version": "29.9.3",
+        "operating_system": "Debian GNU/Linux 13 (trixie)",
+        "os_type": "linux",
+        "architecture": "x86_64",
+        "root_dir": "/srv/penpot/docker",
+        "logging_driver": "local",
+        "storage_driver": "overlay2",
+        "ncpu": 6,
+        "memory_total_bytes": 16776515584
+      },
+      "containers": [
+        {
+          "id": "ea086528693a1cd25097a1c3c4bfb01d68b548e83dd937de84d1e693a842eb1a",
+          "name": "/penpot-penpot-import-1",
+          "image_id": "sha256:d4414e3f2e41ac4f5eb4b2c146c05cbc9f9754b179d6b63efa3af95c005b1261",
+          "image_reference": "dell-penpot-import:2.18.5-amd64",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T04:03:33.088348639Z",
+            "health": "healthy"
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 1000000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 1073741824,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 2147483648,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "4405/tcp": [
+              {
+                "HostIp": "127.0.0.1",
+                "HostPort": "9002"
+              }
+            ]
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": null,
+            "read_only_rootfs": true,
+            "network_mode": "penpot_penpot",
+            "pid_mode": ""
+          },
+          "mounts": [
+            {
+              "type": "volume",
+              "source": "/srv/penpot/docker/volumes/penpot_penpot_import_jobs/_data",
+              "destination": "/data/jobs",
+              "rw": true,
+              "under_role_persistent_mount": true
+            },
+            {
+              "type": "bind",
+              "source": "/etc/penpot/worker-credentials.uid1000.json",
+              "destination": "/run/secrets/worker-credentials",
+              "rw": false,
+              "under_role_persistent_mount": false
+            }
+          ],
+          "networks": [
+            {
+              "name": "penpot_penpot",
+              "ip_address": "172.18.0.11"
+            },
+            {
+              "name": "penpot_penpot-dns",
+              "ip_address": "172.30.250.3"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:d4414e3f2e41ac4f5eb4b2c146c05cbc9f9754b179d6b63efa3af95c005b1261",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": []
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "import",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 1.0,
+            "memory_cap_gib": 1.0,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": false,
+            "digest_reference_matches_approved_image_lock": null,
+            "observed_image_id_matches_prior_preload_record": true
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [
+              "/data/jobs"
+            ],
+            "config_and_secret_mount_values_not_read": true
+          }
+        },
+        {
+          "id": "183c276f1fc31fd07918ec6e3435028f8e7c0e53f684a9c141519fc57ff4441c",
+          "name": "/penpot-penpot-worker-1",
+          "image_id": "sha256:c0bead679c3fe7a4b80d2485f87bdce0e5a6acc26a9c2a001b0e4e3270dadee5",
+          "image_reference": "dell-penpot-worker:2.18.5-amd64",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T03:56:37.772839855Z",
+            "health": "healthy"
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 2000000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 4294967296,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 8589934592,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "4404/tcp": null
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": null,
+            "read_only_rootfs": false,
+            "network_mode": "penpot_penpot",
+            "pid_mode": ""
+          },
+          "mounts": [
+            {
+              "type": "bind",
+              "source": "/etc/penpot/worker-credentials.uid1001.json",
+              "destination": "/run/secrets/worker-credentials",
+              "rw": false,
+              "under_role_persistent_mount": false
+            }
+          ],
+          "networks": [
+            {
+              "name": "penpot_penpot",
+              "ip_address": "172.18.0.10"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:c0bead679c3fe7a4b80d2485f87bdce0e5a6acc26a9c2a001b0e4e3270dadee5",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": []
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "worker",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 2.0,
+            "memory_cap_gib": 4.0,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": false,
+            "digest_reference_matches_approved_image_lock": null,
+            "observed_image_id_matches_prior_preload_record": true
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [],
+            "config_and_secret_mount_values_not_read": true
+          }
+        },
+        {
+          "id": "ad45a21c088030c386aa19c227c0644b2c494cab3418d18a4cec4e7b711bef00",
+          "name": "/penpot-penpot-frontend-1",
+          "image_id": "sha256:bd020fb6bddfd77449c26f76ee04ca7b2b50a0ffe8562ebc7b9e294bfcd38b89",
+          "image_reference": "dell-penpot-frontend:2.18.5-ff1783e-amd64",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T03:56:36.743884382Z",
+            "health": null
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 1000000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 268435456,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 536870912,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "8080/tcp": [
+              {
+                "HostIp": "0.0.0.0",
+                "HostPort": "9001"
+              }
+            ]
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": null,
+            "read_only_rootfs": false,
+            "network_mode": "penpot_penpot",
+            "pid_mode": ""
+          },
+          "mounts": [
+            {
+              "type": "bind",
+              "source": "/opt/dell/penpot/runtime/logging/templates/nginx-mcp-locations.conf.template",
+              "destination": "/tmp/nginx-mcp-locations.conf.template",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/penpot/runtime/logging/templates/nginx.conf.template",
+              "destination": "/tmp/nginx.conf.template",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "volume",
+              "source": "/srv/penpot/docker/volumes/penpot_penpot_assets/_data",
+              "destination": "/opt/data/assets",
+              "rw": true,
+              "under_role_persistent_mount": true
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/penpot/source/frontend/selfhost/login-defaults.example.json",
+              "destination": "/run/secrets/login-defaults",
+              "rw": false,
+              "under_role_persistent_mount": false
+            }
+          ],
+          "networks": [
+            {
+              "name": "penpot_penpot",
+              "ip_address": "172.18.0.9"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:bd020fb6bddfd77449c26f76ee04ca7b2b50a0ffe8562ebc7b9e294bfcd38b89",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": []
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "frontend",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 1.0,
+            "memory_cap_gib": 0.25,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": false,
+            "digest_reference_matches_approved_image_lock": null,
+            "observed_image_id_matches_prior_preload_record": false
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [
+              "/opt/data/assets"
+            ],
+            "config_and_secret_mount_values_not_read": true
+          }
+        },
+        {
+          "id": "c4d65977331c3ae148d7439cf98f4eacbd18afde8043d632f1a4750791d8357f",
+          "name": "/penpot-penpot-backend-1",
+          "image_id": "sha256:c54c38204393018c4009b7161b9ee3a04ccc0daab657b820d5de86a0d3013630",
+          "image_reference": "penpotapp/backend@sha256:3d3d1eeb5a488efd31ec22038374eb6b52dccc21532047c2e508a18193f3e71f",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T03:56:35.754515973Z",
+            "health": null
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 2000000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 3221225472,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 6442450944,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {},
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": null,
+            "read_only_rootfs": false,
+            "network_mode": "penpot_penpot",
+            "pid_mode": ""
+          },
+          "mounts": [
+            {
+              "type": "volume",
+              "source": "/srv/penpot/docker/volumes/penpot_penpot_assets/_data",
+              "destination": "/opt/data/assets",
+              "rw": true,
+              "under_role_persistent_mount": true
+            }
+          ],
+          "networks": [
+            {
+              "name": "penpot_penpot",
+              "ip_address": "172.18.0.8"
+            },
+            {
+              "name": "penpot_penpot-dns",
+              "ip_address": "172.30.250.2"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:c54c38204393018c4009b7161b9ee3a04ccc0daab657b820d5de86a0d3013630",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "penpotapp/backend@sha256:3d3d1eeb5a488efd31ec22038374eb6b52dccc21532047c2e508a18193f3e71f"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "backend",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 2.0,
+            "memory_cap_gib": 3.0,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [
+              "/opt/data/assets"
+            ],
+            "config_and_secret_mount_values_not_read": true
+          }
+        },
+        {
+          "id": "83facdc96ec8adc68ea491f67e73924d321f67e0baee935968cc1a2c925fc16f",
+          "name": "/penpot-penpot-admin-console-1",
+          "image_id": "sha256:29c13326e854fd63e18a7231cb1ca26d60f728692bd1207ded003b94aba79390",
+          "image_reference": "penpotapp/admin-console@sha256:679bada92344ad5ebd1ee68b5067d63592383a050e3e5da63d106b259e1b0ac9",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T03:56:35.02749257Z",
+            "health": null
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 1000000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 536870912,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 1073741824,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "3000/tcp": null
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": null,
+            "read_only_rootfs": false,
+            "network_mode": "penpot_penpot",
+            "pid_mode": ""
+          },
+          "mounts": [],
+          "networks": [
+            {
+              "name": "penpot_penpot",
+              "ip_address": "172.18.0.7"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:29c13326e854fd63e18a7231cb1ca26d60f728692bd1207ded003b94aba79390",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "penpotapp/admin-console@sha256:679bada92344ad5ebd1ee68b5067d63592383a050e3e5da63d106b259e1b0ac9"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "admin-console",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 1.0,
+            "memory_cap_gib": 0.5,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [],
+            "config_and_secret_mount_values_not_read": true
+          }
+        },
+        {
+          "id": "c98061098c760a3515b28ad61677082777a087d5b5fb7ae1691d6caa1614a884",
+          "name": "/penpot-penpot-exporter-1",
+          "image_id": "sha256:6173b08e25850cda792cd75261e741649c0febd48326e68e8711ba44b5c9af42",
+          "image_reference": "penpotapp/exporter@sha256:48b66f774d338f0ed25d58c6d42f9f107a99170f67bf75ce76361d3dc9e6e27b",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T03:56:32.108244193Z",
+            "health": null
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 2000000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 1610612736,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 3221225472,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {},
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": null,
+            "read_only_rootfs": false,
+            "network_mode": "penpot_penpot",
+            "pid_mode": ""
+          },
+          "mounts": [],
+          "networks": [
+            {
+              "name": "penpot_penpot",
+              "ip_address": "172.18.0.6"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:6173b08e25850cda792cd75261e741649c0febd48326e68e8711ba44b5c9af42",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "penpotapp/exporter@sha256:48b66f774d338f0ed25d58c6d42f9f107a99170f67bf75ce76361d3dc9e6e27b"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "exporter",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 2.0,
+            "memory_cap_gib": 1.5,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [],
+            "config_and_secret_mount_values_not_read": true
+          }
+        },
+        {
+          "id": "cde921f6987e936e1e2b55daa6c5eee99249cf087e5dde4a0cfb47e8be46160b",
+          "name": "/penpot-penpot-dns-1",
+          "image_id": "sha256:7ed84fca86579b7bee90ec5c9750457cd9450729d2dd01fb2070f00f6cd7fb14",
+          "image_reference": "adguard/dnsproxy@sha256:29a27f0a695fa0ae97c56e61343bb7fb820b555e7069b87562a0d5b6fabaea6f",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T03:56:27.395448266Z",
+            "health": null
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 500000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 134217728,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 268435456,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "443/tcp": null,
+            "443/udp": null,
+            "53/tcp": null,
+            "53/udp": null,
+            "5443/tcp": null,
+            "5443/udp": null,
+            "6060/tcp": null,
+            "80/tcp": null,
+            "853/tcp": null,
+            "853/udp": null
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": [
+              "CAP_NET_BIND_SERVICE"
+            ],
+            "cap_drop": [
+              "ALL"
+            ],
+            "read_only_rootfs": true,
+            "network_mode": "penpot_penpot-dns",
+            "pid_mode": ""
+          },
+          "mounts": [],
+          "networks": [
+            {
+              "name": "penpot_penpot-dns",
+              "ip_address": "172.30.250.53"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:7ed84fca86579b7bee90ec5c9750457cd9450729d2dd01fb2070f00f6cd7fb14",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "adguard/dnsproxy@sha256:29a27f0a695fa0ae97c56e61343bb7fb820b555e7069b87562a0d5b6fabaea6f"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "dns",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 0.5,
+            "memory_cap_gib": 0.125,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [],
+            "config_and_secret_mount_values_not_read": true
+          }
+        },
+        {
+          "id": "d2e2a5deb45538da923923ffe5eb76dedcf649701e173a40da8caef67570ba6c",
+          "name": "/penpot-penpot-valkey-1",
+          "image_id": "sha256:ca662989648f173e01fb1a1768e7d84ddcaf8b7de135070b59271b0918104eb3",
+          "image_reference": "valkey/valkey@sha256:757b7e559b14512bcc252949b13b717385d9381ed42e6b325982d03f4a5c8e8e",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T03:56:28.369606264Z",
+            "health": "healthy"
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 500000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 201326592,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 402653184,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "6379/tcp": null
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": null,
+            "read_only_rootfs": false,
+            "network_mode": "penpot_penpot",
+            "pid_mode": ""
+          },
+          "mounts": [],
+          "networks": [
+            {
+              "name": "penpot_penpot",
+              "ip_address": "172.18.0.2"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:ca662989648f173e01fb1a1768e7d84ddcaf8b7de135070b59271b0918104eb3",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "valkey/valkey@sha256:757b7e559b14512bcc252949b13b717385d9381ed42e6b325982d03f4a5c8e8e"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "valkey",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 0.5,
+            "memory_cap_gib": 0.1875,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [],
+            "config_and_secret_mount_values_not_read": true
+          }
+        },
+        {
+          "id": "14909a6a0c59bc19e818165a9a2e4297db115771f89067932846adc193200173",
+          "name": "/penpot-penpot-mcp-1",
+          "image_id": "sha256:e95070617f49eacc00f136061d9c6b4bad957319046e9e65e7cee14b9e77577c",
+          "image_reference": "penpotapp/mcp@sha256:6b39db0ca73d0a50a8afa264676d8ab9f455e87d426cff276d31b2a84a0447c5",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T03:56:30.058107809Z",
+            "health": null
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 1000000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 536870912,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 1073741824,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {},
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": null,
+            "read_only_rootfs": false,
+            "network_mode": "penpot_penpot",
+            "pid_mode": ""
+          },
+          "mounts": [],
+          "networks": [
+            {
+              "name": "penpot_penpot",
+              "ip_address": "172.18.0.5"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:e95070617f49eacc00f136061d9c6b4bad957319046e9e65e7cee14b9e77577c",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "penpotapp/mcp@sha256:6b39db0ca73d0a50a8afa264676d8ab9f455e87d426cff276d31b2a84a0447c5"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "mcp",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 1.0,
+            "memory_cap_gib": 0.5,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [],
+            "config_and_secret_mount_values_not_read": true
+          }
+        },
+        {
+          "id": "a8c35c18cb133d429c0091ce6dde152daf498ed7cb487447310a88f24d373928",
+          "name": "/penpot-penpot-postgres-1",
+          "image_id": "sha256:245fc027b7f3755bbd21b4375c2a0ebc7fa5d16c4573da497be9850a823973c8",
+          "image_reference": "postgres@sha256:7da5d534f1ffcdb2f69efa6e466a7a29ff89eefd611c7b50c4d69aa77fd4a822",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T03:56:28.966949481Z",
+            "health": "healthy"
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 1000000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 805306368,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 1610612736,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "5432/tcp": null
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": null,
+            "read_only_rootfs": false,
+            "network_mode": "penpot_penpot",
+            "pid_mode": ""
+          },
+          "mounts": [
+            {
+              "type": "volume",
+              "source": "/srv/penpot/docker/volumes/penpot_penpot_postgres_v15/_data",
+              "destination": "/var/lib/postgresql/data",
+              "rw": true,
+              "under_role_persistent_mount": true
+            }
+          ],
+          "networks": [
+            {
+              "name": "penpot_penpot",
+              "ip_address": "172.18.0.3"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:245fc027b7f3755bbd21b4375c2a0ebc7fa5d16c4573da497be9850a823973c8",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "postgres@sha256:7da5d534f1ffcdb2f69efa6e466a7a29ff89eefd611c7b50c4d69aa77fd4a822"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "postgres",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 1.0,
+            "memory_cap_gib": 0.75,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [
+              "/var/lib/postgresql/data"
+            ],
+            "config_and_secret_mount_values_not_read": true
+          }
+        },
+        {
+          "id": "a742b834a623868865326bfa186f5548e7805607658fa8ed3ba42218e32bc953",
+          "name": "/penpot-penpot-mailpit-1",
+          "image_id": "sha256:580a202b5088e9c651a8e8b4e461e3213fbd3a3aacaa3d2251892a546a734116",
+          "image_reference": "axllent/mailpit@sha256:18156f9ee243aa339170ac33d09d6d5a80b10d9e06b265f90f223a777a8f4b73",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T03:56:29.516991918Z",
+            "health": "healthy"
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 500000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 134217728,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 268435456,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "1025/tcp": null,
+            "1110/tcp": null,
+            "8025/tcp": null
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": null,
+            "read_only_rootfs": false,
+            "network_mode": "penpot_penpot",
+            "pid_mode": ""
+          },
+          "mounts": [],
+          "networks": [
+            {
+              "name": "penpot_penpot",
+              "ip_address": "172.18.0.4"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:580a202b5088e9c651a8e8b4e461e3213fbd3a3aacaa3d2251892a546a734116",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "axllent/mailpit@sha256:18156f9ee243aa339170ac33d09d6d5a80b10d9e06b265f90f223a777a8f4b73"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "mailpit",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 0.5,
+            "memory_cap_gib": 0.125,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [],
+            "config_and_secret_mount_values_not_read": true
+          }
+        }
+      ],
+      "systemd_units": {
+        "docker.service": {
+          "Restart": "always",
+          "Id": "docker.service",
+          "Requires": "system.slice -.mount srv-penpot.mount docker.socket sysinit.target",
+          "BindsTo": "srv-penpot.mount",
+          "After": "srv-penpot.mount system.slice systemd-journald.socket time-set.target containerd.service sysinit.target basic.target network-online.target -.mount firewalld.service nss-lookup.target docker.socket",
+          "RequiresMountsFor": "/srv/penpot",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        },
+        "dell-penpot.service": {
+          "Restart": "no",
+          "Id": "dell-penpot.service",
+          "Requires": "srv-penpot.mount -.mount docker.service sysinit.target system.slice",
+          "BindsTo": "docker.service srv-penpot.mount",
+          "After": "basic.target docker.service srv-penpot.mount sysinit.target systemd-journald.socket network-online.target -.mount system.slice",
+          "RequiresMountsFor": "/srv/penpot",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "exited",
+          "UnitFileState": "enabled",
+          "Type": "oneshot",
+          "RemainAfterExit": "yes",
+          "PartOf": "docker.service",
+          "related_unit_files": [
+            "dell-penpot.service"
+          ]
+        }
+      },
+      "persistent_mount": {
+        "filesystems": [
+          {
+            "target": "/srv/penpot",
+            "source": "/dev/sdb",
+            "fstype": "ext4",
+            "uuid": "ccccda03-bffd-4054-afd3-e0e22f0c607e",
+            "options": "rw,relatime"
+          }
+        ]
+      },
+      "forbidden_fields_not_requested": [
+        "Env",
+        "Cmd",
+        "Health.Test",
+        "Health.Log",
+        "Labels",
+        "container logs"
+      ],
+      "read_only": true,
+      "vmid": 250,
+      "role": "penpot-service",
+      "collection_status": "collected",
+      "budget": {
+        "vcpu": 6,
+        "memory_gib": 16,
+        "mountpoint": "/srv/penpot",
+        "expected_filesystem_uuid": "ccccda03-bffd-4054-afd3-e0e22f0c607e"
+      },
+      "persistent_mount_matches_plan": true,
+      "budget_assessment": {
+        "vm_vcpu": 6,
+        "vm_memory_gib": 16,
+        "cpu_caps_sum_vcpu": 12.5,
+        "memory_caps_sum_gib": 11.9375,
+        "memory_headroom_gib_at_container_caps": 4.0625,
+        "all_containers_have_cpu_cap": true,
+        "all_containers_have_memory_cap": true,
+        "each_cpu_cap_within_VM_vcpu": true,
+        "each_memory_cap_within_VM_memory": true,
+        "memory_cap_sum_within_VM": true,
+        "cpu_cap_sum_within_VM_vcpu": false,
+        "CPU_caps_are_shared_not_reservations": true,
+        "reservation_or_concurrency_SLO_proven": false,
+        "observed_Docker_ncpu_matches_plan": true,
+        "memory_cap_sum_within_observed_Docker_memory": true
+      },
+      "restart_gate_assessment": {
+        "systemd_unit": "dell-penpot.service",
+        "unit_active": true,
+        "unit_substate": "exited",
+        "unit_restart": "no",
+        "container_restart_policies": [
+          "no"
+        ],
+        "role_mount_declared_in_RequiresMountsFor": true,
+        "has_mount_BindsTo": true,
+        "has_docker_BindsTo": true,
+        "has_docker_Requires": true,
+        "failure_recovery_retested_in_this_readonly_audit": false
+      }
+    },
+    {
+      "collected_at": "2026-11-06T04:34:40.722035+00:00",
+      "hostname": "nas-media",
+      "docker": {
+        "server_version": "29.9.3",
+        "operating_system": "Debian GNU/Linux 13 (trixie)",
+        "os_type": "linux",
+        "architecture": "x86_64",
+        "root_dir": "/var/lib/docker",
+        "logging_driver": "json-file",
+        "storage_driver": "overlayfs",
+        "ncpu": 4,
+        "memory_total_bytes": 4112367616
+      },
+      "containers": [
+        {
+          "id": "13d571fdc3332da2f81fc237cc7f445afc1e6ca313d2e2f43b3b9016e9fe7956",
+          "name": "/dell-nas-jellyfin-1",
+          "image_id": "sha256:fea863d0cd9ec445985d9c75fc6ed64e38a1d2766cf0c250a33d553f4fc1b771",
+          "image_reference": "jellyfin/jellyfin@sha256:fea863d0cd9ec445985d9c75fc6ed64e38a1d2766cf0c250a33d553f4fc1b771",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T03:41:12.009488882Z",
+            "health": "healthy"
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 2000000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 1610612736,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 3221225472,
+            "pids_limit": 256
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "8096/tcp": [
+              {
+                "HostIp": "10.63.40.10",
+                "HostPort": "8096"
+              }
+            ]
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": [
+              "ALL"
+            ],
+            "read_only_rootfs": false,
+            "network_mode": "dell-nas_default",
+            "pid_mode": ""
+          },
+          "mounts": [
+            {
+              "type": "bind",
+              "source": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a/appdata/jellyfin/cache",
+              "destination": "/cache",
+              "rw": true,
+              "under_role_persistent_mount": true
+            },
+            {
+              "type": "bind",
+              "source": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a/appdata/jellyfin/config",
+              "destination": "/config",
+              "rw": true,
+              "under_role_persistent_mount": true
+            },
+            {
+              "type": "bind",
+              "source": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a/media",
+              "destination": "/media",
+              "rw": false,
+              "under_role_persistent_mount": true
+            }
+          ],
+          "networks": [
+            {
+              "name": "dell-nas_default",
+              "ip_address": "172.18.0.2"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:fea863d0cd9ec445985d9c75fc6ed64e38a1d2766cf0c250a33d553f4fc1b771",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "jellyfin/jellyfin@sha256:fea863d0cd9ec445985d9c75fc6ed64e38a1d2766cf0c250a33d553f4fc1b771"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "jellyfin",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 2.0,
+            "memory_cap_gib": 1.5,
+            "explicit_pids_cap_present": true,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [
+              "/cache",
+              "/config",
+              "/media"
+            ],
+            "config_and_secret_mount_values_not_read": true
+          }
+        }
+      ],
+      "systemd_units": {
+        "docker.service": {
+          "Restart": "always",
+          "Id": "docker.service",
+          "Requires": "docker.socket system.slice sysinit.target",
+          "BindsTo": "",
+          "After": "network-online.target systemd-journald.socket docker.socket firewalld.service basic.target sysinit.target containerd.service nss-lookup.target system.slice time-set.target",
+          "RequiresMountsFor": "",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        },
+        "dell-nas-jellyfin.service": {
+          "Restart": "on-failure",
+          "Id": "dell-nas-jellyfin.service",
+          "Requires": "docker.service system.slice \"srv-dev\\\\x2ddisk\\\\x2dby\\\\x2duuid\\\\x2d5b19837c\\\\x2d128c\\\\x2d498a\\\\x2db79d\\\\x2d563db810c34a.mount\" -.mount sysinit.target",
+          "BindsTo": "\"srv-dev\\\\x2ddisk\\\\x2dby\\\\x2duuid\\\\x2d5b19837c\\\\x2d128c\\\\x2d498a\\\\x2db79d\\\\x2d563db810c34a.mount\"",
+          "After": "basic.target sysinit.target system.slice -.mount systemd-journald.socket network-online.target docker.service \"srv-dev\\\\x2ddisk\\\\x2dby\\\\x2duuid\\\\x2d5b19837c\\\\x2d128c\\\\x2d498a\\\\x2db79d\\\\x2d563db810c34a.mount\"",
+          "RequiresMountsFor": "/opt/dell/nas /srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        }
+      },
+      "persistent_mount": {
+        "filesystems": [
+          {
+            "target": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a",
+            "source": "/dev/sda1",
+            "fstype": "ext4",
+            "uuid": "5b19837c-128c-498a-b79d-563db810c34a",
+            "options": "rw,relatime,quota,usrquota,grpquota"
+          }
+        ]
+      },
+      "forbidden_fields_not_requested": [
+        "Env",
+        "Cmd",
+        "Health.Test",
+        "Health.Log",
+        "Labels",
+        "container logs"
+      ],
+      "read_only": true,
+      "collection_status": "collected",
+      "vmid": 260,
+      "role": "nas-media",
+      "budget": {
+        "vcpu": 4,
+        "memory_gib": 4,
+        "mountpoint": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a",
+        "expected_filesystem_uuid": "5b19837c-128c-498a-b79d-563db810c34a"
+      },
+      "persistent_mount_matches_plan": true,
+      "budget_assessment": {
+        "vm_vcpu": 4,
+        "vm_memory_gib": 4,
+        "cpu_caps_sum_vcpu": 2.0,
+        "memory_caps_sum_gib": 1.5,
+        "memory_headroom_gib_at_container_caps": 2.5,
+        "all_containers_have_cpu_cap": true,
+        "all_containers_have_memory_cap": true,
+        "each_cpu_cap_within_VM_vcpu": true,
+        "each_memory_cap_within_VM_memory": true,
+        "memory_cap_sum_within_VM": true,
+        "cpu_cap_sum_within_VM_vcpu": true,
+        "CPU_caps_are_shared_not_reservations": true,
+        "reservation_or_concurrency_SLO_proven": false,
+        "observed_Docker_ncpu_matches_plan": true,
+        "memory_cap_sum_within_observed_Docker_memory": true
+      },
+      "restart_gate_assessment": {
+        "systemd_unit": "dell-nas-jellyfin.service",
+        "unit_active": true,
+        "unit_substate": "running",
+        "unit_restart": "on-failure",
+        "container_restart_policies": [
+          "no"
+        ],
+        "role_mount_declared_in_RequiresMountsFor": true,
+        "has_mount_BindsTo": true,
+        "has_docker_BindsTo": false,
+        "has_docker_Requires": true,
+        "failure_recovery_retested_in_this_readonly_audit": false
+      }
+    },
+    {
+      "collected_at": "2026-11-06T04:34:42.411420+00:00",
+      "hostname": "ops-service",
+      "docker": {
+        "server_version": "29.9.3",
+        "operating_system": "Debian GNU/Linux 13 (trixie)",
+        "os_type": "linux",
+        "architecture": "x86_64",
+        "root_dir": "/var/lib/docker",
+        "logging_driver": "local",
+        "storage_driver": "overlay2",
+        "ncpu": 2,
+        "memory_total_bytes": 4112924672
+      },
+      "containers": [
+        {
+          "id": "cc44366d5b41b7bea30adfb939551ae62d0faffeae7d25c4a66a76bec2963325",
+          "name": "/dell-ops-grafana-1",
+          "image_id": "sha256:6afa1ab7f6e662c739a45a1d458598d7eb6ab70fc7c0ab45af64864e1503d4b6",
+          "image_reference": "grafana/grafana:13.3.0@sha256:6e5d306338670f381a942f1c50d3c266bf71531e5ddd9ee4fc1a133dac5ce63d",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T02:51:10.211566584Z",
+            "health": "healthy"
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 500000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 805306368,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 805306368,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "3000/tcp": [
+              {
+                "HostIp": "10.63.30.40",
+                "HostPort": "3000"
+              }
+            ]
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": [
+              "ALL"
+            ],
+            "read_only_rootfs": false,
+            "network_mode": "dell-ops_default",
+            "pid_mode": ""
+          },
+          "mounts": [
+            {
+              "type": "bind",
+              "source": "/opt/dell/ops/config/grafana/dashboards",
+              "destination": "/etc/grafana/dashboards",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/ops/config/grafana/provisioning",
+              "destination": "/etc/grafana/provisioning",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/ops/secrets/grafana-admin-password",
+              "destination": "/run/secrets/grafana-admin-password",
+              "rw": false,
+              "under_role_persistent_mount": false
+            },
+            {
+              "type": "bind",
+              "source": "/srv/dell-data/ops/grafana",
+              "destination": "/var/lib/grafana",
+              "rw": true,
+              "under_role_persistent_mount": true
+            }
+          ],
+          "networks": [
+            {
+              "name": "dell-ops_default",
+              "ip_address": "172.18.0.5"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:6afa1ab7f6e662c739a45a1d458598d7eb6ab70fc7c0ab45af64864e1503d4b6",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "grafana/grafana@sha256:6e5d306338670f381a942f1c50d3c266bf71531e5ddd9ee4fc1a133dac5ce63d"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "grafana",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 0.5,
+            "memory_cap_gib": 0.75,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [
+              "/var/lib/grafana"
+            ],
+            "config_and_secret_mount_values_not_read": true
+          }
+        },
+        {
+          "id": "d27b041fb49721ba8a10b9a4f6f7da82bea7f4656f32c45765ac600423278045",
+          "name": "/dell-ops-alertmanager-1",
+          "image_id": "sha256:151292169170da9f8414b68c8e5994c75bd9cbb94ff60b8bc90860c4994b0946",
+          "image_reference": "prom/alertmanager:v0.34.2@sha256:7619e9399e623c9f99a40cb199c2bceb972cbf725598a51dcbde69d51dcaaedf",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T02:51:09.165672322Z",
+            "health": "healthy"
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 250000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 268435456,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 268435456,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "9093/tcp": [
+              {
+                "HostIp": "10.63.30.40",
+                "HostPort": "9093"
+              }
+            ]
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": [
+              "ALL"
+            ],
+            "read_only_rootfs": false,
+            "network_mode": "dell-ops_default",
+            "pid_mode": ""
+          },
+          "mounts": [
+            {
+              "type": "bind",
+              "source": "/srv/dell-data/ops/alertmanager",
+              "destination": "/alertmanager",
+              "rw": true,
+              "under_role_persistent_mount": true
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/ops/config/alertmanager",
+              "destination": "/etc/alertmanager",
+              "rw": false,
+              "under_role_persistent_mount": false
+            }
+          ],
+          "networks": [
+            {
+              "name": "dell-ops_default",
+              "ip_address": "172.18.0.3"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:151292169170da9f8414b68c8e5994c75bd9cbb94ff60b8bc90860c4994b0946",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "prom/alertmanager@sha256:7619e9399e623c9f99a40cb199c2bceb972cbf725598a51dcbde69d51dcaaedf"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "alertmanager",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 0.25,
+            "memory_cap_gib": 0.25,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [
+              "/alertmanager"
+            ],
+            "config_and_secret_mount_values_not_read": true
+          }
+        },
+        {
+          "id": "68406abe1c775fd2ba8efced947989ad1e5bb88da1c7abea51db5384b9c28fea",
+          "name": "/dell-ops-prometheus-1",
+          "image_id": "sha256:9bd9cbec4bd4f33bb6ccedf8c25a5132f8e7b2fb158c9a223a54485e4332e962",
+          "image_reference": "prom/prometheus:v3.16.0@sha256:89c1a644817e9ad70fa2af76c84898e327c1de7063735f962e8313b1e28672c3",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T02:51:08.832679582Z",
+            "health": "healthy"
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 1000000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 1610612736,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 1610612736,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "9090/tcp": [
+              {
+                "HostIp": "10.63.30.40",
+                "HostPort": "9090"
+              }
+            ]
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": [
+              "ALL"
+            ],
+            "read_only_rootfs": false,
+            "network_mode": "dell-ops_default",
+            "pid_mode": ""
+          },
+          "mounts": [
+            {
+              "type": "bind",
+              "source": "/srv/dell-data/ops/prometheus",
+              "destination": "/prometheus",
+              "rw": true,
+              "under_role_persistent_mount": true
+            },
+            {
+              "type": "bind",
+              "source": "/opt/dell/ops/config/prometheus",
+              "destination": "/etc/prometheus",
+              "rw": false,
+              "under_role_persistent_mount": false
+            }
+          ],
+          "networks": [
+            {
+              "name": "dell-ops_default",
+              "ip_address": "172.18.0.2"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:9bd9cbec4bd4f33bb6ccedf8c25a5132f8e7b2fb158c9a223a54485e4332e962",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "prom/prometheus@sha256:89c1a644817e9ad70fa2af76c84898e327c1de7063735f962e8313b1e28672c3"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "prometheus",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 1.0,
+            "memory_cap_gib": 1.5,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [
+              "/prometheus"
+            ],
+            "config_and_secret_mount_values_not_read": true
+          }
+        },
+        {
+          "id": "462891a120cab615e3d14a478fb52e76d0e51a2a30c2f1fb5111e711eb6acf0c",
+          "name": "/dell-ops-blackbox-1",
+          "image_id": "sha256:e6f02b1a6c427e2a771fb33b42cb167dde3e5e8b3625e55e55aa20aaa018946d",
+          "image_reference": "prom/blackbox-exporter:v0.29.1@sha256:66eae352a79e6f677aeddd8c25a9bdb017586dc5fbd230f22329213d891f94bd",
+          "state": {
+            "status": "running",
+            "running": true,
+            "restarting": false,
+            "oom_killed": false,
+            "started_at": "2026-11-06T02:51:09.742554043Z",
+            "health": "healthy"
+          },
+          "restart_count": 0,
+          "restart_policy": {
+            "MaximumRetryCount": 0,
+            "Name": "no"
+          },
+          "resources": {
+            "nano_cpus": 250000000,
+            "cpu_quota": 0,
+            "cpu_period": 0,
+            "cpu_shares": 0,
+            "cpuset_cpus": "",
+            "memory_bytes": 134217728,
+            "memory_reservation_bytes": 0,
+            "memory_swap_bytes": 134217728,
+            "pids_limit": null
+          },
+          "logging": {
+            "driver": "local",
+            "max_size": "10m",
+            "max_file": "3"
+          },
+          "ports": {
+            "9115/tcp": null
+          },
+          "security": {
+            "privileged": false,
+            "cap_add": null,
+            "cap_drop": [
+              "ALL"
+            ],
+            "read_only_rootfs": false,
+            "network_mode": "dell-ops_default",
+            "pid_mode": ""
+          },
+          "mounts": [
+            {
+              "type": "bind",
+              "source": "/opt/dell/ops/config/blackbox",
+              "destination": "/etc/blackbox_exporter",
+              "rw": false,
+              "under_role_persistent_mount": false
+            }
+          ],
+          "networks": [
+            {
+              "name": "dell-ops_default",
+              "ip_address": "172.18.0.4"
+            }
+          ],
+          "image_metadata": {
+            "id": "sha256:e6f02b1a6c427e2a771fb33b42cb167dde3e5e8b3625e55e55aa20aaa018946d",
+            "architecture": "amd64",
+            "os": "linux",
+            "repo_digests": [
+              "prom/blackbox-exporter@sha256:66eae352a79e6f677aeddd8c25a9bdb017586dc5fbd230f22329213d891f94bd"
+            ]
+          },
+          "service_name_basis": "container-name; labels were not read",
+          "service": "blackbox",
+          "resource_interpretation": {
+            "cpu_cap_vcpu": 0.25,
+            "memory_cap_gib": 0.125,
+            "explicit_pids_cap_present": false,
+            "limits_are_upper_bounds_not_reserved_capacity": true
+          },
+          "image_verification": {
+            "linux_amd64": true,
+            "container_image_id_matches_inspected_image": true,
+            "runtime_reference_digest_pinned": true,
+            "digest_reference_matches_approved_image_lock": true,
+            "observed_image_id_matches_prior_preload_record": null
+          },
+          "mount_verification": {
+            "no_Mac_or_docker_socket_mounts": true,
+            "data_mounts": [],
+            "config_and_secret_mount_values_not_read": true
+          }
+        }
+      ],
+      "systemd_units": {
+        "docker.service": {
+          "Restart": "always",
+          "Id": "docker.service",
+          "Requires": "system.slice sysinit.target docker.socket",
+          "BindsTo": "",
+          "After": "sysinit.target nss-lookup.target basic.target system.slice time-set.target docker.socket containerd.service firewalld.service network-online.target systemd-journald.socket",
+          "RequiresMountsFor": "",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        },
+        "dell-ops.service": {
+          "Restart": "on-failure",
+          "Id": "dell-ops.service",
+          "Requires": "system.slice -.mount docker.service sysinit.target \"srv-dell\\\\x2ddata.mount\"",
+          "BindsTo": "docker.service \"srv-dell\\\\x2ddata.mount\"",
+          "After": "docker.service \"srv-dell\\\\x2ddata.mount\" basic.target sysinit.target systemd-journald.socket network-online.target system.slice -.mount",
+          "RequiresMountsFor": "/opt/dell/ops /srv/dell-data",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        }
+      },
+      "persistent_mount": {
+        "filesystems": [
+          {
+            "target": "/srv/dell-data",
+            "source": "/dev/sda",
+            "fstype": "ext4",
+            "uuid": "01b1f302-27be-4fbd-b4af-b8e782d85dea",
+            "options": "rw,relatime"
+          }
+        ]
+      },
+      "forbidden_fields_not_requested": [
+        "Env",
+        "Cmd",
+        "Health.Test",
+        "Health.Log",
+        "Labels",
+        "container logs"
+      ],
+      "read_only": true,
+      "collection_status": "collected",
+      "vmid": 270,
+      "role": "ops-service",
+      "budget": {
+        "vcpu": 2,
+        "memory_gib": 4,
+        "mountpoint": "/srv/dell-data",
+        "expected_filesystem_uuid": "01b1f302-27be-4fbd-b4af-b8e782d85dea"
+      },
+      "persistent_mount_matches_plan": true,
+      "budget_assessment": {
+        "vm_vcpu": 2,
+        "vm_memory_gib": 4,
+        "cpu_caps_sum_vcpu": 2.0,
+        "memory_caps_sum_gib": 2.625,
+        "memory_headroom_gib_at_container_caps": 1.375,
+        "all_containers_have_cpu_cap": true,
+        "all_containers_have_memory_cap": true,
+        "each_cpu_cap_within_VM_vcpu": true,
+        "each_memory_cap_within_VM_memory": true,
+        "memory_cap_sum_within_VM": true,
+        "cpu_cap_sum_within_VM_vcpu": true,
+        "CPU_caps_are_shared_not_reservations": true,
+        "reservation_or_concurrency_SLO_proven": false,
+        "observed_Docker_ncpu_matches_plan": true,
+        "memory_cap_sum_within_observed_Docker_memory": true
+      },
+      "restart_gate_assessment": {
+        "systemd_unit": "dell-ops.service",
+        "unit_active": true,
+        "unit_substate": "running",
+        "unit_restart": "on-failure",
+        "container_restart_policies": [
+          "no"
+        ],
+        "role_mount_declared_in_RequiresMountsFor": true,
+        "has_mount_BindsTo": true,
+        "has_docker_BindsTo": true,
+        "has_docker_Requires": true,
+        "failure_recovery_retested_in_this_readonly_audit": false
+      }
+    }
+  ],
+  "collection_note": "250 first whitelist template lacked safe missing Health-map access; retry uses index without reading test or logs",
+  "completed_at": "2026-11-06T04:38:44.785395+00:00",
+  "summary": {
+    "guests": 7,
+    "containers": 26,
+    "running": 26,
+    "healthy": 20,
+    "without_docker_health": 6,
+    "without_explicit_pids_cap": 25,
+    "all_linux_amd64": true,
+    "digest_pinned_references": 23,
+    "tag_references_with_observed_image_ID": 3,
+    "all_CPU_and_memory_caps_present": true,
+    "all_log_rotation_local_10m_3": true,
+    "all_persistent_mount_UUIDs_match": true,
+    "no_Mac_or_docker_socket_mounts": true,
+    "no_privileged_containers": true,
+    "per_role": [
+      {
+        "vmid": 200,
+        "role": "data-prod-db",
+        "containers": 1,
+        "healthy": 1,
+        "without_docker_health": 0,
+        "memory_caps_gib": 12.0,
+        "vm_memory_gib": 16,
+        "cpu_caps": 5.0,
+        "vm_vcpu": 6,
+        "systemd_substate": "running",
+        "systemd_restart": "on-failure"
+      },
+      {
+        "vmid": 201,
+        "role": "data-prod-infra",
+        "containers": 3,
+        "healthy": 3,
+        "without_docker_health": 0,
+        "memory_caps_gib": 5.0,
+        "vm_memory_gib": 8,
+        "cpu_caps": 4.0,
+        "vm_vcpu": 4,
+        "systemd_substate": "running",
+        "systemd_restart": "on-failure"
+      },
+      {
+        "vmid": 210,
+        "role": "data-test",
+        "containers": 4,
+        "healthy": 4,
+        "without_docker_health": 0,
+        "memory_caps_gib": 2.625,
+        "vm_memory_gib": 4,
+        "cpu_caps": 2.5,
+        "vm_vcpu": 2,
+        "systemd_substate": "running",
+        "systemd_restart": "on-failure"
+      },
+      {
+        "vmid": 221,
+        "role": "artifact-service",
+        "containers": 2,
+        "healthy": 2,
+        "without_docker_health": 0,
+        "memory_caps_gib": 3.0625,
+        "vm_memory_gib": 4,
+        "cpu_caps": 2.0,
+        "vm_vcpu": 2,
+        "systemd_substate": "running",
+        "systemd_restart": "on-failure"
+      },
+      {
+        "vmid": 250,
+        "role": "penpot-service",
+        "containers": 11,
+        "healthy": 5,
+        "without_docker_health": 6,
+        "memory_caps_gib": 11.9375,
+        "vm_memory_gib": 16,
+        "cpu_caps": 12.5,
+        "vm_vcpu": 6,
+        "systemd_substate": "exited",
+        "systemd_restart": "no"
+      },
+      {
+        "vmid": 260,
+        "role": "nas-media",
+        "containers": 1,
+        "healthy": 1,
+        "without_docker_health": 0,
+        "memory_caps_gib": 1.5,
+        "vm_memory_gib": 4,
+        "cpu_caps": 2.0,
+        "vm_vcpu": 4,
+        "systemd_substate": "running",
+        "systemd_restart": "on-failure"
+      },
+      {
+        "vmid": 270,
+        "role": "ops-service",
+        "containers": 4,
+        "healthy": 4,
+        "without_docker_health": 0,
+        "memory_caps_gib": 2.625,
+        "vm_memory_gib": 4,
+        "cpu_caps": 2.0,
+        "vm_vcpu": 2,
+        "systemd_substate": "running",
+        "systemd_restart": "on-failure"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "id": "CRT001",
+      "severity": "medium",
+      "title": "No explicit container PIDs cap",
+      "status": "open",
+      "observed": [
+        {
+          "vmid": 200,
+          "service": "mysql",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 201,
+          "service": "redis",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 201,
+          "service": "rabbitmq",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 201,
+          "service": "nacos",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 210,
+          "service": "nacos",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 210,
+          "service": "rabbitmq",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 210,
+          "service": "mysql",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 210,
+          "service": "redis",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 221,
+          "service": "gateway",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 221,
+          "service": "nexus",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 250,
+          "service": "import",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 250,
+          "service": "worker",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 250,
+          "service": "frontend",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 250,
+          "service": "backend",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 250,
+          "service": "admin-console",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 250,
+          "service": "exporter",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 250,
+          "service": "dns",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 250,
+          "service": "valkey",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 250,
+          "service": "mcp",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 250,
+          "service": "postgres",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 250,
+          "service": "mailpit",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 270,
+          "service": "grafana",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 270,
+          "service": "alertmanager",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 270,
+          "service": "prometheus",
+          "observed_pids_limit": null
+        },
+        {
+          "vmid": 270,
+          "service": "blackbox",
+          "observed_pids_limit": null
+        }
+      ],
+      "interpretation": "PidsLimit=null means no explicit per-container PIDs cap in this metadata; it does not prove absence of inherited guest/systemd limits."
+    },
+    {
+      "id": "CRT002",
+      "severity": "medium",
+      "title": "Penpot has six services without Docker health status",
+      "status": "open",
+      "observed": [
+        {
+          "vmid": 250,
+          "service": "frontend",
+          "observed_health": null
+        },
+        {
+          "vmid": 250,
+          "service": "backend",
+          "observed_health": null
+        },
+        {
+          "vmid": 250,
+          "service": "admin-console",
+          "observed_health": null
+        },
+        {
+          "vmid": 250,
+          "service": "exporter",
+          "observed_health": null
+        },
+        {
+          "vmid": 250,
+          "service": "dns",
+          "observed_health": null
+        },
+        {
+          "vmid": 250,
+          "service": "mcp",
+          "observed_health": null
+        }
+      ],
+      "interpretation": "running alone is not application health proof. Existing external/functional evidence is separate; this audit did not read health commands or run probes."
+    },
+    {
+      "id": "CRT003",
+      "severity": "high",
+      "title": "Penpot startup unit is oneshot, with no demonstrated automatic failure recovery",
+      "status": "open",
+      "observed": {
+        "vmid": 250,
+        "unit": "dell-penpot.service",
+        "Type": "oneshot",
+        "RemainAfterExit": "yes",
+        "ActiveState": "active",
+        "SubState": "exited",
+        "Restart": "no",
+        "all_11_container_restart": "no",
+        "related_unit_files": [
+          "dell-penpot.service"
+        ]
+      },
+      "interpretation": "Mount-gated startup is present; continuous stack supervision and automatic recovery are not demonstrated by the current unit metadata."
+    },
+    {
+      "id": "CRT004",
+      "severity": "notice",
+      "title": "Summed CPU caps exceed VM vCPU in test-data and Penpot",
+      "status": "requires-capacity-interpretation",
+      "observed": [
+        {
+          "vmid": 210,
+          "cpu_caps_sum": 2.5,
+          "vm_vcpu": 2
+        },
+        {
+          "vmid": 250,
+          "cpu_caps_sum": 12.5,
+          "vm_vcpu": 6
+        }
+      ],
+      "interpretation": "These are shared ceilings, not reserved CPUs. Guest vCPU remains the aggregate execution boundary; simultaneous cap use cannot be promised. No load test performed."
+    },
+    {
+      "id": "CRT005",
+      "severity": "medium",
+      "title": "Three source-built Penpot image references use tags",
+      "status": "needs-provenance-or-ID-lock-review",
+      "observed": [
+        {
+          "vmid": 250,
+          "service": "import",
+          "reference": "dell-penpot-import:2.18.5-amd64",
+          "actual_image_id": "sha256:d4414e3f2e41ac4f5eb4b2c146c05cbc9f9754b179d6b63efa3af95c005b1261",
+          "prior_preload_id_match": true
+        },
+        {
+          "vmid": 250,
+          "service": "worker",
+          "reference": "dell-penpot-worker:2.18.5-amd64",
+          "actual_image_id": "sha256:c0bead679c3fe7a4b80d2485f87bdce0e5a6acc26a9c2a001b0e4e3270dadee5",
+          "prior_preload_id_match": true
+        },
+        {
+          "vmid": 250,
+          "service": "frontend",
+          "reference": "dell-penpot-frontend:2.18.5-ff1783e-amd64",
+          "actual_image_id": "sha256:bd020fb6bddfd77449c26f76ee04ca7b2b50a0ffe8562ebc7b9e294bfcd38b89",
+          "prior_preload_id_match": false
+        }
+      ],
+      "interpretation": "Actual image IDs and linux/amd64 were captured; tags can be reassigned. Worker/import IDs match prior preload evidence; frontend has a newer observed image ID, requiring its build provenance rather than the old frontend preload ID."
+    },
+    {
+      "id": "CRT006",
+      "severity": "notice",
+      "title": "NAS unit uses mount BindsTo and Docker Requires, without Docker BindsTo",
+      "status": "difference-recorded",
+      "observed": {
+        "vmid": 260,
+        "BindsTo_contains_docker": false,
+        "Requires_contains_docker": true,
+        "BindsTo_contains_data_mount": true,
+        "Restart": "on-failure",
+        "SubState": "running"
+      },
+      "interpretation": "Different from the five other continuous supervisors; readonly inspection does not prove daemon-loss recovery behavior. Existing NAS guest reboot evidence remains separate."
+    }
+  ],
+  "limitations": [
+    "Read-only point-in-time metadata audit; no restart/rebuild/load tests",
+    "No Env, Cmd, health test/log, labels or application/container logs requested",
+    "Running/no-health services are not signed off as application-health passed",
+    "CPU/memory limits are upper bounds, not reserved resources or guaranteed concurrent throughput",
+    "No source Nexus/other Mac Docker instance queried; only specified guest221 metadata",
+    "VM240, templates, PVE and all other guests excluded"
+  ],
+  "guest_mutations_performed": false,
+  "known_hosts_modified": false,
+  "additional_load_test_performed": false,
+  "collection_commands": [
+    "docker info --format <server/OS/Arch/RootDir only>",
+    "docker ps -aq --no-trunc",
+    "docker inspect --format <explicit field whitelist; no Env/Cmd/labels/health test/log> <container-id>",
+    "docker image inspect --format <id/architecture/os/repo_digests only> <image-id>",
+    "systemctl show <fixed role unit> --property=<non-secret state/restart/mount dependency metadata>",
+    "findmnt --json --mountpoint <fixed role mount> --output TARGET,SOURCE,FSTYPE,UUID,OPTIONS"
+  ]
+}

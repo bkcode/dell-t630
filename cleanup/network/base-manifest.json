@@ -1,0 +1,17 @@
+{
+  "status": "local-candidate-only-not-applied",
+  "bases": {
+    "control.py": {
+      "path": "dell/scripts/control.py",
+      "sha256": "cebbb0908bb916169182d6b2700f511aff89e5130c08d070aaf94e8a46068c4f"
+    },
+    "render-bridge-acl.py": {
+      "path": "dell/network19/audit/render-bridge-acl.py",
+      "sha256": "d0f2282ce5013d79c9e7dc395367243af37b5b68ae75e5e332b30fcf73f3627d"
+    },
+    "gateway-policy.py": {
+      "path": "dell/network19/gateway/policy.py",
+      "sha256": "bd237ff8c6417306af7cf0a9e3106d0426f5ca6bb54f072984dd9e89638708da"
+    }
+  }
+}

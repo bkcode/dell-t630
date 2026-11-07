@@ -1,0 +1,33 @@
+{
+  "id": "ACC-SYS-001",
+  "status": "passed",
+  "executed_at": "2026-11-06T15:04:45.986290+08:00",
+  "timezone": "Asia/Shanghai",
+  "operator": "root-task-manager",
+  "plan_sha256": "2090547eae7c1562a4a20814fefdd90b033137d4549f0aff079763ad4e4ec902",
+  "preconditions_checked": true,
+  "target": {
+    "host": "192.168.21.22",
+    "environment": "managed-PVE-implementation",
+    "vmid": null
+  },
+  "commands_or_steps": [
+    "See linked execution artifact and operator observations"
+  ],
+  "exit_codes": [
+    0
+  ],
+  "observations": [
+    "12新guest正常重启恢复已实测（10滚动+Nexus/Penpot独立证据），原machine/key/UUID、NTP、角色健康及数据保持，正式仅runtime",
+    "独立NAS QA复用原守卫：正确挂载内部三次200+healthy；B1只QA umount守卫exit1/no根盘回落；B2仅QA loop detach，QA启动非零且本地systemd失败信号明确",
+    "同文件同UUID/canary恢复后一次条件纠正C三次200+healthy，所有QA container/unit/network/mount/loop/file已清理，真实NAS进程/身份/三样本hash始终不变"
+  ],
+  "artifacts": [
+    "evidence/implementation/system-recovery-final-summary.json"
+  ],
+  "limitations": [
+    "未重启/断电PVE宿主或CF，不代表灾备RPO/RTO；真实媒体盘未卸载，QA本地失败信号非群通知测试；原测试控制器失败与修正顺序完整保留"
+  ],
+  "reviewed_by": "root-task-manager",
+  "plan_snapshot": "evidence/plans/plan-2090547eae7c1562.json"
+}

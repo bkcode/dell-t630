@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-06T17:27:57.396312+08:00",
+  "scope": "root-authorized-fresh9011-guest-build-only",
+  "exit_code": 0,
+  "result": {
+    "status": "java21-clean-nonroot-acceptance-passed",
+    "uid": 999,
+    "user": "java",
+    "versions": {
+      "java": "openjdk version \"21.0.13\" 2026-10-20\nOpenJDK Runtime Environment (build 21.0.13+9-1-deb13u2-Debian)\nOpenJDK 64-Bit Server VM (build 21.0.13+9-1-deb13u2-Debian, mixed mode, sharing)",
+      "javac": "javac 21.0.13"
+    },
+    "business_artifacts_present": false,
+    "business_or_exporter_listeners": [],
+    "exporter_parked": true,
+    "CPU_count": 2,
+    "loadavg": [
+      0.57080078125,
+      0.150390625,
+      0.04296875
+    ],
+    "filesystem_free_bytes": 30819389440,
+    "MemTotal_kib": 2021540,
+    "machine_id_sha256": "90223fd2fa6829f2f243919fa213f65f18bcb80528140b6500db843051aee4e5",
+    "boot_id_sha256": "04da8c3629b61d2f13611c1bc497d6ced57e84331078c81c18b1a8da026696c4",
+    "network_or_external_messages_sent": false,
+    "temporary_compile_and_run": "passed; source/class automatically removed",
+    "builder": "9011 fresh9010 clone",
+    "build_only": true,
+    "template_sealed": false,
+    "policy_hook_restored": true,
+    "packages": [
+      "openjdk-21-jdk-headless 21.0.13+9-1~deb13u2",
+      "openjdk-21-jre-headless 21.0.13+9-1~deb13u2",
+      "prometheus-node-exporter 1.9.0-1+b4"
+    ],
+    "acceptance_code_sha256": "20bc24ce5ceb8258149a11ec28059d2d0b2f3f9b1e58178e9d6e6f8b26736814",
+    "no_business_or_credentials_copied": true
+  },
+  "PVE_or_other_guest_writes": false
+}

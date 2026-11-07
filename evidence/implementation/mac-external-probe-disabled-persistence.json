@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-06T13:58:21.373738",
+  "status": "stopped-invalid-background-probe-also-unregistered-on-next-login",
+  "only_this_task_plist_removed": true,
+  "private_source_plist_and_state_retained": true,
+  "plist_sha256": "22fa3a7c7924d9f0c94d9a45a5375f5e85c0172d347af75bb206c1c0ac516de3",
+  "reason": "prevent RunAtLoad resuming notifications before background LAN access is validated"
+}

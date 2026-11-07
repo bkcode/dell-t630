@@ -1,0 +1,47 @@
+{
+  "at": "2026-11-06T16:37:35.562047+08:00",
+  "scope": "190-native-check-only",
+  "code_sha256": {
+    "policy.py": "300a28729d49ed27231d81a74d7de9fd28a3c53e6908f442c6310e3216289570",
+    "manage.py": "f5f7891a6f053bbf992641560d8997070f600450f20109faa375870f71c4009d"
+  },
+  "result": {
+    "status": "standby-native-checks-passed",
+    "checks": [
+      {
+        "name": "nft-check",
+        "exit_code": 0,
+        "output": ""
+      },
+      {
+        "name": "dnsmasq-test",
+        "exit_code": 0,
+        "output": "dnsmasq: syntax check OK.\n"
+      },
+      {
+        "name": "systemd-unit-check",
+        "exit_code": 0,
+        "output": ""
+      }
+    ],
+    "forward_before": {
+      "net.ipv4.ip_forward": "0",
+      "net.ipv4.conf.all.forwarding": "0",
+      "net.ipv4.conf.eth0.forwarding": "0",
+      "net.ipv4.conf.eth1.forwarding": "0"
+    },
+    "forward_after": {
+      "net.ipv4.ip_forward": "0",
+      "net.ipv4.conf.all.forwarding": "0",
+      "net.ipv4.conf.eth0.forwarding": "0",
+      "net.ipv4.conf.eth1.forwarding": "0"
+    },
+    "interfaces_by_MAC": {
+      "WAN": "eth0",
+      "LAN": "eth1"
+    },
+    "kernel_tables": [],
+    "services_started": false,
+    "firewall_loaded": false
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-07T02:16:24.709774+00:00",
+  "status": "local-review-only-management-window-not-open",
+  "remote_connections_attempted": false,
+  "guest_or_PVE_mutations": false,
+  "existing_tools_modified": false,
+  "AST_valid": [
+    "target.py",
+    "relocate.py",
+    "verify220.py"
+  ],
+  "pure_tests": 6,
+  "local_tool_hashes": {
+    "target.py": "09b87a31f78dc60af86913d3ec02d11a10bc8206837c3cf2376a142f46736756",
+    "relocate.py": "5161ea0b369ff95fc05f1fccde59e8d7e1667fd0eb7afab0c526f2ccc2fea140",
+    "verify220.py": "2f74b359ea323aeb1717448c3188747169bf3915caa357a6928058aef2ba2dfd"
+  },
+  "prior_uploaded_target_SHA": "c7839413765d1bd62faed4d51260cc60f99de5822d3ad45ca605029aeac51cab",
+  "source_quiesce_tool_exists": false,
+  "notes": "local-resume-review-20261107.md"
+}

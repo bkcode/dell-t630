@@ -1,0 +1,28 @@
+{
+  "role": "data-prod-infra",
+  "private_ip": "10.63.10.11",
+  "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+  "services": [
+    "dell-data-prod-infra.service",
+    "prometheus-node-exporter.service",
+    "qemu-guest-agent.service",
+    "ssh.service"
+  ],
+  "http_checks": [
+    {
+      "name": "nacos-readiness",
+      "url": "http://10.63.10.11:8848/nacos/v1/console/health/readiness"
+    }
+  ],
+  "candidate_service_units": [
+    "docker.service",
+    "dell-data-prod-infra.service"
+  ],
+  "candidate_http_checks": [
+    {
+      "name": "nacos-readiness",
+      "url": "http://10.63.10.11:8848/nacos/v1/console/health/readiness"
+    }
+  ],
+  "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+}

@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-06T06:30:20.389769",
+  "source_vmid": 9002,
+  "source_was_stopped": true,
+  "restore_vmid": 9020,
+  "archive": "/mnt/pve/store/dell-artifacts/baseline-backup/vzdump-qemu-9002-2026_11_06-06_29_18.vma.zst",
+  "bytes": 380475872,
+  "sha256": "8db60b7f9f2f89f011dd5c369b88aca6c71d66c0d03cc1e6eeaa01339cc651cf",
+  "scope": "OS baseline only; application data and RPO/RTO remain pending",
+  "limitations": [
+    "OS baseline only; application consistency/RPO/RTO not tested",
+    "Full replacement-hypervisor/control-plane recovery not tested",
+    "Custom Cloud-Init snippets are separate dependencies and were saved as protected sidecars",
+    "Mac copy is a provisional independent-device baseline, not an approved production backup scheduler"
+  ],
+  "verified_at": "2026-11-06T06:31:12.420982+08:00",
+  "independent_device_copy": "/Users/yangzhaohui/work/www/harness/dell/private/backups/baseline/vzdump-qemu-9002-2026_11_06-06_29_18.vma.zst",
+  "independent_copy_sha256_verified": true,
+  "restored_guest": {
+    "exit_code": 0,
+    "stdout": "ub\ndell-restore-baseline\ntemplate=tpl-linux-base\nos=debian13\narchitecture=amd64\n{\n  \"boot_status_code\": \"enabled-by-generator\",\n  \"datasource\": \"nocloud\",\n  \"detail\": \"DataSourceNoCloud [seed=/dev/sr0]\",\n  \"errors\": [],\n  \"extended_status\": \"done\",\n  \"init\": {\n    \"errors\": [],\n    \"finished\": 12.18,\n    \"recoverable_errors\": {},\n    \"start\": 10.74\n  },\n  \"init-local\": {\n    \"errors\": [],\n    \"finished\": 8.48,\n    \"recoverable_errors\": {},\n    \"start\": 6.99\n  },\n  \"last_update\": \"Thu, 01 Jan 1970 00:00:14 +0000\",\n  \"modules-config\": {\n    \"errors\": [],\n    \"finished\": 12.84,\n    \"recoverable_errors\": {},\n    \"start\": 12.32\n  },\n  \"modules-final\": {\n    \"errors\": [],\n    \"finished\": 14.41,\n    \"recoverable_errors\": {},\n    \"start\": 12.9\n  },\n  \"recoverable_errors\": {},\n  \"stage\": null,\n  \"status\": \"done\"\n}\nactive\n",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+    "target": {
+      "vmid": 9020,
+      "ip": "192.168.21.213",
+      "host_key_alias": "dell-vm9020",
+      "host_key_fingerprint": "SHA256:ih4nSQSCl4Yngg5w01YcJ3zYVtfxpVjUQ13gcCtIPCM",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  },
+  "cloud_init_sidecars_saved_privately": true
+}

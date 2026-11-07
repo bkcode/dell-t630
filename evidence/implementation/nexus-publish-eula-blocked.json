@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-06T11:19:16.278025",
+  "result": {
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nTraceback (most recent call last):\n  File \"/opt/dell/publisher/nexus-acceptance.py\", line 23, in <module>\n    status,_=request('PUT',root+ext,'dell-publisher',data);assert status in (200,201,204),'Publisher write failed '+str(status)\n                                                                  ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Publisher write failed 403\n",
+    "target": {
+      "vmid": 220,
+      "ip": "10.63.30.10",
+      "host_key_alias": "dell-vm220",
+      "host_key_fingerprint": "SHA256:2PFQYC3uPSg/sMihWZZ7R1vgkKKozJbTwTjf6VNWwG4",
+      "trust_source": "PVE QGA over known SSH host"
+    }
+  }
+}

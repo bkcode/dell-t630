@@ -1,0 +1,44 @@
+[
+  {
+    "service": "frontend",
+    "helper_exit_code": 0,
+    "stdout_empty": true,
+    "stderr_empty": true,
+    "guest_file_written": false
+  },
+  {
+    "service": "backend",
+    "helper_exit_code": 0,
+    "stdout_empty": true,
+    "stderr_empty": true,
+    "guest_file_written": false
+  },
+  {
+    "service": "exporter",
+    "helper_exit_code": 0,
+    "stdout_empty": true,
+    "stderr_empty": true,
+    "guest_file_written": false
+  },
+  {
+    "service": "admin-console",
+    "helper_exit_code": 0,
+    "stdout_empty": true,
+    "stderr_empty": true,
+    "guest_file_written": false,
+    "redirect_origin_route_callback_strictly_verified": true
+  },
+  {
+    "service": "mcp",
+    "helper_exit_code": 0,
+    "stdout_empty": true,
+    "stderr_empty": true,
+    "guest_file_written": false
+  },
+  {
+    "service": "dns",
+    "native_helper_exit_code": 0,
+    "answer_matches": true,
+    "guest_file_written": false
+  }
+]

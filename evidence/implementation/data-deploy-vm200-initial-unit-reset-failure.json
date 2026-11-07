@@ -1,0 +1,58 @@
+{
+  "role": "prod-db",
+  "vmid": 200,
+  "started_at": "2026-11-06T10:41:45.222839+08:00",
+  "steps": [
+    {
+      "name": "secure-bundle-stdin-copy",
+      "at": "2026-11-06T10:41:46.215648+08:00",
+      "result": {
+        "exit_code": 0,
+        "stdout": "{\"role\": \"prod-db\", \"vmid\": 200, \"private_ip\": \"10.63.10.10\", \"files\": 16, \"mode\": \"secure-stdin-bundle\", \"secrets_values_emitted\": false, \"source_business_data_included\": false, \"status\": \"copied\"}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 200,
+          "ip": "10.63.10.10",
+          "host_key_alias": "dell-vm200",
+          "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      }
+    },
+    {
+      "name": "preflight-check",
+      "at": "2026-11-06T10:41:47.246268+08:00",
+      "result": {
+        "exit_code": 0,
+        "stdout": "{\"role\": \"prod-db\", \"preflight\": \"passed\", \"deployment\": \"not-run\"}\n",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\n",
+        "target": {
+          "vmid": 200,
+          "ip": "10.63.10.10",
+          "host_key_alias": "dell-vm200",
+          "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      }
+    },
+    {
+      "name": "deploy",
+      "at": "2026-11-06T10:41:50.618253+08:00",
+      "result": {
+        "exit_code": 1,
+        "stdout": "",
+        "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nERROR: reset explicit deployment retry state failed, exit 1; output retained in private log\n",
+        "target": {
+          "vmid": 200,
+          "ip": "10.63.10.10",
+          "host_key_alias": "dell-vm200",
+          "host_key_fingerprint": "SHA256:OjoRkaukT1Fzx92Ww7bhMJOLYvOrybe+dbHbKb2it1Q",
+          "trust_source": "PVE QGA over known SSH host"
+        }
+      }
+    }
+  ],
+  "status": "failed-stopped-queue",
+  "error": "deploy failed; sanitized guest result retained",
+  "finished_at": "2026-11-06T10:41:50.619595+08:00"
+}

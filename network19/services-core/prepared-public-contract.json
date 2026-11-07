@@ -1,0 +1,268 @@
+{
+  "status": "prepared-not-deployed",
+  "revision": "network19-v1",
+  "source_active_release": "/opt/finger/releases/test/20261106T121030",
+  "new_issuer": "http://192.168.19.45:9999",
+  "new_COMS_domain": "http://192.168.19.45:9999/finger-bff-system/dell-test-files",
+  "Nacos_dataId_mapping": {
+    "finger-common.yaml": "finger-common.network19-v1.yaml",
+    "finger-service-system.yaml": "finger-service-system.network19-v1.yaml",
+    "finger-service-coms.yaml": "finger-service-coms.network19-v1.yaml",
+    "finger-auth.yaml": "finger-auth.network19-v1.yaml",
+    "finger-bff-system.yaml": "finger-bff-system.network19-v1.yaml",
+    "finger-gateway-mobile-lan-v2.yaml": "finger-gateway-mobile-lan-v2.network19-v1.yaml"
+  },
+  "publisher_files": [
+    {
+      "vmid": 220,
+      "installed_path": "/usr/local/bin/dell-publish",
+      "source_sha256": "27f20c96914c5374a3a8775adaca43157b2e76bba5f673503e3881992b8d0170",
+      "canonical_deployed_snapshot_equal": true,
+      "prepared_path": "prepared/publisher/vm220/publisher_client220.py",
+      "prepared_sha256": "d674598542a73556f31d85d4f5c6bbdd55d66dddb9acb4d84cb7587e4f532969",
+      "edits": [
+        {
+          "line": 17,
+          "old": "10.63.20.20",
+          "new": "192.168.19.45"
+        },
+        {
+          "line": 17,
+          "old": "10.63.30.10",
+          "new": "192.168.19.30"
+        },
+        {
+          "line": 19,
+          "old": "10.63.30.10",
+          "new": "192.168.19.30"
+        },
+        {
+          "line": 41,
+          "old": "deployer@10.63.20.20",
+          "new": "deployer@192.168.19.45"
+        }
+      ],
+      "deployed": false
+    },
+    {
+      "vmid": 240,
+      "installed_path": "/usr/local/libexec/dell-publish-test240",
+      "source_sha256": "98f5c4d460cfa251aaebbe5ef4791f728762b546031d43b263d208a22a2f6f06",
+      "canonical_deployed_snapshot_equal": true,
+      "prepared_path": "prepared/publisher/vm240/publisher_root.py",
+      "prepared_sha256": "e08ca08eb89043f3167c0d5a836693f23a1d4cd095d27a88646e0add59d06593",
+      "edits": [
+        {
+          "line": 25,
+          "old": "10.63.20.20",
+          "new": "192.168.19.45"
+        },
+        {
+          "line": 29,
+          "old": "10.63.20.20",
+          "new": "192.168.19.45"
+        },
+        {
+          "line": 84,
+          "old": "http://10.63.20.20:",
+          "new": "http://192.168.19.45:"
+        }
+      ],
+      "deployed": false
+    },
+    {
+      "vmid": 240,
+      "installed_path": "/usr/local/libexec/dell-publisher-dispatch",
+      "source_sha256": "8e327e157500feb7202e3afedc3a24e42573c1f6e7bafe0645187beda8a49193",
+      "canonical_deployed_snapshot_equal": true,
+      "prepared_path": "prepared/publisher/vm240/publisher_dispatch.py",
+      "prepared_sha256": "bdf6398be6b66b2ddfd7a691c52fbb90bcb0b6f06f7963988051e6e32f42e195",
+      "edits": [
+        {
+          "line": 16,
+          "old": "10.63.30.10",
+          "new": "192.168.19.30"
+        },
+        {
+          "line": 16,
+          "old": "10.63.20.20",
+          "new": "192.168.19.45"
+        }
+      ],
+      "deployed": false
+    },
+    {
+      "vmid": 240,
+      "installed_path": "/usr/local/libexec/dell-publisher/publisher_protocol.py",
+      "source_sha256": "382d761e1d5dce4323fb2d30375bd1c76353044290c3d6c924eb9892accca910",
+      "canonical_deployed_snapshot_equal": true,
+      "prepared_path": "prepared/publisher/vm240/publisher_protocol.py",
+      "prepared_sha256": "62da6feb9b923ea81b853b6131adac9312272d8f0d39c99104e77aea30dc62e2",
+      "edits": [
+        {
+          "line": 10,
+          "old": "finger-gateway-mobile-lan-v2.yaml",
+          "new": "finger-gateway-mobile-lan-v2.network19-v1.yaml"
+        },
+        {
+          "line": 79,
+          "old": "10.63.20.20",
+          "new": "192.168.19.45"
+        },
+        {
+          "line": 80,
+          "old": "10.63.20.10:8848",
+          "new": "192.168.19.20:8848"
+        },
+        {
+          "line": 84,
+          "old": "10.63.20.10:8848",
+          "new": "192.168.19.20:8848"
+        },
+        {
+          "line": 92,
+          "old": "finger-common.yaml",
+          "new": "finger-common.network19-v1.yaml"
+        },
+        {
+          "line": 102,
+          "old": "10.63.20.10",
+          "new": "192.168.19.20"
+        },
+        {
+          "line": 104,
+          "old": "10.63.20.10",
+          "new": "192.168.19.20"
+        },
+        {
+          "line": 109,
+          "old": "jdbc:mysql://10.63.20.10:3306/finger_",
+          "new": "jdbc:mysql://192.168.19.20:3306/finger_"
+        },
+        {
+          "line": 111,
+          "old": "http://192.168.21.22:19999/finger-bff-system/dell-test-files",
+          "new": "http://192.168.19.45:9999/finger-bff-system/dell-test-files"
+        },
+        {
+          "line": 112,
+          "old": "http://192.168.21.22:19999",
+          "new": "http://192.168.19.45:9999"
+        },
+        {
+          "line": 124,
+          "old": "10.63.20.20",
+          "new": "192.168.19.45"
+        },
+        {
+          "line": 124,
+          "old": "10.63.20.10",
+          "new": "192.168.19.20"
+        },
+        {
+          "line": 124,
+          "old": "http://192.168.21.22:19999",
+          "new": "http://192.168.19.45:9999"
+        },
+        {
+          "structural_patch": "only CONFIG_IDS exact2-line setup\u2192versioned whitelist; validation algorithm unchanged"
+        }
+      ],
+      "deployed": false
+    },
+    {
+      "vmid": 240,
+      "installed_path": "/usr/local/libexec/dell/deploy-test-chain.py",
+      "source_sha256": "8beb4586ce4504252e5076f5852bf4f19a50481747eb2f0d8e47af5094cf41ff",
+      "canonical_deployed_snapshot_equal": true,
+      "prepared_path": "prepared/publisher/vm240/fixed-deploy-test-chain.py",
+      "prepared_sha256": "7dec440948b633c0e51f09afdcf1b239016f46518dd9ab734c81bea00e806c30",
+      "edits": [
+        {
+          "line": 19,
+          "old": "10.63.20.20",
+          "new": "192.168.19.45"
+        },
+        {
+          "line": 24,
+          "old": "10.63.20.20",
+          "new": "192.168.19.45"
+        },
+        {
+          "line": 24,
+          "old": "10.63.20.10",
+          "new": "192.168.19.20"
+        },
+        {
+          "line": 25,
+          "old": "http://192.168.21.22:19999",
+          "new": "http://192.168.19.45:9999"
+        },
+        {
+          "line": 36,
+          "old": "10.63.20.20",
+          "new": "192.168.19.45"
+        },
+        {
+          "line": 37,
+          "old": "10.63.20.10:8848",
+          "new": "192.168.19.20:8848"
+        },
+        {
+          "line": 42,
+          "old": "jdbc:mysql://10.63.20.10:3306/finger_",
+          "new": "jdbc:mysql://192.168.19.20:3306/finger_"
+        },
+        {
+          "line": 94,
+          "old": "10.63.20.20",
+          "new": "192.168.19.45"
+        },
+        {
+          "line": 131,
+          "old": "http://10.63.20.20:",
+          "new": "http://192.168.19.45:"
+        }
+      ],
+      "deployed": false
+    }
+  ],
+  "new_policy_fields": {
+    "target_ip": "192.168.19.45",
+    "fixed_deployer_sha256": "7dec440948b633c0e51f09afdcf1b239016f46518dd9ab734c81bea00e806c30",
+    "baseline_migrated": "always false under current user scope"
+  },
+  "policy_other_fields": "copy on guest unchanged; namespace never replaced",
+  "client_profile_patch": {
+    "path": "/etc/dell-publisher/client-test240.json",
+    "target_host": {
+      "old": "10.63.20.20",
+      "new": "192.168.19.45"
+    },
+    "source_ip": {
+      "old": "10.63.30.10",
+      "new": "192.168.19.30"
+    },
+    "other_fields": "unchanged"
+  },
+  "authorized_key_patch": {
+    "path": "/etc/ssh/authorized_keys/deployer",
+    "only_exact_from_option": {
+      "old": "10.63.30.10",
+      "new": "192.168.19.30"
+    },
+    "key_bytes_forced_command_restrict": "unchanged"
+  },
+  "readiness": {
+    "fixed_path": "/root/dell-java-test-readiness.json",
+    "new_target_ip": "192.168.19.45",
+    "recreate_after_new_network_validation": false,
+    "do_not_relabel_old_proof": true,
+    "current_scope": "no app readiness generation; old proof historical only; publisher fenced"
+  },
+  "no_pending_quiescence_code_used": true,
+  "no_secret_values_or_target_writes": true,
+  "java_application_deployment_allowed": false,
+  "fresh_Nacos_publish_allowed": false,
+  "Java_scope": "single acceptance template/foundation only; root separately assigns"
+}

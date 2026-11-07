@@ -1,0 +1,28 @@
+{
+  "network": {
+    "version": 2,
+    "ethernets": {
+      "eth0": {
+        "match": {
+          "macaddress": "bc:24:11:8f:30:c7"
+        },
+        "addresses": [
+          "192.168.19.197/24"
+        ],
+        "nameservers": {
+          "addresses": [
+            "192.168.19.1"
+          ],
+          "search": []
+        },
+        "set-name": "eth0",
+        "routes": [
+          {
+            "to": "default",
+            "via": "192.168.19.1"
+          }
+        ]
+      }
+    }
+  }
+}

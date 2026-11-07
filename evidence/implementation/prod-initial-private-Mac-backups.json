@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-06T12:32:06.006810",
+  "status": "initial-new-environment-snapshots-private-Mac-copy-verified",
+  "components": [
+    {
+      "component": "nacos",
+      "vmid": 200,
+      "local_archive": "private/backups/app-initial-environment/export-nacos-f106e23107d34c0bba39a4c006dd1891.tar.gz",
+      "archive_sha256": "9b2435bef023a0238b279ac0cc424d8fdcdef444f9913904859d89bde556e6a7",
+      "bytes": 4057,
+      "mode": "0o600",
+      "payload_sha256_verified": true
+    },
+    {
+      "component": "redis",
+      "vmid": 201,
+      "local_archive": "private/backups/app-initial-environment/export-redis-6c706257613d40228cf2611d94276e26.tar.gz",
+      "archive_sha256": "254846ed584fb230a3760bff90747ef91059d31c8462fdcfd34edb733d636915",
+      "bytes": 703,
+      "mode": "0o600",
+      "payload_sha256_verified": true
+    },
+    {
+      "component": "rabbit-topology",
+      "vmid": 201,
+      "local_archive": "private/backups/app-initial-environment/export-rabbit-topology-b260debe1b5a4e0d9ea6657226a927cb.tar.gz",
+      "archive_sha256": "00d9ab4a50bdbff021b1b44ad108b4c4e4d85395cf5d5a43f8ab6e73e704708a",
+      "bytes": 1004,
+      "mode": "0o600",
+      "payload_sha256_verified": true
+    }
+  ],
+  "scope": "current fresh Nacos metadata/new-target identity hashes, empty Redis RDB, Rabbit definitions only; no credential files/old Mac source identities/CF",
+  "restoration_evidence": "infra/backup/full-snapshot-restore/runtime-status.json",
+  "limitations": [
+    "Rabbit definitions have no messages",
+    "Current Redis snapshot is empty",
+    "Nacos active config_info empty, 12 tables/10 rows",
+    "No full independent-host disaster/RPO/RTO or continuous schedule claim"
+  ]
+}

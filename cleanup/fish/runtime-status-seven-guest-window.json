@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-11-06T17:15:36.869209+00:00",
+  "status": "authorized7-install-only-verified",
+  "roles": [
+    {
+      "vmid": 190,
+      "status": "installed-verified",
+      "fish": "fish, version 4.0.2",
+      "package_version": "4.0.2-1",
+      "checks": {
+        "fish_exact_version": true,
+        "fish_common_exact_version": true,
+        "binary_version_command": true,
+        "ub_nonconfig_private_smoke": true,
+        "ub_root_login_shells_unchanged": true,
+        "core_services_and_containers_PIDs_start_health_unchanged": true
+      },
+      "strict_SSH_new_connection": true,
+      "before_shells": {
+        "ub": "/bin/bash",
+        "root": "/bin/bash"
+      },
+      "after_shells": {
+        "ub": "/bin/bash",
+        "root": "/bin/bash"
+      },
+      "new_packages": [
+        "fish-common",
+        "libpcre2-32-0",
+        "fish"
+      ],
+      "evidence": "evidence/guest190.json"
+    },
+    {
+      "vmid": 200,
+      "status": "installed-verified",
+      "fish": "fish, version 4.0.2",
+      "package_version": "4.0.2-1",
+      "checks": {
+        "fish_exact_version": true,
+        "fish_common_exact_version": true,
+        "binary_version_command": true,
+        "ub_nonconfig_private_smoke": true,
+        "ub_root_login_shells_unchanged": true,
+        "core_services_and_containers_PIDs_start_health_unchanged": true
+      },
+      "strict_SSH_new_connection": true,
+      "before_shells": {
+        "ub": "/bin/bash",
+        "root": "/bin/bash"
+      },
+      "after_shells": {
+        "ub": "/bin/bash",
+        "root": "/bin/bash"
+      },
+      "new_packages": [
+        "fish-common",
+        "libpcre2-32-0",
+        "fish"
+      ],
+      "evidence": "evidence/guest200.json"
+    },
+    {
+      "vmid": 201,
+      "status": "installed-verified",
+      "fish": "fish, version 4.0.2",
+      "package_version": "4.0.2-1",
+      "checks": {
+        "fish_exact_version": true,
+        "fish_common_exact_version": true,
+        "binary_version_command": true,
+        "ub_nonconfig_private_smoke": true,
+        "ub_root_login_shells_unchanged": true,
+        "core_services_and_containers_PIDs_start_health_unchanged": true
+      },
+      "strict_SSH_new_connection": true,
+      "before_shells": {
+        "ub": "/bin/bash",
+        "root": "/bin/bash"
+      },
+      "after_shells": {
+        "ub": "/bin/bash",
+        "root": "/bin/bash"
+      },
+      "new_packages": [
+        "fish-common",
+        "libpcre2-32-0",
+        "fish"
+      ],
+      "evidence": "evidence/guest201.json"
+    },
+    {
+      "vmid": 210,
+      "status": "installed-verified",
+      "fish": "fish, version 4.0.2",
+      "package_version": "4.0.2-1",
+      "checks": {
+        "fish_exact_version": true,
+        "fish_common_exact_version": true,
+        "binary_version_command": true,
+        "ub_nonconfig_private_smoke": true,
+        "ub_root_login_shells_unchanged": true,
+        "core_services_and_containers_PIDs_start_health_unchanged": true
+      },
+      "strict_SSH_new_connection": true,
+      "before_shells": {
+        "ub": "/bin/bash",
+        "root": "/bin/bash"
+      },
+      "after_shells": {
+        "ub": "/bin/bash",
+        "root": "/bin/bash"
+      },
+      "new_packages": [
+        "fish-common",
+        "libpcre2-32-0",
+        "fish"
+      ],
+      "evidence": "evidence/guest210.json"
+    },
+    {
+      "vmid": 230,
+      "status": "installed-verified",
+      "fish": "fish, version 4.0.2",
+      "package_version": "4.0.2-1",
+      "checks": {
+        "fish_exact_version": true,
+        "fish_common_exact_version": true,
+        "binary_version_command": true,
+        "ub_nonconfig_private_smoke": true,
+        "ub_root_login_shells_unchanged": true,
+        "core_services_and_containers_PIDs_start_health_unchanged": true
+      },
+      "strict_SSH_new_connection": true,
+      "before_shells": {
+        "ub": "/bin/bash",
+        "root": "/bin/bash"
+      },
+      "after_shells": {
+        "ub": "/bin/bash",
+        "root": "/bin/bash"
+      },
+      "new_packages": [
+        "fish-common",
+        "libpcre2-32-0",
+        "fish"
+      ],
+      "evidence": "evidence/guest230.json"
+    },
+    {
+      "vmid": 240,
+      "status": "installed-verified",
+      "fish": "fish, version 4.0.2",
+      "package_version": "4.0.2-1",
+      "checks": {
+        "fish_exact_version": true,
+        "fish_common_exact_version": true,
+        "binary_version_command": true,
+        "ub_nonconfig_private_smoke": true,
+        "ub_root_login_shells_unchanged": true,
+        "core_services_and_containers_PIDs_start_health_unchanged": true
+      },
+      "strict_SSH_new_connection": true,
+      "before_shells": {
+        "ub": "/bin/bash",
+        "root": "/bin/bash"
+      },
+      "after_shells": {
+        "ub": "/bin/bash",
+        "root": "/bin/bash"
+      },
+      "new_packages": [
+        "fish-common",
+        "libpcre2-32-0",
+        "fish"
+      ],
+      "evidence": "evidence/guest240.json"
+    },
+    {
+      "vmid": 260,
+      "status": "installed-verified",
+      "fish": "fish, version 4.0.2",
+      "package_version": "4.0.2-1",
+      "checks": {
+        "fish_exact_version": true,
+        "fish_common_exact_version": true,
+        "binary_version_command": true,
+        "ub_nonconfig_private_smoke": true,
+        "ub_root_login_shells_unchanged": true,
+        "core_services_and_containers_PIDs_start_health_unchanged": true
+      },
+      "strict_SSH_new_connection": true,
+      "before_shells": {
+        "ub": "/bin/bash",
+        "root": "/bin/bash"
+      },
+      "after_shells": {
+        "ub": "/bin/bash",
+        "root": "/bin/bash"
+      },
+      "new_packages": [
+        "fish-common",
+        "libpcre2-32-0",
+        "fish"
+      ],
+      "evidence": "evidence/guest260.json"
+    }
+  ],
+  "default_login_shell": "ub/root remain /bin/bash; user choice pending; no chsh",
+  "no_user_shellconfig_or_plugins": true,
+  "temporary_XDG_smoke_cleaned": true,
+  "APT": {
+    "NEEDRESTART_MODE": "l",
+    "simulation_no_remove_or_existing_upgrade": true,
+    "no_install_recommends": true,
+    "no_fullupgrade_autoremove_update": true
+  },
+  "core_services_containers_PID_start_health_unchanged": true,
+  "PVE_host_shell_or_packages_changed": false,
+  "excluded_roles_changed": false,
+  "not_in_this_window": {
+    "220": "inventory only; install pending root Nexus/APT coordination",
+    "9001_9010_9011": "all stopped; no original template start/install/disk mutation; clone method prepared",
+    "default_shell_change": "pending user confirmation; no implicit change"
+  },
+  "guest_private_secrets_identity_data_changed_by_tool": false,
+  "templates_or_QA_created_or_powered": false
+}

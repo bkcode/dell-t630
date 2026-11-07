@@ -1,0 +1,12 @@
+{
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory\nError response from daemon: No such image: sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe\nTraceback (most recent call last):\n  File \"<stdin>\", line 24, in <module>\n  File \"/usr/lib/python3.13/subprocess.py\", line 472, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,\n           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n               **kwargs).stdout\n               ^^^^^^^^^\n  File \"/usr/lib/python3.13/subprocess.py\", line 577, in run\n    raise CalledProcessError(retcode, process.args,\n                             output=stdout, stderr=stderr)\nsubprocess.CalledProcessError: Command '['docker', '--host', 'unix:///var/run/docker.sock', 'image', 'inspect', 'sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe']' returned non-zero exit status 1.\n",
+  "target": {
+    "vmid": 210,
+    "ip": "192.168.21.153",
+    "host_key_alias": "dell-vm210",
+    "host_key_fingerprint": "SHA256:0NGrIbuCNFPozzA3n4Gf7zE7q8JbG8gmWxLDBFPMnsU",
+    "trust_source": "PVE QGA over known SSH host"
+  }
+}

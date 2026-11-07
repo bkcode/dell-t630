@@ -1,0 +1,33 @@
+{
+  "id": "ACC-DATA-001",
+  "status": "passed",
+  "executed_at": "2026-11-06T14:34:48.022872+08:00",
+  "timezone": "Asia/Shanghai",
+  "operator": "root-task-manager",
+  "plan_sha256": "57059d122924364b566ee359801f7836f049a42dbdbad22d66b7c9b4055839a2",
+  "preconditions_checked": true,
+  "target": {
+    "host": "192.168.21.22",
+    "environment": "managed-PVE-implementation",
+    "vmid": null
+  },
+  "commands_or_steps": [
+    "See linked execution artifact and operator observations"
+  ],
+  "exit_codes": [
+    0
+  ],
+  "observations": [
+    "正式/测试实例、IP/namespace/vhost独立，9类新目标秘密差异true，应用Nacos账号仅本namespace rw无admin，最小SQL权限与有效网络drop矩阵独立通过",
+    "当前5实际配置与A一致，3DB仅test210且账号host10.63.20.20/18表DML无DDL授权，六个实际Nacos文档匹配；正式按用户仅runtime/无业务data",
+    "短信四keys空、外部Sargia本机9禁用，检查的非空外置凭据均对应明确新目标秘密；未迁Mac真实业务行/生产外发任务"
+  ],
+  "artifacts": [
+    "evidence/implementation/data-environment-isolation-final.json"
+  ],
+  "limitations": [
+    "两跨实例非admin各一次实际500而非401/403；无成功登录响应，官方缺失用户异常映射500仅静态归因；第一次正文未解析token不可追补，第二次内存检查无token；不宣称源数据全量迁移或全面脱敏已完成"
+  ],
+  "reviewed_by": "root-task-manager",
+  "plan_snapshot": "evidence/plans/plan-57059d122924364b.json"
+}

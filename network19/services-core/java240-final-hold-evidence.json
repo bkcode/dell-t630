@@ -1,0 +1,100 @@
+{
+  "at": "2026-11-06T09:16:14.007793+00:00",
+  "exit_code": 0,
+  "result": {
+    "status": "apps-stopped-disabled-monitor-scope-updated-publisher-fenced",
+    "units": [
+      {
+        "unit": "dell-finger-finger-gateway-mobile.service",
+        "active": "inactive",
+        "MainPID0": true,
+        "enablement": "not-found",
+        "enablement_non_enabled": true,
+        "cgroup_empty": true
+      },
+      {
+        "unit": "dell-finger-finger-bff-system.service",
+        "active": "inactive",
+        "MainPID0": true,
+        "enablement": "not-found",
+        "enablement_non_enabled": true,
+        "cgroup_empty": true
+      },
+      {
+        "unit": "dell-finger-finger-auth.service",
+        "active": "inactive",
+        "MainPID0": true,
+        "enablement": "not-found",
+        "enablement_non_enabled": true,
+        "cgroup_empty": true
+      },
+      {
+        "unit": "dell-finger-finger-service-coms.service",
+        "active": "inactive",
+        "MainPID0": true,
+        "enablement": "not-found",
+        "enablement_non_enabled": true,
+        "cgroup_empty": true
+      },
+      {
+        "unit": "dell-finger-finger-service-system.service",
+        "active": "inactive",
+        "MainPID0": true,
+        "enablement": "not-found",
+        "enablement_non_enabled": true,
+        "cgroup_empty": true
+      }
+    ],
+    "five_apps_no_active": true,
+    "publisher_fenced": true,
+    "active_health_service_count": 3,
+    "active_HTTP_checks": 0,
+    "business_restarts_or_Nacos_publish": false,
+    "health_new_SHA": "19cf8220828cdfe83bd737fd137cdc92ae10aa6c6f60d6f81c9dd67bbc118380",
+    "health_config": {
+      "role": "java-test-01",
+      "private_ip": "10.63.20.20",
+      "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+      "services": [
+        "ssh.service",
+        "qemu-guest-agent.service",
+        "prometheus-node-exporter.service"
+      ],
+      "http_checks": [],
+      "candidate_service_units": [
+        "dell-finger-finger-gateway-mobile.service",
+        "dell-finger-finger-bff-system.service",
+        "dell-finger-finger-auth.service",
+        "dell-finger-finger-service-coms.service",
+        "dell-finger-finger-service-system.service"
+      ],
+      "candidate_http_checks": [
+        {
+          "name": "actuator-example-not-enabled",
+          "url": "http://127.0.0.1:9999/actuator/health/readiness"
+        },
+        {
+          "name": "finger-service-system-health",
+          "url": "http://10.63.20.20:10210/actuator/health"
+        },
+        {
+          "name": "finger-service-coms-health",
+          "url": "http://10.63.20.20:10202/actuator/health"
+        },
+        {
+          "name": "finger-auth-health",
+          "url": "http://10.63.20.20:10000/actuator/health"
+        },
+        {
+          "name": "finger-bff-system-health",
+          "url": "http://10.63.20.20:10104/actuator/health"
+        },
+        {
+          "name": "finger-gateway-mobile-health",
+          "url": "http://10.63.20.20:9999/actuator/health"
+        }
+      ],
+      "notes": "Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths."
+    }
+  }
+}

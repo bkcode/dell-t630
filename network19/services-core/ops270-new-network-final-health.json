@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-06T09:50:47.150389+00:00",
+  "exit_code": 1,
+  "result": {
+    "status": "not-all-up-or-verified",
+    "checks": {
+      "exact12new_model_and_actual_targets": true,
+      "all12nodeUP": false,
+      "all_Ops_own_5_targets_UP": true,
+      "Grafana_database_ok": true,
+      "PVE_QGA_textfile_fresh": true,
+      "Java240_base3_only": true,
+      "Java240_active_HTTP_none": true,
+      "Lark_active_fixed172_policy": true
+    },
+    "node_targets": 12,
+    "reported_nodes_UP": 11,
+    "actual_Ops_target_count": 17,
+    "nodes_down_vmids": [
+      "232"
+    ],
+    "PVE_metric_age_seconds": 64.789,
+    "native_bridge_state": {
+      "MainPID": "40894",
+      "NRestarts": "0",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "Lark_send_or_vendor_connectivity_tested": false,
+    "HTTP_bodies_credentials_or_hook_read_or_emitted": false,
+    "writes": 0
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "at": "2026-11-06T17:13:34.896010+00:00",
+  "exit_code": 0,
+  "result": {
+    "status": "installed-verified",
+    "vmid": 200,
+    "at": "2026-11-06T17:13:34.873537+00:00",
+    "checks": {
+      "fish_exact_version": true,
+      "fish_common_exact_version": true,
+      "binary_version_command": true,
+      "ub_nonconfig_private_smoke": true,
+      "ub_root_login_shells_unchanged": true,
+      "core_services_and_containers_PIDs_start_health_unchanged": true
+    },
+    "before_shells": {
+      "ub": "/bin/bash",
+      "root": "/bin/bash"
+    },
+    "after_shells": {
+      "ub": "/bin/bash",
+      "root": "/bin/bash"
+    },
+    "fish_binary_version": "fish, version 4.0.2",
+    "new_packages": [
+      "fish-common",
+      "libpcre2-32-0",
+      "fish"
+    ],
+    "NEEDRESTART_MODE": "l",
+    "no_install_recommends": true,
+    "existing_packages_upgraded_or_removed": false,
+    "apt_update_fullupgrade_autoremove_chsh_or_shellconfig_run": false,
+    "service_restart_requested_by_tool": false,
+    "core_before": {
+      "services": {
+        "containerd.service": {
+          "MainPID": "770",
+          "ExecMainStartTimestampMonotonic": "8351368",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-data-prod-db.service": {
+          "MainPID": "136092",
+          "ExecMainStartTimestampMonotonic": "12695427940",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "docker.service": {
+          "MainPID": "783",
+          "ExecMainStartTimestampMonotonic": "8735805",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "732",
+          "ExecMainStartTimestampMonotonic": "8175923",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "ssh.service": {
+          "MainPID": "752",
+          "ExecMainStartTimestampMonotonic": "8257446",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-networkd.service": {
+          "MainPID": "675",
+          "ExecMainStartTimestampMonotonic": "6140349",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "MainPID": "397",
+          "ExecMainStartTimestampMonotonic": "4419457",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "containers": {
+        "b1a1e926f9ca": {
+          "name": "/dell-data-prod-db-mysql-1",
+          "pid": 136243,
+          "running": true,
+          "started_at": "2026-11-06T09:07:40.840743494Z",
+          "health": "healthy"
+        }
+      }
+    },
+    "core_after": {
+      "services": {
+        "containerd.service": {
+          "MainPID": "770",
+          "ExecMainStartTimestampMonotonic": "8351368",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-data-prod-db.service": {
+          "MainPID": "136092",
+          "ExecMainStartTimestampMonotonic": "12695427940",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "docker.service": {
+          "MainPID": "783",
+          "ExecMainStartTimestampMonotonic": "8735805",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "732",
+          "ExecMainStartTimestampMonotonic": "8175923",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "ssh.service": {
+          "MainPID": "752",
+          "ExecMainStartTimestampMonotonic": "8257446",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-networkd.service": {
+          "MainPID": "675",
+          "ExecMainStartTimestampMonotonic": "6140349",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "MainPID": "397",
+          "ExecMainStartTimestampMonotonic": "4419457",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "containers": {
+        "b1a1e926f9ca": {
+          "name": "/dell-data-prod-db-mysql-1",
+          "pid": 136243,
+          "running": true,
+          "started_at": "2026-11-06T09:07:40.840743494Z",
+          "health": "healthy"
+        }
+      }
+    },
+    "user_config_temporary_smoke_cleaned": true
+  },
+  "new_strict_SSH_connection_verified": true
+}

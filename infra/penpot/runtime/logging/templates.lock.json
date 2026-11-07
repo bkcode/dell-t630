@@ -1,0 +1,19 @@
+{
+  "image": "dell-penpot-frontend:2.18.5-amd64",
+  "image_id": "sha256:fa395b809ed21c53a01387567264100fb28c553f1dd4af113f38c50de3b739bc",
+  "scope": "Nginx request logging only; no auth, proxy or query forwarding changes",
+  "templates": {
+    "nginx.conf.template": {
+      "source_sha256": "493bf7c5b48abeb54c4d0ba4a224bcc5ce90c39f81f15098e3dca1fac6a649d2",
+      "target_sha256": "ac2d6f88f2e246cf9bfc7a61c13393d1587777ad1fc3e8043f9ff98af095ae25",
+      "source_image_path": "/tmp/nginx.conf.template",
+      "runtime_source": "runtime/logging/templates/nginx.conf.template"
+    },
+    "nginx-mcp-locations.conf.template": {
+      "source_sha256": "db714107532c346f2c0e6a45f831b9209e15a8ef75213e9c519580fa91882301",
+      "target_sha256": "8066954ca94052183584405a4b5a27ac6302ee327e29702cfab099995162ed82",
+      "source_image_path": "/tmp/nginx-mcp-locations.conf.template",
+      "runtime_source": "runtime/logging/templates/nginx-mcp-locations.conf.template"
+    }
+  }
+}

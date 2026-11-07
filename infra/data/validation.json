@@ -1,0 +1,75 @@
+{
+  "scope": "static-and-compose-parse; no containers started",
+  "roles": [
+    {
+      "role": "prod-db",
+      "services": [
+        "mysql"
+      ],
+      "container_limits_gib": 12.0,
+      "guest_budget_gib": 16,
+      "guest_os_runtime_headroom_gib": 4.0,
+      "compose_parse": "passed",
+      "mount_identity": "configured"
+    },
+    {
+      "role": "prod-infra",
+      "services": [
+        "nacos",
+        "rabbitmq",
+        "redis"
+      ],
+      "container_limits_gib": 5.0,
+      "guest_budget_gib": 8,
+      "guest_os_runtime_headroom_gib": 3.0,
+      "compose_parse": "passed",
+      "mount_identity": "configured"
+    },
+    {
+      "role": "test-data",
+      "services": [
+        "mysql",
+        "nacos",
+        "rabbitmq",
+        "redis"
+      ],
+      "container_limits_gib": 2.625,
+      "guest_budget_gib": 4,
+      "guest_os_runtime_headroom_gib": 1.375,
+      "compose_parse": "passed",
+      "mount_identity": "configured"
+    }
+  ],
+  "checks": [
+    "Python AST",
+    "shell syntax",
+    "official vendor checksums",
+    "Compose parse",
+    "AMD64 digest references",
+    "healthcheck/systemd-owned-restart/resource declarations",
+    "bind create_host_path=false",
+    "explicit guest bind IPs",
+    "no plain password environment entries",
+    "0600 secret files",
+    "prod/test credential separation",
+    "prod DB/Nacos credential match"
+  ],
+  "offline_safety": {
+    "result": "passed",
+    "tests": 18,
+    "scope": "missing/extra/duplicate services; missing/read-only/wrong-UUID/nested mounts; traversal/symlink escape; systemd dependencies"
+  },
+  "runtime_evidence": {
+    "status": "prod-data200201-auth-persistence-verified-test210-delegated",
+    "as_of": "2026-11-06T11:04:51.455925+08:00",
+    "accepted_vmids": [
+      200,
+      201
+    ],
+    "delegated_vmids": [
+      210
+    ],
+    "evidence": "evidence/implementation/data-deployment-acceptance.json",
+    "current_guest_state_requeried": false
+  }
+}

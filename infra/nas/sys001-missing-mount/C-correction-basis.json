@@ -1,0 +1,10 @@
+{
+  "root_conditionally_approved_once": true,
+  "basis": "metadata+static-control-flow inference; original old-exited snapshot frame was not captured",
+  "original_C_failed_retained": true,
+  "same_container_started_then_SIGTERM_in_under1s": true,
+  "OOM_false": true,
+  "current_same_UUID_guard_and_canary_verified": true,
+  "minimal_change": "capture pre-start id/StartedAt; permit exact old exited up to15s only; new exit/dead or any OOM fail immediately; same mounted loop resume only once",
+  "no_resources_scope_or_final_ready_gate_changed": true
+}

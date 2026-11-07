@@ -1,0 +1,111 @@
+{
+  "status": "deployed-identity-preservation-profile-fixed",
+  "templates_untouched": true,
+  "rows": [
+    {
+      "vmid": 190,
+      "reference": "store:snippets/dell-network-gateway-user.yaml",
+      "only_change": "ssh_deletekeys true -> false",
+      "backup": "PVE-only root700/600",
+      "old_sha256": "dfbe107337d521670c5102cdb6a7d0203e203ec946a6e8c74545ea9cba6fe0b3",
+      "new_sha256": "de4f4aacc50e04577999d28f95673112554adc39e69d723cfa7952e0a122cd0f"
+    },
+    {
+      "vmid": 200,
+      "reference": "store:snippets/dell-data-prod-db-user.yaml",
+      "only_change": "ssh_deletekeys true -> false",
+      "backup": "PVE-only root700/600",
+      "old_sha256": "85dbba951c5a993696c50fe26351c57c1eee4f5f2ee08dc0510784c1232a9a45",
+      "new_sha256": "a8b8e2b573df21c429e656750320d64ca38e58056af69bff3b18b32fee2f9dba"
+    },
+    {
+      "vmid": 201,
+      "reference": "store:snippets/dell-data-prod-infra-user.yaml",
+      "only_change": "ssh_deletekeys true -> false",
+      "backup": "PVE-only root700/600",
+      "old_sha256": "3e6e34eb049702da8b89ef6245ce72337912795d4369292d77b7520bd48ca790",
+      "new_sha256": "51384e75b9a875f0aca17336ebb185ca6f49aa7d8ddd82ff53878102a5f41f48"
+    },
+    {
+      "vmid": 210,
+      "reference": "store:snippets/dell-data-test-user.yaml",
+      "only_change": "ssh_deletekeys true -> false",
+      "backup": "PVE-only root700/600",
+      "old_sha256": "2c0960f2972d66f19df3575b7679e7b0f424097d6cd91714134839eaf94359d5",
+      "new_sha256": "c0688d4a75fe635fb0dfd34ace1bdad10ff683a5ac56439513db3682a0b8d9e0"
+    },
+    {
+      "vmid": 220,
+      "reference": "store:snippets/dell-publish-service-user.yaml",
+      "only_change": "ssh_deletekeys true -> false",
+      "backup": "PVE-only root700/600",
+      "old_sha256": "fa3710efc612a4893479fe744d9fbfe28a8466feb250eb4f7a10c208688efeb0",
+      "new_sha256": "d5252baf207121f8f96734373938c74b38db8a6dc87175376f120c59dde72c13"
+    },
+    {
+      "vmid": 221,
+      "reference": "store:snippets/dell-artifact-service-user.yaml",
+      "only_change": "ssh_deletekeys true -> false",
+      "backup": "PVE-only root700/600",
+      "old_sha256": "427b93d90fd11d7b60f0e548711df0da164d0cb39842dc045043ddb998eb824f",
+      "new_sha256": "87dec9f5b282c0aa3c7246089b1759849bd3e7dc0dbcd229f780c5873b0146fb"
+    },
+    {
+      "vmid": 230,
+      "reference": "store:snippets/dell-java-prod-01-user.yaml",
+      "only_change": "ssh_deletekeys true -> false",
+      "backup": "PVE-only root700/600",
+      "old_sha256": "eec527d4a0c0d22c1e0522772e031cfe44ffd04eeec23734c436d0e494f04b22",
+      "new_sha256": "6057f3cd2db7f0b75ccf553b488461f62c9c3e50d98ee1f7a00ad3de92fa00a7"
+    },
+    {
+      "vmid": 231,
+      "reference": "store:snippets/dell-java-prod-02-user.yaml",
+      "only_change": "ssh_deletekeys true -> false",
+      "backup": "PVE-only root700/600",
+      "old_sha256": "c2d5a4335093f183f25f3eb82a675d17e57f4b310efe57cf8070343e90e82a6e",
+      "new_sha256": "0466ea508bb6c8fd91c6d0c3bacfa3cdd0def39eb1cf04790f9b89022426d178"
+    },
+    {
+      "vmid": 232,
+      "reference": "store:snippets/dell-java-prod-03-user.yaml",
+      "only_change": "ssh_deletekeys true -> false",
+      "backup": "PVE-only root700/600",
+      "old_sha256": "c5b22d917d09a4cfc0752ff61928b970720af55ba6f172392596315034324c9c",
+      "new_sha256": "83ec6c58db3b7178a969e4c75b206bde9842082da358b7a13480427d24aabd58"
+    },
+    {
+      "vmid": 240,
+      "reference": "store:snippets/dell-java-test-01-user.yaml",
+      "only_change": "ssh_deletekeys true -> false",
+      "backup": "PVE-only root700/600",
+      "old_sha256": "ca0833d020abc31fe8df6682f1e8ea8bc044c7ba0708dcc7a3c85bdd32fecda4",
+      "new_sha256": "c7760ccf536afbcb376c3a39cb04efeaf5db42734af4f70a349311f6c9b4bf93"
+    },
+    {
+      "vmid": 250,
+      "reference": "store:snippets/dell-penpot-service-user.yaml",
+      "only_change": "ssh_deletekeys true -> false",
+      "backup": "PVE-only root700/600",
+      "old_sha256": "48d7e73ad922c19d7f1e6263c8f9136a2b957ba8733c9f0950f62b13be74de7e",
+      "new_sha256": "3738289a92392fcace8b25aee66354f84e29a73faaaedbf7ef589183aed98fdc"
+    },
+    {
+      "vmid": 260,
+      "reference": "store:snippets/dell-nas-media-user.yaml",
+      "only_change": "ssh_deletekeys true -> false",
+      "backup": "PVE-only root700/600",
+      "old_sha256": "ec240a06c27a77db626760581025a5f897d8b37675deb38dfdc681ddfd74b8fb",
+      "new_sha256": "64b8ccd83e993f559fdca6a00e6de02241fff1f0a28340503447a36dd31b077b"
+    },
+    {
+      "vmid": 270,
+      "reference": "store:snippets/dell-ops-service-user.yaml",
+      "only_change": "ssh_deletekeys true -> false",
+      "backup": "PVE-only root700/600",
+      "old_sha256": "33f0789f085ed03228db888024eb30c056cebce7543063cd9557f5d253883a16",
+      "new_sha256": "13b1b4432760451182af3269301bb1619e5a12e1ff14b5f05f9b6c0a6a2c6dc1"
+    }
+  ],
+  "guest_restarts": 0
+}

@@ -1,0 +1,17 @@
+{
+  "real_PVE_client_to_data200_TCP3306": true,
+  "diagnostic_untrusted_source": "192.0.2.19 TEST-NET documentation address, no real LAN client impersonated",
+  "destination": "192.168.19.10:3306 existing healthy MySQL listener",
+  "source_MAC": "real PVE vmbr0 MAC",
+  "ether_destination": "existing GW190 WAN MAC",
+  "raw_unicast_SYN_sent": 1,
+  "bytes": 54,
+  "ARP_broadcast_credentials_or_SQL_sent": false,
+  "network_configuration_changed": false,
+  "at": "2026-11-06T18:04:20.189770",
+  "GW_forward_final_drop_before": 0,
+  "GW_forward_final_drop_after": 1,
+  "GW_forward_final_drop_delta": 1,
+  "passed": true,
+  "scope": "one deliberately untrusted WAN source to real healthy internal listener; other WAN ports remain configuration-only validation"
+}

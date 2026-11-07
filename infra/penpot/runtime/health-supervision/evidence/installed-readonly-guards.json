@@ -1,0 +1,31 @@
+{
+  "collected_at": "2026-11-06T05:23:18.143172+00:00",
+  "phase": "installed-readonly-guards",
+  "exit_code": 0,
+  "result": {
+    "status": "all-readonly-checks-passed",
+    "checks": [
+      {
+        "phase": "guest",
+        "passed": true
+      },
+      {
+        "phase": "load-lock",
+        "passed": true
+      },
+      {
+        "phase": "storage",
+        "passed": true
+      },
+      {
+        "phase": "files-Git-images",
+        "passed": true
+      },
+      {
+        "phase": "compose-services-images",
+        "passed": true
+      }
+    ],
+    "services_changed": false
+  }
+}

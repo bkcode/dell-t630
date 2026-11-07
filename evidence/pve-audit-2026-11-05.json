@@ -1,0 +1,312 @@
+{
+  "schema_version": 1,
+  "collected_at": "2026-11-05T23:02:22.014688+08:00",
+  "timezone": "Asia/Shanghai",
+  "host": "192.168.21.22",
+  "ssh_user": "root",
+  "identity_file": "~/.ssh/yang_local_rsa",
+  "mode": "read-only",
+  "checks": [
+    {
+      "id": "clock",
+      "command": "date --iso-8601=seconds",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "2026-11-05T23:01:55+08:00"
+    },
+    {
+      "id": "identity",
+      "command": "id",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "uid=0(root) gid=0(root) groups=0(root)"
+    },
+    {
+      "id": "hostname",
+      "command": "hostname",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "pve"
+    },
+    {
+      "id": "model",
+      "command": "dmidecode -s system-product-name",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "PowerEdge T630"
+    },
+    {
+      "id": "pve-version",
+      "command": "pveversion",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "pve-manager/8.4.0/ec58e45e1bcdf2ac (running kernel: 6.8.12-9-pve)"
+    },
+    {
+      "id": "kernel",
+      "command": "uname -r",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "6.8.12-9-pve"
+    },
+    {
+      "id": "cpu",
+      "command": "lscpu --json",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "{\n   \"lscpu\": [\n      {\n         \"field\": \"Architecture:\",\n         \"data\": \"x86_64\"\n      },{\n         \"field\": \"CPU op-mode(s):\",\n         \"data\": \"32-bit, 64-bit\"\n      },{\n         \"field\": \"Address sizes:\",\n         \"data\": \"46 bits physical, 48 bits virtual\"\n      },{\n         \"field\": \"Byte Order:\",\n         \"data\": \"Little Endian\"\n      },{\n         \"field\": \"CPU(s):\",\n         \"data\": \"56\"\n      },{\n         \"field\": \"On-line CPU(s) list:\",\n         \"data\": \"0-55\"\n      },{\n         \"field\": \"Vendor ID:\",\n         \"data\": \"GenuineIntel\"\n      },{\n         \"field\": \"BIOS Vendor ID:\",\n         \"data\": \"Intel\"\n      },{\n         \"field\": \"Model name:\",\n         \"data\": \"Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz\"\n      },{\n         \"field\": \"BIOS Model name:\",\n         \"data\": \"Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz  CPU @ 2.4GHz\"\n      },{\n         \"field\": \"BIOS CPU family:\",\n         \"data\": \"179\"\n      },{\n         \"field\": \"CPU family:\",\n         \"data\": \"6\"\n      },{\n         \"field\": \"Model:\",\n         \"data\": \"79\"\n      },{\n         \"field\": \"Thread(s) per core:\",\n         \"data\": \"2\"\n      },{\n         \"field\": \"Core(s) per socket:\",\n         \"data\": \"14\"\n      },{\n         \"field\": \"Socket(s):\",\n         \"data\": \"2\"\n      },{\n         \"field\": \"Stepping:\",\n         \"data\": \"1\"\n      },{\n         \"field\": \"CPU(s) scaling MHz:\",\n         \"data\": \"95%\"\n      },{\n         \"field\": \"CPU max MHz:\",\n         \"data\": \"3300.0000\"\n      },{\n         \"field\": \"CPU min MHz:\",\n         \"data\": \"1200.0000\"\n      },{\n         \"field\": \"BogoMIPS:\",\n         \"data\": \"4795.00\"\n      },{\n         \"field\": \"Flags:\",\n         \"data\": \"fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 pti ssbd ibrs ibpb stibp tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm rdt_a rdseed adx smap intel_pt xsaveopt cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts vnmi md_clear flush_l1d\"\n      },{\n         \"field\": \"Virtualization:\",\n         \"data\": \"VT-x\"\n      },{\n         \"field\": \"L1d cache:\",\n         \"data\": \"896 KiB (28 instances)\"\n      },{\n         \"field\": \"L1i cache:\",\n         \"data\": \"896 KiB (28 instances)\"\n      },{\n         \"field\": \"L2 cache:\",\n         \"data\": \"7 MiB (28 instances)\"\n      },{\n         \"field\": \"L3 cache:\",\n         \"data\": \"70 MiB (2 instances)\"\n      },{\n         \"field\": \"NUMA node(s):\",\n         \"data\": \"2\"\n      },{\n         \"field\": \"NUMA node0 CPU(s):\",\n         \"data\": \"0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54\"\n      },{\n         \"field\": \"NUMA node1 CPU(s):\",\n         \"data\": \"1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55\"\n      },{\n         \"field\": \"Vulnerability Gather data sampling:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Itlb multihit:\",\n         \"data\": \"KVM: Mitigation: VMX disabled\"\n      },{\n         \"field\": \"Vulnerability L1tf:\",\n         \"data\": \"Mitigation; PTE Inversion; VMX conditional cache flushes, SMT vulnerable\"\n      },{\n         \"field\": \"Vulnerability Mds:\",\n         \"data\": \"Mitigation; Clear CPU buffers; SMT vulnerable\"\n      },{\n         \"field\": \"Vulnerability Meltdown:\",\n         \"data\": \"Mitigation; PTI\"\n      },{\n         \"field\": \"Vulnerability Mmio stale data:\",\n         \"data\": \"Mitigation; Clear CPU buffers; SMT vulnerable\"\n      },{\n         \"field\": \"Vulnerability Reg file data sampling:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Retbleed:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Spec rstack overflow:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Spec store bypass:\",\n         \"data\": \"Mitigation; Speculative Store Bypass disabled via prctl\"\n      },{\n         \"field\": \"Vulnerability Spectre v1:\",\n         \"data\": \"Mitigation; usercopy/swapgs barriers and __user pointer sanitization\"\n      },{\n         \"field\": \"Vulnerability Spectre v2:\",\n         \"data\": \"Mitigation; Retpolines; IBPB conditional; IBRS_FW; STIBP conditional; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected\"\n      },{\n         \"field\": \"Vulnerability Srbds:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Tsx async abort:\",\n         \"data\": \"Mitigation; Clear CPU buffers; SMT vulnerable\"\n      }\n   ]\n}"
+    },
+    {
+      "id": "memory",
+      "command": "free -b",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "               total        used        free      shared  buff/cache   available\nMem:     135056257024  3132727296 131475795968    54267904  1416654848 131923529728\nSwap:     8589930496           0  8589930496"
+    },
+    {
+      "id": "block-devices",
+      "command": "lsblk --json -o NAME,SIZE,TYPE,FSTYPE,MOUNTPOINTS,MODEL",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "{\n   \"blockdevices\": [\n      {\n         \"name\": \"sda\",\n         \"size\": \"446.6G\",\n         \"type\": \"disk\",\n         \"fstype\": null,\n         \"mountpoints\": [\n             null\n         ],\n         \"model\": \"PERC H730 Adp\",\n         \"children\": [\n            {\n               \"name\": \"sda1\",\n               \"size\": \"1007K\",\n               \"type\": \"part\",\n               \"fstype\": null,\n               \"mountpoints\": [\n                   null\n               ],\n               \"model\": null\n            },{\n               \"name\": \"sda2\",\n               \"size\": \"1G\",\n               \"type\": \"part\",\n               \"fstype\": \"vfat\",\n               \"mountpoints\": [\n                   \"/boot/efi\"\n               ],\n               \"model\": null\n            },{\n               \"name\": \"sda3\",\n               \"size\": \"445.6G\",\n               \"type\": \"part\",\n               \"fstype\": \"LVM2_member\",\n               \"mountpoints\": [\n                   null\n               ],\n               \"model\": null,\n               \"children\": [\n                  {\n                     \"name\": \"pve-swap\",\n                     \"size\": \"8G\",\n                     \"type\": \"lvm\",\n                     \"fstype\": \"swap\",\n                     \"mountpoints\": [\n                         \"[SWAP]\"\n                     ],\n                     \"model\": null\n                  },{\n                     \"name\": \"pve-root\",\n                     \"size\": \"96G\",\n                     \"type\": \"lvm\",\n                     \"fstype\": \"ext4\",\n                     \"mountpoints\": [\n                         \"/\"\n                     ],\n                     \"model\": null\n                  },{\n                     \"name\": \"pve-data_tmeta\",\n                     \"size\": \"3.3G\",\n                     \"type\": \"lvm\",\n                     \"fstype\": null,\n                     \"mountpoints\": [\n                         null\n                     ],\n                     \"model\": null,\n                     \"children\": [\n                        {\n                           \"name\": \"pve-data-tpool\",\n                           \"size\": \"319.1G\",\n                           \"type\": \"lvm\",\n                           \"fstype\": null,\n                           \"mountpoints\": [\n                               null\n                           ],\n                           \"model\": null,\n                           \"children\": [\n                              {\n                                 \"name\": \"pve-data\",\n                                 \"size\": \"319.1G\",\n                                 \"type\": \"lvm\",\n                                 \"fstype\": null,\n                                 \"mountpoints\": [\n                                     null\n                                 ],\n                                 \"model\": null\n                              },{\n                                 \"name\": \"pve-vm--102--cloudinit\",\n                                 \"size\": \"4M\",\n                                 \"type\": \"lvm\",\n                                 \"fstype\": \"iso9660\",\n                                 \"mountpoints\": [\n                                     null\n                                 ],\n                                 \"model\": null\n                              },{\n                                 \"name\": \"pve-vm--103--cloudinit\",\n                                 \"size\": \"4M\",\n                                 \"type\": \"lvm\",\n                                 \"fstype\": \"iso9660\",\n                                 \"mountpoints\": [\n                                     null\n                                 ],\n                                 \"model\": null\n                              },{\n                                 \"name\": \"pve-vm--104--cloudinit\",\n                                 \"size\": \"4M\",\n                                 \"type\": \"lvm\",\n                                 \"fstype\": \"iso9660\",\n                                 \"mountpoints\": [\n                                     null\n                                 ],\n                                 \"model\": null\n                              },{\n                                 \"name\": \"pve-vm--104--disk--0\",\n                                 \"size\": \"32G\",\n                                 \"type\": \"lvm\",\n                                 \"fstype\": null,\n                                 \"mountpoints\": [\n                                     null\n                                 ],\n                                 \"model\": null\n                              },{\n                                 \"name\": \"pve-vm--105--cloudinit\",\n                                 \"size\": \"4M\",\n                                 \"type\": \"lvm\",\n                                 \"fstype\": \"iso9660\",\n                                 \"mountpoints\": [\n                                     null\n                                 ],\n                                 \"model\": null\n                              },{\n                                 \"name\": \"pve-vm--100--disk--0\",\n                                 \"size\": \"4G\",\n                                 \"type\": \"lvm\",\n                                 \"fstype\": \"ext4\",\n                                 \"mountpoints\": [\n                                     null\n                                 ],\n                                 \"model\": null\n                              },{\n                                 \"name\": \"pve-vm--101--cloudinit\",\n                                 \"size\": \"4M\",\n                                 \"type\": \"lvm\",\n                                 \"fstype\": \"iso9660\",\n                                 \"mountpoints\": [\n                                     null\n                                 ],\n                                 \"model\": null\n                              },{\n                                 \"name\": \"pve-vm--101--disk--0\",\n                                 \"size\": \"32G\",\n                                 \"type\": \"lvm\",\n                                 \"fstype\": null,\n                                 \"mountpoints\": [\n                                     null\n                                 ],\n                                 \"model\": null\n                              }\n                           ]\n                        }\n                     ]\n                  },{\n                     \"name\": \"pve-data_tdata\",\n                     \"size\": \"319.1G\",\n                     \"type\": \"lvm\",\n                     \"fstype\": null,\n                     \"mountpoints\": [\n                         null\n                     ],\n                     \"model\": null,\n                     \"children\": [\n                        {\n                           \"name\": \"pve-data-tpool\",\n                           \"size\": \"319.1G\",\n                           \"type\": \"lvm\",\n                           \"fstype\": null,\n                           \"mountpoints\": [\n                               null\n                           ],\n                           \"model\": null,\n                           \"children\": [\n                              {\n                                 \"name\": \"pve-data\",\n                                 \"size\": \"319.1G\",\n                                 \"type\": \"lvm\",\n                                 \"fstype\": null,\n                                 \"mountpoints\": [\n                                     null\n                                 ],\n                                 \"model\": null\n                              },{\n                                 \"name\": \"pve-vm--102--cloudinit\",\n                                 \"size\": \"4M\",\n                                 \"type\": \"lvm\",\n                                 \"fstype\": \"iso9660\",\n                                 \"mountpoints\": [\n                                     null\n                                 ],\n                                 \"model\": null\n                              },{\n                                 \"name\": \"pve-vm--103--cloudinit\",\n                                 \"size\": \"4M\",\n                                 \"type\": \"lvm\",\n                                 \"fstype\": \"iso9660\",\n                                 \"mountpoints\": [\n                                     null\n                                 ],\n                                 \"model\": null\n                              },{\n                                 \"name\": \"pve-vm--104--cloudinit\",\n                                 \"size\": \"4M\",\n                                 \"type\": \"lvm\",\n                                 \"fstype\": \"iso9660\",\n                                 \"mountpoints\": [\n                                     null\n                                 ],\n                                 \"model\": null\n                              },{\n                                 \"name\": \"pve-vm--104--disk--0\",\n                                 \"size\": \"32G\",\n                                 \"type\": \"lvm\",\n                                 \"fstype\": null,\n                                 \"mountpoints\": [\n                                     null\n                                 ],\n                                 \"model\": null\n                              },{\n                                 \"name\": \"pve-vm--105--cloudinit\",\n                                 \"size\": \"4M\",\n                                 \"type\": \"lvm\",\n                                 \"fstype\": \"iso9660\",\n                                 \"mountpoints\": [\n                                     null\n                                 ],\n                                 \"model\": null\n                              },{\n                                 \"name\": \"pve-vm--100--disk--0\",\n                                 \"size\": \"4G\",\n                                 \"type\": \"lvm\",\n                                 \"fstype\": \"ext4\",\n                                 \"mountpoints\": [\n                                     null\n                                 ],\n                                 \"model\": null\n                              },{\n                                 \"name\": \"pve-vm--101--cloudinit\",\n                                 \"size\": \"4M\",\n                                 \"type\": \"lvm\",\n                                 \"fstype\": \"iso9660\",\n                                 \"mountpoints\": [\n                                     null\n                                 ],\n                                 \"model\": null\n                              },{\n                                 \"name\": \"pve-vm--101--disk--0\",\n                                 \"size\": \"32G\",\n                                 \"type\": \"lvm\",\n                                 \"fstype\": null,\n                                 \"mountpoints\": [\n                                     null\n                                 ],\n                                 \"model\": null\n                              }\n                           ]\n                        }\n                     ]\n                  }\n               ]\n            }\n         ]\n      },{\n         \"name\": \"sdb\",\n         \"size\": \"7.3T\",\n         \"type\": \"disk\",\n         \"fstype\": null,\n         \"mountpoints\": [\n             null\n         ],\n         \"model\": \"PERC H730 Adp\",\n         \"children\": [\n            {\n               \"name\": \"sdb1\",\n               \"size\": \"7.3T\",\n               \"type\": \"part\",\n               \"fstype\": \"ext4\",\n               \"mountpoints\": [\n                   \"/mnt/pve/store\"\n               ],\n               \"model\": null\n            }\n         ]\n      },{\n         \"name\": \"sr0\",\n         \"size\": \"1024M\",\n         \"type\": \"rom\",\n         \"fstype\": null,\n         \"mountpoints\": [\n             null\n         ],\n         \"model\": \"PLDS DVD+/-RW DH-16AES\"\n      }\n   ]\n}"
+    },
+    {
+      "id": "filesystems",
+      "command": "df -hT",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "Filesystem           Type      Size  Used Avail Use% Mounted on\nudev                 devtmpfs   63G     0   63G   0% /dev\ntmpfs                tmpfs      13G  3.0M   13G   1% /run\n/dev/mapper/pve-root ext4       94G  9.6G   80G  11% /\ntmpfs                tmpfs      63G   46M   63G   1% /dev/shm\ntmpfs                tmpfs     5.0M     0  5.0M   0% /run/lock\nefivarfs             efivarfs  304K   79K  221K  27% /sys/firmware/efi/efivars\n/dev/sda2            vfat     1022M   12M 1011M   2% /boot/efi\n/dev/sdb1            ext4      7.3T  3.8G  6.9T   1% /mnt/pve/store\n/dev/fuse            fuse      128M   24K  128M   1% /etc/pve\ntmpfs                tmpfs      13G     0   13G   0% /run/user/0"
+    },
+    {
+      "id": "storage-status",
+      "command": "pvesm status",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "Name             Type     Status           Total            Used       Available        %\nlocal             dir     active        98497780         9961548        83486684   10.11%\nlocal-lvm     lvmthin     active       334610432        38580582       296029849   11.53%\nstore             dir     active      7750194656         3932952      7355598384    0.05%"
+    },
+    {
+      "id": "lvm",
+      "command": "lvs -o lv_name,lv_size,data_percent,metadata_percent,pool_lv,origin",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "  LV               LSize    Data%  Meta%  Pool Origin         \n  base-102-disk-0    32.00g               data                \n  base-103-disk-0    32.00g               data                \n  base-105-disk-0    40.00g               data                \n  base-106-disk-0    16.00g               data                \n  data             <319.11g 11.53  0.84                       \n  root               96.00g                                   \n  swap                8.00g                                   \n  vm-100-disk-0       4.00g 24.47         data                \n  vm-101-cloudinit    4.00m 9.38          data                \n  vm-101-disk-0      32.00g 13.86         data                \n  vm-102-cloudinit    4.00m 9.38          data                \n  vm-103-cloudinit    4.00m 9.38          data                \n  vm-104-cloudinit    4.00m 9.38          data                \n  vm-104-disk-0      32.00g 19.33         data base-103-disk-0\n  vm-105-cloudinit    4.00m 9.38          data                "
+    },
+    {
+      "id": "qemu-inventory",
+      "command": "qm list",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "      VMID NAME                 STATUS     MEM(MB)    BOOTDISK(GB) PID       \n       101 data-docker-base-tpl stopped    8192              32.00 0         \n       102 data-docker-tpl2     stopped    8192              32.00 0         \n       103 publish-base-tpl     stopped    8192              32.00 0         \n       104 publish              stopped    8192              32.00 0         \n       105 java-running-base-tpl stopped    16384             40.00 0         \n       106 windoge-template     stopped    4096              16.00 0         "
+    },
+    {
+      "id": "lxc-inventory",
+      "command": "pct list",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "VMID       Status     Lock         Name                \n100        running                 cf-tunnel           "
+    },
+    {
+      "id": "cluster-vms",
+      "command": "pvesh get /cluster/resources --type vm --output-format json",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "[{\"cpu\":0.00109173067446196,\"disk\":742592512,\"diskread\":523194368,\"diskwrite\":5357568,\"id\":\"lxc/100\",\"maxcpu\":1,\"maxdisk\":4143677440,\"maxmem\":536870912,\"mem\":35840000,\"name\":\"cf-tunnel\",\"netin\":5097263,\"netout\":2453351,\"node\":\"pve\",\"status\":\"running\",\"template\":0,\"type\":\"lxc\",\"uptime\":7842,\"vmid\":100},{\"cpu\":0,\"disk\":0,\"diskread\":0,\"diskwrite\":0,\"id\":\"qemu/101\",\"maxcpu\":4,\"maxdisk\":34359738368,\"maxmem\":8589934592,\"mem\":0,\"name\":\"data-docker-base-tpl\",\"netin\":0,\"netout\":0,\"node\":\"pve\",\"status\":\"stopped\",\"template\":0,\"type\":\"qemu\",\"uptime\":0,\"vmid\":101},{\"cpu\":0,\"disk\":0,\"diskread\":0,\"diskwrite\":0,\"id\":\"qemu/102\",\"maxcpu\":4,\"maxdisk\":34359738368,\"maxmem\":8589934592,\"mem\":0,\"name\":\"data-docker-tpl2\",\"netin\":0,\"netout\":0,\"node\":\"pve\",\"status\":\"stopped\",\"template\":1,\"type\":\"qemu\",\"uptime\":0,\"vmid\":102},{\"cpu\":0,\"disk\":0,\"diskread\":0,\"diskwrite\":0,\"id\":\"qemu/103\",\"maxcpu\":4,\"maxdisk\":34359738368,\"maxmem\":8589934592,\"mem\":0,\"name\":\"publish-base-tpl\",\"netin\":0,\"netout\":0,\"node\":\"pve\",\"status\":\"stopped\",\"template\":1,\"type\":\"qemu\",\"uptime\":0,\"vmid\":103},{\"cpu\":0,\"disk\":0,\"diskread\":0,\"diskwrite\":0,\"id\":\"qemu/104\",\"maxcpu\":4,\"maxdisk\":34359738368,\"maxmem\":8589934592,\"mem\":0,\"name\":\"publish\",\"netin\":0,\"netout\":0,\"node\":\"pve\",\"status\":\"stopped\",\"template\":0,\"type\":\"qemu\",\"uptime\":0,\"vmid\":104},{\"cpu\":0,\"disk\":0,\"diskread\":0,\"diskwrite\":0,\"id\":\"qemu/105\",\"maxcpu\":8,\"maxdisk\":42949672960,\"maxmem\":17179869184,\"mem\":0,\"name\":\"java-running-base-tpl\",\"netin\":0,\"netout\":0,\"node\":\"pve\",\"status\":\"stopped\",\"template\":1,\"type\":\"qemu\",\"uptime\":0,\"vmid\":105},{\"cpu\":0,\"disk\":0,\"diskread\":0,\"diskwrite\":0,\"id\":\"qemu/106\",\"maxcpu\":2,\"maxdisk\":17179869184,\"maxmem\":4294967296,\"mem\":0,\"name\":\"windoge-template\",\"netin\":0,\"netout\":0,\"node\":\"pve\",\"status\":\"stopped\",\"template\":1,\"type\":\"qemu\",\"uptime\":0,\"vmid\":106}]"
+    },
+    {
+      "id": "vm-config-101",
+      "command": "qm config 101",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "{\"agent\": \"1\", \"boot\": \"order=scsi0;ide2;net0\", \"cipassword_configured\": true, \"ciuser\": \"ub\", \"cores\": \"4\", \"cpu\": \"host\", \"ide0\": \"local-lvm:vm-101-cloudinit,media=cdrom,size=4M\", \"ide2\": \"none,media=cdrom\", \"memory\": \"8192\", \"meta\": \"creation-qemu=9.2.0,ctime=1783003956\", \"name\": \"data-docker-base-tpl\", \"net0\": \"virtio=BC:24:11:97:74:4A,bridge=vmbr0,firewall=1\", \"numa\": \"0\", \"ostype\": \"l26\", \"scsi0\": \"local-lvm:vm-101-disk-0,iothread=1,size=32G\", \"scsihw\": \"virtio-scsi-single\", \"sockets\": \"1\", \"sshkeys_configured\": true}"
+    },
+    {
+      "id": "vm-config-102",
+      "command": "qm config 102",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "{\"agent\": \"1\", \"boot\": \"order=scsi0;ide2;net0\", \"cipassword_configured\": true, \"ciuser\": \"ub\", \"cores\": \"4\", \"cpu\": \"host\", \"ide0\": \"local-lvm:vm-102-cloudinit,media=cdrom,size=4M\", \"ide2\": \"none,media=cdrom\", \"memory\": \"8192\", \"meta\": \"creation-qemu=9.2.0,ctime=1783003956\", \"name\": \"data-docker-tpl2\", \"net0\": \"virtio=BC:24:11:9E:04:04,bridge=vmbr0,firewall=1\", \"numa\": \"0\", \"ostype\": \"l26\", \"scsi0\": \"local-lvm:base-102-disk-0,iothread=1,size=32G\", \"scsihw\": \"virtio-scsi-single\", \"sockets\": \"1\", \"sshkeys_configured\": true, \"template\": \"1\"}"
+    },
+    {
+      "id": "vm-config-103",
+      "command": "qm config 103",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "{\"agent\": \"1\", \"boot\": \"order=scsi0;ide2;net0\", \"cipassword_configured\": true, \"ciuser\": \"ub\", \"cores\": \"4\", \"cpu\": \"host\", \"ide0\": \"local-lvm:vm-103-cloudinit,media=cdrom\", \"ide2\": \"none,media=cdrom\", \"memory\": \"8192\", \"meta\": \"creation-qemu=9.2.0,ctime=1783083650\", \"name\": \"publish-base-tpl\", \"net0\": \"virtio=BC:24:11:77:2B:3C,bridge=vmbr0,firewall=1\", \"numa\": \"0\", \"ostype\": \"l26\", \"scsi0\": \"local-lvm:base-103-disk-0,iothread=1,size=32G\", \"scsi1\": \"store:103/base-103-disk-0.qcow2,iothread=1,size=100G\", \"scsihw\": \"virtio-scsi-single\", \"sockets\": \"1\", \"sshkeys_configured\": true, \"template\": \"1\"}"
+    },
+    {
+      "id": "vm-config-104",
+      "command": "qm config 104",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "{\"agent\": \"1\", \"boot\": \"order=scsi0;ide2;net0\", \"cipassword_configured\": true, \"ciuser\": \"ub\", \"cores\": \"4\", \"cpu\": \"host\", \"ide0\": \"local-lvm:vm-104-cloudinit,media=cdrom,size=4M\", \"ide2\": \"none,media=cdrom\", \"ipconfig0\": \"ip=192.168.21.23/24,gw=192.168.21.1\", \"memory\": \"8192\", \"meta\": \"creation-qemu=9.2.0,ctime=1783083650\", \"name\": \"publish\", \"net0\": \"virtio=BC:24:11:F3:1E:CC,bridge=vmbr0,firewall=1\", \"numa\": \"0\", \"ostype\": \"l26\", \"scsi0\": \"local-lvm:vm-104-disk-0,iothread=1,size=32G\", \"scsi1\": \"store:103/base-103-disk-0.qcow2/104/vm-104-disk-0.qcow2,iothread=1,size=100G\", \"scsihw\": \"virtio-scsi-single\", \"sockets\": \"1\", \"sshkeys_configured\": true}"
+    },
+    {
+      "id": "vm-config-105",
+      "command": "qm config 105",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "{\"agent\": \"1\", \"boot\": \"order=scsi0;ide2;net0\", \"cipassword_configured\": true, \"ciuser\": \"ub\", \"cores\": \"8\", \"cpu\": \"host\", \"ide0\": \"local-lvm:vm-105-cloudinit,media=cdrom,size=4M\", \"ide2\": \"none,media=cdrom\", \"memory\": \"16384\", \"meta\": \"creation-qemu=9.2.0,ctime=1783010267\", \"name\": \"java-running-base-tpl\", \"net0\": \"virtio=BC:24:11:7E:87:77,bridge=vmbr0,firewall=1\", \"numa\": \"0\", \"ostype\": \"l26\", \"scsi0\": \"local-lvm:base-105-disk-0,iothread=1,size=40G\", \"scsihw\": \"virtio-scsi-single\", \"sockets\": \"1\", \"sshkeys_configured\": true, \"template\": \"1\"}"
+    },
+    {
+      "id": "vm-config-106",
+      "command": "qm config 106",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "{\"agent\": \"1\", \"balloon\": \"0\", \"bios\": \"seabios\", \"boot\": \"order=virtio0;ide2\", \"cores\": \"2\", \"cpu\": \"host\", \"ide2\": \"none,media=cdrom\", \"machine\": \"pc-q35-9.2+pve1\", \"memory\": \"4096\", \"meta\": \"creation-qemu=9.2.0,ctime=1752145742\", \"name\": \"windoge-template\", \"net0\": \"virtio=BC:24:11:FF:90:F9,bridge=br2001\", \"numa\": \"0\", \"ostype\": \"win10\", \"scsihw\": \"virtio-scsi-single\", \"sockets\": \"1\", \"template\": \"1\", \"virtio0\": \"local-lvm:base-106-disk-0,size=16G\"}"
+    },
+    {
+      "id": "ct100-config",
+      "command": "pct config 100",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "arch: amd64\ncores: 1\nhostname: cf-tunnel\nmemory: 512\nnet0: name=eth0,bridge=vmbr0,firewall=1,hwaddr=BC:24:11:42:04:C1,ip=dhcp,type=veth\nonboot: 1\nostype: debian\nrootfs: local-lvm:vm-100-disk-0,size=4G\nswap: 512\nunprivileged: 1"
+    },
+    {
+      "id": "network-addresses",
+      "command": "ip -br addr",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "lo               UNKNOWN        127.0.0.1/8 ::1/128 \neno1             UP             \neno2             DOWN           \nvmbr0            UP             192.168.21.22/24 fe80::46a8:42ff:fe38:c11b/64 \nveth100i0@if2    UP             \nfwbr100i0        UP             \nfwpr100p0@fwln100i0 UP             \nfwln100i0@fwpr100p0 UP             "
+    },
+    {
+      "id": "network-routes",
+      "command": "ip route",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "default via 192.168.21.1 dev vmbr0 proto kernel onlink \n192.168.21.0/24 dev vmbr0 proto kernel scope link src 192.168.21.22 "
+    },
+    {
+      "id": "nic-link",
+      "command": "ethtool eno1",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "Settings for eno1:\n\tSupported ports: [ TP ]\n\tSupported link modes:   10baseT/Half 10baseT/Full\n\t                        100baseT/Half 100baseT/Full\n\t                        1000baseT/Full\n\tSupported pause frame use: Symmetric\n\tSupports auto-negotiation: Yes\n\tSupported FEC modes: Not reported\n\tAdvertised link modes:  10baseT/Half 10baseT/Full\n\t                        100baseT/Half 100baseT/Full\n\t                        1000baseT/Full\n\tAdvertised pause frame use: Symmetric\n\tAdvertised auto-negotiation: Yes\n\tAdvertised FEC modes: Not reported\n\tSpeed: 1000Mb/s\n\tDuplex: Full\n\tAuto-negotiation: on\n\tPort: Twisted Pair\n\tPHYAD: 1\n\tTransceiver: internal\n\tMDI-X: on (auto)\n\tSupports Wake-on: pumbg\n\tWake-on: d\n        Current message level: 0x00000007 (7)\n                               drv probe link\n\tLink detected: yes"
+    },
+    {
+      "id": "firewall-status",
+      "command": "pve-firewall status",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "Status: disabled/running"
+    },
+    {
+      "id": "backup-jobs",
+      "command": "pvesh get /cluster/backup --output-format json",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "[]"
+    },
+    {
+      "id": "replication-jobs",
+      "command": "pvesh get /cluster/replication --output-format json",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "[]"
+    },
+    {
+      "id": "cluster-status",
+      "command": "pvecm status",
+      "exit_code": 2,
+      "status": "failed",
+      "stdout": "Error: Corosync config '/etc/pve/corosync.conf' does not exist - is this node part of a cluster?"
+    },
+    {
+      "id": "network-config",
+      "command": "cat /etc/network/interfaces",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "auto lo\niface lo inet loopback\n\niface eno1 inet manual\n\nauto vmbr0\niface vmbr0 inet static\n\taddress 192.168.21.22/24\n\tgateway 192.168.21.1\n\tbridge-ports eno1\n\tbridge-stp off\n\tbridge-fd 0\n\niface eno2 inet manual\n\n\niface vmbr0 inet6 auto\n    post-up ip -6 route add default via fe80::ced8:43ff:fec5:416e dev vmbr0\n    pre-down ip -6 route del default via fe80::ced8:43ff:fec5:416e dev vmbr0\n\nsource /etc/network/interfaces.d/*"
+    },
+    {
+      "id": "storage-config",
+      "command": "cat /etc/pve/storage.cfg",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "dir: local\n\tpath /var/lib/vz\n\tcontent backup,vztmpl,iso\n\nlvmthin: local-lvm\n\tthinpool data\n\tvgname pve\n\tcontent images,rootdir\n\ndir: store\n\tpath /mnt/pve/store\n\tcontent backup,rootdir,snippets,vztmpl,iso,images\n\tis_mountpoint 1\n\tnodes pve\n"
+    },
+    {
+      "id": "datacenter-config",
+      "command": "cat /etc/pve/datacenter.cfg",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "keyboard: en-us"
+    },
+    {
+      "id": "file-cluster.fw",
+      "command": "file existence /etc/pve/firewall/cluster.fw",
+      "status": "passed",
+      "exit_code": 0,
+      "stdout": "absent"
+    },
+    {
+      "id": "file-host.fw",
+      "command": "file existence /etc/pve/nodes/pve/host.fw",
+      "status": "passed",
+      "exit_code": 0,
+      "stdout": "absent"
+    },
+    {
+      "id": "ct100-addresses",
+      "command": "pct exec 100 -- ip -br addr",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "lo               UNKNOWN        127.0.0.1/8 ::1/128 \neth0@if5         UP             192.168.21.150/24 2409:8a4c:1840:640:be24:11ff:fe42:4c1/64 fe80::be24:11ff:fe42:4c1/64 "
+    },
+    {
+      "id": "ct100-cloudflared",
+      "command": "pct exec 100 -- systemctl show cloudflared -p ActiveState -p SubState -p UnitFileState",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "ActiveState=active\nSubState=running\nUnitFileState=enabled"
+    },
+    {
+      "id": "smart-scan",
+      "command": "smartctl --scan-open",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "# /dev/sda -d scsi # /dev/sda, SCSI device open failed: DELL or MegaRaid controller, please try adding '-d megaraid,N'\n# /dev/sdb -d scsi # /dev/sdb, SCSI device open failed: DELL or MegaRaid controller, please try adding '-d megaraid,N'\n/dev/bus/0 -d sat+megaraid,0 # /dev/bus/0 [megaraid_disk_00] [SAT], ATA device\n/dev/bus/0 -d sat+megaraid,1 # /dev/bus/0 [megaraid_disk_01] [SAT], ATA device\n/dev/bus/0 -d megaraid,2 # /dev/bus/0 [megaraid_disk_02], SCSI device\n/dev/bus/0 -d megaraid,3 # /dev/bus/0 [megaraid_disk_03], SCSI device\n/dev/bus/0 -d megaraid,7 # /dev/bus/0 [megaraid_disk_07], SCSI device"
+    },
+    {
+      "id": "smart-info-0",
+      "command": "smartctl -i -H -d megaraid,0 /dev/sda",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "smartctl 7.3 2022-02-28 r5338 [x86_64-linux-6.8.12-9-pve] (local build)\nCopyright (C) 2002-22, Bruce Allen, Christian Franke, www.smartmontools.org\n\n=== START OF INFORMATION SECTION ===\nModel Family:     Intel 730 and DC S35x0/3610/3700 Series SSDs\nDevice Model:     INTEL SSDSC2BB480G6\nFirmware Version: G2010140\nUser Capacity:    480,103,981,056 bytes [480 GB]\nSector Sizes:     512 bytes logical, 4096 bytes physical\nRotation Rate:    Solid State Device\nForm Factor:      2.5 inches\nTRIM Command:     Available, deterministic, zeroed\nDevice is:        In smartctl database 7.3/5319\nATA Version is:   ACS-2 T13/2015-D revision 3\nSATA Version is:  SATA 2.6, 6.0 Gb/s (current: 6.0 Gb/s)\nLocal Time is:    Thu Nov  5 23:02:21 2026 CST\nSMART support is: Available - device has SMART capability.\nSMART support is: Enabled\n\n=== START OF READ SMART DATA SECTION ===\nSMART Status not supported: ATA return descriptor not supported by controller firmware\nSMART overall-health self-assessment test result: PASSED\nWarning: This result is based on an Attribute check.\n"
+    },
+    {
+      "id": "smart-info-1",
+      "command": "smartctl -i -H -d megaraid,1 /dev/sda",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "smartctl 7.3 2022-02-28 r5338 [x86_64-linux-6.8.12-9-pve] (local build)\nCopyright (C) 2002-22, Bruce Allen, Christian Franke, www.smartmontools.org\n\n=== START OF INFORMATION SECTION ===\nDevice Model:     INTEL SSDSC2BB480G6L\nFirmware Version: G201LH02\nUser Capacity:    480,103,981,056 bytes [480 GB]\nSector Sizes:     512 bytes logical, 4096 bytes physical\nRotation Rate:    Solid State Device\nForm Factor:      2.5 inches\nTRIM Command:     Available, deterministic, zeroed\nDevice is:        Not in smartctl database 7.3/5319\nATA Version is:   ACS-2 T13/2015-D revision 3\nSATA Version is:  SATA 2.6, 6.0 Gb/s (current: 6.0 Gb/s)\nLocal Time is:    Thu Nov  5 23:02:21 2026 CST\nSMART support is: Available - device has SMART capability.\nSMART support is: Enabled\n\n=== START OF READ SMART DATA SECTION ===\nSMART Status not supported: ATA return descriptor not supported by controller firmware\nSMART overall-health self-assessment test result: PASSED\nWarning: This result is based on an Attribute check.\n"
+    },
+    {
+      "id": "smart-info-2",
+      "command": "smartctl -i -H -d megaraid,2 /dev/sda",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "smartctl 7.3 2022-02-28 r5338 [x86_64-linux-6.8.12-9-pve] (local build)\nCopyright (C) 2002-22, Bruce Allen, Christian Franke, www.smartmontools.org\n\n=== START OF INFORMATION SECTION ===\nVendor:               SEAGATE\nProduct:              ST4000NM0295\nRevision:             DT31\nCompliance:           SPC-4\nUser Capacity:        4,000,787,030,016 bytes [4.00 TB]\nLogical block size:   512 bytes\nFormatted with type 2 protection\n8 bytes of protection information per logical block\nLU is fully provisioned\nRotation Rate:        7200 rpm\nForm Factor:          3.5 inches\nDevice type:          disk\nTransport protocol:   SAS (SPL-4)\nLocal Time is:        Thu Nov  5 23:02:21 2026 CST\nSMART support is:     Available - device has SMART capability.\nSMART support is:     Enabled\nTemperature Warning:  Disabled or Not Supported\n\n=== START OF READ SMART DATA SECTION ===\nSMART Health Status: OK\n\nGrown defects during certification <not available>\nTotal blocks reassigned during format <not available>\nTotal new blocks reassigned = 11\nPower on minutes since format <not available>"
+    },
+    {
+      "id": "smart-info-3",
+      "command": "smartctl -i -H -d megaraid,3 /dev/sda",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "smartctl 7.3 2022-02-28 r5338 [x86_64-linux-6.8.12-9-pve] (local build)\nCopyright (C) 2002-22, Bruce Allen, Christian Franke, www.smartmontools.org\n\n=== START OF INFORMATION SECTION ===\nVendor:               SEAGATE\nProduct:              ST4000NM0295\nRevision:             DT31\nCompliance:           SPC-4\nUser Capacity:        4,000,787,030,016 bytes [4.00 TB]\nLogical block size:   512 bytes\nFormatted with type 2 protection\n8 bytes of protection information per logical block\nLU is fully provisioned\nRotation Rate:        7200 rpm\nForm Factor:          3.5 inches\nDevice type:          disk\nTransport protocol:   SAS (SPL-4)\nLocal Time is:        Thu Nov  5 23:02:21 2026 CST\nSMART support is:     Available - device has SMART capability.\nSMART support is:     Enabled\nTemperature Warning:  Disabled or Not Supported\n\n=== START OF READ SMART DATA SECTION ===\nSMART Health Status: OK\n\nGrown defects during certification <not available>\nTotal blocks reassigned during format <not available>\nTotal new blocks reassigned = 0\nPower on minutes since format <not available>"
+    },
+    {
+      "id": "smart-info-7",
+      "command": "smartctl -i -H -d megaraid,7 /dev/sda",
+      "exit_code": 0,
+      "status": "passed",
+      "stdout": "smartctl 7.3 2022-02-28 r5338 [x86_64-linux-6.8.12-9-pve] (local build)\nCopyright (C) 2002-22, Bruce Allen, Christian Franke, www.smartmontools.org\n\n=== START OF INFORMATION SECTION ===\nVendor:               SEAGATE\nProduct:              ST4000NM0295\nRevision:             DT31\nCompliance:           SPC-4\nUser Capacity:        4,000,787,030,016 bytes [4.00 TB]\nLogical block size:   512 bytes\nFormatted with type 2 protection\n8 bytes of protection information per logical block\nLU is fully provisioned\nRotation Rate:        7200 rpm\nForm Factor:          3.5 inches\nDevice type:          disk\nTransport protocol:   SAS (SPL-4)\nLocal Time is:        Thu Nov  5 23:02:21 2026 CST\nSMART support is:     Available - device has SMART capability.\nSMART support is:     Enabled\nTemperature Warning:  Disabled or Not Supported\n\n=== START OF READ SMART DATA SECTION ===\nSMART Health Status: OK\n\nGrown defects during certification <not available>\nTotal blocks reassigned during format <not available>\nTotal new blocks reassigned = 0\nPower on minutes since format <not available>"
+    }
+  ],
+  "limitations": [
+    "No guest start, clone, reboot or configuration writes performed.",
+    "RAID layout/member mapping and protected cache not confirmed.",
+    "Stopped guest/template OS and package versions not inspected.",
+    "Successful root PVE login does not verify ub guest login.",
+    "No performance, recovery, port-conflict or VLAN acceptance executed."
+  ]
+}

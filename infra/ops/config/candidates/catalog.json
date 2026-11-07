@@ -1,0 +1,141 @@
+{
+  "status": "candidate-not-live-verified",
+  "roles": [
+    {
+      "role": "cf-tunnel",
+      "kind": "lxc",
+      "vmid": 100,
+      "candidate_ip": null,
+      "deployment_status": "not-accepted",
+      "monitoring_status": "pending-exporter-http-and-acl-verification",
+      "node_exporter": null,
+      "http": null
+    },
+    {
+      "role": "data-prod-db",
+      "kind": "vm",
+      "vmid": 200,
+      "candidate_ip": "10.63.10.10",
+      "deployment_status": "prepared-stopped-awaiting-explicit-network-approval",
+      "monitoring_status": "pending-exporter-http-and-acl-verification",
+      "node_exporter": "10.63.10.10:9100",
+      "http": null
+    },
+    {
+      "role": "data-prod-infra",
+      "kind": "vm",
+      "vmid": 201,
+      "candidate_ip": "10.63.10.11",
+      "deployment_status": "prepared-stopped-awaiting-explicit-network-approval",
+      "monitoring_status": "pending-exporter-http-and-acl-verification",
+      "node_exporter": "10.63.10.11:9100",
+      "http": "http://10.63.10.11:8848/nacos/v1/console/health/readiness"
+    },
+    {
+      "role": "data-test",
+      "kind": "vm",
+      "vmid": 210,
+      "candidate_ip": "10.63.20.10",
+      "deployment_status": "prepared-stopped-awaiting-explicit-network-approval",
+      "monitoring_status": "pending-exporter-http-and-acl-verification",
+      "node_exporter": "10.63.20.10:9100",
+      "http": "http://10.63.20.10:8848/nacos/v1/console/health/readiness"
+    },
+    {
+      "role": "publish-service",
+      "kind": "vm",
+      "vmid": 220,
+      "candidate_ip": "10.63.30.10",
+      "deployment_status": "prepared-stopped-awaiting-explicit-network-approval",
+      "monitoring_status": "pending-exporter-http-and-acl-verification",
+      "node_exporter": "10.63.30.10:9100",
+      "http": null
+    },
+    {
+      "role": "artifact-service",
+      "kind": "vm",
+      "vmid": 221,
+      "candidate_ip": "10.63.30.20",
+      "deployment_status": "prepared-stopped-awaiting-explicit-network-approval",
+      "monitoring_status": "pending-exporter-http-and-acl-verification",
+      "node_exporter": "10.63.30.20:9100",
+      "http": "http://10.63.30.20:8081/service/rest/v1/status"
+    },
+    {
+      "role": "java-prod-01",
+      "kind": "vm",
+      "vmid": 230,
+      "candidate_ip": "10.63.10.20",
+      "deployment_status": "prepared-stopped-awaiting-explicit-network-approval",
+      "monitoring_status": "pending-exporter-http-and-acl-verification",
+      "node_exporter": "10.63.10.20:9100",
+      "http": null
+    },
+    {
+      "role": "java-prod-02",
+      "kind": "vm",
+      "vmid": 231,
+      "candidate_ip": "10.63.10.21",
+      "deployment_status": "prepared-stopped-awaiting-explicit-network-approval",
+      "monitoring_status": "pending-exporter-http-and-acl-verification",
+      "node_exporter": "10.63.10.21:9100",
+      "http": null
+    },
+    {
+      "role": "java-prod-03",
+      "kind": "vm",
+      "vmid": 232,
+      "candidate_ip": "10.63.10.22",
+      "deployment_status": "prepared-stopped-awaiting-explicit-network-approval",
+      "monitoring_status": "pending-exporter-http-and-acl-verification",
+      "node_exporter": "10.63.10.22:9100",
+      "http": null
+    },
+    {
+      "role": "java-test-01",
+      "kind": "vm",
+      "vmid": 240,
+      "candidate_ip": "10.63.20.20",
+      "deployment_status": "prepared-stopped-awaiting-explicit-network-approval",
+      "monitoring_status": "pending-exporter-http-and-acl-verification",
+      "node_exporter": "10.63.20.20:9100",
+      "http": null
+    },
+    {
+      "role": "penpot-service",
+      "kind": "vm",
+      "vmid": 250,
+      "candidate_ip": "10.63.30.30",
+      "deployment_status": "prepared-stopped-awaiting-explicit-network-approval",
+      "monitoring_status": "pending-exporter-http-and-acl-verification",
+      "node_exporter": "10.63.30.30:9100",
+      "http": "http://10.63.30.30:9001/"
+    },
+    {
+      "role": "nas-media",
+      "kind": "vm",
+      "vmid": 260,
+      "candidate_ip": "10.63.40.10",
+      "deployment_status": "prepared-stopped-awaiting-explicit-network-approval",
+      "monitoring_status": "pending-exporter-http-and-acl-verification",
+      "node_exporter": "10.63.40.10:9100",
+      "http": "http://10.63.40.10:8096/health"
+    },
+    {
+      "role": "ops-service",
+      "kind": "vm",
+      "vmid": 270,
+      "candidate_ip": "10.63.30.40",
+      "deployment_status": "prepared-stopped-awaiting-explicit-network-approval",
+      "monitoring_status": "pending-exporter-http-and-acl-verification",
+      "node_exporter": "10.63.30.40:9100",
+      "http": "http://10.63.30.40:3000/api/health"
+    }
+  ],
+  "pve_metrics": {
+    "host": "192.168.21.22",
+    "status": "pending-separate-authorized-push-or-read-only-api",
+    "new_host_port_opened": false,
+    "included_in_scrape_targets": false
+  }
+}

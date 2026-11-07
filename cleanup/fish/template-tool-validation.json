@@ -1,0 +1,28 @@
+{
+  "at": "2026-11-06T18:03:10.338379+00:00",
+  "status": "candidate-QA-passed-final-core-promotion-root-owned",
+  "files": {
+    "template-builder.py": "3d2fa5f6eab371cde5860d98224a232ddc0d9c0f94ca8fc7d9182ecf47b3de94",
+    "template-qa.py": "d003e2e11023f6cfcd7f151c8bee20e05d0535f6b4b4cd5377c018c44ce476be",
+    "template-window.py": "a1780ce5f5ed3b5cf556f8f119606ba75c51743fe7b0b083202c5c56624f943c",
+    "template-seal-window.py": "1aecadab04c3e590a814c3cec97f6fccf949f83d379c481c11d2668c8db1a283",
+    "template-refresh.py": "092541c44a599f2d32a284bdbf45386fd9cf51516f467c9ac76a040076af80f0",
+    "template-resume-install.py": "53fc49af1486f58121edcec0fa786e3cd6a7c156542491d5e5c042e66e306582",
+    "test-template-builder.py": "598c9a43dc05d78078966c5fb692b1d139cb8354b8be886f8abcd4e2311e7072",
+    "template-QA-window.py": "bddc93b0697c35a7fee891035226897f972ced75f109a36d27f2438afec25d07"
+  },
+  "fixtures": {
+    "tests": 10,
+    "passed": 10
+  },
+  "actual": {
+    "9040": "installed-new-strictSSH-passed;seal-original-refusal-preserved;corrected-seal-passed",
+    "9041": "original-profile-refusal-preserved;approved-original-profile-installed-new-strictSSH-passed;seal-passed-original-daemon-preserved-engine-id-reset",
+    "9042": "installed-new-strictSSH-Java-preservation-passed;seal-passed",
+    "9043": "QA-passed-released",
+    "9044": "QA-passed-independent-Docker-engine-ID-original-profile-released",
+    "9045": "QA-passed-Java21-nonroot-clean-released"
+  },
+  "pending": "root backup original core/replace preserved VMIDs/final metadata+image consistency/QA lifecycle cleanup",
+  "QA_summary": "template-QA-summary.json"
+}

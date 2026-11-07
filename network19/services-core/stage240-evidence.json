@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-06T08:58:55.064394+00:00",
+  "exit_code": 0,
+  "result": {
+    "status": "private-backups-and-candidates-staged",
+    "vmid": 240,
+    "path": "/root/dell-network19/staged/services-core-v1",
+    "reports": [
+      {
+        "tool": "commit-publisher.py",
+        "exit_code": 0,
+        "status": "inspected-no-target-write"
+      },
+      {
+        "tool": "stage-java240.py",
+        "exit_code": 0,
+        "status": "private-pair-staged-not-installed-published-or-started"
+      },
+      {
+        "private_release_pair": [
+          "20261106T085840",
+          "20261106T085841"
+        ],
+        "all_secrets_namespace_vhost_unchanged": true,
+        "published_or_started": false
+      }
+    ],
+    "active_files_addresses_services_unchanged": true,
+    "formal_apps_started": false,
+    "Nacos_published": false,
+    "secret_values_emitted": false
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "at": "2026-11-06T17:50:17.610164+00:00",
+  "vmid": 9041,
+  "phase": "install-only-reviewed-original-profile-correction",
+  "target": {
+    "vmid": 9041,
+    "ip": "192.168.19.198",
+    "host_key_alias": "dell-vm9041",
+    "host_key_fingerprint": "SHA256:uXQUq3GP+pOk0Wua9wC6l7KrbehHE5B5zCZFeoGYfS8",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "contract": {
+    "schema_version": 1,
+    "vmid": 9041,
+    "source_template": 9001,
+    "hostname": "fish-build-docker",
+    "ip": "192.168.19.198",
+    "mac": "bc:24:11:a6:72:55",
+    "fish_version": "4.0.2-1",
+    "no_chsh": true,
+    "docker_profile": {
+      "driver": "overlayfs",
+      "live_restore": true,
+      "containerd_snapshotter": "default-enabled"
+    },
+    "docker_daemon_sha256": "2c1c9ff5b7a09c2a49f196beebe463c83ca12380a6a34b899296c7d6c0b8cb6b"
+  },
+  "exit_code": 0,
+  "result": {
+    "stage": "/root/dell-fish-template-stage-9041",
+    "vmid": 9041,
+    "phases": {
+      "check": {
+        "exit_code": 0,
+        "receipt": {
+          "at": "2026-11-06T17:50:04.589302+00:00",
+          "vmid": 9041,
+          "phase": "check",
+          "status": "passed",
+          "result": {
+            "protected": {
+              "shells": {
+                "root": "/bin/bash",
+                "ub": "/bin/bash"
+              },
+              "files": {
+                "/etc/docker/daemon.json": "2c1c9ff5b7a09c2a49f196beebe463c83ca12380a6a34b899296c7d6c0b8cb6b"
+              },
+              "docker": {
+                "engine_id_sha256": "f807698bb4b69b603a9c2618ca8681618e4060bdbe372298d18072230b7a2ea9",
+                "daemon_sha256": "2c1c9ff5b7a09c2a49f196beebe463c83ca12380a6a34b899296c7d6c0b8cb6b",
+                "version": "29.9.3",
+                "driver": "overlayfs",
+                "live_restore": true,
+                "profile_preserved": true,
+                "zero_containers_volumes_images": true,
+                "default_networks_only": true
+              }
+            },
+            "machine_id_sha256": "a086a1a1926da6a8e18c347ad4ce6d9433cbb20841e1f3ca15a62d0cb4966ce6",
+            "hostkey_fingerprint": "SHA256:uXQUq3GP+pOk0Wua9wC6l7KrbehHE5B5zCZFeoGYfS8",
+            "persistent_configuration_writes": false,
+            "temporary_java_smoke_cleaned": false
+          }
+        }
+      },
+      "install": {
+        "exit_code": 0,
+        "receipt": {
+          "at": "2026-11-06T17:50:17.572951+00:00",
+          "vmid": 9041,
+          "phase": "install",
+          "status": "passed",
+          "result": {
+            "before": {
+              "shells": {
+                "root": "/bin/bash",
+                "ub": "/bin/bash"
+              },
+              "files": {
+                "/etc/docker/daemon.json": "2c1c9ff5b7a09c2a49f196beebe463c83ca12380a6a34b899296c7d6c0b8cb6b"
+              },
+              "docker": {
+                "engine_id_sha256": "f807698bb4b69b603a9c2618ca8681618e4060bdbe372298d18072230b7a2ea9",
+                "daemon_sha256": "2c1c9ff5b7a09c2a49f196beebe463c83ca12380a6a34b899296c7d6c0b8cb6b",
+                "version": "29.9.3",
+                "driver": "overlayfs",
+                "live_restore": true,
+                "profile_preserved": true,
+                "zero_containers_volumes_images": true,
+                "default_networks_only": true
+              }
+            },
+            "install": {
+              "status": "installed-verified",
+              "vmid": 9041,
+              "at": "2026-11-06T17:50:17.557672+00:00",
+              "checks": {
+                "fish_exact_version": true,
+                "fish_common_exact_version": true,
+                "binary_version_command": true,
+                "ub_nonconfig_private_smoke": true,
+                "ub_root_login_shells_unchanged": true,
+                "core_services_and_containers_PIDs_start_health_unchanged": true
+              },
+              "before_shells": {
+                "ub": "/bin/bash",
+                "root": "/bin/bash"
+              },
+              "after_shells": {
+                "ub": "/bin/bash",
+                "root": "/bin/bash"
+              },
+              "fish_binary_version": "fish, version 4.0.2",
+              "new_packages": [
+                "fish-common",
+                "libpcre2-32-0",
+                "fish"
+              ],
+              "NEEDRESTART_MODE": "l",
+              "no_install_recommends": true,
+              "existing_packages_upgraded_or_removed": false,
+              "apt_update_fullupgrade_autoremove_chsh_or_shellconfig_run": false,
+              "service_restart_requested_by_tool": false,
+              "core_before": {
+                "services": {
+                  "containerd.service": {
+                    "MainPID": "781",
+                    "ExecMainStartTimestampMonotonic": "16815571",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "docker.service": {
+                    "MainPID": "822",
+                    "ExecMainStartTimestampMonotonic": "20498314",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "qemu-guest-agent.service": {
+                    "MainPID": "685",
+                    "ExecMainStartTimestampMonotonic": "15861610",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "ssh.service": {
+                    "MainPID": "712",
+                    "ExecMainStartTimestampMonotonic": "16336193",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "systemd-networkd.service": {
+                    "MainPID": "619",
+                    "ExecMainStartTimestampMonotonic": "12014590",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "systemd-resolved.service": {
+                    "MainPID": "331",
+                    "ExecMainStartTimestampMonotonic": "6585010",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  }
+                },
+                "containers": {}
+              },
+              "core_after": {
+                "services": {
+                  "containerd.service": {
+                    "MainPID": "781",
+                    "ExecMainStartTimestampMonotonic": "16815571",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "docker.service": {
+                    "MainPID": "822",
+                    "ExecMainStartTimestampMonotonic": "20498314",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "qemu-guest-agent.service": {
+                    "MainPID": "685",
+                    "ExecMainStartTimestampMonotonic": "15861610",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "ssh.service": {
+                    "MainPID": "712",
+                    "ExecMainStartTimestampMonotonic": "16336193",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "systemd-networkd.service": {
+                    "MainPID": "619",
+                    "ExecMainStartTimestampMonotonic": "12014590",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  },
+                  "systemd-resolved.service": {
+                    "MainPID": "331",
+                    "ExecMainStartTimestampMonotonic": "6585010",
+                    "LoadState": "loaded",
+                    "ActiveState": "active",
+                    "SubState": "running"
+                  }
+                },
+                "containers": {}
+              },
+              "publisher_before": null,
+              "publisher_after": null,
+              "user_config_temporary_smoke_cleaned": true
+            },
+            "machine_id_sha256": "a086a1a1926da6a8e18c347ad4ce6d9433cbb20841e1f3ca15a62d0cb4966ce6",
+            "hostkey_fingerprint": "SHA256:uXQUq3GP+pOk0Wua9wC6l7KrbehHE5B5zCZFeoGYfS8"
+          }
+        }
+      }
+    }
+  },
+  "no_seal_no_PVE": true,
+  "original_failed_attempt_preserved": true,
+  "new_strict_SSH": {
+    "user": "ub",
+    "shell": "/bin/bash",
+    "fish_newSSH_noconfig_private": true,
+    "temporary_smoke_cleaned": true
+  },
+  "new_strict_SSH_exit": 0
+}
