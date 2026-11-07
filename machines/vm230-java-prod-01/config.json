@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "machine": {
+    "kind": "vm",
+    "vmid": 230,
+    "name": "java-prod-01",
+    "ip": "192.168.19.40",
+    "vcpu": 6,
+    "memory_gib": 16
+  },
+  "source_of_truth": "plan.json",
+  "source_role_pointer": "/roles/6",
+  "last_verified_at": "2026-11-07T02:35:01+08:00",
+  "current_runtime_verified": false,
+  "status": "paused-awaiting-hardware-repair",
+  "pause_reason": "UEFI0058 POST memory error; historical SEL identifies DIMM_B1; user paused all server work",
+  "purpose": "正式 Java 运行基础，仅 JDK21、非 root 运行身份与基础监控；不部署或启动业务程序。",
+  "network": {
+    "ip": "192.168.19.40",
+    "prefixlen": 24,
+    "bridge": "vmbr19",
+    "gateway": "192.168.19.1",
+    "dns": [
+      "192.168.19.1"
+    ],
+    "revision": "network19",
+    "management_owner": "PVE only management/L2; VM190 routing/DNS/DHCP, no NAT",
+    "security_boundary": "bridge MAC/IP role ACL; trusted WireGuard 10.66.66.0/24 server-network access does not bypass application authentication"
+  },
+  "storage": {
+    "system_storage": "store",
+    "data_volumes": [],
+    "data_disk_contract": "No separate data disk/mount UUID declared for this role in plan.json; do not invent or format one."
+  },
+  "access": {
+    "ssh_user": "ub",
+    "client_identity_file": "~/.ssh/yang_local_rsa",
+    "host_key_alias": "dell-vm230",
+    "strict_host_key_checking": true,
+    "private_key_copied": false,
+    "fish_version": "4.0.2-1",
+    "root_and_ub_default_shell": "/bin/bash",
+    "login_shell_changed": false
+  },
+  "startup_order": {
+    "vmid": 230,
+    "order": 40,
+    "up_seconds": 15,
+    "down_seconds": 120
+  },
+  "monitoring": {
+    "exporter_endpoint": "192.168.19.40:9100",
+    "services": [
+      "prometheus-node-exporter.service",
+      "dell-guest-health.service",
+      "dell-guest-health.timer"
+    ],
+    "scope": "guest-local textfile service health; Java business HTTP checks absent",
+    "runtime_state": "historical verified baseline; fresh check pending after hardware recovery"
+  },
+  "business_scope": {
+    "java_business_allowed": false,
+    "publisher": "fenced; no business activation",
+    "production_source_business_data_import": false
+  },
+  "configuration_policy": {
+    "effective_secret_config_in_git": false,
+    "public_config_snapshots_copied": false,
+    "reason": "Public parameterized templates are indexed; rendered secret bundles and unverified runtime files are not copied. Old 10.63 settings are historical only."
+  },
+  "services": {
+    "runtime": "Debian OpenJDK21, nonroot finger identity",
+    "java_path": "/opt/finger/java/bin/java",
+    "application_deployment": "prohibited in both environments",
+    "active_business_services": [],
+    "business_HTTP_checks": 0,
+    "compose_business_stack": null,
+    "old_test_releases": "held private historical artifacts; do not copy, activate, adopt, or restore into running services"
+  },
+  "dependencies": [
+    {
+      "target_vmid": 190,
+      "purpose": "gateway/DNS"
+    },
+    {
+      "target_vmid": 270,
+      "purpose": "base monitoring consumer"
+    }
+  ]
+}

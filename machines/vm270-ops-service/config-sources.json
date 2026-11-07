@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "path_base": "repository-root",
+  "entries": [
+    {
+      "path": "plan.json",
+      "type": "current-contract",
+      "purpose": "当前资源/地址/数据卷合同唯一来源；运行状态未在硬件故障后复验。",
+      "sha256": "023ed7a0237f4ac0862ac97fcc4c34d4808b2e9d942efa6b455e748e94ca0703"
+    },
+    {
+      "path": "11-live-handoff.md",
+      "type": "current-contract",
+      "purpose": "最后验收与当前UEFI0058暂停时间线。",
+      "sha256": "0da10943e1b39845dafa76e58161982e0eac9a9c7747c849eec21977084cadc2"
+    },
+    {
+      "path": "12-service-access-and-operations.md",
+      "type": "current-contract",
+      "purpose": "当前19网入口及凭据保管规则。",
+      "sha256": "ad845beb1290754fdc647642507d996f999c2646639406ea35211bd58b29fc29"
+    },
+    {
+      "path": "19-manual-operations.md",
+      "type": "current-contract",
+      "purpose": "人工启停、硬件门禁、克隆、备份与受控恢复。",
+      "sha256": "717488c3042e9e1777ee3e94d756ccd8ba5f99ea0b17a43c10da22e942e83599"
+    },
+    {
+      "path": "cleanup/final-live-check.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-07 02:35综合验收快照，不代表当前在线。",
+      "sha256": "0832ce1e4a762c9423aded25a286a06ccaeda866e5829d28a0d1d8befdd1f999"
+    },
+    {
+      "path": "cleanup/monitoring/ten-role/final-Prometheus-readback.json",
+      "type": "historical-evidence",
+      "purpose": "最新10node+5own15/15UP且221保留，非当前在线。",
+      "sha256": "f502f17620c64498a19851c68470a59fd2cb2396b869541f9c9622f6b3d3b3d9"
+    },
+    {
+      "path": "cleanup/monitoring/ten-role/execution-status.json",
+      "type": "historical-evidence",
+      "purpose": "十guest/source配套实际应用，原health/collector/timer保持。",
+      "sha256": "3abcda6653d0abd115a7028defb3d1074af63c1c06f2330a5fd2ab529cc2b720"
+    },
+    {
+      "path": "infra/ops/guest-baseline/guest-targets.json",
+      "type": "current-contract",
+      "purpose": "当前公开十角色catalog；未来221退役须成对变更，不烘焙秘密。",
+      "sha256": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306"
+    },
+    {
+      "path": "infra/ops/lark-notify/README.md",
+      "type": "current-contract",
+      "purpose": "现役机内Lark约束、真实双phase送达及至少一次语义。",
+      "sha256": "f3fb69fd7af0fb7839a6d9465c3155afc1203d171ea630d3098fd1d5da90012d"
+    },
+    {
+      "path": "infra/ops/compose.yaml",
+      "type": "historical-evidence",
+      "purpose": "公开四组件/IPAM/secret引用结构，缺受控运行文件不能直接up。",
+      "sha256": "c0d1783ae4d393355d5beb3d4dd0587917eb7d2b5d386ac915ec70185f467f80"
+    },
+    {
+      "path": "cleanup/monitoring/ten-role/future-merge-contract.json",
+      "type": "pending-candidate",
+      "purpose": "未来Nexus合并10→9基线门禁，当前不可当已实施。",
+      "sha256": "2816d77dc6737efbc4e4fcba7b6d4798a1b05d48397f8e4bec7bbfca49eb5594"
+    },
+    {
+      "path": "infra/ops/mac-external-probe/README.md",
+      "type": "historical-evidence",
+      "purpose": "用户明确停用的外部探针与误告警更正历史，禁止据此恢复任务。",
+      "sha256": "5a7ff3ce002b88152da5cf9256a0bc70ebba0eb0db95c09a368bc62d8c7d753a"
+    }
+  ],
+  "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."
+}

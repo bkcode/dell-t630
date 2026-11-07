@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "machine": {
+    "kind": "vm",
+    "vmid": 200,
+    "name": "data-prod-db",
+    "ip": "192.168.19.10",
+    "vcpu": 6,
+    "memory_gib": 16
+  },
+  "source_of_truth": "plan.json",
+  "source_role_pointer": "/roles/1",
+  "last_verified_at": "2026-11-07T02:35:01+08:00",
+  "current_runtime_verified": false,
+  "status": "paused-awaiting-hardware-repair",
+  "pause_reason": "UEFI0058 POST memory error; historical SEL identifies DIMM_B1; user paused all server work",
+  "purpose": "正式 MySQL 与正式 Nacos 外部元数据库，正式业务 schema 保持为空。",
+  "network": {
+    "ip": "192.168.19.10",
+    "prefixlen": 24,
+    "bridge": "vmbr19",
+    "gateway": "192.168.19.1",
+    "dns": [
+      "192.168.19.1"
+    ],
+    "revision": "network19",
+    "management_owner": "PVE only management/L2; VM190 routing/DNS/DHCP, no NAT",
+    "security_boundary": "bridge MAC/IP role ACL; trusted WireGuard 10.66.66.0/24 server-network access does not bypass application authentication"
+  },
+  "storage": {
+    "system_storage": "local-lvm",
+    "data_volumes": [
+      {
+        "size_gib": 80,
+        "pve_storage": "local-lvm",
+        "mountpoint": "/srv/dell-data",
+        "filesystem": "ext4",
+        "filesystem_uuid": "d61c0e22-941e-447a-9e9a-1e9e50deb02f",
+        "data_root": "/srv/dell-data/prod-db",
+        "gate": "exact mountpoint/source/UUID, no symlink or parent traversal, no root filesystem fallback"
+      }
+    ]
+  },
+  "access": {
+    "ssh_user": "ub",
+    "client_identity_file": "~/.ssh/yang_local_rsa",
+    "host_key_alias": "dell-vm200",
+    "strict_host_key_checking": true,
+    "private_key_copied": false,
+    "fish_version": "4.0.2-1",
+    "root_and_ub_default_shell": "/bin/bash",
+    "login_shell_changed": false
+  },
+  "startup_order": {
+    "vmid": 200,
+    "order": 10,
+    "up_seconds": 60,
+    "down_seconds": 120
+  },
+  "monitoring": {
+    "exporter_endpoint": "192.168.19.10:9100",
+    "services": [
+      "prometheus-node-exporter.service",
+      "dell-guest-health.service",
+      "dell-guest-health.timer"
+    ],
+    "scope": "guest-local textfile service health; Java business HTTP checks absent",
+    "runtime_state": "historical verified baseline; fresh check pending after hardware recovery"
+  },
+  "business_scope": {
+    "java_business_allowed": false,
+    "publisher": "fenced; no business activation",
+    "production_source_business_data_import": false
+  },
+  "configuration_policy": {
+    "effective_secret_config_in_git": false,
+    "public_config_snapshots_copied": false,
+    "reason": "Public parameterized templates are indexed; rendered secret bundles and unverified runtime files are not copied. Old 10.63 settings are historical only."
+  },
+  "services": {
+    "supervisor_unit": "dell-data-prod-db.service",
+    "install_directory": "/opt/dell/data/prod-db",
+    "compose_source": "infra/data/compose.prod-db.yaml",
+    "expected_services": [
+      "mysql"
+    ],
+    "images": {
+      "mysql": "mysql:8.4.5@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840"
+    },
+    "published_tcp_ports": [
+      3306
+    ],
+    "container_restart_policy": "no",
+    "startup_owner": "systemd supervisor validates mount identity and complete service set before and during runtime",
+    "secrets": "root-managed installed bundle; values not stored in these machine documents",
+    "effective_compose_snapshot": "not copied; fresh SHA comparison required after recovery"
+  },
+  "dependencies": [
+    {
+      "target_vmid": 190,
+      "purpose": "gateway/DNS"
+    },
+    {
+      "target_vmid": 270,
+      "purpose": "monitoring consumer"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "machine": {
+    "kind": "lxc",
+    "vmid": 100,
+    "name": "cf-tunnel",
+    "ip": "192.168.19.5",
+    "vcpu": 1,
+    "memory_gib": 0.5
+  },
+  "source_of_truth": "plan.json",
+  "last_verified_at": "2026-11-07T02:35:01+08:00",
+  "current_runtime_verified": false,
+  "status": "paused-awaiting-hardware-repair",
+  "pause_reason": "User paused server work afterUEFI0058 POST memory error; priorSEL DIMM_B1 evidence, repair/online state unverified.",
+  "record_kind": "offline-configuration-contract-not-live-collection",
+  "created_from_local_files_only": true,
+  "configuration_policy": {
+    "secret_config_or_private_keys_in_git": false,
+    "public_runtime_snapshots_copied": false,
+    "reason": "Index proven contracts/receipts; no old10.63 or narrowVPN preview copied as currentruntime. Fresh actual configuration requires hardware recovery and user resume."
+  },
+  "source_role_pointer": "/roles/0",
+  "purpose": "Preserve original CloudflareTunnel identity inCT100; no source credentials exported.",
+  "network": {
+    "address": "192.168.19.5/24",
+    "bridge": "vmbr19",
+    "interface": "eth0",
+    "gateway": "192.168.19.1",
+    "DNS": [
+      "192.168.19.1"
+    ],
+    "old21.150_DHCP_address": "historicalonly; notcurrentcontract",
+    "IPv6_business_not_configured": true,
+    "outbound_tunnel_transport_ports": {
+      "TCP": [
+        7844
+      ],
+      "UDP": [
+        7844
+      ]
+    },
+    "outbound_policy_owner": "VM190 plusPVE L2ACL, including approvedOWFake-IP compatibility"
+  },
+  "storage": {
+    "rootfs_storage": "local-lvm",
+    "rootfs_volume_reference": "local-lvm:vm-100-disk-0",
+    "rootfs_configured_size_GiB": 4,
+    "OS_family_from_PVE_config": "debian",
+    "metadata_source_at": "2026-11-07T01:04:21+08:00",
+    "disk_contents_not_read": true
+  },
+  "services": {
+    "unit": "cloudflared.service",
+    "credential_management_last_indicated": "remote-token; actualtoken/ExecStart omitted",
+    "unit_and_identity_bytes_preserved_by_networkmigration": true,
+    "controlled_container_restart_during_migration_recorded": true,
+    "original_PID_continuity_claimed": false,
+    "last_direct_ready_evidence": "network19/evidence/final-live-network-identity.json",
+    "last_direct_ready_at": "2026-11-06T18:09:13+08:00",
+    "ready_HTTP_status_then": 200,
+    "ready_connections_then": 2,
+    "included_in_0235_running_inventory": true,
+    "remote_ingress_origin_configuration_obtained": false,
+    "public_business_end_to_end_verified": false
+  },
+  "credentials_and_backups": {
+    "token_read_or_copied_by_this_document": false,
+    "cloudflared_unit_body_or_ExecStart_saved": false,
+    "local_token_file_path_assumed": false,
+    "CF_backup_export_allowed": false,
+    "protected_PVE_backup_directory_hint": "/root/dell-bootstrap/protected-cf-backups/",
+    "directory_mode": "0700root",
+    "archive_mode": "0600root",
+    "same_host_backup_not_independent_disaster_recovery": true,
+    "restore_from_that_archive_verified": false,
+    "metadata_only_source": "evidence/implementation/cf-local-backup-metadata.json"
+  },
+  "startup_order": {
+    "vmid": 100,
+    "order": 5,
+    "up_seconds": 10,
+    "down_seconds": 60
+  },
+  "access": {
+    "container_management": "PVEpctconsole/QGA-likehosttools after authorizedresume; containerSSH notassumed",
+    "fish_install_excluded": true,
+    "client_private_keys_or_CFtokens_in_this_directory": false
+  },
+  "limitations": [
+    "Contract snapshot not livecollection; hosthardwarepause meanscurrentCF online/registeredstateunknown.",
+    "Cloudflaredregistration/localreadydoesnotproveunknownremoteoriginsorpublicbusinessreachability.",
+    "Do notread tokenfiles/unitlaunch arguments,exportCFarchives toMac,or createfake localingressYAML."
+  ]
+}

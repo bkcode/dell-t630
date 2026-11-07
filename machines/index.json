@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "source_of_truth": "plan.json",
+  "configuration_scope": "Offline public contracts and source manifests; not a live export or complete backup",
+  "current_runtime_verified": false,
+  "last_verified_inventory_at": "2026-11-07T02:35:01+08:00",
+  "counts": {
+    "PVE_hosts": 1,
+    "retained_guest_instances": 12,
+    "retained_templates": 3,
+    "total_directories": 16
+  },
+  "machines": [
+    {
+      "path": "machines/pve",
+      "kind": "pve",
+      "vmid": null,
+      "name": "pve",
+      "ip": "192.168.21.22",
+      "lifecycle": "retained"
+    },
+    {
+      "path": "machines/ct100-cf-tunnel",
+      "kind": "lxc",
+      "vmid": 100,
+      "name": "cf-tunnel",
+      "ip": "192.168.19.5",
+      "lifecycle": "retained"
+    },
+    {
+      "path": "machines/vm190-network-gateway",
+      "kind": "vm",
+      "vmid": 190,
+      "name": "network-gateway",
+      "ip": "192.168.19.1",
+      "lifecycle": "retained"
+    },
+    {
+      "path": "machines/vm200-data-prod-db",
+      "kind": "vm",
+      "vmid": 200,
+      "name": "data-prod-db",
+      "ip": "192.168.19.10",
+      "lifecycle": "retained"
+    },
+    {
+      "path": "machines/vm201-data-prod-infra",
+      "kind": "vm",
+      "vmid": 201,
+      "name": "data-prod-infra",
+      "ip": "192.168.19.11",
+      "lifecycle": "retained"
+    },
+    {
+      "path": "machines/vm210-data-test",
+      "kind": "vm",
+      "vmid": 210,
+      "name": "data-test",
+      "ip": "192.168.19.20",
+      "lifecycle": "retained"
+    },
+    {
+      "path": "machines/vm220-publish-service",
+      "kind": "vm",
+      "vmid": 220,
+      "name": "publish-service",
+      "ip": "192.168.19.30",
+      "lifecycle": "retained"
+    },
+    {
+      "path": "machines/vm221-artifact-service",
+      "kind": "vm",
+      "vmid": 221,
+      "name": "artifact-service",
+      "ip": "192.168.19.31",
+      "lifecycle": "pending-retirement-after-Nexus-merge-verification"
+    },
+    {
+      "path": "machines/vm230-java-prod-01",
+      "kind": "vm",
+      "vmid": 230,
+      "name": "java-prod-01",
+      "ip": "192.168.19.40",
+      "lifecycle": "retained"
+    },
+    {
+      "path": "machines/vm240-java-test-01",
+      "kind": "vm",
+      "vmid": 240,
+      "name": "java-test-01",
+      "ip": "192.168.19.45",
+      "lifecycle": "retained"
+    },
+    {
+      "path": "machines/vm250-penpot-service",
+      "kind": "vm",
+      "vmid": 250,
+      "name": "penpot-service",
+      "ip": "192.168.19.50",
+      "lifecycle": "retained"
+    },
+    {
+      "path": "machines/vm260-nas-media",
+      "kind": "vm",
+      "vmid": 260,
+      "name": "nas-media",
+      "ip": "192.168.19.60",
+      "lifecycle": "retained"
+    },
+    {
+      "path": "machines/vm270-ops-service",
+      "kind": "vm",
+      "vmid": 270,
+      "name": "ops-service",
+      "ip": "192.168.19.70",
+      "lifecycle": "retained"
+    },
+    {
+      "path": "machines/tpl9001-docker-base",
+      "kind": "template",
+      "vmid": 9001,
+      "name": "tpl-docker-base",
+      "ip": null,
+      "lifecycle": "sealed-template-last-verified"
+    },
+    {
+      "path": "machines/tpl9010-linux-base",
+      "kind": "template",
+      "vmid": 9010,
+      "name": "tpl-linux-base",
+      "ip": null,
+      "lifecycle": "sealed-template-last-verified"
+    },
+    {
+      "path": "machines/tpl9011-java-acceptance",
+      "kind": "template",
+      "vmid": 9011,
+      "name": "tpl-java-acceptance",
+      "ip": null,
+      "lifecycle": "sealed-template-last-verified"
+    }
+  ]
+}

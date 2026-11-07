@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "scope": "offline current-contract references and timestamped historical evidence; no remote export",
+  "entries": [
+    {
+      "path": "plan.json",
+      "type": "current-contract",
+      "purpose": "资源/IP/角色唯一规划；当前hardwarepause字段优先，不作实时探测。",
+      "sha256": "023ed7a0237f4ac0862ac97fcc4c34d4808b2e9d942efa6b455e748e94ca0703"
+    },
+    {
+      "path": "AGENTS.md",
+      "type": "current-contract",
+      "purpose": "用户暂停与秘密/操作边界。",
+      "sha256": "092764a24bcedd354d9bedfdd887247c23adba8bd2765d38c87cc2091f952159"
+    },
+    {
+      "path": "11-live-handoff.md",
+      "type": "current-contract",
+      "purpose": "最后02:35快照、当前UEFI0058暂停及恢复门禁。",
+      "sha256": "0da10943e1b39845dafa76e58161982e0eac9a9c7747c849eec21977084cadc2"
+    },
+    {
+      "path": "19-manual-operations.md",
+      "type": "current-contract",
+      "purpose": "恢复后人工操作合同，当前不能执行其中远程命令。",
+      "sha256": "717488c3042e9e1777ee3e94d756ccd8ba5f99ea0b17a43c10da22e942e83599"
+    },
+    {
+      "path": "cleanup/final-live-check.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-07 02:35最后综合验收；其中Nexus待授权是当时状态，现授权已满足但未执行。",
+      "sha256": "0832ce1e4a762c9423aded25a286a06ccaeda866e5829d28a0d1d8befdd1f999"
+    },
+    {
+      "path": "16-wireguard-access.md",
+      "type": "current-contract",
+      "purpose": "10.66.66.0/24全有效IPv4服务信任及每peer/32边界。",
+      "sha256": "85447563bb7f08eea1d1d42fd8ace8af3fe5bcd6d3f3a710198f0c5e5039957d"
+    },
+    {
+      "path": "network19/wireguard/full-access-verification.json",
+      "type": "historical-evidence",
+      "purpose": "全VPN实际配置/用户批量确认；不是旧窄9001规则。",
+      "sha256": "72b9b4c5d09e5f4acad959dbee002f0955754edc9bce5aaec4848662b16fa575"
+    },
+    {
+      "path": "network19/gateway/live-confirm.json",
+      "type": "historical-evidence",
+      "purpose": "最后fullWG网关事务确认、noNAT、MAC接口/服务。",
+      "sha256": "78af07c97208f7c031f60825f9ed5c4b708b651a2fb086a5b0ae401c1901c55d"
+    },
+    {
+      "path": "network19/gateway/reboot-evidence.json",
+      "type": "historical-evidence",
+      "purpose": "网关正常重启持久性旧收据，不代表host灾备或当前在线。",
+      "sha256": "2f5257baada18abb26bb91750d48ff7065272151739661b7d8b6059c66164a39"
+    },
+    {
+      "path": "cleanup/network/dns-runtime/summary.json",
+      "type": "historical-evidence",
+      "purpose": "02:31最新DNS清理验证：11保留名与11退休NXDOMAIN。",
+      "sha256": "4536f006d3b8376a656028204da5fced38f5bd1fd16de9aaa08d3310f286d776"
+    },
+    {
+      "path": "cleanup/network/dns-runtime/receipt.json",
+      "type": "historical-evidence",
+      "purpose": "DNS-only应用收据，非DNS/WG/路由不变。",
+      "sha256": "5e79a260e96ffdd8d050de11c05d7402b96e32d138ca3a67fdbb871d8c63396d"
+    },
+    {
+      "path": "cleanup/network/dns-runtime/prepared-dnsmasq.conf",
+      "type": "historical-evidence",
+      "purpose": "对应已验DNS清理的公开输入；与receipt并读，不复制预览当完整现役导出。",
+      "sha256": "39306a3c5d85b7440d9f61af3c837affef05f739c1680be6fdc1bdfb364f13d6"
+    },
+    {
+      "path": "network19/evidence/DHCP-real-QA-native-capture.json",
+      "type": "historical-evidence",
+      "purpose": "真实LAN DORA；pcap仅PVE，未证明全部WAN DHCP反向包。",
+      "sha256": "0c63d4a016311d622f06cacf83cbdad428b6a6b2fc9cb26cc68cdf40262b219d"
+    }
+  ]
+}

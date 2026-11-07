@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "path_base": "repository-root",
+  "entries": [
+    {
+      "path": "plan.json",
+      "type": "current-contract",
+      "purpose": "当前资源/地址/数据卷合同唯一来源；运行状态未在硬件故障后复验。",
+      "sha256": "023ed7a0237f4ac0862ac97fcc4c34d4808b2e9d942efa6b455e748e94ca0703"
+    },
+    {
+      "path": "11-live-handoff.md",
+      "type": "current-contract",
+      "purpose": "最后验收与当前UEFI0058暂停时间线。",
+      "sha256": "0da10943e1b39845dafa76e58161982e0eac9a9c7747c849eec21977084cadc2"
+    },
+    {
+      "path": "12-service-access-and-operations.md",
+      "type": "current-contract",
+      "purpose": "当前19网入口及凭据保管规则。",
+      "sha256": "ad845beb1290754fdc647642507d996f999c2646639406ea35211bd58b29fc29"
+    },
+    {
+      "path": "19-manual-operations.md",
+      "type": "current-contract",
+      "purpose": "人工启停、硬件门禁、克隆、备份与受控恢复。",
+      "sha256": "717488c3042e9e1777ee3e94d756ccd8ba5f99ea0b17a43c10da22e942e83599"
+    },
+    {
+      "path": "cleanup/final-live-check.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-07 02:35综合验收快照，不代表当前在线。",
+      "sha256": "0832ce1e4a762c9423aded25a286a06ccaeda866e5829d28a0d1d8befdd1f999"
+    },
+    {
+      "path": "network19/services-media/nas-smb-post-cutover-verification.json",
+      "type": "historical-evidence",
+      "purpose": "19.60三share真实权限矩阵、原fixture SHA和JF只读挂载。",
+      "sha256": "6fba7021454bbed48032858e44a5dc555cc0a11eeeda8f4cd845820734ceffed"
+    },
+    {
+      "path": "network19/services-media/nas-jellyfin-post-cutover-verification.json",
+      "type": "historical-evidence",
+      "purpose": "原影片static SHA/DirectPlay profile与原身份读回，非真实TV验收。",
+      "sha256": "1faa3d3e296c63b7527327747418ff611c6ca6295c3d4a965eacba087b4ba9bb"
+    },
+    {
+      "path": "network19/wireguard/media/apply-result.json",
+      "type": "historical-evidence",
+      "purpose": "仅追加VPN10/24到三share/JF本地识别，权限/身份/UUID保持。",
+      "sha256": "a125fcf85b13ecbe0bb7f802883761907b6d417058821f019fba0bb517186fb9"
+    },
+    {
+      "path": "network19/wireguard/media/README.md",
+      "type": "current-contract",
+      "purpose": "VPN来源识别范围与必要restart/客户端保护约束。",
+      "sha256": "567ec8743ef9c195cdd4bf3c5522584366dc666c1bfb7a32a982d27752fbd7e9"
+    },
+    {
+      "path": "infra/nas/check-data-mount.py",
+      "type": "current-contract",
+      "purpose": "专盘UUID/容量/非根盘fail-closed规则，不能用来初始化磁盘。",
+      "sha256": "5ba9fd7cfc37d1e7398a454dff0151c516b15a15b93b3c37061f0486d01120fc"
+    },
+    {
+      "path": "infra/nas/compose.yaml",
+      "type": "historical-evidence",
+      "purpose": "公开容器结构参考，需要现役受控env，非完整可直接部署快照。",
+      "sha256": "f57289cc286a4b2991f0c0709f3ef41336931a2041c8d8a051a87e9a434d86a7"
+    }
+  ],
+  "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."
+}

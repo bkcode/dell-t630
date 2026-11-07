@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "machine": {
+    "kind": "vm",
+    "vmid": 210,
+    "name": "data-test",
+    "ip": "192.168.19.20",
+    "vcpu": 2,
+    "memory_gib": 4
+  },
+  "source_of_truth": "plan.json",
+  "source_role_pointer": "/roles/3",
+  "last_verified_at": "2026-11-07T02:35:01+08:00",
+  "current_runtime_verified": false,
+  "status": "paused-awaiting-hardware-repair",
+  "pause_reason": "UEFI0058 POST memory error; historical SEL identifies DIMM_B1; user paused all server work",
+  "purpose": "独立测试 MySQL、Nacos、Redis、RabbitMQ，保留最小 auth/system/coms 测试 schema；不共享正式账号和持久化目录。",
+  "network": {
+    "ip": "192.168.19.20",
+    "prefixlen": 24,
+    "bridge": "vmbr19",
+    "gateway": "192.168.19.1",
+    "dns": [
+      "192.168.19.1"
+    ],
+    "revision": "network19",
+    "management_owner": "PVE only management/L2; VM190 routing/DNS/DHCP, no NAT",
+    "security_boundary": "bridge MAC/IP role ACL; trusted WireGuard 10.66.66.0/24 server-network access does not bypass application authentication"
+  },
+  "storage": {
+    "system_storage": "store",
+    "data_volumes": [
+      {
+        "size_gib": 40,
+        "pve_storage": "store",
+        "mountpoint": "/srv/dell-data",
+        "filesystem": "ext4",
+        "filesystem_uuid": "dd1773f9-aa48-4401-a9c8-caf0f66845f3",
+        "data_root": "/srv/dell-data/test-data",
+        "gate": "exact mountpoint/source/UUID, no symlink or parent traversal, no root filesystem fallback"
+      }
+    ]
+  },
+  "access": {
+    "ssh_user": "ub",
+    "client_identity_file": "~/.ssh/yang_local_rsa",
+    "host_key_alias": "dell-vm210",
+    "strict_host_key_checking": true,
+    "private_key_copied": false,
+    "fish_version": "4.0.2-1",
+    "root_and_ub_default_shell": "/bin/bash",
+    "login_shell_changed": false
+  },
+  "startup_order": {
+    "vmid": 210,
+    "order": 12,
+    "up_seconds": 90,
+    "down_seconds": 120
+  },
+  "monitoring": {
+    "exporter_endpoint": "192.168.19.20:9100",
+    "services": [
+      "prometheus-node-exporter.service",
+      "dell-guest-health.service",
+      "dell-guest-health.timer"
+    ],
+    "scope": "guest-local textfile service health; Java business HTTP checks absent",
+    "runtime_state": "historical verified baseline; fresh check pending after hardware recovery"
+  },
+  "business_scope": {
+    "java_business_allowed": false,
+    "publisher": "fenced; no business activation",
+    "production_source_business_data_import": false
+  },
+  "configuration_policy": {
+    "effective_secret_config_in_git": false,
+    "public_config_snapshots_copied": false,
+    "reason": "Public parameterized templates are indexed; rendered secret bundles and unverified runtime files are not copied. Old 10.63 settings are historical only."
+  },
+  "services": {
+    "supervisor_unit": "dell-data-test-data.service",
+    "install_directory": "/opt/dell/data/test-data",
+    "compose_source": "infra/data/compose.test-data.yaml",
+    "expected_services": [
+      "mysql",
+      "nacos",
+      "redis",
+      "rabbitmq"
+    ],
+    "images": {
+      "mysql": "mysql:8.4.5@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840",
+      "nacos": "nacos/nacos-server:v2.4.3@sha256:c8dc1db0ac6a345b62bad4e76963d25237a90bf45704795e7cb4d1d972b024a3",
+      "redis": "redis:7.4.4@sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a",
+      "rabbitmq": "rabbitmq:3.13.7-management@sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920"
+    },
+    "published_tcp_ports": [
+      3306,
+      8848,
+      9848,
+      6379,
+      5672,
+      15672
+    ],
+    "container_restart_policy": "no",
+    "startup_owner": "systemd supervisor validates mount identity and complete service set before and during runtime",
+    "secrets": "root-managed installed bundle; values not stored in these machine documents",
+    "effective_compose_snapshot": "not copied; fresh SHA comparison required after recovery"
+  },
+  "dependencies": [
+    {
+      "target_vmid": 190,
+      "purpose": "gateway/DNS"
+    },
+    {
+      "target_vmid": 270,
+      "purpose": "monitoring consumer"
+    }
+  ]
+}

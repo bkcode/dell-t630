@@ -8,6 +8,7 @@
 
 | 需要做什么 | 阅读入口 |
 | --- | --- |
+| 按每台机器查看配置与文档 | **[machines目录](machines/README.md)**：宿主、12来宾和3模板各自独立目录 |
 | 人工值守、故障处理、启动、备份、克隆、未来合并 | **[人工操作手册](19-manual-operations.md)** |
 | 接手本次暂停任务 | [当前交接与恢复条件](11-live-handoff.md) |
 | 看完整服务器名称、地址、配置与作用 | [当前状态清单](01-current-state.md)、[机器可读规划](plan.json) |
@@ -59,6 +60,7 @@
 本地检查（仓库根目录执行）：
 
 ```sh
+python3 scripts/validate_machines.py
 python3 scripts/validate_docs.py --json
 python3 scripts/check_git_safety.py
 ```

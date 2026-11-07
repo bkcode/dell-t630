@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "path_base": "repository root dell/",
+  "scope": "public non-secret sources only; source hashes pin local indexed files, not running guest state",
+  "entries": [
+    {
+      "path": "plan.json",
+      "type": "current-contract",
+      "purpose": "唯一角色/IP/资源/存储合同；状态字符串不等于实时在线",
+      "sha256": "023ed7a0237f4ac0862ac97fcc4c34d4808b2e9d942efa6b455e748e94ca0703"
+    },
+    {
+      "path": "19-manual-operations.md",
+      "type": "current-contract",
+      "purpose": "硬件恢复、日常检查、受控启停与备份人工门禁",
+      "sha256": "717488c3042e9e1777ee3e94d756ccd8ba5f99ea0b17a43c10da22e942e83599"
+    },
+    {
+      "path": "11-live-handoff.md",
+      "type": "current-contract",
+      "purpose": "用户暂停、无 Java 业务、发布冻结和恢复顺序",
+      "sha256": "0da10943e1b39845dafa76e58161982e0eac9a9c7747c849eec21977084cadc2"
+    },
+    {
+      "path": "network19/migration-plan.json",
+      "type": "historical-evidence",
+      "purpose": "原19网迁移阶段地址/策略说明，含已退役角色；现役角色与地址以plan.json为准，不能重跑迁移器",
+      "sha256": "a638c14a7b152ad48b5254166bdd2ad3c7c69ea723e648bf88bd1ebb38bc1832"
+    },
+    {
+      "path": "cleanup/final-live-check.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-07 02:35综合验收，含本机hostname/IP/fish/默认Bash；不能代表当前在线",
+      "sha256": "0832ce1e4a762c9423aded25a286a06ccaeda866e5829d28a0d1d8befdd1f999"
+    },
+    {
+      "path": "cleanup/hardware/DIMM_B1-incident.json",
+      "type": "historical-evidence",
+      "purpose": "UEFI0058与历史DIMM_B1事件，当前硬件暂停原因",
+      "sha256": "aeaa61c93d796b61b1730f22988cde2f3ecc7afe50f861c1d6b528022c9a53fb"
+    },
+    {
+      "path": "cleanup/fish/evidence/guest201.json",
+      "type": "historical-evidence",
+      "purpose": "本来宾fish安装与默认登录shell未更改证据",
+      "sha256": "b3ae75789325eb099284dc81c08370c70be02d91975ff94f27fb860f5f0a7056"
+    },
+    {
+      "path": "cleanup/monitoring/ten-role/execution-status.json",
+      "type": "historical-evidence",
+      "purpose": "清理后10来宾监控合同部署回执，旧数量不得作为实时UP",
+      "sha256": "3abcda6653d0abd115a7028defb3d1074af63c1c06f2330a5fd2ab529cc2b720"
+    },
+    {
+      "path": "cleanup/monitoring/ten-role/candidates/vm201/guest-targets.json",
+      "type": "historical-evidence",
+      "purpose": "已审19网监控目标输入；全角色列表属于当时10节点，非直接重部署入口",
+      "sha256": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306"
+    },
+    {
+      "path": "infra/data/compose.prod-infra.yaml",
+      "type": "current-contract",
+      "purpose": "公开参数化Compose结构与资源上限；不是含现役IP/秘密的完整rendered配置",
+      "sha256": "b1f5178a320b55cc7b9478fc23f436d5eb2047eee38030e697abe196c679dccf"
+    },
+    {
+      "path": "infra/data/images.lock.json",
+      "type": "current-contract",
+      "purpose": "固定linux/amd64镜像版本与digest",
+      "sha256": "456f23eec8dcc07df42aa9c10ecfe91a4263eb148138ba45fa9de42f3dc5fed3"
+    },
+    {
+      "path": "infra/data/scripts/manage.py",
+      "type": "current-contract",
+      "purpose": "来宾挂载/完整服务集合/认证监督器源码；部署需重新审查实际目标和配置，不在暂停期运行",
+      "sha256": "b86e6c8339fc3ebc9151258849d78276d91e179692be588ce5bcdd344b341a10"
+    },
+    {
+      "path": "infra/data/README.md",
+      "type": "historical-evidence",
+      "purpose": "组件设计/监督/秘密边界；原10.63地址与原阶段210待部署文字已过时，仅技术记录",
+      "sha256": "d60839301f7613b9a7164ad55b91562ce5cc1b4ae74c1e1a4dcb0d24864f4701"
+    },
+    {
+      "path": "network19/services-core/role201-commit-start-evidence.json",
+      "type": "historical-evidence",
+      "purpose": "组件迁移19网后的受控commit/start回执，不作为当前健康证明",
+      "sha256": "daf7979db70adadb54a339b2d78f777aaed9d8fdf37afd86d44dc26336cc7d8f"
+    },
+    {
+      "path": "evidence/implementation/data-deploy-vm201.json",
+      "type": "historical-evidence",
+      "purpose": "最初部署认证和专用fixture验收，地址可能属于旧网",
+      "sha256": "09e39160ee19aea695c59b8edfba0e436ca4bedcde551e8efe8451d85a04642d"
+    },
+    {
+      "path": "evidence/implementation/data-prod-final-inventory.json",
+      "type": "historical-evidence",
+      "purpose": "正式组件版本及空业务库检查原始证据",
+      "sha256": "5c087b7fb5e642a94902b9c5e51920a6a767f0ae12a9ab76d6c57c55c1fba9e4"
+    }
+  ]
+}

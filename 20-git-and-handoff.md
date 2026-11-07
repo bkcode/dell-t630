@@ -9,6 +9,7 @@
 ```sh
 git clone git@github.com:bkcode/dell-t630.git
 cd dell-t630
+python3 scripts/validate_machines.py
 python3 scripts/validate_docs.py --json
 python3 scripts/check_git_safety.py
 ```
@@ -20,6 +21,7 @@ python3 scripts/check_git_safety.py
 | 目录/文件 | 内容 | 使用边界 |
 | --- | --- | --- |
 | 根目录编号文档 | 状态、架构、模板、访问、验收、手册 | README/交接优先；较早阶段的数字保留历史说明 |
+| `machines/` | 每台宿主/来宾/模板的配置合同、来源索引与运维文档 | 离线整理、身份资源受plan约束，不含秘密或实时配置导出 |
 | `plan.json`、`tasks.json` | 配置合同与任务登记 | 包含暂停和未完成项，不等同实时探针 |
 | `evidence/` | 初次盘点和带日期的实施证据 | 不改写原执行结果，新增核验另留证 |
 | `infra/` | 应用、NAS、监控、备份、发布链脚本 | 部分为旧网配置，不能整目录执行 |
@@ -38,6 +40,7 @@ python3 scripts/check_git_safety.py
 在仓库根目录运行：
 
 ```sh
+python3 scripts/validate_machines.py
 python3 scripts/validate_docs.py --json
 python3 scripts/check_git_safety.py
 git status --short

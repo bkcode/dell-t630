@@ -3,6 +3,7 @@
 ## 入口与当前状态
 
 - 本仓库位于 `/Users/yangzhaohui/work/www/harness/dell`，独立 Git 远端为 `git@github.com:bkcode/dell-t630.git`；harness 父目录不是本仓库。
+- 每台机器的配置与文档入口是 `machines/README.md`；保留宿主、12来宾和3模板的离线合同/来源索引，不能把新目录当现场配置导出。机器身份与资源仍由plan约束，新增/修改后运行 `python3 scripts/validate_machines.py`。
 - 先读 `README.md`、`11-live-handoff.md`、`19-manual-operations.md`、`plan.json`；资源/IP/角色以 plan 为准，历史证据必须带时间解释。
 - **2026-11-07 用户暂停服务器工作，等待硬件处理；当前只整理文档并提交 Git。不得连接服务器、恢复迁移或发告警测试。**
 - iDRAC 控制台 UEFI0058 阻止正常启动；此前 SEL 指向 DIMM_B1。不得把 F1、一次开机或网络恢复当成内存已修复，不清日志掩盖错误，不远程 powercycle，不指导带电插拔。

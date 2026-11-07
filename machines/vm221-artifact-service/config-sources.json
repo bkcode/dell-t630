@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "path_base": "repository-root",
+  "entries": [
+    {
+      "path": "plan.json",
+      "type": "current-contract",
+      "purpose": "当前资源/地址/数据卷合同唯一来源；运行状态未在硬件故障后复验。",
+      "sha256": "023ed7a0237f4ac0862ac97fcc4c34d4808b2e9d942efa6b455e748e94ca0703"
+    },
+    {
+      "path": "11-live-handoff.md",
+      "type": "current-contract",
+      "purpose": "最后验收与当前UEFI0058暂停时间线。",
+      "sha256": "0da10943e1b39845dafa76e58161982e0eac9a9c7747c849eec21977084cadc2"
+    },
+    {
+      "path": "12-service-access-and-operations.md",
+      "type": "current-contract",
+      "purpose": "当前19网入口及凭据保管规则。",
+      "sha256": "ad845beb1290754fdc647642507d996f999c2646639406ea35211bd58b29fc29"
+    },
+    {
+      "path": "19-manual-operations.md",
+      "type": "current-contract",
+      "purpose": "人工启停、硬件门禁、克隆、备份与受控恢复。",
+      "sha256": "717488c3042e9e1777ee3e94d756ccd8ba5f99ea0b17a43c10da22e942e83599"
+    },
+    {
+      "path": "cleanup/final-live-check.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-07 02:35综合验收快照，不代表当前在线。",
+      "sha256": "0832ce1e4a762c9423aded25a286a06ccaeda866e5829d28a0d1d8befdd1f999"
+    },
+    {
+      "path": "network19/services-media/nexus-post-cutover-verification.json",
+      "type": "historical-evidence",
+      "purpose": "实际19.31下49GAV/234SHA/身份/EULA与GET-only验证。",
+      "sha256": "f2ed457567f427f9c6e1ad98ef2ce2f0c8253783f2787fb64dfa3d8614506fda"
+    },
+    {
+      "path": "infra/nexus/manage.py",
+      "type": "historical-evidence",
+      "purpose": "监督/权限门禁源码结构参考，现役assignment/env需fresh读回；不能据其本地旧默认部署。",
+      "sha256": "522a12a9738802a3cab7312b9a9ada886839e88e173e44313b9263528f55b470"
+    },
+    {
+      "path": "infra/nexus/compose.yaml",
+      "type": "historical-evidence",
+      "purpose": "基础Compose源码必须叠mount overlay；不是完整现役参数快照。",
+      "sha256": "f79df7f4e62aede8716685e5f1378d3565ba8e2635a15b86fafe8643409f5472"
+    },
+    {
+      "path": "infra/nexus/compose.mount-gated.yaml",
+      "type": "historical-evidence",
+      "purpose": "restart=no叠层结构，单独存在不代表当前runtime。",
+      "sha256": "b8d76cbab113ad349a9525948773d2bc9b3d3507bd0cba7b3683ffa0cb5975ee"
+    },
+    {
+      "path": "cleanup/nexus/live-inventory.json",
+      "type": "historical-evidence",
+      "purpose": "实际source221 OS/UUID/监督/公开配置SHA及资源。",
+      "sha256": "27d9bb166b423c564ccb6dee81a2c8d943b49a1844eb99ded1c7fe71de731208"
+    },
+    {
+      "path": "17-publish-artifact-consolidation.md",
+      "type": "pending-candidate",
+      "purpose": "目标是未来并入220，验证后才退役221。",
+      "sha256": "18fee32d420f136e6e3849c4e3568562a62677c5c06cc73839513045888344ee"
+    },
+    {
+      "path": "cleanup/nexus/resume-preflight.md",
+      "type": "pending-candidate",
+      "purpose": "硬件恢复后的fresh检查/冷备移盘和监控10→9检查点。",
+      "sha256": "5d6c270b2f2d7927d46e31f60c7e93d8c62317e784d077b86b5e284d2aaa6412"
+    }
+  ],
+  "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."
+}

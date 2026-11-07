@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "machine": {
+    "kind": "pve",
+    "vmid": null,
+    "name": "pve",
+    "ip": "192.168.21.22",
+    "vcpu": 56,
+    "memory_gib": 125
+  },
+  "source_of_truth": "plan.json",
+  "last_verified_at": "2026-11-07T02:35:01+08:00",
+  "current_runtime_verified": false,
+  "status": "paused-awaiting-hardware-repair",
+  "pause_reason": "User paused server work afterUEFI0058 POST memory error; priorSEL DIMM_B1 evidence, repair/online state unverified.",
+  "record_kind": "offline-configuration-contract-not-live-collection",
+  "created_from_local_files_only": true,
+  "configuration_policy": {
+    "secret_config_or_private_keys_in_git": false,
+    "public_runtime_snapshots_copied": false,
+    "reason": "Index proven contracts/receipts; no old10.63 or narrowVPN preview copied as currentruntime. Fresh actual configuration requires hardware recovery and user resume."
+  },
+  "purpose": "DellT630 physical virtualization/storage owner; management and L2bridge only.",
+  "last_successful_operation_at": "2026-11-07T02:44:29+08:00",
+  "last_operation_scope": "Read/synchronize plan only; no Nexusmigration or hostpower operation.",
+  "hardware": {
+    "model": "Dell PowerEdge T630",
+    "CPU_model_historical": "2xIntel XeonE5-2680v4",
+    "physical_cores": 28,
+    "logical_processors": 56,
+    "machine_vcpu_field_basis": "Hostlogicalprocessor count, not an assignedVMvCPU quota.",
+    "machine_memory_gib_basis": "Conservative125GiB planningbudget; effectiveRAM must be measured afterrepair.",
+    "last_OS_observed_memory_GiB_approx": 125.78,
+    "iDRAC_ip": "192.168.21.21",
+    "current_issue": "UEFI0058 uncorrectablememory POSTblock",
+    "prior_SEL_location": "DIMM_B1",
+    "BMC_timezone_verified": false,
+    "exact_failed_component_confirmed": false,
+    "suspects": [
+      "DIMM",
+      "contact",
+      "slot/channel",
+      "memorycontroller"
+    ],
+    "no_F1_powercycle_logclear_or_physicalrepair_performed_by_this_document": true
+  },
+  "network": {
+    "management": {
+      "interface": "vmbr0",
+      "address": "192.168.21.22/24",
+      "physical_port": "eno1",
+      "default_gateway": "192.168.21.1",
+      "TCP_ports": [
+        22,
+        8006
+      ]
+    },
+    "server_bridge": {
+      "name": "vmbr19",
+      "host_IPv4": [],
+      "host_IPv6": [],
+      "physical_ports": []
+    },
+    "host_client_route": "192.168.19.0/24 via192.168.21.23 devvmbr0 source192.168.21.22",
+    "host_IPv4_forward": false,
+    "host_IPv6_and_per_interface_forward": false,
+    "host_application_NAT": false,
+    "remaining_filter_table": "bridge dell19_acl",
+    "L2_enforcement": "exact virtualport/MAC/IP binding and roleACL; same19 traffic does not cross router.",
+    "old_internal_bridges_retired": [
+      "vmbr10",
+      "vmbr20",
+      "vmbr30",
+      "vmbr40"
+    ],
+    "old_loader": "dell-network.service masked",
+    "VPN_access_contract": {
+      "source": "10.66.66.0/24",
+      "destination": "192.168.19.0/24",
+      "protocols": "all valid IPv4",
+      "gateway_local_addresses": [
+        "192.168.21.23",
+        "192.168.19.1"
+      ],
+      "no_NAT": true,
+      "service_authentication": "unchanged",
+      "guest_role_isolation": "unchanged",
+      "NAS_trusted_source_added": true,
+      "remote_MacAir_batch_user_confirmed": true,
+      "evidence": "network19/wireguard/full-access-verification.json"
+    }
+  },
+  "storage": {
+    "owner": "PVE/H730; never passthrough already-mounted devices toNAS",
+    "controller": "DellPERC H730",
+    "historical_arrays": [
+      {
+        "media": "SSD",
+        "RAID": "RAID1"
+      },
+      {
+        "media": "HDD",
+        "RAID": "RAID5"
+      }
+    ],
+    "last_direct_controller_check": "2026-11-06T05:17:13+08:00",
+    "controller_state_at_that_check": "Optimal; earlierHDDslot32:3rebuild completed",
+    "current_controller_and_filesystem_state": "unverified-after-memory-error",
+    "host_storages": [
+      "local",
+      "local-lvm",
+      "store"
+    ],
+    "do_not_format_or_recreate_arrays": true
+  },
+  "deployment_snapshot": {
+    "at": "2026-11-07T02:35:01+08:00",
+    "running_instances": 12,
+    "VMs": 11,
+    "LXC": 1,
+    "stopped_templates": [
+      9001,
+      9010,
+      9011
+    ],
+    "allocated_vCPU": 43,
+    "allocated_memory_GiB": 85,
+    "monitoring_targets_then": 15,
+    "live_UP_now_claimed": false
+  },
+  "access": {
+    "SSH_user": "root",
+    "client_key_path_reference_only": "~/.ssh/yang_local_rsa",
+    "strict_host_key_checking": true,
+    "private_key_copied": false,
+    "fish_installed_on_host": false
+  },
+  "resume_gate": [
+    "User completes hardware assessment/repair and explicitly resumes serverwork.",
+    "PreserveSEL/Lifecycle and verifyPOST/memorydiagnostics/effectivecapacity.",
+    "Then freshtrusted hardware/RAID/filesystem/network/service validation; no oldNATfallback."
+  ]
+}

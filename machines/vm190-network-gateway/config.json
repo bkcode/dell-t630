@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "machine": {
+    "kind": "vm",
+    "vmid": 190,
+    "name": "network-gateway",
+    "ip": "192.168.19.1",
+    "vcpu": 2,
+    "memory_gib": 0.5
+  },
+  "source_of_truth": "plan.json",
+  "last_verified_at": "2026-11-07T02:35:01+08:00",
+  "current_runtime_verified": false,
+  "status": "paused-awaiting-hardware-repair",
+  "pause_reason": "User paused server work afterUEFI0058 POST memory error; priorSEL DIMM_B1 evidence, repair/online state unverified.",
+  "record_kind": "offline-configuration-contract-not-live-collection",
+  "created_from_local_files_only": true,
+  "configuration_policy": {
+    "secret_config_or_private_keys_in_git": false,
+    "public_runtime_snapshots_copied": false,
+    "reason": "Index proven contracts/receipts; no old10.63 or narrowVPN preview copied as currentruntime. Fresh actual configuration requires hardware recovery and user resume."
+  },
+  "source_role_pointer": "/roles/11",
+  "purpose": "Dedicated no-NAT server19 router,DNS,DHCP/firewall; PVEhostdoesnotroute.",
+  "OS_contract": "DebianGNU/Linux13 amd64 LinuxBase baseline",
+  "network": {
+    "WAN": {
+      "bridge": "vmbr0",
+      "MAC": "02:63:19:01:90:00",
+      "address": "192.168.21.23/24",
+      "observed_interface_name": "eth0",
+      "gateway": "192.168.21.1"
+    },
+    "LAN": {
+      "bridge": "vmbr19",
+      "MAC": "02:63:19:01:90:01",
+      "address": "192.168.19.1/24",
+      "observed_interface_name": "eth1"
+    },
+    "interfaces_bound_by": "MAC, not assumedeth naming",
+    "management_ip": "192.168.21.23",
+    "IPv4_forward": true,
+    "NAT": false,
+    "WAN_LAN_IPv6_disabled": true,
+    "loopback_IPv6_kept": true,
+    "OpenWrt_return_route": "192.168.19.0/24 via192.168.21.23",
+    "WireGuard_trusted_access": {
+      "source": "10.66.66.0/24",
+      "destination": "192.168.19.0/24",
+      "protocols": "all valid IPv4",
+      "gateway_local_addresses": [
+        "192.168.21.23",
+        "192.168.19.1"
+      ],
+      "no_NAT": true,
+      "service_authentication": "unchanged",
+      "guest_role_isolation": "unchanged",
+      "NAS_trusted_source_added": true,
+      "remote_MacAir_batch_user_confirmed": true,
+      "evidence": "network19/wireguard/full-access-verification.json"
+    },
+    "WireGuard_termination": "OpenWrt; thisVMenforcestrusted-source access, not peerkeys",
+    "same_subnet_limit": "peer19/24 frames bypass router; PVEbridgeACLremainsrequired"
+  },
+  "storage": {
+    "system_storage": "store",
+    "system_disk_gib": 32,
+    "provisioning": "32GiB thin/sparse fullclone9010; no templateshrink",
+    "current_storage_readback_pending": true
+  },
+  "services": {
+    "firewall_unit": "dell-gateway19-firewall.service",
+    "ready_unit": "dell-gateway19-ready.service",
+    "DNS_DHCP_unit": "dell-gateway19-dnsmasq.service",
+    "nft_table": "inet dell_gateway19",
+    "default_input_forward_policy": "drop",
+    "SSH_authentication": "publickey-only; serviceaccounts/authorization stillapply"
+  },
+  "dns": {
+    "listen_address": "192.168.19.1",
+    "listen_protocols": [
+      "UDP53",
+      "TCP53"
+    ],
+    "upstream": "192.168.21.1",
+    "domain": "dell.home.arpa",
+    "static_records": [
+      {
+        "role": "cf-tunnel",
+        "address": "192.168.19.5"
+      },
+      {
+        "role": "data-prod-db",
+        "address": "192.168.19.10"
+      },
+      {
+        "role": "data-prod-infra",
+        "address": "192.168.19.11"
+      },
+      {
+        "role": "data-test",
+        "address": "192.168.19.20"
+      },
+      {
+        "role": "publish-service",
+        "address": "192.168.19.30"
+      },
+      {
+        "role": "artifact-service",
+        "address": "192.168.19.31"
+      },
+      {
+        "role": "java-prod-01",
+        "address": "192.168.19.40"
+      },
+      {
+        "role": "java-test-01",
+        "address": "192.168.19.45"
+      },
+      {
+        "role": "penpot-service",
+        "address": "192.168.19.50"
+      },
+      {
+        "role": "nas-media",
+        "address": "192.168.19.60"
+      },
+      {
+        "role": "ops-service",
+        "address": "192.168.19.70"
+      }
+    ],
+    "last_DNS_cleanup_verified_at": "2026-11-07T02:31:51+08:00",
+    "retained_records_verified_UDP_TCP": 11,
+    "retired_names_verified_NXDOMAIN_UDP_TCP": 11,
+    "old_records_removed": 11,
+    "nonDNS_options_preserved": true,
+    "Nexus_record_owner_current": "artifact-service19.31 remainsVM221; no220aliascommit"
+  },
+  "dhcp": {
+    "LAN_only": true,
+    "WAN_service_not_added": true,
+    "pool_start": "192.168.19.200",
+    "pool_end": "192.168.19.239",
+    "lease_duration": "1h",
+    "max_leases": 40,
+    "option_router": "192.168.19.1",
+    "option_DNS": "192.168.19.1",
+    "lease_file": "/var/lib/misc/dnsmasq.leases",
+    "lease_contents_not_copied": true
+  },
+  "startup_order": {
+    "vmid": 190,
+    "order": 1,
+    "up_seconds": 30,
+    "down_seconds": 120
+  },
+  "access": {
+    "SSH_user": "ub",
+    "client_key_path_reference_only": "~/.ssh/yang_local_rsa",
+    "host_key_alias": "dell-gw190",
+    "strict_host_key_checking": true,
+    "fish": {
+      "installed_by_this_task": true,
+      "version": "4.0.2-1",
+      "default_login_shell_changed": false
+    },
+    "default_root_ub_shell": "/bin/bash",
+    "private_keys_or_WG_peerkeys_in_this_directory": false
+  },
+  "limitations": [
+    "No fresh runtimeverification whilehostPOST isblocked.",
+    "No raw firewall/runtimeexport copied; oldnarrowWG/pre-cleanupDNSpreviews are not currentconfig.",
+    "Remote userbatchconfirmed9HTTPentries; exactremoteHTTPcodes/SMB/SSHauthnot separately supplied.",
+    "Nexusmerge authorization ismet buthardwarepause prevents execution; do notchangeDNS/IPownership yet."
+  ]
+}

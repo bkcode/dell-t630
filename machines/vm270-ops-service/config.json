@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "machine": {
+    "kind": "vm",
+    "vmid": 270,
+    "name": "ops-service",
+    "ip": "192.168.19.70",
+    "vcpu": 2,
+    "memory_gib": 4
+  },
+  "source_of_truth": "plan.json",
+  "last_verified_at": "2026-11-07T02:35:01+08:00",
+  "current_runtime_verified": false,
+  "status": "paused-awaiting-hardware-repair",
+  "verification_note": "2026-11-07 02:35最后成功验收；当前UEFI0058/DIMM_B1暂停，未复验live。",
+  "network": {
+    "bridge": "vmbr19",
+    "prefix_length": 24,
+    "gateway": "192.168.19.1",
+    "DNS": "192.168.19.1",
+    "additional_ips": []
+  },
+  "storage": {
+    "system_storage": "store",
+    "data_storage": "store",
+    "data_disk_gib": 32,
+    "guest_mountpoint": "/srv/dell-data",
+    "data_filesystem_uuid": "01b1f302-27be-4fbd-b4af-b8e782d85dea"
+  },
+  "startup_order": {
+    "vmid": 270,
+    "order": 20,
+    "up_seconds": 30,
+    "down_seconds": 60
+  },
+  "software": {
+    "OS": "Debian GNU/Linux 13 amd64",
+    "Docker": {
+      "engine": "29.9.3",
+      "compose": "5.7.0",
+      "storage_driver": "overlay2",
+      "mode": "four-service-mount-gated-supervision-plus-native-Lark"
+    },
+    "fish": {
+      "installed_by_this_task": false,
+      "version": "excluded-unchanged",
+      "default_login_shell_changed": false
+    }
+  },
+  "services": [
+    {
+      "name": "Ops-supervisor",
+      "kind": "systemd",
+      "unit": "dell-ops.service",
+      "compose_guest_paths": [
+        "/opt/dell/ops/compose.yaml"
+      ],
+      "containers_expected": 4,
+      "container_restart": "no"
+    },
+    {
+      "name": "Lark-native-bridge",
+      "kind": "systemd",
+      "unit": "dell-lark-notify.service",
+      "credential_delivery": "LoadCredential only; values excluded"
+    }
+  ],
+  "boundaries": {
+    "credential_values_in_this_directory": false,
+    "private_files_copied": false,
+    "no_publisher_key_export_or_wholebackup220": true,
+    "CF_backup_PVE_only": true,
+    "Docker_on_PVE_host": false
+  },
+  "monitoring": {
+    "last_verified_guest_nodes": 10,
+    "last_verified_other_ops_targets": 5,
+    "last_verified_total_UP": 15,
+    "Nexus221_still_registered": true,
+    "server_internal_Lark": "active-at-last-verified",
+    "Mac_external_probe": "disabled-user-deferred"
+  }
+}

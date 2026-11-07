@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "path": "plan.json",
+      "type": "current-contract",
+      "purpose": "保留模板名称、用途与卫生约束；不等同当前运行状态",
+      "sha256": "023ed7a0237f4ac0862ac97fcc4c34d4808b2e9d942efa6b455e748e94ca0703"
+    },
+    {
+      "path": "cleanup/initial-PVE-readonly.json",
+      "type": "historical-evidence",
+      "purpose": "02:35综合验收前的PVE资源盘点，2vCPU/2GiB与停止模板记录",
+      "sha256": "caeefae4bdf77fc77900b7b0528cd28d8635b31e372a4c778e6745f3dc449243"
+    },
+    {
+      "path": "cleanup/fish/core-template-replacement.json",
+      "type": "historical-evidence",
+      "purpose": "三模板fish换版、停止封存与通用DHCP metadata核验",
+      "sha256": "6ea031715f7f544a8fae7c72c10f50f15037d469dd60922c6a84aab5b0c81133"
+    },
+    {
+      "path": "cleanup/fish/template-QA-summary.json",
+      "type": "historical-evidence",
+      "purpose": "独立clone机器身份/hostkey与fish验收",
+      "sha256": "c2f08822e0421ae24a3ed6d3b5076904594a25afd6b65e81cd197bbf6ba64d3c"
+    },
+    {
+      "path": "03-templates-and-access.md",
+      "type": "current-contract",
+      "purpose": "模板、访问与克隆职责边界",
+      "sha256": "8a43f96a2eb0b143efdca1338f90c937a9f8e68b273bcbaebba45d47d1c2fcbc"
+    },
+    {
+      "path": "19-manual-operations.md",
+      "type": "current-contract",
+      "purpose": "人工操作、克隆前置与禁止重复初始化",
+      "sha256": "717488c3042e9e1777ee3e94d756ccd8ba5f99ea0b17a43c10da22e942e83599"
+    },
+    {
+      "path": "network19/java-template/README.md",
+      "type": "current-contract",
+      "purpose": "原通用Java验收模板合同，fish更新以cleanup证据为准",
+      "sha256": "54af929293c64c1c8dfa0ce29de03f16e9989fa9a2668596c36446a414accfdd"
+    },
+    {
+      "path": "network19/java-template/verify.py",
+      "type": "current-contract",
+      "purpose": "模板内无业务的非root基础验收脚本",
+      "snapshot_path": "configs/java-acceptance-verify.py",
+      "source_sha256": "20bc24ce5ceb8258149a11ec28059d2d0b2f3f9b1e58178e9d6e6f8b26736814",
+      "sha256": "20bc24ce5ceb8258149a11ec28059d2d0b2f3f9b1e58178e9d6e6f8b26736814"
+    },
+    {
+      "path": "network19/java-template/clone-evidence.json",
+      "type": "historical-evidence",
+      "purpose": "专用完整clone JDK/身份隔离验收",
+      "sha256": "7ed9af782537073e43c39dcf0243a29ad2e7df0e099db18c7df38345fd683c8f"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "scope": "offline current-contract references and timestamped historical evidence; no remote export",
+  "entries": [
+    {
+      "path": "plan.json",
+      "type": "current-contract",
+      "purpose": "资源/IP/角色唯一规划；当前hardwarepause字段优先，不作实时探测。",
+      "sha256": "023ed7a0237f4ac0862ac97fcc4c34d4808b2e9d942efa6b455e748e94ca0703"
+    },
+    {
+      "path": "AGENTS.md",
+      "type": "current-contract",
+      "purpose": "用户暂停与秘密/操作边界。",
+      "sha256": "092764a24bcedd354d9bedfdd887247c23adba8bd2765d38c87cc2091f952159"
+    },
+    {
+      "path": "11-live-handoff.md",
+      "type": "current-contract",
+      "purpose": "最后02:35快照、当前UEFI0058暂停及恢复门禁。",
+      "sha256": "0da10943e1b39845dafa76e58161982e0eac9a9c7747c849eec21977084cadc2"
+    },
+    {
+      "path": "19-manual-operations.md",
+      "type": "current-contract",
+      "purpose": "恢复后人工操作合同，当前不能执行其中远程命令。",
+      "sha256": "717488c3042e9e1777ee3e94d756ccd8ba5f99ea0b17a43c10da22e942e83599"
+    },
+    {
+      "path": "cleanup/final-live-check.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-07 02:35最后综合验收；其中Nexus待授权是当时状态，现授权已满足但未执行。",
+      "sha256": "0832ce1e4a762c9423aded25a286a06ccaeda866e5829d28a0d1d8befdd1f999"
+    },
+    {
+      "path": "12-service-access-and-operations.md",
+      "type": "current-contract",
+      "purpose": "CF/备份/凭据位置与当前暂停边界。",
+      "sha256": "ad845beb1290754fdc647642507d996f999c2646639406ea35211bd58b29fc29"
+    },
+    {
+      "path": "network19/evidence/CF-network-move.json",
+      "type": "historical-evidence",
+      "purpose": "19网迁移及受控重启、原含token服务字节保持，不含token。",
+      "sha256": "6394d279a5ea3e4a68eb8e5e08b96868f29598411079e4bdaefbe3607d68d058"
+    },
+    {
+      "path": "network19/evidence/CF-post-fakeIP-check.json",
+      "type": "historical-evidence",
+      "purpose": "旧注册事件/服务元数据；不能当公网源站全通。",
+      "sha256": "67fc66c2b951aee6c0376e96838c09a04d80fe60664867b80c3c26dccbad8f24"
+    },
+    {
+      "path": "network19/evidence/final-live-network-identity.json",
+      "type": "historical-evidence",
+      "purpose": "更早CF19.5/localready200/2连接；全14角色字段属该时点。",
+      "sha256": "e1cf0007ec27d178540ea463b568a307a9d28f06a1be432af29f8c529bdf8845"
+    },
+    {
+      "path": "network19/evidence/CF-origin-after-restart-metadata.json",
+      "type": "historical-evidence",
+      "purpose": "retained日志未获得remoteconfig，origin仍未知。",
+      "sha256": "eeeb034c3eb2ac82a8e02120433e330412760bed960998f2c6fe59e81cfc4170"
+    },
+    {
+      "path": "evidence/implementation/cf-local-backup-metadata.json",
+      "type": "historical-evidence",
+      "purpose": "PVE-only受保护archive路径元数据，绝不复制payload/token。",
+      "sha256": "49ac3db2e0f0f0b532d38aefbc9f4b0573d41e12951723ef7ee34c42224913e9"
+    },
+    {
+      "path": "cleanup/audit/pve-storage-inventory.json",
+      "type": "historical-evidence",
+      "purpose": "CFrootfs4GiB/ostype等白名单元数据，不读取容器用户数据。",
+      "sha256": "f07fc5a13f73f880bcbe690b4b98f79d81eed8a46ec069feb8796774ddd17b2d"
+    }
+  ]
+}

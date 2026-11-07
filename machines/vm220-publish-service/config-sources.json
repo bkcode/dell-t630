@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "path_base": "repository-root",
+  "entries": [
+    {
+      "path": "plan.json",
+      "type": "current-contract",
+      "purpose": "当前资源/地址/数据卷合同唯一来源；运行状态未在硬件故障后复验。",
+      "sha256": "023ed7a0237f4ac0862ac97fcc4c34d4808b2e9d942efa6b455e748e94ca0703"
+    },
+    {
+      "path": "11-live-handoff.md",
+      "type": "current-contract",
+      "purpose": "最后验收与当前UEFI0058暂停时间线。",
+      "sha256": "0da10943e1b39845dafa76e58161982e0eac9a9c7747c849eec21977084cadc2"
+    },
+    {
+      "path": "12-service-access-and-operations.md",
+      "type": "current-contract",
+      "purpose": "当前19网入口及凭据保管规则。",
+      "sha256": "ad845beb1290754fdc647642507d996f999c2646639406ea35211bd58b29fc29"
+    },
+    {
+      "path": "19-manual-operations.md",
+      "type": "current-contract",
+      "purpose": "人工启停、硬件门禁、克隆、备份与受控恢复。",
+      "sha256": "717488c3042e9e1777ee3e94d756ccd8ba5f99ea0b17a43c10da22e942e83599"
+    },
+    {
+      "path": "cleanup/final-live-check.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-07 02:35综合验收快照，不代表当前在线。",
+      "sha256": "0832ce1e4a762c9423aded25a286a06ccaeda866e5829d28a0d1d8befdd1f999"
+    },
+    {
+      "path": "infra/publisher/README.md",
+      "type": "current-contract",
+      "purpose": "发布受限权限合同；实际安装以deployed和已读回SHA为准。",
+      "sha256": "5feb89d775c252d63ae238dd403bc152955c2fcf82a378a582b800b09585f1d0"
+    },
+    {
+      "path": "cleanup/nexus/docker220-prepare-result.json",
+      "type": "historical-evidence",
+      "purpose": "220经典Docker软件准备成功，0containers/无Nexus/无alias31。",
+      "sha256": "216284630f9686402e8deb628cf8dc3dc6a1b22b3d37b43b3e1aaac6d4ab210a"
+    },
+    {
+      "path": "cleanup/nexus/preparation-readback.json",
+      "type": "historical-evidence",
+      "purpose": "实际public文件SHA、standby模式布尔、发布key仅stat。",
+      "sha256": "73f0b84ee90ce995d7307bebec475a8bebdb8d31868e94c3824f5328bd7df906"
+    },
+    {
+      "path": "network19/services-core/publisher220-key-hostalias-final-readback.json",
+      "type": "historical-evidence",
+      "purpose": "19.30来源/19.45目标及受信key合同迁网读回，不是业务发布许可。",
+      "sha256": "430945e11ed3392278310095ef8693efa10bca22f8ffe484ff48c7d66d161cfc"
+    },
+    {
+      "path": "17-publish-artifact-consolidation.md",
+      "type": "pending-candidate",
+      "purpose": "合并目标6CPU8GiB+服务alias31；尚未移交。",
+      "sha256": "18fee32d420f136e6e3849c4e3568562a62677c5c06cc73839513045888344ee"
+    },
+    {
+      "path": "cleanup/nexus/PLAN.md",
+      "type": "pending-candidate",
+      "purpose": "未来冷备/唯一盘/网络alias/应用切换计划。",
+      "sha256": "13d9ee16d8180276c656076618fa526399325e6570e87e9aac5029fcee9bb7d3"
+    },
+    {
+      "path": "cleanup/nexus/target.py",
+      "type": "pending-candidate",
+      "purpose": "后续应用执行器，不能把已有standby阶段当已完成合并。",
+      "sha256": "09b87a31f78dc60af86913d3ec02d11a10bc8206837c3cf2376a142f46736756"
+    }
+  ],
+  "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."
+}

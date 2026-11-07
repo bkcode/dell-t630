@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "machine": {
+    "kind": "vm",
+    "vmid": 260,
+    "name": "nas-media",
+    "ip": "192.168.19.60",
+    "vcpu": 4,
+    "memory_gib": 4
+  },
+  "source_of_truth": "plan.json",
+  "last_verified_at": "2026-11-07T02:35:01+08:00",
+  "current_runtime_verified": false,
+  "status": "paused-awaiting-hardware-repair",
+  "verification_note": "2026-11-07 02:35最后成功验收；当前UEFI0058/DIMM_B1暂停，未复验live。",
+  "network": {
+    "bridge": "vmbr19",
+    "prefix_length": 24,
+    "gateway": "192.168.19.1",
+    "DNS": "192.168.19.1",
+    "additional_ips": []
+  },
+  "storage": {
+    "system_storage": "store",
+    "data_storage": "store",
+    "data_disk_gib": 2048,
+    "guest_mountpoint": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a",
+    "data_filesystem_uuid": "5b19837c-128c-498a-b79d-563db810c34a"
+  },
+  "startup_order": {
+    "vmid": 260,
+    "order": 50,
+    "up_seconds": 30,
+    "down_seconds": 120
+  },
+  "software": {
+    "OS": "Debian GNU/Linux 13 amd64",
+    "Docker": {
+      "engine": "29.9.3",
+      "compose": "5.7.0",
+      "storage_driver": "overlayfs",
+      "mode": "original-observed-NAS-driver-preserved-not-switched-to-overlay2"
+    },
+    "fish": {
+      "installed_by_this_task": true,
+      "version": "4.0.2-1",
+      "default_login_shell_changed": false
+    }
+  },
+  "services": [
+    {
+      "name": "Jellyfin",
+      "kind": "systemd",
+      "unit": "dell-nas-jellyfin.service",
+      "compose_guest_paths": [
+        "/opt/dell/nas/compose.yaml"
+      ],
+      "containers": [
+        "dell-nas-jellyfin-1"
+      ],
+      "container_restart": "no"
+    },
+    {
+      "name": "OMV",
+      "kind": "systemd",
+      "units": [
+        "openmediavault-engined.service",
+        "nginx.service"
+      ]
+    },
+    {
+      "name": "SMB",
+      "kind": "systemd",
+      "unit": "smbd.service",
+      "configuration_owner": "OMV official RPC/Salt"
+    }
+  ],
+  "boundaries": {
+    "credential_values_in_this_directory": false,
+    "private_files_copied": false,
+    "no_publisher_key_export_or_wholebackup220": true,
+    "CF_backup_PVE_only": true,
+    "Docker_on_PVE_host": false
+  },
+  "nas_contract": {
+    "shares": [
+      "media",
+      "games",
+      "incoming"
+    ],
+    "Jellyfin_media_readonly": true,
+    "Jellyfin_remote_access": false,
+    "UPnP": false,
+    "trusted_VPN": "10.66.66.0/24"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "path_base": "repository-root",
+  "entries": [
+    {
+      "path": "plan.json",
+      "type": "current-contract",
+      "purpose": "当前资源/地址/数据卷合同唯一来源；运行状态未在硬件故障后复验。",
+      "sha256": "023ed7a0237f4ac0862ac97fcc4c34d4808b2e9d942efa6b455e748e94ca0703"
+    },
+    {
+      "path": "11-live-handoff.md",
+      "type": "current-contract",
+      "purpose": "最后验收与当前UEFI0058暂停时间线。",
+      "sha256": "0da10943e1b39845dafa76e58161982e0eac9a9c7747c849eec21977084cadc2"
+    },
+    {
+      "path": "12-service-access-and-operations.md",
+      "type": "current-contract",
+      "purpose": "当前19网入口及凭据保管规则。",
+      "sha256": "ad845beb1290754fdc647642507d996f999c2646639406ea35211bd58b29fc29"
+    },
+    {
+      "path": "19-manual-operations.md",
+      "type": "current-contract",
+      "purpose": "人工启停、硬件门禁、克隆、备份与受控恢复。",
+      "sha256": "717488c3042e9e1777ee3e94d756ccd8ba5f99ea0b17a43c10da22e942e83599"
+    },
+    {
+      "path": "cleanup/final-live-check.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-07 02:35综合验收快照，不代表当前在线。",
+      "sha256": "0832ce1e4a762c9423aded25a286a06ccaeda866e5829d28a0d1d8befdd1f999"
+    },
+    {
+      "path": "network19/services-media/penpot-post-cutover-verification.json",
+      "type": "historical-evidence",
+      "purpose": "19.50新origin/Git/3设计/973媒体/原身份/MCP只读和既有job实测。",
+      "sha256": "8a6688363a03332861b793730fbbe6e181dc2700926a74187da7e6d08e8922d6"
+    },
+    {
+      "path": "infra/penpot/runtime/health-supervision/README.md",
+      "type": "current-contract",
+      "purpose": "notify持续监督、11健康、镜像ID和受控恢复边界。",
+      "sha256": "9af229a0dafd723da0a53226fd0cf88c1a37ab98950dd443a785f4d6c9c88665"
+    },
+    {
+      "path": "infra/penpot/runtime/health-supervision/evidence/final-runtime-contract.json",
+      "type": "historical-evidence",
+      "purpose": "11服务资源/镜像/健康合同读回，时间限于证据点。",
+      "sha256": "ee6632fc9f9032136bf06ac5bd70d3ad7e15ab357fb6c3f322189c29f8dfc752"
+    },
+    {
+      "path": "network19/services-media/PLAN.md",
+      "type": "historical-evidence",
+      "purpose": "已执行迁网差异与原source文件说明；不重新执行旧stage/commit。",
+      "sha256": "1c986a38c987c1774f5c0b588363dcf9f4f85a37ce0d4c5cc2381c3fb618b5f0"
+    },
+    {
+      "path": "infra/penpot/compose.fresh.yaml",
+      "type": "historical-evidence",
+      "purpose": "初装结构参考，含旧公开BIND/DoH；不能当作19.50现役完整文件复制部署。",
+      "sha256": "9aca0e47e83508c517e1299f33afcfb435da70ab4c1a45ed8fbe8deb96d28db9"
+    },
+    {
+      "path": "infra/penpot/runtime/logging/README.md",
+      "type": "current-contract",
+      "purpose": "MCP query-safe日志规则与不削弱认证的限制。",
+      "sha256": "df0c21f0380e88c7bb132aa36e626f983c3b23c356eec190343019b7f9a3f702"
+    }
+  ],
+  "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."
+}

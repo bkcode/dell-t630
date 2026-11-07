@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "scope": "offline current-contract references and timestamped historical evidence; no remote export",
+  "entries": [
+    {
+      "path": "plan.json",
+      "type": "current-contract",
+      "purpose": "资源/IP/角色唯一规划；当前hardwarepause字段优先，不作实时探测。",
+      "sha256": "023ed7a0237f4ac0862ac97fcc4c34d4808b2e9d942efa6b455e748e94ca0703"
+    },
+    {
+      "path": "AGENTS.md",
+      "type": "current-contract",
+      "purpose": "用户暂停与秘密/操作边界。",
+      "sha256": "092764a24bcedd354d9bedfdd887247c23adba8bd2765d38c87cc2091f952159"
+    },
+    {
+      "path": "11-live-handoff.md",
+      "type": "current-contract",
+      "purpose": "最后02:35快照、当前UEFI0058暂停及恢复门禁。",
+      "sha256": "0da10943e1b39845dafa76e58161982e0eac9a9c7747c849eec21977084cadc2"
+    },
+    {
+      "path": "19-manual-operations.md",
+      "type": "current-contract",
+      "purpose": "恢复后人工操作合同，当前不能执行其中远程命令。",
+      "sha256": "717488c3042e9e1777ee3e94d756ccd8ba5f99ea0b17a43c10da22e942e83599"
+    },
+    {
+      "path": "cleanup/final-live-check.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-07 02:35最后综合验收；其中Nexus待授权是当时状态，现授权已满足但未执行。",
+      "sha256": "0832ce1e4a762c9423aded25a286a06ccaeda866e5829d28a0d1d8befdd1f999"
+    },
+    {
+      "path": "08-hardware-findings.md",
+      "type": "current-contract",
+      "purpose": "B1/UEFI0058证据强度、历史RAID与当前未复验的区别。",
+      "sha256": "cc38a026cacb5894fcc901c7ce9142da2578651a263b1b253b713410283b4b78"
+    },
+    {
+      "path": "15-network19-delivery.md",
+      "type": "current-contract",
+      "purpose": "PVE只管理/L2、全VPN/19网络合同。",
+      "sha256": "4f0202adb95311d321cef274890a195e53276dd8c0be001cf2ca7e3b43a0414a"
+    },
+    {
+      "path": "cleanup/hardware/DIMM_B1-incident.json",
+      "type": "historical-evidence",
+      "purpose": "用户iDRAC/POST截图本地整理，不是新远程采样。",
+      "sha256": "aeaa61c93d796b61b1730f22988cde2f3ecc7afe50f861c1d6b528022c9a53fb"
+    },
+    {
+      "path": "cleanup/hardware/resume-connectivity-20261107.json",
+      "type": "historical-evidence",
+      "purpose": "故障后连接失败记录；本目录未再次连接。",
+      "sha256": "d2e2ff3c25871b2ddd6f348522a56b22be56dc3cd881d7a166e3b0efa75520b1"
+    },
+    {
+      "path": "cleanup/PVE-plan-synced.json",
+      "type": "historical-evidence",
+      "purpose": "02:44:29最后规划同步，未改变运行态。",
+      "sha256": "4d295bd6b50ffd6d3f5688940ddf79f2ced2296795061f9851bc8cc98fdc5649"
+    },
+    {
+      "path": "network19/evidence/host-management-only-retirement.json",
+      "type": "historical-evidence",
+      "purpose": "旧桥/NAT退出与forward0实际收据。",
+      "sha256": "961dccfc9938e7c1758e75727a092a6e324ee3dae164cd5f0b85f5f22509252b"
+    },
+    {
+      "path": "evidence/implementation/raid-recovered.json",
+      "type": "historical-evidence",
+      "purpose": "11月6日05:17控制器Optimal恢复记录，不能冒称故障后当前健康。",
+      "sha256": "fde59f9405e734211b89615413e25fd73aec4d1769694d70a3eec3c34696ae2f"
+    },
+    {
+      "path": "cleanup/audit/pve-storage-inventory.json",
+      "type": "historical-evidence",
+      "purpose": "01:04宿主FSUUID/存储元数据；含已清对象历史不作当前运行清单。",
+      "sha256": "f07fc5a13f73f880bcbe690b4b98f79d81eed8a46ec069feb8796774ddd17b2d"
+    }
+  ]
+}

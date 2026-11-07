@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import os
 import hashlib
+import importlib.util
 import json
 import re
 from pathlib import Path
@@ -16,7 +17,8 @@ REQUIRED = [
     '11-live-handoff.md', '12-service-access-and-operations.md', '01-current-state.md', '02-architecture.md',
     '03-templates-and-access.md', '04-services-and-migration.md', '05-home-nas.md',
     '06-acceptance.md', '07-implementation-and-tasks.md', 'plan.json',
-    'acceptance.json', 'tasks.json', 'evidence/pve-audit-2026-11-05.json',
+    'acceptance.json', 'tasks.json', 'machines/README.md', 'machines/index.json',
+    'scripts/validate_machines.py', 'evidence/pve-audit-2026-11-05.json',
     'evidence/document-verification.md', 'evidence/local-services-2026-11-05.json',
 ]
 
@@ -257,6 +259,17 @@ def validate() -> dict:
             errors.append(f'Private key material in {file.relative_to(ROOT)}')
         if re.search(r'(?:ssh-rsa|ssh-ed25519)\s+AAAA[A-Za-z0-9+/=]{30,}', content):
             errors.append(f'Unexpected public key material in {file.relative_to(ROOT)}')
+    if (ROOT / 'machines/index.json').is_file():
+        try:
+            spec = importlib.util.spec_from_file_location('dell_machine_validator', ROOT / 'scripts/validate_machines.py')
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            machine_result = module.validate()
+            errors.extend('Machine directory: ' + message for message in machine_result['errors'])
+            stats['machine_directory_validation'] = machine_result['status']
+            stats['machine_directories'] = machine_result['stats']['machine_directories']
+        except (OSError, ValueError, KeyError, TypeError) as exc:
+            errors.append('Cannot validate machine directories: ' + str(exc))
     stats.update(local_links_checked=local_links, external_links_listed=len(external_links))
     warnings.append('External URL availability is not tested by this offline validator')
     return {'status': 'passed' if not errors else 'failed', 'scope': 'local-document-validation-only',

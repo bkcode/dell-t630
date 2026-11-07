@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "machine": {
+    "kind": "template",
+    "vmid": 9010,
+    "name": "tpl-linux-base",
+    "ip": null,
+    "vcpu": 2,
+    "memory_gib": 2
+  },
+  "source_of_truth": "plan.json",
+  "last_verified_at": "2026-11-07T02:35:01+08:00",
+  "current_runtime_verified": false,
+  "status": "template-stopped-last-verified",
+  "inventory_scope": "Retained template in last successful PVE inventory; clone QA is historical evidence, not a new live check.",
+  "role_contract": {
+    "name": "tpl-linux-base",
+    "status": "created-and-clone-verified",
+    "purpose": "Linux + Cloud-Init + qemu-guest-agent + baseline operations; no credentials or business data",
+    "vmid": 9010,
+    "os": "Debian GNU/Linux 13 amd64",
+    "fish": "4.0.2-1",
+    "default_login_shell": "/bin/bash",
+    "fish_QA_evidence": "cleanup/fish/template-QA-summary.json",
+    "image_update_evidence": "cleanup/fish/core-template-replacement.json"
+  },
+  "network": {
+    "bridge": "vmbr19",
+    "address_mode": "Cloud-Init DHCP; no persistent service IP assigned to template",
+    "clone_requirements": [
+      "allocate unique VMID/hostname/MAC/IP",
+      "register MAC/IP role ACL before approved service use",
+      "new machine-id/SSH host keys per clone",
+      "gateway and DNS192.168.19.1"
+    ]
+  },
+  "access": {
+    "admin_user": "ub",
+    "private_key_material_in_template": false,
+    "public_key_policy": "only approved administrative public key provisioning; no keys stored in this directory"
+  },
+  "operations": {
+    "boot_as_service": false,
+    "fish": "4.0.2-1",
+    "default_login_shell": "/bin/bash",
+    "business_apps_configs_credentials": false,
+    "prohibited": [
+      "boot template as ordinary service VM",
+      "reuse prior QA identity",
+      "cloud-init clean or delete host keys on existing service VM"
+    ]
+  }
+}

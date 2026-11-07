@@ -1,0 +1,48 @@
+{
+  "at": "2026-11-07T12:44:54.816033+08:00",
+  "scope": "offline-machine-directory-organization",
+  "status": "passed",
+  "server_connections": false,
+  "runtime_or_secrets_exported": false,
+  "existing_server_plan_roles_changed": false,
+  "machine_validation": {
+    "status": "passed",
+    "scope": "offline-per-machine-contracts-only",
+    "stats": {
+      "machine_directories": 16,
+      "guest_records": 12,
+      "template_records": 3,
+      "source_references": 194,
+      "snapshot_copies": 1
+    },
+    "errors": [],
+    "limitations": [
+      "No live SSH or configuration export",
+      "Source files may be historical or pending; respect classification",
+      "Private deployment credentials and archives are intentionally absent"
+    ]
+  },
+  "independent_public_copy": {
+    "status": "passed",
+    "private_present": false,
+    "files_copied": 1700,
+    "links_checked": 868
+  },
+  "negative_cases_passed": [
+    "resource drift rejected",
+    "offline live-success claim rejected",
+    "data UUID drift rejected",
+    "startup order drift rejected",
+    "unapplied alias rejected",
+    "private source rejected before read",
+    "missing source SHA rejected",
+    "parent symlink escape rejected before read",
+    "snapshot byte drift rejected"
+  ],
+  "source_hash_meaning": "local repository file version only; not guest runtime equality",
+  "limitations": [
+    "Current server halted/paused; no live checks",
+    "Per-machine config.json is a non-secret configuration contract, not complete rendered .env or backup",
+    "Original deployment source/evidence files retained in place; use source classification before any future action"
+  ]
+}

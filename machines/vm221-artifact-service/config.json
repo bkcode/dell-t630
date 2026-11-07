@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "machine": {
+    "kind": "vm",
+    "vmid": 221,
+    "name": "artifact-service",
+    "ip": "192.168.19.31",
+    "vcpu": 2,
+    "memory_gib": 4
+  },
+  "source_of_truth": "plan.json",
+  "last_verified_at": "2026-11-07T02:35:01+08:00",
+  "current_runtime_verified": false,
+  "status": "paused-awaiting-hardware-repair",
+  "verification_note": "2026-11-07 02:35最后成功验收；当前UEFI0058/DIMM_B1暂停，未复验live。",
+  "network": {
+    "bridge": "vmbr19",
+    "prefix_length": 24,
+    "gateway": "192.168.19.1",
+    "DNS": "192.168.19.1",
+    "additional_ips": []
+  },
+  "storage": {
+    "system_storage": "store",
+    "data_storage": "store",
+    "data_disk_gib": 100,
+    "guest_mountpoint": "/srv/nexus",
+    "data_filesystem_uuid": "239dc45a-b1f3-408b-a8ef-7afa77b52204"
+  },
+  "startup_order": {
+    "vmid": 221,
+    "order": 21,
+    "up_seconds": 90,
+    "down_seconds": 180
+  },
+  "software": {
+    "OS": "Debian GNU/Linux 13 amd64",
+    "Docker": {
+      "engine": "29.9.3",
+      "compose": "5.7.0",
+      "storage_driver": "overlay2",
+      "mode": "dedicated-mount-gated-Nexus-two-container-stack"
+    },
+    "fish": {
+      "installed_by_this_task": true,
+      "version": "4.0.2-1",
+      "default_login_shell_changed": false
+    }
+  },
+  "services": [
+    {
+      "name": "Nexus-supervisor",
+      "kind": "systemd",
+      "unit": "dell-nexus.service",
+      "compose_guest_paths": [
+        "/opt/dell/nexus/compose.yaml",
+        "/opt/dell/nexus/compose.mount-gated.yaml"
+      ],
+      "containers": [
+        "nexus-nexus-1",
+        "nexus-gateway-1"
+      ],
+      "container_restart": "no"
+    }
+  ],
+  "boundaries": {
+    "credential_values_in_this_directory": false,
+    "private_files_copied": false,
+    "no_publisher_key_export_or_wholebackup220": true,
+    "CF_backup_PVE_only": true,
+    "Docker_on_PVE_host": false
+  },
+  "target_section": {
+    "status": "pending-retirement-after-220-merge-verification",
+    "current_role_retired": false,
+    "destination_vmid": 220,
+    "service_ip_unchanged": "192.168.19.31",
+    "reference": "17-publish-artifact-consolidation.md",
+    "executed": false
+  },
+  "lifecycle": "pending-retirement"
+}

@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "path_base": "repository root dell/",
+  "scope": "public non-secret sources only; source hashes pin local indexed files, not running guest state",
+  "entries": [
+    {
+      "path": "plan.json",
+      "type": "current-contract",
+      "purpose": "唯一角色/IP/资源/存储合同；状态字符串不等于实时在线",
+      "sha256": "023ed7a0237f4ac0862ac97fcc4c34d4808b2e9d942efa6b455e748e94ca0703"
+    },
+    {
+      "path": "19-manual-operations.md",
+      "type": "current-contract",
+      "purpose": "硬件恢复、日常检查、受控启停与备份人工门禁",
+      "sha256": "717488c3042e9e1777ee3e94d756ccd8ba5f99ea0b17a43c10da22e942e83599"
+    },
+    {
+      "path": "11-live-handoff.md",
+      "type": "current-contract",
+      "purpose": "用户暂停、无 Java 业务、发布冻结和恢复顺序",
+      "sha256": "0da10943e1b39845dafa76e58161982e0eac9a9c7747c849eec21977084cadc2"
+    },
+    {
+      "path": "network19/migration-plan.json",
+      "type": "historical-evidence",
+      "purpose": "原19网迁移阶段地址/策略说明，含已退役角色；现役角色与地址以plan.json为准，不能重跑迁移器",
+      "sha256": "a638c14a7b152ad48b5254166bdd2ad3c7c69ea723e648bf88bd1ebb38bc1832"
+    },
+    {
+      "path": "cleanup/final-live-check.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-07 02:35综合验收，含本机hostname/IP/fish/默认Bash；不能代表当前在线",
+      "sha256": "0832ce1e4a762c9423aded25a286a06ccaeda866e5829d28a0d1d8befdd1f999"
+    },
+    {
+      "path": "cleanup/hardware/DIMM_B1-incident.json",
+      "type": "historical-evidence",
+      "purpose": "UEFI0058与历史DIMM_B1事件，当前硬件暂停原因",
+      "sha256": "aeaa61c93d796b61b1730f22988cde2f3ecc7afe50f861c1d6b528022c9a53fb"
+    },
+    {
+      "path": "cleanup/fish/evidence/guest240.json",
+      "type": "historical-evidence",
+      "purpose": "本来宾fish安装与默认登录shell未更改证据",
+      "sha256": "cbdf68fd0b8fb1109f13ef28e7b56a68d2f625a98fd943c1164127c504d027bd"
+    },
+    {
+      "path": "cleanup/monitoring/ten-role/execution-status.json",
+      "type": "historical-evidence",
+      "purpose": "清理后10来宾监控合同部署回执，旧数量不得作为实时UP",
+      "sha256": "3abcda6653d0abd115a7028defb3d1074af63c1c06f2330a5fd2ab529cc2b720"
+    },
+    {
+      "path": "cleanup/monitoring/ten-role/candidates/vm240/guest-targets.json",
+      "type": "historical-evidence",
+      "purpose": "已审19网监控目标输入；全角色列表属于当时10节点，非直接重部署入口",
+      "sha256": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306"
+    },
+    {
+      "path": "03-templates-and-access.md",
+      "type": "current-contract",
+      "purpose": "单一Java验收模板9011与克隆身份/运行基础边界",
+      "sha256": "8a43f96a2eb0b143efdca1338f90c937a9f8e68b273bcbaebba45d47d1c2fcbc"
+    },
+    {
+      "path": "network19/services-core/java240-foundation-only-readback.json",
+      "type": "historical-evidence",
+      "purpose": "VM240 19网阶段基础可读/JDK/无业务/发布冻结证据；不把结果推作230实测",
+      "sha256": "9eeb305673a0b0108e3483b820897a7d99b22555325b7478bb7c9975635372d8"
+    },
+    {
+      "path": "infra/java/runtime/README.md",
+      "type": "historical-evidence",
+      "purpose": "早期五业务发布实现；旧10.63和LAN DNAT已退休，不是现役启动手册",
+      "sha256": "38beb23a7485836f7ae0e9f3a79ac673a04ef00ac0c83670f569edfd4aa8dd1c"
+    },
+    {
+      "path": "infra/publisher/README.md",
+      "type": "historical-evidence",
+      "purpose": "旧受限发布链机制与演练记录；当前fenced，不重新发布",
+      "sha256": "5feb89d775c252d63ae238dd403bc152955c2fcf82a378a582b800b09585f1d0"
+    },
+    {
+      "path": "network19/services-core/java240-stop-disable-hold-evidence.json",
+      "type": "historical-evidence",
+      "purpose": "旧五业务停止/禁自启与不可变文件留存回执",
+      "sha256": "2b4dc899ec40d5eca54a1f15a949fc5562e20b891ef8b10b84bb94f0b8f6cffd"
+    },
+    {
+      "path": "network19/services-core/publisher240-fenced-readback-evidence.json",
+      "type": "historical-evidence",
+      "purpose": "测试发布baseline冻结与受限目标读回",
+      "sha256": "d70420cc78d6932b6f5e2e5b5b45372d98153b7d897ff6b08d77294695963516"
+    }
+  ]
+}
