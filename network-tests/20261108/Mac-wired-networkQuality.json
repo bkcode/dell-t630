@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-08T21:23:11.019356+08:00",
+  "tool": "networkQuality",
+  "interface": "en0",
+  "download_Mbps": 160.8,
+  "upload_Mbps": 58.56,
+  "base_rtt_ms": 101.86071014404297,
+  "endpoint": "hkhkg1-edge-fx-022.aaplimg.com",
+  "download_bytes": 141698918,
+  "upload_bytes": 82837504,
+  "duration_limit_seconds": 25,
+  "exit": 0,
+  "scope": "current router-policy Internet endpoint path; not bare WuhanMobile on-net acceptance"
+}

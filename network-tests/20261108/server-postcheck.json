@@ -1,0 +1,20 @@
+{
+  "iperfversion": {
+    "exit": 0,
+    "out": "iperf 3.12 (cJSON 1.7.15)\nLinux pve 6.8.12-9-pve #1 SMP PREEMPT_DYNAMIC PMX 6.8.12-9 (2025-03-16T19:18Z) x86_64\nOptional features available: CPU affinity setting, IPv6 flow label, SCTP, TCP congestion algorithm setting, sendfile / zerocopy, socket pacing, authentication, bind to device, support IPv4 don't fragment\n",
+    "err": ""
+  },
+  "link_after": {
+    "exit": 0,
+    "out": "[{\"ifindex\":2,\"ifname\":\"eno1\",\"flags\":[\"BROADCAST\",\"MULTICAST\",\"UP\",\"LOWER_UP\"],\"mtu\":1500,\"qdisc\":\"mq\",\"master\":\"vmbr0\",\"operstate\":\"UP\",\"linkmode\":\"DEFAULT\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"44:a8:42:38:c1:1b\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\",\"stats64\":{\"rx\":{\"bytes\":386150419,\"packets\":292606,\"errors\":0,\"dropped\":0,\"over_errors\":0,\"multicast\":2994},\"tx\":{\"bytes\":332147927,\"packets\":321228,\"errors\":0,\"dropped\":0,\"carrier_errors\":0,\"collisions\":0}},\"vfinfo_list\":[],\"altnames\":[\"enp1s0f0\"]}]\n",
+    "err": ""
+  },
+  "temporary_iperf_listeners": [
+    "LISTEN 0      4096           *:5201       *:* users:((\"iperf3\",pid=1418,fd=3))                                                                                                         "
+  ],
+  "service_failures": {
+    "exit": 0,
+    "out": "",
+    "err": ""
+  }
+}

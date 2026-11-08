@@ -1,0 +1,58 @@
+{
+  "at": "2026-11-08T21:08:21.430560+08:00",
+  "Mac_router_access": {
+    "router_known_host_present": true,
+    "routerSSH": {
+      "exit": 255,
+      "error": "** WARNING: connection is not using a post-quantum key exchange algorithm.\n** This session may be vulnerable to \"store now, decrypt later\" attacks.\n** The server may need to be upgraded. See https://openssh.com/pq.html\nroot@192.168.21.1: Permission denied (publickey,password).\n"
+    }
+  },
+  "candidates": {
+    "Shanghai": [],
+    "Telecom": [
+      {
+        "id": "18475",
+        "sponsor": "Chief Telecom",
+        "name": "Keelung",
+        "country": "Taiwan",
+        "host": "klv3-1.speedtest.idv.tw:8080",
+        "url": "http://klv3-1.speedtest.idv.tw:8080/speedtest/upload.php"
+      },
+      {
+        "id": "3967",
+        "sponsor": "Chief Telecom",
+        "name": "Taipei",
+        "country": "Taiwan",
+        "host": "tpv3-1.speedtest.idv.tw:8080",
+        "url": "http://tpv3-1.speedtest.idv.tw:8080/speedtest/upload.php"
+      },
+      {
+        "id": "2327",
+        "sponsor": "Far Eastone Telecommunications Co., Ltd.",
+        "name": "Taipei",
+        "country": "Taiwan",
+        "host": "spt1.seed.net.tw:8080",
+        "url": "http://spt1.seed.net.tw:8080/speedtest/upload.php"
+      },
+      {
+        "id": "17265",
+        "sponsor": "FarEasTone Telecom",
+        "name": "Zhonghe",
+        "country": "Taiwan",
+        "host": "fetsz1.seed.net.tw:8080",
+        "url": "http://fetsz1.seed.net.tw:8080/speedtest/upload.php"
+      }
+    ],
+    "Unicom": [
+      {
+        "id": "53587",
+        "sponsor": "Unicom Multi System",
+        "name": "Ishwardi",
+        "country": "Bangladesh",
+        "host": "speedtest.unicommultisystem.net.prod.hosts.ooklaserver.net:8080",
+        "url": "http://speedtest.unicommultisystem.net:8080/speedtest/upload.php"
+      }
+    ]
+  },
+  "known_external_path": "speedtest config ISP Microsoft Corporation, GB, via OW FakeIP/proxy; not home ISP identification"
+}

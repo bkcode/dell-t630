@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-08T21:11:23.775461+08:00",
+  "method": "iperf3 native clients,2TCPstreams,6secondmeasurement+1secondomit per direction",
+  "path": "MacWiFi21.116 <-> PVE21.22",
+  "tests": [
+    {
+      "direction": "Mac->PVE",
+      "client_exit": 1,
+      "receiver_Mbps": 0.0,
+      "sender_Mbps": 0.0,
+      "retransmits": null,
+      "error": "unable to connect to server - server may have stopped running or use a different port, firewall issue, etc.: No route to host",
+      "server_exit": 255
+    },
+    {
+      "direction": "PVE->Mac",
+      "client_exit": 1,
+      "receiver_Mbps": 0.0,
+      "sender_Mbps": 0.0,
+      "retransmits": null,
+      "error": "unable to connect to server - server may have stopped running or use a different port, firewall issue, etc.: No route to host",
+      "server_exit": 255
+    }
+  ],
+  "measurement_status": "invalid_no_connection; numeric zero fields are not measured throughput"
+}

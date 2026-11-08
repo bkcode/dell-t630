@@ -1,0 +1,53 @@
+{
+  "node": "Aliyun CDN after official redirect",
+  "flows": [
+    {
+      "exit": 1,
+      "HTTP": 302,
+      "bytes": 215,
+      "seconds": 0.159774,
+      "remote_ip": "117.187.26.228",
+      "Mbps": 0.01,
+      "redirects": 1,
+      "final_url": "http://iso-osm.mirrors.aliyuncs.com/debian-cd/current/amd64/iso-cd/debian-13.7.0-amd64-netinst.iso",
+      "error": "curl: (1) Protocol \"http\" not supported or disabled in libcurl\n"
+    },
+    {
+      "exit": 1,
+      "HTTP": 302,
+      "bytes": 215,
+      "seconds": 0.158932,
+      "remote_ip": "117.187.26.228",
+      "Mbps": 0.01,
+      "redirects": 1,
+      "final_url": "http://iso-osm.mirrors.aliyuncs.com/debian-cd/current/amd64/iso-cd/debian-13.7.0-amd64-netinst.iso",
+      "error": "curl: (1) Protocol \"http\" not supported or disabled in libcurl\n"
+    },
+    {
+      "exit": 1,
+      "HTTP": 302,
+      "bytes": 215,
+      "seconds": 0.166341,
+      "remote_ip": "117.187.26.228",
+      "Mbps": 0.01,
+      "redirects": 1,
+      "final_url": "http://iso-osm.mirrors.aliyuncs.com/debian-cd/current/amd64/iso-cd/debian-13.7.0-amd64-netinst.iso",
+      "error": "curl: (1) Protocol \"http\" not supported or disabled in libcurl\n"
+    },
+    {
+      "exit": 1,
+      "HTTP": 302,
+      "bytes": 215,
+      "seconds": 0.146315,
+      "remote_ip": "117.187.26.228",
+      "Mbps": 0.01,
+      "redirects": 1,
+      "final_url": "http://iso-osm.mirrors.aliyuncs.com/debian-cd/current/amd64/iso-cd/debian-13.7.0-amd64-netinst.iso",
+      "error": "curl: (1) Protocol \"http\" not supported or disabled in libcurl\n"
+    }
+  ],
+  "wall_seconds": 0.19585540599928208,
+  "aggregate_observed_Mbps": 0.0,
+  "valid_complete_flows": 0,
+  "at": "2026-11-08T21:17:51.722235+08:00"
+}

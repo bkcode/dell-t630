@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-08T21:21:04.167666+08:00",
+  "source": "Mac en0 21.230, default wired",
+  "server": "PVE existing listener21.22:5201, preexisting PID1418 not created by this test",
+  "tests": [
+    {
+      "direction": "Mac->PVE",
+      "exit": 1,
+      "receiver_Mbps": 0.0,
+      "sender_Mbps": 0.0,
+      "retransmits": null,
+      "error": "unable to connect to server - server may have stopped running or use a different port, firewall issue, etc.: No route to host"
+    },
+    {
+      "direction": "PVE->Mac",
+      "exit": 1,
+      "receiver_Mbps": 0.0,
+      "sender_Mbps": 0.0,
+      "retransmits": null,
+      "error": "unable to connect to server - server may have stopped running or use a different port, firewall issue, etc.: No route to host"
+    }
+  ],
+  "measurement_status": "invalid_no_connection; numeric zero fields are not measured throughput"
+}

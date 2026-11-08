@@ -1,0 +1,29 @@
+{
+  "ali_manifest": {
+    "exit": 0,
+    "metadata": "200 117.187.26.231 0.270117",
+    "error": "",
+    "iso_entries": [
+      "a7ef94ac2fb9a7fec454552abd629b7cc9d5155c886165a45649f5ce6167e355  debian-13.7.0-amd64-netinst.iso",
+      "d33ed0c64bde5ff43445c0c530f9da599954d8585771c55345cb840d7997d4a7  debian-edu-13.7.0-amd64-netinst.iso"
+    ]
+  },
+  "tencent_manifest": {
+    "exit": 0,
+    "metadata": "200 111.48.204.89 0.259825",
+    "error": "",
+    "iso_entries": [
+      "8fde79cfc6b20a696200fc5c15219cf6d721e8feb367e9e0e33a79d1cb68fa83  debian-12.7.0-amd64-netinst.iso",
+      "9c0b85d69d342e77f2df689dfb3b4b77626883d7f067cc8533c5b8d130f12b33  debian-edu-12.7.0-amd64-netinst.iso"
+    ]
+  },
+  "cn_egress": {
+    "exit": 28,
+    "metadata": "000 120.226.74.153 0.000000",
+    "error": "curl: (28) SSL connection timeout\n",
+    "egress_matches_user_report": null,
+    "operator_mobile_seen": null,
+    "public_IP_not_recorded": true,
+    "verification_status": "inconclusive due HTTPS timeout; no negative ISP inference"
+  }
+}

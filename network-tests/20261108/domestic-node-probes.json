@@ -1,0 +1,22 @@
+{
+  "speedtest1.hb.chinamobile.com": {
+    "DNS": [],
+    "exit": 6,
+    "result": "000  0.000000",
+    "error": "curl: (6) Could not resolve host: speedtest1.hb.chinamobile.com\n"
+  },
+  "speedtest2.hb.chinamobile.com": {
+    "DNS": [],
+    "exit": 6,
+    "result": "000  0.000000",
+    "error": "curl: (6) Could not resolve host: speedtest2.hb.chinamobile.com\n"
+  },
+  "speedtest.dukekunshan.edu.cn": {
+    "DNS": [
+      "180.208.59.230"
+    ],
+    "exit": 0,
+    "result": "200 180.208.59.230 0.107100",
+    "error": ""
+  }
+}

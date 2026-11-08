@@ -1,0 +1,93 @@
+{
+  "date": "2026-11-08",
+  "timezone": "Asia/Shanghai",
+  "user_service": {
+    "operator": "China Mobile",
+    "city": "Wuhan,Hubei",
+    "nominal_download_Mbps": 1000,
+    "nominal_upload_Mbps": "not provided",
+    "user_public_IP": "not retained in public evidence"
+  },
+  "links": {
+    "PVE_eno1": "1000Mb/s Full Duplex",
+    "OpenWrt_WAN": "1GbE from user screenshot",
+    "Mac_en0": "1000baseT Full Duplex",
+    "Mac_default_before": "Wi-Fi en1 192.168.21.116",
+    "Mac_default_after": "Ethernet en0 192.168.21.230; changed by user"
+  },
+  "valid_results": {
+    "LAN_Mac_to_PVE_Mbps": 937.54,
+    "LAN_PVE_to_Mac_Mbps": [
+      571.4,
+      709.6
+    ],
+    "idle_wired_latency_ms": {
+      "router_avg": 0.489,
+      "PVE_avg": 0.586,
+      "packet_loss_sample": "0/10 for router and PVE; short sample only"
+    },
+    "current_Internet_Apple_HongKong_wired": {
+      "download_Mbps": 160.8,
+      "upload_Mbps": 58.56,
+      "base_rtt_ms": 101.86071014404297,
+      "duration_seconds": 25,
+      "scope": "current routing policy + remote endpoint; not bare WuhanMobile qualification"
+    },
+    "PVE_domestic_Tencent_CDN": {
+      "download_Mbps": 153.89,
+      "TCP_flows": 4,
+      "bytes": 67108864,
+      "scope": "domestic off-net CDN end-to-end download; not access-link maximum"
+    }
+  },
+  "router_screenshot_counters": {
+    "before": {
+      "rx_packets_rounded": 1770000,
+      "rx_dropped_rounded": 27230,
+      "rx_errors": 0,
+      "tx_errors": 0
+    },
+    "after": {
+      "rx_packets_rounded": 2240000,
+      "rx_dropped_rounded": 30070,
+      "rx_errors": 0,
+      "tx_errors": 0
+    },
+    "delta_rx_packets_approx": 470000,
+    "delta_dropped_approx": 2840,
+    "delta_dropped_per_delta_rx_approx_percent": 0.6043,
+    "interpretation": "rounded cumulative Linux/OpenWrt interface counters; not measured end-to-end packet loss; cannot attribute solely to these tests"
+  },
+  "invalid_or_limited_tests": [
+    "MacPython socket LAN access failed with errno65; no valid TCP metric",
+    "native iperf3 new-client localnetwork access failed; zero metrics invalid, not zero link throughput",
+    "128MiB WiFi upload timed out; incomplete result not stable upload speed",
+    "earlier32MiBWiFi followup may overlap final WAN phase; not used as isolated baseline",
+    "Speedtest config saw MicrosoftGB exit via198.18FakeIP/proxy; not homeISP identity",
+    "Kunshan off-net speedtest node slow/timeouts; not used to condemn ISP",
+    "Aliyun redirect/download endpoint unavailable; no effective speed result",
+    "wired source21.230 cannot ping internal19.1 due gateway management-source policy; actualPenpot/NAS/NexusHTTP200",
+    "OpenWrtSSH existing management key denied; no routerCPU/queue/NAT-offload/softnet data collected"
+  ],
+  "changes": {
+    "Mac_tools": "installed Homebrew iperf3 3.22 and dependency openssl4; no service started; no unrelated tap trust changed",
+    "router_config_changed": false,
+    "PVE_persistent_config_changed": false,
+    "temporary_test_listeners": "bound21.22 with source+nonce and finite deadlines; closed after tests",
+    "business_data_sent": false,
+    "Mac_external_probe": "not installed or enabled; this was an explicit one-time speed test"
+  },
+  "findings": [
+    "WiredLAN upstream can nearly fill1Gbps; no evidence of100Mbps physical negotiation bottleneck",
+    "PVE->Mac single-stream rate lower/variable; do not assign a cause without endpoint/TCP counters",
+    "WiFi prior results much less representative ofwired server path",
+    "Current Internet paths observed around154-161Mbpsdown/59Mbpsup, not proof1000Mservice underdelivery",
+    "WANRXdrop counter increased and warrants router-side classification, not just packetloss percentage"
+  ],
+  "next_needed_for_ISP_acceptance": [
+    "known-direct localChinaMobile speedtest endpoint or administrator-reviewed per-test proxy bypass",
+    "wired source and no competing traffic during test",
+    "routerCPU/softirq/softnet/physical ethtool/queue/SQM/offload counters before-and-after; read-only first",
+    "never change broadband credentials or global proxy/firewall settings solely to force a higher score"
+  ]
+}

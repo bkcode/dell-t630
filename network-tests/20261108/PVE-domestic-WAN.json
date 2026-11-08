@@ -1,0 +1,69 @@
+{
+  "node": "Duke Kunshan University, Kunshan China",
+  "host": "speedtest.dukekunshan.edu.cn",
+  "observed_direct_destination": "180.208.59.230",
+  "path_limitations": "domestic off-net server; no proof of entire router policy, not WuhanMobile on-net acceptance",
+  "download": [
+    {
+      "exit": 28,
+      "HTTP": 200,
+      "bytes": 734682,
+      "seconds": 15.999372,
+      "remote_ip": "180.208.59.230",
+      "Mbps": 0.37,
+      "error": "curl: (28) Operation timed out after 16000 milliseconds with 734682 out of 31625365 bytes received\n"
+    },
+    {
+      "exit": 28,
+      "HTTP": 200,
+      "bytes": 745466,
+      "seconds": 15.999642,
+      "remote_ip": "180.208.59.230",
+      "Mbps": 0.37,
+      "error": "curl: (28) Operation timed out after 16000 milliseconds with 745466 out of 31625365 bytes received\n"
+    },
+    {
+      "exit": 28,
+      "HTTP": 200,
+      "bytes": 659194,
+      "seconds": 16.000017,
+      "remote_ip": "180.208.59.230",
+      "Mbps": 0.33,
+      "error": "curl: (28) Operation timed out after 16000 milliseconds with 659194 out of 31625365 bytes received\n"
+    },
+    {
+      "exit": 28,
+      "HTTP": 200,
+      "bytes": 713114,
+      "seconds": 15.999579,
+      "remote_ip": "180.208.59.230",
+      "Mbps": 0.36,
+      "error": "curl: (28) Operation timed out after 16000 milliseconds with 713114 out of 31625365 bytes received\n"
+    }
+  ],
+  "upload": [
+    {
+      "exit": 28,
+      "HTTP": 0,
+      "bytes": 458752,
+      "seconds": 15.999827,
+      "remote_ip": "180.208.59.230",
+      "Mbps": 0.23,
+      "error": "curl: (28) Operation timed out after 16000 milliseconds with 0 bytes received\n"
+    },
+    {
+      "exit": 28,
+      "HTTP": 0,
+      "bytes": 458752,
+      "seconds": 16.001749,
+      "remote_ip": "180.208.59.230",
+      "Mbps": 0.23,
+      "error": "curl: (28) Operation timed out after 16001 milliseconds with 0 bytes received\n"
+    }
+  ],
+  "download_wall_seconds": 16.029738064999947,
+  "aggregate_download_Mbps": 1.42,
+  "upload_wall_seconds": 16.175274653000088,
+  "aggregate_upload_Mbps": 0.0,
+  "at": "2026-11-08T21:13:21.560736+08:00"
+}

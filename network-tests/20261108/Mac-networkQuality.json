@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-08T21:10:52.524935+08:00",
+  "path": "MacWiFi current default WAN path; OWproxy may apply",
+  "tool": "networkQuality",
+  "max_runtime_seconds": 40,
+  "sequential": true,
+  "exit": 0,
+  "result": {
+    "base_rtt": 164.8324432373047,
+    "dl_throughput": 53612936,
+    "ul_throughput": 50554436,
+    "interface_name": "en1",
+    "test_endpoint": "hkhkg1-edge-fx-022.aaplimg.com",
+    "dl_bytes_transferred": 222627716,
+    "ul_bytes_transferred": 100270078,
+    "dl_flows": 16,
+    "ul_flows": 16,
+    "dl_phase_duration": 19.226797103881836,
+    "ul_phase_duration": 19.186189889907837,
+    "dl_responsiveness": 188.55860900878906,
+    "ul_responsiveness": 71.74082946777344
+  },
+  "error": "",
+  "summary_scope": "Only public aggregate metrics retained; detailed timing arrays not needed"
+}

@@ -1,0 +1,40 @@
+{
+  "at": "2026-11-08T21:06:49.930033+08:00",
+  "path": "Mac Wi-Fi -> physical LAN/PVE21.22",
+  "method": "nativecurl single HTTP/1.1 stream,128MiB zero payload per direction, no server disk IO",
+  "bind": "192.168.21.22",
+  "peer_only": "192.168.21.116",
+  "tests": [
+    {
+      "direction": "PVE->Mac",
+      "exit": 0,
+      "HTTP": 200,
+      "bytes": 134217728,
+      "seconds": 5.459206,
+      "Mbps": 196.68,
+      "error": ""
+    },
+    {
+      "direction": "Mac->PVE",
+      "exit": 28,
+      "HTTP": 0,
+      "bytes": 108967355,
+      "seconds": 22.000975,
+      "Mbps": 39.62,
+      "error": "curl: (28) Operation timed out after 22000 milliseconds with 0 bytes received\n"
+    }
+  ],
+  "server_results": [
+    {
+      "direction": "PVE->Mac",
+      "bytes_sent": 134217728,
+      "seconds": 5.378579104999972
+    },
+    {
+      "direction": "Mac->PVE",
+      "bytes_received": 108967355,
+      "seconds": 22.314276293000148
+    }
+  ],
+  "temporary_listener_closed": true
+}

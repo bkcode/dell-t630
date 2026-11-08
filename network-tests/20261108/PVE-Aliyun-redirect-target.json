@@ -1,0 +1,45 @@
+{
+  "node": "official Aliyun public ISO redirected endpoint",
+  "url": "http://iso-osm.mirrors.aliyuncs.com/debian-cd/current/amd64/iso-cd/debian-13.7.0-amd64-netinst.iso",
+  "flows": [
+    {
+      "exit": 7,
+      "HTTP": 0,
+      "bytes": 0,
+      "seconds": 0.058863,
+      "remote_ip": "",
+      "Mbps": 0.0,
+      "error": "curl: (7) Failed to connect to iso-osm.mirrors.aliyuncs.com port 80 after 59 ms: Couldn't connect to server\n"
+    },
+    {
+      "exit": 7,
+      "HTTP": 0,
+      "bytes": 0,
+      "seconds": 0.058254,
+      "remote_ip": "",
+      "Mbps": 0.0,
+      "error": "curl: (7) Failed to connect to iso-osm.mirrors.aliyuncs.com port 80 after 59 ms: Couldn't connect to server\n"
+    },
+    {
+      "exit": 7,
+      "HTTP": 0,
+      "bytes": 0,
+      "seconds": 0.05741,
+      "remote_ip": "",
+      "Mbps": 0.0,
+      "error": "curl: (7) Failed to connect to iso-osm.mirrors.aliyuncs.com port 80 after 58 ms: Couldn't connect to server\n"
+    },
+    {
+      "exit": 7,
+      "HTTP": 0,
+      "bytes": 0,
+      "seconds": 0.060647,
+      "remote_ip": "",
+      "Mbps": 0.0,
+      "error": "curl: (7) Failed to connect to iso-osm.mirrors.aliyuncs.com port 80 after 61 ms: Couldn't connect to server\n"
+    }
+  ],
+  "wall_seconds": 0.09013983200020448,
+  "aggregate_Mbps": 0.0,
+  "valid_flows": 0
+}

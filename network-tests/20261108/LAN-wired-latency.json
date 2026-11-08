@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-08T21:19:54.169879+08:00",
+  "source": "Macwired21.230 explicit source, idle no throughput test overlapping",
+  "results": [
+    {
+      "host": "192.168.21.1",
+      "exit": 0,
+      "summary": [
+        "10 packets transmitted, 10 packets received, 0.0% packet loss",
+        "round-trip min/avg/max/stddev = 0.409/0.489/0.641/0.076 ms"
+      ],
+      "stderr": ""
+    },
+    {
+      "host": "192.168.21.22",
+      "exit": 0,
+      "summary": [
+        "10 packets transmitted, 10 packets received, 0.0% packet loss",
+        "round-trip min/avg/max/stddev = 0.342/0.586/0.986/0.213 ms"
+      ],
+      "stderr": ""
+    },
+    {
+      "host": "192.168.19.1",
+      "exit": 2,
+      "summary": [
+        "10 packets transmitted, 0 packets received, 100.0% packet loss"
+      ],
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-08T21:13:19.967310+08:00",
+  "method": "32MiB single nativecurl stream repeat; no server disk IO",
+  "results": [
+    {
+      "direction": "PVE->Mac",
+      "exit": 0,
+      "HTTP": 200,
+      "bytes": 33554432,
+      "seconds": 4.64473,
+      "Mbps": 57.79,
+      "error": ""
+    },
+    {
+      "direction": "Mac->PVE",
+      "exit": 0,
+      "HTTP": 200,
+      "bytes": 33554432,
+      "seconds": 9.775794,
+      "Mbps": 27.46,
+      "error": ""
+    }
+  ],
+  "temporary_listener_closed": true,
+  "timing_limitation": "Test start may overlap final seconds of domestic WAN upload; not used as isolated wired baseline"
+}

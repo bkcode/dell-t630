@@ -1,0 +1,99 @@
+{
+  "at": "2026-11-08T21:17:04.145325+08:00",
+  "tests": [
+    {
+      "node": "Aliyun",
+      "url": "https://mirrors.aliyun.com/debian-cd/current/amd64/iso-cd/debian-13.7.0-amd64-netinst.iso",
+      "source": "PVE wired1Gb",
+      "flows": [
+        {
+          "exit": 0,
+          "HTTP": 302,
+          "bytes": 215,
+          "seconds": 0.181536,
+          "remote_ip": "117.187.26.231",
+          "Mbps": 0.01,
+          "error": ""
+        },
+        {
+          "exit": 0,
+          "HTTP": 302,
+          "bytes": 215,
+          "seconds": 0.1809,
+          "remote_ip": "117.187.26.231",
+          "Mbps": 0.01,
+          "error": ""
+        },
+        {
+          "exit": 0,
+          "HTTP": 302,
+          "bytes": 215,
+          "seconds": 0.181056,
+          "remote_ip": "117.187.26.231",
+          "Mbps": 0.01,
+          "error": ""
+        },
+        {
+          "exit": 0,
+          "HTTP": 302,
+          "bytes": 215,
+          "seconds": 0.184662,
+          "remote_ip": "117.187.26.231",
+          "Mbps": 0.01,
+          "error": ""
+        }
+      ],
+      "wall_seconds": 0.2167869779996181,
+      "aggregate_observed_Mbps": 0.0,
+      "valid_complete_flows": 0,
+      "scope": "domesticCDN download, not WuhanMobile local official speedtest; router proxy policy not changed"
+    },
+    {
+      "node": "Tencent",
+      "url": "https://mirrors.cloud.tencent.com/debian-cd/current/amd64/iso-cd/debian-12.7.0-amd64-netinst.iso",
+      "source": "PVE wired1Gb",
+      "flows": [
+        {
+          "exit": 0,
+          "HTTP": 206,
+          "bytes": 16777216,
+          "seconds": 2.731312,
+          "remote_ip": "111.48.204.89",
+          "Mbps": 49.14,
+          "error": ""
+        },
+        {
+          "exit": 0,
+          "HTTP": 206,
+          "bytes": 16777216,
+          "seconds": 3.455902,
+          "remote_ip": "111.48.204.89",
+          "Mbps": 38.84,
+          "error": ""
+        },
+        {
+          "exit": 0,
+          "HTTP": 206,
+          "bytes": 16777216,
+          "seconds": 2.763529,
+          "remote_ip": "111.48.204.89",
+          "Mbps": 48.57,
+          "error": ""
+        },
+        {
+          "exit": 0,
+          "HTTP": 206,
+          "bytes": 16777216,
+          "seconds": 2.904583,
+          "remote_ip": "111.48.204.89",
+          "Mbps": 46.21,
+          "error": ""
+        }
+      ],
+      "wall_seconds": 3.4886754769995605,
+      "aggregate_observed_Mbps": 153.89,
+      "valid_complete_flows": 4,
+      "scope": "domesticCDN download, not WuhanMobile local official speedtest; router proxy policy not changed"
+    }
+  ]
+}

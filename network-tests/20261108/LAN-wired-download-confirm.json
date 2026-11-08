@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-08T21:22:45.851474+08:00",
+  "direction": "PVE->Mac wireden0",
+  "isolated_from_WAN_throughput_tests": true,
+  "bytes": 268435456,
+  "seconds": 3.026351,
+  "Mbps": 709.6,
+  "HTTP": 200,
+  "sourceIP": "192.168.21.230",
+  "exit": 0,
+  "temporary_listener_closed": true
+}

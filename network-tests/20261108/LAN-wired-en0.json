@@ -1,0 +1,28 @@
+{
+  "at": "2026-11-08T21:16:25.553669+08:00",
+  "path": "Macwired en0 192.168.21.230 <-> PVE21.22; explicitcurlinterfaceen0",
+  "method": "128MiB single HTTP/1.1 nativecurl per direction, no disk on PVE",
+  "results": [
+    {
+      "direction": "PVE->Mac",
+      "exit": 0,
+      "HTTP": 200,
+      "sourceIP": "192.168.21.230",
+      "bytes": 134217728,
+      "seconds": 1.879133,
+      "Mbps": 571.4,
+      "error": ""
+    },
+    {
+      "direction": "Mac->PVE",
+      "exit": 0,
+      "HTTP": 200,
+      "sourceIP": "192.168.21.230",
+      "bytes": 134217728,
+      "seconds": 1.145281,
+      "Mbps": 937.54,
+      "error": ""
+    }
+  ],
+  "temporary_listener_closed": true
+}
