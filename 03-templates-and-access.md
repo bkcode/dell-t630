@@ -1,6 +1,6 @@
 # 模板、克隆身份与访问合同
 
-更新：2026-11-07。**服务器工作暂停，当前PVE/来宾不可认定在线。** 本文是最后已验收模板与未来恢复后的操作合同；UEFI0058/DIMM_B1硬件门禁未过前，不启动克隆、重做身份或尝试远程修改。最后状态与时间边界见[当前状态](01-current-state.md)。
+更新：2026-11-08。**服务器恢复，本轮限检查补齐现有基础服务、盘点清理确认多余项，不迁移、不新建克隆或重做现役身份。** 用户确认内存重新插拔/更换并诊断通过；20:16–20:20审计恢复严格SSH与基础服务观察，UEFI0058保留为历史事故。三模板仍停放，本轮未重新启动/制作/QA模板。状态与限制见[当前状态](01-current-state.md)。
 
 ## 1. 最终保留三模板
 
@@ -24,7 +24,7 @@ Docker模板原存储profile与角色runtime分开：9001保持其overlayfs/live
 
 | 目标/身份 | 登录或运行方式 | 边界 |
 | --- | --- | --- |
-| PVE21.22 | root，Mac指定私钥 | 宿主写操作由主AI统一，当前暂停 |
+| PVE21.22 | root，Mac指定私钥 | 宿主写由主AI统一，仅限本轮已批准补齐/清理，不迁移 |
 | Linux来宾 | ub，指定公钥由CI注入 | ub是管理身份，不等于业务应用用户 |
 | OMV260 | 安装后已验ub/SSH权限 | SMB/Jellyfin账号与管理登录分开 |
 | Java验收 | java非root/nologin | 只跑通用临时smoke，无业务服务 |
@@ -35,7 +35,7 @@ Docker模板原存储profile与角色runtime分开：9001保持其overlayfs/live
 
 主机密钥由可信PVE QGA/控制台核对后登记，再strict SSH连接。普通文档/验收只保存指纹，不输出原始公钥/私钥；受控known_hosts按SSH格式保存已核对的服务器公钥。ssh-keyscan只获得候选，不能独立证明身份。不允许StrictHostKeyChecking=no、空known_hosts或在看到错误后自动接受新key。
 
-以下仅供**硬件恢复并获准恢复工作后**管理者复核，不是当前执行指令：
+以下是管理者的只读复核示例，不是本次文档任务执行指令；本轮已由既有strict SSH核验恢复，任何变更另按明确范围：
 
 ```bash
 dell_root='/Users/yangzhaohui/work/www/harness/dell'
@@ -47,9 +47,9 @@ ssh -i "$HOME/.ssh/yang_local_rsa" \
   root@192.168.21.22 'hostname; id -un; pveversion'
 ```
 
-来宾建议通过已登记的`scripts/control.py`/可信target info管理，PVE只作SSH跳板和客户端路由，不恢复host转发/NAT。190有双NIC/IP，使用其专用trusted info；同NIC多已批准IP时，只有role明确additional_ips且primary存在、无未知uplink地址才允许，默认管理仍走primary。当前Nexus尚在221，220尚未拥有31，不能按合并提案更新信任身份。
+来宾建议通过已登记的`scripts/control.py`/可信target info管理，PVE只作SSH跳板和客户端路由，不恢复host转发/NAT。190有双NIC/IP，使用其专用trusted info；同NIC多已批准IP时，只有role明确additional_ips且primary存在、无未知uplink地址才允许，默认管理仍走primary。本轮审计Nexus仍在221，220尚未拥有31；用户明确暂不迁移，不能按合并提案更新信任身份。
 
-## 4. 每clone必须显式hostname profile
+## 4. 未来clone必须显式hostname profile（本轮不执行）
 
 generic cicustom user会替代PVE自动生成的user-data，不能保证PVE VM显示名自动成为guest hostname。本次9012首启实际为localhost，之后主AI为该实例注入独立profile显式hostname并正常重启，保住其已生成key后strict SSH/JDK检查通过。
 
@@ -62,9 +62,9 @@ generic cicustom user会替代PVE自动生成的user-data，不能保证PVE VM�
 
 9011镜像ssh_deletekeys:true用于新clone独立身份；190专用false和QA9012已首启后为了保住key的false是**实例级**策略，不可反写通用模板。修改现役CI前要核instance-id与effective userdata，避免网络/hostname变更意外重生hostkeys；也不能为了改hostname重复clean现役machine-id/密钥。
 
-## 5. Java验收与监控停放
+## 5. Java模板验收与实例监控边界
 
-唯一Java模板不含业务；230/240也只有运行基础。下述脚本以java非root执行临时编译/运行并自动删除源码/class，不启动HTTP、JMX或业务定时器：
+唯一Java模板不含业务；230/240也只有运行基础。[本轮核心审计](recovery/20261108/core-services-audit.json)于20:16:13–20:18:22确认两台JDK21.0.13可执行、finger账号存在、Java进程0、旧五业务unit not-found/inactive且非enabled，exporter和collector timer正常；未以finger重新执行smoke。模板9011的java身份与masked exporter规则不等于230/240现役实例应停监控。下述脚本以java非root执行临时编译/运行并自动删除源码/class，不启动HTTP、JMX或业务定时器：
 
 ```bash
 sudo runuser --user java -- /usr/bin/python3 \
@@ -79,7 +79,7 @@ Java业务未来若重新获准，需要单独冻结服务清单、非root运行
 
 | 对象 | 检查和通过条件 | 当前证据边界 |
 | --- | --- | --- |
-| hostname/IP/MAC | 与每实例profile、地址及L2登记一致 | 独立克隆已验；当前暂停后需恢复复核 |
+| hostname/IP/MAC | 与每实例profile、地址及L2登记一致 | 独立克隆是历史验收；本轮恢复核来宾地址/hostname，未新clone或重置身份 |
 | machine-id/hostkey/instance-id | clone不同于builder，指纹匹配可信记录 | [Java clone](network19/java-template/clone-evidence.json)、Fish QA |
 | 管理公钥 | 仅预期授权，用户可用指定key登录 | 公钥可共享给同一管理者，host私钥必须实例独立 |
 | 镜像残留 | 无客户端私钥、业务目录、Nacos/DB/制品/媒体或发布密钥 | 制作/clean与独立clone分别验，不能只看清理命令退出码 |
@@ -89,4 +89,4 @@ Java业务未来若重新获准，需要单独冻结服务清单、非root运行
 
 通用模板清理使用发行版支持的cloud-init clean选项、machine-id与生成网络清理，再删除制作实例hostkeys/授权/历史。只在专用builder获准清理，清完不先重启再转模板；不对现有数据恢复角色盲删Rabbit/MySQL身份或执行旧clean脚本。
 
-恢复/克隆记录至少含时间、VMID、主机名、MAC/IP、来源模板、OS/版本、登录用户、QGA/CI状态、机器身份hash和公钥指纹、磁盘UUID、结果及限制。当前停机不重开模板做新验收，保留[清理与模板结果](18-cleanup-and-consolidation.md)和原始证据。
+恢复/克隆记录至少含时间、VMID、主机名、MAC/IP、来源模板、OS/版本、登录用户、QGA/CI状态、机器身份hash和公钥指纹、磁盘UUID、结果及限制。本轮不重开模板做新验收，保留[清理与模板结果](18-cleanup-and-consolidation.md)和原始证据。

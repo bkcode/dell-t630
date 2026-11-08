@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-08T20:30:53.342890+08:00",
+  "scope": "read-only absence check; no launch/load/start/network probe",
+  "user_policy": "not required; removed from current and future plan",
+  "LaunchAgent_plist_present": false,
+  "launchd_job_present": false,
+  "raw_launchd_environment_not_recorded": true
+}

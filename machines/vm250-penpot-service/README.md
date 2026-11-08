@@ -1,6 +1,8 @@
+> 2026-11-08恢复：本机已完成基础存活/地址/服务检查，详见[恢复记录](../../recovery/20261108/README.md)；本轮不迁移、不升级应用，不需要Mac外部探针。下列旧验收/暂停描述按原时点解释，配置与最新检查见config.json。
+
 # VM250 · penpot-service
 
-本目录是每机公开合同与来源索引，**不提供秘密或可直接重放的完整部署包**。source of truth为[plan.json](../../plan.json)；最后成功验收为2026-11-07 02:35:01+08:00。当前服务器因UEFI0058/DIMM_B1问题由用户暂停，current_runtime_verified=false，以下均不是live在线声明。
+本目录是每机公开合同与来源索引，**不提供秘密或可直接重放的完整部署包**。source of truth为[plan.json](../../plan.json)；最后成功验收为2026-11-07 02:35:01+08:00。11月7日曾因UEFI0058暂停；11月8日用户确认内存已处理且诊断通过，本机恢复检查见顶部记录。
 
 ## 源码仓库：bkcode/penpot · main
 
@@ -31,7 +33,7 @@ Git改造Penpot与常驻worker/import/MCP服务，保存3活动设计和原素�
 - 3设计data/revn/stats与原971媒体已迁，当前已验973包含2官方导出缓存；不能删除额外文件来凑971。
 - 原新owner/worker/MCP身份保持，秘密仅guest受控文件；客户端旧Mac connector不会自动指向这里。
 - 停启只用原unit，禁止fresh初始化、旧source.env/key复制或PG整库覆盖现有数据。
-- 硬件稳定、用户明确恢复执行和fresh核验之前不远程变更；F1不能当修复。PVE写/VMID/IP/数据盘归属由root统一，严格SSH/ub管理，不关闭hostkey检查、不复制私钥。
+- 11月8日已按用户恢复指令完成基础检查；新的变更仍须在当前范围内核实，F1本身不代表修复。PVE写/VMID/IP/数据盘归属由root统一，严格SSH/ub管理，不关闭hostkey检查、不复制私钥。
 - 目录不含任何.env、secrets、Webhook或key；只引用公开合同和历史证据。CF备份只PVE、发布私钥只220，不能wholebackup220或把private打包提交Git。
 - 日常流程见[人工操作手册](../../19-manual-operations.md)与[访问入口](../../12-service-access-and-operations.md)；只读[本机config.json](config.json)与[config-sources.json](config-sources.json)核对，不盲重跑初始化器。
 

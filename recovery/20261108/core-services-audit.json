@@ -1,0 +1,1586 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-08T20:19:21.134053+08:00",
+  "scope": "read-only strict SSH audit of VM200/201/210/230/240; no service/file/server changes",
+  "current_boot_is_not_memory_repair_proof": true,
+  "migration_allowed": false,
+  "source221_untouched": true,
+  "Mac_external_probe_enabled": false,
+  "commands_scope": [
+    "hostname/ip/networkctl/findmnt metadata",
+    "systemctl selected read-only properties",
+    "docker inspect only ID/State.Status/Health.Status/RestartCount",
+    "fish and passwd shell metadata",
+    "Java version and java process count without commandline/env",
+    "supervisor journal classified in memory; no raw logs emitted"
+  ],
+  "initial_sandbox_limited_attempts": [
+    {
+      "vmid": 200,
+      "role": "data-prod-db",
+      "expected_ip": "192.168.19.10",
+      "expected_data_uuid": "d61c0e22-941e-447a-9e9a-1e9e50deb02f",
+      "ssh_exit_code": 255,
+      "host_key_alias": "dell-vm200",
+      "error": "ssh: connect to host 192.168.21.22 port 22: Operation not permitted\r\nConnection closed by UNKNOWN port 65535\r\n"
+    },
+    {
+      "vmid": 201,
+      "role": "data-prod-infra",
+      "expected_ip": "192.168.19.11",
+      "expected_data_uuid": "b85156c2-dac8-4b33-ab25-460aaf676c57",
+      "ssh_exit_code": 255,
+      "host_key_alias": "dell-vm201",
+      "error": "ssh: connect to host 192.168.21.22 port 22: Operation not permitted\r\nConnection closed by UNKNOWN port 65535\r\n"
+    },
+    {
+      "vmid": 210,
+      "role": "data-test",
+      "expected_ip": "192.168.19.20",
+      "expected_data_uuid": "dd1773f9-aa48-4401-a9c8-caf0f66845f3",
+      "ssh_exit_code": 255,
+      "host_key_alias": "dell-vm210",
+      "error": "ssh: connect to host 192.168.21.22 port 22: Operation not permitted\r\nConnection closed by UNKNOWN port 65535\r\n"
+    },
+    {
+      "vmid": 230,
+      "role": "java-prod-01",
+      "expected_ip": "192.168.19.40",
+      "expected_data_uuid": null,
+      "ssh_exit_code": 255,
+      "host_key_alias": "dell-vm230",
+      "error": "ssh: connect to host 192.168.21.22 port 22: Operation not permitted\r\nConnection closed by UNKNOWN port 65535\r\n"
+    },
+    {
+      "vmid": 240,
+      "role": "java-test-01",
+      "expected_ip": "192.168.19.45",
+      "expected_data_uuid": null,
+      "ssh_exit_code": 255,
+      "host_key_alias": "dell-vm240",
+      "error": "ssh: connect to host 192.168.21.22 port 22: Operation not permitted\r\nConnection closed by UNKNOWN port 65535\r\n"
+    }
+  ],
+  "results": [
+    {
+      "vmid": 200,
+      "role": "data-prod-db",
+      "expected_ip": "192.168.19.10",
+      "expected_data_uuid": "d61c0e22-941e-447a-9e9a-1e9e50deb02f",
+      "ssh_exit_code": 0,
+      "host_key_alias": "dell-vm200",
+      "audit": {
+        "at": "2026-11-08T12:16:13.288640+00:00",
+        "hostname": "data-prod-db",
+        "boot_id": "fac32bc2-8a13-49c6-9ad9-b316dc96966a",
+        "addresses": {
+          "exit_code": 0,
+          "data": [
+            {
+              "ifindex": 2,
+              "ifname": "eth0",
+              "flags": [
+                "BROADCAST",
+                "MULTICAST",
+                "UP",
+                "LOWER_UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "fq_codel",
+              "operstate": "UP",
+              "group": "default",
+              "txqlen": 1000,
+              "altnames": [
+                "enp0s18",
+                "enxbc24111c6200"
+              ],
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "192.168.19.10",
+                  "prefixlen": 24,
+                  "broadcast": "192.168.19.255",
+                  "scope": "global",
+                  "label": "eth0",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            },
+            {
+              "ifindex": 3,
+              "ifname": "br-130ddce4ef74",
+              "flags": [
+                "BROADCAST",
+                "MULTICAST",
+                "UP",
+                "LOWER_UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "noqueue",
+              "operstate": "UP",
+              "group": "default",
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "172.18.0.1",
+                  "prefixlen": 16,
+                  "broadcast": "172.18.255.255",
+                  "scope": "global",
+                  "label": "br-130ddce4ef74",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            },
+            {
+              "ifindex": 4,
+              "ifname": "docker0",
+              "flags": [
+                "NO-CARRIER",
+                "BROADCAST",
+                "MULTICAST",
+                "UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "noqueue",
+              "operstate": "DOWN",
+              "group": "default",
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "172.17.0.1",
+                  "prefixlen": 16,
+                  "broadcast": "172.17.255.255",
+                  "scope": "global",
+                  "label": "docker0",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            }
+          ]
+        },
+        "routes": {
+          "exit_code": 0,
+          "data": [
+            {
+              "dst": "default",
+              "gateway": "192.168.19.1",
+              "dev": "eth0",
+              "protocol": "static",
+              "flags": []
+            },
+            {
+              "dst": "172.17.0.0/16",
+              "dev": "docker0",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "172.17.0.1",
+              "flags": [
+                "linkdown"
+              ]
+            },
+            {
+              "dst": "172.18.0.0/16",
+              "dev": "br-130ddce4ef74",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "172.18.0.1",
+              "flags": []
+            },
+            {
+              "dst": "192.168.19.0/24",
+              "dev": "eth0",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "192.168.19.10",
+              "flags": []
+            }
+          ]
+        },
+        "DNS": {
+          "resolv_conf_target": "/run/systemd/resolve/stub-resolv.conf",
+          "nameservers": [
+            "127.0.0.53"
+          ]
+        },
+        "networkctl_DNS": [
+          "Gateway: 192.168.19.1 on eth0",
+          "DNS: 192.168.19.1"
+        ],
+        "fish": "fish, version 4.0.2",
+        "shells": {
+          "root": "/bin/bash",
+          "ub": "/bin/bash"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "751",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStatus": "0",
+            "Id": "ssh.service",
+            "After": "network.target sysinit.target nss-user-lookup.target system.slice -.mount basic.target systemd-journald.socket auditd.service sshd-keygen.service cloud-init-network.service",
+            "RequiresMountsFor": "/run/sshd",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "FragmentPath": "/usr/lib/systemd/system/ssh.service",
+            "UnitFileState": "enabled"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "731",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStatus": "0",
+            "Id": "qemu-guest-agent.service",
+            "After": "sysinit.target system.slice basic.target \"dev-virtio\\\\x2dports-org.qemu.guest_agent.0.device\" systemd-journald.socket",
+            "RequiresMountsFor": "",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "FragmentPath": "/usr/lib/systemd/system/qemu-guest-agent.service",
+            "UnitFileState": "static"
+          },
+          "docker.service": {
+            "MainPID": "781",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStatus": "0",
+            "Id": "docker.service",
+            "After": "network-online.target docker.socket sysinit.target system.slice basic.target firewalld.service time-set.target systemd-journald.socket containerd.service nss-lookup.target",
+            "RequiresMountsFor": "",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "FragmentPath": "/usr/lib/systemd/system/docker.service",
+            "UnitFileState": "enabled"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "789",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStatus": "0",
+            "Id": "prometheus-node-exporter.service",
+            "After": "sysinit.target basic.target system.slice systemd-journald.socket",
+            "RequiresMountsFor": "",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "FragmentPath": "/usr/lib/systemd/system/prometheus-node-exporter.service",
+            "UnitFileState": "enabled"
+          },
+          "dell-guest-health.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStatus": "0",
+            "Id": "dell-guest-health.service",
+            "After": "system.slice network-online.target tmp.mount systemd-tmpfiles-setup.service dell-guest-health.timer -.mount systemd-journald.socket basic.target sysinit.target",
+            "RequiresMountsFor": "",
+            "LoadState": "loaded",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "FragmentPath": "/etc/systemd/system/dell-guest-health.service",
+            "UnitFileState": "static"
+          },
+          "dell-guest-health.timer": {
+            "Result": "success",
+            "Id": "dell-guest-health.timer",
+            "After": "sysinit.target",
+            "RequiresMountsFor": "",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "waiting",
+            "FragmentPath": "/etc/systemd/system/dell-guest-health.timer",
+            "UnitFileState": "enabled"
+          },
+          "dell-data-prod-db.service": {
+            "MainPID": "1158",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStatus": "0",
+            "Id": "dell-data-prod-db.service",
+            "After": "basic.target network-online.target systemd-journald.socket docker.service \"srv-dell\\\\x2ddata.mount\" sysinit.target system.slice -.mount",
+            "RequiresMountsFor": "/opt/dell/data/prod-db /srv/dell-data",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "FragmentPath": "/etc/systemd/system/dell-data-prod-db.service",
+            "UnitFileState": "enabled"
+          }
+        },
+        "failed_units": [],
+        "listeners": [
+          "0.0.0.0:22",
+          "192.168.19.10:3306",
+          "192.168.19.10:9100",
+          "[::]:22"
+        ],
+        "mount": {
+          "exit_code": 0,
+          "data": {
+            "filesystems": [
+              {
+                "target": "/srv/dell-data",
+                "source": "/dev/sdb",
+                "fstype": "ext4",
+                "uuid": "d61c0e22-941e-447a-9e9a-1e9e50deb02f",
+                "options": "rw,relatime,stripe=16"
+              }
+            ]
+          }
+        },
+        "docker_list_exit_code": 0,
+        "containers": [
+          {
+            "exit_code": 0,
+            "data": {
+              "ID": "b1a1e926f9ca92d717dbb903a313315a74749f7a942528096cb57cea8abee0ca",
+              "State": "running",
+              "Health": "healthy",
+              "RestartCount": 0
+            }
+          }
+        ],
+        "supervisor_journal_classification": {
+          "mount identity": 0,
+          "UUID": 0,
+          "mountpoint": 0,
+          "mount": 0,
+          "unhealthy": 0,
+          "failed": 0,
+          "inactive": 0,
+          "exited": 0,
+          "missing": 0,
+          "permission denied": 0,
+          "address": 0,
+          "timeout": 0,
+          "dependency": 0,
+          "healthy": 0
+        },
+        "supervisor_journal_raw_emitted": false
+      },
+      "checks": {
+        "strict_SSH": true,
+        "hostname": true,
+        "expected_IP_present": true,
+        "gateway": true,
+        "upstream_DNS": true,
+        "fish_installed": true,
+        "default_Bash_unchanged": true,
+        "no_failed_units": true,
+        "exporter_active": true,
+        "collector_timer_active": true,
+        "exact_mount_UUID_rw": true,
+        "supervisor_active": true,
+        "container_count_expected": true,
+        "containers_running_healthy": true,
+        "container_restart_counts_zero": true
+      }
+    },
+    {
+      "vmid": 201,
+      "role": "data-prod-infra",
+      "expected_ip": "192.168.19.11",
+      "expected_data_uuid": "b85156c2-dac8-4b33-ab25-460aaf676c57",
+      "ssh_exit_code": 0,
+      "host_key_alias": "dell-vm201",
+      "audit": {
+        "at": "2026-11-08T12:16:14.807141+00:00",
+        "hostname": "data-prod-infra",
+        "boot_id": "4be535b9-e983-49cf-97bc-256ca22bacc3",
+        "addresses": {
+          "exit_code": 0,
+          "data": [
+            {
+              "ifindex": 2,
+              "ifname": "eth0",
+              "flags": [
+                "BROADCAST",
+                "MULTICAST",
+                "UP",
+                "LOWER_UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "fq_codel",
+              "operstate": "UP",
+              "group": "default",
+              "txqlen": 1000,
+              "altnames": [
+                "enp0s18",
+                "enxbc24111cbb93"
+              ],
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "192.168.19.11",
+                  "prefixlen": 24,
+                  "broadcast": "192.168.19.255",
+                  "scope": "global",
+                  "label": "eth0",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            },
+            {
+              "ifindex": 3,
+              "ifname": "docker0",
+              "flags": [
+                "NO-CARRIER",
+                "BROADCAST",
+                "MULTICAST",
+                "UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "noqueue",
+              "operstate": "DOWN",
+              "group": "default",
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "172.17.0.1",
+                  "prefixlen": 16,
+                  "broadcast": "172.17.255.255",
+                  "scope": "global",
+                  "label": "docker0",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            },
+            {
+              "ifindex": 4,
+              "ifname": "br-f638bf454723",
+              "flags": [
+                "BROADCAST",
+                "MULTICAST",
+                "UP",
+                "LOWER_UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "noqueue",
+              "operstate": "UP",
+              "group": "default",
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "172.18.0.1",
+                  "prefixlen": 16,
+                  "broadcast": "172.18.255.255",
+                  "scope": "global",
+                  "label": "br-f638bf454723",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            }
+          ]
+        },
+        "routes": {
+          "exit_code": 0,
+          "data": [
+            {
+              "dst": "default",
+              "gateway": "192.168.19.1",
+              "dev": "eth0",
+              "protocol": "static",
+              "flags": []
+            },
+            {
+              "dst": "172.17.0.0/16",
+              "dev": "docker0",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "172.17.0.1",
+              "flags": [
+                "linkdown"
+              ]
+            },
+            {
+              "dst": "172.18.0.0/16",
+              "dev": "br-f638bf454723",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "172.18.0.1",
+              "flags": []
+            },
+            {
+              "dst": "192.168.19.0/24",
+              "dev": "eth0",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "192.168.19.11",
+              "flags": []
+            }
+          ]
+        },
+        "DNS": {
+          "resolv_conf_target": "/run/systemd/resolve/stub-resolv.conf",
+          "nameservers": [
+            "127.0.0.53"
+          ]
+        },
+        "networkctl_DNS": [
+          "Gateway: 192.168.19.1 on eth0",
+          "DNS: 192.168.19.1"
+        ],
+        "fish": "fish, version 4.0.2",
+        "shells": {
+          "root": "/bin/bash",
+          "ub": "/bin/bash"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "718",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStatus": "0",
+            "Id": "ssh.service",
+            "After": "nss-user-lookup.target system.slice basic.target sysinit.target -.mount network.target cloud-init-network.service systemd-journald.socket sshd-keygen.service auditd.service",
+            "RequiresMountsFor": "/run/sshd",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "FragmentPath": "/usr/lib/systemd/system/ssh.service",
+            "UnitFileState": "enabled"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "700",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStatus": "0",
+            "Id": "qemu-guest-agent.service",
+            "After": "basic.target systemd-journald.socket \"dev-virtio\\\\x2dports-org.qemu.guest_agent.0.device\" system.slice sysinit.target",
+            "RequiresMountsFor": "",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "FragmentPath": "/usr/lib/systemd/system/qemu-guest-agent.service",
+            "UnitFileState": "static"
+          },
+          "docker.service": {
+            "MainPID": "749",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStatus": "0",
+            "Id": "docker.service",
+            "After": "containerd.service basic.target network-online.target sysinit.target time-set.target docker.socket system.slice firewalld.service systemd-journald.socket nss-lookup.target",
+            "RequiresMountsFor": "",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "FragmentPath": "/usr/lib/systemd/system/docker.service",
+            "UnitFileState": "enabled"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "757",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStatus": "0",
+            "Id": "prometheus-node-exporter.service",
+            "After": "sysinit.target system.slice systemd-journald.socket basic.target",
+            "RequiresMountsFor": "",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "FragmentPath": "/usr/lib/systemd/system/prometheus-node-exporter.service",
+            "UnitFileState": "enabled"
+          },
+          "dell-guest-health.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStatus": "0",
+            "Id": "dell-guest-health.service",
+            "After": "systemd-tmpfiles-setup.service -.mount network-online.target tmp.mount system.slice sysinit.target dell-guest-health.timer basic.target systemd-journald.socket",
+            "RequiresMountsFor": "",
+            "LoadState": "loaded",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "FragmentPath": "/etc/systemd/system/dell-guest-health.service",
+            "UnitFileState": "static"
+          },
+          "dell-guest-health.timer": {
+            "Result": "success",
+            "Id": "dell-guest-health.timer",
+            "After": "sysinit.target",
+            "RequiresMountsFor": "",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "waiting",
+            "FragmentPath": "/etc/systemd/system/dell-guest-health.timer",
+            "UnitFileState": "enabled"
+          },
+          "dell-data-prod-infra.service": {
+            "MainPID": "1209",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStatus": "0",
+            "Id": "dell-data-prod-infra.service",
+            "After": "systemd-journald.socket network-online.target -.mount system.slice basic.target sysinit.target docker.service \"srv-dell\\\\x2ddata.mount\"",
+            "RequiresMountsFor": "/opt/dell/data/prod-infra /srv/dell-data",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "FragmentPath": "/etc/systemd/system/dell-data-prod-infra.service",
+            "UnitFileState": "enabled"
+          }
+        },
+        "failed_units": [],
+        "listeners": [
+          "192.168.19.11:8848",
+          "192.168.19.11:9100",
+          "0.0.0.0:22",
+          "192.168.19.11:5672",
+          "192.168.19.11:9848",
+          "192.168.19.11:6379",
+          "192.168.19.11:15672",
+          "[::]:22"
+        ],
+        "mount": {
+          "exit_code": 0,
+          "data": {
+            "filesystems": [
+              {
+                "target": "/srv/dell-data",
+                "source": "/dev/sdb",
+                "fstype": "ext4",
+                "uuid": "b85156c2-dac8-4b33-ab25-460aaf676c57",
+                "options": "rw,relatime,stripe=16"
+              }
+            ]
+          }
+        },
+        "docker_list_exit_code": 0,
+        "containers": [
+          {
+            "exit_code": 0,
+            "data": {
+              "ID": "ff4c025af4b222512bfd2975790d40144c5d6b38c435888adc06e2a0be9d8e61",
+              "State": "running",
+              "Health": "healthy",
+              "RestartCount": 0
+            }
+          },
+          {
+            "exit_code": 0,
+            "data": {
+              "ID": "b940153fac95f736fb49a32ccd7f9143dced2eddd62944f4ef810e2c30a771a5",
+              "State": "running",
+              "Health": "healthy",
+              "RestartCount": 0
+            }
+          },
+          {
+            "exit_code": 0,
+            "data": {
+              "ID": "3d3000b2a67c396ec5647892e12f9441fbbddb19aa0882cca447a2f403bc43f0",
+              "State": "running",
+              "Health": "healthy",
+              "RestartCount": 0
+            }
+          }
+        ],
+        "supervisor_journal_classification": {
+          "mount identity": 0,
+          "UUID": 0,
+          "mountpoint": 0,
+          "mount": 0,
+          "unhealthy": 0,
+          "failed": 0,
+          "inactive": 0,
+          "exited": 0,
+          "missing": 0,
+          "permission denied": 0,
+          "address": 0,
+          "timeout": 0,
+          "dependency": 0,
+          "healthy": 0
+        },
+        "supervisor_journal_raw_emitted": false
+      },
+      "checks": {
+        "strict_SSH": true,
+        "hostname": true,
+        "expected_IP_present": true,
+        "gateway": true,
+        "upstream_DNS": true,
+        "fish_installed": true,
+        "default_Bash_unchanged": true,
+        "no_failed_units": true,
+        "exporter_active": true,
+        "collector_timer_active": true,
+        "exact_mount_UUID_rw": true,
+        "supervisor_active": true,
+        "container_count_expected": true,
+        "containers_running_healthy": true,
+        "container_restart_counts_zero": true
+      }
+    },
+    {
+      "vmid": 210,
+      "role": "data-test",
+      "expected_ip": "192.168.19.20",
+      "expected_data_uuid": "dd1773f9-aa48-4401-a9c8-caf0f66845f3",
+      "ssh_exit_code": 0,
+      "host_key_alias": "dell-vm210",
+      "audit": {
+        "at": "2026-11-08T12:16:17.727311+00:00",
+        "hostname": "data-test",
+        "boot_id": "7e33a42f-69ed-4cff-9d07-29ce4999d109",
+        "addresses": {
+          "exit_code": 0,
+          "data": [
+            {
+              "ifindex": 2,
+              "ifname": "eth0",
+              "flags": [
+                "BROADCAST",
+                "MULTICAST",
+                "UP",
+                "LOWER_UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "fq_codel",
+              "operstate": "UP",
+              "group": "default",
+              "txqlen": 1000,
+              "altnames": [
+                "enp0s18",
+                "enxbc24115d2d98"
+              ],
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "192.168.19.20",
+                  "prefixlen": 24,
+                  "broadcast": "192.168.19.255",
+                  "scope": "global",
+                  "label": "eth0",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            },
+            {
+              "ifindex": 3,
+              "ifname": "br-a92ce9a20927",
+              "flags": [
+                "BROADCAST",
+                "MULTICAST",
+                "UP",
+                "LOWER_UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "noqueue",
+              "operstate": "UP",
+              "group": "default",
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "172.18.0.1",
+                  "prefixlen": 16,
+                  "broadcast": "172.18.255.255",
+                  "scope": "global",
+                  "label": "br-a92ce9a20927",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            },
+            {
+              "ifindex": 4,
+              "ifname": "docker0",
+              "flags": [
+                "NO-CARRIER",
+                "BROADCAST",
+                "MULTICAST",
+                "UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "noqueue",
+              "operstate": "DOWN",
+              "group": "default",
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "172.17.0.1",
+                  "prefixlen": 16,
+                  "broadcast": "172.17.255.255",
+                  "scope": "global",
+                  "label": "docker0",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            }
+          ]
+        },
+        "routes": {
+          "exit_code": 0,
+          "data": [
+            {
+              "dst": "default",
+              "gateway": "192.168.19.1",
+              "dev": "eth0",
+              "protocol": "static",
+              "flags": []
+            },
+            {
+              "dst": "172.17.0.0/16",
+              "dev": "docker0",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "172.17.0.1",
+              "flags": [
+                "linkdown"
+              ]
+            },
+            {
+              "dst": "172.18.0.0/16",
+              "dev": "br-a92ce9a20927",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "172.18.0.1",
+              "flags": []
+            },
+            {
+              "dst": "192.168.19.0/24",
+              "dev": "eth0",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "192.168.19.20",
+              "flags": []
+            }
+          ]
+        },
+        "DNS": {
+          "resolv_conf_target": "/run/systemd/resolve/stub-resolv.conf",
+          "nameservers": [
+            "127.0.0.53"
+          ]
+        },
+        "networkctl_DNS": [
+          "Gateway: 192.168.19.1 on eth0",
+          "DNS: 192.168.19.1"
+        ],
+        "fish": "fish, version 4.0.2",
+        "shells": {
+          "root": "/bin/bash",
+          "ub": "/bin/bash"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "691",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStatus": "0",
+            "Id": "ssh.service",
+            "After": "auditd.service network.target sysinit.target nss-user-lookup.target cloud-init-network.service -.mount system.slice sshd-keygen.service systemd-journald.socket basic.target",
+            "RequiresMountsFor": "/run/sshd",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "FragmentPath": "/usr/lib/systemd/system/ssh.service",
+            "UnitFileState": "enabled"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "659",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStatus": "0",
+            "Id": "qemu-guest-agent.service",
+            "After": "basic.target system.slice sysinit.target systemd-journald.socket \"dev-virtio\\\\x2dports-org.qemu.guest_agent.0.device\"",
+            "RequiresMountsFor": "",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "FragmentPath": "/usr/lib/systemd/system/qemu-guest-agent.service",
+            "UnitFileState": "static"
+          },
+          "docker.service": {
+            "MainPID": "758",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStatus": "0",
+            "Id": "docker.service",
+            "After": "nss-lookup.target firewalld.service docker.socket system.slice network-online.target systemd-journald.socket time-set.target basic.target sysinit.target containerd.service",
+            "RequiresMountsFor": "",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "FragmentPath": "/usr/lib/systemd/system/docker.service",
+            "UnitFileState": "enabled"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "734",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStatus": "0",
+            "Id": "prometheus-node-exporter.service",
+            "After": "systemd-journald.socket basic.target system.slice sysinit.target",
+            "RequiresMountsFor": "",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "FragmentPath": "/usr/lib/systemd/system/prometheus-node-exporter.service",
+            "UnitFileState": "enabled"
+          },
+          "dell-guest-health.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStatus": "0",
+            "Id": "dell-guest-health.service",
+            "After": "dell-guest-health.timer system.slice sysinit.target tmp.mount network-online.target systemd-tmpfiles-setup.service systemd-journald.socket -.mount basic.target",
+            "RequiresMountsFor": "",
+            "LoadState": "loaded",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "FragmentPath": "/etc/systemd/system/dell-guest-health.service",
+            "UnitFileState": "static"
+          },
+          "dell-guest-health.timer": {
+            "Result": "success",
+            "Id": "dell-guest-health.timer",
+            "After": "sysinit.target",
+            "RequiresMountsFor": "",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "waiting",
+            "FragmentPath": "/etc/systemd/system/dell-guest-health.timer",
+            "UnitFileState": "enabled"
+          },
+          "dell-data-test-data.service": {
+            "MainPID": "1233",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStatus": "0",
+            "Id": "dell-data-test-data.service",
+            "After": "\"srv-dell\\\\x2ddata.mount\" system.slice systemd-journald.socket docker.service sysinit.target -.mount network-online.target basic.target",
+            "RequiresMountsFor": "/srv/dell-data /opt/dell/data/test-data",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "FragmentPath": "/etc/systemd/system/dell-data-test-data.service",
+            "UnitFileState": "enabled"
+          }
+        },
+        "failed_units": [],
+        "listeners": [
+          "192.168.19.20:9100",
+          "192.168.19.20:8848",
+          "192.168.19.20:6379",
+          "192.168.19.20:9848",
+          "192.168.19.20:5672",
+          "0.0.0.0:22",
+          "192.168.19.20:15672",
+          "192.168.19.20:3306",
+          "[::]:22"
+        ],
+        "mount": {
+          "exit_code": 0,
+          "data": {
+            "filesystems": [
+              {
+                "target": "/srv/dell-data",
+                "source": "/dev/sdb",
+                "fstype": "ext4",
+                "uuid": "dd1773f9-aa48-4401-a9c8-caf0f66845f3",
+                "options": "rw,relatime"
+              }
+            ]
+          }
+        },
+        "docker_list_exit_code": 0,
+        "containers": [
+          {
+            "exit_code": 0,
+            "data": {
+              "ID": "5bd9a27fd4051994494eed423d84e50862ef91918ffbfa4834df14de2a8f2e4c",
+              "State": "running",
+              "Health": "healthy",
+              "RestartCount": 0
+            }
+          },
+          {
+            "exit_code": 0,
+            "data": {
+              "ID": "df4e9d159f5903e42ab4e6c2c092d2d454ac55a76c226fc8a07fe44c72b41ef6",
+              "State": "running",
+              "Health": "healthy",
+              "RestartCount": 0
+            }
+          },
+          {
+            "exit_code": 0,
+            "data": {
+              "ID": "b5d49893d99c73d425f0af035dce837f1467a096841d7bbae3f7d5381ce3df22",
+              "State": "running",
+              "Health": "healthy",
+              "RestartCount": 0
+            }
+          },
+          {
+            "exit_code": 0,
+            "data": {
+              "ID": "4d955f668d96330c7d9cbe676ec41722a1d3c67038a52d89f0c3f8f11866ce58",
+              "State": "running",
+              "Health": "healthy",
+              "RestartCount": 0
+            }
+          }
+        ],
+        "supervisor_journal_classification": {
+          "mount identity": 0,
+          "UUID": 0,
+          "mountpoint": 0,
+          "mount": 0,
+          "unhealthy": 0,
+          "failed": 0,
+          "inactive": 0,
+          "exited": 0,
+          "missing": 0,
+          "permission denied": 0,
+          "address": 0,
+          "timeout": 0,
+          "dependency": 0,
+          "healthy": 0
+        },
+        "supervisor_journal_raw_emitted": false
+      },
+      "checks": {
+        "strict_SSH": true,
+        "hostname": true,
+        "expected_IP_present": true,
+        "gateway": true,
+        "upstream_DNS": true,
+        "fish_installed": true,
+        "default_Bash_unchanged": true,
+        "no_failed_units": true,
+        "exporter_active": true,
+        "collector_timer_active": true,
+        "exact_mount_UUID_rw": true,
+        "supervisor_active": true,
+        "container_count_expected": true,
+        "containers_running_healthy": true,
+        "container_restart_counts_zero": true
+      }
+    },
+    {
+      "vmid": 230,
+      "role": "java-prod-01",
+      "expected_ip": "192.168.19.40",
+      "expected_data_uuid": null,
+      "ssh_exit_code": 0,
+      "host_key_alias": "dell-vm230",
+      "first_attempt": {
+        "ssh_exit_code": 255,
+        "error": "channel 0: open failed: connect failed: No route to host\r\nstdio forwarding failed\r\nConnection closed by UNKNOWN port 65535\r\n"
+      },
+      "audit": {
+        "at": "2026-11-08T12:18:19.538104+00:00",
+        "hostname": "java-prod-01",
+        "boot_id": "8729da28-8dea-4c13-b863-9ba4819d1fd5",
+        "addresses": {
+          "exit_code": 0,
+          "data": [
+            {
+              "ifindex": 2,
+              "ifname": "eth0",
+              "flags": [
+                "BROADCAST",
+                "MULTICAST",
+                "UP",
+                "LOWER_UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "fq_codel",
+              "operstate": "UP",
+              "group": "default",
+              "txqlen": 1000,
+              "altnames": [
+                "enp0s18",
+                "enxbc24111c2000"
+              ],
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "192.168.19.40",
+                  "prefixlen": 24,
+                  "broadcast": "192.168.19.255",
+                  "scope": "global",
+                  "label": "eth0",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            }
+          ]
+        },
+        "routes": {
+          "exit_code": 0,
+          "data": [
+            {
+              "dst": "default",
+              "gateway": "192.168.19.1",
+              "dev": "eth0",
+              "protocol": "static",
+              "flags": []
+            },
+            {
+              "dst": "192.168.19.0/24",
+              "dev": "eth0",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "192.168.19.40",
+              "flags": []
+            }
+          ]
+        },
+        "DNS": {
+          "resolv_conf_target": "/run/systemd/resolve/stub-resolv.conf",
+          "nameservers": [
+            "127.0.0.53"
+          ]
+        },
+        "networkctl_DNS": [
+          "Gateway: 192.168.19.1 on eth0",
+          "DNS: 192.168.19.1"
+        ],
+        "fish": "fish, version 4.0.2",
+        "shells": {
+          "root": "/bin/bash",
+          "ub": "/bin/bash"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "748",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "ssh.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "718",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "qemu-guest-agent.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "static"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "780",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "prometheus-node-exporter.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          },
+          "dell-guest-health.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-guest-health.service",
+            "LoadState": "loaded",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": "static"
+          },
+          "dell-guest-health.timer": {
+            "Result": "success",
+            "Id": "dell-guest-health.timer",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "waiting",
+            "UnitFileState": "enabled"
+          },
+          "dell-finger-finger-gateway-mobile.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-finger-finger-gateway-mobile.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          },
+          "dell-finger-finger-bff-system.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-finger-finger-bff-system.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          },
+          "dell-finger-finger-auth.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-finger-finger-auth.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          },
+          "dell-finger-finger-service-coms.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-finger-finger-service-coms.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          },
+          "dell-finger-finger-service-system.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-finger-finger-service-system.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          }
+        },
+        "failed_units": [],
+        "root_mount": {
+          "exit_code": 0,
+          "data": {
+            "filesystems": [
+              {
+                "target": "/",
+                "source": "/dev/sda1",
+                "fstype": "ext4",
+                "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+                "options": "rw,relatime,discard,errors=remount-ro"
+              }
+            ]
+          }
+        },
+        "listeners": [
+          "0.0.0.0:22",
+          "127.0.0.54:53",
+          "127.0.0.53%lo:53",
+          "192.168.19.40:9100",
+          "0.0.0.0:5355",
+          "[::]:22",
+          "[::]:5355"
+        ],
+        "java_process_count": 0,
+        "finger_user_present": true,
+        "jdk_exit_code": 0,
+        "jdk_version_lines": [
+          "openjdk version \"21.0.13\" 2026-10-20",
+          "OpenJDK Runtime Environment (build 21.0.13+9-1-deb13u2-Debian)",
+          "OpenJDK 64-Bit Server VM (build 21.0.13+9-1-deb13u2-Debian, mixed mode, sharing)"
+        ]
+      },
+      "checks": {
+        "strict_SSH": true,
+        "hostname": true,
+        "expected_IP_present": true,
+        "gateway": true,
+        "upstream_DNS": true,
+        "fish_installed": true,
+        "default_Bash_unchanged": true,
+        "no_failed_units": true,
+        "exporter_active": true,
+        "collector_timer_active": true,
+        "jdk21": true,
+        "finger_user_exists": true,
+        "no_Java_processes": true,
+        "five_old_business_units_stopped_not_enabled": true
+      }
+    },
+    {
+      "vmid": 240,
+      "role": "java-test-01",
+      "expected_ip": "192.168.19.45",
+      "expected_data_uuid": null,
+      "ssh_exit_code": 0,
+      "host_key_alias": "dell-vm240",
+      "first_attempt": {
+        "ssh_exit_code": 255,
+        "error": "channel 0: open failed: connect failed: No route to host\r\nstdio forwarding failed\r\nConnection closed by UNKNOWN port 65535\r\n"
+      },
+      "audit": {
+        "at": "2026-11-08T12:18:22.792444+00:00",
+        "hostname": "java-test-01",
+        "boot_id": "bba2c8ec-3ff7-4c75-9136-0688694b7b92",
+        "addresses": {
+          "exit_code": 0,
+          "data": [
+            {
+              "ifindex": 2,
+              "ifname": "eth0",
+              "flags": [
+                "BROADCAST",
+                "MULTICAST",
+                "UP",
+                "LOWER_UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "fq_codel",
+              "operstate": "UP",
+              "group": "default",
+              "txqlen": 1000,
+              "altnames": [
+                "enp0s18",
+                "enxbc241165415a"
+              ],
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "192.168.19.45",
+                  "prefixlen": 24,
+                  "broadcast": "192.168.19.255",
+                  "scope": "global",
+                  "label": "eth0",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            }
+          ]
+        },
+        "routes": {
+          "exit_code": 0,
+          "data": [
+            {
+              "dst": "default",
+              "gateway": "192.168.19.1",
+              "dev": "eth0",
+              "protocol": "static",
+              "flags": []
+            },
+            {
+              "dst": "192.168.19.0/24",
+              "dev": "eth0",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "192.168.19.45",
+              "flags": []
+            }
+          ]
+        },
+        "DNS": {
+          "resolv_conf_target": "/run/systemd/resolve/stub-resolv.conf",
+          "nameservers": [
+            "127.0.0.53"
+          ]
+        },
+        "networkctl_DNS": [
+          "Gateway: 192.168.19.1 on eth0",
+          "DNS: 192.168.19.1"
+        ],
+        "fish": "fish, version 4.0.2",
+        "shells": {
+          "root": "/bin/bash",
+          "ub": "/bin/bash"
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "710",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "ssh.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "687",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "qemu-guest-agent.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "static"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "749",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "prometheus-node-exporter.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          },
+          "dell-guest-health.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-guest-health.service",
+            "LoadState": "loaded",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": "static"
+          },
+          "dell-guest-health.timer": {
+            "Result": "success",
+            "Id": "dell-guest-health.timer",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "waiting",
+            "UnitFileState": "enabled"
+          },
+          "dell-finger-finger-gateway-mobile.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-finger-finger-gateway-mobile.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          },
+          "dell-finger-finger-bff-system.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-finger-finger-bff-system.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          },
+          "dell-finger-finger-auth.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-finger-finger-auth.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          },
+          "dell-finger-finger-service-coms.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-finger-finger-service-coms.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          },
+          "dell-finger-finger-service-system.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-finger-finger-service-system.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          }
+        },
+        "failed_units": [],
+        "root_mount": {
+          "exit_code": 0,
+          "data": {
+            "filesystems": [
+              {
+                "target": "/",
+                "source": "/dev/sda1",
+                "fstype": "ext4",
+                "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+                "options": "rw,relatime,discard,errors=remount-ro"
+              }
+            ]
+          }
+        },
+        "listeners": [
+          "0.0.0.0:5355",
+          "0.0.0.0:22",
+          "127.0.0.54:53",
+          "127.0.0.53%lo:53",
+          "192.168.19.45:9100",
+          "[::]:5355",
+          "[::]:22"
+        ],
+        "java_process_count": 0,
+        "finger_user_present": true,
+        "jdk_exit_code": 0,
+        "jdk_version_lines": [
+          "openjdk version \"21.0.13\" 2026-10-20",
+          "OpenJDK Runtime Environment (build 21.0.13+9-1-deb13u2-Debian)",
+          "OpenJDK 64-Bit Server VM (build 21.0.13+9-1-deb13u2-Debian, mixed mode, sharing)"
+        ]
+      },
+      "checks": {
+        "strict_SSH": true,
+        "hostname": true,
+        "expected_IP_present": true,
+        "gateway": true,
+        "upstream_DNS": true,
+        "fish_installed": true,
+        "default_Bash_unchanged": true,
+        "no_failed_units": true,
+        "exporter_active": true,
+        "collector_timer_active": true,
+        "jdk21": true,
+        "finger_user_exists": true,
+        "no_Java_processes": true,
+        "five_old_business_units_stopped_not_enabled": true
+      }
+    }
+  ],
+  "status": "read-only-core-service-baseline-passed-no-repair-action-required",
+  "assessment": {
+    "data_guests": [
+      200,
+      201,
+      210
+    ],
+    "data_expected_containers": 8,
+    "data_running_healthy_containers": 8,
+    "data_mounts_UUID_exact_rw": true,
+    "data_gateway_DNS_expected": true,
+    "data_failed_units": 0,
+    "Java_guests_pending": [],
+    "Java_pending_reason": null,
+    "auth_or_namespace_retention_retested": false,
+    "application_data_read_or_mutated": false,
+    "services_started_stopped_installed": false,
+    "server_files_changed": false,
+    "known_hosts_changed": false,
+    "source_Nexus221_accessed": false,
+    "business_apps_started": false,
+    "mac_external_probe_touched": false,
+    "Java_guests_verified": [
+      230,
+      240
+    ],
+    "Java_initial_connection_failure_resolved": "One read-only retry after PVE sequential onboot reached these guests succeeded; no start/restart/reconfiguration performed",
+    "observed_nonessential_listener_candidate": "VM230/240 systemd-resolved LLMNR TCP5355 listens on wildcard; no service failure; review future local name resolution requirements before any disabling. No change made."
+  },
+  "hardware_scope": {
+    "main_agent_reported_at": "2026-11-08T20:18:21+08:00",
+    "user_reported_reseat_or_replacement_and_diagnostics_passed": true,
+    "this_subtask_independently_verified_memory_repair": false
+  },
+  "recommendations": [
+    "Do not redeploy or reinitialize data components: current inspected mount, supervisor and container health baseline passed.",
+    "Keep VM230/240 as JDK foundations with old business units inactive/not found; do not restart old release or publish Nacos config.",
+    "No core-service repair required by observed metadata. Independent authentication/namespace/data-integrity recovery checks remain separate if needed.",
+    "Keep source221, CF, templates, network and Mac probe unchanged; no migration in this phase."
+  ]
+}

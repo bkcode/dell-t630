@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-07T10:55:18.181006+08:00",
+  "generated_at": "2026-11-08T20:23:54.551737+08:00",
   "timezone": "Asia/Shanghai",
-  "scope": "historical cleanup/fish/template acceptance; authorized Nexus merge paused for hardware; recovery checks not executed",
-  "status": "paused-awaiting-hardware-recovery",
+  "scope": "historical cleanup9passed plus user-deferred Nexus merge;11/08 existing-infrastructure runtime recovery scoped separately",
+  "status": "existing-infrastructure-recovered-user-deferred-migration",
   "summary": {
     "total": 16,
     "current_phase_case_count": 10,
@@ -16,14 +16,16 @@
     "required_pending": [
       "CLN-NEXUS-001"
     ],
-    "hardware_resume_pending": [
+    "hardware_resume_pending": [],
+    "recovery_cases_pending": [
       "REC-HW-001",
       "REC-BAK-001",
       "REC-DATA-001",
       "REC-NET-001",
       "REC-OBS-001",
       "REC-ROLL-001"
-    ]
+    ],
+    "current_phase_recovery_complete_scope": "runtime basics only; no migration/no full disaster-recovery reacceptance"
   },
   "cases": [
     {
@@ -56,9 +58,9 @@
       "limitations": [
         "旧回退档完整性不等于所有旧VM恢复启动实演",
         "正式/测试各一按既有隔离要求处理，未回复的默认shell偏好不视作chsh许可",
-        "UEFI0058 POST暂停后未重新验证在线状态；历史通过不代表当前服务仍运行。"
+        "11/08已另做基础运行核查；本例原历史操作未重执行，基础健康不代替其完整验收。"
       ],
-      "current_live_status": "unverified-hardware-paused",
+      "current_live_status": "basic-runtime-scoped-verification20261108;historical-case-not-reexecuted",
       "verification_scope": "historical-success-not-current-live",
       "full_service_baseline_reference_at": "2026-11-07T02:35:01.759527+08:00",
       "phase": "historical-cleanup",
@@ -93,9 +95,9 @@
       "limitations": [
         "旧回退档完整性不等于所有旧VM恢复启动实演",
         "正式/测试各一按既有隔离要求处理，未回复的默认shell偏好不视作chsh许可",
-        "UEFI0058 POST暂停后未重新验证在线状态；历史通过不代表当前服务仍运行。"
+        "11/08已另做基础运行核查；本例原历史操作未重执行，基础健康不代替其完整验收。"
       ],
-      "current_live_status": "unverified-hardware-paused",
+      "current_live_status": "basic-runtime-scoped-verification20261108;historical-case-not-reexecuted",
       "verification_scope": "historical-success-not-current-live",
       "full_service_baseline_reference_at": "2026-11-07T02:35:01.759527+08:00",
       "phase": "historical-cleanup",
@@ -134,9 +136,9 @@
       "limitations": [
         "旧回退档完整性不等于所有旧VM恢复启动实演",
         "正式/测试各一按既有隔离要求处理，未回复的默认shell偏好不视作chsh许可",
-        "UEFI0058 POST暂停后未重新验证在线状态；历史通过不代表当前服务仍运行。"
+        "11/08已另做基础运行核查；本例原历史操作未重执行，基础健康不代替其完整验收。"
       ],
-      "current_live_status": "unverified-hardware-paused",
+      "current_live_status": "basic-runtime-scoped-verification20261108;historical-case-not-reexecuted",
       "verification_scope": "historical-success-not-current-live",
       "full_service_baseline_reference_at": "2026-11-07T02:35:01.759527+08:00",
       "phase": "historical-cleanup",
@@ -171,9 +173,9 @@
       "limitations": [
         "旧回退档完整性不等于所有旧VM恢复启动实演",
         "正式/测试各一按既有隔离要求处理，未回复的默认shell偏好不视作chsh许可",
-        "UEFI0058 POST暂停后未重新验证在线状态；历史通过不代表当前服务仍运行。"
+        "11/08已另做基础运行核查；本例原历史操作未重执行，基础健康不代替其完整验收。"
       ],
-      "current_live_status": "unverified-hardware-paused",
+      "current_live_status": "basic-runtime-scoped-verification20261108;historical-case-not-reexecuted",
       "verification_scope": "historical-success-not-current-live",
       "full_service_baseline_reference_at": "2026-11-07T02:35:01.759527+08:00",
       "phase": "historical-cleanup",
@@ -212,9 +214,9 @@
       "limitations": [
         "旧回退档完整性不等于所有旧VM恢复启动实演",
         "正式/测试各一按既有隔离要求处理，未回复的默认shell偏好不视作chsh许可",
-        "UEFI0058 POST暂停后未重新验证在线状态；历史通过不代表当前服务仍运行。"
+        "11/08已另做基础运行核查；本例原历史操作未重执行，基础健康不代替其完整验收。"
       ],
-      "current_live_status": "unverified-hardware-paused",
+      "current_live_status": "basic-runtime-scoped-verification20261108;historical-case-not-reexecuted",
       "verification_scope": "historical-success-not-current-live",
       "full_service_baseline_reference_at": "2026-11-07T02:35:01.759527+08:00",
       "phase": "historical-cleanup",
@@ -253,9 +255,9 @@
       "limitations": [
         "旧回退档完整性不等于所有旧VM恢复启动实演",
         "正式/测试各一按既有隔离要求处理，未回复的默认shell偏好不视作chsh许可",
-        "UEFI0058 POST暂停后未重新验证在线状态；历史通过不代表当前服务仍运行。"
+        "11/08已另做基础运行核查；本例原历史操作未重执行，基础健康不代替其完整验收。"
       ],
-      "current_live_status": "unverified-hardware-paused",
+      "current_live_status": "basic-runtime-scoped-verification20261108;historical-case-not-reexecuted",
       "verification_scope": "historical-success-not-current-live",
       "full_service_baseline_reference_at": "2026-11-07T02:35:01.759527+08:00",
       "phase": "historical-cleanup",
@@ -294,9 +296,9 @@
       "limitations": [
         "旧回退档完整性不等于所有旧VM恢复启动实演",
         "正式/测试各一按既有隔离要求处理，未回复的默认shell偏好不视作chsh许可",
-        "UEFI0058 POST暂停后未重新验证在线状态；历史通过不代表当前服务仍运行。"
+        "11/08已另做基础运行核查；本例原历史操作未重执行，基础健康不代替其完整验收。"
       ],
-      "current_live_status": "unverified-hardware-paused",
+      "current_live_status": "basic-runtime-scoped-verification20261108;historical-case-not-reexecuted",
       "verification_scope": "historical-success-not-current-live",
       "full_service_baseline_reference_at": "2026-11-07T02:35:01.759527+08:00",
       "phase": "historical-cleanup",
@@ -335,9 +337,9 @@
       "limitations": [
         "旧回退档完整性不等于所有旧VM恢复启动实演",
         "正式/测试各一按既有隔离要求处理，未回复的默认shell偏好不视作chsh许可",
-        "UEFI0058 POST暂停后未重新验证在线状态；历史通过不代表当前服务仍运行。"
+        "11/08已另做基础运行核查；本例原历史操作未重执行，基础健康不代替其完整验收。"
       ],
-      "current_live_status": "unverified-hardware-paused",
+      "current_live_status": "basic-runtime-scoped-verification20261108;historical-case-not-reexecuted",
       "verification_scope": "historical-success-not-current-live",
       "full_service_baseline_reference_at": "2026-11-07T02:35:01.759527+08:00",
       "phase": "historical-cleanup",
@@ -372,9 +374,9 @@
       "limitations": [
         "旧回退档完整性不等于所有旧VM恢复启动实演",
         "正式/测试各一按既有隔离要求处理，未回复的默认shell偏好不视作chsh许可",
-        "UEFI0058 POST暂停后未重新验证在线状态；历史通过不代表当前服务仍运行。"
+        "11/08已另做基础运行核查；本例原历史操作未重执行，基础健康不代替其完整验收。"
       ],
-      "current_live_status": "unverified-hardware-paused",
+      "current_live_status": "basic-runtime-scoped-verification20261108;historical-case-not-reexecuted",
       "verification_scope": "historical-success-not-current-live",
       "full_service_baseline_reference_at": "2026-11-07T02:35:01.759527+08:00",
       "phase": "historical-cleanup",
@@ -389,8 +391,8 @@
       "status": "pending",
       "required_for_phase": true,
       "preconditions": [
-        "本轮用户整理/多余模板清理与fish范围已知；原数据/认证/CF及220privatekey边界保持",
-        "Nexus短停维护已获明确授权；先通过硬件恢复门禁及fresh基线，才能执行合并"
+        "用户将来明确恢复迁移任务后再fresh核基线、硬件/存储与本次冷备；历史短停授权不覆盖当前明确不迁移。",
+        "发布私钥仅220、不wholebackup220、原盘/IP31唯一owner。"
       ],
       "steps": [
         "按18当前计划及对应受控工具逐项操作",
@@ -421,12 +423,12 @@
           "note": "firmware POST gate; no migration executed"
         }
       ],
-      "observed_result": "用户已明确授权短时停机合并，但迁移未开始。iDRAC先示PowerOff，随后控制台UEFI0058停在POST；此前SEL指向DIMM_B1。当前阻塞是硬件恢复和fresh验收，不是再次等待同项维护授权。",
+      "observed_result": "11/08基础核查221仍独立19.31且原两容器healthy；220原standby未加31/未启Nexus。用户明确暂不迁移，合并pending原因是用户延期，不再以硬件暂停或同项授权未到为唯一阻塞。",
       "limitations": [
-        "02:35完整验收后当前源221/目标220运行状态不可现场确认；助手未执行本轮迁移停服/重启/盘或IP移交。",
-        "SEL的B1事件与UEFI0058支持内存路径故障，但不足以断言单条DIMM已确诊或内存是整机物理关机唯一原因；BMC显示时间时区未核。"
+        "本轮未执行221停服/退役、220Nexus启用或原盘/IP31移交。",
+        "基础健康不等于原合并账号/EULA/全部制品/回退验收通过。"
       ],
-      "current_live_status": "unverified-hardware-paused",
+      "current_live_status": "basic-runtime-scoped-verification20261108;historical-case-not-reexecuted",
       "verification_scope": "authorized-not-executed",
       "maintenance_authorized": true,
       "migration_started": false,
@@ -434,7 +436,9 @@
       "execution_type": "manual-review",
       "fail_criteria": [
         "真实观察不符合该项通过条件、缺少对象/时间/步骤或证据，或越过原身份/数据/权限边界；旧passed不能代替硬件暂停后的fresh验收。"
-      ]
+      ],
+      "current_phase_allowed": false,
+      "deferred_reason": "user-explicitly-deferred-all-migration20261108"
     },
     {
       "id": "REC-HW-001",
@@ -443,7 +447,7 @@
       "execution_type": "manual-review",
       "status": "pending",
       "required_for_phase": false,
-      "required_for_hardware_resume": true,
+      "required_for_hardware_resume": false,
       "preconditions": [
         "由具备资质的现场人员保留SEL/Lifecycle与POST证据；不得清日志掩盖错误，不自动按F1绕过，不远程powercycle。"
       ],
@@ -465,14 +469,45 @@
         {
           "path": "08-hardware-findings.md",
           "note": "baseline/plan only; no new recovery execution evidence"
+        },
+        {
+          "path": "recovery/20261108/core-services-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/media-tools-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/ops-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/host-network-postcheck.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/host-forwarding-restored.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/pve-cleanup-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/network-CF-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
         }
       ],
       "planned_result_evidence": "cleanup/hardware/recovery/REC-HW-001.json",
-      "observed_result": "未执行；本轮在本地同步文档、规则与暂停状态，编写人工手册并进行Git交付，未远程连接服务器或实施物理/运行恢复。实际Git结果由20-git-and-handoff.md及交付证据记录。",
-      "current_live_status": "unverified-hardware-paused",
+      "observed_result": "用户报告已重新插拔/更换内存且诊断通过；本boot EDAC CE/UE0、RAIDOptl和基础服务可达。未独立收集完整物理维护/离线诊断报告、根因隔离及长期稳定观察，原严格用例仍pending。",
+      "current_live_status": "basic-runtime-scoped-verification20261108;historical-case-not-reexecuted",
       "limitations": [
-        "当前证据只支持事故事实/旧基线与执行计划，不能视为恢复通过。"
-      ]
+        "已观察部分按本轮范围记录；原严格通过条件尚未全部实演，不扩大签收。"
+      ],
+      "verification_progress": "partial",
+      "required_for_current_phase": false,
+      "current_scope_note": "原严格恢复/迁移合同保留，非本轮基础服务恢复完成的额外门禁。"
     },
     {
       "id": "REC-BAK-001",
@@ -481,9 +516,9 @@
       "execution_type": "disruptive-test",
       "status": "pending",
       "required_for_phase": false,
-      "required_for_hardware_resume": true,
+      "required_for_hardware_resume": false,
       "preconditions": [
-        "REC-HW-001通过；现有Nexus维护授权有效，root再次确认本次确切221/220对象、可用空间和回退资源。"
+        "仅当将来用户明确恢复迁移时，先fresh确认硬件/存储稳定、确切221/220对象、备份空间及回退资源；本轮不执行。"
       ],
       "steps": [
         "fresh核221数据UUID/挂载/账号身份/制品摘要与220standby，先保存root600基线。",
@@ -508,14 +543,45 @@
         {
           "path": "cleanup/nexus/PLAN.md",
           "note": "baseline/plan only; no new recovery execution evidence"
+        },
+        {
+          "path": "recovery/20261108/core-services-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/media-tools-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/ops-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/host-network-postcheck.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/host-forwarding-restored.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/pve-cleanup-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/network-CF-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
         }
       ],
       "planned_result_evidence": "cleanup/hardware/recovery/REC-BAK-001.json",
-      "observed_result": "未执行；本轮在本地同步文档、规则与暂停状态，编写人工手册并进行Git交付，未远程连接服务器或实施物理/运行恢复。实际Git结果由20-git-and-handoff.md及交付证据记录。",
-      "current_live_status": "unverified-hardware-paused",
+      "observed_result": "本轮明确不迁移，不停221、不做合并冷备或隔离恢复；旧归档完整性证据保留，本次未重签。",
+      "current_live_status": "basic-runtime-scoped-verification20261108;historical-case-not-reexecuted",
       "limitations": [
-        "当前证据只支持事故事实/旧基线与执行计划，不能视为恢复通过。"
-      ]
+        "已观察部分按本轮范围记录；原严格通过条件尚未全部实演，不扩大签收。"
+      ],
+      "verification_progress": "not-executed-user-deferred",
+      "required_for_current_phase": false,
+      "current_scope_note": "原严格恢复/迁移合同保留，非本轮基础服务恢复完成的额外门禁。"
     },
     {
       "id": "REC-DATA-001",
@@ -524,7 +590,7 @@
       "execution_type": "read-only",
       "status": "pending",
       "required_for_phase": false,
-      "required_for_hardware_resume": true,
+      "required_for_hardware_resume": false,
       "preconditions": [
         "REC-HW-001通过；恢复后可信访问信息由root重新确认，不自行重生host keys或初始化业务。"
       ],
@@ -551,14 +617,45 @@
         {
           "path": "infra/penpot/application/acceptance-summary.json",
           "note": "baseline/plan only; no new recovery execution evidence"
+        },
+        {
+          "path": "recovery/20261108/core-services-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/media-tools-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/ops-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/host-network-postcheck.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/host-forwarding-restored.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/pve-cleanup-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/network-CF-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
         }
       ],
       "planned_result_evidence": "cleanup/hardware/recovery/REC-DATA-001.json",
-      "observed_result": "未执行；本轮在本地同步文档、规则与暂停状态，编写人工手册并进行Git交付，未远程连接服务器或实施物理/运行恢复。实际Git结果由20-git-and-handoff.md及交付证据记录。",
-      "current_live_status": "unverified-hardware-paused",
+      "observed_result": "原挂载UUID、运行身份元数据、既有服务与容器健康已核，230/240无Java业务；未登录数据库核账号权限或重验Nexus全部GAV/EULA、Penpot设计素材/共享内容，因此完整数据身份用例仍pending。",
+      "current_live_status": "basic-runtime-scoped-verification20261108;historical-case-not-reexecuted",
       "limitations": [
-        "当前证据只支持事故事实/旧基线与执行计划，不能视为恢复通过。"
-      ]
+        "已观察部分按本轮范围记录；原严格通过条件尚未全部实演，不扩大签收。"
+      ],
+      "verification_progress": "partial",
+      "required_for_current_phase": false,
+      "current_scope_note": "原严格恢复/迁移合同保留，非本轮基础服务恢复完成的额外门禁。"
     },
     {
       "id": "REC-NET-001",
@@ -567,7 +664,7 @@
       "execution_type": "read-only",
       "status": "pending",
       "required_for_phase": false,
-      "required_for_hardware_resume": true,
+      "required_for_hardware_resume": false,
       "preconditions": [
         "REC-HW-001通过，网关190和访问方实际可达；本条不授权新网络变更。"
       ],
@@ -589,14 +686,45 @@
         {
           "path": "network19/audit/network19-acceptance.json",
           "note": "baseline/plan only; no new recovery execution evidence"
+        },
+        {
+          "path": "recovery/20261108/core-services-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/media-tools-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/ops-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/host-network-postcheck.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/host-forwarding-restored.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/pve-cleanup-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/network-CF-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
         }
       ],
       "planned_result_evidence": "cleanup/hardware/recovery/REC-NET-001.json",
-      "observed_result": "未执行；本轮在本地同步文档、规则与暂停状态，编写人工手册并进行Git交付，未远程连接服务器或实施物理/运行恢复。实际Git结果由20-git-and-handoff.md及交付证据记录。",
-      "current_live_status": "unverified-hardware-paused",
+      "observed_result": "PVE/190与19网络基本路径已核，带IP桥forwarding=1已通过3个owned guard文件纠正为全0，interfaces/routes/ACL未变，无network reload/guest restart。未重跑完整VPN/角色拒绝矩阵和新guard重启持久性，严格用例仍pending。",
+      "current_live_status": "basic-runtime-scoped-verification20261108;historical-case-not-reexecuted",
       "limitations": [
-        "当前证据只支持事故事实/旧基线与执行计划，不能视为恢复通过。"
-      ]
+        "已观察部分按本轮范围记录；原严格通过条件尚未全部实演，不扩大签收。"
+      ],
+      "verification_progress": "partial",
+      "required_for_current_phase": false,
+      "current_scope_note": "原严格恢复/迁移合同保留，非本轮基础服务恢复完成的额外门禁。"
     },
     {
       "id": "REC-OBS-001",
@@ -605,13 +733,13 @@
       "execution_type": "read-only",
       "status": "pending",
       "required_for_phase": false,
-      "required_for_hardware_resume": true,
+      "required_for_hardware_resume": false,
       "preconditions": [
         "REC-HW-001通过，Ops270与10个节点已恢复预期基础服务；本条不授权新外发测试。"
       ],
       "steps": [
         "fresh核10guest+5Ops共15targets的实际UP、加载配置/报警、PVE硬件采集及Java base-only语义；不能拿02:35/02:37旧快照代替。",
-        "核原内部Larkactive白名单及受保护凭据加载、bridge172.18网络不变；只读不send。Mac外部探针继续停用，不宣称T630断电时能独立外告警。"
+        "核原内部Larkactive白名单及受保护凭据加载、bridge172.18网络不变；只读不send。Mac外部探针用户明确不需要，保持停用并移出当前/后续待办，不宣称独立外告警。"
       ],
       "observable_pass_conditions": [
         "15targets fresh采样符合预期、硬件指标可观测、当前告警逐项处理，内部通知配置身份保持且无未授权外发。"
@@ -627,14 +755,45 @@
         {
           "path": "cleanup/monitoring/ten-role/execution-status.json",
           "note": "baseline/plan only; no new recovery execution evidence"
+        },
+        {
+          "path": "recovery/20261108/core-services-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/media-tools-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/ops-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/host-network-postcheck.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/host-forwarding-restored.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/pve-cleanup-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/network-CF-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
         }
       ],
       "planned_result_evidence": "cleanup/hardware/recovery/REC-OBS-001.json",
-      "observed_result": "未执行；本轮在本地同步文档、规则与暂停状态，编写人工手册并进行Git交付，未远程连接服务器或实施物理/运行恢复。实际Git结果由20-git-and-handoff.md及交付证据记录。",
-      "current_live_status": "unverified-hardware-paused",
+      "observed_result": "20:19:38读回15/15targets UP、Prom/AM alerts空、4容器healthy、Lark原unit active及textfile更新；未发送通知或重新验Lark端到端。Mac外部探针由用户明确不需要，已从当前/后续任务移除。",
+      "current_live_status": "basic-runtime-scoped-verification20261108;historical-case-not-reexecuted",
       "limitations": [
-        "当前证据只支持事故事实/旧基线与执行计划，不能视为恢复通过。"
-      ]
+        "已观察部分按本轮范围记录；原严格通过条件尚未全部实演，不扩大签收。"
+      ],
+      "verification_progress": "partial",
+      "required_for_current_phase": false,
+      "current_scope_note": "原严格恢复/迁移合同保留，非本轮基础服务恢复完成的额外门禁。"
     },
     {
       "id": "REC-ROLL-001",
@@ -643,7 +802,7 @@
       "execution_type": "manual-review",
       "status": "pending",
       "required_for_phase": false,
-      "required_for_hardware_resume": true,
+      "required_for_hardware_resume": false,
       "preconditions": [
         "REC-HW/BAK/DATA/NET/OBS各项通过；只有本轮授权合并恢复执行后才可完成，未执行不签。"
       ],
@@ -669,28 +828,71 @@
         {
           "path": "10-resume-after-approval.md",
           "note": "baseline/plan only; no new recovery execution evidence"
+        },
+        {
+          "path": "recovery/20261108/core-services-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/media-tools-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/ops-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/host-network-postcheck.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/host-forwarding-restored.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/pve-cleanup-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
+        },
+        {
+          "path": "recovery/20261108/network-CF-audit.json",
+          "note": "11/08 scoped runtime evidence; does not imply full case passed"
         }
       ],
       "planned_result_evidence": "cleanup/hardware/recovery/REC-ROLL-001.json",
-      "observed_result": "未执行；本轮在本地同步文档、规则与暂停状态，编写人工手册并进行Git交付，未远程连接服务器或实施物理/运行恢复。实际Git结果由20-git-and-handoff.md及交付证据记录。",
-      "current_live_status": "unverified-hardware-paused",
+      "observed_result": "本轮用户暂缓迁移，未执行Nexus移盘/IP接管、回退或退役；不把基础恢复验收当合并通过。",
+      "current_live_status": "basic-runtime-scoped-verification20261108;historical-case-not-reexecuted",
       "limitations": [
-        "当前证据只支持事故事实/旧基线与执行计划，不能视为恢复通过。"
-      ]
+        "已观察部分按本轮范围记录；原严格通过条件尚未全部实演，不扩大签收。"
+      ],
+      "verification_progress": "not-executed-user-deferred",
+      "required_for_current_phase": false,
+      "current_scope_note": "原严格恢复/迁移合同保留，非本轮基础服务恢复完成的额外门禁。"
     }
   ],
   "runtime_state": {
-    "status": "paused-awaiting-hardware-recovery",
-    "current_live_status": "unverified-firmware-POST-halted",
-    "last_successful_full_verification_at": "2026-11-07T02:35:01.759527+08:00",
-    "last_successful_PVE_operation_at": "2026-11-07T02:44:29+08:00",
-    "last_PVE_operation_time_source": "root-task-manager handoff; distinct from full acceptance",
-    "hardware_evidence": "cleanup/hardware/DIMM_B1-incident.json",
-    "hardware_code": "UEFI0058",
-    "prior_SEL_location": "DIMM_B1",
-    "BMC_timezone_verified": false,
-    "Nexus_maintenance_authorized": true,
+    "status": "existing-infrastructure-recovered-user-deferred-migration",
+    "current_live_status": "basic-runtime-verified-at-recorded-time-not-full-reacceptance",
+    "current_runtime_verification_at": "2026-11-08T20:20:48+08:00",
+    "prior_full_service_acceptance_at": "2026-11-07T02:35:01.759527+08:00",
+    "prior_last_PVE_operation_before_incident_at": "2026-11-07T02:44:29+08:00",
+    "hardware_incident": "cleanup/hardware/DIMM_B1-incident.json",
+    "hardware_repair_user_report": "User confirmed memory reseat/replacement and diagnostics passed on2026-11-08; exact physical procedure and diagnostic report not independently collected here",
+    "current_boot_EDAC_CE_UE": 0,
+    "RAID_runtime_state": "Optl",
+    "hardware_root_cause_independently_proven": false,
     "Nexus_migration_started": false,
-    "remote_actions_in_this_document_closeout": false
-  }
+    "migration_allowed_this_phase": false,
+    "source221_retirement_allowed_this_phase": false,
+    "Mac_external_probe": "not-required-by-user;removed-from-current-and-future-tasks;remain-disabled",
+    "evidence": [
+      "recovery/20261108/core-services-audit.json",
+      "recovery/20261108/media-tools-audit.json",
+      "recovery/20261108/ops-audit.json",
+      "recovery/20261108/host-network-postcheck.json",
+      "recovery/20261108/host-forwarding-restored.json",
+      "recovery/20261108/pve-cleanup-audit.json",
+      "recovery/20261108/network-CF-audit.json"
+    ]
+  },
+  "Mac_external_probe": "user-not-required;not-a-current-or-future-task"
 }

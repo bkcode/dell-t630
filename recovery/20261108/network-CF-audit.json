@@ -1,0 +1,62 @@
+{
+  "gateway": {
+    "hostname": "network-gateway",
+    "addresses": {
+      "exit": 0,
+      "out": "[{\"ifindex\":1,\"ifname\":\"lo\",\"flags\":[\"LOOPBACK\",\"UP\",\"LOWER_UP\"],\"mtu\":65536,\"qdisc\":\"noqueue\",\"operstate\":\"UNKNOWN\",\"group\":\"default\",\"txqlen\":1000,\"addr_info\":[{\"family\":\"inet\",\"local\":\"127.0.0.1\",\"prefixlen\":8,\"scope\":\"host\",\"label\":\"lo\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]},{\"ifindex\":2,\"ifname\":\"eth0\",\"flags\":[\"BROADCAST\",\"MULTICAST\",\"UP\",\"LOWER_UP\"],\"mtu\":1500,\"qdisc\":\"fq_codel\",\"operstate\":\"UP\",\"group\":\"default\",\"txqlen\":1000,\"altnames\":[\"enp0s18\",\"enx026319019000\"],\"addr_info\":[{\"family\":\"inet\",\"local\":\"192.168.21.23\",\"prefixlen\":24,\"broadcast\":\"192.168.21.255\",\"scope\":\"global\",\"label\":\"eth0\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]},{\"ifindex\":3,\"ifname\":\"eth1\",\"flags\":[\"BROADCAST\",\"MULTICAST\",\"UP\",\"LOWER_UP\"],\"mtu\":1500,\"qdisc\":\"fq_codel\",\"operstate\":\"UP\",\"group\":\"default\",\"txqlen\":1000,\"altnames\":[\"enp0s19\",\"enx026319019001\"],\"addr_info\":[{\"family\":\"inet\",\"local\":\"192.168.19.1\",\"prefixlen\":24,\"broadcast\":\"192.168.19.255\",\"scope\":\"global\",\"label\":\"eth1\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]}]\n"
+    },
+    "routes": {
+      "exit": 0,
+      "out": "[{\"dst\":\"default\",\"gateway\":\"192.168.21.1\",\"dev\":\"eth0\",\"protocol\":\"static\",\"metric\":100,\"flags\":[]},{\"dst\":\"192.168.19.0/24\",\"dev\":\"eth1\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"192.168.19.1\",\"flags\":[]},{\"dst\":\"192.168.21.0/24\",\"dev\":\"eth0\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"192.168.21.23\",\"flags\":[]}]\n"
+    },
+    "failed_units": {
+      "exit": 0,
+      "out": ""
+    },
+    "forward4": "1",
+    "units": {
+      "dell-gateway19-firewall.service": "MainPID=0\nResult=success\nActiveState=active\nSubState=exited\n",
+      "dell-gateway19-ready.service": "MainPID=0\nResult=success\nActiveState=active\nSubState=exited\n",
+      "dell-gateway19-dnsmasq.service": "MainPID=822\nResult=success\nActiveState=active\nSubState=running\n"
+    },
+    "nft_tables": [
+      {
+        "family": "inet",
+        "name": "dell_gateway19",
+        "handle": 6
+      }
+    ],
+    "NAT_rules_present": false,
+    "WG_full_source_seen": true,
+    "dns_tcp_queries": {
+      "penpot-service.dell.home.arpa": {
+        "exit": 0,
+        "addresses": [
+          "198.18.0.194"
+        ]
+      },
+      "artifact-service.dell.home.arpa": {
+        "exit": 0,
+        "addresses": [
+          "198.18.0.195"
+        ]
+      },
+      "publish-service.dell.home.arpa": {
+        "exit": 0,
+        "addresses": [
+          "198.18.0.196"
+        ]
+      }
+    }
+  },
+  "CF": {
+    "unit": "MainPID=175\nNRestarts=0\nLoadState=loaded\nActiveState=active\nSubState=running\n",
+    "ready": {
+      "error_type": "URLError"
+    },
+    "metrics": {
+      "error_type": "URLError"
+    }
+  },
+  "scope": "read-only network and tunnel liveness; no token/ExecStart read; public ingress not verified"
+}

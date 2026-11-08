@@ -1,23 +1,23 @@
 # Dell T630人工操作手册
 
-更新：2026-11-07，Asia/Shanghai。本手册面向掌握PVE root和来宾ub管理权限的管理员，提供逐项复核流程，**不是一键部署脚本，也不代表以下动作现在正在执行**。当前用户已暂停硬件处理与Nexus合并，改做文档Git交付；未经明确恢复执行，不因看到命令就连接、停服、改盘或启动业务。
+更新：2026-11-08，Asia/Shanghai。本手册面向掌握PVE root和来宾ub管理权限的管理员，提供逐项复核流程，**不是一键部署脚本，也不代表以下动作现在正在执行**。用户已确认内存重插/更换并诊断通过，服务器恢复检查现有基础服务和清理；本轮明确不迁移、不合并Nexus。下文复杂合并/恢复命令仅保留人工参考，不因服务器可达就停服、改盘或启动业务。
 
-Nexus短时维护的知情授权已经满足；当前暂停和硬件安全门禁仍有效。旧“待授权”记录只作历史，不能反复索取同一许可，也不能借旧许可越过新暂停。当前拓扑/预算以[plan.json](plan.json)、入口以[12](12-service-access-and-operations.md)、清理事实以[18](18-cleanup-and-consolidation.md)为准。证据采集后的运行状态会变化，硬件故障后必须fresh核查。
+历史Nexus短时维护知情许可已满足，但11月8日用户明确暂不迁移的范围控制当前执行。旧“待授权”记录只作历史，不能反复索取同一许可，也不能借旧许可或硬件恢复自动启动合并。当前拓扑/预算以[plan.json](plan.json)、入口以[12](12-service-access-and-operations.md)、清理事实以[18](18-cleanup-and-consolidation.md)为准。证据采集后的运行状态会变化，硬件故障后必须fresh核查。
 
-## 1. 先处理硬件门禁
+## 1. 硬件历史、当前恢复与复发门禁
 
 已记录iDRAC多位不可纠正内存错误及correctable rate exceeded指向DIMM_B1；后续控制台显示UEFI0058并停在F1/F2/F10/F11提示。控制台该屏本身没有列插槽，B1来自先前SEL。BMC时区尚未核实，不能据显示时间断言该内存条是物理关机唯一原因，也不能跳过接触、插槽、通道或内存控制器检查。
 
-人工恢复检查点：
+11月8日用户确认已重插/更换并诊断通过，root本boot EDAC CE/UE为0、RAIDOptl，已复核12运行实例/15targets UP/6HTTP200；这些是当前恢复采样，不代表单凭计数0已独立确诊原故障。SEL/UEFI0058历史继续保留。以后故障复发时按下列检查点处理：
 
 1. 先保留iDRAC SEL、Lifecycle、POST截图、B1库存/配置及时间/时区。不要先清日志、反复powercycle或改BIOS来隐藏错误。故障证据见[DIMM事件](cleanup/hardware/DIMM_B1-incident.json)。
-2. 用户当前暂停，**不要求立即实施物理动作**。将来明确恢复后，由熟悉T630维护规程的人员正常关机、断开电源并采取ESD措施，再按Dell维护资料做离线检查、重新就位/合适替换及诊断；禁止带电插拔，不在本手册猜测DIMM互换布局。
+2. 当前不要求重复物理操作。若将来故障复发并明确安排物理维护，由熟悉T630维护规程的人员正常关机、断开电源并采取ESD措施，再按Dell维护资料做离线检查、重新就位/合适替换及诊断；禁止带电插拔，不在本手册猜测DIMM互换布局。
 3. F1可能使机器继续启动，**不等于故障已修复**。在POST/内存诊断、iDRAC日志与稳定性未确认前，不搬数据库、不做高负载构建/大恢复，不仅凭SSH重新可达就继续合并。
 4. 硬件稳定后，再核RAID/BBU/磁盘、PVE存储、文件系统、实际bootID及服务。旧RAID“Optl”或旧HTTP200是过去证据，不是故障后的新结论。
 
 ## 2. 地址、身份与凭据
 
-以下是最后签收的地址配置；当前能否访问须硬件恢复后验证。PVE21.22不再承担应用NAT或L3转发，应用使用真实19地址。
+以下地址在11月8日恢复核查中保持，实时可用性仍以操作当时检查为准。PVE21.22不再承担应用NAT或L3转发，应用使用真实19地址。
 
 | 对象 | 地址/入口 | 说明 |
 | --- | --- | --- |
@@ -61,7 +61,7 @@ ssh -i ~/.ssh/yang_local_rsa -o IdentitiesOnly=yes -o BatchMode=yes \
 
 ## 3. 正常启动与关机
 
-**仅硬件稳定、明确恢复运行后使用。** 先在PVE确认`qm list`、`pct list`、`pvesm status`；模板和退休VM不能混进运行清单。这里给人工顺序，不自动改现役onboot。PVE延时只能排序，不能代替DNS、挂载和应用健康。
+**仅硬件稳定且有相应维护窗口时使用；本次已自动恢复的对象不重复启动。** 先在PVE确认`qm list`、`pct list`、`pvesm status`；模板和退休VM不能混进运行清单。这里给人工顺序，不自动改现役onboot。PVE延时只能排序，不能代替DNS、挂载和应用健康。11月8日已补宿主forward启动守卫；日常复核宿主forward全0/无hostNAT，不用恢复宿主转发来修来宾服务。
 
 最后签收的实际onboot order为：**190(1) → CF100(5) → 200(10) → 201(11) → 210(12) → 270(20) → 221(21) → 250(22) → 220(30) → 230(40) → 240(43) → 260(50)**。不要拿旧startup-order.json里已退役231/232的行重新应用。人工分阶段gate如下，不改变已配置顺序：
 
@@ -114,7 +114,7 @@ sudo docker --host unix:///var/run/docker.sock inspect --format '{{.State.Status
 
 NAS更改用官方OMV模型/界面，不能裸改生成的Samba/fstab文件后与Salt互相覆盖。SMB实际来源过滤在各share，不能只查global；当前21/19/127+VPN10允许，users/readlist/writelist/guest仍受控。Jellyfin配置重启前须检查实际播放/转码，不能强杀真实流。
 
-Ops为机内监控；整台T630失效时可能连告警也失效。Mac外部探针按用户决定停用，不能重新加载其LaunchAgent来假装已修复独立告警。维护静默只在明确范围使用，健康与零真实告警后解除本次项，不清其它管理员的静默。
+Ops为机内监控；整台T630失效时可能连告警也失效。Mac外部探针用户明确不需要，现行/后续均移出操作范围；不再要求隐私授权、独立App或重新加载LaunchAgent，历史代码/误告警仅供审计。维护静默只在明确范围使用，健康与零真实告警后解除本次项，不清其它管理员的静默。
 
 ## 5. 模板克隆与验收
 
@@ -161,15 +161,15 @@ qmrestore <已核归档路径> <新QA_VMID> --storage <批准存储> --unique 1
 4. 在QA核OS/UUID/实际应用/账号权限与原数据SHA，再做需要的业务只读校验；数据库不可只看容器running。记录步骤/时间/失败/限制，才决定是否切换。未验恢复不宣称RPO/RTO。
 5. 回滚指针/JAR不回滚SQL、Nacos或新用户数据；恢复测试禁止直接覆盖现役数据。QA清理由准确VMID/卷manifest与依赖检查决定，不按目录或base-*通配删除。
 
-## 7. Nexus手动合并：授权已满足，当前硬件暂停
+## 7. Nexus手动合并：历史方案，本轮不迁移
 
-名称与归属以[17合并架构](17-publish-artifact-consolidation.md)为准：最终只保留VM220 `publish-service`，发布与Nexus是该VM的两项职责，31是服务alias；原VM221 `artifact-service`核验后退役。合并验收后须重新核启停清单并移除221，不能继续按旧双机清单启动两个31所有者。
+当前独立220/221保持；[17合并架构](17-publish-artifact-consolidation.md)只是将来用户明确恢复迁移后的目标：最终只保留VM220 `publish-service`，发布与Nexus是该VM的两项职责，31是服务alias；原VM221 `artifact-service`核验后退役。合并验收后须重新核启停清单并移除221，不能继续按旧双机清单启动两个31所有者。
 
-目标已选：220管理primary19.30，Nexus服务alias19.31:8081，OS hostname继续publish-service；220计划6CPU/8GiB，原100GiB数据卷/srv/nexus UUID239dc…保留。服务URL/新账号/EULA/原数据保持；不是新建空仓库。当前仅Docker/两镜像/13项root600 standby准备完成，**221仍是配置归属，220未装active Nexus、未绑定31或迁盘**，故障后的可用性需重新查。
+目标已选：220管理primary19.30，Nexus服务alias19.31:8081，OS hostname继续publish-service；220计划6CPU/8GiB，原100GiB数据卷/srv/nexus UUID239dc…保留。服务URL/新账号/EULA/原数据保持；不是新建空仓库。当前仅Docker/两镜像/13项root600 standby准备完成，**221仍是配置归属，220未装active Nexus、未绑定31或迁盘**，11月8日只读复核Nexus221两容器健康、220仍4CPU/4GiB且无active Nexus；这不授权继续下列迁移步骤。
 
 ### A. 恢复与fresh基线
 
-- 用户知情短停许可已有，当前暂停必须先明确恢复；管理员核硬件、可信管理、存储稳定，再安排具体窗口。不要反复问已满足许可，也不要省略人工检查点。
+- 历史知情短停许可保留，但本轮明确不迁移；只有将来用户明确恢复Nexus迁移任务，管理员才fresh核硬件、可信管理、存储和具体窗口。不能仅凭SSH恢复继续，也不反复索同一历史许可。
 - 只读fresh核221/220实际OS、MAC/IP、bootID、unit、两imageIDs、原UUID和数据树。核target Dockerclassic、0容器及原standby nonce `cb01b8582f544381b0461001dfa3ccb4`。
 - 对13项standby与source现役code/env/三身份做私有hash比较，只有公开IP/hostname/image差异可输出；秘密值或其hash不进普通终端/Git。发布key只stat，不读/传。
 - 仓库原基线49GAV/234主SHA、35metadata语义/1076checksum可能随新合法数据漂移。应冻结当前全量及原数据子集，不删回49凑通过。source只读GET基线驱动**尚未落地**，必须先准备审核；现有verify220.py是target激活后的GET-only验证器，不是source停服脚本。
@@ -203,7 +203,7 @@ qm move-disk 221 scsi1 --target-vmid 220 --target-disk scsi2
 
 同步把31的L2归属从221MAC移到220MAC，保留业务role矩阵、VPN10范围与发布forced-from30/fenced策略。现有`network19/guest-network.py apply`是单IP设计，会断言/删除额外地址，**不能抄它或旧10.63初始化器来设置双IP**。
 
-管理仍用220/30及其自身hostkey，不能用dell-vm221信任别名连新220，也不能复制221hostkeys伪装旧机器。scripts/control.py在本地**已实现additional_ips严格同NIC白名单支持**，不会替管理员配置alias。将来硬件稳定并恢复任务后，先按唯一角色所有权更新plan：220的ip仍为19.30、additional_ips声明19.31，同时221不能继续作为active角色claim31；然后fresh核实际地址、同一NIC及受信hostkey。未知/未声明地址、重复IP或跨NIC仍拒绝，SSH管理固定primary19.30，不关闭strict检查。
+管理仍用220/30及其自身hostkey，不能用dell-vm221信任别名连新220，也不能复制221hostkeys伪装旧机器。scripts/control.py在本地**已实现additional_ips严格同NIC白名单支持**，不会替管理员配置alias。将来用户明确恢复迁移任务且fresh核硬件稳定后，先按唯一角色所有权更新plan：220的ip仍为19.30、additional_ips声明19.31，同时221不能继续作为active角色claim31；然后fresh核实际地址、同一NIC及受信hostkey。未知/未声明地址、重复IP或跨NIC仍拒绝，SSH管理固定primary19.30，不关闭strict检查。
 
 ### D. 原盘挂载、候选提交、启动与验证
 
@@ -215,7 +215,7 @@ sudo /usr/bin/python3 -I -B /opt/dell/cleanup/nexus/target.py commit --nonce cb0
 sudo /usr/bin/python3 -I -B /opt/dell/cleanup/nexus/target.py start --nonce cb01b8582f544381b0461001dfa3ccb4 --root-source221-off-and-disk-handover-complete
 ```
 
-这些命令会真实写/启服务，**现在暂停，不执行**。mount只用已存在UUID、非根盘、原UID/GID200与非空db/blobs，不format。commit只改hostname合同和两image引用，其余env/身份不变，不fresh-init/EULA/上传；start原unit有限等2healthy。fstab已写但mount失败、commit部分路径留下或unit已active而journal未收尾时，先读状态/私有journal和manifest，停止一键重跑；不删整目录强行通过guard。
+这些命令会真实写/启服务，**本轮明确不迁移，不执行**。mount只用已存在UUID、非根盘、原UID/GID200与非空db/blobs，不format。commit只改hostname合同和两image引用，其余env/身份不变，不fresh-init/EULA/上传；start原unit有限等2healthy。fstab已写但mount失败、commit部分路径留下或unit已active而journal未收尾时，先读状态/私有journal和manifest，停止一键重跑；不删整目录强行通过guard。
 
 实际healthy后用[verify220.py](cleanup/nexus/verify220.py)的GET-only检查原/新鲜GAV与SHA、EULA、用户角色、group、匿名401/403和publisher非docker组/socket拒绝。原key只能220，source30/target45/受限命令和fenced不变，不执行Java业务发布。
 
@@ -249,11 +249,11 @@ qm move-disk 220 scsi2 --target-vmid 221 --target-disk scsi1
 - `network19/guest-network.py apply`用于已完成的单IP迁移，不用于220双IP。
 - `infra/bootstrap-guest-storage.py`等建盘/格式化初装流程；禁止对保留卷做mkfs/wipefs、通配lvremove或删/srv。
 - `infra/nas/install-omv.sh`、旧same-IP `adopt-omv-network.sh`及omv populate初装路线；不能覆盖现役OMV网络/SSH/共享配置。
-- Penpot `fresh-target.py init`、历史source凭据复制/PG全库覆盖流程；当前保留Git改造、新身份和既有数据，不重新初始化。
+- Penpot `fresh-target.py init`、历史source凭据复制/PG全库覆盖流程；当前保留Git改造、新身份和既有数据，不重新初始化；main文档合同更新不授权升级历史ff1783e应用。
 - Nexus `fresh-instance.py`、`bootstrap-new.py`、`accept-eula.py`不用于同实例合并恢复；不重置账号、EULA、repo或导入旧H2。
 - Docker `down -v`、volume rm、prune --volumes，或整机/模板目录通配删除；运行中数据不是可清缓存。
 - Java模板clean.py、cloud-init clean/machine-id/hostkey删除只用于明确fresh builder，不能“修复”现役VM。
 - 已完成的旧15对象/QA删除脚本、旧候选30测试版publisher部署器；不能重复删ID或把未部署候选覆盖现役。
-- Mac外部探针LaunchAgent和自动恢复发送；其停用是用户明确范围，不因本手册存在重启。
+- Mac外部探针LaunchAgent和自动恢复发送；用户明确不需要，现行和后续不配置，不因本手册存在而重启。
 
 所有复杂变更先形成具体对象、影响、前置、差异、验证与回退，按已满足的授权范围执行；新业务/删除/外部身份或未涵盖风险另行明确。普通文档检查只运行本地`python3 scripts/validate_docs.py`，不代表远程健康或硬件已修复。

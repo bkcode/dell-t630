@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-08T20:34:09+08:00",
+  "running": [
+    100,
+    190,
+    200,
+    201,
+    210,
+    220,
+    221,
+    230,
+    240,
+    250,
+    260,
+    270
+  ],
+  "templates": [
+    9001,
+    9010,
+    9011
+  ],
+  "extra_stopped": [],
+  "all_host_forward_zero": true,
+  "EDAC_nonzero": {},
+  "failed_units": [],
+  "ISO_paths_remaining": [
+    "dell-artifacts-20261106.iso"
+  ],
+  "monitoring": {
+    "total": 15,
+    "UP": 15,
+    "Prom_alert_count": 0,
+    "AM_alert_count": 0
+  }
+}

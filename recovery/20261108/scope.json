@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-08",
+  "timezone": "Asia/Shanghai",
+  "user_scope": "check and complete existing infrastructure; inventory and clean confirmed redundant server resources",
+  "migration_allowed": false,
+  "Nexus_merge_allowed_this_phase": false,
+  "retire_source221_allowed": false,
+  "Java_business_deployment_allowed": false,
+  "Mac_external_probe_enabled": false,
+  "hardware_repair_method": "user reports reseated/replaced and diagnostic passed; current boot EDACce/ue0 independently observed",
+  "server_writes_so_far": true,
+  "Mac_external_probe_scope": "explicitly not required by user; removed from current plan and future work",
+  "server_write_scope": "management-only forwarding guard installed; no migration/application restart"
+}

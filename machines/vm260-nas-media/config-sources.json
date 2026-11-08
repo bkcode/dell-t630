@@ -6,25 +6,25 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "当前资源/地址/数据卷合同唯一来源；运行状态未在硬件故障后复验。",
-      "sha256": "023ed7a0237f4ac0862ac97fcc4c34d4808b2e9d942efa6b455e748e94ca0703"
+      "sha256": "108ad706e5917e44eb5c6c1f7318c4e41b2f4cf62d281cf76f1a00368832430b"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
       "purpose": "最后验收与当前UEFI0058暂停时间线。",
-      "sha256": "0da10943e1b39845dafa76e58161982e0eac9a9c7747c849eec21977084cadc2"
+      "sha256": "858f0eb05138a66db981507bce15f013359e8388760f778c8cddb018099694ba"
     },
     {
       "path": "12-service-access-and-operations.md",
       "type": "current-contract",
       "purpose": "当前19网入口及凭据保管规则。",
-      "sha256": "ad845beb1290754fdc647642507d996f999c2646639406ea35211bd58b29fc29"
+      "sha256": "f917b7b2445c4fb5f728318cd0ab0851cf13fb0d08bca152f8ad587cd5f41a86"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工启停、硬件门禁、克隆、备份与受控恢复。",
-      "sha256": "717488c3042e9e1777ee3e94d756ccd8ba5f99ea0b17a43c10da22e942e83599"
+      "sha256": "1102845cef3dac5ec1a1797f02b447f4e04d9cc9f00a855e007d61f7082b7c99"
     },
     {
       "path": "cleanup/final-live-check.json",
@@ -54,7 +54,7 @@
       "path": "network19/wireguard/media/README.md",
       "type": "current-contract",
       "purpose": "VPN来源识别范围与必要restart/客户端保护约束。",
-      "sha256": "567ec8743ef9c195cdd4bf3c5522584366dc666c1bfb7a32a982d27752fbd7e9"
+      "sha256": "a67bd9bdd89b2a531afac5f89263eff18cddb0a88ef3743d2a3ef75aef5cfef5"
     },
     {
       "path": "infra/nas/check-data-mount.py",
@@ -67,6 +67,12 @@
       "type": "historical-evidence",
       "purpose": "公开容器结构参考，需要现役受控env，非完整可直接部署快照。",
       "sha256": "f57289cc286a4b2991f0c0709f3ef41336931a2041c8d8a051a87e9a434d86a7"
+    },
+    {
+      "path": "recovery/20261108/media-tools-audit.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-08 scoped recovery check; no migration/application update, not full app-content restore acceptance",
+      "sha256": "3cf578c4e8ee1916363e962adff0db11235ae80706b294a0e7b649463c526e83"
     }
   ],
   "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."

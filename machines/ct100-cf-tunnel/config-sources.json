@@ -6,25 +6,25 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一规划；当前hardwarepause字段优先，不作实时探测。",
-      "sha256": "023ed7a0237f4ac0862ac97fcc4c34d4808b2e9d942efa6b455e748e94ca0703"
+      "sha256": "108ad706e5917e44eb5c6c1f7318c4e41b2f4cf62d281cf76f1a00368832430b"
     },
     {
       "path": "AGENTS.md",
       "type": "current-contract",
       "purpose": "用户暂停与秘密/操作边界。",
-      "sha256": "092764a24bcedd354d9bedfdd887247c23adba8bd2765d38c87cc2091f952159"
+      "sha256": "4a68d9509032171f2ab4d7ceed00f1f8fa16c1242f9ca2937997f520d45a7f8b"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
       "purpose": "最后02:35快照、当前UEFI0058暂停及恢复门禁。",
-      "sha256": "0da10943e1b39845dafa76e58161982e0eac9a9c7747c849eec21977084cadc2"
+      "sha256": "858f0eb05138a66db981507bce15f013359e8388760f778c8cddb018099694ba"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "恢复后人工操作合同，当前不能执行其中远程命令。",
-      "sha256": "717488c3042e9e1777ee3e94d756ccd8ba5f99ea0b17a43c10da22e942e83599"
+      "sha256": "1102845cef3dac5ec1a1797f02b447f4e04d9cc9f00a855e007d61f7082b7c99"
     },
     {
       "path": "cleanup/final-live-check.json",
@@ -36,7 +36,7 @@
       "path": "12-service-access-and-operations.md",
       "type": "current-contract",
       "purpose": "CF/备份/凭据位置与当前暂停边界。",
-      "sha256": "ad845beb1290754fdc647642507d996f999c2646639406ea35211bd58b29fc29"
+      "sha256": "f917b7b2445c4fb5f728318cd0ab0851cf13fb0d08bca152f8ad587cd5f41a86"
     },
     {
       "path": "network19/evidence/CF-network-move.json",
@@ -73,6 +73,12 @@
       "type": "historical-evidence",
       "purpose": "CFrootfs4GiB/ostype等白名单元数据，不读取容器用户数据。",
       "sha256": "f07fc5a13f73f880bcbe690b4b98f79d81eed8a46ec069feb8796774ddd17b2d"
+    },
+    {
+      "path": "recovery/20261108/network-CF-followup.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-08 scoped recovery check; no migration/application update, not full app-content restore acceptance",
+      "sha256": "e4014df0a31b1f8b2ece2d99a1dff53e91d436c1707af7f5f27393278f865ef7"
     }
   ]
 }

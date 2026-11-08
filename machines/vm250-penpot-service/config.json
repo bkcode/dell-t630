@@ -9,10 +9,10 @@
     "memory_gib": 16
   },
   "source_of_truth": "plan.json",
-  "last_verified_at": "2026-11-07T02:35:01+08:00",
-  "current_runtime_verified": false,
-  "status": "paused-awaiting-hardware-repair",
-  "verification_note": "2026-11-07 02:35最后成功验收；当前UEFI0058/DIMM_B1暂停，未复验live。",
+  "last_verified_at": "2026-11-08T12:19:39.230515+00:00",
+  "current_runtime_verified": true,
+  "status": "recovered-infrastructure-verified",
+  "verification_note": "2026-11-08 scoped recovery checks passed; user confirms memory repair/diagnostics; no migration, code upgrade or Java business deployment.",
   "network": {
     "bridge": "vmbr19",
     "prefix_length": 24,
@@ -87,5 +87,8 @@
     "update_policy": "reviewed immutable commit reachable from origin/main; preserve customizations",
     "contract_path": "machines/vm250-penpot-service/git-source.json",
     "authentication_setup": "deferred; no PAT/SSH configuration changed"
-  }
+  },
+  "current_verification_evidence": "recovery/20261108/media-tools-audit.json",
+  "current_verification_scope": "scoped infrastructure recovery; original app data contents/authentication not fully revalidated; no migration",
+  "timestamp_scope": "source audit/receipt time; individual probes retain their timestamps"
 }

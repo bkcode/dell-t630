@@ -9,10 +9,9 @@
     "memory_gib": 0.5
   },
   "source_of_truth": "plan.json",
-  "last_verified_at": "2026-11-07T02:35:01+08:00",
-  "current_runtime_verified": false,
-  "status": "paused-awaiting-hardware-repair",
-  "pause_reason": "User paused server work afterUEFI0058 POST memory error; priorSEL DIMM_B1 evidence, repair/online state unverified.",
+  "last_verified_at": "2026-11-08T20:24:01.673285+08:00",
+  "current_runtime_verified": true,
+  "status": "recovered-infrastructure-verified",
   "record_kind": "offline-configuration-contract-not-live-collection",
   "created_from_local_files_only": true,
   "configuration_policy": {
@@ -172,6 +171,10 @@
     "No fresh runtimeverification whilehostPOST isblocked.",
     "No raw firewall/runtimeexport copied; oldnarrowWG/pre-cleanupDNSpreviews are not currentconfig.",
     "Remote userbatchconfirmed9HTTPentries; exactremoteHTTPcodes/SMB/SSHauthnot separately supplied.",
-    "Nexusmerge authorization ismet buthardwarepause prevents execution; do notchangeDNS/IPownership yet."
-  ]
+    "Nexus merge historical authorization remains; user explicitly deferred migration2026-11-08. Do not change DNS/IP ownership."
+  ],
+  "current_verification_evidence": "recovery/20261108/network-CF-followup.json",
+  "current_verification_scope": "scoped infrastructure recovery; original app data contents/authentication not fully revalidated; no migration",
+  "verification_note": "2026-11-08 scoped recovery checks passed; user confirms memory repair/diagnostics; no migration, code upgrade or Java business deployment.",
+  "timestamp_scope": "source audit/receipt time; individual probes retain their timestamps"
 }

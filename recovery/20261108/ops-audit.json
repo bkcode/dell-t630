@@ -1,0 +1,978 @@
+{
+  "schema_version": 1,
+  "scope": "VM270 read-only recovery audit; no migration or external send",
+  "target": {
+    "vmid": 270,
+    "ip": "192.168.19.70",
+    "host_key_alias": "dell-vm270",
+    "host_key_fingerprint": "SHA256:OjP5q9f3WXxGcoOHs23VlnOf258C6T+nNAxTiYoyf0g",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "snapshots": [
+    {
+      "exit_code": 0,
+      "result": {
+        "at": "2026-11-08T12:18:15.053493+00:00",
+        "hostname": "ops-service",
+        "boot_time_utc": "2026-11-08T12:13:47.173486+00:00",
+        "boot_id_sha256": "bfaee63462aa877703be24ea923067b30954807ca84ae35831a92094a9411521",
+        "commands_scope": "read-only selected systemd/Docker metadata, textfile stats and local GET only",
+        "secrets_read": false,
+        "notifications_or_external_HTTP_sent": false,
+        "service_or_config_mutations": false,
+        "data_mount": {
+          "exit_code": 0,
+          "filesystems": [
+            {
+              "target": "/srv/dell-data",
+              "source": "/dev/sdb",
+              "uuid": "01b1f302-27be-4fbd-b4af-b8e782d85dea",
+              "fstype": "ext4",
+              "options": "rw,relatime"
+            }
+          ]
+        },
+        "expected_UUID": "01b1f302-27be-4fbd-b4af-b8e782d85dea",
+        "mount_UUID_matches": true,
+        "system_running": "running",
+        "failed_units": [],
+        "units": {
+          "dell-ops.service": {
+            "MainPID": "1166",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStartTimestamp": "Sun 2026-11-08 12:14:09 UTC",
+            "ExecMainExitTimestamp": "",
+            "User": "root",
+            "DynamicUser": "no",
+            "ProtectSystem": "no",
+            "NoNewPrivileges": "no",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-lark-notify.service": {
+            "MainPID": "1464",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStartTimestamp": "Sun 2026-11-08 12:14:12 UTC",
+            "ExecMainExitTimestamp": "",
+            "User": "dell-lark-notify",
+            "DynamicUser": "yes",
+            "ProtectSystem": "strict",
+            "NoNewPrivileges": "yes",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "765",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStartTimestamp": "Sun 2026-11-08 12:14:01 UTC",
+            "ExecMainExitTimestamp": "",
+            "User": "",
+            "DynamicUser": "no",
+            "ProtectSystem": "no",
+            "NoNewPrivileges": "no",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "containerd.service": {
+            "MainPID": "714",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStartTimestamp": "Sun 2026-11-08 12:14:00 UTC",
+            "ExecMainExitTimestamp": "",
+            "User": "",
+            "DynamicUser": "no",
+            "ProtectSystem": "no",
+            "NoNewPrivileges": "no",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "751",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStartTimestamp": "Sun 2026-11-08 12:14:00 UTC",
+            "ExecMainExitTimestamp": "",
+            "User": "prometheus",
+            "DynamicUser": "no",
+            "ProtectSystem": "no",
+            "NoNewPrivileges": "yes",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-guest-health.timer": {
+            "Result": "success",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-guest-health.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStartTimestamp": "",
+            "ExecMainExitTimestamp": "",
+            "User": "prometheus",
+            "DynamicUser": "no",
+            "ProtectSystem": "strict",
+            "NoNewPrivileges": "yes",
+            "LoadState": "loaded",
+            "ActiveState": "activating",
+            "SubState": "condition"
+          }
+        },
+        "docker_info": {
+          "version": "29.9.3",
+          "architecture": "x86_64",
+          "root": "/var/lib/docker",
+          "driver": "overlay2",
+          "containers": 4
+        },
+        "containers": [
+          {
+            "name": "/dell-ops-grafana-1",
+            "image_id": "sha256:6afa1ab7f6e662c739a45a1d458598d7eb6ab70fc7c0ab45af64864e1503d4b6",
+            "status": "running",
+            "running": true,
+            "pid": 1505,
+            "started_at": "2026-11-08T12:14:12.960111442Z",
+            "exit_code": 0,
+            "OOMKilled": false,
+            "restart_count": 0,
+            "restart_policy": "no",
+            "health": "healthy",
+            "mounts": [
+              {
+                "source": "/opt/dell/ops/config/grafana/dashboards",
+                "destination": "/etc/grafana/dashboards",
+                "RW": false
+              },
+              {
+                "source": "/opt/dell/ops/config/grafana/provisioning",
+                "destination": "/etc/grafana/provisioning",
+                "RW": false
+              },
+              {
+                "source": "/opt/dell/ops/secrets/grafana-admin-password",
+                "destination": "/run/secrets/grafana-admin-password",
+                "RW": false
+              },
+              {
+                "source": "/srv/dell-data/ops/grafana",
+                "destination": "/var/lib/grafana",
+                "RW": true
+              }
+            ]
+          },
+          {
+            "name": "/dell-ops-alertmanager-1",
+            "image_id": "sha256:151292169170da9f8414b68c8e5994c75bd9cbb94ff60b8bc90860c4994b0946",
+            "status": "running",
+            "running": true,
+            "pid": 1422,
+            "started_at": "2026-11-08T12:14:12.217652412Z",
+            "exit_code": 0,
+            "OOMKilled": false,
+            "restart_count": 0,
+            "restart_policy": "no",
+            "health": "healthy",
+            "mounts": [
+              {
+                "source": "/srv/dell-data/ops/alertmanager",
+                "destination": "/alertmanager",
+                "RW": true
+              },
+              {
+                "source": "/opt/dell/ops/config/alertmanager",
+                "destination": "/etc/alertmanager",
+                "RW": false
+              },
+              {
+                "source": "/opt/dell/ops/secrets/lark-bridge-token",
+                "destination": "/run/secrets/lark-bridge-token",
+                "RW": false
+              }
+            ]
+          },
+          {
+            "name": "/dell-ops-prometheus-1",
+            "image_id": "sha256:9bd9cbec4bd4f33bb6ccedf8c25a5132f8e7b2fb158c9a223a54485e4332e962",
+            "status": "running",
+            "running": true,
+            "pid": 1277,
+            "started_at": "2026-11-08T12:14:10.925126199Z",
+            "exit_code": 0,
+            "OOMKilled": false,
+            "restart_count": 0,
+            "restart_policy": "no",
+            "health": "healthy",
+            "mounts": [
+              {
+                "source": "/srv/dell-data/ops/prometheus",
+                "destination": "/prometheus",
+                "RW": true
+              },
+              {
+                "source": "/opt/dell/ops/config/prometheus",
+                "destination": "/etc/prometheus",
+                "RW": false
+              }
+            ]
+          },
+          {
+            "name": "/dell-ops-blackbox-1",
+            "image_id": "sha256:e6f02b1a6c427e2a771fb33b42cb167dde3e5e8b3625e55e55aa20aaa018946d",
+            "status": "running",
+            "running": true,
+            "pid": 1356,
+            "started_at": "2026-11-08T12:14:11.692853563Z",
+            "exit_code": 0,
+            "OOMKilled": false,
+            "restart_count": 0,
+            "restart_policy": "no",
+            "health": "healthy",
+            "mounts": [
+              {
+                "source": "/opt/dell/ops/config/blackbox",
+                "destination": "/etc/blackbox_exporter",
+                "RW": false
+              }
+            ]
+          }
+        ],
+        "textfiles": [
+          {
+            "path": "/var/lib/prometheus/node-exporter-textfile/dell_guest_health.prom",
+            "mtime_age_seconds": 60.346,
+            "bytes": 1657,
+            "selected_numeric_metrics": {
+              "dell_guest_health_collection_success": [
+                1.0
+              ],
+              "dell_guest_health_collection_timestamp_seconds": [
+                1794140234.714
+              ]
+            }
+          },
+          {
+            "path": "/var/lib/prometheus/node-exporter-textfile/dell-pve.prom",
+            "mtime_age_seconds": 4.965,
+            "bytes": 4426,
+            "selected_numeric_metrics": {
+              "dell_pve_collector_timestamp_seconds": [
+                1794140281.3508036
+              ]
+            }
+          }
+        ],
+        "readiness": {
+          "Prometheus": {
+            "HTTP": 200,
+            "data": null
+          },
+          "Alertmanager": {
+            "HTTP": 200,
+            "data": null
+          },
+          "Grafana": {
+            "HTTP": 200,
+            "data": null
+          }
+        },
+        "prometheus_targets": {
+          "request_status": 200,
+          "error_category": null,
+          "targets": [
+            {
+              "job": "blackbox-exporter",
+              "instance": "blackbox:9115",
+              "role": "ops-service",
+              "scrape_url": "http://blackbox:9115/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:17:59.94811468Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "guest-node",
+              "instance": "192.168.19.10:9100",
+              "role": "data-prod-db",
+              "scrape_url": "http://192.168.19.10:9100/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:17:48.600528647Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "guest-node",
+              "instance": "192.168.19.20:9100",
+              "role": "data-test",
+              "scrape_url": "http://192.168.19.20:9100/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:17:56.807401474Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "guest-node",
+              "instance": "192.168.19.30:9100",
+              "role": "publish-service",
+              "scrape_url": "http://192.168.19.30:9100/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:18:05.620499496Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "guest-node",
+              "instance": "192.168.19.31:9100",
+              "role": "artifact-service",
+              "scrape_url": "http://192.168.19.31:9100/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:18:05.943893404Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "guest-node",
+              "instance": "192.168.19.60:9100",
+              "role": "nas-media",
+              "scrape_url": "http://192.168.19.60:9100/metrics",
+              "health": "down",
+              "last_scrape": "2026-11-08T12:18:02.662398878Z",
+              "last_error_category": "no-route"
+            },
+            {
+              "job": "guest-node",
+              "instance": "192.168.19.40:9100",
+              "role": "java-prod-01",
+              "scrape_url": "http://192.168.19.40:9100/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:18:01.675419408Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "guest-node",
+              "instance": "192.168.19.45:9100",
+              "role": "java-test-01",
+              "scrape_url": "http://192.168.19.45:9100/metrics",
+              "health": "down",
+              "last_scrape": "2026-11-08T12:17:58.273135654Z",
+              "last_error_category": "no-route"
+            },
+            {
+              "job": "guest-node",
+              "instance": "192.168.19.70:9100",
+              "role": "ops-service",
+              "scrape_url": "http://192.168.19.70:9100/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:17:57.993376889Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "guest-node",
+              "instance": "192.168.19.11:9100",
+              "role": "data-prod-infra",
+              "scrape_url": "http://192.168.19.11:9100/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:18:01.013621744Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "guest-node",
+              "instance": "192.168.19.50:9100",
+              "role": "penpot-service",
+              "scrape_url": "http://192.168.19.50:9100/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:17:55.236523702Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "http-health",
+              "instance": "http://alertmanager:9093/-/ready",
+              "role": "ops-service",
+              "scrape_url": "http://blackbox:9115/probe",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:17:48.077364978Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "http-health",
+              "instance": "http://prometheus:9090/-/ready",
+              "role": "ops-service",
+              "scrape_url": "http://blackbox:9115/probe",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:17:50.542895092Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "http-health",
+              "instance": "http://grafana:3000/api/health",
+              "role": "ops-service",
+              "scrape_url": "http://blackbox:9115/probe",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:17:57.310575801Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "prometheus",
+              "instance": "localhost:9090",
+              "role": "ops-service",
+              "scrape_url": "http://localhost:9090/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:18:13.106593387Z",
+              "last_error_category": "empty"
+            }
+          ],
+          "total": 15,
+          "UP": 13
+        },
+        "prometheus_alerts": {
+          "request_status": 200,
+          "alerts": [
+            {
+              "alertname": "GuestExporterUnavailable",
+              "role": "java-test-01",
+              "instance": "192.168.19.45:9100",
+              "severity": "warning",
+              "state": "firing",
+              "activeAt": "2026-11-08T12:14:34.786517428Z"
+            },
+            {
+              "alertname": "GuestExporterUnavailable",
+              "role": "nas-media",
+              "instance": "192.168.19.60:9100",
+              "severity": "warning",
+              "state": "firing",
+              "activeAt": "2026-11-08T12:15:04.786517428Z"
+            },
+            {
+              "alertname": "GuestExporterUnavailable",
+              "role": "publish-service",
+              "instance": "192.168.19.30:9100",
+              "severity": "warning",
+              "state": "firing",
+              "activeAt": "2026-11-08T12:15:04.786517428Z"
+            }
+          ]
+        },
+        "alertmanager_alerts": {
+          "request_status": 200,
+          "alerts": [
+            {
+              "alertname": "GuestExporterUnavailable",
+              "role": "nas-media",
+              "instance": "192.168.19.60:9100",
+              "severity": "warning",
+              "state": "active",
+              "startsAt": "2026-11-08T12:18:04.786Z",
+              "endsAt": "2026-11-08T12:22:04.786Z"
+            },
+            {
+              "alertname": "GuestExporterUnavailable",
+              "role": "publish-service",
+              "instance": "192.168.19.30:9100",
+              "severity": "warning",
+              "state": "active",
+              "startsAt": "2026-11-08T12:18:04.786Z",
+              "endsAt": "2026-11-08T12:22:04.786Z"
+            },
+            {
+              "alertname": "GuestExporterUnavailable",
+              "role": "java-test-01",
+              "instance": "192.168.19.45:9100",
+              "severity": "warning",
+              "state": "active",
+              "startsAt": "2026-11-08T12:17:34.786Z",
+              "endsAt": "2026-11-08T12:21:34.786Z"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "exit_code": 0,
+      "result": {
+        "at": "2026-11-08T12:19:38.625548+00:00",
+        "hostname": "ops-service",
+        "boot_time_utc": "2026-11-08T12:13:47.175543+00:00",
+        "boot_id_sha256": "bfaee63462aa877703be24ea923067b30954807ca84ae35831a92094a9411521",
+        "commands_scope": "read-only selected systemd/Docker metadata, textfile stats and local GET only",
+        "secrets_read": false,
+        "notifications_or_external_HTTP_sent": false,
+        "service_or_config_mutations": false,
+        "data_mount": {
+          "exit_code": 0,
+          "filesystems": [
+            {
+              "target": "/srv/dell-data",
+              "source": "/dev/sdb",
+              "uuid": "01b1f302-27be-4fbd-b4af-b8e782d85dea",
+              "fstype": "ext4",
+              "options": "rw,relatime"
+            }
+          ]
+        },
+        "expected_UUID": "01b1f302-27be-4fbd-b4af-b8e782d85dea",
+        "mount_UUID_matches": true,
+        "system_running": "running",
+        "failed_units": [],
+        "units": {
+          "dell-ops.service": {
+            "MainPID": "1166",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStartTimestamp": "Sun 2026-11-08 12:14:09 UTC",
+            "ExecMainExitTimestamp": "",
+            "User": "root",
+            "DynamicUser": "no",
+            "ProtectSystem": "no",
+            "NoNewPrivileges": "no",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-lark-notify.service": {
+            "MainPID": "1464",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStartTimestamp": "Sun 2026-11-08 12:14:12 UTC",
+            "ExecMainExitTimestamp": "",
+            "User": "dell-lark-notify",
+            "DynamicUser": "yes",
+            "ProtectSystem": "strict",
+            "NoNewPrivileges": "yes",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "docker.service": {
+            "MainPID": "765",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStartTimestamp": "Sun 2026-11-08 12:14:01 UTC",
+            "ExecMainExitTimestamp": "",
+            "User": "",
+            "DynamicUser": "no",
+            "ProtectSystem": "no",
+            "NoNewPrivileges": "no",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "containerd.service": {
+            "MainPID": "714",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStartTimestamp": "Sun 2026-11-08 12:14:00 UTC",
+            "ExecMainExitTimestamp": "",
+            "User": "",
+            "DynamicUser": "no",
+            "ProtectSystem": "no",
+            "NoNewPrivileges": "no",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "751",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStartTimestamp": "Sun 2026-11-08 12:14:00 UTC",
+            "ExecMainExitTimestamp": "",
+            "User": "prometheus",
+            "DynamicUser": "no",
+            "ProtectSystem": "no",
+            "NoNewPrivileges": "yes",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-guest-health.timer": {
+            "Result": "success",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "waiting"
+          },
+          "dell-guest-health.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "ExecMainStartTimestamp": "Sun 2026-11-08 12:19:30 UTC",
+            "ExecMainExitTimestamp": "Sun 2026-11-08 12:19:34 UTC",
+            "User": "prometheus",
+            "DynamicUser": "no",
+            "ProtectSystem": "strict",
+            "NoNewPrivileges": "yes",
+            "LoadState": "loaded",
+            "ActiveState": "inactive",
+            "SubState": "dead"
+          }
+        },
+        "docker_info": {
+          "version": "29.9.3",
+          "architecture": "x86_64",
+          "root": "/var/lib/docker",
+          "driver": "overlay2",
+          "containers": 4
+        },
+        "containers": [
+          {
+            "name": "/dell-ops-grafana-1",
+            "image_id": "sha256:6afa1ab7f6e662c739a45a1d458598d7eb6ab70fc7c0ab45af64864e1503d4b6",
+            "status": "running",
+            "running": true,
+            "pid": 1505,
+            "started_at": "2026-11-08T12:14:12.960111442Z",
+            "exit_code": 0,
+            "OOMKilled": false,
+            "restart_count": 0,
+            "restart_policy": "no",
+            "health": "healthy",
+            "mounts": [
+              {
+                "source": "/opt/dell/ops/config/grafana/dashboards",
+                "destination": "/etc/grafana/dashboards",
+                "RW": false
+              },
+              {
+                "source": "/opt/dell/ops/config/grafana/provisioning",
+                "destination": "/etc/grafana/provisioning",
+                "RW": false
+              },
+              {
+                "source": "/opt/dell/ops/secrets/grafana-admin-password",
+                "destination": "/run/secrets/grafana-admin-password",
+                "RW": false
+              },
+              {
+                "source": "/srv/dell-data/ops/grafana",
+                "destination": "/var/lib/grafana",
+                "RW": true
+              }
+            ]
+          },
+          {
+            "name": "/dell-ops-alertmanager-1",
+            "image_id": "sha256:151292169170da9f8414b68c8e5994c75bd9cbb94ff60b8bc90860c4994b0946",
+            "status": "running",
+            "running": true,
+            "pid": 1422,
+            "started_at": "2026-11-08T12:14:12.217652412Z",
+            "exit_code": 0,
+            "OOMKilled": false,
+            "restart_count": 0,
+            "restart_policy": "no",
+            "health": "healthy",
+            "mounts": [
+              {
+                "source": "/srv/dell-data/ops/alertmanager",
+                "destination": "/alertmanager",
+                "RW": true
+              },
+              {
+                "source": "/opt/dell/ops/config/alertmanager",
+                "destination": "/etc/alertmanager",
+                "RW": false
+              },
+              {
+                "source": "/opt/dell/ops/secrets/lark-bridge-token",
+                "destination": "/run/secrets/lark-bridge-token",
+                "RW": false
+              }
+            ]
+          },
+          {
+            "name": "/dell-ops-prometheus-1",
+            "image_id": "sha256:9bd9cbec4bd4f33bb6ccedf8c25a5132f8e7b2fb158c9a223a54485e4332e962",
+            "status": "running",
+            "running": true,
+            "pid": 1277,
+            "started_at": "2026-11-08T12:14:10.925126199Z",
+            "exit_code": 0,
+            "OOMKilled": false,
+            "restart_count": 0,
+            "restart_policy": "no",
+            "health": "healthy",
+            "mounts": [
+              {
+                "source": "/srv/dell-data/ops/prometheus",
+                "destination": "/prometheus",
+                "RW": true
+              },
+              {
+                "source": "/opt/dell/ops/config/prometheus",
+                "destination": "/etc/prometheus",
+                "RW": false
+              }
+            ]
+          },
+          {
+            "name": "/dell-ops-blackbox-1",
+            "image_id": "sha256:e6f02b1a6c427e2a771fb33b42cb167dde3e5e8b3625e55e55aa20aaa018946d",
+            "status": "running",
+            "running": true,
+            "pid": 1356,
+            "started_at": "2026-11-08T12:14:11.692853563Z",
+            "exit_code": 0,
+            "OOMKilled": false,
+            "restart_count": 0,
+            "restart_policy": "no",
+            "health": "healthy",
+            "mounts": [
+              {
+                "source": "/opt/dell/ops/config/blackbox",
+                "destination": "/etc/blackbox_exporter",
+                "RW": false
+              }
+            ]
+          }
+        ],
+        "textfiles": [
+          {
+            "path": "/var/lib/prometheus/node-exporter-textfile/dell_guest_health.prom",
+            "mtime_age_seconds": 4.402,
+            "bytes": 1657,
+            "selected_numeric_metrics": {
+              "dell_guest_health_collection_success": [
+                1.0
+              ],
+              "dell_guest_health_collection_timestamp_seconds": [
+                1794140374.228
+              ]
+            }
+          },
+          {
+            "path": "/var/lib/prometheus/node-exporter-textfile/dell-pve.prom",
+            "mtime_age_seconds": 27.503,
+            "bytes": 4434,
+            "selected_numeric_metrics": {
+              "dell_pve_collector_timestamp_seconds": [
+                1794140341.5930755
+              ]
+            }
+          }
+        ],
+        "readiness": {
+          "Prometheus": {
+            "HTTP": 200,
+            "data": null
+          },
+          "Alertmanager": {
+            "HTTP": 200,
+            "data": null
+          },
+          "Grafana": {
+            "HTTP": 200,
+            "data": null
+          }
+        },
+        "prometheus_targets": {
+          "request_status": 200,
+          "error_category": null,
+          "targets": [
+            {
+              "job": "blackbox-exporter",
+              "instance": "blackbox:9115",
+              "role": "ops-service",
+              "scrape_url": "http://blackbox:9115/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:19:29.94811468Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "guest-node",
+              "instance": "192.168.19.50:9100",
+              "role": "penpot-service",
+              "scrape_url": "http://192.168.19.50:9100/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:19:25.236523702Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "guest-node",
+              "instance": "192.168.19.10:9100",
+              "role": "data-prod-db",
+              "scrape_url": "http://192.168.19.10:9100/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:19:18.600528647Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "guest-node",
+              "instance": "192.168.19.20:9100",
+              "role": "data-test",
+              "scrape_url": "http://192.168.19.20:9100/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:19:26.807401474Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "guest-node",
+              "instance": "192.168.19.30:9100",
+              "role": "publish-service",
+              "scrape_url": "http://192.168.19.30:9100/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:19:35.620499496Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "guest-node",
+              "instance": "192.168.19.31:9100",
+              "role": "artifact-service",
+              "scrape_url": "http://192.168.19.31:9100/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:19:35.943893404Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "guest-node",
+              "instance": "192.168.19.60:9100",
+              "role": "nas-media",
+              "scrape_url": "http://192.168.19.60:9100/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:19:32.662398878Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "guest-node",
+              "instance": "192.168.19.40:9100",
+              "role": "java-prod-01",
+              "scrape_url": "http://192.168.19.40:9100/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:19:31.675419408Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "guest-node",
+              "instance": "192.168.19.45:9100",
+              "role": "java-test-01",
+              "scrape_url": "http://192.168.19.45:9100/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:19:28.273135654Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "guest-node",
+              "instance": "192.168.19.70:9100",
+              "role": "ops-service",
+              "scrape_url": "http://192.168.19.70:9100/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:19:27.993376889Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "guest-node",
+              "instance": "192.168.19.11:9100",
+              "role": "data-prod-infra",
+              "scrape_url": "http://192.168.19.11:9100/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:19:31.013621744Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "http-health",
+              "instance": "http://alertmanager:9093/-/ready",
+              "role": "ops-service",
+              "scrape_url": "http://blackbox:9115/probe",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:19:18.077364978Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "http-health",
+              "instance": "http://prometheus:9090/-/ready",
+              "role": "ops-service",
+              "scrape_url": "http://blackbox:9115/probe",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:19:20.542895092Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "http-health",
+              "instance": "http://grafana:3000/api/health",
+              "role": "ops-service",
+              "scrape_url": "http://blackbox:9115/probe",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:19:27.314384577Z",
+              "last_error_category": "empty"
+            },
+            {
+              "job": "prometheus",
+              "instance": "localhost:9090",
+              "role": "ops-service",
+              "scrape_url": "http://localhost:9090/metrics",
+              "health": "up",
+              "last_scrape": "2026-11-08T12:19:13.106593387Z",
+              "last_error_category": "empty"
+            }
+          ],
+          "total": 15,
+          "UP": 15
+        },
+        "prometheus_alerts": {
+          "request_status": 200,
+          "alerts": []
+        },
+        "alertmanager_alerts": {
+          "request_status": 200,
+          "alerts": []
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "No PVE startup queue queried; down targets require root boot-stage correlation.",
+    "Lark unit state does not prove fresh firing/resolved delivery; no tests sent.",
+    "Mac external probe must remain disabled and was not contacted or enabled."
+  ],
+  "recorded_at": "2026-11-08T20:20:23.793705+08:00",
+  "status": "ops-read-only-recovery-current-snapshot-healthy",
+  "summary": {
+    "latest_observed_at_UTC": "2026-11-08T12:19:38.625548+00:00",
+    "latest_observed_at_Asia_Shanghai": "2026-11-08T20:19:38.625548+08:00",
+    "mount_UUID_matches": true,
+    "system_running": "running",
+    "failed_units": [],
+    "exact_four_ops_containers_healthy": true,
+    "15_targets_UP": true,
+    "down_targets": [],
+    "Prometheus_alerts": [],
+    "Alertmanager_alerts": [],
+    "Lark_unit_active": true,
+    "services_or_containers_restarted_by_audit": false,
+    "no_send_test_or_credential_content_read": true,
+    "initial_down_targets": [
+      {
+        "role": "nas-media",
+        "instance": "192.168.19.60:9100",
+        "category": "no-route"
+      },
+      {
+        "role": "java-test-01",
+        "instance": "192.168.19.45:9100",
+        "category": "no-route"
+      }
+    ],
+    "initial_alerts_cleared_naturally": true
+  },
+  "concrete_followup": [
+    "No Ops270 corrective restart/configuration change indicated by these two read-only snapshots.",
+    "15UP proves registered monitoring targets were scraped, not full application/data or long-term hardware stability acceptance.",
+    "Do not enable Mac probe or run a Lark send test; native Lark running does not prove a new end-to-end delivery this boot."
+  ],
+  "local_forwarding_script_review": {
+    "path": "recovery/20261108/restore-management-forwarding.py",
+    "sha256_reviewed": "2284bcba1237ec4c9bd226c9dd412d257b019b3314949f9e9f6d34b74be398c6",
+    "execution_performed": false,
+    "generated_shell_sh_n_exit_codes": [
+      0,
+      0
+    ],
+    "scope_blocker_found": false,
+    "review": "Exact vmbr0 IFACE hook invokes fixed helper; owned3newfiles/exclusivecreate, unchanged interfaces/routes/ACL checks, no networking reload or unit restart. Existing unit evidence has After network.target and Before pve-guests.service.",
+    "suggestion": "Persist sanitized failure receipt and make rollback per-operation best-effort/finally so one unlink/proc failure cannot prevent remaining cleanup/restoration. Shell syntax success does not prove future ifupdown runtime ordering or reboot persistence."
+  }
+}

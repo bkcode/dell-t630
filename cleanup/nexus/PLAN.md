@@ -1,12 +1,12 @@
-> 当前状态（2026-11-07）：用户已明确“授权短时停机合并”，Nexus预计短停、221冷备关机、220重启及移盘/alias移交的知情许可已满足。随后出现DIMM_B1/UEFI0058硬件问题，用户现已暂停硬件处理与合并，改做文档Git交付；因此当前不执行停服、关机、备份停机或迁盘。管理偶尔可达或按F1进入系统都不等于硬件已修复。
+> 当前范围（2026-11-08）：用户已确认内存重插/更换并诊断通过，服务器恢复基础检查/补齐与清理。**用户明确暂不迁移、不合并Nexus、不退役221**；当前不执行此计划的stop、冷备关机、move-disk、alias31或target commit/start。root本轮复核12运行实例、15targets UP及6HTTP200，并补齐宿主forward启动守卫；恢复连通不是自动继续历史合并的触发条件。
 
-> 历史审批记录：先前source221停服调用确被自动审批在执行前拒绝，见approval-block.json；该调用没有执行。其“未获知情维护许可”的缺口已由maintenance-authorized.json中的后续明确授权满足，不能继续当成当前待授权事项，也不能据此把迁移写成已完成。恢复时先由管理员确认硬件/存储稳定、fresh基线及明确恢复窗口，不重复索取同一项已满足许可。人工流程见[19操作手册](../../19-manual-operations.md)与[resume清单](resume-preflight.md)。
+> 历史记录：11月7日source停服曾被自动审批在执行前拒绝，随后用户“授权短时停机合并”已满足当时知情许可。DIMM_B1/UEFI0058故障和许可均保留为历史；11月8日新的不迁移范围优先。将来仅在用户明确恢复Nexus迁移任务后fresh复核并开具体窗口，不把许可仍缺失或硬件仍唯一阻塞写成当前结论。人工流程见[19操作手册](../../19-manual-operations.md)。
 
 # Nexus并入发布机220：实际准备与切换计划
 
-目标名称与职责统一见[17合并架构](../../17-publish-artifact-consolidation.md)：只保留一台VM220 `publish-service`，内部运行发布基础与Nexus；`artifact-service`只保留历史/DNS兼容含义，VM221验收后退役。本文保留未执行的技术操作，不表示合并已完成。
+[17合并架构](../../17-publish-artifact-consolidation.md)仅保留未来目标：在将来明确恢复迁移并验收后才由VM220承担发布与Nexus。本轮220/221独立，本文技术操作均不执行。
 
-最后成功准备状态：**220仅完成Docker/Compose、原2镜像离线导入和私有standby候选；Nexus归属仍为221，合并未开始。未绑定19.31、未迁数据盘、未启动220 Nexus。** 这是硬件故障前的准备事实，不保证当前221可用；实际电源、POST与服务状态需硬件稳定后复核。 本文是已选方案与root后续窗口参考，不把准备当切换完成。
+最后成功准备状态：**220仅完成Docker/Compose、原2镜像离线导入和私有standby候选；Nexus归属仍为221，合并未开始。未绑定19.31、未迁数据盘、未启动220 Nexus。** 这是已有准备与11月8日恢复读回一致的事实：221原unit/2容器healthy，220仍4CPU/4GiB、无active Nexus或31。本文仅未来窗口参考，不能把准备当切换完成。
 
 ## 已选拓扑与资源
 
@@ -53,7 +53,7 @@ root网络配套：
 
 1. source221停机退31所有权；target220保留primary30并加alias31/24，默认路由/DNS19.1和默认source30保持。必要时显式route prefsrc30或审查publisher SSH -b30；不改from30受限授权或解除fenced策略。
 2. PVE L2 MAC/IP集合220允许30+31，删除221 active归属；GW/bridge既有31HTTP权限移成220component事实，受信VPN10/24无NAT范围保持。child不改PVE/OW。
-3. scripts/control.py trust_guest本地已实现additional_ips严格同NIC白名单支持，非待开发补丁；它不自行添加地址。硬件恢复并明确恢复任务后，root按唯一角色所有权更新plan：220保留primary19.30并声明additional_ips=["192.168.19.31"]，221不得同时作为active角色claim31。随后fresh验证声明/实际同NIC地址与受信hostkey，未知地址、重复声明/实际重复和跨NIC仍拒；expected_ip和SSH管理固定primary19.30，不关闭strict检查。SSH31将呈现220自身key，这是机器所有权改变，不拷221key伪装；禁止用dell-vm221 alias连新220。
+3. scripts/control.py trust_guest本地已实现additional_ips严格同NIC白名单支持，非待开发补丁；它不自行添加地址。将来用户明确恢复Nexus迁移任务并fresh核硬件/管理后，root按唯一角色所有权更新plan：220保留primary19.30并声明additional_ips=["192.168.19.31"]，221不得同时作为active角色claim31。随后fresh验证声明/实际同NIC地址与受信hostkey，未知地址、重复声明/实际重复和跨NIC仍拒；expected_ip和SSH管理固定primary19.30，不关闭strict检查。SSH31将呈现220自身key，这是机器所有权改变，不拷221key伪装；禁止用dell-vm221 alias连新220。
 4. exporter220继续只在30:9100，Prom移除221物理节点target，不能用31再假造第二台节点。把dell-nexus及31:8081本地HTTP加入220实际collector，保留220原policy；更新backup/onboot/role/IPAM现行数据模型，不重复计算221预算。
 
 ## root完成handover后：应用精确命令
@@ -76,3 +76,5 @@ mount仅用已存在UUID，核原数据UID200/GID200与非空db/blobs树，不fo
 - 物理220只有一套SSH身份与正确双IP元数据、221物理metrics已退役，Ops/backup/现行plan/docs一致，再由root签退役。source221OS盘/备份不立即删除。
 
 如失败：停止220 Nexus并禁其自启；root先撤31 alias，正常停220，反向把scsi2原盘移动回221 scsi1，恢复source221原IP/metadata/监督；数据和身份使用原盘，不从旧初始空库重新导入。target220只保留待审新Nexus文件/软件，不能wholebackup它或清publisherkey；移除仅本次Nexus unit/路径应再用manifest界定。回退未执行，不能把计划当恢复证明。
+
+当前源应用保持：Penpot历史ff1783e不升级、Java业务不部署；Mac外部探针用户明确不需要，现行和后续均不安排配置/恢复。此文不因硬件恢复而启动新的迁移。

@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-07T10:55:18.181006+08:00",
-  "status": "paused-awaiting-hardware-recovery",
+  "updated_at": "2026-11-08T20:23:54.551737+08:00",
+  "status": "existing-infrastructure-recovered-user-deferred-migration",
   "scope": "cleanup/acceptance.json",
   "required_cases": [
     "CLN-JAVA-001",
@@ -19,31 +19,47 @@
     "CLN-NEXUS-001"
   ],
   "manifest": "cleanup/acceptance.json",
-  "source_Nexus_vmid221_kept_running": null,
+  "source_Nexus_vmid221_kept_running": true,
   "previous_network_phase_snapshot": "cleanup/phase-before-cleanup.json",
   "claims_excluded": [
-    "Nexus migrated to220",
-    "current T630/guests/services verified running after POST incident",
-    "DIMM module conclusively diagnosed or sole physical poweroff cause proven",
-    "default login fish selected",
-    "all old archive restore boots tested",
-    "long-term RPO/RTO or SLO accepted"
+    "Nexus merged to220 or source221 retired",
+    "Full hardware root-cause diagnosis independently proven",
+    "All original38cases reexecuted or strict6RECcases passed",
+    "All old archive restore boots tested",
+    "Long-term RPO/RTO or SLO accepted",
+    "Mac external probe scheduled as future work"
   ],
   "runtime_state": {
-    "status": "paused-awaiting-hardware-recovery",
-    "current_live_status": "unverified-firmware-POST-halted",
-    "last_successful_full_verification_at": "2026-11-07T02:35:01.759527+08:00",
-    "last_successful_PVE_operation_at": "2026-11-07T02:44:29+08:00",
-    "last_PVE_operation_time_source": "root-task-manager handoff; distinct from full acceptance",
-    "hardware_evidence": "cleanup/hardware/DIMM_B1-incident.json",
-    "hardware_code": "UEFI0058",
-    "prior_SEL_location": "DIMM_B1",
-    "BMC_timezone_verified": false,
-    "Nexus_maintenance_authorized": true,
+    "status": "existing-infrastructure-recovered-user-deferred-migration",
+    "current_live_status": "basic-runtime-verified-at-recorded-time-not-full-reacceptance",
+    "current_runtime_verification_at": "2026-11-08T20:20:48+08:00",
+    "prior_full_service_acceptance_at": "2026-11-07T02:35:01.759527+08:00",
+    "prior_last_PVE_operation_before_incident_at": "2026-11-07T02:44:29+08:00",
+    "hardware_incident": "cleanup/hardware/DIMM_B1-incident.json",
+    "hardware_repair_user_report": "User confirmed memory reseat/replacement and diagnostics passed on2026-11-08; exact physical procedure and diagnostic report not independently collected here",
+    "current_boot_EDAC_CE_UE": 0,
+    "RAID_runtime_state": "Optl",
+    "hardware_root_cause_independently_proven": false,
     "Nexus_migration_started": false,
-    "remote_actions_in_this_document_closeout": false
+    "migration_allowed_this_phase": false,
+    "source221_retirement_allowed_this_phase": false,
+    "Mac_external_probe": "not-required-by-user;removed-from-current-and-future-tasks;remain-disabled",
+    "evidence": [
+      "recovery/20261108/core-services-audit.json",
+      "recovery/20261108/media-tools-audit.json",
+      "recovery/20261108/ops-audit.json",
+      "recovery/20261108/host-network-postcheck.json",
+      "recovery/20261108/host-forwarding-restored.json",
+      "recovery/20261108/pve-cleanup-audit.json",
+      "recovery/20261108/network-CF-audit.json"
+    ]
   },
-  "hardware_resume_pending": [
+  "hardware_resume_pending": [],
+  "Nexus_maintenance_authorized": true,
+  "Nexus_migration_started": false,
+  "source_Nexus_last_verified_running": true,
+  "counts_are_historical_not_current_live": false,
+  "recovery_strict_cases_pending": [
     "REC-HW-001",
     "REC-BAK-001",
     "REC-DATA-001",
@@ -51,8 +67,14 @@
     "REC-OBS-001",
     "REC-ROLL-001"
   ],
-  "Nexus_maintenance_authorized": true,
-  "Nexus_migration_started": false,
-  "source_Nexus_last_verified_running": true,
-  "counts_are_historical_not_current_live": true
+  "Nexus_merge_current_phase_allowed": false,
+  "Nexus_pending_reason": "user-explicitly-deferred-migration20261108",
+  "current_basic_runtime": {
+    "instances_running": 12,
+    "templates_stopped": 3,
+    "monitoring_targets_UP": 15,
+    "HTTP200_count": 6,
+    "verified_at": "2026-11-08T20:20:48+08:00"
+  },
+  "Mac_external_probe": "user-not-required;removed-from-current-and-future-tasks"
 }

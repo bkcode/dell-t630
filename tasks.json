@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "date": "2026-11-05",
-  "scope": "historical implementation/network19/cleanup results preserved; current local documentation/rules/paused-state synchronization, manual operations guide and Git delivery; no remote server modification",
+  "scope": "11/08 recovery of existing infrastructure and dependency audit only; no migration, no Java business, no Mac external probe task",
   "documentation": [
     {
       "id": "DOC-01",
@@ -213,9 +213,9 @@
       "verification_scope": "historical-completed-stage-not-current-live"
     }
   ],
-  "updated_at": "2026-11-07T10:55:18.181006+08:00",
+  "updated_at": "2026-11-08T20:23:54.551737+08:00",
   "implementation_note": "Original IMP entries describe the prior completed baseline. Latest user scope overrides Java program deployment: five test services are stopped/disabled, publisher fenced, only acceptance template9011 current.",
-  "overall_status": "paused-awaiting-hardware-recovery",
+  "overall_status": "existing-infrastructure-recovered-user-deferred-migration",
   "network19_execution": [
     {
       "id": "N19-TASK-GW",
@@ -294,35 +294,46 @@
     "verification_scope": "historical before cleanup and hardware pause"
   },
   "cleanup_execution": {
-    "status": "nine-historically-passed-Nexus-authorized-hardware-paused",
+    "status": "historical-cleanup-complete-Nexus-user-deferred",
     "roles_current": 12,
     "templates_current": 3,
     "old_objects_deleted": 15,
     "own_temp_objects_deleted": 6,
     "fish_runtime_guests": 9,
     "fish_templates": 3,
-    "current_targets_UP": null,
-    "Nexus_merge": "explicitly authorized; not started; UEFI0058 POST/B1 memory-path gate before fresh baseline/cold backup",
+    "current_targets_UP": 15,
+    "Nexus_merge": "user explicitly deferred migration20261108;221 retained;220 standby;no source retirement",
     "evidence": "cleanup/acceptance.json",
     "last_verified_targets_UP": 15,
-    "last_verified_at": "2026-11-07T02:35:01.759527+08:00"
+    "last_verified_at": "2026-11-08T20:20:48+08:00"
   },
   "runtime_state": {
-    "status": "paused-awaiting-hardware-recovery",
-    "current_live_status": "unverified-firmware-POST-halted",
-    "last_successful_full_verification_at": "2026-11-07T02:35:01.759527+08:00",
-    "last_successful_PVE_operation_at": "2026-11-07T02:44:29+08:00",
-    "last_PVE_operation_time_source": "root-task-manager handoff; distinct from full acceptance",
-    "hardware_evidence": "cleanup/hardware/DIMM_B1-incident.json",
-    "hardware_code": "UEFI0058",
-    "prior_SEL_location": "DIMM_B1",
-    "BMC_timezone_verified": false,
-    "Nexus_maintenance_authorized": true,
+    "status": "existing-infrastructure-recovered-user-deferred-migration",
+    "current_live_status": "basic-runtime-verified-at-recorded-time-not-full-reacceptance",
+    "current_runtime_verification_at": "2026-11-08T20:20:48+08:00",
+    "prior_full_service_acceptance_at": "2026-11-07T02:35:01.759527+08:00",
+    "prior_last_PVE_operation_before_incident_at": "2026-11-07T02:44:29+08:00",
+    "hardware_incident": "cleanup/hardware/DIMM_B1-incident.json",
+    "hardware_repair_user_report": "User confirmed memory reseat/replacement and diagnostics passed on2026-11-08; exact physical procedure and diagnostic report not independently collected here",
+    "current_boot_EDAC_CE_UE": 0,
+    "RAID_runtime_state": "Optl",
+    "hardware_root_cause_independently_proven": false,
     "Nexus_migration_started": false,
-    "remote_actions_in_this_document_closeout": false
+    "migration_allowed_this_phase": false,
+    "source221_retirement_allowed_this_phase": false,
+    "Mac_external_probe": "not-required-by-user;removed-from-current-and-future-tasks;remain-disabled",
+    "evidence": [
+      "recovery/20261108/core-services-audit.json",
+      "recovery/20261108/media-tools-audit.json",
+      "recovery/20261108/ops-audit.json",
+      "recovery/20261108/host-network-postcheck.json",
+      "recovery/20261108/host-forwarding-restored.json",
+      "recovery/20261108/pve-cleanup-audit.json",
+      "recovery/20261108/network-CF-audit.json"
+    ]
   },
   "hardware_recovery": {
-    "status": "pending-no-remote-execution",
+    "status": "basic-runtime-recovered-strict-cases-partial-or-user-deferred",
     "owner": "root + qualified onsite hardware operator",
     "acceptance_manifest": "cleanup/acceptance.json",
     "cases": [
@@ -332,7 +343,29 @@
       "REC-NET-001",
       "REC-OBS-001",
       "REC-ROLL-001"
-    ]
+    ],
+    "current_phase_scope": "user report plus EDAC0/RAIDOptl and basic runtime checks; not independent full hardware diagnosis",
+    "Mac_external_probe": "not-required-removed-from-current-and-future-tasks"
   },
-  "local_delivery_record": "20-git-and-handoff.md"
+  "local_delivery_record": "20-git-and-handoff.md",
+  "recovery20261108": {
+    "status": "basic-services-recovered-and-audited",
+    "evidence": [
+      "recovery/20261108/core-services-audit.json",
+      "recovery/20261108/media-tools-audit.json",
+      "recovery/20261108/ops-audit.json",
+      "recovery/20261108/host-network-postcheck.json",
+      "recovery/20261108/host-forwarding-restored.json",
+      "recovery/20261108/pve-cleanup-audit.json",
+      "recovery/20261108/network-CF-audit.json"
+    ],
+    "running_instances": 12,
+    "templates": 3,
+    "targets_UP": 15,
+    "HTTP200_count": 6,
+    "host_forwarding": "all0-after3ownedguardfiles;no-networkreload/no-guestrestart",
+    "migration_allowed": false,
+    "Java_business_allowed": false,
+    "Mac_external_probe_required": false
+  }
 }

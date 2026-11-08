@@ -1,12 +1,12 @@
-> 文档状态（2026-11-07）：本页为阶段实施/技术记录，文中“当前”、网段、角色数与通过结果以原执行时点为准。服务器现因UEFI0058内存错误暂停，Nexus合并已授权但未执行；当前配置入口见[访问清单](../../12-service-access-and-operations.md)，恢复门槛见[最新交接](../../11-live-handoff.md)。旧脚本、stage/commit或初始化步骤不得直接重跑。
+> 文档状态（2026-11-08）：本页为阶段实施/技术记录，旧网段、角色数和通过结果按原时点解释。基础已恢复；本轮仅补齐与清理，用户暂不迁移/合并，Mac外部探针不需要。当前配置见[访问清单](../../12-service-access-and-operations.md)，范围与恢复证据见[最新交接](../../11-live-handoff.md)；旧初始化器不得重跑。
 
 > 当前生产式运行入口（2026-11-06）：使用`dell-penpot.service`及[runtime/health-supervision](runtime/health-supervision/README.md)的notify持续监督、11健康检查/镜像ID锁/PIDs；旧fresh-target只作为初始化bootstrap，不是持续管理入口。真实frontend故障自动恢复和guest重启已验证，原数据/Git/身份保持。
 
 # Penpot：Git 改造版与应用级迁移
 
-> 当前源码合同：使用 **[bkcode/penpot](https://github.com/bkcode/penpot) 的 main 分支**，固定仓库`git@github.com:bkcode/penpot.git`或`https://github.com/bkcode/penpot.git`。后续直接从该仓库显式取main并锁定审核commit，不跟随默认分支。详见[VM250源码与更新](../../machines/vm250-penpot-service/SOURCE-AND-UPDATES.md)。本页初次迁移的bundle、旧IP及版本数字保留历史意义；当前服务器硬件暂停，未执行程序更新，PAT自动认证另行处理。
+> 当前源码合同：使用 **[bkcode/penpot](https://github.com/bkcode/penpot) 的 main 分支**，固定仓库`git@github.com:bkcode/penpot.git`或`https://github.com/bkcode/penpot.git`。后续直接从该仓库显式取main并锁定审核commit，不跟随默认分支。详见[VM250源码与更新](../../machines/vm250-penpot-service/SOURCE-AND-UPDATES.md)。本页初次迁移的bundle、旧IP及版本数字保留历史意义；11月8日基础服务已恢复，未执行程序更新，PAT自动认证另行处理。
 
-最后验收状态：**VM250 的完整11服务、3个活动设计官方`.penpot`包导出/导入、新身份、素材与结构均已有通过记录；当前硬件暂停，在线状态未复验。** Mac 源保持运行，未改源设计；没有复制旧部署密钥、密码、cookie、session 或 MCP key。
+最后验收状态：**VM250 的完整11服务、3个活动设计官方`.penpot`包导出/导入、新身份、素材与结构均已有通过记录；11月8日已复验11服务健康，但本轮未重新验证全部设计内容。** Mac 源保持运行，未改源设计；没有复制旧部署密钥、密码、cookie、session 或 MCP key。
 
 这是当前执行入口。旧准备流程保存在 [HISTORY-preparation.md](HISTORY-preparation.md)，其中源身份复制、PG 全库恢复、旧安全 frontend 归档仅作历史审核，不再作为本次迁移路线。
 

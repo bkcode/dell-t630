@@ -37,8 +37,9 @@
     "credential_values_in_git": false
   },
   "operational_state": {
-    "status": "paused-awaiting-hardware-repair",
-    "current_runtime_verified": false,
-    "source_fetch_checkout_build_or_deploy_performed": false
+    "status": "recovered-infrastructure-no-source-update",
+    "current_runtime_verified": true,
+    "source_fetch_checkout_build_or_deploy_performed": false,
+    "verification_evidence": "recovery/20261108/media-tools-audit.json"
   }
 }

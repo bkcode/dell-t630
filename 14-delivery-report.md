@@ -1,32 +1,28 @@
-# 交付与硬件暂停报告
+# 交付与恢复报告
 
-更新：2026-11-07（Asia/Shanghai）。软件部署、网络和清理的历史验收保留；**当前处于硬件暂停，不能宣称PVE、来宾或服务正在运行。** 最后完整服务验收为02:35:01+08，最后成功PVE操作为02:44:29+08，二者不是同一项验收。
+更新：2026-11-08（Asia/Shanghai）。用户确认内存已重新插拔/更换且诊断通过；当前boot EDAC CE/UE0、RAIDOptl。既有基础服务已恢复并完成分范围核查，**不再把11/07的POST停机状态当当前现场**；完整物理根因、独立离线诊断与长期稳定性未因此自动签收。
 
-用户iDRAC/控制台证据先示PowerOff，后示UEFI0058停在POST；先前SEL记录DIMM_B1多位不可纠正错误及correctable阈值超限。BMC显示时间时区未核，内存模块/槽位/通道/控制器仍需隔离，不能断言单条DIMM已确诊或是物理关机唯一原因。[事故记录](cleanup/hardware/DIMM_B1-incident.json)与[恢复入口](10-resume-after-approval.md)为当前门禁。
+本轮用户范围为检查补齐基础服务并清理可确认多余项，明确**暂不迁移**。Mac外部探针明确不需要，保持停用，移出当前与后续待办。
 
-## 最后验收结果
+## 本次结果
 
-- 12角色（11VM+1LXC）、43vCPU/85GiB、3模板9001/9010/9011；正式230和测试240各一。15旧对象与6临时对象已保护归档清理，受保护备份完整性有证据，不等于所有旧对象恢复启动都实演。
-- network19经独立网关190路由，PVE21.22保留管理/L2，旧宿主四桥/NAT/forward撤除；WireGuard10.66.66/24路径与原角色隔离验收完成。
-- fish9guest+3模板为4.0.2-1，默认shell保持Bash；CF/Penpot/Ops与PVEhost排除。candidate独立QA在替换原模板前完成，机器/hostkey/DockerID去重，Java原JDK/非root验收基线保持。
-- Java业务按最新用户范围不部署，230/240只有运行基础，单一Java验收模板9011；原测试五服务E2E、发布B/A回退是历史证据，publisher继续fenced，不能据此自动启动业务。
-- 200/201正式与210测试隔离、认证及受控持久/恢复曾通过，正式空业务数据。Penpot原3设计/971原媒体保护、新身份/MCP/监督恢复及NAS软件权限/合成DirectPlay/隔离缺挂载保护曾通过；真实家庭设备和混合负载未验。
-- Nexus221原身份/EULA、49GAV/234主制品SHA、重建恢复曾通过；220最后仅standby。用户随后已明确授权短停合并，但硬件暂停前未开始迁移，未执行本次停源、重启、移盘或IP31交接。
-- 清理后15targets（10guest+5Ops）曾UP，内部Lark已验启用；这只是最后基线。Mac外部探针按用户选择停用，T630整机故障可能同时失去机内监控与通知。
+- 12实例（11VM+1LXC）运行、3模板保留，43vCPU/85GiB；230/240各一且Java业务不部署，publisher fenced。221继续独立Nexus，220保持standby、没有31alias或Nexus栈。
+- 200/201/210原UUID/ext4/rw、8容器healthy；Java两台JDK21.0.13可用、finger账号存在且无Java业务进程。没有重新登录数据库核全部账号/权限/内容，也没有重跑业务初始化。
+- 221原2容器healthy；Penpot11healthy、原镜像/Git/worker基础就绪；NAS原UUID与OMV/SMB/Jellyfin基础正常。没有重做全部GAV/EULA、设计/素材、MCP、SMB读写矩阵或真实播放验收。
+- Ops270原4容器healthy、systemrunning/failed[]、15/15targets UP、Prom/AM alerts空；textfile自动更新，内部Lark原unit active。未发Lark测试，不能宣称本boot重新验过通知端到端。
+- PVE/Nexus/Penpot/OMV/Jellyfin/Grafana共6HTTP入口200；其中PVE自签TLS只验可达，不是证书认证签收。
+- 定位ifupdown2在带IP桥写forwarding1覆盖早期sysctl的问题；新增3个owned guard文件后双栈全0。interfaces/routes/ACL保持，无network reload、guest restart或数据迁移；本次未另重启验新guard持久性。
 
-## 仍待完成
+首轮部分目标尚未自然开机，出现no-route/starting和旧周期告警；随后全部恢复。首轮记录保留，没有把启动队列判作需重新部署的故障。本次未发现必须额外补装或重启的基础缺项，多余资源仍以依赖核对后明确无用为清理条件。
 
-[原38项验收](acceptance.json)保留26历史passed、12future/manual pending。本轮[清理验收](cleanup/acceptance.json)保留9历史passed、1已授权但未执行的Nexus合并，并新增6项未执行恢复门禁：硬件、冷备、数据身份、网络、监控、回退。当前应先恢复硬件并fresh核验，不能只因管理端口重新可达就继续搬数据库。
+## 证据与验收边界
 
-长期独立备份目的地/调度、获批RPO/RTO、整机灾备、生产业务SLO、真实电视/PS4/PS5/4K HDR/GPU仍未验。家用NAS不是正式唯一备份；CF归档仅PVE，publisher私钥仅220，禁止wholebackup220或跨设备夹带私钥。源Mac数据和业务Git工作树保留。
+[核心基础](recovery/20261108/core-services-audit.json)、[媒体工具](recovery/20261108/media-tools-audit.json)、[Ops](recovery/20261108/ops-audit.json)、[宿主网络后检](recovery/20261108/host-network-postcheck.json)、[forwardguard修复](recovery/20261108/host-forwarding-restored.json)、[资源盘点](recovery/20261108/pve-cleanup-audit.json)。这些是带时间的基础运行证据，不能代替每个原用例的完整通过条件。
 
-访问地址与操作细节只引用[运行手册](12-service-access-and-operations.md)，不复活旧21.22 DNAT或旧10.63地址。本轮在本地同步文档、规则及plan暂停状态，编写[人工操作手册](19-manual-operations.md)，经审核与本地校验后进行Git交付，不远程修改服务器。实际提交、推送及交付证据见[Git与交接](20-git-and-handoff.md)；本地文档通过或Git交付不等于当前live恢复。
+原38项26历史passed/12pending不强改；[清理验收](cleanup/acceptance.json)原9项历史通过保留，Nexus合并pending原因更新为用户暂缓迁移。6项原严格REC用例保持pending，分别说明用户报告/运行部分证据或未执行冷备/回退，不作为本轮基础恢复的额外阻塞门禁。
 
-## 证据入口
+11/07 02:35:01完整验收、02:44:29最后PVE操作、UEFI0058/B1 SEL事件是历史节点；BMC时区、单条DIMM及物理关机唯一原因未独立完全确认。不能因本bootCE/UE0就承诺长期硬件无故障。
 
-- [最后完整检查](cleanup/final-live-check.json)、[清理验收](cleanup/acceptance.md)、[阶段状态](phase-delivery.json)
-- [fish与模板QA](cleanup/fish/template-QA-summary.json)、[模板替换](cleanup/fish/core-template-replacement.json)
-- [Nexus维护授权](cleanup/nexus/maintenance-authorized.json)、[合并准备](cleanup/nexus/preparation-readback.json)
-- [硬件事故](cleanup/hardware/DIMM_B1-incident.json)、[恢复门禁](10-resume-after-approval.md)、[任务状态](tasks.json)
+长期独立备份/RPO/RTO、整机灾备、生产SLO、真实电视/PS4/PS5/4K HDR/GPU仍未验。家用NAS不是正式唯一备份；CF归档仅PVE，publisher私钥仅220、禁止wholebackup220；源Mac数据和业务工作树保留。机内监控与T630同故障域，不提供用户不需要的Mac外部探测承诺。
 
-历史真实失败及修正均保留，未改写为一直成功；本次没有新的服务验收或恢复passed记录。
+访问与后续人工操作见[运行手册](12-service-access-and-operations.md)、[人工操作手册](19-manual-operations.md)、[继续入口](10-resume-after-approval.md)。本次文档与状态在本地同步，Git实际结果见[交接](20-git-and-handoff.md)及交付证据；文档或Git通过不扩大为全部硬件、业务与灾备验收。

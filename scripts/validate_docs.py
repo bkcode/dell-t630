@@ -46,6 +46,8 @@ def validate() -> dict:
     tasks = read_json('tasks.json')
     audit = read_json('evidence/pve-audit-2026-11-05.json')
     operation = plan.get('operational_state', {})
+    stats['operational_state'] = operation.get('status', 'unspecified')
+    stats['live_verification_in_this_check'] = False
     if operation.get('status') == 'user-paused-awaiting-memory-hardware-repair':
         if operation.get('runtime_counts_are_last_verified_not_live') is not True:
             errors.append('Hardware pause must distinguish last verified counts from current runtime')

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "date": "2026-11-07",
+  "date": "2026-11-08",
   "timezone": "Asia/Shanghai",
-  "status": "paused-by-user-hardware-UEFI0058-documentation-only",
+  "status": "recovered-infrastructure-verified-no-migration",
   "scope": "network19-infrastructure-and-single-Java-acceptance-template",
   "pve": {
     "host": "192.168.21.22",
@@ -541,7 +541,7 @@
     "penpot_nexus_migration": "Git exact modified source and application-level export/import, no old env/MCP credential transfer",
     "production_java_delivery": "Runtime foundation only; test business apps also stopped/disabled by latest user instruction",
     "nexus_eula": "User explicitly accepted; new VM221 acceptance confirmed via API 2026-11-06",
-    "notification_scope": "User explicitly chose server-internal Lark only this phase; Mac external probe disabled",
+    "notification_scope": "server-internal Lark only; user explicitly does not need Mac external probe, removed from current/future work",
     "network19_routed_gateway": "OW19/24 via21.23,router19019.1;PVE21.22management/L2only,nohostNAT/L3forward"
   },
   "unresolved": [
@@ -579,7 +579,10 @@
     "evidence": [
       "network19/evidence/host-management-only-retirement.json",
       "network19/evidence/Mac-final-management-and-services.json",
-      "network19/audit/data-tcp-matrix.json"
+      "network19/audit/data-tcp-matrix.json",
+      "recovery/20261108/host-forwarding-restored.json",
+      "recovery/20261108/host-network-postcheck.json",
+      "recovery/20261108/network-CF-followup.json"
     ],
     "WireGuard_trusted_access": {
       "source": "10.66.66.0/24",
@@ -603,7 +606,7 @@
     "evidence": "evidence/implementation/raid-recovered.json",
     "historical_fault": "slot32:3 access failure; root cause unresolved, monitor"
   },
-  "updated_at": "2026-11-07T10:03:47.430060+08:00",
+  "updated_at": "2026-11-08T20:27:56.465278+08:00",
   "docker_runtime_profile": {
     "driver": "classic-overlay2",
     "reason": "Verified compatibility with source single-platform offline archives; preserves config IDs",
@@ -624,13 +627,15 @@
     "mode": "active-whitelist",
     "acceptance_evidence": "evidence/implementation/lark-notify-send-acceptance-pair.json",
     "active_evidence": "evidence/implementation/lark-notify-enable-live-after-maintenance.json",
-    "external_Mac_probe": "disabled-plist-and-jobs-removed-user-deferred",
+    "external_Mac_probe": "not-required-explicit-user-choice-20261108",
     "whole_T630_failure_notification_claim": false,
     "network19_evidence": "network19/services-core/ops270-new-network-allup-readback.json",
-    "maintenance": "own cleanup site silence ended; zeroalerts/15UP;Nexus future migration needs new approved window",
+    "maintenance": "No maintenance silence active in current recovery; migration explicitly deferred by user",
     "maintenance_evidence": "network19/evidence/maintenance-ended.json",
     "cleanup_maintenance_evidence": "cleanup/maintenance-ended.json",
-    "after_cleanup_targets_UP": 15
+    "after_cleanup_targets_UP": 15,
+    "external_Mac_probe_future_task": false,
+    "current_evidence": "recovery/20261108/ops-audit.json"
   },
   "delivery_scope_manifest": "cleanup/acceptance.json",
   "expected_role_count": 12,
@@ -685,7 +690,7 @@
     9045
   ],
   "Nexus_consolidation": {
-    "status": "authorized-user-paused-pending-hardware-repair",
+    "status": "user-explicitly-deferred-20261108",
     "active_vmid": 221,
     "active_service_IP": "192.168.19.31",
     "target_vmid": 220,
@@ -699,7 +704,7 @@
     "approval_evidence": "cleanup/nexus/approval-block.json",
     "standby_evidence": "cleanup/nexus/preparation-readback.json",
     "authorization_evidence": "cleanup/nexus/maintenance-authorized.json",
-    "current_source_runtime": "not currently verified; last boot console halted before PVE; source221 service was not stopped by migration",
+    "current_source_runtime": "VM221 running original19.31 and UUID,2healthy/status200; no migration allowed this phase",
     "hardware_gate": "cleanup/hardware/DIMM_B1-incident.json",
     "source_not_stopped_by_assistant": true,
     "migration_started": false,
@@ -759,17 +764,30 @@
     "Nexus221_kept_running": true,
     "monitoring_targets": "10guest+5Ops=15UP",
     "default_shell": "Bash; optional user preference unanswered, no chsh",
-    "PVE_host_fish": "not installed/changed by this task"
+    "PVE_host_fish": "not installed/changed by this task",
+    "recovery_20261108": {
+      "deleted_official_installers": 2,
+      "logical_bytes_reclaimed": 3876812800,
+      "VM_or_data_disk_deletion": false,
+      "protected_archives": "21 kept, metadata/name set checked; payload not rehashed this phase",
+      "migration_performed": false,
+      "evidence": "recovery/20261108/unused-ISO-cleanup-receipt.json"
+    }
   },
   "operational_state": {
-    "as_of": "2026-11-07T10:55:15.478714+08:00",
-    "status": "user-paused-awaiting-memory-hardware-repair",
-    "live_state": "firmware UEFI0058 prompt; PVE not reachable at last probe; services not currently reverified",
-    "last_successful_live_acceptance": "2026-11-07T02:35:01+08:00",
-    "last_successful_PVE_operation": "2026-11-07T02:44:29+08:00",
-    "last_operation": "read actual running/template inventory and sync /root/dell-bootstrap/plan.json only",
-    "runtime_counts_are_last_verified_not_live": true,
-    "resume_requires": "user resumes after hardware repair; memory/storage preflight and fresh application baseline",
-    "user_scope_now": "local documentation/manual/Git only; no remote server actions"
+    "as_of": "2026-11-08T20:34:09+08:00",
+    "status": "recovered-infrastructure-only-no-migration",
+    "live_state": "12guests running,3templates stopped,15monitoring targetsUP; sixHTTP endpoints reachable; scoped checks2026-11-08",
+    "last_successful_live_acceptance": "2026-11-08T20:34:09+08:00",
+    "last_successful_PVE_operation": "2026-11-08T20:34:09+08:00",
+    "last_operation": "exact2 old installerISO cleanup then read-only12running/3templates/15UP/EDAC0/forward0 verification",
+    "runtime_counts_are_last_verified_not_live": false,
+    "resume_requires": "not applicable to infrastructure checks; migration explicitly deferred by user",
+    "user_scope_now": "check and complete existing infrastructure; clean confirmed redundant resources; no migration or application code upgrade",
+    "current_runtime_verified": true,
+    "machine_status_contract": "recovered-infrastructure-verified",
+    "hardware_diagnostics": "user reports reseated/replaced and diagnostics passed; current bootEDACce/ue0 independently observed",
+    "hardware_evidence": "recovery/20261108/hardware-summary.json",
+    "recovery_manifest": "recovery/20261108/README.md"
   }
 }

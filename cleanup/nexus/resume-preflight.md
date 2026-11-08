@@ -1,12 +1,12 @@
 # Nexus合并：管理恢复后的最小resume清单
 
-更新：2026-11-07。**用户“授权短时停机合并”的知情维护许可已满足**，见maintenance-authorized.json及AGENTS最新追加；旧approval-block.json保留历史，不能再把同一许可写成pending。当前用户已暂停硬件处理与Nexus合并，转做文档Git交付；DIMM_B1/UEFI0058问题尚未签为修复，迁移尚未开始。下文仅是将来明确恢复执行后的人工复核清单，不授予当前远程、停服、备份停机或迁盘动作。
+更新：2026-11-08。用户确认内存重插/更换并诊断通过，现已恢复基础服务核验与清理；root复核12运行实例、15targets UP/6HTTP200，宿主forward启动守卫已补。**本轮用户明确暂不迁移、不合并Nexus、不退役221**。历史短时停机合并的知情授权与DIMM_B1/UEFI0058事件保留，但不覆盖最新不迁移范围。下文仅是将来用户明确恢复Nexus迁移任务后才使用的人工清单，不是当前执行步骤。
 
-## 1. 将来恢复执行时，先确认硬件与管理稳定，再交接窗口
+## 1. 当前恢复事实与未来任务门禁
 
-- 先保留iDRAC SEL/Lifecycle与POST证据，按T630维护规程在正常关机、断开电源并采取ESD措施后由合格人员诊断DIMM_B1路径；不把F1继续启动视为修复，不清日志掩盖错误。用户当前暂停，文档不要求立即动硬件。只有硬件稳定后，root才核PVE21.22与GW21.23、受信SSH/QGA；21.1可达本身不等于T630恢复。不能重跑旧网络初始化器猜修，也不把一次连接超时改写成已停服。
-- 因可能发生过物理断连/电源事件，先读实际bootID、RAID/存储健康、各guest挂载/文件系统状态、原Nexusunit/两容器健康；未恢复干净状态时先给root处理，不直接照旧stage激活。
-- 用户停机授权记录继续有效，不重复索要；但后续明确“暂停”控制当前执行。实际stop/复制须等用户/管理员明确恢复本任务，并由root确认硬件稳定、可信管理恢复及具体窗口；不能借旧授权越过暂停。
+- 11月8日基础服务已恢复。用户报告内存重插/更换并诊断通过，root当前boot CE/UE0和RAIDOptl；保留SEL/Lifecycle/UEFI0058历史及持续观察，不能把单次计数0或F1当独立维修证明。若故障复发，再由合格人员按断电/ESD规程诊断，不要求现在重复拆装。
+- 当前只检查补齐基础服务和清理确定多余项。Nexus221保持独立19.31，2204CPU/4GiB仅primary30和standby；不stop、备份停机、迁盘或绑定31。
+- 仅在将来用户明确恢复Nexus迁移任务后，才fresh核bootID/存储/服务和可信管理，安排具体窗口；不得只因SSH恢复自动执行旧计划。历史知情许可不再写pending，但最新不迁移指令控制当前动作。
 
 ## 2. 新鲜核对source和standby，勿重建/重新安装
 
@@ -22,7 +22,7 @@
 2. 在原unit已停止、两容器不再写之后，root先正常关机221并确认stopped，再对**已停止的221**做受保护完整vzdump --mode stop，完成SHA/zstd/VMA校验并再次确认它仍off；归档仅PVE root700/600，不exportMac。随后才进入220停机/盘与31移交。不能先对运行源做stop模式备份后假定它不会自动恢复运行；220永不wholebackup，不能复制其发布key。
 3. root正常停220，设6CPU/8GiB；执行已核本机语义的`qm move-disk 221 scsi1 --target-vmid 220 --target-disk scsi2`，**不传storage，不把rename/move称保留拷贝**，同盘不能并挂RW。两scsi0及源备份保留。
 4. root给220同MAC加31服务alias、primary30/default源30保持，默认GW/DNS19.1；PVE L2/网关/IPAM把31从221转220。保留VPN10/24既有已授权路径及业务认证，不重做无关网络。
-5. 管理仍用220/19.30自己的hostkey；SSH31会变成220身份，不复制221hostkey伪装。scripts/control.py本地**已实现additional_ips严格同NIC白名单支持**，无需再开发该补丁。恢复任务时先按唯一角色所有权更新plan：220主ip19.30、additional_ips声明19.31，221不得同时active claim31，再fresh验证实际同NIC/声明地址和受信指纹；未知/重复或跨NIC地址仍拒绝，expected_ip与SSH固定primary19.30。不能关闭hostkey，也不能以dell-vm221 alias连220。
+5. 管理仍用220/19.30自己的hostkey；SSH31会变成220身份，不复制221hostkey伪装。scripts/control.py本地**已实现additional_ips严格同NIC白名单支持**，无需再开发该补丁。将来明确恢复迁移任务后，先按唯一角色所有权更新plan：220主ip19.30、additional_ips声明19.31，221不得同时active claim31，再fresh验证实际同NIC/声明地址和受信指纹；未知/重复或跨NIC地址仍拒绝，expected_ip与SSH固定primary19.30。不能关闭hostkey，也不能以dell-vm221 alias连220。
 
 ## 4. 必要本地toolfix（尚未同步target）
 
@@ -35,7 +35,7 @@
 
 ## 5. 再开放mount/commit/start
 
-root确认冷备/源off/唯一盘所有权/别名及双IP管理后，按PLAN原nonce调用target.py mount→commit→start，加显式handover确认。别在管理断连期间试探这些动作。
+root确认冷备/源off/唯一盘所有权/别名及双IP管理后，按PLAN原nonce调用target.py mount→commit→start，加显式handover确认。本轮不迁移，不执行这些动作；也不能在管理断连时试探。
 
 - Mount按原UUID239定位且校唯一设备/非根盘，保留/srv/dell-build UUID16dc...；不format，不按sd字母猜，不递归chown整个盘。首次commit前target无active Nexus路径/unit/secret目录；如发现部分旧安装，要先读journal与manifest，不绕guard盲重跑。
 - commit只hostname合同和两image引用变化，其它源/env/身份不变；start原unit有限等2healthy/原ID。若unit已active而journal未收尾，只先读事实再幂等确认，不能重复移盘或重复初始化。
@@ -55,4 +55,4 @@ root确认冷备/源off/唯一盘所有权/别名及双IP管理后，按PLAN原n
 
 任何镜像/身份/UUID/原内容差异或持久化/ACL不满足，都先保持可审journal，不强行删除target来凑通过。root负责停target、撤31、唯一盘反向move回221、恢复源网络/监督；应用文件回退不等于数据/网络灾备，也不wholebackup220。源221OS盘与冷备在最终数据/身份/角色/网络/监控通过前不删。
 
-本清单仅作人工恢复参考；当前合并暂停，不宣称221已冷备、220已8G/双IP、管理已恢复或内存错误已修复。完整人工操作入口见[19-manual-operations.md](../../19-manual-operations.md)。
+本清单仅作未来合并参考；基础服务与管理已恢复，但当前用户明确不迁移，不宣称221已冷备、220已8G/双IP或已合并。Penpot历史ff1783e不升级，Java业务不部署；Mac外部探针用户明确不需要，现行/后续均不配置。完整人工操作入口见[19-manual-operations.md](../../19-manual-operations.md)。

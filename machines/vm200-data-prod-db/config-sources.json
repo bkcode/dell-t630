@@ -7,19 +7,19 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "唯一角色/IP/资源/存储合同；状态字符串不等于实时在线",
-      "sha256": "023ed7a0237f4ac0862ac97fcc4c34d4808b2e9d942efa6b455e748e94ca0703"
+      "sha256": "108ad706e5917e44eb5c6c1f7318c4e41b2f4cf62d281cf76f1a00368832430b"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "硬件恢复、日常检查、受控启停与备份人工门禁",
-      "sha256": "717488c3042e9e1777ee3e94d756ccd8ba5f99ea0b17a43c10da22e942e83599"
+      "sha256": "1102845cef3dac5ec1a1797f02b447f4e04d9cc9f00a855e007d61f7082b7c99"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
       "purpose": "用户暂停、无 Java 业务、发布冻结和恢复顺序",
-      "sha256": "0da10943e1b39845dafa76e58161982e0eac9a9c7747c849eec21977084cadc2"
+      "sha256": "858f0eb05138a66db981507bce15f013359e8388760f778c8cddb018099694ba"
     },
     {
       "path": "network19/migration-plan.json",
@@ -36,8 +36,8 @@
     {
       "path": "cleanup/hardware/DIMM_B1-incident.json",
       "type": "historical-evidence",
-      "purpose": "UEFI0058与历史DIMM_B1事件，当前硬件暂停原因",
-      "sha256": "aeaa61c93d796b61b1730f22988cde2f3ecc7afe50f861c1d6b528022c9a53fb"
+      "purpose": "原UEFI0058/B1历史事件及11月8日用户修复确认与基础恢复摘要；不等于助手离线诊断",
+      "sha256": "8be83f030ca16619a0e01c63a683858014af8907876674f7565463d848796b2f"
     },
     {
       "path": "cleanup/fish/evidence/guest200.json",
@@ -79,7 +79,7 @@
       "path": "infra/data/README.md",
       "type": "historical-evidence",
       "purpose": "组件设计/监督/秘密边界；原10.63地址与原阶段210待部署文字已过时，仅技术记录",
-      "sha256": "d60839301f7613b9a7164ad55b91562ce5cc1b4ae74c1e1a4dcb0d24864f4701"
+      "sha256": "bd6ec7228c600a9e4fbdff2e0e4b1ab9e1c68c6f5e27d737df3b450bbb80cce7"
     },
     {
       "path": "network19/services-core/role200-commit-start-evidence.json",
@@ -98,6 +98,12 @@
       "type": "historical-evidence",
       "purpose": "正式组件版本及空业务库检查原始证据",
       "sha256": "5c087b7fb5e642a94902b9c5e51920a6a767f0ae12a9ab76d6c57c55c1fba9e4"
+    },
+    {
+      "path": "recovery/20261108/core-services-audit.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-08 scoped recovery check; no migration/application update, not full app-content restore acceptance",
+      "sha256": "014f876f568dbe4090b0c620c68a530f695abae40ee1aa834b1f9e6dd02a88e7"
     }
   ]
 }

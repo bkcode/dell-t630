@@ -1,0 +1,63 @@
+{
+  "direct_queries_to_gateway_DNS": {
+    "penpot-service.dell.home.arpa": {
+      "UDP": {
+        "rcode": 0,
+        "A": [
+          "192.168.19.50"
+        ]
+      },
+      "TCP": {
+        "rcode": 0,
+        "A": [
+          "192.168.19.50"
+        ]
+      }
+    },
+    "artifact-service.dell.home.arpa": {
+      "UDP": {
+        "rcode": 0,
+        "A": [
+          "192.168.19.31"
+        ]
+      },
+      "TCP": {
+        "rcode": 0,
+        "A": [
+          "192.168.19.31"
+        ]
+      }
+    },
+    "publish-service.dell.home.arpa": {
+      "UDP": {
+        "rcode": 0,
+        "A": [
+          "192.168.19.30"
+        ]
+      },
+      "TCP": {
+        "rcode": 0,
+        "A": [
+          "192.168.19.30"
+        ]
+      }
+    }
+  },
+  "CF_actual_port20241": {
+    "ready": {
+      "HTTP": 200,
+      "readyConnections": 2
+    },
+    "metrics": {
+      "HTTP": 200,
+      "ha_connection_metric": [
+        "cloudflared_tunnel_ha_connections 2"
+      ]
+    }
+  },
+  "prior_probe_limitations": "Gateway OS resolver follows OW FakeIP; must query LAN DNS19.1 directly for host-record verification. CF port2000 was a wrong probe assumption; actual metadata endpoint20241 is used here.",
+  "source_or_secret_read": false,
+  "writes": false,
+  "recorded_at": "2026-11-08T20:24:01.673285+08:00",
+  "timestamp_scope": "manager file receipt time immediately following read-only probe"
+}

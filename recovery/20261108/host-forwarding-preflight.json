@@ -1,0 +1,139 @@
+{
+  "matched_config_lines": [
+    {
+      "path": "/etc/sysctl.conf",
+      "line": 27,
+      "text": "# Uncomment the next line to enable packet forwarding for IPv4"
+    },
+    {
+      "path": "/etc/sysctl.conf",
+      "line": 28,
+      "text": "#net.ipv4.ip_forward=1"
+    },
+    {
+      "path": "/etc/sysctl.conf",
+      "line": 30,
+      "text": "# Uncomment the next line to enable packet forwarding for IPv6"
+    },
+    {
+      "path": "/etc/sysctl.conf",
+      "line": 33,
+      "text": "#net.ipv6.conf.all.forwarding=1"
+    },
+    {
+      "path": "/etc/network/interfaces",
+      "line": 6,
+      "text": "auto vmbr0"
+    },
+    {
+      "path": "/etc/network/interfaces",
+      "line": 7,
+      "text": "iface vmbr0 inet static"
+    },
+    {
+      "path": "/etc/network/interfaces",
+      "line": 17,
+      "text": "iface vmbr0 inet6 auto"
+    },
+    {
+      "path": "/etc/network/interfaces",
+      "line": 18,
+      "text": "    post-up ip -6 route add default via fe80::ced8:43ff:fec5:416e dev vmbr0"
+    },
+    {
+      "path": "/etc/network/interfaces",
+      "line": 19,
+      "text": "    pre-down ip -6 route del default via fe80::ced8:43ff:fec5:416e dev vmbr0"
+    },
+    {
+      "path": "/etc/sysctl.d/99-sysctl.conf",
+      "line": 27,
+      "text": "# Uncomment the next line to enable packet forwarding for IPv4"
+    },
+    {
+      "path": "/etc/sysctl.d/99-sysctl.conf",
+      "line": 28,
+      "text": "#net.ipv4.ip_forward=1"
+    },
+    {
+      "path": "/etc/sysctl.d/99-sysctl.conf",
+      "line": 30,
+      "text": "# Uncomment the next line to enable packet forwarding for IPv6"
+    },
+    {
+      "path": "/etc/sysctl.d/99-sysctl.conf",
+      "line": 33,
+      "text": "#net.ipv6.conf.all.forwarding=1"
+    },
+    {
+      "path": "/etc/sysctl.d/99-z-dell-management-only.conf",
+      "line": 1,
+      "text": "net.ipv4.ip_forward=0"
+    },
+    {
+      "path": "/etc/sysctl.d/99-z-dell-management-only.conf",
+      "line": 2,
+      "text": "net.ipv4.conf.all.forwarding=0"
+    },
+    {
+      "path": "/etc/sysctl.d/99-z-dell-management-only.conf",
+      "line": 3,
+      "text": "net.ipv4.conf.default.forwarding=0"
+    },
+    {
+      "path": "/etc/sysctl.d/99-z-dell-management-only.conf",
+      "line": 4,
+      "text": "net.ipv6.conf.all.forwarding=0"
+    },
+    {
+      "path": "/etc/sysctl.d/99-z-dell-management-only.conf",
+      "line": 5,
+      "text": "net.ipv6.conf.default.forwarding=0"
+    },
+    {
+      "path": "/etc/network/interfaces.d/dell-network19.conf",
+      "line": 1,
+      "text": "auto vmbr19"
+    },
+    {
+      "path": "/etc/network/interfaces.d/dell-network19.conf",
+      "line": 2,
+      "text": "iface vmbr19 inet manual"
+    },
+    {
+      "path": "/etc/network/interfaces.d/dell-network19.conf",
+      "line": 6,
+      "text": "    post-up /usr/sbin/sysctl -q -w net.ipv6.conf.vmbr19.disable_ipv6=1"
+    },
+    {
+      "path": "/etc/network/interfaces.d/dell-network19.conf",
+      "line": 7,
+      "text": "    post-up /usr/sbin/ip route replace 192.168.19.0/24 via 192.168.21.23 dev vmbr0"
+    },
+    {
+      "path": "/etc/network/interfaces.d/dell-network19.conf",
+      "line": 8,
+      "text": "    pre-down /usr/sbin/ip route del 192.168.19.0/24 via 192.168.21.23 dev vmbr0 || true"
+    }
+  ],
+  "bridge_ifquery": {
+    "exit": 0,
+    "out": "auto vmbr0\niface vmbr0 inet static\n\taddress 192.168.21.22/24\n\tgateway 192.168.21.1\n\tbridge-ports eno1\n\tbridge-stp off\n\tbridge-fd 0\n\nauto vmbr0\niface vmbr0 inet6 auto\n\tpost-up ip -6 route add default via fe80::ced8:43ff:fec5:416e dev vmbr0\n\tpre-down ip -6 route del default via fe80::ced8:43ff:fec5:416e dev vmbr0\n\n",
+    "err": ""
+  },
+  "sysctl_units": {
+    "exit": 0,
+    "out": "Nov 08 20:07:52 pve systemd[1]: Starting systemd-sysctl.service - Apply Kernel Variables...\nNov 08 20:07:52 pve systemd[1]: Finished systemd-sysctl.service - Apply Kernel Variables.\n",
+    "err": ""
+  },
+  "times": {
+    "exit": 0,
+    "out": "2026-11-08T20:15:37+08:00\n",
+    "err": ""
+  },
+  "services": {
+    "exit": 0,
+    "out": "UNIT FILE                     STATE   PRESET\ndell-network.service          masked  enabled\ndell-network19-bridge.service enabled enabled\ndell-pve-metrics.service      static  -\ndell-pve-metrics.timer        enabled enabled\n\n4 unit files listed.\n",
+    "err": ""
+  }
+}

@@ -39,5 +39,12 @@
     "F1_not_pressed_by_assistant": true,
     "migration_started": false,
     "next": "preserve SEL; offline DIMM assessment/reseat or correct replacement; memory diagnostics before data migration"
+  },
+  "recovery_20261108": {
+    "user_report": "reseated/replaced memory and diagnostics passed",
+    "assistant_verification": "PVE current boot EDAC ce/ue0,4x32GB,RAIDOptimal and scoped services checked",
+    "evidence": "recovery/20261108/hardware-summary.json",
+    "Nexus_migration": "explicitly deferred by user; no merge this phase",
+    "independent_offline_diagnostic_by_assistant": false
   }
 }

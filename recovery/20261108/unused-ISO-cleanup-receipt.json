@@ -1,0 +1,38 @@
+{
+  "at": "2026-11-08T20:30:17.061693+08:00",
+  "status": "two-unused-official-installers-cleaned",
+  "deleted": [
+    {
+      "volid": "store:iso/debian-12.10.0-amd64-netinst.iso",
+      "path": "/mnt/pve/store/template/iso/debian-12.10.0-amd64-netinst.iso",
+      "size": 663748608,
+      "sha256": "ee8d8579128977d7dc39d48f43aec5ab06b7f09e1f40a9d98f2a9d149221704a",
+      "inode": 234094596,
+      "mtime_ns": 1746862503987818136,
+      "device": 2065,
+      "no_config_or_snapshot_ref": true,
+      "no_open_FD": true,
+      "official_SHA_match": true
+    },
+    {
+      "volid": "store:iso/ubuntu-24.04.2-live-server-amd64.iso",
+      "path": "/mnt/pve/store/template/iso/ubuntu-24.04.2-live-server-amd64.iso",
+      "size": 3213064192,
+      "sha256": "d6dab0c3a657988501b4bd76f1297c053df710e06e0c3aece60dead24f270b4d",
+      "inode": 234094597,
+      "mtime_ns": 1747047032445464666,
+      "device": 2065,
+      "no_config_or_snapshot_ref": true,
+      "no_open_FD": true,
+      "official_SHA_match": true
+    }
+  ],
+  "logical_bytes_reclaimed": 3876812800,
+  "shared_artifacts_ISO_unchanged": true,
+  "protected21_archives_unchanged": true,
+  "guest_identity_states_unchanged": true,
+  "VMs_or_disks_deleted": false,
+  "LXC_template_cache_deleted": false,
+  "migration_performed": false,
+  "protected_archive_validation_scope": "21 archive names retained and this script never touched payload; no full content/SHA revalidation this phase"
+}

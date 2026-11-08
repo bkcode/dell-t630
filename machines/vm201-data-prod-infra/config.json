@@ -10,10 +10,9 @@
   },
   "source_of_truth": "plan.json",
   "source_role_pointer": "/roles/2",
-  "last_verified_at": "2026-11-07T02:35:01+08:00",
-  "current_runtime_verified": false,
-  "status": "paused-awaiting-hardware-repair",
-  "pause_reason": "UEFI0058 POST memory error; historical SEL identifies DIMM_B1; user paused all server work",
+  "last_verified_at": "2026-11-08T20:19:21.134053+08:00",
+  "current_runtime_verified": true,
+  "status": "recovered-infrastructure-verified",
   "purpose": "正式 Nacos、Redis、RabbitMQ，Nacos 元数据库依赖 VM200；不承载正式 Java 业务。",
   "network": {
     "ip": "192.168.19.11",
@@ -65,7 +64,7 @@
       "dell-guest-health.timer"
     ],
     "scope": "guest-local textfile service health; Java business HTTP checks absent",
-    "runtime_state": "historical verified baseline; fresh check pending after hardware recovery"
+    "runtime_state": "2026-11-08 scoped recovery verified; active timers/exporters; 15targetsUP viaOps"
   },
   "business_scope": {
     "java_business_allowed": false,
@@ -117,5 +116,9 @@
       "target_vmid": 270,
       "purpose": "monitoring consumer"
     }
-  ]
+  ],
+  "current_verification_evidence": "recovery/20261108/core-services-audit.json",
+  "current_verification_scope": "scoped infrastructure recovery; original app data contents/authentication not fully revalidated; no migration",
+  "verification_note": "2026-11-08 scoped recovery checks passed; user confirms memory repair/diagnostics; no migration, code upgrade or Java business deployment.",
+  "timestamp_scope": "source audit/receipt time; individual probes retain their timestamps"
 }

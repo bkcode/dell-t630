@@ -1,3 +1,5 @@
+> 2026-11-08现行状态：基础服务已恢复，host转发启动守卫已补齐；本轮不迁移，不合并Nexus。Mac外部探针不需要。详见[恢复记录](recovery/20261108/README.md)。下文原迁网/历史故障记录保留原时点含义。
+
 > 2026-11-07状态：服务器因UEFI0058内存故障暂停。本文为既有VPN配置及历史验收，不代表当前在线；硬件处理后按[交接](11-live-handoff.md)复验。Nexus合并已授权、未执行。
 
 # WireGuard受信网段访问全部服务器服务
@@ -40,4 +42,4 @@
 
 最终证据：[全服务验证](network19/wireguard/full-access-verification.json)、[网关确认](network19/gateway/live-confirm.json)、[实际全服务规则](network19/gateway/WG-full-active-counter.json)、[NAS适配](network19/wireguard/media/apply-result.json)、[NAS读回](network19/wireguard/media/readback-result.json)。原局域网9入口也全部HTTP200，角色隔离/宿主管理模式保留。
 
-最后整理验收时规模：1台物理T630，运行11台VM+1个CF LXC共12实例；只保留9001/9010/9011三份停止模板，旧模板/停止QA已备份清理。Java正式230与测试240各一，无业务程序。Nexus合并220已获维护授权，因硬件与用户暂停尚未执行，WireGuard信任范围不变，见[18整理结果](18-cleanup-and-consolidation.md)。
+最后整理验收时规模：1台物理T630，运行11台VM+1个CF LXC共12实例；只保留9001/9010/9011三份停止模板，旧模板/停止QA已备份清理。Java正式230与测试240各一，无业务程序。Nexus合并220已获维护授权，按用户本轮暂不迁移要求尚未执行，WireGuard信任范围不变，见[18整理结果](18-cleanup-and-consolidation.md)。

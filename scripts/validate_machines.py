@@ -69,8 +69,14 @@ def validate() -> dict:
             errors.append('Invalid per-machine schema_version: ' + rel)
         if cfg.get('source_of_truth') != 'plan.json' or not cfg.get('last_verified_at'):
             errors.append('Missing source/time contract: ' + rel)
-        if cfg.get('current_runtime_verified') is not False:
-            errors.append('Offline record must not claim current live verification: ' + rel)
+        live = cfg.get('current_runtime_verified')
+        if live is True:
+            proof = cfg.get('current_verification_evidence', '')
+            if (not plan.get('operational_state', {}).get('current_runtime_verified')
+                    or not proof or not safe_file(ROOT/proof)):
+                errors.append('Current runtime claim requires recovered plan and verification evidence: ' + rel)
+        elif live is not False:
+            errors.append('Explicit current runtime verification boolean required: ' + rel)
         if identity[0] in ('vm', 'lxc'):
             stats['guest_records'] += 1
             role = roles.get(identity[1], {})
@@ -111,8 +117,9 @@ def validate() -> dict:
                 wanted = tuple(role.get(key) for key in ('data_filesystem_uuid', 'guest_mountpoint', 'data_disk_gib', 'data_storage'))
                 if actual != wanted:
                     errors.append('Data disk UUID/mount/size/storage differs from plan: ' + rel)
-            if cfg.get('status') != 'paused-awaiting-hardware-repair':
-                errors.append('Guest record must retain current pause: ' + rel)
+            expected_status = plan.get('operational_state', {}).get('machine_status_contract', 'paused-awaiting-hardware-repair')
+            if cfg.get('status') != expected_status:
+                errors.append('Guest record status differs from current operational scope: ' + rel)
         elif identity[0] == 'template':
             stats['template_records'] += 1
             template = templates.get(identity[1], {})

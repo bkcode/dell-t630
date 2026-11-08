@@ -9,16 +9,16 @@
     "memory_gib": 125
   },
   "source_of_truth": "plan.json",
-  "last_verified_at": "2026-11-07T02:35:01+08:00",
-  "current_runtime_verified": false,
-  "status": "paused-awaiting-hardware-repair",
-  "pause_reason": "User paused server work afterUEFI0058 POST memory error; priorSEL DIMM_B1 evidence, repair/online state unverified.",
+  "last_verified_at": "2026-11-08T20:20:48+08:00",
+  "current_runtime_verified": true,
+  "status": "recovered-infrastructure-verified",
   "record_kind": "offline-configuration-contract-not-live-collection",
   "created_from_local_files_only": true,
   "configuration_policy": {
     "secret_config_or_private_keys_in_git": false,
-    "public_runtime_snapshots_copied": false,
-    "reason": "Index proven contracts/receipts; no old10.63 or narrowVPN preview copied as currentruntime. Fresh actual configuration requires hardware recovery and user resume."
+    "public_runtime_snapshots_copied": true,
+    "reason": "Index proven contracts/receipts; no old10.63 or narrowVPN preview copied as currentruntime. Fresh actual configuration requires hardware recovery and user resume.",
+    "scope": "only three public management-forwarding guard files, SHA matched; not full runtime config export"
   },
   "purpose": "DellT630 physical virtualization/storage owner; management and L2bridge only.",
   "last_successful_operation_at": "2026-11-07T02:44:29+08:00",
@@ -105,7 +105,7 @@
     ],
     "last_direct_controller_check": "2026-11-06T05:17:13+08:00",
     "controller_state_at_that_check": "Optimal; earlierHDDslot32:3rebuild completed",
-    "current_controller_and_filesystem_state": "unverified-after-memory-error",
+    "current_controller_and_filesystem_state": "2026-11-08 virtualdrivesOptimal/5physicalOnln/PVE3storagesactive; application disk mounts verified per role; not full filesystem scan",
     "host_storages": [
       "local",
       "local-lvm",
@@ -139,5 +139,20 @@
     "User completes hardware assessment/repair and explicitly resumes serverwork.",
     "PreserveSEL/Lifecycle and verifyPOST/memorydiagnostics/effectivecapacity.",
     "Then freshtrusted hardware/RAID/filesystem/network/service validation; no oldNATfallback."
-  ]
+  ],
+  "current_verification_evidence": "recovery/20261108/host-network-postcheck.json",
+  "current_verification_scope": "scoped infrastructure recovery; original app data contents/authentication not fully revalidated; no migration",
+  "verification_note": "2026-11-08 scoped recovery checks passed; user confirms memory repair/diagnostics; no migration, code upgrade or Java business deployment.",
+  "timestamp_scope": "source audit/receipt time; individual probes retain their timestamps",
+  "management_forwarding_guard": {
+    "guest_paths": {
+      "/usr/local/sbin/dell-management-forwarding-off": "96b0b6d8b5bb137a7599f3afe3ff86c1c3a6986b4ecb8cad106ba06fb55a6c05",
+      "/etc/network/if-up.d/dell-management-forwarding-off": "bda534462bc2b1bb87acfa9ade706dc5604e8b022da1a27b9ab9fcd7a781ae2e",
+      "/etc/systemd/system/dell-network19-bridge.service.d/20-management-only.conf": "a42bfddfa94cefa54c44d9daf979b3644f6906f96ca64fb800d5319bfd1c2674"
+    },
+    "applied": true,
+    "network_reload_or_guest_restart": false,
+    "current_all_forward_zero_verified": true,
+    "next_maintenance_reboot_persistence_test_pending": true
+  }
 }

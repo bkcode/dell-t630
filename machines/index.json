@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_of_truth": "plan.json",
   "configuration_scope": "Offline public contracts and source manifests; not a live export or complete backup",
-  "current_runtime_verified": false,
-  "last_verified_inventory_at": "2026-11-07T02:35:01+08:00",
+  "current_runtime_verified": true,
+  "last_verified_inventory_at": "2026-11-08T20:20:48+08:00",
   "counts": {
     "PVE_hosts": 1,
     "retained_guest_instances": 12,
@@ -139,5 +139,6 @@
       "ip": null,
       "lifecycle": "sealed-template-last-verified"
     }
-  ]
+  ],
+  "current_verification_evidence": "recovery/20261108/host-network-postcheck.json"
 }

@@ -6,25 +6,25 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一规划；当前hardwarepause字段优先，不作实时探测。",
-      "sha256": "023ed7a0237f4ac0862ac97fcc4c34d4808b2e9d942efa6b455e748e94ca0703"
+      "sha256": "108ad706e5917e44eb5c6c1f7318c4e41b2f4cf62d281cf76f1a00368832430b"
     },
     {
       "path": "AGENTS.md",
       "type": "current-contract",
       "purpose": "用户暂停与秘密/操作边界。",
-      "sha256": "092764a24bcedd354d9bedfdd887247c23adba8bd2765d38c87cc2091f952159"
+      "sha256": "4a68d9509032171f2ab4d7ceed00f1f8fa16c1242f9ca2937997f520d45a7f8b"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
       "purpose": "最后02:35快照、当前UEFI0058暂停及恢复门禁。",
-      "sha256": "0da10943e1b39845dafa76e58161982e0eac9a9c7747c849eec21977084cadc2"
+      "sha256": "858f0eb05138a66db981507bce15f013359e8388760f778c8cddb018099694ba"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "恢复后人工操作合同，当前不能执行其中远程命令。",
-      "sha256": "717488c3042e9e1777ee3e94d756ccd8ba5f99ea0b17a43c10da22e942e83599"
+      "sha256": "1102845cef3dac5ec1a1797f02b447f4e04d9cc9f00a855e007d61f7082b7c99"
     },
     {
       "path": "cleanup/final-live-check.json",
@@ -36,7 +36,7 @@
       "path": "16-wireguard-access.md",
       "type": "current-contract",
       "purpose": "10.66.66.0/24全有效IPv4服务信任及每peer/32边界。",
-      "sha256": "85447563bb7f08eea1d1d42fd8ace8af3fe5bcd6d3f3a710198f0c5e5039957d"
+      "sha256": "d1048f8e723f94505a0dd1b423ae0b84c50970c042a92767ff957cb95e2359e6"
     },
     {
       "path": "network19/wireguard/full-access-verification.json",
@@ -79,6 +79,12 @@
       "type": "historical-evidence",
       "purpose": "真实LAN DORA；pcap仅PVE，未证明全部WAN DHCP反向包。",
       "sha256": "0c63d4a016311d622f06cacf83cbdad428b6a6b2fc9cb26cc68cdf40262b219d"
+    },
+    {
+      "path": "recovery/20261108/network-CF-followup.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-08 scoped recovery check; no migration/application update, not full app-content restore acceptance",
+      "sha256": "e4014df0a31b1f8b2ece2d99a1dff53e91d436c1707af7f5f27393278f865ef7"
     }
   ]
 }

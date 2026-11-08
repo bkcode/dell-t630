@@ -1,0 +1,18 @@
+[
+  {
+    "path": "/mnt/pve/store/template/iso/debian-12.10.0-amd64-netinst.iso",
+    "size": 663748608,
+    "sha256": "ee8d8579128977d7dc39d48f43aec5ab06b7f09e1f40a9d98f2a9d149221704a",
+    "official_manifest": "https://cdimage.debian.org/mirror/cdimage/archive/12.10.0/amd64/iso-cd/SHA256SUMS",
+    "official_match": true,
+    "official_digest": "ee8d8579128977d7dc39d48f43aec5ab06b7f09e1f40a9d98f2a9d149221704a"
+  },
+  {
+    "path": "/mnt/pve/store/template/iso/ubuntu-24.04.2-live-server-amd64.iso",
+    "size": 3213064192,
+    "sha256": "d6dab0c3a657988501b4bd76f1297c053df710e06e0c3aece60dead24f270b4d",
+    "official_manifest": "https://old-releases.ubuntu.com/releases/24.04.2/SHA256SUMS",
+    "official_match": true,
+    "official_digest": "d6dab0c3a657988501b4bd76f1297c053df710e06e0c3aece60dead24f270b4d"
+  }
+]

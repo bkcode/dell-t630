@@ -1,0 +1,1092 @@
+{
+  "schema_version": 1,
+  "at": "2026-11-08T12:19:39.230515+00:00",
+  "scope": "2026-11-08 NAS/Penpot/Nexus/publisher readonlyexistinginfrastructure recovery; noNexusmerge",
+  "guest_vmids": [
+    220,
+    221,
+    250,
+    260
+  ],
+  "hardware_context": "rootcurrentbootEDACCE/UE0 RAIDOptl; userreports DIMM reseat/replacement+diagnosticpassed; this auditdoes not independentlyprovehardware repair",
+  "known_hosts_or_key_contents_modified_or_read": false,
+  "migration_install_stop_or_backup_actions": false,
+  "guests": [
+    {
+      "vmid": 220,
+      "role": "publish-service",
+      "collection_status": "collected",
+      "collected_at": "2026-11-08T12:19:37.103316+00:00",
+      "boot_id": "84c06304-4157-4f7c-9ca0-2c1e814b171a",
+      "uptime_seconds": 131.13,
+      "read_only": true,
+      "mutations": false,
+      "CPU_count": 4,
+      "MemTotal_bytes": 4112367616,
+      "mount": {
+        "filesystems": [
+          {
+            "target": "/srv/dell-build",
+            "source": "/dev/sdb",
+            "fstype": "ext4",
+            "uuid": "16dc6067-56ef-4687-a314-edc6421f9ed4"
+          }
+        ]
+      },
+      "mount_matches": true,
+      "expected_data_UUID": "16dc6067-56ef-4687-a314-edc6421f9ed4",
+      "physical_interfaces": [
+        {
+          "name": "eth0",
+          "MAC": "bc:24:11:2a:01:ad",
+          "IPv4": [
+            {
+              "address": "192.168.19.30",
+              "prefix": 24
+            }
+          ]
+        }
+      ],
+      "units": {
+        "docker.service": {
+          "Type": "notify",
+          "Restart": "always",
+          "MainPID": "790",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "",
+          "RequiresMountsFor": "",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        },
+        "prometheus-node-exporter.service": {
+          "Type": "simple",
+          "Restart": "on-failure",
+          "MainPID": "775",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "",
+          "RequiresMountsFor": "",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        }
+      },
+      "containers": [],
+      "health_GET": [],
+      "publisher_client_profile": {
+        "target_host": "192.168.19.45",
+        "target_user": "deployer",
+        "host_key_alias": "dell-test240-publisher",
+        "source_ip": "192.168.19.30"
+      },
+      "publisher_key_stat_only": {
+        "uid": 999,
+        "gid": 989,
+        "mode": "0o600",
+        "bytes": 419,
+        "mtime_ns": 1793936890687081274,
+        "contents_read": false
+      },
+      "publisher_client_public_code_SHA": "d674598542a73556f31d85d4f5c6bbdd55d66dddb9acb4d84cb7587e4f532969",
+      "Nexus_containers_on220_count": 0,
+      "Nexus_active_paths_present": {
+        "/opt/dell/nexus": false,
+        "/etc/nexus.env": false,
+        "/root/dell-nexus-secrets": false,
+        "/etc/systemd/system/dell-nexus.service": false
+      },
+      "publisher_scope": "fenced contract; no deploy or target240 request executed; target policy not independently queried"
+    },
+    {
+      "vmid": 221,
+      "role": "artifact-service",
+      "collected_at": "2026-11-08T12:16:58.215951+00:00",
+      "execution_type": "read-only",
+      "boot_id": "b3939224-298b-4a81-8d31-f0a7e5099600",
+      "uptime_seconds": 156.69,
+      "CPU_count": 2,
+      "MemTotal_bytes": 4112932864,
+      "expected_onboot_order": {
+        "vmid": 221,
+        "order": 21,
+        "up_seconds": 90,
+        "down_seconds": 180
+      },
+      "forbidden_Env_Cmd_health_logs_credentials_requested": false,
+      "mutations": false,
+      "physical_interfaces": [
+        {
+          "name": "eth0",
+          "MAC": "bc:24:11:ec:e1:6f",
+          "IPv4": [
+            {
+              "address": "192.168.19.31",
+              "prefix": 24
+            }
+          ]
+        }
+      ],
+      "mount": {
+        "filesystems": [
+          {
+            "target": "/srv/nexus",
+            "source": "/dev/sdb",
+            "fstype": "ext4",
+            "uuid": "239dc45a-b1f3-408b-a8ef-7afa77b52204"
+          }
+        ]
+      },
+      "expected_data_UUID": "239dc45a-b1f3-408b-a8ef-7afa77b52204",
+      "mount_matches": true,
+      "units": {
+        "docker.service": {
+          "Type": "notify",
+          "Restart": "always",
+          "MainPID": "767",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "",
+          "RequiresMountsFor": "",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        },
+        "dell-nexus.service": {
+          "Type": "simple",
+          "Restart": "on-failure",
+          "MainPID": "1082",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "srv-nexus.mount docker.service",
+          "RequiresMountsFor": "/srv/nexus",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        }
+      },
+      "containers": [
+        {
+          "name": "/nexus-gateway-1",
+          "id": "bb273c7b5b309671bd34f56c04dc6ae96dc7451105b8f1f19f890968fb4ce69a",
+          "image": "sha256:4e5db4761e0ff445f7fd29aad680ad28e8abf7d204895557f145d65535abcc1c",
+          "PID": 1859,
+          "started_at": "2026-11-08T12:16:14.979034966Z",
+          "state": "running",
+          "running": true,
+          "restarting": false,
+          "OOM": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/nexus-nexus-1",
+          "id": "70d4bec45b73e68dee425c6962ba0ec2d1448b03187dfa0dc8369bdc44eb65bb",
+          "image": "sha256:2ae4fee2eed85f42c982aa2fc16746a8453c7f79faf2a7ea236855ca8652e001",
+          "PID": 1367,
+          "started_at": "2026-11-08T12:14:57.967173576Z",
+          "state": "running",
+          "running": true,
+          "restarting": false,
+          "OOM": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        }
+      ],
+      "health_GET": [
+        {
+          "url": "http://192.168.19.31:8081/service/rest/v1/status",
+          "HTTP_status": 200,
+          "ok": true,
+          "response_body_saved": false
+        }
+      ],
+      "collection_status": "collected"
+    },
+    {
+      "vmid": 250,
+      "role": "penpot-service",
+      "collection_status": "collected",
+      "collected_at": "2026-11-08T12:19:35.544767+00:00",
+      "boot_id": "7ccfee09-86db-44ca-8c14-236c55a94782",
+      "uptime_seconds": 222.39,
+      "read_only": true,
+      "mutations": false,
+      "CPU_count": 6,
+      "MemTotal_bytes": 16776507392,
+      "mount": {
+        "filesystems": [
+          {
+            "target": "/srv/penpot",
+            "source": "/dev/sdb",
+            "fstype": "ext4",
+            "uuid": "ccccda03-bffd-4054-afd3-e0e22f0c607e"
+          }
+        ]
+      },
+      "mount_matches": true,
+      "expected_data_UUID": "ccccda03-bffd-4054-afd3-e0e22f0c607e",
+      "physical_interfaces": [
+        {
+          "name": "eth0",
+          "MAC": "bc:24:11:78:e9:84",
+          "IPv4": [
+            {
+              "address": "192.168.19.50",
+              "prefix": 24
+            }
+          ]
+        }
+      ],
+      "units": {
+        "docker.service": {
+          "Type": "notify",
+          "Restart": "always",
+          "MainPID": "844",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "srv-penpot.mount",
+          "RequiresMountsFor": "/srv/penpot",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        },
+        "dell-penpot.service": {
+          "Type": "notify",
+          "Restart": "on-failure",
+          "MainPID": "1249",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "docker.service srv-penpot.mount",
+          "RequiresMountsFor": "/srv/penpot",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        }
+      },
+      "containers": [
+        {
+          "name": "/penpot-penpot-frontend-1",
+          "id": "96c4fb2d14c0747697b232b2435dbaf1ba58c25850be1f8e84a2f4acfd6cff49",
+          "image": "sha256:bd020fb6bddfd77449c26f76ee04ca7b2b50a0ffe8562ebc7b9e294bfcd38b89",
+          "PID": 2613,
+          "state": "running",
+          "started_at": "2026-11-08T12:16:40.99886842Z",
+          "running": true,
+          "OOM": false,
+          "restarting": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/penpot-penpot-backend-1",
+          "id": "4611f0d09e79410ae4bab0ff75a008bb1bdbe6dfc0a76175726d632355831df5",
+          "image": "sha256:c54c38204393018c4009b7161b9ee3a04ccc0daab657b820d5de86a0d3013630",
+          "PID": 2497,
+          "state": "running",
+          "started_at": "2026-11-08T12:16:40.169637214Z",
+          "running": true,
+          "OOM": false,
+          "restarting": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/penpot-penpot-admin-console-1",
+          "id": "989309f28c5aaf2db549888b842dd256ca92371664c5baf5ad8b1ce4829f5644",
+          "image": "sha256:29c13326e854fd63e18a7231cb1ca26d60f728692bd1207ded003b94aba79390",
+          "PID": 2400,
+          "state": "running",
+          "started_at": "2026-11-08T12:16:39.3186309Z",
+          "running": true,
+          "OOM": false,
+          "restarting": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/penpot-penpot-exporter-1",
+          "id": "81bec808dfa5ad48bdd7fc73f3da737d3f9c0a5c9acb814e7be1761e3d7954e4",
+          "image": "sha256:6173b08e25850cda792cd75261e741649c0febd48326e68e8711ba44b5c9af42",
+          "PID": 2197,
+          "state": "running",
+          "started_at": "2026-11-08T12:16:35.567992231Z",
+          "running": true,
+          "OOM": false,
+          "restarting": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/penpot-penpot-dns-1",
+          "id": "896b4b365781d4ce0922b7a250fc277fcb1de2b34cdb5cca76578352de76239b",
+          "image": "sha256:7ed84fca86579b7bee90ec5c9750457cd9450729d2dd01fb2070f00f6cd7fb14",
+          "PID": 1783,
+          "state": "running",
+          "started_at": "2026-11-08T12:16:31.122661704Z",
+          "running": true,
+          "OOM": false,
+          "restarting": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/penpot-penpot-mcp-1",
+          "id": "aa9c599b0dd027b4f8056f8adf283d6ebb07f861569af13478c68305d53ccbaf",
+          "image": "sha256:e95070617f49eacc00f136061d9c6b4bad957319046e9e65e7cee14b9e77577c",
+          "PID": 1985,
+          "state": "running",
+          "started_at": "2026-11-08T12:16:32.729103231Z",
+          "running": true,
+          "OOM": false,
+          "restarting": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/penpot-penpot-worker-1",
+          "id": "bdd8e421ad746ddecc7950b390c21c046f6622914eed89cf3fc9e5f52fca31cb",
+          "image": "sha256:c0bead679c3fe7a4b80d2485f87bdce0e5a6acc26a9c2a001b0e4e3270dadee5",
+          "PID": 2693,
+          "state": "running",
+          "started_at": "2026-11-08T12:16:41.713476974Z",
+          "running": true,
+          "OOM": false,
+          "restarting": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/penpot-penpot-import-1",
+          "id": "90aacbc3b78e9b1c07771b55013e3b62c5634df8c777545c4229558f974b01ed",
+          "image": "sha256:d4414e3f2e41ac4f5eb4b2c146c05cbc9f9754b179d6b63efa3af95c005b1261",
+          "PID": 2780,
+          "state": "running",
+          "started_at": "2026-11-08T12:16:42.255940062Z",
+          "running": true,
+          "OOM": false,
+          "restarting": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/penpot-penpot-postgres-1",
+          "id": "b6ac0e7fd316f8b53df1d8853d5614049fa5d180f8f9b5f84e3baa448f481c17",
+          "image": "sha256:245fc027b7f3755bbd21b4375c2a0ebc7fa5d16c4573da497be9850a823973c8",
+          "PID": 2047,
+          "state": "running",
+          "started_at": "2026-11-08T12:16:33.171822582Z",
+          "running": true,
+          "OOM": false,
+          "restarting": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/penpot-penpot-valkey-1",
+          "id": "d08ee10d5b4ce72de16ca148218a85edda276963b6e0d665517a763801a9616e",
+          "image": "sha256:ca662989648f173e01fb1a1768e7d84ddcaf8b7de135070b59271b0918104eb3",
+          "PID": 1858,
+          "state": "running",
+          "started_at": "2026-11-08T12:16:31.829945347Z",
+          "running": true,
+          "OOM": false,
+          "restarting": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/penpot-penpot-mailpit-1",
+          "id": "b223cafa5cb2450dc520513f71e999ba6550c0cf894a514c4d520e72c33f39d9",
+          "image": "sha256:580a202b5088e9c651a8e8b4e461e3213fbd3a3aacaa3d2251892a546a734116",
+          "PID": 1919,
+          "state": "running",
+          "started_at": "2026-11-08T12:16:32.280151143Z",
+          "running": true,
+          "OOM": false,
+          "restarting": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        }
+      ],
+      "health_GET": [
+        {
+          "url": "http://192.168.19.50:9001/",
+          "HTTP_status": 200,
+          "ok": true,
+          "response_body_saved": false
+        },
+        {
+          "url": "http://172.18.0.10:4404/readyz",
+          "HTTP_status": 200,
+          "ok": true,
+          "response_body_saved": false,
+          "worker_public_fields": {
+            "state": "ready",
+            "activeTasks": 0
+          }
+        }
+      ],
+      "Git": {
+        "HEAD": "ff1783e7865af7aae571c985f03e057631b7af63",
+        "dirty": false,
+        "expected_historical_HEAD": "ff1783e7865af7aae571c985f03e057631b7af63",
+        "read_succeeded": true,
+        "application_update_authorized": false
+      }
+    },
+    {
+      "vmid": 260,
+      "role": "nas-media",
+      "collection_status": "collected",
+      "collected_at": "2026-11-08T12:19:36.852402+00:00",
+      "boot_id": "9a191088-cf52-46d3-afda-ebd5af0b46f9",
+      "uptime_seconds": 61.95,
+      "read_only": true,
+      "mutations": false,
+      "CPU_count": 4,
+      "MemTotal_bytes": 4112367616,
+      "mount": {
+        "filesystems": [
+          {
+            "target": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a",
+            "source": "/dev/sdb1",
+            "fstype": "ext4",
+            "uuid": "5b19837c-128c-498a-b79d-563db810c34a"
+          }
+        ]
+      },
+      "mount_matches": true,
+      "expected_data_UUID": "5b19837c-128c-498a-b79d-563db810c34a",
+      "physical_interfaces": [
+        {
+          "name": "ens18",
+          "MAC": "bc:24:11:a7:3b:73",
+          "IPv4": [
+            {
+              "address": "192.168.19.60",
+              "prefix": 24
+            }
+          ]
+        }
+      ],
+      "units": {
+        "docker.service": {
+          "Type": "notify",
+          "Restart": "always",
+          "MainPID": "902",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "",
+          "RequiresMountsFor": "",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        },
+        "dell-nas-jellyfin.service": {
+          "Type": "simple",
+          "Restart": "on-failure",
+          "MainPID": "1267",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "docker.service \"srv-dev\\\\x2ddisk\\\\x2dby\\\\x2duuid\\\\x2d5b19837c\\\\x2d128c\\\\x2d498a\\\\x2db79d\\\\x2d563db810c34a.mount\"",
+          "RequiresMountsFor": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a /opt/dell/nas",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        },
+        "smbd.service": {
+          "Type": "notify",
+          "Restart": "no",
+          "MainPID": "886",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "",
+          "RequiresMountsFor": "",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        },
+        "openmediavault-engined.service": {
+          "Type": "forking",
+          "Restart": "no",
+          "MainPID": "813",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "",
+          "RequiresMountsFor": "",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        },
+        "nginx.service": {
+          "Type": "forking",
+          "Restart": "no",
+          "MainPID": "777",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "",
+          "RequiresMountsFor": "",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        }
+      },
+      "containers": [
+        {
+          "name": "/dell-nas-jellyfin-1",
+          "id": "c7db70188968ec3c8896c5110e71f5b23d9e0284cd6c9128173148d509305ad9",
+          "image": "sha256:fea863d0cd9ec445985d9c75fc6ed64e38a1d2766cf0c250a33d553f4fc1b771",
+          "PID": 1339,
+          "state": "running",
+          "started_at": "2026-11-08T12:19:28.800922692Z",
+          "running": true,
+          "OOM": false,
+          "restarting": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        }
+      ],
+      "health_GET": [
+        {
+          "url": "http://192.168.19.60/",
+          "HTTP_status": 200,
+          "ok": true,
+          "response_body_saved": false
+        },
+        {
+          "url": "http://192.168.19.60:8096/health",
+          "HTTP_status": 200,
+          "ok": true,
+          "response_body_saved": false
+        }
+      ],
+      "SMB_shares": {
+        "media": {
+          "hosts allow": "192.168.21.0/24 192.168.19.0/24 127.0.0.1 10.66.66.0/24",
+          "hosts deny": "",
+          "valid users": "naswriter nasreader",
+          "read list": "nasreader",
+          "write list": "naswriter",
+          "read only": "No",
+          "guest ok": "No"
+        },
+        "games": {
+          "hosts allow": "192.168.21.0/24 192.168.19.0/24 127.0.0.1 10.66.66.0/24",
+          "hosts deny": "",
+          "valid users": "naswriter nasreader",
+          "read list": "nasreader",
+          "write list": "naswriter",
+          "read only": "No",
+          "guest ok": "No"
+        },
+        "incoming": {
+          "hosts allow": "192.168.21.0/24 192.168.19.0/24 127.0.0.1 10.66.66.0/24",
+          "hosts deny": "",
+          "valid users": "naswriter nasreader",
+          "read list": "nasreader",
+          "write list": "naswriter",
+          "read only": "No",
+          "guest ok": "No"
+        }
+      },
+      "existing_synthetic_file_metadata": [
+        {
+          "path": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a/media/dell-acceptance-media.bin",
+          "bytes": 1048576,
+          "uid": 1001,
+          "gid": 2000,
+          "mode": "0o664",
+          "contents_read": false
+        },
+        {
+          "path": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a/games/dell-acceptance-games.bin",
+          "bytes": 1048576,
+          "uid": 1001,
+          "gid": 2000,
+          "mode": "0o664",
+          "contents_read": false
+        },
+        {
+          "path": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a/incoming/dell-acceptance-incoming.bin",
+          "bytes": 1048576,
+          "uid": 1001,
+          "gid": 2000,
+          "mode": "0o664",
+          "contents_read": false
+        },
+        {
+          "path": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a/media/movies/DellAcceptance/dell-acceptance-fixture.mp4",
+          "bytes": 1144701,
+          "uid": 2000,
+          "gid": 2000,
+          "mode": "0o644",
+          "contents_read": false
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Onbootorder not reached isnot a fault; unreachable results require rootqueue correlation.",
+    "No EULA/account/import/rebuild/APIauthenticated data query orsharewrite performed.",
+    "Historical plan currentlypaused; this is a dated recovery snapshot, not a hardware repair declaration."
+  ],
+  "prior_observations": [
+    {
+      "at": "2026-11-08T12:16:59.341769+00:00",
+      "guests": [
+        {
+          "vmid": 220,
+          "role": "publish-service",
+          "collection_status": "not-yet-reachable-or-readiness-unconfirmed",
+          "expected_onboot_order": {
+            "vmid": 220,
+            "order": 30,
+            "up_seconds": 15,
+            "down_seconds": 60
+          },
+          "exit_code": 255,
+          "raw_private_details_withheld": true,
+          "classification": "await-root-onboot-queue-confirmation-not-a-fault-finding",
+          "mutations": false
+        },
+        {
+          "vmid": 221,
+          "role": "artifact-service",
+          "collected_at": "2026-11-08T12:16:58.215951+00:00",
+          "execution_type": "read-only",
+          "boot_id": "b3939224-298b-4a81-8d31-f0a7e5099600",
+          "uptime_seconds": 156.69,
+          "CPU_count": 2,
+          "MemTotal_bytes": 4112932864,
+          "expected_onboot_order": {
+            "vmid": 221,
+            "order": 21,
+            "up_seconds": 90,
+            "down_seconds": 180
+          },
+          "forbidden_Env_Cmd_health_logs_credentials_requested": false,
+          "mutations": false,
+          "physical_interfaces": [
+            {
+              "name": "eth0",
+              "MAC": "bc:24:11:ec:e1:6f",
+              "IPv4": [
+                {
+                  "address": "192.168.19.31",
+                  "prefix": 24
+                }
+              ]
+            }
+          ],
+          "mount": {
+            "filesystems": [
+              {
+                "target": "/srv/nexus",
+                "source": "/dev/sdb",
+                "fstype": "ext4",
+                "uuid": "239dc45a-b1f3-408b-a8ef-7afa77b52204"
+              }
+            ]
+          },
+          "expected_data_UUID": "239dc45a-b1f3-408b-a8ef-7afa77b52204",
+          "mount_matches": true,
+          "units": {
+            "docker.service": {
+              "Type": "notify",
+              "Restart": "always",
+              "MainPID": "767",
+              "Result": "success",
+              "NRestarts": "0",
+              "BindsTo": "",
+              "RequiresMountsFor": "",
+              "LoadState": "loaded",
+              "ActiveState": "active",
+              "SubState": "running",
+              "UnitFileState": "enabled"
+            },
+            "dell-nexus.service": {
+              "Type": "simple",
+              "Restart": "on-failure",
+              "MainPID": "1082",
+              "Result": "success",
+              "NRestarts": "0",
+              "BindsTo": "srv-nexus.mount docker.service",
+              "RequiresMountsFor": "/srv/nexus",
+              "LoadState": "loaded",
+              "ActiveState": "active",
+              "SubState": "running",
+              "UnitFileState": "enabled"
+            }
+          },
+          "containers": [
+            {
+              "name": "/nexus-gateway-1",
+              "id": "bb273c7b5b309671bd34f56c04dc6ae96dc7451105b8f1f19f890968fb4ce69a",
+              "image": "sha256:4e5db4761e0ff445f7fd29aad680ad28e8abf7d204895557f145d65535abcc1c",
+              "PID": 1859,
+              "started_at": "2026-11-08T12:16:14.979034966Z",
+              "state": "running",
+              "running": true,
+              "restarting": false,
+              "OOM": false,
+              "health": "healthy",
+              "restart_count": 0,
+              "restart_policy": "no"
+            },
+            {
+              "name": "/nexus-nexus-1",
+              "id": "70d4bec45b73e68dee425c6962ba0ec2d1448b03187dfa0dc8369bdc44eb65bb",
+              "image": "sha256:2ae4fee2eed85f42c982aa2fc16746a8453c7f79faf2a7ea236855ca8652e001",
+              "PID": 1367,
+              "started_at": "2026-11-08T12:14:57.967173576Z",
+              "state": "running",
+              "running": true,
+              "restarting": false,
+              "OOM": false,
+              "health": "healthy",
+              "restart_count": 0,
+              "restart_policy": "no"
+            }
+          ],
+          "health_GET": [
+            {
+              "url": "http://192.168.19.31:8081/service/rest/v1/status",
+              "HTTP_status": 200,
+              "ok": true,
+              "response_body_saved": false
+            }
+          ],
+          "collection_status": "collected"
+        },
+        {
+          "vmid": 250,
+          "role": "penpot-service",
+          "collected_at": "2026-11-08T12:16:58.227980+00:00",
+          "execution_type": "read-only",
+          "boot_id": "7ccfee09-86db-44ca-8c14-236c55a94782",
+          "uptime_seconds": 65.07,
+          "CPU_count": 6,
+          "MemTotal_bytes": 16776507392,
+          "expected_onboot_order": {
+            "vmid": 250,
+            "order": 22,
+            "up_seconds": 90,
+            "down_seconds": 180
+          },
+          "forbidden_Env_Cmd_health_logs_credentials_requested": false,
+          "mutations": false,
+          "physical_interfaces": [
+            {
+              "name": "eth0",
+              "MAC": "bc:24:11:78:e9:84",
+              "IPv4": [
+                {
+                  "address": "192.168.19.50",
+                  "prefix": 24
+                }
+              ]
+            }
+          ],
+          "mount": {
+            "filesystems": [
+              {
+                "target": "/srv/penpot",
+                "source": "/dev/sdb",
+                "fstype": "ext4",
+                "uuid": "ccccda03-bffd-4054-afd3-e0e22f0c607e"
+              }
+            ]
+          },
+          "expected_data_UUID": "ccccda03-bffd-4054-afd3-e0e22f0c607e",
+          "mount_matches": true,
+          "units": {
+            "docker.service": {
+              "Type": "notify",
+              "Restart": "always",
+              "MainPID": "844",
+              "Result": "success",
+              "NRestarts": "0",
+              "BindsTo": "srv-penpot.mount",
+              "RequiresMountsFor": "/srv/penpot",
+              "LoadState": "loaded",
+              "ActiveState": "active",
+              "SubState": "running",
+              "UnitFileState": "enabled"
+            },
+            "dell-penpot.service": {
+              "Type": "notify",
+              "Restart": "on-failure",
+              "MainPID": "1249",
+              "Result": "success",
+              "NRestarts": "0",
+              "BindsTo": "srv-penpot.mount docker.service",
+              "RequiresMountsFor": "/srv/penpot",
+              "LoadState": "loaded",
+              "ActiveState": "activating",
+              "SubState": "start",
+              "UnitFileState": "enabled"
+            }
+          },
+          "containers": [
+            {
+              "name": "/penpot-penpot-import-1",
+              "id": "90aacbc3b78e9b1c07771b55013e3b62c5634df8c777545c4229558f974b01ed",
+              "image": "sha256:d4414e3f2e41ac4f5eb4b2c146c05cbc9f9754b179d6b63efa3af95c005b1261",
+              "PID": 2780,
+              "started_at": "2026-11-08T12:16:42.255940062Z",
+              "state": "running",
+              "running": true,
+              "restarting": false,
+              "OOM": false,
+              "health": "healthy",
+              "restart_count": 0,
+              "restart_policy": "no"
+            },
+            {
+              "name": "/penpot-penpot-worker-1",
+              "id": "bdd8e421ad746ddecc7950b390c21c046f6622914eed89cf3fc9e5f52fca31cb",
+              "image": "sha256:c0bead679c3fe7a4b80d2485f87bdce0e5a6acc26a9c2a001b0e4e3270dadee5",
+              "PID": 2693,
+              "started_at": "2026-11-08T12:16:41.713476974Z",
+              "state": "running",
+              "running": true,
+              "restarting": false,
+              "OOM": false,
+              "health": "starting",
+              "restart_count": 0,
+              "restart_policy": "no"
+            },
+            {
+              "name": "/penpot-penpot-frontend-1",
+              "id": "96c4fb2d14c0747697b232b2435dbaf1ba58c25850be1f8e84a2f4acfd6cff49",
+              "image": "sha256:bd020fb6bddfd77449c26f76ee04ca7b2b50a0ffe8562ebc7b9e294bfcd38b89",
+              "PID": 2613,
+              "started_at": "2026-11-08T12:16:40.99886842Z",
+              "state": "running",
+              "running": true,
+              "restarting": false,
+              "OOM": false,
+              "health": "healthy",
+              "restart_count": 0,
+              "restart_policy": "no"
+            },
+            {
+              "name": "/penpot-penpot-backend-1",
+              "id": "4611f0d09e79410ae4bab0ff75a008bb1bdbe6dfc0a76175726d632355831df5",
+              "image": "sha256:c54c38204393018c4009b7161b9ee3a04ccc0daab657b820d5de86a0d3013630",
+              "PID": 2497,
+              "started_at": "2026-11-08T12:16:40.169637214Z",
+              "state": "running",
+              "running": true,
+              "restarting": false,
+              "OOM": false,
+              "health": "starting",
+              "restart_count": 0,
+              "restart_policy": "no"
+            },
+            {
+              "name": "/penpot-penpot-admin-console-1",
+              "id": "989309f28c5aaf2db549888b842dd256ca92371664c5baf5ad8b1ce4829f5644",
+              "image": "sha256:29c13326e854fd63e18a7231cb1ca26d60f728692bd1207ded003b94aba79390",
+              "PID": 2400,
+              "started_at": "2026-11-08T12:16:39.3186309Z",
+              "state": "running",
+              "running": true,
+              "restarting": false,
+              "OOM": false,
+              "health": "healthy",
+              "restart_count": 0,
+              "restart_policy": "no"
+            },
+            {
+              "name": "/penpot-penpot-exporter-1",
+              "id": "81bec808dfa5ad48bdd7fc73f3da737d3f9c0a5c9acb814e7be1761e3d7954e4",
+              "image": "sha256:6173b08e25850cda792cd75261e741649c0febd48326e68e8711ba44b5c9af42",
+              "PID": 2197,
+              "started_at": "2026-11-08T12:16:35.567992231Z",
+              "state": "running",
+              "running": true,
+              "restarting": false,
+              "OOM": false,
+              "health": "healthy",
+              "restart_count": 0,
+              "restart_policy": "no"
+            },
+            {
+              "name": "/penpot-penpot-dns-1",
+              "id": "896b4b365781d4ce0922b7a250fc277fcb1de2b34cdb5cca76578352de76239b",
+              "image": "sha256:7ed84fca86579b7bee90ec5c9750457cd9450729d2dd01fb2070f00f6cd7fb14",
+              "PID": 1783,
+              "started_at": "2026-11-08T12:16:31.122661704Z",
+              "state": "running",
+              "running": true,
+              "restarting": false,
+              "OOM": false,
+              "health": "healthy",
+              "restart_count": 0,
+              "restart_policy": "no"
+            },
+            {
+              "name": "/penpot-penpot-valkey-1",
+              "id": "d08ee10d5b4ce72de16ca148218a85edda276963b6e0d665517a763801a9616e",
+              "image": "sha256:ca662989648f173e01fb1a1768e7d84ddcaf8b7de135070b59271b0918104eb3",
+              "PID": 1858,
+              "started_at": "2026-11-08T12:16:31.829945347Z",
+              "state": "running",
+              "running": true,
+              "restarting": false,
+              "OOM": false,
+              "health": "healthy",
+              "restart_count": 0,
+              "restart_policy": "no"
+            },
+            {
+              "name": "/penpot-penpot-mcp-1",
+              "id": "aa9c599b0dd027b4f8056f8adf283d6ebb07f861569af13478c68305d53ccbaf",
+              "image": "sha256:e95070617f49eacc00f136061d9c6b4bad957319046e9e65e7cee14b9e77577c",
+              "PID": 1985,
+              "started_at": "2026-11-08T12:16:32.729103231Z",
+              "state": "running",
+              "running": true,
+              "restarting": false,
+              "OOM": false,
+              "health": "healthy",
+              "restart_count": 0,
+              "restart_policy": "no"
+            },
+            {
+              "name": "/penpot-penpot-postgres-1",
+              "id": "b6ac0e7fd316f8b53df1d8853d5614049fa5d180f8f9b5f84e3baa448f481c17",
+              "image": "sha256:245fc027b7f3755bbd21b4375c2a0ebc7fa5d16c4573da497be9850a823973c8",
+              "PID": 2047,
+              "started_at": "2026-11-08T12:16:33.171822582Z",
+              "state": "running",
+              "running": true,
+              "restarting": false,
+              "OOM": false,
+              "health": "healthy",
+              "restart_count": 0,
+              "restart_policy": "no"
+            },
+            {
+              "name": "/penpot-penpot-mailpit-1",
+              "id": "b223cafa5cb2450dc520513f71e999ba6550c0cf894a514c4d520e72c33f39d9",
+              "image": "sha256:580a202b5088e9c651a8e8b4e461e3213fbd3a3aacaa3d2251892a546a734116",
+              "PID": 1919,
+              "started_at": "2026-11-08T12:16:32.280151143Z",
+              "state": "running",
+              "running": true,
+              "restarting": false,
+              "OOM": false,
+              "health": "healthy",
+              "restart_count": 0,
+              "restart_policy": "no"
+            }
+          ],
+          "health_GET": [
+            {
+              "url": "http://192.168.19.50:9001/",
+              "HTTP_status": 200,
+              "ok": true,
+              "response_body_saved": false
+            },
+            {
+              "url": "http://172.18.0.10:4404/readyz",
+              "HTTP_status": 503,
+              "ok": false,
+              "response_body_saved": false
+            }
+          ],
+          "Git": {
+            "HEAD": "ff1783e7865af7aae571c985f03e057631b7af63",
+            "dirty": false,
+            "read_succeeded": true,
+            "expected_historical_HEAD": "ff1783e7865af7aae571c985f03e057631b7af63",
+            "application_update_authorized": false
+          },
+          "collection_status": "collected"
+        },
+        {
+          "vmid": 260,
+          "role": "nas-media",
+          "collection_status": "not-yet-reachable-or-readiness-unconfirmed",
+          "expected_onboot_order": {
+            "vmid": 260,
+            "order": 50,
+            "up_seconds": 30,
+            "down_seconds": 120
+          },
+          "exit_code": 255,
+          "raw_private_details_withheld": true,
+          "classification": "await-root-onboot-queue-confirmation-not-a-fault-finding",
+          "mutations": false
+        }
+      ]
+    }
+  ],
+  "assessments": {
+    "220": {
+      "mount_UUID_FS_matches": true,
+      "actual_4CPU_4GiB_no_alias31": true,
+      "Nexus_not_installed_active": true,
+      "publisher_profile_source30_target45": true,
+      "publisher_key_stat600_UID999": true
+    },
+    "221": {
+      "mount_UUID_FS_matches": true,
+      "expected_containers": 2,
+      "all_expected_running_healthy": true,
+      "image_IDs_match_prior_approved": true,
+      "restart_count_zero": true,
+      "original_GET_all200": true
+    },
+    "250": {
+      "mount_UUID_FS_matches": true,
+      "expected_containers": 11,
+      "all_expected_running_healthy": true,
+      "image_IDs_match_prior_approved": true,
+      "restart_count_zero": true,
+      "original_GET_all200": true,
+      "Git_historical_ff1783e_clean": true
+    },
+    "260": {
+      "mount_UUID_FS_matches": true,
+      "expected_containers": 1,
+      "all_expected_running_healthy": true,
+      "image_IDs_match_prior_approved": true,
+      "restart_count_zero": true,
+      "original_GET_all200": true,
+      "original_4_fixture_files_metadata_present": true,
+      "SMB_network_and_auth_contract": true
+    }
+  },
+  "status": "readonly-existing-media-tools-recovered-no-required-remediation-observed",
+  "onboot_observation": "First220260unreachable andPEN9healthy werebootqueue/startup; boundedsecondreadfound220/NASreachableandPEN11healthy withoutagent action.",
+  "required_remediation_items": [],
+  "deferred_or_not_retested": [
+    "Hardware DIMMrepair details andongoing EDAC stability ownedbyroot/user.",
+    "Publisherfenced business policy on240 not independentlyqueried; no publish attempts.",
+    "Nexus EULA/accounts/49GAV234SHA not reauthenticated or reimported; health/mount/images onlyin this scope.",
+    "Penpot application HEAD unchanged; no auth/MCP/design/media-content revalidation.",
+    "NAS fixture metadata only; no password/content/readwrite/physicaldevice tests.",
+    "No Nexusmerge/221retirement/220backup orCFaccess."
+  ]
+}

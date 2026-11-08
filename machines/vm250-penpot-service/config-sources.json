@@ -6,25 +6,25 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "当前资源/地址/数据卷合同唯一来源；运行状态未在硬件故障后复验。",
-      "sha256": "023ed7a0237f4ac0862ac97fcc4c34d4808b2e9d942efa6b455e748e94ca0703"
+      "sha256": "108ad706e5917e44eb5c6c1f7318c4e41b2f4cf62d281cf76f1a00368832430b"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
       "purpose": "最后验收与当前UEFI0058暂停时间线。",
-      "sha256": "0da10943e1b39845dafa76e58161982e0eac9a9c7747c849eec21977084cadc2"
+      "sha256": "858f0eb05138a66db981507bce15f013359e8388760f778c8cddb018099694ba"
     },
     {
       "path": "12-service-access-and-operations.md",
       "type": "current-contract",
       "purpose": "当前19网入口及凭据保管规则。",
-      "sha256": "ad845beb1290754fdc647642507d996f999c2646639406ea35211bd58b29fc29"
+      "sha256": "f917b7b2445c4fb5f728318cd0ab0851cf13fb0d08bca152f8ad587cd5f41a86"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工启停、硬件门禁、克隆、备份与受控恢复。",
-      "sha256": "717488c3042e9e1777ee3e94d756ccd8ba5f99ea0b17a43c10da22e942e83599"
+      "sha256": "1102845cef3dac5ec1a1797f02b447f4e04d9cc9f00a855e007d61f7082b7c99"
     },
     {
       "path": "cleanup/final-live-check.json",
@@ -42,7 +42,7 @@
       "path": "infra/penpot/runtime/health-supervision/README.md",
       "type": "current-contract",
       "purpose": "notify持续监督、11健康、镜像ID和受控恢复边界。",
-      "sha256": "9af229a0dafd723da0a53226fd0cf88c1a37ab98950dd443a785f4d6c9c88665"
+      "sha256": "d4cf790dfccadbd48ec5d0f1960145f87a47f9534a1241bde61a060ba7b72f59"
     },
     {
       "path": "infra/penpot/runtime/health-supervision/evidence/final-runtime-contract.json",
@@ -54,7 +54,7 @@
       "path": "network19/services-media/PLAN.md",
       "type": "historical-evidence",
       "purpose": "已执行迁网差异与原source文件说明；不重新执行旧stage/commit。",
-      "sha256": "1c986a38c987c1774f5c0b588363dcf9f4f85a37ce0d4c5cc2381c3fb618b5f0"
+      "sha256": "6d3944997fc82d9b862c0cdfbc529042c0fb9234ea0e7cb2e8457962e2342ea3"
     },
     {
       "path": "infra/penpot/compose.fresh.yaml",
@@ -66,25 +66,25 @@
       "path": "infra/penpot/runtime/logging/README.md",
       "type": "current-contract",
       "purpose": "MCP query-safe日志规则与不削弱认证的限制。",
-      "sha256": "df0c21f0380e88c7bb132aa36e626f983c3b23c356eec190343019b7f9a3f702"
+      "sha256": "36982f6752eed4130200e935fc4c29bbe923b6efa5e2fd5f9617a6c4c78bb5c8"
     },
     {
       "path": "machines/vm250-penpot-service/git-source.json",
       "type": "current-contract",
       "purpose": "用户确认的bkcode/penpot main源码与更新合同；不证明远端最新或现场已更新",
-      "sha256": "75dd47c8e49d06c4f7c725ecec5e592a87ffd018ef7cbc32a6a36563dad7038a"
+      "sha256": "825283d192b502c230b2f412273b73629080bd9db942c5563dcfcda6dba83265"
     },
     {
       "path": "machines/vm250-penpot-service/SOURCE-AND-UPDATES.md",
       "type": "current-contract",
       "purpose": "源码获取、固定main、版本保留、构建切换与数据边界",
-      "sha256": "a1e81debaa637ebc550fef52b00cff920ba87cc23d3370e0481443462728c611"
+      "sha256": "fc890a48bfe4c824364a60d355cf4a183cfc7b59f85cd013a7d26524a796e309"
     },
     {
       "path": "infra/penpot/README.md",
       "type": "current-contract",
       "purpose": "Penpot源码主入口；其中初装bundle和旧网配置仍须按历史解释",
-      "sha256": "5557a43d83185f882daf6e6fba7c1eb0165f32c10864f15f0da5f92d3c3bf80c"
+      "sha256": "61c70c3c8ba012b99dd189beb0c2c595265266b1f52fab2b3e089e97fea260e3"
     },
     {
       "path": "infra/penpot/git-source-facts.json",
@@ -97,6 +97,12 @@
       "type": "historical-evidence",
       "purpose": "已验收运行代码/构建来源，非本轮更新结果",
       "sha256": "97d3c289516681b83b18e3e7b14d90e88447661cffa39ea6023741a2cb949373"
+    },
+    {
+      "path": "recovery/20261108/media-tools-audit.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-08 scoped recovery check; no migration/application update, not full app-content restore acceptance",
+      "sha256": "3cf578c4e8ee1916363e962adff0db11235ae80706b294a0e7b649463c526e83"
     }
   ],
   "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."
