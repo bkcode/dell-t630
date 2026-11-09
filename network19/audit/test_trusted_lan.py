@@ -18,10 +18,24 @@ LAN_LINE = '    ip saddr 192.168.21.0/24 ip daddr 192.168.19.0/24 counter accept
 
 class TrustedLAN(unittest.TestCase):
     def test_reproduces_confirmed_bridge_bytes(self):
-        text, metadata = renderer.render(PLAN, INVENTORY)
+        historical_plan = json.loads((ROOT / 'lan-trusted-20261109/master-candidate.json').read_text())
+        historical_inventory = json.loads((ROOT / 'lan-trusted-20261109/nic-registry-at-confirmation.json').read_text())
+        text, metadata = renderer.render(historical_plan, historical_inventory)
         self.assertEqual(text, (ROOT / 'lan-trusted-20261109/bridge-candidate.nft').read_text())
         self.assertEqual(len(metadata['rows']), 15)
         self.assertFalse(metadata['old_ops_transition_exception'])
+
+    def test_current_resource_addition_is_exact_and_reproducible(self):
+        text, metadata = renderer.render(PLAN, INVENTORY)
+        self.assertEqual(text, (ROOT.parent / 'completion/20261109-resources/bridge-candidate.nft').read_text())
+        self.assertEqual(len(metadata['rows']), 16)
+        for source in ['192.168.19.40', '192.168.19.45']:
+            self.assertIn(source + ' . 192.168.19.80 . 2049', text)
+        self.assertNotIn('192.168.19.20 . 192.168.19.80 . 2049', text)
+        for key,value in [('tcp',[2049,111]),('ip','192.168.19.81'),('clients',{'230':'192.168.19.40','240':'192.168.19.45','210':'192.168.19.20'})]:
+            bad=copy.deepcopy(PLAN);bad['shared_resource_service'][key]=value
+            with self.subTest(key=key),self.assertRaises(AssertionError):
+                renderer.render(bad,INVENTORY)
 
     def test_new_permission_stays_after_identity_and_invalid_checks(self):
         text, _ = renderer.render(PLAN, INVENTORY)

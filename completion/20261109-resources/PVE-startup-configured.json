@@ -1,0 +1,11 @@
+{
+  "vmid": 280,
+  "onboot": "1",
+  "startup": "order=35,up=20,down=120",
+  "cores": "2",
+  "memory_MiB": "2048",
+  "system_disk": "store:280/vm-280-disk-0.qcow2,discard=on,iothread=1,size=32G",
+  "data_disk": "store:280/vm-280-disk-1.qcow2,discard=on,iothread=1,size=100G",
+  "forward_v4": "0",
+  "forward_v6": "0"
+}

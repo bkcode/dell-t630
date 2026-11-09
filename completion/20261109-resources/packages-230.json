@@ -1,0 +1,9 @@
+{
+  "hostname": "java-prod-01",
+  "status": "required-resource-packages-ready",
+  "new_packages": [
+    "nfs-common"
+  ],
+  "package_daemon_start_blocked": true,
+  "Java_or_HTTP_started": false
+}

@@ -1,0 +1,15 @@
+{
+  "captured_at": "2026-11-10T00:26:47.167117+08:00",
+  "status": "passed",
+  "scope": "pure local configuration/guard/regression tests; actual native evidence is separate",
+  "tests": {
+    "resources_including_DNS_umask": 28,
+    "installer_self_tests": 8,
+    "gateway": 45,
+    "bridge_current_and_historical": 6,
+    "resource_monitoring_candidates": 10
+  },
+  "total": 97,
+  "first_failure_evidence_retained": true,
+  "server_mutations_by_tests": false
+}

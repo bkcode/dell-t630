@@ -1,0 +1,18 @@
+{
+  "started_at": "2026-11-10T00:17:20.063207+08:00",
+  "nonce": "d076a316359e482dbb939bc4a8b6c064",
+  "scope": "only new VM280 controlled OS reboot, two new NFS mounts temporarily stopped; no Java/physical PVE reboot",
+  "canary_cleaned": true,
+  "before_VM_boot_id": "9003d448-6b0c-4cd8-a20f-2d301a83b98d",
+  "canary_fsynced_before_reboot": true,
+  "reboot_request_exit": 0,
+  "after_VM_boot_id": "76af9f98-c961-405a-824e-0b4d10222051",
+  "VM_boot_id_changed": true,
+  "server_guard_after_reboot": true,
+  "canary_survived_VM_reboot": true,
+  "both_client_mount_guards_restored": true,
+  "physical_PVE_boot_id_unchanged": true,
+  "status": "new-resource-VM-controlled-reboot-and-shared-file-persistence-passed",
+  "finished_at": "2026-11-10T00:17:50.727357+08:00",
+  "client_OS_rebooted": false
+}

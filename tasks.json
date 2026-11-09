@@ -213,7 +213,7 @@
       "verification_scope": "historical-completed-stage-not-current-live"
     }
   ],
-  "updated_at": "2026-11-09T23:41:04.461557+08:00",
+  "updated_at": "2026-11-10T00:20:38.241841+08:00",
   "implementation_note": "Original IMP entries describe the prior completed baseline. Latest user scope overrides Java program deployment: five test services are stopped/disabled, publisher fenced, only acceptance template9011 current.",
   "overall_status": "existing-infrastructure-recovered-user-deferred-migration",
   "network19_execution": [
@@ -386,7 +386,7 @@
     "phase_cases_passed": 9,
     "phase_case_count": 9,
     "guest_postcheck": "completion/20261109/guests-post-backup.json",
-    "latest_followup_manifest": "completion/20261109-test-credentials/acceptance.json"
+    "latest_followup_manifest": "completion/20261109-resources/acceptance.json"
   },
   "backup_scope_update20261109": {
     "status": "completed-native-verified",
@@ -493,5 +493,34 @@
     "secret_values_in_git": false,
     "evidence": "completion/20261109-test-credentials/acceptance.json",
     "local_mirror_evidence": "completion/20261109-test-credentials/local-mirrors.json"
+  },
+  "shared_resource_service": {
+    "vmid": 280,
+    "name": "resource-service",
+    "ip": "192.168.19.80",
+    "server_path": "/srv/resources",
+    "client_path": "/mnt/resources",
+    "clients": [
+      230,
+      240
+    ],
+    "protocol": "NFSv4.1",
+    "tcp_port": 2049,
+    "same_directory_for_prod_test": true,
+    "data_disk_gib": 100,
+    "HTTP_published": false,
+    "existing_file_migration": false,
+    "automatic_backup_included": false,
+    "status": "native-and-postcheck-passed",
+    "data_filesystem_uuid": "57d8158e-5fcf-4dd2-8cb4-b47b1e54ed7b",
+    "NFS_root_squash": true,
+    "resources_gid": 2980,
+    "client_Java_user": "finger",
+    "service_auto_start": true,
+    "acceptance": "completion/20261109-resources/acceptance.json",
+    "usage_manual": "completion/20261109-resources/usage-manual.md",
+    "controlled_VM_reboot_verified": true,
+    "clients_OS_rebooted": false,
+    "monitoring_total_UP": 16
   }
 }

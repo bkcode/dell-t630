@@ -1,5 +1,5 @@
 {
-  "status": "local-canonical-reproduction-of-confirmed-live-rules",
+  "status": "offline-candidate-not-applied",
   "retired_vmids": [
     101,
     102,
@@ -25,8 +25,24 @@
   ],
   "temporary_bootstrap_vmids": [],
   "service_endpoints": {},
-  "inventory_timestamp": "2026-11-07T02:22:40.627630",
+  "inventory_timestamp": "2026-11-09T23:48:27.388213+08:00",
   "rows": [
+    {
+      "vmid": 100,
+      "nic": "net0",
+      "mac": "bc:24:11:42:04:c1",
+      "ip": "192.168.19.5",
+      "ips": [
+        "192.168.19.5"
+      ],
+      "ports": [
+        "veth100i0",
+        "fwpr100p0"
+      ],
+      "current_bridge": "vmbr19",
+      "template": false,
+      "role": "approved-role"
+    },
     {
       "vmid": 190,
       "nic": "net1",
@@ -204,6 +220,22 @@
       "role": "approved-role"
     },
     {
+      "vmid": 280,
+      "nic": "net0",
+      "mac": "02:63:19:02:80:00",
+      "ip": "192.168.19.80",
+      "ips": [
+        "192.168.19.80"
+      ],
+      "ports": [
+        "tap280i0",
+        "fwpr280p0"
+      ],
+      "current_bridge": "vmbr19",
+      "template": false,
+      "role": "approved-role"
+    },
+    {
       "vmid": 9001,
       "nic": "net0",
       "mac": "bc:24:11:7e:96:13",
@@ -244,26 +276,10 @@
       "current_bridge": "vmbr19",
       "template": true,
       "role": "quarantine-DHCP-only"
-    },
-    {
-      "vmid": 100,
-      "nic": "net0",
-      "mac": "bc:24:11:42:04:c1",
-      "ip": "192.168.19.5",
-      "ips": [
-        "192.168.19.5"
-      ],
-      "ports": [
-        "veth100i0",
-        "fwpr100p0"
-      ],
-      "current_bridge": "vmbr19",
-      "template": false,
-      "role": "approved-role"
     }
   ],
   "warnings": [],
-  "peer_tcp_tuple_count": 31,
+  "peer_tcp_tuple_count": 34,
   "wan_to_lan_rules": [
     {
       "src": [
@@ -371,12 +387,5 @@
     "MAC/IP registry refreshed before clone activation; unknown/template clone remains DHCP-only, never automatic prod role.",
     "CF internal origin allowlist is unknown and intentionally not granted; parent must add exact approved origins.",
     "New same-tools arbitrary SSH/other traffic is intentionally not preserved; review any required dependency before cutover."
-  ],
-  "locally_recompiled_at": "2026-11-09",
-  "native_validation_this_sync": false,
-  "applied_evidence": [
-    "network19/lan-trusted-20261109/bridge-confirmed.json",
-    "network19/lan-trusted-20261109/final-postcheck.json"
-  ],
-  "nft_sha256": "a6910d08db278527566e0b343c8a12b57989f7ba10b2df1b0d498e969e120bc0"
+  ]
 }

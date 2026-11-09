@@ -13,7 +13,7 @@ TIMER='dell-guest-health.timer'
 POLICY=Path('/usr/sbin/policy-rc.d')
 SELF_LOCK=Path('/run/lock/dell-guest-monitoring.lock')
 APT_LOCKS=[Path(x) for x in ['/var/lib/dpkg/lock-frontend','/var/lib/dpkg/lock','/var/lib/apt/lists/lock','/var/cache/apt/archives/lock']]
-ROLES={'artifact-service','data-prod-db','data-prod-infra','data-test','java-prod-01','java-test-01','nas-media','ops-service','penpot-service','publish-service'}
+ROLES={'artifact-service','data-prod-db','data-prod-infra','data-test','java-prod-01','java-test-01','nas-media','ops-service','penpot-service','publish-service','resource-service'}
 
 def command(args,label,check=True,timeout=180):
     p=subprocess.run(args,capture_output=True,text=True,timeout=timeout)
@@ -150,6 +150,7 @@ def role_health_profile(row):
       'data-prod-infra':['dell-data-prod-infra.service'],
       'data-test':['dell-data-test-data.service'],
       'artifact-service':['dell-nexus.service'],
+      'resource-service':['nfs-server.service','dell-resources-firewall.service'],
       'penpot-service':['dell-penpot.service'],
       'nas-media':['openmediavault-engined.service','nginx.service','smbd.service','dell-nas-jellyfin.service'],
       'ops-service':['dell-ops.service','dell-lark-notify.service']}

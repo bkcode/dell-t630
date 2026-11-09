@@ -52,6 +52,11 @@ def render(plan,inventory,old_ops=False):
  add(201,200,[3306])
  for v in [230,231,232]:add(v,200,[3306]);add(v,201,[6379,5672,8848,9848])
  add(240,210,[3306,6379,5672,8848,9848]);add(220,240,[22])
+ shared=plan.get('shared_resource_service')
+ if shared is not None:
+  assert shared=={'vmid':280,'ip':'192.168.19.80','clients':{'230':'192.168.19.40','240':'192.168.19.45'},'tcp':[2049],'shared_directory':True}, 'Only explicit shared NFS contract allowed'
+  assert ipmap.get(280)=='192.168.19.80' and ipmap.get(230)=='192.168.19.40' and ipmap.get(240)=='192.168.19.45', 'Resource identities must match fixed roles'
+  add(230,280,[2049]);add(240,280,[2049])
  for v in [200,201,210,220,230,231,232,240,250,270]:
   if v in ipmap and endpoint['ip']:
    for port in endpoint['tcp']:peer.add((ipmap[v],endpoint['ip'],port))

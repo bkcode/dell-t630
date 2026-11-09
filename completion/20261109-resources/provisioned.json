@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-09T23:46:35.968288+08:00",
+  "status": "new-resource-VM-created-stopped",
+  "vmid": 280,
+  "name": "resource-service",
+  "ip": "192.168.19.80",
+  "MAC": "02:63:19:02:80:00",
+  "cpu": 2,
+  "memory_MiB": 2048,
+  "system_disk_GiB": 32,
+  "new_data_disk_GiB": 100,
+  "template": 9010,
+  "existing_guests_or_disks_changed": false,
+  "started": false
+}

@@ -1,8 +1,21 @@
 # Dell T630人工操作手册
 
-更新：2026-11-09，Asia/Shanghai。本手册面向掌握PVE root和来宾ub管理权限的管理员，提供逐项复核流程，**不是一键部署脚本，也不代表以下动作现在正在执行**。用户已确认内存处理/诊断通过；本轮继续完成基础搭建并最新仅选择正式数据库/Nacos配置自动备份，仅测试Nacos配置迁移按用户新授权完成，仅Puyu两库业务数据按随后新授权迁210，正式不动、不合并Nexus。现行正式DB/Nacos逻辑首轮3301B成功、service退出0，03:30 timer已启用；旧11来宾全机jobdisabled且旧档保留；当日状态入口为[11月9日交付记录](completion/20261109-prod-db-scope/README.md)。下文复杂合并/恢复命令仅保留人工参考，不因服务器可达就停服、改盘或启动业务。
+更新：2026-11-10，Asia/Shanghai。本手册面向掌握PVE root和来宾ub管理权限的管理员，提供逐项复核流程，**不是一键部署脚本，也不代表以下动作现在正在执行**。用户已确认内存处理/诊断通过；本轮继续完成基础搭建并最新仅选择正式数据库/Nacos配置自动备份，仅测试Nacos配置迁移按用户新授权完成，仅Puyu两库业务数据按随后新授权迁210，正式不动、不合并Nexus。现行正式DB/Nacos逻辑首轮3301B成功、service退出0，03:30 timer已启用；旧11来宾全机jobdisabled且旧档保留；当日状态入口为[11月9日交付记录](completion/20261109-prod-db-scope/README.md)。下文复杂合并/恢复命令仅保留人工参考，不因服务器可达就停服、改盘或启动业务。
 
 历史Nexus短时维护知情许可已满足，但11月8日用户明确暂不迁移的范围控制当前执行。旧“待授权”记录只作历史，不能反复索取同一许可，也不能借旧许可或硬件恢复自动启动合并。当前拓扑/预算以[plan.json](plan.json)、入口以[12](12-service-access-and-operations.md)、清理事实以[18](18-cleanup-and-consolidation.md)为准。证据采集后的运行状态会变化，硬件故障后必须fresh核查。
+
+## 统一资源服务（新增VM280）
+
+用户选择正式/测试共用VM280 `resource-service`（19.80）的同一目录。独立100GiB ext4盘挂`/srv/resources`，系统盘保32GiB；两running 230/240目标挂载均为`/mnt/resources`，240原`/mnt/dell-artifacts`不动。NFSv4.1-only/TCP2049/fsid0，只有19.40/19.45获export与bridge/专属输入许可；root_squash、sync、server根2770/defaultACL、共享resources附属组2980。finger原UID999/GID989保留。
+
+[server启动](completion/20261109-resources/server-installed.json)与[实际盘UUID](completion/20261109-resources/storage-initialized.json)已留证；两客户端真NFS挂载/guard、非root跨机创建/读写/删除、root_squash与240缺挂载根盘写入负测均已通过；仅VM280受控重启约30秒，fsync canary持久、两客户端挂载恢复，未重启两台running。**NFS-only，不启HTTP/Java、不迁文件、不扩自动备份。** 资源角色使预算变为13来宾（12VM＋CF LXC）、3模板、45vCPU/87GiB；保守125GiB预算余38GiB。[00:20最终只读后检](completion/20261109-resources/final-postcheck.json)确认13来宾运行、3模板停止、16/16 targets UP、资源5项服务指标UP与PVE全forward0。详见[280机器目录](machines/vm280-resource-service/README.md)与[资源使用手册](completion/20261109-resources/usage-manual.md)。
+
+模板仅能将来预装客户端与disabled挂载候选，clone按真实IP/组/exports/bridge登记后显式激活；**本次没有修改三模板**。
+
+[独立native验收](completion/20261109-resources/native-acceptance.json)与[仅280重启](completion/20261109-resources/reboot-exercise.json)覆盖本次专属fixture，不含真实业务或文件恢复。findmnt允许systemd-1 autofs加唯一真实nfs4的合法stack，可用`-t nfs4`辨识；单独autofs仍不算共享已挂载。客户端文件创建明确用umask0002；首轮失败及清理记录保留，随后仅按已批准UMask重跑fixture，未修改服务来追过。新增280 fish4.0.2、root/ub默认Bash已后检；当前10台guest＋3模板具备fish基线。
+
+应用尚未接入：Finger的`file.upload.path=/mnt/resources`仅建议，未改实际配置/Nacos/profile；HTTP domain/公开图片URL未搭。Puyu现有images在MySQL内通过权限接口下载，NFS不会自动迁出，也未随部署改Java或应用连接。
+
 
 ## 1. 硬件历史、当前恢复与复发门禁
 
@@ -101,15 +114,15 @@ ssh -i ~/.ssh/yang_local_rsa -o IdentitiesOnly=yes -o BatchMode=yes \
 
 **仅硬件稳定且有相应维护窗口时使用；本次已自动恢复的对象不重复启动。** 先在PVE确认`qm list`、`pct list`、`pvesm status`；模板和退休VM不能混进运行清单。这里给人工顺序，不自动改现役onboot。PVE延时只能排序，不能代替DNS、挂载和应用健康。11月8日已补宿主forward守卫，11月9日自然重启后文件SHA、执行顺序及全forward0已真实读回，见[PVE审计](completion/20261109/pve-audit.json)；日常仍复核全0/无hostNAT，不用恢复宿主转发来修来宾服务。
 
-最后签收的实际onboot order为：**190(1) → CF100(5) → 200(10) → 201(11) → 210(12) → 270(20) → 221(21) → 250(22) → 220(30) → 230(40) → 240(43) → 260(50)**。不要拿旧startup-order.json里已退役231/232的行重新应用。人工分阶段gate如下，不改变已配置顺序：
+最后签收的实际onboot order为：**190(1) → CF100(5) → 200(10) → 201(11) → 210(12) → 270(20) → 221(21) → 250(22) → 220(30) → 280(35) → 230(40) → 240(43) → 260(50)**。不要拿旧startup-order.json里已退役231/232的行重新应用。280新增后的完整PVE启动序列未重新整机演练；本次只重启280。人工分阶段gate如下，不改变已配置顺序：
 
 1. 网络阶段先190：`qm start 190`。通过控制台/QGA确认WAN21.23、LAN19.1、路由、DNS/DHCP及原防火墙；19网测试节点验证DNS。别因21网直接DNS请求受限而扩大WAN监听。随后按order5恢复CF100（需要时`pct start 100`），保持原身份/配置；它只是网络隧道进程先就绪，不代表后面的origin或公网E2E已通过。已运行对象不为检查重复重启。
 2. 数据阶段先200 MySQL，确认原UUID与dell-data-prod-db.service健康，再201、210各栈；每台检查后往下，不能先起依赖Nacos/DB的业务。
-3. 其它批准对象按现役次序：270监控、221 Nexus、250 Penpot、220发布基础、230/240空Java基础、260 NAS。逐台核健康/挂载，不启动Java业务。应用就绪后才复核原CF origin；未知account-side配置或缺证据不签公网E2E。
+3. 其它批准对象按现役次序：270监控、221 Nexus、250 Penpot、220发布基础、280资源NFS、230/240空Java基础、260 NAS。逐台核健康/挂载，不启动Java业务。应用就绪后才复核原CF origin；未知account-side配置或缺证据不签公网E2E。
 
 单VM的常规命令分别是`qm status <VMID>`、`qm start <VMID>`；CT用`pct status/start <CTID>`。替换已登记ID逐条执行，不写遍历所有VM的一键循环。
 
-停止按实际顺序反向并先排空客户端写入/真实播放：**260 → 240 → 230 → 220 → 250 → 221 → 270 → 210 → 201 → 200 → CF100 → 190**，最后才正常关闭PVE。需要事先关闭外部流量入口时，可先在明确维护范围停隧道连接，但不能改写已登记顺序或把190提前停掉。Ops尽量保留到应用停止后供观察；对某个VM：
+停止按实际顺序反向并先排空客户端写入/真实播放：**260 → 240 → 230 → 280 → 220 → 250 → 221 → 270 → 210 → 201 → 200 → CF100 → 190**，最后才正常关闭PVE。需要事先关闭外部流量入口时，可先在明确维护范围停隧道连接，但不能改写已登记顺序或把190提前停掉。Ops尽量保留到应用停止后供观察；对某个VM：
 
 ```bash
 qm shutdown <已核VMID> --timeout 180

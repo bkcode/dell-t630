@@ -1,16 +1,16 @@
 {
-  "at": "2026-11-09T23:34:12.099942+08:00",
+  "at": "2026-11-10T00:24:57.610083+08:00",
   "status": "prepared-not-applied",
-  "master_plan_sha256": "11ad406e83a75878e097d4928c3c1bd99f60e7d7ca02d5e1ec57b63eb79c7009",
+  "master_plan_sha256": "0cc9978e706aacd10bb740a6ade975dbf03256b00d9eba2faa84a5865dafd168",
   "MACs": {
     "WAN": "02:63:19:01:90:00",
     "LAN": "02:63:19:01:90:01"
   },
   "interface_names": "runtime-resolved-by-MAC; preview names only observed",
   "files": {
-    "config.json": "32c84b7b941ceaec56a74a499acbb3b0e51dbbf7814e5059cb879e27bd21a843",
+    "config.json": "f1cfcd2c60a8596e36fabf728aff784c95eb195a72869aa96c75e13bf70d7ab3",
     "preview.nft": "df645452cf331e3a5c609300f96ad9531e80acae8bf62316e90a2abc8ba4e3b5",
-    "preview-dnsmasq.conf": "39306a3c5d85b7440d9f61af3c837affef05f739c1680be6fdc1bdfb364f13d6",
+    "preview-dnsmasq.conf": "2744e162728a86f91c90d82165de1aeb13774078dcdb225ea5fdd818309e5b06",
     "05-dell-gateway19-lan.network": "1d2dc502b25548499d3d1d2a1a4deef311ecf483fbf2c4b1a8fc3dfc7c4f1b23",
     "05-dell-gateway19-wan.network": "422c86e07b67c871ac6346de0f3b5726140f17f821d2c60b74bf9cae9fa6e76e"
   },

@@ -1,14 +1,27 @@
 # Dell PowerEdge T630 部署与运维
 
-本仓库保存 T630 / Proxmox VE 8.4 的部署方案、基础设施脚本、验收证据和人工操作手册。最后整理日期：**2026-11-09，Asia/Shanghai**。
+本仓库保存 T630 / Proxmox VE 8.4 的部署方案、基础设施脚本、验收证据和人工操作手册。最后整理日期：**2026-11-10，Asia/Shanghai**。
 
 **2026-11-09继续完成基础搭建，并按用户最新范围仅备正式数据库/Nacos配置；随后另获授权完成选定测试Nacos配置及两份Puyu数据库迁移。** 14:24自然重启后的fresh审计确认12来宾运行、3模板停止、15/15UP、EDAC0/RAIDOptl，forward guard文件与启动顺序保持全0。Nexus221继续独立、220保持原standby，Java业务不启，Penpot实际ff提交不更新main，Mac外部探针不需要。当日状态统一见[11月9日交付记录](completion/20261109-prod-db-scope/README.md)；[11月8日恢复](recovery/20261108/README.md)保留历史。
+
+## 统一资源服务（新增VM280）
+
+用户选择正式/测试共用VM280 `resource-service`（19.80）的同一目录。独立100GiB ext4盘挂`/srv/resources`，系统盘保32GiB；两running 230/240目标挂载均为`/mnt/resources`，240原`/mnt/dell-artifacts`不动。NFSv4.1-only/TCP2049/fsid0，只有19.40/19.45获export与bridge/专属输入许可；root_squash、sync、server根2770/defaultACL、共享resources附属组2980。finger原UID999/GID989保留。
+
+[server启动](completion/20261109-resources/server-installed.json)与[实际盘UUID](completion/20261109-resources/storage-initialized.json)已留证；两客户端真NFS挂载/guard、非root跨机创建/读写/删除、root_squash与240缺挂载根盘写入负测均已通过；仅VM280受控重启约30秒，fsync canary持久、两客户端挂载恢复，未重启两台running。**NFS-only，不启HTTP/Java、不迁文件、不扩自动备份。** 资源角色使预算变为13来宾（12VM＋CF LXC）、3模板、45vCPU/87GiB；保守125GiB预算余38GiB。[00:20最终只读后检](completion/20261109-resources/final-postcheck.json)确认13来宾运行、3模板停止、16/16 targets UP、资源5项服务指标UP与PVE全forward0。详见[280机器目录](machines/vm280-resource-service/README.md)与[资源使用手册](completion/20261109-resources/usage-manual.md)。
+
+模板仅能将来预装客户端与disabled挂载候选，clone按真实IP/组/exports/bridge登记后显式激活；**本次没有修改三模板**。
+
+[独立native验收](completion/20261109-resources/native-acceptance.json)与[仅280重启](completion/20261109-resources/reboot-exercise.json)覆盖本次专属fixture，不含真实业务或文件恢复。findmnt允许systemd-1 autofs加唯一真实nfs4的合法stack，可用`-t nfs4`辨识；单独autofs仍不算共享已挂载。客户端文件创建明确用umask0002；首轮失败及清理记录保留，随后仅按已批准UMask重跑fixture，未修改服务来追过。新增280 fish4.0.2、root/ub默认Bash已后检；当前10台guest＋3模板具备fish基线。
+
+应用尚未接入：Finger的`file.upload.path=/mnt/resources`仅建议，未改实际配置/Nacos/profile；HTTP domain/公开图片URL未搭。Puyu现有images在MySQL内通过权限接口下载，NFS不会自动迁出，也未随部署改Java或应用连接。
+
 
 ## 从这里开始
 
 | 需要做什么 | 阅读入口 |
 | --- | --- |
-| 按每台机器查看配置与文档 | **[machines目录](machines/README.md)**：宿主、12来宾和3模板各自独立目录 |
+| 按每台机器查看配置与文档 | **[machines目录](machines/README.md)**：宿主、13来宾和3模板各自独立目录 |
 | 人工值守、故障处理、启动、备份、克隆、未来合并 | **[人工操作手册](19-manual-operations.md)** |
 | 接手当前基础设施任务 | [当前交接与恢复条件](11-live-handoff.md) |
 | 看完整服务器名称、地址、配置与作用 | [当前状态清单](01-current-state.md)、[机器可读规划](plan.json) |
@@ -23,13 +36,13 @@
 
 ## 服务目标：发布与制品仓库同机
 
-目标中只保留一台 **VM220 `publish-service`（6vCPU / 8GiB）**：主IP19.30用于管理、构建和受限发布，同NIC的19.31:8081用于Nexus。`artifact-service`不再是目标中的独立VM；旧221验收后退役，既有服务DNS可作为逻辑兼容名保留。目标11实例/14监控目标，总43vCPU/85GiB不变。
+目标中只保留一台 **VM220 `publish-service`（6vCPU / 8GiB）**：主IP19.30用于管理、构建和受限发布，同NIC的19.31:8081用于Nexus。`artifact-service`不再是目标中的独立VM；旧221验收后退役，既有服务DNS可作为逻辑兼容名保留。加入独立资源280后的合并目标为12实例/15监控目标，总45vCPU/87GiB不变。
 
-**这是目标说明，用户本轮暂不迁移。** 下方12实例表为最后实机快照，两者不能混算。详见[合并架构](17-publish-artifact-consolidation.md)。
+**这是目标说明，用户本轮暂不迁移。** 下方清单含新资源280；旧12实例快照只代表新增前，两者不能混算。详见[合并架构](17-publish-artifact-consolidation.md)。
 
 ## 当前保留部署与历史基线
 
-2026-11-09 fresh审计仍为1台物理服务器、**12运行实例（11VM+1LXC）和3停止模板**，配置总额43vCPU/85GiB。11月7日02:35/02:44:29及随后UEFI0058停机是历史节点，不能继续称为最后成功现场；时间线见[硬件记录](cleanup/hardware/DIMM_B1-incident.json)，新证据见[当日入口](completion/20261109-prod-db-scope/README.md)。
+2026-11-10 00:20最新后检为1台物理服务器、**13运行实例（12VM+1LXC）和3停止模板**，配置总额45vCPU/87GiB；新增资源前11月9日的12实例/43CPU/85GiB为历史。11月7日02:35/02:44:29及随后UEFI0058停机是历史节点，不能继续称为最后成功现场；时间线见[硬件记录](cleanup/hardware/DIMM_B1-incident.json)，新证据见[当日入口](completion/20261109-prod-db-scope/README.md)。
 
 | VMID | 名称 | 地址 | 主要作用 |
 | --- | --- | --- | --- |
@@ -45,10 +58,11 @@
 | 250 | penpot-service | 19.50 | Git 定制版 Penpot |
 | 260 | nas-media | 19.60 | OMV、SMB、Jellyfin 家庭媒体与文件共享 |
 | 270 | ops-service | 19.70 | Prometheus、Grafana、Alertmanager、内部 Lark |
+| 280 | resource-service | 19.80 | 两running共用NFS资源存储，/mnt/resources |
 
 地址前缀为 `192.168.`。PVE 自身管理地址是 `192.168.21.22`，iDRAC 是 `192.168.21.21`。OpenWrt `21.1` 将 `19.0/24` 路由到 `21.23`；PVE 只做管理和二层桥，不做应用端口转发。受信LAN `192.168.21.0/24` 与WireGuard `10.66.66.0/24` 均已获准IPv4访问服务器网段，应用登录权限继续生效。
 
-模板仅保留 Linux `9010`、Docker `9001`、Java 验收 `9011`。9 台来宾和 3 份模板已安装 fish，默认 Bash；CF、Penpot、Ops 和 PVE 宿主排除。NAS 不另做模板。11月9日监控复验15/15UP；Mac外部探针不需要，不再列入待办。
+模板仅保留 Linux `9010`、Docker `9001`、Java 验收 `9011`。10 台来宾和 3 份模板已安装 fish，默认 Bash；CF、Penpot、Ops 和 PVE 宿主排除。NAS 不另做模板。新增280前11月9日监控复验15/15UP，11月10日00:20最终后检16/16UP；Mac外部探针不需要，不再列入待办。
 
 ## 文档与证据怎样使用
 
@@ -56,7 +70,7 @@
 - `cleanup/final-live-check.json`、网络及应用验收文件是带时间的历史证据，不能代替恢复后的现场检查。
 - `infra/`、`network19/`、`cleanup/` 包含分阶段实施代码和旧候选，**不是可整体重跑的一键安装包**。
 - `private/` 是本机受保护资料，已排除 Git。Git 不包含数据库、备份归档、服务密码或客户端私钥；新电脑仅克隆仓库不能直接恢复全部服务。
-- 合并前维持 12 实例、15 监控目标。合并并验收后才更新为 11 实例、14 目标，不能提前改成完成。
+- 加入资源280后，合并前维持13实例、16监控目标。将来合并并验收后才更新为12实例、15目标，不能提前改成完成。
 
 本地检查（仓库根目录执行）：
 

@@ -1,0 +1,8 @@
+{
+  "status": "configuration-prepared-no-service-start",
+  "role": "client-230",
+  "installed_files": 6,
+  "Java_or_HTTP_started": false,
+  "packages_installed": false,
+  "existing_artifact_mount_changed": false
+}

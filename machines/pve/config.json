@@ -9,7 +9,7 @@
     "memory_gib": 125
   },
   "source_of_truth": "plan.json",
-  "last_verified_at": "2026-11-09T17:06:01.762963+08:00",
+  "last_verified_at": "2026-11-10T00:20:38.241841+08:00",
   "current_runtime_verified": true,
   "status": "recovered-infrastructure-verified",
   "record_kind": "offline-configuration-contract-not-live-collection",
@@ -135,9 +135,9 @@
     "private_key_copied": false,
     "fish_installed_on_host": false
   },
-  "current_verification_evidence": "completion/20261109-prod-db-scope/final-verification.json",
-  "current_verification_scope": "current infrastructure setup, no migration or full application restore",
-  "verification_note": "Fresh metadata/service audit after natural host reboot; no data migration, Nexus merge or Java business deployment.",
+  "current_verification_evidence": "completion/20261109-resources/final-postcheck.json",
+  "current_verification_scope": "13guest/3template inventory, host forwarding0 and new-resource expansion; hardware fields retain earlier audited timestamps",
+  "verification_note": "VM280 controlled reboot only; physical host and two running-client OS not rebooted. Earlier hardware data not re-audited by this resource proof.",
   "timestamp_scope": "2026-11-09 scoped audit; individual commands retain actual timestamps",
   "management_forwarding_guard": {
     "guest_paths": {
@@ -182,5 +182,20 @@
     "scope": "one3301B nacos_prod snapshot temporarily restored onVM210; no production/testmanagedDB writes",
     "evidence": "completion/20261109-prod-db-restore/native-success.json",
     "RPO_RTO_or_independent_DR_validated": false
+  },
+  "resource_expansion_20261110": {
+    "at": "2026-11-10T00:20:38.241841+08:00",
+    "running_instances": 13,
+    "VMs": 12,
+    "LXC": 1,
+    "stopped_templates": 3,
+    "configured_budget_from_plan": {
+      "vcpu": 45,
+      "memory_GiB": 87
+    },
+    "host_all_interface_forwarding_zero": true,
+    "evidence": "completion/20261109-resources/final-postcheck.json",
+    "new_VM280_startup_evidence": "completion/20261109-resources/PVE-startup-configured.json",
+    "physical_PVE_rebooted_this_task": false
   }
 }

@@ -1,12 +1,25 @@
-# 当前交接：测试配置与Puyu两库迁入完成
+# 当前交接：配置/两库迁入与统一资源服务完成
 
-更新：2026-11-09，Asia/Shanghai。用户继续授权完成基础搭建，并明确仅自动备份正式数据库/Nacos配置；内存现场处理/诊断通过由用户此前确认。**最新另授权仅puyu_auth_local/puyu_erp_local迁往210并保留源；正式不动、不合并Nexus、不退役221、不启动Java。** 以前短停合并许可保留为历史，不覆盖这次明确暂缓。
+更新：2026-11-10，Asia/Shanghai。用户继续授权完成基础搭建，并明确仅自动备份正式数据库/Nacos配置；内存现场处理/诊断通过由用户此前确认。**最新另授权仅puyu_auth_local/puyu_erp_local迁往210并保留源；正式不动、不合并Nexus、不退役221、不启动Java。** 以前短停合并许可保留为历史，不覆盖这次明确暂缓。
 
 当日执行状态唯一入口：[11月9日交付记录](completion/20261109-prod-db-scope/README.md)。[11月8日恢复记录](recovery/20261108/README.md)为上轮历史。
 
+## 统一资源服务（新增VM280）
+
+用户选择正式/测试共用VM280 `resource-service`（19.80）的同一目录。独立100GiB ext4盘挂`/srv/resources`，系统盘保32GiB；两running 230/240目标挂载均为`/mnt/resources`，240原`/mnt/dell-artifacts`不动。NFSv4.1-only/TCP2049/fsid0，只有19.40/19.45获export与bridge/专属输入许可；root_squash、sync、server根2770/defaultACL、共享resources附属组2980。finger原UID999/GID989保留。
+
+[server启动](completion/20261109-resources/server-installed.json)与[实际盘UUID](completion/20261109-resources/storage-initialized.json)已留证；两客户端真NFS挂载/guard、非root跨机创建/读写/删除、root_squash与240缺挂载根盘写入负测均已通过；仅VM280受控重启约30秒，fsync canary持久、两客户端挂载恢复，未重启两台running。**NFS-only，不启HTTP/Java、不迁文件、不扩自动备份。** 资源角色使预算变为13来宾（12VM＋CF LXC）、3模板、45vCPU/87GiB；保守125GiB预算余38GiB。[00:20最终只读后检](completion/20261109-resources/final-postcheck.json)确认13来宾运行、3模板停止、16/16 targets UP、资源5项服务指标UP与PVE全forward0。详见[280机器目录](machines/vm280-resource-service/README.md)与[资源使用手册](completion/20261109-resources/usage-manual.md)。
+
+模板仅能将来预装客户端与disabled挂载候选，clone按真实IP/组/exports/bridge登记后显式激活；**本次没有修改三模板**。
+
+[独立native验收](completion/20261109-resources/native-acceptance.json)与[仅280重启](completion/20261109-resources/reboot-exercise.json)覆盖本次专属fixture，不含真实业务或文件恢复。findmnt允许systemd-1 autofs加唯一真实nfs4的合法stack，可用`-t nfs4`辨识；单独autofs仍不算共享已挂载。客户端文件创建明确用umask0002；首轮失败及清理记录保留，随后仅按已批准UMask重跑fixture，未修改服务来追过。新增280 fish4.0.2、root/ub默认Bash已后检；当前10台guest＋3模板具备fish基线。
+
+应用尚未接入：Finger的`file.upload.path=/mnt/resources`仅建议，未改实际配置/Nacos/profile；HTTP domain/公开图片URL未搭。Puyu现有images在MySQL内通过权限接口下载，NFS不会自动迁出，也未随部署改Java或应用连接。
+
+
 ## 已核事实与实际变更
 
-- 12来宾自然onboot启动、3模板停止；15监控目标UP，Prom/AM无活动告警；主要6HTTP入口通过。盘UUID、容器镜像与健康按角色复核，不能扩写成全量内容/认证/外网E2E验收。
+- 新增280前的14:24基础阶段：12来宾自然onboot启动、3模板停止；15监控目标UP，Prom/AM无活动告警；主要6HTTP入口通过。盘UUID、容器镜像与健康按角色复核，不能扩写成全量内容/认证/外网E2E验收。
 - 当前启动4×32GB/EDAC ce/ue均0，RAID1/5 Optimal/5盘在线；内存维修诊断是用户报告，助手未独立做离线诊断/压力测试。
 - PVE桥转发启动漂移已由3个owned guard补齐；11月9日14:24自然重启后，SHA相同、networking→bridge/ExecStartPost→pve-guests实际顺序与全forward0已读回，不再仅为待验候选。管理interfaces/路由/ACL、无NAT边界保持。
 - 本轮[空闲iperfserver已停用自启](completion/20261109/idle-iperf-disabled.json)、5201关闭，软件包保留，没有应用/来宾重启。

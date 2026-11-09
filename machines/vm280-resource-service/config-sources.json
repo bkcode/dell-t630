@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "path_base": "repository root dell/",
+  "scope": "public non-secret configuration contract and time-bounded receipts, not secret/runtime full export",
+  "entries": [
+    {
+      "path": "plan.json",
+      "type": "current-contract",
+      "purpose": "角色/IP/预算/启动顺序唯一合同，根任务维护。",
+      "sha256": "54cedd4f7f923504da2de122312759661566555ce6cc5a0998c43b6806e81354"
+    },
+    {
+      "path": "19-manual-operations.md",
+      "type": "current-contract",
+      "purpose": "人工启停与共享挂载操作；不自动执行。",
+      "sha256": "3bb8c58d089adaa7efe99d330ff3beffb228e0c71eaf1ce07334420bd68f0028"
+    },
+    {
+      "path": "completion/20261109-resources/usage-manual.md",
+      "type": "current-contract",
+      "purpose": "共享目录日常使用、故障与扩容/新client步骤，实际验收按收据。",
+      "sha256": "ab2f815a8994ff17a3e634cd6be8c701e2f4278ca84ecfb26384aa3c2000430a"
+    },
+    {
+      "path": "infra/resources/policy.example.json",
+      "type": "pending-candidate",
+      "purpose": "公开参数schema，UUID模板null，不是可直接安装的实际策略。",
+      "sha256": "d0d2b78239d849e66f4e0580743880e78770d8ffab18f23580607d184d492c2d"
+    },
+    {
+      "path": "infra/resources/prepare.py",
+      "type": "current-contract",
+      "purpose": "当前公开renderer；HTTP/futureJava输出不安装。",
+      "sha256": "963cb8e945abfaaa8c9508fa3296d9c15526b15d7299c3c8061f91f7f528347c"
+    },
+    {
+      "path": "infra/resources/guard.py",
+      "type": "current-contract",
+      "purpose": "只读真实挂载/身份门禁。",
+      "sha256": "869710422479c6e1d27fb1e828decc48071e3bc1eeb5c0ece82230aa4f5d66b2"
+    },
+    {
+      "path": "infra/resources/install.py",
+      "type": "current-contract",
+      "purpose": "固定路径安装器，不自动安装软件，不启动Java/HTTP。",
+      "sha256": "7f795a07c4cc4d470cb2ab367160e5bfc162be79d4f605be7e58559b4cc2a1f6"
+    },
+    {
+      "path": "completion/20261109-resources/storage-initialized.json",
+      "type": "historical-evidence",
+      "purpose": "实际100GiB新盘UUID/挂载，未格式化根盘或现役盘。",
+      "sha256": "c5112f41cb9da5cf5710a11c384a916667e8a45be72b2f135622afcd4960d720"
+    },
+    {
+      "path": "completion/20261109-resources/server-installed.json",
+      "type": "historical-evidence",
+      "purpose": "NFSserver安装激活回执；不外推跨机fixture。",
+      "sha256": "63a447669e41d38bfae8a3db38537e2ceac05932cf32344b4178f133d98a84ba"
+    },
+    {
+      "path": "completion/20261109-resources/bridge-confirmed.json",
+      "type": "historical-evidence",
+      "purpose": "280登记与精确NFS peer规则实际确认。",
+      "sha256": "298c83820ed30c5bfb98cec0853878ac10787e36d48355c1034d13d3f50b6832"
+    },
+    {
+      "path": "completion/20261109-resources/gateway-DNS-applied.json",
+      "type": "historical-evidence",
+      "purpose": "resource-service A记录80添加；网关路由/nft/noNAT保持。",
+      "sha256": "0395bb8a6cca690cb78ebccb12cc0e3b03a10e54b23975c6a53e03f0a4e870fe"
+    },
+    {
+      "path": "completion/20261109-resources/native-acceptance.json",
+      "type": "historical-evidence",
+      "purpose": "真实专属fixture、跨机非root读写、root_squash与缺挂载负测；首轮失败历史保留。",
+      "sha256": "3eabfec620e7faf495329eaee513823bd3792ed05ac3012134fa2ddfe9bfde2a"
+    },
+    {
+      "path": "completion/20261109-resources/reboot-exercise.json",
+      "type": "historical-evidence",
+      "purpose": "仅VM280约30秒正常重启、fsync canary持久、两client恢复；未重启running。",
+      "sha256": "b555bb8669e82afc0cf46577687873fa654fae27c9f6ba597fed7cc4a951827a"
+    },
+    {
+      "path": "completion/20261109-resources/final-postcheck.json",
+      "type": "historical-evidence",
+      "purpose": "00:20实际13来宾/3模板/16UP、资源UUID/服务/fish/Bash、PVE全forward0。",
+      "sha256": "627095f14106b8e4c5dcc582b53bb537ad0af08d555a2441bbf9bdb46bc6c9df"
+    },
+    {
+      "path": "completion/20261109-resources/PVE-startup-configured.json",
+      "type": "historical-evidence",
+      "purpose": "实际onboot1和order35/up20/down120，初建onboot0阶段已后续启用。",
+      "sha256": "e5eec180f6212cc450ff2b45ba04ee2df2602590d3933870482f64d954b54e22"
+    }
+  ]
+}

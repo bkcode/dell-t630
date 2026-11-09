@@ -1,0 +1,12 @@
+{
+  "hostname": "resource-service",
+  "status": "required-resource-packages-ready",
+  "new_packages": [
+    "nfs-kernel-server",
+    "nfs-common",
+    "acl",
+    "nftables"
+  ],
+  "package_daemon_start_blocked": true,
+  "Java_or_HTTP_started": false
+}

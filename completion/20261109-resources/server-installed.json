@@ -1,0 +1,8 @@
+{
+  "status": "activated-NFS-or-automount",
+  "role": "server",
+  "installed_files": 11,
+  "Java_or_HTTP_started": false,
+  "packages_installed": false,
+  "existing_artifact_mount_changed": false
+}

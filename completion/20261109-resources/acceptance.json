@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-10T00:20:38.241841+08:00",
+  "status": "passed-unified-NFS-resource-foundation",
+  "scope": "VM280 shared NFSv4.1 storage and two running mounts; no application integration/HTTP/source file migration/backup expansion",
+  "cases": [
+    {
+      "id": "RESOURCE-VM-001",
+      "title": "新资源实例与独立空数据盘",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确新增统一资源服务器，两running同一目录；不迁文件/不Java/资源不扩自动备份"
+      ],
+      "steps": [
+        "核实际受信SSH/PVE回执、独立原生验证与限定重启证据"
+      ],
+      "observable_pass_conditions": [
+        "新资源实例与独立空数据盘的本期实际检查通过，未覆盖原有文件或扩大业务范围"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-resources/provisioned.json",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        },
+        {
+          "path": "completion/20261109-resources/storage-initialized.json",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        },
+        {
+          "path": "completion/20261109-resources/guest-access.json",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        },
+        {
+          "path": "completion/20261109-resources/PVE-startup-configured.json",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        }
+      ],
+      "verified_at": "2026-11-10T00:20:38.241841+08:00"
+    },
+    {
+      "id": "RESOURCE-NFS-001",
+      "title": "精确NFS4.1导出与挂载门禁",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确新增统一资源服务器，两running同一目录；不迁文件/不Java/资源不扩自动备份"
+      ],
+      "steps": [
+        "核实际受信SSH/PVE回执、独立原生验证与限定重启证据"
+      ],
+      "observable_pass_conditions": [
+        "精确NFS4.1导出与挂载门禁的本期实际检查通过，未覆盖原有文件或扩大业务范围"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-resources/server-first-native-state.json",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        },
+        {
+          "path": "completion/20261109-resources/native-acceptance.json",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        },
+        {
+          "path": "completion/20261109-resources/final-postcheck.json",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        }
+      ],
+      "verified_at": "2026-11-10T00:20:38.241841+08:00"
+    },
+    {
+      "id": "RESOURCE-SHARE-001",
+      "title": "两running共用同根的非root读写",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确新增统一资源服务器，两running同一目录；不迁文件/不Java/资源不扩自动备份"
+      ],
+      "steps": [
+        "核实际受信SSH/PVE回执、独立原生验证与限定重启证据"
+      ],
+      "observable_pass_conditions": [
+        "两running共用同根的非root读写的本期实际检查通过，未覆盖原有文件或扩大业务范围"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-resources/native-acceptance.json",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        },
+        {
+          "path": "completion/20261109-resources/native-acceptance.md",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        }
+      ],
+      "verified_at": "2026-11-10T00:20:38.241841+08:00"
+    },
+    {
+      "id": "RESOURCE-GUARD-001",
+      "title": "root_squash与未挂载根盘写入拒绝",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确新增统一资源服务器，两running同一目录；不迁文件/不Java/资源不扩自动备份"
+      ],
+      "steps": [
+        "核实际受信SSH/PVE回执、独立原生验证与限定重启证据"
+      ],
+      "observable_pass_conditions": [
+        "root_squash与未挂载根盘写入拒绝的本期实际检查通过，未覆盖原有文件或扩大业务范围"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-resources/native-acceptance.json",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        },
+        {
+          "path": "completion/20261109-resources/native-first-attempt.json",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        },
+        {
+          "path": "completion/20261109-resources/native-first-attempt.md",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        }
+      ],
+      "verified_at": "2026-11-10T00:20:38.241841+08:00"
+    },
+    {
+      "id": "RESOURCE-NET-001",
+      "title": "新增身份与两客户端通路及负测",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确新增统一资源服务器，两running同一目录；不迁文件/不Java/资源不扩自动备份"
+      ],
+      "steps": [
+        "核实际受信SSH/PVE回执、独立原生验证与限定重启证据"
+      ],
+      "observable_pass_conditions": [
+        "新增身份与两客户端通路及负测的本期实际检查通过，未覆盖原有文件或扩大业务范围"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-resources/bridge-applied.json",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        },
+        {
+          "path": "completion/20261109-resources/bridge-confirmed.json",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        },
+        {
+          "path": "completion/20261109-resources/final-postcheck.json",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        }
+      ],
+      "verified_at": "2026-11-10T00:20:38.241841+08:00"
+    },
+    {
+      "id": "RESOURCE-BOOT-001",
+      "title": "仅资源VM受控重启和共享文件持久",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确新增统一资源服务器，两running同一目录；不迁文件/不Java/资源不扩自动备份"
+      ],
+      "steps": [
+        "核实际受信SSH/PVE回执、独立原生验证与限定重启证据"
+      ],
+      "observable_pass_conditions": [
+        "仅资源VM受控重启和共享文件持久的本期实际检查通过，未覆盖原有文件或扩大业务范围"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-resources/reboot-exercise.json",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        },
+        {
+          "path": "completion/20261109-resources/final-postcheck.json",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        }
+      ],
+      "verified_at": "2026-11-10T00:20:38.241841+08:00"
+    },
+    {
+      "id": "RESOURCE-OPS-001",
+      "title": "16目标UP及资源原生服务监控",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确新增统一资源服务器，两running同一目录；不迁文件/不Java/资源不扩自动备份"
+      ],
+      "steps": [
+        "核实际受信SSH/PVE回执、独立原生验证与限定重启证据"
+      ],
+      "observable_pass_conditions": [
+        "16目标UP及资源原生服务监控的本期实际检查通过，未覆盖原有文件或扩大业务范围"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-resources/monitoring-activated.json",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        },
+        {
+          "path": "completion/20261109-resources/Lark-role-installed.json",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        },
+        {
+          "path": "completion/20261109-resources/Prom-target-installed.json",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        },
+        {
+          "path": "completion/20261109-resources/final-postcheck.json",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        }
+      ],
+      "verified_at": "2026-11-10T00:20:38.241841+08:00"
+    },
+    {
+      "id": "RESOURCE-DOC-001",
+      "title": "使用手册与限定交付范围",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确新增统一资源服务器，两running同一目录；不迁文件/不Java/资源不扩自动备份"
+      ],
+      "steps": [
+        "核实际受信SSH/PVE回执、独立原生验证与限定重启证据"
+      ],
+      "observable_pass_conditions": [
+        "使用手册与限定交付范围的本期实际检查通过，未覆盖原有文件或扩大业务范围"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-resources/usage-manual.md",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        },
+        {
+          "path": "completion/20261109-resources/native-acceptance.md",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        },
+        {
+          "path": "completion/20261109-resources/reboot-exercise.json",
+          "note": "actual bounded native/offline evidence; initial failure retained with explanation where applicable"
+        }
+      ],
+      "verified_at": "2026-11-10T00:20:38.241841+08:00"
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "current_phase_case_count": 8,
+    "current_phase_passed": 8,
+    "statuses": {
+      "passed": 8
+    }
+  },
+  "not_required_or_deferred": [
+    "application upload configuration switch",
+    "resource HTTP/domain and external E2E",
+    "existing file migration",
+    "running-client OS reboot exercise",
+    "template changes",
+    "load/SLO and independent file backup/restore"
+  ]
+}

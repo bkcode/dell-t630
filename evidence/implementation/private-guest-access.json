@@ -121,6 +121,17 @@
         "trust_source": "PVE QGA over known SSH host"
       },
       "stdout": "{\"hostname\": \"ops-service\", \"ip\": [\"192.168.19.70\"], \"routes\": [{\"dst\": \"default\", \"gateway\": \"192.168.19.1\", \"dev\": \"eth0\", \"protocol\": \"static\", \"flags\": []}], \"fish\": null, \"shells\": {\"root\": \"/bin/bash\", \"ub\": \"/bin/bash\"}, \"business_Java_processes\": false}"
+    },
+    {
+      "name": "resource-service",
+      "status": "strict-new-resource-guest-access-verified",
+      "target": {
+        "vmid": 280,
+        "ip": "192.168.19.80",
+        "host_key_alias": "dell-vm280",
+        "host_key_fingerprint": "SHA256:xp1B3cJdCvIc1yB6Cv6gc8lT0BY4Xc/nAde7oAzxk+g",
+        "trust_source": "PVE QGA over known SSH host"
+      }
     }
   ],
   "network_revision": "network19",

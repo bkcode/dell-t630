@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "machine": {
+    "kind": "vm",
+    "vmid": 280,
+    "name": "resource-service",
+    "ip": "192.168.19.80",
+    "vcpu": 2,
+    "memory_gib": 2
+  },
+  "source_of_truth": "plan.json",
+  "source_role_pointer": "/roles/12",
+  "last_verified_at": "2026-11-10T00:20:38.241841+08:00",
+  "current_runtime_verified": true,
+  "status": "recovered-infrastructure-verified",
+  "purpose": "正式/测试运行基础共用同一NFS资源目录；不拆环境，不启HTTP/Java，不迁旧文件。",
+  "network": {
+    "ip": "192.168.19.80",
+    "prefixlen": 24,
+    "bridge": "vmbr19",
+    "gateway": "192.168.19.1",
+    "dns": [
+      "192.168.19.1"
+    ],
+    "NFS_clients": [
+      "192.168.19.40",
+      "192.168.19.45"
+    ],
+    "NFS_TCP_port": 2049,
+    "NFS_version": "4.1",
+    "HTTP_enabled": false,
+    "boundary": "Exact exports + owned guest input guard + PVE bridge MAC/IP/peer rules; host forward0/noNAT retained"
+  },
+  "storage": {
+    "system_storage": "store",
+    "system_disk_gib": 32,
+    "data_volumes": [
+      {
+        "filesystem_uuid": "57d8158e-5fcf-4dd2-8cb4-b47b1e54ed7b",
+        "mountpoint": "/srv/resources",
+        "size_gib": 100,
+        "pve_storage": "store",
+        "fstype": "ext4",
+        "options": [
+          "rw",
+          "nodev",
+          "nosuid",
+          "noexec"
+        ]
+      }
+    ],
+    "data_directory_permissions": "root:resources 2770; default ACL group rwX other0",
+    "resources_GID": 2980,
+    "root_squash": true
+  },
+  "access": {
+    "ssh_user": "ub",
+    "client_identity_file": "~/.ssh/yang_local_rsa",
+    "host_key_alias": "dell-vm280",
+    "strict_host_key_checking": true,
+    "private_key_copied": false,
+    "fish_version": "4.0.2",
+    "root_and_ub_default_shell": "/bin/bash",
+    "login_shell_changed": false
+  },
+  "startup_order": {
+    "vmid": 280,
+    "order": 35,
+    "up_seconds": 20,
+    "down_seconds": 120
+  },
+  "services": {
+    "native_units": [
+      "srv-resources.mount",
+      "dell-resources-firewall.service",
+      "nfs-server.service"
+    ],
+    "server_installed_receipt": "completion/20261109-resources/server-installed.json",
+    "export_path": "/srv/resources",
+    "export_fsid": 0,
+    "client_remote_source": "192.168.19.80:/",
+    "client_local_mountpoint": "/mnt/resources",
+    "Java_started": false,
+    "HTTP_enabled": false,
+    "Docker_service": false,
+    "client_mount_and_nonroot_fixture": "passed",
+    "server_reboot_persistence": "passed-only-VM280",
+    "native_acceptance_evidence": "completion/20261109-resources/native-acceptance.json",
+    "reboot_evidence": "completion/20261109-resources/reboot-exercise.json"
+  },
+  "permissions": {
+    "runtime_user_on_clients": "finger",
+    "client_uid": 999,
+    "client_primary_gid": 989,
+    "supplementary_group": "resources",
+    "supplementary_gid": 2980,
+    "shared_between_prod_test": true,
+    "isolated_per_environment": false
+  },
+  "monitoring": {
+    "exporter_endpoint": "192.168.19.80:9100",
+    "verified_scrape": true,
+    "active_target_count": 16,
+    "all_targets_UP": true,
+    "resource_service_metrics_UP": 5,
+    "evidence": "completion/20261109-resources/final-postcheck.json"
+  },
+  "dependencies": [
+    {
+      "target_vmid": 190,
+      "purpose": "routing/DNS"
+    },
+    {
+      "target_vmid": 270,
+      "purpose": "active resource node/service monitoring via existing Ops;16totalUP"
+    }
+  ],
+  "current_verification_evidence": "completion/20261109-resources/final-postcheck.json",
+  "current_verification_scope": "NFS exact mount/identity, controlled resourceVM280 reboot persistence, monitor16UP metadata; no Java business/file migration or data restore",
+  "verification_note": "Native synthetic fixture and root_squash/missing-mount checks passed; only VM280 rebooted, client OSes not rebooted.",
+  "local_backup": {
+    "included_in_production_logical_backup": false,
+    "whole_VM_backup": false,
+    "schedule_enabled": false,
+    "scope": "resource files excluded; current auto backup only VM200 productionMySQL/Nacos",
+    "evidence": "completion/20261109-prod-db-scope/README.md"
+  },
+  "templates": {
+    "modified_in_this_task": false,
+    "future_suggestion": "disabled client prerequisites only; clone actualIP enrollment and explicit activation required"
+  },
+  "onboot": true,
+  "startup_verification_evidence": "completion/20261109-resources/PVE-startup-configured.json"
+}

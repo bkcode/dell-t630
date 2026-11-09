@@ -3,12 +3,12 @@
   "source_of_truth": "plan.json",
   "configuration_scope": "Offline public contracts and source manifests; not a live export or complete backup",
   "current_runtime_verified": true,
-  "last_verified_inventory_at": "2026-11-09T17:06:01.762963+08:00",
+  "last_verified_inventory_at": "2026-11-10T00:20:38.241841+08:00",
   "counts": {
     "PVE_hosts": 1,
-    "retained_guest_instances": 12,
+    "retained_guest_instances": 13,
     "retained_templates": 3,
-    "total_directories": 16
+    "total_directories": 17
   },
   "machines": [
     {
@@ -116,6 +116,14 @@
       "lifecycle": "retained"
     },
     {
+      "path": "machines/vm280-resource-service",
+      "kind": "vm",
+      "vmid": 280,
+      "name": "resource-service",
+      "ip": "192.168.19.80",
+      "lifecycle": "resource-foundation-native-and-controlled-reboot-verified"
+    },
+    {
       "path": "machines/tpl9001-docker-base",
       "kind": "template",
       "vmid": 9001,
@@ -140,5 +148,5 @@
       "lifecycle": "sealed-template-last-verified"
     }
   ],
-  "current_verification_evidence": "completion/20261109-prod-db-scope/final-verification.json"
+  "current_verification_evidence": "completion/20261109-resources/final-postcheck.json"
 }

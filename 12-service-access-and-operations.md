@@ -1,6 +1,6 @@
 # 当前访问入口与日常操作
 
-2026-11-09，Asia/Shanghai。**自然重启后基础服务fresh复验；继续基础搭建，仅自动备份正式数据库/Nacos，并按最新授权完成测试Nacos配置原样迁移；最新另授权Puyu两库按原名迁入测试210，正式环境不动。** Nexus仍独立221，Mac外部探针不需要。当日状态见[11月9日交付记录](completion/20261109-prod-db-scope/README.md)，[11月8日恢复](recovery/20261108/README.md)保留历史。应用直接访问真实19地址；PVE21.22只用于宿主管理，原应用DNAT端口已关闭。详见[当前交付](15-network19-delivery.md)与[新网络验收](network19/audit/network19-acceptance.md)。
+2026-11-10，Asia/Shanghai。**自然重启后基础服务fresh复验；继续基础搭建，仅自动备份正式数据库/Nacos，并按最新授权完成测试Nacos配置原样迁移；最新另授权Puyu两库按原名迁入测试210，正式环境不动。** Nexus仍独立221，Mac外部探针不需要。当日状态见[11月9日交付记录](completion/20261109-prod-db-scope/README.md)，[11月8日恢复](recovery/20261108/README.md)保留历史。应用直接访问真实19地址；PVE21.22只用于宿主管理，原应用DNAT端口已关闭。详见[当前交付](15-network19-delivery.md)与[新网络验收](network19/audit/network19-acceptance.md)。
 
 | 服务 | 当前入口 | 范围 |
 | --- | --- | --- |
@@ -16,6 +16,7 @@
 | Grafana | http://192.168.19.70:3000/ | 真实内网入口，无需旧13000隧道 |
 | Prometheus / Alertmanager | 192.168.19.70:9090 / :9093 | 仅批准管理来源，不公开 |
 | Java业务 | **停用** | 测试五服务无进程/自启，正式无业务应用 |
+| 统一资源NFS | `192.168.19.80:/` → 两running `/mnt/resources` | 仅230/240，NFS4.1/TCP2049；无HTTP/公开图片URL |
 | Java验收模板 | PVE VMID9011 `tpl-java-acceptance` | 唯一验收模板，无应用/业务配置/秘密 |
 
 HTTP入口是用户同意的LAN阶段；公网域名/HTTPS/SMTP尚未配置。跨子网的发现广播不作为已验能力，电视/播放器请手动填写19.60。NAS用于文件保存/整理/传输，不承诺主机直接从NAS运行游戏。
@@ -37,6 +38,19 @@ HTTP入口是用户同意的LAN阶段；公网域名/HTTPS/SMTP尚未配置。�
 SSH使用ub和`~/.ssh/yang_local_rsa`，严格已核host key；受控目标见`evidence/implementation/private-guest-access.json`，代码见`scripts/control.py`。该JSON虽名称含private，内容为IP/公钥指纹索引，不包含私钥；实际`private/known_hosts`不进Git，新电脑须先可信交接指纹。PVE root只用于管理/QGA，不复制客户端私钥，不关闭主机密钥检查。模板克隆按[Java模板说明](network19/java-template/README.md)注入独立hostname与地址。
 
 日常启停、故障处理、克隆和备份步骤见[人工操作手册](19-manual-operations.md)，换电脑接手见[Git交接](20-git-and-handoff.md)。
+
+## 统一资源服务（新增VM280）
+
+用户选择正式/测试共用VM280 `resource-service`（19.80）的同一目录。独立100GiB ext4盘挂`/srv/resources`，系统盘保32GiB；两running 230/240目标挂载均为`/mnt/resources`，240原`/mnt/dell-artifacts`不动。NFSv4.1-only/TCP2049/fsid0，只有19.40/19.45获export与bridge/专属输入许可；root_squash、sync、server根2770/defaultACL、共享resources附属组2980。finger原UID999/GID989保留。
+
+[server启动](completion/20261109-resources/server-installed.json)与[实际盘UUID](completion/20261109-resources/storage-initialized.json)已留证；两客户端真NFS挂载/guard、非root跨机创建/读写/删除、root_squash与240缺挂载根盘写入负测均已通过；仅VM280受控重启约30秒，fsync canary持久、两客户端挂载恢复，未重启两台running。**NFS-only，不启HTTP/Java、不迁文件、不扩自动备份。** 资源角色使预算变为13来宾（12VM＋CF LXC）、3模板、45vCPU/87GiB；保守125GiB预算余38GiB。[00:20最终只读后检](completion/20261109-resources/final-postcheck.json)确认13来宾运行、3模板停止、16/16 targets UP、资源5项服务指标UP与PVE全forward0。详见[280机器目录](machines/vm280-resource-service/README.md)与[资源使用手册](completion/20261109-resources/usage-manual.md)。
+
+模板仅能将来预装客户端与disabled挂载候选，clone按真实IP/组/exports/bridge登记后显式激活；**本次没有修改三模板**。
+
+[独立native验收](completion/20261109-resources/native-acceptance.json)与[仅280重启](completion/20261109-resources/reboot-exercise.json)覆盖本次专属fixture，不含真实业务或文件恢复。findmnt允许systemd-1 autofs加唯一真实nfs4的合法stack，可用`-t nfs4`辨识；单独autofs仍不算共享已挂载。客户端文件创建明确用umask0002；首轮失败及清理记录保留，随后仅按已批准UMask重跑fixture，未修改服务来追过。新增280 fish4.0.2、root/ub默认Bash已后检；当前10台guest＋3模板具备fish基线。
+
+应用尚未接入：Finger的`file.upload.path=/mnt/resources`仅建议，未改实际配置/Nacos/profile；HTTP domain/公开图片URL未搭。Puyu现有images在MySQL内通过权限接口下载，NFS不会自动迁出，也未随部署改Java或应用连接。
+
 
 ## 当前受信LAN访问（替代早前Nacos-only策略）
 
@@ -111,7 +125,7 @@ Publisher目标19.45、来源限制19.30、公钥/强制命令与最小权限保
 
 ## 监控与备份边界
 
-2026-11-09 [Ops审计](completion/20261109/ops-audit.json)再次复验10node+5Ops共15/15UP，Prom/AM无活动告警。本机textfile采集业务范围已移除Java五HTTP检查，catalog/installer已配套减为10节点。服务器内部Lark active，172.18内部链与凭据保持；未发送新的验收消息。Mac外部探针明确不需要，已移出当前和后续工作，整机故障无法由机内监控保证外发。
+新增280前，2026-11-09 [Ops审计](completion/20261109/ops-audit.json)再次复验10node+5Ops共15/15UP，Prom/AM无活动告警。本机textfile采集业务范围已移除Java五HTTP检查，当时catalog/installer配套为10节点；资源280加入后实际11node＋5Ops共16目标UP，见[00:20资源后检](completion/20261109-resources/final-postcheck.json)。服务器内部Lark active，172.18内部链与凭据保持；未发送新的验收消息。Mac外部探针明确不需要，已移出当前和后续工作，整机故障无法由机内监控保证外发。
 
 正式业务数据未从开发环境导入。**现行自动备份仅VM200正式数据库/Nacos配置。** 当前唯一非系统库`nacos_prod`，12张BASE TABLE全InnoDB；正式业务schema尚未创建，新增库不在显式白名单则拒绝告警并要求更新。首轮逻辑SQL gzip 3,301 bytes通过CRC/传输SHA、DDL锁释放及guest暂存清理，service退出0、timer已enabled，下一次2026-11-10 03:30（Asia/Shanghai）；GFS最近3/每日7/每周4。PVE目的地`/mnt/pve/store/dell-artifacts/prod-db-backups`，目录root700/文件600，不经Mac，见[新首轮与timer](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)、[中央状态](completion/20261109-prod-db-scope/README.md)。
 

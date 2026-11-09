@@ -1,0 +1,160 @@
+{
+  "at": "2026-11-09T15:50:23.289844+00:00",
+  "config_bind": {
+    "source": "/opt/dell/ops/config/prometheus",
+    "destination": "/etc/prometheus",
+    "RW": false
+  },
+  "config_SHA256": "35b0a682e8cef2802cd871982e442614e67ae3313f39945ace2591879f508c04",
+  "fileSD_selectors": [
+    "/etc/prometheus/targets/guest-node.json",
+    "/etc/prometheus/targets/http-services.json"
+  ],
+  "public_target_files": {
+    "/opt/dell/ops/config/prometheus/targets/guest-node.json": {
+      "container_path": "/etc/prometheus/targets/guest-node.json",
+      "SHA256": "dc7cf106ebb42021191018c7eda121cf1deb7128308fee7a75beff9a5bf3c9f0",
+      "public_target_groups": [
+        {
+          "targets": [
+            "192.168.19.10:9100"
+          ],
+          "labels": {
+            "role": "data-prod-db",
+            "zone": "prod",
+            "vmid": "200"
+          }
+        },
+        {
+          "targets": [
+            "192.168.19.11:9100"
+          ],
+          "labels": {
+            "role": "data-prod-infra",
+            "zone": "prod",
+            "vmid": "201"
+          }
+        },
+        {
+          "targets": [
+            "192.168.19.20:9100"
+          ],
+          "labels": {
+            "role": "data-test",
+            "zone": "test",
+            "vmid": "210"
+          }
+        },
+        {
+          "targets": [
+            "192.168.19.30:9100"
+          ],
+          "labels": {
+            "role": "publish-service",
+            "zone": "management",
+            "vmid": "220"
+          }
+        },
+        {
+          "targets": [
+            "192.168.19.31:9100"
+          ],
+          "labels": {
+            "role": "artifact-service",
+            "zone": "tools",
+            "vmid": "221"
+          }
+        },
+        {
+          "targets": [
+            "192.168.19.40:9100"
+          ],
+          "labels": {
+            "role": "java-prod-01",
+            "zone": "prod",
+            "vmid": "230"
+          }
+        },
+        {
+          "targets": [
+            "192.168.19.45:9100"
+          ],
+          "labels": {
+            "role": "java-test-01",
+            "zone": "test",
+            "vmid": "240"
+          }
+        },
+        {
+          "targets": [
+            "192.168.19.50:9100"
+          ],
+          "labels": {
+            "role": "penpot-service",
+            "zone": "tools",
+            "vmid": "250"
+          }
+        },
+        {
+          "targets": [
+            "192.168.19.60:9100"
+          ],
+          "labels": {
+            "role": "nas-media",
+            "zone": "home",
+            "vmid": "260"
+          }
+        },
+        {
+          "targets": [
+            "192.168.19.70:9100"
+          ],
+          "labels": {
+            "role": "ops-service",
+            "zone": "management",
+            "vmid": "270"
+          }
+        }
+      ]
+    },
+    "/opt/dell/ops/config/prometheus/targets/http-services.json": {
+      "container_path": "/etc/prometheus/targets/http-services.json",
+      "SHA256": "736b5f1d7c6d376fd8a8c7305ec5b41b1dd81910a8329febc67259067eb03cb1",
+      "public_target_groups": [
+        {
+          "targets": [
+            "http://grafana:3000/api/health"
+          ],
+          "labels": {
+            "role": "ops-service",
+            "check": "grafana-health",
+            "scope": "service-http"
+          }
+        },
+        {
+          "targets": [
+            "http://alertmanager:9093/-/ready"
+          ],
+          "labels": {
+            "role": "ops-service",
+            "check": "alertmanager-ready",
+            "scope": "service-http"
+          }
+        },
+        {
+          "targets": [
+            "http://prometheus:9090/-/ready"
+          ],
+          "labels": {
+            "role": "ops-service",
+            "check": "prometheus-ready",
+            "scope": "service-http"
+          }
+        }
+      ]
+    }
+  },
+  "native_config_check_exit": 0,
+  "remote_changes": false,
+  "secret_Env_Cmd_read": false
+}

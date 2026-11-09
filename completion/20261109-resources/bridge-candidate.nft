@@ -1,0 +1,119 @@
+# OFFLINE CANDIDATE ONLY: parent must nft -c and atomically apply owned table.
+# No host L3 routing/NAT or PVE firewall daemon dependency.
+# Direct tap/veth required. Host INPUT/OUTPUT guard only vmbr19 in this stage.
+table bridge dell19_acl {
+  set mac_ids {
+    type ifname . ether_addr;
+    elements = { "fwpr100p0" . bc:24:11:42:04:c1, "fwpr190p1" . 02:63:19:01:90:01, "fwpr200p0" . bc:24:11:1c:62:00, "fwpr201p0" . bc:24:11:1c:bb:93, "fwpr210p0" . bc:24:11:5d:2d:98, "fwpr220p0" . bc:24:11:2a:01:ad, "fwpr221p0" . bc:24:11:ec:e1:6f, "fwpr230p0" . bc:24:11:1c:20:00, "fwpr240p0" . bc:24:11:65:41:5a, "fwpr250p0" . bc:24:11:78:e9:84, "fwpr260p0" . bc:24:11:a7:3b:73, "fwpr270p0" . bc:24:11:ce:8c:67, "fwpr280p0" . 02:63:19:02:80:00, "fwpr9001p0" . bc:24:11:7e:96:13, "fwpr9010p0" . bc:24:11:e8:c9:67, "fwpr9011p0" . bc:24:11:c3:a1:80, "tap190i1" . 02:63:19:01:90:01, "tap200i0" . bc:24:11:1c:62:00, "tap201i0" . bc:24:11:1c:bb:93, "tap210i0" . bc:24:11:5d:2d:98, "tap220i0" . bc:24:11:2a:01:ad, "tap221i0" . bc:24:11:ec:e1:6f, "tap230i0" . bc:24:11:1c:20:00, "tap240i0" . bc:24:11:65:41:5a, "tap250i0" . bc:24:11:78:e9:84, "tap260i0" . bc:24:11:a7:3b:73, "tap270i0" . bc:24:11:ce:8c:67, "tap280i0" . 02:63:19:02:80:00, "tap9001i0" . bc:24:11:7e:96:13, "tap9010i0" . bc:24:11:e8:c9:67, "tap9011i0" . bc:24:11:c3:a1:80, "veth100i0" . bc:24:11:42:04:c1 };
+  }
+
+  set ip_ids {
+    type ifname . ipv4_addr;
+    elements = { "fwpr100p0" . 192.168.19.5, "fwpr190p1" . 192.168.19.1, "fwpr200p0" . 192.168.19.10, "fwpr201p0" . 192.168.19.11, "fwpr210p0" . 192.168.19.20, "fwpr220p0" . 192.168.19.30, "fwpr221p0" . 192.168.19.31, "fwpr230p0" . 192.168.19.40, "fwpr240p0" . 192.168.19.45, "fwpr250p0" . 192.168.19.50, "fwpr260p0" . 192.168.19.60, "fwpr270p0" . 192.168.19.70, "fwpr280p0" . 192.168.19.80, "tap190i1" . 192.168.19.1, "tap200i0" . 192.168.19.10, "tap201i0" . 192.168.19.11, "tap210i0" . 192.168.19.20, "tap220i0" . 192.168.19.30, "tap221i0" . 192.168.19.31, "tap230i0" . 192.168.19.40, "tap240i0" . 192.168.19.45, "tap250i0" . 192.168.19.50, "tap260i0" . 192.168.19.60, "tap270i0" . 192.168.19.70, "tap280i0" . 192.168.19.80, "veth100i0" . 192.168.19.5 };
+  }
+
+  set gateway_ports {
+    type ifname;
+    elements = { "fwpr190p1", "tap190i1" };
+  }
+
+  set guest_ports {
+    type ifname;
+    elements = { "fwpr100p0", "fwpr200p0", "fwpr201p0", "fwpr210p0", "fwpr220p0", "fwpr221p0", "fwpr230p0", "fwpr240p0", "fwpr250p0", "fwpr260p0", "fwpr270p0", "fwpr280p0", "fwpr9001p0", "fwpr9010p0", "fwpr9011p0", "tap200i0", "tap201i0", "tap210i0", "tap220i0", "tap221i0", "tap230i0", "tap240i0", "tap250i0", "tap260i0", "tap270i0", "tap280i0", "tap9001i0", "tap9010i0", "tap9011i0", "veth100i0" };
+  }
+
+  set access_bridges {
+    type ifname;
+    elements = { "vmbr19" };
+  }
+
+  set peer_tcp {
+    type ipv4_addr . ipv4_addr . inet_service;
+    elements = { 192.168.19.10 . 192.168.19.31 . 8081, 192.168.19.11 . 192.168.19.10 . 3306, 192.168.19.11 . 192.168.19.31 . 8081, 192.168.19.20 . 192.168.19.31 . 8081, 192.168.19.30 . 192.168.19.31 . 8081, 192.168.19.30 . 192.168.19.45 . 22, 192.168.19.40 . 192.168.19.10 . 3306, 192.168.19.40 . 192.168.19.11 . 5672, 192.168.19.40 . 192.168.19.11 . 6379, 192.168.19.40 . 192.168.19.11 . 8848, 192.168.19.40 . 192.168.19.11 . 9848, 192.168.19.40 . 192.168.19.31 . 8081, 192.168.19.40 . 192.168.19.80 . 2049, 192.168.19.45 . 192.168.19.20 . 3306, 192.168.19.45 . 192.168.19.20 . 5672, 192.168.19.45 . 192.168.19.20 . 6379, 192.168.19.45 . 192.168.19.20 . 8848, 192.168.19.45 . 192.168.19.20 . 9848, 192.168.19.45 . 192.168.19.31 . 8081, 192.168.19.45 . 192.168.19.80 . 2049, 192.168.19.50 . 192.168.19.31 . 8081, 192.168.19.70 . 192.168.19.10 . 9100, 192.168.19.70 . 192.168.19.11 . 9100, 192.168.19.70 . 192.168.19.20 . 9100, 192.168.19.70 . 192.168.19.30 . 9100, 192.168.19.70 . 192.168.19.31 . 8081, 192.168.19.70 . 192.168.19.31 . 9100, 192.168.19.70 . 192.168.19.40 . 9100, 192.168.19.70 . 192.168.19.45 . 9100, 192.168.19.70 . 192.168.19.5 . 9100, 192.168.19.70 . 192.168.19.50 . 9100, 192.168.19.70 . 192.168.19.60 . 9100, 192.168.19.70 . 192.168.19.70 . 9100, 192.168.19.70 . 192.168.19.80 . 9100 };
+  }
+
+  set lan_tcp {
+    type ipv4_addr . inet_service;
+  }
+
+  chain host_input {
+    type filter hook input priority -200; policy accept;
+    meta ibrname @access_bridges counter drop comment "no-host-service-on-server19-or-access-fwbr"
+  }
+  chain host_output {
+    type filter hook output priority -200; policy accept;
+    meta obrname @access_bridges counter drop comment "host-client-route-must-use-gateway-WAN"
+  }
+  chain forward {
+    type filter hook forward priority -200; policy accept;
+    meta ibrname "vmbr19" jump server19
+    meta obrname "vmbr19" jump server19
+  }
+  chain server19 {
+    ether type { 0x86dd, 0x8100, 0x88a8 } counter drop comment "no-ipv6-vlan-bypass"
+    meta iifname . ether saddr != @mac_ids counter drop comment "unknown-port-or-source-MAC"
+    ether type arp jump arp_guard
+    ether type ip jump ip_guard
+    counter drop comment "unapproved-ethertype"
+  }
+  chain arp_guard {
+    meta iifname . arp saddr ether != @mac_ids counter drop comment "ARP-SHA-source-binding"
+    arp operation request arp saddr ip 0.0.0.0 arp daddr ip 192.168.19.0/24 counter accept comment "address-probe"
+    meta iifname . arp saddr ip @ip_ids counter accept comment "ARP-SPA-exact-port-IP"
+    counter drop comment "ARP-source-IP-spoof"
+  }
+  chain ip_guard {
+    meta iifname @guest_ports meta oifname @gateway_ports ip saddr { 0.0.0.0, 192.168.19.0/24 } udp sport 68 udp dport 67 counter accept comment "MAC-bound-DHCP-client-only"
+    meta iifname @gateway_ports meta oifname @guest_ports ip saddr 192.168.19.1 udp sport 67 udp dport 68 counter accept comment "gateway-only-DHCP-server"
+    meta oifname . ether daddr != @mac_ids counter drop comment "unicast-destination-MAC-binding"
+    meta iifname @gateway_ports jump from_gateway
+    meta iifname @guest_ports jump from_guest
+    counter drop comment "unregistered-direction"
+  }
+  chain from_gateway {
+    ip saddr 192.168.19.0/24 ip saddr != 192.168.19.1 counter drop comment "gateway-cannot-spoof-peer19"
+    meta oifname . ip daddr != @ip_ids counter drop comment "approved-destination-IP-only"
+    ct state invalid counter drop
+    ct state { established, related } counter accept
+    ip saddr 192.168.19.1 ip protocol icmp counter accept comment "gateway-diagnostics"
+    ip saddr 192.168.21.0/24 ip daddr 192.168.19.50 tcp dport 9001 counter accept comment "manager-WAN-to-LAN-0"
+    ip saddr 192.168.21.0/24 ip daddr 192.168.19.31 tcp dport 8081 counter accept comment "manager-WAN-to-LAN-1"
+    ip saddr 192.168.21.0/24 ip daddr 192.168.19.60 tcp dport { 80, 445, 8096 } counter accept comment "manager-WAN-to-LAN-2"
+    ip saddr 192.168.21.0/24 ip daddr 192.168.19.45 tcp dport 9999 counter accept comment "manager-WAN-to-LAN-3"
+    ip saddr 192.168.21.0/24 ip daddr 192.168.19.40 tcp dport 9999 counter accept comment "manager-WAN-to-LAN-4"
+    ip saddr 192.168.21.0/24 ip daddr 192.168.19.70 tcp dport 3000 counter accept comment "manager-WAN-to-LAN-5"
+    ip saddr { 192.168.21.22, 192.168.21.116 } ip daddr 192.168.19.0/24 tcp dport { 22, 3306, 5672, 6379, 8848, 9090, 9093, 9100, 9848, 9849, 15672 } counter accept comment "manager-WAN-to-LAN-6"
+    ip saddr 10.66.66.0/24 ip daddr 192.168.19.0/24 counter accept comment "trusted-WireGuard-to-server19"
+    ip saddr 192.168.21.0/24 ip daddr 192.168.19.20 tcp dport { 8848, 9848 } counter accept comment "LAN-test-Nacos-only"
+    ip saddr 192.168.21.0/24 ip daddr 192.168.19.0/24 counter accept comment "trusted-LAN21-to-server19"
+    counter drop comment "gateway-ingress-denied"
+  }
+  chain from_guest {
+    meta iifname . ip saddr != @ip_ids counter drop comment "guest-source-IP-binding"
+    meta oifname @gateway_ports jump to_gateway
+    meta oifname . ip daddr != @ip_ids counter drop comment "peer-destination-IP-binding"
+    ct state invalid counter drop
+    ct state { established, related } counter accept
+    ip saddr . ip daddr . tcp dport @peer_tcp counter accept comment "explicit-role-TCP-matrix"
+    counter drop comment "east-west-denied"
+  }
+  chain to_gateway {
+    ip daddr 192.168.19.0/24 ip daddr != 192.168.19.1 counter drop comment "no-peer-hairpin-through-gateway"
+    ct state invalid counter drop
+    ct state { established, related } counter accept
+    ip daddr 192.168.19.1 udp dport 53 counter accept
+    ip daddr 192.168.19.1 tcp dport 53 counter accept
+    ip daddr 192.168.19.1 ip protocol icmp counter accept
+    ip saddr 192.168.19.70 ip daddr 192.168.19.1 tcp dport 9100 counter accept comment "Ops-gateway-exporter-if-activated"
+    ip daddr 192.168.21.0/24 counter drop comment "no-unapproved-server-to-management-LAN-session"
+    ip daddr 192.168.19.1 counter drop comment "no-other-gateway-service"
+    ip daddr { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16 } counter drop comment "manager-exclude-private-destinations"
+    tcp dport { 53, 80, 443 } counter accept comment "manager-public-egress"
+    udp dport { 53, 123 } counter accept comment "manager-public-egress"
+    ip protocol icmp counter accept
+    ip saddr 192.168.19.5 tcp dport { 7844 } counter accept comment "manager-CF_extra_public"
+    ip saddr 192.168.19.5 udp dport { 7844 } counter accept comment "manager-CF_extra_public"
+    ip saddr 192.168.19.30 tcp dport { 22 } counter accept comment "manager-publisher_optional_public_ssh"
+    counter drop comment "unapproved-egress"
+  }
+}

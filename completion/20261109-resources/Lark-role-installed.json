@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-09T16:10:17.649293+00:00",
+  "kind": "lark",
+  "status": "exact-resource-role-increment-installed",
+  "new_public_SHA256": "a78a84351fd0bf8e79b2d6ef7b4ef2a4464734108a01666850f4c290f8ffe458",
+  "test_notifications_sent": false,
+  "receivers_tokens_rules_or_other_targets_changed": false,
+  "only_Lark_bridge_restarted": true,
+  "Prometheus_restarted": false
+}

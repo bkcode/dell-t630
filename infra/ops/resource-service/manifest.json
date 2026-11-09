@@ -1,0 +1,52 @@
+{
+  "status": "local-candidates-only-resource280-stopped-unverified",
+  "baseline_source_files": {
+    "infra/ops/guest-baseline/install-guest-baseline.py": "72860ba5eeb268a626f587aa57ea8b683ba36477e21787080ec994d543d8792a",
+    "infra/ops/guest-baseline/guest-targets.json": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306"
+  },
+  "candidate_source_files": {
+    "infra/ops/guest-baseline/install-guest-baseline.py": "fb612f39bd68641d2f5b0bdc79da193c2d770f88cbaee3c6a726a6b0ce9acf74",
+    "infra/ops/guest-baseline/guest-targets.json": "f632b7ff22cf168a621ff1acda6ddaecf598bb17403b08481f0b5f27b32a8c43"
+  },
+  "runtime_Prometheus_guestnode_path": "/opt/dell/ops/config/prometheus/targets/guest-node.json",
+  "runtime_Prometheus_guestnode_old_SHA256": "dc7cf106ebb42021191018c7eda121cf1deb7128308fee7a75beff9a5bf3c9f0",
+  "runtime_Prometheus_config_path": "/opt/dell/ops/config/prometheus/prometheus.yml",
+  "runtime_Prometheus_config_SHA256": "35b0a682e8cef2802cd871982e442614e67ae3313f39945ace2591879f508c04",
+  "expected_current_exporter_targets": 10,
+  "candidate_exporter_targets_after_280_verified": 11,
+  "existing5Ops_targets_unchanged": true,
+  "source_updates_not_runtime_deployment": true,
+  "current_other_roles_profiles_unchanged": true,
+  "mount_validation_owner": "NFSunit BindsTo/RequiresMountsFor srv-resources.mount andExecStartPre /opt/dell/resources/guard.py; actualUUIDrootfillsafterformat/mount",
+  "HTTP_targets_or_receivers_added": false,
+  "backup_scope_expanded": false,
+  "remote_writes_or_280_start": false,
+  "lark_bridge": {
+    "source_path": "infra/ops/lark-notify/bridge.py",
+    "actual_runtime_path": "/usr/local/libexec/dell-lark-notify/bridge.py",
+    "unit_name": "dell-lark-notify.service",
+    "old_SHA256": "12d733376239919ba55c3739ebf8a0564de12ceaad9fba28c75d8632630a41e6",
+    "candidate_SHA256": "a78a84351fd0bf8e79b2d6ef7b4ef2a4464734108a01666850f4c290f8ffe458",
+    "delta": "ROLES exactaddresource-service only; ALERTS/LABELS/receivers/auth/retries/dedupeunchanged",
+    "remote_deploy_performed": false
+  },
+  "collector_unchanged_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+  "candidate_resource_health_SHA256": "c597f442a4246b7d7ef525433348f361f4b7d18d81870305e9e8304669c729c8",
+  "candidate_fileSD_SHA256": "9e51cc2cca214e5754ed76c5472686143650f737b05bdf15ce1c312d79a67263",
+  "staging_public_files": [
+    {
+      "source": "infra/ops/guest-baseline/install-guest-baseline.py",
+      "sha256": "fb612f39bd68641d2f5b0bdc79da193c2d770f88cbaee3c6a726a6b0ce9acf74"
+    },
+    {
+      "source": "infra/ops/guest-baseline/collect-guest-health.py",
+      "sha256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1"
+    },
+    {
+      "source": "infra/ops/guest-baseline/guest-targets.json",
+      "sha256": "f632b7ff22cf168a621ff1acda6ddaecf598bb17403b08481f0b5f27b32a8c43"
+    }
+  ],
+  "local_tests_passed": 10,
+  "updated_at": "2026-11-09T15:54:46.992244+00:00"
+}

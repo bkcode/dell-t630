@@ -15,7 +15,7 @@ ALERTS={
  'PveRaidMemberOffline':'PVE RAID物理磁盘离线','PveStorageSpaceLow':'PVE存储可用空间低于20%',
  'PveMemoryAvailableLow':'PVE可用内存低于10%','CloudflareProcessUnavailable':'现有Cloudflare进程未运行',
  'GuestManagedUnitUnavailable':'来宾配置的服务未运行','GuestLocalHealthUnavailable':'来宾本地应用健康检查失败'}
-ROLES={'cf-tunnel','data-prod-db','data-prod-infra','data-test','publish-service','artifact-service','java-prod-01','java-prod-02','java-prod-03','java-test-01','penpot-service','nas-media','ops-service','pve'}
+ROLES={'cf-tunnel','data-prod-db','data-prod-infra','data-test','publish-service','artifact-service','java-prod-01','java-prod-02','java-prod-03','java-test-01','penpot-service','nas-media','ops-service','pve','resource-service'}
 LABELS=('alertname','role','severity','check','unit','service','dell_acceptance','acceptance_run')
 class Rejected(Exception):pass
 class DeliveryFailed(Exception):

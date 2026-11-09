@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-09T23:55:01.044276+08:00",
+  "scope": "resource DNS first attempt",
+  "status": "original-DNS-restored-before-controlled-retry",
+  "cause": "umask077 stripped requested0644 to0600; dnsmasq service user could not read owned configuration",
+  "source_content_rollback": true,
+  "permission0644_and_DNS_active_restored": true,
+  "routes_firewall_app_processes_changed": false,
+  "code_fix": "explicit fchmod + service-user readability precheck before restart",
+  "offline_umask077_mode644_regression": "passed",
+  "original_failure_journal_preserved_on_gateway": true
+}

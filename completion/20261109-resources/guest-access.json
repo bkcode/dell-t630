@@ -1,0 +1,11 @@
+{
+  "status": "strict-new-resource-guest-access-verified",
+  "target": {
+    "vmid": 280,
+    "ip": "192.168.19.80",
+    "host_key_alias": "dell-vm280",
+    "host_key_fingerprint": "SHA256:xp1B3cJdCvIc1yB6Cv6gc8lT0BY4Xc/nAde7oAzxk+g",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "cloud_init_done_no_errors": true
+}

@@ -1,0 +1,205 @@
+{
+  "captured_at": "2026-11-09T23:48:27.388213+08:00",
+  "guests": [
+    {
+      "vmid": 100,
+      "kind": "lxc",
+      "template": false,
+      "nics": {
+        "net0": {
+          "name": "eth0",
+          "bridge": "vmbr19",
+          "firewall": "0",
+          "gw": "192.168.19.1",
+          "hwaddr": "BC:24:11:42:04:C1",
+          "ip": "192.168.19.5/24",
+          "ip6": "manual",
+          "type": "veth"
+        }
+      }
+    },
+    {
+      "vmid": 190,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "02:63:19:01:90:00",
+          "bridge": "vmbr0"
+        },
+        "net1": {
+          "virtio": "02:63:19:01:90:01",
+          "bridge": "vmbr19"
+        }
+      }
+    },
+    {
+      "vmid": 200,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:1C:62:00",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 201,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:1C:BB:93",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 210,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:5D:2D:98",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 220,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:2A:01:AD",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 221,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:EC:E1:6F",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 230,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:1C:20:00",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 240,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:65:41:5A",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 250,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:78:E9:84",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 260,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:A7:3B:73",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 270,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:CE:8C:67",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 280,
+      "kind": "vm",
+      "template": false,
+      "nics": {
+        "net0": {
+          "virtio": "02:63:19:02:80:00",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 9001,
+      "kind": "vm",
+      "template": true,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:7E:96:13",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 9010,
+      "kind": "vm",
+      "template": true,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:E8:C9:67",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    },
+    {
+      "vmid": 9011,
+      "kind": "vm",
+      "template": true,
+      "nics": {
+        "net0": {
+          "virtio": "BC:24:11:C3:A1:80",
+          "bridge": "vmbr19",
+          "firewall": "0"
+        }
+      }
+    }
+  ]
+}

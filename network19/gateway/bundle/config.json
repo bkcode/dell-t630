@@ -52,6 +52,10 @@
     {
       "role": "ops-service",
       "address": "192.168.19.70"
+    },
+    {
+      "role": "resource-service",
+      "address": "192.168.19.80"
     }
   ],
   "WAN_to_LAN": [
@@ -175,7 +179,7 @@
     9001,
     9999
   ],
-  "migration_plan_sha256": "11ad406e83a75878e097d4928c3c1bd99f60e7d7ca02d5e1ec57b63eb79c7009",
+  "migration_plan_sha256": "0cc9978e706aacd10bb740a6ade975dbf03256b00d9eba2faa84a5865dafd168",
   "OW_fake_IP_proxy": {
     "source": "192.168.19.0/24",
     "destination": "198.18.0.0/15",

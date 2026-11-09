@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "status": "candidate-not-deployed",
+  "server": {
+    "vmid": 280,
+    "hostname": "resource-service",
+    "ip": "192.168.19.80",
+    "vcpu": 2,
+    "memory_gib": 2,
+    "system_disk_gib": 32,
+    "data_disk_gib": 100,
+    "data_uuid": null,
+    "mount": "/srv/resources",
+    "fstype": "ext4"
+  },
+  "clients": [
+    {
+      "vmid": 230,
+      "hostname": "java-prod-01",
+      "ip": "192.168.19.40"
+    },
+    {
+      "vmid": 240,
+      "hostname": "java-test-01",
+      "ip": "192.168.19.45"
+    }
+  ],
+  "client_mount": "/mnt/resources",
+  "nfs_version": "4.1",
+  "nfs_port": 2049,
+  "runtime_user": "finger",
+  "runtime_uid": 999,
+  "runtime_gid": 989,
+  "server_group": "resources",
+  "shared_environment_directory": true,
+  "optional_http_enabled": false,
+  "resource_gid": 2980
+}

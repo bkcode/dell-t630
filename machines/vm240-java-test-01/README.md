@@ -1,4 +1,4 @@
-> 更新：2026-11-09（Asia/Shanghai）。本轮基础fresh审计已复核；当日实时收尾状态统一见[11月9日交付记录](../../completion/20261109-prod-db-scope/README.md)。本页仅本地同步带时点证据，不执行服务器操作；不迁移数据、不合并Nexus、不启动Java业务、不升级Penpot，不需要Mac外部探针。
+> 更新：2026-11-10（Asia/Shanghai）。本轮基础fresh审计已复核；当日实时收尾状态统一见[11月9日交付记录](../../completion/20261109-prod-db-scope/README.md)。本页仅本地同步带时点证据，不执行服务器操作；不迁移数据、不合并Nexus、不启动Java业务、不升级Penpot，不需要Mac外部探针。
 
 # VM240 · java-test-01
 
@@ -71,3 +71,17 @@ fish已安装（包版本4.0.2-1）；root/ub默认仍为Bash，没有自动chsh
 - [README.md](../../infra/publisher/README.md) — `historical-evidence`：旧受限发布链机制与演练记录；当前fenced，不重新发布。
 - [java240-stop-disable-hold-evidence.json](../../network19/services-core/java240-stop-disable-hold-evidence.json) — `historical-evidence`：旧五业务停止/禁自启与不可变文件留存回执。
 - [publisher240-fenced-readback-evidence.json](../../network19/services-core/publisher240-fenced-readback-evidence.json) — `historical-evidence`：测试发布baseline冻结与受限目标读回。
+
+## 统一资源目录（新增280）
+
+本机作为已批准NFS客户端，目标`192.168.19.80:/ → /mnt/resources`，与另一台running使用同一目录，不区分prod/test。server 100GiB数据盘与NFS启动见[server回执](../../completion/20261109-resources/server-installed.json)，本机真NFS/guard与双机非rootfixture已由[独立native验收](../../completion/20261109-resources/native-acceptance.json)通过；[仅280重启](../../completion/20261109-resources/reboot-exercise.json)后两client挂载/guard恢复、fsync共享canary保留，未重启本机OS。finger保UID999/GID989，仅追加resources附属GID2980，server root_squash/2770/defaultACL；客户端hard、nfs4.1、TCP2049、nodev/nosuid/noexec与automount。
+
+共享是网络挂载，不是给本机格式化新数据盘。仅安装NFS基础不启动Java、不启HTTP、不迁文件、不把共享内容纳入当前正式DB/Nacos自动备份；未来业务挂载依赖drop-in仍未安装。模板预置disabled挂载只是建议，本次未改三模板。[详细使用与故障手册](../../completion/20261109-resources/usage-manual.md)、[280机器合同](../vm280-resource-service/README.md)。
+
+本机原`/mnt/dell-artifacts`保持，不覆盖为资源挂载。
+
+[00:20最终后检](../../completion/20261109-resources/final-postcheck.json)确认13来宾/3模板、16/16监控targetsUP、PVE全部forward0。合法挂载stack是systemd-1 autofs＋唯一`192.168.19.80:/` nfs4，可用`findmnt -t nfs4 --mountpoint /mnt/resources`区分；仅autofs仍不算真NFS。fixture提前用umask0002，文件实际660/组2980；首轮失败与清理保留，未改服务来追过。
+
+应用接入仍未执行：Finger `file.upload.path=/mnt/resources`仅建议值，未改Nacos/profile或启动Java；HTTPdomain/公开图片URL未搭。Puyu images仍在MySQL，经权限下载接口访问，NFS不自动迁出。新资源不改变现行仅正式DB/Nacos备份范围。
+
+原`/mnt/dell-artifacts`前后精确findmnt均无active row，只证明挂载状态未变，不代表旧文件内容已逐项验收。

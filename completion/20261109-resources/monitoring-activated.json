@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-11-10T00:10:48.106815+08:00",
+  "mode": "activate",
+  "role": "resource-service",
+  "vmid": 280,
+  "expected_private_ip": "192.168.19.80",
+  "exporter_enabled": "enabled",
+  "exporter_active": "active",
+  "exporter_socket_enabled": "masked",
+  "collector_timer_enabled": "enabled",
+  "collector_timer_active": "active",
+  "collector_active": "activating",
+  "listeners_9100": [
+    "192.168.19.80:9100"
+  ],
+  "exporter_enablement_links": [
+    "/etc/systemd/system/multi-user.target.wants/prometheus-node-exporter.service"
+  ],
+  "socket_enablement_links": [],
+  "notifications_sent": false,
+  "pve_or_ct_targeted": false,
+  "package_version": "1.9.0-1+b4"
+}

@@ -1,0 +1,294 @@
+{
+  "captured_at": "2026-11-10T00:20:38.241841+08:00",
+  "status": "passed",
+  "checks": {
+    "13_guests_running": true,
+    "3_templates_stopped": true,
+    "all_host_forwarding_zero": true,
+    "management_SSH_yes_NFS_no": true,
+    "other19_peer_NFS_denied": true,
+    "16_targets_all_UP": true,
+    "5_resource_service_metrics_UP": true,
+    "resource_units_active": true,
+    "resource_UUID_correct": true,
+    "guest_modes_correct": true,
+    "Lark_active_correct_code": true
+  },
+  "read_only": true,
+  "PVE": {
+    "guests": [
+      {
+        "vmid": 100,
+        "name": "cf-tunnel",
+        "status": "running"
+      },
+      {
+        "vmid": 190,
+        "name": "network-gateway",
+        "status": "running"
+      },
+      {
+        "vmid": 200,
+        "name": "data-prod-db",
+        "status": "running"
+      },
+      {
+        "vmid": 201,
+        "name": "data-prod-infra",
+        "status": "running"
+      },
+      {
+        "vmid": 210,
+        "name": "data-test",
+        "status": "running"
+      },
+      {
+        "vmid": 220,
+        "name": "publish-service",
+        "status": "running"
+      },
+      {
+        "vmid": 221,
+        "name": "artifact-service",
+        "status": "running"
+      },
+      {
+        "vmid": 230,
+        "name": "java-prod-01",
+        "status": "running"
+      },
+      {
+        "vmid": 240,
+        "name": "java-test-01",
+        "status": "running"
+      },
+      {
+        "vmid": 250,
+        "name": "penpot-service",
+        "status": "running"
+      },
+      {
+        "vmid": 260,
+        "name": "nas-media",
+        "status": "running"
+      },
+      {
+        "vmid": 270,
+        "name": "ops-service",
+        "status": "running"
+      },
+      {
+        "vmid": 280,
+        "name": "resource-service",
+        "status": "running"
+      }
+    ],
+    "templates": [
+      {
+        "vmid": 9001,
+        "status": "stopped"
+      },
+      {
+        "vmid": 9010,
+        "status": "stopped"
+      },
+      {
+        "vmid": 9011,
+        "status": "stopped"
+      }
+    ],
+    "host_forwarding": {
+      "/proc/sys/net/ipv4/conf/all/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/default/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/eno1/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/eno2/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/lo/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap190i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap190i1/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap200i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap201i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap210i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap220i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap221i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap230i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap240i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap250i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap260i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap270i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap280i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/veth100i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/vmbr0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/vmbr19/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/all/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/default/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/eno1/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/eno2/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/lo/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap190i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap190i1/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap200i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap201i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap210i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap220i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap221i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap230i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap240i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap250i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap260i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap270i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap280i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/veth100i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/vmbr0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/vmbr19/forwarding": "0"
+    },
+    "management_path_tests": {
+      "22": true,
+      "2049": false
+    }
+  },
+  "Ops": {
+    "active_targets": 16,
+    "all_targets_UP": true,
+    "targets": [
+      {
+        "role": "ops-service",
+        "vmid": null,
+        "instance": "blackbox:9115",
+        "health": "up"
+      },
+      {
+        "role": "penpot-service",
+        "vmid": "250",
+        "instance": "192.168.19.50:9100",
+        "health": "up"
+      },
+      {
+        "role": "data-prod-db",
+        "vmid": "200",
+        "instance": "192.168.19.10:9100",
+        "health": "up"
+      },
+      {
+        "role": "publish-service",
+        "vmid": "220",
+        "instance": "192.168.19.30:9100",
+        "health": "up"
+      },
+      {
+        "role": "java-prod-01",
+        "vmid": "230",
+        "instance": "192.168.19.40:9100",
+        "health": "up"
+      },
+      {
+        "role": "nas-media",
+        "vmid": "260",
+        "instance": "192.168.19.60:9100",
+        "health": "up"
+      },
+      {
+        "role": "ops-service",
+        "vmid": "270",
+        "instance": "192.168.19.70:9100",
+        "health": "up"
+      },
+      {
+        "role": "data-prod-infra",
+        "vmid": "201",
+        "instance": "192.168.19.11:9100",
+        "health": "up"
+      },
+      {
+        "role": "artifact-service",
+        "vmid": "221",
+        "instance": "192.168.19.31:9100",
+        "health": "up"
+      },
+      {
+        "role": "resource-service",
+        "vmid": "280",
+        "instance": "192.168.19.80:9100",
+        "health": "up"
+      },
+      {
+        "role": "data-test",
+        "vmid": "210",
+        "instance": "192.168.19.20:9100",
+        "health": "up"
+      },
+      {
+        "role": "java-test-01",
+        "vmid": "240",
+        "instance": "192.168.19.45:9100",
+        "health": "up"
+      },
+      {
+        "role": "ops-service",
+        "vmid": null,
+        "instance": "http://grafana:3000/api/health",
+        "health": "up"
+      },
+      {
+        "role": "ops-service",
+        "vmid": null,
+        "instance": "http://alertmanager:9093/-/ready",
+        "health": "up"
+      },
+      {
+        "role": "ops-service",
+        "vmid": null,
+        "instance": "http://prometheus:9090/-/ready",
+        "health": "up"
+      },
+      {
+        "role": "ops-service",
+        "vmid": null,
+        "instance": "localhost:9090",
+        "health": "up"
+      }
+    ],
+    "resource_service_metrics": {
+      "dell-resources-firewall.service": "1",
+      "nfs-server.service": "1",
+      "prometheus-node-exporter.service": "1",
+      "qemu-guest-agent.service": "1",
+      "ssh.service": "1"
+    },
+    "guest_node_SD_sha256": "9e51cc2cca214e5754ed76c5472686143650f737b05bdf15ce1c312d79a67263",
+    "lark_code_sha256": "a78a84351fd0bf8e79b2d6ef7b4ef2a4464734108a01666850f4c290f8ffe458",
+    "lark_active": true
+  },
+  "resource": {
+    "boot_id": "76af9f98-c961-405a-824e-0b4d10222051",
+    "mount": {
+      "filesystems": [
+        {
+          "target": "/srv/resources",
+          "source": "/dev/sdb",
+          "fstype": "ext4",
+          "options": "rw,nosuid,nodev,noexec,relatime",
+          "uuid": "57d8158e-5fcf-4dd2-8cb4-b47b1e54ed7b"
+        }
+      ]
+    },
+    "versions": "-3 +4 -4.0 +4.1 -4.2",
+    "root_mode": "0o2770",
+    "root_uid": 0,
+    "root_gid": 2980,
+    "fish": "fish, version 4.0.2",
+    "root_shell": "/bin/bash",
+    "ub_shell": "/bin/bash",
+    "guard_public_source_SHA256": "869710422479c6e1d27fb1e828decc48071e3bc1eeb5c0ece82230aa4f5d66b2",
+    "active_units": {
+      "nfs-server.service": true,
+      "dell-resources-firewall.service": true,
+      "prometheus-node-exporter.service": true,
+      "dell-guest-health.timer": true
+    }
+  },
+  "negative": {
+    "source_vmid": 210,
+    "unapproved_peer_NFS_TCP_allowed": false,
+    "no_data_read_or_write": true
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-09T15:55:56.309438+00:00",
+  "status": "new-blank-resource-data-disk-initialized-mounted",
+  "vmid": 280,
+  "device": "/dev/sdb",
+  "uuid": "57d8158e-5fcf-4dd2-8cb4-b47b1e54ed7b",
+  "data_GiB": 100,
+  "mountpoint": "/srv/resources",
+  "root_disk_or_existing_volume_formatted": false,
+  "unmounted_underlay_mode": "0555 root:root",
+  "exports_or_Java_started": false
+}

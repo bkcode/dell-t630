@@ -1,0 +1,1266 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-11-09T16:13:27.974694+00:00",
+  "nonce": "8ff11ce341b548748a9516bda05627f4",
+  "scope": "new synthetic own NFS fixture; only240new mountunits missing-mount negative; no Java/data migration/notifications",
+  "steps": [
+    {
+      "vmid": 280,
+      "phase": "metadata",
+      "exit_code": 0,
+      "result": {
+        "at": 1794240809.2454984,
+        "vmid": 280,
+        "guard_exit": 0,
+        "mounts": {
+          "exit_code": 0,
+          "rows": [
+            {
+              "target": "/srv/resources",
+              "source": "/dev/sdb",
+              "fstype": "ext4",
+              "options": "rw,nosuid,nodev,noexec,relatime",
+              "uuid": "57d8158e-5fcf-4dd2-8cb4-b47b1e54ed7b"
+            }
+          ]
+        },
+        "root_stat": {
+          "dev": 2064,
+          "ino": 2,
+          "uid": 0,
+          "gid": 2980,
+          "mode": "0o2770",
+          "mtime_ns": 1794239755000000000,
+          "ctime_ns": 1794240054613068331
+        },
+        "resources_group": {
+          "name": "resources",
+          "gid": 2980
+        },
+        "capacity": {
+          "total_bytes": 105089261568,
+          "free_bytes": 105070362624
+        },
+        "protected_units": {
+          "ssh.service": {
+            "MainPID": "763",
+            "ExecMainStartTimestampMonotonic": "13864182",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "691",
+            "ExecMainStartTimestampMonotonic": "13476428",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "6408",
+            "ExecMainStartTimestampMonotonic": "1218529198",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "systemd-networkd.service": {
+            "MainPID": "633",
+            "ExecMainStartTimestampMonotonic": "10678250",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "systemd-resolved.service": {
+            "MainPID": "338",
+            "ExecMainStartTimestampMonotonic": "6496740",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "nfs-server.service": {
+            "MainPID": "0",
+            "ExecMainStartTimestampMonotonic": "628950185",
+            "ActiveState": "active",
+            "SubState": "exited"
+          },
+          "nfs-mountd.service": {
+            "MainPID": "3173",
+            "ExecMainStartTimestampMonotonic": "628830000",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-resources-firewall.service": {
+            "MainPID": "0",
+            "ExecMainStartTimestampMonotonic": "628458213",
+            "ActiveState": "active",
+            "SubState": "exited"
+          }
+        },
+        "failed_units": [],
+        "exports": "/srv/resources\t192.168.19.40(sync,wdelay,hide,no_subtree_check,fsid=0,mountpoint,sec=sys,rw,secure,root_squash,no_all_squash)\n/srv/resources\t192.168.19.45(sync,wdelay,hide,no_subtree_check,fsid=0,mountpoint,sec=sys,rw,secure,root_squash,no_all_squash)\n",
+        "versions": "-3 +4 -4.0 +4.1 -4.2",
+        "manage_gids": "n",
+        "status": "passed"
+      }
+    },
+    {
+      "vmid": 230,
+      "phase": "metadata",
+      "exit_code": 0,
+      "result": {
+        "at": 1794240810.611244,
+        "vmid": 230,
+        "guard_exit": 0,
+        "mounts": {
+          "exit_code": 0,
+          "rows": [
+            {
+              "target": "/mnt/resources",
+              "source": "systemd-1",
+              "fstype": "autofs",
+              "options": "rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=75364",
+              "uuid": null
+            },
+            {
+              "target": "/mnt/resources",
+              "source": "192.168.19.80:/",
+              "fstype": "nfs4",
+              "options": "rw,nosuid,nodev,noexec,relatime,vers=4.1,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=192.168.19.40,local_lock=none,addr=192.168.19.80",
+              "uuid": null
+            }
+          ]
+        },
+        "root_stat": {
+          "dev": 54,
+          "ino": 2,
+          "uid": 0,
+          "gid": 2980,
+          "mode": "0o2770",
+          "mtime_ns": 1794239755000000000,
+          "ctime_ns": 1794240054613068331
+        },
+        "resources_group": {
+          "name": "resources",
+          "gid": 2980
+        },
+        "capacity": {
+          "total_bytes": 105089335296,
+          "free_bytes": 105070460928
+        },
+        "protected_units": {
+          "ssh.service": {
+            "MainPID": "738",
+            "ExecMainStartTimestampMonotonic": "12747988",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "714",
+            "ExecMainStartTimestampMonotonic": "12538342",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "747",
+            "ExecMainStartTimestampMonotonic": "13308532",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "systemd-networkd.service": {
+            "MainPID": "662",
+            "ExecMainStartTimestampMonotonic": "11388421",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "systemd-resolved.service": {
+            "MainPID": "391",
+            "ExecMainStartTimestampMonotonic": "7410918",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "finger": {
+          "uid": 999,
+          "gid": 989,
+          "groups": [
+            989,
+            2980
+          ]
+        },
+        "resource_units": {
+          "mnt-resources.mount": {
+            "Result": "success",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "mounted",
+            "UnitFileState": "static"
+          },
+          "mnt-resources.automount": {
+            "Result": "success",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          }
+        },
+        "Java_process_count": 0,
+        "artifact_mount": {
+          "exit_code": 1,
+          "rows": []
+        },
+        "status": "passed"
+      }
+    },
+    {
+      "vmid": 240,
+      "phase": "metadata",
+      "exit_code": 0,
+      "result": {
+        "at": 1794240812.548922,
+        "vmid": 240,
+        "guard_exit": 0,
+        "mounts": {
+          "exit_code": 0,
+          "rows": [
+            {
+              "target": "/mnt/resources",
+              "source": "systemd-1",
+              "fstype": "autofs",
+              "options": "rw,relatime,fd=51,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=75063",
+              "uuid": null
+            },
+            {
+              "target": "/mnt/resources",
+              "source": "192.168.19.80:/",
+              "fstype": "nfs4",
+              "options": "rw,nosuid,nodev,noexec,relatime,vers=4.1,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=192.168.19.45,local_lock=none,addr=192.168.19.80",
+              "uuid": null
+            }
+          ]
+        },
+        "root_stat": {
+          "dev": 54,
+          "ino": 2,
+          "uid": 0,
+          "gid": 2980,
+          "mode": "0o2770",
+          "mtime_ns": 1794239755000000000,
+          "ctime_ns": 1794240054613068331
+        },
+        "resources_group": {
+          "name": "resources",
+          "gid": 2980
+        },
+        "capacity": {
+          "total_bytes": 105089335296,
+          "free_bytes": 105070460928
+        },
+        "protected_units": {
+          "ssh.service": {
+            "MainPID": "714",
+            "ExecMainStartTimestampMonotonic": "11598786",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "686",
+            "ExecMainStartTimestampMonotonic": "11321594",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "719",
+            "ExecMainStartTimestampMonotonic": "12226200",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "systemd-networkd.service": {
+            "MainPID": "634",
+            "ExecMainStartTimestampMonotonic": "9998156",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "systemd-resolved.service": {
+            "MainPID": "374",
+            "ExecMainStartTimestampMonotonic": "6975152",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "finger": {
+          "uid": 999,
+          "gid": 989,
+          "groups": [
+            989,
+            2980
+          ]
+        },
+        "resource_units": {
+          "mnt-resources.mount": {
+            "Result": "success",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "mounted",
+            "UnitFileState": "static"
+          },
+          "mnt-resources.automount": {
+            "Result": "success",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          }
+        },
+        "Java_process_count": 0,
+        "artifact_mount": {
+          "exit_code": 1,
+          "rows": []
+        },
+        "status": "passed"
+      }
+    },
+    {
+      "vmid": 230,
+      "phase": "create230",
+      "exit_code": 1,
+      "result": {
+        "status": "failed",
+        "phase": "create230",
+        "error_type": "AssertionError",
+        "created_this_operation": true
+      }
+    },
+    {
+      "vmid": 230,
+      "phase": "cleanup",
+      "exit_code": 0,
+      "result": {
+        "phase": "cleanup",
+        "fixture_absent": true,
+        "status": "passed",
+        "created_this_operation": false
+      }
+    },
+    {
+      "vmid": 280,
+      "phase": "metadata",
+      "exit_code": 0,
+      "result": {
+        "at": 1794240815.0563934,
+        "vmid": 280,
+        "guard_exit": 0,
+        "mounts": {
+          "exit_code": 0,
+          "rows": [
+            {
+              "target": "/srv/resources",
+              "source": "/dev/sdb",
+              "fstype": "ext4",
+              "options": "rw,nosuid,nodev,noexec,relatime",
+              "uuid": "57d8158e-5fcf-4dd2-8cb4-b47b1e54ed7b"
+            }
+          ]
+        },
+        "root_stat": {
+          "dev": 2064,
+          "ino": 2,
+          "uid": 0,
+          "gid": 2980,
+          "mode": "0o2770",
+          "mtime_ns": 1794240814522459170,
+          "ctime_ns": 1794240814522459170
+        },
+        "resources_group": {
+          "name": "resources",
+          "gid": 2980
+        },
+        "capacity": {
+          "total_bytes": 105089261568,
+          "free_bytes": 105070362624
+        },
+        "protected_units": {
+          "ssh.service": {
+            "MainPID": "763",
+            "ExecMainStartTimestampMonotonic": "13864182",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "691",
+            "ExecMainStartTimestampMonotonic": "13476428",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "6408",
+            "ExecMainStartTimestampMonotonic": "1218529198",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "systemd-networkd.service": {
+            "MainPID": "633",
+            "ExecMainStartTimestampMonotonic": "10678250",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "systemd-resolved.service": {
+            "MainPID": "338",
+            "ExecMainStartTimestampMonotonic": "6496740",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "nfs-server.service": {
+            "MainPID": "0",
+            "ExecMainStartTimestampMonotonic": "628950185",
+            "ActiveState": "active",
+            "SubState": "exited"
+          },
+          "nfs-mountd.service": {
+            "MainPID": "3173",
+            "ExecMainStartTimestampMonotonic": "628830000",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "dell-resources-firewall.service": {
+            "MainPID": "0",
+            "ExecMainStartTimestampMonotonic": "628458213",
+            "ActiveState": "active",
+            "SubState": "exited"
+          }
+        },
+        "failed_units": [],
+        "exports": "/srv/resources\t192.168.19.40(sync,wdelay,hide,no_subtree_check,fsid=0,mountpoint,sec=sys,rw,secure,root_squash,no_all_squash)\n/srv/resources\t192.168.19.45(sync,wdelay,hide,no_subtree_check,fsid=0,mountpoint,sec=sys,rw,secure,root_squash,no_all_squash)\n",
+        "versions": "-3 +4 -4.0 +4.1 -4.2",
+        "manage_gids": "n",
+        "status": "passed"
+      }
+    },
+    {
+      "vmid": 230,
+      "phase": "metadata",
+      "exit_code": 0,
+      "result": {
+        "at": 1794240815.98094,
+        "vmid": 230,
+        "guard_exit": 0,
+        "mounts": {
+          "exit_code": 0,
+          "rows": [
+            {
+              "target": "/mnt/resources",
+              "source": "systemd-1",
+              "fstype": "autofs",
+              "options": "rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=75364",
+              "uuid": null
+            },
+            {
+              "target": "/mnt/resources",
+              "source": "192.168.19.80:/",
+              "fstype": "nfs4",
+              "options": "rw,nosuid,nodev,noexec,relatime,vers=4.1,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=192.168.19.40,local_lock=none,addr=192.168.19.80",
+              "uuid": null
+            }
+          ]
+        },
+        "root_stat": {
+          "dev": 54,
+          "ino": 2,
+          "uid": 0,
+          "gid": 2980,
+          "mode": "0o2770",
+          "mtime_ns": 1794240814522459170,
+          "ctime_ns": 1794240814522459170
+        },
+        "resources_group": {
+          "name": "resources",
+          "gid": 2980
+        },
+        "capacity": {
+          "total_bytes": 105089335296,
+          "free_bytes": 105070460928
+        },
+        "protected_units": {
+          "ssh.service": {
+            "MainPID": "738",
+            "ExecMainStartTimestampMonotonic": "12747988",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "714",
+            "ExecMainStartTimestampMonotonic": "12538342",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "747",
+            "ExecMainStartTimestampMonotonic": "13308532",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "systemd-networkd.service": {
+            "MainPID": "662",
+            "ExecMainStartTimestampMonotonic": "11388421",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "systemd-resolved.service": {
+            "MainPID": "391",
+            "ExecMainStartTimestampMonotonic": "7410918",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "finger": {
+          "uid": 999,
+          "gid": 989,
+          "groups": [
+            989,
+            2980
+          ]
+        },
+        "resource_units": {
+          "mnt-resources.mount": {
+            "Result": "success",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "mounted",
+            "UnitFileState": "static"
+          },
+          "mnt-resources.automount": {
+            "Result": "success",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          }
+        },
+        "Java_process_count": 0,
+        "artifact_mount": {
+          "exit_code": 1,
+          "rows": []
+        },
+        "status": "passed"
+      }
+    },
+    {
+      "vmid": 240,
+      "phase": "metadata",
+      "exit_code": 0,
+      "result": {
+        "at": 1794240816.867197,
+        "vmid": 240,
+        "guard_exit": 0,
+        "mounts": {
+          "exit_code": 0,
+          "rows": [
+            {
+              "target": "/mnt/resources",
+              "source": "systemd-1",
+              "fstype": "autofs",
+              "options": "rw,relatime,fd=51,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=75063",
+              "uuid": null
+            },
+            {
+              "target": "/mnt/resources",
+              "source": "192.168.19.80:/",
+              "fstype": "nfs4",
+              "options": "rw,nosuid,nodev,noexec,relatime,vers=4.1,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=192.168.19.45,local_lock=none,addr=192.168.19.80",
+              "uuid": null
+            }
+          ]
+        },
+        "root_stat": {
+          "dev": 54,
+          "ino": 2,
+          "uid": 0,
+          "gid": 2980,
+          "mode": "0o2770",
+          "mtime_ns": 1794239755000000000,
+          "ctime_ns": 1794240054613068331
+        },
+        "resources_group": {
+          "name": "resources",
+          "gid": 2980
+        },
+        "capacity": {
+          "total_bytes": 105089335296,
+          "free_bytes": 105070460928
+        },
+        "protected_units": {
+          "ssh.service": {
+            "MainPID": "714",
+            "ExecMainStartTimestampMonotonic": "11598786",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "686",
+            "ExecMainStartTimestampMonotonic": "11321594",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "719",
+            "ExecMainStartTimestampMonotonic": "12226200",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "systemd-networkd.service": {
+            "MainPID": "634",
+            "ExecMainStartTimestampMonotonic": "9998156",
+            "ActiveState": "active",
+            "SubState": "running"
+          },
+          "systemd-resolved.service": {
+            "MainPID": "374",
+            "ExecMainStartTimestampMonotonic": "6975152",
+            "ActiveState": "active",
+            "SubState": "running"
+          }
+        },
+        "failed_units": [],
+        "finger": {
+          "uid": 999,
+          "gid": 989,
+          "groups": [
+            989,
+            2980
+          ]
+        },
+        "resource_units": {
+          "mnt-resources.mount": {
+            "Result": "success",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "mounted",
+            "UnitFileState": "static"
+          },
+          "mnt-resources.automount": {
+            "Result": "success",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          }
+        },
+        "Java_process_count": 0,
+        "artifact_mount": {
+          "exit_code": 1,
+          "rows": []
+        },
+        "status": "passed"
+      }
+    }
+  ],
+  "fixture_directory_created": true,
+  "fixture_cleaned": true,
+  "server_service_mutations": false,
+  "PVE_mutations": false,
+  "messages_or_external_requests_sent": false,
+  "before": {
+    "280": {
+      "at": 1794240809.2454984,
+      "vmid": 280,
+      "guard_exit": 0,
+      "mounts": {
+        "exit_code": 0,
+        "rows": [
+          {
+            "target": "/srv/resources",
+            "source": "/dev/sdb",
+            "fstype": "ext4",
+            "options": "rw,nosuid,nodev,noexec,relatime",
+            "uuid": "57d8158e-5fcf-4dd2-8cb4-b47b1e54ed7b"
+          }
+        ]
+      },
+      "root_stat": {
+        "dev": 2064,
+        "ino": 2,
+        "uid": 0,
+        "gid": 2980,
+        "mode": "0o2770",
+        "mtime_ns": 1794239755000000000,
+        "ctime_ns": 1794240054613068331
+      },
+      "resources_group": {
+        "name": "resources",
+        "gid": 2980
+      },
+      "capacity": {
+        "total_bytes": 105089261568,
+        "free_bytes": 105070362624
+      },
+      "protected_units": {
+        "ssh.service": {
+          "MainPID": "763",
+          "ExecMainStartTimestampMonotonic": "13864182",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "691",
+          "ExecMainStartTimestampMonotonic": "13476428",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "prometheus-node-exporter.service": {
+          "MainPID": "6408",
+          "ExecMainStartTimestampMonotonic": "1218529198",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-networkd.service": {
+          "MainPID": "633",
+          "ExecMainStartTimestampMonotonic": "10678250",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "MainPID": "338",
+          "ExecMainStartTimestampMonotonic": "6496740",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "nfs-server.service": {
+          "MainPID": "0",
+          "ExecMainStartTimestampMonotonic": "628950185",
+          "ActiveState": "active",
+          "SubState": "exited"
+        },
+        "nfs-mountd.service": {
+          "MainPID": "3173",
+          "ExecMainStartTimestampMonotonic": "628830000",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-resources-firewall.service": {
+          "MainPID": "0",
+          "ExecMainStartTimestampMonotonic": "628458213",
+          "ActiveState": "active",
+          "SubState": "exited"
+        }
+      },
+      "failed_units": [],
+      "exports": "/srv/resources\t192.168.19.40(sync,wdelay,hide,no_subtree_check,fsid=0,mountpoint,sec=sys,rw,secure,root_squash,no_all_squash)\n/srv/resources\t192.168.19.45(sync,wdelay,hide,no_subtree_check,fsid=0,mountpoint,sec=sys,rw,secure,root_squash,no_all_squash)\n",
+      "versions": "-3 +4 -4.0 +4.1 -4.2",
+      "manage_gids": "n",
+      "status": "passed"
+    },
+    "230": {
+      "at": 1794240810.611244,
+      "vmid": 230,
+      "guard_exit": 0,
+      "mounts": {
+        "exit_code": 0,
+        "rows": [
+          {
+            "target": "/mnt/resources",
+            "source": "systemd-1",
+            "fstype": "autofs",
+            "options": "rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=75364",
+            "uuid": null
+          },
+          {
+            "target": "/mnt/resources",
+            "source": "192.168.19.80:/",
+            "fstype": "nfs4",
+            "options": "rw,nosuid,nodev,noexec,relatime,vers=4.1,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=192.168.19.40,local_lock=none,addr=192.168.19.80",
+            "uuid": null
+          }
+        ]
+      },
+      "root_stat": {
+        "dev": 54,
+        "ino": 2,
+        "uid": 0,
+        "gid": 2980,
+        "mode": "0o2770",
+        "mtime_ns": 1794239755000000000,
+        "ctime_ns": 1794240054613068331
+      },
+      "resources_group": {
+        "name": "resources",
+        "gid": 2980
+      },
+      "capacity": {
+        "total_bytes": 105089335296,
+        "free_bytes": 105070460928
+      },
+      "protected_units": {
+        "ssh.service": {
+          "MainPID": "738",
+          "ExecMainStartTimestampMonotonic": "12747988",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "714",
+          "ExecMainStartTimestampMonotonic": "12538342",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "prometheus-node-exporter.service": {
+          "MainPID": "747",
+          "ExecMainStartTimestampMonotonic": "13308532",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-networkd.service": {
+          "MainPID": "662",
+          "ExecMainStartTimestampMonotonic": "11388421",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "MainPID": "391",
+          "ExecMainStartTimestampMonotonic": "7410918",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "failed_units": [],
+      "finger": {
+        "uid": 999,
+        "gid": 989,
+        "groups": [
+          989,
+          2980
+        ]
+      },
+      "resource_units": {
+        "mnt-resources.mount": {
+          "Result": "success",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "mounted",
+          "UnitFileState": "static"
+        },
+        "mnt-resources.automount": {
+          "Result": "success",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        }
+      },
+      "Java_process_count": 0,
+      "artifact_mount": {
+        "exit_code": 1,
+        "rows": []
+      },
+      "status": "passed"
+    },
+    "240": {
+      "at": 1794240812.548922,
+      "vmid": 240,
+      "guard_exit": 0,
+      "mounts": {
+        "exit_code": 0,
+        "rows": [
+          {
+            "target": "/mnt/resources",
+            "source": "systemd-1",
+            "fstype": "autofs",
+            "options": "rw,relatime,fd=51,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=75063",
+            "uuid": null
+          },
+          {
+            "target": "/mnt/resources",
+            "source": "192.168.19.80:/",
+            "fstype": "nfs4",
+            "options": "rw,nosuid,nodev,noexec,relatime,vers=4.1,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=192.168.19.45,local_lock=none,addr=192.168.19.80",
+            "uuid": null
+          }
+        ]
+      },
+      "root_stat": {
+        "dev": 54,
+        "ino": 2,
+        "uid": 0,
+        "gid": 2980,
+        "mode": "0o2770",
+        "mtime_ns": 1794239755000000000,
+        "ctime_ns": 1794240054613068331
+      },
+      "resources_group": {
+        "name": "resources",
+        "gid": 2980
+      },
+      "capacity": {
+        "total_bytes": 105089335296,
+        "free_bytes": 105070460928
+      },
+      "protected_units": {
+        "ssh.service": {
+          "MainPID": "714",
+          "ExecMainStartTimestampMonotonic": "11598786",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "686",
+          "ExecMainStartTimestampMonotonic": "11321594",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "prometheus-node-exporter.service": {
+          "MainPID": "719",
+          "ExecMainStartTimestampMonotonic": "12226200",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-networkd.service": {
+          "MainPID": "634",
+          "ExecMainStartTimestampMonotonic": "9998156",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "MainPID": "374",
+          "ExecMainStartTimestampMonotonic": "6975152",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "failed_units": [],
+      "finger": {
+        "uid": 999,
+        "gid": 989,
+        "groups": [
+          989,
+          2980
+        ]
+      },
+      "resource_units": {
+        "mnt-resources.mount": {
+          "Result": "success",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "mounted",
+          "UnitFileState": "static"
+        },
+        "mnt-resources.automount": {
+          "Result": "success",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        }
+      },
+      "Java_process_count": 0,
+      "artifact_mount": {
+        "exit_code": 1,
+        "rows": []
+      },
+      "status": "passed"
+    }
+  },
+  "failure": {
+    "error_type": "RuntimeError",
+    "fixed_stage": "native-step-failed-230-create230"
+  },
+  "after": {
+    "280": {
+      "at": 1794240815.0563934,
+      "vmid": 280,
+      "guard_exit": 0,
+      "mounts": {
+        "exit_code": 0,
+        "rows": [
+          {
+            "target": "/srv/resources",
+            "source": "/dev/sdb",
+            "fstype": "ext4",
+            "options": "rw,nosuid,nodev,noexec,relatime",
+            "uuid": "57d8158e-5fcf-4dd2-8cb4-b47b1e54ed7b"
+          }
+        ]
+      },
+      "root_stat": {
+        "dev": 2064,
+        "ino": 2,
+        "uid": 0,
+        "gid": 2980,
+        "mode": "0o2770",
+        "mtime_ns": 1794240814522459170,
+        "ctime_ns": 1794240814522459170
+      },
+      "resources_group": {
+        "name": "resources",
+        "gid": 2980
+      },
+      "capacity": {
+        "total_bytes": 105089261568,
+        "free_bytes": 105070362624
+      },
+      "protected_units": {
+        "ssh.service": {
+          "MainPID": "763",
+          "ExecMainStartTimestampMonotonic": "13864182",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "691",
+          "ExecMainStartTimestampMonotonic": "13476428",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "prometheus-node-exporter.service": {
+          "MainPID": "6408",
+          "ExecMainStartTimestampMonotonic": "1218529198",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-networkd.service": {
+          "MainPID": "633",
+          "ExecMainStartTimestampMonotonic": "10678250",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "MainPID": "338",
+          "ExecMainStartTimestampMonotonic": "6496740",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "nfs-server.service": {
+          "MainPID": "0",
+          "ExecMainStartTimestampMonotonic": "628950185",
+          "ActiveState": "active",
+          "SubState": "exited"
+        },
+        "nfs-mountd.service": {
+          "MainPID": "3173",
+          "ExecMainStartTimestampMonotonic": "628830000",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "dell-resources-firewall.service": {
+          "MainPID": "0",
+          "ExecMainStartTimestampMonotonic": "628458213",
+          "ActiveState": "active",
+          "SubState": "exited"
+        }
+      },
+      "failed_units": [],
+      "exports": "/srv/resources\t192.168.19.40(sync,wdelay,hide,no_subtree_check,fsid=0,mountpoint,sec=sys,rw,secure,root_squash,no_all_squash)\n/srv/resources\t192.168.19.45(sync,wdelay,hide,no_subtree_check,fsid=0,mountpoint,sec=sys,rw,secure,root_squash,no_all_squash)\n",
+      "versions": "-3 +4 -4.0 +4.1 -4.2",
+      "manage_gids": "n",
+      "status": "passed"
+    },
+    "230": {
+      "at": 1794240815.98094,
+      "vmid": 230,
+      "guard_exit": 0,
+      "mounts": {
+        "exit_code": 0,
+        "rows": [
+          {
+            "target": "/mnt/resources",
+            "source": "systemd-1",
+            "fstype": "autofs",
+            "options": "rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=75364",
+            "uuid": null
+          },
+          {
+            "target": "/mnt/resources",
+            "source": "192.168.19.80:/",
+            "fstype": "nfs4",
+            "options": "rw,nosuid,nodev,noexec,relatime,vers=4.1,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=192.168.19.40,local_lock=none,addr=192.168.19.80",
+            "uuid": null
+          }
+        ]
+      },
+      "root_stat": {
+        "dev": 54,
+        "ino": 2,
+        "uid": 0,
+        "gid": 2980,
+        "mode": "0o2770",
+        "mtime_ns": 1794240814522459170,
+        "ctime_ns": 1794240814522459170
+      },
+      "resources_group": {
+        "name": "resources",
+        "gid": 2980
+      },
+      "capacity": {
+        "total_bytes": 105089335296,
+        "free_bytes": 105070460928
+      },
+      "protected_units": {
+        "ssh.service": {
+          "MainPID": "738",
+          "ExecMainStartTimestampMonotonic": "12747988",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "714",
+          "ExecMainStartTimestampMonotonic": "12538342",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "prometheus-node-exporter.service": {
+          "MainPID": "747",
+          "ExecMainStartTimestampMonotonic": "13308532",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-networkd.service": {
+          "MainPID": "662",
+          "ExecMainStartTimestampMonotonic": "11388421",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "MainPID": "391",
+          "ExecMainStartTimestampMonotonic": "7410918",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "failed_units": [],
+      "finger": {
+        "uid": 999,
+        "gid": 989,
+        "groups": [
+          989,
+          2980
+        ]
+      },
+      "resource_units": {
+        "mnt-resources.mount": {
+          "Result": "success",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "mounted",
+          "UnitFileState": "static"
+        },
+        "mnt-resources.automount": {
+          "Result": "success",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        }
+      },
+      "Java_process_count": 0,
+      "artifact_mount": {
+        "exit_code": 1,
+        "rows": []
+      },
+      "status": "passed"
+    },
+    "240": {
+      "at": 1794240816.867197,
+      "vmid": 240,
+      "guard_exit": 0,
+      "mounts": {
+        "exit_code": 0,
+        "rows": [
+          {
+            "target": "/mnt/resources",
+            "source": "systemd-1",
+            "fstype": "autofs",
+            "options": "rw,relatime,fd=51,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=75063",
+            "uuid": null
+          },
+          {
+            "target": "/mnt/resources",
+            "source": "192.168.19.80:/",
+            "fstype": "nfs4",
+            "options": "rw,nosuid,nodev,noexec,relatime,vers=4.1,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=192.168.19.45,local_lock=none,addr=192.168.19.80",
+            "uuid": null
+          }
+        ]
+      },
+      "root_stat": {
+        "dev": 54,
+        "ino": 2,
+        "uid": 0,
+        "gid": 2980,
+        "mode": "0o2770",
+        "mtime_ns": 1794239755000000000,
+        "ctime_ns": 1794240054613068331
+      },
+      "resources_group": {
+        "name": "resources",
+        "gid": 2980
+      },
+      "capacity": {
+        "total_bytes": 105089335296,
+        "free_bytes": 105070460928
+      },
+      "protected_units": {
+        "ssh.service": {
+          "MainPID": "714",
+          "ExecMainStartTimestampMonotonic": "11598786",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "qemu-guest-agent.service": {
+          "MainPID": "686",
+          "ExecMainStartTimestampMonotonic": "11321594",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "prometheus-node-exporter.service": {
+          "MainPID": "719",
+          "ExecMainStartTimestampMonotonic": "12226200",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-networkd.service": {
+          "MainPID": "634",
+          "ExecMainStartTimestampMonotonic": "9998156",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "systemd-resolved.service": {
+          "MainPID": "374",
+          "ExecMainStartTimestampMonotonic": "6975152",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "failed_units": [],
+      "finger": {
+        "uid": 999,
+        "gid": 989,
+        "groups": [
+          989,
+          2980
+        ]
+      },
+      "resource_units": {
+        "mnt-resources.mount": {
+          "Result": "success",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "mounted",
+          "UnitFileState": "static"
+        },
+        "mnt-resources.automount": {
+          "Result": "success",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running",
+          "UnitFileState": "enabled"
+        }
+      },
+      "Java_process_count": 0,
+      "artifact_mount": {
+        "exit_code": 1,
+        "rows": []
+      },
+      "status": "passed"
+    }
+  },
+  "protected_service_identities_unchanged": true,
+  "artifact_mount_unchanged": true,
+  "Java_off_preserved": true,
+  "finished_at": "2026-11-09T16:13:37.240653+00:00",
+  "status": "failed"
+}

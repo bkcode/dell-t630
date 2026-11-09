@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-11-06T06:23:46.069219+08:00",
-  "scope": "10 active Debian13 exporter guests;221 retained,no Nexusmerge;CF100/GW190 use PVE/QGA",
+  "scope": "11 assigned Debian13 exporter roles; original10 active, resource280 stopped/pending install and activation; CF100/GW190 use PVE/QGA",
   "excluded": [
     "PVE host",
     "cf-tunnel CT100",
@@ -76,8 +76,17 @@
       "vmid": 270,
       "private_ip": "192.168.19.70",
       "prefixlen": 24
+    },
+    {
+      "role": "resource-service",
+      "hostname": "resource-service",
+      "vmid": 280,
+      "private_ip": "192.168.19.80",
+      "prefixlen": 24
     }
   ],
   "network_revision": "network19",
-  "topology_revision": "cleanup-Java-only-10-exporters-15-targets"
+  "topology_revision": "resource280-candidate-not-yet-live",
+  "resource280_status": "pending-native-resource-guard-firewall-and-exporter-validation",
+  "updated_at": "2026-11-09T15:51:29.663899+00:00"
 }

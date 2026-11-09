@@ -3,7 +3,7 @@
 ## 入口与当前状态
 
 - 本仓库位于 `/Users/yangzhaohui/work/www/harness/dell`，独立 Git 远端为 `git@github.com:bkcode/dell-t630.git`；harness 父目录不是本仓库。
-- 每台机器的配置与文档入口是 `machines/README.md`；保留宿主、12来宾和3模板的离线合同/来源索引，不能把新目录当现场配置导出。机器身份与资源仍由plan约束，新增/修改后运行 `python3 scripts/validate_machines.py`。
+- 每台机器的配置与文档入口是 `machines/README.md`；保留宿主、13来宾和3模板的离线合同/来源索引，不能把新目录当现场配置导出。机器身份与资源仍由plan约束，新增/修改后运行 `python3 scripts/validate_machines.py`。
 - 先读 `README.md`、`11-live-handoff.md`、`19-manual-operations.md`、`plan.json`；资源/IP/角色以 plan 为准，历史证据必须带时间解释。
 - **2026-11-09 用户继续授权完成基础搭建，并选择先搭PVE本机自动备份、独立目的地后续；其后明确仅正式数据库/Nacos配置纳入备份，其他暂排除；不迁移数据。11月8日确认服务器恢复，授权检查补齐基础与清理。用户明确暂不迁移：不执行Nexus合并、数据迁移或源221退役。先只读核验硬件/服务和清理依赖，不把恢复可达当内存已确诊修复。Mac外部探针仍停用，Java业务不部署。**
 - 11月7日iDRAC控制台曾因UEFI0058阻止启动，SEL指向DIMM_B1；11月8日用户确认内存已重新插拔/更换且诊断通过，本轮EDAC计数0与基础服务恢复记录见recovery/20261108。不得把 F1、一次开机或网络恢复当成内存已修复，不清日志掩盖错误，不远程 powercycle，不指导带电插拔。
@@ -49,3 +49,9 @@
 - 用户已明确要求本轮整理并提交Git；仅提交本仓库经检查的非秘密资料。不得改全局memory，默认不删除唯一历史证据。
 
 - OpenClash完整规则由用户明确只留本地：openwrt/rules-20261108/已本地exclude，local/openclash-rules-20261108分支不得push；禁止push --all/强加ignored规则。
+
+## 2026-11-10统一资源服务
+
+- 用户新增并完成VM280 resource-service/19.80，2CPU2GiB＋32GiB系统/100GiB独立数据盘；正式230和测试240明确共用同一根，不拆环境。server /srv/resources真UUID57d8158e-5fcf-4dd2-8cb4-b47b1e54ed7b，client /mnt/resources源19.80:/，NFSv4.1 TCP2049精确双client、root_squash、group2980，finger999:989不改、只附组。当前13guests/3tpl、45CPU87GiB，16targetsUP。
+- 未挂载时禁止应用写本机底目录；保守卫/真实挂载校验。默认ACL不保证NFS客户端0022产生groupwrite，未来服务与手册采用UMask0002。新client需VMID/IP/MAC/exports/本机输入/PVEpeer/策略逐层登记，模板克隆不自动授权；三模板本次未改。
+- 资源不纳自动备份，不迁旧文件/不公开HTTP/不改Nacos应用上传配置/不启动Java；原Nexus暂缓。两running的/mnt/dell-artifacts等原有状态保留。新VM受控重启实证仅此资源服务，不是客户端OS重启/物理PVE重启或完整灾备。见completion/20261109-resources/acceptance.json与usage-manual.md，禁止重放空盘格式化器或旧全量bootstrap。

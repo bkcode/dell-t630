@@ -34,10 +34,10 @@
     "onboot": true
   },
   "target_budget": {
-    "permanent_roles": 12,
-    "vcpu": 43,
-    "guest_memory_gib": 85,
-    "host_reserve_planned_gib": 40,
+    "permanent_roles": 13,
+    "vcpu": 45,
+    "guest_memory_gib": 87,
+    "host_reserve_planned_gib": 38,
     "minimum_reserve_gib": 8
   },
   "guest_addresses": [
@@ -156,6 +156,15 @@
       "name": "ops-service",
       "old_ip": "10.63.30.40",
       "new_ip": "192.168.19.70",
+      "prefix": 24,
+      "gateway": "192.168.19.1",
+      "bridge": "vmbr19",
+      "kind": "vm"
+    },
+    {
+      "vmid": 280,
+      "name": "resource-service",
+      "new_ip": "192.168.19.80",
       "prefix": 24,
       "gateway": "192.168.19.1",
       "bridge": "vmbr19",
@@ -416,5 +425,17 @@
     9043,
     9044,
     9045
-  ]
+  ],
+  "shared_resource_service": {
+    "vmid": 280,
+    "ip": "192.168.19.80",
+    "clients": {
+      "230": "192.168.19.40",
+      "240": "192.168.19.45"
+    },
+    "tcp": [
+      2049
+    ],
+    "shared_directory": true
+  }
 }

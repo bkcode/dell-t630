@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-09T15:45:54.023922+00:00",
+  "status": "prepared-not-deployed",
+  "vm_created": false,
+  "server_or_client_writes": false,
+  "remote_calls": false,
+  "data_uuid_assigned": false,
+  "tests": {
+    "command": "python3 -B dell/infra/resources/test_resources.py",
+    "passed": 14,
+    "failed": 0,
+    "scope": "pure offline rendering and mount/identity rejection logic"
+  },
+  "CLI_render_with_synthetic_UUID_in_temporary_directory": true,
+  "existing_output_rejected": true,
+  "rendered_file_count": 16,
+  "policy_permissions_0600": true,
+  "runtime_fields": {
+    "server_system_disk_gib": 32,
+    "server_data_disk_gib": 100,
+    "runtime_uid": 999,
+    "runtime_primary_gid": 989,
+    "supplementary_resource_gid": 2980,
+    "http_enabled": false
+  },
+  "owned_file_sha256": {
+    "README.md": "af5c6a116269cd11a5ba13fe38147c0393e4272fedeafae04203adeaf536d8da",
+    "policy.example.json": "d0d2b78239d849e66f4e0580743880e78770d8ffab18f23580607d184d492c2d",
+    "prepare.py": "23e447c79a1c3e683b1b9d6581b5d92098154b0f61d63bb9b1e2b9f0190e36f1",
+    "guard.py": "6c51ac8f05d14415cf61f52ddd3e051bda5fc3054ca8ec8470ab33ebabc06f61",
+    "test_resources.py": "544c7c0280ef7c85c100e007278f80fca96e9d9ad13ffc005eeb6b35ed14ba7a"
+  },
+  "pending_native_acceptance": [
+    "PVE VM280/IP/data-disk allocation and strict SSH identity by parent",
+    "server/client GID2980 conflict check and supplementary membership",
+    "actual data UUID/ext4 filesystem/native systemd and nft/nfsconf checks",
+    "controlled mount/export/start and root_squash/non-client negative tests",
+    "finger cross-client fixture create/read/delete and mount outage safety",
+    "server/client reboot persistence"
+  ],
+  "excluded_claims": [
+    "No NFS live success or HTTP publishing",
+    "No Java or app start/config change",
+    "No automatic file backup/restore/DR"
+  ],
+  "official_sources": [
+    "https://manpages.debian.org/trixie/nfs-kernel-server/exports.5.en.html",
+    "https://manpages.debian.org/trixie/nfs-common/nfs.conf.5.en.html",
+    "https://manpages.debian.org/trixie/nfs-common/nfs.5.en.html",
+    "https://manpages.debian.org/trixie/systemd/systemd.mount.5.en.html",
+    "https://manpages.debian.org/trixie/systemd/systemd.automount.5.en.html"
+  ]
+}

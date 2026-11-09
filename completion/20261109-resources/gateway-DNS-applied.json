@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-09T15:55:33.885923+00:00",
+  "status": "single-resource-DNS-record-added",
+  "new_host": "resource-service.dell.home.arpa",
+  "IP": "192.168.19.80",
+  "only_dnsmasq_restarted": true,
+  "config_firewall_render_unchanged": true,
+  "route_address_networkd_nft_or_NAT_changed": false
+}

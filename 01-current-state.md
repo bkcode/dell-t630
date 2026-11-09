@@ -1,6 +1,8 @@
 # T630 当前状态、恢复验收与操作边界
 
-更新：2026-11-09（Asia/Shanghai）。**当前继续完成基础搭建，不迁移数据、不合并Nexus、不启动Java业务。** 14:24:03自然重启后，[本轮PVE审计](completion/20261109/pve-audit.json)确认12来宾运行、3模板停止、EDAC计数0与RAID Optimal，上一轮forward guard实际跨重启保持全0；[Ops审计](completion/20261109/ops-audit.json)15/15 targets UP。用户已确认此前内存重新插拔/更换并诊断通过，这与助手本轮只读观察分别记录。现行自动备份已缩为仅正式数据库/Nacos配置，首轮3,301 bytes与03:30 timer通过，见[新中央入口](completion/20261109-prod-db-scope/README.md)。本文只同步本地证据，不发起远程动作。
+更新：2026-11-10（Asia/Shanghai）。当前已完成统一资源VM280/NFS与两running同根挂载：[最新后检](completion/20261109-resources/final-postcheck.json)确认13来宾运行、3模板停止、16/16监控UP，宿主各接口双栈forward0。资源用法见[手册](completion/20261109-resources/usage-manual.md)。用户后续另明确授权的测试Nacos36配置/Puyu两库迁移与固定测试凭据均已完成，源保留；不执行Nexus合并，不启动Java，不迁旧资源文件/启HTTP，自动备份仍仅正式MySQL/Nacos。
+
+此前11月9日14:24自然重启后的12来宾/15UP、EDAC0/RAIDOptl是新增资源之前的硬件基础审计，见下方历史；新资源VM单独重启约30秒验证了自身共享持久性，没有重启物理PVE或两running OS。
 
 ## 1. 时间线和证据层级
 
@@ -22,9 +24,9 @@
 
 ## 2. 本轮恢复后保留角色
 
-已设计的合并目标仍是一台VM220 `publish-service`承担发布与Nexus，6vCPU/8GiB、主IP19.30+服务alias19.31，目标11实例/14监控目标，详见[17目标合同](17-publish-artifact-consolidation.md)。**用户11月8日明确暂不迁移；该目标本轮不实施，221保持独立，不退役、不移盘、不加alias。**
+已设计的合并目标仍是一台VM220 `publish-service`承担发布与Nexus，6vCPU/8GiB、主IP19.30+服务alias19.31，新增资源280后目标12实例/15监控目标，详见[17目标合同](17-publish-artifact-consolidation.md)。**用户11月8日明确暂不迁移；该目标本轮不实施，221保持独立，不退役、不移盘、不加alias。**
 
-以下12角色为保留的11个VM和1个LXC；[11月9日PVE审计](completion/20261109/pve-audit.json)再次观察到全部运行。运行不等于所有业务/数据已重新验收，各服务范围见下节。
+以下13角色为现役12个VM和1个LXC；[最新资源后检](completion/20261109-resources/final-postcheck.json)观察到全部运行。运行不等于所有业务/数据已重新验收，各服务范围见下节。
 
 | ID | 角色 | 地址 | vCPU / GiB | 已交付职责与边界 |
 | --- | --- | --- | ---: | --- |
@@ -40,7 +42,8 @@
 | 250 | penpot-service | 19.50 | 6 / 16 | 定制Penpot全套、3份设计/973媒体与MCP验收 |
 | 260 | nas-media | 19.60 | 4 / 4 | OMV、SMB三共享及Jellyfin家庭媒体；不作为正式业务备份目标 |
 | 270 | ops-service | 19.70 | 2 / 4 | Prometheus/Grafana/Alertmanager/Blackbox及服务器内Lark |
-| **合计** | **12角色** | 均为192.168.* | **43 / 85** | 配置预算，非负载或吞吐承诺 |
+| 280 | resource-service | 19.80 | 2 / 2 | 统一NFSv4.1上传资源存储；230/240同根/mnt/resources，未启HTTP/业务 |
+| **合计** | **13角色** | 均为192.168.* | **45 / 87** | 配置预算，非负载或吞吐承诺 |
 
 三份保留停止模板是`9001 tpl-docker-base`、`9010 tpl-linux-base`、`9011 tpl-java-acceptance`。旧模板102/103/105/106、重复Java231/232、旧101/104和已完成QA/临时builder均在受保护备份后清理；完整ID和备份入口见[清理结果](18-cleanup-and-consolidation.md)。不能再按原14角色、三台prod Java或旧模板清单执行部署。
 
@@ -58,7 +61,7 @@
 
 PVE管理地址`192.168.21.22`，BMC/iDRAC记录地址`192.168.21.21`；GW190管理WAN为21.23。PVE的vmbr19无宿主IP，host IPv4/IPv6转发为0，无宿主NAT，旧四个10.63桥和应用DNAT已退出；主机自身到19的客户端路由经21.23。19网来宾网关/DNS为19.1，公网出口NAT由OW21.1负责。
 
-硬件已识别为双E5-2680 v4，28物理核心/56线程；观察内存约125.78GiB，规划预算保守125GiB。85GiB来宾配置约留40GiB给主机/余量，最低保留8GiB，不能以配置空闲推导当前DIMM健康或容量SLO。
+硬件已识别为双E5-2680 v4，28物理核心/56线程；观察内存约125.78GiB，规划预算保守125GiB。新增资源后87GiB来宾配置约留38GiB给主机/余量，最低保留8GiB，不能以配置空闲推导当前DIMM健康或容量SLO。
 
 H730暴露SSD RAID1和HDD RAID5，PVE管理`local/local-lvm/store`；主AI本轮只读报告RAID Optimal，各应用审计核其分配挂载UUID。当前控制器状态不等于逐文件/数据库一致性证明。NAS只管理专用虚拟盘，不能再挂载PVE的sdb/store或直通承载宿主存储的整卡。
 
@@ -74,7 +77,7 @@ H730暴露SSD RAID1和HDD RAID5，PVE管理`local/local-lvm/store`；主AI本轮
 
 ## 6. 当前授权、保留目标与后续核查
 
-用户最新要求是继续完成基础搭建并仅自动备份正式数据库/Nacos配置，保持不迁移数据与现有业务边界。Nexus历史维护授权和220 primary30+alias31/6CPU8GiB目标保留，但不能覆盖本轮不迁移指令。221继续独立提供Nexus，220仅待机材料；不因恢复可达自动进入原切换窗口。未来仅在用户明确恢复迁移任务后fresh核验，不以本轮基础健康检查替代应用一致性备份与迁移门禁。
+用户最新要求是继续完成基础搭建并仅自动备份正式数据库/Nacos配置，另已逐项授权测试Nacos/Puyu迁移及统一资源服务；新资源不迁旧文件、未切应用，其他现有业务边界保留。Nexus历史维护授权和220 primary30+alias31/6CPU8GiB目标保留，但不能覆盖本轮不迁移指令。221继续独立提供Nexus，220仅待机材料；不因恢复可达自动进入原切换窗口。未来仅在用户明确恢复迁移任务后fresh核验，不以本轮基础健康检查替代应用一致性备份与迁移门禁。
 
 11月7日02:35验收JSON标题中的“merge pending approval”是当时旧状态；历史授权后来满足，而11月8日用户又明确暂不迁移。两次决定均保留，不修改历史原始证据。
 

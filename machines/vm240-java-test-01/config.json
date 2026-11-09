@@ -10,7 +10,7 @@
   },
   "source_of_truth": "plan.json",
   "source_role_pointer": "/roles/7",
-  "last_verified_at": "2026-11-09T16:01:00.600541+08:00",
+  "last_verified_at": "2026-11-10T00:20:38.241841+08:00",
   "current_runtime_verified": true,
   "status": "recovered-infrastructure-verified",
   "purpose": "测试 Java 运行基础，历史五业务单元已停止/禁自启，publisher fenced；不重新激活旧 release。",
@@ -29,7 +29,25 @@
   "storage": {
     "system_storage": "store",
     "data_volumes": [],
-    "data_disk_contract": "No separate data disk/mount UUID declared for this role in plan.json; do not invent or format one."
+    "data_disk_contract": "No separate data disk/mount UUID declared for this role in plan.json; do not invent or format one.",
+    "shared_network_mounts": [
+      {
+        "server_vmid": 280,
+        "server_ip": "192.168.19.80",
+        "remote_source": "192.168.19.80:/",
+        "mountpoint": "/mnt/resources",
+        "fstype": "nfs4",
+        "version": "4.1",
+        "hard": true,
+        "shared_environment_directory": true,
+        "status": "verified-native-NFS41-and-restored-after-server280-reboot",
+        "legal_mount_stack": "systemd-1 autofs plus exactly one192.168.19.80:/ nfs4; use findmnt-t nfs4"
+      }
+    ],
+    "preserved_other_mounts": [
+      "/mnt/dell-artifacts"
+    ],
+    "preserved_other_mounts_verification": "Exact/mnt/dell-artifacts findmnt had no active row bothbefore/after; unchanged mount state, no full content verification."
   },
   "access": {
     "ssh_user": "ub",
@@ -55,12 +73,13 @@
       "dell-guest-health.timer"
     ],
     "scope": "guest-local textfile service health; Java business HTTP checks absent",
-    "runtime_state": "2026-11-08 scoped recovery verified; active timers/exporters; 15targetsUP viaOps"
+    "runtime_state": "2026-11-10T00:20 finalpostcheck16targetsUP; exporter/guest metadata only"
   },
   "business_scope": {
     "java_business_allowed": false,
     "publisher": "fenced; no business activation",
-    "production_source_business_data_import": false
+    "production_source_business_data_import": false,
+    "resource_mount_does_not_authorize_Java": true
   },
   "configuration_policy": {
     "effective_secret_config_in_git": false,
@@ -74,7 +93,12 @@
     "active_business_services": [],
     "business_HTTP_checks": 0,
     "compose_business_stack": null,
-    "old_test_releases": "held private historical artifacts; do not copy, activate, adopt, or restore into running services"
+    "old_test_releases": "held private historical artifacts; do not copy, activate, adopt, or restore into running services",
+    "resource_mount_units": [
+      "mnt-resources.mount",
+      "mnt-resources.automount"
+    ],
+    "application_resource_path_applied": false
   },
   "dependencies": [
     {
@@ -84,11 +108,15 @@
     {
       "target_vmid": 270,
       "purpose": "base monitoring consumer"
+    },
+    {
+      "target_vmid": 280,
+      "purpose": "Shared NFS resource mount /mnt/resources; no Java enabled"
     }
   ],
-  "current_verification_evidence": "completion/20261109/guests-post-backup.json",
-  "current_verification_scope": "current infrastructure setup, no migration or full application restore",
-  "verification_note": "Fresh metadata/service audit after natural host reboot; no data migration, Nexus merge or Java business deployment.",
+  "current_verification_evidence": "completion/20261109-resources/final-postcheck.json",
+  "current_verification_scope": "NFS exact mount/identity, controlled resourceVM280 reboot persistence, monitor16UP metadata; no Java business/file migration or data restore",
+  "verification_note": "Native synthetic fixture and root_squash/missing-mount checks passed; only VM280 rebooted, client OSes not rebooted.",
   "timestamp_scope": "2026-11-09 scoped audit; individual commands retain actual timestamps",
   "local_backup": {
     "included_in_fixed_PVE_job": false,
@@ -100,5 +128,15 @@
     "scope": "only production MySQL/Nacos logical backup; all other data excluded",
     "evidence": "completion/20261109-prod-db-scope/first-success-and-timer-enabled.json",
     "old_wholeVM_archives_preserved": true
+  },
+  "permissions": {
+    "runtime_user": "finger",
+    "uid": 999,
+    "primary_gid": 989,
+    "resources_group": "resources",
+    "resources_supplementary_gid": 2980,
+    "identity_changed": false,
+    "actual_new_group_and_mount_acceptance": "passed",
+    "file_creation_UMask": "0002 contract for future application processes; no Java unit changed"
   }
 }

@@ -1,0 +1,18 @@
+{
+  "role": 270,
+  "actual_code_path": "/usr/local/libexec/dell-lark-notify/bridge.py",
+  "actual_code_SHA256": "12d733376239919ba55c3739ebf8a0564de12ceaad9fba28c75d8632630a41e6",
+  "actual_unit_path": "/etc/systemd/system/dell-lark-notify.service",
+  "actual_unit_SHA256": "682831587cd2d624aec40efb2651e0020a3c64b2630f5b6df88200aae0fc6fbf",
+  "unit_name": "dell-lark-notify.service",
+  "unit_state": {
+    "MainPID": "34793",
+    "NRestarts": "0",
+    "ActiveState": "active",
+    "SubState": "running"
+  },
+  "secret_token_Env_read": false,
+  "remote_write": false,
+  "local_source_SHA256_before": "12d733376239919ba55c3739ebf8a0564de12ceaad9fba28c75d8632630a41e6",
+  "local_source_matches_actual": true
+}

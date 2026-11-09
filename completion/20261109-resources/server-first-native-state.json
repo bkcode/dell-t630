@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-09T16:06:03.710462+00:00",
+  "versions": "-3 +4 -4.0 +4.1 -4.2",
+  "exports": "/srv/resources\t192.168.19.40(sync,wdelay,hide,no_subtree_check,fsid=0,mountpoint,sec=sys,rw,secure,root_squash,no_all_squash)\n/srv/resources\t192.168.19.45(sync,wdelay,hide,no_subtree_check,fsid=0,mountpoint,sec=sys,rw,secure,root_squash,no_all_squash)\n",
+  "mount": {
+    "filesystems": [
+      {
+        "target": "/srv/resources",
+        "source": "/dev/sdb",
+        "fstype": "ext4",
+        "options": "rw,nosuid,nodev,noexec,relatime",
+        "uuid": "57d8158e-5fcf-4dd2-8cb4-b47b1e54ed7b"
+      }
+    ]
+  },
+  "units": {
+    "nfs-server.service": "active",
+    "dell-resources-firewall.service": "active"
+  },
+  "manage_gids": "n"
+}

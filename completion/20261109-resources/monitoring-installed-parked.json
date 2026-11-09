@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-11-09T23:59:40.884202+08:00",
+  "mode": "install-only",
+  "role": "resource-service",
+  "vmid": 280,
+  "expected_private_ip": "192.168.19.80",
+  "exporter_enabled": "masked",
+  "exporter_active": "inactive",
+  "exporter_socket_enabled": "masked",
+  "collector_timer_enabled": "disabled",
+  "collector_timer_active": "inactive",
+  "collector_active": "inactive",
+  "listeners_9100": [],
+  "exporter_enablement_links": [],
+  "socket_enablement_links": [],
+  "notifications_sent": false,
+  "pve_or_ct_targeted": false,
+  "package_version": "1.9.0-1+b4"
+}
