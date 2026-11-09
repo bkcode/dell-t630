@@ -18,6 +18,10 @@
 
 230/240各一，仅运行基础，无Java业务进程/自启；publisher仍fenced。Penpot保留实际ff1783e版本，用户指定的bkcode/penpot main是未来更新合同，本轮未取码/构建/升级。
 
+## 测试基础新增空域
+
+[20:27回执](completion/20261109-test-env/empty-namespace-created.json)确认在原VM210 Nacos `19.20:8848`新增`finger-test-empty`，ID `23836f2e-9553-5948-84cd-431b2f241bd6`，配置0/跨组注册服务0；旧域7配置、历史9和3业务schema（3/10/6表）保留。已有测试role只加新域rw权限，原密码/关系/四容器保持，无迁移/DDL/业务config发布/Java或重启。现役`.env`/health仍用旧ID `10719261-2641-590a-b821-c8484ca955ac`，未来使用新域必须显式选新ID，不改源码profile。登录账号/密码只查[12受保护文件索引](12-service-access-and-operations.md)，不在文档输出值。
+
 ## 正式数据库/Nacos备份交接
 
 **现行自动备份仅VM200正式数据库/Nacos配置。** 当前唯一非系统库`nacos_prod`，12张BASE TABLE全InnoDB；正式业务schema尚未创建，新增库不在显式白名单则拒绝告警并要求更新。首轮逻辑SQL gzip 3,301 bytes通过CRC/传输SHA、DDL锁释放及guest暂存清理，service退出0、timer已enabled，下一次2026-11-10 03:30（Asia/Shanghai）；GFS最近3/每日7/每周4。PVE目的地`/mnt/pve/store/dell-artifacts/prod-db-backups`，目录root700/文件600，不经Mac，见[新首轮与timer](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)、[中央状态](completion/20261109-prod-db-scope/README.md)。

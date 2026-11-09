@@ -1,0 +1,115 @@
+{
+  "vmid": 210,
+  "at": "2026-11-09T12:29:51.466405+00:00",
+  "read_only": true,
+  "namespaces": [
+    {
+      "id": "10719261-2641-590a-b821-c8484ca955ac",
+      "name": "finger-test",
+      "config_count": 7
+    },
+    {
+      "id": "23836f2e-9553-5948-84cd-431b2f241bd6",
+      "name": "finger-test-empty",
+      "config_count": 0
+    }
+  ],
+  "new_namespace_catalog_all_groups_service_count": 0,
+  "new_catalog_list_empty": true,
+  "existing_client_role_association_matches": true,
+  "permission_count": 2,
+  "permissions_exact_old_and_new_rw_only": true,
+  "client_new_missing_config_HTTP": 404,
+  "client_unrelated_namespace_HTTP": 403,
+  "schema_table_counts": [
+    {
+      "schema": "finger_auth_test",
+      "base_table_count": 3
+    },
+    {
+      "schema": "finger_coms_test",
+      "base_table_count": 10
+    },
+    {
+      "schema": "finger_system_test",
+      "base_table_count": 6
+    },
+    {
+      "schema": "nacos_test",
+      "base_table_count": 12
+    }
+  ],
+  "old_config_metadata_count": 7,
+  "old_configs_all_DELL_TEST_yaml": true,
+  "old_config_MD5_metadata_nonempty_count": 7,
+  "new_config_metadata_count_all_groups": 0,
+  "current_config_total": 7,
+  "history_count": 9,
+  "account_role_permission_counts": {
+    "users": 2,
+    "roles": 2,
+    "permissions": 2
+  },
+  "Nacos_readiness_HTTP": 200,
+  "Nacos_UI_HTTP": 200,
+  "containers": [
+    {
+      "Name": "/dell-data-test-data-mysql-1",
+      "ID": "df4e9d159f5903e42ab4e6c2c092d2d454ac55a76c226fc8a07fe44c72b41ef6",
+      "ImageID": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+      "State": "running",
+      "Health": "healthy",
+      "RestartCount": 0,
+      "OOMKilled": false
+    },
+    {
+      "Name": "/dell-data-test-data-nacos-1",
+      "ID": "5bd9a27fd4051994494eed423d84e50862ef91918ffbfa4834df14de2a8f2e4c",
+      "ImageID": "sha256:fc86d4833afb7abc64006f04c715946303f6b15d694c2f05c2895a27d967ed88",
+      "State": "running",
+      "Health": "healthy",
+      "RestartCount": 0,
+      "OOMKilled": false
+    },
+    {
+      "Name": "/dell-data-test-data-redis-1",
+      "ID": "b5d49893d99c73d425f0af035dce837f1467a096841d7bbae3f7d5381ce3df22",
+      "ImageID": "sha256:17c1c1b96fd1685968790c7fcab311e5bc49c809efe9744af262640a559c4cf2",
+      "State": "running",
+      "Health": "healthy",
+      "RestartCount": 0,
+      "OOMKilled": false
+    },
+    {
+      "Name": "/dell-data-test-data-rabbitmq-1",
+      "ID": "4d955f668d96330c7d9cbe676ec41722a1d3c67038a52d89f0c3f8f11866ce58",
+      "ImageID": "sha256:de912cbbf07f938bb8aaa5682464a73a00c6a996efdf0880423aeb4eae006c34",
+      "State": "running",
+      "Health": "healthy",
+      "RestartCount": 0,
+      "OOMKilled": false
+    }
+  ],
+  "config_content_or_token_password_hash_or_business_rows_output": false,
+  "writes_config_publication_or_Java_start": false,
+  "checks": {
+    "new_namespace_exact_name_config0": true,
+    "new_allgroup_config0": true,
+    "new_allgroupcatalog0": true,
+    "old_namespace_name_configcount_unchanged": true,
+    "client_role_association_preserved": true,
+    "permissions_exact_two_resources": true,
+    "clientnew404": true,
+    "unrelated403": true,
+    "schema_table_counts_unchanged": true,
+    "old_config_metadata_count_group_type_preserved": true,
+    "old_config_history_count_unchanged": true,
+    "account_role_counts_unchanged": true,
+    "original_4containerIDs_images_health_unchanged": true,
+    "readiness_UI200": true
+  },
+  "all_passed": true,
+  "old_MD5_comparison_limit": "Preflight savedcounts/group/type but not individualdataId/group/MD5 baseline. Independentpostcheck verified7current metadataitems withMD5present andcounts/group/type; exactindividualunchanged isproducerbefore/afterproof, notinventedindependentcomparison.",
+  "producer_preservation_reference": "empty-namespace-created.json existing_config_metadata_history_count_and_schema_metadata_unchanged=true",
+  "empty_meaning": "Only newnamespace configs0/allgroupservices0; wholeVM210/businessschemas andoldnamespace intentionally retained."
+}

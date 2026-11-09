@@ -1,0 +1,388 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-09T20:21:48.446925+08:00",
+  "scope": "empty-foundation service plan only; preserve all existing test data; no migration/business initialization/Java activation",
+  "source_inspection_only": true,
+  "remote_access_performed": false,
+  "runtime_scripts_executed": false,
+  "private_files_or_config_bodies_or_database_rows_read": false,
+  "mac_source_data_read_in_this_scope": false,
+  "finger_business_config_mapping_continued": false,
+  "active_plan_role": {
+    "vmid": 210,
+    "name": "data-test",
+    "ip": "192.168.19.20",
+    "vcpu": 2,
+    "memory_gib": 4,
+    "system_storage": "store",
+    "data_disk_gib": 40,
+    "data_storage": "store",
+    "data_filesystem_uuid": "dd1773f9-aa48-4401-a9c8-caf0f66845f3",
+    "guest_mountpoint": "/srv/dell-data",
+    "gateway": "192.168.19.1",
+    "DNS": "192.168.19.1",
+    "planned_bridge": "vmbr19",
+    "startup_order": {
+      "vmid": 210,
+      "order": 12,
+      "up_seconds": 90,
+      "down_seconds": 120
+    }
+  },
+  "template": {
+    "core_docker_template": 9001,
+    "historical_role_template_inference": "infra/provision-guests.py selects9001 for data-test; provisioning receipt does not independently state template ID",
+    "new_clone_required": false,
+    "new_template_QA_performed": false,
+    "do_not_change_role_Docker_storage_backend": true
+  },
+  "foundation_services": [
+    {
+      "service": "mysql",
+      "fixed_image": "mysql:8.4.5@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840",
+      "platform": "linux/amd64",
+      "published_tcp_ports": [
+        3306
+      ],
+      "container_memory_limit": "896m",
+      "container_CPU_limit": "0.75",
+      "restart_policy": "no",
+      "pids_limit": 1024,
+      "environment_variable_keys_only": [
+        "MYSQL_DATABASE",
+        "MYSQL_PASSWORD_FILE",
+        "MYSQL_ROOT_PASSWORD_FILE",
+        "MYSQL_USER"
+      ],
+      "mount_destinations_only": [
+        "/var/lib/mysql",
+        "/etc/mysql/conf.d/dell.cnf",
+        "/docker-entrypoint-initdb.d/10-nacos.sql",
+        "/opt/health/mysql-health.sh"
+      ]
+    },
+    {
+      "service": "nacos",
+      "fixed_image": "nacos/nacos-server:v2.4.3@sha256:c8dc1db0ac6a345b62bad4e76963d25237a90bf45704795e7cb4d1d972b024a3",
+      "platform": "linux/amd64",
+      "published_tcp_ports": [
+        8848,
+        9848
+      ],
+      "container_memory_limit": "1g",
+      "container_CPU_limit": "1.0",
+      "restart_policy": "no",
+      "pids_limit": 1024,
+      "environment_variable_keys_only": [
+        "JAVA_TOOL_OPTIONS",
+        "JVM_XMN",
+        "JVM_XMS",
+        "JVM_XMX",
+        "MODE",
+        "MYSQL_DATABASE_NUM",
+        "MYSQL_SERVICE_DB_NAME",
+        "MYSQL_SERVICE_DB_PARAM",
+        "MYSQL_SERVICE_HOST",
+        "MYSQL_SERVICE_PORT",
+        "MYSQL_SERVICE_USER",
+        "NACOS_AUTH_ENABLE",
+        "NACOS_AUTH_IDENTITY_KEY",
+        "NACOS_AUTH_USER_AGENT_AUTH_WHITE_ENABLE",
+        "NACOS_SERVER_IP",
+        "PREFER_HOST_MODE",
+        "SPRING_DATASOURCE_PLATFORM"
+      ],
+      "mount_destinations_only": [
+        "/home/nacos/logs",
+        "/home/nacos/data",
+        "/home/nacos/conf/application.properties",
+        "/opt/bootstrap/nacos-entrypoint.sh"
+      ]
+    },
+    {
+      "service": "redis",
+      "fixed_image": "redis:7.4.4@sha256:bf8a5a417fa9b88aadf569fc16934c574be29386c126bf706063c4d95670440a",
+      "platform": "linux/amd64",
+      "published_tcp_ports": [
+        6379
+      ],
+      "container_memory_limit": "256m",
+      "container_CPU_limit": "0.25",
+      "restart_policy": "no",
+      "pids_limit": 1024,
+      "environment_variable_keys_only": [
+        "REDIS_MAXMEMORY"
+      ],
+      "mount_destinations_only": [
+        "/data",
+        "/opt/bootstrap/redis-entrypoint.sh",
+        "/opt/health/redis-health.sh"
+      ]
+    },
+    {
+      "service": "rabbitmq",
+      "fixed_image": "rabbitmq:3.13.7-management@sha256:9cfb7e92ae7d296aec4d1ae799e431209f7ed57d55f9c929d95667d0ccf1c920",
+      "platform": "linux/amd64",
+      "published_tcp_ports": [
+        5672,
+        15672
+      ],
+      "container_memory_limit": "512m",
+      "container_CPU_limit": "0.5",
+      "restart_policy": "no",
+      "pids_limit": 1024,
+      "environment_variable_keys_only": [
+        "RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS"
+      ],
+      "mount_destinations_only": [
+        "/var/lib/rabbitmq",
+        "/etc/rabbitmq/rabbitmq.conf"
+      ]
+    }
+  ],
+  "resource_budget": {
+    "guest_GiB": 4,
+    "container_memory_limits_MiB": 2688,
+    "remaining_for_OS_cache_overhead_MiB": 1408,
+    "capacity_SLO_proven": false
+  },
+  "lifecycle": {
+    "supervisor": "dell-data-test-data.service",
+    "install_directory": "/opt/dell/data/test-data",
+    "data_root": "/srv/dell-data/test-data",
+    "guard": "exact ext4/rw mountpoint and assigned UUID; bind create_host_path=false; container restart=no; unified supervisor owns recovery",
+    "service_environment": "test infrastructure; no Java/Spring business profile is being created"
+  },
+  "namespace": {
+    "id": "10719261-2641-590a-b821-c8484ca955ac",
+    "bootstrap_display_name_contract": "finger-test",
+    "default_derivation_matches": true,
+    "historical_namespace_present": true,
+    "presence_evidence_at": "2026-11-06T11:06:45.438228+08:00",
+    "historical_config_metadata": {
+      "at": "2026-11-06T14:30:46.756329+08:00",
+      "group": "DELL_TEST",
+      "bodies_read": false,
+      "dataIds_exported": false,
+      "recorded_config_metadata_count": 6,
+      "namespace_total_count_proven": false,
+      "all_six_recorded_GET_statuses_200": true
+    },
+    "current_empty_namespace_exists": null,
+    "current_config_count_checked": false,
+    "public_default_not_assumed_test": true,
+    "do_not_infer_test_empty_from_formal_backup_restore": true,
+    "decision": "namespace existed historically and was not empty then; preserve current namespace/configs/accounts. Local-only evidence cannot certify any currently empty test namespace; do not delete to force empty."
+  },
+  "network_contract": {
+    "bridge": "vmbr19",
+    "gateway_DNS": "192.168.19.1",
+    "PVE_management": "192.168.21.22 management/L2 only; forward0 and no hostNAT",
+    "east_west": "MAC/IP role ACL, not gateway alone",
+    "retained_allowed_consumers": [
+      {
+        "source_vmid": 240,
+        "destination_vmid": 210,
+        "tcp": [
+          3306,
+          6379,
+          5672,
+          8848,
+          9848
+        ],
+        "Java_business_allowed": false
+      },
+      {
+        "source_vmid": 270,
+        "destination_vmid": 210,
+        "tcp": [
+          9100
+        ]
+      }
+    ],
+    "LAN_management_sources": [
+      "192.168.21.22",
+      "192.168.21.116"
+    ],
+    "LAN_management_contract": "gateway policy permits approved sources to19/24 on management/data ports; this is not blanket public exposure",
+    "trusted_VPN": "10.66.66.0/24 to19/24 per current full-service authorization; peer /32 and application authentication retained",
+    "DNS_or_ACL_modified": false,
+    "fresh_packets_tested": false
+  },
+  "monitoring": {
+    "exporter": "192.168.19.20:9100",
+    "units": [
+      "prometheus-node-exporter.service",
+      "dell-guest-health.service",
+      "dell-guest-health.timer"
+    ],
+    "freshest_local_core_audit_at": "2026-11-09T06:43:02.861269+00:00",
+    "core_foundation_checks_all_passed": true,
+    "containers_running_healthy_restart0": true,
+    "expected_container_count": 4,
+    "no_fresh_remote_sampling_this_task": true
+  },
+  "safe_reuse": "Reuse public role/UUID/image/Compose contract and pure metadata guard ideas; do not replay installers or old stages. If root later verifies an actual missing foundation item, prepare a separately reviewed minimal delta preserving existing data.",
+  "do_not_run": [
+    {
+      "paths": [
+        "infra/data/prepare.py"
+      ],
+      "classification": "writes-private-bundle-and-credentials",
+      "reason": "不能为了空服务覆写既有包/身份；仅缺项且root审核差异后参考生成逻辑。"
+    },
+    {
+      "paths": [
+        "infra/data/scripts/manage.py deploy",
+        "infra/data/scripts/manage.py bootstrap-nacos"
+      ],
+      "classification": "service-mutation-or-foundation-bootstrap",
+      "reason": "deploy停旧监督/容器并创建启用服务；bootstrap创建管理员/namespace/user/role/permission；当前现有数据保留，不盲重跑。"
+    },
+    {
+      "paths": [
+        "infra/data/scripts/manage.py check",
+        "infra/data/scripts/manage.py health"
+      ],
+      "classification": "not-strict-read-only-probe",
+      "reason": "共享run()会追加私有日志；health的Nacos probe会读取响应body，不作为本次不读body的只读入口。"
+    },
+    {
+      "paths": [
+        "infra/data/scripts/acceptance.py"
+      ],
+      "classification": "synthetic-fixture-mutation",
+      "reason": "含fixture/SQL/持久化测试写入与清理，本轮不执行。"
+    },
+    {
+      "paths": [
+        "infra/java/runtime/prepare-test-chain.py",
+        "infra/java/runtime/apply-test-sql.py",
+        "infra/java/runtime/publish-test-nacos.py",
+        "infra/java/runtime/manager-init-test.py"
+      ],
+      "classification": "business-schema-seed-config-initialization",
+      "reason": "业务包/测试DDL/合成管理员/Nacos配置发布属于已停止方向，旧生成/应用脚本含10.63时代约束；不生成、不初始化、不迁移。"
+    },
+    {
+      "paths": [
+        "infra/java/runtime/manager-stage.py",
+        "infra/java/runtime/manager-activate-test.py",
+        "infra/java/runtime/deploy-test-chain.py"
+      ],
+      "classification": "business-stage-and-activation",
+      "reason": "旧Java业务发布/启停路径，本轮不启动Java、publisher继续fenced。"
+    },
+    {
+      "paths": [
+        "infra/provision-guests.py",
+        "network19/guest-network.py",
+        "network19/services-core/stage-core.py"
+      ],
+      "classification": "historical-provision-or-network-migration",
+      "reason": "创建VM/改网/旧stage逻辑不是补空基础服务入口，现有210不重clone、不改UUID、不重新stage。"
+    }
+  ],
+  "minimal_followup_read_only_if_root_needs_current_proof": [
+    "Strict existing SSH metadata checks: UUID/units/selectedStateHealth/ports/time/exporter only; no Env/Cmd/healthlog/DB rows.",
+    "Nacos authenticated namespace listing metadata only: id/name/configCount and optional permission metadata, no GET configuration body; never reset passwords or initialize business.",
+    "If namespace is present/nonempty, preserve it. Creating an additional empty namespace must be explicit and use a new noncolliding identity; do not clear or repurpose the old namespace."
+  ],
+  "sources": [
+    {
+      "path": "plan.json",
+      "type": "current-contract",
+      "purpose": "VM210身份/IP/资源与挂载合同"
+    },
+    {
+      "path": "03-templates-and-access.md",
+      "type": "current-contract",
+      "purpose": "保留模板9001/9010/9011与身份卫生；不新clone或重做现役身份"
+    },
+    {
+      "path": "infra/provision-guests.py",
+      "type": "historical-evidence",
+      "purpose": "data-test按旧创建器走9001；创建器有PVE写与旧默认网络，不可重跑"
+    },
+    {
+      "path": "evidence/implementation/guests-provisioned.json",
+      "type": "historical-evidence",
+      "purpose": "原210已创建记录，模板源仅由创建器规则推导"
+    },
+    {
+      "path": "infra/data/compose.test-data.yaml",
+      "type": "current-contract",
+      "purpose": "公开参数化四组件结构，非现役秘密渲染快照"
+    },
+    {
+      "path": "infra/data/images.lock.json",
+      "type": "current-contract",
+      "purpose": "固定官方AMD64版本/digest"
+    },
+    {
+      "path": "infra/data/prepare.py",
+      "type": "current-contract",
+      "purpose": "通用基础包生成器；写私有bundle/秘密，不能当只读或无差异重部署工具"
+    },
+    {
+      "path": "infra/data/scripts/manage.py",
+      "type": "current-contract",
+      "purpose": "统一挂载监督与Nacos基础账号/namespace bootstrap语义；run会写日志，deploy会停启"
+    },
+    {
+      "path": "infra/data/scripts/acceptance.py",
+      "type": "historical-evidence",
+      "purpose": "包含fixture创建/SQL写/重启验证，当前不得执行"
+    },
+    {
+      "path": "completion/20261109/core-audit.json",
+      "type": "historical-evidence",
+      "purpose": "14:43最新基础状态记录，未查namespace configCount或业务内容"
+    },
+    {
+      "path": "completion/20261109-prod-db-restore/semantic-attempt-observation.json",
+      "type": "historical-evidence",
+      "purpose": "仅VM210临时隔离恢复，原4服务保持；不能据prod快照空配置推test namespace为空"
+    },
+    {
+      "path": "evidence/implementation/test-data-deployment.json",
+      "type": "historical-evidence",
+      "purpose": "11月6日Nacos namespace存在与隔离认证通过元数据"
+    },
+    {
+      "path": "evidence/implementation/data-environment-isolation-final.json",
+      "type": "historical-evidence",
+      "purpose": "仅取namespace/group/count元数据；该test namespace历史6配置，不取body/DB rows"
+    },
+    {
+      "path": "network19/migration-plan.json",
+      "type": "current-contract",
+      "purpose": "现役19地址/GW/DNS/许可矩阵，含历史阶段与退役角色时按plan过滤"
+    },
+    {
+      "path": "network19/audit/render-bridge-acl.py",
+      "type": "current-contract",
+      "purpose": "同19网MAC/IP绑定与240→210数据端口/270→210 exporter合同，仅读不render/apply"
+    },
+    {
+      "path": "cleanup/network/dns-runtime/summary.json",
+      "type": "historical-evidence",
+      "purpose": "原DNS清理及服务名称留存验证"
+    },
+    {
+      "path": "infra/ops/guest-baseline/guest-targets.json",
+      "type": "current-contract",
+      "purpose": "公开当前十角色catalog的210条目"
+    },
+    {
+      "path": "cleanup/monitoring/ten-role/execution-status.json",
+      "type": "historical-evidence",
+      "purpose": "监控目录/source配对应用记录"
+    },
+    {
+      "path": "completion/20261109/ops-audit.json",
+      "type": "historical-evidence",
+      "purpose": "15targets UP与textfile采样，不当namespace空证明"
+    }
+  ]
+}

@@ -7,19 +7,19 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "07d844dcd1f23952f4270bd08c2876ab09f4839a884481a7c14bca90b90d9c12"
+      "sha256": "dbd806f3a9cdeabaa3dd9f5f51aab0cd9020cb7fd5196eb60a8c6cedd25343be"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
-      "sha256": "7c42068892909459134ecec3b26041df3bc8d83d7e509a164e0d6ae0db6121f5"
+      "sha256": "9a725346f6153b303e8882e6650082134ec678fa166d2688b5800ef127313bca"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
       "purpose": "当前基础搭建与历史故障交接；本轮不迁移，旧证据按时点解释。",
-      "sha256": "a7b3341a3f28908b3298a1e38f41aa76bb08aecb29e49cc51ab4cb69489391ea"
+      "sha256": "e00901c95a8e24124dab55d1f316c25c7ed6c52680a3bb1bf825ceea94706795"
     },
     {
       "path": "network19/migration-plan.json",
@@ -230,6 +230,42 @@
       "type": "current-contract",
       "purpose": "Authorized one-snapshot isolated restore proof/source; no production import, fullbusinessRPO/RTO orDR claim",
       "sha256": "9af7511e26f6530fef7043e593d2a5533822f77eb83205a05c6d9ca726f1d35e"
+    },
+    {
+      "path": "infra/data/test-empty-namespace.py",
+      "type": "current-contract",
+      "purpose": "Empty namespace only on existing test foundation; preserve legacy data/no migrations orJava",
+      "sha256": "0a10b441f6d37befec893c7e645e074d9c8639a9d934855ae997477ae27d603a"
+    },
+    {
+      "path": "completion/20261109-test-env/README.md",
+      "type": "current-contract",
+      "purpose": "Empty namespace only on existing test foundation; preserve legacy data/no migrations orJava",
+      "sha256": "8fd9e85932126d07ee68f13face97b86a66113242efff6578eaa919c643d8a72"
+    },
+    {
+      "path": "completion/20261109-test-env/acceptance.json",
+      "type": "current-contract",
+      "purpose": "Empty namespace only on existing test foundation; preserve legacy data/no migrations orJava",
+      "sha256": "4c69f9adcfbf66003bff97b8e001c76cd5f0baa9c163d6d5b89ed7725d6ac49a"
+    },
+    {
+      "path": "completion/20261109-test-env/preflight.json",
+      "type": "historical-evidence",
+      "purpose": "Empty namespace only on existing test foundation; preserve legacy data/no migrations orJava",
+      "sha256": "739f6b6c1d217087983ff15217c830f825c24180f727e25612314c0abb738054"
+    },
+    {
+      "path": "completion/20261109-test-env/empty-namespace-created.json",
+      "type": "historical-evidence",
+      "purpose": "Empty namespace only on existing test foundation; preserve legacy data/no migrations orJava",
+      "sha256": "1762de789eafbf12b5e9d3eca0d222f59c730629fe9c6692dc6b65ba27f18693"
+    },
+    {
+      "path": "completion/20261109-test-env/postcheck.json",
+      "type": "historical-evidence",
+      "purpose": "Empty namespace only on existing test foundation; preserve legacy data/no migrations orJava",
+      "sha256": "176109ef1a3782ba78f46858259b9f5633f8c074d3d35a9381f860570aa3e24c"
     }
   ]
 }

@@ -1,0 +1,1 @@
+{"status": "reviewed-producer-staged-and-dryrun-passed", "public_source_SHA": "0a10b441f6d37befec893c7e645e074d9c8639a9d934855ae997477ae27d603a", "dryrun": {"status": "plan-only-no-mutations", "new_namespace": {"id": "23836f2e-9553-5948-84cd-431b2f241bd6", "name": "finger-test-empty"}, "exists": false, "configuration_body_read": false}, "namespace_or_permissions_created": false}

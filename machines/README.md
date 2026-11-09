@@ -25,6 +25,10 @@
 | 模板 | [9010 · tpl-linux-base](tpl9010-linux-base/README.md) | 无服务IP |
 | 模板 | [9011 · tpl-java-acceptance](tpl9011-java-acceptance/README.md) | 无服务IP |
 
+## 测试空域入口
+
+VM210测试Nacos沿用`192.168.19.20:8848`，新增`finger-test-empty`（ID `23836f2e-9553-5948-84cd-431b2f241bd6`），创建后验收配置0/跨组注册服务0，见[本轮回执](../completion/20261109-test-env/empty-namespace-created.json)和[210使用说明](vm210-data-test/README.md)。同一实例的旧namespace、配置/历史和数据库全部保留，不是清库或重建。基础`.env`/health仍指旧域；未来业务需显式选新ID，当前不改源码profile、不初始化业务或启动Java。账号仅查既有受保护bundle文件，值不进入机器目录/Git。
+
 ## 每个目录的文件
 
 | 文件 | 用途 |

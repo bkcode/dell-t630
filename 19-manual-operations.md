@@ -41,6 +41,14 @@
 
 凭据只查受控文件位置，见[12凭据表](12-service-access-and-operations.md)。目录700、秘密文件600；不把值贴入文档、终端命令、日志、截图或Git。不要`cat`秘密来调试；不把密码放`-pPASSWORD`、URL或环境变量。旧Mac Penpot连接不自动改成新服务，客户端切换需使用正确目标身份，不能拿源key替代。
 
+### 测试Nacos新空namespace的使用
+
+进入`http://192.168.19.20:8848/nacos/`，沿用现有测试应用登录身份，显式选择`finger-test-empty`，namespace ID `23836f2e-9553-5948-84cd-431b2f241bd6`。用户名和密码仅按[12受保护文件索引](12-service-access-and-operations.md)查看；密码仍在`private/data/bundles/test-data/secrets/nacos-client-password`及guest受控对应文件，不cat到终端/截图、不给URL/argv传值。
+
+[创建后验收](completion/20261109-test-env/empty-namespace-created.json)为配置0、跨组注册服务0、新域缺配置404/无关域403；该“空”只表示同一测试Nacos中新建的逻辑namespace。旧ID `10719261-2641-590a-b821-c8484ca955ac`、7配置/历史9、原3业务schema的3/10/6表均保留，不清库、不重置密码/role、不重启或启动Java。
+
+基础bundle `.env`和健康检查仍用旧namespace保兼容，不为切换页面修改这些值，也不修改源码profile。未来业务获准使用新域时单独显式选择新ID；本轮不上传配置、执行SQL/seed或迁移任何数据。
+
 ### SSH严格连接
 
 在持有用户密钥的管理电脑上执行；先按受信PVE/QGA记录核对host key。**private/known_hosts和私钥不在Git；新电脑clone文档后不能直接获得管理信任。** 必须经已知可信管理员/iDRAC控制台/PVE-QGA核实指纹并受控交接本机known_hosts；ssh-keyscan只能收集候选，不能单独证明可信。不要把私钥或known_hosts当普通文档提交。以下路径是原管理电脑示例，新电脑应使用其已核本机路径；示例只用于**当前仍独立的221**：

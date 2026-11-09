@@ -608,7 +608,7 @@
     "evidence": "evidence/implementation/raid-recovered.json",
     "historical_fault": "slot32:3 access failure; root cause unresolved, monitor"
   },
-  "updated_at": "2026-11-09T18:46:50.834115+08:00",
+  "updated_at": "2026-11-09T20:32:14.386535+08:00",
   "docker_runtime_profile": {
     "driver": "classic-overlay2",
     "reason": "Verified compatibility with source single-platform offline archives; preserves config IDs",
@@ -654,7 +654,7 @@
       "current_scope": "production DB/Nacos only; old wholeVM rule group removed"
     }
   },
-  "delivery_scope_manifest": "completion/20261109-prod-db-restore/acceptance.json",
+  "delivery_scope_manifest": "completion/20261109-test-env/acceptance.json",
   "expected_role_count": 12,
   "network19_migration_manifest": "network19/migration-plan.json",
   "acceptance_templates": [
@@ -806,7 +806,7 @@
     "hardware_diagnostics": "user reports reseated/replaced and diagnostics passed; current bootEDACce/ue0 independently observed",
     "hardware_evidence": "completion/20261109/pve-audit.json",
     "recovery_manifest": "recovery/20261108/README.md",
-    "current_completion_manifest": "completion/20261109-prod-db-restore/acceptance.json",
+    "current_completion_manifest": "completion/20261109-test-env/acceptance.json",
     "current_backup_scope_manifest": "completion/20261109-prod-db-scope/acceptance.json"
   },
   "backup_delivery": {
@@ -896,5 +896,32 @@
     "business_RPO_RTO_validated": false,
     "postcheck": "completion/20261109-prod-db-restore/postcheck.json",
     "host_ops_postcheck": "completion/20261109-prod-db-restore/host-ops-postcheck.json"
+  },
+  "test_foundation_20261109": {
+    "status": "ready-native-and-independent-postchecked",
+    "scope": "empty test infrastructure; preserve existing data; no migration/business init/Java",
+    "vmid": 210,
+    "Nacos_endpoint": "http://192.168.19.20:8848/nacos/",
+    "empty_namespace": {
+      "id": "23836f2e-9553-5948-84cd-431b2f241bd6",
+      "name": "finger-test-empty",
+      "config_count": 0,
+      "allgroup_service_count": 0
+    },
+    "legacy_namespace_id": "10719261-2641-590a-b821-c8484ca955ac",
+    "legacy_configs_preserved": 7,
+    "history_count_preserved": 9,
+    "business_schema_tables_preserved": {
+      "finger_auth_test": 3,
+      "finger_coms_test": 10,
+      "finger_system_test": 6
+    },
+    "runtime_bundle_namespace_changed": false,
+    "application_user": "finger_test",
+    "role": "finger-test-client",
+    "permission_resources": "old and new namespace:*:* rw only",
+    "new_accounts_password_resets_or_containers": false,
+    "evidence": "completion/20261109-test-env/postcheck.json",
+    "test_automatic_backup_added": false
   }
 }

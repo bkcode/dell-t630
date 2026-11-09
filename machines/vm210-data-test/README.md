@@ -34,6 +34,14 @@
 
 版本为mysql:8.4.5; nacos/nacos-server:v2.4.3; redis:7.4.4; rabbitmq:3.13.7-management，固定AMD64 digest记录在[config.json](config.json)。这里只索引公开参数化Compose；实际渲染包含秘密，不复制进机器目录。恢复后须对现役安装文件与19网参数做fresh核对，不能照旧10.63 README重新prepare覆盖。
 
+## 测试Nacos空namespace已搭好
+
+同一VM210/`192.168.19.20:8848`测试Nacos内新增 **`finger-test-empty`**，namespace ID `23836f2e-9553-5948-84cd-431b2f241bd6`。20:27验收时配置0、跨组注册服务0，见[空namespace回执](../../completion/20261109-test-env/empty-namespace-created.json)。这是新增逻辑隔离域，**没有清空整个Nacos实例、旧namespace或MySQL数据库**；旧namespace `10719261-2641-590a-b821-c8484ca955ac` 的7项配置、历史计数9及原3个业务schema（表数3/10/6）保持，原4容器帧未变。
+
+沿用既有测试应用账号及role，仅增加新域`:*:*`的rw授权，已核新域缺配置404、无关域403；没有重置密码/账号role关系、迁移、业务DDL/配置发布、Java启动或服务重启。基础bundle `.env`和health仍指旧namespace以保兼容，不为了“空”改其namespace值；未来业务若另获准使用新域必须显式选新ID，当前不改源码profile。
+
+用户名只按受保护的`private/data/bundles/test-data/.env`中`NACOS_CLIENT_USER`查看，密码引用`private/data/bundles/test-data/secrets/nacos-client-password`；guest对应`/opt/dell/data/test-data/.env`和`secrets/nacos-client-password`。仅说明保管位置，不读取/展示值、不通过命令参数或截图传播；原管理账号继续用原受控位置。
+
 ## 依赖与环境边界
 
 独立测试 MySQL、Nacos、Redis、RabbitMQ，保留最小 auth/system/coms 测试 schema；不共享正式账号和持久化目录。

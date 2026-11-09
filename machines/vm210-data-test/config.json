@@ -10,7 +10,7 @@
   },
   "source_of_truth": "plan.json",
   "source_role_pointer": "/roles/3",
-  "last_verified_at": "2026-11-09T16:01:00.600541+08:00",
+  "last_verified_at": "2026-11-09T20:32:14.386535+08:00",
   "current_runtime_verified": true,
   "status": "recovered-infrastructure-verified",
   "purpose": "独立测试 MySQL、Nacos、Redis、RabbitMQ，保留最小 auth/system/coms 测试 schema；不共享正式账号和持久化目录。",
@@ -115,9 +115,9 @@
       "purpose": "monitoring consumer"
     }
   ],
-  "current_verification_evidence": "completion/20261109/guests-post-backup.json",
+  "current_verification_evidence": "completion/20261109-test-env/postcheck.json",
   "current_verification_scope": "current infrastructure setup, no migration or full application restore",
-  "verification_note": "Fresh metadata/service audit after natural host reboot; no data migration, Nexus merge or Java business deployment.",
+  "verification_note": "Existing test infrastructure reused; only new empty namespace and precise permission added; no data migration/business init/Java/restart",
   "timestamp_scope": "2026-11-09 scoped audit; individual commands retain actual timestamps",
   "local_backup": {
     "included_in_fixed_PVE_job": false,
@@ -135,5 +135,32 @@
     "scope": "one3301B nacos_prod snapshot temporarily restored onVM210; no production/testmanagedDB writes",
     "evidence": "completion/20261109-prod-db-restore/native-success.json",
     "RPO_RTO_or_independent_DR_validated": false
+  },
+  "empty_Nacos_foundation": {
+    "status": "ready-native-and-independent-postchecked",
+    "scope": "empty test infrastructure; preserve existing data; no migration/business init/Java",
+    "vmid": 210,
+    "Nacos_endpoint": "http://192.168.19.20:8848/nacos/",
+    "empty_namespace": {
+      "id": "23836f2e-9553-5948-84cd-431b2f241bd6",
+      "name": "finger-test-empty",
+      "config_count": 0,
+      "allgroup_service_count": 0
+    },
+    "legacy_namespace_id": "10719261-2641-590a-b821-c8484ca955ac",
+    "legacy_configs_preserved": 7,
+    "history_count_preserved": 9,
+    "business_schema_tables_preserved": {
+      "finger_auth_test": 3,
+      "finger_coms_test": 10,
+      "finger_system_test": 6
+    },
+    "runtime_bundle_namespace_changed": false,
+    "application_user": "finger_test",
+    "role": "finger-test-client",
+    "permission_resources": "old and new namespace:*:* rw only",
+    "new_accounts_password_resets_or_containers": false,
+    "evidence": "completion/20261109-test-env/postcheck.json",
+    "test_automatic_backup_added": false
   }
 }

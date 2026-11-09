@@ -7,6 +7,7 @@
 | PVE | https://192.168.21.22:8006/ | 管理SSH22保留 |
 | 虚拟网关190 | WAN192.168.21.23 / LAN192.168.19.1 | 路由、19DNS/DHCP，无NAT |
 | Penpot | http://192.168.19.50:9001/ | Git定制版、3设计/973媒体、11服务 |
+| 测试Nacos | http://192.168.19.20:8848/nacos/ | 同实例新空域finger-test-empty，需登录并显式选namespace；旧域保留 |
 | Nexus | http://192.168.19.31:8081/ | 目前归221；合并目标归220同NIC服务alias，URL不改 |
 | OMV | http://192.168.19.60/ | 家庭NAS管理 |
 | Jellyfin | http://192.168.19.60:8096/ | 媒体库、DirectPlay协议已验 |
@@ -36,12 +37,21 @@ SSH使用ub和`~/.ssh/yang_local_rsa`，严格已核host key；受控目标见`e
 
 日常启停、故障处理、克隆和备份步骤见[人工操作手册](19-manual-operations.md)，换电脑接手见[Git交接](20-git-and-handoff.md)。
 
+## 测试Nacos空namespace已搭好
+
+同一VM210/`192.168.19.20:8848`测试Nacos内新增 **`finger-test-empty`**，namespace ID `23836f2e-9553-5948-84cd-431b2f241bd6`。20:27验收时配置0、跨组注册服务0，见[空namespace回执](completion/20261109-test-env/empty-namespace-created.json)。这是新增逻辑隔离域，**没有清空整个Nacos实例、旧namespace或MySQL数据库**；旧namespace `10719261-2641-590a-b821-c8484ca955ac` 的7项配置、历史计数9及原3个业务schema（表数3/10/6）保持，原4容器帧未变。
+
+沿用既有测试应用账号及role，仅增加新域`:*:*`的rw授权，已核新域缺配置404、无关域403；没有重置密码/账号role关系、迁移、业务DDL/配置发布、Java启动或服务重启。基础bundle `.env`和health仍指旧namespace以保兼容，不为了“空”改其namespace值；未来业务若另获准使用新域必须显式选新ID，当前不改源码profile。
+
+用户名只按受保护的`private/data/bundles/test-data/.env`中`NACOS_CLIENT_USER`查看，密码引用`private/data/bundles/test-data/secrets/nacos-client-password`；guest对应`/opt/dell/data/test-data/.env`和`secrets/nacos-client-password`。仅说明保管位置，不读取/展示值、不通过命令参数或截图传播；原管理账号继续用原受控位置。
+
 ## 凭据位置
 
 
 | 对象 | 受保护位置 |
 | --- | --- |
 | 数据组件 | Mac `private/data/bundles/<角色>/secrets/` 与各guest受控安装包 |
+| 测试Nacos新空域沿用账号 | 用户名查test-data受保护`.env`的`NACOS_CLIENT_USER`；密码查`private/data/bundles/test-data/secrets/nacos-client-password`，不在文档列值 |
 | Java合成管理员/测试client | Mac `private/java/secrets/`；测试账号FNTEST0001 |
 | Nexus新admin/reader/test publisher | Mac `private/nexus/new-secrets/` 与原221 `/root/dell-nexus-secrets/`；合并验收后由220承接同一身份目录 |
 | Penpot新owner | 250 `/etc/penpot/new-identities.json`，owner@dell.local |

@@ -1,0 +1,188 @@
+{
+  "vmid": 210,
+  "hostname": "data-test",
+  "captured_at": "2026-11-09T12:17:16.990953+00:00",
+  "read_only": true,
+  "no_migration_initialization_clear_account_reset_configpublish_Java_start": true,
+  "cfg_preflight_run_auth_fixture_not_called": true,
+  "physical_interfaces": [
+    {
+      "name": "eth0",
+      "MAC": "bc:24:11:5d:2d:98",
+      "IPv4": [
+        "192.168.19.20"
+      ]
+    }
+  ],
+  "default_routes": [
+    {
+      "dst": "default",
+      "gateway": "192.168.19.1",
+      "dev": "eth0",
+      "protocol": "static",
+      "flags": []
+    }
+  ],
+  "DNS_public": "Link 2 (eth0): 192.168.19.1",
+  "data_mount": {
+    "filesystems": [
+      {
+        "target": "/srv/dell-data",
+        "source": "/dev/sdb",
+        "fstype": "ext4",
+        "uuid": "dd1773f9-aa48-4401-a9c8-caf0f66845f3"
+      }
+    ]
+  },
+  "containers": [
+    {
+      "Name": "/dell-data-test-data-mysql-1",
+      "ID": "df4e9d159f5903e42ab4e6c2c092d2d454ac55a76c226fc8a07fe44c72b41ef6",
+      "ImageID": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+      "State": "running",
+      "Health": "healthy",
+      "RestartCount": 0,
+      "OOMKilled": false
+    },
+    {
+      "Name": "/dell-data-test-data-redis-1",
+      "ID": "b5d49893d99c73d425f0af035dce837f1467a096841d7bbae3f7d5381ce3df22",
+      "ImageID": "sha256:17c1c1b96fd1685968790c7fcab311e5bc49c809efe9744af262640a559c4cf2",
+      "State": "running",
+      "Health": "healthy",
+      "RestartCount": 0,
+      "OOMKilled": false
+    },
+    {
+      "Name": "/dell-data-test-data-rabbitmq-1",
+      "ID": "4d955f668d96330c7d9cbe676ec41722a1d3c67038a52d89f0c3f8f11866ce58",
+      "ImageID": "sha256:de912cbbf07f938bb8aaa5682464a73a00c6a996efdf0880423aeb4eae006c34",
+      "State": "running",
+      "Health": "healthy",
+      "RestartCount": 0,
+      "OOMKilled": false
+    },
+    {
+      "Name": "/dell-data-test-data-nacos-1",
+      "ID": "5bd9a27fd4051994494eed423d84e50862ef91918ffbfa4834df14de2a8f2e4c",
+      "ImageID": "sha256:fc86d4833afb7abc64006f04c715946303f6b15d694c2f05c2895a27d967ed88",
+      "State": "running",
+      "Health": "healthy",
+      "RestartCount": 0,
+      "OOMKilled": false
+    }
+  ],
+  "SHOW_DATABASES": [
+    "finger_auth_test",
+    "finger_coms_test",
+    "finger_system_test",
+    "information_schema",
+    "mysql",
+    "nacos_test",
+    "performance_schema",
+    "sys"
+  ],
+  "Nacos_external_DB": "nacos_test",
+  "non_system_schema_table_counts": [
+    {
+      "schema": "finger_auth_test",
+      "base_table_count": 3,
+      "estimated_table_bytes": 49152
+    },
+    {
+      "schema": "finger_coms_test",
+      "base_table_count": 10,
+      "estimated_table_bytes": 393216
+    },
+    {
+      "schema": "finger_system_test",
+      "base_table_count": 6,
+      "estimated_table_bytes": 229376
+    },
+    {
+      "schema": "nacos_test",
+      "base_table_count": 12,
+      "estimated_table_bytes": 409600
+    }
+  ],
+  "Nacos_namespaces": [
+    {
+      "namespace_id": "10719261-2641-590a-b821-c8484ca955ac",
+      "name": "finger-test"
+    }
+  ],
+  "Nacos_config_counts": {
+    "current_total": 7,
+    "history_total": 9,
+    "namespace_group_type_counts": [
+      {
+        "namespace_id": "10719261-2641-590a-b821-c8484ca955ac",
+        "group": "DELL_TEST",
+        "type": "yaml",
+        "count": 7
+      }
+    ]
+  },
+  "Nacos_auth_metadata_counts": {
+    "users": 2,
+    "roles": 2,
+    "permissions": 1
+  },
+  "Nacos_namespace_permission_counts": [
+    {
+      "namespace_id": "10719261-2641-590a-b821-c8484ca955ac",
+      "rw_permission_rows": 1,
+      "enabled_accounts_with_role_and_rw_permission": 1
+    }
+  ],
+  "Nacos_readiness_HTTP": 200,
+  "Nacos_existing_admin_authentication": true,
+  "Nacos_authenticated_namespace_metadata": [
+    {
+      "namespace_id": "",
+      "name": "public",
+      "config_count": 0
+    },
+    {
+      "namespace_id": "10719261-2641-590a-b821-c8484ca955ac",
+      "name": "finger-test",
+      "config_count": 7
+    }
+  ],
+  "Nacos_token_or_password_or_configcontent_output": false,
+  "business_rows_counted_or_values_read": false,
+  "checks": {
+    "role_IP": true,
+    "GW19_1": true,
+    "DNS19_1": true,
+    "data_UUID_FS": true,
+    "four_containers_healthy_restart0": true,
+    "Nacosready200": true,
+    "Nacosadminauth": true,
+    "test_namespace_has_enabled_rw_identity": true
+  },
+  "status": "existing-test-base-ready-no-write-needed",
+  "preserve_existing_schemas": [
+    "finger_auth_test",
+    "finger_coms_test",
+    "finger_system_test",
+    "nacos_test"
+  ],
+  "preserve_existing_config_scope": "all observedNacos namespace/group/type currentconfigs andhistory; notempty/reset/importedbecauseuserrequestedemptybase",
+  "user_current_scope": "No data migration; build only emptytestinfrastructure, retainexistingdata; no businessSQL/configimport and noJava deployment",
+  "permission_limitations": "Adminauthentication+namespacepermissionmetadatacounts only; clientnegativeisolation tests not rerun, noaccount names/hashes/passwordsoutput",
+  "prior_interrupted_task": "Only local publiccodereads performed beforeinterruption; no previousoutputorremoteaction toresume",
+  "facts_vs_history": {
+    "actual_schema_names": [
+      "finger_auth_test",
+      "finger_coms_test",
+      "finger_system_test",
+      "nacos_test"
+    ],
+    "actual_business_table_total": 19,
+    "actual_Nacos_current_config_count": 7,
+    "old_docs_not_authoritative": "Some olddeliverynotes said18business tables/sixconfigs or finger_test_auth style names. Actualcurrentnames/counts above takeprecedence; no catalogrenamingorclearing performed."
+  },
+  "observed_base_gaps": [],
+  "future_safe_actions": "No base writecurrentlynecessary. Useremptytestbase meansno new data/configimport, not permissionto deleteexisting testdata. Anyactualfuturegaprequiresrootreviewwindow."
+}

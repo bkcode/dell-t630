@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-09T20:32:14.386535+08:00",
+  "status": "passed-empty-test-foundation",
+  "scope": "empty test services only; preserve existing data; no migration or business initialization/Java",
+  "cases": [
+    {
+      "id": "TESTBASE-SERVICE-001",
+      "title": "基础服务与管理入口",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户最终只要空测试服务，明确不迁移且保留现有数据"
+      ],
+      "steps": [
+        "核对VM210受信身份及实际带时间收据",
+        "核跨group为空与原数据/权限/容器保持"
+      ],
+      "observable_pass_conditions": [
+        "四基础健康/namespace0config0services/授权只旧新两空间，client404和control403，无业务或生产变更"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-test-env/preflight.json",
+          "note": "actual narrow-scoped proof; no config-body or business-row export"
+        },
+        {
+          "path": "completion/20261109-test-env/postcheck.json",
+          "note": "actual narrow-scoped proof; no config-body or business-row export"
+        }
+      ],
+      "verified_at": "2026-11-09T20:32:14.386535+08:00",
+      "verification_scope": "empty Nacos logical namespace on existing test infrastructure only"
+    },
+    {
+      "id": "TESTBASE-EMPTY-001",
+      "title": "独立空namespace与最小权限",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户最终只要空测试服务，明确不迁移且保留现有数据"
+      ],
+      "steps": [
+        "核对VM210受信身份及实际带时间收据",
+        "核跨group为空与原数据/权限/容器保持"
+      ],
+      "observable_pass_conditions": [
+        "四基础健康/namespace0config0services/授权只旧新两空间，client404和control403，无业务或生产变更"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-test-env/empty-namespace-created.json",
+          "note": "actual narrow-scoped proof; no config-body or business-row export"
+        },
+        {
+          "path": "completion/20261109-test-env/postcheck.json",
+          "note": "actual narrow-scoped proof; no config-body or business-row export"
+        }
+      ],
+      "verified_at": "2026-11-09T20:32:14.386535+08:00",
+      "verification_scope": "empty Nacos logical namespace on existing test infrastructure only"
+    },
+    {
+      "id": "TESTBASE-PRESERVE-001",
+      "title": "原数据/配置/账号与容器保持",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户最终只要空测试服务，明确不迁移且保留现有数据"
+      ],
+      "steps": [
+        "核对VM210受信身份及实际带时间收据",
+        "核跨group为空与原数据/权限/容器保持"
+      ],
+      "observable_pass_conditions": [
+        "四基础健康/namespace0config0services/授权只旧新两空间，client404和control403，无业务或生产变更"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-test-env/empty-namespace-created.json",
+          "note": "actual narrow-scoped proof; no config-body or business-row export"
+        },
+        {
+          "path": "completion/20261109-test-env/preflight.json",
+          "note": "actual narrow-scoped proof; no config-body or business-row export"
+        },
+        {
+          "path": "completion/20261109-test-env/postcheck.json",
+          "note": "actual narrow-scoped proof; no config-body or business-row export"
+        }
+      ],
+      "verified_at": "2026-11-09T20:32:14.386535+08:00",
+      "verification_scope": "empty Nacos logical namespace on existing test infrastructure only"
+    },
+    {
+      "id": "TESTBASE-SCOPE-001",
+      "title": "不迁移/业务初始化/Java启动",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户最终只要空测试服务，明确不迁移且保留现有数据"
+      ],
+      "steps": [
+        "核对VM210受信身份及实际带时间收据",
+        "核跨group为空与原数据/权限/容器保持"
+      ],
+      "observable_pass_conditions": [
+        "四基础健康/namespace0config0services/授权只旧新两空间，client404和control403，无业务或生产变更"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-test-env/dryrun.json",
+          "note": "actual narrow-scoped proof; no config-body or business-row export"
+        },
+        {
+          "path": "completion/20261109-test-env/empty-namespace-created.json",
+          "note": "actual narrow-scoped proof; no config-body or business-row export"
+        },
+        {
+          "path": "completion/20261109-test-env/postcheck.json",
+          "note": "actual narrow-scoped proof; no config-body or business-row export"
+        }
+      ],
+      "verified_at": "2026-11-09T20:32:14.386535+08:00",
+      "verification_scope": "empty Nacos logical namespace on existing test infrastructure only"
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "current_phase_case_count": 4,
+    "current_phase_passed": 4,
+    "statuses": {
+      "passed": 4
+    }
+  },
+  "not_required_or_deferred": [
+    "business config publication",
+    "business SQL/schema/init data",
+    "Mac data migration",
+    "Java business application startup",
+    "actual configuration write/readback test"
+  ]
+}
