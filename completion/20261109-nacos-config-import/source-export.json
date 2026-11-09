@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "captured_at": "2026-11-09T13:18:36.650073+00:00",
+  "status": "selected36-source-export-complete-private-verified",
+  "source_URL": "http://127.0.0.1:8848/nacos",
+  "namespaces": [
+    {
+      "id": "08e7191f-3ccd-411a-be00-56798d237533",
+      "name": "finger-cloud-dev",
+      "count": 32
+    },
+    {
+      "id": "7bfe03c6-0590-4ff0-8def-e07015016b54",
+      "name": "finger-trascan",
+      "count": 4
+    }
+  ],
+  "selected_expected_count": 36,
+  "source_GET_only": true,
+  "target_clear_import_or_grant_performed": false,
+  "content_hash_key_credential_values_output": false,
+  "private_reference": "private/nacos-config-import/20261109/source.json",
+  "prior_attempt": "Safetyrejectednullpaginationmd5; sourceGET/showallactualMD5agreed. CorrectedMD5authoritytoshowallstoredfield andcrosscheckedrawsearchbody, no contenttransformation.",
+  "listed_count": 36,
+  "encrypted_key_nonempty_count": 0,
+  "exported_count": 36,
+  "all_encrypted_keys_empty": true,
+  "groups": {
+    "DEFAULT_GROUP": 36
+  },
+  "types": {
+    "yaml": 35,
+    "text": 1
+  },
+  "all_GET_body_matches_source_MD5": true,
+  "all_showall_matches_GET_and_raw_list": true,
+  "source_list_metadata_and_content_stable_before_after": true,
+  "source_showall_metadata_and_content_stable_before_after": true,
+  "private_payload_roundtrip_exact": true,
+  "payload_protocol_keys": [
+    "version",
+    "namespaces",
+    "items"
+  ],
+  "namespace_keys": [
+    "id",
+    "name",
+    "count"
+  ],
+  "item_keys": [
+    "namespace_id",
+    "namespace_name",
+    "data_id",
+    "group",
+    "type",
+    "app_name",
+    "description",
+    "config_tags",
+    "encrypted_data_key",
+    "content",
+    "md5"
+  ],
+  "private_file": {
+    "path": "/Users/yangzhaohui/work/www/harness/dell/private/nacos-config-import/20261109/source.json",
+    "uid": 501,
+    "mode": "0o600",
+    "parent_mode": "0o700",
+    "bytes": 105559,
+    "prior_snapshot_overwritten": false
+  },
+  "MD5_authority": "showall.md5; pageList.md5maynull, rawpagecontentcomputedcrosscheck; nohashvaluesoutput"
+}

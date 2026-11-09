@@ -7,19 +7,19 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "65593c1f55f23c503933e20eb388fa98e5a0c292ca017b2e48a4ce0c5c542cfb"
+      "sha256": "045cf0ccb806066365aa5a8c11f1e0dd93916b14fe5690925f21ae33c2d68726"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
-      "sha256": "9a725346f6153b303e8882e6650082134ec678fa166d2688b5800ef127313bca"
+      "sha256": "660def21ab88296afbb54619bf7b986397006c3a5f080fa5d6cd171ba176ca99"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
       "purpose": "当前基础搭建与历史故障交接；本轮不迁移，旧证据按时点解释。",
-      "sha256": "e00901c95a8e24124dab55d1f316c25c7ed6c52680a3bb1bf825ceea94706795"
+      "sha256": "fd55fb5881a1ff53f8fc241df8b7f8ff33cea8217de799bf23c902649f9fc177"
     },
     {
       "path": "network19/migration-plan.json",
@@ -241,7 +241,7 @@
       "path": "completion/20261109-test-env/README.md",
       "type": "current-contract",
       "purpose": "Empty namespace only on existing test foundation; preserve legacy data/no migrations orJava",
-      "sha256": "8fd9e85932126d07ee68f13face97b86a66113242efff6578eaa919c643d8a72"
+      "sha256": "bcb5d39a3d05a32726f3e3336e9216fdf456abbc7be2a87869b88c47c5dabc61"
     },
     {
       "path": "completion/20261109-test-env/acceptance.json",
@@ -284,6 +284,42 @@
       "type": "historical-evidence",
       "purpose": "Exact LAN testNacos8848/9848 only; production/DB/WG/noNAT unchanged",
       "sha256": "727ae2866b0d6f8ba5eab79341bdedd4613e6a14ebf7a0137e0ad90b1bd58607"
+    },
+    {
+      "path": "infra/data/nacos-config-import/README.md",
+      "type": "current-contract",
+      "purpose": "User authorized selected36 Nacos config-only replacement; no Java/businessDB/production/accountpermission migration",
+      "sha256": "9e28c3c8179bb02a80343236faae534f68f71ab1056613421101bfdc0b16a780"
+    },
+    {
+      "path": "infra/data/nacos-config-import/target-worker.py",
+      "type": "current-contract",
+      "purpose": "User authorized selected36 Nacos config-only replacement; no Java/businessDB/production/accountpermission migration",
+      "sha256": "f61d42329a834031db2fa1c636831a9c4838bb286e7df19c05e074334087a2fe"
+    },
+    {
+      "path": "completion/20261109-nacos-config-import/README.md",
+      "type": "current-contract",
+      "purpose": "User authorized selected36 Nacos config-only replacement; no Java/businessDB/production/accountpermission migration",
+      "sha256": "c414c540db6ddef153e95260b3729c8ccc3ac2298e41ec7eebe01a50dbeb080d"
+    },
+    {
+      "path": "completion/20261109-nacos-config-import/acceptance.json",
+      "type": "current-contract",
+      "purpose": "User authorized selected36 Nacos config-only replacement; no Java/businessDB/production/accountpermission migration",
+      "sha256": "95936da486dc5c20e9baadef6bb29c73b01badedbe5298ce000dc845b4b48034"
+    },
+    {
+      "path": "completion/20261109-nacos-config-import/verified.json",
+      "type": "historical-evidence",
+      "purpose": "User authorized selected36 Nacos config-only replacement; no Java/businessDB/production/accountpermission migration",
+      "sha256": "336613fe1747855c3477caac5749278ea7a64c567c4a63d0c518f87d4db6eb72"
+    },
+    {
+      "path": "completion/20261109-nacos-config-import/postcheck.json",
+      "type": "historical-evidence",
+      "purpose": "User authorized selected36 Nacos config-only replacement; no Java/businessDB/production/accountpermission migration",
+      "sha256": "9884b98a4b6732010bc4b304b0b2afc40314521c0a43c702357bc0d14f222e86"
     }
   ]
 }

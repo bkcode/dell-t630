@@ -1,4 +1,4 @@
-> 更新：2026-11-09（Asia/Shanghai）。本轮基础fresh审计已复核；当日实时收尾状态统一见[11月9日交付记录](../../completion/20261109-prod-db-scope/README.md)。本页仅本地同步带时点证据，不执行服务器操作；不迁移数据、不合并Nexus、不启动Java业务、不升级Penpot，不需要Mac外部探针。
+> 更新：2026-11-09（Asia/Shanghai）。本轮基础fresh审计已复核；当日实时收尾状态统一见[11月9日交付记录](../../completion/20261109-prod-db-scope/README.md)。本页仅本地同步带时点证据，不执行服务器操作；本期测试Nacos配置迁移已获准；不迁业务数据库、不合并Nexus、不启动Java业务、不升级Penpot，不需要Mac外部探针。
 
 # VM210 · data-test
 
@@ -34,13 +34,26 @@
 
 版本为mysql:8.4.5; nacos/nacos-server:v2.4.3; redis:7.4.4; rabbitmq:3.13.7-management，固定AMD64 digest记录在[config.json](config.json)。这里只索引公开参数化Compose；实际渲染包含秘密，不复制进机器目录。恢复后须对现役安装文件与19网参数做fresh核对，不能照旧10.63 README重新prepare覆盖。
 
-## 测试Nacos空namespace已搭好
+## 测试Nacos配置现状：36项原样导入完成
 
-同一VM210/`192.168.19.20:8848`测试Nacos内新增 **`finger-test-empty`**，namespace ID `23836f2e-9553-5948-84cd-431b2f241bd6`。20:27验收时配置0、跨组注册服务0，见[空namespace回执](../../completion/20261109-test-env/empty-namespace-created.json)。这是新增逻辑隔离域，**没有清空整个Nacos实例、旧namespace或MySQL数据库**；旧namespace `10719261-2641-590a-b821-c8484ca955ac` 的7项配置、历史计数9及原3个业务schema（表数3/10/6）保持，原4容器帧未变。
+用户最新明确授权本机Nacos配置迁移，**覆盖先前“只搭空服务、不迁配置”的限制**；仍不迁业务数据库、不动正式环境、不启动Java或修改源码profile。同一测试入口`http://192.168.19.20:8848/nacos/`内现有配置如下，namespace ID/name、group与正文保持源原样：
 
-沿用既有测试应用账号及role，仅增加新域`:*:*`的rw授权，已核新域缺配置404、无关域403；没有重置密码/账号role关系、迁移、业务DDL/配置发布、Java启动或服务重启。基础bundle `.env`和health仍指旧namespace以保兼容，不为了“空”改其namespace值；未来业务若另获准使用新域必须显式选新ID，当前不改源码profile。
+| namespace | ID | 当前配置数 |
+| --- | --- | ---: |
+| finger-cloud-dev | `08e7191f-3ccd-411a-be00-56798d237533` | 32 |
+| finger-trascan | `7bfe03c6-0590-4ff0-8def-e07015016b54` | 4 |
+| finger-test（旧域） | `10719261-2641-590a-b821-c8484ca955ac` | 0 |
+| finger-test-empty | `23836f2e-9553-5948-84cd-431b2f241bd6` | 0 |
+| public | 默认域 | 0 |
 
-用户名只按受保护的`private/data/bundles/test-data/.env`中`NACOS_CLIENT_USER`查看，密码引用`private/data/bundles/test-data/secrets/nacos-client-password`；guest对应`/opt/dell/data/test-data/.env`和`secrets/nacos-client-password`。仅说明保管位置，不读取/展示值、不通过命令参数或截图传播；原管理账号继续用原受控位置。
+[applied](../../completion/20261109-nacos-config-import/applied.json)与[只读verified](../../completion/20261109-nacos-config-import/verified.json)确认合计36项、当前全部group为`DEFAULT_GROUP`，类型35 yaml＋1 text，正文及type/appName/desc等受审元数据在私有流程exact比对通过。原样内容可能仍含源本地连接参数，**没有端点适配，不代表服务器应用已可运行**。
+
+现有测试应用账号`finger_test`原权限仍只覆盖旧finger-test和finger-test-empty两域，**没有grant新导入的两个source namespace**。管理员可管理这两域；未来业务接入须另行明确namespace与应用权限，不能为消除403重置密码/role或自动提权。基础.env/health仍指旧域保兼容，不改源码profile、不启动Java。
+
+旧7项已有guest受保护完整快照；首次删除2项后缓存读回触发安全停止，修复为只读有界等待后，新run另备剩5项、清5→0→导36，没有覆盖旧备份或盲目resume。旧配置history继续保留/产生正常API审计，namespace、用户/role/permissions、业务DB及服务未写，缺失的两source域仅建元数据。这里只记录计数/比较结论，不放旧配置内容、正文hash或密码；后续证据见[导入目录](../../completion/20261109-nacos-config-import/)。
+
+20:27[空域创建](../../completion/20261109-test-env/empty-namespace-created.json)当时“旧7项/历史9保留、新空域0”仍是历史事实；后来用户授权清全部配置并导源，当前旧域已0，不能继续称仍有7项。账号凭据仍只由原受保护文件/渠道保管，不在本文披露值。
+
 
 ## 依赖与环境边界
 

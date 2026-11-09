@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-09T21:46:26.287751+08:00",
+  "status": "passed-selected36-config-import",
+  "scope": "testNacos current configitems cleared and selected source36 originalcontent imported",
+  "cases": [
+    {
+      "id": "NACOSIMPORT-SOURCE-001",
+      "title": "选源与受保护快照",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户已明确目标全部configitems清理、源32+4原ID/name/group/content，不启动应用"
+      ],
+      "steps": [
+        "核实际带时间回执及私有保护元数据",
+        "核body精确与可空metadata语义比较、源/服务和权限保持"
+      ],
+      "observable_pass_conditions": [
+        "原7当前项清理，2source域共36全量body/MD5一致、旧空间0，非配置对象保持且Java不启动"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-nacos-config-import/source-export.json",
+          "note": "actual config-only evidence; no public body/secret/hash values"
+        },
+        {
+          "path": "completion/20261109-nacos-config-import/prepared.json",
+          "note": "actual config-only evidence; no public body/secret/hash values"
+        },
+        {
+          "path": "completion/20261109-nacos-config-import/remaining-prepared.json",
+          "note": "actual config-only evidence; no public body/secret/hash values"
+        }
+      ],
+      "verified_at": "2026-11-09T21:46:26.287751+08:00",
+      "verification_scope": "test Nacos configuration migration only; not runtime/businessDB/production migration"
+    },
+    {
+      "id": "NACOSIMPORT-REPLACE-001",
+      "title": "完整清目标并原样发布36",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户已明确目标全部configitems清理、源32+4原ID/name/group/content，不启动应用"
+      ],
+      "steps": [
+        "核实际带时间回执及私有保护元数据",
+        "核body精确与可空metadata语义比较、源/服务和权限保持"
+      ],
+      "observable_pass_conditions": [
+        "原7当前项清理，2source域共36全量body/MD5一致、旧空间0，非配置对象保持且Java不启动"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-nacos-config-import/first-apply-failure.json",
+          "note": "actual config-only evidence; no public body/secret/hash values"
+        },
+        {
+          "path": "completion/20261109-nacos-config-import/delete-readback-diagnostic.json",
+          "note": "actual config-only evidence; no public body/secret/hash values"
+        },
+        {
+          "path": "completion/20261109-nacos-config-import/applied.json",
+          "note": "actual config-only evidence; no public body/secret/hash values"
+        },
+        {
+          "path": "completion/20261109-nacos-config-import/verified.json",
+          "note": "actual config-only evidence; no public body/secret/hash values"
+        }
+      ],
+      "verified_at": "2026-11-09T21:46:26.287751+08:00",
+      "verification_scope": "test Nacos configuration migration only; not runtime/businessDB/production migration"
+    },
+    {
+      "id": "NACOSIMPORT-EXACT-001",
+      "title": "源和目标一致性独立核验",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户已明确目标全部configitems清理、源32+4原ID/name/group/content，不启动应用"
+      ],
+      "steps": [
+        "核实际带时间回执及私有保护元数据",
+        "核body精确与可空metadata语义比较、源/服务和权限保持"
+      ],
+      "observable_pass_conditions": [
+        "原7当前项清理，2source域共36全量body/MD5一致、旧空间0，非配置对象保持且Java不启动"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-nacos-config-import/postcheck.json",
+          "note": "actual config-only evidence; no public body/secret/hash values"
+        },
+        {
+          "path": "completion/20261109-nacos-config-import/verified.json",
+          "note": "actual config-only evidence; no public body/secret/hash values"
+        }
+      ],
+      "verified_at": "2026-11-09T21:46:26.287751+08:00",
+      "verification_scope": "test Nacos configuration migration only; not runtime/businessDB/production migration"
+    },
+    {
+      "id": "NACOSIMPORT-BOUNDARY-001",
+      "title": "账号/业务DB/服务/Java边界",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户已明确目标全部configitems清理、源32+4原ID/name/group/content，不启动应用"
+      ],
+      "steps": [
+        "核实际带时间回执及私有保护元数据",
+        "核body精确与可空metadata语义比较、源/服务和权限保持"
+      ],
+      "observable_pass_conditions": [
+        "原7当前项清理，2source域共36全量body/MD5一致、旧空间0，非配置对象保持且Java不启动"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-nacos-config-import/postcheck.json",
+          "note": "actual config-only evidence; no public body/secret/hash values"
+        },
+        {
+          "path": "completion/20261109-nacos-config-import/runtime-ops-postcheck.json",
+          "note": "actual config-only evidence; no public body/secret/hash values"
+        }
+      ],
+      "verified_at": "2026-11-09T21:46:26.287751+08:00",
+      "verification_scope": "test Nacos configuration migration only; not runtime/businessDB/production migration"
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "current_phase_case_count": 4,
+    "current_phase_passed": 4,
+    "statuses": {
+      "passed": 4
+    }
+  },
+  "not_required_or_deferred": [
+    "application permission grants for new namespaces",
+    "endpoint adaptation",
+    "Java business deployment",
+    "businessDB migration",
+    "source continuous sync or runtimeE2E"
+  ]
+}

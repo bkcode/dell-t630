@@ -1,3 +1,5 @@
+> 后续范围变化：用户随后授权清测试Nacos配置项并原样导入本机选定36份。旧finger-test7项已清、新两source域32/4；finger-test-empty仍0、账号/权限/业务DB保持。当前见[配置导入交付](../20261109-nacos-config-import/README.md)。下文为先前空服务阶段时点记录，不反改原回执。
+
 # 空测试基础服务：已就绪
 
 2026-11-09（Asia/Shanghai）。用户最终范围：不做数据迁移，只搭空服务，保留现有数据、不导入业务SQL或配置、不启动Java业务。复用了VM210现有MySQL/Nacos/Redis/RabbitMQ，没有重装、重启或新增VM/容器。

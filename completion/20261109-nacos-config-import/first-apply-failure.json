@@ -1,0 +1,19 @@
+{
+  "status": "failed-before-publication",
+  "fixed_failure_code": "target-delete-readback",
+  "original_run_id": "e57ebd00096d42ecbccdf7a72b4afb04",
+  "effect_verified_by_later_read_only_diagnostic": {
+    "original_config_count": 7,
+    "remaining": 5,
+    "already_deleted": 2,
+    "missing_items_later_HTTP": [
+      404,
+      404
+    ],
+    "unexpected_new_keys": 0
+  },
+  "cause": "DELETE committed before plain GET cache became absent; no duplicate DELETE was issued",
+  "original7_private_snapshot_preserved": true,
+  "ordinary_evidence_contains_no_body_or_digest": true,
+  "corrective_action": "bounded GET-only wait; newrun snapshot remaining5 before clear5/publish36"
+}

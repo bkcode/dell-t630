@@ -1,0 +1,21 @@
+{
+  "status": "cache-wait-corrected-and-remaining5-safely-prepared",
+  "run_id": "12b575d6d3d04e978b904197bf3d67ee",
+  "original7_backup_run": "e57ebd00096d42ecbccdf7a72b4afb04",
+  "original7_backup_preserved": true,
+  "already_deleted_original_items": 2,
+  "new_prepare": {
+    "configuration_content_or_md5_values_emitted": false,
+    "run_id": "12b575d6d3d04e978b904197bf3d67ee",
+    "source_config_count": 36,
+    "source_namespace_names": [
+      "finger-cloud-dev",
+      "finger-trascan"
+    ],
+    "status": "prepared-no-target-write",
+    "target_before_config_count": 5
+  },
+  "worker_SHA": "f61d42329a834031db2fa1c636831a9c4838bb286e7df19c05e074334087a2fe",
+  "source_payload_or_hashes_output": false,
+  "further_DELETE_or_POST_configs": false
+}

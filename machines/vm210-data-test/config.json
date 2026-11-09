@@ -10,7 +10,7 @@
   },
   "source_of_truth": "plan.json",
   "source_role_pointer": "/roles/3",
-  "last_verified_at": "2026-11-09T20:32:14.386535+08:00",
+  "last_verified_at": "2026-11-09T21:46:26.287751+08:00",
   "current_runtime_verified": true,
   "status": "recovered-infrastructure-verified",
   "purpose": "独立测试 MySQL、Nacos、Redis、RabbitMQ，保留最小 auth/system/coms 测试 schema；不共享正式账号和持久化目录。",
@@ -115,9 +115,9 @@
       "purpose": "monitoring consumer"
     }
   ],
-  "current_verification_evidence": "completion/20261109-test-env/postcheck.json",
+  "current_verification_evidence": "completion/20261109-nacos-config-import/postcheck.json",
   "current_verification_scope": "current infrastructure setup, no migration or full application restore",
-  "verification_note": "Existing test infrastructure reused; only new empty namespace and precise permission added; no data migration/business init/Java/restart",
+  "verification_note": "User authorized config-only migration: original7cleared, selected source36 originalbody imported; no businessDB/Java/production/accountpermission changes",
   "timestamp_scope": "2026-11-09 scoped audit; individual commands retain actual timestamps",
   "local_backup": {
     "included_in_fixed_PVE_job": false,
@@ -172,5 +172,34 @@
     "two_layers": "VM190 inet and PVE bridge ACL",
     "Nacos_authentication_required": true,
     "evidence": "network19/lan-nacos-20261109/README.md"
+  },
+  "Nacos_current_config_import": {
+    "status": "native-import-and-independent-postcheck-passed",
+    "target_vmid": 210,
+    "target_endpoint": "http://192.168.19.20:8848/nacos/",
+    "source_namespaces": [
+      {
+        "id": "08e7191f-3ccd-411a-be00-56798d237533",
+        "name": "finger-cloud-dev",
+        "count": 32
+      },
+      {
+        "id": "7bfe03c6-0590-4ff0-8def-e07015016b54",
+        "name": "finger-trascan",
+        "count": 4
+      }
+    ],
+    "source_total": 36,
+    "all_group": "DEFAULT_GROUP",
+    "target_total": 36,
+    "original_target_configs_cleared": 7,
+    "body_exact": true,
+    "namespaceID_name_group_preserved": true,
+    "nullable_metadata_semantics": "3empty descriptions becameNULL; othermetadata semantics same",
+    "endpoint_adaptation": false,
+    "Java_started": false,
+    "businessDB_or_production_or_account_permission_migration": false,
+    "original7_and_remaining5_private_backups_preserved": true,
+    "evidence": "completion/20261109-nacos-config-import/postcheck.json"
   }
 }

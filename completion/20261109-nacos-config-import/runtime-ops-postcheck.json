@@ -1,0 +1,14 @@
+{
+  "VM240": {
+    "java_business_processes": 0,
+    "services_started_by_this_probe": false
+  },
+  "Ops": {
+    "targets_count": 15,
+    "targets_UP": 15,
+    "Prom_alerts": 0,
+    "AM_alerts": 0,
+    "Lark_active": true,
+    "test_notification_sent": false
+  }
+}

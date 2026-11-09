@@ -1,0 +1,19 @@
+{
+  "status": "source-transferred-private-and-target-backup-prepared",
+  "run_id": "e57ebd00096d42ecbccdf7a72b4afb04",
+  "public_code_SHA": "0b5ed89cb169a97e5459b13357a8411b7fbf54e47c93750b0f21d2d9feb05d74",
+  "source_config_count": 36,
+  "source_payload_values_or_hash_printed": false,
+  "prepare": {
+    "configuration_content_or_md5_values_emitted": false,
+    "run_id": "e57ebd00096d42ecbccdf7a72b4afb04",
+    "source_config_count": 36,
+    "source_namespace_names": [
+      "finger-cloud-dev",
+      "finger-trascan"
+    ],
+    "status": "prepared-no-target-write",
+    "target_before_config_count": 7
+  },
+  "Nacos_config_DELETE_or_POST_executed": false
+}

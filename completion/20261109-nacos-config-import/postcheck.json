@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-11-09T13:41:50.274023+00:00",
+  "scope": "IndependentGET-only source/targetconfigimportpostcheck,nochange",
+  "source": {
+    "selected_source_count": 36,
+    "source_GET_body_and_MD5_exact_private_export": true,
+    "source_showall_metadata_exact_private_export": true,
+    "raw_body_hash_or_key_values_output": false,
+    "source_mutated": false
+  },
+  "target": {
+    "vmid": 210,
+    "at": "2026-11-09T13:41:50.224103+00:00",
+    "namespace_metadata": [
+      {
+        "id": "",
+        "name": "public",
+        "config_count": 0
+      },
+      {
+        "id": "08e7191f-3ccd-411a-be00-56798d237533",
+        "name": "finger-cloud-dev",
+        "config_count": 32
+      },
+      {
+        "id": "10719261-2641-590a-b821-c8484ca955ac",
+        "name": "finger-test",
+        "config_count": 0
+      },
+      {
+        "id": "23836f2e-9553-5948-84cd-431b2f241bd6",
+        "name": "finger-test-empty",
+        "config_count": 0
+      },
+      {
+        "id": "7bfe03c6-0590-4ff0-8def-e07015016b54",
+        "name": "finger-trascan",
+        "config_count": 4
+      }
+    ],
+    "all_instance_config_count": 36,
+    "groups": {
+      "DEFAULT_GROUP": 36
+    },
+    "types": {
+      "yaml": 35,
+      "text": 1
+    },
+    "target_identity_set_exact_source": true,
+    "target_body_and_MD5_exact_count": 36,
+    "target_metadata_exact_count_nullable_empty_normalized": 36,
+    "metadata_raw_nullable_vs_empty_difference_counts": {
+      "desc": 3
+    },
+    "target_private_source_item_count": 36,
+    "schema_table_counts": {
+      "finger_auth_test": 3,
+      "finger_coms_test": 10,
+      "finger_system_test": 6,
+      "nacos_test": 12
+    },
+    "users_roles_permissions_counts": {
+      "users": 2,
+      "roles": 2,
+      "permissions": 2
+    },
+    "client_permission_resources_exact_old_and_empty": true,
+    "client_role_association_same": true,
+    "private_backup_metadata": [
+      {
+        "run_id": "e57ebd00096d42ecbccdf7a72b4afb04",
+        "directory_uid": 0,
+        "directory_mode": "0o700",
+        "backup_filename": "target-before.json",
+        "backup_uid": 0,
+        "backup_mode": "0o600",
+        "backup_bytes": 7393,
+        "file_contents_or_hash_read": false,
+        "symlink": false
+      },
+      {
+        "run_id": "12b575d6d3d04e978b904197bf3d67ee",
+        "directory_uid": 0,
+        "directory_mode": "0o700",
+        "backup_filename": "target-before.json",
+        "backup_uid": 0,
+        "backup_mode": "0o600",
+        "backup_bytes": 6953,
+        "file_contents_or_hash_read": false,
+        "symlink": false
+      }
+    ],
+    "containers": [
+      {
+        "Name": "/dell-data-test-data-mysql-1",
+        "ID": "df4e9d159f5903e42ab4e6c2c092d2d454ac55a76c226fc8a07fe44c72b41ef6",
+        "ImageID": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+        "PID": 1325,
+        "StartedAt": "2026-11-09T06:28:57.073828899Z",
+        "State": "running",
+        "Health": "healthy",
+        "RestartCount": 0,
+        "OOMKilled": false
+      },
+      {
+        "Name": "/dell-data-test-data-nacos-1",
+        "ID": "5bd9a27fd4051994494eed423d84e50862ef91918ffbfa4834df14de2a8f2e4c",
+        "ImageID": "sha256:fc86d4833afb7abc64006f04c715946303f6b15d694c2f05c2895a27d967ed88",
+        "PID": 1846,
+        "StartedAt": "2026-11-09T06:29:09.039813697Z",
+        "State": "running",
+        "Health": "healthy",
+        "RestartCount": 0,
+        "OOMKilled": false
+      },
+      {
+        "Name": "/dell-data-test-data-redis-1",
+        "ID": "b5d49893d99c73d425f0af035dce837f1467a096841d7bbae3f7d5381ce3df22",
+        "ImageID": "sha256:17c1c1b96fd1685968790c7fcab311e5bc49c809efe9744af262640a559c4cf2",
+        "PID": 1401,
+        "StartedAt": "2026-11-09T06:28:57.982305444Z",
+        "State": "running",
+        "Health": "healthy",
+        "RestartCount": 0,
+        "OOMKilled": false
+      },
+      {
+        "Name": "/dell-data-test-data-rabbitmq-1",
+        "ID": "4d955f668d96330c7d9cbe676ec41722a1d3c67038a52d89f0c3f8f11866ce58",
+        "ImageID": "sha256:de912cbbf07f938bb8aaa5682464a73a00c6a996efdf0880423aeb4eae006c34",
+        "PID": 1477,
+        "StartedAt": "2026-11-09T06:28:58.751894383Z",
+        "State": "running",
+        "Health": "healthy",
+        "RestartCount": 0,
+        "OOMKilled": false
+      }
+    ],
+    "readiness_HTTP": 200,
+    "UI_HTTP": 200,
+    "content_tokens_password_hash_or_private_MD5_values_output": false,
+    "server_writes_config_publish_grants_or_Java_start": false
+  },
+  "checks": {
+    "source36_body_MD5_unchanged": true,
+    "source_metadata_unchanged": true,
+    "target36_identityset_exact": true,
+    "target36_body_MD5_exact": true,
+    "target36_metadata_semantics_exact": true,
+    "selected_namespace_names_counts": true,
+    "public_old_empty_configs0": true,
+    "full36_DEFAULTGROUP_types": true,
+    "users_roles_grants_preserved": true,
+    "business_schema_tablecounts_preserved": true,
+    "original4_IDs_images_health_preserved": true,
+    "private_two_backups_root700600": true,
+    "readiness_UI200": true
+  },
+  "all_passed": true,
+  "limitations": [
+    "Initialtest-envpreflight lacksPID/StartedAt; currentcapturedonly, nofabricatedexactcomparison. SameIDs/restart0checked, producerseparateframeproof.",
+    "Nullableoptionalmetadatacomparedusingreviewednull-emptysemantics; rawnullable-differencecounts separatelyreported, no silentclaimofbyteidentityforDBnullablefields.",
+    "Privatebackup7and5existence/UIDmodeonly; originalcountsfromprepared/remainingreceipts, backupcontentnotread.",
+    "NoVM240operation,Java notstarted; rootcanindependentlycheckJavafoundation."
+  ],
+  "no_configuration_content_hash_keys_or_credentials_in_public_report": true
+}

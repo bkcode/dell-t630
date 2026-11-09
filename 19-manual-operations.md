@@ -1,6 +1,6 @@
 # Dell T630人工操作手册
 
-更新：2026-11-09，Asia/Shanghai。本手册面向掌握PVE root和来宾ub管理权限的管理员，提供逐项复核流程，**不是一键部署脚本，也不代表以下动作现在正在执行**。用户已确认内存处理/诊断通过；本轮继续完成基础搭建并最新仅选择正式数据库/Nacos配置自动备份，明确不迁移数据、不合并Nexus。现行正式DB/Nacos逻辑首轮3301B成功、service退出0，03:30 timer已启用；旧11来宾全机jobdisabled且旧档保留；当日状态入口为[11月9日交付记录](completion/20261109-prod-db-scope/README.md)。下文复杂合并/恢复命令仅保留人工参考，不因服务器可达就停服、改盘或启动业务。
+更新：2026-11-09，Asia/Shanghai。本手册面向掌握PVE root和来宾ub管理权限的管理员，提供逐项复核流程，**不是一键部署脚本，也不代表以下动作现在正在执行**。用户已确认内存处理/诊断通过；本轮继续完成基础搭建并最新仅选择正式数据库/Nacos配置自动备份，仅测试Nacos配置迁移按用户新授权完成，不迁业务数据库、不合并Nexus。现行正式DB/Nacos逻辑首轮3301B成功、service退出0，03:30 timer已启用；旧11来宾全机jobdisabled且旧档保留；当日状态入口为[11月9日交付记录](completion/20261109-prod-db-scope/README.md)。下文复杂合并/恢复命令仅保留人工参考，不因服务器可达就停服、改盘或启动业务。
 
 历史Nexus短时维护知情许可已满足，但11月8日用户明确暂不迁移的范围控制当前执行。旧“待授权”记录只作历史，不能反复索取同一许可，也不能借旧许可或硬件恢复自动启动合并。当前拓扑/预算以[plan.json](plan.json)、入口以[12](12-service-access-and-operations.md)、清理事实以[18](18-cleanup-and-consolidation.md)为准。证据采集后的运行状态会变化，硬件故障后必须fresh核查。
 
@@ -41,13 +41,15 @@
 
 凭据只查受控文件位置，见[12凭据表](12-service-access-and-operations.md)。目录700、秘密文件600；不把值贴入文档、终端命令、日志、截图或Git。不要`cat`秘密来调试；不把密码放`-pPASSWORD`、URL或环境变量。旧Mac Penpot连接不自动改成新服务，客户端切换需使用正确目标身份，不能拿源key替代。
 
-### 测试Nacos新空namespace的使用
+### 测试Nacos配置的当前使用范围
 
-进入`http://192.168.19.20:8848/nacos/`，沿用现有测试应用登录身份，显式选择`finger-test-empty`，namespace ID `23836f2e-9553-5948-84cd-431b2f241bd6`。用户名和密码仅按[12受保护文件索引](12-service-access-and-operations.md)查看；密码仍在`private/data/bundles/test-data/secrets/nacos-client-password`及guest受控对应文件，不cat到终端/截图、不给URL/argv传值。
+入口`http://192.168.19.20:8848/nacos/`。现有admin可管理导入域：finger-cloud-dev `08e7191f-3ccd-411a-be00-56798d237533` 32项、finger-trascan `7bfe03c6-0590-4ff0-8def-e07015016b54` 4项，共36，当前均DEFAULT_GROUP，35yaml/1text。旧finger-test `10719261-2641-590a-b821-c8484ca955ac`、finger-test-empty `23836f2e-9553-5948-84cd-431b2f241bd6`和public配置均0。[applied](completion/20261109-nacos-config-import/applied.json)/[verified](completion/20261109-nacos-config-import/verified.json)为当前证明；20:27旧7项仍保留的[空域创建记录](completion/20261109-test-env/empty-namespace-created.json)仅按当时解释。
 
-[创建后验收](completion/20261109-test-env/empty-namespace-created.json)为配置0、跨组注册服务0、新域缺配置404/无关域403；该“空”只表示同一测试Nacos中新建的逻辑namespace。旧ID `10719261-2641-590a-b821-c8484ca955ac`、7配置/历史9、原3业务schema的3/10/6表均保留，不清库、不重置密码/role、不重启或启动Java。
+应用`finger_test`原role只允许旧finger-test和finger-test-empty，没有grant两导入域；不能把应用账号403当网络故障、改密码或自动提权。未来业务接入另行明确namespace/权限；基础.env/health仍可指旧域保兼容。本期最新用户配置迁移授权覆盖先前只空服务限制，但不含Java启动、源码profile修改或业务数据库迁移。
 
-基础bundle `.env`和健康检查仍用旧namespace保兼容，不为切换页面修改这些值，也不修改源码profile。未来业务获准使用新域时单独显式选择新ID；本轮不上传配置、执行SQL/seed或迁移任何数据。
+两源域ID/name/group和正文原样，没有端点适配，可能仍含源本地连接参数；保存成功不代表应用可运行。不把这些连接信息、正文/hash或密码贴进文档/终端/Git，凭据仍按[12受保护位置](12-service-access-and-operations.md)管理，本文不列值。
+
+旧7项保护快照保存在guest私有位置；首run删2后遇缓存暂态停手，新run重新保护剩5并清5→0→导36。不要覆盖旧backup或重跑旧manifest“resume”；失败应先只读核DBmetadata与普通GET缓存差异。DELETE读回仅等404/原基线200，不重复DELETE；POST读回404可等、200错正文立即停。所有namespace/账号/role/权限/业务DB/服务保留，缺两域仅元数据create，不通过SQLtruncate或重启凑通过。后续参见[本次导入记录](completion/20261109-nacos-config-import/)。
 
 ### SSH严格连接
 

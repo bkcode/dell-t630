@@ -11,7 +11,9 @@
 - 用户已进一步授权并完成单份Nacos备份隔离恢复：VM210临时无网络MySQL，12表/10条元数据的完整DDL语义及逐列内容/重启校验通过，临时资源已清，源档与timer不变。当前验收completion/20261109-prod-db-restore/acceptance.json；仅此小快照，不扩签正式业务数据/RPO/RTO/独立DR，也不得据此覆盖现役库。
 - Nexus短停合并的历史授权保留，但2026-11-08用户明确暂不迁移，当前不得合并/迁盘/退役221。将来用户明确恢复迁移任务后再fresh核验；本轮补齐与清理不能绕过该边界。
 
-- 用户最新测试环境范围仅空基础服务，保留现有数据，不迁移/业务初始化/Java。VM210已有四组件，新增finger-test-empty（23836f2e-9553-5948-84cd-431b2f241bd6）为空起点；旧域10719261-2641-590a-b821-c8484ca955ac与7配置/19业务表保留，原health/bundle默认namespace不变。新域测试角色只精确rw授权，不重置账号；当前验收completion/20261109-test-env/acceptance.json。不得据“空”清库或重跑业务bootstrap。
+- 用户此前测试环境范围仅空基础服务；其后已明确授权下述选定Nacos配置迁移，仍不做业务DB初始化/迁移或Java启动。VM210已有四组件，新增finger-test-empty（23836f2e-9553-5948-84cd-431b2f241bd6）为空起点；旧域10719261-2641-590a-b821-c8484ca955ac与7配置/19业务表保留，原health/bundle默认namespace不变。新域测试角色只精确rw授权，不重置账号；当前验收completion/20261109-test-env/acceptance.json。不得据“空”清库或重跑业务bootstrap。
+
+- 用户随后明确授权仅Nacos配置迁移：清理测试210所有配置items，导入Mac finger-cloud-dev(08e7191f-3ccd-411a-be00-56798d237533)32项及finger-trascan(7bfe03c6-0590-4ff0-8def-e07015016b54)4项；原namespace ID/name/group/body保留，不适配连接地址、不启动Java。原7配置已在guest受保护完整备份，删除后Nacos缓存异步读回曾暂停，必须以journal/现况安全续作，不盲重跑；保留namespace/账号/权限/历史与业务DB，正式不动。源码/配置body与真实MD5仅private/SSH，不进Git。此最新授权只覆盖测试Nacos配置，不是业务DB迁移。
 
 ## 范围与安全边界
 

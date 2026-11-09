@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-11-09T13:02:18.572737+00:00",
+  "source_project": "/Users/yangzhaohui/work/nacos",
+  "source_base_URL": "http://127.0.0.1:8848/nacos",
+  "source_service": {
+    "compose_source": "/Users/yangzhaohui/work/nacos/docker-compose.yml",
+    "compose_image_reference": "nacos/nacos-server:v2.4.3",
+    "container_name": "nacos",
+    "container_ID": "61cfa904c75240b900e5ec2b443f58ff05f5e906d29d3638b3656f422d4aed49",
+    "actual_ImageID": "sha256:e7e48cb036c4e72bbb37b2fa04557e1fca192392eb954120e7b0b785fa08ae6f",
+    "observed_state": "running",
+    "network_mode": "host",
+    "published_ports": {},
+    "mounts": [
+      {
+        "source": "/Users/yangzhaohui/work/nacos/nacos/logs",
+        "destination": "/home/nacos/logs",
+        "RW": true
+      }
+    ]
+  },
+  "Nacos_readiness_HTTP": 200,
+  "namespace_list_HTTP": 200,
+  "authentication_attempts": 0,
+  "credential_or_token_values_read_or_output": false,
+  "config_content_or_compose_Env_values_output": false,
+  "source_mutations_or_restart": false,
+  "destination_or_import_scope": "root awaiting usertarget/source-range confirmation; no publication/deletion initiated",
+  "namespaces": [
+    {
+      "namespace_id": "",
+      "name": "public",
+      "reported_config_count": 0,
+      "config_list_HTTP": 200,
+      "metadata_complete": true,
+      "listed_config_count": 0,
+      "API_totalCount": 0,
+      "group_counts": []
+    },
+    {
+      "namespace_id": "08e7191f-3ccd-411a-be00-56798d237533",
+      "name": "finger-cloud-dev",
+      "reported_config_count": 32,
+      "config_list_HTTP": 200,
+      "metadata_complete": true,
+      "listed_config_count": 32,
+      "API_totalCount": 32,
+      "group_counts": [
+        {
+          "group": "DEFAULT_GROUP",
+          "count": 32
+        }
+      ]
+    },
+    {
+      "namespace_id": "7bfe03c6-0590-4ff0-8def-e07015016b54",
+      "name": "finger-trascan",
+      "reported_config_count": 4,
+      "config_list_HTTP": 200,
+      "metadata_complete": true,
+      "listed_config_count": 4,
+      "API_totalCount": 4,
+      "group_counts": [
+        {
+          "group": "DEFAULT_GROUP",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "namespace_id": "broker-base-local-20260922",
+      "name": "broker-base-local-20260922",
+      "reported_config_count": 1,
+      "config_list_HTTP": 200,
+      "metadata_complete": true,
+      "listed_config_count": 1,
+      "API_totalCount": 1,
+      "group_counts": [
+        {
+          "group": "DEFAULT_GROUP",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "namespace_id": "broker-omva-local-20260917",
+      "name": "Broker OMVA Local 20260917",
+      "reported_config_count": 1,
+      "config_list_HTTP": 200,
+      "metadata_complete": true,
+      "listed_config_count": 1,
+      "API_totalCount": 1,
+      "group_counts": [
+        {
+          "group": "DEFAULT_GROUP",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "namespace_id": "puyu-local",
+      "name": "puyu-local",
+      "reported_config_count": 5,
+      "config_list_HTTP": 200,
+      "metadata_complete": true,
+      "listed_config_count": 5,
+      "API_totalCount": 5,
+      "group_counts": [
+        {
+          "group": "DEFAULT_GROUP",
+          "count": 5
+        }
+      ]
+    }
+  ],
+  "status": "source-Nacos-metadata-inventoried-readonly",
+  "all_namespace_config_metadata_complete": true,
+  "total_namespace_count": 6,
+  "total_config_count": 43,
+  "authentication_observation": "Local loopback readonly namespace/configlist GET succeeded withoutcredentials; not aclaim aboutall networkauth enforcement.",
+  "compose_persistence_limitation": "Onlylogs bindmount observedforNacos. Do notreplaceapplication export withcopylogdirectory/Derby guessing or wholeDBmigration.",
+  "config_item_metadata_deferred_until_user_source_selection": true,
+  "latest_scope": "Userwillfirstselectsource namespaceaftername/id/count/groupcountlist. TargettestNacosallnamespaceconfigclear has beenrequestedbut MUST NOTexecuteuntilsourcechoice androotwindow; preserveallnamespaceobjects/accounts/permissions/businessDBs; productionuntouched."
+}

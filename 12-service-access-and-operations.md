@@ -1,13 +1,13 @@
 # 当前访问入口与日常操作
 
-2026-11-09，Asia/Shanghai。**自然重启后基础服务fresh复验；继续完成搭建并仅备正式数据库/Nacos配置，不迁移数据。** Nexus仍独立221，Mac外部探针不需要。当日状态见[11月9日交付记录](completion/20261109-prod-db-scope/README.md)，[11月8日恢复](recovery/20261108/README.md)保留历史。应用直接访问真实19地址；PVE21.22只用于宿主管理，原应用DNAT端口已关闭。详见[当前交付](15-network19-delivery.md)与[新网络验收](network19/audit/network19-acceptance.md)。
+2026-11-09，Asia/Shanghai。**自然重启后基础服务fresh复验；继续基础搭建，仅自动备份正式数据库/Nacos，并按最新授权完成测试Nacos配置原样迁移；不迁业务数据库。** Nexus仍独立221，Mac外部探针不需要。当日状态见[11月9日交付记录](completion/20261109-prod-db-scope/README.md)，[11月8日恢复](recovery/20261108/README.md)保留历史。应用直接访问真实19地址；PVE21.22只用于宿主管理，原应用DNAT端口已关闭。详见[当前交付](15-network19-delivery.md)与[新网络验收](network19/audit/network19-acceptance.md)。
 
 | 服务 | 当前入口 | 范围 |
 | --- | --- | --- |
 | PVE | https://192.168.21.22:8006/ | 管理SSH22保留 |
 | 虚拟网关190 | WAN192.168.21.23 / LAN192.168.19.1 | 路由、19DNS/DHCP，无NAT |
 | Penpot | http://192.168.19.50:9001/ | Git定制版、3设计/973媒体、11服务 |
-| 测试Nacos | http://192.168.19.20:8848/nacos/ | 21.0/24已仅放行该目标TCP8848/9848；同实例finger-test-empty需登录并显式选namespace，旧域保留 |
+| 测试Nacos | http://192.168.19.20:8848/nacos/ | 21.0/24仅放行8848/9848；cloud-dev32＋trascan4已原样导入，账号须有目标域权限 |
 | Nexus | http://192.168.19.31:8081/ | 目前归221；合并目标归220同NIC服务alias，URL不改 |
 | OMV | http://192.168.19.60/ | 家庭NAS管理 |
 | Jellyfin | http://192.168.19.60:8096/ | 媒体库、DirectPlay协议已验 |
@@ -45,13 +45,26 @@ Studio来源21.230已记录HTTP200、TCP9848连接成功；同来源到test19.20
 
 这次没有扩展ICMP许可；ping可能仍无响应，不能据此判断Nacos失败。请分别检查`/nacos/`的HTTP、需要的9848 TCP及既有认证。GW hot更新未重启服务、PID保持；PVE桥只新增1条规则且hostforward全0，WireGuard10.66.66/24原全服务许可和无NAT保持。证据：[网关确认](network19/lan-nacos-20261109/gateway-confirmed.json)、[桥确认](network19/lan-nacos-20261109/bridge-confirmed.json)、[网关独立核查](network19/lan-nacos-20261109/gateway-independent-check.json)、[桥独立核查](network19/lan-nacos-20261109/bridge-independent-check.json)。没有新增公网CF入口，也不把任何密码值或私有凭据文件加入Git。
 
-## 测试Nacos空namespace已搭好
+## 测试Nacos配置现状：36项原样导入完成
 
-同一VM210/`192.168.19.20:8848`测试Nacos内新增 **`finger-test-empty`**，namespace ID `23836f2e-9553-5948-84cd-431b2f241bd6`。20:27验收时配置0、跨组注册服务0，见[空namespace回执](completion/20261109-test-env/empty-namespace-created.json)。这是新增逻辑隔离域，**没有清空整个Nacos实例、旧namespace或MySQL数据库**；旧namespace `10719261-2641-590a-b821-c8484ca955ac` 的7项配置、历史计数9及原3个业务schema（表数3/10/6）保持，原4容器帧未变。
+用户最新明确授权本机Nacos配置迁移，**覆盖先前“只搭空服务、不迁配置”的限制**；仍不迁业务数据库、不动正式环境、不启动Java或修改源码profile。同一测试入口`http://192.168.19.20:8848/nacos/`内现有配置如下，namespace ID/name、group与正文保持源原样：
 
-沿用既有测试应用账号及role，仅增加新域`:*:*`的rw授权，已核新域缺配置404、无关域403；没有重置密码/账号role关系、迁移、业务DDL/配置发布、Java启动或服务重启。基础bundle `.env`和health仍指旧namespace以保兼容，不为了“空”改其namespace值；未来业务若另获准使用新域必须显式选新ID，当前不改源码profile。
+| namespace | ID | 当前配置数 |
+| --- | --- | ---: |
+| finger-cloud-dev | `08e7191f-3ccd-411a-be00-56798d237533` | 32 |
+| finger-trascan | `7bfe03c6-0590-4ff0-8def-e07015016b54` | 4 |
+| finger-test（旧域） | `10719261-2641-590a-b821-c8484ca955ac` | 0 |
+| finger-test-empty | `23836f2e-9553-5948-84cd-431b2f241bd6` | 0 |
+| public | 默认域 | 0 |
 
-用户名只按受保护的`private/data/bundles/test-data/.env`中`NACOS_CLIENT_USER`查看，密码引用`private/data/bundles/test-data/secrets/nacos-client-password`；guest对应`/opt/dell/data/test-data/.env`和`secrets/nacos-client-password`。仅说明保管位置，不读取/展示值、不通过命令参数或截图传播；原管理账号继续用原受控位置。
+[applied](completion/20261109-nacos-config-import/applied.json)与[只读verified](completion/20261109-nacos-config-import/verified.json)确认合计36项、当前全部group为`DEFAULT_GROUP`，类型35 yaml＋1 text，正文及type/appName/desc等受审元数据在私有流程exact比对通过。原样内容可能仍含源本地连接参数，**没有端点适配，不代表服务器应用已可运行**。
+
+现有测试应用账号`finger_test`原权限仍只覆盖旧finger-test和finger-test-empty两域，**没有grant新导入的两个source namespace**。管理员可管理这两域；未来业务接入须另行明确namespace与应用权限，不能为消除403重置密码/role或自动提权。基础.env/health仍指旧域保兼容，不改源码profile、不启动Java。
+
+旧7项已有guest受保护完整快照；首次删除2项后缓存读回触发安全停止，修复为只读有界等待后，新run另备剩5项、清5→0→导36，没有覆盖旧备份或盲目resume。旧配置history继续保留/产生正常API审计，namespace、用户/role/permissions、业务DB及服务未写，缺失的两source域仅建元数据。这里只记录计数/比较结论，不放旧配置内容、正文hash或密码；后续证据见[导入目录](completion/20261109-nacos-config-import/)。
+
+20:27[空域创建](completion/20261109-test-env/empty-namespace-created.json)当时“旧7项/历史9保留、新空域0”仍是历史事实；后来用户授权清全部配置并导源，当前旧域已0，不能继续称仍有7项。账号凭据仍只由原受保护文件/渠道保管，不在本文披露值。
+
 
 ## 凭据位置
 
@@ -59,7 +72,7 @@ Studio来源21.230已记录HTTP200、TCP9848连接成功；同来源到test19.20
 | 对象 | 受保护位置 |
 | --- | --- |
 | 数据组件 | Mac `private/data/bundles/<角色>/secrets/` 与各guest受控安装包 |
-| 测试Nacos新空域沿用账号 | 用户名查test-data受保护`.env`的`NACOS_CLIENT_USER`；密码查`private/data/bundles/test-data/secrets/nacos-client-password`，不在文档列值 |
+| 测试Nacos既有应用账号（仅旧域/空域权限） | 用户名查test-data受保护`.env`的`NACOS_CLIENT_USER`；密码查`private/data/bundles/test-data/secrets/nacos-client-password`，不在文档列值 |
 | Java合成管理员/测试client | Mac `private/java/secrets/`；测试账号FNTEST0001 |
 | Nexus新admin/reader/test publisher | Mac `private/nexus/new-secrets/` 与原221 `/root/dell-nexus-secrets/`；合并验收后由220承接同一身份目录 |
 | Penpot新owner | 250 `/etc/penpot/new-identities.json`，owner@dell.local |

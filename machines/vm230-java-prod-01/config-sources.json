@@ -7,19 +7,19 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "65593c1f55f23c503933e20eb388fa98e5a0c292ca017b2e48a4ce0c5c542cfb"
+      "sha256": "045cf0ccb806066365aa5a8c11f1e0dd93916b14fe5690925f21ae33c2d68726"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
-      "sha256": "9a725346f6153b303e8882e6650082134ec678fa166d2688b5800ef127313bca"
+      "sha256": "660def21ab88296afbb54619bf7b986397006c3a5f080fa5d6cd171ba176ca99"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
       "purpose": "当前基础搭建与历史故障交接；本轮不迁移，旧证据按时点解释。",
-      "sha256": "e00901c95a8e24124dab55d1f316c25c7ed6c52680a3bb1bf825ceea94706795"
+      "sha256": "fd55fb5881a1ff53f8fc241df8b7f8ff33cea8217de799bf23c902649f9fc177"
     },
     {
       "path": "network19/migration-plan.json",

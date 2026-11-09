@@ -1,0 +1,21 @@
+{
+  "automatic_rollback_performed": false,
+  "config_count": 36,
+  "configuration_content_or_md5_values_emitted": false,
+  "deleted_config_count": 5,
+  "group_counts": {
+    "DEFAULT_GROUP": 36
+  },
+  "namespace_counts": {
+    "08e7191f-3ccd-411a-be00-56798d237533": 32,
+    "7bfe03c6-0590-4ff0-8def-e07015016b54": 4
+  },
+  "namespaces_created_only_if_missing": [
+    "finger-cloud-dev",
+    "finger-trascan"
+  ],
+  "published_config_count": 36,
+  "run_id": "12b575d6d3d04e978b904197bf3d67ee",
+  "status": "target-configs-replaced-from-reviewed-source",
+  "users_roles_permissions_services_or_business_DB_changed": false
+}

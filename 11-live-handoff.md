@@ -1,6 +1,6 @@
-# 当前交接：基础已恢复，本轮不迁移
+# 当前交接：测试配置原样导入完成，业务数据库不迁移
 
-更新：2026-11-09，Asia/Shanghai。用户继续授权完成基础搭建，并明确仅自动备份正式数据库/Nacos配置；内存现场处理/诊断通过由用户此前确认。**不合并Nexus、不搬数据、不退役221。** 以前短停合并许可保留为历史，不覆盖这次明确暂缓。
+更新：2026-11-09，Asia/Shanghai。用户继续授权完成基础搭建，并明确仅自动备份正式数据库/Nacos配置；内存现场处理/诊断通过由用户此前确认。**最新只授权测试Nacos配置迁移，不合并Nexus、不迁业务数据库、不退役221。** 以前短停合并许可保留为历史，不覆盖这次明确暂缓。
 
 当日执行状态唯一入口：[11月9日交付记录](completion/20261109-prod-db-scope/README.md)。[11月8日恢复记录](recovery/20261108/README.md)为上轮历史。
 
@@ -18,9 +18,12 @@
 
 230/240各一，仅运行基础，无Java业务进程/自启；publisher仍fenced。Penpot保留实际ff1783e版本，用户指定的bkcode/penpot main是未来更新合同，本轮未取码/构建/升级。
 
-## 测试基础新增空域
+## 测试Nacos配置迁移已完成
 
-[20:27回执](completion/20261109-test-env/empty-namespace-created.json)确认在原VM210 Nacos `19.20:8848`新增`finger-test-empty`，ID `23836f2e-9553-5948-84cd-431b2f241bd6`，配置0/跨组注册服务0；旧域7配置、历史9和3业务schema（3/10/6表）保留。已有测试role只加新域rw权限，原密码/关系/四容器保持，无迁移/DDL/业务config发布/Java或重启。现役`.env`/health仍用旧ID `10719261-2641-590a-b821-c8484ca955ac`，未来使用新域必须显式选新ID，不改源码profile。登录账号/密码只查[12受保护文件索引](12-service-access-and-operations.md)，不在文档输出值。
+用户最新授权覆盖之前仅空服务方向：source两域finger-cloud-dev `08e7191f-3ccd-411a-be00-56798d237533` 32项、finger-trascan `7bfe03c6-0590-4ff0-8def-e07015016b54` 4项现已原ID/name/group/body导入210，types35yaml/1text；[applied](completion/20261109-nacos-config-import/applied.json)及[verified](completion/20261109-nacos-config-import/verified.json)确认36项正文/metadata exact。旧finger-test `10719261-2641-590a-b821-c8484ca955ac`、新empty `23836f2e-9553-5948-84cd-431b2f241bd6`及public现均0。20:27空基础创建时旧7项保留的记录仍属历史，不追改原证据。
+
+原7配置完整保护快照留guestprivate：初次删2后因cache延迟停手，另run备剩5/清5→0→导36，未覆盖旧快照或盲resume。namespace、users/role/permissions、业务DB和服务保持，仅缺source域时create元数据；未新增App权限、不Java/不改源码profile。`finger_test`仍只old＋empty，可管理新域的是现有admin；后续业务需显式授权新ID。配置原样可能仍指源本地连接，未适配、不保证业务可运行，旧内容/hash/密码不进普通文档。详见[导入目录](completion/20261109-nacos-config-import/)。
+
 
 ## 正式数据库/Nacos备份交接
 

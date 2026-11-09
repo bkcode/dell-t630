@@ -2,7 +2,7 @@
 
 更新：2026-11-09，Asia/Shanghai。此处为PVE宿主、最后保留的12个来宾与3份模板建立独立目录，共16份。iDRAC属于PVE物理机管理面，记录在pve目录；已删除的旧VM/QA不重新建成现役对象。
 
-**2026-11-09继续完成基础搭建与仅正式数据库/Nacos逻辑备份，不迁移数据。** 当日fresh审计为12running/3tpl、15UP，forward guard跨14:24自然重启保持；正式DB首轮3301B/timer已通过、旧whole-VM计划disabled，最终状态统一见[当日交付记录](../completion/20261109-prod-db-scope/README.md)。每机JSON是合同/索引，不是秘密恢复包或实时配置导出；每机状态按各自证据与范围解释。
+**2026-11-09继续完成基础搭建与仅正式数据库/Nacos逻辑备份，不迁业务数据库；测试配置迁移按用户最新授权完成。** 当日fresh审计为12running/3tpl、15UP，forward guard跨14:24自然重启保持；正式DB首轮3301B/timer已通过、旧whole-VM计划disabled，最终状态统一见[当日交付记录](../completion/20261109-prod-db-scope/README.md)。每机JSON是合同/索引，不是秘密恢复包或实时配置导出；每机状态按各自证据与范围解释。
 
 ## 机器入口
 
@@ -25,9 +25,12 @@
 | 模板 | [9010 · tpl-linux-base](tpl9010-linux-base/README.md) | 无服务IP |
 | 模板 | [9011 · tpl-java-acceptance](tpl9011-java-acceptance/README.md) | 无服务IP |
 
-## 测试空域入口
+## 测试配置入口：源两域原样36项
 
-VM210测试Nacos沿用`192.168.19.20:8848`，新增`finger-test-empty`（ID `23836f2e-9553-5948-84cd-431b2f241bd6`），创建后验收配置0/跨组注册服务0，见[本轮回执](../completion/20261109-test-env/empty-namespace-created.json)和[210使用说明](vm210-data-test/README.md)。同一实例的旧namespace、配置/历史和数据库全部保留，不是清库或重建。基础`.env`/health仍指旧域；未来业务需显式选新ID，当前不改源码profile、不初始化业务或启动Java。账号仅查既有受保护bundle文件，值不进入机器目录/Git。
+用户最新授权测试Nacos配置迁移，覆盖先前仅空基础限制。VM210 `19.20:8848`现为finger-cloud-dev（`08e7191f-3ccd-411a-be00-56798d237533`）32项＋finger-trascan（`7bfe03c6-0590-4ff0-8def-e07015016b54`）4项；旧finger-test（`10719261-2641-590a-b821-c8484ca955ac`）、finger-test-empty（`23836f2e-9553-5948-84cd-431b2f241bd6`）和public均0。ID/name/group/body原样保留、未适配端点，不代表应用已可运行。见[applied](../completion/20261109-nacos-config-import/applied.json)、[verified](../completion/20261109-nacos-config-import/verified.json)及[210细节](vm210-data-test/README.md)。
+
+`finger_test`原应用权限仍只old＋empty，不授权两导入域；以后业务接入另配权限，当前admin可管理、不Java/不改profile/不迁业务DB。原7项guest私有备份保留，2＋5删除分两run留证，不公开body/hash/密码。早前[空域创建](../completion/20261109-test-env/empty-namespace-created.json)保持其当时历史含义，不再当当前旧域仍7项的证明。
+
 
 ## 每个目录的文件
 

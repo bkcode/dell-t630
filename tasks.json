@@ -213,7 +213,7 @@
       "verification_scope": "historical-completed-stage-not-current-live"
     }
   ],
-  "updated_at": "2026-11-09T20:32:14.386535+08:00",
+  "updated_at": "2026-11-09T21:46:26.287751+08:00",
   "implementation_note": "Original IMP entries describe the prior completed baseline. Latest user scope overrides Java program deployment: five test services are stopped/disabled, publisher fenced, only acceptance template9011 current.",
   "overall_status": "existing-infrastructure-recovered-user-deferred-migration",
   "network19_execution": [
@@ -427,5 +427,14 @@
       9848
     ],
     "evidence": "network19/lan-nacos-20261109/README.md"
+  },
+  "Nacos_config_import_20261109": {
+    "status": "completed",
+    "acceptance_manifest": "completion/20261109-nacos-config-import/acceptance.json",
+    "phase_cases_passed": 4,
+    "phase_case_count": 4,
+    "target_cleared_original": 7,
+    "source_imported": 36,
+    "Java_or_businessDB_or_production_changes": false
   }
 }
