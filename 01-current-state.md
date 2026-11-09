@@ -1,6 +1,6 @@
 # T630 当前状态、恢复验收与操作边界
 
-更新：2026-11-09（Asia/Shanghai）。**当前继续完成基础搭建，不迁移数据、不合并Nexus、不启动Java业务。** 14:24:03自然重启后，[本轮PVE审计](completion/20261109/pve-audit.json)确认12来宾运行、3模板停止、EDAC计数0与RAID Optimal，上一轮forward guard实际跨重启保持全0；[Ops审计](completion/20261109/ops-audit.json)15/15 targets UP。用户已确认此前内存重新插拔/更换并诊断通过，这与助手本轮只读观察分别记录。[首轮11项备份已完整验证](completion/20261109/backup-first-success.json)，原生任务OK/退出0；[每日计划已启用](completion/20261109/backup-schedule-enabled.json)，按03:30和3/7/4策略运行。本文只同步本地证据，不发起远程动作。
+更新：2026-11-09（Asia/Shanghai）。**当前继续完成基础搭建，不迁移数据、不合并Nexus、不启动Java业务。** 14:24:03自然重启后，[本轮PVE审计](completion/20261109/pve-audit.json)确认12来宾运行、3模板停止、EDAC计数0与RAID Optimal，上一轮forward guard实际跨重启保持全0；[Ops审计](completion/20261109/ops-audit.json)15/15 targets UP。用户已确认此前内存重新插拔/更换并诊断通过，这与助手本轮只读观察分别记录。现行自动备份已缩为仅正式数据库/Nacos配置，首轮3,301 bytes与03:30 timer通过，见[新中央入口](completion/20261109-prod-db-scope/README.md)。本文只同步本地证据，不发起远程动作。
 
 ## 1. 时间线和证据层级
 
@@ -15,7 +15,8 @@
 | 2026-11-08 20:19:38–20:20:48 | 12来宾启动完成；15/15 UP、0告警；主要6入口200；各接口forward恢复0 | [08恢复审计](recovery/20261108/ops-audit.json)、[08后检](recovery/20261108/host-network-postcheck.json)，保留上轮时点 |
 | 2026-11-09 14:24:03开机、14:42–14:44审计 | 12running/3tpl停止、15UP，EDAC0、两VD Optl；guard SHA与networking→bridge/ExecStartPost→pve-guests顺序保持，各接口forward0 | [PVE](completion/20261109/pve-audit.json)、[核心](completion/20261109/core-audit.json)、[媒体](completion/20261109/media-audit.json)、[Ops](completion/20261109/ops-audit.json)，新鲜基础范围，不是业务恢复全验 |
 | 2026-11-09 14:45:56 | 空闲iperf3 server已stop/disable，工具包保留，5201关闭 | [清理回执](completion/20261109/idle-iperf-disabled.json)，无应用/来宾重启 |
-| 2026-11-09 15:54:56完成，15:56:02收据 | 固定11项全部zstd/native verified、原生任务OK/退出0，共19,747,582,801 bytes；03:30计划已enabled | [首轮成功](completion/20261109/backup-first-success.json)、[计划启用](completion/20261109/backup-schedule-enabled.json)；不等于恢复通过或异机灾备 |
+| 2026-11-09 15:54:56/15:56（已退役方案历史） | 固定11项全部zstd/native verified、原生任务OK/退出0，共19,747,582,801 bytes；03:30计划已enabled | [首轮成功](completion/20261109/backup-first-success.json)、[计划启用](completion/20261109/backup-schedule-enabled.json)；后续已停用，旧档保留；不等于恢复通过或异机灾备 |
+| 2026-11-09 16:57–17:01 新范围收尾 | 仅VM200 nacos_prod/12表逻辑首轮3301B成功，03:30 timer enabled、db-only三规则已加载；旧whole-VM job停用且档保留 | [新首轮](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)、[规则热载](completion/20261109-prod-db-scope/alerts-installed.json)，不签恢复/独立DR |
 
 [plan.json](plan.json)是保留角色、地址和配置预算的机器可读来源；deployment_status不代替带时间的现场健康证据。[机器目录](machines/README.md)保存逐机合同与公开来源索引，不是实时配置导出。历史事故与本轮恢复证据边界见[硬件发现](08-hardware-findings.md)，日常检查见[操作手册](19-manual-operations.md)。
 
@@ -61,19 +62,17 @@ PVE管理地址`192.168.21.22`，BMC/iDRAC记录地址`192.168.21.21`；GW190管
 
 H730暴露SSD RAID1和HDD RAID5，PVE管理`local/local-lvm/store`；主AI本轮只读报告RAID Optimal，各应用审计核其分配挂载UUID。当前控制器状态不等于逐文件/数据库一致性证明。NAS只管理专用虚拟盘，不能再挂载PVE的sdb/store或直通承载宿主存储的整卡。
 
-## 5. PVE本机自动备份：首轮验证完成、每日计划已启用
+## 5. 正式数据库/Nacos自动备份：首轮完成、timer已启用
 
-用户选择先建本机恢复点，策略入口为[PVE本机自动备份](infra/backup/pve-local/README.md)与[policy](infra/backup/pve-local/policy.json)。固定100/190/200/201/210/221/230/240/250/260/270共11项，220始终排除；CF100仅PVE保存，归档/日志root600、目录root700，原21档不纳入新namespace保留策略。每日03:30，最近3份＋每日7点＋每周4点按PVE原生组合执行。
+现行自动备份**仅限VM200正式MySQL数据库与完整Nacos外部元数据库**；当前唯一非系统库为`nacos_prod`（12张BASE TABLE、全InnoDB），正式业务schema尚未创建。新增非系统库不在显式白名单即拒绝并告警，需审核更新策略，不能静默漏备。PVE落点`/mnt/pve/store/dell-artifacts/prod-db-backups`，目录root700/文件600；首轮逻辑SQL gzip **3,301 bytes**已完成CRC/传输SHA校验、DDL锁释放和guest暂存清理，service退出0；03:30（Asia/Shanghai）timer已enabled，下一次2026-11-10 03:30，GFS最近3/每日7/每周4。见[新首轮与timer回执](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)及[当前中央入口](completion/20261109-prod-db-scope/README.md)。
 
-**首轮11项全部完成zstd/native完整性检查，原生任务status=OK、unit退出0，计划已启用。** [首轮回执](completion/20261109/backup-first-success.json)记录归档总19,747,582,801 bytes；[计划回执](completion/20261109/backup-schedule-enabled.json)确认native job enabled=1、03:30与3/7/4保留。先前失败和进行中证据继续保留历史，不再作为现状；后续健康及规则状态统一见[本轮交付](completion/20261109/README.md)。
+其他数据均不纳入自动：不备VM/OS、测试数据、Redis/Rabbit、Nexus、Penpot、NAS、Ops或CF文件，220发布私钥继续只留220。旧11来宾全机job已disabled、旧whole-VM告警组已退役；原19,747,582,801 bytes全机归档和21回退档保留，不自动删除。新指标`dell_prod_db_backup_*`及三条db-only规则已原生校验/热载，原Prom身份、既有三告警名和Lark接收对象不变、无人工testsend，见[规则回执](completion/20261109-prod-db-scope/alerts-installed.json)。这是同机应用逻辑备份，不是VM快照；未恢复、未迁移、不签异机灾备或RPO/RTO，Java不启、Nexus不合并、Mac外部探针不需要。
 
-[备份metadata指标已接入原collector](completion/20261109/backup-metrics-installed.json)，复用QGA、不加监听；[三名Lark告警白名单已配套](completion/20261109/backup-notify-whitelist-result.json)，没有人工测试外发。Prom规则的实际加载与后验结果只以[当日中央记录](completion/20261109/README.md)为准，本页不提前声明已加载。
-
-这是snapshot/crash-consistent系统恢复点；QGA freeze不等于数据库逻辑一致、跨来宾事务一致或恢复演练。归档在同一T630/store，异机目的地、真实RPO/RTO和独立灾备仍未完成，本轮不恢复VM或导入数据。
+此前[11档全机首轮成功](completion/20261109/backup-first-success.json)及15:56启用是历史事实，已被用户最新“仅正式数据库/Nacos配置”范围取代；原`dell-local-nightly`不再启用，旧[pve-local实现](infra/backup/pve-local/README.md)退役不可重跑。CF历史档只留PVE，任何旧档/配置均不得因此导出。
 
 ## 6. 当前授权、保留目标与后续核查
 
-用户最新要求是继续完成基础搭建并先采用PVE本机自动备份，保持不迁移数据与现有业务边界。Nexus历史维护授权和220 primary30+alias31/6CPU8GiB目标保留，但不能覆盖本轮不迁移指令。221继续独立提供Nexus，220仅待机材料；不因恢复可达自动进入原切换窗口。未来仅在用户明确恢复迁移任务后fresh核验，不以本轮基础健康检查替代应用一致性备份与迁移门禁。
+用户最新要求是继续完成基础搭建并仅自动备份正式数据库/Nacos配置，保持不迁移数据与现有业务边界。Nexus历史维护授权和220 primary30+alias31/6CPU8GiB目标保留，但不能覆盖本轮不迁移指令。221继续独立提供Nexus，220仅待机材料；不因恢复可达自动进入原切换窗口。未来仅在用户明确恢复迁移任务后fresh核验，不以本轮基础健康检查替代应用一致性备份与迁移门禁。
 
 11月7日02:35验收JSON标题中的“merge pending approval”是当时旧状态；历史授权后来满足，而11月8日用户又明确暂不迁移。两次决定均保留，不修改历史原始证据。
 

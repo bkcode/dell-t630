@@ -1,6 +1,6 @@
 # Git 与资料交接
 
-更新：2026-11-09，Asia/Shanghai。本仓库是部署知识与代码仓库；本轮fresh审计基础健康并补齐用户授权的PVE本机自动备份，不迁移数据。首轮11档验证、原生正常退出与03:30计划启用已有实际收据；Git或文档通过不代替恢复演练、独立灾备或Nexus合并。当前状态入口：[当日交付记录](completion/20261109/README.md)。
+更新：2026-11-09，Asia/Shanghai。本仓库是部署知识与代码仓库；本轮fresh审计基础健康并补齐用户新范围的正式数据库/Nacos逻辑自动备份，不迁移数据。现行正式DB首轮3301B与03:30 timer已有成功回执，旧11来宾job停用、档保留；Git或文档通过不代替恢复演练、独立灾备或Nexus合并。当前状态入口：[当日交付记录](completion/20261109-prod-db-scope/README.md)。
 
 ## 仓库与阅读顺序
 
@@ -57,11 +57,11 @@ OW完整规则用户明确只留本地，`openwrt/rules-20261108/`已local exclu
 
 ## 当前交接事实
 
-- 当日fresh验收入口为[11月9日交付](completion/20261109/README.md)：自然重启后12running/3tpl、15UP、forward guard持久与EDAC0/RAIDOptl；11月7日02:35仅历史。
+- 当日fresh验收入口为[11月9日交付](completion/20261109-prod-db-scope/README.md)：自然重启后12running/3tpl、15UP、forward guard持久与EDAC0/RAIDOptl；11月7日02:35仅历史。
 - 11月7日02:44:29仅为故障前最后成功同步，不再当成当前最后PVE操作；原故障时间线不改写。
 - 随后PVE不可达；用户控制台显示UEFI0058，历史SEL指向B1；11月8日恢复记录另行保存，不覆盖该历史。
 - Nexus合并已有维护授权，220准备完毕、221未移交；基础已恢复，但用户暂不迁移；将来明确恢复该任务后fresh核验。
-- [PVE本机备份合同](infra/backup/pve-local/README.md)固定11项排除220、CF仅PVE，root700/600，最近3/每日7/每周4及原21档保留。首轮固定11档已全部verified（zstd、tar/vma及SHA验证），原生任务OK、unit退出0；15:56审核后每日03:30计划已启用，合计19,747,582,801字节。证据：[首轮成功](completion/20261109/backup-first-success.json)、[计划启用](completion/20261109/backup-schedule-enabled.json)。 snapshot非DB逻辑一致、未做恢复、无独立DR/RPO保证。归档/私有状态不进Git；新增Prom规则实际部署/加载见[当日记录](completion/20261109/README.md)，不提前签收。
+- 现行自动备份仅VM200正式MySQL/Nacos外部元数据库，当前只有nacos_prod/12表、正式业务schema未创建；新库未列白名单直接拒绝告警、需审核更新。首轮3301B已校验、03:30 timer enabled/GFS3-7-4，PVE目的地`/mnt/pve/store/dell-artifacts/prod-db-backups` root700/600，见[新中央入口](completion/20261109-prod-db-scope/README.md)及[首轮回执](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)。其他数据不自动备份；旧whole-VM jobdisabled、19,747,582,801B和21档保留不自动删除。新db-only三规则已[热载](completion/20261109-prod-db-scope/alerts-installed.json)，原Prom identity/三名/接收对象不变，无testsend。无restore/异机DR/RPO保证，SQL与私有manifest不进Git。
 - 本轮空闲iperfserver已停用且留包、新备份namespace已安装，这些有各自回执；本页同步只改文档，不删除源数据/私有资料或修改全局记忆。
 
 当前业务边界保持：Nexus不合并/数据不迁移、Java业务不启、Penpot实际ff提交不更新main；用户不需要Mac外部探针，不列当前或后续待办。

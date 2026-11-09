@@ -2,7 +2,7 @@
 
 更新：2026-11-09（Asia/Shanghai）。用户此前确认内存已重新插拔/更换且诊断通过；本次14:24自然重启后fresh核EDAC0、RAIDOptl、12running/3tpl与15targets UP。既有基础服务完成分范围核查，**不再把11/07的POST停机状态当当前现场**；完整物理根因、独立离线诊断与长期稳定性未因此自动签收。
 
-本轮用户要求继续完成基础搭建，并选择先建PVE本机自动备份，明确**不迁移数据、不合并Nexus**。当日状态入口：[completion/20261109/README.md](completion/20261109/README.md)。Mac外部探针明确不需要，保持停用，移出当前与后续待办。
+本轮用户要求继续完成基础搭建，并最新仅选择正式数据库/Nacos配置自动备份，明确**不迁移数据、不合并Nexus**。当日状态入口：[completion/20261109-prod-db-scope/README.md](completion/20261109-prod-db-scope/README.md)。Mac外部探针明确不需要，保持停用，移出当前与后续待办。
 
 ## 本次结果
 
@@ -14,13 +14,15 @@
 - 上轮定位ifupdown2覆写forwarding后补3个owned guard；本次14:24自然重启后SHA、networking→bridge/ExecStartPost→pve-guests顺序与全forward0实际读回，已验证本次重启保持。原interfaces/routes/ACL和无host NAT不变。
 - [空闲iperfserver停用](completion/20261109/idle-iperf-disabled.json)、5201关闭、包保留，未重启来宾或改网络。
 
-11月8日初查的启动no-route/starting保留为历史，11月9日fresh基础健康不需要重装。新增本机自动备份首轮已验证并启用计划；规则后验和整个本期签收仍以[当日记录](completion/20261109/README.md)的实际结果为准，不以部分模块通过代签全部。多余资源仍须依赖核对。
+11月8日初查的启动no-route/starting保留为历史，11月9日fresh基础健康不需要重装。新增本机自动备份首轮已验证并启用计划；规则后验和整个本期签收仍以[当日记录](completion/20261109-prod-db-scope/README.md)的实际结果为准，不以部分模块通过代签全部。多余资源仍须依赖核对。
 
-## 新增本机自动备份：进行中
+## 现行自动备份：仅正式数据库/Nacos配置
 
-[PVE本机备份合同](infra/backup/pve-local/README.md)固定11项、排除220、CF档只留PVE，目录root700/归档日志状态600、最近3/每日7/每周4保留；旧21回退档保留。首轮固定11档已全部verified（zstd、tar/vma及SHA验证），原生任务OK、unit退出0；15:56审核后每日03:30计划已启用，合计19,747,582,801字节。证据：[首轮成功](completion/20261109/backup-first-success.json)、[计划启用](completion/20261109/backup-schedule-enabled.json)。 metadata/Lark白名单已有配套，无人工通知测试；新增Prom规则实际部署/加载状态见[当日记录](completion/20261109/README.md)，不提前签收。
+**现行自动备份仅VM200正式数据库/Nacos配置。** 当前唯一非系统库`nacos_prod`，12张BASE TABLE全InnoDB；正式业务schema尚未创建，新增库不在显式白名单则拒绝告警并要求更新。首轮逻辑SQL gzip 3,301 bytes通过CRC/传输SHA、DDL锁释放及guest暂存清理，service退出0、timer已enabled，下一次2026-11-10 03:30（Asia/Shanghai）；GFS最近3/每日7/每周4。PVE目的地`/mnt/pve/store/dell-artifacts/prod-db-backups`，目录root700/文件600，不经Mac，见[新首轮与timer](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)、[中央状态](completion/20261109-prod-db-scope/README.md)。
 
-这是snapshot/crash-consistent系统恢复点，不是数据库逻辑或跨VM事务一致性；本轮不恢复、不迁移，不签独立灾备/RPO/RTO。
+其他数据均不自动备份：VM/OS、测试库、Redis/Rabbit、Nexus、Penpot、NAS、Ops、CF及发布私钥排除。旧11来宾全机jobdisabled、whole-VM规则组退役，原19,747,582,801 bytes全机档和21回退档保留、不自动删除；旧CF档只准PVE。新`dell_prod_db_backup_*`三条db-only规则已原生校验/SIGHUP加载，原Prom身份与既有三告警名/Lark接收对象不变，无testsend，见[规则回执](completion/20261109-prod-db-scope/alerts-installed.json)。仅同机逻辑恢复点，未恢复/无独立灾备或RPO保证；不迁移、不合并Nexus、不启Java、无Mac外部探针。
+
+原全机首轮成功和9/9验收保留为历史，不再是现行自动备份范围。
 
 ## 证据与验收边界
 

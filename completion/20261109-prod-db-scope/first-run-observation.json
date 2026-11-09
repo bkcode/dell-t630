@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-09T16:56:33.136330+08:00",
+  "unit": {
+    "Result": "success",
+    "ExecMainStatus": "0",
+    "ActiveState": "inactive",
+    "SubState": "dead"
+  },
+  "backup_metadata": {
+    "version": 1,
+    "source_vmid": 200,
+    "databases": [
+      "nacos_prod"
+    ],
+    "status": "success",
+    "run_id": "b16d1ed9ff0a4ff1877179428bd592c6",
+    "started_at": "2026-11-09T08:56:04.964148+00:00",
+    "last_success_timestamp": 1794214577.444057,
+    "last_run_success": 1,
+    "archive_bytes": 3301,
+    "finished_at": "2026-11-09T08:56:17.444057+00:00",
+    "last_success_run_id": "b16d1ed9ff0a4ff1877179428bd592c6",
+    "old_successes_pruned": 0
+  },
+  "SQL_or_manifest_contents_read": false
+}

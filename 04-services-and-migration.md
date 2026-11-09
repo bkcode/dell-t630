@@ -1,6 +1,6 @@
 # 服务部署结果、迁移边界与未完成事项
 
-更新：2026-11-09。**继续补齐现有基础搭建，用户选择先建PVE本机自动备份，不迁移数据。** 本轮14:42–14:44在14:24自然重启后再次观察基础服务健康，forward guard跨重启全0。[首轮11项归档验证完成](completion/20261109/backup-first-success.json)、原生任务OK/退出0，[03:30计划已启用](completion/20261109/backup-schedule-enabled.json)，不签恢复或异机灾备。Nexus221保持独立、Java业务不启、Penpot实际ff提交不更新main；Mac外部探针不再需要。没有重做全部应用内容/认证/恢复，整体见[01](01-current-state.md)、[08](08-hardware-findings.md)。
+更新：2026-11-09。**继续补齐现有基础搭建，用户最新仅选择正式数据库/Nacos配置自动备份，不迁移数据。** 本轮14:42–14:44在14:24自然重启后再次观察基础服务健康，forward guard跨重启全0。[正式DB首轮与timer](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)成功，旧whole-VM任务停用，不签恢复或异机灾备。Nexus221保持独立、Java业务不启、Penpot实际ff提交不更新main；Mac外部探针不再需要。没有重做全部应用内容/认证/恢复，整体见[01](01-current-state.md)、[08](08-hardware-findings.md)。
 
 ## 1. 当前实际服务归属与验收层级
 
@@ -64,17 +64,17 @@ Penpot使用独立目标身份；定制前端便利登录值不能随源配置�
 
 NAS采用OMV管理专用2TiB虚拟盘，Jellyfin只读媒体；SMB写入/只读账户区分，游戏文件不进入媒体扫库。旧home-cinema-nas仓库中宿主OMV、旧IP或一键拉起MoviePilot/qBittorrent的说明不能当本T630实施入口，详见[05](05-home-nas.md)。
 
-## 6. 新增PVE本机自动备份与恢复边界
+## 6. 现行正式数据库/Nacos逻辑备份与恢复边界
 
-PVE备份与应用逻辑/导出恢复互补。已做的合成MySQL/Nacos/Redis/Rabbit fixture隔离恢复、Grafana SQLite恢复、模板VMA恢复和应用样本验证只覆盖对应范围；Rabbit topology不含消息，单Nacos配置行不是完整元库，JAR回滚不回滚DB/Nacos。
+现行自动备份**仅限VM200正式MySQL数据库与完整Nacos外部元数据库**；当前唯一非系统库为`nacos_prod`（12张BASE TABLE、全InnoDB），正式业务schema尚未创建。新增非系统库不在显式白名单即拒绝并告警，需审核更新策略，不能静默漏备。PVE落点`/mnt/pve/store/dell-artifacts/prod-db-backups`，目录root700/文件600；首轮逻辑SQL gzip **3,301 bytes**已完成CRC/传输SHA校验、DDL锁释放和guest暂存清理，service退出0；03:30（Asia/Shanghai）timer已enabled，下一次2026-11-10 03:30，GFS最近3/每日7/每周4。见[新首轮与timer回执](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)及[当前中央入口](completion/20261109-prod-db-scope/README.md)。
 
-原应用样本副本暂在Mac私有目录，受保护清理VMA档仍留原PVE目录。用户11月9日明确选择先搭[PVE本机自动备份](infra/backup/pve-local/README.md)：native job `dell-local-nightly`、storage `dell-local-backup`，03:30、最近3＋每日7＋每周4点，固定11对象100/190/200/201/210/221/230/240/250/260/270；220始终排除以保护发布私钥，CF归档仅PVE不导出。新namespace目录root700、归档/日志/状态600，原21档不受新保留策略影响。
+VM201的Nacos配置在VM200的`nacos_prod`外部元库，逻辑导出覆盖其中配置/namespace/users/roles/permissions等数据库内容；不是VM201文件系统、JWT部署秘密或Redis/Rabbit数据备份。只支持当前BASE TABLE/InnoDB且无routine/event/trigger/view的边界，新对象需复核策略。
 
-[首轮成功回执](completion/20261109/backup-first-success.json)确认固定11项全部zstd/native verified，原生任务OK、unit退出0，总19,747,582,801 bytes；[计划启用回执](completion/20261109/backup-schedule-enabled.json)确认enabled=1、03:30和3/7/4保留。历史失败与部分进度保留，不覆盖现有归档成功事实，也不扩大为恢复保证；后续状态统一见[本轮交付记录](completion/20261109/README.md)。
+其他数据均不纳入自动：不备VM/OS、测试数据、Redis/Rabbit、Nexus、Penpot、NAS、Ops或CF文件，220发布私钥继续只留220。旧11来宾全机job已disabled、旧whole-VM告警组已退役；原19,747,582,801 bytes全机归档和21回退档保留，不自动删除。新指标`dell_prod_db_backup_*`及三条db-only规则已原生校验/热载，原Prom身份、既有三告警名和Lark接收对象不变、无人工testsend，见[规则回执](completion/20261109-prod-db-scope/alerts-installed.json)。这是同机应用逻辑备份，不是VM快照；未恢复、未迁移、不签异机灾备或RPO/RTO，Java不启、Nexus不合并、Mac外部探针不需要。
 
-[metadata已接入现有PVE collector](completion/20261109/backup-metrics-installed.json)，[三名Lark白名单已配套](completion/20261109/backup-notify-whitelist-result.json)，不新增接收人、不人工外发；Prom新规则实际加载/后验只查[当日中央入口](completion/20261109/README.md)，本页不提前声称已加载。快照有QGA/文件系统冻结也仍是系统/crash-consistent恢复点，不保证数据库逻辑或跨VM事务一致；本轮不恢复VM、不迁移数据。独立目的地、完整恢复演练与RPO/RTO未完成，不能签异机灾备或SLA。Lark秘密也不由单份Grafana数据库覆盖。
+此前[11档全机首轮成功](completion/20261109/backup-first-success.json)及15:56启用是历史事实，已被用户最新“仅正式数据库/Nacos配置”范围取代；原`dell-local-nightly`不再启用，旧[pve-local实现](infra/backup/pve-local/README.md)退役不可重跑。CF历史档只留PVE，任何旧档/配置均不得因此导出。
 
-本轮不做重建、压测、数据导入或迁移；备份只按新明确的native snapshot范围执行，不运行旧应用fixture/导入或恢复脚本。当前Optimal、HTTP200、压缩/native检查与archive SHA都不能单独替代业务一致性及完整恢复验证。OW完整规则仅本地保存，不触碰或上传；不以Git交付扩大该范围。
+旧fixture/Grafana/模板恢复仅对应历史样本，不能替代当前3301B逻辑档恢复；新库白名单或未来真实业务不变量必须显式验收。OW规则只本地，不触/不上传。
 
 ## 7. 运维和验收入口
 

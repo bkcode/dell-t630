@@ -1,0 +1,10 @@
+{
+  "guest_worker_negative_and_safety_tests": 59,
+  "host_retention_persistence_and_policy_tests": 5,
+  "metrics_negative_tests": 26,
+  "native_capabilities": "MySQL dump options checked; timeout exists; internalQGA hostname read proved; nativeSQLdump/gzipCRC/transportSHA/taskexit0 proved",
+  "restore_or_business_data_migration_tested": false,
+  "real_Lark_test_sent": false,
+  "source_database_rows_or_archive_copied_to_Mac": false,
+  "independent_final_review": "6/6 current scope passed; old38/6REC not expanded"
+}

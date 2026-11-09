@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "date": "2026-11-05",
-  "scope": "2026-11-09 existing infrastructure completion and PVE-local backups; no migration, no Java business, no Mac external probe",
+  "scope": "existing infrastructure; only production database and Nacos configuration automatic backup; no migration/Java/Macprobe",
   "documentation": [
     {
       "id": "DOC-01",
@@ -213,7 +213,7 @@
       "verification_scope": "historical-completed-stage-not-current-live"
     }
   ],
-  "updated_at": "2026-11-09T15:59:33.818518+08:00",
+  "updated_at": "2026-11-09T17:07:14.022135+08:00",
   "implementation_note": "Original IMP entries describe the prior completed baseline. Latest user scope overrides Java program deployment: five test services are stopped/disabled, publisher fenced, only acceptance template9011 current.",
   "overall_status": "existing-infrastructure-recovered-user-deferred-migration",
   "network19_execution": [
@@ -369,7 +369,7 @@
     "Mac_external_probe_required": false
   },
   "current_completion20261109": {
-    "status": "infrastructure-and-local-backup-complete-no-migration",
+    "status": "historical-foundation-phase-passed;backup-superseded-by-production-DB-only-scope",
     "scope": "continue existing infrastructure; PVE-local automatic backups; no migration",
     "acceptance_manifest": "completion/20261109/acceptance.json",
     "user_backup_choice": "PVE本机自动备份，独立目的地后续接入",
@@ -386,5 +386,17 @@
     "phase_cases_passed": 9,
     "phase_case_count": 9,
     "guest_postcheck": "completion/20261109/guests-post-backup.json"
+  },
+  "backup_scope_update20261109": {
+    "status": "completed-native-verified",
+    "acceptance_manifest": "completion/20261109-prod-db-scope/acceptance.json",
+    "phase_cases_passed": 6,
+    "phase_case_count": 6,
+    "old_VM_job_enabled": false,
+    "new_timer_enabled": true,
+    "databases": [
+      "nacos_prod"
+    ],
+    "restore_or_migration": false
   }
 }

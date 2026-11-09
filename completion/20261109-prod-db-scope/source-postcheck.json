@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-11-09T09:03:42.300953+00:00",
+  "scope": "post-nativeproductionDBbackup readonlysourcehealth/metadata/temporarypathcleanup receipt",
+  "guests": [
+    {
+      "vmid": 200,
+      "hostname": "data-prod-db",
+      "at": "2026-11-09T09:03:39.729762+00:00",
+      "read_only": true,
+      "guest_or_PVE_mutations": false,
+      "containers": [
+        {
+          "Name": "/dell-data-prod-db-mysql-1",
+          "ID": "b1a1e926f9ca92d717dbb903a313315a74749f7a942528096cb57cea8abee0ca",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        }
+      ],
+      "credential_Env_Cmd_SQL_contents_read": false,
+      "databases": [
+        "information_schema",
+        "mysql",
+        "nacos_prod",
+        "performance_schema",
+        "sys"
+      ],
+      "non_system_schemas": [
+        "nacos_prod"
+      ],
+      "Nacos_table_count": 12,
+      "metadata_activity_counts": {
+        "active_InnoDB_transactions": 0,
+        "pending_metadata_locks": 0,
+        "backup_locks": 0,
+        "observed_current_DDL_statements": 0
+      },
+      "host_selected_process_counts": {
+        "mysqldump": 0,
+        "mysql": 0,
+        "timeout": 0
+      },
+      "container_selected_process_counts": {
+        "mysqldump": 0,
+        "mysql": 0,
+        "timeout": 0,
+        "mysqld": 1
+      },
+      "guest_staging": {
+        "path": "/srv/dell-data/_prod_db_backups",
+        "exists": true,
+        "entries_metadata_only": [
+          {
+            "name": ".worker.lock",
+            "uid": 0,
+            "gid": 0,
+            "mode": "0o600",
+            "directory": false,
+            "symlink": false
+          }
+        ],
+        "uid": 0,
+        "gid": 0,
+        "mode": "0o700",
+        "persistent_worker_lock_expected": true,
+        "run_id_checked_absent": "b16d1ed9ff0a4ff1877179428bd592c6",
+        "run_directory_absent": true,
+        "classification_basis": "infra/backup/prod-db/guest-worker.py opens persistent .worker.lock; cleanup_run removes owned successful run directory only. Lockfile is not SQL/artifact residue; no flock operation attempted by audit."
+      },
+      "container_tmp_owned_directory_names": [],
+      "no_residual_dump_workers_observed": true,
+      "checks": {
+        "source_containers_IDs_same_as_prebackup_core": true,
+        "source_containers_running_healthy": true,
+        "only_nacos_prod_non_system_schema": true,
+        "Nacos12tables": true,
+        "no_residual_dump_workers_observed": true,
+        "container_tmp_owned_directories_cleared": true,
+        "host_run_spool_cleared_expected_lock_only": true
+      },
+      "status": "passed-readonly-source-postcheck"
+    },
+    {
+      "vmid": 201,
+      "hostname": "data-prod-infra",
+      "at": "2026-11-09T09:03:39.714422+00:00",
+      "read_only": true,
+      "guest_or_PVE_mutations": false,
+      "containers": [
+        {
+          "Name": "/dell-data-prod-infra-redis-1",
+          "ID": "b940153fac95f736fb49a32ccd7f9143dced2eddd62944f4ef810e2c30a771a5",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "Name": "/dell-data-prod-infra-rabbitmq-1",
+          "ID": "3d3000b2a67c396ec5647892e12f9441fbbddb19aa0882cca447a2f403bc43f0",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "Name": "/dell-data-prod-infra-nacos-1",
+          "ID": "ff4c025af4b222512bfd2975790d40144c5d6b38c435888adc06e2a0be9d8e61",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        }
+      ],
+      "credential_Env_Cmd_SQL_contents_read": false,
+      "Nacos_health_GET": {
+        "url": "http://192.168.19.11:8848/nacos/v1/console/health/readiness",
+        "HTTP_status": 200,
+        "body_saved": false
+      },
+      "checks": {
+        "source_containers_IDs_same_as_prebackup_core": true,
+        "source_containers_running_healthy": true,
+        "Nacos_readiness200": true
+      },
+      "status": "passed-readonly-source-postcheck"
+    }
+  ],
+  "all_passed": true,
+  "no_guest_PVE_mutations": true,
+  "no_dump_or_backup_invoked": true,
+  "known_hosts_unchanged": true,
+  "manage_cfg_preflight_run_not_called": true,
+  "private_SQL_or_credentials_or_datafile_contents_read": false,
+  "limitations": [
+    "Processobservations selectexecutablecomm only,noCmd/arguments; a fleetingnewexternalclientafterthispoint cannotbeexcluded.",
+    "Activityandbackup-lock counts are point-in-time observations, notfutureDDLguarantees.",
+    "Staginginspection enumeratesdirectnames/UIDmode only, noSQLcontent orrecursivebusinessdata."
+  ],
+  "local_metadata_review_note": "Initial all-directory-empty predicate wouldflag intendedpersistent.worker.lock; corrected tosuccessfulrunabsent+onlyexpectedroot600regularlock afterreadingactualworker source, nochange toguest."
+}

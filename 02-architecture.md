@@ -1,6 +1,6 @@
 # T630 服务目标架构、部署快照与资源边界
 
-更新：2026-11-09。**当前实际仍为12实例，不迁移数据；合并目标仅保留。用户继续完成基础搭建，并授权先建PVE本机自动备份。** 14:24自然重启后的[PVE审计](completion/20261109/pve-audit.json)确认12running/3停止模板、forward guard跨重启保持全0；[Ops](completion/20261109/ops-audit.json)15UP。[首轮11项已验证成功](completion/20261109/backup-first-success.json)、[03:30计划已启用](completion/20261109/backup-schedule-enabled.json)，仍不等于独立灾备或数据库逻辑备份。用户物理内存诊断与本轮EDAC0只读结果分开，见[当前状态](01-current-state.md)、[硬件发现](08-hardware-findings.md)。
+更新：2026-11-09。**当前实际仍为12实例，不迁移数据；合并目标仅保留。用户继续完成基础搭建，并将自动备份限定为正式数据库/Nacos配置。** 14:24自然重启后的[PVE审计](completion/20261109/pve-audit.json)确认12running/3停止模板、forward guard跨重启保持全0；[Ops](completion/20261109/ops-audit.json)15UP。[现行正式DB首轮与timer](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)已通过，属于应用逻辑备份，未恢复、非异机灾备。用户物理内存诊断与本轮EDAC0只读结果分开，见[当前状态](01-current-state.md)、[硬件发现](08-hardware-findings.md)。
 
 ## 1. 当前交付范围
 
@@ -80,8 +80,12 @@ OW现有代理返回198.18/15 Fake-IP；190保留原已验证的普通DNS/web/NT
 
 ## 6. 存储、备份和恢复
 
-H730/store由PVE管理，OMV只独占NAS专用2TiB虚拟盘内文件系统；不将宿主sdb或整卡再交NAS挂载。各数据盘和应用配置需按真实UUID、source和mountpoint核对；相同路径目录存在不证明数据盘在线。
+H730/store仍由PVE管理，OMV只独占NAS专用2TiB虚拟盘；数据按真实UUID和挂载核验，不把根盘目录当在线数据盘。
 
-正式数据、Nacos元库、Redis、RabbitMQ消息/拓扑、Nexus、Penpot DB/素材与NAS个人文件有不同一致性边界。PVE来宾备份、逻辑/应用导出、合成fixture恢复分别留证，不能互相替代；Rabbit definitions不包含消息，Grafana SQLite备份不覆盖native Lark秘密。原应用样本独立副本暂存Mac私有目录；当前新增[PVE本机自动备份](infra/backup/pve-local/README.md)作为本机恢复层，固定11项排除220、CF只PVE、root700/600、03:30和最近3/每日7/每周4点。[首轮11项zstd/native已验证](completion/20261109/backup-first-success.json)、原生任务OK/退出0，[native计划已enabled](completion/20261109/backup-schedule-enabled.json)；03:30和保留策略已配置生效，但不能以一次成功证明长期连续执行。独立目的地和RPO/RTO仍需落实。
+现行自动备份**仅限VM200正式MySQL数据库与完整Nacos外部元数据库**；当前唯一非系统库为`nacos_prod`（12张BASE TABLE、全InnoDB），正式业务schema尚未创建。新增非系统库不在显式白名单即拒绝并告警，需审核更新策略，不能静默漏备。PVE落点`/mnt/pve/store/dell-artifacts/prod-db-backups`，目录root700/文件600；首轮逻辑SQL gzip **3,301 bytes**已完成CRC/传输SHA校验、DDL锁释放和guest暂存清理，service退出0；03:30（Asia/Shanghai）timer已enabled，下一次2026-11-10 03:30，GFS最近3/每日7/每周4。见[新首轮与timer回执](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)及[当前中央入口](completion/20261109-prod-db-scope/README.md)。
 
-本机snapshot备份可能使用QGA文件系统冻结，仍不是逐应用逻辑/跨VM事务一致；首轮归档完整性已完成，未做恢复演练，不签异机灾备。[备份metadata已接原QGA采集](completion/20261109/backup-metrics-installed.json)、[Lark三名白名单已配套](completion/20261109/backup-notify-whitelist-result.json)，未人工发消息；Prom新增规则实际加载与后验只以[当日中央入口](completion/20261109/README.md)为准，不由本页提前签收。本轮核心/媒体/Ops挂载和健康按审计范围通过，不等于应用内容/认证或全部备份恢复验收。用户本轮不迁移；将来Nexus切换和同IP alias也不能实现无缝旧TCP会话或数据库回滚，新目标有写入后必须应用一致性回迁，不能简单改回IP。关键人工入口见[服务与运维](12-service-access-and-operations.md)、[备份](infra/backup/README.md)，不要直接执行历史迁移脚本。
+其他数据均不纳入自动：不备VM/OS、测试数据、Redis/Rabbit、Nexus、Penpot、NAS、Ops或CF文件，220发布私钥继续只留220。旧11来宾全机job已disabled、旧whole-VM告警组已退役；原19,747,582,801 bytes全机归档和21回退档保留，不自动删除。新指标`dell_prod_db_backup_*`及三条db-only规则已原生校验/热载，原Prom身份、既有三告警名和Lark接收对象不变、无人工testsend，见[规则回执](completion/20261109-prod-db-scope/alerts-installed.json)。这是同机应用逻辑备份，不是VM快照；未恢复、未迁移、不签异机灾备或RPO/RTO，Java不启、Nexus不合并、Mac外部探针不需要。
+
+此前[11档全机首轮成功](completion/20261109/backup-first-success.json)及15:56启用是历史事实，已被用户最新“仅正式数据库/Nacos配置”范围取代；原`dell-local-nightly`不再启用，旧[pve-local实现](infra/backup/pve-local/README.md)退役不可重跑。CF历史档只留PVE，任何旧档/配置均不得因此导出。
+
+原MySQL/Nacos/Redis/Rabbit合成恢复、Grafana SQLite及模板QA只证明对应历史范围，不能替代新逻辑备份的完整恢复。任何未来迁移或恢复仍须准确白名单、隔离、拒覆盖现役数据；本轮不执行。

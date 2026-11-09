@@ -1,0 +1,161 @@
+# BEGIN dell-prod-db-backup metadata metrics (insert before collector text=)
+# Requires existing _db_read_json, metric(name,value), and prior legacy metrics in lines.
+# Does not read archives, contact QGA, run backups or add a pvesh call.
+import datetime as _pdb_datetime
+import math as _pdb_math
+import re as _pdb_re
+import subprocess as _pdb_subprocess
+import time as _pdb_time
+
+_PDB_DEFAULTS = {'enabled': 0, 'state_valid': 0, 'running': 0,
+                 'last_run_success': 0, 'last_success_timestamp_seconds': 0,
+                 'archive_bytes': 0}
+_PDB_MAXIMUM = 1073741824
+
+
+def _pdb_need(value):
+    if not value:
+        raise ValueError('production backup metadata rejected')
+
+
+def _pdb_number(value):
+    _pdb_need(type(value) in (int, float) and _pdb_math.isfinite(value))
+    return value
+
+
+def _pdb_stamp(value, now):
+    _pdb_need(isinstance(value, str) and len(value) <= 40)
+    date = _pdb_datetime.datetime.fromisoformat(value.replace('Z', '+00:00'))
+    _pdb_need(date.tzinfo is not None and date.utcoffset().total_seconds() == 0)
+    result = date.timestamp()
+    _pdb_need(0 < result <= now + 60)
+    return result
+
+
+def _pdb_legacy_disabled(prior_lines):
+    # A default zero from a failed old collector must not prove the old job disabled.
+    for name, expected in [('dell_pve_local_backup_enabled', 0),
+                           ('dell_pve_local_backup_state_valid', 1)]:
+        matches = [line for line in prior_lines
+                   if isinstance(line, str) and line.startswith(name + ' ')]
+        _pdb_need(len(matches) == 1)
+        fields = matches[0].split()
+        _pdb_need(len(fields) == 2 and fields[0] == name)
+        value = float(fields[1])
+        _pdb_need(_pdb_math.isfinite(value) and value == expected)
+
+
+def _pdb_runtime(command, monotonic):
+    deadline = monotonic() + 18.0  # All3calls share one budget, below20seconds.
+    enabled, active = None, None
+    for action in ['is-enabled', 'is-active']:
+        remaining = deadline - monotonic()
+        _pdb_need(remaining > 0)
+        result = command(['systemctl', action, 'dell-prod-db-backup.timer'],
+                         capture_output=True, text=True, timeout=min(8.0, remaining))
+        _pdb_need(monotonic() <= deadline)
+        state = result.stdout.strip()
+        if action == 'is-enabled':
+            _pdb_need((result.returncode == 0 and state == 'enabled')
+                      or (result.returncode == 1 and state in ('disabled', 'masked')))
+            enabled = state == 'enabled'
+        else:
+            _pdb_need((result.returncode == 0 and state == 'active')
+                      or (result.returncode == 3 and state == 'inactive'))
+            active = state == 'active'
+    remaining = deadline - monotonic()
+    _pdb_need(remaining > 0)
+    result = command(['systemctl', 'show', 'dell-prod-db-backup.service',
+                      '--property=ActiveState,SubState,Result,ExecMainStatus'],
+                     capture_output=True, text=True, timeout=min(5.0, remaining))
+    _pdb_need(result.returncode == 0 and monotonic() <= deadline)
+    fields = {}
+    for line in result.stdout.splitlines():
+        _pdb_need('=' in line)
+        key, value = line.split('=', 1)
+        _pdb_need(key in ('ActiveState', 'SubState', 'Result', 'ExecMainStatus')
+                  and key not in fields)
+        fields[key] = value
+    _pdb_need(set(fields) == {'ActiveState', 'SubState', 'Result', 'ExecMainStatus'}
+              and fields['ActiveState'] in ('active', 'activating', 'inactive', 'failed', 'deactivating')
+              and bool(fields['SubState']) and bool(fields['Result'])
+              and _pdb_re.fullmatch('[0-9]+', fields['ExecMainStatus']) is not None)
+    worker_live = fields['ActiveState'] in ('active', 'activating')
+    worker_failed = (fields['ActiveState'] in ('inactive', 'failed', 'deactivating')
+                     and (fields['Result'] != 'success' or fields['ExecMainStatus'] != '0'))
+    return int(enabled and active), worker_live, worker_failed
+
+
+def _pdb_collect(read_json=None, command=None, now=None, monotonic=None,
+                 prior_lines=None):
+    read_json = _db_read_json if read_json is None else read_json
+    command = _pdb_subprocess.run if command is None else command
+    monotonic = _pdb_time.monotonic if monotonic is None else monotonic
+    now = _pdb_time.time() if now is None else now
+    prior_lines = lines if prior_lines is None else prior_lines
+    _pdb_number(now)
+    _pdb_need(now > 0)
+    # Existing reader verifies root ownership, ancestor trust, parent0700,
+    # regular/single-link0600, bounded JSON, duplicate keys and nonfinite values.
+    policy = read_json('/etc/dell-prod-db-backup/policy.json')
+    _pdb_need(type(policy.get('schema_version')) is int
+              and policy['schema_version'] == 1
+              and type(policy.get('vmid')) is int and policy['vmid'] == 200
+              and policy.get('databases') == ['nacos_prod']
+              and policy.get('nacos_database') == 'nacos_prod'
+              and policy.get('backup_root') == '/mnt/pve/store/dell-artifacts/prod-db-backups'
+              and policy.get('state_dir') == '/var/lib/dell-prod-db-backup'
+              and policy.get('mountpoint') == '/mnt/pve/store'
+              and policy.get('filesystem_uuid') == '75e5b438-5ff3-4139-83d6-b6a6847aedac'
+              and type(policy.get('maximum_archive_bytes')) is int
+              and policy['maximum_archive_bytes'] == _PDB_MAXIMUM
+              and policy.get('independent_destination') is False
+              and policy.get('whole_VM_backup') is False)
+    _pdb_legacy_disabled(prior_lines)
+    state = read_json('/var/lib/dell-prod-db-backup/status.json')
+    _pdb_need(type(state.get('version')) is int and state['version'] == 1
+              and type(state.get('source_vmid')) is int and state['source_vmid'] == 200
+              and state.get('databases') == ['nacos_prod']
+              and state.get('status') in ('running', 'success', 'failed')
+              and isinstance(state.get('run_id'), str)
+              and _pdb_re.fullmatch('[0-9a-f]{32}', state['run_id']) is not None
+              and type(state.get('last_run_success')) is int
+              and state['last_run_success'] in (0, 1)
+              and type(state.get('archive_bytes')) is int
+              and 0 <= state['archive_bytes'] <= _PDB_MAXIMUM)
+    success = _pdb_number(state.get('last_success_timestamp'))
+    _pdb_need(0 <= success <= now + 60)
+    start = _pdb_stamp(state.get('started_at'), now)
+    _pdb_need(success <= start + 60 or state['status'] == 'success')
+    if state['status'] == 'running':
+        _pdb_need(state.get('finished_at') is None)
+    else:
+        finish = _pdb_stamp(state.get('finished_at'), now)
+        _pdb_need(finish >= start and success <= finish + 60)
+    if state['status'] == 'success':
+        _pdb_need(state['last_run_success'] == 1 and success > 0
+                  and start <= success <= finish + 1 and state['archive_bytes'] > 0)
+    if state['status'] == 'failed':
+        _pdb_need(state['last_run_success'] == 0)
+    if state['last_run_success'] == 1:
+        _pdb_need(success > 0 and state['archive_bytes'] > 0)
+    enabled, worker_live, worker_failed = _pdb_runtime(command, monotonic)
+    orphan_running = state['status'] == 'running' and not worker_live
+    return {'enabled': enabled, 'state_valid': 1,
+            'running': int(state['status'] == 'running' and worker_live and not worker_failed),
+            'last_run_success': 0 if worker_failed or orphan_running else state['last_run_success'],
+            'last_success_timestamp_seconds': success,
+            'archive_bytes': state['archive_bytes']}
+
+
+def _pdb_emit(emit, collect=None):
+    try:
+        values = (collect or _pdb_collect)()
+    except Exception:
+        values = dict(_PDB_DEFAULTS)
+    for name in _PDB_DEFAULTS:
+        emit('dell_prod_db_backup_' + name, values[name])
+
+
+_pdb_emit(metric)
+# END dell-prod-db-backup metadata metrics

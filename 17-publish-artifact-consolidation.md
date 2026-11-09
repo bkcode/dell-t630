@@ -2,7 +2,7 @@
 
 更新：2026-11-09。本文保留此前选定的**未来合并目标合同**，不是当前执行计划。用户已确认内存重插/更换并诊断通过，服务器已恢复基础服务；本轮明确**暂不迁移、不合并Nexus**。当前VM220发布机与VM221制品仓库继续独立，历史同机目标不覆盖现役角色。
 
-当前事实：VM221仍独立19.31，原盘与身份未向220移交；220仍4CPU/4GiB、仅19.30及待机材料。11月9日fresh核对仍为12running/3tpl与15UP，相关证据见[当日交付入口](completion/20261109/README.md)及[媒体审计](completion/20261109/media-audit.json)。硬件故障与历史维护许可均保留，但当前不执行合并的原因是用户本轮范围明确排除迁移，不能因SSH恢复自动开始。
+当前事实：VM221仍独立19.31，原盘与身份未向220移交；220仍4CPU/4GiB、仅19.30及待机材料。11月9日fresh核对仍为12running/3tpl与15UP，相关证据见[当日交付入口](completion/20261109-prod-db-scope/README.md)及[媒体审计](completion/20261109/media-audit.json)。硬件故障与历史维护许可均保留，但当前不执行合并的原因是用户本轮范围明确排除迁移，不能因SSH恢复自动开始。
 
 ## 1. 未来合并后的服务结构（本轮不执行）
 
@@ -56,7 +56,9 @@ VM221：artifact-service → 数据与身份核验通过后退役
 
 构建盘与Nexus数据盘各自独立，不将仓库写进构建缓存或容器可写层。原Nexus100GiB卷、文件系统UUID `239dc45a-b1f3-408b-a8ef-7afa77b52204` 及数据身份保留，原盘只允许一个VM写。发布专用私钥继续只留220，publisher不加入docker组，受限SSH/源IP30与业务发布冻结策略不放宽。
 
-本轮[PVE本机备份](infra/backup/pve-local/README.md)固定11项包含独立221、排除220，CF仅PVE，root700/600及最近3/每日7/每周4保留、旧21档保留。首轮固定11档已全部verified（zstd、tar/vma及SHA验证），原生任务OK、unit退出0；15:56审核后每日03:30计划已启用，合计19,747,582,801字节。证据：[首轮成功](completion/20261109/backup-first-success.json)、[计划启用](completion/20261109/backup-schedule-enabled.json)。 这是同机snapshot/crash-consistent恢复点，不是迁移源停服冷备、DB逻辑备份或已完成恢复，不代替未来合并门禁；本轮仍不迁移。
+现行自动备份仅VM200正式MySQL/Nacos外部元库，当前唯一`nacos_prod`12表、正式业务schema未创建；Nexus221制品数据/系统和其他数据不自动备份。新增未列白名单库直接失败告警、需更新策略。PVE逻辑档落`/mnt/pve/store/dell-artifacts/prod-db-backups` root700/600，首轮3301B、03:30 timer enabled/GFS3-7-4，见[新中央入口](completion/20261109-prod-db-scope/README.md)与[新首轮回执](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)。
+
+旧11来宾全机方案曾成功，但当前job已disabled、旧规则组退役；19,747,582,801B档与21回退档保留，不自动删除。旧CF档只留PVE、发布key只220。新db-only三规则已[热载](completion/20261109-prod-db-scope/alerts-installed.json)，原Prom identity/三名/接收对象保持、无testsend。本机逻辑备份未做恢复或独立DR，也不等于未来Nexus迁移源停服冷备；本轮不迁移/合并/启Java，无Mac探针。
 
 备份仍需应用一致性与明确白名单；不能因为同机合并就对220做包含发布私钥的整机备份/快照导出。独立221源冷备和原OS盘在最终核验前保留，不能删除唯一回退点。
 
@@ -87,4 +89,4 @@ VM221：artifact-service → 数据与身份核验通过后退役
 
 将来用户明确恢复迁移任务、完成fresh基线与合并验收后，才同步现役roles、IPAM/ACL、监控、启停清单和凭据归属说明。未完成前，文档与Git提交都不代表服务器已变更。
 
-本轮继续完成基础与已授权本机备份，不迁移数据或合并Nexus；Java业务不部署，Penpot保持已验历史ff1783e，不因main文档更新而升级应用。Mac外部探针用户明确不需要，不作为现行或后续待配置能力。OW完整规则只留本地，本轮不触碰或上传。
+本轮继续基础与仅正式数据库/Nacos逻辑备份，不迁移数据或合并Nexus；Java业务不部署，Penpot保持已验历史ff1783e，不因main文档更新而升级应用。Mac外部探针用户明确不需要，不作为现行或后续待配置能力。OW完整规则只留本地，本轮不触碰或上传。

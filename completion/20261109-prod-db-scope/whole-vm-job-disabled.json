@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-09T16:37:40.647983+08:00",
+  "status": "old-whole-guest-backup-schedule-disabled",
+  "before_enabled": 1,
+  "after_enabled": 0,
+  "active_backup_tasks": 0,
+  "archives_deleted": false,
+  "new_scope": "production MySQL databases and Nacos configuration only; no VM backups, Redis, MQ, test, NAS, Penpot, Nexus or CF"
+}

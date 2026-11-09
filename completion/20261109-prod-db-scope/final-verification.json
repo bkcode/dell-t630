@@ -1,0 +1,124 @@
+{
+  "at": "2026-11-09T17:06:01.762963+08:00",
+  "scope": "production DB/Nacos logical backup only; no restore/migration/external SQL export",
+  "status": "passed",
+  "checks": {
+    "whole_VM_job_disabled": true,
+    "new_DB_timer_active_enabled": true,
+    "new_DB_task_success_exit0": true,
+    "source_exactly_VM200_nacos_prod": true,
+    "12running3templates": true,
+    "no_failed_host_units": true,
+    "forward0_and_EDAC0": true,
+    "DB_metrics_valid_success": true,
+    "one_DB_only_backup_rule_group": true,
+    "targets15UP_noalerts": true,
+    "Lark_active_no_test_send": true,
+    "source_postcheck": true
+  },
+  "PVE": {
+    "at": "2026-11-09T17:06:01.723063+08:00",
+    "old_whole_VM_job_enabled": 0,
+    "new_timer": {
+      "NextElapseUSecRealtime": "Tue 2026-11-10 03:30:00 CST",
+      "ActiveState": "active",
+      "SubState": "waiting",
+      "UnitFileState": "enabled"
+    },
+    "new_unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ActiveState": "inactive",
+      "SubState": "dead"
+    },
+    "new_status": {
+      "version": 1,
+      "source_vmid": 200,
+      "databases": [
+        "nacos_prod"
+      ],
+      "status": "success",
+      "run_id": "b16d1ed9ff0a4ff1877179428bd592c6",
+      "started_at": "2026-11-09T08:56:04.964148+00:00",
+      "last_success_timestamp": 1794214577.444057,
+      "last_run_success": 1,
+      "archive_bytes": 3301,
+      "finished_at": "2026-11-09T08:56:17.444057+00:00",
+      "last_success_run_id": "b16d1ed9ff0a4ff1877179428bd592c6",
+      "old_successes_pruned": 0
+    },
+    "running_VMIDs": [
+      100,
+      190,
+      200,
+      201,
+      210,
+      220,
+      221,
+      230,
+      240,
+      250,
+      260,
+      270
+    ],
+    "stopped_templates": [
+      9001,
+      9010,
+      9011
+    ],
+    "failed_units": [],
+    "forwarding_all0": true,
+    "EDAC_all0": true
+  },
+  "Ops": {
+    "at": "2026-11-09T09:05:58.984597+00:00",
+    "metrics": {
+      "enabled": [
+        1.0
+      ],
+      "state_valid": [
+        1.0
+      ],
+      "running": [
+        0.0
+      ],
+      "last_run_success": [
+        1.0
+      ],
+      "last_success_timestamp_seconds": [
+        1794214577.444057
+      ],
+      "archive_bytes": [
+        3301.0
+      ]
+    },
+    "backup_groups": [
+      {
+        "name": "dell-prod-db-backup",
+        "rules": [
+          {
+            "name": "PveLocalBackupFailed",
+            "health": "ok",
+            "state": "inactive"
+          },
+          {
+            "name": "PveLocalBackupStale",
+            "health": "ok",
+            "state": "inactive"
+          },
+          {
+            "name": "PveLocalBackupStateInvalid",
+            "health": "ok",
+            "state": "inactive"
+          }
+        ]
+      }
+    ],
+    "targets_count": 15,
+    "targets_UP": 15,
+    "Prom_alerts": 0,
+    "AM_alerts": 0,
+    "Lark_unit_active": true,
+    "notification_test_sent": false
+  }
+}

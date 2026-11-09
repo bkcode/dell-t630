@@ -1,16 +1,18 @@
-> 文档状态（2026-11-09）：本页区分历史应用逻辑/fixture工具与新PVE本机自动备份。用户继续基础搭建、先选择本机备份，不迁移数据/合并Nexus/启动Java，Mac外部探针不需要。当日状态见[交付记录](../../completion/20261109/README.md)，旧网段与原通过结果按时点解释，旧初始化器不重跑。
+> 文档状态（2026-11-09）：本页区分历史应用逻辑/fixture工具与现行正式数据库/Nacos逻辑自动备份。用户继续基础搭建、最新仅自动备份正式数据库/Nacos配置，不迁移数据/合并Nexus/启动Java，Mac外部探针不需要。当日状态见[交付记录](../../completion/20261109-prod-db-scope/README.md)，旧网段与原通过结果按时点解释，旧初始化器不重跑。
 
 # 应用备份与隔离恢复
 
-本页原应用逻辑工具包含已执行的纯合成fixture验证和新正式初始化环境的本地快照，**这些旧工具不支持CF**、不上传Nexus、不遍历其它私有目录。新子目录[pve-local](pve-local/README.md)是另一层用户授权的PVE原生snapshot备份，包含CF但只留PVE、明确排除220。原Mac临时独立副本与本机快照都不等于持续异地灾备。
+本页原应用逻辑工具包含已执行的纯合成fixture验证和新正式初始化环境的本地快照，**这些旧工具不支持CF**、不上传Nexus、不遍历其它私有目录。旧子目录[pve-local](pve-local/README.md)曾完成11来宾snapshot，现已退役停用、旧档保留；CF不在现行自动备份范围，旧CF档只留PVE。原Mac临时独立副本与本机快照都不等于持续异地灾备。
 
-## 2026-11-09本机自动备份：首轮成功、计划已启用
+## 现行自动备份：仅正式数据库与Nacos配置
 
-[PVE本机备份合同](pve-local/README.md)固定100/190/200/201/210/221/230/240/250/260/270共11项，排除220，CF档只PVE，root700目录/600归档日志状态。native job每日03:30（Asia/Shanghai），最近3份＋每日7点＋每周4点原生组合保留，原21回退档独立保留。
+以[新中央入口](../../completion/20261109-prod-db-scope/README.md)为准：VM200当前唯一非系统库`nacos_prod`，12张BASE TABLE全InnoDB，正式业务schema尚未创建。VM201 Nacos的完整外部元数据库在VM200，纳入配置/namespace/users/roles/permissions等DB数据；不包含部署JWT/秘密文件、VM201系统、Redis/Rabbit或任何其他数据。
 
-**首轮成功、计划已启用。** 固定11档已全部verified（zstd、tar/vma及SHA验证），原生任务OK、unit退出0；15:56审核后每日03:30计划已启用，合计19,747,582,801字节。证据：[首轮成功](../../completion/20261109/backup-first-success.json)、[计划启用](../../completion/20261109/backup-schedule-enabled.json)。 既有metadata/Lark白名单配套不等于重新发送通知；新增Prom规则实际部署/加载状态以[当日记录](../../completion/20261109/README.md)为准，不提前声称已加载。
+[首轮与timer](../../completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)：3301B逻辑SQL gzip，CRC/传输SHA/DDL锁释放/guest暂存清理已验证、service退出0；timer enabled，下一次2026-11-10 03:30（Asia/Shanghai），GFS最近3/每日7/每周4。文件落PVE `/mnt/pve/store/dell-artifacts/prod-db-backups` root700/600，经受限QGA，不经Mac。新增非系统库未列白名单会失败告警，须更新policy及对应校验；仅支持当前BASE/InnoDB、0view/routine/event/trigger，未来对象需复核。
 
-这是snapshot/crash-consistent系统恢复点，不是下面的数据库逻辑导出或跨来宾事务一致性保证；本轮未恢复VM，不签独立目的地、RPO/RTO或异机灾备。Nexus221独立、Java不启、Mac外部探针不需要；OW完整规则仅本地，不触/不上传。
+[db-only指标与三规则](../../completion/20261109-prod-db-scope/alerts-installed.json)已原生校验/SIGHUP加载，旧whole-VM组absent、原Prom identity和既有三名/Lark接收对象保持，没有人工testsend。源码：[guest-worker.py](prod-db/guest-worker.py)、[host-worker.py](prod-db/host-worker.py)、[host policy](prod-db/policy-host.json)、[guest policy](prod-db/policy-guest.json)；不是无条件重跑入口。
+
+其他数据均排除：VM/OS、测试、Nexus/Penpot/NAS/Ops/CF、Redis/Rabbit及发布私钥不自动备份。旧11来宾jobdisabled，原19,747,582,801B全机档和21回退档保留，不自动删除。仅同机应用逻辑恢复点，未恢复、非异机DR/RPO保证，不迁移/合并/启Java、无Mac外部探针；OW规则仅本地不触上传。
 
 ## 历史已执行A-D（非本轮重跑）
 
@@ -53,7 +55,7 @@ python3 application-backup.py rabbit-topology \
 | Rabbit | 确认topology稳定窗口后官方definitions API导出 | 含敏感password hash/parameters，**不含消息**；不停写场景没有完整队列消息一致性保证，需另行quiesce/备机方案，不能直接tar现役Mnesia冒充完整备份 |
 | Ops | 主AI负责在线Grafana SQLite backup与network-none恢复；配置/image锁/仪表盘配套 | 主AI已验证在线SQLite备份、network-none Grafana应用恢复和Mac归档（见ops-online-backup-restore.json、ops-private-Mac-backup.json）；Prometheus TSDB、Alertmanager nflog与历史不包括在本轮数据脚本，需受控snapshot或维护窗口；配置与SQLite不等于全部监控历史 |
 
-正式工具提供最低磁盘/估算余量、凭据只文件、敏感stdout抑制和manifest SHA，历史E当时仅运行上述fresh初始化三项。MySQL/Nacos业务不变量、完整真实数据集恢复、Redis大数据fork成本、Rabbit消息恢复及Ops全量历史继续待验。11月9日只补PVE native snapshot调度与metadata/告警配套，不把下述旧应用逻辑工具冒称已自动调度；首轮11档验证与03:30计划启用已完成；新增规则后验见[当日记录](../../completion/20261109/README.md)，恢复时长仍待验。不得据此标记正式应用全量、RPO/RTO或异地灾备已达成。
+正式工具提供最低磁盘/估算余量、凭据只文件、敏感stdout抑制和manifest SHA，历史E当时仅运行上述fresh初始化三项。MySQL/Nacos业务不变量、完整真实数据集恢复、Redis大数据fork成本、Rabbit消息恢复及Ops全量历史继续待验。11月9日早前native snapshot方案已停用，当前仅补正式DB/Nacos逻辑调度与db-only告警，不把下述旧应用逻辑工具冒称已自动调度；旧全机首轮11档曾验证且短暂启用，现已停job/退役规则；当前正式DB首轮3301B、03:30 timer及db-only三规则已通过，后验见[当日记录](../../completion/20261109-prod-db-scope/README.md)，恢复时长仍待验。不得据此标记正式应用全量、RPO/RTO或异地灾备已达成。
 
 ## 工具与安全
 

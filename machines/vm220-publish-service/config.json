@@ -91,14 +91,14 @@
   "timestamp_scope": "2026-11-09 scoped audit; individual commands retain actual timestamps",
   "local_backup": {
     "included_in_fixed_PVE_job": false,
+    "included_in_production_logical_backup": false,
+    "whole_VM_backup": false,
     "job": null,
-    "storage": null,
-    "first_run_verified": false,
     "schedule_enabled": false,
-    "scope": "snapshot/crash-consistent recovery point only; independent DR not signed",
-    "excluded_reason": "publisher private key remains220; no wholeVM backup",
-    "CF_policy": null,
-    "evidence": "infra/backup/pve-local/policy.json",
-    "coverage": "excluded from enabled job; private key only220"
+    "first_run_verified": false,
+    "scope": "only production MySQL/Nacos logical backup; all other data excluded",
+    "evidence": "completion/20261109-prod-db-scope/first-success-and-timer-enabled.json",
+    "old_wholeVM_archives_preserved": true,
+    "publisher_key_boundary": "private key remains220; never wholeVM backup or key export"
   }
 }

@@ -1,0 +1,1 @@
+{"help_exit": 0, "option_support": {"connect-timeout": false, "single-transaction": true, "quick": true, "routines": true, "triggers": true, "events": true, "hex-blob": true, "no-tablespaces": true, "set-gtid-purged": true}, "database_connection_or_export": false, "raw_help_printed": false}

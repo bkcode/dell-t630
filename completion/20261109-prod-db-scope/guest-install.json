@@ -1,0 +1,1 @@
+{"status": "guest-fixed-logical-worker-installed-no-export-yet", "public_SHA": {"/usr/local/libexec/dell-prod-db-backup/guest-worker.py": "393b532b13183f00e8f3d06fb1f3a88acda311ca7022f69b2f46241f5823cb8a", "/etc/dell-prod-db-backup/policy.json": "6acd4cf6f9f000f03c6988eb54952749b2fbb4a73180ff9abf2ce7ab39f58556"}, "database_or_service_changes": false}

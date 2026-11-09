@@ -1,6 +1,10 @@
 # 当前实施进展
 
-**2026-11-09当前：本轮基础搭建和PVE本机自动备份9/9已通过。** [首轮11档](completion/20261109/backup-first-success.json)完整验证/nativeOK/退出0，[每日03:30计划](completion/20261109/backup-schedule-enabled.json)已启用；三告警原生校验并同容器SIGHUP加载、12实例/15UP与归档权限后验通过，详见[当日交付](completion/20261109/README.md)。不迁移、不合并、不启Java业务，无Mac外部探针；本机恢复点不签独立灾备/实际恢复/RPO。下文11月8日记录按原时点保留。
+**2026-11-09现行：仅正式数据库/Nacos配置自动备份已native通过。** 现行自动备份**仅限VM200正式MySQL数据库与完整Nacos外部元数据库**；当前唯一非系统库为`nacos_prod`（12张BASE TABLE、全InnoDB），正式业务schema尚未创建。新增非系统库不在显式白名单即拒绝并告警，需审核更新策略，不能静默漏备。PVE落点`/mnt/pve/store/dell-artifacts/prod-db-backups`，目录root700/文件600；首轮逻辑SQL gzip **3,301 bytes**已完成CRC/传输SHA校验、DDL锁释放和guest暂存清理，service退出0；03:30（Asia/Shanghai）timer已enabled，下一次2026-11-10 03:30，GFS最近3/每日7/每周4。见[新首轮与timer回执](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)及[当前中央入口](completion/20261109-prod-db-scope/README.md)。
+
+其他数据均不纳入自动：不备VM/OS、测试数据、Redis/Rabbit、Nexus、Penpot、NAS、Ops或CF文件，220发布私钥继续只留220。旧11来宾全机job已disabled、旧whole-VM告警组已退役；原19,747,582,801 bytes全机归档和21回退档保留，不自动删除。新指标`dell_prod_db_backup_*`及三条db-only规则已原生校验/热载，原Prom身份、既有三告警名和Lark接收对象不变、无人工testsend，见[规则回执](completion/20261109-prod-db-scope/alerts-installed.json)。这是同机应用逻辑备份，不是VM快照；未恢复、未迁移、不签异机灾备或RPO/RTO，Java不启、Nexus不合并、Mac外部探针不需要。
+
+此前[11档全机首轮成功](completion/20261109/backup-first-success.json)及15:56启用是历史事实，已被用户最新“仅正式数据库/Nacos配置”范围取代；原`dell-local-nightly`不再启用，旧[pve-local实现](infra/backup/pve-local/README.md)退役不可重跑。CF历史档只留PVE，任何旧档/配置均不得因此导出。 下文11月8日恢复记录按当时事实保留。
 
 ## 11月8日历史恢复记录
 

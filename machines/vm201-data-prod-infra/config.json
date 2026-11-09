@@ -10,7 +10,7 @@
   },
   "source_of_truth": "plan.json",
   "source_role_pointer": "/roles/2",
-  "last_verified_at": "2026-11-09T16:01:00.600541+08:00",
+  "last_verified_at": "2026-11-09T17:06:01.762963+08:00",
   "current_runtime_verified": true,
   "status": "recovered-infrastructure-verified",
   "purpose": "正式 Nacos、Redis、RabbitMQ，Nacos 元数据库依赖 VM200；不承载正式 Java 业务。",
@@ -117,19 +117,23 @@
       "purpose": "monitoring consumer"
     }
   ],
-  "current_verification_evidence": "completion/20261109/guests-post-backup.json",
+  "current_verification_evidence": "completion/20261109-prod-db-scope/source-postcheck.json",
   "current_verification_scope": "current infrastructure setup, no migration or full application restore",
   "verification_note": "Fresh metadata/service audit after natural host reboot; no data migration, Nexus merge or Java business deployment.",
   "timestamp_scope": "2026-11-09 scoped audit; individual commands retain actual timestamps",
   "local_backup": {
-    "included_in_fixed_PVE_job": true,
-    "job": "dell-local-nightly",
-    "storage": "dell-local-backup",
-    "first_run_verified": true,
-    "schedule_enabled": true,
-    "scope": "snapshot/crash-consistent recovery point only; independent DR not signed",
-    "excluded_reason": null,
-    "CF_policy": null,
-    "evidence": "completion/20261109/backup-first-success.json"
+    "included_in_fixed_PVE_job": false,
+    "included_in_production_logical_backup": false,
+    "whole_VM_backup": false,
+    "job": null,
+    "schedule_enabled": false,
+    "first_run_verified": false,
+    "scope": "only production MySQL/Nacos logical backup; all other data excluded",
+    "evidence": "completion/20261109-prod-db-scope/first-success-and-timer-enabled.json",
+    "old_wholeVM_archives_preserved": true,
+    "Nacos_configuration_covered_via": {
+      "vmid": 200,
+      "database": "nacos_prod"
+    }
   }
 }

@@ -1,6 +1,6 @@
 # 实例精简、模板清理与fish：最后验收结果
 
-更新：2026-11-09（Asia/Shanghai）。继续完成基础搭建并按用户选择先建PVE本机自动备份，**明确暂不迁移、不合并Nexus、不退役221**。本次自然重启后fresh核为12running/3tpl、15targets UP；当日状态统一见[11月9日交付记录](completion/20261109/README.md)。此前实例/模板清理和fish安装仍为已完成历史，不能扩写为新的迁移已完成。历史Nexus短停许可保留，但不覆盖本轮不迁移的最新范围。
+更新：2026-11-09（Asia/Shanghai）。继续完成基础搭建并按用户新范围仅备正式数据库/Nacos配置，**明确暂不迁移、不合并Nexus、不退役221**。本次自然重启后fresh核为12running/3tpl、15targets UP；当日状态统一见[11月9日交付记录](completion/20261109-prod-db-scope/README.md)。此前实例/模板清理和fish安装仍为已完成历史，不能扩写为新的迁移已完成。历史Nexus短停许可保留，但不覆盖本轮不迁移的最新范围。
 
 ## 当前保留对象
 
@@ -31,7 +31,7 @@
 
 `/mnt/pve/store/dell-artifacts/cleanup-backups-20261107/`
 
-目录root0700，归档/日志root0600，仅PVE本机。上述历史清理当时没有备份CF100，没有整机备份或快照220；新11月9日固定11项中CF100获准仅PVE备份，220继续排除，发布私钥只在220。完整性验证不等于对所有旧实例逐台恢复启动；原模板回退档保留，fish候选则实际完成独立QA后恢复到原模板ID并核对元数据。新建的6个builder/candidate/QA对象9040–9045随后全部删除，不留额外运行机或模板。
+目录root0700，归档/日志root0600，仅PVE本机。上述历史清理当时没有备份CF100，没有整机备份或快照220；11月9日早前全机方案曾含CF100，仅PVE；该自动计划现已停用，CF不在当前正式DB备份内，220私钥继续只留原机，发布私钥只在220。完整性验证不等于对所有旧实例逐台恢复启动；原模板回退档保留，fish候选则实际完成独立QA后恢复到原模板ID并核对元数据。新建的6个builder/candidate/QA对象9040–9045随后全部删除，不留额外运行机或模板。
 
 证据：[依赖DAG](cleanup/audit/disk-dependency-dag.json)、[删除复核](cleanup/audit/delete-script-review.md)、[实际删除](cleanup/deleted-candidates.json)、[备份汇总](cleanup/backup-summary.json)、[模板换版](cleanup/fish/core-template-replacement.json)、[QA](cleanup/fish/template-QA-summary.json)、[临时机清理](cleanup/fish/temp-closeout.json)。
 
@@ -59,9 +59,11 @@ VM190仅更新DNS静态host-record，删除批准的11条旧记录。11个保留
 
 [空闲iperf3常驻已stop/disable](completion/20261109/idle-iperf-disabled.json)，关闭5201、软件包保留，不更改网络或重启来宾。原15旧对象/6临时对象及21回退档保留原历史，不重放删除工具。
 
-新增[PVE本机自动备份](infra/backup/pve-local/README.md)固定11项、排除220、CF仅PVE，root700目录/600归档日志状态，最近3/每日7/每周4保留，原21档不进入新prune namespace。首轮固定11档已全部verified（zstd、tar/vma及SHA验证），原生任务OK、unit退出0；15:56审核后每日03:30计划已启用，合计19,747,582,801字节。证据：[首轮成功](completion/20261109/backup-first-success.json)、[计划启用](completion/20261109/backup-schedule-enabled.json)。 metadata与Lark白名单配套不等于新通知测试；Prom规则实际部署/加载状态见[当日记录](completion/20261109/README.md)，不提前签收。
+**现行自动备份仅VM200正式数据库/Nacos配置。** 当前唯一非系统库`nacos_prod`，12张BASE TABLE全InnoDB；正式业务schema尚未创建，新增库不在显式白名单则拒绝告警并要求更新。首轮逻辑SQL gzip 3,301 bytes通过CRC/传输SHA、DDL锁释放及guest暂存清理，service退出0、timer已enabled，下一次2026-11-10 03:30（Asia/Shanghai）；GFS最近3/每日7/每周4。PVE目的地`/mnt/pve/store/dell-artifacts/prod-db-backups`，目录root700/文件600，不经Mac，见[新首轮与timer](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)、[中央状态](completion/20261109-prod-db-scope/README.md)。
 
-本机snapshot/crash-consistent不等于应用逻辑/跨VM一致、独立灾备或恢复通过；本轮不恢复、迁盘或导入数据。OW完整规则仅本地保留，不触/不上传。
+其他数据均不自动备份：VM/OS、测试库、Redis/Rabbit、Nexus、Penpot、NAS、Ops、CF及发布私钥排除。旧11来宾全机jobdisabled、whole-VM规则组退役，原19,747,582,801 bytes全机档和21回退档保留、不自动删除；旧CF档只准PVE。新`dell_prod_db_backup_*`三条db-only规则已原生校验/SIGHUP加载，原Prom身份与既有三告警名/Lark接收对象不变，无testsend，见[规则回执](completion/20261109-prod-db-scope/alerts-installed.json)。仅同机逻辑恢复点，未恢复/无独立灾备或RPO保证；不迁移、不合并Nexus、不启Java、无Mac外部探针。
+
+旧全机11项成功属早前阶段，停计划不删除旧档、不退役VM221；OW规则仅本地保留，不触/不上传。
 
 ## Nexus合并：历史准备保留，本轮明确不迁移
 

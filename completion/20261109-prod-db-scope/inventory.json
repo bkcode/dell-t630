@@ -1,0 +1,1197 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-11-09T08:39:48.518538+00:00",
+  "scope": "production database andNacos backup design readonlymetadata only; noRedisRabbitNexusPenpotNASdata backup",
+  "known_hosts_modified": false,
+  "guest_or_PVE_mutations": false,
+  "dump_or_backup_executed": false,
+  "env_or_secret_values_or_business_rows_output": false,
+  "guests": [
+    {
+      "vmid": 200,
+      "role": "data-prod-db",
+      "captured_at": "2026-11-09T08:39:36.350541+00:00",
+      "status": "collected",
+      "read_only": true,
+      "dump_backup_or_write": false,
+      "env_values_secret_or_business_rows_output": false,
+      "SHOW_DATABASES": [
+        "information_schema",
+        "mysql",
+        "nacos_prod",
+        "performance_schema",
+        "sys"
+      ],
+      "Nacos_application_account_selected_schema": "nacos_prod",
+      "schema_engine_table_counts": [
+        {
+          "schema": "information_schema",
+          "table_type": "SYSTEM VIEW",
+          "engine": "NONE",
+          "count": 78
+        },
+        {
+          "schema": "mysql",
+          "table_type": "BASE TABLE",
+          "engine": "CSV",
+          "count": 2
+        },
+        {
+          "schema": "mysql",
+          "table_type": "BASE TABLE",
+          "engine": "InnoDB",
+          "count": 36
+        },
+        {
+          "schema": "nacos_prod",
+          "table_type": "BASE TABLE",
+          "engine": "InnoDB",
+          "count": 12
+        },
+        {
+          "schema": "performance_schema",
+          "table_type": "BASE TABLE",
+          "engine": "PERFORMANCE_SCHEMA",
+          "count": 113
+        },
+        {
+          "schema": "sys",
+          "table_type": "BASE TABLE",
+          "engine": "InnoDB",
+          "count": 1
+        },
+        {
+          "schema": "sys",
+          "table_type": "VIEW",
+          "engine": "NONE",
+          "count": 100
+        }
+      ],
+      "observed_non_system_schemas": [
+        "nacos_prod"
+      ],
+      "observed_business_schema_candidates": [],
+      "Nacos_table_names": [
+        "config_info",
+        "config_info_aggr",
+        "config_info_beta",
+        "config_info_tag",
+        "config_tags_relation",
+        "group_capacity",
+        "his_config_info",
+        "permissions",
+        "roles",
+        "tenant_capacity",
+        "tenant_info",
+        "users"
+      ],
+      "Nacos_key_table_metadata": {
+        "config_info": {
+          "columns": [
+            {
+              "name": "id",
+              "type": "bigint",
+              "nullable": "NO",
+              "key": "PRI"
+            },
+            {
+              "name": "data_id",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": "MUL"
+            },
+            {
+              "name": "group_id",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "content",
+              "type": "longtext",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "md5",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "gmt_create",
+              "type": "datetime",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "gmt_modified",
+              "type": "datetime",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "src_user",
+              "type": "text",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "src_ip",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "app_name",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "tenant_id",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "c_desc",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "c_use",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "effect",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "type",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "c_schema",
+              "type": "text",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "encrypted_data_key",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": ""
+            }
+          ],
+          "row_count_only": 0,
+          "config_content_or_credential_values_output": false
+        },
+        "config_info_aggr": {
+          "columns": [
+            {
+              "name": "id",
+              "type": "bigint",
+              "nullable": "NO",
+              "key": "PRI"
+            },
+            {
+              "name": "data_id",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": "MUL"
+            },
+            {
+              "name": "group_id",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "datum_id",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "content",
+              "type": "longtext",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "gmt_modified",
+              "type": "datetime",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "app_name",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "tenant_id",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            }
+          ],
+          "row_count_only": 0,
+          "config_content_or_credential_values_output": false
+        },
+        "config_info_beta": {
+          "columns": [
+            {
+              "name": "id",
+              "type": "bigint",
+              "nullable": "NO",
+              "key": "PRI"
+            },
+            {
+              "name": "data_id",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": "MUL"
+            },
+            {
+              "name": "group_id",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "app_name",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "content",
+              "type": "longtext",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "beta_ips",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "md5",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "gmt_create",
+              "type": "datetime",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "gmt_modified",
+              "type": "datetime",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "src_user",
+              "type": "text",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "src_ip",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "tenant_id",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "encrypted_data_key",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": ""
+            }
+          ],
+          "row_count_only": 0,
+          "config_content_or_credential_values_output": false
+        },
+        "config_info_tag": {
+          "columns": [
+            {
+              "name": "id",
+              "type": "bigint",
+              "nullable": "NO",
+              "key": "PRI"
+            },
+            {
+              "name": "data_id",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": "MUL"
+            },
+            {
+              "name": "group_id",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "tenant_id",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "tag_id",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "app_name",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "content",
+              "type": "longtext",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "md5",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "gmt_create",
+              "type": "datetime",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "gmt_modified",
+              "type": "datetime",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "src_user",
+              "type": "text",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "src_ip",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            }
+          ],
+          "row_count_only": 0,
+          "config_content_or_credential_values_output": false
+        },
+        "config_tags_relation": {
+          "columns": [
+            {
+              "name": "id",
+              "type": "bigint",
+              "nullable": "NO",
+              "key": "MUL"
+            },
+            {
+              "name": "tag_name",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "tag_type",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "data_id",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "group_id",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "tenant_id",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": "MUL"
+            },
+            {
+              "name": "nid",
+              "type": "bigint",
+              "nullable": "NO",
+              "key": "PRI"
+            }
+          ],
+          "row_count_only": 0,
+          "config_content_or_credential_values_output": false
+        },
+        "his_config_info": {
+          "columns": [
+            {
+              "name": "id",
+              "type": "bigint",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "nid",
+              "type": "bigint",
+              "nullable": "NO",
+              "key": "PRI"
+            },
+            {
+              "name": "data_id",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": "MUL"
+            },
+            {
+              "name": "group_id",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "app_name",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "content",
+              "type": "longtext",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "md5",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "gmt_create",
+              "type": "datetime",
+              "nullable": "NO",
+              "key": "MUL"
+            },
+            {
+              "name": "gmt_modified",
+              "type": "datetime",
+              "nullable": "NO",
+              "key": "MUL"
+            },
+            {
+              "name": "src_user",
+              "type": "text",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "src_ip",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "op_type",
+              "type": "char",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "tenant_id",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "encrypted_data_key",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": ""
+            }
+          ],
+          "row_count_only": 4,
+          "config_content_or_credential_values_output": false
+        },
+        "tenant_info": {
+          "columns": [
+            {
+              "name": "id",
+              "type": "bigint",
+              "nullable": "NO",
+              "key": "PRI"
+            },
+            {
+              "name": "kp",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": "MUL"
+            },
+            {
+              "name": "tenant_id",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": "MUL"
+            },
+            {
+              "name": "tenant_name",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "tenant_desc",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "create_source",
+              "type": "varchar",
+              "nullable": "YES",
+              "key": ""
+            },
+            {
+              "name": "gmt_create",
+              "type": "bigint",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "gmt_modified",
+              "type": "bigint",
+              "nullable": "NO",
+              "key": ""
+            }
+          ],
+          "row_count_only": 1,
+          "config_content_or_credential_values_output": false
+        },
+        "tenant_capacity": {
+          "columns": [
+            {
+              "name": "id",
+              "type": "bigint",
+              "nullable": "NO",
+              "key": "PRI"
+            },
+            {
+              "name": "tenant_id",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": "UNI"
+            },
+            {
+              "name": "quota",
+              "type": "int",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "usage",
+              "type": "int",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "max_size",
+              "type": "int",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "max_aggr_count",
+              "type": "int",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "max_aggr_size",
+              "type": "int",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "max_history_count",
+              "type": "int",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "gmt_create",
+              "type": "datetime",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "gmt_modified",
+              "type": "datetime",
+              "nullable": "NO",
+              "key": ""
+            }
+          ],
+          "row_count_only": 0,
+          "config_content_or_credential_values_output": false
+        },
+        "group_capacity": {
+          "columns": [
+            {
+              "name": "id",
+              "type": "bigint",
+              "nullable": "NO",
+              "key": "PRI"
+            },
+            {
+              "name": "group_id",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": "UNI"
+            },
+            {
+              "name": "quota",
+              "type": "int",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "usage",
+              "type": "int",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "max_size",
+              "type": "int",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "max_aggr_count",
+              "type": "int",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "max_aggr_size",
+              "type": "int",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "max_history_count",
+              "type": "int",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "gmt_create",
+              "type": "datetime",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "gmt_modified",
+              "type": "datetime",
+              "nullable": "NO",
+              "key": ""
+            }
+          ],
+          "row_count_only": 0,
+          "config_content_or_credential_values_output": false
+        },
+        "users": {
+          "columns": [
+            {
+              "name": "username",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": "PRI"
+            },
+            {
+              "name": "password",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": ""
+            },
+            {
+              "name": "enabled",
+              "type": "tinyint",
+              "nullable": "NO",
+              "key": ""
+            }
+          ],
+          "row_count_only": 2,
+          "config_content_or_credential_values_output": false
+        },
+        "roles": {
+          "columns": [
+            {
+              "name": "username",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": "PRI"
+            },
+            {
+              "name": "role",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": "PRI"
+            }
+          ],
+          "row_count_only": 2,
+          "config_content_or_credential_values_output": false
+        },
+        "permissions": {
+          "columns": [
+            {
+              "name": "role",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": "PRI"
+            },
+            {
+              "name": "resource",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": "PRI"
+            },
+            {
+              "name": "action",
+              "type": "varchar",
+              "nullable": "NO",
+              "key": "PRI"
+            }
+          ],
+          "row_count_only": 1,
+          "config_content_or_credential_values_output": false
+        }
+      },
+      "consistency_observation": {
+        "active_InnoDB_transaction_count": 0,
+        "observed_current_DDL_statement_count": 0,
+        "pending_metadata_lock_count": 0,
+        "performance_schema_enabled": "1",
+        "event_scheduler": "ON",
+        "future_no_DDL_guaranteed": false,
+        "SQL_text_or_transaction_values_output": false
+      },
+      "programmable_object_counts": {
+        "routines": [],
+        "triggers": [
+          {
+            "schema": "sys",
+            "count": 2
+          }
+        ],
+        "events": []
+      },
+      "public_script_metadata": [
+        {
+          "path": "/opt/dell/data/prod-db/scripts/acceptance.py",
+          "exists": true,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "bytes": 11172,
+          "directory": false,
+          "symlink": false,
+          "SHA256": "79077300d3643f9b338da0858a8357b22e77a1bf2d9db50d2193f186555ae8c1",
+          "legacy_10_63_literals": []
+        },
+        {
+          "path": "/opt/dell/data/prod-db/scripts/manage.py",
+          "exists": true,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "bytes": 19942,
+          "directory": false,
+          "symlink": false,
+          "SHA256": "099151f272b2ad273e60fa0be7a37a3c6d2b3073017eacc6ae7a4f60a8cb56d3",
+          "legacy_10_63_literals": []
+        },
+        {
+          "path": "/opt/dell/data/prod-db/compose.yaml",
+          "exists": true,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600",
+          "bytes": 1686,
+          "directory": false,
+          "symlink": false,
+          "SHA256": "5039f612b888cb3a944beed1027b1e071dfa4b4d21cf6b334904f593438841c3",
+          "legacy_10_63_literals": []
+        },
+        {
+          "path": "/opt/dell/data/prod-db/application-backup.py",
+          "exists": false
+        },
+        {
+          "path": "/opt/dell/backup/application-backup.py",
+          "exists": false
+        },
+        {
+          "path": "/usr/local/libexec/dell-application-backup.py",
+          "exists": false
+        },
+        {
+          "path": "/opt/dell/data/prod-db/scripts/application-backup.py",
+          "exists": false
+        }
+      ],
+      "public_compose_environment_key_names": [
+        "MYSQL_DATABASE",
+        "MYSQL_PASSWORD_FILE",
+        "MYSQL_ROOT_PASSWORD_FILE",
+        "MYSQL_USER"
+      ],
+      "known_backup_path_metadata": [
+        {
+          "path": "/opt/dell/data/prod-db/_app_backups",
+          "exists": false
+        },
+        {
+          "path": "/srv/dell-data/_app_backups",
+          "exists": true,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o700",
+          "bytes": 4096,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/etc/systemd/system/dell-prod-db-backup.timer",
+          "exists": false
+        },
+        {
+          "path": "/etc/systemd/system/dell-application-backup.timer",
+          "exists": false
+        }
+      ],
+      "matching_backup_unit_filenames": [],
+      "secret_reference_paths_metadata_only": [
+        {
+          "path": "/opt/dell/data/prod-db/secrets/mysql-root-password",
+          "exists": true,
+          "uid": 999,
+          "gid": 999,
+          "mode": "0o600",
+          "bytes": 49,
+          "directory": false,
+          "symlink": false
+        },
+        {
+          "path": "/opt/dell/data/prod-db/secrets/nacos-db-password",
+          "exists": true,
+          "uid": 999,
+          "gid": 999,
+          "mode": "0o600",
+          "bytes": 49,
+          "directory": false,
+          "symlink": false
+        }
+      ],
+      "reusable_mysql_helper": {
+        "path": "/opt/dell/data/prod-db/scripts/acceptance.py",
+        "function": "mysql({}, metadata_SQL, admin=True|False)",
+        "exec_shape": [
+          "docker",
+          "--host",
+          "unix:///var/run/docker.sock",
+          "compose",
+          "--env-file",
+          "/opt/dell/data/prod-db/.env",
+          "-f",
+          "/opt/dell/data/prod-db/compose.yaml",
+          "exec",
+          "-T",
+          "mysql",
+          "sh",
+          "-c",
+          "fixed mounted-secret wrapper, SQL via STDIN"
+        ],
+        "root_secret_container_reference": "/run/secrets/mysql-root-password",
+        "root_secret_host_path": "/opt/dell/data/prod-db/secrets/mysql-root-password",
+        "Nacos_secret_container_reference": "/run/secrets/nacos-db-password",
+        "Nacos_secret_host_path": "/opt/dell/data/prod-db/secrets/nacos-db-password",
+        "credential_values_on_stdout_or_caller_argv": false,
+        "cfg_preflight_auth_prepare_not_called": true
+      },
+      "bounded_public_backup_code_discovery": [
+        {
+          "path": "/root/dell-application-backup.py",
+          "uid": 0,
+          "mode": "0o600",
+          "bytes": 7956,
+          "SHA256": "4b9a203662fea0a62955f5c3e9a77a6184b4f1748ffb9f8aeb187f64f7d3ac81",
+          "legacy_10_63_literals": []
+        }
+      ],
+      "private_data_or_secret_files_descended": false,
+      "actual_MySQL_container_selected_inspect": {
+        "Name": "/dell-data-prod-db-mysql-1",
+        "ID": "b1a1e926f9ca92d717dbb903a313315a74749f7a942528096cb57cea8abee0ca",
+        "Image": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+        "compose_project": "dell-data-prod-db",
+        "compose_service": "mysql",
+        "Mounts": [
+          {
+            "Source": "/opt/dell/data/prod-db/vendor/nacos-mysql-schema-2.4.3.sql",
+            "Destination": "/docker-entrypoint-initdb.d/10-nacos.sql"
+          },
+          {
+            "Source": "/opt/dell/data/prod-db/scripts/mysql-health.sh",
+            "Destination": "/opt/health/mysql-health.sh"
+          },
+          {
+            "Source": "/opt/dell/data/prod-db/secrets/mysql-root-password",
+            "Destination": "/run/secrets/mysql-root-password"
+          },
+          {
+            "Source": "/opt/dell/data/prod-db/secrets/nacos-db-password",
+            "Destination": "/run/secrets/nacos-db-password"
+          },
+          {
+            "Source": "/srv/dell-data/prod-db/mysql",
+            "Destination": "/var/lib/mysql"
+          },
+          {
+            "Source": "/opt/dell/data/prod-db/config/mysql.cnf",
+            "Destination": "/etc/mysql/conf.d/dell.cnf"
+          }
+        ]
+      },
+      "NACOS_DB_NAME_runtime_metadata_value": "nacos_prod",
+      "NACOS_DB_NAME_value_basis": "SELECT DATABASE() through existing Nacos application account, not .env read"
+    },
+    {
+      "vmid": 201,
+      "role": "data-prod-infra",
+      "captured_at": "2026-11-09T08:38:09.066908+00:00",
+      "read_only": true,
+      "backup_dump_restore_or_mutations": false,
+      "env_credentials_or_business_rows_output": false,
+      "public_script_metadata": [
+        {
+          "path": "/opt/dell/data/prod-infra/scripts/acceptance.py",
+          "exists": true,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "bytes": 11172,
+          "symlink": false,
+          "SHA256": "79077300d3643f9b338da0858a8357b22e77a1bf2d9db50d2193f186555ae8c1",
+          "legacy_10_63_literals": []
+        },
+        {
+          "path": "/opt/dell/data/prod-infra/scripts/manage.py",
+          "exists": true,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "bytes": 20582,
+          "symlink": false,
+          "SHA256": "b86e6c8339fc3ebc9151258849d78276d91e179692be588ce5bcdd344b341a10",
+          "legacy_10_63_literals": []
+        },
+        {
+          "path": "/opt/dell/data/prod-infra/compose.yaml",
+          "exists": true,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600",
+          "bytes": 4957,
+          "symlink": false,
+          "SHA256": "b1f5178a320b55cc7b9478fc23f436d5eb2047eee38030e697abe196c679dccf",
+          "legacy_10_63_literals": []
+        },
+        {
+          "path": "/opt/dell/data/prod-infra/application-backup.py",
+          "exists": false
+        },
+        {
+          "path": "/opt/dell/backup/application-backup.py",
+          "exists": false
+        },
+        {
+          "path": "/usr/local/libexec/dell-application-backup.py",
+          "exists": false
+        },
+        {
+          "path": "/opt/dell/data/prod-infra/scripts/application-backup.py",
+          "exists": false
+        }
+      ],
+      "public_compose_environment_key_names": [
+        "JAVA_TOOL_OPTIONS",
+        "JVM_XMN",
+        "JVM_XMS",
+        "JVM_XMX",
+        "MODE",
+        "MYSQL_DATABASE_NUM",
+        "MYSQL_SERVICE_DB_NAME",
+        "MYSQL_SERVICE_DB_PARAM",
+        "MYSQL_SERVICE_HOST",
+        "MYSQL_SERVICE_PORT",
+        "MYSQL_SERVICE_USER",
+        "NACOS_AUTH_ENABLE",
+        "NACOS_AUTH_IDENTITY_KEY",
+        "NACOS_AUTH_USER_AGENT_AUTH_WHITE_ENABLE",
+        "NACOS_SERVER_IP",
+        "PREFER_HOST_MODE",
+        "RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS",
+        "REDIS_MAXMEMORY",
+        "SPRING_DATASOURCE_PLATFORM"
+      ],
+      "public_compose_Nacos_external_DB_key_present": true,
+      "known_backup_path_metadata": [
+        {
+          "path": "/opt/dell/data/prod-infra/_app_backups",
+          "exists": false
+        },
+        {
+          "path": "/srv/dell-data/_app_backups",
+          "exists": false
+        },
+        {
+          "path": "/etc/systemd/system/dell-prod-db-backup.timer",
+          "exists": false
+        },
+        {
+          "path": "/etc/systemd/system/dell-application-backup.timer",
+          "exists": false
+        }
+      ],
+      "matching_backup_unit_filenames": [],
+      "secret_reference_paths_metadata_only": [
+        {
+          "path": "/opt/dell/data/prod-infra/secrets/nacos-admin-password",
+          "exists": true,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600",
+          "bytes": 49,
+          "symlink": false
+        },
+        {
+          "path": "/opt/dell/data/prod-infra/secrets/nacos-client-password",
+          "exists": true,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600",
+          "bytes": 49,
+          "symlink": false
+        },
+        {
+          "path": "/opt/dell/data/prod-infra/secrets/nacos-server-identity",
+          "exists": false
+        },
+        {
+          "path": "/opt/dell/data/prod-infra/secrets/nacos-auth-token",
+          "exists": true,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600",
+          "bytes": 65,
+          "symlink": false
+        }
+      ],
+      "status": "collected",
+      "bounded_public_backup_code_discovery": [
+        {
+          "path": "/root/dell-application-backup.py",
+          "uid": 0,
+          "mode": "0o600",
+          "bytes": 7956,
+          "SHA256": "4b9a203662fea0a62955f5c3e9a77a6184b4f1748ffb9f8aeb187f64f7d3ac81",
+          "legacy_10_63_literals": []
+        }
+      ],
+      "private_data_or_secret_files_descended": false
+    }
+  ],
+  "prior_attempt": {
+    "VM200": "localresultassembly unconfirmed; individualSQLmetadatastatusall0; Nacosnullableemptycolumn_key tabpadding corrected; noSQL/permission change"
+  },
+  "local_legacy_source_review": {
+    "infra/backup/application-backup.py": {
+      "SHA256": "4b9a203662fea0a62955f5c3e9a77a6184b4f1748ffb9f8aeb187f64f7d3ac81",
+      "legacy_10_63_literals": []
+    },
+    "infra/data/scripts/acceptance.py": {
+      "SHA256": "79077300d3643f9b338da0858a8357b22e77a1bf2d9db50d2193f186555ae8c1",
+      "legacy_10_63_literals": []
+    },
+    "infra/data/scripts/manage.py": {
+      "SHA256": "b86e6c8339fc3ebc9151258849d78276d91e179692be588ce5bcdd344b341a10",
+      "legacy_10_63_literals": []
+    },
+    "infra/backup/full-snapshot-restore/worker.py": {
+      "SHA256": "acbe445b49647c3a2a37f545215be93b09f2a47dbb62e5280162eb604281840f",
+      "legacy_10_63_literals": [
+        "10.63.10.10",
+        "10.63.10.11"
+      ]
+    }
+  },
+  "scope_conclusion": {
+    "observed_production_business_schemas": [],
+    "Nacos_external_MySQL_DB": "nacos_prod",
+    "Nacos_base_tables": 12,
+    "all_observed_Nacos_tables_engine": "InnoDB",
+    "current_business_config_rows_in_config_info": 0,
+    "Nacos_config_history_rows": 4,
+    "metadata_not_values": "fullcolumnnames/types+COUNT only forconfig/authrelatedtables; nocontent/passwordhash/usernames/rolesvalues",
+    "future_database_discovery_policy": "mustfreshlistnon-system schemas; do notsilently include test/otherVM data",
+    "backup_execution": false,
+    "other_service_data_in_scope": false
+  },
+  "consistency_risks_and_requirements": [
+    "InnoDBsingle-transaction can coverobserved12tables; DDLmust be excluded bymaintenance/schema-change coordination, current0DDLdoes notpromise future.",
+    "performance_schema snapshot may miss concurrent/finishedstatements; metadata counts areobservations notchangefreeze.",
+    "event_schedulerON with0observed non-system events doesnotpromise futureabsence; capture routines/triggers/events metadata withfutureselectedDBbackup andrestore-safe event policy.",
+    "Nacosconfig/users/roles/permissions/fullhistory belong totheexternalmetadatadb; backup can containsensitive configandpasswordhashes evenwhen currentconfig_infoCOUNT0.",
+    "Global mysqlusers/grants areoutsideselectednacos_prod dump; define controlledcredentials/accountrecovery separately, never publiclogs.",
+    "Oldmanage.preflight andmanage.run canwrite deploy-private.log; no suchfunctioncalled bythisaudit. Newbackupguard should independently inspect mount/IP/Docker withoutdeployment logwrites.",
+    "Legacyfull-snapshot-restore worker hardcodes old10.63.10.10; cannotreuse unchanged forthecurrentproduction19 network.",
+    "No dump, schema lock, event change, transactionwrite, backup ortimerchange performed."
+  ],
+  "status": "readonly-production-db-and-Nacos-metadata-scope-confirmed",
+  "future_schema_allowlist_policy": "Currentproductionnon-systemallowlist exactly[nacos_prod]; newnon-systemschema mustfail+alert until explicitly reviewed, no silent backup omission."
+}

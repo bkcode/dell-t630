@@ -5,7 +5,7 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "34ae7971e3763f6e9424ac491f5bd56d4913f8ae14506f9474d982f22117b1b4"
+      "sha256": "b18d024fe543e3c04ff3d8f92dd0e720ec8944e80fe97cfb34f4926b9ffe6905"
     },
     {
       "path": "cleanup/initial-PVE-readonly.json",
@@ -29,25 +29,25 @@
       "path": "03-templates-and-access.md",
       "type": "current-contract",
       "purpose": "模板、访问与克隆职责边界",
-      "sha256": "241ec388a2d314f42bc31fc5d2b92e4ea65c1c89497704f1bd4554d27ee11ba7"
+      "sha256": "f5e0f2055b406736b5150abc98fc97f1315bd7279ece462dabdfcf6f579857a1"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
-      "sha256": "022e500c0a7ca91ecdb82895b7bdfd12a6f4a56824100a49cad864a5de003361"
+      "sha256": "75896559aa5861b58a48e16090246964be9dd2be4c6c26084a950f345a37ea4b"
     },
     {
       "path": "infra/backup/pve-local/policy.json",
-      "type": "current-contract",
-      "purpose": "用户已授权本机备份的固定对象/保留/权限合同；任务启用与首轮结果另看当期验收",
+      "type": "historical-evidence",
+      "purpose": "Retired whole-VM backup implementation; current user DB-only scope prohibits re-enabling this job.",
       "sha256": "d3e7615137c1456ef450e74a3f5f5ba0e62bbd04912b1070c64669e0df95ad25"
     },
     {
       "path": "completion/20261109/README.md",
       "type": "current-contract",
       "purpose": "当前基础搭建与本机自动备份实施；不迁数据、不启Java/Macprobe",
-      "sha256": "fb369e35633ef2c1ee2f8220b3bdbb4d89c21f95808b99b6c4fdeeb70ba02c80"
+      "sha256": "414938c88dbe78d14310c1f18622a17ef38204eb79a9c6492cbbd43718674289"
     },
     {
       "path": "completion/20261109/acceptance.json",
@@ -72,6 +72,42 @@
       "type": "historical-evidence",
       "purpose": "2026-11-09 scoped audit/receipt with explicit timestamp and limits; not a complete runtime export",
       "sha256": "a5a18376d46855950f4d4cbf58588458bbdd703cd95671c59f067440ba1b8cd6"
+    },
+    {
+      "path": "infra/backup/prod-db/README.md",
+      "type": "current-contract",
+      "purpose": "Current DB-only backup contract or timestamped actual proof; all other data excluded; not a complete runtime export",
+      "sha256": "76b4be4eceae92567d9fb4d608c7e01b2c91b708368e70ae8bab92e49b3d7bc9"
+    },
+    {
+      "path": "infra/backup/prod-db/policy-host.json",
+      "type": "current-contract",
+      "purpose": "Current DB-only backup contract or timestamped actual proof; all other data excluded; not a complete runtime export",
+      "sha256": "d31c374000440cf12825213da82f158e8e37c39d3d853abd2486d2a0907db3ea"
+    },
+    {
+      "path": "completion/20261109-prod-db-scope/README.md",
+      "type": "current-contract",
+      "purpose": "Current DB-only backup contract or timestamped actual proof; all other data excluded; not a complete runtime export",
+      "sha256": "c612b98d23ccc64d142188a309d5b521442f2e3083b77b407ccd252e88f03564"
+    },
+    {
+      "path": "completion/20261109-prod-db-scope/acceptance.json",
+      "type": "current-contract",
+      "purpose": "Current DB-only backup contract or timestamped actual proof; all other data excluded; not a complete runtime export",
+      "sha256": "d1b694b70987b8496ba63399a0fd83596e680da835d7b3a947fdd0b50bcc139f"
+    },
+    {
+      "path": "completion/20261109-prod-db-scope/first-success-and-timer-enabled.json",
+      "type": "historical-evidence",
+      "purpose": "Current DB-only backup contract or timestamped actual proof; all other data excluded; not a complete runtime export",
+      "sha256": "f3691faee54fef4ac370221162f900d4f870a3f82db9ed8e1a8ee007884e325f"
+    },
+    {
+      "path": "completion/20261109-prod-db-scope/final-verification.json",
+      "type": "historical-evidence",
+      "purpose": "Current DB-only backup contract or timestamped actual proof; all other data excluded; not a complete runtime export",
+      "sha256": "2aafaaf362538e823b0d4d243fe15bb30270764d501f2170a1a0fbc880e93465"
     }
   ]
 }

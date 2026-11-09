@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "vmid": 200,
+  "databases": ["nacos_prod"],
+  "nacos_database": "nacos_prod",
+  "mountpoint": "/mnt/pve/store",
+  "filesystem_uuid": "75e5b438-5ff3-4139-83d6-b6a6847aedac",
+  "backup_root": "/mnt/pve/store/dell-artifacts/prod-db-backups",
+  "state_dir": "/var/lib/dell-prod-db-backup",
+  "maximum_archive_bytes": 1073741824,
+  "minimum_free_bytes": 107374182400,
+  "keep_last": 3,
+  "keep_daily": 7,
+  "keep_weekly": 4,
+  "schedule": "03:30",
+  "timezone": "Asia/Shanghai",
+  "scope": "production MySQL databases and complete Nacos metadata DB only; current sole non-system DB nacos_prod; newly unlisted DB fails rather than omitted",
+  "independent_destination": false,
+  "whole_VM_backup": false
+}

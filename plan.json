@@ -2,8 +2,8 @@
   "schema_version": 1,
   "date": "2026-11-09",
   "timezone": "Asia/Shanghai",
-  "status": "infrastructure-complete-PVE-local-backup-enabled-no-migration",
-  "scope": "existing-infrastructure-and-PVE-local-backups-no-migration",
+  "status": "infrastructure-complete-production-DB-only-backup-enabled",
+  "scope": "existing infrastructure and production DB/Nacos logical backup only; no migration",
   "pve": {
     "host": "192.168.21.22",
     "ssh_user": "root",
@@ -608,7 +608,7 @@
     "evidence": "evidence/implementation/raid-recovered.json",
     "historical_fault": "slot32:3 access failure; root cause unresolved, monitor"
   },
-  "updated_at": "2026-11-09T15:59:33.818518+08:00",
+  "updated_at": "2026-11-09T17:07:14.022135+08:00",
   "docker_runtime_profile": {
     "driver": "classic-overlay2",
     "reason": "Verified compatibility with source single-platform offline archives; preserves config IDs",
@@ -637,7 +637,7 @@
     "cleanup_maintenance_evidence": "cleanup/maintenance-ended.json",
     "after_cleanup_targets_UP": 15,
     "external_Mac_probe_future_task": false,
-    "current_evidence": "completion/20261109/final-verification.json",
+    "current_evidence": "completion/20261109-prod-db-scope/final-verification.json",
     "backup_alert_scope": {
       "names": [
         "PveLocalBackupFailed",
@@ -646,13 +646,15 @@
       ],
       "receiver": "existing internal Lark channel only",
       "whitelist_evidence": "completion/20261109/backup-notify-whitelist-result.json",
-      "Prometheus_rule_activation": "nativevalidated and freshSIGHUP loaded;3healthyinactive",
+      "Prometheus_rule_activation": "three existing alert names now use DB-only metrics; same-container SIGHUP verified",
       "artificial_test_send": false,
-      "rule_evidence": "completion/20261109/backup-alerts-installed.json",
-      "postcheck": "completion/20261109/final-verification.json"
+      "rule_evidence": "completion/20261109-prod-db-scope/alerts-installed.json",
+      "postcheck": "completion/20261109-prod-db-scope/final-verification.json",
+      "metric_prefix": "dell_prod_db_backup_",
+      "current_scope": "production DB/Nacos only; old wholeVM rule group removed"
     }
   },
-  "delivery_scope_manifest": "completion/20261109/acceptance.json",
+  "delivery_scope_manifest": "completion/20261109-prod-db-scope/acceptance.json",
   "expected_role_count": 12,
   "network19_migration_manifest": "network19/migration-plan.json",
   "acceptance_templates": [
@@ -790,12 +792,12 @@
     }
   },
   "operational_state": {
-    "as_of": "2026-11-09T15:59:33.818518+08:00",
+    "as_of": "2026-11-09T17:07:14.022135+08:00",
     "status": "recovered-infrastructure-only-no-migration",
-    "live_state": "2026-11-09 final:12guests running,3templates stopped,15targetsUP; backup11verified and03:30jobenabled; sixHTTP200",
-    "last_successful_live_acceptance": "2026-11-09T15:59:33.818518+08:00",
-    "last_successful_PVE_operation": "2026-11-09T15:56:02+08:00",
-    "last_operation": "11guest first backup verified; native03:30schedule enabled; metrics refreshed; original Prometheus SIGHUP and finalread-only health verified",
+    "live_state": "12guests running/3templates stopped/15targetsUP; production DB/Nacos-only logical backup verified and03:30timerenabled; oldwholeVMjobdisabled",
+    "last_successful_live_acceptance": "2026-11-09T17:06:01.762963+08:00",
+    "last_successful_PVE_operation": "2026-11-09T16:58:12+08:00",
+    "last_operation": "old wholeVMjob disabled; production DB first3301B verified; timer enabled and collector updated; Ops same-container rule reload verified",
     "runtime_counts_are_last_verified_not_live": false,
     "resume_requires": "not applicable to infrastructure checks; migration explicitly deferred by user",
     "user_scope_now": "continue infrastructure setup, install and verify local automatic backups; no data migration/Nexus merge/Java business/Macprobe",
@@ -804,9 +806,42 @@
     "hardware_diagnostics": "user reports reseated/replaced and diagnostics passed; current bootEDACce/ue0 independently observed",
     "hardware_evidence": "completion/20261109/pve-audit.json",
     "recovery_manifest": "recovery/20261108/README.md",
-    "current_completion_manifest": "completion/20261109/acceptance.json"
+    "current_completion_manifest": "completion/20261109-prod-db-scope/acceptance.json",
+    "current_backup_scope_manifest": "completion/20261109-prod-db-scope/acceptance.json"
   },
   "backup_delivery": {
+    "scope": "production MySQL databases and complete Nacos metadata DB only",
+    "source_vmid": 200,
+    "source_ip": "192.168.19.10",
+    "databases": [
+      "nacos_prod"
+    ],
+    "formal_business_schema_exists": false,
+    "Nacos_runtime_vmid": 201,
+    "format": "logical mysqldump gzip; no wholeVM",
+    "timer": "dell-prod-db-backup.timer",
+    "service": "dell-prod-db-backup.service",
+    "schedule": "03:30 Asia/Shanghai",
+    "schedule_enabled": true,
+    "destination": "PVE /mnt/pve/store/dell-artifacts/prod-db-backups",
+    "policy": "infra/backup/prod-db/policy-host.json",
+    "retention": {
+      "keep_last": 3,
+      "keep_daily": 7,
+      "keep_weekly": 4,
+      "delete_only_after_verified_new_commit": true
+    },
+    "first_archive_bytes": 3301,
+    "first_success": "completion/20261109-prod-db-scope/first-success-and-timer-enabled.json",
+    "final_verification": "completion/20261109-prod-db-scope/final-verification.json",
+    "whole_VM_job_enabled": false,
+    "other_application_or_test_data_included": false,
+    "old_archives_deleted": false,
+    "restore_executed": false,
+    "independent_destination_configured": false,
+    "new_unlisted_schema": "fail and alert; never silently omitted"
+  },
+  "historical_whole_VM_backup_delivery": {
     "scope": "PVE-local snapshots, not independent disaster recovery",
     "user_choice": "PVE本机自动备份，独立目的地后续接入",
     "native_job": "dell-local-nightly",
@@ -829,7 +864,7 @@
       220
     ],
     "first_run": "11verified; native taskOK; unitexit0",
-    "schedule_enabled": true,
+    "schedule_enabled": false,
     "guest_data_migration": false,
     "restore_executed": false,
     "first_success_evidence": "completion/20261109/backup-first-success.json",
@@ -837,6 +872,9 @@
     "archive_bytes": 19747582801,
     "daily_retention_cycle_observed": false,
     "independent_destination_configured": false,
-    "automatic_restore_test_performed": false
+    "automatic_restore_test_performed": false,
+    "status": "superseded-by-user-production-DB-only-scope",
+    "original_first_11_verified": true,
+    "archives_preserved": true
   }
 }

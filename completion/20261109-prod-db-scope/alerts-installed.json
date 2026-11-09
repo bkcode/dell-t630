@@ -1,0 +1,18 @@
+{
+  "at": "2026-11-09T09:01:42.517597+00:00",
+  "status": "prod-DB-only-rules-native-validated-SIGHUP-loaded",
+  "metrics": {
+    "enabled": 1.0,
+    "state_valid": 1.0,
+    "running": 0.0,
+    "last_run_success": 1.0,
+    "last_success_timestamp_seconds": 1794214577.444057,
+    "archive_bytes": 3301.0
+  },
+  "old_whole_VM_group_absent": true,
+  "new_group": "dell-prod-db-backup",
+  "same_three_approved_alert_names_and_receiver": true,
+  "Prometheus_container_identity_unchanged": true,
+  "rule_SHA": "438ed95dfa87acabae22ac579d8f5a6dc75ef58ebbebd5d92553b652816b72a7",
+  "notification_test_sent": false
+}

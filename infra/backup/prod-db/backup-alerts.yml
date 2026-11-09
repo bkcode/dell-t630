@@ -1,0 +1,44 @@
+groups:
+  - name: dell-prod-db-backup
+    rules:
+      - alert: PveLocalBackupFailed
+        expr: |
+          (max(dell_prod_db_backup_enabled) == 1)
+          and (max(dell_prod_db_backup_state_valid) == 1)
+          and (max(dell_prod_db_backup_running) == 0)
+          and (max(dell_prod_db_backup_last_run_success) == 0)
+        for: 10m
+        labels:
+          site: dell-t630
+          role: pve
+          severity: warning
+        annotations:
+          summary: Production database and Nacos backup failed
+      - alert: PveLocalBackupStale
+        expr: |
+          (max(dell_prod_db_backup_enabled) == 1)
+          and (max(dell_prod_db_backup_state_valid) == 1)
+          and (time() - max(dell_prod_db_backup_last_success_timestamp_seconds) > 129600)
+        for: 10m
+        labels:
+          site: dell-t630
+          role: pve
+          severity: warning
+        annotations:
+          summary: Production DB backup success older than 36 hours
+      - alert: PveLocalBackupStateInvalid
+        expr: |
+          (max(dell_prod_db_backup_enabled) != 1)
+          or (max(dell_prod_db_backup_state_valid) != 1)
+          or absent(dell_prod_db_backup_enabled)
+          or absent(dell_prod_db_backup_state_valid)
+          or absent(dell_prod_db_backup_running)
+          or absent(dell_prod_db_backup_last_run_success)
+          or absent(dell_prod_db_backup_last_success_timestamp_seconds)
+        for: 10m
+        labels:
+          site: dell-t630
+          role: pve
+          severity: warning
+        annotations:
+          summary: Production DB backup timer disabled or state invalid

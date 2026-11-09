@@ -2,7 +2,7 @@
 
 更新：2026-11-09，Asia/Shanghai。此处为PVE宿主、最后保留的12个来宾与3份模板建立独立目录，共16份。iDRAC属于PVE物理机管理面，记录在pve目录；已删除的旧VM/QA不重新建成现役对象。
 
-**2026-11-09继续完成基础搭建与PVE本机自动备份，不迁移数据。** 当日fresh审计为12running/3tpl、15UP，forward guard跨14:24自然重启保持；首轮11档验证成功、03:30计划已启用，最终状态统一见[当日交付记录](../completion/20261109/README.md)。每机JSON是合同/索引，不是秘密恢复包或实时配置导出；每机状态按各自证据与范围解释。
+**2026-11-09继续完成基础搭建与仅正式数据库/Nacos逻辑备份，不迁移数据。** 当日fresh审计为12running/3tpl、15UP，forward guard跨14:24自然重启保持；正式DB首轮3301B/timer已通过、旧whole-VM计划disabled，最终状态统一见[当日交付记录](../completion/20261109-prod-db-scope/README.md)。每机JSON是合同/索引，不是秘密恢复包或实时配置导出；每机状态按各自证据与范围解释。
 
 ## 机器入口
 
@@ -44,13 +44,13 @@
 
 合并目标合同见[17合并架构](../17-publish-artifact-consolidation.md)。未来验收后更新现役清单与目录状态，保留必要源/回退记录；不能仅改目录名代替迁移。
 
-## 本机备份范围与机器身份
+## 现行备份范围与机器身份
 
-[PVE本机自动备份](../infra/backup/pve-local/README.md)固定100/190/200/201/210/221/230/240/250/260/270共11项，220整机始终排除以保护发布私钥，CF仅PVE保存；root700目录/600归档日志状态，03:30及最近3/每日7/每周4原生保留。原21回退档继续保留，3停止模板不每日重复归档。
+自动备份仅源VM200正式MySQL/Nacos外部元数据库，当前唯一`nacos_prod`、12表、正式业务schema未创建。VM201 Nacos配置通过该库覆盖；201自身文件/Redis/Rabbit与所有其他机器数据均不自动备份。新增未列白名单数据库直接失败告警、需显式更新。
 
-首轮固定11档已全部verified（zstd、tar/vma及SHA验证），原生任务OK、unit退出0；15:56审核后每日03:30计划已启用，合计19,747,582,801字节。证据：[首轮成功](../completion/20261109/backup-first-success.json)、[计划启用](../completion/20261109/backup-schedule-enabled.json)。 新Prom规则实际加载与后验见[当日记录](../completion/20261109/README.md)，不提前签收。本机snapshot/crash-consistent不是DB逻辑/跨VM一致或异机灾备，本轮未恢复；归档不得进入机器目录/Git。
+[首轮与timer](../completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)3301B已CRC/传输SHA/锁释放/暂存清理通过，03:30 timer enabled（next2026-11-10），GFS3/7/4，PVE目的地`/mnt/pve/store/dell-artifacts/prod-db-backups` root700/600。[新规则](../completion/20261109-prod-db-scope/alerts-installed.json)已使用db-only指标热载，原Prom identity/三名/接收对象保持，无testsend；最终状态见[新中央入口](../completion/20261109-prod-db-scope/README.md)。
 
-OW完整规则仅本地保存，不触/不上传，不push local-only分支。
+旧11来宾全机jobdisabled、旧规则组退役；19,747,582,801B旧全机档、21回退档和模板回退资料保留，不自动删。历史CF档仅PVE，发布私钥仅220；不把归档放机器目录/Git。当前是应用逻辑备份、非VM快照，未restore/无异机DR/RPO保证，不迁移/合并/启Java、无Mac探针；OW规则只本地不触上传。
 
 ## 秘密、操作与检查
 

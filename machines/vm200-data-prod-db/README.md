@@ -1,12 +1,12 @@
-> 更新：2026-11-09（Asia/Shanghai）。本轮基础fresh审计已复核；当日实时收尾状态统一见[11月9日交付记录](../../completion/20261109/README.md)。本页仅本地同步带时点证据，不执行服务器操作；不迁移数据、不合并Nexus、不启动Java业务、不升级Penpot，不需要Mac外部探针。
+> 更新：2026-11-09（Asia/Shanghai）。本轮基础fresh审计已复核；当日实时收尾状态统一见[11月9日交付记录](../../completion/20261109-prod-db-scope/README.md)。本页仅本地同步带时点证据，不执行服务器操作；不迁移数据、不合并Nexus、不启动Java业务、不升级Penpot，不需要Mac外部探针。
 
 # VM200 · data-prod-db
 
 ## 本轮只读状态与备份归属
 
-14:42:56–14:43:40分项采样：hostname/19.10/GW与DNS19.1正确，原数据UUID/ext4/rw、监督active、1容器running/healthy/RestartCount0，NTP同步、exporter和collector timer正常、failed units空。正式空业务为保留合同，本轮未读库内容或重验DB权限。 证据：[本机分项审计](../../completion/20261109/core-audit.json)。
+14:42:56–14:43:40分项采样：hostname/19.10/GW与DNS19.1正确，原数据UUID/ext4/rw、监督active、1容器running/healthy/RestartCount0，NTP同步、exporter和collector timer正常、failed units空。正式业务schema未创建；该14:42只读审计没有读库内容/重验权限，后续新授权的逻辑备份见下方独立回执。 证据：[本机分项审计](../../completion/20261109/core-audit.json)。
 
-本机纳入[PVE本机自动备份](../../infra/backup/pve-local/README.md)的固定11来宾白名单；220始终排除，CF档只留PVE。 计划为03:30、最近3份＋每日7点＋每周4点，私有目录root700、归档/日志/状态600，旧21回退档保留。**首轮最终结果、job启用与告警规则后验只以[当日中央入口](../../completion/20261109/README.md)为准，本页不复制进行中状态。** 同机snapshot/crash-consistent不等于DB逻辑/跨VM一致、异机灾备或已恢复；本轮不迁移数据、不恢复覆盖现役。
+本机是当前唯一自动备份源：仅正式MySQL数据库与完整Nacos外部元库。当前只有nacos_prod/12表，正式业务schema尚未创建。 现行仅正式DB/Nacos逻辑SQL导出（非VM snapshot），PVE落点`/mnt/pve/store/dell-artifacts/prod-db-backups` root700/600；新未列白名单数据库拒绝告警、需更新。03:30/GFS最近3＋每日7＋每周4，首轮3301B与timer见[新回执](../../completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)，实际监控/收尾统一见[新中央入口](../../completion/20261109-prod-db-scope/README.md)。旧11来宾job已disabled、原19,747,582,801B档与21回退档保留不自动删；未restore/无异机DR，不迁移/合并/启Java、无Mac探针。
 
 **配置合同与带时点基础审计，非完整运行配置导出。** 11月7日UEFI0058/B1事故与当日02:35旧基线保留历史；用户11月8日确认内存处理/诊断通过，11月9日已按下列证据重新核验基础状态。本页文档同步没有远程变更，也不把健康状态扩写为业务数据/权限或完整恢复通过。
 

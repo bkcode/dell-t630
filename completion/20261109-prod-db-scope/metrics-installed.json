@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-09T16:58:12.336864+08:00",
+  "status": "prod-DB-metadata-added-to-existing-collector",
+  "collector_SHA": "5a3408e54d795a19adb5baa974247663f233f715ee41c3146fcae39bb51a2bd1",
+  "native_unit": {
+    "Result": "success",
+    "ExecMainStatus": "0"
+  },
+  "new_listener_or_key_or_notification": false
+}

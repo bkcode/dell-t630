@@ -92,14 +92,14 @@
   "current_verification_scope": "current infrastructure setup, no migration or full application restore",
   "timestamp_scope": "2026-11-09 scoped audit; individual commands retain actual timestamps",
   "local_backup": {
-    "included_in_fixed_PVE_job": true,
-    "job": "dell-local-nightly",
-    "storage": "dell-local-backup",
-    "first_run_verified": true,
-    "schedule_enabled": true,
-    "scope": "snapshot/crash-consistent recovery point only; independent DR not signed",
-    "excluded_reason": null,
-    "CF_policy": null,
-    "evidence": "completion/20261109/backup-first-success.json"
+    "included_in_fixed_PVE_job": false,
+    "included_in_production_logical_backup": false,
+    "whole_VM_backup": false,
+    "job": null,
+    "schedule_enabled": false,
+    "first_run_verified": false,
+    "scope": "only production MySQL/Nacos logical backup; all other data excluded",
+    "evidence": "completion/20261109-prod-db-scope/first-success-and-timer-enabled.json",
+    "old_wholeVM_archives_preserved": true
   }
 }

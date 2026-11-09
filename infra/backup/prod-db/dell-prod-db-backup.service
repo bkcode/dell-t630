@@ -1,0 +1,13 @@
+[Unit]
+Description=Dell production MySQL and Nacos logical backup to PVE local store
+RequiresMountsFor=/mnt/pve/store
+After=pve-cluster.service
+
+[Service]
+Type=oneshot
+User=root
+UMask=0077
+ExecStart=/usr/bin/python3 -I -B /usr/local/libexec/dell-prod-db-backup/host-worker.py
+TimeoutStartSec=2400
+Nice=10
+IOSchedulingClass=idle

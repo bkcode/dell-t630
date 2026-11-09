@@ -1,6 +1,6 @@
 # 家庭NAS、影音与游戏文件库
 
-更新：2026-11-09。**14:24自然重启后NAS原UUID/单元/容器和原健康入口再次只读通过；未迁移、重装、写共享或新播放。** [14:43媒体审计](completion/20261109/media-audit.json)确认原配置/镜像与基础服务保持。PVE本机备份包含260，[首轮11项已验证完成](completion/20261109/backup-first-success.json)、[03:30计划已启用](completion/20261109/backup-schedule-enabled.json)；本轮没有恢复演练，同机备份不等于家庭异机灾备。总体状态见[01](01-current-state.md)。
+更新：2026-11-09。**14:24自然重启后NAS原UUID/单元/容器和原健康入口再次只读通过；未迁移、重装、写共享或新播放。** [14:43媒体审计](completion/20261109/media-audit.json)确认原配置/镜像与基础服务保持。用户最新仅备正式数据库/Nacos配置，NAS数据不纳入自动备份；旧260全机档保留，不自动删除，见[新范围](completion/20261109-prod-db-scope/README.md)。总体状态见[01](01-current-state.md)。
 
 ## 1. 职责与已交付功能
 
@@ -61,9 +61,9 @@ NAS系统盘和数据盘不依赖自己导出的SMB/NFS启动。OMV持久网络�
 
 备份分层包括OMV配置、Compose/Jellyfin数据库、不可重建家庭文件/存档与所选媒体。应用数据库按支持的一致性方式保存，个人珍贵文件有独立副本；大体积可重新取得内容由用户决定范围。NAS不作为正式业务备份目标，也不把整盘备份再写到自己内部。
 
-新增[PVE本机自动备份](infra/backup/pve-local/README.md)固定11项中包含260，明确排除220发布机、CF归档仅PVE，以VM snapshot保存系统/虚拟数据盘恢复点；备份目录在PVE store原生namespace，不经NAS导出共享，也不把备份写入VM260自己盘内。2TiB是虚拟盘逻辑容量，稀疏扫描仍消耗时间/IO，不能据归档暂小就宣称已覆盖未来媒体增长或持续备份能力。[首轮11项已完整验证](completion/20261109/backup-first-success.json)、原生任务OK/退出0，[计划已启用](completion/20261109/backup-schedule-enabled.json)，03:30与3/7/4保留保持；本轮260归档为2,177,592,558 bytes。Prom规则实际状态只查[当日中央入口](completion/20261109/README.md)，不在本页提前签加载。
+**NAS媒体、游戏文件、OMV/Jellyfin数据均不在当前自动备份范围。** 当前只有VM200正式数据库/Nacos逻辑备份，见[中央范围](completion/20261109-prod-db-scope/README.md)和[首轮与timer](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)。旧全机方案中260归档2,177,592,558 bytes属历史，原档保留不自动删；2TiB是虚拟盘逻辑容量，不等于当前有持续媒体保护。
 
-同机NAS与PVE、数据和Ops共享供电/内存/RAID故障域；PVE本机snapshot不覆盖整机损失、不保证Jellyfin数据库逻辑一致，也没有本轮恢复演练。独立目的地/恢复SLO仍待完成，当前不宣称家庭数据已具备完整灾备；珍贵家庭文件独立副本仍有必要。
+同机NAS与PVE、数据和Ops共享供电/内存/RAID故障域；NAS未纳入现行自动备份；旧同机snapshot不覆盖整机损失、不保证Jellyfin数据库逻辑一致，也没有本轮恢复演练。独立目的地/恢复SLO仍待完成，当前不宣称家庭数据已具备完整灾备；珍贵家庭文件独立副本仍有必要。
 
 ## 6. 当前恢复观察与后续人工验收
 

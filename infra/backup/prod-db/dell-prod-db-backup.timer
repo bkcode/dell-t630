@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily production DB and Nacos backup only
+
+[Timer]
+OnCalendar=*-*-* 03:30:00 Asia/Shanghai
+Persistent=false
+AccuracySec=1min
+Unit=dell-prod-db-backup.service
+
+[Install]
+WantedBy=timers.target

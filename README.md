@@ -2,7 +2,7 @@
 
 本仓库保存 T630 / Proxmox VE 8.4 的部署方案、基础设施脚本、验收证据和人工操作手册。最后整理日期：**2026-11-09，Asia/Shanghai**。
 
-**2026-11-09继续完成基础搭建，并按用户选择先搭PVE本机自动备份，不迁移数据。** 14:24自然重启后的fresh审计确认12来宾运行、3模板停止、15/15UP、EDAC0/RAIDOptl，forward guard文件与启动顺序保持全0。Nexus221继续独立、220保持原standby，Java业务不启，Penpot实际ff提交不更新main，Mac外部探针不需要。当日状态统一见[11月9日交付记录](completion/20261109/README.md)；[11月8日恢复](recovery/20261108/README.md)保留历史。
+**2026-11-09继续完成基础搭建，并按用户最新范围仅备正式数据库/Nacos配置，不迁移数据。** 14:24自然重启后的fresh审计确认12来宾运行、3模板停止、15/15UP、EDAC0/RAIDOptl，forward guard文件与启动顺序保持全0。Nexus221继续独立、220保持原standby，Java业务不启，Penpot实际ff提交不更新main，Mac外部探针不需要。当日状态统一见[11月9日交付记录](completion/20261109-prod-db-scope/README.md)；[11月8日恢复](recovery/20261108/README.md)保留历史。
 
 ## 从这里开始
 
@@ -16,7 +16,7 @@
 | 理解路由、虚拟机、Docker 与隔离 | [架构](02-architecture.md)、[网络交付](15-network19-delivery.md)、[WireGuard](16-wireguard-access.md) |
 | 查模板与家庭 NAS | [模板](03-templates-and-access.md)、[NAS](05-home-nas.md) |
 | 看发布与Nexus合并后的目标架构 | **[17合并架构](17-publish-artifact-consolidation.md)**，目标只保留VM220 publish-service |
-| 查本机自动备份合同与首轮结果 | [PVE本机备份](infra/backup/pve-local/README.md)、[当日状态](completion/20261109/README.md) |
+| 查现行正式数据库/Nacos自动备份 | [新中央入口](completion/20261109-prod-db-scope/README.md)、[首轮与timer](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json) |
 | 查已完成清理和未完成的 Nexus 合并 | [整理结果](18-cleanup-and-consolidation.md)、[合并恢复检查](cleanup/nexus/resume-preflight.md) |
 | 查验收边界和结果 | [验收总览](06-acceptance.md)、[本轮整理验收](cleanup/acceptance.md) |
 | 将仓库交给另一台电脑或下一位管理员 | [Git 与资料交接](20-git-and-handoff.md) |
@@ -29,7 +29,7 @@
 
 ## 当前保留部署与历史基线
 
-2026-11-09 fresh审计仍为1台物理服务器、**12运行实例（11VM+1LXC）和3停止模板**，配置总额43vCPU/85GiB。11月7日02:35/02:44:29及随后UEFI0058停机是历史节点，不能继续称为最后成功现场；时间线见[硬件记录](cleanup/hardware/DIMM_B1-incident.json)，新证据见[当日入口](completion/20261109/README.md)。
+2026-11-09 fresh审计仍为1台物理服务器、**12运行实例（11VM+1LXC）和3停止模板**，配置总额43vCPU/85GiB。11月7日02:35/02:44:29及随后UEFI0058停机是历史节点，不能继续称为最后成功现场；时间线见[硬件记录](cleanup/hardware/DIMM_B1-incident.json)，新证据见[当日入口](completion/20261109-prod-db-scope/README.md)。
 
 | VMID | 名称 | 地址 | 主要作用 |
 | --- | --- | --- | --- |
@@ -66,13 +66,15 @@ python3 scripts/validate_docs.py --json
 python3 scripts/check_git_safety.py
 ```
 
-## PVE本机自动备份：首轮成功、计划已启用
+## 仅正式数据库/Nacos逻辑备份：首轮成功、timer已启用
 
-固定备份100/190/200/201/210/221/230/240/250/260/270共11项，**220始终排除、CF仅PVE**；目录root700、归档/日志/状态root600，原21回退档保留。最近3份＋每日7点＋每周4点按原生组合策略。首轮固定11档已全部verified（zstd、tar/vma及SHA验证），原生任务OK、unit退出0；15:56审核后每日03:30计划已启用，合计19,747,582,801字节。证据：[首轮成功](completion/20261109/backup-first-success.json)、[计划启用](completion/20261109/backup-schedule-enabled.json)。
+现行自动备份**仅限VM200正式MySQL数据库与完整Nacos外部元数据库**；当前唯一非系统库为`nacos_prod`（12张BASE TABLE、全InnoDB），正式业务schema尚未创建。新增非系统库不在显式白名单即拒绝并告警，需审核更新策略，不能静默漏备。PVE落点`/mnt/pve/store/dell-artifacts/prod-db-backups`，目录root700/文件600；首轮逻辑SQL gzip **3,301 bytes**已完成CRC/传输SHA校验、DDL锁释放和guest暂存清理，service退出0；03:30（Asia/Shanghai）timer已enabled，下一次2026-11-10 03:30，GFS最近3/每日7/每周4。见[新首轮与timer回执](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)及[当前中央入口](completion/20261109-prod-db-scope/README.md)。
 
-这是同机snapshot/crash-consistent恢复点，不是数据库逻辑/跨VM事务一致性或异机灾备；本轮未恢复，不签RPO/RTO。原metadata采集和Lark三名白名单已配套、未人工外发；新增Prom规则实际部署/加载状态以[当日记录](completion/20261109/README.md)为准。具体见[备份合同](infra/backup/pve-local/README.md)。
+其他数据均不纳入自动：不备VM/OS、测试数据、Redis/Rabbit、Nexus、Penpot、NAS、Ops或CF文件，220发布私钥继续只留220。旧11来宾全机job已disabled、旧whole-VM告警组已退役；原19,747,582,801 bytes全机归档和21回退档保留，不自动删除。新指标`dell_prod_db_backup_*`及三条db-only规则已原生校验/热载，原Prom身份、既有三告警名和Lark接收对象不变、无人工testsend，见[规则回执](completion/20261109-prod-db-scope/alerts-installed.json)。这是同机应用逻辑备份，不是VM快照；未恢复、未迁移、不签异机灾备或RPO/RTO，Java不启、Nexus不合并、Mac外部探针不需要。
 
-继续待验：新增规则后验以[当日记录](completion/20261109/README.md)实际状态为准；另有硬件长期稳定性、长期独立备份与RPO/RTO、真实电视/PS、公网域名/HTTPS。Nexus合并用户暂缓，Java业务不在当前范围；Mac外部探针不再列待办。OW完整规则只留本地，不触/不上传或push local-only分支。
+此前[11档全机首轮成功](completion/20261109/backup-first-success.json)及15:56启用是历史事实，已被用户最新“仅正式数据库/Nacos配置”范围取代；原`dell-local-nightly`不再启用，旧[pve-local实现](infra/backup/pve-local/README.md)退役不可重跑。CF历史档只留PVE，任何旧档/配置均不得因此导出。
+
+硬件长期稳定、独立目的地/恢复与RPO/RTO、真实TV/PS/公网HTTPS仍按原范围另验；OW完整规则只留本地，不触/不上传。
 
 ## 全部主题文档
 

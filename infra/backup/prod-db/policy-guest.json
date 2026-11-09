@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "databases": ["nacos_prod"],
+  "nacos_database": "nacos_prod",
+  "expected_mysql_container": "dell-data-prod-db-mysql-1",
+  "expected_compose_project": "dell-data-prod-db",
+  "data_uuid": "d61c0e22-941e-447a-9e9a-1e9e50deb02f",
+  "staging_root": "/srv/dell-data/_prod_db_backups",
+  "max_archive_bytes": 1073741824
+}

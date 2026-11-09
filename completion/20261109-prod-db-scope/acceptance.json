@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-09T17:07:14.022135+08:00",
+  "status": "passed-current-production-DB-only-scope",
+  "scope": "production DB and Nacos configuration logical backups only",
+  "cases": [
+    {
+      "id": "DBBAK-SCOPE-001",
+      "title": "仅正式数据库/Nacos配置",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户最新仅正式数据库/Nacos配置；旧整机计划停用、历史档保留"
+      ],
+      "steps": [
+        "核对实际带时间收据、scope与后验；未执行恢复不扩签"
+      ],
+      "observable_pass_conditions": [
+        "对应收据实际成功且不包含其他数据备份/SQL外传；恢复、独立灾备与多周期保留不扩签"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-prod-db-scope/whole-vm-job-disabled.json",
+          "note": "actual scoped evidence; no payload/credential export"
+        },
+        {
+          "path": "completion/20261109-prod-db-scope/whole-vm-rules-retired.json",
+          "note": "actual scoped evidence; no payload/credential export"
+        },
+        {
+          "path": "completion/20261109-prod-db-scope/inventory.json",
+          "note": "actual scoped evidence; no payload/credential export"
+        }
+      ],
+      "verified_at": "2026-11-09T17:07:14.022135+08:00",
+      "verification_scope": "current production DB/Nacos logical backup only"
+    },
+    {
+      "id": "DBBAK-DUMP-001",
+      "title": "逻辑导出、锁释放与完整性",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户最新仅正式数据库/Nacos配置；旧整机计划停用、历史档保留"
+      ],
+      "steps": [
+        "核对实际带时间收据、scope与后验；未执行恢复不扩签"
+      ],
+      "observable_pass_conditions": [
+        "对应收据实际成功且不包含其他数据备份/SQL外传；恢复、独立灾备与多周期保留不扩签"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-prod-db-scope/first-success-and-timer-enabled.json",
+          "note": "actual scoped evidence; no payload/credential export"
+        },
+        {
+          "path": "completion/20261109-prod-db-scope/source-postcheck.json",
+          "note": "actual scoped evidence; no payload/credential export"
+        }
+      ],
+      "verified_at": "2026-11-09T17:07:14.022135+08:00",
+      "verification_scope": "current production DB/Nacos logical backup only"
+    },
+    {
+      "id": "DBBAK-SCHEDULE-001",
+      "title": "专属定时器与私有目录",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户最新仅正式数据库/Nacos配置；旧整机计划停用、历史档保留"
+      ],
+      "steps": [
+        "核对实际带时间收据、scope与后验；未执行恢复不扩签"
+      ],
+      "observable_pass_conditions": [
+        "对应收据实际成功且不包含其他数据备份/SQL外传；恢复、独立灾备与多周期保留不扩签"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-prod-db-scope/first-success-and-timer-enabled.json",
+          "note": "actual scoped evidence; no payload/credential export"
+        },
+        {
+          "path": "completion/20261109-prod-db-scope/host-install.json",
+          "note": "actual scoped evidence; no payload/credential export"
+        }
+      ],
+      "verified_at": "2026-11-09T17:07:14.022135+08:00",
+      "verification_scope": "current production DB/Nacos logical backup only"
+    },
+    {
+      "id": "DBBAK-MONITOR-001",
+      "title": "新指标与同容器热载",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户最新仅正式数据库/Nacos配置；旧整机计划停用、历史档保留"
+      ],
+      "steps": [
+        "核对实际带时间收据、scope与后验；未执行恢复不扩签"
+      ],
+      "observable_pass_conditions": [
+        "对应收据实际成功且不包含其他数据备份/SQL外传；恢复、独立灾备与多周期保留不扩签"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-prod-db-scope/metrics-installed.json",
+          "note": "actual scoped evidence; no payload/credential export"
+        },
+        {
+          "path": "completion/20261109-prod-db-scope/alerts-installed.json",
+          "note": "actual scoped evidence; no payload/credential export"
+        },
+        {
+          "path": "completion/20261109-prod-db-scope/final-verification.json",
+          "note": "actual scoped evidence; no payload/credential export"
+        }
+      ],
+      "verified_at": "2026-11-09T17:07:14.022135+08:00",
+      "verification_scope": "current production DB/Nacos logical backup only"
+    },
+    {
+      "id": "DBBAK-HEALTH-001",
+      "title": "源端与现有基础健康",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户最新仅正式数据库/Nacos配置；旧整机计划停用、历史档保留"
+      ],
+      "steps": [
+        "核对实际带时间收据、scope与后验；未执行恢复不扩签"
+      ],
+      "observable_pass_conditions": [
+        "对应收据实际成功且不包含其他数据备份/SQL外传；恢复、独立灾备与多周期保留不扩签"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-prod-db-scope/source-postcheck.json",
+          "note": "actual scoped evidence; no payload/credential export"
+        },
+        {
+          "path": "completion/20261109-prod-db-scope/final-verification.json",
+          "note": "actual scoped evidence; no payload/credential export"
+        }
+      ],
+      "verified_at": "2026-11-09T17:07:14.022135+08:00",
+      "verification_scope": "current production DB/Nacos logical backup only"
+    },
+    {
+      "id": "DBBAK-BOUNDARY-001",
+      "title": "无迁移/恢复/其他数据备份",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户最新仅正式数据库/Nacos配置；旧整机计划停用、历史档保留"
+      ],
+      "steps": [
+        "核对实际带时间收据、scope与后验；未执行恢复不扩签"
+      ],
+      "observable_pass_conditions": [
+        "对应收据实际成功且不包含其他数据备份/SQL外传；恢复、独立灾备与多周期保留不扩签"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-prod-db-scope/first-success-and-timer-enabled.json",
+          "note": "actual scoped evidence; no payload/credential export"
+        },
+        {
+          "path": "completion/20261109-prod-db-scope/inventory.json",
+          "note": "actual scoped evidence; no payload/credential export"
+        },
+        {
+          "path": "completion/20261109-prod-db-scope/source-postcheck.json",
+          "note": "actual scoped evidence; no payload/credential export"
+        }
+      ],
+      "verified_at": "2026-11-09T17:07:14.022135+08:00",
+      "verification_scope": "current production DB/Nacos logical backup only"
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "statuses": {
+      "passed": 6
+    },
+    "current_phase_case_count": 6,
+    "current_phase_passed": 6
+  },
+  "not_required_or_deferred": [
+    "SQL restore/business recovery/RPO/RTO",
+    "independent destination",
+    "new databases or programmable objects require whitelist/consistency review",
+    "large DB transport beyond current caps",
+    "purge historical wholeVM/cleanup archives"
+  ]
+}

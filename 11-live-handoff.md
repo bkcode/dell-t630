@@ -1,8 +1,8 @@
 # 当前交接：基础已恢复，本轮不迁移
 
-更新：2026-11-09，Asia/Shanghai。用户继续授权完成基础搭建，并明确先建PVE本机自动备份；内存现场处理/诊断通过由用户此前确认。**不合并Nexus、不搬数据、不退役221。** 以前短停合并许可保留为历史，不覆盖这次明确暂缓。
+更新：2026-11-09，Asia/Shanghai。用户继续授权完成基础搭建，并明确仅自动备份正式数据库/Nacos配置；内存现场处理/诊断通过由用户此前确认。**不合并Nexus、不搬数据、不退役221。** 以前短停合并许可保留为历史，不覆盖这次明确暂缓。
 
-当日执行状态唯一入口：[11月9日交付记录](completion/20261109/README.md)。[11月8日恢复记录](recovery/20261108/README.md)为上轮历史。
+当日执行状态唯一入口：[11月9日交付记录](completion/20261109-prod-db-scope/README.md)。[11月8日恢复记录](recovery/20261108/README.md)为上轮历史。
 
 ## 已核事实与实际变更
 
@@ -18,13 +18,13 @@
 
 230/240各一，仅运行基础，无Java业务进程/自启；publisher仍fenced。Penpot保留实际ff1783e版本，用户指定的bkcode/penpot main是未来更新合同，本轮未取码/构建/升级。
 
-## PVE本机自动备份交接
+## 正式数据库/Nacos备份交接
 
-已安装新私有storage/native job，固定11项100/190/200/201/210/221/230/240/250/260/270，220排除、CF仅PVE，目录root700/归档日志状态600。03:30、最近3＋每日7＋每周4的原生保留策略，旧21档独立保留；合同见[本机备份](infra/backup/pve-local/README.md)。
+**现行自动备份仅VM200正式数据库/Nacos配置。** 当前唯一非系统库`nacos_prod`，12张BASE TABLE全InnoDB；正式业务schema尚未创建，新增库不在显式白名单则拒绝告警并要求更新。首轮逻辑SQL gzip 3,301 bytes通过CRC/传输SHA、DDL锁释放及guest暂存清理，service退出0、timer已enabled，下一次2026-11-10 03:30（Asia/Shanghai）；GFS最近3/每日7/每周4。PVE目的地`/mnt/pve/store/dell-artifacts/prod-db-backups`，目录root700/文件600，不经Mac，见[新首轮与timer](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)、[中央状态](completion/20261109-prod-db-scope/README.md)。
 
-**首轮成功、计划已启用。** 固定11档已全部verified（zstd、tar/vma及SHA验证），原生任务OK、unit退出0；15:56审核后每日03:30计划已启用，合计19,747,582,801字节。证据：[首轮成功](completion/20261109/backup-first-success.json)、[计划启用](completion/20261109/backup-schedule-enabled.json)。 新增Prom规则实际部署/加载状态统一见[当日记录](completion/20261109/README.md)，此处不提前签加载或真实通知送达；既有metadata与Lark白名单配套，无本轮人工外发。
+其他数据均不自动备份：VM/OS、测试库、Redis/Rabbit、Nexus、Penpot、NAS、Ops、CF及发布私钥排除。旧11来宾全机jobdisabled、whole-VM规则组退役，原19,747,582,801 bytes全机档和21回退档保留、不自动删除；旧CF档只准PVE。新`dell_prod_db_backup_*`三条db-only规则已原生校验/SIGHUP加载，原Prom身份与既有三告警名/Lark接收对象不变，无testsend，见[规则回执](completion/20261109-prod-db-scope/alerts-installed.json)。仅同机逻辑恢复点，未恢复/无独立灾备或RPO保证；不迁移、不合并Nexus、不启Java、无Mac外部探针。
 
-本机snapshot不是应用逻辑/跨来宾一致性、独立目的地或恢复演练。本轮不恢复VM/导入数据，真实RPO/RTO与独立灾备继续待验。
+旧全机启用的早前阶段已被本次用户新范围取代，不按旧手册重新启用。其他完整恢复、真实家庭设备、硬件长期观察仍按原边界另验。
 
 ## 告警与待办
 

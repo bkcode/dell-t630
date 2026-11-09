@@ -1,6 +1,6 @@
 # 硬件发现、历史UEFI0058与恢复观察
 
-更新：2026-11-09（Asia/Shanghai）。**当前继续完成基础搭建并新增用户授权的PVE本机自动备份，不迁移数据。** [本轮PVE审计](completion/20261109/pve-audit.json)于14:42–14:44读取14:24自然重启后的4×32GiB、EDAC0、RAIDOptl和12running/3tpl；上一轮guard已实际跨重启保持全forward0。用户此前确认内存重新插拔/更换及诊断通过，与助手只读短期计数分别记录，没有独立离线诊断或压力测试。UEFI0058/B1保留为历史；本页本次仅本地同步，无新远程动作。
+更新：2026-11-09（Asia/Shanghai）。**当前继续完成基础搭建并按用户最新范围仅备正式数据库/Nacos配置，不迁移数据。** [本轮PVE审计](completion/20261109/pve-audit.json)于14:42–14:44读取14:24自然重启后的4×32GiB、EDAC0、RAIDOptl和12running/3tpl；上一轮guard已实际跨重启保持全forward0。用户此前确认内存重新插拔/更换及诊断通过，与助手只读短期计数分别记录，没有独立离线诊断或压力测试。UEFI0058/B1保留为历史；本页本次仅本地同步，无新远程动作。
 
 ## 1. 历史内存事件与证据强度
 
@@ -73,9 +73,13 @@ PERC板载缓存ECC与系统DIMM_B1属于不同层；缓存correctable/uncorrect
 | HW-02 | POST恢复、诊断与有效容量 | 用户报告重新插拔/更换和诊断通过；OS可达、4×32GiB，助手未独立离线诊断 |
 | HW-03 | 同hostkey/PVE及新鲜RAM/RAID状态 | 11月9日14:42–14:44再核EDAC0、两VD Optl；不保证长期稳定 |
 | HW-04 | 原12来宾/15目标与原服务基础 | 11月9日fresh分范围通过，forward guard已跨重启保持；应用数据/认证/长期灾备另验 |
-| HW-05 | 完成基础搭建与本机备份 | 11项归档全verified、原生OK/退出0、03:30计划enabled；排除220、CF仅PVE，不迁移/退役221/启Java，也未做恢复 |
+| HW-05 | 正式DB/Nacos自动备份 | VM200唯一nacos_prod/12表，首轮3301B/退出0、03:30 timer enabled；其他数据均排除，旧全机jobdisabled/旧档保留，无恢复 |
 
-新[PVE本机自动备份](infra/backup/pve-local/README.md)位于同一store故障域，目录root700/归档日志600，03:30与最近3/每日7/每周4策略已配置；[首轮11项已全部zstd/native验证](completion/20261109/backup-first-success.json)，原生OK/unit退出0，[native计划已enabled](completion/20261109/backup-schedule-enabled.json)，归档共19,747,582,801 bytes。[metadata已接原collector](completion/20261109/backup-metrics-installed.json)、[Lark三名白名单已配套](completion/20261109/backup-notify-whitelist-result.json)，新Prom规则实际加载与后验只查[当日中央入口](completion/20261109/README.md)，本页不提前签收；无本轮人工外发。snapshot/crash-consistent恢复点不能替代DB逻辑一致、独立目的地或实际恢复演练。
+现行自动备份**仅限VM200正式MySQL数据库与完整Nacos外部元数据库**；当前唯一非系统库为`nacos_prod`（12张BASE TABLE、全InnoDB），正式业务schema尚未创建。新增非系统库不在显式白名单即拒绝并告警，需审核更新策略，不能静默漏备。PVE落点`/mnt/pve/store/dell-artifacts/prod-db-backups`，目录root700/文件600；首轮逻辑SQL gzip **3,301 bytes**已完成CRC/传输SHA校验、DDL锁释放和guest暂存清理，service退出0；03:30（Asia/Shanghai）timer已enabled，下一次2026-11-10 03:30，GFS最近3/每日7/每周4。见[新首轮与timer回执](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)及[当前中央入口](completion/20261109-prod-db-scope/README.md)。
+
+其他数据均不纳入自动：不备VM/OS、测试数据、Redis/Rabbit、Nexus、Penpot、NAS、Ops或CF文件，220发布私钥继续只留220。旧11来宾全机job已disabled、旧whole-VM告警组已退役；原19,747,582,801 bytes全机归档和21回退档保留，不自动删除。新指标`dell_prod_db_backup_*`及三条db-only规则已原生校验/热载，原Prom身份、既有三告警名和Lark接收对象不变、无人工testsend，见[规则回执](completion/20261109-prod-db-scope/alerts-installed.json)。这是同机应用逻辑备份，不是VM快照；未恢复、未迁移、不签异机灾备或RPO/RTO，Java不启、Nexus不合并、Mac外部探针不需要。
+
+此前[11档全机首轮成功](completion/20261109/backup-first-success.json)及15:56启用是历史事实，已被用户最新“仅正式数据库/Nacos配置”范围取代；原`dell-local-nightly`不再启用，旧[pve-local实现](infra/backup/pve-local/README.md)退役不可重跑。CF历史档只留PVE，任何旧档/配置均不得因此导出。
 
 OW完整规则仅本地保存，不触/不上传，也不push local-only分支。人工入口见[操作手册](19-manual-operations.md)。当前没有必要为了验证而反复重启、卸载真实数据盘、重装组件或清SEL；后续若出现新CE/UE、IO或服务异常，保留新鲜证据再安排精确处理。历史控制器工具路径`/root/dell-bootstrap/perccli-extracted/opt/MegaRAID/perccli/perccli64`只作只读show/query依据，不授权任何配置写入。
 

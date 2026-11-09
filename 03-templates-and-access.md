@@ -1,6 +1,6 @@
 # 模板、克隆身份与访问合同
 
-更新：2026-11-09。**继续完成基础搭建与PVE本机自动备份，不迁移数据、不新建克隆或重做现役身份。** [本轮PVE审计](completion/20261109/pve-audit.json)确认14:24自然重启后12来宾自启合同与3停止模板保持；[核心审计](completion/20261109/core-audit.json)再次核严格SSH、fish/Bash和无Java业务。未重新制作/QA模板；UEFI0058是历史事故，用户确认诊断通过与当前计数观察分开记录。状态见[01](01-current-state.md)。
+更新：2026-11-09。**继续完成基础搭建与正式数据库/Nacos配置自动备份，不迁移数据、不新建克隆或重做现役身份。** [本轮PVE审计](completion/20261109/pve-audit.json)确认14:24自然重启后12来宾自启合同与3停止模板保持；[核心审计](completion/20261109/core-audit.json)再次核严格SSH、fish/Bash和无Java业务。未重新制作/QA模板；UEFI0058是历史事故，用户确认诊断通过与当前计数观察分开记录。状态见[01](01-current-state.md)。
 
 ## 1. 最终保留三模板
 
@@ -89,4 +89,8 @@ Java业务未来若重新获准，需要单独冻结服务清单、非root运行
 
 通用模板清理使用发行版支持的cloud-init clean选项、machine-id与生成网络清理，再删除制作实例hostkeys/授权/历史。只在专用builder获准清理，清完不先重启再转模板；不对现有数据恢复角色盲删Rabbit/MySQL身份或执行旧clean脚本。
 
-恢复/克隆记录至少含时间、VMID、主机名、MAC/IP、来源模板、OS/版本、登录用户、QGA/CI状态、机器身份hash和公钥指纹、磁盘UUID、结果及限制。本轮不重开模板做新验收，保留[清理与模板结果](18-cleanup-and-consolidation.md)和原始证据。新[PVE本机备份策略](infra/backup/pve-local/README.md)不每日重复备份这3份停止模板，沿用原受保护回退档；fixed11始终排除220，不能以整机备份复制其发布私钥，CF归档只留PVE。[首轮11项归档验证完成](completion/20261109/backup-first-success.json)、原生任务OK/退出0，[计划已启用](completion/20261109/backup-schedule-enabled.json)：03:30、最近3份＋每日7点＋每周4点。没有本轮恢复演练或异机灾备；Prom规则状态只查[当日中央入口](completion/20261109/README.md)。此处不提供重跑备份/模板工具入口。
+恢复/克隆记录至少含时间、VMID、主机名、MAC/IP、来源模板、OS/版本、登录用户、QGA/CI状态、机器身份hash和公钥指纹、磁盘UUID、结果及限制。本轮不重开模板做新验收，保留[清理与模板结果](18-cleanup-and-consolidation.md)和原始证据。现行自动备份**仅限VM200正式MySQL数据库与完整Nacos外部元数据库**；当前唯一非系统库为`nacos_prod`（12张BASE TABLE、全InnoDB），正式业务schema尚未创建。新增非系统库不在显式白名单即拒绝并告警，需审核更新策略，不能静默漏备。PVE落点`/mnt/pve/store/dell-artifacts/prod-db-backups`，目录root700/文件600；首轮逻辑SQL gzip **3,301 bytes**已完成CRC/传输SHA校验、DDL锁释放和guest暂存清理，service退出0；03:30（Asia/Shanghai）timer已enabled，下一次2026-11-10 03:30，GFS最近3/每日7/每周4。见[新首轮与timer回执](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)及[当前中央入口](completion/20261109-prod-db-scope/README.md)。
+
+当前模板、VM系统/镜像与所有非正式DB数据不纳入自动备份；原3模板回退档及旧全机/21档仍保留，不新做模板QA。此前[11档全机首轮成功](completion/20261109/backup-first-success.json)及15:56启用是历史事实，已被用户最新“仅正式数据库/Nacos配置”范围取代；原`dell-local-nightly`不再启用，旧[pve-local实现](infra/backup/pve-local/README.md)退役不可重跑。CF历史档只留PVE，任何旧档/配置均不得因此导出。
+
+不以备份改变clone身份/SSH/JDK和业务禁用边界；未恢复、非异机灾备。

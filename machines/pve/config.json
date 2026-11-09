@@ -9,7 +9,7 @@
     "memory_gib": 125
   },
   "source_of_truth": "plan.json",
-  "last_verified_at": "2026-11-09T16:01:00.600541+08:00",
+  "last_verified_at": "2026-11-09T17:06:01.762963+08:00",
   "current_runtime_verified": true,
   "status": "recovered-infrastructure-verified",
   "record_kind": "offline-configuration-contract-not-live-collection",
@@ -135,7 +135,7 @@
     "private_key_copied": false,
     "fish_installed_on_host": false
   },
-  "current_verification_evidence": "completion/20261109/final-verification.json",
+  "current_verification_evidence": "completion/20261109-prod-db-scope/final-verification.json",
   "current_verification_scope": "current infrastructure setup, no migration or full application restore",
   "verification_note": "Fresh metadata/service audit after natural host reboot; no data migration, Nexus merge or Java business deployment.",
   "timestamp_scope": "2026-11-09 scoped audit; individual commands retain actual timestamps",
@@ -152,17 +152,29 @@
     "actual_reboot_persistence_evidence": "completion/20261109/pve-audit.json"
   },
   "local_backup_control": {
-    "job": "dell-local-nightly",
-    "policy": "infra/backup/pve-local/policy.json",
+    "job": "dell-prod-db-backup.timer",
     "enabled": true,
-    "native_pve_storage": "dell-local-backup",
-    "scope": "fixed11 verified first success and native03:30 schedule enabled; not independent DR",
-    "evidence": "completion/20261109/backup-schedule-enabled.json"
+    "mode": "production DB/Nacos logical only",
+    "policy": "infra/backup/prod-db/policy-host.json",
+    "destination": "/mnt/pve/store/dell-artifacts/prod-db-backups",
+    "old_native_VM_job_enabled": false,
+    "evidence": "completion/20261109-prod-db-scope/first-success-and-timer-enabled.json"
   },
   "historical_hardware_resume_gate": [
     "User completes hardware assessment/repair and explicitly resumes serverwork.",
     "PreserveSEL/Lifecycle and verifyPOST/memorydiagnostics/effectivecapacity.",
     "Then freshtrusted hardware/RAID/filesystem/network/service validation; no oldNATfallback."
   ],
-  "hardware_resume_note": "User resumed after reported memory maintenance/diagnostics; fresh runtime evidence is separate from full physical root-cause proof."
+  "hardware_resume_note": "User resumed after reported memory maintenance/diagnostics; fresh runtime evidence is separate from full physical root-cause proof.",
+  "local_backup": {
+    "included_in_fixed_PVE_job": false,
+    "included_in_production_logical_backup": false,
+    "whole_VM_backup": false,
+    "job": null,
+    "schedule_enabled": false,
+    "first_run_verified": false,
+    "scope": "only production MySQL/Nacos logical backup; all other data excluded",
+    "evidence": "completion/20261109-prod-db-scope/first-success-and-timer-enabled.json",
+    "old_wholeVM_archives_preserved": true
+  }
 }

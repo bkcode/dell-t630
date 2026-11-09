@@ -1,4 +1,4 @@
-> 更新：2026-11-09（Asia/Shanghai）。本轮基础fresh审计已复核；当日实时收尾状态统一见[11月9日交付记录](../../completion/20261109/README.md)。本页仅本地同步带时点证据，不执行服务器操作；不迁移数据、不合并Nexus、不启动Java业务、不升级Penpot，不需要Mac外部探针。
+> 更新：2026-11-09（Asia/Shanghai）。本轮基础fresh审计已复核；当日实时收尾状态统一见[11月9日交付记录](../../completion/20261109-prod-db-scope/README.md)。本页仅本地同步带时点证据，不执行服务器操作；不迁移数据、不合并Nexus、不启动Java业务、不升级Penpot，不需要Mac外部探针。
 
 # PVE物理宿主pve
 
@@ -6,7 +6,7 @@
 
 14:24:03自然重启后的14:42–14:44采样：12来宾running、3模板stopped，EDAC CE/UE0、RAID1/5 Optl/5盘Onln；三个forward guard SHA保持，networking→bridge/ExecStartPost→pve-guests真实顺序成功，双栈all/default/全部接口forward0、无host NAT。用户报告内存处理/诊断通过不等于本轮独立离线诊断。 证据：[本机分项审计](../../completion/20261109/pve-audit.json)。
 
-本宿主承载[PVE本机自动备份](../../infra/backup/pve-local/README.md)任务，不等于PVE宿主OS自身已全量备份。固定对象为11来宾100/190/200/201/210/221/230/240/250/260/270，220始终排除，CF仅PVE。 计划为03:30、最近3份＋每日7点＋每周4点，私有目录root700、归档/日志/状态600，旧21回退档保留。**首轮最终结果、job启用与告警规则后验只以[当日中央入口](../../completion/20261109/README.md)为准，本页不复制进行中状态。** 同机snapshot/crash-consistent不等于DB逻辑/跨VM一致、异机灾备或已恢复；本轮不迁移数据、不恢复覆盖现役。
+本机承载正式DB备份控制器与目标目录，不是PVE宿主OS或全机备份。 现行仅正式DB/Nacos逻辑SQL导出（非VM snapshot），PVE落点`/mnt/pve/store/dell-artifacts/prod-db-backups` root700/600；新未列白名单数据库拒绝告警、需更新。03:30/GFS最近3＋每日7＋每周4，首轮3301B与timer见[新回执](../../completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)，实际监控/收尾统一见[新中央入口](../../completion/20261109-prod-db-scope/README.md)。旧11来宾job已disabled、原19,747,582,801B档与21回退档保留不自动删；未restore/无异机DR，不迁移/合并/启Java、无Mac探针。
 
 **以下仍是配置合同与带日期基础审计，不是全量现场配置导出。** 合同来自[plan](../../plan.json)，11月7日02:35/02:44及UEFI0058/B1保留历史；用户11月8日确认内存处理/诊断通过，11月9日已fresh检查当前boot。助手未独立离线诊断或清SEL，不把EDAC0/可达扩大为唯一物理根因已排除或应用数据全部正确。
 
