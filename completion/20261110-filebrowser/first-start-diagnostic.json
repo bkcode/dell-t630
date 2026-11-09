@@ -1,0 +1,40 @@
+{
+  "at": "2026-11-10T05:51:56.632099+08:00",
+  "status": "initial-native-launch-stopped-before-HTTP-ready",
+  "cause": "strict mode-bit-only credential guard rejected valid systemd named-user read ACL",
+  "actual_runtime_metadata": {
+    "directory": {
+      "uid": 0,
+      "gid": 0,
+      "mode": "0550",
+      "acl": [
+        "user::r-x",
+        "user:2000:r-x",
+        "group::---",
+        "mask::r-x",
+        "other::---"
+      ]
+    },
+    "file": {
+      "uid": 0,
+      "gid": 0,
+      "mode": "0440",
+      "nlink": 1,
+      "acl": [
+        "user::r--",
+        "user:2000:r--",
+        "group::---",
+        "mask::r--",
+        "other::---"
+      ]
+    },
+    "euid": 2000,
+    "egid": 2980
+  },
+  "credential_contents_read_by_diagnostics": false,
+  "known_secret_values_found_in_startup_journal": false,
+  "HTTP_listener_established": false,
+  "account_bootstrap_executed": false,
+  "NFS_or_client_mounts_restarted": false,
+  "runtime_credentials_permissions_modified": false
+}

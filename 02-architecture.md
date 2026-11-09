@@ -93,3 +93,7 @@ H730/store仍由PVE管理，OMV只独占NAS专用2TiB虚拟盘；资源280另独
 此前[11档全机首轮成功](completion/20261109/backup-first-success.json)及15:56启用是历史事实，已被用户最新“仅正式数据库/Nacos配置”范围取代；原`dell-local-nightly`不再启用，旧[pve-local实现](infra/backup/pve-local/README.md)退役不可重跑。CF历史档只留PVE，任何旧档/配置均不得因此导出。
 
 原MySQL/Nacos/Redis/Rabbit合成恢复、Grafana SQLite及模板QA只证明对应历史范围，不能替代新逻辑备份的完整恢复。任何未来迁移或恢复仍须准确白名单、隔离、拒覆盖现役数据；本轮不执行。
+
+## 资源管理界面增量（11月10日）
+
+VM280同时承担原NFS共享和受认证FileBrowser管理，管理HTTPS19.80:8080只给LAN21/24/WG10.66/24，NFS2049仍仅两running。两入口使用同一/srv/resources，不复制或拆环境；Webstate在root盘/var/lib/dell-filebrowser700，权限/缓存/登录元数据不放共享内。管理页面不作为业务图片URL；未来应用上传/公开或私有资源访问仍单独接入。没有新增VM、Docker、PVE路由或监控target；现资源6服务与HTTPS健康，16targetUP。详见[管理交付](completion/20261110-filebrowser/README.md)与[操作手册](completion/20261110-filebrowser/usage-manual.md)。

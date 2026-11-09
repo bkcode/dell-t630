@@ -7,19 +7,19 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "角色/IP/预算/启动顺序唯一合同，根任务维护。",
-      "sha256": "54cedd4f7f923504da2de122312759661566555ce6cc5a0998c43b6806e81354"
+      "sha256": "b1a543733cb676e4e7a5ae971e4e38fae5dd3bc68d6011f10b24e1f68680b248"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工启停与共享挂载操作；不自动执行。",
-      "sha256": "3bb8c58d089adaa7efe99d330ff3beffb228e0c71eaf1ce07334420bd68f0028"
+      "sha256": "73f977de3aea539d126917c23ad19b717d11ba4a3203a384e3db216654e89970"
     },
     {
       "path": "completion/20261109-resources/usage-manual.md",
       "type": "current-contract",
       "purpose": "共享目录日常使用、故障与扩容/新client步骤，实际验收按收据。",
-      "sha256": "ab2f815a8994ff17a3e634cd6be8c701e2f4278ca84ecfb26384aa3c2000430a"
+      "sha256": "47275a9b370a2d4ca7f462f07ef3f3d88089b9a6c81da074ee265ecba1286eb1"
     },
     {
       "path": "infra/resources/policy.example.json",
@@ -92,6 +92,78 @@
       "type": "historical-evidence",
       "purpose": "实际onboot1和order35/up20/down120，初建onboot0阶段已后续启用。",
       "sha256": "e5eec180f6212cc450ff2b45ba04ee2df2602590d3933870482f64d954b54e22"
+    },
+    {
+      "path": "infra/resources/filebrowser/prepare.py",
+      "type": "current-contract",
+      "purpose": "Authorized private Webmanagement increment; public parameters/nativeproof only, no secrets/file payload",
+      "sha256": "3244d813c5084a622cef72dcce52a5e78e5636d64b1416a22ed820860eaedac1"
+    },
+    {
+      "path": "infra/resources/filebrowser/install.py",
+      "type": "historical-evidence",
+      "purpose": "Authorized private Webmanagement increment; public parameters/nativeproof only, no secrets/file payload",
+      "sha256": "0b8c021cbbc13cb0e321525725b7b91f93e356122711a92bc495d086fcbd9e82"
+    },
+    {
+      "path": "infra/resources/filebrowser/bootstrap.py",
+      "type": "historical-evidence",
+      "purpose": "Authorized private Webmanagement increment; public parameters/nativeproof only, no secrets/file payload",
+      "sha256": "59b6a37574bac74267f0007e64433ff8d5c7006374f5c955746af3b1fc0d7414"
+    },
+    {
+      "path": "infra/resources/filebrowser/upstream.lock.json",
+      "type": "historical-evidence",
+      "purpose": "Authorized private Webmanagement increment; public parameters/nativeproof only, no secrets/file payload",
+      "sha256": "4418a74e0a978cb22c93a5d79d28a2262fb627a38bdd8501fe04058852734e34"
+    },
+    {
+      "path": "completion/20261110-filebrowser/acceptance.json",
+      "type": "current-contract",
+      "purpose": "Authorized private Webmanagement increment; public parameters/nativeproof only, no secrets/file payload",
+      "sha256": "1ac855a429abb9e178700dfe08251d166ab34f1f9c90e01ffc247818cfcf6094"
+    },
+    {
+      "path": "completion/20261110-filebrowser/usage-manual.md",
+      "type": "current-contract",
+      "purpose": "Authorized private Webmanagement increment; public parameters/nativeproof only, no secrets/file payload",
+      "sha256": "561778263a8e6dfa11b222ded3f16bddf0a4ddca7a4c8335908b80cfcfeb61f3"
+    },
+    {
+      "path": "completion/20261110-filebrowser/final-postcheck.json",
+      "type": "historical-evidence",
+      "purpose": "Authorized private Webmanagement increment; public parameters/nativeproof only, no secrets/file payload",
+      "sha256": "8f67081af7e9e8aa76783eb58885ddaad3589cce9884e4cc42b049b934c01cc9"
+    },
+    {
+      "path": "completion/20261110-filebrowser/tls.crt",
+      "type": "historical-evidence",
+      "purpose": "Authorized private Webmanagement increment; public parameters/nativeproof only, no secrets/file payload",
+      "sha256": "006915769ae25afdbd08303988652d6d0e3b0a82194118e657e768fa6608746e"
+    },
+    {
+      "path": "completion/20261110-filebrowser/service-restart.json",
+      "type": "historical-evidence",
+      "purpose": "Authorized private Webmanagement increment; public parameters/nativeproof only, no secrets/file payload",
+      "sha256": "9b9f6bc4f422dde7763565c814889c3ce8b239c120cb94fcab4c0e7925e8dca1"
+    },
+    {
+      "path": "completion/20261110-filebrowser/native-acceptance.json",
+      "type": "current-contract",
+      "purpose": "Authorized private Webmanagement increment; public parameters/nativeproof only, no secrets/file payload",
+      "sha256": "d1c9f1298cc5988594827ce7734dfb477e429bb55577ac0b61769f1298ba631a"
+    },
+    {
+      "path": "completion/20261110-filebrowser/browser-acceptance.json",
+      "type": "current-contract",
+      "purpose": "Authorized private Webmanagement increment; public parameters/nativeproof only, no secrets/file payload",
+      "sha256": "668690b28a74ab33c22c0be1c247cb803239d4b9ce0a147303403629ab663a2e"
+    },
+    {
+      "path": "completion/20261110-filebrowser/log-privacy.json",
+      "type": "historical-evidence",
+      "purpose": "Authorized private Webmanagement increment; public parameters/nativeproof only, no secrets/file payload",
+      "sha256": "ad8fb79325e00d7dd10b0375ef99f9a5b7527372bd1a8afbe3d1a1879e2f4318"
     }
   ]
 }

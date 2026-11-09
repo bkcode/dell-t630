@@ -138,5 +138,15 @@
     "identity_changed": false,
     "actual_new_group_and_mount_acceptance": "passed",
     "file_creation_UMask": "0002 contract for future application processes; no Java unit changed"
+  },
+  "Web_resource_interoperability": {
+    "status": "native-verified",
+    "web_writer_uid": 2000,
+    "shared_gid": 2980,
+    "file_mode": "0660",
+    "directory_mode": "2770",
+    "client_finger_UID_primary_GID_changed": false,
+    "NFS_interoperability_evidence": "completion/20261110-filebrowser/native-acceptance.json",
+    "Java_started": false
   }
 }

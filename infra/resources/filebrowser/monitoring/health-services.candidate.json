@@ -1,0 +1,17 @@
+{
+  "role": "resource-service",
+  "private_ip": "192.168.19.80",
+  "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+  "services": [
+    "ssh.service",
+    "qemu-guest-agent.service",
+    "prometheus-node-exporter.service",
+    "nfs-server.service",
+    "dell-resources-firewall.service",
+    "dell-filebrowser.service"
+  ],
+  "http_checks": [],
+  "candidate_service_units": [],
+  "candidate_http_checks": [],
+  "notes": "FileBrowser monitoring candidate only. Existing five services unchanged; add native FileBrowser unit. HTTPS check remains absent until official health path and dedicated root-owned public CA are confirmed and runtime validated."
+}

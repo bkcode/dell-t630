@@ -1,0 +1,1 @@
+首次API/NFS验收尝试未通过。280 API创建与上传完成，目录为2000:2980/2770，文件为2000:2980/660。230脚本在切换finger之前以root读取本nonce owner.marker时PermissionError；这是root_squash边界下的测试前置顺序错误，未到finger读写，不将其认定为finger权限失败。保留原失败回执；仅修runner为先切finger，再核标记，不改服务或权限。

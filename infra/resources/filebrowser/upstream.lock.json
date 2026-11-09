@@ -1,0 +1,15 @@
+{
+  "project": "gtsteffaniak/filebrowser",
+  "tag": "v2.1.4-beta",
+  "asset": {
+    "name": "linux-amd64-filebrowser",
+    "url": "https://github.com/gtsteffaniak/filebrowser/releases/download/v2.1.4-beta/linux-amd64-filebrowser",
+    "digest": "sha256:4af557de16603bdfba2ae87b7807b8654612c542b2deff826eedee72086a5da2",
+    "size": 29064968
+  },
+  "native_install": true,
+  "automatic_upgrades": false,
+  "selected_security_advisory": "GHSA-892f-9h5p-mfc8",
+  "stable_2_1_0_release_HTTP": 404,
+  "beta_tag_not_claimed_stable": true
+}

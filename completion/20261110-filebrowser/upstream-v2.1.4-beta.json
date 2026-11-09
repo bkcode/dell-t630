@@ -1,0 +1,62 @@
+{
+  "tag": "v2.1.4-beta",
+  "prerelease": false,
+  "published_at": "2026-10-31T13:30:45Z",
+  "target_commitish": "main",
+  "assets": [
+    {
+      "name": "darwin-amd64-filebrowser",
+      "url": "https://github.com/gtsteffaniak/filebrowser/releases/download/v2.1.4-beta/darwin-amd64-filebrowser",
+      "digest": "sha256:ebec2d7733e354abdc56b221cd5a314a959dc1087710ce0b83b3b6384c0fc9dc",
+      "size": 48404432
+    },
+    {
+      "name": "darwin-arm64-filebrowser",
+      "url": "https://github.com/gtsteffaniak/filebrowser/releases/download/v2.1.4-beta/darwin-arm64-filebrowser",
+      "digest": "sha256:0dc9c2dde073bbac457e942319eea3eea1ee562ee182469dfb54097f3c9f0962",
+      "size": 46619218
+    },
+    {
+      "name": "filebrowser.exe",
+      "url": "https://github.com/gtsteffaniak/filebrowser/releases/download/v2.1.4-beta/filebrowser.exe",
+      "digest": "sha256:6ef93727c8b22ac9f3db2e9cdac49b1143205a223659d99e80740f32e12167f3",
+      "size": 28551168
+    },
+    {
+      "name": "freebsd-amd64-filebrowser",
+      "url": "https://github.com/gtsteffaniak/filebrowser/releases/download/v2.1.4-beta/freebsd-amd64-filebrowser",
+      "digest": "sha256:568c846d187a66123f6363530be422b4336ddb5ab18104db048aad565f88d50e",
+      "size": 47595690
+    },
+    {
+      "name": "linux-amd64-filebrowser",
+      "url": "https://github.com/gtsteffaniak/filebrowser/releases/download/v2.1.4-beta/linux-amd64-filebrowser",
+      "digest": "sha256:4af557de16603bdfba2ae87b7807b8654612c542b2deff826eedee72086a5da2",
+      "size": 29064968
+    },
+    {
+      "name": "linux-arm64-filebrowser",
+      "url": "https://github.com/gtsteffaniak/filebrowser/releases/download/v2.1.4-beta/linux-arm64-filebrowser",
+      "digest": "sha256:b6bb874e6f126be58793cdd70836007642d504feb2b672e5ea6d17ffecd4b555",
+      "size": 27385724
+    },
+    {
+      "name": "linux-armv6-filebrowser",
+      "url": "https://github.com/gtsteffaniak/filebrowser/releases/download/v2.1.4-beta/linux-armv6-filebrowser",
+      "digest": "sha256:2abeca0c3df0a8cc421e052b6e75efbe0429e6b6969c64ab0a8d43f283cd9e4e",
+      "size": 21558080
+    },
+    {
+      "name": "linux-armv7-filebrowser",
+      "url": "https://github.com/gtsteffaniak/filebrowser/releases/download/v2.1.4-beta/linux-armv7-filebrowser",
+      "digest": "sha256:5a20641f5327f498e6fb5f062cc817be7eb7c8ffe461debd5285a43e7d766717",
+      "size": 21537172
+    },
+    {
+      "name": "linux-riscv64-filebrowser",
+      "url": "https://github.com/gtsteffaniak/filebrowser/releases/download/v2.1.4-beta/linux-riscv64-filebrowser",
+      "digest": "sha256:5e0b09262b74043d131ceee99bceb2edaa35f851e10298e8b8694fcc0a861e88",
+      "size": 44105888
+    }
+  ]
+}

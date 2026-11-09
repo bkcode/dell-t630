@@ -6,25 +6,25 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "54cedd4f7f923504da2de122312759661566555ce6cc5a0998c43b6806e81354"
+      "sha256": "b1a543733cb676e4e7a5ae971e4e38fae5dd3bc68d6011f10b24e1f68680b248"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
       "purpose": "当前基础搭建与历史故障交接；本轮不迁移，旧证据按时点解释。",
-      "sha256": "9ebd49f938a102a7807dc0af19f210d70ce90daeef7061c50c5ea3424cda43b4"
+      "sha256": "bc05a5d61aa4e0f7edbe808ce2dc22e862d1df7f0d652017e09e42a2448601ab"
     },
     {
       "path": "12-service-access-and-operations.md",
       "type": "current-contract",
       "purpose": "当前19网入口及凭据保管规则。",
-      "sha256": "70cb7c5bbd0ff52f2703eca3527ff6f074334d9c52f6f508aa6812ba261f7dad"
+      "sha256": "6504b39030851ea459571b25f8e914fc930613292ca3bd571de4bc97ce901697"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
-      "sha256": "3bb8c58d089adaa7efe99d330ff3beffb228e0c71eaf1ce07334420bd68f0028"
+      "sha256": "73f977de3aea539d126917c23ad19b717d11ba4a3203a384e3db216654e89970"
     },
     {
       "path": "cleanup/final-live-check.json",
@@ -205,6 +205,30 @@
       "type": "historical-evidence",
       "purpose": "Unified resource role exact native/runtime and manual scope; no business/HTTP/backup expansion",
       "sha256": "91cf7847a4f86d63c265c4b5032be0e9fbd134bc795e855a740cef92aa364163"
+    },
+    {
+      "path": "completion/20261110-filebrowser/final-postcheck.json",
+      "type": "historical-evidence",
+      "purpose": "Authorized private Webmanagement increment; public parameters/nativeproof only, no secrets/file payload",
+      "sha256": "8f67081af7e9e8aa76783eb58885ddaad3589cce9884e4cc42b049b934c01cc9"
+    },
+    {
+      "path": "completion/20261110-filebrowser/monitoring-installed.json",
+      "type": "historical-evidence",
+      "purpose": "Authorized private Webmanagement increment; public parameters/nativeproof only, no secrets/file payload",
+      "sha256": "ccdcb009ed0d1e803e96ad4b7402d27f364c0824e72d58b63fcca6a2c6e8555b"
+    },
+    {
+      "path": "infra/ops/guest-baseline/collect-guest-health.py",
+      "type": "historical-evidence",
+      "purpose": "Authorized private Webmanagement increment; public parameters/nativeproof only, no secrets/file payload",
+      "sha256": "3c8b51912733c6d7634ca787098c0fe853cfb924ad16058630158c0cdb1b2228"
+    },
+    {
+      "path": "infra/resources/filebrowser/monitoring/health.candidate.json",
+      "type": "historical-evidence",
+      "purpose": "Authorized private Webmanagement increment; public parameters/nativeproof only, no secrets/file payload",
+      "sha256": "c3015e604d1398ef577afbb1f71def1ce41c373fb6bcb4419c0482ffd89a888b"
     }
   ],
   "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."

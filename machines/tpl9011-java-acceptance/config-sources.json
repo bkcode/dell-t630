@@ -5,7 +5,7 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "54cedd4f7f923504da2de122312759661566555ce6cc5a0998c43b6806e81354"
+      "sha256": "b1a543733cb676e4e7a5ae971e4e38fae5dd3bc68d6011f10b24e1f68680b248"
     },
     {
       "path": "cleanup/initial-PVE-readonly.json",
@@ -35,7 +35,7 @@
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
-      "sha256": "3bb8c58d089adaa7efe99d330ff3beffb228e0c71eaf1ce07334420bd68f0028"
+      "sha256": "73f977de3aea539d126917c23ad19b717d11ba4a3203a384e3db216654e89970"
     },
     {
       "path": "network19/java-template/README.md",

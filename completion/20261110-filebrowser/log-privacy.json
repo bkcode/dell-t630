@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-09T22:16:27.120504+00:00",
+  "status": "passed",
+  "known_secret_values_in_service_journal": false,
+  "private_key_material_in_service_journal": false,
+  "raw_journal_or_secret_values_output": false,
+  "log_entries_removed": false
+}

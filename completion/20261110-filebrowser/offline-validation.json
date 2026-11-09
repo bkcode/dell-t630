@@ -1,0 +1,51 @@
+{
+  "captured_at": "2026-11-10T06:22:28.668113+08:00",
+  "status": "passed",
+  "scope": "pure renderer/installer tests and temporary127.0.0.1 TLS CA regressions; no server writes",
+  "results": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "infra/resources/filebrowser",
+        "-p",
+        "test_*.py",
+        "-q"
+      ],
+      "exit_code": 0,
+      "tests": 37
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "infra/resources/filebrowser/monitoring",
+        "-p",
+        "test_*.py",
+        "-q"
+      ],
+      "exit_code": 0,
+      "tests": 10
+    },
+    {
+      "command": [
+        "python3",
+        "-c",
+        "import sys,unittest;sys.path.insert(0,\"infra/ops\");unittest.main(module=\"test_guest_baseline\",defaultTest=\"CollectorSafety\",verbosity=0)"
+      ],
+      "exit_code": 0,
+      "tests": 10
+    }
+  ],
+  "total": 57,
+  "temporary_loopback_TLS_servers_closed": true,
+  "Mac_external_probe_enabled": false,
+  "fixture_material_note": "Synthetic TLS-marker tests use non-key byte strings; no PEM private-key material in Git sources",
+  "fixture_marker_regression_at": "2026-11-10T06:23:55.553556+08:00"
+}

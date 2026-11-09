@@ -16,10 +16,11 @@
 | Grafana | http://192.168.19.70:3000/ | 真实内网入口，无需旧13000隧道 |
 | Prometheus / Alertmanager | 192.168.19.70:9090 / :9093 | 仅批准管理来源，不公开 |
 | Java业务 | **停用** | 测试五服务无进程/自启，正式无业务应用 |
-| 统一资源NFS | `192.168.19.80:/` → 两running `/mnt/resources` | 仅230/240，NFS4.1/TCP2049；无HTTP/公开图片URL |
+| 统一资源NFS | `192.168.19.80:/` → 两running `/mnt/resources` | 仅230/240，NFS4.1/TCP2049；与下列管理HTTPS用途不同 |
+| FileBrowser管理页 | https://192.168.19.80:8080/ | 日常resources、维护admin；自签TLS，LAN21/WG10；无公开图片URL |
 | Java验收模板 | PVE VMID9011 `tpl-java-acceptance` | 唯一验收模板，无应用/业务配置/秘密 |
 
-HTTP入口是用户同意的LAN阶段；公网域名/HTTPS/SMTP尚未配置。跨子网的发现广播不作为已验能力，电视/播放器请手动填写19.60。NAS用于文件保存/整理/传输，不承诺主机直接从NAS运行游戏。
+原HTTP入口是用户同意的LAN阶段；新增FileBrowser使用自签HTTPS，公网域名/其他入口HTTPS/SMTP尚未配置。跨子网的发现广播不作为已验能力，电视/播放器请手动填写19.60。NAS用于文件保存/整理/传输，不承诺主机直接从NAS运行游戏。
 
 合并目标为一台VM220 `publish-service`同时承载发布与Nexus，主IP30+服务alias31；`artifact-service`不再是独立目标VM，见[17合并架构](17-publish-artifact-consolidation.md)。**下表是迁移尚未执行的最后验收归属**：
 
@@ -39,17 +40,25 @@ SSH使用ub和`~/.ssh/yang_local_rsa`，严格已核host key；受控目标见`e
 
 日常启停、故障处理、克隆和备份步骤见[人工操作手册](19-manual-operations.md)，换电脑接手见[Git交接](20-git-and-handoff.md)。
 
+## FileBrowser Quantum管理页面
+
+新增私有管理入口 **https://192.168.19.80:8080/**，仅LAN21/24、WG10.66/24及本机；日常`resources`可浏览/下载/新建上传，delete/edit/override/share/提权直接API已验403；维护`admin`有完整权限，不把日常限制说成它也绝对不能删除。密码只在Mac `dell/private/credentials/filebrowser-management-20261110.json`与guest root `/etc/dell-filebrowser/secrets/login.json`保管，不在文档输出值。首次核[tls.crt](completion/20261110-filebrowser/tls.crt)的SHA256指纹后接受/导入；无公网域名、无系统truststore变更。
+
+官方native固定v2.1.4-beta（不是stable），UID2000/GID2980、UMask0002、文件660/目录2770，DB/cache在非共享的`/var/lib/dell-filebrowser`700；初始化marker在root的`/etc/dell-filebrowser/bootstrap.complete`，正常后续启动不再注入初始化口令。自身metadata自动备份关闭，不扩正式DB/Nacos备份；Docker未装，NFS/PVE/路由不改，不Java、不业务图片URL、不迁旧文件。
+
+[原生API/NFS验收](completion/20261110-filebrowser/native-acceptance.json)passed且fixture已清；[真实浏览器](completion/20261110-filebrowser/browser-acceptance.json)只签登录/列表及观察到href后的96PNG深链渲染，自动点击未导航，未签所有按钮。[只重启新app](completion/20261110-filebrowser/service-restart.json)已保持账号、scope和JWT且不再注入初始化口令，NFS/VM/clients未重启；[06:12最终后检](completion/20261110-filebrowser/final-postcheck.json)已确认13运行来宾、3停止模板、16targets全UP、资源6服务指标及专属CA HTTPS健康均UP，PVE全forward0；未加Promtarget/receiver或外发测试消息。完整[管理页使用手册](completion/20261110-filebrowser/usage-manual.md)含证书指纹、账号、维护/升级与故障步骤；[公开服务包](infra/resources/filebrowser/README.md)。
+
 ## 统一资源服务（新增VM280）
 
 用户选择正式/测试共用VM280 `resource-service`（19.80）的同一目录。独立100GiB ext4盘挂`/srv/resources`，系统盘保32GiB；两running 230/240目标挂载均为`/mnt/resources`，240原`/mnt/dell-artifacts`不动。NFSv4.1-only/TCP2049/fsid0，只有19.40/19.45获export与bridge/专属输入许可；root_squash、sync、server根2770/defaultACL、共享resources附属组2980。finger原UID999/GID989保留。
 
-[server启动](completion/20261109-resources/server-installed.json)与[实际盘UUID](completion/20261109-resources/storage-initialized.json)已留证；两客户端真NFS挂载/guard、非root跨机创建/读写/删除、root_squash与240缺挂载根盘写入负测均已通过；仅VM280受控重启约30秒，fsync canary持久、两客户端挂载恢复，未重启两台running。**NFS-only，不启HTTP/Java、不迁文件、不扩自动备份。** 资源角色使预算变为13来宾（12VM＋CF LXC）、3模板、45vCPU/87GiB；保守125GiB预算余38GiB。[00:20最终只读后检](completion/20261109-resources/final-postcheck.json)确认13来宾运行、3模板停止、16/16 targets UP、资源5项服务指标UP与PVE全forward0。详见[280机器目录](machines/vm280-resource-service/README.md)与[资源使用手册](completion/20261109-resources/usage-manual.md)。
+[server启动](completion/20261109-resources/server-installed.json)与[实际盘UUID](completion/20261109-resources/storage-initialized.json)已留证；两客户端真NFS挂载/guard、非root跨机创建/读写/删除、root_squash与240缺挂载根盘写入负测均已通过；仅VM280受控重启约30秒，fsync canary持久、两客户端挂载恢复，未重启两台running。**NFS保留，另加受限FileBrowser管理HTTPS；不提供业务图片URL、不启Java、不迁文件、不扩自动备份。** 资源角色使预算变为13来宾（12VM＋CF LXC）、3模板、45vCPU/87GiB；保守125GiB预算余38GiB。[00:20最终只读后检](completion/20261109-resources/final-postcheck.json)确认13来宾运行、3模板停止、16/16 targets UP、资源5项服务指标UP与PVE全forward0。详见[280机器目录](machines/vm280-resource-service/README.md)与[资源使用手册](completion/20261109-resources/usage-manual.md)。
 
 模板仅能将来预装客户端与disabled挂载候选，clone按真实IP/组/exports/bridge登记后显式激活；**本次没有修改三模板**。
 
 [独立native验收](completion/20261109-resources/native-acceptance.json)与[仅280重启](completion/20261109-resources/reboot-exercise.json)覆盖本次专属fixture，不含真实业务或文件恢复。findmnt允许systemd-1 autofs加唯一真实nfs4的合法stack，可用`-t nfs4`辨识；单独autofs仍不算共享已挂载。客户端文件创建明确用umask0002；首轮失败及清理记录保留，随后仅按已批准UMask重跑fixture，未修改服务来追过。新增280 fish4.0.2、root/ub默认Bash已后检；当前10台guest＋3模板具备fish基线。
 
-应用尚未接入：Finger的`file.upload.path=/mnt/resources`仅建议，未改实际配置/Nacos/profile；HTTP domain/公开图片URL未搭。Puyu现有images在MySQL内通过权限接口下载，NFS不会自动迁出，也未随部署改Java或应用连接。
+应用尚未接入：Finger的`file.upload.path=/mnt/resources`仅建议，未改实际配置/Nacos/profile；业务HTTP domain/公开图片URL未搭。Puyu现有images在MySQL内通过权限接口下载，NFS不会自动迁出，也未随部署改Java或应用连接。
 
 
 ## 当前受信LAN访问（替代早前Nacos-only策略）

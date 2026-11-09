@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-09T22:06:15.037768+00:00",
+  "status": "existing-node-monitoring-extended-with-verified-HTTPS",
+  "local_services": 6,
+  "HTTPS_check_up": true,
+  "dedicated_CA_chain_hostname_verified": true,
+  "system_trust_store_changed": false,
+  "Prometheus_target_added": false,
+  "test_notification_sent": false,
+  "other_guest_collectors_changed": false,
+  "collector_public_SHA256": "3c8b51912733c6d7634ca787098c0fe853cfb924ad16058630158c0cdb1b2228"
+}

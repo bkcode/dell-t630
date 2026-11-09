@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-09T21:46:22.809068+00:00",
+  "status": "management-configuration-prepared-not-started",
+  "tag": "v2.1.4-beta",
+  "service_UID": 2000,
+  "shared_GID": 2980,
+  "native_no_Docker": true,
+  "shared_files_or_permissions_rewritten": false,
+  "protected_service_identities_unchanged": true,
+  "public_files_sha256": {
+    "config.yaml": "74b7443364b7736880f395ba0b50e2b374ca11ea29bdb886cf3798bb7c2a5376",
+    "dell-filebrowser.service": "3471c058871d350fa72aca6edb187f91473d2176c4f646aac92dc7a6aaf5eff7",
+    "dell-filebrowser-firewall.service": "bd91a8e2c54aabe66177aa269327f4f117a93d06f964f853227bd0636c0ccf84",
+    "firewall.py": "92c10680c39459ef0a97ce8ec6ded9358fdfbe027789b5103d91a656f871e7d3",
+    "launch.py": "897fdaf9f320e89219834afaaf531b1984162fd1f2ea50d83375964e1f8a5862",
+    "input.nft": "ffb0cc6fe833910a95a9bca783ea9db3fdf33a0594556387d64b5c7c19674384"
+  },
+  "certificate_fingerprint": "sha256 Fingerprint=2B:E1:76:FF:A3:10:4B:2C:46:7C:58:23:D9:6C:FB:C2:65:BE:D6:EA:CD:4F:A4:A3:42:56:A5:0E:AB:4F:09:A3"
+}

@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-09T21:54:00.220003+00:00",
+  "status": "daily-user-initialized-and-settings-secret-redaction-passed",
+  "daily_username": "resources",
+  "maintenance_username": "admin",
+  "daily_global_permissions": {
+    "admin": false,
+    "api": false,
+    "share": false,
+    "realtime": false
+  },
+  "daily_source_permissions": {
+    "view": true,
+    "download": true,
+    "create": true,
+    "modify": false,
+    "delete": false,
+    "configured": true
+  },
+  "source": "resources",
+  "scope": "/",
+  "HTTPS_chain_and_hostname_verified": true,
+  "fresh_admin_and_daily_login": true,
+  "known_secrets_absent_from_admin_settings_API": true,
+  "daily_admin_settings_denied": 403,
+  "root_owned_initialization_marker_created": true,
+  "resource_files_modified": false,
+  "real_credentials_or_tokens_output": false,
+  "application_restart_acceptance_pending": true
+}

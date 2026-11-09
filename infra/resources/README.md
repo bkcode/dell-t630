@@ -1,3 +1,5 @@
+> 最新扩展（2026-11-10）：同VM280已增加受认证FileBrowser HTTPS管理页，见[新交付](../../completion/20261110-filebrowser/README.md)与[管理使用手册](../../completion/20261110-filebrowser/usage-manual.md)。下方NFS阶段的“不启HTTP”指当时尚未部署管理页/仍不公开业务图片入口；NFS合同与旧验收保留，不据旧描述回退新功能。
+
 # 统一资源服务工具与实施合同
 
 当前已部署并验收：VM280 `resource-service` / `192.168.19.80`，两running共用同一资源目录。实际结果见[交付入口](../../completion/20261109-resources/README.md)、[8项验收](../../completion/20261109-resources/acceptance.json)，人工使用见 **[资源使用手册](../../completion/20261109-resources/usage-manual.md)**。

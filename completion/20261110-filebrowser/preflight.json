@@ -1,0 +1,25 @@
+{
+  "hostname": "resource-service",
+  "arch": "x86_64",
+  "docker_installed": false,
+  "podman_installed": false,
+  "listeners": "udp UNCONN 0      0          127.0.0.1:854   0.0.0.0:* users:((\"rpc.statd\",pid=677,fd=7))                      \nudp UNCONN 0      0            0.0.0.0:57356 0.0.0.0:* users:((\"rpc.statd\",pid=677,fd=8))                      \nudp UNCONN 0      0         127.0.0.54:53    0.0.0.0:* users:((\"systemd-resolve\",pid=346,fd=20))               \nudp UNCONN 0      0      127.0.0.53%lo:53    0.0.0.0:* users:((\"systemd-resolve\",pid=346,fd=18))               \nudp UNCONN 0      0            0.0.0.0:111   0.0.0.0:* users:((\"rpcbind\",pid=486,fd=5),(\"systemd\",pid=1,fd=45))\nudp UNCONN 0      0            0.0.0.0:5355  0.0.0.0:* users:((\"systemd-resolve\",pid=346,fd=11))               \nudp UNCONN 0      0               [::]:111      [::]:* users:((\"rpcbind\",pid=486,fd=7),(\"systemd\",pid=1,fd=47))\nudp UNCONN 0      0               [::]:52449    [::]:* users:((\"rpc.statd\",pid=677,fd=10))                     \nudp UNCONN 0      0               [::]:5355     [::]:* users:((\"systemd-resolve\",pid=346,fd=13))               \ntcp LISTEN 0      128          0.0.0.0:22    0.0.0.0:* users:((\"sshd\",pid=705,fd=6))                           \ntcp LISTEN 0      4096         0.0.0.0:111   0.0.0.0:* users:((\"rpcbind\",pid=486,fd=4),(\"systemd\",pid=1,fd=44))\ntcp LISTEN 0      4096   192.168.19.80:9100  0.0.0.0:* users:((\"prometheus-node\",pid=717,fd=3))                \ntcp LISTEN 0      4096         0.0.0.0:5355  0.0.0.0:* users:((\"systemd-resolve\",pid=346,fd=12))               \ntcp LISTEN 0      4096         0.0.0.0:38325 0.0.0.0:* users:((\"rpc.statd\",pid=677,fd=9))                      \ntcp LISTEN 0      4096   127.0.0.53%lo:53    0.0.0.0:* users:((\"systemd-resolve\",pid=346,fd=19))               \ntcp LISTEN 0      4096   192.168.19.80:2049  0.0.0.0:*                                                         \ntcp LISTEN 0      4096      127.0.0.54:53    0.0.0.0:* users:((\"systemd-resolve\",pid=346,fd=21))               \ntcp LISTEN 0      128             [::]:22       [::]:* users:((\"sshd\",pid=705,fd=7))                           \ntcp LISTEN 0      4096            [::]:111      [::]:* users:((\"rpcbind\",pid=486,fd=6),(\"systemd\",pid=1,fd=46))\ntcp LISTEN 0      4096            [::]:5355     [::]:* users:((\"systemd-resolve\",pid=346,fd=14))               \ntcp LISTEN 0      4096            [::]:43711    [::]:* users:((\"rpc.statd\",pid=677,fd=11))                     \n",
+  "mount": {
+    "filesystems": [
+      {
+        "target": "/srv/resources",
+        "uuid": "57d8158e-5fcf-4dd2-8cb4-b47b1e54ed7b",
+        "fstype": "ext4",
+        "options": "rw,nosuid,nodev,noexec,relatime"
+      }
+    ]
+  },
+  "managed_units": {
+    "nfs-server.service": true,
+    "dell-resources-firewall.service": true,
+    "prometheus-node-exporter.service": true
+  },
+  "UID2000_available": true,
+  "GID2980": "resources",
+  "filebrowser_state_exists": false
+}

@@ -1,0 +1,186 @@
+{
+  "captured_at": "2026-11-10T06:12:08.767369+08:00",
+  "status": "passed",
+  "checks": {
+    "13_guests_running": true,
+    "3_templates_stopped": true,
+    "host_all_forwarding_zero": true,
+    "16_monitoring_targets_UP": true,
+    "resource6services_UP": true,
+    "verified_HTTPS_health_metric_UP": true,
+    "web_TLS_bound_exact": true,
+    "unapproved19_peer_denied": true,
+    "dedicated_unprivileged_account": true,
+    "private_state_2000_2980_700": true,
+    "official_fixed_binary_digest": true,
+    "protected_NFS_services_unchanged": true,
+    "bootstrap_not_reset_on_start": true,
+    "no_Docker_installed": true,
+    "existing_internal_Lark_active": true
+  },
+  "scope": "final runtime metadata and health; no resource/auth mutation",
+  "PVE": {
+    "guests": [
+      {
+        "vmid": 100,
+        "status": "running"
+      },
+      {
+        "vmid": 190,
+        "status": "running"
+      },
+      {
+        "vmid": 200,
+        "status": "running"
+      },
+      {
+        "vmid": 201,
+        "status": "running"
+      },
+      {
+        "vmid": 210,
+        "status": "running"
+      },
+      {
+        "vmid": 220,
+        "status": "running"
+      },
+      {
+        "vmid": 221,
+        "status": "running"
+      },
+      {
+        "vmid": 230,
+        "status": "running"
+      },
+      {
+        "vmid": 240,
+        "status": "running"
+      },
+      {
+        "vmid": 250,
+        "status": "running"
+      },
+      {
+        "vmid": 260,
+        "status": "running"
+      },
+      {
+        "vmid": 270,
+        "status": "running"
+      },
+      {
+        "vmid": 280,
+        "status": "running"
+      }
+    ],
+    "templates": [
+      {
+        "vmid": 9001,
+        "status": "stopped"
+      },
+      {
+        "vmid": 9010,
+        "status": "stopped"
+      },
+      {
+        "vmid": 9011,
+        "status": "stopped"
+      }
+    ],
+    "all_interface_forwarding": {
+      "/proc/sys/net/ipv4/conf/all/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/default/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/eno1/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/eno2/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/lo/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap190i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap190i1/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap200i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap201i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap210i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap220i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap221i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap230i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap240i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap250i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap260i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap270i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/tap280i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/veth100i0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/vmbr0/forwarding": "0",
+      "/proc/sys/net/ipv4/conf/vmbr19/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/all/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/default/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/eno1/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/eno2/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/lo/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap190i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap190i1/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap200i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap201i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap210i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap220i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap221i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap230i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap240i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap250i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap260i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap270i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/tap280i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/veth100i0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/vmbr0/forwarding": "0",
+      "/proc/sys/net/ipv6/conf/vmbr19/forwarding": "0"
+    }
+  },
+  "Ops": {
+    "targets": 16,
+    "all_targets_UP": true,
+    "resource_service_metrics": {
+      "dell-resources-firewall.service": "1",
+      "nfs-server.service": "1",
+      "prometheus-node-exporter.service": "1",
+      "qemu-guest-agent.service": "1",
+      "ssh.service": "1",
+      "dell-filebrowser.service": "1"
+    },
+    "filebrowser_HTTPS_health": "1",
+    "internal_Lark_active": true,
+    "Prometheus_or_receiver_reconfigured": false
+  },
+  "FileBrowser": {
+    "unit": {
+      "MainPID": "6145",
+      "NRestarts": "0",
+      "MemoryCurrent": "89657344",
+      "MemoryMax": "402653184",
+      "User": "filebrowser",
+      "Group": "resources",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "executable": "/opt/dell/filebrowser/releases/v2.1.4-beta/filebrowser",
+    "binary_SHA256": "4af557de16603bdfba2ae87b7807b8654612c542b2deff826eedee72086a5da2",
+    "private_state": {
+      "uid": 2000,
+      "gid": 2980,
+      "mode": "0o700"
+    },
+    "bootstrap_marker_root_owned": true,
+    "bootstrap_password_absent_from_process": true,
+    "HTTPS_chain_hostname_health": true,
+    "protected_service_frames_unchanged": true,
+    "docker_present": false,
+    "TLS_8080_bound_only_resource_IP": true,
+    "own_web_input_policy": "table inet dell_filebrowser_input {\n\tchain input {\n\t\ttype filter hook input priority filter - 6; policy accept;\n\t\ttcp dport 8080 ct state invalid counter packets 0 bytes 0 drop\n\t\tiifname \"lo\" tcp dport 8080 accept\n\t\tip saddr { 10.66.66.0/24, 192.168.19.80, 192.168.21.0/24 } tcp dport 8080 counter packets 666 bytes 109087 accept\n\t\ttcp dport 8080 counter packets 0 bytes 0 drop\n\t\tudp dport 8080 counter packets 0 bytes 0 drop\n\t}\n}\n",
+    "source_config_public_SHA256": "74b7443364b7736880f395ba0b50e2b374ca11ea29bdb886cf3798bb7c2a5376",
+    "runtime_credential_permissions_changed": false,
+    "global_CA_trust_changed": false,
+    "actual_secrets_or_environ_output": false
+  },
+  "negative": {
+    "source_vmid": 210,
+    "unapproved_server_peer_web_TCP_allowed": false,
+    "resource_files_read_or_written": false
+  }
+}

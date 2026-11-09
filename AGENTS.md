@@ -37,7 +37,7 @@
 - 所有服务来宾在19网；同网东西向由 bridge MAC/IP/角色ACL隔离。10.66.66.0/24 已授权全服务访问，WireGuard peer 继续每客户端/32。
 - 230/240 正式/测试运行基础各1；**不部署或启动Java业务**，测试五服务停用，publisher fenced；唯一Java验收模板9011无业务配置/秘密。
 - 核心模板9010/9001，Java验收9011。旧15对象与临时9040–9045已受保护备份后清理，不重放destroy/stage/commit。备份完整性不等于每个旧实例都已恢复演练。
-- fish 已装9来宾+3模板，默认 Bash 不变；排除100/250/270与PVE宿主，不自动chsh。
+- fish 已装10来宾+3模板，默认 Bash 不变；排除100/250/270与PVE宿主，不自动chsh。
 - Nexus 目前仍独立221/19.31；220/19.30仅准备。目标2206CPU8GiB、primary30+alias31、原UUID盘移交，验收后才退221；详情见cleanup/nexus/resume-preflight.md。
 - 合并工具非一键幂等；不能重跑prepared stage，部分mount/commit须先按journal核对。不得并启两个31地址/两个数据库写者。
 
@@ -55,3 +55,11 @@
 - 用户新增并完成VM280 resource-service/19.80，2CPU2GiB＋32GiB系统/100GiB独立数据盘；正式230和测试240明确共用同一根，不拆环境。server /srv/resources真UUID57d8158e-5fcf-4dd2-8cb4-b47b1e54ed7b，client /mnt/resources源19.80:/，NFSv4.1 TCP2049精确双client、root_squash、group2980，finger999:989不改、只附组。当前13guests/3tpl、45CPU87GiB，16targetsUP。
 - 未挂载时禁止应用写本机底目录；保守卫/真实挂载校验。默认ACL不保证NFS客户端0022产生groupwrite，未来服务与手册采用UMask0002。新client需VMID/IP/MAC/exports/本机输入/PVEpeer/策略逐层登记，模板克隆不自动授权；三模板本次未改。
 - 资源不纳自动备份，不迁旧文件/不公开HTTP/不改Nacos应用上传配置/不启动Java；原Nexus暂缓。两running的/mnt/dell-artifacts等原有状态保留。新VM受控重启实证仅此资源服务，不是客户端OS重启/物理PVE重启或完整灾备。见completion/20261109-resources/acceptance.json与usage-manual.md，禁止重放空盘格式化器或旧全量bootstrap。
+
+## 2026-11-10资源Web管理增量
+
+- 用户选型后明确授权补FileBrowser Quantum与文档，现VM280原生fixed2.1.4-beta/官方SHA锁，HTTPS19.80:8080仅LAN21/24、WG10.66/24、本机；自有输入表，不改NFS/PVE、不装Docker、不增加VM或Prom目标。13guests/3tpl/16UP，资源6服务＋专属CA HTTPS健康。此前不启HTTP指业务/公开图片入口，不能误读成要删除本次已授权管理HTTPS。
+- 日常resources仅view/download/create，modify/delete/share/admin/API-token权限关闭，原生API/NFS负测已验；maintenanceadmin完整应用权限，不冒绝对禁删。资源root同目录，UID2000/GID2980新文件660/目录2770，stateDB/cache在/var/lib/dell-filebrowser700不在导出内。真实口令/JWT/TLSkey只private/rootsecret/LoadCredential，不入Git或stdout。
+- root-owned/etc/dell-filebrowser/bootstrap.complete之后启动不再注入初始admin口令，勿删除marker盲重置密码。systemd运行时root0:0的0550/0440带namedUID2000只读ACL是合法形式，守卫精确核ACL；不得chmod/chown runtimecred来追过。
+- Beta选用原因是官方稳定2.0.2受已公告问题影响且2.1stable release查询404；固定已修复2.1.4-beta，不称稳定版、不自动跟可变tag升级。证书本地自签，首访核公开指纹；无全局trust变更，健康探测专属CA验证链/hostname，不-k。
+- 仅管理界面，不改业务上传参数/Java/Nacos，不公开图片URL、不迁文件、不扩自动备份；原MySQL/Redis/Rabbit密码合同保持。实际验收completion/20261110-filebrowser/acceptance.json，使用手册同目录usage-manual.md；初始化/安装one-shot不得盲重放。浏览器只签真实login/list/观察href的PNG预览，pointer全路径未签，旧失败完整保留。

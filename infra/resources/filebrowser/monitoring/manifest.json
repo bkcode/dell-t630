@@ -1,0 +1,25 @@
+{
+  "prepared_at": "2026-11-09T21:35:21.942014+00:00",
+  "old_collector_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+  "candidate_collector_SHA256": "3c8b51912733c6d7634ca787098c0fe853cfb924ad16058630158c0cdb1b2228",
+  "collector_source": "infra/ops/guest-baseline/collect-guest-health.py",
+  "default_HTTP_behaviour_change": false,
+  "remote_deploy": true,
+  "officialhealthpath_confirmed": true,
+  "new_regression_tests_passed": 10,
+  "legacy_collector_safety_tests_passed": 10,
+  "Prometheus_target_count_unchanged": 16,
+  "remote_writes": true,
+  "service_started": true,
+  "candidate_files": {
+    "health-services.candidate.json": "755801efe2e42b1298c1f66f71e0b1a9c9b216fbc39fbffa25d90f0d4b223136",
+    "health.candidate.json": "c3015e604d1398ef577afbb1f71def1ce41c373fb6bcb4419c0482ffd89a888b",
+    "https-check-contract.json": "d1b56d47b87ecd7695e1d71c9827b3a3c0dc32b6443dbea362a4ba573200c229",
+    "test_collector_ca.py": "c7fd9095384394ec59fd211d8f539c8e4dced8b92c9c528797dca4641c1bb7bd",
+    "README.md": "8f402ee8264a8eaeaf7e7e116aea5bca181df4e8a2e636ac4d372b82acb05b36"
+  },
+  "status": "source-and-native-HTTPS-monitoring-verified",
+  "officialhealthpath": "/health",
+  "native_evidence": "completion/20261110-filebrowser/monitoring-installed.json",
+  "final_postcheck": "completion/20261110-filebrowser/final-postcheck.json"
+}

@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-10T06:12:08.767369+08:00",
+  "status": "passed-authenticated-resource-Web-management",
+  "scope": "existingVM280 FileBrowser native HTTPS administration; no business image endpoint or existing-file migration",
+  "cases": [
+    {
+      "id": "FILEBROWSER-VERSION-001",
+      "title": "已修复发行版与官方二进制校验",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户授权将推荐FileBrowser Quantum补至现有资源VM并补文档；保持NFS/业务与备份边界"
+      ],
+      "steps": [
+        "核官方固定版本、原生受信SSH/API/NFS/限定浏览器及最终实际回执"
+      ],
+      "observable_pass_conditions": [
+        "已修复发行版与官方二进制校验的限定实际检查通过，初始失败保留且未以放宽权限追通过"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-filebrowser/upstream-v2.1.4-beta.json",
+          "note": "bounded native or documented evidence; no real passwords/JWT/private keys"
+        },
+        {
+          "path": "completion/20261110-filebrowser/binary-staged.json",
+          "note": "bounded native or documented evidence; no real passwords/JWT/private keys"
+        },
+        {
+          "path": "completion/20261110-filebrowser/final-postcheck.json",
+          "note": "bounded native or documented evidence; no real passwords/JWT/private keys"
+        }
+      ],
+      "verified_at": "2026-11-10T06:12:08.767369+08:00"
+    },
+    {
+      "id": "FILEBROWSER-RUNTIME-001",
+      "title": "独立非root管理服务与私有状态",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户授权将推荐FileBrowser Quantum补至现有资源VM并补文档；保持NFS/业务与备份边界"
+      ],
+      "steps": [
+        "核官方固定版本、原生受信SSH/API/NFS/限定浏览器及最终实际回执"
+      ],
+      "observable_pass_conditions": [
+        "独立非root管理服务与私有状态的限定实际检查通过，初始失败保留且未以放宽权限追通过"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-filebrowser/prepared.json",
+          "note": "bounded native or documented evidence; no real passwords/JWT/private keys"
+        },
+        {
+          "path": "completion/20261110-filebrowser/acl-compatibility.json",
+          "note": "bounded native or documented evidence; no real passwords/JWT/private keys"
+        },
+        {
+          "path": "completion/20261110-filebrowser/final-postcheck.json",
+          "note": "bounded native or documented evidence; no real passwords/JWT/private keys"
+        }
+      ],
+      "verified_at": "2026-11-10T06:12:08.767369+08:00"
+    },
+    {
+      "id": "FILEBROWSER-AUTH-001",
+      "title": "认证与受限日常账号权限",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户授权将推荐FileBrowser Quantum补至现有资源VM并补文档；保持NFS/业务与备份边界"
+      ],
+      "steps": [
+        "核官方固定版本、原生受信SSH/API/NFS/限定浏览器及最终实际回执"
+      ],
+      "observable_pass_conditions": [
+        "认证与受限日常账号权限的限定实际检查通过，初始失败保留且未以放宽权限追通过"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-filebrowser/bootstrap.json",
+          "note": "bounded native or documented evidence; no real passwords/JWT/private keys"
+        },
+        {
+          "path": "completion/20261110-filebrowser/native-acceptance.json",
+          "note": "bounded native or documented evidence; no real passwords/JWT/private keys"
+        },
+        {
+          "path": "completion/20261110-filebrowser/log-privacy.json",
+          "note": "bounded native or documented evidence; no real passwords/JWT/private keys"
+        }
+      ],
+      "verified_at": "2026-11-10T06:12:08.767369+08:00"
+    },
+    {
+      "id": "FILEBROWSER-SHARE-001",
+      "title": "网页上传与两NFS客户端同目录读写",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户授权将推荐FileBrowser Quantum补至现有资源VM并补文档；保持NFS/业务与备份边界"
+      ],
+      "steps": [
+        "核官方固定版本、原生受信SSH/API/NFS/限定浏览器及最终实际回执"
+      ],
+      "observable_pass_conditions": [
+        "网页上传与两NFS客户端同目录读写的限定实际检查通过，初始失败保留且未以放宽权限追通过"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-filebrowser/native-acceptance.json",
+          "note": "bounded native or documented evidence; no real passwords/JWT/private keys"
+        },
+        {
+          "path": "completion/20261110-filebrowser/native-acceptance.md",
+          "note": "bounded native or documented evidence; no real passwords/JWT/private keys"
+        }
+      ],
+      "verified_at": "2026-11-10T06:12:08.767369+08:00"
+    },
+    {
+      "id": "FILEBROWSER-BROWSER-001",
+      "title": "实际登录、文件列表与限定图片预览",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户授权将推荐FileBrowser Quantum补至现有资源VM并补文档；保持NFS/业务与备份边界"
+      ],
+      "steps": [
+        "核官方固定版本、原生受信SSH/API/NFS/限定浏览器及最终实际回执"
+      ],
+      "observable_pass_conditions": [
+        "实际登录、文件列表与限定图片预览的限定实际检查通过，初始失败保留且未以放宽权限追通过"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-filebrowser/browser-acceptance.json",
+          "note": "bounded native or documented evidence; no real passwords/JWT/private keys"
+        },
+        {
+          "path": "completion/20261110-filebrowser/native-acceptance.json",
+          "note": "bounded native or documented evidence; no real passwords/JWT/private keys"
+        }
+      ],
+      "verified_at": "2026-11-10T06:12:08.767369+08:00"
+    },
+    {
+      "id": "FILEBROWSER-PERSIST-001",
+      "title": "新服务重启后账号权限持久",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户授权将推荐FileBrowser Quantum补至现有资源VM并补文档；保持NFS/业务与备份边界"
+      ],
+      "steps": [
+        "核官方固定版本、原生受信SSH/API/NFS/限定浏览器及最终实际回执"
+      ],
+      "observable_pass_conditions": [
+        "新服务重启后账号权限持久的限定实际检查通过，初始失败保留且未以放宽权限追通过"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-filebrowser/service-restart.json",
+          "note": "bounded native or documented evidence; no real passwords/JWT/private keys"
+        },
+        {
+          "path": "completion/20261110-filebrowser/final-postcheck.json",
+          "note": "bounded native or documented evidence; no real passwords/JWT/private keys"
+        }
+      ],
+      "verified_at": "2026-11-10T06:12:08.767369+08:00"
+    },
+    {
+      "id": "FILEBROWSER-OPS-001",
+      "title": "HTTPS专属证书健康与16目标保持",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户授权将推荐FileBrowser Quantum补至现有资源VM并补文档；保持NFS/业务与备份边界"
+      ],
+      "steps": [
+        "核官方固定版本、原生受信SSH/API/NFS/限定浏览器及最终实际回执"
+      ],
+      "observable_pass_conditions": [
+        "HTTPS专属证书健康与16目标保持的限定实际检查通过，初始失败保留且未以放宽权限追通过"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-filebrowser/monitoring-installed.json",
+          "note": "bounded native or documented evidence; no real passwords/JWT/private keys"
+        },
+        {
+          "path": "completion/20261110-filebrowser/final-postcheck.json",
+          "note": "bounded native or documented evidence; no real passwords/JWT/private keys"
+        }
+      ],
+      "verified_at": "2026-11-10T06:12:08.767369+08:00"
+    },
+    {
+      "id": "FILEBROWSER-DOC-001",
+      "title": "使用手册与交付边界",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户授权将推荐FileBrowser Quantum补至现有资源VM并补文档；保持NFS/业务与备份边界"
+      ],
+      "steps": [
+        "核官方固定版本、原生受信SSH/API/NFS/限定浏览器及最终实际回执"
+      ],
+      "observable_pass_conditions": [
+        "使用手册与交付边界的限定实际检查通过，初始失败保留且未以放宽权限追通过"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-filebrowser/usage-manual.md",
+          "note": "bounded native or documented evidence; no real passwords/JWT/private keys"
+        },
+        {
+          "path": "completion/20261110-filebrowser/first-start-diagnostic.json",
+          "note": "bounded native or documented evidence; no real passwords/JWT/private keys"
+        },
+        {
+          "path": "completion/20261110-filebrowser/native-first-attempt.json",
+          "note": "bounded native or documented evidence; no real passwords/JWT/private keys"
+        }
+      ],
+      "verified_at": "2026-11-10T06:12:08.767369+08:00"
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "current_phase_case_count": 8,
+    "current_phase_passed": 8,
+    "statuses": {
+      "passed": 8
+    }
+  },
+  "limitations": [
+    "browser automated pointer navigation not signed off; observed href routes and actual preview were verified",
+    "no real offsite WireGuard client E2E this phase; source policy inspected and LAN checked",
+    "beta-tagged patchedrelease pinned; no stability/SLO claim",
+    "no file/applicationmetadata backup/restore expansion",
+    "noJava/business upload configuration or public image domain integration"
+  ]
+}

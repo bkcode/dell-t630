@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Read only local unit/health state, atomically emit non-secret textfile metrics."""
-import argparse,ipaddress,json,os,re,subprocess,tempfile,time,urllib.error,urllib.request
+import argparse,ipaddress,json,os,re,ssl,stat,subprocess,tempfile,time,urllib.error,urllib.request
 from pathlib import Path
 from urllib.parse import urlsplit
 TEXTFILE_DIR=Path('/var/lib/prometheus/node-exporter-textfile')
@@ -15,6 +15,27 @@ def local_addresses():
     if p.returncode:raise ValueError('cannot read local interface addresses')
     return {x['local'] for a in json.loads(p.stdout) for x in a.get('addr_info',[]) if x.get('local')}
 
+PUBLIC_CA_PATH=Path('/etc/dell-filebrowser/tls.crt')
+MAX_CA_BYTES=65536
+
+
+def ca_file_for(url,value):
+    if urlsplit(url).scheme!='https':raise ValueError('ca_file is allowed only for HTTPS')
+    if not isinstance(value,str) or value!=str(PUBLIC_CA_PATH):raise ValueError('only the dedicated public FileBrowser CA path is allowed')
+    path=Path(value)
+    if path.resolve(strict=True)!=path:raise ValueError('public CA path cannot contain symlinks')
+    for parent in [path.parent,*path.parent.parents]:
+        info=parent.lstat()
+        if not stat.S_ISDIR(info.st_mode) or info.st_uid!=0 or info.st_mode&0o022:raise ValueError('public CA ancestors must be trusted root directories')
+    info=path.lstat()
+    if not stat.S_ISREG(info.st_mode) or info.st_uid!=0 or info.st_mode&0o022 or not info.st_mode&0o004 or not 0<info.st_size<=MAX_CA_BYTES:
+        raise ValueError('public CA must be bounded root-owned and publicly readable, not writable')
+    if not os.access(path,os.R_OK):raise ValueError('collector cannot read public CA')
+    raw=path.read_bytes()
+    if b'-----BEGIN CERTIFICATE-----' not in raw or b'PRIVATE KEY' in raw:raise ValueError('ca_file must contain public certificates only')
+    return path
+
+
 def validate(c,addresses):
     if set(c)-{'role','private_ip','textfile_directory','services','http_checks','candidate_service_units','candidate_http_checks','notes'}:raise ValueError('unknown config fields; do not put secrets or headers in health config')
     if not re.fullmatch(r'[a-z0-9][a-z0-9-]{0,62}',c.get('role','')):raise ValueError('invalid role label')
@@ -26,7 +47,7 @@ def validate(c,addresses):
     for unit in services:
         if not re.fullmatch(r'[A-Za-z0-9_.@:-]+\.service',unit):raise ValueError('invalid service unit')
     for check in checks+c.get('candidate_http_checks',[]):
-        if set(check)!={'name','url'}:raise ValueError('health checks accept only name and credential-free URL')
+        if set(check) not in ({'name','url'},{'name','url','ca_file'}):raise ValueError('health checks accept only name, credential-free URL and optional public CA')
         if not re.fullmatch(r'[A-Za-z0-9_.-]{1,80}',check.get('name','')):raise ValueError('invalid health-check label')
         u=urlsplit(check.get('url',''))
         if u.scheme not in ('http','https') or not u.hostname or u.username or u.password or u.query or u.fragment:raise ValueError('credential/query-bearing health URL rejected')
@@ -38,6 +59,7 @@ def validate(c,addresses):
         try:port=u.port or (443 if u.scheme=='https' else 80)
         except ValueError:raise ValueError('invalid local health port') from None
         if not 1<=port<=65535:raise ValueError('invalid local health port')
+        if 'ca_file' in check:ca_file_for(check['url'],check['ca_file'])
     return c
 
 def unit_state(unit):
@@ -48,10 +70,17 @@ def unit_state(unit):
     if set(values)!={'LoadState','ActiveState'}:return 0,0,False
     return int(values['LoadState']=='loaded'),int(values['ActiveState']=='active'),True
 
-def http_state(url):
+def http_state(url,ca_file=None):
     try:
         request=urllib.request.Request(url,method='GET',headers={'User-Agent':'dell-local-health/1'})
-        with urllib.request.build_opener(NoRedirect).open(request,timeout=3) as response:
+        if ca_file is None:
+            opener=urllib.request.build_opener(NoRedirect)
+        else:
+            path=ca_file_for(url,ca_file)
+            context=ssl.create_default_context(cafile=str(path))
+            if context.verify_mode!=ssl.CERT_REQUIRED or not context.check_hostname:raise ValueError('verified HTTPS context required')
+            opener=urllib.request.build_opener(urllib.request.ProxyHandler({}),NoRedirect,urllib.request.HTTPSHandler(context=context))
+        with opener.open(request,timeout=3) as response:
             response.read(1024)
             return int(response.status==200),response.status
     except urllib.error.HTTPError as error:
@@ -69,7 +98,7 @@ def collect(c):
         lines+=['dell_guest_service_present{'+tags+'} '+str(present),'dell_guest_service_active{'+tags+'} '+str(active)]
     lines+=['# TYPE dell_guest_http_up gauge','# TYPE dell_guest_http_status_code gauge']
     for check in c.get('http_checks',[]):
-        up,code=http_state(check['url']);tags=role+',check="'+label(check['name'])+'"'
+        up,code=(http_state(check['url'],check['ca_file']) if 'ca_file' in check else http_state(check['url']));tags=role+',check="'+label(check['name'])+'"'
         lines+=['dell_guest_http_up{'+tags+'} '+str(up),'dell_guest_http_status_code{'+tags+'} '+str(code)]
     lines+=['# TYPE dell_guest_health_collection_success gauge','dell_guest_health_collection_success{'+role+'} '+str(int(read_ok)),'# TYPE dell_guest_health_collection_timestamp_seconds gauge','dell_guest_health_collection_timestamp_seconds{'+role+'} '+format(time.time(),'.3f')]
     return '\n'.join(lines)+'\n',read_ok

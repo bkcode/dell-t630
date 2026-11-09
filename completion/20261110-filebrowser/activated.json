@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-09T21:47:28.801702+00:00",
+  "status": "management-service-started-authentication-and-upload-acceptance-pending",
+  "protected_service_identities_unchanged": true,
+  "port": 8080,
+  "HTTPS": true,
+  "NFS_or_client_restarts": false,
+  "Java_or_business_HTTP_started": false
+}

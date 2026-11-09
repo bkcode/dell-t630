@@ -1,0 +1,20 @@
+{
+  "prepared_at": "2026-11-09T21:35:21.942014+00:00",
+  "old_collector_SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+  "candidate_collector_SHA256": "3c8b51912733c6d7634ca787098c0fe853cfb924ad16058630158c0cdb1b2228",
+  "collector_source": "infra/ops/guest-baseline/collect-guest-health.py",
+  "default_HTTP_behaviour_change": false,
+  "remote_deploy": false,
+  "officialhealthpath_confirmed": false,
+  "new_regression_tests_passed": 10,
+  "legacy_collector_safety_tests_passed": 10,
+  "Prometheus_target_count_unchanged": 16,
+  "remote_writes": false,
+  "service_started": false,
+  "candidate_files": {
+    "health-services.candidate.json": "755801efe2e42b1298c1f66f71e0b1a9c9b216fbc39fbffa25d90f0d4b223136",
+    "https-check-contract.json": "4315dd94a0afc946b83158097eed206a1daddfc8bccc7b512b6441d7d2891092",
+    "test_collector_ca.py": "e64634a08a97b1972b5792b14ed3353e3e64ae6656f08c502026a26fb73e7ac2",
+    "README.md": "3b37292791c64515b7ce6887a57102cfadad378d5fcc7432b236e58de9b54078"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-09T22:08:48.061077+00:00",
+  "status": "new-management-service-restart-and-account-persistence-passed",
+  "service_PID_changed": true,
+  "original_admin_and_daily_credentials_authenticate": true,
+  "daily_scope_and_restrictions_persist": true,
+  "bootstrap_password_absent_from_process_environment": true,
+  "fixed_JWT_credential_loaded": true,
+  "protected_NFS_and_other_service_identities_unchanged": true,
+  "VM_or_clients_rebooted": false,
+  "actual_credentials_tokens_or_environ_output": false
+}

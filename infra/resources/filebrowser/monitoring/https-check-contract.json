@@ -1,0 +1,27 @@
+{
+  "status": "native-verified-HTTPS-health",
+  "role": "resource-service",
+  "vmid": 280,
+  "expected_services_before": 5,
+  "expected_services_after": 6,
+  "new_service": "dell-filebrowser.service",
+  "origin": "https://192.168.19.80:8080",
+  "official_health_path": "/health",
+  "candidate_check_name": "filebrowser-https-health",
+  "ca_file": "/etc/dell-filebrowser/tls.crt",
+  "certificate_scope": "public dedicatedCA only; verifyhostname+chain; no globaltrust change or insecure",
+  "filebrowser_data_state_cache": "/var/lib/dell-filebrowser (separatefromNFSdata)",
+  "new_Prometheus_targets": 0,
+  "current_Prometheus_total_targets_to_preserve": 16,
+  "root_will_fresh_read_healthJSON_before_apply": true,
+  "remote_writes_or_start": false,
+  "official_health_contract": {
+    "method": "GET",
+    "authenticated": false,
+    "expected_HTTP": 200,
+    "expected_public_message": "ok",
+    "source": "official v214 backend/internal/web/httpRouter.go + http.go, confirmed by acceptance review",
+    "runtime_not_proven_by_static_source": true
+  },
+  "native_verification_evidence": "completion/20261110-filebrowser/monitoring-installed.json"
+}

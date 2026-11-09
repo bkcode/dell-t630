@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-10T06:05:01.286924+08:00",
+  "status": "daily-user-login-file-list-and-image-preview-passed",
+  "tool": "agent-browser dedicated session",
+  "daily_username": "resources",
+  "login_form_visible": true,
+  "encrypted_vault_password_stdin_login": true,
+  "own_synthetic_directory_visible": true,
+  "observed_directory_and_PNG_href_routes_loaded": true,
+  "API_and_NFS_fixture_files_visible": [
+    "fixture.png",
+    "append.txt",
+    "from-nfs.txt",
+    "owner.marker"
+  ],
+  "image_rendered_dimensions": [
+    96,
+    96
+  ],
+  "maintenance_settings_or_passwords_opened": false,
+  "browser_private_screenshots_only": true,
+  "browser_system_certificate_prompt_ignored_for_selfsigned_test_only": true,
+  "separate_Mac_curl_pinned_CA_HTTP": 200,
+  "browser_pointer_navigation_not_signed_off": "automated clicks did not navigate; verified actual observed href routes directly",
+  "credentials_or_tokens_in_public_report": false
+}

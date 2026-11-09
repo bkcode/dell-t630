@@ -663,7 +663,7 @@
     "evidence": "evidence/implementation/raid-recovered.json",
     "historical_fault": "slot32:3 access failure; root cause unresolved, monitor"
   },
-  "updated_at": "2026-11-10T00:20:38.241841+08:00",
+  "updated_at": "2026-11-10T06:12:08.767369+08:00",
   "docker_runtime_profile": {
     "driver": "classic-overlay2",
     "reason": "Verified compatibility with source single-platform offline archives; preserves config IDs",
@@ -709,9 +709,9 @@
       "current_scope": "production DB/Nacos only; old wholeVM rule group removed"
     },
     "resource_role_evidence": "completion/20261109-resources/Lark-role-installed.json",
-    "resource_monitoring_postcheck": "completion/20261109-resources/final-postcheck.json"
+    "resource_monitoring_postcheck": "completion/20261110-filebrowser/final-postcheck.json"
   },
-  "delivery_scope_manifest": "completion/20261109-resources/acceptance.json",
+  "delivery_scope_manifest": "completion/20261110-filebrowser/acceptance.json",
   "expected_role_count": 13,
   "network19_migration_manifest": "network19/migration-plan.json",
   "acceptance_templates": [
@@ -849,12 +849,12 @@
     }
   },
   "operational_state": {
-    "as_of": "2026-11-10T00:20:38.241841+08:00",
-    "status": "infrastructure-running-with-unified-resource-storage",
-    "live_state": "13guests running/3templates stopped/16targetsUP; resource NFS+two mounts verified; production DB-only backup scope unchanged",
-    "last_successful_live_acceptance": "2026-11-10T00:20:38.241841+08:00",
+    "as_of": "2026-11-10T06:12:08.767369+08:00",
+    "status": "infrastructure-running-with-authenticated-resource-management",
+    "live_state": "13guests running/3templates stopped/16targetsUP; resource NFS+authenticated management HTTPS verified; DB-only backup unchanged",
+    "last_successful_live_acceptance": "2026-11-10T06:12:08.767369+08:00",
     "last_successful_PVE_operation": "2026-11-10T00:20:38.241841+08:00",
-    "last_operation": "new VM280 unified NFS and two running mounts native verification, controlled VM-only reboot,16UP; no Java/HTTP/file migration/backup expansion",
+    "last_operation": "existingVM280 authenticatedFileBrowser native HTTPS+API/NFS scope, app-onlyrestart and6services/HTTPShealth verified; no newVM/Java/businessHTTP/backup expansion",
     "runtime_counts_are_last_verified_not_live": false,
     "resume_requires": "not applicable to infrastructure checks; migration explicitly deferred by user",
     "user_scope_now": "infrastructure plus explicitly selected test config/DB migration and fixed credentials; unified resource NFS for both running; no Nexus merge/Java/Macprobe",
@@ -863,7 +863,7 @@
     "hardware_diagnostics": "user reports reseated/replaced and diagnostics passed; current bootEDACce/ue0 independently observed",
     "hardware_evidence": "completion/20261109/pve-audit.json",
     "recovery_manifest": "recovery/20261108/README.md",
-    "current_completion_manifest": "completion/20261109-resources/acceptance.json",
+    "current_completion_manifest": "completion/20261110-filebrowser/acceptance.json",
     "current_backup_scope_manifest": "completion/20261109-prod-db-scope/acceptance.json",
     "previous_recorded_PVE_operation": "2026-11-09T18:42:53+08:00",
     "last_PVE_operation_kind": "manager capture time of read-only final PVE inventory/forwarding verification; not power operation",
@@ -1097,6 +1097,98 @@
     "usage_manual": "completion/20261109-resources/usage-manual.md",
     "controlled_VM_reboot_verified": true,
     "clients_OS_rebooted": false,
-    "monitoring_total_UP": 16
+    "monitoring_total_UP": 16,
+    "management_web": {
+      "status": "native-API-NFS-restart-and-monitoring-verified",
+      "project": "gtsteffaniak/filebrowser",
+      "tag": "v2.1.4-beta",
+      "binary_SHA256": "4af557de16603bdfba2ae87b7807b8654612c542b2deff826eedee72086a5da2",
+      "vmid": 280,
+      "URL": "https://192.168.19.80:8080/",
+      "source_path": "/srv/resources",
+      "native_systemd": true,
+      "Linux_service_user": "filebrowser",
+      "uid": 2000,
+      "gid": 2980,
+      "state_directory": "/var/lib/dell-filebrowser",
+      "state_directory_mode": "0700",
+      "daily_user": "resources",
+      "maintenance_user": "admin",
+      "daily_allow": [
+        "view",
+        "preview",
+        "download",
+        "create-directory",
+        "upload-new-file"
+      ],
+      "daily_deny": [
+        "delete",
+        "overwrite",
+        "edit",
+        "share",
+        "privilege-escalation"
+      ],
+      "management_sources": [
+        "192.168.21.0/24",
+        "10.66.66.0/24"
+      ],
+      "selfsigned_TLS": true,
+      "system_global_CA_changed": false,
+      "Docker_installed": false,
+      "business_resource_HTTP_enabled": false,
+      "app_Java_or_Nacos_upload_configuration_changed": false,
+      "backup_scope_expanded": false,
+      "local_service_checks": 6,
+      "verified_HTTPS_health": true,
+      "acceptance": "completion/20261110-filebrowser/acceptance.json",
+      "usage_manual": "completion/20261110-filebrowser/usage-manual.md",
+      "fixed_version_reason": "officialadvisoryaffectedstable2.0.2;actual2.1stable release404;patched2.1.4beta pinned"
+    }
+  },
+  "FileBrowser_management_20261110": {
+    "status": "native-API-NFS-restart-and-monitoring-verified",
+    "project": "gtsteffaniak/filebrowser",
+    "tag": "v2.1.4-beta",
+    "binary_SHA256": "4af557de16603bdfba2ae87b7807b8654612c542b2deff826eedee72086a5da2",
+    "vmid": 280,
+    "URL": "https://192.168.19.80:8080/",
+    "source_path": "/srv/resources",
+    "native_systemd": true,
+    "Linux_service_user": "filebrowser",
+    "uid": 2000,
+    "gid": 2980,
+    "state_directory": "/var/lib/dell-filebrowser",
+    "state_directory_mode": "0700",
+    "daily_user": "resources",
+    "maintenance_user": "admin",
+    "daily_allow": [
+      "view",
+      "preview",
+      "download",
+      "create-directory",
+      "upload-new-file"
+    ],
+    "daily_deny": [
+      "delete",
+      "overwrite",
+      "edit",
+      "share",
+      "privilege-escalation"
+    ],
+    "management_sources": [
+      "192.168.21.0/24",
+      "10.66.66.0/24"
+    ],
+    "selfsigned_TLS": true,
+    "system_global_CA_changed": false,
+    "Docker_installed": false,
+    "business_resource_HTTP_enabled": false,
+    "app_Java_or_Nacos_upload_configuration_changed": false,
+    "backup_scope_expanded": false,
+    "local_service_checks": 6,
+    "verified_HTTPS_health": true,
+    "acceptance": "completion/20261110-filebrowser/acceptance.json",
+    "usage_manual": "completion/20261110-filebrowser/usage-manual.md",
+    "fixed_version_reason": "officialadvisoryaffectedstable2.0.2;actual2.1stable release404;patched2.1.4beta pinned"
   }
 }

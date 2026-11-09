@@ -1,6 +1,6 @@
 # T630 当前状态、恢复验收与操作边界
 
-更新：2026-11-10（Asia/Shanghai）。当前已完成统一资源VM280/NFS与两running同根挂载：[最新后检](completion/20261109-resources/final-postcheck.json)确认13来宾运行、3模板停止、16/16监控UP，宿主各接口双栈forward0。资源用法见[手册](completion/20261109-resources/usage-manual.md)。用户后续另明确授权的测试Nacos36配置/Puyu两库迁移与固定测试凭据均已完成，源保留；不执行Nexus合并，不启动Java，不迁旧资源文件/启HTTP，自动备份仍仅正式MySQL/Nacos。
+更新：2026-11-10（Asia/Shanghai）。当前已完成统一资源VM280/NFS、两running同根挂载及受认证FileBrowser管理页：[最新后检](completion/20261109-resources/final-postcheck.json)确认13来宾运行、3模板停止、16/16监控UP，宿主各接口双栈forward0。资源用法见[手册](completion/20261109-resources/usage-manual.md)。用户后续另明确授权的测试Nacos36配置/Puyu两库迁移与固定测试凭据均已完成，源保留；不执行Nexus合并，不启动Java，不迁旧资源文件、不启业务图片HTTP（管理HTTPS已另获授权），自动备份仍仅正式MySQL/Nacos。
 
 此前11月9日14:24自然重启后的12来宾/15UP、EDAC0/RAIDOptl是新增资源之前的硬件基础审计，见下方历史；新资源VM单独重启约30秒验证了自身共享持久性，没有重启物理PVE或两running OS。
 
@@ -84,3 +84,7 @@ H730暴露SSD RAID1和HDD RAID5，PVE管理`local/local-lvm/store`；主AI本轮
 本轮基础恢复已经带时间复核；没有清SEL、强制阵列Online或通过重装覆盖应用。仍需保留维修/诊断与硬件事件供长期观察，记录任何新CE/UE或IO错误。新的清理动作先核依赖、唯一回退与精确范围；不重复删除已清对象、不重新启动Java业务。认证/内容一致性、长期备份、真实客户端及负载SLO未因本次健康GET自动完成。
 
 OW完整规则仅本地保存，不触碰/上传，不push local-only分支。初始11月5日盘点、10.63过渡网络、旧模板/Java五服务试验均只作历史证据保留，不再占本文当前清单。旧资料见[evidence](evidence/)、[实施日志](09-implementation-progress.md)，不要重跑已完成bootstrap。
+
+## 最新资源管理页
+
+现有280新增https://192.168.19.80:8080/，日常resources受限上传/浏览、维护admin完整，口令只private保管；native程序不改NFS/VM预算，16targets保持，资源6服务＋专属CA HTTPS检查通过。见[管理交付](completion/20261110-filebrowser/README.md)、[使用手册](completion/20261110-filebrowser/usage-manual.md)。只重启新app，旧服务与两机挂载保持，未接业务图片或扩备份。

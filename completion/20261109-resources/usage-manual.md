@@ -1,6 +1,14 @@
 # 统一资源目录使用手册
 
-更新：2026-11-10，Asia/Shanghai。用户选择正式/测试共用同一台资源服务器和同一个目录。**VM280 NFS与230/240真挂载、权限/跨机读写已通过；仅280受控重启约30秒与fsync canary持久性通过，两client挂载恢复，未重启running。** 这里只提供人工操作示例，不自动运行任何命令；不启Java、不迁入旧资源文件、不启HTTP，也不扩展当前正式DB/Nacos自动备份。
+更新：2026-11-10，Asia/Shanghai。用户选择正式/测试共用同一台资源服务器和同一个目录。**VM280 NFS与230/240真挂载、权限/跨机读写已通过；仅280受控重启约30秒与fsync canary持久性通过，两client挂载恢复，未重启running。** 这里只提供人工操作示例，不自动运行任何命令；不启Java、不迁入旧资源文件、不启业务图片HTTP，也不扩展当前正式DB/Nacos自动备份；新增管理HTTPS见下节。
+
+## 新增受认证管理页面（2026-11-10）
+
+NFS基础保持，另增 **https://192.168.19.80:8080/** FileBrowser Quantum管理页；来源仅LAN21/24、WG10.66/24和本机。日常resources浏览/下载/新建上传，禁止删除/编辑/覆盖/分享/提权；完整权限admin仅必要维护使用。证书指纹、私有凭据位置、实际通过范围与维护步骤统一见[管理页使用手册](../20261110-filebrowser/usage-manual.md)。
+
+此HTTPS是受认证维护页，不是公开图片/业务上传API。Linux服务UID2000/资源组2980，与两running finger999:989＋2980互读；新Web文件660/目录2770。DB/cache在`/var/lib/dell-filebrowser`700，不在共享；不改应用路径、不迁Puyu images、不启Java、不扩备份。原00:20 NFS8项验收保留，不把它冒称已测Web；本次[API/NFS验收](../20261110-filebrowser/native-acceptance.json)和[浏览器限定验收](../20261110-filebrowser/browser-acceptance.json)单列，fixture已清。
+
+[新app重启](../20261110-filebrowser/service-restart.json)与[06:12最终后检](../20261110-filebrowser/final-postcheck.json)已通过：仅FileBrowser自身重启、原账号/scope保持，资源6服务＋专属CA HTTPS健康UP、Prom仍16targets，NFS/VM/clients未重启。页面不会扩签资源备份或应用接入。
 
 ## 路径和身份
 
@@ -14,7 +22,7 @@
 | 文件运行身份 | 两机`finger`保留UID999/GID989，追加`resources`附属组GID2980 |
 | 240 `/mnt/dell-artifacts` | 原有独立用途，保持原状，不能覆盖成新共享挂载 |
 
-管理员仍通过`ub`与既有SSH密钥登录，只有必要管理动作使用sudo；不拷客户端私钥。NFS只允许230/240的精确IP与TCP2049，root_squash保留；没有SMB、Docker文件服务、上传HTTP或图片URL。资源目录不按prod/test划分，双方对同一路径的更改会立即影响另一方。不要单查某个环境就认定文件孤立或可删除。
+管理员仍通过`ub`与既有SSH密钥登录，只有必要管理动作使用sudo；不拷客户端私钥。NFS只允许230/240的精确IP与TCP2049，root_squash保留；没有SMB、Docker文件服务或业务上传HTTP/公开图片URL；新增的FileBrowser HTTPS仅管理员维护。资源目录不按prod/test划分，双方对同一路径的更改会立即影响另一方。不要单查某个环境就认定文件孤立或可删除。
 
 ## 使用前先确认真挂载
 

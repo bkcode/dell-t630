@@ -9,7 +9,7 @@
     "memory_gib": 4
   },
   "source_of_truth": "plan.json",
-  "last_verified_at": "2026-11-10T00:20:38.241841+08:00",
+  "last_verified_at": "2026-11-10T06:12:08.767369+08:00",
   "current_runtime_verified": true,
   "status": "recovered-infrastructure-verified",
   "verification_note": "Fresh metadata/service audit after natural host reboot; no data migration, Nexus merge or Java business deployment.",
@@ -79,10 +79,12 @@
     "Nexus221_still_registered": true,
     "server_internal_Lark": "active-with-resource-role-only-increment-no-test-send",
     "Mac_external_probe": "not-required-explicit-user-choice",
-    "resource_vmid280_registered": true
+    "resource_vmid280_registered": true,
+    "resource_local_service_checks": 6,
+    "resource_dedicated_CA_HTTPS_health": true
   },
-  "current_verification_evidence": "completion/20261109-resources/final-postcheck.json",
-  "current_verification_scope": "16targetsUP,5resource service metrics, existing Lark role enum increment; no test notification or other app content check",
+  "current_verification_evidence": "completion/20261110-filebrowser/final-postcheck.json",
+  "current_verification_scope": "16targets and resource6service/HTTPShealthUP; existingreceiver/Lark unchanged, no test notification",
   "external_Mac_probe": "not-required; removed from current and future plans",
   "timestamp_scope": "2026-11-10 resource expansion verification; earlier evidence retains its own time",
   "local_backup": {

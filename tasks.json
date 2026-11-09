@@ -213,7 +213,7 @@
       "verification_scope": "historical-completed-stage-not-current-live"
     }
   ],
-  "updated_at": "2026-11-10T00:20:38.241841+08:00",
+  "updated_at": "2026-11-10T06:12:08.767369+08:00",
   "implementation_note": "Original IMP entries describe the prior completed baseline. Latest user scope overrides Java program deployment: five test services are stopped/disabled, publisher fenced, only acceptance template9011 current.",
   "overall_status": "existing-infrastructure-recovered-user-deferred-migration",
   "network19_execution": [
@@ -386,7 +386,7 @@
     "phase_cases_passed": 9,
     "phase_case_count": 9,
     "guest_postcheck": "completion/20261109/guests-post-backup.json",
-    "latest_followup_manifest": "completion/20261109-resources/acceptance.json"
+    "latest_followup_manifest": "completion/20261110-filebrowser/acceptance.json"
   },
   "backup_scope_update20261109": {
     "status": "completed-native-verified",
@@ -522,5 +522,51 @@
     "controlled_VM_reboot_verified": true,
     "clients_OS_rebooted": false,
     "monitoring_total_UP": 16
+  },
+  "FileBrowser_management_20261110": {
+    "status": "native-API-NFS-restart-and-monitoring-verified",
+    "project": "gtsteffaniak/filebrowser",
+    "tag": "v2.1.4-beta",
+    "binary_SHA256": "4af557de16603bdfba2ae87b7807b8654612c542b2deff826eedee72086a5da2",
+    "vmid": 280,
+    "URL": "https://192.168.19.80:8080/",
+    "source_path": "/srv/resources",
+    "native_systemd": true,
+    "Linux_service_user": "filebrowser",
+    "uid": 2000,
+    "gid": 2980,
+    "state_directory": "/var/lib/dell-filebrowser",
+    "state_directory_mode": "0700",
+    "daily_user": "resources",
+    "maintenance_user": "admin",
+    "daily_allow": [
+      "view",
+      "preview",
+      "download",
+      "create-directory",
+      "upload-new-file"
+    ],
+    "daily_deny": [
+      "delete",
+      "overwrite",
+      "edit",
+      "share",
+      "privilege-escalation"
+    ],
+    "management_sources": [
+      "192.168.21.0/24",
+      "10.66.66.0/24"
+    ],
+    "selfsigned_TLS": true,
+    "system_global_CA_changed": false,
+    "Docker_installed": false,
+    "business_resource_HTTP_enabled": false,
+    "app_Java_or_Nacos_upload_configuration_changed": false,
+    "backup_scope_expanded": false,
+    "local_service_checks": 6,
+    "verified_HTTPS_health": true,
+    "acceptance": "completion/20261110-filebrowser/acceptance.json",
+    "usage_manual": "completion/20261110-filebrowser/usage-manual.md",
+    "fixed_version_reason": "officialadvisoryaffectedstable2.0.2;actual2.1stable release404;patched2.1.4beta pinned"
   }
 }

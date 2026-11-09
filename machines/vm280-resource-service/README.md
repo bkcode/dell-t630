@@ -1,6 +1,14 @@
 # VM280 · resource-service
 
-更新：2026-11-10，Asia/Shanghai。此目录是资源服务合同与公开来源索引，不是完整运行配置导出。**VM280及230/240真NFS/guard、非root跨机读写/删除、root_squash/缺挂载负测已通过；仅280约30秒受控重启，fsync canary持久、两client挂载恢复，未重启running。** 现行资源范围不含HTTP、Java启动、旧文件搬迁或自动备份扩围。
+更新：2026-11-10，Asia/Shanghai。此目录是资源服务合同与公开来源索引，不是完整运行配置导出。**VM280及230/240真NFS/guard、非root跨机读写/删除、root_squash/缺挂载负测已通过；仅280约30秒受控重启，fsync canary持久、两client挂载恢复，未重启running。** 现行资源包含NFS与私有FileBrowser管理HTTPS，不含业务图片HTTP、Java启动、旧文件搬迁或自动备份扩围。
+
+## FileBrowser Quantum管理页面
+
+新增私有管理入口 **https://192.168.19.80:8080/**，仅LAN21/24、WG10.66/24及本机；日常`resources`可浏览/下载/新建上传，delete/edit/override/share/提权直接API已验403；维护`admin`有完整权限，不把日常限制说成它也绝对不能删除。密码只在Mac `dell/private/credentials/filebrowser-management-20261110.json`与guest root `/etc/dell-filebrowser/secrets/login.json`保管，不在文档输出值。首次核[tls.crt](../../completion/20261110-filebrowser/tls.crt)的SHA256指纹后接受/导入；无公网域名、无系统truststore变更。
+
+官方native固定v2.1.4-beta（不是stable），UID2000/GID2980、UMask0002、文件660/目录2770，DB/cache在非共享的`/var/lib/dell-filebrowser`700；初始化marker在root的`/etc/dell-filebrowser/bootstrap.complete`，正常后续启动不再注入初始化口令。自身metadata自动备份关闭，不扩正式DB/Nacos备份；Docker未装，NFS/PVE/路由不改，不Java、不业务图片URL、不迁旧文件。
+
+[原生API/NFS验收](../../completion/20261110-filebrowser/native-acceptance.json)passed且fixture已清；[真实浏览器](../../completion/20261110-filebrowser/browser-acceptance.json)只签登录/列表及观察到href后的96PNG深链渲染，自动点击未导航，未签所有按钮。[只重启新app](../../completion/20261110-filebrowser/service-restart.json)已保持账号、scope和JWT且不再注入初始化口令，NFS/VM/clients未重启；[06:12最终后检](../../completion/20261110-filebrowser/final-postcheck.json)已确认13运行来宾、3停止模板、16targets全UP、资源6服务指标及专属CA HTTPS健康均UP，PVE全forward0；未加Promtarget/receiver或外发测试消息。完整[管理页使用手册](../../completion/20261110-filebrowser/usage-manual.md)含证书指纹、账号、维护/升级与故障步骤；[公开服务包](../../infra/resources/filebrowser/README.md)。
 
 本机资料：[配置合同](config.json)、[配置来源](config-sources.json)、[用户使用手册](../../completion/20261109-resources/usage-manual.md)。主AI维护[plan](../../plan.json)与PVE创建/地址/网络；本目录不自动运行provision、格式化或部署。
 
@@ -23,7 +31,7 @@ native单元为`srv-resources.mount`、`dell-resources-firewall.service`与`nfs-
 
 两running的finger保持UID999/GID989，仅加resources附属GID2980；不得把server资源组替换成989。客户端hard/automount、真挂载guard和root0555下层用于防止共享失效后写根盘；存在autofs不算NFS已挂好。240原`/mnt/dell-artifacts`保留。任何未来Java挂载依赖另审、另安装，本轮业务不启。
 
-资源文件**未纳入自动备份**，也未迁入旧文件。当前自动任务仅正式VM200/nacos_prod SQL；RAID、同机共享与数据库备份不提供这些文件的恢复保证。Nginx/HTTP图片只是未启用候选，不存在已交付的图片或上传URL。
+资源文件**未纳入自动备份**，也未迁入旧文件。当前自动任务仅正式VM200/nacos_prod SQL；RAID、同机共享与数据库备份不提供这些文件的恢复保证。Nginx/业务HTTP图片只是未启用候选，不存在已交付的业务图片或上传URL；FileBrowser受认证管理HTTPS是另一用途。
 
 ## 验收与日常入口
 

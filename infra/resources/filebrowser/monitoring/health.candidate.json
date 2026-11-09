@@ -1,0 +1,23 @@
+{
+  "role": "resource-service",
+  "private_ip": "192.168.19.80",
+  "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+  "services": [
+    "ssh.service",
+    "qemu-guest-agent.service",
+    "prometheus-node-exporter.service",
+    "nfs-server.service",
+    "dell-resources-firewall.service",
+    "dell-filebrowser.service"
+  ],
+  "http_checks": [
+    {
+      "name": "filebrowser-https-health",
+      "url": "https://192.168.19.80:8080/health",
+      "ca_file": "/etc/dell-filebrowser/tls.crt"
+    }
+  ],
+  "candidate_service_units": [],
+  "candidate_http_checks": [],
+  "notes": "Candidate only: preserve original five services and add native FileBrowser. Official v214 public GET /health, dedicated public CA with verified IP SAN19.80; native TLS/readiness/metrics still require actual deployment verification. No new Prometheus target or Lark test send."
+}
