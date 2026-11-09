@@ -6,25 +6,25 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "b18d024fe543e3c04ff3d8f92dd0e720ec8944e80fe97cfb34f4926b9ffe6905"
+      "sha256": "07d844dcd1f23952f4270bd08c2876ab09f4839a884481a7c14bca90b90d9c12"
     },
     {
       "path": "AGENTS.md",
       "type": "current-contract",
       "purpose": "当前用户范围、委派和秘密/操作边界。",
-      "sha256": "4cdc5493a1f050c02d13add9ce6aec03d0e5a5ce9e3dd4aaec1be3769473f393"
+      "sha256": "3435c15da4acde876ed4f38ed2a6510750ade4cf218a7753a537307908b1416a"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
       "purpose": "当前基础搭建与历史故障交接；本轮不迁移，旧证据按时点解释。",
-      "sha256": "092b6a56cbaf2d9e0d4938d48473aaa1c964ce5dd85877194786b28b0c3cb131"
+      "sha256": "a7b3341a3f28908b3298a1e38f41aa76bb08aecb29e49cc51ab4cb69489391ea"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
-      "sha256": "75896559aa5861b58a48e16090246964be9dd2be4c6c26084a950f345a37ea4b"
+      "sha256": "7c42068892909459134ecec3b26041df3bc8d83d7e509a164e0d6ae0db6121f5"
     },
     {
       "path": "cleanup/final-live-check.json",
@@ -36,7 +36,7 @@
       "path": "08-hardware-findings.md",
       "type": "current-contract",
       "purpose": "B1/UEFI0058历史证据与本轮硬件运行观察的区别，不替代物理根因诊断。",
-      "sha256": "161dff04ad8c238d3d1f8ccb8ec70a27a6e024c896694fe26f3ab4ba67fad656"
+      "sha256": "d944ee917b3f257d565408878e6119190588fd10f46a058ce972eee2c65802a5"
     },
     {
       "path": "15-network19-delivery.md",
@@ -153,7 +153,7 @@
       "path": "infra/backup/prod-db/README.md",
       "type": "current-contract",
       "purpose": "Current DB-only backup contract or timestamped actual proof; all other data excluded; not a complete runtime export",
-      "sha256": "76b4be4eceae92567d9fb4d608c7e01b2c91b708368e70ae8bab92e49b3d7bc9"
+      "sha256": "e3778414987ee08975f689d2da06e65fab80d76e92907d591886b07f1021a348"
     },
     {
       "path": "infra/backup/prod-db/policy-host.json",
@@ -165,13 +165,13 @@
       "path": "completion/20261109-prod-db-scope/README.md",
       "type": "current-contract",
       "purpose": "Current DB-only backup contract or timestamped actual proof; all other data excluded; not a complete runtime export",
-      "sha256": "c612b98d23ccc64d142188a309d5b521442f2e3083b77b407ccd252e88f03564"
+      "sha256": "ccead649a3df42475795925722b8ad08d069bcf9353e9be721154e44538de866"
     },
     {
       "path": "completion/20261109-prod-db-scope/acceptance.json",
       "type": "current-contract",
       "purpose": "Current DB-only backup contract or timestamped actual proof; all other data excluded; not a complete runtime export",
-      "sha256": "d1b694b70987b8496ba63399a0fd83596e680da835d7b3a947fdd0b50bcc139f"
+      "sha256": "e4a22177d09bdfb9a223497d3d61a1af4bf6d3e35cbb99f14c8d5c197e54344d"
     },
     {
       "path": "completion/20261109-prod-db-scope/first-success-and-timer-enabled.json",
@@ -184,6 +184,54 @@
       "type": "historical-evidence",
       "purpose": "Current DB-only backup contract or timestamped actual proof; all other data excluded; not a complete runtime export",
       "sha256": "2aafaaf362538e823b0d4d243fe15bb30270764d501f2170a1a0fbc880e93465"
+    },
+    {
+      "path": "infra/backup/prod-db/restore/README.md",
+      "type": "current-contract",
+      "purpose": "Authorized one-snapshot isolated restore proof/source; no production import, fullbusinessRPO/RTO orDR claim",
+      "sha256": "7d9bc22a32e5977fe80db6e8e1c17cd1b384f3dcf13458adec90f007444e76eb"
+    },
+    {
+      "path": "completion/20261109-prod-db-restore/README.md",
+      "type": "current-contract",
+      "purpose": "Authorized one-snapshot isolated restore proof/source; no production import, fullbusinessRPO/RTO orDR claim",
+      "sha256": "b0c6d042990e988fd8c5e0ea01685af7c1711974f72f8626d5a60eaeaff2e9fd"
+    },
+    {
+      "path": "completion/20261109-prod-db-restore/acceptance.json",
+      "type": "current-contract",
+      "purpose": "Authorized one-snapshot isolated restore proof/source; no production import, fullbusinessRPO/RTO orDR claim",
+      "sha256": "49c09a8cc50e9f0985e7e4af7627259b7154a5aea238f34b4c6dc31ddd99d76e"
+    },
+    {
+      "path": "completion/20261109-prod-db-restore/native-success.json",
+      "type": "historical-evidence",
+      "purpose": "Authorized one-snapshot isolated restore proof/source; no production import, fullbusinessRPO/RTO orDR claim",
+      "sha256": "b35a52d41a1040f995fd2838e4eab4e106945fb5f82ea44711e457b7d3ff1786"
+    },
+    {
+      "path": "completion/20261109-prod-db-restore/postcheck.json",
+      "type": "historical-evidence",
+      "purpose": "Authorized one-snapshot isolated restore proof/source; no production import, fullbusinessRPO/RTO orDR claim",
+      "sha256": "636bf052ec5143b89019237b087fd38afaf5a60c1718b4c5e0a4bcd4289c1089"
+    },
+    {
+      "path": "completion/20261109-prod-db-restore/host-ops-postcheck.json",
+      "type": "historical-evidence",
+      "purpose": "Authorized one-snapshot isolated restore proof/source; no production import, fullbusinessRPO/RTO orDR claim",
+      "sha256": "ba57c4495ed60fb870d4520d42004856b0cfe8be90b72fc4f2a60e1553b08b9b"
+    },
+    {
+      "path": "infra/backup/prod-db/restore/host-drill.py",
+      "type": "current-contract",
+      "purpose": "Authorized one-snapshot isolated restore proof/source; no production import, fullbusinessRPO/RTO orDR claim",
+      "sha256": "f175d6215a0b27dc68e37c19cf89b10ea4fc99c1ccf1f9f80e6d32ada8c44464"
+    },
+    {
+      "path": "infra/backup/prod-db/restore/qga-restore.pl",
+      "type": "current-contract",
+      "purpose": "Authorized one-snapshot isolated restore proof/source; no production import, fullbusinessRPO/RTO orDR claim",
+      "sha256": "4b71e2863ef6a64838d76b3320b05e01f7c612906ac3a5d5f9d0a9fcc64b06dd"
     }
   ]
 }

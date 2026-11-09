@@ -58,7 +58,7 @@ VM221：artifact-service → 数据与身份核验通过后退役
 
 现行自动备份仅VM200正式MySQL/Nacos外部元库，当前唯一`nacos_prod`12表、正式业务schema未创建；Nexus221制品数据/系统和其他数据不自动备份。新增未列白名单库直接失败告警、需更新策略。PVE逻辑档落`/mnt/pve/store/dell-artifacts/prod-db-backups` root700/600，首轮3301B、03:30 timer enabled/GFS3-7-4，见[新中央入口](completion/20261109-prod-db-scope/README.md)与[新首轮回执](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)。
 
-旧11来宾全机方案曾成功，但当前job已disabled、旧规则组退役；19,747,582,801B档与21回退档保留，不自动删除。旧CF档只留PVE、发布key只220。新db-only三规则已[热载](completion/20261109-prod-db-scope/alerts-installed.json)，原Prom identity/三名/接收对象保持、无testsend。本机逻辑备份未做恢复或独立DR，也不等于未来Nexus迁移源停服冷备；本轮不迁移/合并/启Java，无Mac探针。
+旧11来宾全机方案曾成功，但当前job已disabled、旧规则组退役；19,747,582,801B档与21回退档保留，不自动删除。旧CF档只留PVE、发布key只220。新db-only三规则已[热载](completion/20261109-prod-db-scope/alerts-installed.json)，原Prom identity/三名/接收对象保持、无testsend。本机逻辑备份仅[该3301B Nacos小档已在VM210临时隔离恢复](completion/20261109-prod-db-restore/README.md)，完整业务恢复/RPO/RTO/异机DR未签，也不等于未来Nexus迁移源停服冷备；本轮不迁移/合并/启Java，无Mac探针。
 
 备份仍需应用一致性与明确白名单；不能因为同机合并就对220做包含发布私钥的整机备份/快照导出。独立221源冷备和原OS盘在最终核验前保留，不能删除唯一回退点。
 

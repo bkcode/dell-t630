@@ -1,0 +1,48 @@
+{
+  "at": "2026-11-09T18:20:04.735612+08:00",
+  "unit": {
+    "Result": "exit-code",
+    "ExecMainStatus": "1",
+    "ActiveState": "failed",
+    "SubState": "failed"
+  },
+  "sanitized_result": {
+    "version": 1,
+    "run_id": "4d07d2e8fb5e481d9a1b2b7b8a829fd4",
+    "source_run_id": "b16d1ed9ff0a4ff1877179428bd592c6",
+    "started_at": "2026-11-09T10:19:25.913942+00:00",
+    "finished_at": "2026-11-09T10:19:40.706797+00:00",
+    "elapsed_seconds": 14.793,
+    "target_vmid": 210,
+    "source_vmid": 200,
+    "source_archive_bytes": 3301,
+    "source_backup_SHA_unchanged": true,
+    "backup_timer_unchanged": true,
+    "cleanup_command_succeeded": false,
+    "error_type": "RuntimeError",
+    "SQL_or_credentials_exported_to_Mac": false,
+    "production_import_performed": false,
+    "business_RPO_RTO_verified": false,
+    "status": "failed",
+    "guest_report": {
+      "RPO_RTO_approved": false,
+      "cleanup_failed": true,
+      "cleanup_failure_code": "command-failed",
+      "elapsed_seconds": 1.307,
+      "error_type": "Rejected",
+      "failure_code": "command-failed",
+      "finished_at": "2026-11-09T10:19:34.912469+00:00",
+      "format": "dell-prod-db-isolated-restore-v1",
+      "image_id": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+      "independent_DR_claimed": false,
+      "notifications_or_external_connections": false,
+      "production_queried": false,
+      "run_id": "4d07d2e8fb5e481d9a1b2b7b8a829fd4",
+      "source_containers_unchanged": false,
+      "source_credentials_used": false,
+      "stage": "cleanup",
+      "started_at": "2026-11-09T10:19:33.605544+00:00",
+      "status": "failed"
+    }
+  }
+}

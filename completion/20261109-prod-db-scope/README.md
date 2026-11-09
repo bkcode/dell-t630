@@ -26,10 +26,16 @@
 
 告警安装曾遇模板替换解析失败及一次未确认加载；新增文件按已知范围回退，显式文件权限与步骤检查修正后原生校验/热载成功，保留[修正记录](alert-activation-correction.json)和[只读诊断](alert-activation-diagnostic.json)。未因此改接收对象/认证或发送测试通知。
 
+## 后续限定恢复已通过
+
+[恢复中央入口](../20261109-prod-db-restore/README.md)及[最终回执](../20261109-prod-db-restore/semantic-attempt-observation.json)：仅该3301B `nacos_prod`小快照在VM210同镜像临时隔离MySQL恢复通过，12表10行、活跃`config_info`为空；10行为历史/命名空间/认证权限元数据。完整DDL语义/字符集映射、列顺序、全部行摘要、CHECK TABLE与重启持久化通过；guest47.522秒、总59.857秒、PVEunit退出0。临时资源清理、VM210原4服务及源档SHA/timer保持已核。
+
+先前三次失败与cleanup证据保留；最终只对MySQL官方bug110825的冗余CHARACTER SET按实际COLLATIONS映射作同义规范化，未忽略真实类型/索引/COMMENT/字符集差异。小样本恢复不扩签正式业务库、业务RPO/RTO或异机灾备，现行自动备份范围不变。
+
 ## 范围边界
 
 其他VM、整机、测试库、Redis/MQ、NAS媒体、Penpot、Nexus、CF和发布数据不纳入当前自动备份。SQL含Nacos元库必要数据，但不备MySQL系统库/全局账号或凭据文件。新增非系统库未列入白名单会使任务失败并告警，需明确纳入，不能静默漏备。
 
-这是同机逻辑恢复点，未执行SQL恢复、迁移、覆盖现役或独立灾备/RPO/RTO验收；没有启动Java业务。当前小库受限QGA传输，不新增端口/SSH私钥，1GiB压缩与8GiB展开上限之外须另审大库方案。Mac外部探针不需要。原11实例备份的成功收据作为历史保留，不能再据它启用旧job。
+这是同机逻辑恢复点；后续仅该小快照已完成下述VM210临时隔离SQL恢复，没有迁移、覆盖现役、业务库恢复或独立灾备/RPO/RTO验收，也没有启动Java业务。当前小库受限QGA传输，不新增端口/SSH私钥，1GiB压缩与8GiB展开上限之外须另审大库方案。Mac外部探针不需要。原11实例备份的成功收据作为历史保留，不能再据它启用旧job。
 
 维护及实现：[新备份说明](../../infra/backup/prod-db/README.md)、[当前6项验收](acceptance.json)。

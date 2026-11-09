@@ -1,6 +1,6 @@
 # T630 服务目标架构、部署快照与资源边界
 
-更新：2026-11-09。**当前实际仍为12实例，不迁移数据；合并目标仅保留。用户继续完成基础搭建，并将自动备份限定为正式数据库/Nacos配置。** 14:24自然重启后的[PVE审计](completion/20261109/pve-audit.json)确认12running/3停止模板、forward guard跨重启保持全0；[Ops](completion/20261109/ops-audit.json)15UP。[现行正式DB首轮与timer](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)已通过，属于应用逻辑备份，未恢复、非异机灾备。用户物理内存诊断与本轮EDAC0只读结果分开，见[当前状态](01-current-state.md)、[硬件发现](08-hardware-findings.md)。
+更新：2026-11-09。**当前实际仍为12实例，不迁移数据；合并目标仅保留。用户继续完成基础搭建，并将自动备份限定为正式数据库/Nacos配置。** 14:24自然重启后的[PVE审计](completion/20261109/pve-audit.json)确认12running/3停止模板、forward guard跨重启保持全0；[Ops](completion/20261109/ops-audit.json)15UP。[现行正式DB首轮与timer](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)已通过，属于应用逻辑备份，仅[该3301B Nacos小档已在VM210临时隔离恢复](completion/20261109-prod-db-restore/README.md)，完整业务恢复/RPO/RTO/异机DR未签。用户物理内存诊断与本轮EDAC0只读结果分开，见[当前状态](01-current-state.md)、[硬件发现](08-hardware-findings.md)。
 
 ## 1. 当前交付范围
 
@@ -84,7 +84,7 @@ H730/store仍由PVE管理，OMV只独占NAS专用2TiB虚拟盘；数据按真实
 
 现行自动备份**仅限VM200正式MySQL数据库与完整Nacos外部元数据库**；当前唯一非系统库为`nacos_prod`（12张BASE TABLE、全InnoDB），正式业务schema尚未创建。新增非系统库不在显式白名单即拒绝并告警，需审核更新策略，不能静默漏备。PVE落点`/mnt/pve/store/dell-artifacts/prod-db-backups`，目录root700/文件600；首轮逻辑SQL gzip **3,301 bytes**已完成CRC/传输SHA校验、DDL锁释放和guest暂存清理，service退出0；03:30（Asia/Shanghai）timer已enabled，下一次2026-11-10 03:30，GFS最近3/每日7/每周4。见[新首轮与timer回执](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)及[当前中央入口](completion/20261109-prod-db-scope/README.md)。
 
-其他数据均不纳入自动：不备VM/OS、测试数据、Redis/Rabbit、Nexus、Penpot、NAS、Ops或CF文件，220发布私钥继续只留220。旧11来宾全机job已disabled、旧whole-VM告警组已退役；原19,747,582,801 bytes全机归档和21回退档保留，不自动删除。新指标`dell_prod_db_backup_*`及三条db-only规则已原生校验/热载，原Prom身份、既有三告警名和Lark接收对象不变、无人工testsend，见[规则回执](completion/20261109-prod-db-scope/alerts-installed.json)。这是同机应用逻辑备份，不是VM快照；未恢复、未迁移、不签异机灾备或RPO/RTO，Java不启、Nexus不合并、Mac外部探针不需要。
+其他数据均不纳入自动：不备VM/OS、测试数据、Redis/Rabbit、Nexus、Penpot、NAS、Ops或CF文件，220发布私钥继续只留220。旧11来宾全机job已disabled、旧whole-VM告警组已退役；原19,747,582,801 bytes全机归档和21回退档保留，不自动删除。新指标`dell_prod_db_backup_*`及三条db-only规则已原生校验/热载，原Prom身份、既有三告警名和Lark接收对象不变、无人工testsend，见[规则回执](completion/20261109-prod-db-scope/alerts-installed.json)。这是同机应用逻辑备份，不是VM快照；仅[该3301B Nacos小档已在VM210临时隔离恢复](completion/20261109-prod-db-restore/README.md)，完整业务恢复/RPO/RTO/异机DR未签；不迁移，Java不启、Nexus不合并、Mac外部探针不需要。
 
 此前[11档全机首轮成功](completion/20261109/backup-first-success.json)及15:56启用是历史事实，已被用户最新“仅正式数据库/Nacos配置”范围取代；原`dell-local-nightly`不再启用，旧[pve-local实现](infra/backup/pve-local/README.md)退役不可重跑。CF历史档只留PVE，任何旧档/配置均不得因此导出。
 

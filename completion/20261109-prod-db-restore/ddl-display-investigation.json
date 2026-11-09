@@ -1,0 +1,29 @@
+{
+  "status": "native-semantic-DDL-and-content-comparison-passed",
+  "observed": {
+    "table": "config_info",
+    "source_canonical_length": 1509,
+    "restored_canonical_length": 1817,
+    "difference": 308,
+    "non_ascii_characters_equal": true,
+    "client_and_results_charset": "utf8mb4"
+  },
+  "hypothesis": "14 text columns receive redundant explicit CHARACTER SET utf8mb3 after replay;308equals14times22; not yet a passed native semantic comparison",
+  "primary_sources": [
+    {
+      "url": "https://bugs.mysql.com/bug.php?id=110825",
+      "supports": "Verified report: SHOW CREATE TABLE adds explicit COLLATE, then replay adds explicit CHARACTER SET; output is not text-idempotent",
+      "version_scope": "report version8.0.32; current8.4.5 behavior must be proved locally"
+    },
+    {
+      "url": "https://dev.mysql.com/doc/refman/8.4/en/charset-column.html",
+      "supports": "COLLATE alone implies its unique associated character set; explicit matchingCHARACTER SET is semantically redundant"
+    }
+  ],
+  "planned_check": "only quote-aware removal of CHARACTER SET immediately paired with matching COLLATE verified by scratch information_schema.COLLATIONS; preserve all remainingDDL and per-column/data checks",
+  "raw_SQL_literals_or_hashes_recorded": false,
+  "native_result": "native-success.json",
+  "charset_collation_mapping_verified": true,
+  "complete_DDL_semantics_and_all_row_data_match": true,
+  "comment_or_real_charset_collation_differences_ignored": false
+}

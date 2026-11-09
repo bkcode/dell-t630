@@ -1,0 +1,1 @@
+{"status": "verified-redundant-charset-semantics-installed", "worker_SHA": "19494c3d140605c4009699efe62a486ad2dc15f4421e7c3baa62044e9ee3f552", "only_mapping_proved_CHARSET_before_COLLATE_normalized": true, "types_indexes_COMMENT_actual_collation_and_all_rows_still_strict": true, "SQL_executed_or_source_credentials_read": false}

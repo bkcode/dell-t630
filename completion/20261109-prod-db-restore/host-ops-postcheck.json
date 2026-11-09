@@ -1,0 +1,47 @@
+{
+  "PVE": {
+    "at": "2026-11-09T18:45:59.218827+08:00",
+    "backup_timer": {
+      "NextElapseUSecRealtime": "Tue 2026-11-10 03:30:00 CST",
+      "ActiveState": "active",
+      "UnitFileState": "enabled"
+    },
+    "old_whole_VM_job_enabled": 0,
+    "failed_units": []
+  },
+  "Ops": {
+    "at": "2026-11-09T10:45:57.961127+00:00",
+    "targets_count": 15,
+    "targets_UP": 15,
+    "Prom_alert_count": 0,
+    "AM_alert_count": 0,
+    "backup_metrics": {
+      "enabled": [
+        1.0
+      ],
+      "state_valid": [
+        1.0
+      ],
+      "running": [
+        0.0
+      ],
+      "last_run_success": [
+        1.0
+      ],
+      "archive_bytes": [
+        3301.0
+      ]
+    },
+    "Lark_active": true,
+    "test_notifications_sent": false
+  },
+  "checks": {
+    "PVE_no_failed_units": true,
+    "backup_timer_active_enabled": true,
+    "whole_VM_job_still_disabled": true,
+    "targets15UP_noalerts": true,
+    "backup_metadata_healthy": true,
+    "internal_Lark_active": true
+  },
+  "status": "passed"
+}

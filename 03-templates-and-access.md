@@ -93,4 +93,4 @@ Java业务未来若重新获准，需要单独冻结服务清单、非root运行
 
 当前模板、VM系统/镜像与所有非正式DB数据不纳入自动备份；原3模板回退档及旧全机/21档仍保留，不新做模板QA。此前[11档全机首轮成功](completion/20261109/backup-first-success.json)及15:56启用是历史事实，已被用户最新“仅正式数据库/Nacos配置”范围取代；原`dell-local-nightly`不再启用，旧[pve-local实现](infra/backup/pve-local/README.md)退役不可重跑。CF历史档只留PVE，任何旧档/配置均不得因此导出。
 
-不以备份改变clone身份/SSH/JDK和业务禁用边界；未恢复、非异机灾备。
+不以备份改变clone身份/SSH/JDK和业务禁用边界；仅[该3301B Nacos小档已在VM210临时隔离恢复](completion/20261109-prod-db-restore/README.md)，完整业务恢复/RPO/RTO/异机DR未签。

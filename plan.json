@@ -608,7 +608,7 @@
     "evidence": "evidence/implementation/raid-recovered.json",
     "historical_fault": "slot32:3 access failure; root cause unresolved, monitor"
   },
-  "updated_at": "2026-11-09T17:07:14.022135+08:00",
+  "updated_at": "2026-11-09T18:46:50.834115+08:00",
   "docker_runtime_profile": {
     "driver": "classic-overlay2",
     "reason": "Verified compatibility with source single-platform offline archives; preserves config IDs",
@@ -654,7 +654,7 @@
       "current_scope": "production DB/Nacos only; old wholeVM rule group removed"
     }
   },
-  "delivery_scope_manifest": "completion/20261109-prod-db-scope/acceptance.json",
+  "delivery_scope_manifest": "completion/20261109-prod-db-restore/acceptance.json",
   "expected_role_count": 12,
   "network19_migration_manifest": "network19/migration-plan.json",
   "acceptance_templates": [
@@ -792,12 +792,12 @@
     }
   },
   "operational_state": {
-    "as_of": "2026-11-09T17:07:14.022135+08:00",
+    "as_of": "2026-11-09T18:46:50.834115+08:00",
     "status": "recovered-infrastructure-only-no-migration",
     "live_state": "12guests running/3templates stopped/15targetsUP; production DB/Nacos-only logical backup verified and03:30timerenabled; oldwholeVMjobdisabled",
     "last_successful_live_acceptance": "2026-11-09T17:06:01.762963+08:00",
-    "last_successful_PVE_operation": "2026-11-09T16:58:12+08:00",
-    "last_operation": "old wholeVMjob disabled; production DB first3301B verified; timer enabled and collector updated; Ops same-container rule reload verified",
+    "last_successful_PVE_operation": "2026-11-09T18:42:53+08:00",
+    "last_operation": "one3301B Nacos snapshot temporaryVM210restore/fullDDLsemantic+rowcontent+restart validated, ownedruntime cleaned; sourcebackup/timer unchanged",
     "runtime_counts_are_last_verified_not_live": false,
     "resume_requires": "not applicable to infrastructure checks; migration explicitly deferred by user",
     "user_scope_now": "continue infrastructure setup, install and verify local automatic backups; no data migration/Nexus merge/Java business/Macprobe",
@@ -806,7 +806,7 @@
     "hardware_diagnostics": "user reports reseated/replaced and diagnostics passed; current bootEDACce/ue0 independently observed",
     "hardware_evidence": "completion/20261109/pve-audit.json",
     "recovery_manifest": "recovery/20261108/README.md",
-    "current_completion_manifest": "completion/20261109-prod-db-scope/acceptance.json",
+    "current_completion_manifest": "completion/20261109-prod-db-restore/acceptance.json",
     "current_backup_scope_manifest": "completion/20261109-prod-db-scope/acceptance.json"
   },
   "backup_delivery": {
@@ -837,9 +837,15 @@
     "whole_VM_job_enabled": false,
     "other_application_or_test_data_included": false,
     "old_archives_deleted": false,
-    "restore_executed": false,
+    "restore_executed": true,
     "independent_destination_configured": false,
-    "new_unlisted_schema": "fail and alert; never silently omitted"
+    "new_unlisted_schema": "fail and alert; never silently omitted",
+    "restore_scope": "one current3301B nacos_prod snapshot restored only in temporary VM210/MySQL,12tables10rows; no production import or businessdataset/RPO/RTO proof",
+    "restore_evidence": "completion/20261109-prod-db-restore/native-success.json",
+    "restore_restart_persistence_verified": true,
+    "restore_temporary_resources_cleaned": true,
+    "restore_elapsed_seconds": 47.522,
+    "restore_end_to_end_elapsed_seconds": 59.857
   },
   "historical_whole_VM_backup_delivery": {
     "scope": "PVE-local snapshots, not independent disaster recovery",
@@ -876,5 +882,19 @@
     "status": "superseded-by-user-production-DB-only-scope",
     "original_first_11_verified": true,
     "archives_preserved": true
+  },
+  "restore_drill_20261109": {
+    "status": "passed-4of4-native-and-independent-postchecked",
+    "evidence": "completion/20261109-prod-db-restore/native-success.json",
+    "target_vmid": 210,
+    "source_vmid": 200,
+    "source_backup_bytes": 3301,
+    "table_count": 12,
+    "rows": 10,
+    "producer_timer_changed": false,
+    "production_import": false,
+    "business_RPO_RTO_validated": false,
+    "postcheck": "completion/20261109-prod-db-restore/postcheck.json",
+    "host_ops_postcheck": "completion/20261109-prod-db-restore/host-ops-postcheck.json"
   }
 }

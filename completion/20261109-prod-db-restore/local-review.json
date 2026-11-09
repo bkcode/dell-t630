@@ -1,0 +1,11 @@
+{
+  "host_mock_safety_tests": 5,
+  "target_offline_safety_tests": 29,
+  "scope": "source immutable / temp210 only / no SQL or credential export / cleanup of owned resources only",
+  "initial_native_incompatibility": "Docker created container missing State.Health; safe index access fixed; native cleanup verified",
+  "second_native_attempt": "import finished, strict fullDDL comparison rejected; cleanup and source unchanged verified; no pass declaration",
+  "native_restore_passed": true,
+  "native_result": "native-success.json",
+  "source_backup_or_timer_modified": false,
+  "source_or_temporary_password_values_exported": false
+}

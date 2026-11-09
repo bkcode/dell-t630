@@ -213,7 +213,7 @@
       "verification_scope": "historical-completed-stage-not-current-live"
     }
   ],
-  "updated_at": "2026-11-09T17:07:14.022135+08:00",
+  "updated_at": "2026-11-09T18:46:50.834115+08:00",
   "implementation_note": "Original IMP entries describe the prior completed baseline. Latest user scope overrides Java program deployment: five test services are stopped/disabled, publisher fenced, only acceptance template9011 current.",
   "overall_status": "existing-infrastructure-recovered-user-deferred-migration",
   "network19_execution": [
@@ -398,5 +398,16 @@
       "nacos_prod"
     ],
     "restore_or_migration": false
+  },
+  "restore_drill_20261109": {
+    "status": "completed",
+    "acceptance_manifest": "completion/20261109-prod-db-restore/acceptance.json",
+    "phase_cases_passed": 4,
+    "phase_case_count": 4,
+    "dataset": "nacos_prod12tables10rows3301B archivedSQL",
+    "temporary_target_vmid": 210,
+    "production_import_or_migration": false,
+    "runtime_resources_cleaned": true,
+    "RPO_RTO_or_independent_DR_approved": false
   }
 }

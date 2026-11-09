@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "status": "passed-one-Nacos-snapshot-isolated-restore",
+  "scope": "one isolated restore drill explicitly authorized by user",
+  "cases": [
+    {
+      "id": "RESTORE-ISOLATION-001",
+      "title": "目标隔离与源保护",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确授权执行隔离恢复第1项",
+        "只使用既有PVE正式nacos_prod备份，目标为VM210临时实例"
+      ],
+      "steps": [
+        "核对当次实际成功报告、unit退出状态、源SHA/timer和源服务后检"
+      ],
+      "observable_pass_conditions": [
+        "3301B/12表/10行，完整DDL语义(仅映射证明冗余CS规范化)及全部列内容/CHECKTABLE/重启匹配；精确清理、源档SHA/timer及现役服务保持"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-prod-db-restore/native-success.json",
+          "note": "Actual one-snapshot native proof; no production import or businessRPO/RTO claim"
+        },
+        {
+          "path": "completion/20261109-prod-db-restore/postcheck.json",
+          "note": "Actual one-snapshot native proof; no production import or businessRPO/RTO claim"
+        },
+        {
+          "path": "completion/20261109-prod-db-restore/host-ops-postcheck.json",
+          "note": "Actual one-snapshot native proof; no production import or businessRPO/RTO claim"
+        }
+      ],
+      "verification_scope": "one archivedNacosSQL snapshot only; no businessRPO/RTO or fullDR",
+      "verified_at": "2026-11-09T18:46:50.834115+08:00"
+    },
+    {
+      "id": "RESTORE-DATA-001",
+      "title": "完整表结构与逐列内容",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确授权执行隔离恢复第1项",
+        "只使用既有PVE正式nacos_prod备份，目标为VM210临时实例"
+      ],
+      "steps": [
+        "核对当次实际成功报告、unit退出状态、源SHA/timer和源服务后检"
+      ],
+      "observable_pass_conditions": [
+        "3301B/12表/10行，完整DDL语义(仅映射证明冗余CS规范化)及全部列内容/CHECKTABLE/重启匹配；精确清理、源档SHA/timer及现役服务保持"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-prod-db-restore/native-success.json",
+          "note": "Actual one-snapshot native proof; no production import or businessRPO/RTO claim"
+        },
+        {
+          "path": "completion/20261109-prod-db-restore/postcheck.json",
+          "note": "Actual one-snapshot native proof; no production import or businessRPO/RTO claim"
+        },
+        {
+          "path": "completion/20261109-prod-db-restore/host-ops-postcheck.json",
+          "note": "Actual one-snapshot native proof; no production import or businessRPO/RTO claim"
+        }
+      ],
+      "verification_scope": "one archivedNacosSQL snapshot only; no businessRPO/RTO or fullDR",
+      "verified_at": "2026-11-09T18:46:50.834115+08:00"
+    },
+    {
+      "id": "RESTORE-PERSISTENCE-001",
+      "title": "临时重启后持久化",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确授权执行隔离恢复第1项",
+        "只使用既有PVE正式nacos_prod备份，目标为VM210临时实例"
+      ],
+      "steps": [
+        "核对当次实际成功报告、unit退出状态、源SHA/timer和源服务后检"
+      ],
+      "observable_pass_conditions": [
+        "3301B/12表/10行，完整DDL语义(仅映射证明冗余CS规范化)及全部列内容/CHECKTABLE/重启匹配；精确清理、源档SHA/timer及现役服务保持"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-prod-db-restore/native-success.json",
+          "note": "Actual one-snapshot native proof; no production import or businessRPO/RTO claim"
+        },
+        {
+          "path": "completion/20261109-prod-db-restore/postcheck.json",
+          "note": "Actual one-snapshot native proof; no production import or businessRPO/RTO claim"
+        },
+        {
+          "path": "completion/20261109-prod-db-restore/host-ops-postcheck.json",
+          "note": "Actual one-snapshot native proof; no production import or businessRPO/RTO claim"
+        }
+      ],
+      "verification_scope": "one archivedNacosSQL snapshot only; no businessRPO/RTO or fullDR",
+      "verified_at": "2026-11-09T18:46:50.834115+08:00"
+    },
+    {
+      "id": "RESTORE-CLEANUP-001",
+      "title": "自有资源清理与原服务保持",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确授权执行隔离恢复第1项",
+        "只使用既有PVE正式nacos_prod备份，目标为VM210临时实例"
+      ],
+      "steps": [
+        "核对当次实际成功报告、unit退出状态、源SHA/timer和源服务后检"
+      ],
+      "observable_pass_conditions": [
+        "3301B/12表/10行，完整DDL语义(仅映射证明冗余CS规范化)及全部列内容/CHECKTABLE/重启匹配；精确清理、源档SHA/timer及现役服务保持"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-prod-db-restore/native-success.json",
+          "note": "Actual one-snapshot native proof; no production import or businessRPO/RTO claim"
+        },
+        {
+          "path": "completion/20261109-prod-db-restore/postcheck.json",
+          "note": "Actual one-snapshot native proof; no production import or businessRPO/RTO claim"
+        },
+        {
+          "path": "completion/20261109-prod-db-restore/host-ops-postcheck.json",
+          "note": "Actual one-snapshot native proof; no production import or businessRPO/RTO claim"
+        }
+      ],
+      "verification_scope": "one archivedNacosSQL snapshot only; no businessRPO/RTO or fullDR",
+      "verified_at": "2026-11-09T18:46:50.834115+08:00"
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "current_phase_case_count": 4,
+    "current_phase_passed": 4,
+    "statuses": {
+      "passed": 4
+    }
+  },
+  "not_required_or_deferred": [
+    "fullbusiness datasets orRPO/RTO",
+    "Nacosruntime login/JVM/keys",
+    "independentDRdestination",
+    "productionimports/migration"
+  ],
+  "generated_at": "2026-11-09T18:46:50.834115+08:00",
+  "coverage_limits": [
+    "current config_info activebusinessrows0;10metadata rows only",
+    "no NacosJVM/login/sourcekeys/businessdataset",
+    "timing sample only; not RPO/RTO or independentDR"
+  ]
+}

@@ -176,5 +176,11 @@
     "scope": "only production MySQL/Nacos logical backup; all other data excluded",
     "evidence": "completion/20261109-prod-db-scope/first-success-and-timer-enabled.json",
     "old_wholeVM_archives_preserved": true
+  },
+  "isolated_restore_drill": {
+    "status": "verified-and-cleaned",
+    "scope": "one3301B nacos_prod snapshot temporarily restored onVM210; no production/testmanagedDB writes",
+    "evidence": "completion/20261109-prod-db-restore/native-success.json",
+    "RPO_RTO_or_independent_DR_validated": false
   }
 }

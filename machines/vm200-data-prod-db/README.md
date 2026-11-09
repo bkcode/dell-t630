@@ -6,7 +6,7 @@
 
 14:42:56–14:43:40分项采样：hostname/19.10/GW与DNS19.1正确，原数据UUID/ext4/rw、监督active、1容器running/healthy/RestartCount0，NTP同步、exporter和collector timer正常、failed units空。正式业务schema未创建；该14:42只读审计没有读库内容/重验权限，后续新授权的逻辑备份见下方独立回执。 证据：[本机分项审计](../../completion/20261109/core-audit.json)。
 
-本机是当前唯一自动备份源：仅正式MySQL数据库与完整Nacos外部元库。当前只有nacos_prod/12表，正式业务schema尚未创建。 现行仅正式DB/Nacos逻辑SQL导出（非VM snapshot），PVE落点`/mnt/pve/store/dell-artifacts/prod-db-backups` root700/600；新未列白名单数据库拒绝告警、需更新。03:30/GFS最近3＋每日7＋每周4，首轮3301B与timer见[新回执](../../completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)，实际监控/收尾统一见[新中央入口](../../completion/20261109-prod-db-scope/README.md)。旧11来宾job已disabled、原19,747,582,801B档与21回退档保留不自动删；未restore/无异机DR，不迁移/合并/启Java、无Mac探针。
+本机是当前唯一自动备份源：仅正式MySQL数据库与完整Nacos外部元库。当前只有nacos_prod/12表，正式业务schema尚未创建。 现行仅正式DB/Nacos逻辑SQL导出（非VM snapshot），PVE落点`/mnt/pve/store/dell-artifacts/prod-db-backups` root700/600；新未列白名单数据库拒绝告警、需更新。03:30/GFS最近3＋每日7＋每周4，首轮3301B与timer见[新回执](../../completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)，实际监控/收尾统一见[新中央入口](../../completion/20261109-prod-db-scope/README.md)。旧11来宾job已disabled、原19,747,582,801B档与21回退档保留不自动删；仅[该3301B Nacos小档已在VM210临时隔离恢复](../../completion/20261109-prod-db-restore/README.md)，完整业务恢复/RPO/RTO/异机DR未签，不迁移/合并/启Java、无Mac探针。
 
 **配置合同与带时点基础审计，非完整运行配置导出。** 11月7日UEFI0058/B1事故与当日02:35旧基线保留历史；用户11月8日确认内存处理/诊断通过，11月9日已按下列证据重新核验基础状态。本页文档同步没有远程变更，也不把健康状态扩写为业务数据/权限或完整恢复通过。
 

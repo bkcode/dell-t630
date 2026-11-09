@@ -1,0 +1,47 @@
+{
+  "at": "2026-11-09T18:27:30.476299+08:00",
+  "unit": {
+    "Result": "exit-code",
+    "ExecMainStatus": "1",
+    "ActiveState": "failed",
+    "SubState": "failed"
+  },
+  "sanitized_result": {
+    "version": 1,
+    "run_id": "c00cce90b1534114a7eaeabcefc439e6",
+    "source_run_id": "b16d1ed9ff0a4ff1877179428bd592c6",
+    "started_at": "2026-11-09T10:26:15.749040+00:00",
+    "finished_at": "2026-11-09T10:26:49.403666+00:00",
+    "elapsed_seconds": 33.655,
+    "target_vmid": 210,
+    "source_vmid": 200,
+    "source_archive_bytes": 3301,
+    "source_backup_SHA_unchanged": true,
+    "backup_timer_unchanged": true,
+    "cleanup_command_succeeded": true,
+    "error_type": "RuntimeError",
+    "SQL_or_credentials_exported_to_Mac": false,
+    "production_import_performed": false,
+    "business_RPO_RTO_verified": false,
+    "status": "failed",
+    "guest_report": {
+      "RPO_RTO_approved": false,
+      "cleanup_failed": false,
+      "elapsed_seconds": 20.467,
+      "error_type": "Rejected",
+      "failure_code": "full-table-ddl-mismatch",
+      "finished_at": "2026-11-09T10:26:43.938721+00:00",
+      "format": "dell-prod-db-isolated-restore-v1",
+      "image_id": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+      "independent_DR_claimed": false,
+      "notifications_or_external_connections": false,
+      "production_queried": false,
+      "run_id": "c00cce90b1534114a7eaeabcefc439e6",
+      "source_containers_unchanged": true,
+      "source_credentials_used": false,
+      "stage": "compare",
+      "started_at": "2026-11-09T10:26:23.472026+00:00",
+      "status": "failed"
+    }
+  }
+}

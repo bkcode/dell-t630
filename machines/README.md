@@ -50,7 +50,7 @@
 
 [首轮与timer](../completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)3301B已CRC/传输SHA/锁释放/暂存清理通过，03:30 timer enabled（next2026-11-10），GFS3/7/4，PVE目的地`/mnt/pve/store/dell-artifacts/prod-db-backups` root700/600。[新规则](../completion/20261109-prod-db-scope/alerts-installed.json)已使用db-only指标热载，原Prom identity/三名/接收对象保持，无testsend；最终状态见[新中央入口](../completion/20261109-prod-db-scope/README.md)。
 
-旧11来宾全机jobdisabled、旧规则组退役；19,747,582,801B旧全机档、21回退档和模板回退资料保留，不自动删。历史CF档仅PVE，发布私钥仅220；不把归档放机器目录/Git。当前是应用逻辑备份、非VM快照，未restore/无异机DR/RPO保证，不迁移/合并/启Java、无Mac探针；OW规则只本地不触上传。
+旧11来宾全机jobdisabled、旧规则组退役；19,747,582,801B旧全机档、21回退档和模板回退资料保留，不自动删。历史CF档仅PVE，发布私钥仅220；不把归档放机器目录/Git。当前是应用逻辑备份、非VM快照，仅[该3301B Nacos小档已在VM210临时隔离恢复](../completion/20261109-prod-db-restore/README.md)，完整业务恢复/RPO/RTO/异机DR未签，不迁移/合并/启Java、无Mac探针；OW规则只本地不触上传。
 
 ## 秘密、操作与检查
 

@@ -1,0 +1,15 @@
+{
+  "target_vmid": 210,
+  "QGA_version": "10.0.13",
+  "native_verified_commands": [
+    "guest-file-open",
+    "guest-file-write",
+    "guest-file-flush",
+    "guest-file-close",
+    "guest-exec",
+    "guest-exec-status"
+  ],
+  "status": "enabled-native-info-query",
+  "artifact_or_SQL_contents_read": false,
+  "guest_files_written": false
+}

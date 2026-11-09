@@ -135,5 +135,11 @@
       "vmid": 200,
       "database": "nacos_prod"
     }
+  },
+  "isolated_restore_drill": {
+    "status": "verified-and-cleaned",
+    "scope": "one3301B nacos_prod snapshot temporarily restored onVM210; no production/testmanagedDB writes",
+    "evidence": "completion/20261109-prod-db-restore/native-success.json",
+    "RPO_RTO_or_independent_DR_validated": false
   }
 }

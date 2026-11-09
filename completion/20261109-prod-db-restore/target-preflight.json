@@ -1,0 +1,468 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-11-09T09:59:41.016883+00:00",
+  "scope": "readonly isolatedproductionDBrestore targetresource/image preflight; no restoreexecution",
+  "proposed_restore_limits": {
+    "cpu_cap": 1,
+    "memory_cap_bytes": 1073741824,
+    "network": "none",
+    "published_ports": [],
+    "data": "new independentlyownedtemporarydirectory onselected assigneddatafilesystem; not created",
+    "credentials": "future newtemporaryrestoreidentity only; not read/generatedhere"
+  },
+  "production_expected_ImageID": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+  "guests": [
+    {
+      "vmid": 200,
+      "role": "data-prod-db",
+      "captured_at": "2026-11-09T09:59:39.827501+00:00",
+      "CPU_count": 6,
+      "load_average": [
+        0.046875,
+        0.087890625,
+        0.08544921875
+      ],
+      "memory_bytes": {
+        "MemTotal": 16776511488,
+        "MemAvailable": 14908239872,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "data_mount": {
+        "filesystems": [
+          {
+            "target": "/srv/dell-data",
+            "source": "/dev/sdb",
+            "fstype": "ext4",
+            "uuid": "d61c0e22-941e-447a-9e9a-1e9e50deb02f"
+          }
+        ]
+      },
+      "expected_data_UUID": "d61c0e22-941e-447a-9e9a-1e9e50deb02f",
+      "mount_matches": true,
+      "data_capacity_bytes": 83955703808,
+      "data_free_bytes": 83714396160,
+      "containers": [
+        {
+          "Name": "/dell-data-prod-db-mysql-1",
+          "ID": "b1a1e926f9ca92d717dbb903a313315a74749f7a942528096cb57cea8abee0ca",
+          "ImageID": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        }
+      ],
+      "images": {
+        "current_mysql_image": {
+          "ID": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+          "OS": "linux",
+          "Architecture": "amd64",
+          "RepoDigests": [
+            "mysql@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840"
+          ],
+          "RepoTags": [],
+          "image_size_bytes": 776618168
+        },
+        "production_exact_cached_image": {
+          "ID": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+          "OS": "linux",
+          "Architecture": "amd64",
+          "RepoDigests": [
+            "mysql@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840"
+          ],
+          "RepoTags": [],
+          "image_size_bytes": 776618168
+        }
+      },
+      "selected_current_container_stats": [
+        {
+          "Name": "dell-data-prod-db-mysql-1",
+          "CPUPerc": "2.35%",
+          "MemoryUsage": "1.281GiB / 12GiB",
+          "PIDs": "44"
+        }
+      ],
+      "read_only": true,
+      "Env_Cmd_config_credentials_SQL_read": false,
+      "containers_directories_pulls_or_mutations": false,
+      "status": "collected"
+    },
+    {
+      "vmid": 210,
+      "role": "data-test",
+      "captured_at": "2026-11-09T09:59:40.993527+00:00",
+      "CPU_count": 2,
+      "load_average": [
+        0.2158203125,
+        0.30712890625,
+        0.3759765625
+      ],
+      "memory_bytes": {
+        "MemTotal": 4112924672,
+        "MemAvailable": 2604879872,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "data_mount": {
+        "filesystems": [
+          {
+            "target": "/srv/dell-data",
+            "source": "/dev/sdb",
+            "fstype": "ext4",
+            "uuid": "dd1773f9-aa48-4401-a9c8-caf0f66845f3"
+          }
+        ]
+      },
+      "expected_data_UUID": "dd1773f9-aa48-4401-a9c8-caf0f66845f3",
+      "mount_matches": true,
+      "data_capacity_bytes": 41956900864,
+      "data_free_bytes": 39989497856,
+      "containers": [
+        {
+          "Name": "/dell-data-test-data-nacos-1",
+          "ID": "5bd9a27fd4051994494eed423d84e50862ef91918ffbfa4834df14de2a8f2e4c",
+          "ImageID": "sha256:fc86d4833afb7abc64006f04c715946303f6b15d694c2f05c2895a27d967ed88",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "Name": "/dell-data-test-data-rabbitmq-1",
+          "ID": "4d955f668d96330c7d9cbe676ec41722a1d3c67038a52d89f0c3f8f11866ce58",
+          "ImageID": "sha256:de912cbbf07f938bb8aaa5682464a73a00c6a996efdf0880423aeb4eae006c34",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "Name": "/dell-data-test-data-mysql-1",
+          "ID": "df4e9d159f5903e42ab4e6c2c092d2d454ac55a76c226fc8a07fe44c72b41ef6",
+          "ImageID": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "Name": "/dell-data-test-data-redis-1",
+          "ID": "b5d49893d99c73d425f0af035dce837f1467a096841d7bbae3f7d5381ce3df22",
+          "ImageID": "sha256:17c1c1b96fd1685968790c7fcab311e5bc49c809efe9744af262640a559c4cf2",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        }
+      ],
+      "images": {
+        "current_mysql_image": {
+          "ID": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+          "OS": "linux",
+          "Architecture": "amd64",
+          "RepoDigests": [
+            "mysql@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840"
+          ],
+          "RepoTags": [],
+          "image_size_bytes": 776618168
+        },
+        "production_exact_cached_image": {
+          "ID": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+          "OS": "linux",
+          "Architecture": "amd64",
+          "RepoDigests": [
+            "mysql@sha256:bd045a5ea8c8d25f497731fea5c50c3aceae7bb22bff543c424bb60052d55840"
+          ],
+          "RepoTags": [],
+          "image_size_bytes": 776618168
+        }
+      },
+      "selected_current_container_stats": [
+        {
+          "Name": "dell-data-test-data-nacos-1",
+          "CPUPerc": "1.79%",
+          "MemoryUsage": "555.6MiB / 1GiB",
+          "PIDs": "164"
+        },
+        {
+          "Name": "dell-data-test-data-rabbitmq-1",
+          "CPUPerc": "0.23%",
+          "MemoryUsage": "164.1MiB / 512MiB",
+          "PIDs": "28"
+        },
+        {
+          "Name": "dell-data-test-data-mysql-1",
+          "CPUPerc": "0.91%",
+          "MemoryUsage": "301.4MiB / 896MiB",
+          "PIDs": "38"
+        },
+        {
+          "Name": "dell-data-test-data-redis-1",
+          "CPUPerc": "0.58%",
+          "MemoryUsage": "23.01MiB / 256MiB",
+          "PIDs": "6"
+        }
+      ],
+      "read_only": true,
+      "Env_Cmd_config_credentials_SQL_read": false,
+      "containers_directories_pulls_or_mutations": false,
+      "status": "collected"
+    }
+  ],
+  "assessment": {
+    "200": {
+      "checks": {
+        "dedicated_data_UUID_matches": true,
+        "exact_production_AMD64_image_cached": true,
+        "current_mysql_same_exact_ImageID": true,
+        "current_all_selected_healthy_restart0": true,
+        "available_at_least_1GiB_plus_512MiB_headroom": true,
+        "data_free_at_least_2GiB": true
+      },
+      "sample_suitable_for_1CPU_1GiB_restore": true,
+      "remaining_MemAvailable_after_1GiB_cap_bytes": 13834498048,
+      "capacity_limitation": "Point-in-time available memory/load, not reservationor guarantee; recheckbeforecreate. Restoreverification mustnot contend withproductionwriters."
+    },
+    "210": {
+      "checks": {
+        "dedicated_data_UUID_matches": true,
+        "exact_production_AMD64_image_cached": true,
+        "current_mysql_same_exact_ImageID": true,
+        "current_all_selected_healthy_restart0": true,
+        "available_at_least_1GiB_plus_512MiB_headroom": true,
+        "data_free_at_least_2GiB": true
+      },
+      "sample_suitable_for_1CPU_1GiB_restore": true,
+      "remaining_MemAvailable_after_1GiB_cap_bytes": 1531138048,
+      "capacity_limitation": "Point-in-time available memory/load, not reservationor guarantee; recheckbeforecreate. Restoreverification mustnot contend withproductionwriters."
+    }
+  },
+  "recommended_target_vmid": 210,
+  "selection_policy": "Prefer210 forseparationfromprod200 ifsameimage/resourceheadroom; otherwise200spare onlyexplicitrootapprovedtemporaryisolatedwindow.",
+  "server_mutations_pulls_directory_or_container_creates": false,
+  "known_hosts_modified": false,
+  "limitations": [
+    "Imageversion derivedfromcachedRepoTags/Digests, notcontainerEnv/Cmd orproductionSQL.",
+    "1CPU/1GiB limits arecaps sharingguestresources, notreserved capacity.",
+    "NoSQL/config/credential/backupfile contents read or transferred."
+  ],
+  "supervisor_coexistence_review": {
+    "vmid": 210,
+    "at": "2026-11-09T10:03:03.039132+00:00",
+    "read_only": true,
+    "source_files": {
+      "manager": {
+        "path": "/opt/dell/data/test-data/scripts/manage.py",
+        "SHA256": "b86e6c8339fc3ebc9151258849d78276d91e179692be588ce5bcdd344b341a10",
+        "selected_functions": [
+          {
+            "function": "compose",
+            "start_line": 31,
+            "end_line": 32,
+            "public_source_lines": [
+              "def compose(*args):",
+              "    return run(['docker','--host','unix:///var/run/docker.sock','compose','--env-file',str(BUNDLE/'.env'),'-f',str(BUNDLE/'compose.yaml'),*args], 'compose '+args[0])"
+            ]
+          },
+          {
+            "function": "states",
+            "start_line": 145,
+            "end_line": 149,
+            "public_source_lines": [
+              "def states():",
+              "    names=compose('ps','--all','--quiet').split()",
+              "    if not names:return []",
+              "    raw=json.loads(run(['docker','--host','unix:///var/run/docker.sock','inspect',*names],'inspect target health'))",
+              "    return [{'service':d['Config']['Labels']['com.docker.compose.service'],'state':d['State']['Status'],'health':d['State'].get('Health',{}).get('Status'),'restart_count':d['RestartCount']} for d in raw]"
+            ]
+          },
+          {
+            "function": "require_complete_health",
+            "start_line": 151,
+            "end_line": 157,
+            "public_source_lines": [
+              "def require_complete_health(expected,current):",
+              "    names=[item['service'] for item in current]",
+              "    if len(names)!=len(expected) or set(names)!=set(expected):",
+              "        raise RuntimeError('configured and actual service sets differ')",
+              "    if not all(item['state']=='running' and item['health']=='healthy' for item in current):",
+              "        raise RuntimeError('not all configured role containers are healthy')",
+              "    return current"
+            ]
+          },
+          {
+            "function": "supervise",
+            "start_line": 316,
+            "end_line": 329,
+            "public_source_lines": [
+              "def supervise(c):",
+              "    # Docker has restart=no. This process and systemd own all recovery.",
+              "    try:",
+              "        verify_data_mount(c)",
+              "        compose('up','-d')",
+              "        wait_healthy()",
+              "        expected=set(compose('config','--services').split())",
+              "        while True:",
+              "            verify_data_mount(c)",
+              "            require_complete_health(expected,states())",
+              "            time.sleep(5)",
+              "    finally:",
+              "        # Keep this independent of mount/IP availability: stop writers on failure.",
+              "        compose('stop','--timeout','90')"
+            ]
+          }
+        ],
+        "docker_container_enumeration_present": null
+      },
+      "guest_collector": {
+        "path": "/opt/dell/guest-monitoring/collect-guest-health.py",
+        "SHA256": "cfeeab7ff46f8baa0b7223baf510c043c554f0ce377cb5d3c02d4d741d6119a1",
+        "selected_functions": [
+          {
+            "function": "validate",
+            "start_line": 18,
+            "end_line": 41,
+            "public_source_lines": [
+              "def validate(c,addresses):",
+              "    if set(c)-{'role','private_ip','textfile_directory','services','http_checks','candidate_service_units','candidate_http_checks','notes'}:raise ValueError('unknown config fields; do not put secrets or headers in health config')",
+              "    if not re.fullmatch(r'[a-z0-9][a-z0-9-]{0,62}',c.get('role','')):raise ValueError('invalid role label')",
+              "    if c.get('textfile_directory')!=str(TEXTFILE_DIR):raise ValueError('unexpected textfile directory')",
+              "    if c.get('private_ip') not in addresses:raise ValueError('assigned private address is not configured')",
+              "    services=c.get('services',[]);checks=c.get('http_checks',[])",
+              "    if len(services)>32 or len(checks)>8:raise ValueError('collector limits exceeded')",
+              "    if len(set(services))!=len(services):raise ValueError('duplicate unit')",
+              "    for unit in services:",
+              "        if not re.fullmatch(r'[A-Za-z0-9_.@:-]+\\.service',unit):raise ValueError('invalid service unit')",
+              "    for check in checks+c.get('candidate_http_checks',[]):",
+              "        if set(check)!={'name','url'}:raise ValueError('health checks accept only name and credential-free URL')",
+              "        if not re.fullmatch(r'[A-Za-z0-9_.-]{1,80}',check.get('name','')):raise ValueError('invalid health-check label')",
+              "        u=urlsplit(check.get('url',''))",
+              "        if u.scheme not in ('http','https') or not u.hostname or u.username or u.password or u.query or u.fragment:raise ValueError('credential/query-bearing health URL rejected')",
+              "        if u.hostname!='localhost':",
+              "            try:ipaddress.ip_address(u.hostname)",
+              "            except ValueError:raise ValueError('literal local address required') from None",
+              "            if u.hostname not in addresses:raise ValueError('health endpoint must be on this guest')",
+              "        if (u.path or '/') not in ALLOWED_PATHS:raise ValueError('only health/root read paths are allowed')",
+              "        try:port=u.port or (443 if u.scheme=='https' else 80)",
+              "        except ValueError:raise ValueError('invalid local health port') from None",
+              "        if not 1<=port<=65535:raise ValueError('invalid local health port')",
+              "    return c"
+            ]
+          },
+          {
+            "function": "unit_state",
+            "start_line": 43,
+            "end_line": 49,
+            "public_source_lines": [
+              "def unit_state(unit):",
+              "    try:p=subprocess.run(['systemctl','show','--no-pager','--property=LoadState','--property=ActiveState',unit],capture_output=True,text=True,timeout=5)",
+              "    except subprocess.TimeoutExpired:return 0,0,False",
+              "    if p.returncode:return 0,0,False",
+              "    values=dict(x.split('=',1) for x in p.stdout.splitlines() if '=' in x)",
+              "    if set(values)!={'LoadState','ActiveState'}:return 0,0,False",
+              "    return int(values['LoadState']=='loaded'),int(values['ActiveState']=='active'),True"
+            ]
+          },
+          {
+            "function": "http_state",
+            "start_line": 51,
+            "end_line": 59,
+            "public_source_lines": [
+              "def http_state(url):",
+              "    try:",
+              "        request=urllib.request.Request(url,method='GET',headers={'User-Agent':'dell-local-health/1'})",
+              "        with urllib.request.build_opener(NoRedirect).open(request,timeout=3) as response:",
+              "            response.read(1024)",
+              "            return int(response.status==200),response.status",
+              "    except urllib.error.HTTPError as error:",
+              "        code=error.code;error.close();return 0,code",
+              "    except (OSError,ValueError):return 0,0"
+            ]
+          },
+          {
+            "function": "collect",
+            "start_line": 63,
+            "end_line": 75,
+            "public_source_lines": [
+              "def collect(c):",
+              "    role='role=\"'+label(c['role'])+'\"';lines=[];read_ok=True",
+              "    lines+=['# TYPE dell_guest_service_present gauge','# TYPE dell_guest_service_active gauge']",
+              "    for unit in c.get('services',[]):",
+              "        present,active,readable=unit_state(unit);read_ok=read_ok and readable",
+              "        tags=role+',service=\"'+label(unit)+'\"'",
+              "        lines+=['dell_guest_service_present{'+tags+'} '+str(present),'dell_guest_service_active{'+tags+'} '+str(active)]",
+              "    lines+=['# TYPE dell_guest_http_up gauge','# TYPE dell_guest_http_status_code gauge']",
+              "    for check in c.get('http_checks',[]):",
+              "        up,code=http_state(check['url']);tags=role+',check=\"'+label(check['name'])+'\"'",
+              "        lines+=['dell_guest_http_up{'+tags+'} '+str(up),'dell_guest_http_status_code{'+tags+'} '+str(code)]",
+              "    lines+=['# TYPE dell_guest_health_collection_success gauge','dell_guest_health_collection_success{'+role+'} '+str(int(read_ok)),'# TYPE dell_guest_health_collection_timestamp_seconds gauge','dell_guest_health_collection_timestamp_seconds{'+role+'} '+format(time.time(),'.3f')]",
+              "    return '\\n'.join(lines)+'\\n',read_ok"
+            ]
+          }
+        ],
+        "docker_container_enumeration_present": false
+      }
+    },
+    "owned_project_current_containers": [
+      {
+        "Name": "/dell-data-test-data-nacos-1",
+        "ID": "5bd9a27fd4051994494eed423d84e50862ef91918ffbfa4834df14de2a8f2e4c",
+        "Health": "healthy",
+        "State": "running",
+        "project": "dell-data-test-data",
+        "service": "nacos"
+      },
+      {
+        "Name": "/dell-data-test-data-mysql-1",
+        "ID": "df4e9d159f5903e42ab4e6c2c092d2d454ac55a76c226fc8a07fe44c72b41ef6",
+        "Health": "healthy",
+        "State": "running",
+        "project": "dell-data-test-data",
+        "service": "mysql"
+      },
+      {
+        "Name": "/dell-data-test-data-redis-1",
+        "ID": "b5d49893d99c73d425f0af035dce837f1467a096841d7bbae3f7d5381ce3df22",
+        "Health": "healthy",
+        "State": "running",
+        "project": "dell-data-test-data",
+        "service": "redis"
+      },
+      {
+        "Name": "/dell-data-test-data-rabbitmq-1",
+        "ID": "4d955f668d96330c7d9cbe676ec41722a1d3c67038a52d89f0c3f8f11866ce58",
+        "Health": "healthy",
+        "State": "running",
+        "project": "dell-data-test-data",
+        "service": "rabbitmq"
+      }
+    ]
+  },
+  "supervisor_coexistence_local_assembly": "firstlocalassert expectedcompose(stop) exactsubstring, actualvariantrequiresmanualfunctionreview; no serveraction",
+  "supervisor_coexistence_conclusion": {
+    "status": "source-reviewed-compatible-project-isolation",
+    "temporary_non_Compose_drill_expected_ignored": true,
+    "actual_project": "dell-data-test-data",
+    "manager_filter_basis": "states() uses compose(ps,--all,--quiet) fromassignedbundle; expectedservices fromsameCompose; onlyinspectthoseIDs. supervisefinallyusescompose(stop,--timeout,90), no globalDockerstopall.",
+    "guest_collector_container_enumeration": false,
+    "guest_collector_behavior": "only approved systemdunitstate andfixedlocalanonymousHTTP; noDockerproject/containercount enforcement",
+    "temporary_requirements": {
+      "forbidden_original_compose_project_label": "dell-data-test-data",
+      "labels": {
+        "dell.owner": "db-restore-drill",
+        "run": "32hexnonce"
+      },
+      "network": "none",
+      "published_ports": [],
+      "data": "independentroot700child onassignedtestfilesystem; do notuseexistingMySQLbind"
+    },
+    "original_four_running_healthy": true,
+    "limitations": [
+      "Code+labelbased determination; no temporarycontainer injected orsupervisorfaulttest.",
+      "Resourceconsumption anddisk IO shared; fresh memory/space gate stillrequired.",
+      "Anyfuture globalruntimeaudit mustexcludeexplicitowneddrill container ratherthan countit asproduction."
+    ],
+    "no_server_mutation_or_helper_invocation": true
+  }
+}

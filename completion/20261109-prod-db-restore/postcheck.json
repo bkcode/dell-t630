@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-11-09T10:44:50.765580+00:00",
+  "restore_run_id": "f9ffa0866ba748cfb9e8c8c54470cf3f",
+  "restore_drill_started_at": "2026-11-09T10:41:53.153316+00:00",
+  "scope": "finalread-only200201210container/sourcehealth/tempcleanup metadata only",
+  "source_baselines": {
+    "200_210": "target-preflight.json currentselectedcontainerID/ImageID",
+    "201": "completion/20261109/core-audit.json IDs plusapprovedimageIDs"
+  },
+  "results": [
+    {
+      "vmid": 200,
+      "hostname": "data-prod-db",
+      "at": "2026-11-09T10:44:50.449087+00:00",
+      "read_only": true,
+      "containers": [
+        {
+          "Name": "/dell-data-prod-db-mysql-1",
+          "ID": "b1a1e926f9ca92d717dbb903a313315a74749f7a942528096cb57cea8abee0ca",
+          "ImageID": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+          "PID": 1297,
+          "StartedAt": "2026-11-09T06:26:09.350854915Z",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        }
+      ],
+      "no_Env_Cmd_credentials_or_SQL_contents_read": true,
+      "server_mutations": false,
+      "checks": {
+        "all_original_containers_running_healthy": true,
+        "restart_zero_no_OOM": true,
+        "PID_positive": true,
+        "all_started_before_restore_drill": true,
+        "IDs_and_ImageIDs_match_target_preflight": true
+      },
+      "status": "passed-readonly-postcheck"
+    },
+    {
+      "vmid": 201,
+      "hostname": "data-prod-infra",
+      "at": "2026-11-09T10:44:50.419455+00:00",
+      "read_only": true,
+      "containers": [
+        {
+          "Name": "/dell-data-prod-infra-redis-1",
+          "ID": "b940153fac95f736fb49a32ccd7f9143dced2eddd62944f4ef810e2c30a771a5",
+          "ImageID": "sha256:17c1c1b96fd1685968790c7fcab311e5bc49c809efe9744af262640a559c4cf2",
+          "PID": 1348,
+          "StartedAt": "2026-11-09T06:27:12.456844312Z",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "Name": "/dell-data-prod-infra-rabbitmq-1",
+          "ID": "3d3000b2a67c396ec5647892e12f9441fbbddb19aa0882cca447a2f403bc43f0",
+          "ImageID": "sha256:de912cbbf07f938bb8aaa5682464a73a00c6a996efdf0880423aeb4eae006c34",
+          "PID": 1539,
+          "StartedAt": "2026-11-09T06:27:13.398720662Z",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "Name": "/dell-data-prod-infra-nacos-1",
+          "ID": "ff4c025af4b222512bfd2975790d40144c5d6b38c435888adc06e2a0be9d8e61",
+          "ImageID": "sha256:fc86d4833afb7abc64006f04c715946303f6b15d694c2f05c2895a27d967ed88",
+          "PID": 1443,
+          "StartedAt": "2026-11-09T06:27:12.976216574Z",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        }
+      ],
+      "no_Env_Cmd_credentials_or_SQL_contents_read": true,
+      "server_mutations": false,
+      "Nacos_readiness_HTTP": 200,
+      "Nacos_config_or_response_body_saved": false,
+      "checks": {
+        "all_original_containers_running_healthy": true,
+        "restart_zero_no_OOM": true,
+        "PID_positive": true,
+        "all_started_before_restore_drill": true,
+        "IDs_match_same_day_core": true,
+        "ImageIDs_match_approved": true,
+        "Nacos_readiness200": true
+      },
+      "status": "passed-readonly-postcheck"
+    },
+    {
+      "vmid": 210,
+      "hostname": "data-test",
+      "at": "2026-11-09T10:44:50.454670+00:00",
+      "read_only": true,
+      "containers": [
+        {
+          "Name": "/dell-data-test-data-nacos-1",
+          "ID": "5bd9a27fd4051994494eed423d84e50862ef91918ffbfa4834df14de2a8f2e4c",
+          "ImageID": "sha256:fc86d4833afb7abc64006f04c715946303f6b15d694c2f05c2895a27d967ed88",
+          "PID": 1846,
+          "StartedAt": "2026-11-09T06:29:09.039813697Z",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "Name": "/dell-data-test-data-rabbitmq-1",
+          "ID": "4d955f668d96330c7d9cbe676ec41722a1d3c67038a52d89f0c3f8f11866ce58",
+          "ImageID": "sha256:de912cbbf07f938bb8aaa5682464a73a00c6a996efdf0880423aeb4eae006c34",
+          "PID": 1477,
+          "StartedAt": "2026-11-09T06:28:58.751894383Z",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "Name": "/dell-data-test-data-mysql-1",
+          "ID": "df4e9d159f5903e42ab4e6c2c092d2d454ac55a76c226fc8a07fe44c72b41ef6",
+          "ImageID": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+          "PID": 1325,
+          "StartedAt": "2026-11-09T06:28:57.073828899Z",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "Name": "/dell-data-test-data-redis-1",
+          "ID": "b5d49893d99c73d425f0af035dce837f1467a096841d7bbae3f7d5381ce3df22",
+          "ImageID": "sha256:17c1c1b96fd1685968790c7fcab311e5bc49c809efe9744af262640a559c4cf2",
+          "PID": 1401,
+          "StartedAt": "2026-11-09T06:28:57.982305444Z",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        }
+      ],
+      "no_Env_Cmd_credentials_or_SQL_contents_read": true,
+      "server_mutations": false,
+      "restore_container_names_by_prefix": [],
+      "restore_container_names_by_owner_label": [],
+      "restore_BASE": {
+        "path": "/srv/dell-data/_prod_db_restore_drill",
+        "exists": true,
+        "entries_metadata": [
+          {
+            "name": "reports",
+            "uid": 0,
+            "gid": 0,
+            "mode": "0o700",
+            "directory": true,
+            "symlink": false
+          },
+          {
+            "name": ".worker.lock",
+            "uid": 0,
+            "gid": 0,
+            "mode": "0o600",
+            "directory": false,
+            "symlink": false
+          }
+        ]
+      },
+      "reports_contents_not_read": true,
+      "checks": {
+        "all_original_containers_running_healthy": true,
+        "restart_zero_no_OOM": true,
+        "PID_positive": true,
+        "all_started_before_restore_drill": true,
+        "IDs_and_ImageIDs_match_target_preflight": true,
+        "no_restore_container_by_prefix_or_owner": true,
+        "BASE_only_reports_and_persistent_lock": true
+      },
+      "status": "passed-readonly-postcheck"
+    }
+  ],
+  "all_passed": true,
+  "no_SQL_queries_credentials_Env_Cmd_datafile_reads": true,
+  "no_serverwrites_or_external_notification": true,
+  "known_hosts_modified": false,
+  "limitations": [
+    "PID/StartedAtcapturedcurrent; preflightlackedthese fieldsso no inventedexactPIDbaselinecomparison. SameID/restart0/startedpredrillobserved; nativeworkerreportseparatelyprovedframeunchanged.",
+    "OnlyBASEdirectmetadataandcontainername/ownerfilters read; reports/SQL/password/data contentsneveropened."
+  ]
+}

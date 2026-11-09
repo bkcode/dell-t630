@@ -1,0 +1,58 @@
+{
+  "at": "2026-11-09T18:32:59.257453+08:00",
+  "unit": {
+    "Result": "exit-code",
+    "ExecMainStatus": "1",
+    "ActiveState": "failed",
+    "SubState": "failed"
+  },
+  "sanitized_result": {
+    "version": 1,
+    "run_id": "2a9d81b5c2bf497087f4f5765f4e2fe4",
+    "source_run_id": "b16d1ed9ff0a4ff1877179428bd592c6",
+    "started_at": "2026-11-09T10:31:41.969463+00:00",
+    "finished_at": "2026-11-09T10:32:18.201940+00:00",
+    "elapsed_seconds": 36.232,
+    "target_vmid": 210,
+    "source_vmid": 200,
+    "source_archive_bytes": 3301,
+    "source_backup_SHA_unchanged": true,
+    "backup_timer_unchanged": true,
+    "cleanup_command_succeeded": true,
+    "error_type": "RuntimeError",
+    "SQL_or_credentials_exported_to_Mac": false,
+    "production_import_performed": false,
+    "business_RPO_RTO_verified": false,
+    "status": "failed",
+    "guest_report": {
+      "RPO_RTO_approved": false,
+      "cleanup_failed": false,
+      "ddl_difference": {
+        "character_set_client": "utf8mb4",
+        "character_set_results": "utf8mb4",
+        "charset_names_available": true,
+        "non_ascii_characters_differ": false,
+        "non_ascii_positions_differ": true,
+        "only_quoted_literals_differ": false,
+        "source_length": 1509,
+        "table": "config_info",
+        "target_length": 1817
+      },
+      "elapsed_seconds": 23.198,
+      "error_type": "Rejected",
+      "failure_code": "full-table-ddl-mismatch",
+      "finished_at": "2026-11-09T10:32:12.510427+00:00",
+      "format": "dell-prod-db-isolated-restore-v1",
+      "image_id": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+      "independent_DR_claimed": false,
+      "notifications_or_external_connections": false,
+      "production_queried": false,
+      "run_id": "2a9d81b5c2bf497087f4f5765f4e2fe4",
+      "source_containers_unchanged": true,
+      "source_credentials_used": false,
+      "stage": "compare",
+      "started_at": "2026-11-09T10:31:49.312794+00:00",
+      "status": "failed"
+    }
+  }
+}

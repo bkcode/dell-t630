@@ -193,5 +193,10 @@
     "new databases or programmable objects require whitelist/consistency review",
     "large DB transport beyond current caps",
     "purge historical wholeVM/cleanup archives"
-  ]
+  ],
+  "subsequent_isolated_restore": {
+    "status": "passed-for-one3301B-Nacos-snapshot-only",
+    "evidence": "completion/20261109-prod-db-restore/native-success.json",
+    "fullbusiness_RPO_RTO_or_independent_DR_validated": false
+  }
 }

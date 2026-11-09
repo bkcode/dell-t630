@@ -146,7 +146,7 @@ sudo runuser --user java -- /usr/bin/python3 /usr/local/libexec/dell-java-accept
 
 **现行自动备份仅VM200正式数据库/Nacos配置。** 当前唯一非系统库`nacos_prod`，12张BASE TABLE全InnoDB；正式业务schema尚未创建，新增库不在显式白名单则拒绝告警并要求更新。首轮逻辑SQL gzip 3,301 bytes通过CRC/传输SHA、DDL锁释放及guest暂存清理，service退出0、timer已enabled，下一次2026-11-10 03:30（Asia/Shanghai）；GFS最近3/每日7/每周4。PVE目的地`/mnt/pve/store/dell-artifacts/prod-db-backups`，目录root700/文件600，不经Mac，见[新首轮与timer](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)、[中央状态](completion/20261109-prod-db-scope/README.md)。
 
-其他数据均不自动备份：VM/OS、测试库、Redis/Rabbit、Nexus、Penpot、NAS、Ops、CF及发布私钥排除。旧11来宾全机jobdisabled、whole-VM规则组退役，原19,747,582,801 bytes全机档和21回退档保留、不自动删除；旧CF档只准PVE。新`dell_prod_db_backup_*`三条db-only规则已原生校验/SIGHUP加载，原Prom身份与既有三告警名/Lark接收对象不变，无testsend，见[规则回执](completion/20261109-prod-db-scope/alerts-installed.json)。仅同机逻辑恢复点，未恢复/无独立灾备或RPO保证；不迁移、不合并Nexus、不启Java、无Mac外部探针。
+其他数据均不自动备份：VM/OS、测试库、Redis/Rabbit、Nexus、Penpot、NAS、Ops、CF及发布私钥排除。旧11来宾全机jobdisabled、whole-VM规则组退役，原19,747,582,801 bytes全机档和21回退档保留、不自动删除；旧CF档只准PVE。新`dell_prod_db_backup_*`三条db-only规则已原生校验/SIGHUP加载，原Prom身份与既有三告警名/Lark接收对象不变，无testsend，见[规则回执](completion/20261109-prod-db-scope/alerts-installed.json)。仅同机逻辑恢复点，仅下述小档已临时隔离恢复，仍无完整业务恢复/独立灾备或RPO保证；不迁移、不合并Nexus、不启Java、无Mac外部探针。
 
 任务由PVE `dell-prod-db-backup.service`/`.timer`编排，受限QGA从VM200导出与分块回收PVE；不读取完整Env/Cmd，不在终端cat SQL/manifest或秘密。worker持LOCK INSTANCE备份锁、single-transaction导出，前后固定表元数据一致；当前仅BASE TABLE/InnoDB、无view/routine/event/trigger，出现新库/对象必须先审核更新策略，不强行放行以凑成功。
 
@@ -157,7 +157,11 @@ systemctl status dell-prod-db-backup.timer
 systemctl status dell-prod-db-backup.service
 ```
 
-暂停未来timer不代表正在进行的导出已停止；取消或故障先核本次run_id、own dump PID/starttime/pidfd及锁会话退出证明，不kill mysqld、不删未知文件、不通配删除归档/guest暂存。PVE已原子收存并校验后才cleanup本次双文件；失败产物需准确核查，不用替换路径绕过门禁。备份恢复本轮未执行，禁止直接导入覆盖现役库。
+暂停未来timer不代表正在进行的导出已停止；取消或故障先核本次run_id、own dump PID/starttime/pidfd及锁会话退出证明，不kill mysqld、不删未知文件、不通配删除归档/guest暂存。PVE已原子收存并校验后才cleanup本次双文件；失败产物需准确核查，不用替换路径绕过门禁。本轮仅将该小快照恢复到独立临时实例，禁止直接导入覆盖现役库。
+
+**仅这份3301B `nacos_prod`小快照已完成VM210临时隔离恢复**：12表10行，活跃`config_info`为空，10行为历史、命名空间及认证/权限元数据。源备份SHA、timer及VM210原4服务保持、临时资源已清理；不扩签业务库、RPO/RTO或异机灾备，见[限定恢复收尾](completion/20261109-prod-db-restore/README.md)。
+
+本次guest核验47.522秒、PVE总流程59.857秒、unit退出0；这不是业务RTO。最终仍严格核DDL/列顺序、逐列HEX/NULL行摘要、CHECK TABLE和重启持久化；仅MySQL官方bug110825的引号外紧邻COLLATE、经临时实例COLLATIONS映射证明相同的冗余CHARACTER SET作同义规范化，不忽略真实字符集/COLLATE、类型、索引或COMMENT差异。旧失败和cleanup证据保留。
 
 ### 历史回退档与应用备份边界
 
@@ -167,9 +171,9 @@ systemctl status dell-prod-db-backup.service
 
 每次备份先登记对象、版本、身份边界、目标、容量、加密/权限及一致性条件。数据库/Blob一起取一致性点，正在运行的目录拷贝不能冒称一致备份。原10.63门禁的历史application-backup脚本必须先核适配现役19配置，不能从旧README直接抄--execute命令。秘密通过受控文件/STDIN使用，不把整个private打包上传Nexus。
 
-### 隔离恢复人工参考（本轮不执行）
+### 全机归档恢复人工参考（本轮未执行）
 
-隔离恢复人工流程：
+以下是旧全机归档的未来恢复流程，与本次SQL临时恢复不同，本轮未执行：
 
 1. 硬件稳定后选择明确归档，与受信记录对SHA，并做`zstd --test <归档>`。需要VMA全档核验时在**PVE root700临时目录**解压、文件600，预留足够原始空间，再`vma verify <原始VMA>`；不要解压含秘密整机档到Mac或公共目录。
 2. 分配新的恢复QA VMID和预算，确认不会覆盖保留VM/卷。PVE恢复示意：

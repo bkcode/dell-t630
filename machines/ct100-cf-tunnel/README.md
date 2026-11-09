@@ -6,7 +6,7 @@
 
 15:26:47只读采样：cloudflared本机ready HTTP200、readyConnections=2；本轮不读取token/unit正文，不做公网域名、账户侧origin或外网VPN E2E。CT仍19.5，原身份保留。 证据：[本机分项审计](../../completion/20261109/network-audit.json)。
 
-本CT与CF文件不纳入现行自动备份。原whole-VM阶段CF历史档仅留PVE，禁止导出；不读取token。 现行仅正式DB/Nacos逻辑SQL导出（非VM snapshot），PVE落点`/mnt/pve/store/dell-artifacts/prod-db-backups` root700/600；新未列白名单数据库拒绝告警、需更新。03:30/GFS最近3＋每日7＋每周4，首轮3301B与timer见[新回执](../../completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)，实际监控/收尾统一见[新中央入口](../../completion/20261109-prod-db-scope/README.md)。旧11来宾job已disabled、原19,747,582,801B档与21回退档保留不自动删；未restore/无异机DR，不迁移/合并/启Java、无Mac探针。
+本CT与CF文件不纳入现行自动备份。原whole-VM阶段CF历史档仅留PVE，禁止导出；不读取token。 现行仅正式DB/Nacos逻辑SQL导出（非VM snapshot），PVE落点`/mnt/pve/store/dell-artifacts/prod-db-backups` root700/600；新未列白名单数据库拒绝告警、需更新。03:30/GFS最近3＋每日7＋每周4，首轮3301B与timer见[新回执](../../completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)，实际监控/收尾统一见[新中央入口](../../completion/20261109-prod-db-scope/README.md)。旧11来宾job已disabled、原19,747,582,801B档与21回退档保留不自动删；仅[该3301B Nacos小档已在VM210临时隔离恢复](../../completion/20261109-prod-db-restore/README.md)，完整业务恢复/RPO/RTO/异机DR未签，不迁移/合并/启Java、无Mac探针。
 
 **仅配置合同与安全元数据；本轮11月9日直接ready200/连接2已复核。** 11月7日02:35运行清单及更早注册记录继续保留历史时点。不能把注册/ready连接写成未知公网源站业务已经全通。
 

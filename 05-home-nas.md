@@ -63,6 +63,8 @@ NAS系统盘和数据盘不依赖自己导出的SMB/NFS启动。OMV持久网络�
 
 **NAS媒体、游戏文件、OMV/Jellyfin数据均不在当前自动备份范围。** 当前只有VM200正式数据库/Nacos逻辑备份，见[中央范围](completion/20261109-prod-db-scope/README.md)和[首轮与timer](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)。旧全机方案中260归档2,177,592,558 bytes属历史，原档保留不自动删；2TiB是虚拟盘逻辑容量，不等于当前有持续媒体保护。
 
+本次仅[该3301B Nacos小档已在VM210临时隔离恢复](completion/20261109-prod-db-restore/README.md)，完整业务恢复/RPO/RTO/异机DR未签；本次没有恢复NAS数据。
+
 同机NAS与PVE、数据和Ops共享供电/内存/RAID故障域；NAS未纳入现行自动备份；旧同机snapshot不覆盖整机损失、不保证Jellyfin数据库逻辑一致，也没有本轮恢复演练。独立目的地/恢复SLO仍待完成，当前不宣称家庭数据已具备完整灾备；珍贵家庭文件独立副本仍有必要。
 
 ## 6. 当前恢复观察与后续人工验收

@@ -6,7 +6,7 @@
 
 14:24:03自然重启后的14:42–14:44采样：12来宾running、3模板stopped，EDAC CE/UE0、RAID1/5 Optl/5盘Onln；三个forward guard SHA保持，networking→bridge/ExecStartPost→pve-guests真实顺序成功，双栈all/default/全部接口forward0、无host NAT。用户报告内存处理/诊断通过不等于本轮独立离线诊断。 证据：[本机分项审计](../../completion/20261109/pve-audit.json)。
 
-本机承载正式DB备份控制器与目标目录，不是PVE宿主OS或全机备份。 现行仅正式DB/Nacos逻辑SQL导出（非VM snapshot），PVE落点`/mnt/pve/store/dell-artifacts/prod-db-backups` root700/600；新未列白名单数据库拒绝告警、需更新。03:30/GFS最近3＋每日7＋每周4，首轮3301B与timer见[新回执](../../completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)，实际监控/收尾统一见[新中央入口](../../completion/20261109-prod-db-scope/README.md)。旧11来宾job已disabled、原19,747,582,801B档与21回退档保留不自动删；未restore/无异机DR，不迁移/合并/启Java、无Mac探针。
+本机承载正式DB备份控制器与目标目录，不是PVE宿主OS或全机备份。 现行仅正式DB/Nacos逻辑SQL导出（非VM snapshot），PVE落点`/mnt/pve/store/dell-artifacts/prod-db-backups` root700/600；新未列白名单数据库拒绝告警、需更新。03:30/GFS最近3＋每日7＋每周4，首轮3301B与timer见[新回执](../../completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)，实际监控/收尾统一见[新中央入口](../../completion/20261109-prod-db-scope/README.md)。旧11来宾job已disabled、原19,747,582,801B档与21回退档保留不自动删；仅[该3301B Nacos小档已在VM210临时隔离恢复](../../completion/20261109-prod-db-restore/README.md)，完整业务恢复/RPO/RTO/异机DR未签，不迁移/合并/启Java、无Mac探针。
 
 **以下仍是配置合同与带日期基础审计，不是全量现场配置导出。** 合同来自[plan](../../plan.json)，11月7日02:35/02:44及UEFI0058/B1保留历史；用户11月8日确认内存处理/诊断通过，11月9日已fresh检查当前boot。助手未独立离线诊断或清SEL，不把EDAC0/可达扩大为唯一物理根因已排除或应用数据全部正确。
 

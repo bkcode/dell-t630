@@ -20,7 +20,17 @@ VM200固定helper校验主机/IP、挂载UUID、容器名/Compose身份和数据
 
 完成后gzip CRC+SHA封存，PVE经既有QGA内部接口每次至多1MiB读入PVE私有partial文件，校count/base64/EOF/总大小、SHA与完整gzip/结束标记；归档和目录fsync后原子提交。PVE确认本地副本后才清guest临时副本。过程不经Mac、不新增SSH私钥或网络端口。QGA用于当前小库受限数据量，不宣称大规模流传输通道。
 
-完整Nacos元库包含配置、命名空间、历史及其库内用户/角色权限元数据；不备MySQL系统库/全局账号、宿主凭据文件或201整机配置文件。源系统重新部署仍依赖另行保管的凭据。本轮未执行SQL恢复、迁移或覆盖现役，CRC/SHA和mysqldump退出0不等于完整业务恢复/RPO/RTO通过。
+完整Nacos元库包含配置、命名空间、历史及其库内用户/角色权限元数据；不备MySQL系统库/全局账号、宿主凭据文件或201整机配置文件。源系统重新部署仍依赖另行保管的凭据。后续仅该小快照完成下述VM210临时隔离恢复，没有生产导入、迁移或覆盖现役；备份成功和这次小样本恢复不等于完整业务恢复/RPO/RTO通过。
+
+## 已完成的限定恢复演练
+
+[最终原生回执](../../../completion/20261109-prod-db-restore/semantic-attempt-observation.json)与[恢复中央入口](../../../completion/20261109-prod-db-restore/README.md)记录：仅这份3301B `nacos_prod`小快照已在VM210同ImageID临时MySQL隔离恢复通过。12表10行，活跃`config_info`为空；10行为历史、命名空间和认证/权限元数据，正式业务schema尚未创建，不能扩签未来业务数据集。
+
+临时实例1CPU/1GiB、networknone、新随机root与限权importer，仅挂独立临时数据/秘密；核完整DDL语义、列名顺序、逐列HEX/NULL行摘要、CHECK TABLE及仅自己实例重启持久化，随后精确清理。guest47.522秒、PVE总59.857秒，unit退出0；VM210原4服务、源档SHA和备份timer保持。SQL、凭据与实际行摘要没有导出Mac/Git。
+
+前三次失败与清理记录保留。最终DDL仍严格校验；仅[MySQL bug110825](https://bugs.mysql.com/bug.php?id=110825)所述、引号外紧接COLLATE且实际scratch `INFORMATION_SCHEMA.COLLATIONS`映射同义的冗余CHARACTER SET可规范化；[COLLATE决定所属字符集](https://dev.mysql.com/doc/refman/8.4/en/charset-column.html)。真实字符集/COLLATE、类型、索引、COMMENT不同继续拒绝，不是忽略DDL差异。
+
+通过只覆盖该小元库快照，没有业务库恢复、生产切换/覆盖、异机环境或业务RPO/RTO验收；不成为自动恢复或直接覆盖生产入口。
 
 ## 监控与人工检查
 

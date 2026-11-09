@@ -61,7 +61,9 @@ OW完整规则用户明确只留本地，`openwrt/rules-20261108/`已local exclu
 - 11月7日02:44:29仅为故障前最后成功同步，不再当成当前最后PVE操作；原故障时间线不改写。
 - 随后PVE不可达；用户控制台显示UEFI0058，历史SEL指向B1；11月8日恢复记录另行保存，不覆盖该历史。
 - Nexus合并已有维护授权，220准备完毕、221未移交；基础已恢复，但用户暂不迁移；将来明确恢复该任务后fresh核验。
-- 现行自动备份仅VM200正式MySQL/Nacos外部元数据库，当前只有nacos_prod/12表、正式业务schema未创建；新库未列白名单直接拒绝告警、需审核更新。首轮3301B已校验、03:30 timer enabled/GFS3-7-4，PVE目的地`/mnt/pve/store/dell-artifacts/prod-db-backups` root700/600，见[新中央入口](completion/20261109-prod-db-scope/README.md)及[首轮回执](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)。其他数据不自动备份；旧whole-VM jobdisabled、19,747,582,801B和21档保留不自动删除。新db-only三规则已[热载](completion/20261109-prod-db-scope/alerts-installed.json)，原Prom identity/三名/接收对象不变，无testsend。无restore/异机DR/RPO保证，SQL与私有manifest不进Git。
+- 现行自动备份仅VM200正式MySQL/Nacos外部元数据库，当前只有nacos_prod/12表、正式业务schema未创建；新库未列白名单直接拒绝告警、需审核更新。首轮3301B已校验、03:30 timer enabled/GFS3-7-4，PVE目的地`/mnt/pve/store/dell-artifacts/prod-db-backups` root700/600，见[新中央入口](completion/20261109-prod-db-scope/README.md)及[首轮回执](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)。其他数据不自动备份；旧whole-VM jobdisabled、19,747,582,801B和21档保留不自动删除。新db-only三规则已[热载](completion/20261109-prod-db-scope/alerts-installed.json)，原Prom identity/三名/接收对象不变，无testsend。仅下述小档已临时隔离恢复，未签完整业务恢复/异机DR/RPO，SQL与私有manifest不进Git。
 - 本轮空闲iperfserver已停用且留包、新备份namespace已安装，这些有各自回执；本页同步只改文档，不删除源数据/私有资料或修改全局记忆。
+
+**仅这份3301B `nacos_prod`小快照已完成VM210临时隔离恢复**：12表10行，活跃`config_info`为空，10行为历史、命名空间及认证/权限元数据。源备份SHA、timer及VM210原4服务保持、临时资源已清理；不扩签业务库、RPO/RTO或异机灾备，见[限定恢复收尾](completion/20261109-prod-db-restore/README.md)。
 
 当前业务边界保持：Nexus不合并/数据不迁移、Java业务不启、Penpot实际ff提交不更新main；用户不需要Mac外部探针，不列当前或后续待办。
