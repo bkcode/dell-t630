@@ -1,0 +1,16 @@
+{
+  "hook_tests": 7,
+  "metadata_tests": 46,
+  "original_notification_bridge_tests": 35,
+  "synthetic_promtool_rule_cases": 8,
+  "alert_installer_mock_cases": 5,
+  "notification_whitelist_delta_cases": 5,
+  "native_amtool_config_and_route_cases": 4,
+  "scope": "offline/loopback or native parse with synthetic input; not a real Lark delivery/restore test",
+  "loopback_test_limit": "initialsandbox denied ephemeral bind; same tests passed after loopback-only execution approval",
+  "final_phase_review": "independent read-only acceptance agent passed current9of9; original38 and6REC unchanged",
+  "live_evidence": "completion/20261109/final-verification.json",
+  "local_document_validator": "passed",
+  "machine_contract_validator": "passed",
+  "candidate_working_file_secret_scan": "passed"
+}

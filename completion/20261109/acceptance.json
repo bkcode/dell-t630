@@ -1,0 +1,306 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-09T16:01:00.600541+08:00",
+  "status": "passed-current-phase-only",
+  "scope": "2026-11-09 existing infrastructure completion and PVE-local backups, no data migration",
+  "cases": [
+    {
+      "id": "SET-HOST-001",
+      "title": "宿主硬件状态、管理与定时采集",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户2026-11-09授权继续搭建不迁数据；备份选择PVE本机",
+        "严格SSH与既有角色/存储合同保持"
+      ],
+      "steps": [
+        "核对本项实际证据、时间与限制",
+        "核对可观察条件，未实际通过保持pending"
+      ],
+      "observable_pass_conditions": [
+        "12来宾运行、3模板停止、无失败单元、当前EDAC0和RAIDOptimal；不等于独立物理诊断"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109/pve-audit.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        },
+        {
+          "path": "completion/20261109/final-verification.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        },
+        {
+          "path": "completion/20261109/raid-post-backup-metrics.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        }
+      ],
+      "verification_scope": "current-phase infrastructure only, not application-content migration/DR/SLO",
+      "verified_at": "2026-11-09T16:01:00.600541+08:00"
+    },
+    {
+      "id": "SET-NET-001",
+      "title": "重启后的管理与二层转发守卫",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户2026-11-09授权继续搭建不迁数据；备份选择PVE本机",
+        "严格SSH与既有角色/存储合同保持"
+      ],
+      "steps": [
+        "核对本项实际证据、时间与限制",
+        "核对可观察条件，未实际通过保持pending"
+      ],
+      "observable_pass_conditions": [
+        "本次自然重启后guardSHA/执行顺序匹配，host各family转发全0，无旧hostNAT"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109/pve-audit.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        },
+        {
+          "path": "completion/20261109/network-audit.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        },
+        {
+          "path": "completion/20261109/final-verification.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        }
+      ],
+      "verification_scope": "current-phase infrastructure only, not application-content migration/DR/SLO",
+      "verified_at": "2026-11-09T16:01:00.600541+08:00"
+    },
+    {
+      "id": "SET-CORE-001",
+      "title": "正式/测试数据与Java基础",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户2026-11-09授权继续搭建不迁数据；备份选择PVE本机",
+        "严格SSH与既有角色/存储合同保持"
+      ],
+      "steps": [
+        "核对本项实际证据、时间与限制",
+        "核对可观察条件，未实际通过保持pending"
+      ],
+      "observable_pass_conditions": [
+        "8数据容器健康、原盘UUID/GW/DNS/NTP正确、Java业务未启用"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109/core-audit.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        },
+        {
+          "path": "completion/20261109/guests-post-backup.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        }
+      ],
+      "verification_scope": "current-phase infrastructure only, not application-content migration/DR/SLO",
+      "verified_at": "2026-11-09T16:01:00.600541+08:00"
+    },
+    {
+      "id": "SET-TOOLS-001",
+      "title": "发布、制品与设计工具",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户2026-11-09授权继续搭建不迁数据；备份选择PVE本机",
+        "严格SSH与既有角色/存储合同保持"
+      ],
+      "steps": [
+        "核对本项实际证据、时间与限制",
+        "核对可观察条件，未实际通过保持pending"
+      ],
+      "observable_pass_conditions": [
+        "220/221独立、Nexus2与Penpot11健康，原部署源码未更新，未迁数据"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109/media-audit.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        },
+        {
+          "path": "completion/20261109/guests-post-backup.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        }
+      ],
+      "verification_scope": "current-phase infrastructure only, not application-content migration/DR/SLO",
+      "verified_at": "2026-11-09T16:01:00.600541+08:00"
+    },
+    {
+      "id": "SET-NAS-001",
+      "title": "家庭NAS软件基础",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户2026-11-09授权继续搭建不迁数据；备份选择PVE本机",
+        "严格SSH与既有角色/存储合同保持"
+      ],
+      "steps": [
+        "核对本项实际证据、时间与限制",
+        "核对可观察条件，未实际通过保持pending"
+      ],
+      "observable_pass_conditions": [
+        "OMV/SMB/Jellyfin及原盘健康，不扩签真实TV/PS/转码"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109/media-audit.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        },
+        {
+          "path": "completion/20261109/guests-post-backup.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        }
+      ],
+      "verification_scope": "current-phase infrastructure only, not application-content migration/DR/SLO",
+      "verified_at": "2026-11-09T16:01:00.600541+08:00"
+    },
+    {
+      "id": "SET-OBS-001",
+      "title": "监控及备份告警配套",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户2026-11-09授权继续搭建不迁数据；备份选择PVE本机",
+        "严格SSH与既有角色/存储合同保持"
+      ],
+      "steps": [
+        "核对本项实际证据、时间与限制",
+        "核对可观察条件，未实际通过保持pending"
+      ],
+      "observable_pass_conditions": [
+        "15targetsUP/内部Larkactive；三条备份规则已原生校验并同容器SIGHUP加载且healthOK/inactive，metadata有效成功11项；未声称新真实通知送达"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109/backup-metrics-installed.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        },
+        {
+          "path": "completion/20261109/backup-notify-whitelist-result.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        },
+        {
+          "path": "completion/20261109/backup-alerts-installed.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        },
+        {
+          "path": "completion/20261109/final-verification.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        }
+      ],
+      "verification_scope": "current-phase infrastructure only, not application-content migration/DR/SLO",
+      "verified_at": "2026-11-09T16:01:00.600541+08:00"
+    },
+    {
+      "id": "SET-CLEAN-001",
+      "title": "关闭空闲测速常驻",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户2026-11-09授权继续搭建不迁数据；备份选择PVE本机",
+        "严格SSH与既有角色/存储合同保持"
+      ],
+      "steps": [
+        "核对本项实际证据、时间与限制",
+        "核对可观察条件，未实际通过保持pending"
+      ],
+      "observable_pass_conditions": [
+        "无活跃测速连接时disable--now，5201关闭，保留软件包，不改来宾/网络"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109/idle-iperf-disabled.json",
+          "note": "本轮固定范围证据，不代替未执行项目"
+        }
+      ],
+      "verification_scope": "current-phase infrastructure only, not application-content migration/DR/SLO",
+      "verified_at": "2026-11-09T16:01:00.600541+08:00"
+    },
+    {
+      "id": "SET-BAK-001",
+      "title": "PVE本机自动备份首轮与计划",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户2026-11-09授权继续搭建不迁数据；备份选择PVE本机",
+        "严格SSH与既有角色/存储合同保持"
+      ],
+      "steps": [
+        "核对本项实际证据、时间与限制",
+        "核对可观察条件，未实际通过保持pending"
+      ],
+      "observable_pass_conditions": [
+        "固定11档zstd/native/SHA验证、native任务OK/unit退出0；每日03:30enabled，次日执行时点和root600已读回；排除220/CF仅PVE；未执行恢复或多个保留周期"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109/backup-first-success.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        },
+        {
+          "path": "completion/20261109/backup-schedule-enabled.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        },
+        {
+          "path": "completion/20261109/backup-next-run-and-permissions.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        },
+        {
+          "path": "completion/20261109/final-verification.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        }
+      ],
+      "verification_scope": "current-phase infrastructure only, not application-content migration/DR/SLO",
+      "verified_at": "2026-11-09T16:01:00.600541+08:00"
+    },
+    {
+      "id": "SET-SCOPE-001",
+      "title": "不迁移与敏感资料边界",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户2026-11-09授权继续搭建不迁数据；备份选择PVE本机",
+        "严格SSH与既有角色/存储合同保持"
+      ],
+      "steps": [
+        "核对本项实际证据、时间与限制",
+        "核对可观察条件，未实际通过保持pending"
+      ],
+      "observable_pass_conditions": [
+        "不合并/迁移/退221、不启Java业务、无Macprobe；OW完整规则localonly未纳入提交"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109/guests-post-backup.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        },
+        {
+          "path": "completion/20261109/git-scope-exclusion.json",
+          "note": "Actual current-phase evidence; contents, restore, long-term operation and external E2E not expanded"
+        }
+      ],
+      "verification_scope": "current-phase infrastructure only, not application-content migration/DR/SLO",
+      "verified_at": "2026-11-09T16:01:00.600541+08:00"
+    }
+  ],
+  "summary": {
+    "total": 9,
+    "current_phase_case_count": 9,
+    "current_phase_passed": 9,
+    "statuses": {
+      "passed": 9
+    },
+    "original38_and_strict6REC_not_reclassified": true
+  },
+  "not_required_or_deferred": [
+    "Nexus merge and source221 retirement",
+    "source-data imports or database/user/design resets",
+    "Java business applications",
+    "Mac external probe (not required by user)",
+    "independent backup destination and application-consistent restore/RPO/RTO",
+    "physicalTV/PS/media performance and public domains"
+  ]
+}

@@ -1,0 +1,331 @@
+{
+  "at": "2026-11-09T15:57:53.463386+08:00",
+  "scope": "final metadata and health only; no application contents/restore/migration",
+  "PVE": {
+    "at": "2026-11-09T15:57:56.111147+08:00",
+    "instances": [
+      {
+        "vmid": 100,
+        "type": "lxc",
+        "status": "running",
+        "template": 0,
+        "name": "cf-tunnel",
+        "maxmem": 536870912,
+        "maxcpu": 1
+      },
+      {
+        "vmid": 190,
+        "type": "qemu",
+        "status": "running",
+        "template": 0,
+        "name": "network-gateway",
+        "maxmem": 536870912,
+        "maxcpu": 2
+      },
+      {
+        "vmid": 200,
+        "type": "qemu",
+        "status": "running",
+        "template": 0,
+        "name": "data-prod-db",
+        "maxmem": 17179869184,
+        "maxcpu": 6
+      },
+      {
+        "vmid": 201,
+        "type": "qemu",
+        "status": "running",
+        "template": 0,
+        "name": "data-prod-infra",
+        "maxmem": 8589934592,
+        "maxcpu": 4
+      },
+      {
+        "vmid": 210,
+        "type": "qemu",
+        "status": "running",
+        "template": 0,
+        "name": "data-test",
+        "maxmem": 4294967296,
+        "maxcpu": 2
+      },
+      {
+        "vmid": 220,
+        "type": "qemu",
+        "status": "running",
+        "template": 0,
+        "name": "publish-service",
+        "maxmem": 4294967296,
+        "maxcpu": 4
+      },
+      {
+        "vmid": 221,
+        "type": "qemu",
+        "status": "running",
+        "template": 0,
+        "name": "artifact-service",
+        "maxmem": 4294967296,
+        "maxcpu": 2
+      },
+      {
+        "vmid": 230,
+        "type": "qemu",
+        "status": "running",
+        "template": 0,
+        "name": "java-prod-01",
+        "maxmem": 17179869184,
+        "maxcpu": 6
+      },
+      {
+        "vmid": 240,
+        "type": "qemu",
+        "status": "running",
+        "template": 0,
+        "name": "java-test-01",
+        "maxmem": 8589934592,
+        "maxcpu": 4
+      },
+      {
+        "vmid": 250,
+        "type": "qemu",
+        "status": "running",
+        "template": 0,
+        "name": "penpot-service",
+        "maxmem": 17179869184,
+        "maxcpu": 6
+      },
+      {
+        "vmid": 260,
+        "type": "qemu",
+        "status": "running",
+        "template": 0,
+        "name": "nas-media",
+        "maxmem": 4294967296,
+        "maxcpu": 4
+      },
+      {
+        "vmid": 270,
+        "type": "qemu",
+        "status": "running",
+        "template": 0,
+        "name": "ops-service",
+        "maxmem": 4294967296,
+        "maxcpu": 2
+      },
+      {
+        "vmid": 9001,
+        "type": "qemu",
+        "status": "stopped",
+        "template": 1,
+        "name": "tpl-docker-base",
+        "maxmem": 2147483648,
+        "maxcpu": 2
+      },
+      {
+        "vmid": 9010,
+        "type": "qemu",
+        "status": "stopped",
+        "template": 1,
+        "name": "tpl-linux-base",
+        "maxmem": 2147483648,
+        "maxcpu": 2
+      },
+      {
+        "vmid": 9011,
+        "type": "qemu",
+        "status": "stopped",
+        "template": 1,
+        "name": "tpl-java-acceptance",
+        "maxmem": 2147483648,
+        "maxcpu": 2
+      }
+    ],
+    "forwarding_all0": true,
+    "nft_tables": [
+      "table bridge dell19_acl"
+    ],
+    "EDAC": {
+      "/sys/devices/system/edac/mc/mc2/ce_count": 0,
+      "/sys/devices/system/edac/mc/mc2/ue_count": 0,
+      "/sys/devices/system/edac/mc/mc0/ce_count": 0,
+      "/sys/devices/system/edac/mc/mc0/ue_count": 0,
+      "/sys/devices/system/edac/mc/mc3/ce_count": 0,
+      "/sys/devices/system/edac/mc/mc3/ue_count": 0,
+      "/sys/devices/system/edac/mc/mc1/ce_count": 0,
+      "/sys/devices/system/edac/mc/mc1/ue_count": 0
+    },
+    "failed_units": [],
+    "iperf": [
+      "ActiveState=inactive",
+      "UnitFileState=disabled"
+    ],
+    "storage": [
+      {
+        "storage": "local",
+        "active": 1,
+        "enabled": 1,
+        "total": 100861726720,
+        "avail": 84742762496,
+        "used": 10948227072,
+        "content": "iso,vztmpl,backup"
+      },
+      {
+        "storage": "store",
+        "active": 1,
+        "enabled": 1,
+        "total": 7936199327744,
+        "avail": 7408819965952,
+        "used": 127340122112,
+        "content": "rootdir,vztmpl,iso,snippets,backup,images"
+      },
+      {
+        "storage": "dell-local-backup",
+        "active": 1,
+        "enabled": 1,
+        "total": 7936199327744,
+        "avail": 7408819965952,
+        "used": 127340122112,
+        "content": "backup"
+      },
+      {
+        "storage": "local-lvm",
+        "active": 1,
+        "enabled": 1,
+        "total": 342641082368,
+        "avail": 329175287831,
+        "used": 13465794537,
+        "content": "rootdir,images"
+      }
+    ],
+    "native_backup_job": {
+      "bwlimit": 0,
+      "comment": "PVE local recovery points only; VM220 excluded; no off-host export",
+      "compress": "zstd",
+      "enabled": 1,
+      "id": "dell-local-nightly",
+      "ionice": 7,
+      "lockwait": 0,
+      "mode": "snapshot",
+      "node": "pve",
+      "notification-mode": "legacy-sendmail",
+      "performance": {
+        "max-workers": "1"
+      },
+      "prune-backups": {
+        "keep-daily": "7",
+        "keep-last": "3",
+        "keep-weekly": "4"
+      },
+      "repeat-missed": 0,
+      "schedule": "03:30",
+      "script": "/usr/local/libexec/dell-local-backup/hook.py",
+      "storage": "dell-local-backup",
+      "tmpdir": "/var/tmp/dell-local-backup",
+      "type": "vzdump",
+      "vmid": "100,190,200,201,210,221,230,240,250,260,270",
+      "zstd": 2
+    },
+    "pvescheduler": [
+      "ActiveState=active",
+      "SubState=running"
+    ],
+    "listener5201": false
+  },
+  "Ops": {
+    "at": "2026-11-09T07:57:54.873695+00:00",
+    "read_only": true,
+    "targets": {
+      "count": 15,
+      "UP": 15,
+      "max_scrape_age_seconds": 29.637685298919678
+    },
+    "backup_metrics": {
+      "enabled": [
+        {
+          "value": 1.0,
+          "sample_at": 1794211074.85
+        }
+      ],
+      "state_valid": [
+        {
+          "value": 1.0,
+          "sample_at": 1794211074.852
+        }
+      ],
+      "running": [
+        {
+          "value": 0.0,
+          "sample_at": 1794211074.855
+        }
+      ],
+      "last_run_success": [
+        {
+          "value": 1.0,
+          "sample_at": 1794211074.857
+        }
+      ],
+      "verified_guest_count": [
+        {
+          "value": 11.0,
+          "sample_at": 1794211074.859
+        }
+      ],
+      "last_success_timestamp_seconds": [
+        {
+          "value": 1794210896.944522,
+          "sample_at": 1794211074.861
+        }
+      ],
+      "current_run_state": [
+        {
+          "value": 0.0,
+          "sample_at": 1794211074.865
+        }
+      ]
+    },
+    "backup_rules": [
+      {
+        "name": "PveLocalBackupFailed",
+        "health": "ok",
+        "state": "inactive"
+      },
+      {
+        "name": "PveLocalBackupStale",
+        "health": "ok",
+        "state": "inactive"
+      },
+      {
+        "name": "PveLocalBackupStateInvalid",
+        "health": "ok",
+        "state": "inactive"
+      }
+    ],
+    "Prom_alert_count": 0,
+    "AM_alert_count": 0,
+    "AM_groups": 0,
+    "Lark_unit": [
+      "ActiveState=active",
+      "SubState=running"
+    ],
+    "containers": [
+      "dell-ops-grafana-1 Up About an hour (healthy)",
+      "dell-ops-alertmanager-1 Up About an hour (healthy)",
+      "dell-ops-prometheus-1 Up About an hour (healthy)",
+      "dell-ops-blackbox-1 Up About an hour (healthy)"
+    ],
+    "real_notification_test_sent": false
+  },
+  "checks": {
+    "12running3templates": true,
+    "host_forward0": true,
+    "EDAC0": true,
+    "no_failed_host_units": true,
+    "no_iperf_listener": true,
+    "job_enabled": true,
+    "targets15UP": true,
+    "backup_metrics_valid_success11": true,
+    "three_rules_loaded_healthy_inactive": true,
+    "no_active_alerts": true
+  },
+  "status": "passed"
+}

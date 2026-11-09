@@ -1,0 +1,1059 @@
+{
+  "captured_at": "2026-11-09T06:42:26.737128+00:00",
+  "mode": "read-only-PVE-audit",
+  "remote_mutations": [],
+  "errors": [],
+  "boot": {
+    "boot_ID": "c2320079-38f6-4c05-bb3f-7502ee3f8f97",
+    "uptime_seconds": 1103.71,
+    "boot_time": "2026-11-09 14:24:03",
+    "kernel": "6.8.12-9-pve",
+    "PVE_version": "pve-manager/8.4.0/ec58e45e1bcdf2ac (running kernel: 6.8.12-9-pve)"
+  },
+  "memory_bytes": {
+    "MemTotal": 135056252928,
+    "MemAvailable": 109339017216,
+    "SwapTotal": 8589930496,
+    "SwapFree": 8589930496
+  },
+  "EDAC": [
+    {
+      "path": "/sys/devices/system/edac/mc/mc0/ce_count",
+      "count": "0"
+    },
+    {
+      "path": "/sys/devices/system/edac/mc/mc0/ue_count",
+      "count": "0"
+    },
+    {
+      "path": "/sys/devices/system/edac/mc/mc1/ce_count",
+      "count": "0"
+    },
+    {
+      "path": "/sys/devices/system/edac/mc/mc1/ue_count",
+      "count": "0"
+    },
+    {
+      "path": "/sys/devices/system/edac/mc/mc2/ce_count",
+      "count": "0"
+    },
+    {
+      "path": "/sys/devices/system/edac/mc/mc2/ue_count",
+      "count": "0"
+    },
+    {
+      "path": "/sys/devices/system/edac/mc/mc3/ce_count",
+      "count": "0"
+    },
+    {
+      "path": "/sys/devices/system/edac/mc/mc3/ue_count",
+      "count": "0"
+    }
+  ],
+  "kernel_error_categories": {
+    "journal_exit": 0,
+    "categories": {
+      "uncorrected_memory": {
+        "matching_lines": 0,
+        "raw_lines_not_saved": true
+      },
+      "MCE": {
+        "matching_lines": 0,
+        "raw_lines_not_saved": true
+      },
+      "EDAC": {
+        "matching_lines": 0,
+        "raw_lines_not_saved": true
+      },
+      "filesystem_IO": {
+        "matching_lines": 0,
+        "raw_lines_not_saved": true
+      }
+    }
+  },
+  "forwarding": {
+    "ipv4": {
+      "all": "0",
+      "default": "0",
+      "eno1": "0",
+      "eno2": "0",
+      "lo": "0",
+      "tap190i0": "0",
+      "tap190i1": "0",
+      "tap200i0": "0",
+      "tap201i0": "0",
+      "tap210i0": "0",
+      "tap220i0": "0",
+      "tap221i0": "0",
+      "tap230i0": "0",
+      "tap240i0": "0",
+      "tap250i0": "0",
+      "tap260i0": "0",
+      "tap270i0": "0",
+      "veth100i0": "0",
+      "vmbr0": "0",
+      "vmbr19": "0"
+    },
+    "ipv6": {
+      "all": "0",
+      "default": "0",
+      "eno1": "0",
+      "eno2": "0",
+      "lo": "0",
+      "tap190i0": "0",
+      "tap190i1": "0",
+      "tap200i0": "0",
+      "tap201i0": "0",
+      "tap210i0": "0",
+      "tap220i0": "0",
+      "tap221i0": "0",
+      "tap230i0": "0",
+      "tap240i0": "0",
+      "tap250i0": "0",
+      "tap260i0": "0",
+      "tap270i0": "0",
+      "veth100i0": "0",
+      "vmbr0": "0",
+      "vmbr19": "0"
+    },
+    "IPv4_ip_forward": "0"
+  },
+  "forwarding_all_zero": true,
+  "forward_guard_files": [
+    {
+      "path": "/usr/local/sbin/dell-management-forwarding-off",
+      "sha256": "96b0b6d8b5bb137a7599f3afe3ff86c1c3a6986b4ecb8cad106ba06fb55a6c05",
+      "uid": 0,
+      "mode": "0o755",
+      "safe_public_source": "#!/bin/sh\n# PVE management/L2 only. Do not restart networking or change routing/ACL.\nset -eu\n[ \"$(hostname -s)\" = pve ] && [ -d /etc/pve ]\nfor family in ipv4 ipv6; do\n    for path in /proc/sys/net/$family/conf/*/forwarding; do\n        [ -f \"$path\" ] || continue\n        printf '0\\n' > \"$path\"\n    done\ndone\nprintf '0\\n' > /proc/sys/net/ipv4/ip_forward\n"
+    },
+    {
+      "path": "/etc/network/if-up.d/dell-management-forwarding-off",
+      "sha256": "bda534462bc2b1bb87acfa9ade706dc5604e8b022da1a27b9ab9fcd7a781ae2e",
+      "uid": 0,
+      "mode": "0o755",
+      "safe_public_source": "#!/bin/sh\n# ifupdown2 sets forwarding on bridges with IP; restore original management-only contract.\nset -eu\n[ \"${IFACE:-}\" = vmbr0 ] || exit 0\nexec /usr/local/sbin/dell-management-forwarding-off\n"
+    },
+    {
+      "path": "/etc/sysctl.d/99-z-dell-management-only.conf",
+      "sha256": "541cd07b995e8d7d537591bf0cf4a4c6daf8f5f89efa64bd5e18afe95d9f4e97",
+      "uid": 0,
+      "mode": "0o644",
+      "safe_public_source": "net.ipv4.ip_forward=0\nnet.ipv4.conf.all.forwarding=0\nnet.ipv4.conf.default.forwarding=0\nnet.ipv6.conf.all.forwarding=0\nnet.ipv6.conf.default.forwarding=0\n"
+    },
+    {
+      "path": "/etc/systemd/system/dell-network19-bridge.service",
+      "sha256": "e543479d9297740e197e41476fe5813eeec0c4dd95d2d4442ee6a6d498bf6cb0",
+      "uid": 0,
+      "mode": "0o644",
+      "safe_public_source": "[Unit]\nDescription=Dell server19 L2 identity and role ACL\nRequires=pve-cluster.service\nAfter=pve-cluster.service network.target\nBefore=pve-guests.service\n[Service]\nType=oneshot\nRemainAfterExit=yes\nExecStart=/usr/local/sbin/dell-apply-network19-bridge\n[Install]\nWantedBy=multi-user.target\n"
+    },
+    {
+      "path": "/etc/systemd/system/dell-network19-bridge.service.d/20-management-only.conf",
+      "sha256": "a42bfddfa94cefa54c44d9daf979b3644f6906f96ca64fb800d5319bfd1c2674",
+      "uid": 0,
+      "mode": "0o644",
+      "safe_public_source": "[Service]\n# Runs after network.target on boot, before pve-guests.service.\nExecStartPost=/usr/local/sbin/dell-management-forwarding-off\n"
+    }
+  ],
+  "units": {
+    "networking.service": {
+      "exit": 0,
+      "properties": {
+        "MainPID": "0",
+        "Result": "success",
+        "NRestarts": "0",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 14:24:12 CST",
+        "Requires": "ifupdown2-pre.service system.slice",
+        "Before": "network.target network-online.target shutdown.target",
+        "After": "ifupdown2-pre.service system.slice systemd-modules-load.service systemd-journald.socket local-fs.target systemd-sysctl.service network-pre.target",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "exited",
+        "UnitFileState": "enabled"
+      }
+    },
+    "systemd-sysctl.service": {
+      "exit": 0,
+      "properties": {
+        "MainPID": "0",
+        "Result": "success",
+        "NRestarts": "0",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 14:24:11 CST",
+        "Requires": "system.slice",
+        "Before": "sysinit.target networking.service systemd-networkd.service shutdown.target",
+        "After": "systemd-modules-load.service system.slice systemd-journald.socket",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "exited",
+        "UnitFileState": "static"
+      }
+    },
+    "dell-network19-bridge.service": {
+      "exit": 0,
+      "properties": {
+        "MainPID": "0",
+        "Result": "success",
+        "NRestarts": "0",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 14:24:15 CST",
+        "ExecStartPost": "{ path=/usr/local/sbin/dell-management-forwarding-off ; argv[]=/usr/local/sbin/dell-management-forwarding-off ; ignore_errors=no ; start_time=[Mon 2026-11-09 14:24:15 CST] ; stop_time=[Mon 2026-11-09 14:24:15 CST] ; pid=1652 ; code=exited ; status=0 }",
+        "Requires": "system.slice sysinit.target pve-cluster.service",
+        "Before": "multi-user.target pve-guests.service shutdown.target",
+        "After": "network.target pve-cluster.service basic.target sysinit.target systemd-journald.socket system.slice",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "exited",
+        "UnitFileState": "enabled"
+      }
+    },
+    "pve-guests.service": {
+      "exit": 0,
+      "properties": {
+        "MainPID": "0",
+        "Result": "success",
+        "NRestarts": "0",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 14:24:18 CST",
+        "Requires": "sysinit.target system.slice dell-network19-bridge.service",
+        "Before": "pvescheduler.service multi-user.target shutdown.target",
+        "After": "systemd-journald.socket pve-query-machine-capabilities.service system.slice pveproxy.service basic.target pvestatd.service pve-ha-lrm.service dell-network19-bridge.service sysinit.target qmeventd.service lxc.service pve-lxc-syscalld.service spiceproxy.service pve-ha-crm.service pve-firewall.service",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "exited",
+        "UnitFileState": "enabled"
+      }
+    },
+    "dell-network.service": {
+      "exit": 0,
+      "properties": {
+        "MainPID": "0",
+        "Result": "success",
+        "NRestarts": "0",
+        "ExecMainStartTimestamp": "",
+        "Requires": "",
+        "Before": "",
+        "After": "",
+        "LoadState": "masked",
+        "ActiveState": "inactive",
+        "SubState": "dead",
+        "UnitFileState": "masked"
+      }
+    },
+    "dell-pve-metrics.service": {
+      "exit": 0,
+      "properties": {
+        "MainPID": "0",
+        "Result": "success",
+        "NRestarts": "0",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 14:41:30 CST",
+        "Requires": "system.slice sysinit.target",
+        "Before": "shutdown.target",
+        "After": "pve-cluster.service basic.target sysinit.target system.slice dell-pve-metrics.timer systemd-journald.socket",
+        "LoadState": "loaded",
+        "ActiveState": "inactive",
+        "SubState": "dead",
+        "UnitFileState": "static"
+      }
+    },
+    "dell-pve-metrics.timer": {
+      "exit": 0,
+      "properties": {
+        "NextElapseUSecRealtime": "",
+        "NextElapseUSecMonotonic": "18min 27.751994s",
+        "LastTriggerUSec": "Mon 2026-11-09 14:41:30 CST",
+        "Result": "success",
+        "Requires": "sysinit.target",
+        "Before": "timers.target dell-pve-metrics.service shutdown.target",
+        "After": "sysinit.target",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "waiting",
+        "UnitFileState": "enabled"
+      }
+    },
+    "pveproxy.service": {
+      "exit": 0,
+      "properties": {
+        "MainPID": "1690",
+        "Result": "success",
+        "NRestarts": "0",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 14:24:17 CST",
+        "Requires": "system.slice sysinit.target",
+        "Before": "multi-user.target shutdown.target pve-ha-lrm.service pve-guests.service spiceproxy.service",
+        "After": "pve-storage.target pvedaemon.service basic.target system.slice sysinit.target pve-cluster.service ssh.service systemd-journald.socket",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "running",
+        "UnitFileState": "enabled"
+      }
+    },
+    "pvedaemon.service": {
+      "exit": 0,
+      "properties": {
+        "MainPID": "1681",
+        "Result": "success",
+        "NRestarts": "0",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 14:24:16 CST",
+        "Requires": "system.slice sysinit.target",
+        "Before": "pveproxy.service shutdown.target pve-ha-crm.service pve-ha-lrm.service multi-user.target",
+        "After": "system.slice sysinit.target basic.target systemd-journald.socket corosync.service pve-cluster.service",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "running",
+        "UnitFileState": "enabled"
+      }
+    },
+    "pvestatd.service": {
+      "exit": 0,
+      "properties": {
+        "MainPID": "1669",
+        "Result": "success",
+        "NRestarts": "0",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 14:24:15 CST",
+        "Requires": "system.slice sysinit.target",
+        "Before": "pve-guests.service multi-user.target shutdown.target",
+        "After": "systemd-journald.socket pve-cluster.service basic.target system.slice sysinit.target",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "running",
+        "UnitFileState": "enabled"
+      }
+    },
+    "iperf3.service": {
+      "exit": 0,
+      "properties": {
+        "MainPID": "1415",
+        "Result": "success",
+        "NRestarts": "0",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 14:24:13 CST",
+        "Requires": "system.slice sysinit.target",
+        "Before": "multi-user.target shutdown.target",
+        "After": "sysinit.target systemd-journald.socket network.target basic.target system.slice auditd.service",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "running",
+        "UnitFileState": "enabled"
+      }
+    }
+  },
+  "failed_units": {
+    "exit": 0,
+    "stdout": []
+  },
+  "nft_tables": {
+    "exit": 0,
+    "stdout": "table bridge dell19_acl\n"
+  },
+  "routes4": {
+    "exit": 0,
+    "data": [
+      {
+        "dst": "default",
+        "gateway": "192.168.21.1",
+        "dev": "vmbr0",
+        "protocol": "kernel",
+        "flags": [
+          "onlink"
+        ]
+      },
+      {
+        "dst": "192.168.19.0/24",
+        "gateway": "192.168.21.23",
+        "dev": "vmbr0",
+        "flags": []
+      },
+      {
+        "dst": "192.168.21.0/24",
+        "dev": "vmbr0",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "192.168.21.22",
+        "flags": []
+      }
+    ]
+  },
+  "vmbr19_addresses": {
+    "exit": 0,
+    "data": [
+      {
+        "ifindex": 5,
+        "ifname": "vmbr19",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "qdisc": "noqueue",
+        "operstate": "UP",
+        "group": "default",
+        "txqlen": 1000,
+        "link_type": "ether",
+        "address": "02:69:e0:75:a0:dd",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "addr_info": []
+      }
+    ]
+  },
+  "host_FS": {
+    "exit": 0,
+    "data": {
+      "filesystems": [
+        {
+          "target": "/",
+          "source": "/dev/mapper/pve-root",
+          "uuid": "acb4f10d-bb75-4d0e-9a8e-48fced6b86f3",
+          "fstype": "ext4",
+          "children": [
+            {
+              "target": "/mnt/pve/store",
+              "source": "/dev/sdb1",
+              "uuid": "75e5b438-5ff3-4139-83d6-b6a6847aedac",
+              "fstype": "ext4"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "storage_status": {
+    "exit": 0,
+    "data": [
+      {
+        "active": 1,
+        "avail": 7428775010304,
+        "content": "backup,rootdir,images,snippets,iso,vztmpl",
+        "enabled": 1,
+        "shared": 0,
+        "storage": "store",
+        "total": 7936199327744,
+        "type": "dir",
+        "used": 107385077760,
+        "used_fraction": 0.01353104594848
+      },
+      {
+        "active": 1,
+        "avail": 84761288704,
+        "content": "vztmpl,backup,iso",
+        "enabled": 1,
+        "shared": 0,
+        "storage": "local",
+        "total": 100861726720,
+        "type": "dir",
+        "used": 10929700864,
+        "used_fraction": 0.108363213871419
+      },
+      {
+        "active": 1,
+        "avail": 329209551940,
+        "content": "rootdir,images",
+        "enabled": 1,
+        "shared": 0,
+        "storage": "local-lvm",
+        "total": 342641082368,
+        "type": "lvmthin",
+        "used": 13431530428,
+        "used_fraction": 0.0391999999975905
+      }
+    ]
+  },
+  "guests": [
+    {
+      "vmid": 100,
+      "kind": "lxc",
+      "state": "running",
+      "template": false,
+      "config_whitelist": {
+        "hostname": "cf-tunnel",
+        "memory": 512,
+        "cores": 1,
+        "onboot": 1,
+        "startup": "order=5,up=10,down=60",
+        "NIC_bridges": {
+          "net0": "vmbr19"
+        }
+      }
+    },
+    {
+      "vmid": 190,
+      "kind": "qemu",
+      "state": "running",
+      "template": false,
+      "config_whitelist": {
+        "name": "network-gateway",
+        "memory": "512",
+        "cores": 2,
+        "onboot": 1,
+        "startup": "order=1,up=30,down=120",
+        "NIC_bridges": {
+          "net0": "vmbr0",
+          "net1": "vmbr19"
+        }
+      }
+    },
+    {
+      "vmid": 200,
+      "kind": "qemu",
+      "state": "running",
+      "template": false,
+      "config_whitelist": {
+        "name": "data-prod-db",
+        "memory": "16384",
+        "cores": 6,
+        "onboot": 1,
+        "startup": "order=10,up=60,down=120",
+        "NIC_bridges": {
+          "net0": "vmbr19"
+        }
+      }
+    },
+    {
+      "vmid": 201,
+      "kind": "qemu",
+      "state": "running",
+      "template": false,
+      "config_whitelist": {
+        "name": "data-prod-infra",
+        "memory": "8192",
+        "cores": 4,
+        "onboot": 1,
+        "startup": "order=11,up=90,down=120",
+        "NIC_bridges": {
+          "net0": "vmbr19"
+        }
+      }
+    },
+    {
+      "vmid": 210,
+      "kind": "qemu",
+      "state": "running",
+      "template": false,
+      "config_whitelist": {
+        "name": "data-test",
+        "memory": "4096",
+        "cores": 2,
+        "onboot": 1,
+        "startup": "order=12,up=90,down=120",
+        "NIC_bridges": {
+          "net0": "vmbr19"
+        }
+      }
+    },
+    {
+      "vmid": 220,
+      "kind": "qemu",
+      "state": "running",
+      "template": false,
+      "config_whitelist": {
+        "name": "publish-service",
+        "memory": "4096",
+        "cores": 4,
+        "onboot": 1,
+        "startup": "order=30,up=15,down=60",
+        "NIC_bridges": {
+          "net0": "vmbr19"
+        }
+      }
+    },
+    {
+      "vmid": 221,
+      "kind": "qemu",
+      "state": "running",
+      "template": false,
+      "config_whitelist": {
+        "name": "artifact-service",
+        "memory": "4096",
+        "cores": 2,
+        "onboot": 1,
+        "startup": "order=21,up=90,down=180",
+        "NIC_bridges": {
+          "net0": "vmbr19"
+        }
+      }
+    },
+    {
+      "vmid": 230,
+      "kind": "qemu",
+      "state": "running",
+      "template": false,
+      "config_whitelist": {
+        "name": "java-prod-01",
+        "memory": "16384",
+        "cores": 6,
+        "onboot": 1,
+        "startup": "order=40,up=15,down=120",
+        "NIC_bridges": {
+          "net0": "vmbr19"
+        }
+      }
+    },
+    {
+      "vmid": 240,
+      "kind": "qemu",
+      "state": "running",
+      "template": false,
+      "config_whitelist": {
+        "name": "java-test-01",
+        "memory": "8192",
+        "cores": 4,
+        "onboot": 1,
+        "startup": "order=43,up=30,down=180",
+        "NIC_bridges": {
+          "net0": "vmbr19"
+        }
+      }
+    },
+    {
+      "vmid": 250,
+      "kind": "qemu",
+      "state": "running",
+      "template": false,
+      "config_whitelist": {
+        "name": "penpot-service",
+        "memory": "16384",
+        "cores": 6,
+        "onboot": 1,
+        "startup": "order=22,up=90,down=180",
+        "NIC_bridges": {
+          "net0": "vmbr19"
+        }
+      }
+    },
+    {
+      "vmid": 260,
+      "kind": "qemu",
+      "state": "running",
+      "template": false,
+      "config_whitelist": {
+        "name": "nas-media",
+        "memory": "4096",
+        "cores": 4,
+        "onboot": 1,
+        "startup": "order=50,up=30,down=120",
+        "NIC_bridges": {
+          "net0": "vmbr19"
+        }
+      }
+    },
+    {
+      "vmid": 270,
+      "kind": "qemu",
+      "state": "running",
+      "template": false,
+      "config_whitelist": {
+        "name": "ops-service",
+        "memory": "4096",
+        "cores": 2,
+        "onboot": 1,
+        "startup": "order=20,up=30,down=60",
+        "NIC_bridges": {
+          "net0": "vmbr19"
+        }
+      }
+    },
+    {
+      "vmid": 9001,
+      "kind": "qemu",
+      "state": "stopped",
+      "template": true,
+      "config_whitelist": {
+        "name": "tpl-docker-base",
+        "memory": "2048",
+        "cores": 2,
+        "onboot": 0,
+        "template": 1,
+        "NIC_bridges": {
+          "net0": "vmbr19"
+        }
+      }
+    },
+    {
+      "vmid": 9010,
+      "kind": "qemu",
+      "state": "stopped",
+      "template": true,
+      "config_whitelist": {
+        "name": "tpl-linux-base",
+        "memory": "2048",
+        "cores": 2,
+        "onboot": 0,
+        "template": 1,
+        "NIC_bridges": {
+          "net0": "vmbr19"
+        }
+      }
+    },
+    {
+      "vmid": 9011,
+      "kind": "qemu",
+      "state": "stopped",
+      "template": true,
+      "config_whitelist": {
+        "name": "tpl-java-acceptance",
+        "memory": "2048",
+        "cores": 2,
+        "onboot": 0,
+        "template": 1,
+        "NIC_bridges": {
+          "net0": "vmbr19"
+        }
+      }
+    }
+  ],
+  "RAID": {
+    "exit": 0,
+    "controller_status": "Success",
+    "virtual_disks": [
+      {
+        "DG/VD": "0/0",
+        "TYPE": "RAID1",
+        "State": "Optl",
+        "Access": "RW",
+        "Consist": "Yes",
+        "Cache": "RWBD",
+        "Size": "446.625 GB"
+      },
+      {
+        "DG/VD": "1/1",
+        "TYPE": "RAID5",
+        "State": "Optl",
+        "Access": "RW",
+        "Consist": "Yes",
+        "Cache": "RWBD",
+        "Size": "7.276 TB"
+      }
+    ],
+    "physical_disks": [
+      {
+        "EID:Slt": "32:0",
+        "State": "Onln",
+        "DG": 0,
+        "Size": "446.625 GB",
+        "Med": "SSD"
+      },
+      {
+        "EID:Slt": "32:1",
+        "State": "Onln",
+        "DG": 0,
+        "Size": "446.625 GB",
+        "Med": "SSD"
+      },
+      {
+        "EID:Slt": "32:2",
+        "State": "Onln",
+        "DG": 1,
+        "Size": "3.637 TB",
+        "Med": "HDD"
+      },
+      {
+        "EID:Slt": "32:3",
+        "State": "Onln",
+        "DG": 1,
+        "Size": "3.637 TB",
+        "Med": "HDD"
+      },
+      {
+        "EID:Slt": "32:7",
+        "State": "Onln",
+        "DG": 1,
+        "Size": "3.637 TB",
+        "Med": "HDD"
+      }
+    ],
+    "BBU": [
+      {
+        "State": "Optimal",
+        "Temp": "40C",
+        "RetentionTime": "0 hour(s)"
+      }
+    ]
+  },
+  "iperf3": {
+    "unit_config": {
+      "exit": 0,
+      "stdout": "# /lib/systemd/system/iperf3.service\n[Unit]\nDescription=iperf3 server\nDocumentation=man:iperf3(1)\nAfter=network.target auditd.service\n\n[Service]\nType=simple\nRestart=always\nRestartSec=15\nUser=iperf3\nExecStart=/usr/bin/iperf3 --server --interval 0\nSuccessExitStatus=1\n\n[Install]\nWantedBy=multi-user.target\n"
+    },
+    "package_version": {
+      "exit": 0,
+      "stdout": "3.12-1+deb12u1"
+    },
+    "sockets": {
+      "exit": 0,
+      "stdout": "tcp LISTEN 0      4096   *:5201 *:* users:((\"iperf3\",pid=1415,fd=3))\n"
+    },
+    "daemon_start_setting": [
+      "START_DAEMON=\"yes\""
+    ],
+    "process": {
+      "PID": 1415,
+      "comm": "iperf3",
+      "executable": "/usr/bin/iperf3",
+      "cgroup": [
+        "0::/system.slice/iperf3.service"
+      ],
+      "safe_command_flags": [
+        "--server"
+      ]
+    }
+  },
+  "sensitive_unit_or_guest_files_read": false,
+  "pressure_reboot_network_test_performed": false,
+  "hardware_boot_listener_supplement": {
+    "captured_at": "2026-11-09T06:43:50.070970+00:00",
+    "SMBIOS_memory": {
+      "exit": 0,
+      "populated_slots": [
+        {
+          "Total Width": "72 bits",
+          "Data Width": "64 bits",
+          "Size": "32 GB",
+          "Locator": "A1",
+          "Bank Locator": "Not Specified",
+          "Type": "DDR4",
+          "Speed": "2133 MT/s",
+          "Configured Memory Speed": "2133 MT/s"
+        },
+        {
+          "Total Width": "72 bits",
+          "Data Width": "64 bits",
+          "Size": "32 GB",
+          "Locator": "A2",
+          "Bank Locator": "Not Specified",
+          "Type": "DDR4",
+          "Speed": "2133 MT/s",
+          "Configured Memory Speed": "2133 MT/s"
+        },
+        {
+          "Total Width": "72 bits",
+          "Data Width": "64 bits",
+          "Size": "32 GB",
+          "Locator": "B1",
+          "Bank Locator": "Not Specified",
+          "Type": "DDR4",
+          "Speed": "2133 MT/s",
+          "Configured Memory Speed": "2133 MT/s"
+        },
+        {
+          "Total Width": "72 bits",
+          "Data Width": "64 bits",
+          "Size": "32 GB",
+          "Locator": "B2",
+          "Bank Locator": "Not Specified",
+          "Type": "DDR4",
+          "Speed": "2133 MT/s",
+          "Configured Memory Speed": "2133 MT/s"
+        }
+      ]
+    },
+    "iperf3_second_socket_snapshot": {
+      "exit": 0,
+      "lines": [
+        "tcp LISTEN 0      4096   *:5201 *:* users:((\"iperf3\",pid=1415,fd=3))"
+      ]
+    },
+    "iperf3_second_unit": {
+      "MainPID": "1415",
+      "ExecMainStartTimestamp": "Mon 2026-11-09 14:24:13 CST",
+      "ActiveState": "active"
+    },
+    "management_files": {
+      "/etc/network/interfaces": {
+        "exists": true,
+        "symlink": false,
+        "sha256": "5099020dbccd6667efdfed69f0643c81689d116d2c570631f6a7f833724177ae"
+      },
+      "/etc/nftables.d/dell.nft": {
+        "exists": false,
+        "symlink": false
+      },
+      "/etc/systemd/system/pve-guests.service.d/40-network19-bridge.conf": {
+        "exists": true,
+        "symlink": false,
+        "sha256": "6bcca69c36d83e1fbd53191d739e5173a83254958ee1fbcacdb43114cf7ad94e",
+        "public_dependency_source": "[Unit]\nRequires=dell-network19-bridge.service\nAfter=dell-network19-bridge.service\n"
+      }
+    },
+    "BMC_local_tool_availability": {
+      "ipmitool": false,
+      "racadm": false
+    },
+    "active_commands_or_traffic_sent": false
+  },
+  "completed_at": "2026-11-09T14:44:45.994878+08:00",
+  "scope": {
+    "user_instruction": "Continue existing infrastructurebuild; no datamigration",
+    "no_Nexusmerge_or_221retirement": true,
+    "no_Java_business_start": true,
+    "Mac_external_probe_not_needed": true,
+    "OpenWrt_full_rules_not_read_or_committed": true,
+    "PVE_writes_owned_by_parent": true,
+    "this_auditor_readonly": true
+  },
+  "startup_comparison": [
+    {
+      "vmid": 100,
+      "onboot": 1,
+      "actual_startup": "order=5,up=10,down=60",
+      "matches_plan": true
+    },
+    {
+      "vmid": 190,
+      "onboot": 1,
+      "actual_startup": "order=1,up=30,down=120",
+      "matches_plan": true
+    },
+    {
+      "vmid": 200,
+      "onboot": 1,
+      "actual_startup": "order=10,up=60,down=120",
+      "matches_plan": true
+    },
+    {
+      "vmid": 201,
+      "onboot": 1,
+      "actual_startup": "order=11,up=90,down=120",
+      "matches_plan": true
+    },
+    {
+      "vmid": 210,
+      "onboot": 1,
+      "actual_startup": "order=12,up=90,down=120",
+      "matches_plan": true
+    },
+    {
+      "vmid": 220,
+      "onboot": 1,
+      "actual_startup": "order=30,up=15,down=60",
+      "matches_plan": true
+    },
+    {
+      "vmid": 221,
+      "onboot": 1,
+      "actual_startup": "order=21,up=90,down=180",
+      "matches_plan": true
+    },
+    {
+      "vmid": 230,
+      "onboot": 1,
+      "actual_startup": "order=40,up=15,down=120",
+      "matches_plan": true
+    },
+    {
+      "vmid": 240,
+      "onboot": 1,
+      "actual_startup": "order=43,up=30,down=180",
+      "matches_plan": true
+    },
+    {
+      "vmid": 250,
+      "onboot": 1,
+      "actual_startup": "order=22,up=90,down=180",
+      "matches_plan": true
+    },
+    {
+      "vmid": 260,
+      "onboot": 1,
+      "actual_startup": "order=50,up=30,down=120",
+      "matches_plan": true
+    },
+    {
+      "vmid": 270,
+      "onboot": 1,
+      "actual_startup": "order=20,up=30,down=60",
+      "matches_plan": true
+    },
+    {
+      "vmid": 9001,
+      "onboot": 0,
+      "actual_startup": null,
+      "matches_plan": true
+    },
+    {
+      "vmid": 9010,
+      "onboot": 0,
+      "actual_startup": null,
+      "matches_plan": true
+    },
+    {
+      "vmid": 9011,
+      "onboot": 0,
+      "actual_startup": null,
+      "matches_plan": true
+    }
+  ],
+  "forward_guard_review": {
+    "current_all_forward_values_zero": true,
+    "three_files_exact_11_08_receipt_SHA_match": {
+      "/usr/local/sbin/dell-management-forwarding-off": true,
+      "/etc/network/if-up.d/dell-management-forwarding-off": true,
+      "/etc/systemd/system/dell-network19-bridge.service.d/20-management-only.conf": true
+    },
+    "root_owned_not_group_world_writable": true,
+    "actual_ordering_proven_this_boot": {
+      "networking_start": "Mon 2026-11-09 14:24:12 CST",
+      "bridge_start": "Mon 2026-11-09 14:24:15 CST",
+      "bridge_ExecStartPost_exit0": true,
+      "pve_guests_start": "Mon 2026-11-09 14:24:18 CST"
+    },
+    "persistent_mechanism": [
+      "sysctl all/default/off",
+      "ifuphook onlyvmbr0 setsinterfaceforwardoff afterifupdown2",
+      "bridgeunit ExecStartPost off after networktarget before pve-guests",
+      "pve-guests Requires/Afterbridgeunit"
+    ],
+    "agent_did_not_trigger_reload_hook_or_reboot": true
+  },
+  "iperf3_review": {
+    "classification": "enabled-idle-boot-daemon-at-two-samples",
+    "MainPID": 1415,
+    "unit": "iperf3.service",
+    "process_cgroup": [
+      "0::/system.slice/iperf3.service"
+    ],
+    "executable": "/usr/bin/iperf3",
+    "socket": "*:5201 TCP LISTEN",
+    "active_test_connections_seen": false,
+    "samples": [
+      "2026-11-09T06:42:26.737128+00:00",
+      "2026-11-09T06:43:50.070970+00:00"
+    ],
+    "service_restart_policy": "always,15seconds",
+    "disable_recommendation": "Parent may stop+disableiperf3.service after a finalsamewindow no-active-connectioncheck; keepbinary/packageavailable for explicitfuturemanualtest. Do not merelykillPID becauseRestartalways respawns.",
+    "uninstall_or_mask_required": false,
+    "recommendation_applied": false,
+    "past_or_future_test_absence_proven": false
+  },
+  "summary": {
+    "status": "fresh-readonly-baseline-passed-iperf3-idle-daemon-recommendation",
+    "running_guest_count": 12,
+    "stopped_templates": [
+      9001,
+      9010,
+      9011
+    ],
+    "startup_contracts_all_match": true,
+    "host_forward_all_zero": true,
+    "only_bridge_ACL_table": true,
+    "old_host_NATfile_absent": true,
+    "failed_unit_count": 0,
+    "PVE_proxy_daemon_status_OK": true,
+    "EDAC_all_zero": true,
+    "currentboot_kernel_error_categories_zero": true,
+    "RAID1_RAID5_Optimal": true,
+    "physical_5_disks_Onln": true,
+    "BBU_Optimal": true,
+    "PVE_metrics_timer_enabled_active_waiting": true,
+    "PVE_metrics_last_run_success": true,
+    "iperf3_idle_daemon": true,
+    "no_remote_mutations_or_pressure_tests": true
+  },
+  "limitations": [
+    "EDAC0 andnominal4x32GB/currentbootkernellog arefreshobservations,not proofthatpreviousB1physicalfaultoralllatenterrorsarefullycured.",
+    "ipmitool/racadm unavailable; no newSEL/Lifecycle clearingorBMCdiagnostic performed. User priorrepairdiagnostic confirmation remains external.",
+    "Thisboot ordering isreadback,not arebootstability/pressureacceptance triggeredbyauditor.",
+    "RAIDquickshow confirmsVD/PD/BBUstates; doesnot provefullfilesystem/applicationintegrity orRPO_RTO.",
+    "No guestservices/metricsquery/CFsecretunit/220keys/env/databasesread; parentcoordinatesguestverification.",
+    "iperf3 noestablished5201 connection at twoshort samples doesnot proveunusedatalltimes.",
+    "Hostmetrics oneshotinactivebetweentimerfirings isnormal; thisaudit didnotrunpush or sendLark."
+  ]
+}

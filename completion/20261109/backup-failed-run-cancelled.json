@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-09T15:04:29.234187+08:00",
+  "status": "known-failed-first-run-cancelled-via-server-unit",
+  "job_still_disabled": true,
+  "native_backup_tasks_active": false,
+  "unit": "Result=exit-code\nExecMainStatus=255\nActiveState=failed\nSubState=failed\n",
+  "guest190_status": "status: running",
+  "guest190_fsfreeze": "thawed",
+  "CT100_status": "status: running",
+  "guest190_backup_lock_present": false,
+  "guest_restart": false
+}

@@ -1,6 +1,6 @@
 # 服务部署结果、迁移边界与未完成事项
 
-更新：2026-11-08。**用户确认内存重新插拔/更换并诊断通过，基础服务已在20:16–20:20恢复审计；当前只检查补齐与清理确认多余项，不迁移。** UEFI0058为历史故障；本轮主要检查健康/状态/挂载，没有重做全部应用内容、认证与备份恢复。Nexus221仍独立，Java业务不部署，Mac外部探针从现行方案及后续待办移除、历史保留。整体见[01](01-current-state.md)，证据边界见[08](08-hardware-findings.md)。
+更新：2026-11-09。**继续补齐现有基础搭建，用户选择先建PVE本机自动备份，不迁移数据。** 本轮14:42–14:44在14:24自然重启后再次观察基础服务健康，forward guard跨重启全0。[首轮11项归档验证完成](completion/20261109/backup-first-success.json)、原生任务OK/退出0，[03:30计划已启用](completion/20261109/backup-schedule-enabled.json)，不签恢复或异机灾备。Nexus221保持独立、Java业务不启、Penpot实际ff提交不更新main；Mac外部探针不再需要。没有重做全部应用内容/认证/恢复，整体见[01](01-current-state.md)、[08](08-hardware-findings.md)。
 
 ## 1. 当前实际服务归属与验收层级
 
@@ -19,12 +19,12 @@
 | 270 Ops | Prometheus/Grafana/AM/Blackbox、OS/PVE/RAID/CF状态、Lark桥 | 原验收firing/resolved code0；本轮15目标UP/0告警 | 不承担整机故障独立外告警；Mac probe不再列入方案或待办 |
 | 190 GW / 100 CF | 路由/DNS/DHCP/filter，隧道传输入口 | 网关同key重启、CF连接注册；VPN全19规则与用户远程批量验证 | 未知Cloudflare account-side origin不由注册成功推定 |
 
-本轮恢复证据：
+本轮11月9日fresh证据（11月8日记录另在recovery目录保留）：
 
-- [核心200/201/210/230/240](recovery/20261108/core-services-audit.json)，20:16:13–20:18:22：三盘UUID/rw相符、数据8容器healthy/RestartCount0；两Java基础JDK21.0.13可执行、finger存在、无Java进程、五旧unit非enabled。未重验DB认证、namespace或业务schema内容。
-- [媒体工具220/221/250/260](recovery/20261108/media-tools-audit.json)，20:19:39：220仍4CPU/4GiB/唯一30，无active Nexus；221两容器、250十一容器、260一容器healthy/原镜像保持，原健康GET通过。Penpot实际Git为ff1783e clean，本轮未更新main；MCP、设计/制品内容与SMB写入未复验。
-- [Ops270](recovery/20261108/ops-audit.json)，20:19:38：4容器healthy、15/15 targets UP/0告警，内部Lark unit active；未触发新消息测试。首轮onboot尚未完成的no-route/starting自然消失，不是通过重启应用修复。
-- [宿主后检](recovery/20261108/host-network-postcheck.json)，20:20:48：保留12来宾运行、主要6入口200、各接口forward0。仅3个owned持久文件用于收敛宿主forward，桥/路由/ACL未变、没有网络reload。PVE HTTPS的curl只证明入口可达，没有认证其自签证书。
+- [核心200/201/210/230/240](completion/20261109/core-audit.json)，14:42:56–14:43:40：三盘UUID/rw相符、数据8容器healthy/RestartCount0；两Java基础JDK21.0.13可执行、finger存在、无Java进程、五旧unit非enabled。未重验DB认证、namespace或业务schema内容。
+- [媒体工具220/221/250/260](completion/20261109/media-audit.json)，14:43:07：220仍4CPU/4GiB/唯一30，无active Nexus；221两容器、250十一容器、260一容器healthy/原镜像保持，原健康GET通过。Penpot实际Git为ff1783e clean，本轮未更新main；MCP、设计/制品内容与SMB写入未复验。
+- [Ops270](completion/20261109/ops-audit.json)：4容器healthy、15/15 targets UP/0告警、10节点textfile新鲜、内部Lark unit active；未触发新消息测试。11月8日启动队列中的瞬时no-route是当时历史，不混成本轮故障。
+- [PVE审计](completion/20261109/pve-audit.json)，14:42–14:44：12来宾运行、3模板停止、EDAC0/RAIDOptl、onboot顺序匹配；11月8日3个guard SHA保持，14:24 networking→bridge/ExecStartPost→pve-guests的真实时序及全forward0已读回。原桥/路由/ACL保持。另[14:45空闲iperf清理](completion/20261109/idle-iperf-disabled.json)已stop/disable服务、关闭5201，工具包保留，不重启应用。
 
 - [直接LAN DNS/CF复核](recovery/20261108/network-CF-followup.json)：19.1 UDP/TCP解析三静态A正确；CF实际20241 ready200、连接2，公网origin E2E未验。网关OS resolver走OW Fake-IP、旧CF2000探针假设错误均已有解释，原失败证据不改写。
 
@@ -64,16 +64,20 @@ Penpot使用独立目标身份；定制前端便利登录值不能随源配置�
 
 NAS采用OMV管理专用2TiB虚拟盘，Jellyfin只读媒体；SMB写入/只读账户区分，游戏文件不进入媒体扫库。旧home-cinema-nas仓库中宿主OMV、旧IP或一键拉起MoviePilot/qBittorrent的说明不能当本T630实施入口，详见[05](05-home-nas.md)。
 
-## 6. 备份与恢复证据如何解读
+## 6. 新增PVE本机自动备份与恢复边界
 
 PVE备份与应用逻辑/导出恢复互补。已做的合成MySQL/Nacos/Redis/Rabbit fixture隔离恢复、Grafana SQLite恢复、模板VMA恢复和应用样本验证只覆盖对应范围；Rabbit topology不含消息，单Nacos配置行不是完整元库，JAR回滚不回滚DB/Nacos。
 
-普通应用备份目的地暂为Mac私有目录；受保护清理VMA备份在PVE本机，CF含凭据备份只准PVE，不导出Mac。NAS不是正式灾备。长期生产备份目的地、周期、保留和恢复RPO/RTO尚未达到可承诺SLA；Lark配置恢复也不包含在单份Grafana数据库备份里。
+原应用样本副本暂在Mac私有目录，受保护清理VMA档仍留原PVE目录。用户11月9日明确选择先搭[PVE本机自动备份](infra/backup/pve-local/README.md)：native job `dell-local-nightly`、storage `dell-local-backup`，03:30、最近3＋每日7＋每周4点，固定11对象100/190/200/201/210/221/230/240/250/260/270；220始终排除以保护发布私钥，CF归档仅PVE不导出。新namespace目录root700、归档/日志/状态600，原21档不受新保留策略影响。
 
-本轮不做重建、压测、数据导入或迁移。恢复审计已核部分挂载/健康，但不以当前Optimal、HTTP200或archive SHA替代数据一致性与完整恢复验证。新的备份/清理按明确范围安排，不从旧脚本推导可整体重跑。
+[首轮成功回执](completion/20261109/backup-first-success.json)确认固定11项全部zstd/native verified，原生任务OK、unit退出0，总19,747,582,801 bytes；[计划启用回执](completion/20261109/backup-schedule-enabled.json)确认enabled=1、03:30和3/7/4保留。历史失败与部分进度保留，不覆盖现有归档成功事实，也不扩大为恢复保证；后续状态统一见[本轮交付记录](completion/20261109/README.md)。
+
+[metadata已接入现有PVE collector](completion/20261109/backup-metrics-installed.json)，[三名Lark白名单已配套](completion/20261109/backup-notify-whitelist-result.json)，不新增接收人、不人工外发；Prom新规则实际加载/后验只查[当日中央入口](completion/20261109/README.md)，本页不提前声称已加载。快照有QGA/文件系统冻结也仍是系统/crash-consistent恢复点，不保证数据库逻辑或跨VM事务一致；本轮不恢复VM、不迁移数据。独立目的地、完整恢复演练与RPO/RTO未完成，不能签异机灾备或SLA。Lark秘密也不由单份Grafana数据库覆盖。
+
+本轮不做重建、压测、数据导入或迁移；备份只按新明确的native snapshot范围执行，不运行旧应用fixture/导入或恢复脚本。当前Optimal、HTTP200、压缩/native检查与archive SHA都不能单独替代业务一致性及完整恢复验证。OW完整规则仅本地保存，不触碰或上传；不以Git交付扩大该范围。
 
 ## 7. 运维和验收入口
 
 当前地址与安全入口见[12](12-service-access-and-operations.md)，网络和VPN见[15](15-network19-delivery.md)，清理结果见[18](18-cleanup-and-consolidation.md)，备份见[应用备份](infra/backup/README.md)。各包prepare/stage/commit有环境/时间门禁，不能因服务恢复就直接重跑历史命令；本轮不进入Nexus或业务迁移。
 
-本轮恢复证据见上方[核心](recovery/20261108/core-services-audit.json)、[媒体工具](recovery/20261108/media-tools-audit.json)、[Ops](recovery/20261108/ops-audit.json)、[宿主后检](recovery/20261108/host-network-postcheck.json)；[故障前完整验收](cleanup/final-live-check.json)与[plan](plan.json)分别保存历史结果和配置合同。原本机只读快照、旧10.63私网及Java试验记录保留作历史，不全局替换其中IP/状态，也不称“所有迁移仍pending”。
+本轮证据见上方[核心](completion/20261109/core-audit.json)、[媒体工具](completion/20261109/media-audit.json)、[Ops](completion/20261109/ops-audit.json)、[PVE](completion/20261109/pve-audit.json)；[故障前完整验收](cleanup/final-live-check.json)与[plan](plan.json)分别保存历史结果和配置合同。原本机只读快照、旧10.63私网及Java试验记录保留作历史，不全局替换其中IP/状态，也不称“所有迁移仍pending”。

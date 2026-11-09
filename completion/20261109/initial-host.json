@@ -1,0 +1,69 @@
+{
+  "at": "2026-11-09T14:42:28.886429+08:00",
+  "scope": "continued infrastructure setup;no migration/noJava business/noMacprobe",
+  "source": "fresh strictSSH PVE",
+  "result": {
+    "time": {
+      "exit": 0,
+      "out": "2026-11-09T14:42:25+08:00\n",
+      "err": ""
+    },
+    "boot": {
+      "exit": 0,
+      "out": "2026-11-09 14:24:03\n",
+      "err": ""
+    },
+    "resources": {
+      "exit": 0,
+      "out": "[{\"cpu\":0.00117366324355154,\"disk\":751304704,\"diskread\":95563776,\"diskwrite\":3543040,\"id\":\"lxc/100\",\"maxcpu\":1,\"maxdisk\":4143677440,\"maxmem\":536870912,\"mem\":34291712,\"name\":\"cf-tunnel\",\"netin\":180445,\"netout\":251412,\"node\":\"pve\",\"status\":\"running\",\"template\":0,\"type\":\"lxc\",\"uptime\":1002,\"vmid\":100},{\"cpu\":0.00431948151853385,\"disk\":0,\"diskread\":151055970,\"diskwrite\":8327680,\"id\":\"qemu/190\",\"maxcpu\":2,\"maxdisk\":34359738368,\"maxmem\":536870912,\"mem\":162026605,\"name\":\"network-gateway\",\"netin\":1442066,\"netout\":928732,\"node\":\"pve\",\"status\":\"running\",\"template\":0,\"type\":\"qemu\",\"uptime\":1079,\"vmid\":190},{\"cpu\":0.0313562362086161,\"disk\":0,\"diskread\":548973154,\"diskwrite\":48198144,\"id\":\"qemu/200\",\"maxcpu\":6,\"maxdisk\":34359738368,\"maxmem\":17179869184,\"mem\":2463053406,\"name\":\"data-prod-db\",\"netin\":190964,\"netout\":689439,\"node\":\"pve\",\"status\":\"running\",\"template\":0,\"type\":\"qemu\",\"uptime\":989,\"vmid\":200},{\"cpu\":0.0993480749262786,\"disk\":0,\"diskread\":598940258,\"diskwrite\":72126976,\"id\":\"qemu/201\",\"maxcpu\":4,\"maxdisk\":34359738368,\"maxmem\":8589934592,\"mem\":2126223741,\"name\":\"data-prod-infra\",\"netin\":281526,\"netout\":586366,\"node\":\"pve\",\"status\":\"running\",\"template\":0,\"type\":\"qemu\",\"uptime\":926,\"vmid\":201},{\"cpu\":0.195816495506868,\"disk\":0,\"diskread\":790452834,\"diskwrite\":88691200,\"id\":\"qemu/210\",\"maxcpu\":2,\"maxdisk\":34359738368,\"maxmem\":4294967296,\"mem\":1825669764,\"name\":\"data-test\",\"netin\":31357,\"netout\":426430,\"node\":\"pve\",\"status\":\"running\",\"template\":0,\"type\":\"qemu\",\"uptime\":833,\"vmid\":210},{\"cpu\":0.00335959673663744,\"disk\":0,\"diskread\":309516898,\"diskwrite\":15200768,\"id\":\"qemu/220\",\"maxcpu\":4,\"maxdisk\":34359738368,\"maxmem\":4294967296,\"mem\":689239870,\"name\":\"publish-service\",\"netin\":17125,\"netout\":296896,\"node\":\"pve\",\"status\":\"running\",\"template\":0,\"type\":\"qemu\",\"uptime\":521,\"vmid\":220},{\"cpu\":0.0633523956051631,\"disk\":0,\"diskread\":716536418,\"diskwrite\":29729280,\"id\":\"qemu/221\",\"maxcpu\":2,\"maxdisk\":34359738368,\"maxmem\":4294967296,\"mem\":1951507136,\"name\":\"artifact-service\",\"netin\":31022,\"netout\":422659,\"node\":\"pve\",\"status\":\"running\",\"template\":0,\"type\":\"qemu\",\"uptime\":707,\"vmid\":221},{\"cpu\":0.0116785981797397,\"disk\":0,\"diskread\":376227426,\"diskwrite\":254280192,\"id\":\"qemu/230\",\"maxcpu\":6,\"maxdisk\":34359738368,\"maxmem\":17179869184,\"mem\":1385138778,\"name\":\"java-prod-01\",\"netin\":15882,\"netout\":266678,\"node\":\"pve\",\"status\":\"running\",\"template\":0,\"type\":\"qemu\",\"uptime\":503,\"vmid\":230},{\"cpu\":0.00215974075926693,\"disk\":0,\"diskread\":152318562,\"diskwrite\":11794944,\"id\":\"qemu/240\",\"maxcpu\":4,\"maxdisk\":34359738368,\"maxmem\":8589934592,\"mem\":638618919,\"name\":\"java-test-01\",\"netin\":14521,\"netout\":246420,\"node\":\"pve\",\"status\":\"running\",\"template\":0,\"type\":\"qemu\",\"uptime\":485,\"vmid\":240},{\"cpu\":0.189737225221524,\"disk\":0,\"diskread\":1258187362,\"diskwrite\":95207936,\"id\":\"qemu/250\",\"maxcpu\":6,\"maxdisk\":34359738368,\"maxmem\":17179869184,\"mem\":4718134607,\"name\":\"penpot-service\",\"netin\":34412,\"netout\":402325,\"node\":\"pve\",\"status\":\"running\",\"template\":0,\"type\":\"qemu\",\"uptime\":614,\"vmid\":250},{\"cpu\":0.00551933749590437,\"disk\":0,\"diskread\":874757198,\"diskwrite\":33014272,\"id\":\"qemu/260\",\"maxcpu\":4,\"maxdisk\":34359738368,\"maxmem\":4294967296,\"mem\":1410091490,\"name\":\"nas-media\",\"netin\":231496,\"netout\":290601,\"node\":\"pve\",\"status\":\"running\",\"template\":0,\"type\":\"qemu\",\"uptime\":452,\"vmid\":260},{\"cpu\":0.070071589078438,\"disk\":0,\"diskread\":1752947298,\"diskwrite\":172319232,\"id\":\"qemu/270\",\"maxcpu\":2,\"maxdisk\":34359738368,\"maxmem\":4294967296,\"mem\":2013353588,\"name\":\"ops-service\",\"netin\":3389859,\"netout\":183118,\"node\":\"pve\",\"status\":\"running\",\"template\":0,\"type\":\"qemu\",\"uptime\":740,\"vmid\":270},{\"cpu\":0,\"disk\":0,\"diskread\":0,\"diskwrite\":0,\"id\":\"qemu/9001\",\"maxcpu\":2,\"maxdisk\":34359738368,\"maxmem\":2147483648,\"mem\":0,\"name\":\"tpl-docker-base\",\"netin\":0,\"netout\":0,\"node\":\"pve\",\"status\":\"stopped\",\"template\":1,\"type\":\"qemu\",\"uptime\":0,\"vmid\":9001},{\"cpu\":0,\"disk\":0,\"diskread\":0,\"diskwrite\":0,\"id\":\"qemu/9010\",\"maxcpu\":2,\"maxdisk\":34359738368,\"maxmem\":2147483648,\"mem\":0,\"name\":\"tpl-linux-base\",\"netin\":0,\"netout\":0,\"node\":\"pve\",\"status\":\"stopped\",\"template\":1,\"type\":\"qemu\",\"uptime\":0,\"vmid\":9010},{\"cpu\":0,\"disk\":0,\"diskread\":0,\"diskwrite\":0,\"id\":\"qemu/9011\",\"maxcpu\":2,\"maxdisk\":34359738368,\"maxmem\":2147483648,\"mem\":0,\"name\":\"tpl-java-acceptance\",\"netin\":0,\"netout\":0,\"node\":\"pve\",\"status\":\"stopped\",\"template\":1,\"type\":\"qemu\",\"uptime\":0,\"vmid\":9011}]\n",
+      "err": ""
+    },
+    "failed": {
+      "exit": 0,
+      "out": "",
+      "err": ""
+    },
+    "storage": {
+      "exit": 0,
+      "out": "Name             Type     Status           Total            Used       Available        %\nlocal             dir     active        98497780        10673532        82774700   10.84%\nlocal-lvm     lvmthin     active       334610432        13116728       321493703    3.92%\nstore             dir     active      7750194656       104868240      7254663096    1.35%\n",
+      "err": ""
+    },
+    "routes": {
+      "exit": 0,
+      "out": "[{\"dst\":\"default\",\"gateway\":\"192.168.21.1\",\"dev\":\"vmbr0\",\"protocol\":\"kernel\",\"flags\":[\"onlink\"]},{\"dst\":\"192.168.19.0/24\",\"gateway\":\"192.168.21.23\",\"dev\":\"vmbr0\",\"flags\":[]},{\"dst\":\"192.168.21.0/24\",\"dev\":\"vmbr0\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"192.168.21.22\",\"flags\":[]}]\n",
+      "err": ""
+    },
+    "TCP_listeners": {
+      "exit": 0,
+      "out": "LISTEN 0      100    127.0.0.1:25   0.0.0.0:* users:((\"master\",pid=1623,fd=13))                                                                                                        \nLISTEN 0      4096   127.0.0.1:85   0.0.0.0:* users:((\"pvedaemon worke\",pid=1684,fd=6),(\"pvedaemon worke\",pid=1683,fd=6),(\"pvedaemon worke\",pid=1682,fd=6),(\"pvedaemon\",pid=1681,fd=6))\nLISTEN 0      4096     0.0.0.0:111  0.0.0.0:* users:((\"rpcbind\",pid=1278,fd=4),(\"systemd\",pid=1,fd=36))                                                                                \nLISTEN 0      128      0.0.0.0:22   0.0.0.0:* users:((\"sshd\",pid=1442,fd=3))                                                                                                           \nLISTEN 0      100        [::1]:25      [::]:* users:((\"master\",pid=1623,fd=14))                                                                                                        \nLISTEN 0      4096           *:8006       *:* users:((\"pveproxy worker\",pid=1693,fd=6),(\"pveproxy worker\",pid=1692,fd=6),(\"pveproxy worker\",pid=1691,fd=6),(\"pveproxy\",pid=1690,fd=6)) \nLISTEN 0      4096           *:5201       *:* users:((\"iperf3\",pid=1415,fd=3))                                                                                                         \nLISTEN 0      4096           *:3128       *:* users:((\"spiceproxy work\",pid=1698,fd=6),(\"spiceproxy\",pid=1697,fd=6))                                                                   \nLISTEN 0      4096        [::]:111     [::]:* users:((\"rpcbind\",pid=1278,fd=6),(\"systemd\",pid=1,fd=38))                                                                                \nLISTEN 0      128         [::]:22      [::]:* users:((\"sshd\",pid=1442,fd=4))                                                                                                           \n",
+      "err": ""
+    },
+    "all_forward_zero": true,
+    "EDAC_counts": {
+      "/sys/devices/system/edac/mc/mc2/ce_count": "0",
+      "/sys/devices/system/edac/mc/mc2/ce_noinfo_count": "0",
+      "/sys/devices/system/edac/mc/mc2/ue_count": "0",
+      "/sys/devices/system/edac/mc/mc2/ue_noinfo_count": "0",
+      "/sys/devices/system/edac/mc/mc0/ce_count": "0",
+      "/sys/devices/system/edac/mc/mc0/ce_noinfo_count": "0",
+      "/sys/devices/system/edac/mc/mc0/ue_count": "0",
+      "/sys/devices/system/edac/mc/mc0/ue_noinfo_count": "0",
+      "/sys/devices/system/edac/mc/mc0/dimm3/dimm_ue_count": "0",
+      "/sys/devices/system/edac/mc/mc0/dimm3/dimm_ce_count": "0",
+      "/sys/devices/system/edac/mc/mc0/dimm0/dimm_ue_count": "0",
+      "/sys/devices/system/edac/mc/mc0/dimm0/dimm_ce_count": "0",
+      "/sys/devices/system/edac/mc/mc3/ce_count": "0",
+      "/sys/devices/system/edac/mc/mc3/ce_noinfo_count": "0",
+      "/sys/devices/system/edac/mc/mc3/ue_count": "0",
+      "/sys/devices/system/edac/mc/mc3/ue_noinfo_count": "0",
+      "/sys/devices/system/edac/mc/mc1/ce_count": "0",
+      "/sys/devices/system/edac/mc/mc1/ce_noinfo_count": "0",
+      "/sys/devices/system/edac/mc/mc1/ue_count": "0",
+      "/sys/devices/system/edac/mc/mc1/ue_noinfo_count": "0",
+      "/sys/devices/system/edac/mc/mc1/dimm3/dimm_ue_count": "0",
+      "/sys/devices/system/edac/mc/mc1/dimm3/dimm_ce_count": "0",
+      "/sys/devices/system/edac/mc/mc1/dimm0/dimm_ue_count": "0",
+      "/sys/devices/system/edac/mc/mc1/dimm0/dimm_ce_count": "0"
+    }
+  }
+}

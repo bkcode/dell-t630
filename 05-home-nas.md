@@ -1,6 +1,6 @@
 # 家庭NAS、影音与游戏文件库
 
-更新：2026-11-08。**NAS基础服务已随正常开机恢复，本轮只读复核通过，未迁移、重装或进行共享写入/新播放测试。** 用户确认内存重新插拔/更换并诊断通过；UEFI0058为历史事件。20:19:39媒体审计与20:20:48入口复核观察原盘UUID、服务、Jellyfin容器健康及OMV/JF HTTP200，实际使用与备份范围未因此全验。总体状态见[01](01-current-state.md)。
+更新：2026-11-09。**14:24自然重启后NAS原UUID/单元/容器和原健康入口再次只读通过；未迁移、重装、写共享或新播放。** [14:43媒体审计](completion/20261109/media-audit.json)确认原配置/镜像与基础服务保持。PVE本机备份包含260，[首轮11项已验证完成](completion/20261109/backup-first-success.json)、[03:30计划已启用](completion/20261109/backup-schedule-enabled.json)；本轮没有恢复演练，同机备份不等于家庭异机灾备。总体状态见[01](01-current-state.md)。
 
 ## 1. 职责与已交付功能
 
@@ -57,21 +57,23 @@ NAS系统盘和数据盘不依赖自己导出的SMB/NFS启动。OMV持久网络�
 
 媒体容器必须由挂载受控systemd启动。缺盘时验证实际mountpoint/UUID/source失败就停止写入，不能因为空目录存在而自动向系统盘建库。停止、修挂载和恢复都应在明确窗口内做，不为验收随意拔盘/卸载真实媒体盘。
 
-历史UEFI0058发生在OS启动前，不是SMB/Jellyfin故障；用户已确认内存处理与诊断通过。本轮[媒体工具审计](recovery/20261108/media-tools-audit.json)核原2TiB UUID、ext4及OMV/SMB/Jellyfin单元，原MP4与三共享fixture仅stat存在；没有读取文件内容或进行认证写入。首轮260尚未可达随onboot自然就绪，未为此重启服务。当前RAID Optimal与HTTP200不等于所有媒体文件已完成校验。
+历史UEFI0058发生在OS启动前，不是SMB/Jellyfin故障；用户已确认内存处理与诊断通过。本轮[媒体审计](completion/20261109/media-audit.json)再次核原2TiB UUID、ext4及OMV/SMB/Jellyfin单元；原MP4与三共享fixture的stat观察来自11月8日，没有读取文件内容或进行认证写入。11月8日260尚未走完onboot的瞬时不可达是当时记录，本轮不据此诊断新故障或重启服务。当前RAID Optimal与HTTP200不等于所有媒体文件已完成校验。
 
 备份分层包括OMV配置、Compose/Jellyfin数据库、不可重建家庭文件/存档与所选媒体。应用数据库按支持的一致性方式保存，个人珍贵文件有独立副本；大体积可重新取得内容由用户决定范围。NAS不作为正式业务备份目标，也不把整盘备份再写到自己内部。
 
-同机NAS与PVE、正式数据、Ops共享供电/内存/RAID故障域；系统盘或同机store备份不覆盖整机损失。独立目的地/保留/恢复SLO未完成，当前不宣称家庭数据已具备完整灾备。
+新增[PVE本机自动备份](infra/backup/pve-local/README.md)固定11项中包含260，明确排除220发布机、CF归档仅PVE，以VM snapshot保存系统/虚拟数据盘恢复点；备份目录在PVE store原生namespace，不经NAS导出共享，也不把备份写入VM260自己盘内。2TiB是虚拟盘逻辑容量，稀疏扫描仍消耗时间/IO，不能据归档暂小就宣称已覆盖未来媒体增长或持续备份能力。[首轮11项已完整验证](completion/20261109/backup-first-success.json)、原生任务OK/退出0，[计划已启用](completion/20261109/backup-schedule-enabled.json)，03:30与3/7/4保留保持；本轮260归档为2,177,592,558 bytes。Prom规则实际状态只查[当日中央入口](completion/20261109/README.md)，不在本页提前签加载。
+
+同机NAS与PVE、数据和Ops共享供电/内存/RAID故障域；PVE本机snapshot不覆盖整机损失、不保证Jellyfin数据库逻辑一致，也没有本轮恢复演练。独立目的地/恢复SLO仍待完成，当前不宣称家庭数据已具备完整灾备；珍贵家庭文件独立副本仍有必要。
 
 ## 6. 当前恢复观察与后续人工验收
 
 | ID | 前置/步骤 | 可观察通过条件 | 状态边界 |
 | --- | --- | --- | --- |
-| NAS-01 | 本轮只读核VM260 | 严格SSH/网络、原2TiB UUID/ext4与挂载保持 | 11月8日已观察通过，不等于独立诊断硬件 |
-| NAS-02 | 只读核自动启动的Jellyfin | 原挂载/unit/容器healthy、health200 | 11月8日已观察；本轮没有卸盘/缺盘故障注入 |
+| NAS-01 | 本轮只读核VM260 | 严格SSH/网络、原2TiB UUID/ext4与挂载保持 | 11月9日再次观察基础通过，不等于独立诊断硬件 |
+| NAS-02 | 只读核自动启动的Jellyfin | 原挂载/unit/容器healthy、health200 | 11月9日再次观察；本轮没有卸盘/缺盘故障注入 |
 | NAS-03 | 专用测试文件做SMB写/读/删除 | checksum正确、只读账号写入拒绝、三共享边界清楚 | 原验收已过，真实家庭设备续验 |
 | NAS-04 | TV/播放器代表性片源 | 正常播放/拖动/字幕/音轨，记录Direct Play/转码 | pending-manual |
 | NAS-05 | 游戏文件按主机工具传输 | 文件校验与支持格式正确，不把存储当网络运行 | pending-manual |
 | NAS-06 | 选独立副本恢复样本 | 配置/家庭样本恢复可核对，无同机循环依赖 | pending-backup-design |
 
-应用恢复与人工使用入口见[12](12-service-access-and-operations.md)，备份边界见[应用备份](infra/backup/README.md)。本轮证据在[媒体工具审计](recovery/20261108/media-tools-audit.json)与[20:20:48入口复核](recovery/20261108/host-network-postcheck.json)；[故障前验收](cleanup/final-live-check.json)仅保留历史，不替代新的真实客户端/内容检查。
+应用恢复与人工使用入口见[12](12-service-access-and-operations.md)，备份边界见[应用备份](infra/backup/README.md)。本轮证据在[11月9日媒体审计](completion/20261109/media-audit.json)，原[11月8日入口复核](recovery/20261108/host-network-postcheck.json)继续保留作历史；[故障前验收](cleanup/final-live-check.json)仅保留历史，不替代新的真实客户端/内容检查。

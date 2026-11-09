@@ -1,0 +1,11 @@
+{
+  "status": "owned-backup-rule-installed-native-validated-fresh-reloaded",
+  "rule": "/opt/dell/ops/config/prometheus/rules/pve-local-backup.yml",
+  "candidate_SHA": "6e36b3577361dba89361ee4c68865df3b0d77f2540602f623022f6683681740e",
+  "first_verified_guest_count": 11,
+  "Prometheus_container_ID_imageID_PID_startedAt_restarts_unchanged": true,
+  "reload_method": "SIGHUP-locked-containerID",
+  "new_receiver_or_test_send": false,
+  "old_rules_and_config_overwritten": false,
+  "secrets_or_Env_Cmd_read": false
+}

@@ -9,7 +9,7 @@
     "memory_gib": 0.5
   },
   "source_of_truth": "plan.json",
-  "last_verified_at": "2026-11-08T20:24:01.673285+08:00",
+  "last_verified_at": "2026-11-09T16:01:00.600541+08:00",
   "current_runtime_verified": true,
   "status": "recovered-infrastructure-verified",
   "record_kind": "offline-configuration-contract-not-live-collection",
@@ -17,7 +17,7 @@
   "configuration_policy": {
     "secret_config_or_private_keys_in_git": false,
     "public_runtime_snapshots_copied": false,
-    "reason": "Index proven contracts/receipts; no old10.63 or narrowVPN preview copied as currentruntime. Fresh actual configuration requires hardware recovery and user resume."
+    "reason": "Index proven contracts/receipts; no old10.63 or narrowVPN preview copied as currentruntime. Current scoped runtime was audited after user-reported repair; this remains a public contract, not a complete live export."
   },
   "source_role_pointer": "/roles/11",
   "purpose": "Dedicated no-NAT server19 router,DNS,DHCP/firewall; PVEhostdoesnotroute.",
@@ -173,8 +173,19 @@
     "Remote userbatchconfirmed9HTTPentries; exactremoteHTTPcodes/SMB/SSHauthnot separately supplied.",
     "Nexus merge historical authorization remains; user explicitly deferred migration2026-11-08. Do not change DNS/IP ownership."
   ],
-  "current_verification_evidence": "recovery/20261108/network-CF-followup.json",
-  "current_verification_scope": "scoped infrastructure recovery; original app data contents/authentication not fully revalidated; no migration",
-  "verification_note": "2026-11-08 scoped recovery checks passed; user confirms memory repair/diagnostics; no migration, code upgrade or Java business deployment.",
-  "timestamp_scope": "source audit/receipt time; individual probes retain their timestamps"
+  "current_verification_evidence": "completion/20261109/network-audit.json",
+  "current_verification_scope": "current infrastructure setup, no migration or full application restore",
+  "verification_note": "Fresh metadata/service audit after natural host reboot; no data migration, Nexus merge or Java business deployment.",
+  "timestamp_scope": "2026-11-09 scoped audit; individual commands retain actual timestamps",
+  "local_backup": {
+    "included_in_fixed_PVE_job": true,
+    "job": "dell-local-nightly",
+    "storage": "dell-local-backup",
+    "first_run_verified": true,
+    "schedule_enabled": true,
+    "scope": "snapshot/crash-consistent recovery point only; independent DR not signed",
+    "excluded_reason": null,
+    "CF_policy": null,
+    "evidence": "completion/20261109/backup-first-success.json"
+  }
 }

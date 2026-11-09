@@ -1,0 +1,901 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-09T14:44:47.513586+08:00",
+  "scope": "VM270 fresh readonly Ops and installed backup schedule metadata; no migration",
+  "target": {
+    "vmid": 270,
+    "ip": "192.168.19.70",
+    "host_key_alias": "dell-vm270",
+    "host_key_fingerprint": "SHA256:OjP5q9f3WXxGcoOHs23VlnOf258C6T+nNAxTiYoyf0g",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "exit_code": 0,
+  "result": {
+    "at": "2026-11-09T06:44:45.286445+00:00",
+    "commands_scope": "selected systemd/Docker/mount/textfile metadata and local GET only",
+    "secrets_read": false,
+    "notifications_or_external_HTTP_sent": false,
+    "service_or_config_mutations": false,
+    "system_running": "running",
+    "failed_units": [],
+    "mount": {
+      "filesystems": [
+        {
+          "target": "/srv/dell-data",
+          "source": "/dev/sdb",
+          "uuid": "01b1f302-27be-4fbd-b4af-b8e782d85dea",
+          "fstype": "ext4",
+          "options": "rw,relatime"
+        }
+      ]
+    },
+    "mount_UUID_matches": true,
+    "units": {
+      "dell-ops.service": {
+        "MainPID": "1137",
+        "Result": "success",
+        "NRestarts": "0",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 06:30:27 UTC",
+        "User": "root",
+        "DynamicUser": "no",
+        "ProtectSystem": "no",
+        "NoNewPrivileges": "no",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "running"
+      },
+      "dell-lark-notify.service": {
+        "MainPID": "1457",
+        "Result": "success",
+        "NRestarts": "0",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 06:30:30 UTC",
+        "User": "dell-lark-notify",
+        "DynamicUser": "yes",
+        "ProtectSystem": "strict",
+        "NoNewPrivileges": "yes",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "running"
+      },
+      "docker.service": {
+        "MainPID": "738",
+        "Result": "success",
+        "NRestarts": "0",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 06:30:19 UTC",
+        "User": "",
+        "DynamicUser": "no",
+        "ProtectSystem": "no",
+        "NoNewPrivileges": "no",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "running"
+      },
+      "containerd.service": {
+        "MainPID": "719",
+        "Result": "success",
+        "NRestarts": "0",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 06:30:17 UTC",
+        "User": "",
+        "DynamicUser": "no",
+        "ProtectSystem": "no",
+        "NoNewPrivileges": "no",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "running"
+      },
+      "prometheus-node-exporter.service": {
+        "MainPID": "729",
+        "Result": "success",
+        "NRestarts": "0",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 06:30:18 UTC",
+        "User": "prometheus",
+        "DynamicUser": "no",
+        "ProtectSystem": "no",
+        "NoNewPrivileges": "yes",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "running"
+      },
+      "dell-guest-health.timer": {
+        "Result": "success",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "waiting"
+      },
+      "dell-guest-health.service": {
+        "MainPID": "0",
+        "Result": "success",
+        "NRestarts": "0",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 06:44:12 UTC",
+        "User": "prometheus",
+        "DynamicUser": "no",
+        "ProtectSystem": "strict",
+        "NoNewPrivileges": "yes",
+        "LoadState": "loaded",
+        "ActiveState": "inactive",
+        "SubState": "dead"
+      }
+    },
+    "all_active_timers_metadata": [
+      "Mon 2026-11-09 06:45:05 UTC      19s -                                   - systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.service",
+      "Mon 2026-11-09 06:45:17 UTC      32s Mon 2026-11-09 06:44:10 UTC   34s ago dell-guest-health.timer      dell-guest-health.service",
+      "Mon 2026-11-09 17:39:00 UTC      10h Sun 2026-11-08 23:22:28 UTC         - apt-daily.timer              apt-daily.service",
+      "Tue 2026-11-10 00:00:00 UTC      17h Mon 2026-11-09 00:00:04 UTC         - dpkg-db-backup.timer         dpkg-db-backup.service",
+      "Tue 2026-11-10 06:00:00 UTC      23h Mon 2026-11-09 06:32:20 UTC 12min ago apt-daily-upgrade.timer      apt-daily-upgrade.service",
+      "Tue 2026-11-10 08:46:28 UTC 1 day 2h Mon 2026-11-09 03:21:58 UTC         - man-db.timer                 man-db.service",
+      "Sun 2026-11-15 03:10:28 UTC   5 days Sun 2026-11-08 12:14:15 UTC         - e2scrub_all.timer            e2scrub_all.service",
+      "Mon 2026-11-16 00:02:35 UTC   6 days Mon 2026-11-09 00:44:36 UTC         - fstrim.timer                 fstrim.service"
+    ],
+    "containers": [
+      {
+        "name": "/dell-ops-grafana-1",
+        "image_id": "sha256:6afa1ab7f6e662c739a45a1d458598d7eb6ab70fc7c0ab45af64864e1503d4b6",
+        "status": "running",
+        "running": true,
+        "pid": 1389,
+        "started_at": "2026-11-09T06:30:30.295223134Z",
+        "exit_code": 0,
+        "OOMKilled": false,
+        "restart_count": 0,
+        "health": "healthy"
+      },
+      {
+        "name": "/dell-ops-alertmanager-1",
+        "image_id": "sha256:151292169170da9f8414b68c8e5994c75bd9cbb94ff60b8bc90860c4994b0946",
+        "status": "running",
+        "running": true,
+        "pid": 1470,
+        "started_at": "2026-11-09T06:30:30.840941779Z",
+        "exit_code": 0,
+        "OOMKilled": false,
+        "restart_count": 0,
+        "health": "healthy"
+      },
+      {
+        "name": "/dell-ops-prometheus-1",
+        "image_id": "sha256:9bd9cbec4bd4f33bb6ccedf8c25a5132f8e7b2fb158c9a223a54485e4332e962",
+        "status": "running",
+        "running": true,
+        "pid": 1249,
+        "started_at": "2026-11-09T06:30:28.905385015Z",
+        "exit_code": 0,
+        "OOMKilled": false,
+        "restart_count": 0,
+        "health": "healthy"
+      },
+      {
+        "name": "/dell-ops-blackbox-1",
+        "image_id": "sha256:e6f02b1a6c427e2a771fb33b42cb167dde3e5e8b3625e55e55aa20aaa018946d",
+        "status": "running",
+        "running": true,
+        "pid": 1327,
+        "started_at": "2026-11-09T06:30:29.617752622Z",
+        "exit_code": 0,
+        "OOMKilled": false,
+        "restart_count": 0,
+        "health": "healthy"
+      }
+    ],
+    "textfiles": [
+      {
+        "path": "/var/lib/prometheus/node-exporter-textfile/dell_guest_health.prom",
+        "age_seconds": 29.086,
+        "selected_numeric_metrics": {
+          "dell_guest_health_collection_success": [
+            1.0
+          ],
+          "dell_guest_health_collection_timestamp_seconds": [
+            1794206656.206
+          ]
+        }
+      },
+      {
+        "path": "/var/lib/prometheus/node-exporter-textfile/dell-pve.prom",
+        "age_seconds": 2.41,
+        "selected_numeric_metrics": {
+          "dell_pve_collector_timestamp_seconds": [
+            1794206674.0422714
+          ]
+        }
+      }
+    ],
+    "readiness": {
+      "Prometheus": {
+        "HTTP": 200,
+        "data": null
+      },
+      "Alertmanager": {
+        "HTTP": 200,
+        "data": null
+      },
+      "Grafana": {
+        "HTTP": 200,
+        "data": null
+      }
+    },
+    "prometheus_targets": {
+      "HTTP": 200,
+      "targets": [
+        {
+          "job": "blackbox-exporter",
+          "role": "ops-service",
+          "instance": "blackbox:9115",
+          "health": "up",
+          "last_scrape": "2026-11-09T06:44:29.948590575Z",
+          "error_present": false,
+          "last_scrape_age_seconds": 17.514
+        },
+        {
+          "job": "guest-node",
+          "role": "java-test-01",
+          "instance": "192.168.19.45:9100",
+          "health": "up",
+          "last_scrape": "2026-11-09T06:44:28.273213144Z",
+          "error_present": false,
+          "last_scrape_age_seconds": 19.189
+        },
+        {
+          "job": "guest-node",
+          "role": "penpot-service",
+          "instance": "192.168.19.50:9100",
+          "health": "up",
+          "last_scrape": "2026-11-09T06:44:25.236234118Z",
+          "error_present": false,
+          "last_scrape_age_seconds": 22.226
+        },
+        {
+          "job": "guest-node",
+          "role": "data-prod-db",
+          "instance": "192.168.19.10:9100",
+          "health": "up",
+          "last_scrape": "2026-11-09T06:44:18.600033767Z",
+          "error_present": false,
+          "last_scrape_age_seconds": 28.862
+        },
+        {
+          "job": "guest-node",
+          "role": "publish-service",
+          "instance": "192.168.19.30:9100",
+          "health": "up",
+          "last_scrape": "2026-11-09T06:44:35.620031676Z",
+          "error_present": false,
+          "last_scrape_age_seconds": 11.842
+        },
+        {
+          "job": "guest-node",
+          "role": "java-prod-01",
+          "instance": "192.168.19.40:9100",
+          "health": "up",
+          "last_scrape": "2026-11-09T06:44:31.675386639Z",
+          "error_present": false,
+          "last_scrape_age_seconds": 15.787
+        },
+        {
+          "job": "guest-node",
+          "role": "nas-media",
+          "instance": "192.168.19.60:9100",
+          "health": "up",
+          "last_scrape": "2026-11-09T06:44:32.652245173Z",
+          "error_present": false,
+          "last_scrape_age_seconds": 14.81
+        },
+        {
+          "job": "guest-node",
+          "role": "ops-service",
+          "instance": "192.168.19.70:9100",
+          "health": "up",
+          "last_scrape": "2026-11-09T06:44:27.993618563Z",
+          "error_present": false,
+          "last_scrape_age_seconds": 19.469
+        },
+        {
+          "job": "guest-node",
+          "role": "data-prod-infra",
+          "instance": "192.168.19.11:9100",
+          "health": "up",
+          "last_scrape": "2026-11-09T06:44:31.013687337Z",
+          "error_present": false,
+          "last_scrape_age_seconds": 16.449
+        },
+        {
+          "job": "guest-node",
+          "role": "artifact-service",
+          "instance": "192.168.19.31:9100",
+          "health": "up",
+          "last_scrape": "2026-11-09T06:44:35.943543802Z",
+          "error_present": false,
+          "last_scrape_age_seconds": 11.519
+        },
+        {
+          "job": "guest-node",
+          "role": "data-test",
+          "instance": "192.168.19.20:9100",
+          "health": "up",
+          "last_scrape": "2026-11-09T06:44:26.807892495Z",
+          "error_present": false,
+          "last_scrape_age_seconds": 20.654
+        },
+        {
+          "job": "http-health",
+          "role": "ops-service",
+          "instance": "http://grafana:3000/api/health",
+          "health": "up",
+          "last_scrape": "2026-11-09T06:44:27.254182493Z",
+          "error_present": false,
+          "last_scrape_age_seconds": 20.208
+        },
+        {
+          "job": "http-health",
+          "role": "ops-service",
+          "instance": "http://alertmanager:9093/-/ready",
+          "health": "up",
+          "last_scrape": "2026-11-09T06:44:18.077434199Z",
+          "error_present": false,
+          "last_scrape_age_seconds": 29.385
+        },
+        {
+          "job": "http-health",
+          "role": "ops-service",
+          "instance": "http://prometheus:9090/-/ready",
+          "health": "up",
+          "last_scrape": "2026-11-09T06:44:20.542207997Z",
+          "error_present": false,
+          "last_scrape_age_seconds": 26.92
+        },
+        {
+          "job": "prometheus",
+          "role": "ops-service",
+          "instance": "localhost:9090",
+          "health": "up",
+          "last_scrape": "2026-11-09T06:44:43.107462049Z",
+          "error_present": false,
+          "last_scrape_age_seconds": 4.355
+        }
+      ],
+      "total": 15,
+      "UP": 15
+    },
+    "alerts": {
+      "Prometheus": {
+        "HTTP": 200,
+        "alerts": []
+      },
+      "Alertmanager": {
+        "HTTP": 200,
+        "alerts": []
+      }
+    },
+    "backup_schedule_metadata": {
+      "backup_retention_unit_files": [
+        {
+          "unit": "dpkg-db-backup.service",
+          "enabled_state": "static"
+        },
+        {
+          "unit": "dpkg-db-backup.timer",
+          "enabled_state": "enabled"
+        }
+      ],
+      "selected_unit_runtime": {
+        "dpkg-db-backup.service": {
+          "Result": "success",
+          "Triggers": "",
+          "LoadState": "loaded",
+          "ActiveState": "inactive",
+          "SubState": "dead",
+          "UnitFileState": "static"
+        },
+        "dpkg-db-backup.timer": {
+          "NextElapseUSecRealtime": "Tue 2026-11-10 00:00:00 UTC",
+          "LastTriggerUSec": "Mon 2026-11-09 00:00:04 UTC",
+          "Result": "success",
+          "Triggers": "dpkg-db-backup.service",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "waiting",
+          "UnitFileState": "enabled"
+        }
+      },
+      "all_timer_unit_names": [
+        "apt-daily-upgrade.timer",
+        "apt-daily.timer",
+        "apt-listchanges.timer",
+        "chrony-dnssrv@.timer",
+        "dell-guest-health.timer",
+        "dpkg-db-backup.timer",
+        "e2scrub_all.timer",
+        "fstrim.timer",
+        "man-db.timer",
+        "systemd-tmpfiles-clean.timer"
+      ],
+      "cron_directory_job_names": {
+        "/etc/cron.d": [
+          "e2scrub_all"
+        ],
+        "/etc/cron.daily": [
+          "apt-compat",
+          "dpkg",
+          "man-db"
+        ],
+        "/etc/cron.weekly": [
+          "man-db"
+        ],
+        "/etc/cron.monthly": [],
+        "/etc/cron.hourly": []
+      },
+      "root_crontab": {
+        "command_exit": 127,
+        "job_line_count": 0,
+        "backup_retention_related_line_count": 0,
+        "command_values_recorded": false
+      },
+      "system_cron_summaries": [
+        {
+          "path": "/etc/cron.d/e2scrub_all",
+          "job_line_count": 2,
+          "backup_retention_related_line_count": 0,
+          "command_values_recorded": false
+        }
+      ],
+      "known_backup_paths": {
+        "/root/dell-app-backups": {
+          "exists": true,
+          "is_directory": true,
+          "mode": "0o700",
+          "contents_not_read": true
+        },
+        "/srv/dell-data/_app_backups": {
+          "exists": false,
+          "is_directory": false,
+          "mode": null,
+          "contents_not_read": true
+        },
+        "/opt/dell/backup": {
+          "exists": false,
+          "is_directory": false,
+          "mode": null,
+          "contents_not_read": true
+        },
+        "/usr/local/libexec/dell-backup": {
+          "exists": false,
+          "is_directory": false,
+          "mode": null,
+          "contents_not_read": true
+        },
+        "/opt/dell/ops/backup-grafana-acceptance.py": {
+          "exists": false,
+          "is_directory": false,
+          "mode": null,
+          "contents_not_read": true
+        },
+        "/opt/dell/ops/scripts/backup.py": {
+          "exists": false,
+          "is_directory": false,
+          "mode": null,
+          "contents_not_read": true
+        }
+      }
+    },
+    "freshness_metrics": {
+      "dell_guest_health_collection_success": {
+        "HTTP": 200,
+        "samples": [
+          {
+            "labels": {
+              "instance": "192.168.19.11:9100",
+              "job": "guest-node",
+              "role": "data-prod-infra"
+            },
+            "sample_time": 1794206687.463,
+            "value": "1"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.70:9100",
+              "job": "guest-node",
+              "role": "ops-service"
+            },
+            "sample_time": 1794206687.463,
+            "value": "1"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.10:9100",
+              "job": "guest-node",
+              "role": "data-prod-db"
+            },
+            "sample_time": 1794206687.463,
+            "value": "1"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.20:9100",
+              "job": "guest-node",
+              "role": "data-test"
+            },
+            "sample_time": 1794206687.463,
+            "value": "1"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.31:9100",
+              "job": "guest-node",
+              "role": "artifact-service"
+            },
+            "sample_time": 1794206687.463,
+            "value": "1"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.50:9100",
+              "job": "guest-node",
+              "role": "penpot-service"
+            },
+            "sample_time": 1794206687.463,
+            "value": "1"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.40:9100",
+              "job": "guest-node",
+              "role": "java-prod-01"
+            },
+            "sample_time": 1794206687.463,
+            "value": "1"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.30:9100",
+              "job": "guest-node",
+              "role": "publish-service"
+            },
+            "sample_time": 1794206687.463,
+            "value": "1"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.45:9100",
+              "job": "guest-node",
+              "role": "java-test-01"
+            },
+            "sample_time": 1794206687.463,
+            "value": "1"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.60:9100",
+              "job": "guest-node",
+              "role": "nas-media"
+            },
+            "sample_time": 1794206687.463,
+            "value": "1"
+          }
+        ]
+      },
+      "dell_guest_health_collection_timestamp_seconds": {
+        "HTTP": 200,
+        "samples": [
+          {
+            "labels": {
+              "instance": "192.168.19.11:9100",
+              "job": "guest-node",
+              "role": "data-prod-infra"
+            },
+            "sample_time": 1794206687.476,
+            "value": "1794206653.028"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.70:9100",
+              "job": "guest-node",
+              "role": "ops-service"
+            },
+            "sample_time": 1794206687.476,
+            "value": "1794206656.206"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.10:9100",
+              "job": "guest-node",
+              "role": "data-prod-db"
+            },
+            "sample_time": 1794206687.476,
+            "value": "1794206611.454"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.20:9100",
+              "job": "guest-node",
+              "role": "data-test"
+            },
+            "sample_time": 1794206687.476,
+            "value": "1794206654.149"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.31:9100",
+              "job": "guest-node",
+              "role": "artifact-service"
+            },
+            "sample_time": 1794206687.476,
+            "value": "1794206628.808"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.50:9100",
+              "job": "guest-node",
+              "role": "penpot-service"
+            },
+            "sample_time": 1794206687.476,
+            "value": "1794206641.811"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.40:9100",
+              "job": "guest-node",
+              "role": "java-prod-01"
+            },
+            "sample_time": 1794206687.476,
+            "value": "1794206601.62"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.30:9100",
+              "job": "guest-node",
+              "role": "publish-service"
+            },
+            "sample_time": 1794206687.476,
+            "value": "1794206664.327"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.45:9100",
+              "job": "guest-node",
+              "role": "java-test-01"
+            },
+            "sample_time": 1794206687.476,
+            "value": "1794206664.94"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.60:9100",
+              "job": "guest-node",
+              "role": "nas-media"
+            },
+            "sample_time": 1794206687.476,
+            "value": "1794206625.72"
+          }
+        ]
+      },
+      "node_textfile_scrape_error": {
+        "HTTP": 200,
+        "samples": [
+          {
+            "labels": {
+              "instance": "192.168.19.11:9100",
+              "job": "guest-node",
+              "role": "data-prod-infra"
+            },
+            "sample_time": 1794206687.478,
+            "value": "0"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.70:9100",
+              "job": "guest-node",
+              "role": "ops-service"
+            },
+            "sample_time": 1794206687.478,
+            "value": "0"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.10:9100",
+              "job": "guest-node",
+              "role": "data-prod-db"
+            },
+            "sample_time": 1794206687.478,
+            "value": "0"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.20:9100",
+              "job": "guest-node",
+              "role": "data-test"
+            },
+            "sample_time": 1794206687.478,
+            "value": "0"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.31:9100",
+              "job": "guest-node",
+              "role": "artifact-service"
+            },
+            "sample_time": 1794206687.478,
+            "value": "0"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.50:9100",
+              "job": "guest-node",
+              "role": "penpot-service"
+            },
+            "sample_time": 1794206687.478,
+            "value": "0"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.40:9100",
+              "job": "guest-node",
+              "role": "java-prod-01"
+            },
+            "sample_time": 1794206687.478,
+            "value": "0"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.30:9100",
+              "job": "guest-node",
+              "role": "publish-service"
+            },
+            "sample_time": 1794206687.478,
+            "value": "0"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.45:9100",
+              "job": "guest-node",
+              "role": "java-test-01"
+            },
+            "sample_time": 1794206687.478,
+            "value": "0"
+          },
+          {
+            "labels": {
+              "instance": "192.168.19.60:9100",
+              "job": "guest-node",
+              "role": "nas-media"
+            },
+            "sample_time": 1794206687.478,
+            "value": "0"
+          }
+        ]
+      },
+      "dell_pve_collector_timestamp_seconds": {
+        "HTTP": 200,
+        "samples": [
+          {
+            "labels": {
+              "instance": "192.168.19.70:9100",
+              "job": "guest-node",
+              "role": "ops-service"
+            },
+            "sample_time": 1794206687.479,
+            "value": "1794206612.9859967"
+          }
+        ]
+      }
+    }
+  },
+  "no_backup_restore_notify_or_restart_executed": true,
+  "Mac_external_probe_required": false,
+  "prior_attempts": [
+    {
+      "schema_version": 1,
+      "recorded_at": "2026-11-09T14:44:13.144817+08:00",
+      "scope": "VM270 fresh readonly Ops and installed backup schedule metadata; no migration",
+      "target": {
+        "vmid": 270,
+        "ip": "192.168.19.70",
+        "host_key_alias": "dell-vm270",
+        "host_key_fingerprint": "SHA256:OjP5q9f3WXxGcoOHs23VlnOf258C6T+nNAxTiYoyf0g",
+        "trust_source": "PVE QGA over known SSH host"
+      },
+      "exit_code": 1,
+      "result": {
+        "status": "probe-error",
+        "category": "FileNotFoundError",
+        "line": 1972
+      },
+      "no_backup_restore_notify_or_restart_executed": true,
+      "Mac_external_probe_required": false,
+      "prior_attempts": [
+        {
+          "schema_version": 1,
+          "recorded_at": "2026-11-09T14:43:40.889289+08:00",
+          "scope": "VM270 fresh readonly Ops and installed backup schedule metadata; no migration",
+          "target": {
+            "vmid": 270,
+            "ip": "192.168.19.70",
+            "host_key_alias": "dell-vm270",
+            "host_key_fingerprint": "SHA256:OjP5q9f3WXxGcoOHs23VlnOf258C6T+nNAxTiYoyf0g",
+            "trust_source": "PVE QGA over known SSH host"
+          },
+          "exit_code": 1,
+          "result": {
+            "status": "unparseable-output-withheld"
+          },
+          "no_backup_restore_notify_or_restart_executed": true,
+          "Mac_external_probe_required": false
+        }
+      ]
+    }
+  ],
+  "status": "fresh-readonly-Ops-health-verified-application-backup-schedule-gap",
+  "checks": {
+    "mount_UUID_matches": true,
+    "system_running_no_failed_units": true,
+    "exact4healthy_noOOM_restart0": true,
+    "targets15of15UP": true,
+    "Prom_AM_alerts_empty": true,
+    "Prom_AM_Grafana_HTTP200": true,
+    "Lark_unit_active": true,
+    "ten_health_collections_success1": true,
+    "ten_textfile_scrape_errors0": true
+  },
+  "freshness_summary": {
+    "guest_collection_age_seconds_min": 22.536,
+    "guest_collection_age_seconds_max": 85.856,
+    "target_scrape_age_seconds_max": 29.385,
+    "PVE_collection_age_seconds": 74.493,
+    "evaluation_scope": "observed ages only; no unapproved workload/SLO target inferred"
+  },
+  "backup_gap": {
+    "VM270_application_backup_or_retention_timer_observed": false,
+    "dpkg_backup_is_application_backup": false,
+    "root_crontab_tool_available": false,
+    "known_prior_backup_directory_exists": true,
+    "prior_backup_contents_or_freshness_read": false,
+    "independent_destination_confirmed": false,
+    "NAS_formal_backup_target_allowed": false,
+    "CF_cross_device_export_allowed": false,
+    "whole_VM220_backup_allowed": false,
+    "other_guest_or_PVE_backup_jobs_audited": false
+  },
+  "local_tool_review": [
+    {
+      "path": "infra/backup/application-backup.py",
+      "sha256": "4b9a203662fea0a62955f5c3e9a77a6184b4f1748ffb9f8aeb187f64f7d3ac81",
+      "observation": "Manual local200/201 component snapshots, delegates deployed mount/IP guard; no scheduler/retention/export. MySQL no-DDL/Redis-fork/topology confirmations require real operational preconditions, not blind timer flags. Partial private outputs may be retained after failure.",
+      "executed": false
+    },
+    {
+      "path": "infra/ops/backup-grafana-acceptance.py",
+      "sha256": "76e927ee54cafc7e69a7c69379acafa96941b389de1cd128e992382a77b583b9",
+      "observation": "Historical acceptance tool with synthetic dashboard POST/DELETE, temporary restore container and hardcoded10.63.30.40; must not schedule or run unchanged. SQLite online backup pattern can be extracted into a separate non-fixture production tool.",
+      "executed": false
+    },
+    {
+      "path": "infra/backup/README.md",
+      "sha256": "a0f71eb9180cb07ec2fbef02d54baead57780f082ef39cc69002580f7cb0e9ff",
+      "observation": "Initial controlled local snapshots and Mac provisional copies documented; long-term independent schedule/retention/RPO/RTO not approved or deployed by these files.",
+      "executed": false
+    }
+  ],
+  "minimal_recommendations": [
+    {
+      "priority": "next-authorized-local-preparation",
+      "action": "Prepare an independent Grafana SQLite online backup+public-config manifest tool with exactVM270/IP19.70/mountUUID guard, root700/600 output, flock+bounded time/space, atomic success manifest; no API writes, no restore container, no source SQLite replacement. Do not deploy during this readonly task.",
+      "needs_confirmation": "Backup cadence/retention/size budget and an approved destination before enablement; local same-disk snapshots explicitly non-independent."
+    },
+    {
+      "priority": "next-authorized-local-preparation",
+      "action": "Prepare read-only backup inventory/staleness/failure metrics from allowlisted successful manifests without opening DB/archive/secret payload; no new notification send tests.",
+      "needs_confirmation": "Existing internal alert policy/metric ownership review; no Mac probe or extra external channel."
+    },
+    {
+      "priority": "before-production-backup-schedule",
+      "action": "Design exact per-role schedule and retention: noDDl policy forMySQL, Redis COW headroom/busy checks, Rabbit topology-only coverage; completed-manifest-only prune with no symlink traversal/exact parent/lock and age+count+capacity floors. Protected21rollback archives and CF/220 exclusions remain untouched.",
+      "needs_confirmation": "Independent destination plus cadence/retention/RPO/RTO; cannot infer from provisional Mac copy or homeNAS."
+    }
+  ],
+  "limitations": [
+    "Only VM270 installed scheduling metadata was inspected; no claim that PVE or other guests have no backup jobs.",
+    "No backup/archive/database contents, Lark credentials, HTTP response payloads with application data, fullEnv/Cmd, or health logs were printed.",
+    "Lark active does not prove fresh firing/resolved delivery; no notify test performed.",
+    "15UP and health ages are point-in-time infrastructure observations, not business/data consistency, hardware long-term stability or approved RPO/RTO.",
+    "Mac external probe explicitly not required; no launchd/probe action; OW full rules were not read or included.",
+    "Initial local missing temporary probe stopped before SSH; subsequent optional-command failures are retained in prior_attempts. Final success does not erase recorded failures."
+  ]
+}

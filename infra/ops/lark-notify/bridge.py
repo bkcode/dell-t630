@@ -5,6 +5,9 @@ from pathlib import Path
 BIND=('172.18.0.1',19093);SOURCE='172.18.0.3';PATH='/v1/alertmanager';MAX_BODY=65536;MAX_ALERTS=16;MAX_LARK=18000
 POLICY=Path('/etc/dell-lark-notify/policy.json')
 ALERTS={
+ 'PveLocalBackupFailed':'PVE本机备份失败',
+ 'PveLocalBackupStale':'PVE本机备份成功已超过36小时',
+ 'PveLocalBackupStateInvalid':'PVE本机备份任务关闭或状态无效',
  'DellLarkNotificationAcceptance':'通知链验收（受控测试）',
  'GuestExporterUnavailable':'来宾监控采集不可达', 'HttpHealthUnavailable':'HTTP健康探测失败',
  'GuestMemoryAvailableLow':'来宾可用内存低于10%', 'GuestFilesystemSpaceLow':'来宾文件系统可用空间低于20%',

@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-09T14:59:02.765807+08:00",
+  "status": "native-LXC-staging-parent-added-archive-directory-remains0700",
+  "tmpdir": "/var/tmp/dell-local-backup",
+  "tmpdir_mode": "0711",
+  "job_still_disabled": true,
+  "diagnostic": {
+    "CF_permission_diagnostic": [
+      "2026-11-09 14:55:27 INFO: tar: /mnt/pve/store/dell-artifacts/scheduled-backups/dump/vzdump-lxc-100-2026_11_09-14_55_26.tmp: Cannot open: Permission denied"
+    ],
+    "guest190_fsfreeze_status": "thawed"
+  },
+  "new_SHA": {
+    "/usr/local/libexec/dell-local-backup/hook.py": "e843c9a8207b37a35d79923b4577a4fb1595ad201e2af1c5d73456e692facdc9",
+    "/etc/dell-local-backup/policy.json": "26803df82488346add1adb5c54161c8c60312ff036dd57e6210c34d6e660c7bd"
+  }
+}

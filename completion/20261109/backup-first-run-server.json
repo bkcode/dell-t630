@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-09T14:59:45.412812+08:00",
+  "status": "first-run-started-in-server-side-transient-unit",
+  "unit": "dell-local-backup-first.service",
+  "VMs": [
+    100,
+    190,
+    200,
+    201,
+    210,
+    221,
+    230,
+    240,
+    250,
+    260,
+    270
+  ],
+  "excluded": [
+    220
+  ],
+  "schedule_enabled": false,
+  "server_log": "/root/dell-bootstrap/completion-20261109/pve-local-backup/first-run-server.log",
+  "max_runtime_seconds": 21600,
+  "mode": "snapshot",
+  "remove_old_backups": false
+}

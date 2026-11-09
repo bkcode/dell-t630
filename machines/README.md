@@ -1,8 +1,8 @@
 # 按机器组织的配置与文档
 
-更新：2026-11-07，Asia/Shanghai。此处为PVE宿主、最后保留的12个来宾与3份模板建立独立目录，共16份。iDRAC属于PVE物理机管理面，记录在pve目录；已删除的旧VM/QA不重新建成现役对象。
+更新：2026-11-09，Asia/Shanghai。此处为PVE宿主、最后保留的12个来宾与3份模板建立独立目录，共16份。iDRAC属于PVE物理机管理面，记录在pve目录；已删除的旧VM/QA不重新建成现役对象。
 
-**2026-11-08基础服务恢复并已按角色复验；用户本轮暂不迁移。** 每机配置合同与新审计分别保管，不是含秘密的完整恢复包；当前状态见[恢复记录](../recovery/20261108/README.md)。原11月7日离线目录整理证据保留历史意义。
+**2026-11-09继续完成基础搭建与PVE本机自动备份，不迁移数据。** 当日fresh审计为12running/3tpl、15UP，forward guard跨14:24自然重启保持；首轮11档验证成功、03:30计划已启用，最终状态统一见[当日交付记录](../completion/20261109/README.md)。每机JSON是合同/索引，不是秘密恢复包或实时配置导出；每机状态按各自证据与范围解释。
 
 ## 机器入口
 
@@ -15,7 +15,7 @@
 | VM | [201 · data-prod-infra](vm201-data-prod-infra/README.md) | 192.168.19.11 |
 | VM | [210 · data-test](vm210-data-test/README.md) | 192.168.19.20 |
 | VM | [220 · publish-service](vm220-publish-service/README.md) | 192.168.19.30 |
-| VM | [221 · artifact-service](vm221-artifact-service/README.md) | 192.168.19.31；合并验收后退役，尚未退役 |
+| VM | [221 · artifact-service](vm221-artifact-service/README.md) | 192.168.19.31；本轮保持独立，不迁移/退役 |
 | VM | [230 · java-prod-01](vm230-java-prod-01/README.md) | 192.168.19.40 |
 | VM | [240 · java-test-01](vm240-java-test-01/README.md) | 192.168.19.45 |
 | VM | [250 · penpot-service](vm250-penpot-service/README.md) | 192.168.19.50 |
@@ -43,6 +43,14 @@
 目标中只保留220 `publish-service`承担发布与Nexus，主IP30+服务alias31、6CPU8GiB；但实际移交尚未执行。因此220目录记录当前4CPU4GiB/30与单独目标，221目录仍记录当前来源身份和待退役条件。不能为了凑目标11实例而提前抹去221的配置，也不能同时把31登记为两台现役VM所有。
 
 合并目标合同见[17合并架构](../17-publish-artifact-consolidation.md)。未来验收后更新现役清单与目录状态，保留必要源/回退记录；不能仅改目录名代替迁移。
+
+## 本机备份范围与机器身份
+
+[PVE本机自动备份](../infra/backup/pve-local/README.md)固定100/190/200/201/210/221/230/240/250/260/270共11项，220整机始终排除以保护发布私钥，CF仅PVE保存；root700目录/600归档日志状态，03:30及最近3/每日7/每周4原生保留。原21回退档继续保留，3停止模板不每日重复归档。
+
+首轮固定11档已全部verified（zstd、tar/vma及SHA验证），原生任务OK、unit退出0；15:56审核后每日03:30计划已启用，合计19,747,582,801字节。证据：[首轮成功](../completion/20261109/backup-first-success.json)、[计划启用](../completion/20261109/backup-schedule-enabled.json)。 新Prom规则实际加载与后验见[当日记录](../completion/20261109/README.md)，不提前签收。本机snapshot/crash-consistent不是DB逻辑/跨VM一致或异机灾备，本轮未恢复；归档不得进入机器目录/Git。
+
+OW完整规则仅本地保存，不触/不上传，不push local-only分支。
 
 ## 秘密、操作与检查
 

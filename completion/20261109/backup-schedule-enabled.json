@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-09T15:56:02.803411+08:00",
+  "status": "first-eleven-verified-native-task-OK",
+  "schedule_enabled": true,
+  "native_job": {
+    "bwlimit": 0,
+    "comment": "PVE local recovery points only; VM220 excluded; no off-host export",
+    "compress": "zstd",
+    "enabled": 1,
+    "id": "dell-local-nightly",
+    "ionice": 7,
+    "lockwait": 0,
+    "mode": "snapshot",
+    "node": "pve",
+    "notification-mode": "legacy-sendmail",
+    "performance": {
+      "max-workers": "1"
+    },
+    "prune-backups": {
+      "keep-daily": "7",
+      "keep-last": "3",
+      "keep-weekly": "4"
+    },
+    "repeat-missed": 0,
+    "schedule": "03:30",
+    "script": "/usr/local/libexec/dell-local-backup/hook.py",
+    "storage": "dell-local-backup",
+    "tmpdir": "/var/tmp/dell-local-backup",
+    "type": "vzdump",
+    "vmid": "100,190,200,201,210,221,230,240,250,260,270",
+    "zstd": 2
+  },
+  "old_failed_attempt_unit_flag_cleared": true,
+  "failure_logs_and_native_tasks_preserved": true
+}

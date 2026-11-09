@@ -1,0 +1,5897 @@
+{
+  "watch": {
+    "unit": "dell-local-backup-first-retry.service",
+    "allowed_vmids": [
+      100,
+      190,
+      200,
+      201,
+      210,
+      221,
+      230,
+      240,
+      250,
+      260,
+      270
+    ],
+    "read_only": true
+  },
+  "snapshots": [
+    {
+      "observed_at_utc": "2026-11-09T07:12:12.755925+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:12:12.755925+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "210": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "221": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "230": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "240": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "250": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "260": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:13:03.474752+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:13:03.474752+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "221": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "230": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "240": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "250": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "260": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:13:54.150531+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:13:54.150531+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "221": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "230": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "240": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "250": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "260": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:14:44.818933+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:14:44.818933+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "221": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "230": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "240": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "250": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "260": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:15:35.489461+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:15:35.489461+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "230": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "240": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "250": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "260": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:16:26.117522+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:16:26.117522+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "230": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "240": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "250": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "260": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:17:16.809495+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:17:16.809495+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "230": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "240": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "250": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "260": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:18:07.489367+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:18:07.489367+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "230": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "240": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "250": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "260": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:18:58.162492+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:18:58.162492+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "230": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "240": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "250": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "260": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:19:48.690921+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:19:48.690921+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "240": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "250": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "260": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:20:39.349459+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:20:39.349459+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "250": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "260": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:21:30.010051+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:21:30.010051+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "250": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "260": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:22:20.692895+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:22:20.692895+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "260": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:23:11.386530+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:23:11.386530+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "260": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:24:02.040967+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:24:02.040967+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "260": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:24:52.661924+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:24:52.661924+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "260": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:25:43.304681+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:25:43.304681+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "260": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:26:33.955123+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:26:33.955123+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:27:24.580895+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:27:24.580895+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:28:15.245044+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:28:15.245044+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:29:05.547973+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:29:05.547973+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:29:56.190479+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:29:56.190479+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:30:46.846667+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:30:46.846667+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:31:37.522501+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:31:37.522501+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:32:28.177047+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:32:28.177047+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:33:18.804617+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:33:18.804617+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:34:09.486608+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:34:09.486608+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:35:00.177216+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:35:00.177216+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:35:50.476226+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:35:50.476226+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:36:41.160331+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:36:41.160331+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:37:31.451974+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:37:31.451974+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:38:22.114780+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:38:22.114780+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:39:12.768222+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:39:12.768222+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:40:03.445714+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:40:03.445714+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:40:54.075903+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:40:54.075903+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:41:44.735791+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:41:44.735791+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:42:35.383527+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:42:35.383527+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:43:26.030546+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:43:26.030546+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:44:16.720922+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:44:16.720922+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:45:07.391216+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:45:07.391216+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:45:58.029312+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:45:58.029312+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:46:48.684650+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:46:48.684650+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:47:39.353166+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:47:39.353166+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:48:30.048586+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:48:30.048586+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:49:20.710372+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:49:20.710372+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:50:11.386797+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:50:11.386797+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:51:02.043279+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:51:02.043279+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:51:52.731662+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:51:52.731662+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        },
+        "270": {
+          "status": "absent",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:52:43.373815+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:52:43.373815+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "verified",
+          "bytes": 2177592558,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "270": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:53:34.053238+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:53:34.053238+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "verified",
+          "bytes": 2177592558,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "270": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:54:24.710877+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:54:24.710877+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "running",
+      "unit": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "verified",
+          "bytes": 2177592558,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "270": {
+          "status": "running",
+          "bytes": null,
+          "proof": {
+            "zstd_verified": false,
+            "native_archive_verified": false,
+            "status_verified": false
+          }
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-09T07:55:15.396338+00:00",
+      "observed_at_asia_shanghai": "2026-11-09T15:55:15.396338+08:00",
+      "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+      "ledger_status": "verified",
+      "unit": {
+        "ActiveState": "inactive",
+        "SubState": "dead",
+        "Result": "success",
+        "ExecMainStatus": "0"
+      },
+      "vms": {
+        "100": {
+          "status": "verified",
+          "bytes": 244553664,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "190": {
+          "status": "verified",
+          "bytes": 385959445,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "200": {
+          "status": "verified",
+          "bytes": 1116375026,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "201": {
+          "status": "verified",
+          "bytes": 1088299413,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "210": {
+          "status": "verified",
+          "bytes": 1528281869,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "221": {
+          "status": "verified",
+          "bytes": 2312520639,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "230": {
+          "status": "verified",
+          "bytes": 670715132,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "240": {
+          "status": "verified",
+          "bytes": 4976985658,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "250": {
+          "status": "verified",
+          "bytes": 3117215083,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "260": {
+          "status": "verified",
+          "bytes": 2177592558,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        },
+        "270": {
+          "status": "verified",
+          "bytes": 2129084314,
+          "proof": {
+            "zstd_verified": true,
+            "native_archive_verified": true,
+            "status_verified": true
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "at": "2026-11-09T15:56:02.803411+08:00",
+  "status": "first-eleven-verified-native-task-OK",
+  "run_id": "c96aee8d7d7147349cdc81c6543e7b44",
+  "started_at": "2026-11-09T07:05:24.702669+00:00",
+  "finished_at": "2026-11-09T07:54:56.944522+00:00",
+  "native_task": {
+    "upid": "UPID:pve:000050F0:0003C89C:6AF170B2:vzdump::root@pam:",
+    "starttime": 1794207922,
+    "endtime": 1794210896,
+    "status": "OK"
+  },
+  "unit": {
+    "Result": "success",
+    "ExecMainStatus": "0",
+    "ActiveState": "inactive",
+    "SubState": "dead"
+  },
+  "archives": [
+    {
+      "vmid": 100,
+      "bytes": 244553664,
+      "archive_mode": "0600",
+      "zstd_verified": true,
+      "native_archive_verified": true,
+      "private_SHA256_present": true
+    },
+    {
+      "vmid": 190,
+      "bytes": 385959445,
+      "archive_mode": "0600",
+      "zstd_verified": true,
+      "native_archive_verified": true,
+      "private_SHA256_present": true
+    },
+    {
+      "vmid": 200,
+      "bytes": 1116375026,
+      "archive_mode": "0600",
+      "zstd_verified": true,
+      "native_archive_verified": true,
+      "private_SHA256_present": true
+    },
+    {
+      "vmid": 201,
+      "bytes": 1088299413,
+      "archive_mode": "0600",
+      "zstd_verified": true,
+      "native_archive_verified": true,
+      "private_SHA256_present": true
+    },
+    {
+      "vmid": 210,
+      "bytes": 1528281869,
+      "archive_mode": "0600",
+      "zstd_verified": true,
+      "native_archive_verified": true,
+      "private_SHA256_present": true
+    },
+    {
+      "vmid": 221,
+      "bytes": 2312520639,
+      "archive_mode": "0600",
+      "zstd_verified": true,
+      "native_archive_verified": true,
+      "private_SHA256_present": true
+    },
+    {
+      "vmid": 230,
+      "bytes": 670715132,
+      "archive_mode": "0600",
+      "zstd_verified": true,
+      "native_archive_verified": true,
+      "private_SHA256_present": true
+    },
+    {
+      "vmid": 240,
+      "bytes": 4976985658,
+      "archive_mode": "0600",
+      "zstd_verified": true,
+      "native_archive_verified": true,
+      "private_SHA256_present": true
+    },
+    {
+      "vmid": 250,
+      "bytes": 3117215083,
+      "archive_mode": "0600",
+      "zstd_verified": true,
+      "native_archive_verified": true,
+      "private_SHA256_present": true
+    },
+    {
+      "vmid": 260,
+      "bytes": 2177592558,
+      "archive_mode": "0600",
+      "zstd_verified": true,
+      "native_archive_verified": true,
+      "private_SHA256_present": true
+    },
+    {
+      "vmid": 270,
+      "bytes": 2129084314,
+      "archive_mode": "0600",
+      "zstd_verified": true,
+      "native_archive_verified": true,
+      "private_SHA256_present": true
+    }
+  ],
+  "total_archive_bytes": 19747582801,
+  "CF_archive_or_digest_exported": false,
+  "publisher220_included": false,
+  "restore_performed": false,
+  "independent_disaster_recovery": false,
+  "native_prune_before_custom_verification": true,
+  "schedule_enabled": true,
+  "native_job": {
+    "bwlimit": 0,
+    "comment": "PVE local recovery points only; VM220 excluded; no off-host export",
+    "compress": "zstd",
+    "enabled": 1,
+    "id": "dell-local-nightly",
+    "ionice": 7,
+    "lockwait": 0,
+    "mode": "snapshot",
+    "node": "pve",
+    "notification-mode": "legacy-sendmail",
+    "performance": {
+      "max-workers": "1"
+    },
+    "prune-backups": {
+      "keep-daily": "7",
+      "keep-last": "3",
+      "keep-weekly": "4"
+    },
+    "repeat-missed": 0,
+    "schedule": "03:30",
+    "script": "/usr/local/libexec/dell-local-backup/hook.py",
+    "storage": "dell-local-backup",
+    "tmpdir": "/var/tmp/dell-local-backup",
+    "type": "vzdump",
+    "vmid": "100,190,200,201,210,221,230,240,250,260,270",
+    "zstd": 2
+  },
+  "old_failed_attempt_unit_flag_cleared": true,
+  "failure_logs_and_native_tasks_preserved": true
+}

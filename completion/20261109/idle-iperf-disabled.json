@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-09T14:45:56.901187+08:00",
+  "status": "idle-iperf-server-disabled-tool-retained",
+  "before": {
+    "MainPID": "1415",
+    "LoadState": "loaded",
+    "ActiveState": "active",
+    "FragmentPath": "/lib/systemd/system/iperf3.service",
+    "UnitFileState": "enabled"
+  },
+  "after": {
+    "MainPID": "0",
+    "ActiveState": "inactive",
+    "SubState": "dead",
+    "UnitFileState": "disabled"
+  },
+  "no_active_test_connections_before_stop": true,
+  "port5201_closed": true,
+  "package_removed": false,
+  "application_or_guest_restart": false,
+  "network_changed": false,
+  "before_defaults_sha256": "f692db655ec981391a1f6a5aac66105a3c54a7f4889f9a570e8dac91c429b451",
+  "after_defaults_sha256": "4e374521f3b919a92d23f03e0d5c9d1a8b5e96963a28503b83a075e720e4ec81"
+}

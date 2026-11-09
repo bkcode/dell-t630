@@ -1,0 +1,15 @@
+{
+  "scope": "local-only review; no remote execution",
+  "reviewer": "acceptance agent",
+  "script": "infra/backup/pve-local/enable-after-first-success.py",
+  "SHA256": "908c1a42f97249adb5a5365cafc4448d90fd484e7efcc6f9dca3990216b7ae89",
+  "status": "passed",
+  "gates": [
+    "exact fixed11 all verified; 220 excluded",
+    "private archive owner/mode/path and recorded checksum present; no CF digest export",
+    "native task OK with matching start and retry unit exited0",
+    "exact reviewed native job fields; no extra selectors",
+    "receipt preflight and atomic write; failures after enable disable and readback"
+  ],
+  "runtime_acceptance_claim": false
+}

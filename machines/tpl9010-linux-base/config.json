@@ -49,5 +49,7 @@
       "reuse prior QA identity",
       "cloud-init clean or delete host keys on existing service VM"
     ]
-  }
+  },
+  "inventory_verified_at": "2026-11-09T14:42:26+08:00",
+  "inventory_evidence": "completion/20261109/pve-audit.json"
 }

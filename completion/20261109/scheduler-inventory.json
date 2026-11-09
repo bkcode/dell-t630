@@ -1,0 +1,21 @@
+{
+  "backup_config_metadata": {
+    "exit": 0,
+    "jobs": []
+  },
+  "host_timers": {
+    "exit": 0,
+    "out": "NEXT                        LEFT        LAST                        PASSED       UNIT                         ACTIVATES\nMon 2026-11-09 14:43:32 CST 8s left     Mon 2026-11-09 14:42:32 CST 51s ago      dell-pve-metrics.timer       dell-pve-metrics.service\nTue 2026-11-10 00:00:00 CST 9h left     -                           -            dpkg-db-backup.timer         dpkg-db-backup.service\nTue 2026-11-10 00:00:00 CST 9h left     Mon 2026-11-09 00:00:01 CST 14h ago      logrotate.timer              logrotate.service\nTue 2026-11-10 03:18:37 CST 12h left    Mon 2026-11-09 14:37:49 CST 5min ago     apt-daily.timer              apt-daily.service\nTue 2026-11-10 03:45:23 CST 13h left    Mon 2026-11-09 05:43:03 CST 9h ago       pve-daily-update.timer       pve-daily-update.service\nTue 2026-11-10 06:48:13 CST 16h left    Mon 2026-11-09 06:43:11 CST 8h ago       apt-daily-upgrade.timer      apt-daily-upgrade.service\nTue 2026-11-10 09:15:17 CST 18h left    Mon 2026-11-09 09:21:20 CST 5h 22min ago man-db.timer                 man-db.service\nTue 2026-11-10 14:39:05 CST 23h left    Mon 2026-11-09 14:39:05 CST 4min 18s ago systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.service\nSun 2026-11-15 03:10:59 CST 5 days left Sun 2026-11-08 19:42:57 CST 19h ago      e2scrub_all.timer            e2scrub_all.service\nMon 2026-11-16 01:35:57 CST 6 days left Mon 2026-11-09 00:01:05 CST 14h ago      fstrim.timer                 fstrim.service\n\n10 timers listed.\n",
+    "err": ""
+  },
+  "units": {
+    "exit": 0,
+    "out": "ExecMainPID=1415\nId=iperf3.service\nLoadState=loaded\nActiveState=active\nSubState=running\nFragmentPath=/lib/systemd/system/iperf3.service\nUnitFileState=enabled\n",
+    "err": ""
+  },
+  "schedule_metadata": {
+    "exit": 0,
+    "out": "/root/dell-bootstrap/cf-local-backup-receipt.json 655 bytes\n/root/dell-bootstrap/baseline-backup-receipt.json 621 bytes\n/root/dell-bootstrap/cleanup/backup-initial-complete.json 415 bytes\n/root/dell-bootstrap/cleanup/backup-worker.py 3669 bytes\n/root/dell-bootstrap/cleanup/backup-current.json 619 bytes\n/root/dell-bootstrap/cleanup/backup-job-complete.json 363 bytes\n/root/dell-bootstrap/cleanup/backup-original-core-templates-complete.json 333 bytes\n",
+    "err": ""
+  }
+}

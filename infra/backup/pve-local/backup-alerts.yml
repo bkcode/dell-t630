@@ -1,0 +1,51 @@
+groups:
+  - name: dell-pve-local-backup
+    rules:
+      - alert: PveLocalBackupFailed
+        expr: |
+          (max(dell_pve_local_backup_enabled) == 1)
+          and (max(dell_pve_local_backup_state_valid) == 1)
+          and (max(dell_pve_local_backup_running) == 0)
+          and (
+            (max(dell_pve_local_backup_last_run_success) == 0)
+            or (max(dell_pve_local_backup_current_run_state) == 2)
+          )
+        for: 10m
+        labels:
+          site: dell-t630
+          role: pve
+          severity: warning
+        annotations:
+          summary: PVE local backup run failed
+          description: Inspect protected PVE backup state locally. No archive paths or credentials are included in this alert.
+      - alert: PveLocalBackupStale
+        expr: |
+          (max(dell_pve_local_backup_enabled) == 1)
+          and (max(dell_pve_local_backup_state_valid) == 1)
+          and (time() - max(dell_pve_local_backup_last_success_timestamp_seconds) > 129600)
+        for: 10m
+        labels:
+          site: dell-t630
+          role: pve
+          severity: warning
+        annotations:
+          summary: PVE local backup success older than 36 hours
+          description: No verified local backup success has been observed in 36 hours. A local archive is not independent disaster recovery.
+      - alert: PveLocalBackupStateInvalid
+        expr: |
+          (max(dell_pve_local_backup_enabled) != 1)
+          or (max(dell_pve_local_backup_state_valid) != 1)
+          or absent(dell_pve_local_backup_enabled)
+          or absent(dell_pve_local_backup_state_valid)
+          or absent(dell_pve_local_backup_running)
+          or absent(dell_pve_local_backup_last_run_success)
+          or absent(dell_pve_local_backup_last_success_timestamp_seconds)
+          or absent(dell_pve_local_backup_verified_guest_count)
+        for: 10m
+        labels:
+          site: dell-t630
+          role: pve
+          severity: warning
+        annotations:
+          summary: PVE local backup job disabled or state invalid
+          description: The expected job or required telemetry is disabled, invalid or missing. Check local state without exporting archives or secrets.

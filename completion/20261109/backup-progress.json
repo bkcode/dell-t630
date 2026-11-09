@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "scope": "first backup readonly progress watch max5min; no backup/job/hook changes",
+  "snapshots": [
+    {
+      "at": "2026-11-09T07:00:54.776197+00:00",
+      "unit": {
+        "Result": "success",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 14:59:45 CST",
+        "ExecMainExitTimestamp": "",
+        "ExecMainCode": "0",
+        "ExecMainStatus": "0",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "running"
+      },
+      "current_ledger": {
+        "status": "running",
+        "started_at": "2026-11-09T06:59:48.855920+00:00",
+        "per_VM": {
+          "100": {
+            "status": "backup-failed",
+            "finished_at": "2026-11-09T06:59:50.783097+00:00"
+          },
+          "190": {
+            "status": "running",
+            "started_at": "2026-11-09T06:59:51.193355+00:00"
+          }
+        }
+      },
+      "archives": [],
+      "error_warning_metadata": [
+        {
+          "line_number": 20,
+          "category": "other-error-or-warning-withheld",
+          "raw_line_not_recorded": true
+        },
+        {
+          "line_number": 23,
+          "category": "backup-failed",
+          "raw_line_not_recorded": true
+        }
+      ],
+      "no_mutations_or_export": true
+    },
+    {
+      "at": "2026-11-09T07:01:59.251437+00:00",
+      "unit": {
+        "Result": "success",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 14:59:45 CST",
+        "ExecMainExitTimestamp": "",
+        "ExecMainCode": "0",
+        "ExecMainStatus": "0",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "running"
+      },
+      "current_ledger": {
+        "status": "running",
+        "started_at": "2026-11-09T06:59:48.855920+00:00",
+        "per_VM": {
+          "100": {
+            "status": "backup-failed",
+            "finished_at": "2026-11-09T06:59:50.783097+00:00"
+          },
+          "190": {
+            "status": "running",
+            "started_at": "2026-11-09T06:59:51.193355+00:00"
+          }
+        }
+      },
+      "archives": [],
+      "error_warning_metadata": [
+        {
+          "line_number": 20,
+          "category": "other-error-or-warning-withheld",
+          "raw_line_not_recorded": true
+        },
+        {
+          "line_number": 23,
+          "category": "backup-failed",
+          "raw_line_not_recorded": true
+        }
+      ],
+      "no_mutations_or_export": true
+    },
+    {
+      "at": "2026-11-09T07:02:52.895425+00:00",
+      "unit": {
+        "Result": "success",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 14:59:45 CST",
+        "ExecMainExitTimestamp": "",
+        "ExecMainCode": "0",
+        "ExecMainStatus": "0",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "running"
+      },
+      "current_ledger": {
+        "status": "running",
+        "started_at": "2026-11-09T06:59:48.855920+00:00",
+        "per_VM": {
+          "100": {
+            "status": "backup-failed",
+            "finished_at": "2026-11-09T06:59:50.783097+00:00"
+          },
+          "190": {
+            "status": "running",
+            "started_at": "2026-11-09T06:59:51.193355+00:00"
+          }
+        }
+      },
+      "archives": [],
+      "error_warning_metadata": [
+        {
+          "line_number": 20,
+          "category": "other-error-or-warning-withheld",
+          "raw_line_not_recorded": true
+        },
+        {
+          "line_number": 23,
+          "category": "backup-failed",
+          "raw_line_not_recorded": true
+        }
+      ],
+      "no_mutations_or_export": true
+    },
+    {
+      "at": "2026-11-09T07:03:43.515576+00:00",
+      "unit": {
+        "Result": "success",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 14:59:45 CST",
+        "ExecMainExitTimestamp": "",
+        "ExecMainCode": "0",
+        "ExecMainStatus": "0",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "running"
+      },
+      "current_ledger": {
+        "status": "running",
+        "started_at": "2026-11-09T06:59:48.855920+00:00",
+        "per_VM": {
+          "100": {
+            "status": "backup-failed",
+            "finished_at": "2026-11-09T06:59:50.783097+00:00"
+          },
+          "190": {
+            "status": "running",
+            "started_at": "2026-11-09T06:59:51.193355+00:00"
+          }
+        }
+      },
+      "archives": [],
+      "error_warning_metadata": [
+        {
+          "line_number": 20,
+          "category": "other-error-or-warning-withheld",
+          "raw_line_not_recorded": true
+        },
+        {
+          "line_number": 23,
+          "category": "backup-failed",
+          "raw_line_not_recorded": true
+        }
+      ],
+      "no_mutations_or_export": true
+    }
+  ],
+  "last_observed_at": "2026-11-09T07:03:43.515576+00:00",
+  "status": "monitoring-paused-by-manager-await-new-unit",
+  "monitoring_paused_at": "2026-11-09T15:04:05.936147+08:00",
+  "server_action_by_monitor": false,
+  "known_failed_VMIDs": [
+    100
+  ],
+  "manager_diagnostic": {
+    "CF_reason": "transient UMask0077 made native childtmp700 inaccessible to unprivileged taruid100000; parent0711 alone insufficient",
+    "bandwidth_reason": "50MiB/s includes sparse virtual zero blocks; largeNAS backup duration unacceptable for this policy",
+    "proposed_new_run": "root-owned cancel/thaw/lockcheck then separate new unit UMask0022,bwlimit0,lowNice/ionice,maxworkers1; not executed by monitoring agent"
+  }
+}

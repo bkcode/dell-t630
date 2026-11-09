@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-09T16:00:24.664573+08:00",
+  "timezone": "Asia/Shanghai",
+  "job_enabled": 1,
+  "next_run": "2026-11-10T03:30:00+08:00",
+  "new_namespace_modes": {
+    "0o600": 26
+  },
+  "all_root_owned_regular_singlelink": true,
+  "archive_payload_read": false,
+  "old21namespace_modified": false
+}

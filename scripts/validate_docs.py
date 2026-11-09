@@ -138,7 +138,7 @@ def validate() -> dict:
             elif status != 'pending':
                 errors.append(f"{case.get('id')}: future implementation acceptance must stay pending")
     current_manifest = plan.get('delivery_scope_manifest')
-    if current_manifest in {'network19/audit/network19-acceptance.json', 'cleanup/acceptance.json'}:
+    if current_manifest in {'network19/audit/network19-acceptance.json', 'cleanup/acceptance.json', 'completion/20261109/acceptance.json'}:
         current = read_json(current_manifest)
         current_cases = current.get('cases', [])
         current_ids = [c.get('id') for c in current_cases]

@@ -1,8 +1,14 @@
-> 2026-11-08恢复：本机已完成基础存活/地址/服务检查，详见[恢复记录](../../recovery/20261108/README.md)；本轮不迁移、不升级应用，不需要Mac外部探针。下列旧验收/暂停描述按原时点解释，配置与最新检查见config.json。
+> 更新：2026-11-09（Asia/Shanghai）。本轮基础fresh审计已复核；当日实时收尾状态统一见[11月9日交付记录](../../completion/20261109/README.md)。本页仅本地同步带时点证据，不执行服务器操作；不迁移数据、不合并Nexus、不启动Java业务、不升级Penpot，不需要Mac外部探针。
 
 # VM220 · publish-service
 
-本目录是每机公开合同与来源索引，**不提供秘密或可直接重放的完整部署包**。source of truth为[plan.json](../../plan.json)；最后成功验收为2026-11-07 02:35:01+08:00。11月7日曾因UEFI0058暂停；11月8日用户确认内存已处理且诊断通过，本机恢复检查见顶部记录。
+## 本轮只读状态与备份归属
+
+14:43:07媒体工具采样：仍4vCPU/4GiB、唯一19.30、原build盘UUID，Docker为空、无active Nexus或31 alias；publisher权限/私钥仅stat、未读取。业务仍fenced，不发布JAR或Nacos，不把合并目标当实际。 证据：[本机分项审计](../../completion/20261109/media-audit.json)。
+
+依[本机备份合同](../../infra/backup/pve-local/README.md)，**本机220明确排除在PVE本机自动备份之外**，禁止wholebackup/snapshot复制发布私钥；私钥只留220。本轮不以备份或清理名义把Nexus合入。 计划为03:30、最近3份＋每日7点＋每周4点，私有目录root700、归档/日志/状态600，旧21回退档保留。**首轮最终结果、job启用与告警规则后验只以[当日中央入口](../../completion/20261109/README.md)为准，本页不复制进行中状态。** 同机snapshot/crash-consistent不等于DB逻辑/跨VM一致、异机灾备或已恢复；本轮不迁移数据、不恢复覆盖现役。
+
+本目录是每机公开合同与来源索引，**不提供秘密或可直接重放的完整部署包**。source of truth为[plan.json](../../plan.json)；11月7日02:35为历史综合基线、UEFI0058为历史事故；用户确认内存处理/诊断通过，11月9日按本页新证据fresh复核，未重验全部应用内容。
 
 ## 职责与实际合同
 
@@ -27,7 +33,7 @@
 - 不运行stage/activate/rollback业务发布；baseline_migrated=false继续冻结。
 - 只stat发布私钥元数据；不读取、复制、导出它，不wholebackup或snapshot220夹带它。
 - 当前4vCPU/4GiB且只有19.30；已完成11月8日基础复验。
-- 11月8日已按用户恢复指令完成基础检查；新的变更仍须在当前范围内核实，F1本身不代表修复。PVE写/VMID/IP/数据盘归属由root统一，严格SSH/ub管理，不关闭hostkey检查、不复制私钥。
+- 11月9日已fresh复核基础状态；新的变更仍须在当前范围内核实，F1本身不代表修复。PVE写/VMID/IP/数据盘归属由root统一，严格SSH/ub管理，不关闭hostkey检查、不复制私钥。
 - 目录不含任何.env、secrets、Webhook或key；只引用公开合同和历史证据。CF备份只PVE、发布私钥只220，不能wholebackup220或把private打包提交Git。
 - 日常流程见[人工操作手册](../../19-manual-operations.md)与[访问入口](../../12-service-access-and-operations.md)；只读[本机config.json](config.json)与[config-sources.json](config-sources.json)核对，不盲重跑初始化器。
 
@@ -37,10 +43,10 @@
 
 ## 配置来源与限制
 
-本目录没有configs快照。某些仓库infra准备文件仍含旧10.63地址或旧默认值，索引已标historical-evidence，不能视作现役完整配置。只有path存在和SHA可复核，不等于当前guest文件逐字相等；硬件故障后须fresh验。pending-candidate仅未来方案，不能冒作active。
+本目录没有configs快照。某些仓库infra准备文件仍含旧10.63地址或旧默认值，索引已标historical-evidence，不能视作现役完整配置。只有path存在和SHA可复核，不等于当前guest文件逐字相等；源文件与guest的逐字一致性未由索引SHA证明，后续维护仍须fresh核。pending-candidate仅未来方案，不能冒作active。
 
-- [plan.json](../../plan.json) · `current-contract`：当前资源/地址/数据卷合同唯一来源；运行状态未在硬件故障后复验。
-- [11-live-handoff.md](../../11-live-handoff.md) · `current-contract`：最后验收与当前UEFI0058暂停时间线。
+- [plan.json](../../plan.json) · `current-contract`：当前资源/地址/数据卷合同唯一来源；基础运行状态已在11月9日分项复验；不代表全部应用数据/认证通过。
+- [11-live-handoff.md](../../11-live-handoff.md) · `current-contract`：当前不迁移范围、11月9日证据入口及历史UEFI0058时间线。
 - [12-service-access-and-operations.md](../../12-service-access-and-operations.md) · `current-contract`：当前19网入口及凭据保管规则。
 - [19-manual-operations.md](../../19-manual-operations.md) · `current-contract`：人工启停、硬件门禁、克隆、备份与受控恢复。
 - [cleanup/final-live-check.json](../../cleanup/final-live-check.json) · `historical-evidence`：2026-11-07 02:35综合验收快照，不代表当前在线。

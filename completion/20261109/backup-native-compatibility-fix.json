@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-09T15:05:17.439593+08:00",
+  "status": "sparse-aware-no-logical-zero-throttle",
+  "job_still_disabled": true,
+  "backup_namespace_mode": "0700",
+  "archive_mode": "0600 afterhook; parent0700 protects inprogress",
+  "new_SHA": {
+    "/usr/local/libexec/dell-local-backup/hook.py": "c366ee6a583421efcfe21df312aabe1cec6d0fd8a94c8670f0aae16f6201bf30",
+    "/etc/dell-local-backup/policy.json": "d3e7615137c1456ef450e74a3f5f5ba0e62bbd04912b1070c64669e0df95ad25"
+  }
+}

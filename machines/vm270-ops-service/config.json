@@ -9,10 +9,10 @@
     "memory_gib": 4
   },
   "source_of_truth": "plan.json",
-  "last_verified_at": "2026-11-08T20:20:23.793705+08:00",
+  "last_verified_at": "2026-11-09T16:01:00.600541+08:00",
   "current_runtime_verified": true,
   "status": "recovered-infrastructure-verified",
-  "verification_note": "2026-11-08 scoped recovery checks passed; user confirms memory repair/diagnostics; no migration, code upgrade or Java business deployment.",
+  "verification_note": "Fresh metadata/service audit after natural host reboot; no data migration, Nexus merge or Java business deployment.",
   "network": {
     "bridge": "vmbr19",
     "prefix_length": 24,
@@ -80,8 +80,19 @@
     "server_internal_Lark": "active-at-last-verified",
     "Mac_external_probe": "disabled-user-deferred"
   },
-  "current_verification_evidence": "recovery/20261108/ops-audit.json",
-  "current_verification_scope": "scoped infrastructure recovery; original app data contents/authentication not fully revalidated; no migration",
+  "current_verification_evidence": "completion/20261109/final-verification.json",
+  "current_verification_scope": "current infrastructure setup, no migration or full application restore",
   "external_Mac_probe": "not-required; removed from current and future plans",
-  "timestamp_scope": "source audit/receipt time; individual probes retain their timestamps"
+  "timestamp_scope": "2026-11-09 scoped audit; individual commands retain actual timestamps",
+  "local_backup": {
+    "included_in_fixed_PVE_job": true,
+    "job": "dell-local-nightly",
+    "storage": "dell-local-backup",
+    "first_run_verified": true,
+    "schedule_enabled": true,
+    "scope": "snapshot/crash-consistent recovery point only; independent DR not signed",
+    "excluded_reason": null,
+    "CF_policy": null,
+    "evidence": "completion/20261109/backup-first-success.json"
+  }
 }

@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-09T15:07:24.271690+08:00",
+  "status": "backup-metadata-added-to-existing-QGA-metrics-collector",
+  "collector_SHA": "11febe546d8fb98ba2e623c33e7af7aa03332edcfe719232a812cfb736e95d88",
+  "existing_collector_service": "Result=success\nExecMainStatus=0\n",
+  "archive_contents_read": false,
+  "new_listener": false,
+  "guest_or_network_restart": false
+}

@@ -1,6 +1,6 @@
 # Dell T630人工操作手册
 
-更新：2026-11-08，Asia/Shanghai。本手册面向掌握PVE root和来宾ub管理权限的管理员，提供逐项复核流程，**不是一键部署脚本，也不代表以下动作现在正在执行**。用户已确认内存重插/更换并诊断通过，服务器恢复检查现有基础服务和清理；本轮明确不迁移、不合并Nexus。下文复杂合并/恢复命令仅保留人工参考，不因服务器可达就停服、改盘或启动业务。
+更新：2026-11-09，Asia/Shanghai。本手册面向掌握PVE root和来宾ub管理权限的管理员，提供逐项复核流程，**不是一键部署脚本，也不代表以下动作现在正在执行**。用户已确认内存处理/诊断通过；本轮继续完成基础搭建并选择先建PVE本机自动备份，明确不迁移数据、不合并Nexus。首轮11档已完整验证、原生任务OK且unit退出0，03:30计划已启用；当日状态入口为[11月9日交付记录](completion/20261109/README.md)。下文复杂合并/恢复命令仅保留人工参考，不因服务器可达就停服、改盘或启动业务。
 
 历史Nexus短时维护知情许可已满足，但11月8日用户明确暂不迁移的范围控制当前执行。旧“待授权”记录只作历史，不能反复索取同一许可，也不能借旧许可或硬件恢复自动启动合并。当前拓扑/预算以[plan.json](plan.json)、入口以[12](12-service-access-and-operations.md)、清理事实以[18](18-cleanup-and-consolidation.md)为准。证据采集后的运行状态会变化，硬件故障后必须fresh核查。
 
@@ -8,7 +8,7 @@
 
 已记录iDRAC多位不可纠正内存错误及correctable rate exceeded指向DIMM_B1；后续控制台显示UEFI0058并停在F1/F2/F10/F11提示。控制台该屏本身没有列插槽，B1来自先前SEL。BMC时区尚未核实，不能据显示时间断言该内存条是物理关机唯一原因，也不能跳过接触、插槽、通道或内存控制器检查。
 
-11月8日用户确认已重插/更换并诊断通过，root本boot EDAC CE/UE为0、RAIDOptl，已复核12运行实例/15targets UP/6HTTP200；这些是当前恢复采样，不代表单凭计数0已独立确诊原故障。SEL/UEFI0058历史继续保留。以后故障复发时按下列检查点处理：
+11月8日用户确认已重插/更换并诊断通过，首次恢复采样EDAC0/RAIDOptl、12running/15UP/6HTTP200；11月9日14:24自然重启后[新PVE审计](completion/20261109/pve-audit.json)再次核EDAC0/RAIDOptl和guard持久，原服务按[当日记录](completion/20261109/README.md)fresh复验。这些都不代表单凭计数0已独立确诊原故障。SEL/UEFI0058历史继续保留。以后故障复发时按下列检查点处理：
 
 1. 先保留iDRAC SEL、Lifecycle、POST截图、B1库存/配置及时间/时区。不要先清日志、反复powercycle或改BIOS来隐藏错误。故障证据见[DIMM事件](cleanup/hardware/DIMM_B1-incident.json)。
 2. 当前不要求重复物理操作。若将来故障复发并明确安排物理维护，由熟悉T630维护规程的人员正常关机、断开电源并采取ESD措施，再按Dell维护资料做离线检查、重新就位/合适替换及诊断；禁止带电插拔，不在本手册猜测DIMM互换布局。
@@ -17,7 +17,7 @@
 
 ## 2. 地址、身份与凭据
 
-以下地址在11月8日恢复核查中保持，实时可用性仍以操作当时检查为准。PVE21.22不再承担应用NAT或L3转发，应用使用真实19地址。
+以下地址在11月9日fresh核查中保持，实时可用性仍以操作当时检查为准。PVE21.22不再承担应用NAT或L3转发，应用使用真实19地址。
 
 | 对象 | 地址/入口 | 说明 |
 | --- | --- | --- |
@@ -61,7 +61,7 @@ ssh -i ~/.ssh/yang_local_rsa -o IdentitiesOnly=yes -o BatchMode=yes \
 
 ## 3. 正常启动与关机
 
-**仅硬件稳定且有相应维护窗口时使用；本次已自动恢复的对象不重复启动。** 先在PVE确认`qm list`、`pct list`、`pvesm status`；模板和退休VM不能混进运行清单。这里给人工顺序，不自动改现役onboot。PVE延时只能排序，不能代替DNS、挂载和应用健康。11月8日已补宿主forward启动守卫；日常复核宿主forward全0/无hostNAT，不用恢复宿主转发来修来宾服务。
+**仅硬件稳定且有相应维护窗口时使用；本次已自动恢复的对象不重复启动。** 先在PVE确认`qm list`、`pct list`、`pvesm status`；模板和退休VM不能混进运行清单。这里给人工顺序，不自动改现役onboot。PVE延时只能排序，不能代替DNS、挂载和应用健康。11月8日已补宿主forward守卫，11月9日自然重启后文件SHA、执行顺序及全forward0已真实读回，见[PVE审计](completion/20261109/pve-audit.json)；日常仍复核全0/无hostNAT，不用恢复宿主转发来修来宾服务。
 
 最后签收的实际onboot order为：**190(1) → CF100(5) → 200(10) → 201(11) → 210(12) → 270(20) → 221(21) → 250(22) → 220(30) → 230(40) → 240(43) → 260(50)**。不要拿旧startup-order.json里已退役231/232的行重新应用。人工分阶段gate如下，不改变已配置顺序：
 
@@ -142,11 +142,32 @@ sudo runuser --user java -- /usr/bin/python3 /usr/local/libexec/dell-java-accept
 
 ## 6. 备份与隔离恢复
 
+### 当前PVE本机自动备份
+
+合同见[本机自动备份](infra/backup/pve-local/README.md)，实际运行状态见[当日记录](completion/20261109/README.md)。新storage为`dell-local-backup`、job为`dell-local-nightly`，固定100/190/200/201/210/221/230/240/250/260/270共11项；220始终排除，CF只留PVE。目录root700、归档/日志/状态600；计划03:30（Asia/Shanghai），最近3份＋每日7点＋每周4点按PVE原生策略组合，旧21回退档不受新namespace保留控制。
+
+**首轮验证和启用已完成，不重跑首轮或enable脚本。** 首轮固定11档已全部verified（zstd、tar/vma及SHA验证），原生任务OK、unit退出0；15:56审核后每日03:30计划已启用，合计19,747,582,801字节。证据：[首轮成功](completion/20261109/backup-first-success.json)、[计划启用](completion/20261109/backup-schedule-enabled.json)。 日常按既有PVE原生任务核对，不能因unit运行中Result=success签本轮成功。Prom规则实际加载与后验见[当日记录](completion/20261109/README.md)；本轮没有人工通知测试。
+
+这是snapshot/crash-consistent系统恢复点，QGA freeze不保证DB逻辑或跨来宾事务一致；本轮未恢复VM，独立目的地与真实RPO/RTO待验。原生prune早于backup-end完整性hook，不能宣称“只通过自定义验证的新档才影响保留”；首轮remove=0，日常保留按原生时序执行。
+
+日常先读GUI/job与状态，不重跑install/start-first-run：
+
+```sh
+pvesh get /cluster/backup/dell-local-nightly --output-format json
+systemctl status pvescheduler.service
+```
+
+设置未来job disabled不停止正在跑的任务。需要取消时仅按PVE精确任务ID处理，并核原生清理、thaw与锁；不得kill来宾、强制unlock、删snapshot或通配清理dump。调整保留/目录先核新鲜容量和最近有效恢复点，CF/220限制不得通过同步整目录绕过。
+
+### 历史回退档与应用备份边界
+
 清理前已保留21份受保护PVE归档，目录`/mnt/pve/store/dell-artifacts/cleanup-backups-20261107/`，root0700，归档/日志0600；压缩约29.9GiB。这是同一物理机/存储内的回退档，**不是异机灾备**。SHA/zstd/VMA全档完整性通过，不表示每份旧实例都恢复开机验过，见[备份汇总](cleanup/backup-summary.json)。
 
-不可跨越：CF归档仅PVE，不导出Mac；publisher私钥仅220，禁止wholebackup/snapshot220来夹带复制它。普通应用初始副本与恢复证据有范围限制：Rabbit definitions不含消息、Redis初始快照0keys、Grafana备份不等于Prometheus/Alertmanager全部历史，NAS媒体不是正式业务备份目标。长期独立目的地/自动调度/保留与真实RPO/RTO尚未签收。
+不可跨越：CF归档仅PVE，不导出Mac；publisher私钥仅220，禁止wholebackup/snapshot220来夹带复制它。普通应用初始副本与恢复证据有范围限制：Rabbit definitions不含消息、Redis初始快照0keys、Grafana备份不等于Prometheus/Alertmanager全部历史，NAS媒体不是正式业务备份目标。本机首轮11档验证已完成、03:30原生调度与保留已启用；长期独立目的地与真实RPO/RTO仍未签收。
 
 每次备份先登记对象、版本、身份边界、目标、容量、加密/权限及一致性条件。数据库/Blob一起取一致性点，正在运行的目录拷贝不能冒称一致备份。原10.63门禁的历史application-backup脚本必须先核适配现役19配置，不能从旧README直接抄--execute命令。秘密通过受控文件/STDIN使用，不把整个private打包上传Nexus。
+
+### 隔离恢复人工参考（本轮不执行）
 
 隔离恢复人工流程：
 
@@ -165,7 +186,7 @@ qmrestore <已核归档路径> <新QA_VMID> --storage <批准存储> --unique 1
 
 当前独立220/221保持；[17合并架构](17-publish-artifact-consolidation.md)只是将来用户明确恢复迁移后的目标：最终只保留VM220 `publish-service`，发布与Nexus是该VM的两项职责，31是服务alias；原VM221 `artifact-service`核验后退役。合并验收后须重新核启停清单并移除221，不能继续按旧双机清单启动两个31所有者。
 
-目标已选：220管理primary19.30，Nexus服务alias19.31:8081，OS hostname继续publish-service；220计划6CPU/8GiB，原100GiB数据卷/srv/nexus UUID239dc…保留。服务URL/新账号/EULA/原数据保持；不是新建空仓库。当前仅Docker/两镜像/13项root600 standby准备完成，**221仍是配置归属，220未装active Nexus、未绑定31或迁盘**，11月8日只读复核Nexus221两容器健康、220仍4CPU/4GiB且无active Nexus；这不授权继续下列迁移步骤。
+目标已选：220管理primary19.30，Nexus服务alias19.31:8081，OS hostname继续publish-service；220计划6CPU/8GiB，原100GiB数据卷/srv/nexus UUID239dc…保留。服务URL/新账号/EULA/原数据保持；不是新建空仓库。当前仅Docker/两镜像/13项root600 standby准备完成，**221仍是配置归属，220未装active Nexus、未绑定31或迁盘**，11月9日fresh复核Nexus221两容器健康、220仍4CPU/4GiB且无active Nexus；这不授权继续下列迁移步骤。
 
 ### A. 恢复与fresh基线
 
@@ -232,6 +253,8 @@ qm move-disk 220 scsi2 --target-vmid 221 --target-disk scsi1
 先确认221该slot空、盘唯一所有权和原备份在，恢复source原网络/31归属/管理与原监督后再启动；target220保留primary30和发布key，不从旧空库重导或清真实数据。旧桥或ACL若已改也需root配套恢复，文件回滚不等于网络回滚。回退没有实演，不签成恢复保证。
 
 ## 8. 失败时停手与禁止重跑清单
+
+OW完整规则按用户要求只留本地，不触碰或上传，也不push其local-only分支；本机备份或文档交付不扩大这一范围。
 
 | 观察 | 人工下一步 |
 | --- | --- |

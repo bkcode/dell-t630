@@ -1,0 +1,12 @@
+{
+  "status": "three-backup-alert-whitelist-committed-native-checked-no-test-send",
+  "candidate_SHA": "12d733376239919ba55c3739ebf8a0564de12ceaad9fba28c75d8632630a41e6",
+  "AM_locked_ID_image_PID_start_restarts_unchanged": true,
+  "native_bridge_MainPID_changed": true,
+  "three_synthetic_label_routes_lark_live": true,
+  "receiver_auth_token_paths_unchanged": true,
+  "ALERTS_only_three_names_added": true,
+  "all_alert_group_counts_zero": true,
+  "no_durable_bridge_queue_and_single_task_no_inbound_confirmed": true,
+  "secret_values_read_or_new_receiver_or_test_send": false
+}

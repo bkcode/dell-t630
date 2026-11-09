@@ -1,0 +1,553 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-11-09T07:59:55.554873+00:00",
+  "scope": "post-first-backup readonlyguestmetadata; noexternal test sends orchanges",
+  "guest_vmids": [
+    200,
+    201,
+    210,
+    220,
+    221,
+    230,
+    240,
+    250,
+    260
+  ],
+  "strict_SSH_existing_info_source": "evidence/implementation/private-guest-access.json roles[].target; trust_guest notcalled",
+  "guest_or_PVE_writes": false,
+  "known_hosts_modified": false,
+  "Env_Cmd_credentials_datafile_contents_read": false,
+  "results": [
+    {
+      "vmid": 200,
+      "hostname": "data-prod-db",
+      "at": "2026-11-09T07:59:53.301693+00:00",
+      "read_only": true,
+      "mutations": false,
+      "root_mount": {
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "fstype": "ext4",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982"
+          }
+        ]
+      },
+      "data_mount": {
+        "filesystems": [
+          {
+            "target": "/srv/dell-data",
+            "source": "/dev/sdb",
+            "fstype": "ext4",
+            "uuid": "d61c0e22-941e-447a-9e9a-1e9e50deb02f"
+          }
+        ]
+      },
+      "containers": [
+        {
+          "name": "/dell-data-prod-db-mysql-1",
+          "ID": "b1a1e926f9ca92d717dbb903a313315a74749f7a942528096cb57cea8abee0ca",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        }
+      ],
+      "checks": {
+        "hostname_matches": true,
+        "root_mount_present_UUID": true,
+        "data_UUID_FS_matches": true,
+        "all_expected_containers_healthy": true,
+        "restart_count_zero": true,
+        "container_IDs_match_same_day_core_audit": true
+      },
+      "status": "passed-metadata-scope"
+    },
+    {
+      "vmid": 201,
+      "hostname": "data-prod-infra",
+      "at": "2026-11-09T07:59:53.344753+00:00",
+      "read_only": true,
+      "mutations": false,
+      "root_mount": {
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "fstype": "ext4",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982"
+          }
+        ]
+      },
+      "data_mount": {
+        "filesystems": [
+          {
+            "target": "/srv/dell-data",
+            "source": "/dev/sdb",
+            "fstype": "ext4",
+            "uuid": "b85156c2-dac8-4b33-ab25-460aaf676c57"
+          }
+        ]
+      },
+      "containers": [
+        {
+          "name": "/dell-data-prod-infra-redis-1",
+          "ID": "b940153fac95f736fb49a32ccd7f9143dced2eddd62944f4ef810e2c30a771a5",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "name": "/dell-data-prod-infra-rabbitmq-1",
+          "ID": "3d3000b2a67c396ec5647892e12f9441fbbddb19aa0882cca447a2f403bc43f0",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "name": "/dell-data-prod-infra-nacos-1",
+          "ID": "ff4c025af4b222512bfd2975790d40144c5d6b38c435888adc06e2a0be9d8e61",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        }
+      ],
+      "checks": {
+        "hostname_matches": true,
+        "root_mount_present_UUID": true,
+        "data_UUID_FS_matches": true,
+        "all_expected_containers_healthy": true,
+        "restart_count_zero": true,
+        "container_IDs_match_same_day_core_audit": true
+      },
+      "status": "passed-metadata-scope"
+    },
+    {
+      "vmid": 210,
+      "hostname": "data-test",
+      "at": "2026-11-09T07:59:53.316393+00:00",
+      "read_only": true,
+      "mutations": false,
+      "root_mount": {
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "fstype": "ext4",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982"
+          }
+        ]
+      },
+      "data_mount": {
+        "filesystems": [
+          {
+            "target": "/srv/dell-data",
+            "source": "/dev/sdb",
+            "fstype": "ext4",
+            "uuid": "dd1773f9-aa48-4401-a9c8-caf0f66845f3"
+          }
+        ]
+      },
+      "containers": [
+        {
+          "name": "/dell-data-test-data-nacos-1",
+          "ID": "5bd9a27fd4051994494eed423d84e50862ef91918ffbfa4834df14de2a8f2e4c",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "name": "/dell-data-test-data-rabbitmq-1",
+          "ID": "4d955f668d96330c7d9cbe676ec41722a1d3c67038a52d89f0c3f8f11866ce58",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "name": "/dell-data-test-data-mysql-1",
+          "ID": "df4e9d159f5903e42ab4e6c2c092d2d454ac55a76c226fc8a07fe44c72b41ef6",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "name": "/dell-data-test-data-redis-1",
+          "ID": "b5d49893d99c73d425f0af035dce837f1467a096841d7bbae3f7d5381ce3df22",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        }
+      ],
+      "checks": {
+        "hostname_matches": true,
+        "root_mount_present_UUID": true,
+        "data_UUID_FS_matches": true,
+        "all_expected_containers_healthy": true,
+        "restart_count_zero": true,
+        "container_IDs_match_same_day_core_audit": true
+      },
+      "status": "passed-metadata-scope"
+    },
+    {
+      "vmid": 220,
+      "hostname": "publish-service",
+      "at": "2026-11-09T07:59:53.367834+00:00",
+      "read_only": true,
+      "mutations": false,
+      "root_mount": {
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "fstype": "ext4",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982"
+          }
+        ]
+      },
+      "data_mount": {
+        "filesystems": [
+          {
+            "target": "/srv/dell-build",
+            "source": "/dev/sdb",
+            "fstype": "ext4",
+            "uuid": "16dc6067-56ef-4687-a314-edc6421f9ed4"
+          }
+        ]
+      },
+      "physical_IPv4": [
+        "192.168.19.30"
+      ],
+      "containers": [],
+      "Nexus_container_count": 0,
+      "checks": {
+        "hostname_matches": true,
+        "root_mount_present_UUID": true,
+        "data_UUID_FS_matches": true,
+        "primary30_only_no31": true,
+        "Nexus_not_on220": true
+      },
+      "status": "passed-metadata-scope"
+    },
+    {
+      "vmid": 221,
+      "hostname": "artifact-service",
+      "at": "2026-11-09T07:59:54.383391+00:00",
+      "read_only": true,
+      "mutations": false,
+      "root_mount": {
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "fstype": "ext4",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982"
+          }
+        ]
+      },
+      "data_mount": {
+        "filesystems": [
+          {
+            "target": "/srv/nexus",
+            "source": "/dev/sdb",
+            "fstype": "ext4",
+            "uuid": "239dc45a-b1f3-408b-a8ef-7afa77b52204"
+          }
+        ]
+      },
+      "containers": [
+        {
+          "name": "/nexus-gateway-1",
+          "ID": "bb273c7b5b309671bd34f56c04dc6ae96dc7451105b8f1f19f890968fb4ce69a",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "name": "/nexus-nexus-1",
+          "ID": "70d4bec45b73e68dee425c6962ba0ec2d1448b03187dfa0dc8369bdc44eb65bb",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        }
+      ],
+      "checks": {
+        "hostname_matches": true,
+        "root_mount_present_UUID": true,
+        "data_UUID_FS_matches": true,
+        "all_expected_containers_healthy": true,
+        "restart_count_zero": true,
+        "container_IDs_match_same_day_media_audit": true
+      },
+      "status": "passed-metadata-scope"
+    },
+    {
+      "vmid": 230,
+      "hostname": "java-prod-01",
+      "at": "2026-11-09T07:59:54.228128+00:00",
+      "read_only": true,
+      "mutations": false,
+      "root_mount": {
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "fstype": "ext4",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982"
+          }
+        ]
+      },
+      "containers": [],
+      "java_process_count": 0,
+      "checks": {
+        "hostname_matches": true,
+        "root_mount_present_UUID": true,
+        "no_Java_business_processes": true,
+        "root_UUID_matches_same_day_core": true
+      },
+      "status": "passed-metadata-scope"
+    },
+    {
+      "vmid": 240,
+      "hostname": "java-test-01",
+      "at": "2026-11-09T07:59:54.267202+00:00",
+      "read_only": true,
+      "mutations": false,
+      "root_mount": {
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "fstype": "ext4",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982"
+          }
+        ]
+      },
+      "containers": [],
+      "java_process_count": 0,
+      "checks": {
+        "hostname_matches": true,
+        "root_mount_present_UUID": true,
+        "no_Java_business_processes": true,
+        "root_UUID_matches_same_day_core": true
+      },
+      "status": "passed-metadata-scope"
+    },
+    {
+      "vmid": 250,
+      "hostname": "penpot-service",
+      "at": "2026-11-09T07:59:54.566613+00:00",
+      "read_only": true,
+      "mutations": false,
+      "root_mount": {
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "fstype": "ext4",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982"
+          }
+        ]
+      },
+      "data_mount": {
+        "filesystems": [
+          {
+            "target": "/srv/penpot",
+            "source": "/dev/sdb",
+            "fstype": "ext4",
+            "uuid": "ccccda03-bffd-4054-afd3-e0e22f0c607e"
+          }
+        ]
+      },
+      "containers": [
+        {
+          "name": "/penpot-penpot-import-1",
+          "ID": "90aacbc3b78e9b1c07771b55013e3b62c5634df8c777545c4229558f974b01ed",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "name": "/penpot-penpot-worker-1",
+          "ID": "bdd8e421ad746ddecc7950b390c21c046f6622914eed89cf3fc9e5f52fca31cb",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "name": "/penpot-penpot-frontend-1",
+          "ID": "96c4fb2d14c0747697b232b2435dbaf1ba58c25850be1f8e84a2f4acfd6cff49",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "name": "/penpot-penpot-backend-1",
+          "ID": "4611f0d09e79410ae4bab0ff75a008bb1bdbe6dfc0a76175726d632355831df5",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "name": "/penpot-penpot-admin-console-1",
+          "ID": "989309f28c5aaf2db549888b842dd256ca92371664c5baf5ad8b1ce4829f5644",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "name": "/penpot-penpot-exporter-1",
+          "ID": "81bec808dfa5ad48bdd7fc73f3da737d3f9c0a5c9acb814e7be1761e3d7954e4",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "name": "/penpot-penpot-dns-1",
+          "ID": "896b4b365781d4ce0922b7a250fc277fcb1de2b34cdb5cca76578352de76239b",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "name": "/penpot-penpot-valkey-1",
+          "ID": "d08ee10d5b4ce72de16ca148218a85edda276963b6e0d665517a763801a9616e",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "name": "/penpot-penpot-mcp-1",
+          "ID": "aa9c599b0dd027b4f8056f8adf283d6ebb07f861569af13478c68305d53ccbaf",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "name": "/penpot-penpot-postgres-1",
+          "ID": "b6ac0e7fd316f8b53df1d8853d5614049fa5d180f8f9b5f84e3baa448f481c17",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        },
+        {
+          "name": "/penpot-penpot-mailpit-1",
+          "ID": "b223cafa5cb2450dc520513f71e999ba6550c0cf894a514c4d520e72c33f39d9",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        }
+      ],
+      "checks": {
+        "hostname_matches": true,
+        "root_mount_present_UUID": true,
+        "data_UUID_FS_matches": true,
+        "all_expected_containers_healthy": true,
+        "restart_count_zero": true,
+        "container_IDs_match_same_day_media_audit": true
+      },
+      "status": "passed-metadata-scope"
+    },
+    {
+      "vmid": 260,
+      "hostname": "nas-media",
+      "at": "2026-11-09T07:59:55.367845+00:00",
+      "read_only": true,
+      "mutations": false,
+      "root_mount": {
+        "filesystems": [
+          {
+            "target": "/",
+            "source": "/dev/sda1",
+            "fstype": "ext4",
+            "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982"
+          }
+        ]
+      },
+      "data_mount": {
+        "filesystems": [
+          {
+            "target": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a",
+            "source": "/dev/sdb1",
+            "fstype": "ext4",
+            "uuid": "5b19837c-128c-498a-b79d-563db810c34a"
+          }
+        ]
+      },
+      "containers": [
+        {
+          "name": "/dell-nas-jellyfin-1",
+          "ID": "c7db70188968ec3c8896c5110e71f5b23d9e0284cd6c9128173148d509305ad9",
+          "State": "running",
+          "Health": "healthy",
+          "RestartCount": 0,
+          "OOMKilled": false
+        }
+      ],
+      "NAS_units": {
+        "dell-nas-jellyfin.service": {
+          "Result": "success",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "smbd.service": {
+          "Result": "success",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "openmediavault-engined.service": {
+          "Result": "success",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "nginx.service": {
+          "Result": "success",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "checks": {
+        "hostname_matches": true,
+        "root_mount_present_UUID": true,
+        "data_UUID_FS_matches": true,
+        "all_expected_containers_healthy": true,
+        "restart_count_zero": true,
+        "container_IDs_match_same_day_media_audit": true,
+        "OMV_SMB_JF_units_active": true
+      },
+      "status": "passed-metadata-scope"
+    }
+  ],
+  "all_passed": true,
+  "summary": {
+    "guests": 9,
+    "expected_application_containers": 22,
+    "Nexus_independent221": true,
+    "Java_business_processes_expected": 0
+  },
+  "limitations": [
+    "rootUUIDforDockerroles iscapturedbut noearlier rootbaseline availableinthisreport; dataUUIDcomparedplan.",
+    "No authenticatedcontent/GAV/design/SMBtest, dataread orcredentials.",
+    "No stop/start/install/cleanup/backup/migration/poweraction; Macprobe/Java notstarted."
+  ]
+}

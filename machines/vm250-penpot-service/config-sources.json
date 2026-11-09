@@ -5,26 +5,26 @@
     {
       "path": "plan.json",
       "type": "current-contract",
-      "purpose": "当前资源/地址/数据卷合同唯一来源；运行状态未在硬件故障后复验。",
-      "sha256": "108ad706e5917e44eb5c6c1f7318c4e41b2f4cf62d281cf76f1a00368832430b"
+      "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
+      "sha256": "34ae7971e3763f6e9424ac491f5bd56d4913f8ae14506f9474d982f22117b1b4"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
-      "purpose": "最后验收与当前UEFI0058暂停时间线。",
-      "sha256": "858f0eb05138a66db981507bce15f013359e8388760f778c8cddb018099694ba"
+      "purpose": "当前基础搭建与历史故障交接；本轮不迁移，旧证据按时点解释。",
+      "sha256": "e844ca33b73f522da6a60bc75b0a5fe9304aafe3d8a31f5b73b50b74b678489d"
     },
     {
       "path": "12-service-access-and-operations.md",
       "type": "current-contract",
       "purpose": "当前19网入口及凭据保管规则。",
-      "sha256": "f917b7b2445c4fb5f728318cd0ab0851cf13fb0d08bca152f8ad587cd5f41a86"
+      "sha256": "d238959fdf202ba8368f8159e28a2ae49476137a4815b47127d9860fc447aea0"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
-      "purpose": "人工启停、硬件门禁、克隆、备份与受控恢复。",
-      "sha256": "1102845cef3dac5ec1a1797f02b447f4e04d9cc9f00a855e007d61f7082b7c99"
+      "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
+      "sha256": "022e500c0a7ca91ecdb82895b7bdfd12a6f4a56824100a49cad864a5de003361"
     },
     {
       "path": "cleanup/final-live-check.json",
@@ -103,6 +103,48 @@
       "type": "historical-evidence",
       "purpose": "2026-11-08 scoped recovery check; no migration/application update, not full app-content restore acceptance",
       "sha256": "3cf578c4e8ee1916363e962adff0db11235ae80706b294a0e7b649463c526e83"
+    },
+    {
+      "path": "infra/backup/pve-local/policy.json",
+      "type": "current-contract",
+      "purpose": "用户已授权本机备份的固定对象/保留/权限合同；任务启用与首轮结果另看当期验收",
+      "sha256": "d3e7615137c1456ef450e74a3f5f5ba0e62bbd04912b1070c64669e0df95ad25"
+    },
+    {
+      "path": "completion/20261109/README.md",
+      "type": "current-contract",
+      "purpose": "当前基础搭建与本机自动备份实施；不迁数据、不启Java/Macprobe",
+      "sha256": "fb369e35633ef2c1ee2f8220b3bdbb4d89c21f95808b99b6c4fdeeb70ba02c80"
+    },
+    {
+      "path": "completion/20261109/acceptance.json",
+      "type": "current-contract",
+      "purpose": "本轮限定基础交付验收，未完成备份/告警仍pending",
+      "sha256": "c258046e11ce46a87a6a69cbb757e44f92691fe0374684a3ef7712fd2933b69d"
+    },
+    {
+      "path": "completion/20261109/guests-post-backup.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-09 scoped audit/receipt with explicit timestamp and limits; not a complete runtime export",
+      "sha256": "6127cba16ecd165a2abb2d1af4e79218e859b156adadef71e5cfdd76715f62cc"
+    },
+    {
+      "path": "completion/20261109/final-verification.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-09 scoped audit/receipt with explicit timestamp and limits; not a complete runtime export",
+      "sha256": "b4d75f14ad4dd54dc51f99aba1ecbd8843a9fab8ab26954d15c0837de4fb6782"
+    },
+    {
+      "path": "completion/20261109/backup-first-success.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-09 scoped audit/receipt with explicit timestamp and limits; not a complete runtime export",
+      "sha256": "ba2cc155e2e9cb6cd1c5b616296db97cc0d139950411ff5e1dcb78eec8d3ca00"
+    },
+    {
+      "path": "completion/20261109/backup-schedule-enabled.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-09 scoped audit/receipt with explicit timestamp and limits; not a complete runtime export",
+      "sha256": "a5a18376d46855950f4d4cbf58588458bbdd703cd95671c59f067440ba1b8cd6"
     }
   ],
   "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."

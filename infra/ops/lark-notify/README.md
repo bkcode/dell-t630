@@ -2,7 +2,7 @@
 
 # Dell Ops → Lark 通知桥
 
-当前状态（2026-11-06）：**270实际安装、双阶段真实Lark验收和active白名单路由均已通过**。主AI先批准Ops维护窗口，再确认维护结束后独立批准active。Mac外部探测按用户决定保持停用，本通知路径独立运行在270。
+历史启用验收（2026-11-06）：**270实际安装、双阶段真实Lark验收和active白名单路由均已通过**。主AI先批准Ops维护窗口，再确认维护结束后独立批准active。Mac外部探测按用户决定保持停用，本通知路径独立运行在270。
 
 ## 结构与秘密边界
 
@@ -75,3 +75,7 @@
 `infra/ops/validate.py`现在保留无marker只能local-only的旧边界；合法通知marker必须owner/schema/mode准确、AM配置完全等于renderer、Compose secret挂载准确且两份稳定token均600且值一致。伪active、错renderer/挂载、错权限或轮换值均拒绝。35项本地回归（含5项新反例）及原Ops13安全测试通过；全Ops静态入口另外执行57项原回归。
 
 270 manage.health只根据合法root状态和native unit active报告lark-active，不重新外发或探测Lark；供应商可达性需要真实发送回执。PVE collector新鲜度从当前Prometheus只读查询，缺失/过旧/负年龄/查询失败不假称fresh。`lark-notify-ops-metadata-health.json`证明public/private/target manager元数据同步后，只执行一次health，四容器及Ops/通知/exporter PID/启动时间不变；历史notconfigured已归档。
+
+## 2026-11-09 备份告警配套
+
+当前基础健康见[Ops审计](../../../completion/20261109/ops-audit.json)。本轮只向既有白名单增加`PveLocalBackupFailed`、`PveLocalBackupStale`、`PveLocalBackupStateInvalid`及固定中文映射，原接收对象、认证凭据引用和消息过滤保持。实际安装及AM原生校验见[收据](../../../completion/20261109/backup-notify-whitelist-result.json)：仅native桥必要重启，原AM容器HUP，未发送人工通知。原35项loopback/mock回归通过；这不等于新真实firing/resolved送达证明。Prom规则和首备门禁的最终状态见[当日交付](../../../completion/20261109/README.md)。Mac外部探针不需要。

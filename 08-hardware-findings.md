@@ -1,6 +1,6 @@
 # 硬件发现、历史UEFI0058与恢复观察
 
-更新：2026-11-08（Asia/Shanghai）。**用户确认内存已重新插拔/更换并通过诊断，服务器恢复；本轮范围是检查补齐现有基础服务和清理确认多余项，不迁移。** 主AI20:12严格SSH只读读取到4×32GiB、当前boot EDAC计数0与RAID Optimal；物理处理/诊断来自用户，本轮没有代理独立离线诊断或压力测试。UEFI0058与DIMM_B1事故保留为历史，不再描述为当前POST拦截。本文只同步本地证据，没有发起新远程操作。
+更新：2026-11-09（Asia/Shanghai）。**当前继续完成基础搭建并新增用户授权的PVE本机自动备份，不迁移数据。** [本轮PVE审计](completion/20261109/pve-audit.json)于14:42–14:44读取14:24自然重启后的4×32GiB、EDAC0、RAIDOptl和12running/3tpl；上一轮guard已实际跨重启保持全forward0。用户此前确认内存重新插拔/更换及诊断通过，与助手只读短期计数分别记录，没有独立离线诊断或压力测试。UEFI0058/B1保留为历史；本页本次仅本地同步，无新远程动作。
 
 ## 1. 历史内存事件与证据强度
 
@@ -17,6 +17,8 @@
 BMC历史显示时间`Sat Nov07 2026 00:02:38`的时区未核，不直接与本地09:32或OS时间做因果排序。原B1事故按T630手册关联CPU2/channel0的分析留在证据中；现场处理前后的具体替换记录应由用户维护，不凭恢复可达反推当时唯一坏件。
 
 ## 2. 本轮内存、存储与范围
+
+11月9日[PVE审计](completion/20261109/pve-audit.json)boot时间14:24:03、采集14:42–14:44，MemTotal约125.781GiB，4个MC的CE/UE全0，当前boot内核不可纠正/MCE/EDAC/FSIO分类0；两VD Optl、5盘Onln、BBUOptimal。A1/A2/B1/B2各32GB保持。该boot被动读取，不是agent触发reboot，也不单独证明长期稳定；以下11月8日摘要作为上一轮证据保留。
 
 主AI的[硬件摘要](recovery/20261108/hardware-summary.json)采于2026-11-08 20:12:15 +08，PVE记录本boot开始于20:07:44：
 
@@ -48,16 +50,17 @@ BMC历史显示时间`Sat Nov07 2026 00:02:38`的时区未核，不直接与本�
 
 PERC板载缓存ECC与系统DIMM_B1属于不同层；缓存correctable/uncorrectable为0不能否认旧SEL多位错误。完整历史见[hardware-network-audit.json](evidence/implementation/hardware-network-audit.json)、[raid-controller.json](evidence/implementation/raid-controller.json)。本轮不删除或改写原JSON，不重复rebuild/force Online以掩盖异常。
 
-## 5. 本轮网络与软件恢复观察
+## 5. 网络持久性已复核与本轮基础观察
 
 当前架构仍为PVE21.22管理/L2，vmbr19无hostIP，独立190 WAN21.23/LAN19.1提供路由/DNS/DHCP/filter；190无NAT，OW21.1做互联网NAT，旧10.63四桥及PVE DNAT不恢复。
 
-开机发现vmbr0 IPv4/IPv6 per-interface forward为1，而all/default及其余接口为0。主AI仅新增/补齐3个owned持久文件并即时收敛，未reload网络、未重启来宾，原interfaces、桥/路由/ACL保持；[修复回执](recovery/20261108/host-forwarding-restored.json)与[20:20:48后检](recovery/20261108/host-network-postcheck.json)确认各接口forward全0、无宿主NAT。该补丁的再次重启持久性未在本轮单独演练，不以语法检查冒签。
+11月8日发现vmbr0 IPv4/IPv6 per-interface forward为1，主AI仅补3个owned文件并即时收敛，未reload网络，见[原回执](recovery/20261108/host-forwarding-restored.json)。**11月9日已实际读回跨重启持久性：**guard三个SHA与原回执相同，networking14:24:12→bridge/ExecStartPost成功14:24:15→pve-guests14:24:18，IPv4/IPv6 all/default/全部接口forward均0，唯一nft仍bridge ACL、无host NAT、vmbr19无hostIP。证据见[本轮PVE审计](completion/20261109/pve-audit.json)，不再仅称未验证候选。没有为本次文档同步再次重启或改网络。
 
-- [核心审计](recovery/20261108/core-services-audit.json)，20:16:13–20:18:22：200/201/210原数据UUID/rw、8容器healthy；230/240 JDK基础与无业务状态通过。
-- [媒体工具审计](recovery/20261108/media-tools-audit.json)，20:19:39：221独立Nexus、250定制Penpot、260 NAS基础服务恢复；220没有移盘、加alias或启动Nexus。内容、认证写入及Penpot main更新未执行。
-- [Ops审计](recovery/20261108/ops-audit.json)，20:19:38：15/15 targets UP，无活动告警，Lark unit active；没有新消息测试，不能据此签本boot供应商送达。
-- [宿主后检](recovery/20261108/host-network-postcheck.json)，20:20:48：12来宾运行、6主要入口200。PVE自签HTTPS只做可达性检查，不是证书身份校验。
+- [11月9日核心审计](completion/20261109/core-audit.json)，14:42:56–14:43:40：三盘原UUID/rw、8容器healthy/RestartCount0，五台NTP同步/无failed，230/240无Java进程/旧五unit非enabled。
+- [11月9日媒体审计](completion/20261109/media-audit.json)，14:43:07：221独立Nexus、250定制Penpot、260 NAS原UUID/镜像及基础健康保持；220没有移盘/加alias/启动Nexus。内容、认证写入及Penpot main更新未执行，实际ff提交保留。
+- [11月9日Ops审计](completion/20261109/ops-audit.json)：15/15 targets UP、无活动告警、Lark unit active；没有新消息测试，不签本boot供应商送达。
+- [11月8日宿主后检](recovery/20261108/host-network-postcheck.json)的6入口200保留作当时范围；11月9日PVE/媒体/Ops分别复核管理与原健康入口。自签HTTPS可达性不等于证书身份校验。
+- [空闲iperf清理](completion/20261109/idle-iperf-disabled.json)，14:45:56：确认无测试连接后stop/disable常驻server，5201关闭，包保留；无网络改变或应用/来宾重启。
 - [网络/CF后续核查](recovery/20261108/network-CF-followup.json)：直接向19.1用UDP/TCP查询，Penpot/制品/发布三A分别为19.50/31/30；CF实际20241端口ready200、连接2。先前网关OS resolver经OW得到Fake-IP和CF误用2000端口探针的失败原样保留，不作为服务故障；未验证Cloudflare公网origin全链路。
 
 同机Ops与GW共享T630故障域，整机无法运行时不依赖内部Lark发失联通知。用户明确不需要Mac外部探针，已从现行方案和后续待办移除，仅保留历史停止/试验记录。
@@ -68,10 +71,12 @@ PERC板载缓存ECC与系统DIMM_B1属于不同层；缓存correctable/uncorrect
 | --- | --- | --- |
 | HW-01 | 事故/维修记录可追溯 | 原SEL/POST证据保留；现场维修诊断由用户确认，本轮未下载新SEL |
 | HW-02 | POST恢复、诊断与有效容量 | 用户报告重新插拔/更换和诊断通过；OS可达、4×32GiB，助手未独立离线诊断 |
-| HW-03 | 同hostkey/PVE及新鲜RAM/RAID状态 | 20:12严格SSH成功，当前boot EDAC0、两VD Optl；不保证长期稳定 |
-| HW-04 | 原12来宾/15目标与原服务基础 | 20:16–20:20分范围通过；应用数据/认证/长期灾备不能由健康状态替代 |
-| HW-05 | 只补齐和清理确认多余项 | 用户本轮不迁移，不进Nexus窗口、不退役221、不启动Java业务；每个新清理项先核依赖与回退 |
+| HW-03 | 同hostkey/PVE及新鲜RAM/RAID状态 | 11月9日14:42–14:44再核EDAC0、两VD Optl；不保证长期稳定 |
+| HW-04 | 原12来宾/15目标与原服务基础 | 11月9日fresh分范围通过，forward guard已跨重启保持；应用数据/认证/长期灾备另验 |
+| HW-05 | 完成基础搭建与本机备份 | 11项归档全verified、原生OK/退出0、03:30计划enabled；排除220、CF仅PVE，不迁移/退役221/启Java，也未做恢复 |
 
-人工入口见[操作手册](19-manual-operations.md)。当前没有必要为了验证而反复重启、卸载真实数据盘、重装组件或清SEL；后续若出现新CE/UE、IO或服务异常，保留新鲜证据再安排精确处理。历史控制器工具路径`/root/dell-bootstrap/perccli-extracted/opt/MegaRAID/perccli/perccli64`只作只读show/query依据，不授权任何配置写入。
+新[PVE本机自动备份](infra/backup/pve-local/README.md)位于同一store故障域，目录root700/归档日志600，03:30与最近3/每日7/每周4策略已配置；[首轮11项已全部zstd/native验证](completion/20261109/backup-first-success.json)，原生OK/unit退出0，[native计划已enabled](completion/20261109/backup-schedule-enabled.json)，归档共19,747,582,801 bytes。[metadata已接原collector](completion/20261109/backup-metrics-installed.json)、[Lark三名白名单已配套](completion/20261109/backup-notify-whitelist-result.json)，新Prom规则实际加载与后验只查[当日中央入口](completion/20261109/README.md)，本页不提前签收；无本轮人工外发。snapshot/crash-consistent恢复点不能替代DB逻辑一致、独立目的地或实际恢复演练。
+
+OW完整规则仅本地保存，不触/不上传，也不push local-only分支。人工入口见[操作手册](19-manual-operations.md)。当前没有必要为了验证而反复重启、卸载真实数据盘、重装组件或清SEL；后续若出现新CE/UE、IO或服务异常，保留新鲜证据再安排精确处理。历史控制器工具路径`/root/dell-bootstrap/perccli-extracted/opt/MegaRAID/perccli/perccli64`只作只读show/query依据，不授权任何配置写入。
 
 异常断电/内存事件期间的数据若有新写入，仍需逐应用按一致性方式复核；当前Optimal、HTTP200、EDAC0和旧备份SHA不能单独代替该结论。

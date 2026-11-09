@@ -1,8 +1,14 @@
-> 2026-11-08恢复：本机已完成基础存活/地址/服务检查，详见[恢复记录](../../recovery/20261108/README.md)；本轮不迁移、不升级应用，不需要Mac外部探针。下列旧验收/暂停描述按原时点解释，配置与最新检查见config.json。
+> 更新：2026-11-09（Asia/Shanghai）。本轮基础fresh审计已复核；当日实时收尾状态统一见[11月9日交付记录](../../completion/20261109/README.md)。本页仅本地同步带时点证据，不执行服务器操作；不迁移数据、不合并Nexus、不启动Java业务、不升级Penpot，不需要Mac外部探针。
 
 # VM201 · data-prod-infra
 
-**配置合同与最后验收资料，非当前在线声明。** 最后综合验收：2026-11-07 02:35:01 +08:00；服务器现因UEFI0058内存错误停留在硬件处理阶段，历史SEL指向DIMM_B1。用户已暂停服务器操作，本轮仅本地整理；未连接、部署、克隆或运行QA。
+## 本轮只读状态与备份归属
+
+14:42:56–14:43:40分项采样：hostname/19.11/GW与DNS19.1正确，原数据UUID/ext4/rw、监督active、3容器running/healthy/RestartCount0，NTP同步、基础监控正常、failed units空。未重新认证Nacos/Redis/Rabbit或读取namespace/消息/业务数据。 证据：[本机分项审计](../../completion/20261109/core-audit.json)。
+
+本机纳入[PVE本机自动备份](../../infra/backup/pve-local/README.md)的固定11来宾白名单；220始终排除，CF档只留PVE。 计划为03:30、最近3份＋每日7点＋每周4点，私有目录root700、归档/日志/状态600，旧21回退档保留。**首轮最终结果、job启用与告警规则后验只以[当日中央入口](../../completion/20261109/README.md)为准，本页不复制进行中状态。** 同机snapshot/crash-consistent不等于DB逻辑/跨VM一致、异机灾备或已恢复；本轮不迁移数据、不恢复覆盖现役。
+
+**配置合同与带时点基础审计，非完整运行配置导出。** 11月7日UEFI0058/B1事故与当日02:35旧基线保留历史；用户11月8日确认内存处理/诊断通过，11月9日已按下列证据重新核验基础状态。本页文档同步没有远程变更，也不把健康状态扩写为业务数据/权限或完整恢复通过。
 
 ## 职责、身份与资源
 
@@ -38,15 +44,15 @@ TCP服务端口为 `8848, 9848, 6379, 5672, 15672`，仅在指定本机19地址�
 
 ## SSH、Shell与网络
 
-恢复并获准操作后，用 `ub` 和客户端 `~/.ssh/yang_local_rsa`，严格核对 `dell-vm201` 既有host key；私钥只在客户端，不进入VM配置目录或Git。更换IP不等于重新信任任意主机，不关闭known_hosts校验，不拷贝别台机器host key。
+日常按已批准维护范围，用 `ub` 和客户端 `~/.ssh/yang_local_rsa`，严格核对 `dell-vm201` 既有host key；私钥只在客户端，不进入VM配置目录或Git。更换IP不等于重新信任任意主机，不关闭known_hosts校验，不拷贝别台机器host key。
 
 fish已安装（包版本4.0.2-1）；root/ub默认仍为Bash，没有自动chsh。19网经VM190/19.1路由到OW，PVE21.22只做管理和二层桥、host forwarding=0、无宿主NAT。已授权WireGuard源10.66.66.0/24访问服务器服务；应用认证与原角色ACL继续生效。
 
-基础exporter端点 `192.168.19.11:9100` 由Ops按既有规则采集，collector只输出本机状态，不输出凭据。最后验收为历史通过，硬件恢复后仍须核真实监听/单元/指标新鲜度。
+基础exporter端点 `192.168.19.11:9100` 由Ops按既有规则采集，collector只输出本机状态，不输出凭据。本轮已按下方审计核基础状态；历史功能通过不代替本轮未重做的认证/内容检查。后续维护时仍核真实监听、单元与指标新鲜度。
 
 ## 人工操作与恢复门禁
 
-先读[人工手册](../../19-manual-operations.md)、[当前交接](../../11-live-handoff.md)、[硬件事件](../../cleanup/hardware/DIMM_B1-incident.json)。硬件稳定且用户明确恢复后，由主AI安排fresh严格SSH、容量、磁盘/UUID、身份、完整服务集合与日志检查。不要以一次开机或F1跳过代替内存修复；本目录没有一键重部署入口。
+先读[人工手册](../../19-manual-operations.md)、[当前交接](../../11-live-handoff.md)、[硬件事件](../../cleanup/hardware/DIMM_B1-incident.json)。11月9日已核严格SSH与分项基础状态；后续每次维护仍由主AI按准确范围核容量、挂载/UUID、身份与完整服务集合。不要以一次开机或F1跳过代替内存修复；本目录没有一键重部署入口。
 
 所有秘密配置、数据库备份和凭据只在受保护的原位置；本目录不保存.env、渲染秘密、业务数据或SSH密钥。这里没有复制运行配置快照：旧阶段文档/模板只作带限制的来源索引，不能把10.63或旧DNAT重新当现役入口。
 
@@ -54,16 +60,16 @@ fish已安装（包版本4.0.2-1）；root/ub默认仍为Bash，没有自动chsh
 
 - [plan.json](../../plan.json) — `current-contract`：唯一角色/IP/资源/存储合同；状态字符串不等于实时在线。
 - [19-manual-operations.md](../../19-manual-operations.md) — `current-contract`：硬件恢复、日常检查、受控启停与备份人工门禁。
-- [11-live-handoff.md](../../11-live-handoff.md) — `current-contract`：用户暂停、无 Java 业务、发布冻结和恢复顺序。
+- [11-live-handoff.md](../../11-live-handoff.md) — `current-contract`：当前补齐范围、无Java业务、发布冻结与维护顺序。
 - [migration-plan.json](../../network19/migration-plan.json) — `historical-evidence`：原19网迁移合同含已退役角色，现役地址与角色以plan.json为准，不能重跑迁移器。
 - [final-live-check.json](../../cleanup/final-live-check.json) — `historical-evidence`：2026-11-07 02:35综合验收，含本机hostname/IP/fish/默认Bash；不能代表当前在线。
-- [DIMM_B1-incident.json](../../cleanup/hardware/DIMM_B1-incident.json) — `historical-evidence`：UEFI0058与历史DIMM_B1事件，当前硬件暂停原因。
+- [DIMM_B1-incident.json](../../cleanup/hardware/DIMM_B1-incident.json) — `historical-evidence`：UEFI0058与DIMM_B1历史事故，现已恢复并完成本轮基础核验。
 - [guest201.json](../../cleanup/fish/evidence/guest201.json) — `historical-evidence`：本来宾fish安装与默认登录shell未更改证据。
 - [execution-status.json](../../cleanup/monitoring/ten-role/execution-status.json) — `historical-evidence`：清理后10来宾监控合同部署回执，旧数量不得作为实时UP。
 - [guest-targets.json](../../cleanup/monitoring/ten-role/candidates/vm201/guest-targets.json) — `historical-evidence`：已审19网监控目标输入；全角色列表属于当时10节点，非直接重部署入口。
 - [compose.prod-infra.yaml](../../infra/data/compose.prod-infra.yaml) — `current-contract`：公开参数化Compose结构与资源上限；不是含现役IP/秘密的完整rendered配置。
 - [images.lock.json](../../infra/data/images.lock.json) — `current-contract`：固定linux/amd64镜像版本与digest。
-- [manage.py](../../infra/data/scripts/manage.py) — `current-contract`：来宾挂载/完整服务集合/认证监督器源码；部署需重新审查实际目标和配置，不在暂停期运行。
+- [manage.py](../../infra/data/scripts/manage.py) — `current-contract`：来宾挂载/完整服务集合/认证监督器源码；部署需重新审查实际目标和配置，不能在未核实际目标/版本时重跑。
 - [README.md](../../infra/data/README.md) — `historical-evidence`：组件设计/监督/秘密边界；原10.63地址与原阶段210待部署文字已过时，仅技术记录。
 - [role201-commit-start-evidence.json](../../network19/services-core/role201-commit-start-evidence.json) — `historical-evidence`：组件迁移19网后的受控commit/start回执，不作为当前健康证明。
 - [data-deploy-vm201.json](../../evidence/implementation/data-deploy-vm201.json) — `historical-evidence`：最初部署认证和专用fixture验收，地址可能属于旧网。

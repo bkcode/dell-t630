@@ -1,0 +1,1042 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-11-09T06:43:07.842606+00:00",
+  "scope": "2026-11-09 existinginfrastructure-readonly, noNexusmerge/data migration/applicationupdate",
+  "source_of_role_contract": "plan.json",
+  "guest_vmids": [
+    220,
+    221,
+    250,
+    260
+  ],
+  "remote_changes_performed": false,
+  "known_hosts_written": false,
+  "secret_or_key_contents_read": false,
+  "guests": [
+    {
+      "vmid": 220,
+      "role": "publish-service",
+      "collected_at": "2026-11-09T06:43:05.712707+00:00",
+      "boot_id": "f464ae7b-0cf4-47be-99dd-85d947165eb9",
+      "uptime_seconds": 560.7,
+      "CPU_count": 4,
+      "memory_total_bytes": 4112363520,
+      "read_only": true,
+      "remote_mutations": false,
+      "forbidden_Env_Cmd_healthlogs_credentials_requested": false,
+      "physical_interfaces": [
+        {
+          "name": "eth0",
+          "MAC": "bc:24:11:2a:01:ad",
+          "IPv4": [
+            "192.168.19.30"
+          ]
+        }
+      ],
+      "mount": {
+        "filesystems": [
+          {
+            "target": "/srv/dell-build",
+            "source": "/dev/sdb",
+            "fstype": "ext4",
+            "uuid": "16dc6067-56ef-4687-a314-edc6421f9ed4",
+            "options": "rw,relatime"
+          }
+        ]
+      },
+      "mount_UUID_FS_matches": true,
+      "data_capacity_bytes": 105089261568,
+      "data_available_bytes": 105039319040,
+      "units": {
+        "docker.service": {
+          "Type": "notify",
+          "Restart": "always",
+          "MainPID": "755",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "",
+          "RequiresMountsFor": "",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/usr/lib/systemd/system/docker.service",
+          "DropInPaths": "",
+          "UnitFileState": "enabled"
+        },
+        "prometheus-node-exporter.service": {
+          "Type": "simple",
+          "Restart": "on-failure",
+          "MainPID": "745",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "",
+          "RequiresMountsFor": "",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/usr/lib/systemd/system/prometheus-node-exporter.service",
+          "DropInPaths": "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+          "UnitFileState": "enabled"
+        },
+        "dell-guest-health.timer": {
+          "Result": "success",
+          "BindsTo": "",
+          "RequiresMountsFor": "",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/etc/systemd/system/dell-guest-health.timer",
+          "DropInPaths": "",
+          "UnitFileState": "enabled"
+        }
+      },
+      "failed_unit_names": [],
+      "backup_timers": [
+        {
+          "next": 1794268800000000,
+          "left": 1794268800000000,
+          "last": 1794182405696479,
+          "passed": 0,
+          "unit": "dpkg-db-backup.timer",
+          "activates": "dpkg-db-backup.service"
+        }
+      ],
+      "docker": {
+        "version": "29.9.3",
+        "driver": "overlay2",
+        "root": "/var/lib/docker",
+        "containers": 0,
+        "name": "publish-service"
+      },
+      "containers": [],
+      "deployment_public_source_metadata": [
+        {
+          "path": "/usr/local/bin/dell-publish",
+          "exists": true,
+          "directory": false,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "bytes": 4445,
+          "mtime_ns": 1793957113197092846,
+          "public_file_SHA256": "d674598542a73556f31d85d4f5c6bbdd55d66dddb9acb4d84cb7587e4f532969"
+        }
+      ],
+      "backup_or_standby_known_path_metadata": [
+        {
+          "path": "/root/dell-nexus-merge",
+          "exists": true,
+          "directory": true,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o700",
+          "bytes": 4096,
+          "mtime_ns": 1793985776500433890
+        },
+        {
+          "path": "/root/dell-nexus-consolidation/docker-prepare",
+          "exists": true,
+          "directory": true,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o700",
+          "bytes": 4096,
+          "mtime_ns": 1793985643104481368
+        },
+        {
+          "path": "/opt/dell/cleanup/nexus/target.py",
+          "exists": true,
+          "directory": false,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o555",
+          "bytes": 9463,
+          "mtime_ns": 1793986111864262970
+        }
+      ],
+      "backup_unit_file_names_metadata": [],
+      "health_GET": [],
+      "publisher_key_stat_only": {
+        "path": "/var/lib/dell-publisher/.ssh/test240_ed25519",
+        "exists": true,
+        "directory": false,
+        "symlink": false,
+        "uid": 999,
+        "gid": 989,
+        "mode": "0o600",
+        "bytes": 419,
+        "mtime_ns": 1793936890687081274
+      },
+      "publisher_key_contents_read": false,
+      "publisher_groups": "uid=999(publisher) gid=989(publisher) groups=989(publisher)",
+      "Nexus_active_paths_exist": {
+        "/opt/dell/nexus": false,
+        "/etc/nexus.env": false,
+        "/root/dell-nexus-secrets": false,
+        "/etc/systemd/system/dell-nexus.service": false
+      },
+      "status": "collected"
+    },
+    {
+      "vmid": 221,
+      "role": "artifact-service",
+      "collected_at": "2026-11-09T06:43:05.385009+00:00",
+      "boot_id": "87e5d63b-b8a1-4376-ac02-deecaa322c19",
+      "uptime_seconds": 745.19,
+      "CPU_count": 2,
+      "memory_total_bytes": 4112920576,
+      "read_only": true,
+      "remote_mutations": false,
+      "forbidden_Env_Cmd_healthlogs_credentials_requested": false,
+      "physical_interfaces": [
+        {
+          "name": "eth0",
+          "MAC": "bc:24:11:ec:e1:6f",
+          "IPv4": [
+            "192.168.19.31"
+          ]
+        }
+      ],
+      "mount": {
+        "filesystems": [
+          {
+            "target": "/srv/nexus",
+            "source": "/dev/sdb",
+            "fstype": "ext4",
+            "uuid": "239dc45a-b1f3-408b-a8ef-7afa77b52204",
+            "options": "rw,relatime"
+          }
+        ]
+      },
+      "mount_UUID_FS_matches": true,
+      "data_capacity_bytes": 105089261568,
+      "data_available_bytes": 105004109824,
+      "units": {
+        "docker.service": {
+          "Type": "notify",
+          "Restart": "always",
+          "MainPID": "729",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "",
+          "RequiresMountsFor": "",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/usr/lib/systemd/system/docker.service",
+          "DropInPaths": "",
+          "UnitFileState": "enabled"
+        },
+        "dell-nexus.service": {
+          "Type": "simple",
+          "Restart": "on-failure",
+          "MainPID": "1045",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "docker.service srv-nexus.mount",
+          "RequiresMountsFor": "/srv/nexus",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/etc/systemd/system/dell-nexus.service",
+          "DropInPaths": "",
+          "UnitFileState": "enabled"
+        }
+      },
+      "failed_unit_names": [],
+      "backup_timers": [
+        {
+          "next": 1794268800000000,
+          "left": 1794268800000000,
+          "last": 1794182406015136,
+          "passed": 0,
+          "unit": "dpkg-db-backup.timer",
+          "activates": "dpkg-db-backup.service"
+        }
+      ],
+      "docker": {
+        "version": "29.9.3",
+        "driver": "overlay2",
+        "root": "/var/lib/docker",
+        "containers": 2,
+        "name": "artifact-service"
+      },
+      "containers": [
+        {
+          "name": "/nexus-gateway-1",
+          "id": "bb273c7b5b309671bd34f56c04dc6ae96dc7451105b8f1f19f890968fb4ce69a",
+          "image": "sha256:4e5db4761e0ff445f7fd29aad680ad28e8abf7d204895557f145d65535abcc1c",
+          "PID": 1662,
+          "state": "running",
+          "started_at": "2026-11-09T06:32:24.093043822Z",
+          "running": true,
+          "OOM": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/nexus-nexus-1",
+          "id": "70d4bec45b73e68dee425c6962ba0ec2d1448b03187dfa0dc8369bdc44eb65bb",
+          "image": "sha256:2ae4fee2eed85f42c982aa2fc16746a8453c7f79faf2a7ea236855ca8652e001",
+          "PID": 1205,
+          "state": "running",
+          "started_at": "2026-11-09T06:31:14.083299411Z",
+          "running": true,
+          "OOM": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        }
+      ],
+      "deployment_public_source_metadata": [
+        {
+          "path": "/opt/dell/nexus/manage.py",
+          "exists": true,
+          "directory": false,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "bytes": 5242,
+          "mtime_ns": 1793935322645410999,
+          "public_file_SHA256": "522a12a9738802a3cab7312b9a9ada886839e88e173e44313b9263528f55b470"
+        },
+        {
+          "path": "/opt/dell/nexus/target_guard.py",
+          "exists": true,
+          "directory": false,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "bytes": 5217,
+          "mtime_ns": 1793932753445018112,
+          "public_file_SHA256": "5d138cde0f0457ed0691d8fdcf0bbdea9495fc0c9af05d317d92953da07894cb"
+        },
+        {
+          "path": "/opt/dell/nexus/compose.yaml",
+          "exists": true,
+          "directory": false,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "bytes": 2050,
+          "mtime_ns": 1793940378414597611,
+          "public_file_SHA256": "f79df7f4e62aede8716685e5f1378d3565ba8e2635a15b86fafe8643409f5472"
+        },
+        {
+          "path": "/opt/dell/nexus/compose.mount-gated.yaml",
+          "exists": true,
+          "directory": false,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "bytes": 66,
+          "mtime_ns": 1793932753441018140,
+          "public_file_SHA256": "b8d76cbab113ad349a9525948773d2bc9b3d3507bd0cba7b3683ffa0cb5975ee"
+        },
+        {
+          "path": "/opt/dell/nexus/application-import.py",
+          "exists": true,
+          "directory": false,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "bytes": 16634,
+          "mtime_ns": 1793956186566995664,
+          "public_file_SHA256": "84d39b6addb6e13333b88f9862e1f3c18c7226b1ba2d088d3420130647b535f3"
+        },
+        {
+          "path": "/opt/dell/nexus/config/nginx.conf",
+          "exists": true,
+          "directory": false,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "bytes": 590,
+          "mtime_ns": 1793932753441018140,
+          "public_file_SHA256": "a871cd0c70f9adfc28ad2ab6bf0620b6dfda31c1d998283bc0fa6c21495ea21c"
+        }
+      ],
+      "backup_or_standby_known_path_metadata": [
+        {
+          "path": "/root/dell-nexus-import",
+          "exists": true,
+          "directory": true,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o700",
+          "bytes": 4096,
+          "mtime_ns": 1793940664793967470
+        },
+        {
+          "path": "/srv/nexus/application-import",
+          "exists": true,
+          "directory": true,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o700",
+          "bytes": 4096,
+          "mtime_ns": 1793939069504771066
+        },
+        {
+          "path": "/opt/dell/nexus/source-backup.py",
+          "exists": false
+        },
+        {
+          "path": "/opt/dell/nexus/backup.py",
+          "exists": false
+        },
+        {
+          "path": "/etc/systemd/system/dell-nexus-backup.timer",
+          "exists": false
+        }
+      ],
+      "backup_unit_file_names_metadata": [],
+      "health_GET": [
+        {
+          "url": "http://192.168.19.31:8081/service/rest/v1/status",
+          "HTTP": 200,
+          "success": true,
+          "body_saved": false
+        }
+      ],
+      "status": "collected"
+    },
+    {
+      "vmid": 250,
+      "role": "penpot-service",
+      "collected_at": "2026-11-09T06:43:05.728296+00:00",
+      "boot_id": "49b956da-cf39-40c2-b633-5c39cea1d5d4",
+      "uptime_seconds": 653.52,
+      "CPU_count": 6,
+      "memory_total_bytes": 16776515584,
+      "read_only": true,
+      "remote_mutations": false,
+      "forbidden_Env_Cmd_healthlogs_credentials_requested": false,
+      "physical_interfaces": [
+        {
+          "name": "eth0",
+          "MAC": "bc:24:11:78:e9:84",
+          "IPv4": [
+            "192.168.19.50"
+          ]
+        }
+      ],
+      "mount": {
+        "filesystems": [
+          {
+            "target": "/srv/penpot",
+            "source": "/dev/sdb",
+            "fstype": "ext4",
+            "uuid": "ccccda03-bffd-4054-afd3-e0e22f0c607e",
+            "options": "rw,relatime"
+          }
+        ]
+      },
+      "mount_UUID_FS_matches": true,
+      "data_capacity_bytes": 105089261568,
+      "data_available_bytes": 99820777472,
+      "units": {
+        "docker.service": {
+          "Type": "notify",
+          "Restart": "always",
+          "MainPID": "801",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "srv-penpot.mount",
+          "RequiresMountsFor": "/srv/penpot",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/usr/lib/systemd/system/docker.service",
+          "DropInPaths": "/etc/systemd/system/docker.service.d/20-dell-penpot-data.conf /etc/systemd/system/docker.service.d/dell-penpot-storage.conf",
+          "UnitFileState": "enabled"
+        },
+        "dell-penpot.service": {
+          "Type": "notify",
+          "Restart": "on-failure",
+          "MainPID": "1205",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "srv-penpot.mount docker.service",
+          "RequiresMountsFor": "/srv/penpot",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/etc/systemd/system/dell-penpot.service",
+          "DropInPaths": "/etc/systemd/system/dell-penpot.service.d/20-health-supervision.conf",
+          "UnitFileState": "enabled"
+        }
+      },
+      "failed_unit_names": [],
+      "backup_timers": [
+        {
+          "next": 1794268800000000,
+          "left": 1794268800000000,
+          "last": 1794182425544070,
+          "passed": 0,
+          "unit": "dpkg-db-backup.timer",
+          "activates": "dpkg-db-backup.service"
+        }
+      ],
+      "docker": {
+        "version": "29.9.3",
+        "driver": "overlay2",
+        "root": "/srv/penpot/docker",
+        "containers": 11,
+        "name": "penpot-service"
+      },
+      "containers": [
+        {
+          "name": "/penpot-penpot-import-1",
+          "id": "90aacbc3b78e9b1c07771b55013e3b62c5634df8c777545c4229558f974b01ed",
+          "image": "sha256:d4414e3f2e41ac4f5eb4b2c146c05cbc9f9754b179d6b63efa3af95c005b1261",
+          "PID": 2763,
+          "state": "running",
+          "started_at": "2026-11-09T06:32:59.012478843Z",
+          "running": true,
+          "OOM": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/penpot-penpot-worker-1",
+          "id": "bdd8e421ad746ddecc7950b390c21c046f6622914eed89cf3fc9e5f52fca31cb",
+          "image": "sha256:c0bead679c3fe7a4b80d2485f87bdce0e5a6acc26a9c2a001b0e4e3270dadee5",
+          "PID": 2674,
+          "state": "running",
+          "started_at": "2026-11-09T06:32:58.345551263Z",
+          "running": true,
+          "OOM": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/penpot-penpot-frontend-1",
+          "id": "96c4fb2d14c0747697b232b2435dbaf1ba58c25850be1f8e84a2f4acfd6cff49",
+          "image": "sha256:bd020fb6bddfd77449c26f76ee04ca7b2b50a0ffe8562ebc7b9e294bfcd38b89",
+          "PID": 2591,
+          "state": "running",
+          "started_at": "2026-11-09T06:32:57.708033056Z",
+          "running": true,
+          "OOM": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/penpot-penpot-backend-1",
+          "id": "4611f0d09e79410ae4bab0ff75a008bb1bdbe6dfc0a76175726d632355831df5",
+          "image": "sha256:c54c38204393018c4009b7161b9ee3a04ccc0daab657b820d5de86a0d3013630",
+          "PID": 2470,
+          "state": "running",
+          "started_at": "2026-11-09T06:32:56.873800183Z",
+          "running": true,
+          "OOM": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/penpot-penpot-admin-console-1",
+          "id": "989309f28c5aaf2db549888b842dd256ca92371664c5baf5ad8b1ce4829f5644",
+          "image": "sha256:29c13326e854fd63e18a7231cb1ca26d60f728692bd1207ded003b94aba79390",
+          "PID": 2377,
+          "state": "running",
+          "started_at": "2026-11-09T06:32:56.197205967Z",
+          "running": true,
+          "OOM": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/penpot-penpot-exporter-1",
+          "id": "81bec808dfa5ad48bdd7fc73f3da737d3f9c0a5c9acb814e7be1761e3d7954e4",
+          "image": "sha256:6173b08e25850cda792cd75261e741649c0febd48326e68e8711ba44b5c9af42",
+          "PID": 2171,
+          "state": "running",
+          "started_at": "2026-11-09T06:32:52.200848995Z",
+          "running": true,
+          "OOM": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/penpot-penpot-dns-1",
+          "id": "896b4b365781d4ce0922b7a250fc277fcb1de2b34cdb5cca76578352de76239b",
+          "image": "sha256:7ed84fca86579b7bee90ec5c9750457cd9450729d2dd01fb2070f00f6cd7fb14",
+          "PID": 1755,
+          "state": "running",
+          "started_at": "2026-11-09T06:32:47.675502479Z",
+          "running": true,
+          "OOM": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/penpot-penpot-valkey-1",
+          "id": "d08ee10d5b4ce72de16ca148218a85edda276963b6e0d665517a763801a9616e",
+          "image": "sha256:ca662989648f173e01fb1a1768e7d84ddcaf8b7de135070b59271b0918104eb3",
+          "PID": 1829,
+          "state": "running",
+          "started_at": "2026-11-09T06:32:48.503177221Z",
+          "running": true,
+          "OOM": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/penpot-penpot-mcp-1",
+          "id": "aa9c599b0dd027b4f8056f8adf283d6ebb07f861569af13478c68305d53ccbaf",
+          "image": "sha256:e95070617f49eacc00f136061d9c6b4bad957319046e9e65e7cee14b9e77577c",
+          "PID": 1953,
+          "state": "running",
+          "started_at": "2026-11-09T06:32:49.41854438Z",
+          "running": true,
+          "OOM": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/penpot-penpot-postgres-1",
+          "id": "b6ac0e7fd316f8b53df1d8853d5614049fa5d180f8f9b5f84e3baa448f481c17",
+          "image": "sha256:245fc027b7f3755bbd21b4375c2a0ebc7fa5d16c4573da497be9850a823973c8",
+          "PID": 2025,
+          "state": "running",
+          "started_at": "2026-11-09T06:32:49.985801669Z",
+          "running": true,
+          "OOM": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        },
+        {
+          "name": "/penpot-penpot-mailpit-1",
+          "id": "b223cafa5cb2450dc520513f71e999ba6550c0cf894a514c4d520e72c33f39d9",
+          "image": "sha256:580a202b5088e9c651a8e8b4e461e3213fbd3a3aacaa3d2251892a546a734116",
+          "PID": 1892,
+          "state": "running",
+          "started_at": "2026-11-09T06:32:48.963361054Z",
+          "running": true,
+          "OOM": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        }
+      ],
+      "deployment_public_source_metadata": [
+        {
+          "path": "/opt/dell/penpot/compose.fresh.yaml",
+          "exists": true,
+          "directory": false,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "bytes": 10526,
+          "mtime_ns": 1793957831332417343,
+          "public_file_SHA256": "0e7c4c2106f720ea0e8035c85b645140b582540a127e05085ca4a41003c05aa6"
+        },
+        {
+          "path": "/opt/dell/penpot/runtime/health-supervision/supervisor.py",
+          "exists": true,
+          "directory": false,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o555",
+          "bytes": 11741,
+          "mtime_ns": 1793957831344417251,
+          "public_file_SHA256": "fdd384bf5470890eb1802cc2eacb49bcc0c0d96013cfe57b257c5021af3b0448"
+        },
+        {
+          "path": "/opt/dell/penpot/runtime/health-supervision/node-health.mjs",
+          "exists": true,
+          "directory": false,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o555",
+          "bytes": 3444,
+          "mtime_ns": 1793957831352417190,
+          "public_file_SHA256": "dfe79a0724058d77fadb2eb4778ef056d597a41fd396012d2b5ecc582cb64d79"
+        },
+        {
+          "path": "/opt/dell/penpot/runtime/health-supervision/compose.health-supervision.yaml",
+          "exists": true,
+          "directory": false,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o444",
+          "bytes": 3519,
+          "mtime_ns": 1793942426471561571,
+          "public_file_SHA256": "806177bae84d81af31fc42e9f6e4cb06b331e01640e78e975c8d00d9cd90dc18"
+        }
+      ],
+      "backup_or_standby_known_path_metadata": [
+        {
+          "path": "/srv/penpot/acceptance",
+          "exists": true,
+          "directory": true,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o700",
+          "bytes": 4096,
+          "mtime_ns": 1793937807976220545
+        },
+        {
+          "path": "/srv/penpot/application-import",
+          "exists": true,
+          "directory": true,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o700",
+          "bytes": 4096,
+          "mtime_ns": 1793935916718205112
+        },
+        {
+          "path": "/opt/dell/penpot/application/source-files.py",
+          "exists": true,
+          "directory": false,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "bytes": 9014,
+          "mtime_ns": 1793937798972267773
+        },
+        {
+          "path": "/opt/dell/penpot/source-backup.py",
+          "exists": false
+        },
+        {
+          "path": "/etc/systemd/system/dell-penpot-backup.timer",
+          "exists": false
+        }
+      ],
+      "backup_unit_file_names_metadata": [],
+      "health_GET": [
+        {
+          "url": "http://192.168.19.50:9001/",
+          "HTTP": 200,
+          "success": true,
+          "body_saved": false
+        }
+      ],
+      "application_Git": {
+        "HEAD": "ff1783e7865af7aae571c985f03e057631b7af63",
+        "clean": true,
+        "read_succeeded": true,
+        "no_fetch_build_checkout": true,
+        "historical_expected_HEAD": "ff1783e7865af7aae571c985f03e057631b7af63"
+      },
+      "status": "collected"
+    },
+    {
+      "vmid": 260,
+      "role": "nas-media",
+      "collected_at": "2026-11-09T06:43:05.126615+00:00",
+      "boot_id": "146a8088-eaae-4a67-b03e-c88918e9306a",
+      "uptime_seconds": 490.38,
+      "CPU_count": 4,
+      "memory_total_bytes": 4112363520,
+      "read_only": true,
+      "remote_mutations": false,
+      "forbidden_Env_Cmd_healthlogs_credentials_requested": false,
+      "physical_interfaces": [
+        {
+          "name": "ens18",
+          "MAC": "bc:24:11:a7:3b:73",
+          "IPv4": [
+            "192.168.19.60"
+          ]
+        }
+      ],
+      "mount": {
+        "filesystems": [
+          {
+            "target": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a",
+            "source": "/dev/sdb1",
+            "fstype": "ext4",
+            "uuid": "5b19837c-128c-498a-b79d-563db810c34a",
+            "options": "rw,relatime"
+          }
+        ]
+      },
+      "mount_UUID_FS_matches": true,
+      "data_capacity_bytes": 2163349549056,
+      "data_available_bytes": 2163324190720,
+      "units": {
+        "docker.service": {
+          "Type": "notify",
+          "Restart": "always",
+          "MainPID": "892",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "",
+          "RequiresMountsFor": "",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/usr/lib/systemd/system/docker.service",
+          "DropInPaths": "",
+          "UnitFileState": "enabled"
+        },
+        "dell-nas-jellyfin.service": {
+          "Type": "simple",
+          "Restart": "on-failure",
+          "MainPID": "1254",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "\"srv-dev\\\\x2ddisk\\\\x2dby\\\\x2duuid\\\\x2d5b19837c\\\\x2d128c\\\\x2d498a\\\\x2db79d\\\\x2d563db810c34a.mount\" docker.service",
+          "RequiresMountsFor": "/srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a /opt/dell/nas",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/etc/systemd/system/dell-nas-jellyfin.service",
+          "DropInPaths": "/etc/systemd/system/dell-nas-jellyfin.service.d/20-docker-binds.conf",
+          "UnitFileState": "enabled"
+        },
+        "openmediavault-engined.service": {
+          "Type": "forking",
+          "Restart": "no",
+          "MainPID": "802",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "",
+          "RequiresMountsFor": "",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/usr/lib/systemd/system/openmediavault-engined.service",
+          "DropInPaths": "",
+          "UnitFileState": "enabled"
+        },
+        "smbd.service": {
+          "Type": "notify",
+          "Restart": "no",
+          "MainPID": "876",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "",
+          "RequiresMountsFor": "",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/usr/lib/systemd/system/smbd.service",
+          "DropInPaths": "",
+          "UnitFileState": "enabled"
+        },
+        "nginx.service": {
+          "Type": "forking",
+          "Restart": "no",
+          "MainPID": "769",
+          "Result": "success",
+          "NRestarts": "0",
+          "BindsTo": "",
+          "RequiresMountsFor": "",
+          "ActiveState": "active",
+          "SubState": "running",
+          "FragmentPath": "/usr/lib/systemd/system/nginx.service",
+          "DropInPaths": "",
+          "UnitFileState": "enabled"
+        }
+      },
+      "failed_unit_names": [],
+      "backup_timers": [
+        {
+          "next": 1794268800000000,
+          "left": 1794268800000000,
+          "last": 1794182400137159,
+          "passed": 0,
+          "unit": "dpkg-db-backup.timer",
+          "activates": "dpkg-db-backup.service"
+        }
+      ],
+      "docker": {
+        "version": "29.9.3",
+        "driver": "overlayfs",
+        "root": "/var/lib/docker",
+        "containers": 1,
+        "name": "nas-media"
+      },
+      "containers": [
+        {
+          "name": "/dell-nas-jellyfin-1",
+          "id": "c7db70188968ec3c8896c5110e71f5b23d9e0284cd6c9128173148d509305ad9",
+          "image": "sha256:fea863d0cd9ec445985d9c75fc6ed64e38a1d2766cf0c250a33d553f4fc1b771",
+          "PID": 1324,
+          "state": "running",
+          "started_at": "2026-11-09T06:35:46.529192646Z",
+          "running": true,
+          "OOM": false,
+          "health": "healthy",
+          "restart_count": 0,
+          "restart_policy": "no"
+        }
+      ],
+      "deployment_public_source_metadata": [
+        {
+          "path": "/opt/dell/nas/compose.yaml",
+          "exists": true,
+          "directory": false,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "bytes": 1258,
+          "mtime_ns": 1793935891473313767,
+          "public_file_SHA256": "f57289cc286a4b2991f0c0709f3ef41336931a2041c8d8a051a87e9a434d86a7"
+        },
+        {
+          "path": "/usr/local/libexec/dell-nas-check-data",
+          "exists": true,
+          "directory": false,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "bytes": 2388,
+          "mtime_ns": 1793935891493313619,
+          "public_file_SHA256": "5ba9fd7cfc37d1e7398a454dff0151c516b15a15b93b3c37061f0486d01120fc"
+        },
+        {
+          "path": "/opt/dell/nas-stage/omv-rpc-stdin.php",
+          "exists": true,
+          "directory": false,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o644",
+          "bytes": 2530,
+          "mtime_ns": 1793937275230337563,
+          "public_file_SHA256": "fa0c7551dca4ed1f19953d54d610cc56e089fa42dc2f055a9cf4893b5bd1f1a5"
+        }
+      ],
+      "backup_or_standby_known_path_metadata": [
+        {
+          "path": "/root/private/dell-nas/acceptance",
+          "exists": true,
+          "directory": true,
+          "symlink": false,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o700",
+          "bytes": 4096,
+          "mtime_ns": 1793959528698489863
+        },
+        {
+          "path": "/etc/systemd/system/dell-nas-backup.timer",
+          "exists": false
+        },
+        {
+          "path": "/usr/local/sbin/omv-backup",
+          "exists": false
+        }
+      ],
+      "backup_unit_file_names_metadata": [],
+      "health_GET": [
+        {
+          "url": "http://192.168.19.60/",
+          "HTTP": 200,
+          "success": true,
+          "body_saved": false
+        },
+        {
+          "url": "http://192.168.19.60:8096/health",
+          "HTTP": 200,
+          "success": true,
+          "body_saved": false
+        }
+      ],
+      "status": "collected"
+    }
+  ],
+  "limitations": [
+    "No recursive search ofhome/private data orfull unit commandline/Env/Cmd/healthlogs.",
+    "Backupscript/timer observations coverknown role paths andsystemd timer names only; notproof noexternal scheduled backup exists.",
+    "No authenticated EULA/account/GAV/design/SMB content validation; noimport/rebuild/stop/install."
+  ],
+  "assessments": {
+    "220": {
+      "mount_UUID_FS_matches": true,
+      "failed_unit_names": [],
+      "original_health_GETs_pass": true,
+      "no_observed_app_or_Docker_unit_restarts": true,
+      "actual_CPU4": true,
+      "only_primary30": true,
+      "Docker_empty": true,
+      "Nexus_active_install_absent": true,
+      "publisher_key_stat_root_contract": true,
+      "publisher_not_docker_group": true
+    },
+    "221": {
+      "mount_UUID_FS_matches": true,
+      "failed_unit_names": [],
+      "original_health_GETs_pass": true,
+      "no_observed_app_or_Docker_unit_restarts": true,
+      "all_expected_running_healthy": true,
+      "image_IDs_match_approved": true,
+      "restart_counts_zero": true,
+      "container_IDs_match_1108": true
+    },
+    "250": {
+      "mount_UUID_FS_matches": true,
+      "failed_unit_names": [],
+      "original_health_GETs_pass": true,
+      "no_observed_app_or_Docker_unit_restarts": true,
+      "all_expected_running_healthy": true,
+      "image_IDs_match_approved": true,
+      "restart_counts_zero": true,
+      "container_IDs_match_1108": true,
+      "historical_ff1783e_clean": true
+    },
+    "260": {
+      "mount_UUID_FS_matches": true,
+      "failed_unit_names": [],
+      "original_health_GETs_pass": true,
+      "no_observed_app_or_Docker_unit_restarts": true,
+      "all_expected_running_healthy": true,
+      "image_IDs_match_approved": true,
+      "restart_counts_zero": true,
+      "container_IDs_match_1108": true
+    }
+  },
+  "status": "readonly-infrastructure-healthy-backup-coverage-gap-needs-design",
+  "observed_runtime_remediation_required": [],
+  "completion_candidates": [
+    {
+      "id": "MEDIA-BACKUP-SCHEDULING",
+      "roles": [
+        221,
+        250,
+        260
+      ],
+      "observation": "Onlydpkg-db-backup.timer found among matching systemd timer names; named role backup timers/tools absent. Import/export acceptance/standby directories exist but are not continuousbackup.",
+      "proposed_next": "root confirm requiredscope,destination,retention,permissionsand applicationconsistency/restore method before approving targeted backup tooling/window. Never wholebackup220 or exportCF/key.",
+      "status": "planning-required-not-installed",
+      "limitations": "Knownpath+systemd-name inventory, no recursiveprivate/croncontent search; possible external orchestrationnot excluded."
+    },
+    {
+      "id": "MEDIA-STANDBY-RETENTION",
+      "roles": [
+        220
+      ],
+      "observation": "PriorNexus consolidation rootprivate standby andpublic executor remain; currentNexusmerge explicitlydeferred.",
+      "proposed_next": "Keep inert; if latercleaning is requested, firstverify exact private manifest/onlystaged duplicates and root approval. Do not delete unique artifacts or backup220.",
+      "status": "inventory-only-no-cleanup-executed"
+    }
+  ],
+  "deployment_source_conclusion": "Publicactive fileSHA captured; Penpot actualGitff1783e clean. No fetch/build/checkout; repository maincontractdoes notauthorize applicationupgrade. Otherroles aredeployed publicpackage+unit metadata, not claimedliveGitcheckouts."
+}

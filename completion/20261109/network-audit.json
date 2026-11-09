@@ -1,0 +1,92 @@
+{
+  "at": "2026-11-09T15:58:19.274782+08:00",
+  "scope": "read-only liveness; no active externalVPN or Cloudflarepublicorigin E2E test",
+  "CF": {
+    "HTTP": 200,
+    "readyConnections": 2
+  },
+  "gateway": {
+    "forward4": "1",
+    "units": {
+      "dell-gateway19-firewall.service": [
+        "Result=success",
+        "ActiveState=active",
+        "SubState=exited"
+      ],
+      "dell-gateway19-ready.service": [
+        "Result=success",
+        "ActiveState=active",
+        "SubState=exited"
+      ],
+      "dell-gateway19-dnsmasq.service": [
+        "Result=success",
+        "ActiveState=active",
+        "SubState=running"
+      ]
+    },
+    "physical_IPs": [
+      "192.168.21.23",
+      "192.168.19.1"
+    ],
+    "DNS": {
+      "penpot-service.dell.home.arpa": {
+        "rcode": 0,
+        "A": [
+          "192.168.19.50"
+        ]
+      },
+      "artifact-service.dell.home.arpa": {
+        "rcode": 0,
+        "A": [
+          "192.168.19.31"
+        ]
+      },
+      "publish-service.dell.home.arpa": {
+        "rcode": 0,
+        "A": [
+          "192.168.19.30"
+        ]
+      }
+    }
+  },
+  "HTTP": [
+    {
+      "URL": "https://192.168.21.22:8006/",
+      "exit": 0,
+      "HTTP": "200",
+      "scope": "reachability; PVEselfsignedTLS not authenticated by curl"
+    },
+    {
+      "URL": "http://192.168.19.31:8081/",
+      "exit": 0,
+      "HTTP": "200",
+      "scope": "public landing/health only; no app authentication"
+    },
+    {
+      "URL": "http://192.168.19.50:9001/",
+      "exit": 0,
+      "HTTP": "200",
+      "scope": "public landing/health only; no app authentication"
+    },
+    {
+      "URL": "http://192.168.19.60/",
+      "exit": 0,
+      "HTTP": "200",
+      "scope": "public landing/health only; no app authentication"
+    },
+    {
+      "URL": "http://192.168.19.60:8096/health",
+      "exit": 0,
+      "HTTP": "200",
+      "scope": "public landing/health only; no app authentication"
+    },
+    {
+      "URL": "http://192.168.19.70:3000/login",
+      "exit": 0,
+      "HTTP": "200",
+      "scope": "public landing/health only; no app authentication"
+    }
+  ],
+  "credentials_read": false,
+  "writes_to_server": false
+}

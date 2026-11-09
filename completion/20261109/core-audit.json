@@ -1,0 +1,1835 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-09T14:43:40.607057+08:00",
+  "scope": "read-only fresh core infrastructure audit; no migration/backup/restore/fixture/business execution",
+  "host_writes": false,
+  "guest_writes": false,
+  "known_hosts_changed": false,
+  "source_Nexus221_accessed": false,
+  "business_data_or_credentials_read": false,
+  "results": [
+    {
+      "vmid": 200,
+      "role": "data-prod-db",
+      "expected_ip": "192.168.19.10",
+      "expected_data_uuid": "d61c0e22-941e-447a-9e9a-1e9e50deb02f",
+      "strict_SSH_exit_code": 0,
+      "host_key_alias": "dell-vm200",
+      "audit": {
+        "at": "2026-11-09T06:42:56.043365+00:00",
+        "hostname": "data-prod-db",
+        "boot_id": "ab22cd4e-5676-47e0-84e7-bda297ae1595",
+        "addresses": {
+          "exit_code": 0,
+          "data": [
+            {
+              "ifindex": 2,
+              "ifname": "eth0",
+              "flags": [
+                "BROADCAST",
+                "MULTICAST",
+                "UP",
+                "LOWER_UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "fq_codel",
+              "operstate": "UP",
+              "group": "default",
+              "txqlen": 1000,
+              "altnames": [
+                "enp0s18",
+                "enxbc24111c6200"
+              ],
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "192.168.19.10",
+                  "prefixlen": 24,
+                  "broadcast": "192.168.19.255",
+                  "scope": "global",
+                  "label": "eth0",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            },
+            {
+              "ifindex": 3,
+              "ifname": "br-130ddce4ef74",
+              "flags": [
+                "BROADCAST",
+                "MULTICAST",
+                "UP",
+                "LOWER_UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "noqueue",
+              "operstate": "UP",
+              "group": "default",
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "172.18.0.1",
+                  "prefixlen": 16,
+                  "broadcast": "172.18.255.255",
+                  "scope": "global",
+                  "label": "br-130ddce4ef74",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            },
+            {
+              "ifindex": 4,
+              "ifname": "docker0",
+              "flags": [
+                "NO-CARRIER",
+                "BROADCAST",
+                "MULTICAST",
+                "UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "noqueue",
+              "operstate": "DOWN",
+              "group": "default",
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "172.17.0.1",
+                  "prefixlen": 16,
+                  "broadcast": "172.17.255.255",
+                  "scope": "global",
+                  "label": "docker0",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            }
+          ]
+        },
+        "routes": {
+          "exit_code": 0,
+          "data": [
+            {
+              "dst": "default",
+              "gateway": "192.168.19.1",
+              "dev": "eth0",
+              "protocol": "static",
+              "flags": []
+            },
+            {
+              "dst": "172.17.0.0/16",
+              "dev": "docker0",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "172.17.0.1",
+              "flags": [
+                "linkdown"
+              ]
+            },
+            {
+              "dst": "172.18.0.0/16",
+              "dev": "br-130ddce4ef74",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "172.18.0.1",
+              "flags": []
+            },
+            {
+              "dst": "192.168.19.0/24",
+              "dev": "eth0",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "192.168.19.10",
+              "flags": []
+            }
+          ]
+        },
+        "networkctl_DNS": [
+          "Gateway: 192.168.19.1 on eth0",
+          "DNS: 192.168.19.1"
+        ],
+        "fish": "fish, version 4.0.2",
+        "shells": {
+          "root": "/bin/bash",
+          "ub": "/bin/bash"
+        },
+        "time_sync": {
+          "at": "2026-11-09T06:43:36.088375+00:00",
+          "NTPSynchronized": {
+            "exit_code": 0,
+            "value": "NTPSynchronized=yes",
+            "stderr_class": "none"
+          },
+          "NTP": {
+            "exit_code": 0,
+            "value": "NTP=yes",
+            "stderr_class": "none"
+          },
+          "Timezone": {
+            "exit_code": 0,
+            "value": "Timezone=Etc/UTC",
+            "stderr_class": "none"
+          },
+          "TimeUSec": {
+            "exit_code": 0,
+            "value": "TimeUSec=Mon 2026-11-09 06:43:36 UTC",
+            "stderr_class": "none"
+          }
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "745",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "ssh.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "725",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "qemu-guest-agent.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "static"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "784",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "prometheus-node-exporter.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          },
+          "dell-guest-health.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-guest-health.service",
+            "LoadState": "loaded",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": "static"
+          },
+          "dell-guest-health.timer": {
+            "NextElapseUSecRealtime": "",
+            "LastTriggerUSec": "Mon 2026-11-09 06:42:18 UTC",
+            "Result": "success",
+            "Id": "dell-guest-health.timer",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "waiting",
+            "UnitFileState": "enabled"
+          },
+          "systemd-timesyncd.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "systemd-timesyncd.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          },
+          "docker.service": {
+            "MainPID": "776",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "docker.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          },
+          "dell-data-prod-db.service": {
+            "MainPID": "1152",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-data-prod-db.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          }
+        },
+        "failed_units": [],
+        "listening_TCP_addresses": [
+          "127.0.0.53%lo:53",
+          "192.168.19.10:9100",
+          "0.0.0.0:5355",
+          "127.0.0.54:53",
+          "192.168.19.10:3306",
+          "0.0.0.0:22",
+          "[::]:5355",
+          "[::]:22"
+        ],
+        "mount": {
+          "exit_code": 0,
+          "data": {
+            "filesystems": [
+              {
+                "target": "/srv/dell-data",
+                "source": "/dev/sdb",
+                "fstype": "ext4",
+                "uuid": "d61c0e22-941e-447a-9e9a-1e9e50deb02f",
+                "options": "rw,relatime,stripe=16"
+              }
+            ]
+          }
+        },
+        "docker_ps_exit_code": 0,
+        "containers": [
+          {
+            "exit_code": 0,
+            "data": {
+              "ID": "b1a1e926f9ca92d717dbb903a313315a74749f7a942528096cb57cea8abee0ca",
+              "State": "running",
+              "Health": "healthy",
+              "RestartCount": 0
+            }
+          }
+        ],
+        "backup_inventory": {
+          "units": {
+            "dpkg-db-backup.service": {
+              "MainPID": "0",
+              "Result": "success",
+              "NRestarts": "0",
+              "Id": "dpkg-db-backup.service",
+              "LoadState": "loaded",
+              "ActiveState": "inactive",
+              "SubState": "dead",
+              "UnitFileState": "static"
+            },
+            "dpkg-db-backup.timer": {
+              "NextElapseUSecRealtime": "Tue 2026-11-10 00:00:00 UTC",
+              "LastTriggerUSec": "Mon 2026-11-09 00:00:08 UTC",
+              "Result": "success",
+              "Id": "dpkg-db-backup.timer",
+              "LoadState": "loaded",
+              "ActiveState": "active",
+              "SubState": "waiting",
+              "UnitFileState": "enabled"
+            }
+          },
+          "script_paths": [
+            "/root/dell-application-backup.py"
+          ],
+          "cron_name_candidates": [],
+          "backup_directory_metadata": [
+            {
+              "path": "/srv/dell-data/_app_backups",
+              "is_directory": true,
+              "mode": "0o700",
+              "uid": 0,
+              "gid": 0,
+              "mtime_UTC": "2026-11-06T04:32:02.844814+00:00"
+            },
+            {
+              "path": "/opt/dell/full-snapshot-restore",
+              "is_directory": true,
+              "mode": "0o700",
+              "uid": 0,
+              "gid": 0,
+              "mtime_UTC": "2026-11-06T04:05:56.386635+00:00"
+            }
+          ],
+          "scanned_roots": {
+            "/opt/dell": 5,
+            "/usr/local/sbin": 1,
+            "/usr/local/libexec": 3,
+            "/root": 2
+          },
+          "backup_scripts_executed": false,
+          "backup_contents_read": false,
+          "cron_contents_read": false
+        },
+        "time_sync_initial_probe_limitation": "Initial combined-property timedatectl returned empty output; not used to infer missing NTP. Re-read each property separately."
+      },
+      "foundation_checks": {
+        "hostname_expected": true,
+        "IP_expected": true,
+        "gateway_expected": true,
+        "DNS_expected": true,
+        "no_failed_units": true,
+        "fish_present": true,
+        "default_Bash": true,
+        "time_NTP_synchronized": true,
+        "NTP_enabled": true,
+        "exporter_active": true,
+        "exporter_bound_role_IP": true,
+        "collector_timer_active": true,
+        "mount_UUID_exact_rw": true,
+        "supervisor_active": true,
+        "container_expected_count": true,
+        "containers_healthy": true,
+        "container_restarts_zero": true
+      },
+      "backup_assessment": {
+        "application_backup_tools_observed": true,
+        "application_backup_timer_observed": false,
+        "stock_dpkg_timer_is_not_application_backup": true,
+        "scan_is_not_exhaustive_external_scheduler_audit": true,
+        "backup_plan_for_this_role": "application persistent-data consistency backup required"
+      }
+    },
+    {
+      "vmid": 201,
+      "role": "data-prod-infra",
+      "expected_ip": "192.168.19.11",
+      "expected_data_uuid": "b85156c2-dac8-4b33-ab25-460aaf676c57",
+      "strict_SSH_exit_code": 0,
+      "host_key_alias": "dell-vm201",
+      "audit": {
+        "at": "2026-11-09T06:42:59.464374+00:00",
+        "hostname": "data-prod-infra",
+        "boot_id": "fb9680ff-544a-4d6f-b369-c7f5f060fe29",
+        "addresses": {
+          "exit_code": 0,
+          "data": [
+            {
+              "ifindex": 2,
+              "ifname": "eth0",
+              "flags": [
+                "BROADCAST",
+                "MULTICAST",
+                "UP",
+                "LOWER_UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "fq_codel",
+              "operstate": "UP",
+              "group": "default",
+              "txqlen": 1000,
+              "altnames": [
+                "enp0s18",
+                "enxbc24111cbb93"
+              ],
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "192.168.19.11",
+                  "prefixlen": 24,
+                  "broadcast": "192.168.19.255",
+                  "scope": "global",
+                  "label": "eth0",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            },
+            {
+              "ifindex": 3,
+              "ifname": "docker0",
+              "flags": [
+                "NO-CARRIER",
+                "BROADCAST",
+                "MULTICAST",
+                "UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "noqueue",
+              "operstate": "DOWN",
+              "group": "default",
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "172.17.0.1",
+                  "prefixlen": 16,
+                  "broadcast": "172.17.255.255",
+                  "scope": "global",
+                  "label": "docker0",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            },
+            {
+              "ifindex": 4,
+              "ifname": "br-f638bf454723",
+              "flags": [
+                "BROADCAST",
+                "MULTICAST",
+                "UP",
+                "LOWER_UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "noqueue",
+              "operstate": "UP",
+              "group": "default",
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "172.18.0.1",
+                  "prefixlen": 16,
+                  "broadcast": "172.18.255.255",
+                  "scope": "global",
+                  "label": "br-f638bf454723",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            }
+          ]
+        },
+        "routes": {
+          "exit_code": 0,
+          "data": [
+            {
+              "dst": "default",
+              "gateway": "192.168.19.1",
+              "dev": "eth0",
+              "protocol": "static",
+              "flags": []
+            },
+            {
+              "dst": "172.17.0.0/16",
+              "dev": "docker0",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "172.17.0.1",
+              "flags": [
+                "linkdown"
+              ]
+            },
+            {
+              "dst": "172.18.0.0/16",
+              "dev": "br-f638bf454723",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "172.18.0.1",
+              "flags": []
+            },
+            {
+              "dst": "192.168.19.0/24",
+              "dev": "eth0",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "192.168.19.11",
+              "flags": []
+            }
+          ]
+        },
+        "networkctl_DNS": [
+          "Gateway: 192.168.19.1 on eth0",
+          "DNS: 192.168.19.1"
+        ],
+        "fish": "fish, version 4.0.2",
+        "shells": {
+          "root": "/bin/bash",
+          "ub": "/bin/bash"
+        },
+        "time_sync": {
+          "at": "2026-11-09T06:43:37.206941+00:00",
+          "NTPSynchronized": {
+            "exit_code": 0,
+            "value": "NTPSynchronized=yes",
+            "stderr_class": "none"
+          },
+          "NTP": {
+            "exit_code": 0,
+            "value": "NTP=yes",
+            "stderr_class": "none"
+          },
+          "Timezone": {
+            "exit_code": 0,
+            "value": "Timezone=Etc/UTC",
+            "stderr_class": "none"
+          },
+          "TimeUSec": {
+            "exit_code": 0,
+            "value": "TimeUSec=Mon 2026-11-09 06:43:37 UTC",
+            "stderr_class": "none"
+          }
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "717",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "ssh.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "698",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "qemu-guest-agent.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "static"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "755",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "prometheus-node-exporter.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          },
+          "dell-guest-health.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-guest-health.service",
+            "LoadState": "loaded",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": "static"
+          },
+          "dell-guest-health.timer": {
+            "NextElapseUSecRealtime": "",
+            "LastTriggerUSec": "Mon 2026-11-09 06:42:52 UTC",
+            "Result": "success",
+            "Id": "dell-guest-health.timer",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "waiting",
+            "UnitFileState": "enabled"
+          },
+          "systemd-timesyncd.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "systemd-timesyncd.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          },
+          "docker.service": {
+            "MainPID": "746",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "docker.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          },
+          "dell-data-prod-infra.service": {
+            "MainPID": "1207",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-data-prod-infra.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          }
+        },
+        "failed_units": [],
+        "listening_TCP_addresses": [
+          "192.168.19.11:6379",
+          "127.0.0.53%lo:53",
+          "192.168.19.11:15672",
+          "192.168.19.11:8848",
+          "0.0.0.0:5355",
+          "192.168.19.11:9100",
+          "192.168.19.11:9848",
+          "192.168.19.11:5672",
+          "0.0.0.0:22",
+          "127.0.0.54:53",
+          "[::]:5355",
+          "[::]:22"
+        ],
+        "mount": {
+          "exit_code": 0,
+          "data": {
+            "filesystems": [
+              {
+                "target": "/srv/dell-data",
+                "source": "/dev/sdb",
+                "fstype": "ext4",
+                "uuid": "b85156c2-dac8-4b33-ab25-460aaf676c57",
+                "options": "rw,relatime,stripe=16"
+              }
+            ]
+          }
+        },
+        "docker_ps_exit_code": 0,
+        "containers": [
+          {
+            "exit_code": 0,
+            "data": {
+              "ID": "ff4c025af4b222512bfd2975790d40144c5d6b38c435888adc06e2a0be9d8e61",
+              "State": "running",
+              "Health": "healthy",
+              "RestartCount": 0
+            }
+          },
+          {
+            "exit_code": 0,
+            "data": {
+              "ID": "b940153fac95f736fb49a32ccd7f9143dced2eddd62944f4ef810e2c30a771a5",
+              "State": "running",
+              "Health": "healthy",
+              "RestartCount": 0
+            }
+          },
+          {
+            "exit_code": 0,
+            "data": {
+              "ID": "3d3000b2a67c396ec5647892e12f9441fbbddb19aa0882cca447a2f403bc43f0",
+              "State": "running",
+              "Health": "healthy",
+              "RestartCount": 0
+            }
+          }
+        ],
+        "backup_inventory": {
+          "units": {
+            "dpkg-db-backup.service": {
+              "MainPID": "0",
+              "Result": "success",
+              "NRestarts": "0",
+              "Id": "dpkg-db-backup.service",
+              "LoadState": "loaded",
+              "ActiveState": "inactive",
+              "SubState": "dead",
+              "UnitFileState": "static"
+            },
+            "dpkg-db-backup.timer": {
+              "NextElapseUSecRealtime": "Tue 2026-11-10 00:00:00 UTC",
+              "LastTriggerUSec": "Mon 2026-11-09 00:00:01 UTC",
+              "Result": "success",
+              "Id": "dpkg-db-backup.timer",
+              "LoadState": "loaded",
+              "ActiveState": "active",
+              "SubState": "waiting",
+              "UnitFileState": "enabled"
+            }
+          },
+          "script_paths": [
+            "/root/dell-application-backup.py"
+          ],
+          "cron_name_candidates": [],
+          "backup_directory_metadata": [
+            {
+              "path": "/srv/dell-data/_app_backups",
+              "is_directory": true,
+              "mode": "0o700",
+              "uid": 0,
+              "gid": 0,
+              "mtime_UTC": "2026-11-06T04:32:05.352397+00:00"
+            },
+            {
+              "path": "/opt/dell/full-snapshot-restore",
+              "is_directory": true,
+              "mode": "0o700",
+              "uid": 0,
+              "gid": 0,
+              "mtime_UTC": "2026-11-06T04:07:00.837614+00:00"
+            }
+          ],
+          "scanned_roots": {
+            "/opt/dell": 5,
+            "/usr/local/sbin": 1,
+            "/usr/local/libexec": 3,
+            "/root": 2
+          },
+          "backup_scripts_executed": false,
+          "backup_contents_read": false,
+          "cron_contents_read": false
+        },
+        "time_sync_initial_probe_limitation": "Initial combined-property timedatectl returned empty output; not used to infer missing NTP. Re-read each property separately."
+      },
+      "foundation_checks": {
+        "hostname_expected": true,
+        "IP_expected": true,
+        "gateway_expected": true,
+        "DNS_expected": true,
+        "no_failed_units": true,
+        "fish_present": true,
+        "default_Bash": true,
+        "time_NTP_synchronized": true,
+        "NTP_enabled": true,
+        "exporter_active": true,
+        "exporter_bound_role_IP": true,
+        "collector_timer_active": true,
+        "mount_UUID_exact_rw": true,
+        "supervisor_active": true,
+        "container_expected_count": true,
+        "containers_healthy": true,
+        "container_restarts_zero": true
+      },
+      "backup_assessment": {
+        "application_backup_tools_observed": true,
+        "application_backup_timer_observed": false,
+        "stock_dpkg_timer_is_not_application_backup": true,
+        "scan_is_not_exhaustive_external_scheduler_audit": true,
+        "backup_plan_for_this_role": "application persistent-data consistency backup required"
+      }
+    },
+    {
+      "vmid": 210,
+      "role": "data-test",
+      "expected_ip": "192.168.19.20",
+      "expected_data_uuid": "dd1773f9-aa48-4401-a9c8-caf0f66845f3",
+      "strict_SSH_exit_code": 0,
+      "host_key_alias": "dell-vm210",
+      "audit": {
+        "at": "2026-11-09T06:43:02.861269+00:00",
+        "hostname": "data-test",
+        "boot_id": "1731b2f8-41ae-4380-b598-e60144f07b9b",
+        "addresses": {
+          "exit_code": 0,
+          "data": [
+            {
+              "ifindex": 2,
+              "ifname": "eth0",
+              "flags": [
+                "BROADCAST",
+                "MULTICAST",
+                "UP",
+                "LOWER_UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "fq_codel",
+              "operstate": "UP",
+              "group": "default",
+              "txqlen": 1000,
+              "altnames": [
+                "enp0s18",
+                "enxbc24115d2d98"
+              ],
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "192.168.19.20",
+                  "prefixlen": 24,
+                  "broadcast": "192.168.19.255",
+                  "scope": "global",
+                  "label": "eth0",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            },
+            {
+              "ifindex": 3,
+              "ifname": "docker0",
+              "flags": [
+                "NO-CARRIER",
+                "BROADCAST",
+                "MULTICAST",
+                "UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "noqueue",
+              "operstate": "DOWN",
+              "group": "default",
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "172.17.0.1",
+                  "prefixlen": 16,
+                  "broadcast": "172.17.255.255",
+                  "scope": "global",
+                  "label": "docker0",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            },
+            {
+              "ifindex": 4,
+              "ifname": "br-a92ce9a20927",
+              "flags": [
+                "BROADCAST",
+                "MULTICAST",
+                "UP",
+                "LOWER_UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "noqueue",
+              "operstate": "UP",
+              "group": "default",
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "172.18.0.1",
+                  "prefixlen": 16,
+                  "broadcast": "172.18.255.255",
+                  "scope": "global",
+                  "label": "br-a92ce9a20927",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            }
+          ]
+        },
+        "routes": {
+          "exit_code": 0,
+          "data": [
+            {
+              "dst": "default",
+              "gateway": "192.168.19.1",
+              "dev": "eth0",
+              "protocol": "static",
+              "flags": []
+            },
+            {
+              "dst": "172.17.0.0/16",
+              "dev": "docker0",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "172.17.0.1",
+              "flags": [
+                "linkdown"
+              ]
+            },
+            {
+              "dst": "172.18.0.0/16",
+              "dev": "br-a92ce9a20927",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "172.18.0.1",
+              "flags": []
+            },
+            {
+              "dst": "192.168.19.0/24",
+              "dev": "eth0",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "192.168.19.20",
+              "flags": []
+            }
+          ]
+        },
+        "networkctl_DNS": [
+          "Gateway: 192.168.19.1 on eth0",
+          "DNS: 192.168.19.1"
+        ],
+        "fish": "fish, version 4.0.2",
+        "shells": {
+          "root": "/bin/bash",
+          "ub": "/bin/bash"
+        },
+        "time_sync": {
+          "at": "2026-11-09T06:43:38.344410+00:00",
+          "NTPSynchronized": {
+            "exit_code": 0,
+            "value": "NTPSynchronized=yes",
+            "stderr_class": "none"
+          },
+          "NTP": {
+            "exit_code": 0,
+            "value": "NTP=yes",
+            "stderr_class": "none"
+          },
+          "Timezone": {
+            "exit_code": 0,
+            "value": "Timezone=Etc/UTC",
+            "stderr_class": "none"
+          },
+          "TimeUSec": {
+            "exit_code": 0,
+            "value": "TimeUSec=Mon 2026-11-09 06:43:38 UTC",
+            "stderr_class": "none"
+          }
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "705",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "ssh.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "671",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "qemu-guest-agent.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "static"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "730",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "prometheus-node-exporter.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          },
+          "dell-guest-health.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-guest-health.service",
+            "LoadState": "loaded",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": "static"
+          },
+          "dell-guest-health.timer": {
+            "NextElapseUSecRealtime": "",
+            "LastTriggerUSec": "Mon 2026-11-09 06:42:56 UTC",
+            "Result": "success",
+            "Id": "dell-guest-health.timer",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "waiting",
+            "UnitFileState": "enabled"
+          },
+          "systemd-timesyncd.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "systemd-timesyncd.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          },
+          "docker.service": {
+            "MainPID": "741",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "docker.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          },
+          "dell-data-test-data.service": {
+            "MainPID": "1202",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-data-test-data.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          }
+        },
+        "failed_units": [],
+        "listening_TCP_addresses": [
+          "0.0.0.0:5355",
+          "127.0.0.54:53",
+          "192.168.19.20:9848",
+          "192.168.19.20:5672",
+          "127.0.0.53%lo:53",
+          "192.168.19.20:15672",
+          "192.168.19.20:3306",
+          "0.0.0.0:22",
+          "192.168.19.20:9100",
+          "192.168.19.20:8848",
+          "192.168.19.20:6379",
+          "[::]:5355",
+          "[::]:22"
+        ],
+        "mount": {
+          "exit_code": 0,
+          "data": {
+            "filesystems": [
+              {
+                "target": "/srv/dell-data",
+                "source": "/dev/sdb",
+                "fstype": "ext4",
+                "uuid": "dd1773f9-aa48-4401-a9c8-caf0f66845f3",
+                "options": "rw,relatime"
+              }
+            ]
+          }
+        },
+        "docker_ps_exit_code": 0,
+        "containers": [
+          {
+            "exit_code": 0,
+            "data": {
+              "ID": "5bd9a27fd4051994494eed423d84e50862ef91918ffbfa4834df14de2a8f2e4c",
+              "State": "running",
+              "Health": "healthy",
+              "RestartCount": 0
+            }
+          },
+          {
+            "exit_code": 0,
+            "data": {
+              "ID": "df4e9d159f5903e42ab4e6c2c092d2d454ac55a76c226fc8a07fe44c72b41ef6",
+              "State": "running",
+              "Health": "healthy",
+              "RestartCount": 0
+            }
+          },
+          {
+            "exit_code": 0,
+            "data": {
+              "ID": "b5d49893d99c73d425f0af035dce837f1467a096841d7bbae3f7d5381ce3df22",
+              "State": "running",
+              "Health": "healthy",
+              "RestartCount": 0
+            }
+          },
+          {
+            "exit_code": 0,
+            "data": {
+              "ID": "4d955f668d96330c7d9cbe676ec41722a1d3c67038a52d89f0c3f8f11866ce58",
+              "State": "running",
+              "Health": "healthy",
+              "RestartCount": 0
+            }
+          }
+        ],
+        "backup_inventory": {
+          "units": {
+            "dpkg-db-backup.service": {
+              "MainPID": "0",
+              "Result": "success",
+              "NRestarts": "0",
+              "Id": "dpkg-db-backup.service",
+              "LoadState": "loaded",
+              "ActiveState": "inactive",
+              "SubState": "dead",
+              "UnitFileState": "static"
+            },
+            "dpkg-db-backup.timer": {
+              "NextElapseUSecRealtime": "Tue 2026-11-10 00:00:00 UTC",
+              "LastTriggerUSec": "Mon 2026-11-09 00:00:00 UTC",
+              "Result": "success",
+              "Id": "dpkg-db-backup.timer",
+              "LoadState": "loaded",
+              "ActiveState": "active",
+              "SubState": "waiting",
+              "UnitFileState": "enabled"
+            }
+          },
+          "script_paths": [],
+          "cron_name_candidates": [],
+          "backup_directory_metadata": [],
+          "scanned_roots": {
+            "/opt/dell": 5,
+            "/usr/local/sbin": 1,
+            "/usr/local/libexec": 3,
+            "/root": 2
+          },
+          "backup_scripts_executed": false,
+          "backup_contents_read": false,
+          "cron_contents_read": false
+        },
+        "time_sync_initial_probe_limitation": "Initial combined-property timedatectl returned empty output; not used to infer missing NTP. Re-read each property separately."
+      },
+      "foundation_checks": {
+        "hostname_expected": true,
+        "IP_expected": true,
+        "gateway_expected": true,
+        "DNS_expected": true,
+        "no_failed_units": true,
+        "fish_present": true,
+        "default_Bash": true,
+        "time_NTP_synchronized": true,
+        "NTP_enabled": true,
+        "exporter_active": true,
+        "exporter_bound_role_IP": true,
+        "collector_timer_active": true,
+        "mount_UUID_exact_rw": true,
+        "supervisor_active": true,
+        "container_expected_count": true,
+        "containers_healthy": true,
+        "container_restarts_zero": true
+      },
+      "backup_assessment": {
+        "application_backup_tools_observed": false,
+        "application_backup_timer_observed": false,
+        "stock_dpkg_timer_is_not_application_backup": true,
+        "scan_is_not_exhaustive_external_scheduler_audit": true,
+        "backup_plan_for_this_role": "application persistent-data consistency backup required"
+      }
+    },
+    {
+      "vmid": 230,
+      "role": "java-prod-01",
+      "expected_ip": "192.168.19.40",
+      "expected_data_uuid": null,
+      "strict_SSH_exit_code": 0,
+      "host_key_alias": "dell-vm230",
+      "audit": {
+        "at": "2026-11-09T06:43:08.186785+00:00",
+        "hostname": "java-prod-01",
+        "boot_id": "a4ced4c9-9fa8-4005-8dae-a3566698cd0c",
+        "addresses": {
+          "exit_code": 0,
+          "data": [
+            {
+              "ifindex": 2,
+              "ifname": "eth0",
+              "flags": [
+                "BROADCAST",
+                "MULTICAST",
+                "UP",
+                "LOWER_UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "fq_codel",
+              "operstate": "UP",
+              "group": "default",
+              "txqlen": 1000,
+              "altnames": [
+                "enp0s18",
+                "enxbc24111c2000"
+              ],
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "192.168.19.40",
+                  "prefixlen": 24,
+                  "broadcast": "192.168.19.255",
+                  "scope": "global",
+                  "label": "eth0",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            }
+          ]
+        },
+        "routes": {
+          "exit_code": 0,
+          "data": [
+            {
+              "dst": "default",
+              "gateway": "192.168.19.1",
+              "dev": "eth0",
+              "protocol": "static",
+              "flags": []
+            },
+            {
+              "dst": "192.168.19.0/24",
+              "dev": "eth0",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "192.168.19.40",
+              "flags": []
+            }
+          ]
+        },
+        "networkctl_DNS": [
+          "Gateway: 192.168.19.1 on eth0",
+          "DNS: 192.168.19.1"
+        ],
+        "fish": "fish, version 4.0.2",
+        "shells": {
+          "root": "/bin/bash",
+          "ub": "/bin/bash"
+        },
+        "time_sync": {
+          "at": "2026-11-09T06:43:39.456470+00:00",
+          "NTPSynchronized": {
+            "exit_code": 0,
+            "value": "NTPSynchronized=yes",
+            "stderr_class": "none"
+          },
+          "NTP": {
+            "exit_code": 0,
+            "value": "NTP=yes",
+            "stderr_class": "none"
+          },
+          "Timezone": {
+            "exit_code": 0,
+            "value": "Timezone=Etc/UTC",
+            "stderr_class": "none"
+          },
+          "TimeUSec": {
+            "exit_code": 0,
+            "value": "TimeUSec=Mon 2026-11-09 06:43:39 UTC",
+            "stderr_class": "none"
+          }
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "738",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "ssh.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "714",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "qemu-guest-agent.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "static"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "747",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "prometheus-node-exporter.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          },
+          "dell-guest-health.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-guest-health.service",
+            "LoadState": "loaded",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": "static"
+          },
+          "dell-guest-health.timer": {
+            "NextElapseUSecRealtime": "",
+            "LastTriggerUSec": "Mon 2026-11-09 06:42:11 UTC",
+            "Result": "success",
+            "Id": "dell-guest-health.timer",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "waiting",
+            "UnitFileState": "enabled"
+          },
+          "systemd-timesyncd.service": {
+            "MainPID": "392",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "systemd-timesyncd.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          },
+          "dell-finger-finger-gateway-mobile.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-finger-finger-gateway-mobile.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          },
+          "dell-finger-finger-bff-system.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-finger-finger-bff-system.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          },
+          "dell-finger-finger-auth.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-finger-finger-auth.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          },
+          "dell-finger-finger-service-coms.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-finger-finger-service-coms.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          },
+          "dell-finger-finger-service-system.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-finger-finger-service-system.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          }
+        },
+        "failed_units": [],
+        "listening_TCP_addresses": [
+          "0.0.0.0:22",
+          "127.0.0.54:53",
+          "0.0.0.0:5355",
+          "192.168.19.40:9100",
+          "127.0.0.53%lo:53",
+          "[::]:22",
+          "[::]:5355"
+        ],
+        "root_mount": {
+          "exit_code": 0,
+          "data": {
+            "filesystems": [
+              {
+                "target": "/",
+                "source": "/dev/sda1",
+                "fstype": "ext4",
+                "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+                "options": "rw,relatime,discard,errors=remount-ro"
+              }
+            ]
+          }
+        },
+        "jdk_exit_code": 0,
+        "jdk_version_lines": [
+          "openjdk version \"21.0.13\" 2026-10-20",
+          "OpenJDK Runtime Environment (build 21.0.13+9-1-deb13u2-Debian)",
+          "OpenJDK 64-Bit Server VM (build 21.0.13+9-1-deb13u2-Debian, mixed mode, sharing)"
+        ],
+        "finger_user_present": true,
+        "java_process_count": 0,
+        "backup_inventory": {
+          "units": {
+            "dpkg-db-backup.service": {
+              "MainPID": "0",
+              "Result": "success",
+              "NRestarts": "0",
+              "Id": "dpkg-db-backup.service",
+              "LoadState": "loaded",
+              "ActiveState": "inactive",
+              "SubState": "dead",
+              "UnitFileState": "static"
+            },
+            "dpkg-db-backup.timer": {
+              "NextElapseUSecRealtime": "Tue 2026-11-10 00:00:00 UTC",
+              "LastTriggerUSec": "Mon 2026-11-09 00:00:00 UTC",
+              "Result": "success",
+              "Id": "dpkg-db-backup.timer",
+              "LoadState": "loaded",
+              "ActiveState": "active",
+              "SubState": "waiting",
+              "UnitFileState": "enabled"
+            }
+          },
+          "script_paths": [],
+          "cron_name_candidates": [],
+          "backup_directory_metadata": [],
+          "scanned_roots": {
+            "/opt/dell": 5,
+            "/usr/local/sbin": 1,
+            "/usr/local/libexec": 3,
+            "/root": 2
+          },
+          "backup_scripts_executed": false,
+          "backup_contents_read": false,
+          "cron_contents_read": false
+        },
+        "time_sync_initial_probe_limitation": "Initial combined-property timedatectl returned empty output; not used to infer missing NTP. Re-read each property separately."
+      },
+      "foundation_checks": {
+        "hostname_expected": true,
+        "IP_expected": true,
+        "gateway_expected": true,
+        "DNS_expected": true,
+        "no_failed_units": true,
+        "fish_present": true,
+        "default_Bash": true,
+        "time_NTP_synchronized": true,
+        "NTP_enabled": true,
+        "exporter_active": true,
+        "exporter_bound_role_IP": true,
+        "collector_timer_active": true,
+        "JDK21_usable_as_root_readonly": true,
+        "finger_user_present": true,
+        "no_Java_processes": true,
+        "five_old_business_units_inactive_and_not_enabled": true
+      },
+      "backup_assessment": {
+        "application_backup_tools_observed": false,
+        "application_backup_timer_observed": false,
+        "stock_dpkg_timer_is_not_application_backup": true,
+        "scan_is_not_exhaustive_external_scheduler_audit": true,
+        "backup_plan_for_this_role": "runtime/configuration foundation only; no business data backup workload by current scope"
+      }
+    },
+    {
+      "vmid": 240,
+      "role": "java-test-01",
+      "expected_ip": "192.168.19.45",
+      "expected_data_uuid": null,
+      "strict_SSH_exit_code": 0,
+      "host_key_alias": "dell-vm240",
+      "audit": {
+        "at": "2026-11-09T06:43:12.885963+00:00",
+        "hostname": "java-test-01",
+        "boot_id": "ac6ac640-8f56-4063-a366-7dd75d214ad5",
+        "addresses": {
+          "exit_code": 0,
+          "data": [
+            {
+              "ifindex": 2,
+              "ifname": "eth0",
+              "flags": [
+                "BROADCAST",
+                "MULTICAST",
+                "UP",
+                "LOWER_UP"
+              ],
+              "mtu": 1500,
+              "qdisc": "fq_codel",
+              "operstate": "UP",
+              "group": "default",
+              "txqlen": 1000,
+              "altnames": [
+                "enp0s18",
+                "enxbc241165415a"
+              ],
+              "addr_info": [
+                {
+                  "family": "inet",
+                  "local": "192.168.19.45",
+                  "prefixlen": 24,
+                  "broadcast": "192.168.19.255",
+                  "scope": "global",
+                  "label": "eth0",
+                  "valid_life_time": 4294967295,
+                  "preferred_life_time": 4294967295
+                }
+              ]
+            }
+          ]
+        },
+        "routes": {
+          "exit_code": 0,
+          "data": [
+            {
+              "dst": "default",
+              "gateway": "192.168.19.1",
+              "dev": "eth0",
+              "protocol": "static",
+              "flags": []
+            },
+            {
+              "dst": "192.168.19.0/24",
+              "dev": "eth0",
+              "protocol": "kernel",
+              "scope": "link",
+              "prefsrc": "192.168.19.45",
+              "flags": []
+            }
+          ]
+        },
+        "networkctl_DNS": [
+          "Gateway: 192.168.19.1 on eth0",
+          "DNS: 192.168.19.1"
+        ],
+        "fish": "fish, version 4.0.2",
+        "shells": {
+          "root": "/bin/bash",
+          "ub": "/bin/bash"
+        },
+        "time_sync": {
+          "at": "2026-11-09T06:43:40.515028+00:00",
+          "NTPSynchronized": {
+            "exit_code": 0,
+            "value": "NTPSynchronized=yes",
+            "stderr_class": "none"
+          },
+          "NTP": {
+            "exit_code": 0,
+            "value": "NTP=yes",
+            "stderr_class": "none"
+          },
+          "Timezone": {
+            "exit_code": 0,
+            "value": "Timezone=Etc/UTC",
+            "stderr_class": "none"
+          },
+          "TimeUSec": {
+            "exit_code": 0,
+            "value": "TimeUSec=Mon 2026-11-09 06:43:40 UTC",
+            "stderr_class": "none"
+          }
+        },
+        "units": {
+          "ssh.service": {
+            "MainPID": "714",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "ssh.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          },
+          "qemu-guest-agent.service": {
+            "MainPID": "686",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "qemu-guest-agent.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "static"
+          },
+          "prometheus-node-exporter.service": {
+            "MainPID": "719",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "prometheus-node-exporter.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          },
+          "dell-guest-health.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-guest-health.service",
+            "LoadState": "loaded",
+            "ActiveState": "activating",
+            "SubState": "condition",
+            "UnitFileState": "static"
+          },
+          "dell-guest-health.timer": {
+            "NextElapseUSecRealtime": "",
+            "LastTriggerUSec": "Mon 2026-11-09 06:43:11 UTC",
+            "Result": "success",
+            "Id": "dell-guest-health.timer",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          },
+          "systemd-timesyncd.service": {
+            "MainPID": "375",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "systemd-timesyncd.service",
+            "LoadState": "loaded",
+            "ActiveState": "active",
+            "SubState": "running",
+            "UnitFileState": "enabled"
+          },
+          "dell-finger-finger-gateway-mobile.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-finger-finger-gateway-mobile.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          },
+          "dell-finger-finger-bff-system.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-finger-finger-bff-system.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          },
+          "dell-finger-finger-auth.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-finger-finger-auth.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          },
+          "dell-finger-finger-service-coms.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-finger-finger-service-coms.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          },
+          "dell-finger-finger-service-system.service": {
+            "MainPID": "0",
+            "Result": "success",
+            "NRestarts": "0",
+            "Id": "dell-finger-finger-service-system.service",
+            "LoadState": "not-found",
+            "ActiveState": "inactive",
+            "SubState": "dead",
+            "UnitFileState": ""
+          }
+        },
+        "failed_units": [],
+        "listening_TCP_addresses": [
+          "0.0.0.0:22",
+          "127.0.0.54:53",
+          "127.0.0.53%lo:53",
+          "0.0.0.0:5355",
+          "192.168.19.45:9100",
+          "[::]:22",
+          "[::]:5355"
+        ],
+        "root_mount": {
+          "exit_code": 0,
+          "data": {
+            "filesystems": [
+              {
+                "target": "/",
+                "source": "/dev/sda1",
+                "fstype": "ext4",
+                "uuid": "2d5cddec-8777-4aef-9b8d-1d7093e60982",
+                "options": "rw,relatime,discard,errors=remount-ro"
+              }
+            ]
+          }
+        },
+        "jdk_exit_code": 0,
+        "jdk_version_lines": [
+          "openjdk version \"21.0.13\" 2026-10-20",
+          "OpenJDK Runtime Environment (build 21.0.13+9-1-deb13u2-Debian)",
+          "OpenJDK 64-Bit Server VM (build 21.0.13+9-1-deb13u2-Debian, mixed mode, sharing)"
+        ],
+        "finger_user_present": true,
+        "java_process_count": 0,
+        "backup_inventory": {
+          "units": {
+            "dpkg-db-backup.service": {
+              "MainPID": "0",
+              "Result": "success",
+              "NRestarts": "0",
+              "Id": "dpkg-db-backup.service",
+              "LoadState": "loaded",
+              "ActiveState": "inactive",
+              "SubState": "dead",
+              "UnitFileState": "static"
+            },
+            "dpkg-db-backup.timer": {
+              "NextElapseUSecRealtime": "Tue 2026-11-10 00:00:00 UTC",
+              "LastTriggerUSec": "Mon 2026-11-09 00:00:16 UTC",
+              "Result": "success",
+              "Id": "dpkg-db-backup.timer",
+              "LoadState": "loaded",
+              "ActiveState": "active",
+              "SubState": "waiting",
+              "UnitFileState": "enabled"
+            }
+          },
+          "script_paths": [],
+          "cron_name_candidates": [],
+          "backup_directory_metadata": [],
+          "scanned_roots": {
+            "/opt/dell": 5,
+            "/usr/local/sbin": 1,
+            "/usr/local/libexec": 3,
+            "/root": 2
+          },
+          "backup_scripts_executed": false,
+          "backup_contents_read": false,
+          "cron_contents_read": false
+        },
+        "time_sync_initial_probe_limitation": "Initial combined-property timedatectl returned empty output; not used to infer missing NTP. Re-read each property separately."
+      },
+      "foundation_checks": {
+        "hostname_expected": true,
+        "IP_expected": true,
+        "gateway_expected": true,
+        "DNS_expected": true,
+        "no_failed_units": true,
+        "fish_present": true,
+        "default_Bash": true,
+        "time_NTP_synchronized": true,
+        "NTP_enabled": true,
+        "exporter_active": true,
+        "exporter_bound_role_IP": true,
+        "collector_timer_active": true,
+        "JDK21_usable_as_root_readonly": true,
+        "finger_user_present": true,
+        "no_Java_processes": true,
+        "five_old_business_units_inactive_and_not_enabled": true
+      },
+      "backup_assessment": {
+        "application_backup_tools_observed": false,
+        "application_backup_timer_observed": false,
+        "stock_dpkg_timer_is_not_application_backup": true,
+        "scan_is_not_exhaustive_external_scheduler_audit": true,
+        "backup_plan_for_this_role": "runtime/configuration foundation only; no business data backup workload by current scope"
+      }
+    }
+  ],
+  "status": "existing-core-foundations-passed-application-backup-automation-gap-found",
+  "summary": {
+    "strict_SSH_guests_passed": [
+      200,
+      201,
+      210,
+      230,
+      240
+    ],
+    "foundation_checks_all_true": true,
+    "data_containers_running_healthy": 8,
+    "data_mount_UUIDs_exact_rw": true,
+    "Java_business_processes": 0,
+    "old_business_units_not_found_inactive_not_enabled": true,
+    "failed_units_all_guests": 0,
+    "time_NTP_synchronized_all": true,
+    "backup_tools_present_on": [
+      200,
+      201
+    ],
+    "application_backup_timer_observed_on": [],
+    "stock_dpkg_backup_timer_present_on": [
+      200,
+      201,
+      210,
+      230,
+      240
+    ],
+    "root_or_guest_services_restarted_by_this_audit": false,
+    "production_empty_business_schema_contract_preserved_not_queried": true
+  },
+  "findings": [
+    {
+      "id": "CORE-BACKUP-001",
+      "severity": "P2",
+      "scope": [
+        200,
+        201,
+        210
+      ],
+      "status": "gap-observed-no-change-applied",
+      "observation": "No application backup timer found in loaded or installed systemd units matching backup/restic/borg/duplicity/rclone. Only dpkg-db-backup.timer exists; it is not a MySQL/Nacos/Redis/Rabbit backup. 200/201 have manual backup script and historical local backup directory; 210 has neither matched tool nor backup directory in scanned paths.",
+      "limitations": [
+        "No crontab contents or external scheduler read; names-only scan cannot exclude a custom task named without the backup-related patterns.",
+        "Tool presence does not prove current19 network guards, code SHA, successful backup, retention or restore status; no script was executed."
+      ],
+      "recommendation": "Main agent should define exact application-consistent scope, current19 UUID/role guards, destination capacity/permissions, retention/locking/failure notification, then prepare and review guest-only scheduled jobs. Keep prod/test outputs separate. Do not install or run a generic whole-private/whole-VM job; do not touch CF or publisher keys.",
+      "required_followup": "A real scheduled pipeline and dated success/failure evidence are still required before claiming automatic backups; independent destination and RPO/RTO remain separate acceptance items."
+    }
+  ],
+  "limitations": [
+    "No database authentication, business rows/schema, namespace or message contents were queried; production-empty and environment-isolation contracts retained but not re-proven by this audit.",
+    "No backup/restore/fixture/Java business or Nacos publish executed; no secrets, complete Env/Cmd or health logs read.",
+    "Backup scan collected filenames and systemd metadata only; no script, cron or archive contents read and no --help needed.",
+    "NTPSynchronized=yes is the effective time-state observation. systemd-timesyncd absent/inactive on a data guest alone is not a fault; actual alternate daemon was not inventoried.",
+    "Current JDK version invocation ran as root for metadata only; no new nonroot application smoke was run.",
+    "No PVE writes, migration, template changes, source221 operation or Mac external probe operation."
+  ]
+}

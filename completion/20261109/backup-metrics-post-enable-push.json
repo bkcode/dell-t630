@@ -1,0 +1,5 @@
+{
+  "status": "existing collector invoked after enable",
+  "native_unit_result": "Result=success\nExecMainStatus=0\n",
+  "new_listener_or_external_probe": false
+}

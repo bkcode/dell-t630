@@ -1,0 +1,38 @@
+{
+  "CF_log": [
+    "2026-11-09 14:59:50 INFO: tar: /var/tmp/dell-local-backup/vzdumptmp17930_100/: Cannot open: Permission denied",
+    "2026-11-09 14:59:50 INFO: tar: Error is not recoverable: exiting now",
+    "2026-11-09 14:59:50 ERROR: Backup of VM 100 failed - command 'set -o pipefail && lxc-usernsexec -m u:0:100000:65536 -m g:0:100000:65536 -- tar cpf - --totals --one-file-system -p --sparse --numeric-owner --acls --xattrs '--xattrs-include=user.*' '--xattrs-include=security.capability' '--warning=no-file-ignored' '--warning=no-xattr-write' --one-file-system '--warning=no-file-ignored' '--directory=/var/tmp/dell-local-backup/vzdumptmp17930_100/' ./etc/vzdump/pct.conf ./etc/vzdump/pct.fw '--directory=/mnt/vzsnap0' --no-anchored '--exclude=lost+found' --anchored '--exclude=./tmp/?*' '--exclude=./var/tmp/?*' '--exclude=./var/run/?*.pid' ./ | cstream -t 52428800 | zstd '--threads=2' >/mnt/pve/store/dell-artifacts/scheduled-backups/dump/vzdump-lxc-100-2026_11_09-14_59_48.tar.dat' failed: exit code 2"
+  ],
+  "staging_metadata": [
+    {
+      "path": "/var/tmp/dell-local-backup",
+      "mode": "0o711",
+      "UID": 0
+    },
+    {
+      "path": "/var/tmp/dell-local-backup/vzdumptmp17930_190",
+      "mode": "0o700",
+      "UID": 0
+    }
+  ],
+  "unit_mask": "MainPID=17912\nUMask=0077\nActiveState=active\n",
+  "native_temp_creation": {
+    "/usr/share/perl5/PVE/VZDump.pm": [
+      {
+        "line": 1052,
+        "text": "\tmkdir $task->{tmpdir};"
+      }
+    ],
+    "/usr/share/perl5/PVE/VZDump/LXC.pm": [
+      {
+        "line": 260,
+        "text": "\t\t \"temporary directory is on NFS, disabling xattr and acl\""
+      },
+      {
+        "line": 317,
+        "text": "    mkpath \"$tmpdir/etc/vzdump/\";"
+      }
+    ]
+  }
+}

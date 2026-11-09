@@ -1,6 +1,6 @@
 # T630 服务目标架构、部署快照与资源边界
 
-更新：2026-11-08。**服务目标保留发布机与Nexus合并合同，实际仍为12实例；用户本轮明确不迁移，只检查补齐基础服务与清理确认多余项。** 用户确认内存重新插拔/更换并诊断通过；本轮20:16–20:20恢复审计观察到12来宾运行、15监控目标UP和主要入口200。UEFI0058为历史故障，当前boot计数0不等于代理独立完成硬件诊断。状态入口：[当前状态](01-current-state.md)、[硬件发现](08-hardware-findings.md)。
+更新：2026-11-09。**当前实际仍为12实例，不迁移数据；合并目标仅保留。用户继续完成基础搭建，并授权先建PVE本机自动备份。** 14:24自然重启后的[PVE审计](completion/20261109/pve-audit.json)确认12running/3停止模板、forward guard跨重启保持全0；[Ops](completion/20261109/ops-audit.json)15UP。[首轮11项已验证成功](completion/20261109/backup-first-success.json)、[03:30计划已启用](completion/20261109/backup-schedule-enabled.json)，仍不等于独立灾备或数据库逻辑备份。用户物理内存诊断与本轮EDAC0只读结果分开，见[当前状态](01-current-state.md)、[硬件发现](08-hardware-findings.md)。
 
 ## 1. 当前交付范围
 
@@ -28,7 +28,7 @@ T630 / PVE21.22：虚拟化、存储、管理和二层桥，无host L3/NAT
 
 ### 本轮恢复后的实际架构：合并尚未执行
 
-本轮[媒体工具审计](recovery/20261108/media-tools-audit.json)确认220仍为19.30（4CPU/4GiB）、没有31或active Nexus；221独立19.31、两容器healthy。共12实例、15监控目标在20:19–20:20再次观察正常。220只完成准备，未移盘/加alias/启动Nexus，本轮也不实施；实际清单见[01](01-current-state.md)，不得把上方目标图当上线证明。
+本轮[媒体工具审计](completion/20261109/media-audit.json)确认220仍为19.30（4CPU/4GiB）、没有31或active Nexus；221独立19.31、两容器healthy。共12实例、15监控目标在11月9日14:42–14:44再次观察正常。220只完成准备，未移盘/加alias/启动Nexus，本轮也不实施；实际清单见[01](01-current-state.md)，不得把上方目标图当上线证明。
 
 ## 2. 资源与故障域
 
@@ -55,7 +55,7 @@ Docker模板9001保留其已验证overlayfs/live-restore基线；数据/定制�
 
 ## 4. 数据、工具和家庭功能
 
-表内认证/隔离/fixture/内容为对应历史功能验收，不表示本轮全部重做。本轮新鲜健康状态分别见[核心审计](recovery/20261108/core-services-audit.json)、[媒体工具审计](recovery/20261108/media-tools-audit.json)、[Ops审计](recovery/20261108/ops-audit.json)，完整限制放在[04](04-services-and-migration.md)。
+表内认证/隔离/fixture/内容为对应历史功能验收，不表示本轮全部重做。本轮新鲜健康状态分别见[核心审计](completion/20261109/core-audit.json)、[媒体工具审计](completion/20261109/media-audit.json)、[Ops审计](completion/20261109/ops-audit.json)，完整限制放在[04](04-services-and-migration.md)。
 
 | 角色组 | 必要功能与已验收范围 | 仍保留的边界 |
 | --- | --- | --- |
@@ -70,7 +70,7 @@ Nacos/Nexus/Penpot的实现可能使用JVM，这是基础组件，不是允许�
 
 ## 5. 网络：物理同网与逻辑隔离
 
-当前应用网络使用vmbr0和内部vmbr19：PVE21.22管理，只有GW190 WAN21.23留在21网；vmbr19无PVE地址。PVE自身到19的客户端路由经21.23，不等于宿主启用L3。主机IPv4/IPv6 forward=0、无host NAT；190也不SNAT，互联网出口由OW NAT处理。11月8日开机发现forward漂移后，主AI仅补3个owned持久文件并即时收敛，未reload网络或改桥/路由/ACL；[20:20:48后检](recovery/20261108/host-network-postcheck.json)确认各接口全0，重启持久性未在本轮再演练。
+当前应用网络使用vmbr0和内部vmbr19：PVE21.22管理，只有GW190 WAN21.23留在21网；vmbr19无PVE地址。PVE自身到19的客户端路由经21.23，不等于宿主启用L3。主机IPv4/IPv6 forward=0、无host NAT；190也不SNAT，互联网出口由OW NAT处理。OW完整规则仅本地保存，本轮不触/不上传。11月8日发现forward漂移后仅补3个owned文件，11月9日自然重启后的SHA/执行顺序与全部forward0已由[PVE审计](completion/20261109/pve-audit.json)实际读回，证明这次跨重启保持；原桥/路由/ACL无变化，不恢复PVE路由/NAT。
 
 同一19/24的peer直接二层互通，不能靠GW190隔离。owned bridge ACL绑定每vNIC的MAC/IP，先检查身份和invalid，再按prod/test/tools/home关系放行；Docker发布端口的实际路径也须纳入角色边界。DNS/DHCP按合同仅由190 LAN19.1提供，动态池19.200–239避开静态角色；本轮[直接UDP/TCP DNS复核](recovery/20261108/network-CF-followup.json)三静态A正确，CF ready200/连接2，但不签公网origin E2E；IPv6/VLAN旁路拒绝；网关保留lo::1，WAN/LAN IPv6关闭。
 
@@ -82,6 +82,6 @@ OW现有代理返回198.18/15 Fake-IP；190保留原已验证的普通DNS/web/NT
 
 H730/store由PVE管理，OMV只独占NAS专用2TiB虚拟盘内文件系统；不将宿主sdb或整卡再交NAS挂载。各数据盘和应用配置需按真实UUID、source和mountpoint核对；相同路径目录存在不证明数据盘在线。
 
-正式数据、Nacos元库、Redis、RabbitMQ消息/拓扑、Nexus、Penpot DB/素材与NAS个人文件有不同一致性边界。PVE来宾备份、逻辑/应用导出、合成fixture恢复分别留证，不能互相替代；Rabbit definitions不包含消息，Grafana SQLite备份不覆盖native Lark秘密。当前普通独立副本暂存Mac私有目录，正式备份周期/独立目的地及RPO/RTO仍需落实；CF备份只准PVE本机。
+正式数据、Nacos元库、Redis、RabbitMQ消息/拓扑、Nexus、Penpot DB/素材与NAS个人文件有不同一致性边界。PVE来宾备份、逻辑/应用导出、合成fixture恢复分别留证，不能互相替代；Rabbit definitions不包含消息，Grafana SQLite备份不覆盖native Lark秘密。原应用样本独立副本暂存Mac私有目录；当前新增[PVE本机自动备份](infra/backup/pve-local/README.md)作为本机恢复层，固定11项排除220、CF只PVE、root700/600、03:30和最近3/每日7/每周4点。[首轮11项zstd/native已验证](completion/20261109/backup-first-success.json)、原生任务OK/退出0，[native计划已enabled](completion/20261109/backup-schedule-enabled.json)；03:30和保留策略已配置生效，但不能以一次成功证明长期连续执行。独立目的地和RPO/RTO仍需落实。
 
-本轮核心/媒体/Ops挂载和健康已经按审计范围恢复观察，但不等于应用内容/认证或全部备份恢复验收。用户本轮不迁移；将来Nexus切换和同IP alias也不能实现无缝旧TCP会话或数据库回滚，新目标有写入后必须应用一致性回迁，不能简单改回IP。关键人工入口见[服务与运维](12-service-access-and-operations.md)、[备份](infra/backup/README.md)，不要直接执行历史迁移脚本。
+本机snapshot备份可能使用QGA文件系统冻结，仍不是逐应用逻辑/跨VM事务一致；首轮归档完整性已完成，未做恢复演练，不签异机灾备。[备份metadata已接原QGA采集](completion/20261109/backup-metrics-installed.json)、[Lark三名白名单已配套](completion/20261109/backup-notify-whitelist-result.json)，未人工发消息；Prom新增规则实际加载与后验只以[当日中央入口](completion/20261109/README.md)为准，不由本页提前签收。本轮核心/媒体/Ops挂载和健康按审计范围通过，不等于应用内容/认证或全部备份恢复验收。用户本轮不迁移；将来Nexus切换和同IP alias也不能实现无缝旧TCP会话或数据库回滚，新目标有写入后必须应用一致性回迁，不能简单改回IP。关键人工入口见[服务与运维](12-service-access-and-operations.md)、[备份](infra/backup/README.md)，不要直接执行历史迁移脚本。

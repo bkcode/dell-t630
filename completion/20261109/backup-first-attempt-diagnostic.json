@@ -1,0 +1,26 @@
+{
+  "selected_logs": {
+    "vzdump-qemu-190-2026_11_09-14_55_28.log": [
+      "2026-11-09 14:55:28 INFO: backup mode: snapshot",
+      "2026-11-09 14:55:29 INFO: issuing guest-agent 'fs-freeze' command",
+      "2026-11-09 14:55:29 INFO: started backup task '605588f1-0d86-4b55-9f1c-6d6a3e7e354a'",
+      "2026-11-09 14:56:03 ERROR: interrupted by signal",
+      "2026-11-09 14:56:03 ERROR: Backup of VM 190 failed - interrupted by signal"
+    ],
+    "vzdump-lxc-100-2026_11_09-14_55_26.log": [
+      "2026-11-09 14:55:26 INFO: backup mode: snapshot",
+      "2026-11-09 14:55:26 INFO: create storage snapshot 'vzdump'",
+      "2026-11-09 14:55:27 INFO: tar: Error is not recoverable: exiting now",
+      "2026-11-09 14:55:27 INFO: cleanup temporary 'vzdump' snapshot",
+      "2026-11-09 14:55:28 ERROR: Backup of VM 100 failed - command 'set -o pipefail && lxc-usernsexec -m u:0:100000:65536 -m g:0:100000:65536 -- tar cpf - --totals --one-file-system -p --sparse --numeric-owner --acls --xattrs '--xattrs-include=user.*' '--xattrs-include=security.capability' '--warning=no-file-ignored' '--warning=no-xattr-write' --one-file-system '--warning=no-file-ignored' '--directory=/mnt/pve/store/dell-artifacts/scheduled-backups/dump/vzdump-lxc-100-2026_11_09-14_55_26.tmp' ./etc/vzdump/pct.conf ./etc/vzdump/pct.fw '--directory=/mnt/vzsnap0' --no-anchored '--exclude=lost+found' --anchored '--exclude=./tmp/?*' '--exclude=./var/tmp/?*' '--exclude=./var/run/?*.pid' ./ | cstream -t 52428800 | zstd '--threads=2' >/mnt/pve/store/dell-artifacts/scheduled-backups/dump/vzdump-lxc-100-2026_11_09-14_55_26.tar.dat' failed: exit code 2"
+    ]
+  },
+  "hook_runner_source": "}\n\nsub run_hook_script {\n    my ($self, $phase, $task, $logfd) = @_;\n\n    my $opts = $self->{opts};\n\n    my $script = $opts->{script};\n    return if !$script;\n\n    die \"Error: The hook script '$script' does not exist.\\n\" if ! -f $script;\n    die \"Error: The hook script '$script' is not executable.\\n\" if ! -x $script;\n\n    my $cmd = [$script, $phase];\n\n    if ($task) {\n\tpush @$cmd, $task->{mode};\n\tpush @$cmd, $task->{vmid};\n    }\n\n    local %ENV;\n    # set immutable opts directly (so they are available in all phases)\n    $ENV{STOREID} = $opts->{storage} if $opts->{storage};\n    $ENV{DUMPDIR} = $opts->{dumpdir} if $opts->{dumpdir};\n\n    foreach my $ek (qw(vmtype hostname target logfile)) {\n\t$ENV{uc($ek)} = $task->{$ek} if $task->{$ek};\n    }\n\n    run_command ($logfd, $cmd);\n}\n\nsub compressor_info {\n    my ($opts) = @_;\n    my $opt_compress = $opts->{compress};\n\n    if (!$opt_compress || $opt_compress eq '0') {\n\treturn undef;\n    } elsif ($opt_compress eq '1' || $opt_compress eq 'lzo') {\n\treturn ('lzop', 'lzo');\n    } elsif ($opt_compress eq 'gzip') {\n\tif ($opts->{pigz} > 0) {\n\t    my $pigz_threads = $opts->{pigz};\n\t    if ($pigz_threads == 1) {\n\t\tmy $cpuinfo = PVE::ProcFSTools::read_cpuinfo();\n\t\t$pigz_threads = int(($cpuinfo->{cpus} + 1)/2);\n\t    }\n\t    return (\"pigz -p ${pigz_threads} --rsyncable\", 'gz');\n\t} else {\n\t    return ('gzip --rsyncable', 'gz');\n\t}\n    } elsif ($opt_compress eq 'zstd') {",
+  "async_options": [
+    "  --quiet    <boolean>\t (default=0)",
+    "\t     Be quiet.",
+    "  --stdout   <boolean>",
+    "\t     Write tar to stdout, not to a file."
+  ],
+  "backup_processes": []
+}

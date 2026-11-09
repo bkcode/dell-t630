@@ -63,5 +63,7 @@
     "storage_driver": "overlayfs",
     "live_restore": true,
     "role_specific_overlay2_not_applied_to_template": true
-  }
+  },
+  "inventory_verified_at": "2026-11-09T14:42:26+08:00",
+  "inventory_evidence": "completion/20261109/pve-audit.json"
 }

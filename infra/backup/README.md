@@ -1,10 +1,18 @@
-> 文档状态（2026-11-08）：本页为阶段实施/技术记录，旧网段、角色数和通过结果按原时点解释。基础已恢复；本轮仅补齐与清理，用户暂不迁移/合并，Mac外部探针不需要。当前配置见[访问清单](../../12-service-access-and-operations.md)，范围与恢复证据见[最新交接](../../11-live-handoff.md)；旧初始化器不得重跑。
+> 文档状态（2026-11-09）：本页区分历史应用逻辑/fixture工具与新PVE本机自动备份。用户继续基础搭建、先选择本机备份，不迁移数据/合并Nexus/启动Java，Mac外部探针不需要。当日状态见[交付记录](../../completion/20261109/README.md)，旧网段与原通过结果按时点解释，旧初始化器不重跑。
 
 # 应用备份与隔离恢复
 
-本目录包含已执行的纯合成fixture验证，以及已在新正式初始化环境生成本地快照的备份工具。没有CF支持或CF文件路径，没有Nexus上传，也不遍历其他私有备份目录。当前Mac仅作为用户授权的临时独立副本目的地，不等于持续异地灾备。
+本页原应用逻辑工具包含已执行的纯合成fixture验证和新正式初始化环境的本地快照，**这些旧工具不支持CF**、不上传Nexus、不遍历其它私有目录。新子目录[pve-local](pve-local/README.md)是另一层用户授权的PVE原生snapshot备份，包含CF但只留PVE、明确排除220。原Mac临时独立副本与本机快照都不等于持续异地灾备。
 
-## 本轮已执行A-D
+## 2026-11-09本机自动备份：首轮成功、计划已启用
+
+[PVE本机备份合同](pve-local/README.md)固定100/190/200/201/210/221/230/240/250/260/270共11项，排除220，CF档只PVE，root700目录/600归档日志状态。native job每日03:30（Asia/Shanghai），最近3份＋每日7点＋每周4点原生组合保留，原21回退档独立保留。
+
+**首轮成功、计划已启用。** 固定11档已全部verified（zstd、tar/vma及SHA验证），原生任务OK、unit退出0；15:56审核后每日03:30计划已启用，合计19,747,582,801字节。证据：[首轮成功](../../completion/20261109/backup-first-success.json)、[计划启用](../../completion/20261109/backup-schedule-enabled.json)。 既有metadata/Lark白名单配套不等于重新发送通知；新增Prom规则实际部署/加载状态以[当日记录](../../completion/20261109/README.md)为准，不提前声称已加载。
+
+这是snapshot/crash-consistent系统恢复点，不是下面的数据库逻辑导出或跨来宾事务一致性保证；本轮未恢复VM，不签独立目的地、RPO/RTO或异机灾备。Nexus221独立、Java不启、Mac外部探针不需要；OW完整规则仅本地，不触/不上传。
+
+## 历史已执行A-D（非本轮重跑）
 
 主AI已审阅PLAN.md并批准仅VM200/201。`run-fixture-validation.py --execute-approved-synthetic-only`已经完成：
 
@@ -45,7 +53,7 @@ python3 application-backup.py rabbit-topology \
 | Rabbit | 确认topology稳定窗口后官方definitions API导出 | 含敏感password hash/parameters，**不含消息**；不停写场景没有完整队列消息一致性保证，需另行quiesce/备机方案，不能直接tar现役Mnesia冒充完整备份 |
 | Ops | 主AI负责在线Grafana SQLite backup与network-none恢复；配置/image锁/仪表盘配套 | 主AI已验证在线SQLite备份、network-none Grafana应用恢复和Mac归档（见ops-online-backup-restore.json、ops-private-Mac-backup.json）；Prometheus TSDB、Alertmanager nflog与历史不包括在本轮数据脚本，需受控snapshot或维护窗口；配置与SQLite不等于全部监控历史 |
 
-正式工具提供最低磁盘/估算余量、凭据只文件、敏感stdout抑制和manifest SHA，本轮E仅运行上述fresh初始化三项。MySQL/Nacos的业务不变量、完整数据集隔离恢复、Redis大数据fork成本、Rabbit消息恢复、Ops全量历史、定时备份、告警与恢复时长均保持pending。不得据此标记正式应用全量、RPO/RTO或异地灾备已达成。
+正式工具提供最低磁盘/估算余量、凭据只文件、敏感stdout抑制和manifest SHA，历史E当时仅运行上述fresh初始化三项。MySQL/Nacos业务不变量、完整真实数据集恢复、Redis大数据fork成本、Rabbit消息恢复及Ops全量历史继续待验。11月9日只补PVE native snapshot调度与metadata/告警配套，不把下述旧应用逻辑工具冒称已自动调度；首轮11档验证与03:30计划启用已完成；新增规则后验见[当日记录](../../completion/20261109/README.md)，恢复时长仍待验。不得据此标记正式应用全量、RPO/RTO或异地灾备已达成。
 
 ## 工具与安全
 
@@ -56,7 +64,7 @@ python3 application-backup.py rabbit-topology \
 
 临时验证秘密只在guest独立verify目录600，UID与固定镜像匹配，不放入artifact manifest；源凭据只从现有数据包600文件读取，经进程内部socket/STDIN使用，禁止argv/stdout。归档成员严格白名单，没有CF、源日志、SSH私钥、凭据文件或源数据卷。
 
-## 后续验收
+## 后续应用逻辑/隔离恢复验收（本轮不执行）
 
 先由任务管理者冻结正式备份数据集、无DDL/topology窗口、恢复对象和容量，再审阅敏感数据导出审批。恢复必须隔离、拒绝非空目标、不启用真实事件/通知/外部连接，只清理本次记录的验证容器/对象。源与目标出现新增写入时，不将回切URL当数据回退。
 

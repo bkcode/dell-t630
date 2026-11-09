@@ -1,8 +1,8 @@
-> 文档状态（2026-11-08）：本页为阶段实施/技术记录，旧网段、角色数和通过结果按原时点解释。基础已恢复；本轮仅补齐与清理，用户暂不迁移/合并，Mac外部探针不需要。当前配置见[访问清单](../../12-service-access-and-operations.md)，范围与恢复证据见[最新交接](../../11-live-handoff.md)；旧初始化器不得重跑。
+> 文档状态（2026-11-09）：当前运行入口如下；旧实施工具和证据保留原时点，不可重放初始化。本轮补齐基础与PVE本机备份，用户暂不迁移/合并，Mac外部探针不需要。当前配置见[访问清单](../../12-service-access-and-operations.md)，范围与恢复证据见[最新交接](../../11-live-handoff.md)；旧初始化器不得重跑。
 
 # ops-service 当前运行与维护入口
 
-VM270 / `ops-service` / `10.63.30.40` 已实际部署。当前四个Ops容器健康、17/17监控目标UP，Grafana数据库与管理员登录通过；12个新来宾的9100及本机状态采集已启用，PVE元数据通过已批准的受控采集链进入Prometheus。
+VM270 / `ops-service` / `192.168.19.70`。11月9日[实际审计](../../completion/20261109/ops-audit.json)为四个Ops容器健康、15/15监控目标UP（10个guest node＋5个Ops目标）。PVE元数据经既有QGA受控链进入Prometheus。本轮未重做Grafana管理员登录或全量内容恢复；那些是历史验收。
 
 **内网Alertmanager → native桥 → Lark已启用active白名单告警。** 2026-11-06真实“验收”firing/resolved两条均取得Lark整数code0回执；主AI确认维护结束、且Prom/AM告警为空后才启active。Mac外部探测按用户决定保持停用。
 
@@ -22,11 +22,11 @@ VM270 / `ops-service` / `10.63.30.40` 已实际部署。当前四个Ops容器健
 
 管理目录为`/opt/dell/ops`，数据盘挂载`/srv/dell-data`，数据根`/srv/dell-data/ops`，实测UUID为`01b1f302-27be-4fbd-b4af-b8e782d85dea`。持久数据的UUID/source/mountpoint校验和缺盘停止写入边界保持。四容器restart=no，由`dell-ops.service`统一负责恢复；不得跳过数据门禁直接让Docker在根盘创建目录。
 
-来宾内部管理入口是Prometheus `10.63.30.40:9090`、Alertmanager `:9093`、Grafana `:3000`；浏览器LAN映射由主AI统一网络文档维护。本桥不增加PVE端口，不监听0.0.0.0或10.63地址。
+来宾直接入口为Prometheus `192.168.19.70:9090`、Alertmanager `:9093`、Grafana `:3000`；通过独立网关190访问，不经PVE应用端口转发。本通知桥只绑定Docker内部172.18.0.1，不新增PVE端口。
 
 ## 当前安全维护入口
 
-本地静态契约与回归：
+以下是历史初装bundle的静态校验器，含旧10.63地址和13角色断言，**不能当作当前19网完整校验或直接重跑的维护入口**。本轮验证清单和新鲜结果见[当日交付](../../completion/20261109/README.md)。历史命令：
 
 ```bash
 python3 infra/ops/validate.py
@@ -53,6 +53,10 @@ health报告完整四组件、Grafana登录和目标数量。通知字段只根�
 - bridge token位于Compose secrets，目标UID/GID65534、600，AM只读挂到`/run/secrets/lark-bridge-token`，native也经LoadCredential读取；不放公共config目录。
 - Grafana SQLite或配置备份不包含完整通知恢复集。通知恢复还需要受控Webhook文件、稳定bridge token、已审unit/代码、AM配置/归属marker及固定网络声明；早于本次安装的备份不能被当作含有这些文件。
 - 恢复或更换通知组件时先进入单独维护窗口，保持local-only/acceptance路由，再恢复权限/静态来源/本机unit；新的验收必须经AM firing→code0→resolved→code0，并在当前boot取得proof，主AI确认维护结束后才启真实route。不要将旧proof当作新恢复验收，或自动轮换/公开Webhook。
-- 本桥没有持久消息队列，成功事件缓存仅内存10分钟；重启可能重复，恢复不保证重播完整故障历史。Lark API code0证明接受请求，不证明用户已读。通知依赖270正常运行；本期Mac外部探测保持user-deferred。
+- 本桥没有持久消息队列，成功事件缓存仅内存10分钟；重启可能重复，恢复不保证重播完整故障历史。Lark API code0证明接受请求，不证明用户已读。通知依赖270正常运行；Mac外部探针用户明确不需要，不列为后续任务。
 
 只有role/IP/本地Unix Docker、镜像、完整服务集合、数据UUID/source/mountpoint和secret边界均通过才继续维护。全局PVE网络及其他来宾的变更仍由主AI集中授权与执行。
+
+## 本机备份监控增量（2026-11-09）
+
+原PVE collector增加`dell_pve_local_backup_*`只读状态指标，既有QGA通道与原指标保持，不新增外部探针或listener。三条备份告警沿既有机内Lark接收对象，通知桥/AM白名单已配套；实际规则加载与计划启用结果以[当日交付](../../completion/20261109/README.md)为准。范围见[备份合同](../backup/pve-local/README.md)和[规则审核](../backup/pve-local/review.md)。本轮无人工通知外发，不把配置/合成路由通过当成新的真实送达验收。

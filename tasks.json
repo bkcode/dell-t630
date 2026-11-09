@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "date": "2026-11-05",
-  "scope": "11/08 recovery of existing infrastructure and dependency audit only; no migration, no Java business, no Mac external probe task",
+  "scope": "2026-11-09 existing infrastructure completion and PVE-local backups; no migration, no Java business, no Mac external probe",
   "documentation": [
     {
       "id": "DOC-01",
@@ -213,7 +213,7 @@
       "verification_scope": "historical-completed-stage-not-current-live"
     }
   ],
-  "updated_at": "2026-11-08T20:23:54.551737+08:00",
+  "updated_at": "2026-11-09T15:59:33.818518+08:00",
   "implementation_note": "Original IMP entries describe the prior completed baseline. Latest user scope overrides Java program deployment: five test services are stopped/disabled, publisher fenced, only acceptance template9011 current.",
   "overall_status": "existing-infrastructure-recovered-user-deferred-migration",
   "network19_execution": [
@@ -367,5 +367,24 @@
     "migration_allowed": false,
     "Java_business_allowed": false,
     "Mac_external_probe_required": false
+  },
+  "current_completion20261109": {
+    "status": "infrastructure-and-local-backup-complete-no-migration",
+    "scope": "continue existing infrastructure; PVE-local automatic backups; no migration",
+    "acceptance_manifest": "completion/20261109/acceptance.json",
+    "user_backup_choice": "PVE本机自动备份，独立目的地后续接入",
+    "Nexus_merge_allowed": false,
+    "data_migration_allowed": false,
+    "Java_business_allowed": false,
+    "Mac_probe_required": false,
+    "local_only_openclash_rule_export_allowed": false,
+    "manager_verified": true,
+    "verified_at": "2026-11-09T15:59:33.818518+08:00",
+    "first_backup": "completion/20261109/backup-first-success.json",
+    "schedule_enabled": true,
+    "monitoring_postcheck": "completion/20261109/final-verification.json",
+    "phase_cases_passed": 9,
+    "phase_case_count": 9,
+    "guest_postcheck": "completion/20261109/guests-post-backup.json"
   }
 }

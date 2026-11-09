@@ -1,0 +1,51 @@
+{
+  "at": "2026-11-09T14:54:49.145008+08:00",
+  "status": "private-backup-storage-and-disabled-job-installed",
+  "storage": {
+    "content": "backup",
+    "create-base-path": 0,
+    "create-subdirs": 0,
+    "digest": "0ae6623c684039ad4b6ed64aab43c6eead448f34",
+    "is_mountpoint": "/mnt/pve/store",
+    "nodes": "pve",
+    "path": "/mnt/pve/store/dell-artifacts/scheduled-backups",
+    "prune-backups": "keep-last=3,keep-daily=7,keep-weekly=4",
+    "storage": "dell-local-backup",
+    "type": "dir"
+  },
+  "job": {
+    "bwlimit": 51200,
+    "comment": "PVE local recovery points only; VM220 excluded; no off-host export",
+    "compress": "zstd",
+    "enabled": 0,
+    "id": "dell-local-nightly",
+    "ionice": 7,
+    "lockwait": 0,
+    "mode": "snapshot",
+    "node": "pve",
+    "notification-mode": "legacy-sendmail",
+    "performance": {
+      "max-workers": "1"
+    },
+    "prune-backups": {
+      "keep-daily": "7",
+      "keep-last": "3",
+      "keep-weekly": "4"
+    },
+    "repeat-missed": 0,
+    "schedule": "03:30",
+    "script": "/usr/local/libexec/dell-local-backup/hook.py",
+    "storage": "dell-local-backup",
+    "type": "vzdump",
+    "vmid": "100,190,200,201,210,221,230,240,250,260,270",
+    "zstd": 2
+  },
+  "public_file_SHA": {
+    "/usr/local/libexec/dell-local-backup/hook.py": "dc4e42e6a82508a0d588604b03ea9238196c4ddaec57fda57ee7a24a030e095e",
+    "/etc/dell-local-backup/policy.json": "f5ede68549dfe35a5a861d399203d51ebe330148f3ef74ce6301cce72d71d2b7"
+  },
+  "backup_started": false,
+  "migration_performed": false,
+  "guest_configuration_changed": false,
+  "old_archives_touched": false
+}

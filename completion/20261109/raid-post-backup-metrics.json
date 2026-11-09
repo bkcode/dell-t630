@@ -1,0 +1,20 @@
+{
+  "at": 1794211225.8189874,
+  "values": {
+    "dell_pve_raid_virtual_optimal": [
+      1.0,
+      1.0
+    ],
+    "dell_pve_raid_member_online": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "dell_pve_bbu_optimal": [
+      1.0
+    ]
+  },
+  "all_report_optimal": true
+}

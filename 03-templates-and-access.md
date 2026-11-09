@@ -1,6 +1,6 @@
 # 模板、克隆身份与访问合同
 
-更新：2026-11-08。**服务器恢复，本轮限检查补齐现有基础服务、盘点清理确认多余项，不迁移、不新建克隆或重做现役身份。** 用户确认内存重新插拔/更换并诊断通过；20:16–20:20审计恢复严格SSH与基础服务观察，UEFI0058保留为历史事故。三模板仍停放，本轮未重新启动/制作/QA模板。状态与限制见[当前状态](01-current-state.md)。
+更新：2026-11-09。**继续完成基础搭建与PVE本机自动备份，不迁移数据、不新建克隆或重做现役身份。** [本轮PVE审计](completion/20261109/pve-audit.json)确认14:24自然重启后12来宾自启合同与3停止模板保持；[核心审计](completion/20261109/core-audit.json)再次核严格SSH、fish/Bash和无Java业务。未重新制作/QA模板；UEFI0058是历史事故，用户确认诊断通过与当前计数观察分开记录。状态见[01](01-current-state.md)。
 
 ## 1. 最终保留三模板
 
@@ -64,7 +64,7 @@ generic cicustom user会替代PVE自动生成的user-data，不能保证PVE VM�
 
 ## 5. Java模板验收与实例监控边界
 
-唯一Java模板不含业务；230/240也只有运行基础。[本轮核心审计](recovery/20261108/core-services-audit.json)于20:16:13–20:18:22确认两台JDK21.0.13可执行、finger账号存在、Java进程0、旧五业务unit not-found/inactive且非enabled，exporter和collector timer正常；未以finger重新执行smoke。模板9011的java身份与masked exporter规则不等于230/240现役实例应停监控。下述脚本以java非root执行临时编译/运行并自动删除源码/class，不启动HTTP、JMX或业务定时器：
+唯一Java模板不含业务；230/240也只有运行基础。[本轮核心审计](completion/20261109/core-audit.json)于11月9日14:42:56–14:43:40确认两台JDK21.0.13可执行、finger账号存在、Java进程0、旧五业务unit not-found/inactive且非enabled，exporter和collector timer正常；未以finger重新执行smoke。模板9011的java身份与masked exporter规则不等于230/240现役实例应停监控。下述脚本以java非root执行临时编译/运行并自动删除源码/class，不启动HTTP、JMX或业务定时器：
 
 ```bash
 sudo runuser --user java -- /usr/bin/python3 \
@@ -89,4 +89,4 @@ Java业务未来若重新获准，需要单独冻结服务清单、非root运行
 
 通用模板清理使用发行版支持的cloud-init clean选项、machine-id与生成网络清理，再删除制作实例hostkeys/授权/历史。只在专用builder获准清理，清完不先重启再转模板；不对现有数据恢复角色盲删Rabbit/MySQL身份或执行旧clean脚本。
 
-恢复/克隆记录至少含时间、VMID、主机名、MAC/IP、来源模板、OS/版本、登录用户、QGA/CI状态、机器身份hash和公钥指纹、磁盘UUID、结果及限制。本轮不重开模板做新验收，保留[清理与模板结果](18-cleanup-and-consolidation.md)和原始证据。
+恢复/克隆记录至少含时间、VMID、主机名、MAC/IP、来源模板、OS/版本、登录用户、QGA/CI状态、机器身份hash和公钥指纹、磁盘UUID、结果及限制。本轮不重开模板做新验收，保留[清理与模板结果](18-cleanup-and-consolidation.md)和原始证据。新[PVE本机备份策略](infra/backup/pve-local/README.md)不每日重复备份这3份停止模板，沿用原受保护回退档；fixed11始终排除220，不能以整机备份复制其发布私钥，CF归档只留PVE。[首轮11项归档验证完成](completion/20261109/backup-first-success.json)、原生任务OK/退出0，[计划已启用](completion/20261109/backup-schedule-enabled.json)：03:30、最近3份＋每日7点＋每周4点。没有本轮恢复演练或异机灾备；Prom规则状态只查[当日中央入口](completion/20261109/README.md)。此处不提供重跑备份/模板工具入口。

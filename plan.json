@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "date": "2026-11-08",
+  "date": "2026-11-09",
   "timezone": "Asia/Shanghai",
-  "status": "recovered-infrastructure-verified-no-migration",
-  "scope": "network19-infrastructure-and-single-Java-acceptance-template",
+  "status": "infrastructure-complete-PVE-local-backup-enabled-no-migration",
+  "scope": "existing-infrastructure-and-PVE-local-backups-no-migration",
   "pve": {
     "host": "192.168.21.22",
     "ssh_user": "root",
@@ -533,11 +533,11 @@
   "decisions": {
     "java": "No Java business program deployment in either environment; preserve one clean acceptance template9011 and runtime foundations only",
     "data_penpot_nexus": "Docker Compose inside separate VMs",
-    "backup": "independent backup/restore design; home NAS is not the formal business backup target",
+    "backup": "PVE-local automatic recovery points first; independent disaster-recovery/restore/RPO/RTO remain pending; home NAS is not the formal business backup destination",
     "production_data": "empty-business-databases-no-real-source-data",
     "publication": "LAN-only-initial-delivery; no domain currently",
     "cf_backup": "PVE-local-only; user declined export",
-    "backup_destination": "provisional Mac dell/private/backups",
+    "backup_destination": "Current: PVE-local native snapshot namespace dell-local-backup; independent destination not yet selected. Prior Mac copies are historical initial backups only.",
     "penpot_nexus_migration": "Git exact modified source and application-level export/import, no old env/MCP credential transfer",
     "production_java_delivery": "Runtime foundation only; test business apps also stopped/disabled by latest user instruction",
     "nexus_eula": "User explicitly accepted; new VM221 acceptance confirmed via API 2026-11-06",
@@ -546,7 +546,7 @@
   },
   "unresolved": [
     "Cloudflare managed hostname/HTTPS and account-side origin configuration",
-    "Production backup destination/schedule and application restore/RPO/RTO validation",
+    "Independent backup destination and application-consistent restore/RPO/RTO validation; PVE-local schedule tracked in backup_delivery",
     "Physical TV/player/PS4/PS5 and mixed production workload acceptance remain manual/future",
     "Production application launch and validated workload/SLO belong to a later phase; current production delivery is runtime infrastructure only"
   ],
@@ -582,7 +582,9 @@
       "network19/audit/data-tcp-matrix.json",
       "recovery/20261108/host-forwarding-restored.json",
       "recovery/20261108/host-network-postcheck.json",
-      "recovery/20261108/network-CF-followup.json"
+      "recovery/20261108/network-CF-followup.json",
+      "completion/20261109/pve-audit.json",
+      "completion/20261109/network-audit.json"
     ],
     "WireGuard_trusted_access": {
       "source": "10.66.66.0/24",
@@ -606,7 +608,7 @@
     "evidence": "evidence/implementation/raid-recovered.json",
     "historical_fault": "slot32:3 access failure; root cause unresolved, monitor"
   },
-  "updated_at": "2026-11-08T20:27:56.465278+08:00",
+  "updated_at": "2026-11-09T15:59:33.818518+08:00",
   "docker_runtime_profile": {
     "driver": "classic-overlay2",
     "reason": "Verified compatibility with source single-platform offline archives; preserves config IDs",
@@ -635,9 +637,22 @@
     "cleanup_maintenance_evidence": "cleanup/maintenance-ended.json",
     "after_cleanup_targets_UP": 15,
     "external_Mac_probe_future_task": false,
-    "current_evidence": "recovery/20261108/ops-audit.json"
+    "current_evidence": "completion/20261109/final-verification.json",
+    "backup_alert_scope": {
+      "names": [
+        "PveLocalBackupFailed",
+        "PveLocalBackupStale",
+        "PveLocalBackupStateInvalid"
+      ],
+      "receiver": "existing internal Lark channel only",
+      "whitelist_evidence": "completion/20261109/backup-notify-whitelist-result.json",
+      "Prometheus_rule_activation": "nativevalidated and freshSIGHUP loaded;3healthyinactive",
+      "artificial_test_send": false,
+      "rule_evidence": "completion/20261109/backup-alerts-installed.json",
+      "postcheck": "completion/20261109/final-verification.json"
+    }
   },
-  "delivery_scope_manifest": "cleanup/acceptance.json",
+  "delivery_scope_manifest": "completion/20261109/acceptance.json",
   "expected_role_count": 12,
   "network19_migration_manifest": "network19/migration-plan.json",
   "acceptance_templates": [
@@ -775,19 +790,53 @@
     }
   },
   "operational_state": {
-    "as_of": "2026-11-08T20:34:09+08:00",
+    "as_of": "2026-11-09T15:59:33.818518+08:00",
     "status": "recovered-infrastructure-only-no-migration",
-    "live_state": "12guests running,3templates stopped,15monitoring targetsUP; sixHTTP endpoints reachable; scoped checks2026-11-08",
-    "last_successful_live_acceptance": "2026-11-08T20:34:09+08:00",
-    "last_successful_PVE_operation": "2026-11-08T20:34:09+08:00",
-    "last_operation": "exact2 old installerISO cleanup then read-only12running/3templates/15UP/EDAC0/forward0 verification",
+    "live_state": "2026-11-09 final:12guests running,3templates stopped,15targetsUP; backup11verified and03:30jobenabled; sixHTTP200",
+    "last_successful_live_acceptance": "2026-11-09T15:59:33.818518+08:00",
+    "last_successful_PVE_operation": "2026-11-09T15:56:02+08:00",
+    "last_operation": "11guest first backup verified; native03:30schedule enabled; metrics refreshed; original Prometheus SIGHUP and finalread-only health verified",
     "runtime_counts_are_last_verified_not_live": false,
     "resume_requires": "not applicable to infrastructure checks; migration explicitly deferred by user",
-    "user_scope_now": "check and complete existing infrastructure; clean confirmed redundant resources; no migration or application code upgrade",
+    "user_scope_now": "continue infrastructure setup, install and verify local automatic backups; no data migration/Nexus merge/Java business/Macprobe",
     "current_runtime_verified": true,
     "machine_status_contract": "recovered-infrastructure-verified",
     "hardware_diagnostics": "user reports reseated/replaced and diagnostics passed; current bootEDACce/ue0 independently observed",
-    "hardware_evidence": "recovery/20261108/hardware-summary.json",
-    "recovery_manifest": "recovery/20261108/README.md"
+    "hardware_evidence": "completion/20261109/pve-audit.json",
+    "recovery_manifest": "recovery/20261108/README.md",
+    "current_completion_manifest": "completion/20261109/acceptance.json"
+  },
+  "backup_delivery": {
+    "scope": "PVE-local snapshots, not independent disaster recovery",
+    "user_choice": "PVE本机自动备份，独立目的地后续接入",
+    "native_job": "dell-local-nightly",
+    "storage": "dell-local-backup",
+    "policy": "infra/backup/pve-local/policy.json",
+    "allowed_vmids": [
+      100,
+      190,
+      200,
+      201,
+      210,
+      221,
+      230,
+      240,
+      250,
+      260,
+      270
+    ],
+    "excluded_vmids": [
+      220
+    ],
+    "first_run": "11verified; native taskOK; unitexit0",
+    "schedule_enabled": true,
+    "guest_data_migration": false,
+    "restore_executed": false,
+    "first_success_evidence": "completion/20261109/backup-first-success.json",
+    "schedule_evidence": "completion/20261109/backup-schedule-enabled.json",
+    "archive_bytes": 19747582801,
+    "daily_retention_cycle_observed": false,
+    "independent_destination_configured": false,
+    "automatic_restore_test_performed": false
   }
 }

@@ -9,7 +9,7 @@
     "memory_gib": 125
   },
   "source_of_truth": "plan.json",
-  "last_verified_at": "2026-11-08T20:20:48+08:00",
+  "last_verified_at": "2026-11-09T16:01:00.600541+08:00",
   "current_runtime_verified": true,
   "status": "recovered-infrastructure-verified",
   "record_kind": "offline-configuration-contract-not-live-collection",
@@ -17,7 +17,7 @@
   "configuration_policy": {
     "secret_config_or_private_keys_in_git": false,
     "public_runtime_snapshots_copied": true,
-    "reason": "Index proven contracts/receipts; no old10.63 or narrowVPN preview copied as currentruntime. Fresh actual configuration requires hardware recovery and user resume.",
+    "reason": "Index proven contracts/receipts; no old10.63 or narrowVPN preview copied as currentruntime. Current scoped runtime was audited after user-reported repair; this remains a public contract, not a complete live export.",
     "scope": "only three public management-forwarding guard files, SHA matched; not full runtime config export"
   },
   "purpose": "DellT630 physical virtualization/storage owner; management and L2bridge only.",
@@ -135,15 +135,10 @@
     "private_key_copied": false,
     "fish_installed_on_host": false
   },
-  "resume_gate": [
-    "User completes hardware assessment/repair and explicitly resumes serverwork.",
-    "PreserveSEL/Lifecycle and verifyPOST/memorydiagnostics/effectivecapacity.",
-    "Then freshtrusted hardware/RAID/filesystem/network/service validation; no oldNATfallback."
-  ],
-  "current_verification_evidence": "recovery/20261108/host-network-postcheck.json",
-  "current_verification_scope": "scoped infrastructure recovery; original app data contents/authentication not fully revalidated; no migration",
-  "verification_note": "2026-11-08 scoped recovery checks passed; user confirms memory repair/diagnostics; no migration, code upgrade or Java business deployment.",
-  "timestamp_scope": "source audit/receipt time; individual probes retain their timestamps",
+  "current_verification_evidence": "completion/20261109/final-verification.json",
+  "current_verification_scope": "current infrastructure setup, no migration or full application restore",
+  "verification_note": "Fresh metadata/service audit after natural host reboot; no data migration, Nexus merge or Java business deployment.",
+  "timestamp_scope": "2026-11-09 scoped audit; individual commands retain actual timestamps",
   "management_forwarding_guard": {
     "guest_paths": {
       "/usr/local/sbin/dell-management-forwarding-off": "96b0b6d8b5bb137a7599f3afe3ff86c1c3a6986b4ecb8cad106ba06fb55a6c05",
@@ -153,6 +148,21 @@
     "applied": true,
     "network_reload_or_guest_restart": false,
     "current_all_forward_zero_verified": true,
-    "next_maintenance_reboot_persistence_test_pending": true
-  }
+    "next_maintenance_reboot_persistence_test_pending": false,
+    "actual_reboot_persistence_evidence": "completion/20261109/pve-audit.json"
+  },
+  "local_backup_control": {
+    "job": "dell-local-nightly",
+    "policy": "infra/backup/pve-local/policy.json",
+    "enabled": true,
+    "native_pve_storage": "dell-local-backup",
+    "scope": "fixed11 verified first success and native03:30 schedule enabled; not independent DR",
+    "evidence": "completion/20261109/backup-schedule-enabled.json"
+  },
+  "historical_hardware_resume_gate": [
+    "User completes hardware assessment/repair and explicitly resumes serverwork.",
+    "PreserveSEL/Lifecycle and verifyPOST/memorydiagnostics/effectivecapacity.",
+    "Then freshtrusted hardware/RAID/filesystem/network/service validation; no oldNATfallback."
+  ],
+  "hardware_resume_note": "User resumed after reported memory maintenance/diagnostics; fresh runtime evidence is separate from full physical root-cause proof."
 }

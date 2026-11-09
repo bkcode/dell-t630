@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-09T16:01:00.600541+08:00",
+  "scope": "local metadata only; original rule contents not read/exported",
+  "branch": "main",
+  "local_only_rules_tracked": 0,
+  "local_rule_commit_is_ancestor_of_main": false,
+  "exclude_rule_present": true,
+  "private_candidates_visible": false,
+  "outgoing_exact_index_scan": "performed separately before commit"
+}

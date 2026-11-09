@@ -1,0 +1,437 @@
+{
+  "schema_version": 1,
+  "scope": "first backup readonly progress watch max5min; no backup/job/hook changes",
+  "snapshots": [
+    {
+      "at": "2026-11-09T07:07:42.681750+00:00",
+      "unit": {
+        "Result": "success",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 15:05:21 CST",
+        "ExecMainExitTimestamp": "",
+        "ExecMainCode": "0",
+        "ExecMainStatus": "0",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "running"
+      },
+      "current_ledger": {
+        "status": "running",
+        "started_at": "2026-11-09T07:05:24.702669+00:00",
+        "per_VM": {
+          "100": {
+            "status": "verified",
+            "bytes": 244553664,
+            "archive": "vzdump-lxc-100-2026_11_09-15_05_24.tar.zst",
+            "zstd_verified": true,
+            "native_archive_verified": true
+          },
+          "190": {
+            "status": "verified",
+            "bytes": 385959445,
+            "archive": "vzdump-qemu-190-2026_11_09-15_05_40.vma.zst",
+            "zstd_verified": true,
+            "native_archive_verified": true
+          },
+          "200": {
+            "status": "running",
+            "started_at": "2026-11-09T07:06:25.144179+00:00"
+          }
+        }
+      },
+      "archives": [
+        {
+          "name": "vzdump-lxc-100-2026_11_09-15_05_24.tar.zst",
+          "bytes": 244553664
+        },
+        {
+          "name": "vzdump-qemu-190-2026_11_09-15_05_40.vma.zst",
+          "bytes": 385959445
+        }
+      ],
+      "error_warning_metadata": [],
+      "native_progress_numeric": [
+        {
+          "line_number": 98,
+          "percent": 35,
+          "numeric_values": [
+            "40.1",
+            "112.0"
+          ]
+        },
+        {
+          "line_number": 99,
+          "percent": 37,
+          "numeric_values": [
+            "41.6",
+            "112.0"
+          ]
+        },
+        {
+          "line_number": 100,
+          "percent": 38,
+          "numeric_values": [
+            "43.3",
+            "112.0"
+          ]
+        },
+        {
+          "line_number": 101,
+          "percent": 40,
+          "numeric_values": [
+            "45.1",
+            "112.0"
+          ]
+        },
+        {
+          "line_number": 102,
+          "percent": 41,
+          "numeric_values": [
+            "47.0",
+            "112.0"
+          ]
+        }
+      ],
+      "no_mutations_or_export": true
+    },
+    {
+      "at": "2026-11-09T07:08:45.260289+00:00",
+      "unit": {
+        "Result": "success",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 15:05:21 CST",
+        "ExecMainExitTimestamp": "",
+        "ExecMainCode": "0",
+        "ExecMainStatus": "0",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "running"
+      },
+      "current_ledger": {
+        "status": "running",
+        "started_at": "2026-11-09T07:05:24.702669+00:00",
+        "per_VM": {
+          "100": {
+            "status": "verified",
+            "bytes": 244553664,
+            "archive": "vzdump-lxc-100-2026_11_09-15_05_24.tar.zst",
+            "zstd_verified": true,
+            "native_archive_verified": true
+          },
+          "190": {
+            "status": "verified",
+            "bytes": 385959445,
+            "archive": "vzdump-qemu-190-2026_11_09-15_05_40.vma.zst",
+            "zstd_verified": true,
+            "native_archive_verified": true
+          },
+          "200": {
+            "status": "running",
+            "started_at": "2026-11-09T07:06:25.144179+00:00"
+          }
+        }
+      },
+      "archives": [
+        {
+          "name": "vzdump-lxc-100-2026_11_09-15_05_24.tar.zst",
+          "bytes": 244553664
+        },
+        {
+          "name": "vzdump-qemu-190-2026_11_09-15_05_40.vma.zst",
+          "bytes": 385959445
+        }
+      ],
+      "error_warning_metadata": [],
+      "native_progress_numeric": [
+        {
+          "line_number": 118,
+          "percent": 68,
+          "numeric_values": [
+            "76.3",
+            "112.0"
+          ]
+        },
+        {
+          "line_number": 119,
+          "percent": 69,
+          "numeric_values": [
+            "78.0",
+            "112.0"
+          ]
+        },
+        {
+          "line_number": 120,
+          "percent": 71,
+          "numeric_values": [
+            "79.8",
+            "112.0"
+          ]
+        },
+        {
+          "line_number": 121,
+          "percent": 72,
+          "numeric_values": [
+            "80.7",
+            "112.0"
+          ]
+        },
+        {
+          "line_number": 122,
+          "percent": 73,
+          "numeric_values": [
+            "81.8",
+            "112.0"
+          ]
+        }
+      ],
+      "no_mutations_or_export": true
+    },
+    {
+      "at": "2026-11-09T07:09:32.954562+00:00",
+      "unit": {
+        "Result": "success",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 15:05:21 CST",
+        "ExecMainExitTimestamp": "",
+        "ExecMainCode": "0",
+        "ExecMainStatus": "0",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "running"
+      },
+      "current_ledger": {
+        "status": "running",
+        "started_at": "2026-11-09T07:05:24.702669+00:00",
+        "per_VM": {
+          "100": {
+            "status": "verified",
+            "bytes": 244553664,
+            "archive": "vzdump-lxc-100-2026_11_09-15_05_24.tar.zst",
+            "zstd_verified": true,
+            "native_archive_verified": true
+          },
+          "190": {
+            "status": "verified",
+            "bytes": 385959445,
+            "archive": "vzdump-qemu-190-2026_11_09-15_05_40.vma.zst",
+            "zstd_verified": true,
+            "native_archive_verified": true
+          },
+          "200": {
+            "status": "running",
+            "started_at": "2026-11-09T07:06:25.144179+00:00"
+          }
+        }
+      },
+      "archives": [
+        {
+          "name": "vzdump-lxc-100-2026_11_09-15_05_24.tar.zst",
+          "bytes": 244553664
+        },
+        {
+          "name": "vzdump-qemu-190-2026_11_09-15_05_40.vma.zst",
+          "bytes": 385959445
+        }
+      ],
+      "error_warning_metadata": [],
+      "native_progress_numeric": [
+        {
+          "line_number": 132,
+          "percent": 86,
+          "numeric_values": [
+            "96.6",
+            "112.0"
+          ]
+        },
+        {
+          "line_number": 133,
+          "percent": 87,
+          "numeric_values": [
+            "98.1",
+            "112.0"
+          ]
+        },
+        {
+          "line_number": 134,
+          "percent": 89,
+          "numeric_values": [
+            "99.8",
+            "112.0"
+          ]
+        },
+        {
+          "line_number": 135,
+          "percent": 90,
+          "numeric_values": [
+            "101.8",
+            "112.0"
+          ]
+        },
+        {
+          "line_number": 136,
+          "percent": 92,
+          "numeric_values": [
+            "103.9",
+            "112.0"
+          ]
+        }
+      ],
+      "no_mutations_or_export": true
+    },
+    {
+      "at": "2026-11-09T07:10:20.203740+00:00",
+      "unit": {
+        "Result": "success",
+        "ExecMainStartTimestamp": "Mon 2026-11-09 15:05:21 CST",
+        "ExecMainExitTimestamp": "",
+        "ExecMainCode": "0",
+        "ExecMainStatus": "0",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "running"
+      },
+      "current_ledger": {
+        "status": "running",
+        "started_at": "2026-11-09T07:05:24.702669+00:00",
+        "per_VM": {
+          "100": {
+            "status": "verified",
+            "bytes": 244553664,
+            "archive": "vzdump-lxc-100-2026_11_09-15_05_24.tar.zst",
+            "zstd_verified": true,
+            "native_archive_verified": true
+          },
+          "190": {
+            "status": "verified",
+            "bytes": 385959445,
+            "archive": "vzdump-qemu-190-2026_11_09-15_05_40.vma.zst",
+            "zstd_verified": true,
+            "native_archive_verified": true
+          },
+          "200": {
+            "status": "verified",
+            "bytes": 1116375026,
+            "archive": "vzdump-qemu-200-2026_11_09-15_06_24.vma.zst",
+            "zstd_verified": true,
+            "native_archive_verified": true
+          },
+          "201": {
+            "status": "running",
+            "started_at": "2026-11-09T07:10:06.596070+00:00"
+          }
+        }
+      },
+      "archives": [
+        {
+          "name": "vzdump-lxc-100-2026_11_09-15_05_24.tar.zst",
+          "bytes": 244553664
+        },
+        {
+          "name": "vzdump-qemu-200-2026_11_09-15_06_24.vma.zst",
+          "bytes": 1116375026
+        },
+        {
+          "name": "vzdump-qemu-190-2026_11_09-15_05_40.vma.zst",
+          "bytes": 385959445
+        }
+      ],
+      "error_warning_metadata": [],
+      "native_progress_numeric": [
+        {
+          "line_number": 140,
+          "percent": 100,
+          "numeric_values": [
+            "112.0",
+            "112.0"
+          ]
+        },
+        {
+          "line_number": 165,
+          "percent": 2,
+          "numeric_values": [
+            "1.3",
+            "56.0"
+          ]
+        },
+        {
+          "line_number": 166,
+          "percent": 4,
+          "numeric_values": [
+            "2.4",
+            "56.0"
+          ]
+        },
+        {
+          "line_number": 167,
+          "percent": 6,
+          "numeric_values": [
+            "3.8",
+            "56.0"
+          ]
+        },
+        {
+          "line_number": 168,
+          "percent": 10,
+          "numeric_values": [
+            "5.7",
+            "56.0"
+          ]
+        }
+      ],
+      "no_mutations_or_export": true
+    }
+  ],
+  "last_observed_at": "2026-11-09T07:10:20.203740+00:00",
+  "status": "bounded-observation-ended-task-still-running",
+  "summary": {
+    "observed_at": "2026-11-09T07:10:20.203740+00:00",
+    "unit": {
+      "Result": "success",
+      "ExecMainStartTimestamp": "Mon 2026-11-09 15:05:21 CST",
+      "ExecMainExitTimestamp": "",
+      "ExecMainCode": "0",
+      "ExecMainStatus": "0",
+      "LoadState": "loaded",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "verified_VMIDs": [
+      100,
+      190,
+      200
+    ],
+    "running_VMIDs": [
+      201
+    ],
+    "failed_VMIDs": [],
+    "not_started_VMIDs": [
+      210,
+      221,
+      230,
+      240,
+      250,
+      260,
+      270
+    ],
+    "verified_archive_bytes": 1746888135,
+    "all11verified_and_unitExited0": false,
+    "ERROR_WARN_count": 0,
+    "task_was_not_stopped_retried_or_modified_by_monitor": true,
+    "reason_for_handoff": "Retry started15:05:21; latest15:10:20 reaches approx5min after run start, stillinprogress;manager continues longer task."
+  },
+  "local_jobend_review": {
+    "source": "infra/backup/pve-local/hook.py",
+    "source_sha256": "c366ee6a583421efcfe21df312aabe1cec6d0fd8a94c8670f0aae16f6201bf30",
+    "execution_scope": "pure evaluation of actual success-expression only; no hook/PVE/archive action",
+    "checks": {
+      "all11verified_jobend_true": true,
+      "one_VM_failed_rejected": true,
+      "one_verification_failed_rejected": true,
+      "one_VM_running_rejected": true,
+      "missing_VM_rejected": true,
+      "unexpected_VM_rejected": true,
+      "log_permission_error_rejected": true,
+      "jobabort_even_allverified_rejected": true
+    },
+    "single_VM_failure_cannot_mark_success": true,
+    "single_ledger_limitation": "Per-hook flock serializes updates only; job-start resets current ledger. It assumes one active backup run. Concurrent manually launched jobs need a full-run serialization guard/run binding before supported; current first-run serial and disabled scheduler retain this assumption.",
+    "final_success_still_requires": "All11ledger verified and native job process ended exit0; job-end alone not enough."
+  }
+}

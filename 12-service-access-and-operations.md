@@ -1,6 +1,6 @@
 # 当前访问入口与日常操作
 
-2026-11-08，Asia/Shanghai。**基础服务已恢复并按角色检查，主要HTTP入口已复验；本轮用户明确暂不迁移。** Nexus仍独立221，Mac外部探针不需要。详见[恢复记录](recovery/20261108/README.md)。应用直接访问真实19地址；PVE21.22只用于宿主管理，原应用DNAT端口已关闭。详见[当前交付](15-network19-delivery.md)与[新网络验收](network19/audit/network19-acceptance.md)。
+2026-11-09，Asia/Shanghai。**自然重启后基础服务fresh复验；继续完成搭建并先建PVE本机自动备份，不迁移数据。** Nexus仍独立221，Mac外部探针不需要。当日状态见[11月9日交付记录](completion/20261109/README.md)，[11月8日恢复](recovery/20261108/README.md)保留历史。应用直接访问真实19地址；PVE21.22只用于宿主管理，原应用DNAT端口已关闭。详见[当前交付](15-network19-delivery.md)与[新网络验收](network19/audit/network19-acceptance.md)。
 
 | 服务 | 当前入口 | 范围 |
 | --- | --- | --- |
@@ -62,9 +62,9 @@ Publisher目标19.45、来源限制19.30、公钥/强制命令与最小权限保
 
 ## 监控与备份边界
 
-2026-11-08 20:19:38复验10node+5Ops共15/15UP，Prom/AM无活动告警。本机textfile采集业务范围已移除Java五HTTP检查，catalog/installer已配套减为10节点。服务器内部Lark active，172.18内部链与凭据保持；未发送新的验收消息。Mac外部探针明确不需要，已移出当前和后续工作，整机故障无法由机内监控保证外发。
+2026-11-09 [Ops审计](completion/20261109/ops-audit.json)再次复验10node+5Ops共15/15UP，Prom/AM无活动告警。本机textfile采集业务范围已移除Java五HTTP检查，catalog/installer已配套减为10节点。服务器内部Lark active，172.18内部链与凭据保持；未发送新的验收消息。Mac外部探针明确不需要，已移出当前和后续工作，整机故障无法由机内监控保证外发。
 
-正式业务数据未从开发环境导入。初始OS/应用备份与测试迁移证据保留，Mac只是临时独立副本目的地；长期调度/容量/保留与真实恢复RPO/RTO尚未签。CF归档仅PVE，发布私钥仅220，NAS家庭媒体不作正式业务备份。物理电视/PS主机、4K/HDR/字幕/硬件转码和生产并发仍待实际验收。
+正式业务数据未从开发环境导入。初始OS/应用备份与历史测试迁移证据保留，Mac仅旧样本临时副本目的地。新增[PVE本机自动备份](infra/backup/pve-local/README.md)固定11项，排除220、CF仅PVE，root700目录/600档日志状态，最近3/每日7/每周4保留。首轮固定11档已全部verified（zstd、tar/vma及SHA验证），原生任务OK、unit退出0；15:56审核后每日03:30计划已启用，合计19,747,582,801字节。证据：[首轮成功](completion/20261109/backup-first-success.json)、[计划启用](completion/20261109/backup-schedule-enabled.json)。 新Prom规则实际部署/加载状态见[当日记录](completion/20261109/README.md)，不据候选存在提前签收。本机snapshot/crash-consistent不是应用逻辑/跨VM一致或异机灾备，本轮未恢复；长期独立目的地与真实RPO/RTO仍待验。NAS家庭媒体不作正式业务备份；电视/PS/4K/HDR/转码和生产并发仍待实际验收。
 
 
 ## 2026-11-07 WireGuard受信网段

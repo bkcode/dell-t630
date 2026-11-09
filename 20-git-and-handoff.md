@@ -1,6 +1,6 @@
 # Git 与资料交接
 
-更新：2026-11-07，Asia/Shanghai。本仓库是部署知识与代码仓库，服务器11月8日已恢复基础服务；本轮不迁移，提交文档不代表部署恢复或 Nexus 合并完成。
+更新：2026-11-09，Asia/Shanghai。本仓库是部署知识与代码仓库；本轮fresh审计基础健康并补齐用户授权的PVE本机自动备份，不迁移数据。首轮11档验证、原生正常退出与03:30计划启用已有实际收据；Git或文档通过不代替恢复演练、独立灾备或Nexus合并。当前状态入口：[当日交付记录](completion/20261109/README.md)。
 
 ## 仓库与阅读顺序
 
@@ -26,12 +26,13 @@ python3 scripts/check_git_safety.py
 | `evidence/` | 初次盘点和带日期的实施证据 | 不改写原执行结果，新增核验另留证 |
 | `infra/` | 应用、NAS、监控、备份、发布链脚本 | 部分为旧网配置，不能整目录执行 |
 | `network19/` | 独立网关与19网迁移代码/验收 | 历史stage/commit不重复执行 |
-| `cleanup/` | 模板精简、fish、合并准备、硬件事件 | 合并未执行；以resume检查表为入口 |
+| `cleanup/` | 模板精简、fish、合并准备、硬件事件 | 合并未执行且本轮不做；旧resume不自动授权 |
+| `recovery/`、`completion/` | 带日期的恢复/补齐与实时任务脱敏回执 | 当日README优先，部分进度不等于最终成功 |
 | `scripts/` | 管理SSH、文档与Git检查 | 管理脚本需要私有凭据和可信host key |
 
 ## Git 中没有什么
 
-`private/` 约19GB本机资料、数据库/导出、VM磁盘/ISO、应用备份、密码、真实webhook、SSH私钥和本机known_hosts均不提交。仓库不是完整备份；新电脑克隆后无法凭代码自动登录或恢复数据库。
+`private/`本机受保护资料、数据库/导出、VM磁盘/ISO、应用备份、密码、真实webhook、SSH私钥和本机known_hosts均不提交。仓库不是完整备份；新电脑克隆后无法凭代码自动登录或恢复数据库。
 
 本机受保护文件的位置见[凭据索引](12-service-access-and-operations.md)。如换电脑，由管理员通过受控渠道重新授权管理公钥并核验主机指纹；不要把私钥或整个 `private/` 加入Git。应用凭据按最小范围交接，不能在聊天/工单/提交中展示。CF备份仍仅PVE，发布私钥仍仅220；这两个边界不因换电脑或交接改变。
 
@@ -52,12 +53,15 @@ git commit -m "docs: update Dell deployment handoff"
 git push origin main
 ```
 
-提交前人工审查变更；不要使用 `git add -f private`、force push 或把备份压缩后绕过忽略规则。检查脚本只报告风险位置，不输出秘密内容；通过是有限的规则检查，不保证发现所有未知凭据。
+OW完整规则用户明确只留本地，`openwrt/rules-20261108/`已local exclude，`local/openclash-rules-20261108`不得push。只push已审公共分支，不执行push --all，也不强加ignored规则。提交前人工审查变更；不要使用 `git add -f private`、force push 或把备份压缩后绕过忽略规则。检查脚本只报告风险位置，不输出秘密内容；通过是有限的规则检查，不保证发现所有未知凭据。
 
 ## 当前交接事实
 
-- 最后完整验收：2026-11-07 02:35；12实例+3模板，15监控目标UP属于该时点。
-- 最后成功PVE操作：02:44:29，更新规划文件，未关机或迁盘。
+- 当日fresh验收入口为[11月9日交付](completion/20261109/README.md)：自然重启后12running/3tpl、15UP、forward guard持久与EDAC0/RAIDOptl；11月7日02:35仅历史。
+- 11月7日02:44:29仅为故障前最后成功同步，不再当成当前最后PVE操作；原故障时间线不改写。
 - 随后PVE不可达；用户控制台显示UEFI0058，历史SEL指向B1；11月8日恢复记录另行保存，不覆盖该历史。
 - Nexus合并已有维护授权，220准备完毕、221未移交；基础已恢复，但用户暂不迁移；将来明确恢复该任务后fresh核验。
-- 源数据、受保护归档和中间证据保留。本轮没有清理服务器、删除本机私有资料或修改全局记忆。
+- [PVE本机备份合同](infra/backup/pve-local/README.md)固定11项排除220、CF仅PVE，root700/600，最近3/每日7/每周4及原21档保留。首轮固定11档已全部verified（zstd、tar/vma及SHA验证），原生任务OK、unit退出0；15:56审核后每日03:30计划已启用，合计19,747,582,801字节。证据：[首轮成功](completion/20261109/backup-first-success.json)、[计划启用](completion/20261109/backup-schedule-enabled.json)。 snapshot非DB逻辑一致、未做恢复、无独立DR/RPO保证。归档/私有状态不进Git；新增Prom规则实际部署/加载见[当日记录](completion/20261109/README.md)，不提前签收。
+- 本轮空闲iperfserver已停用且留包、新备份namespace已安装，这些有各自回执；本页同步只改文档，不删除源数据/私有资料或修改全局记忆。
+
+当前业务边界保持：Nexus不合并/数据不迁移、Java业务不启、Penpot实际ff提交不更新main；用户不需要Mac外部探针，不列当前或后续待办。
