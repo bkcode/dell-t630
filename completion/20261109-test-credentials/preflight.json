@@ -1,0 +1,463 @@
+{
+  "vmid": 210,
+  "hostname": "data-test",
+  "at": "2026-11-09T15:15:24.936640+00:00",
+  "read_only": true,
+  "no_password_or_authhash_Env_Cmd_output": true,
+  "no_CONFIG_REWRITE_passwordchange_or_serviceaction": true,
+  "selected_public_bundle_env": {
+    "RABBIT_ADMIN_USER": "mq_test_admin"
+  },
+  "bundle_env_metadata_only": {
+    "path": "/opt/dell/data/test-data/.env",
+    "exists": true,
+    "uid": 0,
+    "gid": 0,
+    "mode": "0o600",
+    "inode": 285793,
+    "device": 2049,
+    "bytes": 489,
+    "symlink": false
+  },
+  "container_mounts": {
+    "mysql": [
+      {
+        "source": "/opt/dell/data/test-data/secrets/mysql-root-password",
+        "destination": "/run/secrets/mysql-root-password",
+        "RW": false,
+        "type": "bind",
+        "source_metadata": {
+          "path": "/opt/dell/data/test-data/secrets/mysql-root-password",
+          "exists": true,
+          "uid": 999,
+          "gid": 999,
+          "mode": "0o600",
+          "inode": 285669,
+          "device": 2049,
+          "bytes": 49,
+          "symlink": false
+        }
+      },
+      {
+        "source": "/opt/dell/data/test-data/secrets/nacos-db-password",
+        "destination": "/run/secrets/nacos-db-password",
+        "RW": false,
+        "type": "bind",
+        "source_metadata": {
+          "path": "/opt/dell/data/test-data/secrets/nacos-db-password",
+          "exists": true,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o600",
+          "inode": 285673,
+          "device": 2049,
+          "bytes": 49,
+          "symlink": false
+        }
+      }
+    ],
+    "redis": [
+      {
+        "source": "/opt/dell/data/test-data/scripts/redis-entrypoint.sh",
+        "destination": "/opt/bootstrap/redis-entrypoint.sh",
+        "RW": false,
+        "type": "bind",
+        "source_metadata": {
+          "path": "/opt/dell/data/test-data/scripts/redis-entrypoint.sh",
+          "exists": true,
+          "uid": 0,
+          "gid": 0,
+          "mode": "0o755",
+          "inode": 285666,
+          "device": 2049,
+          "bytes": 544,
+          "symlink": false
+        }
+      },
+      {
+        "source": "/opt/dell/data/test-data/secrets/redis-password",
+        "destination": "/run/secrets/redis-password",
+        "RW": false,
+        "type": "bind",
+        "source_metadata": {
+          "path": "/opt/dell/data/test-data/secrets/redis-password",
+          "exists": true,
+          "uid": 999,
+          "gid": 999,
+          "mode": "0o600",
+          "inode": 285678,
+          "device": 2049,
+          "bytes": 49,
+          "symlink": false
+        }
+      }
+    ],
+    "rabbitmq": [
+      {
+        "source": "/opt/dell/data/test-data/config/rabbitmq.conf",
+        "destination": "/etc/rabbitmq/rabbitmq.conf",
+        "RW": false,
+        "type": "bind",
+        "source_metadata": {
+          "path": "/opt/dell/data/test-data/config/rabbitmq.conf",
+          "exists": true,
+          "uid": 999,
+          "gid": 999,
+          "mode": "0o600",
+          "inode": 285659,
+          "device": 2049,
+          "bytes": 140,
+          "symlink": false
+        }
+      },
+      {
+        "source": "/opt/dell/data/test-data/secrets/rabbit-definitions.json",
+        "destination": "/run/secrets/rabbit-definitions.json",
+        "RW": false,
+        "type": "bind",
+        "source_metadata": {
+          "path": "/opt/dell/data/test-data/secrets/rabbit-definitions.json",
+          "exists": true,
+          "uid": 999,
+          "gid": 999,
+          "mode": "0o600",
+          "inode": 285677,
+          "device": 2049,
+          "bytes": 810,
+          "symlink": false
+        }
+      }
+    ]
+  },
+  "root_owned_authfiles_metadata": [
+    {
+      "path": "/opt/dell/data/test-data/secrets/mysql-root-password",
+      "exists": true,
+      "uid": 999,
+      "gid": 999,
+      "mode": "0o600",
+      "inode": 285669,
+      "device": 2049,
+      "bytes": 49,
+      "symlink": false
+    },
+    {
+      "path": "/opt/dell/data/test-data/secrets/nacos-db-password",
+      "exists": true,
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o600",
+      "inode": 285673,
+      "device": 2049,
+      "bytes": 49,
+      "symlink": false
+    },
+    {
+      "path": "/opt/dell/data/test-data/secrets/redis-password",
+      "exists": true,
+      "uid": 999,
+      "gid": 999,
+      "mode": "0o600",
+      "inode": 285678,
+      "device": 2049,
+      "bytes": 49,
+      "symlink": false
+    },
+    {
+      "path": "/opt/dell/data/test-data/secrets/rabbit-admin-password",
+      "exists": true,
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o600",
+      "inode": 285675,
+      "device": 2049,
+      "bytes": 49,
+      "symlink": false
+    },
+    {
+      "path": "/opt/dell/data/test-data/secrets/rabbit-definitions.json",
+      "exists": true,
+      "uid": 999,
+      "gid": 999,
+      "mode": "0o600",
+      "inode": 285677,
+      "device": 2049,
+      "bytes": 810,
+      "symlink": false
+    }
+  ],
+  "MySQL_root_account_TLS_metadata": [
+    {
+      "user": "root",
+      "host": "%",
+      "ssl_type": "",
+      "account_locked": "N",
+      "plugin": "caching_sha2_password"
+    },
+    {
+      "user": "root",
+      "host": "localhost",
+      "ssl_type": "",
+      "account_locked": "N",
+      "plugin": "caching_sha2_password"
+    }
+  ],
+  "MySQL_require_secure_transport": false,
+  "MySQL_server_bind": "*",
+  "Redis_entrypoint_public_source": {
+    "path": "/opt/dell/data/test-data/scripts/redis-entrypoint.sh",
+    "SHA256": "bd98984ec702712d5222ed1f21f2956e1922f044e09ef44c9a3f924928fb6f88",
+    "runtime_conf_path": "/run/dell-redis/redis.conf",
+    "writes_requirepass_from_mounted_secret": true,
+    "startup_overwrites_runtime_conf": true,
+    "runtime_config_owned_redis600": true,
+    "raw_secret_value_output": false
+  },
+  "Redis_runtime_capability": {
+    "existing_secret_auth_PING_success": true,
+    "server_config_file_path": "/run/dell-redis/redis.conf",
+    "protected_mode_enabled": true,
+    "CONFIG_REWRITE_command_exists": true,
+    "CONFIG_REWRITE_not_executed": true
+  },
+  "Redis_runtime_config_metadata": {
+    "path": "/run/dell-redis/redis.conf",
+    "uid": 999,
+    "gid": 999,
+    "mode": "600",
+    "inode": 2,
+    "device": "73",
+    "exec_user_writable": true,
+    "secret_body_read": false
+  },
+  "Redis_CONFIG_REWRITE_assessment": "Command exists and runtimeconf isownedbyRedis999/600; parentroot0711isnotredis-directorywritable. NoCONFIGREWRITE executed, so actualrewriteIOmustnotbe assumedtested; rootmayprefercontrolledin-place runtimeconfigupdate withsameinode whilekeepingcurrentpasswordhidden.",
+  "Rabbit_runtime_users_metadata": [
+    {
+      "user": "mq_test_admin",
+      "tags": [
+        "administrator"
+      ]
+    },
+    {
+      "user": "finger_test_mq",
+      "tags": []
+    }
+  ],
+  "Rabbit_runtime_admin_name_exists": false,
+  "Rabbit_runtime_configured_admin_exists": true,
+  "Rabbit_runtime_vhost_names": [
+    "/finger-test"
+  ],
+  "Rabbit_runtime_permissions_metadata": {
+    "/finger-test": [
+      {
+        "user": "finger_test_mq",
+        "configure": ".*",
+        "write": ".*",
+        "read": ".*"
+      },
+      {
+        "user": "mq_test_admin",
+        "configure": ".*",
+        "write": ".*",
+        "read": ".*"
+      }
+    ]
+  },
+  "Rabbit_persistent_definitions_metadata": {
+    "users": [
+      {
+        "name": "mq_test_admin",
+        "tags": [
+          "administrator"
+        ]
+      },
+      {
+        "name": "finger_test_mq",
+        "tags": []
+      }
+    ],
+    "vhosts": [
+      "/finger-test"
+    ],
+    "permissions": [
+      {
+        "user": "mq_test_admin",
+        "vhost": "/finger-test",
+        "configure": ".*",
+        "write": ".*",
+        "read": ".*"
+      },
+      {
+        "user": "finger_test_mq",
+        "vhost": "/finger-test",
+        "configure": ".*",
+        "write": ".*",
+        "read": ".*"
+      }
+    ],
+    "password_hashes_or_runtimeparameters_readout": false
+  },
+  "Rabbit_public_config_metadata": {
+    "path": "/opt/dell/data/test-data/config/rabbitmq.conf",
+    "SHA256": "21125cae7b1189eec11ee6c2ef81ca45a1452b973ec1093a25cdeb2ca6887499",
+    "load_definitions_path_reference_present": true
+  },
+  "local_private_bundle_file_metadata": [
+    {
+      "path": "private/data/bundles/test-data/.env",
+      "uid": 501,
+      "gid": 20,
+      "mode": "0o600",
+      "inode": 158979245,
+      "device": 16777232,
+      "symlink": false,
+      "contents_read": false
+    },
+    {
+      "path": "private/data/bundles/test-data/secrets/mysql-root-password",
+      "uid": 501,
+      "gid": 20,
+      "mode": "0o600",
+      "inode": 158979232,
+      "device": 16777232,
+      "symlink": false,
+      "contents_read": false
+    },
+    {
+      "path": "private/data/bundles/test-data/secrets/redis-password",
+      "uid": 501,
+      "gid": 20,
+      "mode": "0o600",
+      "inode": 158979234,
+      "device": 16777232,
+      "symlink": false,
+      "contents_read": false
+    },
+    {
+      "path": "private/data/bundles/test-data/secrets/rabbit-admin-password",
+      "uid": 501,
+      "gid": 20,
+      "mode": "0o600",
+      "inode": 158979235,
+      "device": 16777232,
+      "symlink": false,
+      "contents_read": false
+    },
+    {
+      "path": "private/data/bundles/test-data/secrets/rabbit-definitions.json",
+      "uid": 501,
+      "gid": 20,
+      "mode": "0o600",
+      "inode": 158979242,
+      "device": 16777232,
+      "symlink": false,
+      "contents_read": false
+    },
+    {
+      "path": "private/data/store/test/mysql-root-password",
+      "uid": 501,
+      "gid": 20,
+      "mode": "0o600",
+      "inode": 158979207,
+      "device": 16777232,
+      "symlink": false,
+      "contents_read": false
+    },
+    {
+      "path": "private/data/store/test/redis-password",
+      "uid": 501,
+      "gid": 20,
+      "mode": "0o600",
+      "inode": 158979209,
+      "device": 16777232,
+      "symlink": false,
+      "contents_read": false
+    },
+    {
+      "path": "private/data/store/test/rabbit-admin-password",
+      "uid": 501,
+      "gid": 20,
+      "mode": "0o600",
+      "inode": 158979210,
+      "device": 16777232,
+      "symlink": false,
+      "contents_read": false
+    }
+  ],
+  "status": "readonly-credential-management-inventory-collected",
+  "current_values_not_disclosed": true,
+  "pending_changes_owner": "root explicit test-only onlinewindow; no sourceMac/production200201/NacosadminorDBuser/appuser/TLSchange",
+  "container_mounted_file_inode_metadata": {
+    "mysql": [
+      {
+        "path": "/run/secrets/mysql-root-password",
+        "uid": 999,
+        "gid": 999,
+        "mode": "600",
+        "inode": 285669,
+        "device": "2049"
+      }
+    ],
+    "redis": [
+      {
+        "path": "/run/secrets/redis-password",
+        "uid": 999,
+        "gid": 999,
+        "mode": "600",
+        "inode": 285678,
+        "device": "2049"
+      },
+      {
+        "path": "/run/dell-redis",
+        "uid": 0,
+        "gid": 0,
+        "mode": "711",
+        "inode": 1,
+        "device": "73"
+      },
+      {
+        "path": "/run/dell-redis/redis.conf",
+        "uid": 999,
+        "gid": 999,
+        "mode": "600",
+        "inode": 2,
+        "device": "73"
+      }
+    ],
+    "rabbitmq": [
+      {
+        "path": "/run/secrets/rabbit-definitions.json",
+        "uid": 999,
+        "gid": 999,
+        "mode": "600",
+        "inode": 285677,
+        "device": "2049"
+      }
+    ],
+    "Redis_process_UID": 999
+  },
+  "filebind_sync_requirements": {
+    "mysql": {
+      "host_container_inode_same": true,
+      "UID_GID600_preserved_contract": true,
+      "no_atomic_replace_for_live_filebind": true
+    },
+    "redis": {
+      "host_container_inode_same": true,
+      "UID_GID600_preserved_contract": true,
+      "no_atomic_replace_for_live_filebind": true
+    },
+    "rabbitmq": {
+      "host_container_inode_same": true,
+      "UID_GID600_preserved_contract": true,
+      "no_atomic_replace_for_live_filebind": true
+    }
+  },
+  "scope_exclusions": [
+    "No localMacsource orproduction200201 authchange.",
+    "KeepNacosadmin/NacosDBuser/appusers andTLS/authplugin setting unchanged.",
+    "ExistingRabbitmq_test_admin/finger_test_mq accounts/vhost/permissionsmustnotbedeleted/reset accidentally whenaddingrequestedadmin.",
+    "No restart duringthispreflight; configuration/datasafe onlinewindow and rollbackprivateonlyownedbyroot."
+  ]
+}

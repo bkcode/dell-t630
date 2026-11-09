@@ -668,7 +668,7 @@
       "current_scope": "production DB/Nacos only; old wholeVM rule group removed"
     }
   },
-  "delivery_scope_manifest": "completion/20261109-nacos-config-import/acceptance.json",
+  "delivery_scope_manifest": "completion/20261109-test-credentials/acceptance.json",
   "expected_role_count": 12,
   "network19_migration_manifest": "network19/migration-plan.json",
   "acceptance_templates": [
@@ -806,21 +806,21 @@
     }
   },
   "operational_state": {
-    "as_of": "2026-11-09T18:46:50.834115+08:00",
-    "status": "recovered-infrastructure-only-no-migration",
+    "as_of": "2026-11-09T23:41:04.461557+08:00",
+    "status": "infrastructure-running-with-selected-test-data-imported",
     "live_state": "12guests running/3templates stopped/15targetsUP; production DB/Nacos-only logical backup verified and03:30timerenabled; oldwholeVMjobdisabled",
     "last_successful_live_acceptance": "2026-11-09T17:06:01.762963+08:00",
     "last_successful_PVE_operation": "2026-11-09T18:42:53+08:00",
     "last_operation": "one3301B Nacos snapshot temporaryVM210restore/fullDDLsemantic+rowcontent+restart validated, ownedruntime cleaned; sourcebackup/timer unchanged",
     "runtime_counts_are_last_verified_not_live": false,
     "resume_requires": "not applicable to infrastructure checks; migration explicitly deferred by user",
-    "user_scope_now": "continue infrastructure setup, install and verify local automatic backups; no data migration/Nexus merge/Java business/Macprobe",
+    "user_scope_now": "infrastructure plus explicitly selected test Nacos/Puyu migrations, test fixed credentials and trusted LAN access; no Nexus merge/Java business/Macprobe",
     "current_runtime_verified": true,
     "machine_status_contract": "recovered-infrastructure-verified",
     "hardware_diagnostics": "user reports reseated/replaced and diagnostics passed; current bootEDACce/ue0 independently observed",
     "hardware_evidence": "completion/20261109/pve-audit.json",
     "recovery_manifest": "recovery/20261108/README.md",
-    "current_completion_manifest": "completion/20261109-nacos-config-import/acceptance.json",
+    "current_completion_manifest": "completion/20261109-test-credentials/acceptance.json",
     "current_backup_scope_manifest": "completion/20261109-prod-db-scope/acceptance.json"
   },
   "backup_delivery": {
@@ -967,5 +967,61 @@
     "businessDB_or_production_or_account_permission_migration": false,
     "original7_and_remaining5_private_backups_preserved": true,
     "evidence": "completion/20261109-nacos-config-import/postcheck.json"
+  },
+  "Puyu_test_DB_migration_20261109": {
+    "status": "native-import-and-independent-postcheck-passed",
+    "target_vmid": 210,
+    "target_endpoint": "192.168.19.20:3306",
+    "source_preserved": true,
+    "databases": [
+      {
+        "name": "puyu_auth_local",
+        "tables": 4,
+        "snapshot_rows": 178
+      },
+      {
+        "name": "puyu_erp_local",
+        "tables": 47,
+        "snapshot_rows": 1113
+      }
+    ],
+    "snapshot_continuous_sync": false,
+    "source_accounts_or_app_connection_cutover": false,
+    "automatic_backup_added": false,
+    "evidence": "completion/20261109-puyu-db-migration/acceptance.json"
+  },
+  "LAN_trusted_access_20261109": {
+    "status": "gateway-and-bridge-confirmed",
+    "source": "192.168.21.0/24",
+    "destination": "192.168.19.0/24",
+    "protocols": "all IPv4",
+    "gateway_local_addresses": [
+      "192.168.21.23",
+      "192.168.19.1"
+    ],
+    "no_NAT": true,
+    "PVE_forwarding": "all0",
+    "application_authentication_unchanged": true,
+    "evidence": "network19/lan-trusted-20261109/README.md"
+  },
+  "test_credentials_20261109": {
+    "status": "native-and-independent-auth-persistence-postcheck-passed",
+    "target_vmid": 210,
+    "endpoint": "192.168.19.20",
+    "policy": "keep exact user specified test component credentials; no regeneration",
+    "mysql_user": "root",
+    "mysql_hosts": [
+      "localhost",
+      "%"
+    ],
+    "redis_database": 0,
+    "rabbit_admin_user": "admin",
+    "old_Rabbit_admin_and_app_users_preserved": true,
+    "Nacos_sourceMac_or_production_credentials_changed": false,
+    "TLS_or_plugin_changed": false,
+    "service_restart": false,
+    "secret_values_in_git": false,
+    "evidence": "completion/20261109-test-credentials/acceptance.json",
+    "local_mirror_evidence": "completion/20261109-test-credentials/local-mirrors.json"
   }
 }

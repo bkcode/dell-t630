@@ -1,0 +1,189 @@
+{
+  "vmid": 210,
+  "captured_at": "2026-11-09T15:37:53.078706+00:00",
+  "read_only": true,
+  "MySQL_fresh_desired_socket_auth": true,
+  "MySQL_fresh_desired_TCP_NoTLS_getpublickey_auth": true,
+  "MySQL_root_Host_SSL_plugin_lock_metadata": [
+    {
+      "host": "%",
+      "ssl_type": "",
+      "account_locked": "N",
+      "plugin": "caching_sha2_password",
+      "has_secondary_password": false
+    },
+    {
+      "host": "localhost",
+      "ssl_type": "",
+      "account_locked": "N",
+      "plugin": "caching_sha2_password",
+      "has_secondary_password": false
+    }
+  ],
+  "MySQL_require_secure_transport": false,
+  "file_identity_checks": {
+    "mysql": {
+      "same_original_inode_device_UID_GID_mode": true,
+      "mode600": true,
+      "symlink": false,
+      "bytes_equal_desired_newline": true
+    },
+    "redis": {
+      "same_original_inode_device_UID_GID_mode": true,
+      "mode600": true,
+      "symlink": false,
+      "bytes_equal_desired_newline": true
+    },
+    "rabbit": {
+      "same_original_inode_device_UID_GID_mode": true,
+      "mode600": true,
+      "symlink": false,
+      "bytes_equal_desired_newline": true
+    },
+    "env": {
+      "same_original_inode_device_UID_GID_mode": true,
+      "mode600": true,
+      "symlink": false,
+      "only_RABBIT_ADMIN_USER_changed": true
+    },
+    "definitions": {
+      "same_original_inode_device_UID_GID_mode": true,
+      "mode600": true,
+      "symlink": false
+    }
+  },
+  "mounted_file_stat": {
+    "mysql": {
+      "inode": 285669,
+      "UID": 999,
+      "GID": 999,
+      "mode": "600"
+    },
+    "redis": {
+      "inode": 285678,
+      "UID": 999,
+      "GID": 999,
+      "mode": "600"
+    },
+    "rabbitmq": {
+      "inode": 285677,
+      "UID": 999,
+      "GID": 999,
+      "mode": "600"
+    }
+  },
+  "Redis_fresh_default_AUTH_PING": true,
+  "Redis_nonpassword_ACL_equals_original": true,
+  "Redis_exactly_one_desired_password_hash_private_comparison": true,
+  "Redis_runtime_only_requirepass_changed": true,
+  "Redis_CONFIG_REWRITE_or_ACL_write_performed": false,
+  "Rabbit_new_desired_HTTP_admin": true,
+  "Rabbit_new_desired_AMQP_vhosts": {
+    "/": true,
+    "/finger-test": true
+  },
+  "Rabbit_old_admin_original_password_HTTP_still_works": true,
+  "Rabbit_old_application_AMQP_still_works": true,
+  "Rabbit_old_runtime_user_hashes_tags_preserved_private_comparison": true,
+  "Rabbit_original_definitions_users_permissions_and_other_fields_preserved": true,
+  "Rabbit_vhosts_metadata": [
+    "/",
+    "/finger-test"
+  ],
+  "Rabbit_new_admin_both_vhost_permissions_ready": true,
+  "Puyu51_individual_COUNTs_match_export_snapshot": true,
+  "Puyu_totals_metadata": {
+    "puyu_auth_local": 178,
+    "puyu_erp_local": 1113
+  },
+  "schema_table_counts": {
+    "finger_auth_test": 3,
+    "finger_coms_test": 10,
+    "finger_system_test": 6,
+    "nacos_test": 12,
+    "puyu_auth_local": 4,
+    "puyu_erp_local": 47
+  },
+  "Nacos_config_count": 36,
+  "containers": [
+    {
+      "Name": "/dell-data-test-data-mysql-1",
+      "ID": "df4e9d159f5903e42ab4e6c2c092d2d454ac55a76c226fc8a07fe44c72b41ef6",
+      "ImageID": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+      "PID": 1325,
+      "StartedAt": "2026-11-09T06:28:57.073828899Z",
+      "State": "running",
+      "Health": "healthy",
+      "RestartCount": 0,
+      "OOMKilled": false
+    },
+    {
+      "Name": "/dell-data-test-data-nacos-1",
+      "ID": "5bd9a27fd4051994494eed423d84e50862ef91918ffbfa4834df14de2a8f2e4c",
+      "ImageID": "sha256:fc86d4833afb7abc64006f04c715946303f6b15d694c2f05c2895a27d967ed88",
+      "PID": 1846,
+      "StartedAt": "2026-11-09T06:29:09.039813697Z",
+      "State": "running",
+      "Health": "healthy",
+      "RestartCount": 0,
+      "OOMKilled": false
+    },
+    {
+      "Name": "/dell-data-test-data-redis-1",
+      "ID": "b5d49893d99c73d425f0af035dce837f1467a096841d7bbae3f7d5381ce3df22",
+      "ImageID": "sha256:17c1c1b96fd1685968790c7fcab311e5bc49c809efe9744af262640a559c4cf2",
+      "PID": 1401,
+      "StartedAt": "2026-11-09T06:28:57.982305444Z",
+      "State": "running",
+      "Health": "healthy",
+      "RestartCount": 0,
+      "OOMKilled": false
+    },
+    {
+      "Name": "/dell-data-test-data-rabbitmq-1",
+      "ID": "4d955f668d96330c7d9cbe676ec41722a1d3c67038a52d89f0c3f8f11866ce58",
+      "ImageID": "sha256:de912cbbf07f938bb8aaa5682464a73a00c6a996efdf0880423aeb4eae006c34",
+      "PID": 1477,
+      "StartedAt": "2026-11-09T06:28:58.751894383Z",
+      "State": "running",
+      "Health": "healthy",
+      "RestartCount": 0,
+      "OOMKilled": false
+    }
+  ],
+  "supervisor": {
+    "MainPID": "1202",
+    "NRestarts": "0",
+    "ExecMainStartTimestampMonotonic": "23491055",
+    "ActiveState": "active",
+    "SubState": "running"
+  },
+  "desired_or_old_secrets_or_authhashes_output_or_exported": false,
+  "server_mutations_Java_Git_or_external_send": false,
+  "checks": {
+    "MySQL_explicit_desired_fresh_socket_TCP": true,
+    "MySQL_Host_TLS_plugin_preserved": true,
+    "five_original_file_identities600": true,
+    "three_persistent_secrets_match_desired": true,
+    "env_only_admin_key_changed": true,
+    "Redis_auth_ACL_runtime": true,
+    "Rabbit_new_HTTP_AMQP_and_old_accounts_kept": true,
+    "original4_ID_Image_PID_StartedAt_healthy_unchanged": true,
+    "supervisor_running_original_MainPID": true,
+    "Puyu51_counts_Nacos36_unchanged": true,
+    "MySQL_root_Host_set_and_TLS_plugin_exact_before": true,
+    "container_file_bind_inode_UID_GID600_same_preflight": true
+  },
+  "all_passed": true,
+  "status": "independent-readonly-credential-postcheck-passed",
+  "limitations": [
+    "SupervisorMainPID comparedsame-daycore; originalmonotonicstartnotinindependentbaseline, currentcapturedonly; nativeproducerseparatelychecksstartunchanged.",
+    "Credentialverificationusedguestownroot600desired/beforefiles only; localdesirednotread/transmitted bythispostcheck.",
+    "AMQPonlyconnection/auth/vhostopen, noqueue/exchange/messagepublish/delete."
+  ],
+  "container_file_bind_checks": {
+    "mysql": true,
+    "redis": true,
+    "rabbitmq": true
+  }
+}

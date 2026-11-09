@@ -8,7 +8,7 @@ sys.dont_write_bytecode=True;HERE=Path(__file__).resolve().parent;sys.path.inser
 spec=importlib.util.spec_from_file_location('gateway_runtime',HERE/'manage.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
 PLAN=json.loads((HERE.parent/'migration-plan.json').read_text());MAC=('02:63:19:01:90:00','02:63:19:01:90:01');IF={'WAN':'ens9','LAN':'enp7s0'}
 def config():
- plan=copy.deepcopy(PLAN);plan['gateway_policy'].pop('CF_fake_IP_proxy_compatibility',None);plan['gateway_policy'].pop('WireGuard_client_access',None);return p.load(plan,*MAC)
+ plan=copy.deepcopy(PLAN);plan['gateway_policy'].pop('CF_fake_IP_proxy_compatibility',None);plan['gateway_policy'].pop('WireGuard_client_access',None);plan['gateway_policy'].pop('LAN_trusted_client_access',None);return p.load(plan,*MAC)
 class Parser(unittest.TestCase):
  def test_parent_plan_compiles_fixed_topology(self):
   c=config();p.validate_config(c);self.assertEqual(c['vmid'],190);self.assertEqual(c['management_hosts'],['192.168.21.22','192.168.21.116'])
@@ -97,7 +97,7 @@ class CFFakeIPCompatibility(unittest.TestCase):
 
 class WireGuardPenpotAccess(unittest.TestCase):
  def full(self):
-  plan=copy.deepcopy(PLAN);plan['gateway_policy']['WireGuard_client_access']={'source':'10.66.66.0/24','destination':'192.168.19.50','tcp':[9001],'reason':'historical narrow fixture','evidence':'fixture','no_NAT':True};return p.load(plan,*MAC)
+  plan=copy.deepcopy(PLAN);plan['gateway_policy'].pop('LAN_trusted_client_access',None);plan['gateway_policy']['WireGuard_client_access']={'source':'10.66.66.0/24','destination':'192.168.19.50','tcp':[9001],'reason':'historical narrow fixture','evidence':'fixture','no_NAT':True};return p.load(plan,*MAC)
  def test_whole_VPN_source_only_Penpot9001_forward_no_INPUT(self):
   c=self.full();self.assertEqual(c['WireGuard_client_access'],{'source':'10.66.66.0/24','destination':'192.168.19.50','tcp':[9001],'no_NAT':True});text=p.nft(c,IF);input_part=text.split(' chain forward')[0];self.assertNotIn('10.66.66.',input_part);lines=[x for x in text.splitlines() if 'ip saddr 10.66.66.0/24'in x];self.assertEqual(len(lines),1);self.assertIn('ip daddr 192.168.19.50 tcp dport 9001 ct state new',lines[0]);self.assertIn('ct mark set '+p.WG_MARK,lines[0]);self.assertIn('counter accept comment "WG-Penpot-TCP9001"',lines[0]);self.assertIn('iifname "'+IF['WAN']+'" oifname "'+IF['LAN']+'"',lines[0])
  def test_old_config_keeps_exact_INPUT_and_return_state_does_not_accept_mark4(self):
@@ -129,10 +129,10 @@ class TrustedVPNFullUpgrade(unittest.TestCase):
    with self.assertRaises(GuardReached):m.check()
    identity.assert_called_once()
  def test_full_exact_scope_all_IPv4_only_exact_local_addresses(self):
-  full=p.load(copy.deepcopy(PLAN),*MAC);self.assertEqual(full['WireGuard_client_access'],p.WG_FULL);text=p.nft(full,IF);rows=[x for x in text.splitlines() if 'ip saddr 10.66.66.0/24'in x];self.assertEqual(len(rows),2);self.assertTrue(all('ct mark set '+p.WG_FULL_MARK in x and 'dport'not in x and 'ct state new'not in x for x in rows));self.assertIn('ip daddr { 192.168.21.23, 192.168.19.1 }',rows[0]);self.assertIn('ip daddr 192.168.19.0/24',rows[1]);self.assertIn('ct mark != '+p.WG_FULL_MARK+' accept',text)
+  full=p.load(copy.deepcopy(PLAN),*MAC);self.assertEqual(full['WireGuard_client_access'],p.WG_FULL);text=p.nft(full,IF);rows=[x for x in text.splitlines() if 'ip saddr 10.66.66.0/24'in x];self.assertEqual(len(rows),2);self.assertTrue(all('ct mark set '+p.WG_FULL_MARK in x and 'dport'not in x and 'ct state new'not in x for x in rows));self.assertIn('ip daddr { 192.168.21.23, 192.168.19.1 }',rows[0]);self.assertIn('ip daddr 192.168.19.0/24',rows[1]);self.assertIn('ct mark != '+p.WG_FULL_MARK+' ct mark != '+p.LAN_FULL_MARK+' accept',text)
  def test_full_upgrade_preserves_old_mark4_but_rollback_excludes_mark5(self):
   full=p.load(copy.deepcopy(PLAN),*MAC);old=copy.deepcopy(full);old['WireGuard_client_access']=copy.deepcopy(p.WG_NARROW);live=p.nft(full,IF);back=p.nft(old,IF)
-  self.assertIn(p.WG_MARK,live);self.assertIn(p.WG_FULL_MARK,live);self.assertIn('ct mark != '+p.WG_FULL_MARK+' accept',back);self.assertNotIn('ct mark set '+p.WG_FULL_MARK,back);self.assertNotIn('WG-TrustedVPN',back);self.assertIn('WG-Penpot-TCP9001',back)
+  self.assertIn(p.WG_MARK,live);self.assertIn(p.WG_FULL_MARK,live);self.assertIn('ct mark != '+p.WG_FULL_MARK+' ct mark != '+p.LAN_FULL_MARK+' accept',back);self.assertNotIn('ct mark set '+p.WG_FULL_MARK,back);self.assertNotIn('WG-TrustedVPN',back);self.assertIn('WG-Penpot-TCP9001',back)
  def test_full_only_from_confirmed_narrow_and_other_contract_unchanged(self):
   full=p.load(copy.deepcopy(PLAN),*MAC);old=copy.deepcopy(full);old['WireGuard_client_access']=copy.deepcopy(p.WG_NARROW)
   with patch.object(m,'load_policy',return_value=p):
@@ -169,6 +169,25 @@ class LANTestNacosAccess(unittest.TestCase):
     with self.assertRaises((RuntimeError,p.Rejected)):m.validate_hot_delta(old,bad)
   bad=copy.deepcopy(new);bad['hosts'].pop()
   with patch.object(m,'load_policy',return_value=p):
+   with self.assertRaises(RuntimeError):m.validate_hot_delta(old,bad)
+
+class TrustedLANAccess(unittest.TestCase):
+ def test_exact_current_scope_gateway_and_forward_with_rollback_mark(self):
+  c=p.load(copy.deepcopy(PLAN),*MAC);self.assertEqual(c['LAN_trusted_client_access'],p.LAN_FULL);text=p.nft(c,IF)
+  rows=[line for line in text.splitlines() if 'ct mark set '+p.LAN_FULL_MARK in line]
+  self.assertEqual(len(rows),2);self.assertIn('ip daddr { 192.168.21.23, 192.168.19.1 }',rows[0]);self.assertIn('ip daddr 192.168.19.0/24',rows[1]);self.assertTrue(all('ip saddr 192.168.21.0/24' in x and 'dport' not in x for x in rows))
+  old=copy.deepcopy(c);old.pop('LAN_trusted_client_access');before=p.nft(old,IF);self.assertNotIn('ct mark set '+p.LAN_FULL_MARK,before);self.assertIn('ct mark != '+p.LAN_FULL_MARK+' accept',before)
+  old_return=next(x for x in before.splitlines() if 'ct state established,related ct mark {'in x);self.assertNotIn(p.LAN_FULL_MARK,old_return)
+  self.assertEqual(p.dnsmasq(c,IF),p.dnsmasq(old,IF));self.assertEqual([p.network(c,r) for r in ['WAN','LAN']],[p.network(old,r) for r in ['WAN','LAN']])
+  for token in ['masquerade','snat','dnat','flush ruleset']:self.assertNotIn(token,text.lower())
+ def test_noncanonical_trusted_LAN_contract_rejected(self):
+  for key,value in [('source','0.0.0.0/0'),('destination','192.168.0.0/16'),('protocols','tcp'),('gateway_local_addresses',['192.168.21.1','192.168.19.1']),('no_NAT',False)]:
+   bad=p.load(copy.deepcopy(PLAN),*MAC);bad['LAN_trusted_client_access'][key]=value
+   with self.assertRaises(p.Rejected):p.validate_config(bad)
+ def test_hot_delta_only_feature_and_planSHA_no_other_mutation(self):
+  new=p.load(copy.deepcopy(PLAN),*MAC);old=copy.deepcopy(new);old.pop('LAN_trusted_client_access')
+  with patch.object(m,'load_policy',return_value=p):
+   m.validate_hot_delta(old,new);bad=copy.deepcopy(new);bad['hosts'].pop()
    with self.assertRaises(RuntimeError):m.validate_hot_delta(old,bad)
 
 class FakeKernel:

@@ -29,3 +29,7 @@
 PVE写、VMID/IP/盘归属和物理维护协调仍集中处理。CF归档仅PVE；publisher私钥仅220，不wholebackup220、不输出凭据或复制客户端私钥。NAS不是正式唯一备份目标。源Mac数据与业务工作树保留。
 
 11/07 02:35:01完整验收与02:44:29最后PVE操作保留为事故前历史；11/08的分范围运行证据另记，不改写旧失败。物理内存根因和独立长期RPO/RTO、业务SLO、真实家庭设备仍未验；Mac外部探针不列入这些后续项目。
+
+## 11月9日后续精确授权
+
+较早“不迁移”范围之后，用户已分别明确授权测试Nacos选定36配置、Puyu实际两库迁往210，以及整个21/24作为受信LAN。Nacos配置见[已签收4项](completion/20261109-nacos-config-import/acceptance.json)，Puyu见[已签收8项](completion/20261109-puyu-db-migration/acceptance.json)；源保留、没有业务启动/应用连接切换、没有Nexus合并。LAN双层已确认，入口[访问规则](network19/lan-trusted-20261109/README.md)。测试凭据以用户再次指定并要求保持的三组件设置为准，实际同步验收见[独立记录](completion/20261109-test-credentials/README.md)，不把原迁移未改密码的历史声明误读为后续没有获准同步。

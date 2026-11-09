@@ -1,0 +1,107 @@
+{
+  "id": "puyu-local-db-copy-to-dell210-20261109",
+  "kind": "state_change",
+  "objective": "Copy existing local puyu_auth_local and puyu_erp_local snapshot schema/data to empty same-name databases on testVM210 while preserving source and all existing target data",
+  "product_stage": "technical_architecture",
+  "affected_projects": [
+    "puyu-auth",
+    "puyu-service-core",
+    "dell-test-MySQL-VM210"
+  ],
+  "write_scope": [
+    "/Users/yangzhaohui/work/www/harness/dell/infra/data/puyu-db-migration/**",
+    "/Users/yangzhaohui/work/www/harness/dell/completion/20261109-puyu-db-migration/**",
+    "/Users/yangzhaohui/work/www/harness/dell/private/puyu-db-migration/**",
+    "VM210 MySQL only new puyu_auth_local and puyu_erp_local plus owned temporary importer credential/user"
+  ],
+  "architecture_constraints": [
+    "No application/API/source entity/schema-code changes; frontend->Gateway->BFF/Core ownership unaffected",
+    "No source DROP/UPDATE/connectioncutover, no production200/201 write, noJava startup/Nacos config changes",
+    "New target databases only; any existing same name even empty rejects before import",
+    "Private dumps/data fingerprints/credentials never Git or chat; source snapshot not livecutover guarantee"
+  ],
+  "decisions_required": [
+    {
+      "item": "source and target schema names",
+      "status": "resolved",
+      "decision": "Copy actual only puyu_auth_local(4 tables) and puyu_erp_local(47 tables), retain names and source; target none currently"
+    },
+    {
+      "item": "source write consistency",
+      "status": "resolved",
+      "decision": "one mysqldump singletransaction both InnoDB schemas; independent LOCK INSTANCE FOR BACKUP protectsDDL duringdump; DML continues; data validation usesexport snapshot ratherthan laterlive"
+    }
+  ],
+  "steps": [
+    {
+      "id": "preflight",
+      "owner": "root + read-only agent",
+      "write_scope": [
+        "completion/20261109-puyu-db-migration/**"
+      ],
+      "acceptance": [
+        "source2 DBs allInnoDB/allPK/0programobjects and target no same names; preserveexisting4containers/19finger+12nacos tables"
+      ]
+    },
+    {
+      "id": "private-export",
+      "owner": "source agent in approved local-only exportwindow",
+      "write_scope": [
+        "private/puyu-db-migration/**"
+      ],
+      "acceptance": [
+        "nativeSQLdump exit0 +lockrelease +gzipCRC+SHA, source schema stable"
+      ]
+    },
+    {
+      "id": "target-import",
+      "owner": "root only",
+      "write_scope": [
+        "VM210 exactnew2DBs and own temporaryimporter"
+      ],
+      "acceptance": [
+        "freshcollision reject; constrainedimport; no preexisting DB overwritten; no global scheduler change"
+      ]
+    },
+    {
+      "id": "validate",
+      "owner": "root + independentreadonly agent",
+      "write_scope": [
+        "completion/20261109-puyu-db-migration/**"
+      ],
+      "acceptance": [
+        "snapshot/target pertable structure/rowcount/orderedor multisetINSERTdigests match; source preserved,targetothershealthy, tempimporterremoved"
+      ]
+    }
+  ],
+  "integration_acceptance": [
+    "no appconnection orcode change; schema+data snapshot copy only",
+    "all51table types/indexes/constraints/charset/sourcevalues preserved; target count fromsnapshot notoldpreflightiflive DML differs"
+  ],
+  "approval_required": [
+    "database_migration",
+    "use_existing_local_and_target_DB_auth",
+    "dell_repository_Git_delivery"
+  ],
+  "approvals": {
+    "database_migration": "explicit user2026-11-09: 将puyu_*数据库迁移到19.20上",
+    "auth": "existing user-owned local/VM210 credentials necessary to approved migration; never copiedvalues tologs",
+    "Git": "existing Dell AGENTS/user prior explicit persistentdocs/code Gitdelivery; no Puyu applicationrepo push"
+  },
+  "verification": {
+    "planned": [
+      "source-dump nativechecks",
+      "fingerprint negative tests",
+      "targetstaging no-overwrite checks",
+      "nativeimport and postcheck",
+      "dell validate_docs/validate_machines/check_git_safety"
+    ],
+    "completed": [
+      "read-only preflight2 schemas/51InnoDB/1291 inventoryrows/no targetcollisions"
+    ],
+    "skipped_with_reason": [
+      "No code/entity/DTO orAPI change, KSP/bootcompile/providerpublish notapplicable",
+      "No runtimeconnectioncutover orbusinessE2E requested"
+    ]
+  }
+}

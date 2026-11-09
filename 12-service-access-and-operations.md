@@ -1,13 +1,14 @@
 # 当前访问入口与日常操作
 
-2026-11-09，Asia/Shanghai。**自然重启后基础服务fresh复验；继续基础搭建，仅自动备份正式数据库/Nacos，并按最新授权完成测试Nacos配置原样迁移；不迁业务数据库。** Nexus仍独立221，Mac外部探针不需要。当日状态见[11月9日交付记录](completion/20261109-prod-db-scope/README.md)，[11月8日恢复](recovery/20261108/README.md)保留历史。应用直接访问真实19地址；PVE21.22只用于宿主管理，原应用DNAT端口已关闭。详见[当前交付](15-network19-delivery.md)与[新网络验收](network19/audit/network19-acceptance.md)。
+2026-11-09，Asia/Shanghai。**自然重启后基础服务fresh复验；继续基础搭建，仅自动备份正式数据库/Nacos，并按最新授权完成测试Nacos配置原样迁移；最新另授权Puyu两库按原名迁入测试210，正式环境不动。** Nexus仍独立221，Mac外部探针不需要。当日状态见[11月9日交付记录](completion/20261109-prod-db-scope/README.md)，[11月8日恢复](recovery/20261108/README.md)保留历史。应用直接访问真实19地址；PVE21.22只用于宿主管理，原应用DNAT端口已关闭。详见[当前交付](15-network19-delivery.md)与[新网络验收](network19/audit/network19-acceptance.md)。
 
 | 服务 | 当前入口 | 范围 |
 | --- | --- | --- |
 | PVE | https://192.168.21.22:8006/ | 管理SSH22保留 |
 | 虚拟网关190 | WAN192.168.21.23 / LAN192.168.19.1 | 路由、19DNS/DHCP，无NAT |
 | Penpot | http://192.168.19.50:9001/ | Git定制版、3设计/973媒体、11服务 |
-| 测试Nacos | http://192.168.19.20:8848/nacos/ | 21.0/24仅放行8848/9848；cloud-dev32＋trascan4已原样导入，账号须有目标域权限 |
+| 测试Nacos | http://192.168.19.20:8848/nacos/ | 受信LAN21/24可达；cloud-dev32＋trascan4原样保留，账号仍须目标域权限 |
+| 测试MySQL / Puyu两库 | 192.168.19.20:3306；puyu_auth_local / puyu_erp_local | 原名新建迁入51表/1291快照行；既有目标账户Host/密码/权限仍有效 |
 | Nexus | http://192.168.19.31:8081/ | 目前归221；合并目标归220同NIC服务alias，URL不改 |
 | OMV | http://192.168.19.60/ | 家庭NAS管理 |
 | Jellyfin | http://192.168.19.60:8096/ | 媒体库、DirectPlay协议已验 |
@@ -37,17 +38,16 @@ SSH使用ub和`~/.ssh/yang_local_rsa`，严格已核host key；受控目标见`e
 
 日常启停、故障处理、克隆和备份步骤见[人工操作手册](19-manual-operations.md)，换电脑接手见[Git交接](20-git-and-handoff.md)。
 
-## 测试Nacos的LAN访问来源
+## 当前受信LAN访问（替代早前Nacos-only策略）
 
-2026-11-09新增仅`192.168.21.0/24 → 192.168.19.20 TCP8848/9848`：8848用于控制台/API，9848用于客户端gRPC。此前普通Wi-Fi/LAN来源不在原管理来源例外内，默认规则会阻止访问；本次只增加测试Nacos许可，不扩大到整个19网或其它数据端口。网关190转发规则与PVE `bridge dell19_acl`的专属规则**两层均已原生校验、应用并独立确认**，应用认证仍保留，不凭端口可达跳过登录或namespace选择。
+用户最新将`192.168.21.0/24`列为受信LAN，允许到`192.168.19.0/24`的有效IPv4服务及网关`21.23/19.1`本机入口；GW和PVE桥两层均已confirmed，hostforward仍全0、无NAT，原WG10.66.66/24许可保持。[GW回执](network19/lan-trusted-20261109/gateway-confirmed.json)、[桥回执](network19/lan-trusted-20261109/bridge-confirmed.json)。
 
-Studio来源21.230已记录HTTP200、TCP9848连接成功；同来源到test19.20的3306/22/9849及prod19.11的8848/9848实际timeout，见[LAN负测](network19/lan-nacos-20261109/LAN-negative-tests.json)。用户Air通过Wi-Fi明确反馈“已经成功”，[确认记录](network19/lan-nacos-20261109/Air-user-confirmation.json)没有逐项HTTP/nc输出，不把这条反馈扩写为Air每个端口或登录用例均已验收。原21.22/21.116管理例外保留，不能把21.230负测泛化成这些原特例也被阻断。
+23:00[正测](network19/lan-trusted-20261109/LAN-positive-tests.json)记录ub密钥SSH到19.20和21.23成功，TCP test19.20:3306/8848/9848及prod19.11:8848成功，测试机ping2/2。早前[Nacos-only负测](network19/lan-nacos-20261109/LAN-negative-tests.json)的3306/SSH/正式Nacos timeout是旧策略历史，**不能再作为当前LAN仍被阻断的结论**；新规则不保证不存在的端口有服务，ping也不能替代数据库认证或Nacos权限。
 
-这次没有扩展ICMP许可；ping可能仍无响应，不能据此判断Nacos失败。请分别检查`/nacos/`的HTTP、需要的9848 TCP及既有认证。GW hot更新未重启服务、PID保持；PVE桥只新增1条规则且hostforward全0，WireGuard10.66.66/24原全服务许可和无NAT保持。证据：[网关确认](network19/lan-nacos-20261109/gateway-confirmed.json)、[桥确认](network19/lan-nacos-20261109/bridge-confirmed.json)、[网关独立核查](network19/lan-nacos-20261109/gateway-independent-check.json)、[桥独立核查](network19/lan-nacos-20261109/bridge-independent-check.json)。没有新增公网CF入口，也不把任何密码值或私有凭据文件加入Git。
 
 ## 测试Nacos配置现状：36项原样导入完成
 
-用户最新明确授权本机Nacos配置迁移，**覆盖先前“只搭空服务、不迁配置”的限制**；仍不迁业务数据库、不动正式环境、不启动Java或修改源码profile。同一测试入口`http://192.168.19.20:8848/nacos/`内现有配置如下，namespace ID/name、group与正文保持源原样：
+用户最新明确授权本机Nacos配置迁移，**覆盖先前“只搭空服务、不迁配置”的限制**；该次Nacos迁移不涉及业务DB；后续Puyu两库另获本次授权，正式环境不动、不启动Java或修改源码profile。同一测试入口`http://192.168.19.20:8848/nacos/`内现有配置如下，namespace ID/name、group与正文保持源原样：
 
 | namespace | ID | 当前配置数 |
 | --- | --- | ---: |
@@ -65,6 +65,24 @@ Studio来源21.230已记录HTTP200、TCP9848连接成功；同来源到test19.20
 
 20:27[空域创建](completion/20261109-test-env/empty-namespace-created.json)当时“旧7项/历史9保留、新空域0”仍是历史事实；后来用户授权清全部配置并导源，当前旧域已0，不能继续称仍有7项。账号凭据仍只由原受保护文件/渠道保管，不在本文披露值。
 
+
+## Puyu两库已迁入测试MySQL
+
+用户本次明确授权仅本机`puyu_*`实际选定两库迁往VM210/`192.168.19.20:3306`，覆盖之前“不迁业务DB”的限制；按**原库名**新增，不覆盖任何原有同名库、不删除源库：
+
+| 数据库 | 表数 | 导出快照行数 |
+| --- | ---: | ---: |
+| puyu_auth_local | 4 | 178 |
+| puyu_erp_local | 47 | 1113 |
+| 合计 | 51 | 1291 |
+
+源22:41一致性快照导出，源应用未停止、DML可继续；备份DDL锁持有约0.42秒并已释放，1291为导出快照行数，不是源库以后保持不变的计数，也没有持续同步。原名迁入、写前无同名检查及[prepare](completion/20261109-puyu-db-migration/prepared.json)、[apply](completion/20261109-puyu-db-migration/applied.json)、[verify](completion/20261109-puyu-db-migration/verified.json)已原生通过；同版完整redump的DDL/每表INSERT多集指纹与行数一致，51表CHECK TABLE通过。[独立只读后检](completion/20261109-puyu-db-migration/postcheck.json)已逐表核51个COUNT(*)与导出快照匹配，原四容器、Nacos36配置和既有Finger/Nacos表保持。
+
+源库保留，目标原业务/Nacos数据、既有密码/插件/cnf/服务与应用连接没有修改；临时导入账号和client文件已清理。**没有迁移源MySQL系统账号/全局权限，没有随这次DB迁移导入或改写Puyu Nacos配置，也没有启动Java或切应用连接。** 使用目标既有授权账户，Host匹配、原密码和权限继续生效；SSH仍密钥only、用户ub，Docker管理需`sudo docker`。SQL正文、数据摘要和真实凭据只在受控位置，不在普通文档输出。来源：[预检](completion/20261109-puyu-db-migration/preflight.json)、[源导出](completion/20261109-puyu-db-migration/source-export.json)、[快照计数](completion/20261109-puyu-db-migration/source-fingerprint.json)。
+
+### MySQL客户端TLS说明
+
+[只读认证诊断](completion/20261109-puyu-db-migration/mysql-auth-diagnostic.json)记录root账号ssl_type为空、require_secure_transport=0；这不是本次新增强制TLS或关闭TLS的配置。客户端TLS仅做只读连接测试，没有修改服务端证书、TLS开关、密码、认证插件或用户Host。网络可达不等于源Mac密码可用于目标：源MySQL系统账户没有迁移，须使用目标原有授权方式；具体客户端协商按现状核查，不据此改服务端安全字段。
 
 ## 凭据位置
 
@@ -105,3 +123,7 @@ Publisher目标19.45、来源限制19.30、公钥/强制命令与最小权限保
 ## 2026-11-07 WireGuard受信网段
 
 用户明确全服务授权后，10.66.66.0/24已获准访问19/24全部有效IPv4端口及网关21.23/19.1；NAS的SMB/Jellyfin来源识别同步追加，账号/读写权限不变。外网Mac Air批量入口复测已确认全部正常。无需SNAT，OpenWrt各peer仍独立/32，PVE21.22不恢复转发。见[WireGuard全服务访问](16-wireguard-access.md)。
+
+## 测试凭据的最新维护约定（11月9日）
+
+VM210三组件按用户指定并再次要求保持的约定同步：MySQL现有root两Host、Redis默认认证、Rabbit指定admin管理身份；原Rabbit管理/应用账号保留。现役guest持久文件与Mac private测试活动来源已同步，实际回执及后检见[凭据交付](completion/20261109-test-credentials/README.md)。这次另获授权的同步发生在数据库快照迁移之后；不改正式/源Mac/Nacos身份，不重跑初始化器覆盖固定值，也不改TLS/插件。真实密码不写普通文档或Git。

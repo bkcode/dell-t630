@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "status": "passed-offline-canonical-reproduction",
+  "server_mutations": false,
+  "native_check_run_during_sync": false,
+  "source_actual_final_postcheck": "network19/lan-trusted-20261109/final-postcheck.json",
+  "master_semantics_equal_confirmed_candidate": true,
+  "compiled_config_bytes_equal_confirmed_candidate": true,
+  "preview_nft_equal_actual_policy_renderer": true,
+  "bridge_current_and_candidate_bytes_equal_confirmed_applied": true,
+  "DNS_and_network_configuration_unchanged": true,
+  "tests": [
+    {
+      "path": "network19/gateway/test_gateway.py",
+      "exit_code": 0,
+      "tests_passed": 45,
+      "scope": "offline-only"
+    },
+    {
+      "path": "network19/audit/test_trusted_lan.py",
+      "exit_code": 0,
+      "tests_passed": 5,
+      "scope": "offline-only"
+    }
+  ],
+  "artifact_sha256": {
+    "network19/migration-plan.json": "3adfd7a4c1cd67b5ea72b5f3de3b4bb34775a55936ee1d35b5356654dc2b1192",
+    "network19/gateway/bundle/config.json": "32c84b7b941ceaec56a74a499acbb3b0e51dbbf7814e5059cb879e27bd21a843",
+    "network19/gateway/bundle/preview.nft": "df645452cf331e3a5c609300f96ad9531e80acae8bf62316e90a2abc8ba4e3b5",
+    "network19/gateway/bundle/preview-dnsmasq.conf": "39306a3c5d85b7440d9f61af3c837affef05f739c1680be6fdc1bdfb364f13d6",
+    "network19/gateway/bundle/05-dell-gateway19-lan.network": "1d2dc502b25548499d3d1d2a1a4deef311ecf483fbf2c4b1a8fc3dfc7c4f1b23",
+    "network19/gateway/bundle/05-dell-gateway19-wan.network": "422c86e07b67c871ac6346de0f3b5726140f17f821d2c60b74bf9cae9fa6e76e",
+    "network19/gateway/prepared.json": "30ab5bdb35983350031995344362dd393863c94fbf2251b3517e5b9b4ac77bf8",
+    "network19/gateway/test_gateway.py": "72841e53f7b074549c55c02cc11d3b278971f4e097cc8331e31ae9f14e23b39f",
+    "network19/audit/render-bridge-acl.py": "0da505bf81c00f6d46d15065b55e9242b6fbadf0592228204147bc12a1242261",
+    "network19/audit/bridge19-current.nft": "a6910d08db278527566e0b343c8a12b57989f7ba10b2df1b0d498e969e120bc0",
+    "network19/audit/bridge19-current.json": "df28ba3d6b59cf723e910efa7dc7d1e8f9af056617431d65c8299a934aa25a7b",
+    "network19/audit/bridge19-acl-candidate.nft": "a6910d08db278527566e0b343c8a12b57989f7ba10b2df1b0d498e969e120bc0",
+    "network19/audit/bridge19-acl-candidate.json": "df28ba3d6b59cf723e910efa7dc7d1e8f9af056617431d65c8299a934aa25a7b",
+    "network19/audit/test_trusted_lan.py": "23a5484f22484ab448b03dc6572ad47a74f0d290dd2921b92886fa00ddd5df96"
+  },
+  "preserved_canonical_policy_sha256": "372f6fd17c65f79d26c6234bd3e629bfea9bb8d4d39386bdfd088103a50c2b2d",
+  "historical_fixture_warning": {
+    "path": "cleanup/network/test_candidates.py",
+    "tests_passed": 21,
+    "tests_failed": 1,
+    "reason": "Historical proposed gateway source predates LAN mark6 return-state guard; byte comparison to current policy differs. No failure in current canonical gateway/bridge scope; history not overwritten."
+  },
+  "limitations": [
+    "No remote access or fresh native nft/systemd validation in this local sync.",
+    "Actual native status is sourced from confirmed receipts and 23:34 read-only postcheck.",
+    "Air whole-service-range retest has not been supplied; positive metadata samples are not all-service authentication proof."
+  ]
+}

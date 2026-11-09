@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "date": "2026-11-05",
-  "scope": "existing infrastructure; only production database and Nacos configuration automatic backup; no migration/Java/Macprobe",
+  "date": "2026-11-09",
+  "scope": "existing infrastructure and productionDB-only backups; subsequent precise test Nacos/Puyu migrations and requested test credentials/LAN access; no Nexus merge/Java/Macprobe",
   "documentation": [
     {
       "id": "DOC-01",
@@ -213,7 +213,7 @@
       "verification_scope": "historical-completed-stage-not-current-live"
     }
   ],
-  "updated_at": "2026-11-09T21:46:26.287751+08:00",
+  "updated_at": "2026-11-09T23:41:04.461557+08:00",
   "implementation_note": "Original IMP entries describe the prior completed baseline. Latest user scope overrides Java program deployment: five test services are stopped/disabled, publisher fenced, only acceptance template9011 current.",
   "overall_status": "existing-infrastructure-recovered-user-deferred-migration",
   "network19_execution": [
@@ -385,7 +385,8 @@
     "monitoring_postcheck": "completion/20261109/final-verification.json",
     "phase_cases_passed": 9,
     "phase_case_count": 9,
-    "guest_postcheck": "completion/20261109/guests-post-backup.json"
+    "guest_postcheck": "completion/20261109/guests-post-backup.json",
+    "latest_followup_manifest": "completion/20261109-test-credentials/acceptance.json"
   },
   "backup_scope_update20261109": {
     "status": "completed-native-verified",
@@ -436,5 +437,61 @@
     "target_cleared_original": 7,
     "source_imported": 36,
     "Java_or_businessDB_or_production_changes": false
+  },
+  "Puyu_test_DB_migration_20261109": {
+    "status": "native-import-and-independent-postcheck-passed",
+    "target_vmid": 210,
+    "target_endpoint": "192.168.19.20:3306",
+    "source_preserved": true,
+    "databases": [
+      {
+        "name": "puyu_auth_local",
+        "tables": 4,
+        "snapshot_rows": 178
+      },
+      {
+        "name": "puyu_erp_local",
+        "tables": 47,
+        "snapshot_rows": 1113
+      }
+    ],
+    "snapshot_continuous_sync": false,
+    "source_accounts_or_app_connection_cutover": false,
+    "automatic_backup_added": false,
+    "evidence": "completion/20261109-puyu-db-migration/acceptance.json"
+  },
+  "LAN_trusted_access_20261109": {
+    "status": "gateway-and-bridge-confirmed",
+    "source": "192.168.21.0/24",
+    "destination": "192.168.19.0/24",
+    "protocols": "all IPv4",
+    "gateway_local_addresses": [
+      "192.168.21.23",
+      "192.168.19.1"
+    ],
+    "no_NAT": true,
+    "PVE_forwarding": "all0",
+    "application_authentication_unchanged": true,
+    "evidence": "network19/lan-trusted-20261109/README.md"
+  },
+  "test_credentials_20261109": {
+    "status": "native-and-independent-auth-persistence-postcheck-passed",
+    "target_vmid": 210,
+    "endpoint": "192.168.19.20",
+    "policy": "keep exact user specified test component credentials; no regeneration",
+    "mysql_user": "root",
+    "mysql_hosts": [
+      "localhost",
+      "%"
+    ],
+    "redis_database": 0,
+    "rabbit_admin_user": "admin",
+    "old_Rabbit_admin_and_app_users_preserved": true,
+    "Nacos_sourceMac_or_production_credentials_changed": false,
+    "TLS_or_plugin_changed": false,
+    "service_restart": false,
+    "secret_values_in_git": false,
+    "evidence": "completion/20261109-test-credentials/acceptance.json",
+    "local_mirror_evidence": "completion/20261109-test-credentials/local-mirrors.json"
   }
 }

@@ -1,0 +1,561 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-11-09T15:11:07.273072+00:00",
+  "scope": "independentreadonlypuYuDBmigrationpostcheck",
+  "source": {
+    "container_ID_image_identity_matches_export": true,
+    "schemas_still_present": true,
+    "current_counts": [
+      {
+        "schema": "puyu_auth_local",
+        "current_table_count": 4,
+        "current_total_rows": 178,
+        "post_export_DML_may_change_counts": true,
+        "comparison_to_export_rows_not_enforced": true
+      },
+      {
+        "schema": "puyu_erp_local",
+        "current_table_count": 47,
+        "current_total_rows": 1113,
+        "post_export_DML_may_change_counts": true,
+        "comparison_to_export_rows_not_enforced": true
+      }
+    ],
+    "source_auth_read_existing_only_password_configuration_not_changed_by_postcheck": true,
+    "independent_password_file_byte_baseline_available": false,
+    "password_value_or_filehash_output": false,
+    "limitation": "No pre-exportauth/configfilecontenthash baselinecaptured; do notclaimindependentbyteequality. Exportcodeonlyreadsoriginalcontainercredentialsandnativeproducerreportsnoauthchange.",
+    "selected_final_container_metadata": {
+      "ID": "1fee5c4074fac7f6fe309a7ecd24ef882a1b038c1890f13aef5fa04453105788",
+      "ImageID": "sha256:b2f81adb2f3335ee77c6a74a6099bea0c5dca5b51ed01cd84c7966d826992764",
+      "State": "running",
+      "StartedAt": "2026-11-09T10:25:39.409874762Z",
+      "RestartCount": 0,
+      "OOMKilled": false
+    }
+  },
+  "target": {
+    "vmid": 210,
+    "captured_at": "2026-11-09T15:11:07.250474+00:00",
+    "snapshot_manifest_run_id": "e28bf9aa3e8f44328eab71190a5a93a8",
+    "schemas": [
+      {
+        "schema": "puyu_auth_local",
+        "charset": "utf8mb4",
+        "collation": "utf8mb4_0900_ai_ci",
+        "table_count": 4,
+        "total_SQL_COUNT": 178,
+        "tables": [
+          {
+            "table": "flyway_schema_history",
+            "SQL_COUNT": 3,
+            "export_snapshot_row_count": 3,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "oauth2_authorization",
+            "SQL_COUNT": 173,
+            "export_snapshot_row_count": 173,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "oauth2_authorization_consent",
+            "SQL_COUNT": 0,
+            "export_snapshot_row_count": 0,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "oauth2_registered_client",
+            "SQL_COUNT": 2,
+            "export_snapshot_row_count": 2,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          }
+        ]
+      },
+      {
+        "schema": "puyu_erp_local",
+        "charset": "utf8mb4",
+        "collation": "utf8mb4_0900_ai_ci",
+        "table_count": 47,
+        "total_SQL_COUNT": 1113,
+        "tables": [
+          {
+            "table": "core_admin_account",
+            "SQL_COUNT": 31,
+            "export_snapshot_row_count": 31,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_account_history",
+            "SQL_COUNT": 56,
+            "export_snapshot_row_count": 56,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_actor",
+            "SQL_COUNT": 22,
+            "export_snapshot_row_count": 22,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_bill",
+            "SQL_COUNT": 26,
+            "export_snapshot_row_count": 26,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_bill_history",
+            "SQL_COUNT": 33,
+            "export_snapshot_row_count": 33,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_catalog",
+            "SQL_COUNT": 43,
+            "export_snapshot_row_count": 43,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_catalog_history",
+            "SQL_COUNT": 209,
+            "export_snapshot_row_count": 209,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_catalog_mutex",
+            "SQL_COUNT": 1,
+            "export_snapshot_row_count": 1,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_command",
+            "SQL_COUNT": 261,
+            "export_snapshot_row_count": 261,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_cooperation",
+            "SQL_COUNT": 9,
+            "export_snapshot_row_count": 9,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_cooperation_qr",
+            "SQL_COUNT": 8,
+            "export_snapshot_row_count": 8,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_cooperation_qr_history",
+            "SQL_COUNT": 13,
+            "export_snapshot_row_count": 13,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_cooperation_scan",
+            "SQL_COUNT": 6,
+            "export_snapshot_row_count": 6,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_cooperation_visit",
+            "SQL_COUNT": 88,
+            "export_snapshot_row_count": 88,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_credit_account",
+            "SQL_COUNT": 7,
+            "export_snapshot_row_count": 7,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_credit_draft",
+            "SQL_COUNT": 3,
+            "export_snapshot_row_count": 3,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_credit_ledger",
+            "SQL_COUNT": 17,
+            "export_snapshot_row_count": 17,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_file",
+            "SQL_COUNT": 26,
+            "export_snapshot_row_count": 26,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_import_batch",
+            "SQL_COUNT": 6,
+            "export_snapshot_row_count": 6,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_model_download",
+            "SQL_COUNT": 43,
+            "export_snapshot_row_count": 43,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_model_grant",
+            "SQL_COUNT": 7,
+            "export_snapshot_row_count": 7,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_order",
+            "SQL_COUNT": 13,
+            "export_snapshot_row_count": 13,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_order_history",
+            "SQL_COUNT": 34,
+            "export_snapshot_row_count": 34,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_profile",
+            "SQL_COUNT": 29,
+            "export_snapshot_row_count": 29,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_settings",
+            "SQL_COUNT": 1,
+            "export_snapshot_row_count": 1,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_settings_history",
+            "SQL_COUNT": 3,
+            "export_snapshot_row_count": 3,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_sku",
+            "SQL_COUNT": 18,
+            "export_snapshot_row_count": 18,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_stock_history",
+            "SQL_COUNT": 4,
+            "export_snapshot_row_count": 4,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_stock_meta",
+            "SQL_COUNT": 2,
+            "export_snapshot_row_count": 2,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_ticket",
+            "SQL_COUNT": 9,
+            "export_snapshot_row_count": 9,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_admin_ticket_history",
+            "SQL_COUNT": 33,
+            "export_snapshot_row_count": 33,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_consumer_favorite",
+            "SQL_COUNT": 0,
+            "export_snapshot_row_count": 0,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_consumer_selection",
+            "SQL_COUNT": 3,
+            "export_snapshot_row_count": 3,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_designer_category_transfer",
+            "SQL_COUNT": 0,
+            "export_snapshot_row_count": 0,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_designer_library",
+            "SQL_COUNT": 2,
+            "export_snapshot_row_count": 2,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_designer_library_category",
+            "SQL_COUNT": 4,
+            "export_snapshot_row_count": 4,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_designer_library_item",
+            "SQL_COUNT": 0,
+            "export_snapshot_row_count": 0,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_designer_private_image",
+            "SQL_COUNT": 2,
+            "export_snapshot_row_count": 2,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_designer_private_product",
+            "SQL_COUNT": 3,
+            "export_snapshot_row_count": 3,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_designer_private_sku",
+            "SQL_COUNT": 3,
+            "export_snapshot_row_count": 3,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_designer_project",
+            "SQL_COUNT": 4,
+            "export_snapshot_row_count": 4,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_designer_project_file",
+            "SQL_COUNT": 1,
+            "export_snapshot_row_count": 1,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_designer_project_item",
+            "SQL_COUNT": 5,
+            "export_snapshot_row_count": 5,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_designer_share_image",
+            "SQL_COUNT": 1,
+            "export_snapshot_row_count": 1,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_designer_share_snapshot",
+            "SQL_COUNT": 2,
+            "export_snapshot_row_count": 2,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "core_merchant_home_banner",
+            "SQL_COUNT": 1,
+            "export_snapshot_row_count": 1,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          },
+          {
+            "table": "flyway_schema_history",
+            "SQL_COUNT": 21,
+            "export_snapshot_row_count": 21,
+            "count_matches": true,
+            "full_DDL_constraints_semantics_match_source_fingerprint": true,
+            "primary_key_present": true
+          }
+        ]
+      }
+    ],
+    "all_table_names_match_source_snapshot": true,
+    "all_full_DDL_constraints_semantics_match_source_snapshot": true,
+    "tables_with_primary_key": 51,
+    "constraint_type_counts": {
+      "puyu_auth_local": {
+        "PRIMARY KEY": 4
+      },
+      "puyu_erp_local": {
+        "UNIQUE": 20,
+        "PRIMARY KEY": 47,
+        "CHECK": 5
+      }
+    },
+    "existing_non_puyu_schema_table_counts": {
+      "finger_auth_test": 3,
+      "finger_coms_test": 10,
+      "finger_system_test": 6,
+      "nacos_test": 12
+    },
+    "Nacos_current_config_count": 36,
+    "this_run_temp_importer_account_count": 0,
+    "all_owned_temp_importer_prefix_account_count": 0,
+    "container_this_run_cnf_directory_absent": true,
+    "containers": [
+      {
+        "Name": "/dell-data-test-data-mysql-1",
+        "ID": "df4e9d159f5903e42ab4e6c2c092d2d454ac55a76c226fc8a07fe44c72b41ef6",
+        "ImageID": "sha256:a0f6c7786c75739bd76a37b4b85e0f47b7c5d5a17a094bdd522412fb464d5cbe",
+        "PID": 1325,
+        "StartedAt": "2026-11-09T06:28:57.073828899Z",
+        "State": "running",
+        "Health": "healthy",
+        "RestartCount": 0,
+        "OOMKilled": false
+      },
+      {
+        "Name": "/dell-data-test-data-nacos-1",
+        "ID": "5bd9a27fd4051994494eed423d84e50862ef91918ffbfa4834df14de2a8f2e4c",
+        "ImageID": "sha256:fc86d4833afb7abc64006f04c715946303f6b15d694c2f05c2895a27d967ed88",
+        "PID": 1846,
+        "StartedAt": "2026-11-09T06:29:09.039813697Z",
+        "State": "running",
+        "Health": "healthy",
+        "RestartCount": 0,
+        "OOMKilled": false
+      },
+      {
+        "Name": "/dell-data-test-data-redis-1",
+        "ID": "b5d49893d99c73d425f0af035dce837f1467a096841d7bbae3f7d5381ce3df22",
+        "ImageID": "sha256:17c1c1b96fd1685968790c7fcab311e5bc49c809efe9744af262640a559c4cf2",
+        "PID": 1401,
+        "StartedAt": "2026-11-09T06:28:57.982305444Z",
+        "State": "running",
+        "Health": "healthy",
+        "RestartCount": 0,
+        "OOMKilled": false
+      },
+      {
+        "Name": "/dell-data-test-data-rabbitmq-1",
+        "ID": "4d955f668d96330c7d9cbe676ec41722a1d3c67038a52d89f0c3f8f11866ce58",
+        "ImageID": "sha256:de912cbbf07f938bb8aaa5682464a73a00c6a996efdf0880423aeb4eae006c34",
+        "PID": 1477,
+        "StartedAt": "2026-11-09T06:28:58.751894383Z",
+        "State": "running",
+        "Health": "healthy",
+        "RestartCount": 0,
+        "OOMKilled": false
+      }
+    ],
+    "business_rows_or_rawDDL_rowdigest_passwordhash_values_output": false,
+    "server_mutations": false
+  },
+  "checks": {
+    "source_schemas_retained": true,
+    "source_same_container_image": true,
+    "target_all51_sql_count_match_export": true,
+    "target_names_DDL_PK_constraints_match": true,
+    "target_charsets_collations_preserved": true,
+    "existing_finger_Nacos_tables_preserved": true,
+    "Nacos36configs_untouched": true,
+    "original4containers_ID_Image_health_unchanged": true,
+    "no_temp_importer_account_or_cnf": true,
+    "source_no_restart_observed": true
+  },
+  "all_passed": true,
+  "no_SQL_body_rowdigest_realhash_credentials_or_passwordhashes_in_public_report": true,
+  "no_serverwrites_configchanges_GitorJavaactions": true,
+  "limitations": [
+    "PostcheckSQLCOUNTscomparetoexportsnapshot pertable; sourcecurrentcountsnotforcedtoequalexportpointbecauseDMLallowed.",
+    "PreflightdidnotcapturePIDStartedAt so notinventedexactbeforecomparison; currentvaluesrecorded, sameID/restart0checked.",
+    "Password/configbytebaselineabsent; no independentfalseclaimunchangedfromhashes. Producerfixedcode andnativeTLSsameprivatepwdsuccess areseparateproofs."
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-09T23:36:45.227702+08:00",
+  "scope": "fresh MySQL TCP client from Mac local Docker to test19.20:3306",
+  "authenticated_as_root_percent": true,
+  "client_TLS_disabled_with_public_key_retrieval": true,
+  "server_require_secure_transport_false": true,
+  "SQL_writes_or_source_DB_change": false,
+  "password_or_hash_output": false,
+  "client_exit_code": 0
+}

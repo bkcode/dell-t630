@@ -2,16 +2,18 @@
 
 # VM190 server19 独立网关
 
-当前状态：**190已应用并通过独立strict SSH新nonce确认，本机配置/服务及短DNS查询通过；跨网packet验收仍由主AI的230 canary完成。** 本子任务只修改190来宾软件，PVE桥/ACL、OpenWrt路由、其它来宾及业务配置由主AI/其它分派处理。旧应用本轮仍在原网，不把网关本机ready当成全网迁移完成。
+当前状态（2026-11-09 23:34）：网关190已运行在19网络，正常重启持久性与后续Fake-IP/WireGuard更新有独立历史回执。本次LAN21受信访问的[hot确认](../lan-trusted-20261109/gateway-confirmed.json)与[最终只读核查](../lan-trusted-20261109/final-postcheck.json)证明实际配置SHA与本地bundle一致，三自有unit active、无pending事务/活动rollback timer、无NAT。`192.168.21.0/24`可访问`192.168.19.0/24`全IPv4服务及网关自身21.23/19.1，原应用认证保留；WG10.66.66/24许可保持。只在网关和PVE桥两层已批准规则上扩权，PVE仍只管理/L2、IPv4/IPv6 forwarding全0。本轮canonical同步仅本地生成，无远程变更或重启；Air宽范围尚未重新逐项复测。
+
+以下最初stage/canary/失败回退说明按实施时点保留；不能把旧“packet pending/旧应用原网”阶段读成当前网络状态。
 
 资源与地址唯一来源是上级`migration-plan.json`：VM190/network-gateway，从9010全克隆，2vCPU、512MiB、**32GiB sparse虚拟盘**，没有缩盘或创建新PVE模板。WAN `192.168.21.23/24`、默认路由`192.168.21.1`；LAN `192.168.19.1/24`。两NIC固定MAC为`02:63:19:01:90:00/01`，运行期以MAC定位实际接口，不依赖eth0/eth1；目前恰好观测为eth0/eth1。
 
 ## 实现与安全边界
 
-- `policy.py`严格编译主AI给定的gateway_policy与地址清单。管理WAN来源仅PVE21.22和Mac21.116，WAN允许它们SSH/ICMP到网关；19来宾不能SSH网关。SSH只保留pubkey认证，原ub与host key不轮换，客户端私钥留Mac。
+- `policy.py`严格编译主AI给定的gateway_policy与地址清单。基础管理例外保留PVE21.22和Mac21.116；后续明确受信LAN21/24与WG10.66.66/24可访问网关自身21.23/19.1的IPv4服务，SSH仍须原认证。19来宾不能SSH网关。SSH只保留pubkey认证，原ub与host key不轮换，客户端私钥留Mac。
 - `systemd-networkd`以`[Match] MACAddress`应用双静态IP；只有WAN默认路由。原backend已实际确认networkd，没有切换未知renderer。CloudInit后续不覆盖网络，原生成网络文件保留作为回退。
 - 自有`inet dell_gateway19`仅3条filter链：input/forward默认drop、output允许网关自身正常OS出站；**无NAT/SNAT/DNAT**，公网NAT归OW。禁止`nft flush ruleset`，发现外来表拒绝接管。
-- WAN→LAN按主计划源/目的/端口矩阵，19→公网排除私网/保留地址，只允许指定DNS/web/NTP/ICMP；CF19.5额外保留TCP/UDP7844，通用443仍有，publisher19.30可出公网SSH22。CF对旧21网origin兼容只限计划列出的6个端口，未知account-side origins不是全放依据，origin E2E仍未验。
+- WAN→LAN按主计划矩阵与明确的受信LAN21/24、WG10.66.66/24全IPv4特性，19→公网排除私网/保留地址，只允许指定DNS/web/NTP/ICMP；CF19.5额外保留TCP/UDP7844，通用443仍有，publisher19.30可出公网SSH22。CF对旧21网origin兼容只限计划列出的6个端口，未知account-side origins不是全放依据，origin E2E仍未验。
 - new-flow批准后写专用ct mark，established/related仅接受该标记；同LAN→同LAN经网关绕行直接drop，不能用网关绕过PVE bridge东西向隔离。真正同19/24流量通常不经网关，必须由主AI的bridge/vNIC ACL保护。
 - boot先all+WAN+LAN IPv4 forwarding全0并原子加载filter。networkd文件不设置IPv4Forwarding，防止网络管理器提前打开入接口转发；ready核对路由/filter/IPv6后才开启all+WAN+LAN全1并重新hardening。停止FW/ready执行quiesce三者全0。
 - IPv6仅WAN/LAN接口关闭，默认新接口关闭；不改kernel ipv6.disable或all.disable_ipv6，lo恢复`::1/128`。实际审计IPv6地址仅有lo::1。
@@ -44,7 +46,7 @@ python3 dell/network19/gateway/manager.py confirm --nonce <本次32hex>
 
 stage预先快照自有文件/表、全部被hardening触及的sysctl、原unit状态，校验nft/dnsmasq/systemd语法。独立timer同时用OnActiveSec=180s和UTC OnCalendar/Persistent保护当前boot断联与重启漏触发；apply在独立systemd单元运行，不因SSH断联取消。confirm必须新strict SSH验证ub/hostname/原host key、匹配该次nonce和actual check，才关闭watchdog。外层stage/apply/confirm/rollback共用锁，boot/ready子单元不抢同一锁，避免依赖死锁。
 
-rollback先quiesce全0，停止自有DNS/ready/FW，只恢复/删除自有nft表、原文件、原networkd及所有记录sysctl，并逐键readback；原管理静态地址/默认路由恢复。包、公开恢复代码和已产生租约保留，不删业务数据；任何异常由主AIQGA/控制台救援，不回到PVE临时NAT冒充成功。190 reboot持久性由主AI另开窗口，本子任务未自行重启VM。
+rollback先quiesce全0，停止自有DNS/ready/FW，只恢复/删除自有nft表、原文件、原networkd及所有记录sysctl，并逐键readback；原管理静态地址/默认路由恢复。包、公开恢复代码和已产生租约保留，不删业务数据；任何异常由主AIQGA/控制台救援，不回到PVE临时NAT冒充成功。首次应用阶段未自行重启；后来已由主AI授权正常重启并验收，见[实际重启回执](reboot-evidence.json)。
 
 ## 验收标准与实际证据
 
@@ -58,8 +60,8 @@ rollback先quiesce全0，停止自有DNS/ready/FW，只恢复/删除自有nft表
 | GW19-04 | 190 standby | nft-c、dnsmasq --test、systemd verify | 全exit0，前后all/两iface0，kernel表空；同UID/三cap精确leaseFD写可用 | native-parse-evidence.json、lease-probe-evidence.json | 通过 |
 | GW19-05 | 完整apply授权 | 第一失败触发原事务rollback，修订后新stage/check/confirm | 原失败安全恢复；第二次新nonce/新SSH成功，pending与timer关闭 | first-attempt-live-stage/check、first-apply-diagnostic、live-stage/check/confirm.json | 通过 |
 | GW19-06 | 已确认配置 | 查filter/route/forward/IPv6/实际DNS身份及短UDP/TCP查询 | 三filter链、input/forward drop、无NAT、唯一WANdefault、三forward1、lo-onlyIPv6；静态域A正确 | active-audit.json | 通过（网关本机） |
-| GW19-07 | 主AI迁首台230 canary | 真实19客户端到21/公网、DNS/DHCP和WAN拒绝测试 | 实际packet/count/源地址证明经GW无SNAT，授权通/禁止drop、DHCP只LAN | 主AI后续packet证据 | pending |
-| GW19-08 | 主AI明确190 reboot窗口 | 重启190再验启动顺序与持久性 | FW先于转发，MAC/IPv6/默认路由/服务恢复，PVE不接管L3 | 主AI后续reboot证据 | pending |
+| GW19-07 | 主AI迁首台230 canary | 真实19客户端到21/公网、DNS/DHCP和WAN拒绝测试 | 实际packet/count/源地址证明经GW无SNAT，授权通/禁止drop、DHCP只LAN | [实际跨网验收](../audit/network19-acceptance.md) | 已另行留证（不外推公网origin） |
+| GW19-08 | 主AI明确190 reboot窗口 | 重启190再验启动顺序与持久性 | FW先于转发，MAC/IPv6/默认路由/服务恢复，PVE不接管L3 | [网关重启回执](reboot-evidence.json) | 已另行通过 |
 
 ## 官方机制来源
 

@@ -1,0 +1,27 @@
+--- withoutLANfeature-newrenderer
++++ trustedLAN
+@@ -14,6 +14,7 @@
+   iifname "eth0" ip saddr @management ip daddr { 192.168.21.23, 192.168.19.1 } icmp type echo-request limit rate 10/second burst 20 packets accept
+   iifname "eth1" ip saddr 192.168.19.0/24 ip daddr 192.168.19.1 udp dport 53 accept
+   iifname "eth1" ip saddr 192.168.19.0/24 ip daddr 192.168.19.1 tcp dport 53 accept
++  iifname "eth0" ip saddr 192.168.21.0/24 ip daddr { 192.168.21.23, 192.168.19.1 } ct mark set 0x19000006 counter accept comment "LAN-Trusted-Gateway-IPv4"
+   counter drop
+  }
+  chain forward { type filter hook forward priority 0; policy drop;
+@@ -22,7 +23,7 @@
+   iifname "eth0" ip saddr 192.168.19.0/24 drop
+   iifname "eth1" ip saddr != 192.168.19.0/24 drop
+   iifname "eth1" oifname "eth1" counter drop
+-  ct state established,related ct mark { 0x19000001, 0x19000002, 0x19000003, 0x19000004, 0x19000005 } accept
++  ct state established,related ct mark { 0x19000001, 0x19000002, 0x19000003, 0x19000004, 0x19000005, 0x19000006 } accept
+   iifname "eth0" oifname "eth1" ip saddr 10.66.66.0/24 ip daddr 192.168.19.0/24 ct mark set 0x19000005 counter accept comment "WG-TrustedVPN-Server19-IPv4"
+   iifname "eth0" oifname "eth1" ip saddr { 192.168.21.0/24 } ip daddr { 192.168.19.50 } tcp dport { 9001 } ct state new ct mark set 0x19000001 accept
+   iifname "eth0" oifname "eth1" ip saddr { 192.168.21.0/24 } ip daddr { 192.168.19.31 } tcp dport { 8081 } ct state new ct mark set 0x19000001 accept
+@@ -32,6 +33,7 @@
+   iifname "eth0" oifname "eth1" ip saddr { 192.168.21.0/24 } ip daddr { 192.168.19.70 } tcp dport { 3000 } ct state new ct mark set 0x19000001 accept
+   iifname "eth0" oifname "eth1" ip saddr { 192.168.21.22, 192.168.21.116 } ip daddr { 192.168.19.0/24 } tcp dport { 22, 3306, 5672, 6379, 8848, 9090, 9093, 9100, 9848, 9849, 15672 } ct state new ct mark set 0x19000001 accept
+   iifname "eth0" oifname "eth1" ip saddr { 192.168.21.0/24 } ip daddr { 192.168.19.20 } tcp dport { 8848, 9848 } ct state new ct mark set 0x19000001 accept
++  iifname "eth0" oifname "eth1" ip saddr 192.168.21.0/24 ip daddr 192.168.19.0/24 ct mark set 0x19000006 counter accept comment "LAN-Trusted-Server19-IPv4"
+   iifname "eth1" oifname "eth0" ip saddr 192.168.19.5 ip daddr 192.168.21.0/24 tcp dport { 80, 443, 8081, 8096, 9001, 9999 } ct state new ct mark set 0x19000001 accept
+   iifname "eth1" oifname "eth0" ip saddr 192.168.19.0/24 ip daddr 198.18.0.0/15 tcp dport { 53, 80, 443 } ct state new ct mark set 0x19000002 accept
+   iifname "eth1" oifname "eth0" ip saddr 192.168.19.0/24 ip daddr 198.18.0.0/15 udp dport { 53, 123 } ct state new ct mark set 0x19000002 accept

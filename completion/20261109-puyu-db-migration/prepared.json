@@ -1,0 +1,17 @@
+{
+  "status": "Puyu-target-private-staging-and-readonly-prepare-passed",
+  "run_id": "e28bf9aa3e8f44328eab71190a5a93a8",
+  "prepare": {
+    "run_id": "e28bf9aa3e8f44328eab71190a5a93a8",
+    "source_tables": 51,
+    "status": "prepared-no-target-write",
+    "target_collisions": 0
+  },
+  "public_code_SHA": {
+    "target-worker.py": "703fa9739c9bdd3bd9f1b37b7fd79fd595173da87b7c5b16ab17c4799c7506f6",
+    "fingerprint.py": "4ab595181373b8dd9d2733036095101825a257056a947658b51d2b68fefb2361"
+  },
+  "database_created_or_imported": false,
+  "password_or_existing_configuration_changed": false,
+  "SQL_or_actual_data_hash_output": false
+}

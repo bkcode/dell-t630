@@ -1,0 +1,20 @@
+{
+  "LANfeature_exact": "21/24 ->19/24 allIPv4 + exactGWlocal",
+  "negative_variations_rejected": [
+    "source23",
+    "sourceall",
+    "dest23",
+    "destall",
+    "extraGW",
+    "NAT",
+    "porthidden",
+    "DNS",
+    "MGMT",
+    "WG"
+  ],
+  "newmark6_set_only_in2_exactbranches": true,
+  "feature_absent_no_mark6_return_orinput_accept": true,
+  "input_generic_excludes5_and6": true,
+  "bridge_plus1_no_delete": true,
+  "other_fields_equal_exceptfeature_andhash": true
+}

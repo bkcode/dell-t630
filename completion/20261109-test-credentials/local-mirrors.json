@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-09T23:35:20.432972+08:00",
+  "status": "active-local-test-credential-sources-synchronized",
+  "files_synchronized": 10,
+  "private_old_active_mirror_backup": true,
+  "only_test_store_and_test_bundle": true,
+  "sourceMac_nacos_or_production_touched": false,
+  "historical_archives_touched": false,
+  "real_values_or_hashes_output": false,
+  "generator_replayed": false
+}

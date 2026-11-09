@@ -1,0 +1,13 @@
+{
+  "SQL_or_data_hash_emitted": false,
+  "databases": [
+    "puyu_auth_local",
+    "puyu_erp_local"
+  ],
+  "run_id": "e28bf9aa3e8f44328eab71190a5a93a8",
+  "status": "target-puyu-snapshot-verified",
+  "table_counts": {
+    "puyu_auth_local": 4,
+    "puyu_erp_local": 47
+  }
+}

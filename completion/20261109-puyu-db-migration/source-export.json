@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "started_at": "2026-11-09T14:41:31.928520+00:00",
+  "status": "source-two-puyu-databases-exported-private-only",
+  "selected_databases": [
+    "puyu_auth_local",
+    "puyu_erp_local"
+  ],
+  "dump_flags": [
+    "--single-transaction",
+    "--order-by-primary",
+    "--skip-extended-insert",
+    "--complete-insert",
+    "--hex-blob",
+    "--skip-comments",
+    "--skip-dump-date",
+    "--no-tablespaces",
+    "--set-gtid-purged=OFF",
+    "--default-character-set=utf8mb4",
+    "--tz-utc",
+    "--databases",
+    "puyu_auth_local",
+    "puyu_erp_local"
+  ],
+  "source_rows_count_claim": "Exportpoint is one singletransaction dump; preflight1291 isnotasserted asdumpcount.",
+  "target_writes_or_application_stop": false,
+  "data_hashes_SQL_or_credentials_in_public_evidence": false,
+  "code_SHA256": "eb660f7a6da909ffebbbb2110dc7054fc8253b431a6d91925143d4e4baad9096",
+  "DDL_lock_acquired_at": "2026-11-09T14:41:32.664819+00:00",
+  "DDL_lock_released_at": "2026-11-09T14:41:33.082851+00:00",
+  "session_release_proof": {
+    "UNLOCK_marker_acknowledged": true,
+    "independent_counts": {
+      "owned_lock_connection_count": 0,
+      "owned_backup_lock_count": 0
+    },
+    "owned_connection_KILL_fallback_used": false,
+    "session_idle_safety_bound_seconds": 1250
+  },
+  "run_id": "e28bf9aa3e8f44328eab71190a5a93a8",
+  "database_count": 2,
+  "table_counts": {
+    "puyu_auth_local": 4,
+    "puyu_erp_local": 47
+  },
+  "gzip_CRC_verified": true,
+  "private_SHA_verified": true,
+  "schema_metadata_stable_before_after": true,
+  "compressed_bytes": 1914871,
+  "uncompressed_bytes": 4771200,
+  "private_directory_reference": "private/puyu-db-migration/20261109/e28bf9aa3e8f44328eab71190a5a93a8",
+  "private_files_mode600": true,
+  "private_directory_mode700": true,
+  "source_container_not_restarted": true,
+  "finished_at": "2026-11-09T14:41:33.405508+00:00",
+  "elapsed_seconds": 1.477
+}

@@ -175,7 +175,7 @@
     9001,
     9999
   ],
-  "migration_plan_sha256": "1491f4836699e55f3c267fa681c30508ae15b2b2b5d0da4f38a8a45af7b5f62f",
+  "migration_plan_sha256": "11ad406e83a75878e097d4928c3c1bd99f60e7d7ca02d5e1ec57b63eb79c7009",
   "OW_fake_IP_proxy": {
     "source": "192.168.19.0/24",
     "destination": "198.18.0.0/15",
@@ -202,6 +202,16 @@
   },
   "WireGuard_client_access": {
     "source": "10.66.66.0/24",
+    "destination": "192.168.19.0/24",
+    "protocols": "all",
+    "gateway_local_addresses": [
+      "192.168.21.23",
+      "192.168.19.1"
+    ],
+    "no_NAT": true
+  },
+  "LAN_trusted_client_access": {
+    "source": "192.168.21.0/24",
     "destination": "192.168.19.0/24",
     "protocols": "all",
     "gateway_local_addresses": [

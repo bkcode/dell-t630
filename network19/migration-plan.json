@@ -364,6 +364,18 @@
       "reason": "After being told full-server/all-protocol scope risk, user explicitly requested this trustedVPN CIDR allowed on23gateway and access to allserver services",
       "evidence": "network19/wireguard/full-access-authorization.json",
       "no_NAT": true
+    },
+    "LAN_trusted_client_access": {
+      "source": "192.168.21.0/24",
+      "destination": "192.168.19.0/24",
+      "protocols": "all",
+      "gateway_local_addresses": [
+        "192.168.21.23",
+        "192.168.19.1"
+      ],
+      "no_NAT": true,
+      "reason": "User explicit21.*trust to allserver19 forSSH/MySQL andother services; retaincredentials",
+      "evidence": "user20261109 explicit21.*放行"
     }
   },
   "Java_scope_revision": {

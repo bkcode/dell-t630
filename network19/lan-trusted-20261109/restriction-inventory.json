@@ -1,0 +1,367 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-11-09T14:48:52.209941+00:00",
+  "scope": "remaining servicebind/auth/role restrictions readonly selectedmetadata; rootcentraltrustedLAN policy transaction separate",
+  "trusted_management_LAN_requested": "192.168.21.0/24 toserver19 allIPv4/GWself; noNAT/credentialsunchanged",
+  "guests": [
+    {
+      "vmid": 190,
+      "hostname": "network-gateway",
+      "at": "2026-11-09T14:48:50.283726+00:00",
+      "read_only": true,
+      "ACL_password_config_or_service_changes": false,
+      "physical_IPv4": [
+        {
+          "interface": "eth0",
+          "addresses": [
+            "192.168.21.23"
+          ]
+        },
+        {
+          "interface": "eth1",
+          "addresses": [
+            "192.168.19.1"
+          ]
+        }
+      ],
+      "selected_listener_metadata": [
+        {
+          "protocol": "udp",
+          "local": "192.168.19.1:53"
+        },
+        {
+          "protocol": "udp",
+          "local": "127.0.0.54:53"
+        },
+        {
+          "protocol": "udp",
+          "local": "127.0.0.53%lo:53"
+        },
+        {
+          "protocol": "udp",
+          "local": "0.0.0.0%eth1:67"
+        },
+        {
+          "protocol": "tcp",
+          "local": "127.0.0.54:53"
+        },
+        {
+          "protocol": "tcp",
+          "local": "0.0.0.0:22"
+        },
+        {
+          "protocol": "tcp",
+          "local": "127.0.0.53%lo:53"
+        },
+        {
+          "protocol": "tcp",
+          "local": "192.168.19.1:53"
+        },
+        {
+          "protocol": "tcp",
+          "local": "[::]:22"
+        }
+      ],
+      "sshd_ub_from21_164": {
+        "permitrootlogin": "without-password",
+        "pubkeyauthentication": "yes",
+        "passwordauthentication": "no",
+        "kbdinteractiveauthentication": "no",
+        "x11forwarding": "yes",
+        "permittty": "yes",
+        "allowtcpforwarding": "yes",
+        "allowagentforwarding": "yes",
+        "authenticationmethods": "any",
+        "forced_command_is_fixed_dispatch": false
+      },
+      "nft_table_names": [
+        {
+          "family": "inet",
+          "name": "dell_gateway19",
+          "handle": 10
+        }
+      ],
+      "status": "collected"
+    },
+    {
+      "vmid": 210,
+      "hostname": "data-test",
+      "at": "2026-11-09T14:48:50.269943+00:00",
+      "read_only": true,
+      "ACL_password_config_or_service_changes": false,
+      "MySQL_account_host_lock_metadata": [
+        {
+          "user": "finger_auth_test",
+          "host": "10.63.20.20",
+          "account_locked": "N"
+        },
+        {
+          "user": "finger_auth_test",
+          "host": "192.168.19.45",
+          "account_locked": "N"
+        },
+        {
+          "user": "finger_coms_test",
+          "host": "10.63.20.20",
+          "account_locked": "N"
+        },
+        {
+          "user": "finger_coms_test",
+          "host": "192.168.19.45",
+          "account_locked": "N"
+        },
+        {
+          "user": "finger_system_test",
+          "host": "10.63.20.20",
+          "account_locked": "N"
+        },
+        {
+          "user": "finger_system_test",
+          "host": "192.168.19.45",
+          "account_locked": "N"
+        },
+        {
+          "user": "mysql.infoschema",
+          "host": "localhost",
+          "account_locked": "Y"
+        },
+        {
+          "user": "mysql.session",
+          "host": "localhost",
+          "account_locked": "Y"
+        },
+        {
+          "user": "mysql.sys",
+          "host": "localhost",
+          "account_locked": "Y"
+        },
+        {
+          "user": "nacos_test",
+          "host": "%",
+          "account_locked": "N"
+        },
+        {
+          "user": "root",
+          "host": "%",
+          "account_locked": "N"
+        },
+        {
+          "user": "root",
+          "host": "localhost",
+          "account_locked": "N"
+        }
+      ],
+      "MySQL_server_bind_address": "*",
+      "MySQL_published_ports": {
+        "3306/tcp": [
+          {
+            "HostIp": "192.168.19.20",
+            "HostPort": "3306"
+          }
+        ],
+        "33060/tcp": null
+      },
+      "auth_values_grants_business_rows_not_queried": true,
+      "status": "collected"
+    },
+    {
+      "vmid": 240,
+      "hostname": "java-test-01",
+      "at": "2026-11-09T14:48:50.341036+00:00",
+      "read_only": true,
+      "ACL_password_config_or_service_changes": false,
+      "sshd_ub_from21_164": {
+        "permitrootlogin": "without-password",
+        "pubkeyauthentication": "yes",
+        "passwordauthentication": "no",
+        "kbdinteractiveauthentication": "no",
+        "x11forwarding": "yes",
+        "permittty": "yes",
+        "allowtcpforwarding": "yes",
+        "allowagentforwarding": "yes",
+        "authenticationmethods": "any",
+        "forced_command_is_fixed_dispatch": false
+      },
+      "sshd_deployer_from19_30": {
+        "permitrootlogin": "without-password",
+        "pubkeyauthentication": "yes",
+        "passwordauthentication": "no",
+        "kbdinteractiveauthentication": "no",
+        "x11forwarding": "no",
+        "permittty": "no",
+        "allowtcpforwarding": "no",
+        "allowagentforwarding": "no",
+        "authenticationmethods": "publickey",
+        "forced_command_is_fixed_dispatch": true
+      },
+      "deployer_authorized_key_option_checks": {
+        "entry_count": 1,
+        "from_only19_30": true,
+        "restrict_option": true,
+        "fixed_command_dispatch": true,
+        "public_key_or_any_private_key_values_output": false
+      },
+      "publisher_business_fence_baseline_migrated": false,
+      "publisher_policy_only_boolean_readback": true,
+      "status": "collected"
+    },
+    {
+      "vmid": 250,
+      "hostname": "penpot-service",
+      "at": "2026-11-09T14:48:50.379818+00:00",
+      "read_only": true,
+      "ACL_password_config_or_service_changes": false,
+      "selected_published_ports": {
+        "penpot-penpot-frontend-1": {
+          "8080/tcp": [
+            {
+              "HostIp": "192.168.19.50",
+              "HostPort": "9001"
+            }
+          ]
+        },
+        "penpot-penpot-import-1": {
+          "4405/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "9002"
+            }
+          ]
+        },
+        "penpot-penpot-mcp-1": {}
+      },
+      "authentication_or_MCP_key_not_read_or_changed": true,
+      "status": "collected"
+    },
+    {
+      "vmid": 260,
+      "hostname": "nas-media",
+      "at": "2026-11-09T14:48:51.363514+00:00",
+      "read_only": true,
+      "ACL_password_config_or_service_changes": false,
+      "SMB_host_network_allowlists": {
+        "media": {
+          "hosts allow": "192.168.21.0/24 192.168.19.0/24 127.0.0.1 10.66.66.0/24",
+          "hosts deny": ""
+        },
+        "games": {
+          "hosts allow": "192.168.21.0/24 192.168.19.0/24 127.0.0.1 10.66.66.0/24",
+          "hosts deny": ""
+        },
+        "incoming": {
+          "hosts allow": "192.168.21.0/24 192.168.19.0/24 127.0.0.1 10.66.66.0/24",
+          "hosts deny": ""
+        }
+      },
+      "users_passwords_read_write_permissions_not_read_or_changed": true,
+      "status": "collected"
+    },
+    {
+      "vmid": 270,
+      "hostname": "ops-service",
+      "at": "2026-11-09T14:48:51.366876+00:00",
+      "read_only": true,
+      "ACL_password_config_or_service_changes": false,
+      "Lark_bridge_listener_local_addresses": [
+        "172.18.0.1:19093"
+      ],
+      "Lark_native_unit_selected": {
+        "DynamicUser": "yes",
+        "NoNewPrivileges": "yes",
+        "ActiveState": "active",
+        "SubState": "running"
+      },
+      "LoadCredential_paths_unchanged_contract": {
+        "webhook_native_reference_present": true,
+        "bridge_auth_reference_present": true,
+        "secret_values_read": false
+      },
+      "native_unit_public_SHA256": "682831587cd2d624aec40efb2651e0020a3c64b2630f5b6df88200aae0fc6fbf",
+      "status": "collected"
+    }
+  ],
+  "PVE_central_metadata": {
+    "nft_table_names": [
+      {
+        "family": "bridge",
+        "name": "dell19_acl",
+        "handle": 9
+      }
+    ],
+    "IPv4forward": "0"
+  },
+  "central_policy_limitation": "Onlytablepresence/hostforward captured; broad21LAN rulemembership/atomiccommit andfullroleACL proofownedbyroot, notinferredfromthistablelist.",
+  "remote_changes": false,
+  "known_hosts_changed": false,
+  "credentials_Env_Cmd_private_keys_or_password_hashes_output": false,
+  "source_DB_export_or_schema_changes": false,
+  "remaining_restrictions": [
+    {
+      "layer": "centralnetwork",
+      "locations": [
+        "GW190 inetdell_gateway19",
+        "PVEbridge dell19_acl"
+      ],
+      "scope": "TrustedLAN21/24to19/GW beingcommittedbyroot. Existingguestroleisolation/MAC-IPownershipremain separatecontrols.",
+      "observed": "PVEforward0/noL3restoration; tablepresenceonlyinthisaudit.",
+      "change_owner": "root; nochangebythisagent"
+    },
+    {
+      "layer": "SSHauthentication",
+      "locations": [
+        190,
+        240
+      ],
+      "restriction": "ubfrom21.164 haspubkeyyes/passwordno/kbdinteractive no. NetworkaccessdoesnotprovideSSHkey.",
+      "purpose": "Existingkey-only authenticationretained; no passwordchange needed."
+    },
+    {
+      "layer": "publisher",
+      "locations": [
+        240
+      ],
+      "restriction": "deployerkeyfromexact19.30+restrict+fixeddispatch, noforward/TTY, baseline_migratedfalse businessfenced.",
+      "purpose": "TrustedLANisnotpermissiontodeploybusinessorobtain unrestricted shell."
+    },
+    {
+      "layer": "MySQLaccount-host",
+      "locations": [
+        210
+      ],
+      "restriction": "3306publishedonly19.20; serverbind*. root% andnacos_test% existbutrequireexistingpassword/privileges. finger_*testappaccountshosts19.45 andlegacy10.63.20.20, soLAN21directloginusingtheseappusers stillhost-denied.",
+      "purpose": "Do not resetpassword/grants fornetworkreachability; legacyHostrows arefuturecleanupreview notthischange."
+    },
+    {
+      "layer": "NASshare-source-auth",
+      "locations": [
+        260
+      ],
+      "restriction": "All3sharehostsallowalready21/24+19/24+127+VPN10/24. Noadditional21networkrestrictionthere; SMBuser/readwriteauthremains.",
+      "purpose": "NoNASchange neededfor21CIDR, noALL oranon expansion."
+    },
+    {
+      "layer": "Penpotinternalports",
+      "locations": [
+        250
+      ],
+      "restriction": "Publicfrontend19.50:9001; importer9002only127.0.0.1; MCPhelpernohostpublish. MCPexternalthroughauthenticatedfrontendroute, notrawhelperport.",
+      "purpose": "TrustedLANdoesnotmakeinternal/loopbackhelperspublic; keepnormalfrontendentry."
+    },
+    {
+      "layer": "Larkinternalbridge",
+      "locations": [
+        270
+      ],
+      "restriction": "nativebridgeonly172.18.0.1:19093; nativeLoadCredentialreferencesunchanged; auth/sourcechecksremain.",
+      "purpose": "PrivateAMnotificationtransportnotgeneralLANAPI; nonewlistener/recipientorcredentials."
+    },
+    {
+      "layer": "GWservicebind",
+      "locations": [
+        190
+      ],
+      "restriction": "SSHlistenson0.0.0.0:22and[::]:22 acrossbothIPv4addresses; DNSonly19.1:53plusloopbackresolvers, DHCPonlyeth1.",
+      "purpose": "LANtrustedpolicydoesnotmeanDNS/DHCPallWANlisteners. Access19.1forapprovedDNS; avoidenablingWAN DHCP."
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 更新：2026-11-09，Asia/Shanghai。此处为PVE宿主、最后保留的12个来宾与3份模板建立独立目录，共16份。iDRAC属于PVE物理机管理面，记录在pve目录；已删除的旧VM/QA不重新建成现役对象。
 
-**2026-11-09继续完成基础搭建与仅正式数据库/Nacos逻辑备份，不迁业务数据库；测试配置迁移按用户最新授权完成。** 当日fresh审计为12running/3tpl、15UP，forward guard跨14:24自然重启保持；正式DB首轮3301B/timer已通过、旧whole-VM计划disabled，最终状态统一见[当日交付记录](../completion/20261109-prod-db-scope/README.md)。每机JSON是合同/索引，不是秘密恢复包或实时配置导出；每机状态按各自证据与范围解释。
+**2026-11-09继续完成基础搭建与仅正式数据库/Nacos逻辑备份，测试配置迁移及仅Puyu两库到210的DB迁移按用户最新授权完成；正式环境不动。** 当日fresh审计为12running/3tpl、15UP，forward guard跨14:24自然重启保持；正式DB首轮3301B/timer已通过、旧whole-VM计划disabled，最终状态统一见[当日交付记录](../completion/20261109-prod-db-scope/README.md)。每机JSON是合同/索引，不是秘密恢复包或实时配置导出；每机状态按各自证据与范围解释。
 
 ## 机器入口
 
@@ -29,8 +29,14 @@
 
 用户最新授权测试Nacos配置迁移，覆盖先前仅空基础限制。VM210 `19.20:8848`现为finger-cloud-dev（`08e7191f-3ccd-411a-be00-56798d237533`）32项＋finger-trascan（`7bfe03c6-0590-4ff0-8def-e07015016b54`）4项；旧finger-test（`10719261-2641-590a-b821-c8484ca955ac`）、finger-test-empty（`23836f2e-9553-5948-84cd-431b2f241bd6`）和public均0。ID/name/group/body原样保留、未适配端点，不代表应用已可运行。见[applied](../completion/20261109-nacos-config-import/applied.json)、[verified](../completion/20261109-nacos-config-import/verified.json)及[210细节](vm210-data-test/README.md)。
 
-`finger_test`原应用权限仍只old＋empty，不授权两导入域；以后业务接入另配权限，当前admin可管理、不Java/不改profile/不迁业务DB。原7项guest私有备份保留，2＋5删除分两run留证，不公开body/hash/密码。早前[空域创建](../completion/20261109-test-env/empty-namespace-created.json)保持其当时历史含义，不再当当前旧域仍7项的证明。
+`finger_test`原应用权限仍只old＋empty，不授权两导入域；以后业务接入另配权限，当前admin可管理；后续仅Puyu两库数据迁移另获授权，仍不Java/不改profile。原7项guest私有备份保留，2＋5删除分两run留证，不公开body/hash/密码。早前[空域创建](../completion/20261109-test-env/empty-namespace-created.json)保持其当时历史含义，不再当当前旧域仍7项的证明。
 
+
+## 测试MySQL新增Puyu库
+
+VM210 `19.20:3306`按原名新增迁入`puyu_auth_local`4表/178行、`puyu_erp_local`47表/1113行，共51表/1291行，均指22:41导出快照；源应用DML可继续、源库保留且不持续同步。写前无同名检查和[原生apply](../completion/20261109-puyu-db-migration/applied.json)/[verify](../completion/20261109-puyu-db-migration/verified.json)已通过。未迁MySQL系统账号、未改目标原密码/cnf/服务、未迁Puyu Nacos配置/应用连接、未启Java，临时账号/client文件已清；[独立只读后检](../completion/20261109-puyu-db-migration/postcheck.json)已逐表核51个COUNT(*)与导出快照匹配，原四容器、Nacos36配置和既有Finger/Nacos表保持。
+
+当前LAN21/24已受信访问19/24和网关本机，[23:00正测](../network19/lan-trusted-20261109/LAN-positive-tests.json)含测试3306/SSH/ping及正式Nacos8848；早前Nacos-only阻断仅历史。SSH仍ub/key-only，Docker需sudo，MySQL原用户Host/密码仍限制。细节见[210说明](vm210-data-test/README.md)；TLS未新增服务端配置。
 
 ## 每个目录的文件
 

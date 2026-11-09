@@ -15,6 +15,12 @@
 
 - 用户随后明确授权仅Nacos配置迁移：清理测试210所有配置items，导入Mac finger-cloud-dev(08e7191f-3ccd-411a-be00-56798d237533)32项及finger-trascan(7bfe03c6-0590-4ff0-8def-e07015016b54)4项；原namespace ID/name/group/body保留，不适配连接地址、不启动Java。原7配置已在guest受保护完整备份，删除后Nacos缓存异步读回曾暂停，必须以journal/现况安全续作，不盲重跑；保留namespace/账号/权限/历史与业务DB，正式不动。源码/配置body与真实MD5仅private/SSH，不进Git。此最新授权只覆盖测试Nacos配置，不是业务DB迁移。
 
+## 2026-11-09 后续明确授权（覆盖较早范围限制）
+
+- 用户随后指定将本机实际存在的`puyu_auth_local`与`puyu_erp_local`迁至测试210，保留源、原库名/结构/内容；本次已完成2库51表1291快照行的导入与独立核验。此精确例外不授权其它业务迁移、Nexus合并、Java启动或自动备份扩围；快照之后源DML不持续同步。
+- 用户指定测试210三项组件凭据沿用本机Compose约定，并再次要求“保持这个密码设置”。只同步MySQL既有root@localhost/%、Redis默认认证和指定Rabbit管理身份；真实值只存private/guest受保护来源，不写普通文档/Git。正式、源Mac、Nacos管理员/DB用户和原应用账号密码、TLS/插件保持；不得再生成值覆盖本次指定设置。实现与验收入口`completion/20261109-test-credentials/`，实施状态以实际回执为准。
+- `192.168.21.0/24`现已按用户要求作为受信LAN，允许IPv4访问整个`192.168.19.0/24`及网关21.23/19.1本机。GW与PVE bridge双层确认；宿主forwarding全0、无NAT，WG10.66.66/24全服务许可不变。此项取代较早Nacos-only来源限制，不能回放旧narrow配置；应用身份/密钥权限仍生效。
+
 ## 范围与安全边界
 
 - 用户允许子 AI；主 AI 分配范围并验收。主 AI 独占 PVE 写、VMID/IP 分配；子 AI 默认只读宿主，来宾写必须有明确窗口。

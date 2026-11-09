@@ -12,11 +12,11 @@
 
 本机资料：[配置合同](config.json)、[安全来源索引](config-sources.json)，资源/IP以[plan](../../plan.json)为准：2vCPU、512MiB、32GiB稀疏fullclone；WAN21.23/24 vmbr0、LAN19.1/24 vmbr19，按原MAC识别eth0/eth1。先于其它来宾启动的顺序合同在JSON中，当前不执行start。
 
-## 11月9日测试Nacos的LAN专属转发
+## 11月9日LAN21受信访问
 
-本机已hot放行普通LAN `192.168.21.0/24 → 192.168.19.20 TCP8848/9848`，仅测试NacosAPI/控制台与客户端gRPC；原管理来源例外保留。PVE桥另加同范围1条许可，缺任一层都不能把路由可达当服务已放行。[网关确认](../../network19/lan-nacos-20261109/gateway-confirmed.json)/[独立核查](../../network19/lan-nacos-20261109/gateway-independent-check.json)证明hot后服务PID保持、无重启；[桥确认](../../network19/lan-nacos-20261109/bridge-confirmed.json)/[独立核查](../../network19/lan-nacos-20261109/bridge-independent-check.json)证明规则精确、PVE hostforward仍全0。无NAT，原WG10.66.66/24全服务许可不变。
+最新授权已扩为普通LAN `192.168.21.0/24 → 192.168.19.0/24`全IPv4协议，以及网关自身21.23/19.1的IPv4服务。应用认证与SSH key-only保留；网关owned hot规则和PVE bridge owned规则两层均已确认，桥仍先核MAC/目标IP绑定及invalid，不扩大其它来源或来宾角色peer矩阵。无NAT，PVE hostforward全0，原WG10.66.66/24全服务许可不变。[网关确认](../../network19/lan-trusted-20261109/gateway-confirmed.json)、[桥确认](../../network19/lan-trusted-20261109/bridge-confirmed.json)、[23:34最终只读核查](../../network19/lan-trusted-20261109/final-postcheck.json)证明实际配置与持久规则一致，服务未重启/PID保持、pending=false/timer inactive。
 
-Studio21.230已核HTTP200/nc9848；该来源到test3306/22/9849及prod19.11:8848/9848仍timeout，见[负测](../../network19/lan-nacos-20261109/LAN-negative-tests.json)。[Air用户确认](../../network19/lan-nacos-20261109/Air-user-confirmation.json)只说明Wi-Fi访问成功，没有逐项输出。此次未扩ICMP，ping不能代替目标HTTP/TCP与认证判断；不改OW/DNS、数据或Nacos认证，不新增凭据资料。
+[LAN抽测](../../network19/lan-trusted-20261109/LAN-positive-tests.json)已核ub严格SSH到19.20/21.23、test3306/8848/9848与prod19.11:8848及19.20 ICMP成功；Air尚无本次宽范围逐项复测，不能声称全部服务已认证验收。早前[Nacos-only负测](../../network19/lan-nacos-20261109/LAN-negative-tests.json)与[Air当时确认](../../network19/lan-nacos-20261109/Air-user-confirmation.json)属于扩权前历史，不再据此称test3306/SSH/prodNacos被LAN规则拒绝。ping不替代服务TCP/HTTP与认证检查；不改OW/DNS、应用账号、密码或凭据资料。
 
 ## 路由、VPN与最新DNS
 

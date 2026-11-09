@@ -1,0 +1,276 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-09T15:31:15.015716+00:00",
+  "status": "passed-two-Puyu-database-snapshot-copy",
+  "scope": "local puyu_auth_local/puyu_erp_local to new same-name testVM210 databases; source preserved; no application connection cutover",
+  "run_id": "e28bf9aa3e8f44328eab71190a5a93a8",
+  "cases": [
+    {
+      "id": "PUYU-SCOPE-001",
+      "title": "真实源范围与目标无冲突",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确授权本机puyu_*迁至测试19.20，保留源和现有目标数据"
+      ],
+      "steps": [
+        "读实际SHOW DATABASES后按^puyu_筛选",
+        "复核原测试MySQL和目标同名库碰撞门禁"
+      ],
+      "observable_pass_conditions": [
+        "源只puyu_auth_local/puyu_erp_local，4/47表全InnoDB/allPK，views/routines/triggers/events0",
+        "source/target MySQL8.4.5；prepare时目标无同名库，未覆盖原库"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-puyu-db-migration/preflight.json",
+          "note": "实际收据；SQL/真实数据指纹/凭据仅private，普通证据只count/boolean/metadata"
+        },
+        {
+          "path": "completion/20261109-puyu-db-migration/prepared.json",
+          "note": "实际收据；SQL/真实数据指纹/凭据仅private，普通证据只count/boolean/metadata"
+        }
+      ],
+      "verified_at": "2026-11-09T15:11:07.273072+00:00",
+      "verification_scope": "two same-name Puyu schema/data exportpoint snapshot copy only",
+      "limitations": []
+    },
+    {
+      "id": "PUYU-EXPORT-001",
+      "title": "有界单事务导出和DDL锁释放",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "固定源container/image与既有container内auth；未停源应用"
+      ],
+      "steps": [
+        "先核schema/engine/PK/对象",
+        "独立skip-reconnect连接握手并LOCK INSTANCE FOR BACKUP",
+        "单次mysqldump两库+tzUTC，释放锁并独立确认连接/锁0",
+        "gzipCRC及私有SHA完整性校验"
+      ],
+      "observable_pass_conditions": [
+        "DDL锁约0.42秒，UNLOCK marker acknowledged，独立ownedconnection/backupLock均0，无KILLfallback",
+        "run e28bf9aa3e8f44328eab71190a5a93a8：compressed1914871B/expanded4771200B，schema前后一致，private700/600"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-puyu-db-migration/source-export.json",
+          "note": "实际收据；SQL/真实数据指纹/凭据仅private，普通证据只count/boolean/metadata"
+        }
+      ],
+      "verified_at": "2026-11-09T15:11:07.273072+00:00",
+      "verification_scope": "two same-name Puyu schema/data exportpoint snapshot copy only",
+      "limitations": [
+        "DML继续；导出行数以单事务snapshot为准，不用后来的源COUNT强行比较。"
+      ]
+    },
+    {
+      "id": "PUYU-SNAPSHOT-001",
+      "title": "实际导出SQL快照指纹",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "私有源SQL不进入普通证据"
+      ],
+      "steps": [
+        "对实际source.sql.gz展开字节做受审fingerprint",
+        "核每表DDL/INSERT格式及空表"
+      ],
+      "observable_pass_conditions": [
+        "真实导出快照auth4表178行/ERP47表1113行，共51表1291行、4空表",
+        "完整SQL语句和opaque INSERT multiset在private中处理；无业务行或真实digest输出"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-puyu-db-migration/source-fingerprint.json",
+          "note": "实际收据；SQL/真实数据指纹/凭据仅private，普通证据只count/boolean/metadata"
+        }
+      ],
+      "verified_at": "2026-11-09T15:11:07.273072+00:00",
+      "verification_scope": "two same-name Puyu schema/data exportpoint snapshot copy only",
+      "limitations": []
+    },
+    {
+      "id": "PUYU-IMPORT-001",
+      "title": "仅新目标两库受限导入",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "native prepare无同名库；原目标四服务保持"
+      ],
+      "steps": [
+        "受限临时importer仅两库导入",
+        "不DROP现有数据库，不改全局账号/原服务配置",
+        "导入后清临时importer/cnf"
+      ],
+      "observable_pass_conditions": [
+        "原名puyu_auth_local/puyu_erp_local创建并导入，temporary_importer_removed=true",
+        "原源/目标密码与服务配置在迁移流程中未重设"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-puyu-db-migration/prepared.json",
+          "note": "实际收据；SQL/真实数据指纹/凭据仅private，普通证据只count/boolean/metadata"
+        },
+        {
+          "path": "completion/20261109-puyu-db-migration/applied.json",
+          "note": "实际收据；SQL/真实数据指纹/凭据仅private，普通证据只count/boolean/metadata"
+        }
+      ],
+      "verified_at": "2026-11-09T15:11:07.273072+00:00",
+      "verification_scope": "two same-name Puyu schema/data exportpoint snapshot copy only",
+      "limitations": [
+        "权限与认证变更为后续独立用户任务，本收据不替其验收。"
+      ]
+    },
+    {
+      "id": "PUYU-VERIFY-001",
+      "title": "native重导出语义/完整行指纹和CHECK TABLE",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "目标导入已完成"
+      ],
+      "steps": [
+        "目标按相同固定dump flags只读redump",
+        "与源快照完整语义DDL/row multiset fingerprint匹配",
+        "逐表CHECK TABLE要求status OK"
+      ],
+      "observable_pass_conditions": [
+        "native verify target-puyu-snapshot-verified",
+        "source_fp==private manifest fp==target_fp，51表CHECK TABLE通过；没有解析/截断JSON业务值来凑通过"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-puyu-db-migration/verified.json",
+          "note": "实际收据；SQL/真实数据指纹/凭据仅private，普通证据只count/boolean/metadata"
+        },
+        {
+          "path": "completion/20261109-puyu-db-migration/source-fingerprint.json",
+          "note": "实际收据；SQL/真实数据指纹/凭据仅private，普通证据只count/boolean/metadata"
+        }
+      ],
+      "verified_at": "2026-11-09T15:11:07.273072+00:00",
+      "verification_scope": "two same-name Puyu schema/data exportpoint snapshot copy only",
+      "limitations": [
+        "native verified.json为摘要；完整验证合同对应infra/data/puyu-db-migration/target-worker.py verify函数。"
+      ]
+    },
+    {
+      "id": "PUYU-COUNT-001",
+      "title": "独立51表SQL COUNT与结构检查",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "独立只读agent不调用迁移apply或管理log函数"
+      ],
+      "steps": [
+        "读取target自有private manifest.fp仅内存",
+        "对51表逐个SQL COUNT(*)比row_count",
+        "逐表SHOW CREATE语义与source fp、PK及schema charset/collation比较"
+      ],
+      "observable_pass_conditions": [
+        "51表逐项count_matches=true，auth178/ERP1113",
+        "表名集合/完整DDL约束语义一致，51表PK；charsetutf8mb4/collationutf8mb4_0900_ai_ci"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-puyu-db-migration/postcheck.json",
+          "note": "实际收据；SQL/真实数据指纹/凭据仅private，普通证据只count/boolean/metadata"
+        },
+        {
+          "path": "completion/20261109-puyu-db-migration/postcheck.md",
+          "note": "实际收据；SQL/真实数据指纹/凭据仅private，普通证据只count/boolean/metadata"
+        }
+      ],
+      "verified_at": "2026-11-09T15:11:07.273072+00:00",
+      "verification_scope": "two same-name Puyu schema/data exportpoint snapshot copy only",
+      "limitations": [
+        "只消除权威collation映射证明的冗余CHARACTER SET表示；不忽略约束/COMMENT。"
+      ]
+    },
+    {
+      "id": "PUYU-PRESERVE-001",
+      "title": "源与既有测试基础保持",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "不启动Java、不改Nacos/正式200201、源连接不切换"
+      ],
+      "steps": [
+        "独立核源库仍存在/固定容器restart0",
+        "复核原finger/Nacos表数与36配置",
+        "比较原四container IDs/images/health/restart/OOM"
+      ],
+      "observable_pass_conditions": [
+        "源两库仍在，源containerID/image相同且无观察到重启",
+        "原finger_auth_test3/finger_coms_test10/finger_system_test6/nacos_test12及config36保持",
+        "原四containerID/Image同preflight且healthy/restart0/OOMfalse"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-puyu-db-migration/postcheck.json",
+          "note": "实际收据；SQL/真实数据指纹/凭据仅private，普通证据只count/boolean/metadata"
+        }
+      ],
+      "verified_at": "2026-11-09T15:11:07.273072+00:00",
+      "verification_scope": "two same-name Puyu schema/data exportpoint snapshot copy only",
+      "limitations": [
+        "原preflight无PID/StartedAt字段，不伪造逐项旧PID相等证明。",
+        "未采导出前密码/配置文件内容hash，不独立宣称hash字节未变；迁移无相关写操作与原密码native认证另证。"
+      ]
+    },
+    {
+      "id": "PUYU-CLEANUP-001",
+      "title": "临时导入身份和凭据目录清理",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "仅清本run owned importer，不动业务身份"
+      ],
+      "steps": [
+        "SQL COUNT检查本run及owned importer前缀用户",
+        "只检查容器本run cnf目录是否存在"
+      ],
+      "observable_pass_conditions": [
+        "本run importer0、ownedprefix importer0",
+        "/tmp/dell-puyu-import-e28bf9aa3e8f44328eab71190a5a93a8 absent；未读cnf秘密正文"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-puyu-db-migration/applied.json",
+          "note": "实际收据；SQL/真实数据指纹/凭据仅private，普通证据只count/boolean/metadata"
+        },
+        {
+          "path": "completion/20261109-puyu-db-migration/verified.json",
+          "note": "实际收据；SQL/真实数据指纹/凭据仅private，普通证据只count/boolean/metadata"
+        },
+        {
+          "path": "completion/20261109-puyu-db-migration/postcheck.json",
+          "note": "实际收据；SQL/真实数据指纹/凭据仅private，普通证据只count/boolean/metadata"
+        }
+      ],
+      "verified_at": "2026-11-09T15:11:07.273072+00:00",
+      "verification_scope": "two same-name Puyu schema/data exportpoint snapshot copy only",
+      "limitations": []
+    }
+  ],
+  "summary": {
+    "required": 8,
+    "passed": 8,
+    "failed": 0,
+    "pending": 0,
+    "source_databases": 2,
+    "tables": 51,
+    "snapshot_rows": 1291
+  },
+  "excluded_claims": [
+    "No application/Java/frontend/API deployment or connection configuration cutover",
+    "No continuous sync or source write freeze across future changes",
+    "No independentDR/businessRPO/RTO",
+    "No source/target password/TLS/plugin redesign; later testcredential task has separate scope",
+    "No automatic rollback/database deletion proof; source snapshot preserved and target newdata not arbitrarily dropped"
+  ],
+  "ordinary_evidence_contains_SQL_or_data_digest_or_credentials": false
+}

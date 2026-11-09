@@ -10,7 +10,7 @@
   },
   "source_of_truth": "plan.json",
   "source_role_pointer": "/roles/3",
-  "last_verified_at": "2026-11-09T21:46:26.287751+08:00",
+  "last_verified_at": "2026-11-09T15:37:53.078706+00:00",
   "current_runtime_verified": true,
   "status": "recovered-infrastructure-verified",
   "purpose": "独立测试 MySQL、Nacos、Redis、RabbitMQ，保留最小 auth/system/coms 测试 schema；不共享正式账号和持久化目录。",
@@ -171,7 +171,8 @@
     ],
     "two_layers": "VM190 inet and PVE bridge ACL",
     "Nacos_authentication_required": true,
-    "evidence": "network19/lan-nacos-20261109/README.md"
+    "evidence": "network19/lan-nacos-20261109/README.md",
+    "superseded_by": "LAN_trusted_access: entireLAN21 to server19 allIPv4, application authentication retained"
   },
   "Nacos_current_config_import": {
     "status": "native-import-and-independent-postcheck-passed",
@@ -201,5 +202,61 @@
     "businessDB_or_production_or_account_permission_migration": false,
     "original7_and_remaining5_private_backups_preserved": true,
     "evidence": "completion/20261109-nacos-config-import/postcheck.json"
+  },
+  "Puyu_test_DB_snapshot": {
+    "status": "native-import-and-independent-postcheck-passed",
+    "target_vmid": 210,
+    "target_endpoint": "192.168.19.20:3306",
+    "source_preserved": true,
+    "databases": [
+      {
+        "name": "puyu_auth_local",
+        "tables": 4,
+        "snapshot_rows": 178
+      },
+      {
+        "name": "puyu_erp_local",
+        "tables": 47,
+        "snapshot_rows": 1113
+      }
+    ],
+    "snapshot_continuous_sync": false,
+    "source_accounts_or_app_connection_cutover": false,
+    "automatic_backup_added": false,
+    "evidence": "completion/20261109-puyu-db-migration/acceptance.json"
+  },
+  "LAN_trusted_access": {
+    "status": "gateway-and-bridge-confirmed",
+    "source": "192.168.21.0/24",
+    "destination": "192.168.19.0/24",
+    "protocols": "all IPv4",
+    "gateway_local_addresses": [
+      "192.168.21.23",
+      "192.168.19.1"
+    ],
+    "no_NAT": true,
+    "PVE_forwarding": "all0",
+    "application_authentication_unchanged": true,
+    "evidence": "network19/lan-trusted-20261109/README.md"
+  },
+  "test_credentials": {
+    "status": "native-and-independent-auth-persistence-postcheck-passed",
+    "target_vmid": 210,
+    "endpoint": "192.168.19.20",
+    "policy": "keep exact user specified test component credentials; no regeneration",
+    "mysql_user": "root",
+    "mysql_hosts": [
+      "localhost",
+      "%"
+    ],
+    "redis_database": 0,
+    "rabbit_admin_user": "admin",
+    "old_Rabbit_admin_and_app_users_preserved": true,
+    "Nacos_sourceMac_or_production_credentials_changed": false,
+    "TLS_or_plugin_changed": false,
+    "service_restart": false,
+    "secret_values_in_git": false,
+    "evidence": "completion/20261109-test-credentials/acceptance.json",
+    "local_mirror_evidence": "completion/20261109-test-credentials/local-mirrors.json"
   }
 }

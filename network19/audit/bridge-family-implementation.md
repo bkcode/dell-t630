@@ -2,6 +2,10 @@
 
 # vmbr19 bridge-family ACL候选与阶段补充
 
+当前canonical同步（2026-11-09）：`render-bridge-acl.py`默认读取`nic-registry-current.json`的15个已批准身份（12角色与3模板），不再默认用29对象历史stage。本地生成的`bridge19-current.nft`与`bridge19-acl-candidate.nft`逐字节复现[实际已确认规则](../lan-trusted-20261109/bridge-candidate.nft)，SHA为`a6910d08db278527566e0b343c8a12b57989f7ba10b2df1b0d498e969e120bc0`。受信LAN21/24→server19/24全IPv4许可位于网关端口/MAC/目标IP绑定及invalid检查之后，WG许可和原角色peer矩阵不变；模板仍DHCP隔离，不自动获得角色身份。PVE无NAT且hostforward全0。实际持久与运行规则核对见[23:34后检](../lan-trusted-20261109/final-postcheck.json)，本轮只离线复现，没有再执行nft或修改宿主。
+
+下文29身份、桥状态、候选未应用等描述均为最初阶段记录，不能覆盖上述当前回执。离线回归：[测试](test_trusted_lan.py)、[结果](../lan-trusted-20261109/canonical-sync.json)。
+
 此文件补充根任务已推进后的状态，初始current-inventory.json/inventory.md保留原时点事实。主AI已创建无IP vmbr19、移动旧104 NIC并改CI为19.104，已克隆190为32G thin/512MiB双网卡；迁移IP唯一来源改为上级 `network19/migration-plan.json`。这里没有分配或修改任何IP/来宾/宿主。
 
 ## 本次只读实测结论

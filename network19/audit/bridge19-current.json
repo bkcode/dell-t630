@@ -1,5 +1,5 @@
 {
-  "status": "offline-candidate-not-applied",
+  "status": "local-canonical-reproduction-of-confirmed-live-rules",
   "retired_vmids": [
     101,
     102,
@@ -340,6 +340,16 @@
         9849,
         15672
       ]
+    },
+    {
+      "src": [
+        "192.168.21.0/24"
+      ],
+      "dst": "192.168.19.20",
+      "tcp": [
+        8848,
+        9848
+      ]
     }
   ],
   "management_sources": [
@@ -361,5 +371,12 @@
     "MAC/IP registry refreshed before clone activation; unknown/template clone remains DHCP-only, never automatic prod role.",
     "CF internal origin allowlist is unknown and intentionally not granted; parent must add exact approved origins.",
     "New same-tools arbitrary SSH/other traffic is intentionally not preserved; review any required dependency before cutover."
-  ]
+  ],
+  "locally_recompiled_at": "2026-11-09",
+  "native_validation_this_sync": false,
+  "applied_evidence": [
+    "network19/lan-trusted-20261109/bridge-confirmed.json",
+    "network19/lan-trusted-20261109/final-postcheck.json"
+  ],
+  "nft_sha256": "a6910d08db278527566e0b343c8a12b57989f7ba10b2df1b0d498e969e120bc0"
 }

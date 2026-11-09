@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Strict server19 gateway contract and deterministic, shell-free config rendering."""
 import copy,hashlib,ipaddress,json,re
-WAN=ipaddress.IPv4Network('192.168.21.0/24');LAN=ipaddress.IPv4Network('192.168.19.0/24');TABLE='dell_gateway19';FLOW_MARK='0x19000001';FAKE_MARK='0x19000002';CF_FAKE_MARK='0x19000003';WG_MARK='0x19000004';WG_FULL_MARK='0x19000005'
+WAN=ipaddress.IPv4Network('192.168.21.0/24');LAN=ipaddress.IPv4Network('192.168.19.0/24');TABLE='dell_gateway19';FLOW_MARK='0x19000001';FAKE_MARK='0x19000002';CF_FAKE_MARK='0x19000003';WG_MARK='0x19000004';WG_FULL_MARK='0x19000005';LAN_FULL_MARK='0x19000006'
 WG_NARROW={'source':'10.66.66.0/24','destination':'192.168.19.50','tcp':[9001],'no_NAT':True}
 WG_FULL={'source':'10.66.66.0/24','destination':'192.168.19.0/24','protocols':'all','gateway_local_addresses':['192.168.21.23','192.168.19.1'],'no_NAT':True}
+LAN_FULL={'source': '192.168.21.0/24', 'destination': '192.168.19.0/24', 'protocols': 'all', 'gateway_local_addresses': ['192.168.21.23', '192.168.19.1'], 'no_NAT': True}
 NONPUBLIC=['0.0.0.0/8','10.0.0.0/8','100.64.0.0/10','127.0.0.0/8','169.254.0.0/16','172.16.0.0/12','192.0.0.0/24','192.0.2.0/24','192.168.0.0/16','198.18.0.0/15','198.51.100.0/24','203.0.113.0/24','224.0.0.0/4','240.0.0.0/4']
 class Rejected(ValueError):pass
 
@@ -37,7 +38,7 @@ def load(plan,wan_mac,lan_mac):
  mgmt=endpoints(plan['gateway_management_sources'],WAN)
  if '192.168.21.22' not in mgmt or any('/' in x for x in mgmt):raise Rejected('explicit management hosts including PVE required')
  required={'WAN_to_LAN','LAN_to_public_internet','CF_extra_public','publisher_optional_public_ssh','CF_legacy_LAN_origin_compatibility','default_forward','established_related','invalid','NAT','LAN_DNS_DHCP','gateway_ssh','IPv6','same_subnet_routed_attempts'}
- if (not required.issubset(policy) or set(policy)-required-{'OW_fake_IP_proxy_compatibility','CF_fake_IP_proxy_compatibility','WireGuard_client_access'}) or policy['NAT']!='none' or policy['default_forward']!='drop' or policy['invalid']!='drop' or policy['established_related'] is not True:raise Rejected('approved deny/return-state/noNAT policy required')
+ if (not required.issubset(policy) or set(policy)-required-{'OW_fake_IP_proxy_compatibility','CF_fake_IP_proxy_compatibility','WireGuard_client_access','LAN_trusted_client_access'}) or policy['NAT']!='none' or policy['default_forward']!='drop' or policy['invalid']!='drop' or policy['established_related'] is not True:raise Rejected('approved deny/return-state/noNAT policy required')
  records=[];seen=set();retired=set(plan.get('retired_vmids',[]));temporary=set(plan.get('temporary_bootstrap_vmids',[]))|{int(row['vmid']) for row in plan['guest_addresses'] if row.get('temporary_build_only') is True}
  if not temporary.issubset({9040,9041,9042,9043,9044,9045}) or temporary.intersection(retired):raise Rejected('only approved Fish temporary bootstrap identity list')
  active={int(row['vmid']):row for row in plan['guest_addresses'] if int(row['vmid']) not in retired|temporary}
@@ -83,12 +84,16 @@ def load(plan,wan_mac,lan_mac):
   if set(raw) not in (narrow,full) or raw['no_NAT'] is not True or not isinstance(raw['reason'],str) or not isinstance(raw['evidence'],str) or not raw['reason'] or not raw['evidence']:raise Rejected('exact explicit WireGuard authorization contract required')
   keys=['source','destination','tcp','no_NAT'] if set(raw)==narrow else ['source','destination','protocols','gateway_local_addresses','no_NAT']
   result['WireGuard_client_access']={k:raw[k] for k in keys}
+ if 'LAN_trusted_client_access'in policy:
+  raw=policy['LAN_trusted_client_access']
+  if set(raw)!={'source','destination','protocols','gateway_local_addresses','reason','evidence','no_NAT'} or not raw['reason']or not raw['evidence']:raise Rejected('exact approved LAN trust contract required')
+  result['LAN_trusted_client_access']={k:raw[k]for k in LAN_FULL}
  return validate_config(result)
 
 def validate_config(config):
  # Runtime only accepts canonical output of the public master plan compiler, bound by its hash.
  required={'schema_version','vmid','hostname','WAN_MAC','LAN_MAC','management_hosts','hosts','WAN_to_LAN','public_tcp','public_udp','CF_compat_tcp','migration_plan_sha256'}
- if not isinstance(config,dict) or (not required.issubset(config) or set(config)-required-{'OW_fake_IP_proxy','CF_fake_IP_proxy','WireGuard_client_access'}) or config['schema_version']!=1 or config['vmid']!=190 or config['hostname']!='network-gateway' or not re.fullmatch('[a-f0-9]{64}',str(config['migration_plan_sha256'])):raise Rejected('canonical compiled config required')
+ if not isinstance(config,dict) or (not required.issubset(config) or set(config)-required-{'OW_fake_IP_proxy','CF_fake_IP_proxy','WireGuard_client_access','LAN_trusted_client_access'}) or config['schema_version']!=1 or config['vmid']!=190 or config['hostname']!='network-gateway' or not re.fullmatch('[a-f0-9]{64}',str(config['migration_plan_sha256'])):raise Rejected('canonical compiled config required')
  if mac(config['WAN_MAC'])==mac(config['LAN_MAC']):raise Rejected('distinct MACs required')
  mgmt=endpoints(config['management_hosts'],WAN)
  if '192.168.21.22' not in mgmt or any('/'in x for x in mgmt):raise Rejected('explicit management hosts required')
@@ -110,6 +115,8 @@ def validate_config(config):
   if config['CF_fake_IP_proxy']!={'source':'192.168.19.5','destination':'198.18.0.0/15','tcp':[7844],'udp':[7844]}:raise Rejected('only CF19.5 exact fake-IP7844 permitted')
  if 'WireGuard_client_access'in config:
   if config['WireGuard_client_access'] not in (WG_NARROW,WG_FULL) or config['WireGuard_client_access'].get('no_NAT') is not True:raise Rejected('only exact narrow or explicitly risk-authorized full VPN contract permitted')
+ if 'LAN_trusted_client_access'in config:
+  if config['LAN_trusted_client_access']!=LAN_FULL or config['LAN_trusted_client_access'].get('no_NAT')is not True:raise Rejected('only exact explicit trustedLAN contract permitted')
  return config
 
 def iface(value):
@@ -119,17 +126,21 @@ def iface(value):
 def lit(values):return '{ '+', '.join(values)+' }'
 def nft(config,interfaces):
  validate_config(config);wan,lan=iface(interfaces['WAN']),iface(interfaces['LAN'])
- return_marks=[FLOW_MARK]+([FAKE_MARK] if config.get('OW_fake_IP_proxy') else [])+([CF_FAKE_MARK] if config.get('CF_fake_IP_proxy') else [])+([WG_MARK] if config.get('WireGuard_client_access') else [])+([WG_FULL_MARK] if config.get('WireGuard_client_access')==WG_FULL else [])
+ return_marks=[FLOW_MARK]+([FAKE_MARK] if config.get('OW_fake_IP_proxy') else [])+([CF_FAKE_MARK] if config.get('CF_fake_IP_proxy') else [])+([WG_MARK] if config.get('WireGuard_client_access') else [])+([WG_FULL_MARK] if config.get('WireGuard_client_access')==WG_FULL else [])+([LAN_FULL_MARK]if config.get('LAN_trusted_client_access')==LAN_FULL else [])
  if wan==lan:raise Rejected('distinct interfaces required')
- lines=[f'table inet {TABLE} {{',f' set nonpublic {{ type ipv4_addr; flags interval; elements = {lit(NONPUBLIC)}; }}',f' set management {{ type ipv4_addr; elements = {lit(config["management_hosts"])}; }}',' chain input { type filter hook input priority 0; policy drop;','  iifname "lo" accept','  meta nfproto ipv6 drop','  ct state invalid drop',f'  iifname "{wan}" ip saddr 192.168.19.0/24 drop',f'  iifname "{lan}" ip saddr {{ 0.0.0.0, 192.168.19.0/24 }} udp sport 68 udp dport 67 ip daddr {{ 255.255.255.255, 192.168.19.255, 192.168.19.1 }} accept',f'  iifname "{lan}" ip saddr != 192.168.19.0/24 drop',f'  ct state established,related ct mark != {WG_FULL_MARK} accept',f'  iifname "{wan}" ip saddr @management ip daddr {{ 192.168.21.23, 192.168.19.1 }} tcp dport 22 accept',f'  iifname "{wan}" ip saddr @management ip daddr {{ 192.168.21.23, 192.168.19.1 }} icmp type echo-request limit rate 10/second burst 20 packets accept',f'  iifname "{lan}" ip saddr 192.168.19.0/24 ip daddr 192.168.19.1 udp dport 53 accept',f'  iifname "{lan}" ip saddr 192.168.19.0/24 ip daddr 192.168.19.1 tcp dport 53 accept','  counter drop',' }',' chain forward { type filter hook forward priority 0; policy drop;','  meta nfproto ipv6 drop','  ct state invalid drop',f'  iifname "{wan}" ip saddr 192.168.19.0/24 drop',f'  iifname "{lan}" ip saddr != 192.168.19.0/24 drop',f'  iifname "{lan}" oifname "{lan}" counter drop',f'  ct state established,related ct mark {lit(return_marks) if len(return_marks)>1 else FLOW_MARK} accept']
+ lines=[f'table inet {TABLE} {{',f' set nonpublic {{ type ipv4_addr; flags interval; elements = {lit(NONPUBLIC)}; }}',f' set management {{ type ipv4_addr; elements = {lit(config["management_hosts"])}; }}',' chain input { type filter hook input priority 0; policy drop;','  iifname "lo" accept','  meta nfproto ipv6 drop','  ct state invalid drop',f'  iifname "{wan}" ip saddr 192.168.19.0/24 drop',f'  iifname "{lan}" ip saddr {{ 0.0.0.0, 192.168.19.0/24 }} udp sport 68 udp dport 67 ip daddr {{ 255.255.255.255, 192.168.19.255, 192.168.19.1 }} accept',f'  iifname "{lan}" ip saddr != 192.168.19.0/24 drop',f'  ct state established,related ct mark != {WG_FULL_MARK} ct mark != {LAN_FULL_MARK} accept',f'  iifname "{wan}" ip saddr @management ip daddr {{ 192.168.21.23, 192.168.19.1 }} tcp dport 22 accept',f'  iifname "{wan}" ip saddr @management ip daddr {{ 192.168.21.23, 192.168.19.1 }} icmp type echo-request limit rate 10/second burst 20 packets accept',f'  iifname "{lan}" ip saddr 192.168.19.0/24 ip daddr 192.168.19.1 udp dport 53 accept',f'  iifname "{lan}" ip saddr 192.168.19.0/24 ip daddr 192.168.19.1 tcp dport 53 accept','  counter drop',' }',' chain forward { type filter hook forward priority 0; policy drop;','  meta nfproto ipv6 drop','  ct state invalid drop',f'  iifname "{wan}" ip saddr 192.168.19.0/24 drop',f'  iifname "{lan}" ip saddr != 192.168.19.0/24 drop',f'  iifname "{lan}" oifname "{lan}" counter drop',f'  ct state established,related ct mark {lit(return_marks) if len(return_marks)>1 else FLOW_MARK} accept']
  if config.get('WireGuard_client_access')==WG_FULL:
-  index=lines.index(f'  ct state established,related ct mark != {WG_FULL_MARK} accept')
+  index=lines.index(f'  ct state established,related ct mark != {WG_FULL_MARK} ct mark != {LAN_FULL_MARK} accept')
   lines.insert(index,f'  iifname "{wan}" ip saddr 10.66.66.0/24 ip daddr {{ 192.168.21.23, 192.168.19.1 }} ct mark set {WG_FULL_MARK} counter accept comment "WG-TrustedVPN-Gateway-IPv4"')
   lines.append(f'  iifname "{wan}" oifname "{lan}" ip saddr 10.66.66.0/24 ip daddr 192.168.19.0/24 ct mark set {WG_FULL_MARK} counter accept comment "WG-TrustedVPN-Server19-IPv4"')
  elif config.get('WireGuard_client_access')==WG_NARROW:
   lines.append(f'  iifname "{wan}" oifname "{lan}" ip saddr 10.66.66.0/24 ip daddr 192.168.19.50 tcp dport 9001 ct state new ct mark set {WG_MARK} counter accept comment "WG-Penpot-TCP9001"')
  for row in config['WAN_to_LAN']:
   lines.append(f'  iifname "{wan}" oifname "{lan}" ip saddr {lit(row["src"])} ip daddr {lit(row["dst"])} tcp dport {lit([str(p) for p in row["tcp"]])} ct state new ct mark set {FLOW_MARK} accept')
+ if config.get('LAN_trusted_client_access')==LAN_FULL:
+  index=lines.index('  counter drop')
+  lines.insert(index,f'  iifname "{wan}" ip saddr 192.168.21.0/24 ip daddr {{ 192.168.21.23, 192.168.19.1 }} ct mark set {LAN_FULL_MARK} counter accept comment "LAN-Trusted-Gateway-IPv4"')
+  lines.append(f'  iifname "{wan}" oifname "{lan}" ip saddr 192.168.21.0/24 ip daddr 192.168.19.0/24 ct mark set {LAN_FULL_MARK} counter accept comment "LAN-Trusted-Server19-IPv4"')
  lines.append(f'  iifname "{lan}" oifname "{wan}" ip saddr 192.168.19.5 ip daddr 192.168.21.0/24 tcp dport {lit([str(p) for p in config["CF_compat_tcp"]])} ct state new ct mark set {FLOW_MARK} accept')
  if config.get('OW_fake_IP_proxy'):
   for proto,ports_key in [('tcp','tcp'),('udp','udp')]:

@@ -205,7 +205,7 @@ def validate_hot_delta(old,new):
   omit={'migration_plan_sha256','WireGuard_client_access'}
   if {k:v for k,v in old.items() if k not in omit}!={k:v for k,v in new.items() if k not in omit}:raise RuntimeError('full trust upgrade may not change any other contract')
   return
- features={'OW_fake_IP_proxy','CF_fake_IP_proxy','WireGuard_client_access'};added={key for key in features if key in new and key not in old}
+ features={'OW_fake_IP_proxy','CF_fake_IP_proxy','WireGuard_client_access','LAN_trusted_client_access'};added={key for key in features if key in new and key not in old}
  if len(added)!=1:raise RuntimeError('only one exact approved compatibility addition permitted per transaction')
  omit={'migration_plan_sha256',*added}
  if {k:v for k,v in old.items() if k not in omit}!={k:v for k,v in new.items() if k not in omit}:raise RuntimeError('hot update cannot change any other gateway contract')
@@ -218,7 +218,7 @@ def hot_stage(bundle):
  if PENDING.exists():raise RuntimeError('pending transaction exists')
  p=load_policy();old=read_config();new=p.validate_config(json.loads((bundle/'config.json').read_text()));validate_hot_delta(old,new);interfaces=guard(old,True);check();native_checks(new,interfaces,STATE/'hot-check')
  nonce=uuid.uuid4().hex;backup=STATE/('before-hot-'+nonce);backup.mkdir(mode=0o700);original=snapshot(old)
- if new.get('WireGuard_client_access')==p.WG_FULL:
+ if new.get('WireGuard_client_access')==p.WG_FULL or new.get('LAN_trusted_client_access')==p.LAN_FULL:
   # Keep exact old raw rules for audit, but revoke mark5 INPUT trials on rollback.
   original['hot_rollback_nft']=p.nft(old,interfaces)
   rollback_check=('delete table inet dell_gateway19\n' if nft_state() else '')+original['hot_rollback_nft']
@@ -297,6 +297,20 @@ def check():
   mark5_guard=any(x.get('match',{}).get('left')=={'ct':{'key':'mark'}} and x['match'].get('op')=='!=' and x['match'].get('right')==0x19000005 for row in raw['nftables'] if 'rule'in row and row['rule']['chain']=='input' for x in row['rule']['expr'])
   if full and not mark5_guard:raise RuntimeError('generic INPUT established must not swallow full-trust trial mark5')
   result['WG_actual_rules']='trusted VPN /24 full19 /24 + exact gateway addresses mark5' if full else 'only Penpot TCP9001 forward mark4'
+ if config.get('LAN_trusted_client_access')==p.LAN_FULL:
+  raw=json.loads(run(['nft','-j','list','table','inet','dell_gateway19']).stdout);found={}
+  for node in raw['nftables']:
+   rule=node.get('rule',{});comment=rule.get('comment','')
+   if comment in ('LAN-Trusted-Gateway-IPv4','LAN-Trusted-Server19-IPv4'):found[comment]=rule
+  if set(found)!={'LAN-Trusted-Gateway-IPv4','LAN-Trusted-Server19-IPv4'}:raise RuntimeError('LAN trust branches missing')
+  for comment,rule in found.items():
+   expr=rule['expr'];matches=[x['match']for x in expr if 'match'in x];right=[x['right']for x in matches]
+   if {'prefix':{'addr':'192.168.21.0','len':24}}not in right or interfaces['WAN']not in right:raise RuntimeError('LAN source orinterface differs')
+   if not any(x.get('mangle',{}).get('value')==0x19000006 for x in expr):raise RuntimeError('LAN exact trialmark missing')
+   if any(x.get('left',{}).get('payload',{}).get('field')in('sport','dport')for x in matches if isinstance(x.get('left'),dict)):raise RuntimeError('LAN trust cannot hide ports')
+   if comment.endswith('Server19-IPv4')and ({'prefix':{'addr':'192.168.19.0','len':24}}not in right or interfaces['LAN']not in right):raise RuntimeError('LAN server scope differs')
+   if comment.endswith('Gateway-IPv4')and not any(isinstance(x,dict)and set(x.get('set',[]))=={'192.168.21.23','192.168.19.1'}for x in right):raise RuntimeError('LAN gateway scope differs')
+  result['LAN_actual_rules']='trusted21/24 allserver19 +exactgatewaylocal mark6'
  expected=(3 if config.get('OW_fake_IP_proxy') else 0)+(2 if config.get('CF_fake_IP_proxy') else 0)
  if expected:
   text=run(['nft','list','table','inet','dell_gateway19']).stdout.decode()

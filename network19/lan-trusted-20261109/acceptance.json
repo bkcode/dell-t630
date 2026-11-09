@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "status": "passed-defined-LAN-scope",
+  "scope": "trusted IPv4 LAN21/24 to server19/24 and gateway local21.23/19.1; current application authentication retained",
+  "cases": [
+    {
+      "id": "LAN19-GW-001",
+      "title": "网关受信LAN精确范围与hot确认",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户已明确授权LAN21访问server19全部IPv4服务；该阶段已实际应用并留证"
+      ],
+      "steps": [
+        "读取已存在的对应实际回执，核对本项可观察结果"
+      ],
+      "observable_pass_conditions": [
+        "21/24全IPv4到19/24与网关自身21.23/19.1，保认证/IPv6关闭",
+        "独立SSH确认，hot-only、三服务active与PID保持"
+      ],
+      "evidence": [
+        {
+          "path": "network19/lan-trusted-20261109/gateway-confirmed.json",
+          "note": "已有实际证据；canonical项为本次纯本地复现"
+        }
+      ],
+      "verified_at": "2026-11-09T23:34:00.235433+08:00",
+      "verification_scope": "native-receipt",
+      "limitations": []
+    },
+    {
+      "id": "LAN19-BRIDGE-001",
+      "title": "两层ACL与持久桥规则",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户已明确授权LAN21访问server19全部IPv4服务；该阶段已实际应用并留证"
+      ],
+      "steps": [
+        "读取已存在的对应实际回执，核对本项可观察结果"
+      ],
+      "observable_pass_conditions": [
+        "bridge owned表实际确认，SHA与实际candidate一致",
+        "MAC/目标IP绑定与invalid检查在受信LAN许可之前"
+      ],
+      "evidence": [
+        {
+          "path": "network19/lan-trusted-20261109/bridge-confirmed.json",
+          "note": "已有实际证据；canonical项为本次纯本地复现"
+        },
+        {
+          "path": "network19/lan-trusted-20261109/final-postcheck.json",
+          "note": "已有实际证据；canonical项为本次纯本地复现"
+        }
+      ],
+      "verified_at": "2026-11-09T23:34:00.235433+08:00",
+      "verification_scope": "native-receipt-plus-local-rule-order",
+      "limitations": []
+    },
+    {
+      "id": "LAN19-PACKET-001",
+      "title": "实际LAN服务路径抽测",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户已明确授权LAN21访问server19全部IPv4服务；该阶段已实际应用并留证"
+      ],
+      "steps": [
+        "读取已存在的对应实际回执，核对本项可观察结果"
+      ],
+      "observable_pass_conditions": [
+        "ub SSH到19.20/21.23退出0",
+        "19.20的3306/8848/9848及19.11的8848 TCP成功，19.20 ICMP2/2"
+      ],
+      "evidence": [
+        {
+          "path": "network19/lan-trusted-20261109/LAN-positive-tests.json",
+          "note": "已有实际证据；canonical项为本次纯本地复现"
+        }
+      ],
+      "verified_at": "2026-11-09T23:34:00.235433+08:00",
+      "verification_scope": "sampled-LAN-data-plane-not-all-services",
+      "limitations": [
+        "不把TCP或ICMP样本等同于所有应用认证验收"
+      ]
+    },
+    {
+      "id": "LAN19-GUARD-001",
+      "title": "原边界与事务收尾",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户已明确授权LAN21访问server19全部IPv4服务；该阶段已实际应用并留证"
+      ],
+      "steps": [
+        "读取已存在的对应实际回执，核对本项可观察结果"
+      ],
+      "observable_pass_conditions": [
+        "PVE v4/v6 forwarding均0、GW无NAT、WGmark5保持",
+        "pending=false/rollback timer inactive"
+      ],
+      "evidence": [
+        {
+          "path": "network19/lan-trusted-20261109/final-postcheck.json",
+          "note": "已有实际证据；canonical项为本次纯本地复现"
+        }
+      ],
+      "verified_at": "2026-11-09T23:34:00.235433+08:00",
+      "verification_scope": "native-read-only-postcheck",
+      "limitations": []
+    },
+    {
+      "id": "LAN19-CANONICAL-001",
+      "title": "本地canonical与已应用版本一致",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户已明确授权LAN21访问server19全部IPv4服务；该阶段已实际应用并留证"
+      ],
+      "steps": [
+        "读取已存在的对应实际回执，核对本项可观察结果"
+      ],
+      "observable_pass_conditions": [
+        "master语义、config与bridge文件字节一致",
+        "网关45项/桥5项离线测试通过；未连接或变更服务器"
+      ],
+      "evidence": [
+        {
+          "path": "network19/lan-trusted-20261109/canonical-sync.json",
+          "note": "已有实际证据；canonical项为本次纯本地复现"
+        }
+      ],
+      "verified_at": "2026-11-09T23:39:11.274572+08:00",
+      "verification_scope": "offline-only",
+      "limitations": []
+    }
+  ],
+  "summary": {
+    "required": 5,
+    "passed": 5,
+    "failed": 0,
+    "pending": 0
+  },
+  "excluded_claims": [
+    "Air widerange per-service retest not supplied",
+    "No full-port authenticated application matrix",
+    "No new public ingress, OW changes, DNS changes, credentials reset or business deployment",
+    "Historical Nacos-only deny observations are not current restrictions"
+  ],
+  "server_mutations_during_local_closeout": false,
+  "generated_at": "2026-11-09T23:39:11.274572+08:00"
+}

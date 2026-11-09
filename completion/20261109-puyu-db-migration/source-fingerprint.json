@@ -1,0 +1,20 @@
+{
+  "status": "actual-private-export-fingerprint-validated",
+  "snapshot_databases": {
+    "puyu_auth_local": {
+      "tables": 4,
+      "rows": 178,
+      "empty_tables": 1
+    },
+    "puyu_erp_local": {
+      "tables": 47,
+      "rows": 1113,
+      "empty_tables": 3
+    }
+  },
+  "expanded_bytes": 4771200,
+  "same_target_authoritative_collation_map": true,
+  "private_target_manifest_ready": true,
+  "SQL_or_data_hashes_output": false,
+  "target_written": false
+}

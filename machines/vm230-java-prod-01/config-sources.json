@@ -7,25 +7,25 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "045cf0ccb806066365aa5a8c11f1e0dd93916b14fe5690925f21ae33c2d68726"
+      "sha256": "6fbad2dc8ee3cd39c1f47d71b450cfa831e731e3bd60270a29120bd96ef0ae71"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
-      "sha256": "660def21ab88296afbb54619bf7b986397006c3a5f080fa5d6cd171ba176ca99"
+      "sha256": "d8d6972c5b2fe74fe32f85e63cf00417c6e4b1d0d41cb2a47ca8977c2ff5777b"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
       "purpose": "当前基础搭建与历史故障交接；本轮不迁移，旧证据按时点解释。",
-      "sha256": "fd55fb5881a1ff53f8fc241df8b7f8ff33cea8217de799bf23c902649f9fc177"
+      "sha256": "2baed31cf2adc12eaaa4741b5770ee725eee2dc23fb95ada1578cb94bdf1551b"
     },
     {
       "path": "network19/migration-plan.json",
       "type": "historical-evidence",
       "purpose": "原19网迁移阶段地址/策略说明，含已退役角色；现役角色与地址以plan.json为准，不能重跑迁移器",
-      "sha256": "b62a6b53450eaacb13ae328348b62d90893dfb8838e986ed3d982cf31b36c86a"
+      "sha256": "3adfd7a4c1cd67b5ea72b5f3de3b4bb34775a55936ee1d35b5356654dc2b1192"
     },
     {
       "path": "cleanup/final-live-check.json",

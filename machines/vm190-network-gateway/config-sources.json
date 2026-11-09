@@ -6,25 +6,25 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "045cf0ccb806066365aa5a8c11f1e0dd93916b14fe5690925f21ae33c2d68726"
+      "sha256": "6fbad2dc8ee3cd39c1f47d71b450cfa831e731e3bd60270a29120bd96ef0ae71"
     },
     {
       "path": "AGENTS.md",
       "type": "current-contract",
       "purpose": "当前用户范围、委派和秘密/操作边界。",
-      "sha256": "667f98e308410dad52da3af9983a63b060a7408f250bcc33596fb6678d689873"
+      "sha256": "995a88163482169c68983ea14950bc110665a4629c868a2ea93d4fb660ec3ea5"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
       "purpose": "当前基础搭建与历史故障交接；本轮不迁移，旧证据按时点解释。",
-      "sha256": "fd55fb5881a1ff53f8fc241df8b7f8ff33cea8217de799bf23c902649f9fc177"
+      "sha256": "2baed31cf2adc12eaaa4741b5770ee725eee2dc23fb95ada1578cb94bdf1551b"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
-      "sha256": "660def21ab88296afbb54619bf7b986397006c3a5f080fa5d6cd171ba176ca99"
+      "sha256": "d8d6972c5b2fe74fe32f85e63cf00417c6e4b1d0d41cb2a47ca8977c2ff5777b"
     },
     {
       "path": "cleanup/final-live-check.json",
@@ -217,6 +217,18 @@
       "type": "historical-evidence",
       "purpose": "Exact LAN testNacos8848/9848 only; production/DB/WG/noNAT unchanged",
       "sha256": "727ae2866b0d6f8ba5eab79341bdedd4613e6a14ebf7a0137e0ad90b1bd58607"
+    },
+    {
+      "path": "network19/lan-trusted-20261109/acceptance.json",
+      "type": "current-contract",
+      "purpose": "Latest explicitly authorized test data/credential or trusted LAN scope; values excluded",
+      "sha256": "ddda025b263d62a22f5ddf304cc2b0088af8c4030cd819da9eda9291cd6d0e15"
+    },
+    {
+      "path": "network19/lan-trusted-20261109/final-postcheck.json",
+      "type": "historical-evidence",
+      "purpose": "Latest explicitly authorized test data/credential or trusted LAN scope; values excluded",
+      "sha256": "9241baf5aa8ef8ed3f0fd489bfe0c16f7ea1e004b72184d7d15af99ec97b81cb"
     }
   ]
 }

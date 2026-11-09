@@ -1,0 +1,7 @@
+{
+  "at": "2026-11-09T23:37:21.639156+08:00",
+  "test_command": "python3 -m unittest discover -s infra/data/test-credentials -p test_*.py -q",
+  "tests": 7,
+  "status": "passed",
+  "scope": "synthetic failure/rollback/health/concurrency tests; not native restart persistence proof"
+}

@@ -7,25 +7,25 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "045cf0ccb806066365aa5a8c11f1e0dd93916b14fe5690925f21ae33c2d68726"
+      "sha256": "6fbad2dc8ee3cd39c1f47d71b450cfa831e731e3bd60270a29120bd96ef0ae71"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
-      "sha256": "660def21ab88296afbb54619bf7b986397006c3a5f080fa5d6cd171ba176ca99"
+      "sha256": "d8d6972c5b2fe74fe32f85e63cf00417c6e4b1d0d41cb2a47ca8977c2ff5777b"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
       "purpose": "当前基础搭建与历史故障交接；本轮不迁移，旧证据按时点解释。",
-      "sha256": "fd55fb5881a1ff53f8fc241df8b7f8ff33cea8217de799bf23c902649f9fc177"
+      "sha256": "2baed31cf2adc12eaaa4741b5770ee725eee2dc23fb95ada1578cb94bdf1551b"
     },
     {
       "path": "network19/migration-plan.json",
       "type": "historical-evidence",
       "purpose": "原19网迁移阶段地址/策略说明，含已退役角色；现役角色与地址以plan.json为准，不能重跑迁移器",
-      "sha256": "b62a6b53450eaacb13ae328348b62d90893dfb8838e986ed3d982cf31b36c86a"
+      "sha256": "3adfd7a4c1cd67b5ea72b5f3de3b4bb34775a55936ee1d35b5356654dc2b1192"
     },
     {
       "path": "cleanup/final-live-check.json",
@@ -79,7 +79,7 @@
       "path": "infra/data/README.md",
       "type": "historical-evidence",
       "purpose": "组件设计/监督/秘密边界；原10.63地址与原阶段210待部署文字已过时，仅技术记录",
-      "sha256": "bd6ec7228c600a9e4fbdff2e0e4b1ab9e1c68c6f5e27d737df3b450bbb80cce7"
+      "sha256": "0feb97c52672054cc3b57c4fbd357ab09cb498b503c0643560f494c6fca873dc"
     },
     {
       "path": "network19/services-core/role210-commit-start-evidence.json",
@@ -320,6 +320,30 @@
       "type": "historical-evidence",
       "purpose": "User authorized selected36 Nacos config-only replacement; no Java/businessDB/production/accountpermission migration",
       "sha256": "9884b98a4b6732010bc4b304b0b2afc40314521c0a43c702357bc0d14f222e86"
+    },
+    {
+      "path": "completion/20261109-puyu-db-migration/acceptance.json",
+      "type": "current-contract",
+      "purpose": "Latest explicitly authorized test data/credential or trusted LAN scope; values excluded",
+      "sha256": "92664a5ae892e3449eef21b875c0a32f5d40fe67034ebcf28f6086e554835841"
+    },
+    {
+      "path": "completion/20261109-test-credentials/acceptance.json",
+      "type": "current-contract",
+      "purpose": "Latest explicitly authorized test data/credential or trusted LAN scope; values excluded",
+      "sha256": "ac32205655c53206b195402d5bfcd0e6570d8bdb3d0d266186be4cfdf04ac59b"
+    },
+    {
+      "path": "completion/20261109-test-credentials/postcheck.json",
+      "type": "historical-evidence",
+      "purpose": "Latest explicitly authorized test data/credential or trusted LAN scope; values excluded",
+      "sha256": "8ffda8afda030c114a9090f07f9258f257c83f12234068e5df56150d4b7431fa"
+    },
+    {
+      "path": "infra/data/test-credentials/worker.py",
+      "type": "historical-evidence",
+      "purpose": "Latest explicitly authorized test data/credential or trusted LAN scope; values excluded",
+      "sha256": "051975e1305022eda7a4c2be77e8e4905395fc26d9bf4c0cb318cd29ddecc220"
     }
   ]
 }

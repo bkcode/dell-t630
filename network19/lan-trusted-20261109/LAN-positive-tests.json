@@ -1,0 +1,42 @@
+{
+  "direct_SSH_testVM": {
+    "host": "192.168.19.20",
+    "exit": 0,
+    "user": "ub",
+    "error": null
+  },
+  "direct_SSH_gateway": {
+    "host": "192.168.21.23",
+    "exit": 0,
+    "user": "ub",
+    "error": null
+  },
+  "TCP": [
+    {
+      "host": "192.168.19.20",
+      "port": 3306,
+      "connected": true
+    },
+    {
+      "host": "192.168.19.20",
+      "port": 8848,
+      "connected": true
+    },
+    {
+      "host": "192.168.19.20",
+      "port": 9848,
+      "connected": true
+    },
+    {
+      "host": "192.168.19.11",
+      "port": 8848,
+      "connected": true
+    }
+  ],
+  "ping_testVM": {
+    "exit": 0,
+    "summary": [
+      "2 packets transmitted, 2 packets received, 0.0% packet loss"
+    ]
+  }
+}

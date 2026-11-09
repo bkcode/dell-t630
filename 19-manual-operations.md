@@ -1,6 +1,6 @@
 # Dell T630人工操作手册
 
-更新：2026-11-09，Asia/Shanghai。本手册面向掌握PVE root和来宾ub管理权限的管理员，提供逐项复核流程，**不是一键部署脚本，也不代表以下动作现在正在执行**。用户已确认内存处理/诊断通过；本轮继续完成基础搭建并最新仅选择正式数据库/Nacos配置自动备份，仅测试Nacos配置迁移按用户新授权完成，不迁业务数据库、不合并Nexus。现行正式DB/Nacos逻辑首轮3301B成功、service退出0，03:30 timer已启用；旧11来宾全机jobdisabled且旧档保留；当日状态入口为[11月9日交付记录](completion/20261109-prod-db-scope/README.md)。下文复杂合并/恢复命令仅保留人工参考，不因服务器可达就停服、改盘或启动业务。
+更新：2026-11-09，Asia/Shanghai。本手册面向掌握PVE root和来宾ub管理权限的管理员，提供逐项复核流程，**不是一键部署脚本，也不代表以下动作现在正在执行**。用户已确认内存处理/诊断通过；本轮继续完成基础搭建并最新仅选择正式数据库/Nacos配置自动备份，仅测试Nacos配置迁移按用户新授权完成，仅Puyu两库业务数据按随后新授权迁210，正式不动、不合并Nexus。现行正式DB/Nacos逻辑首轮3301B成功、service退出0，03:30 timer已启用；旧11来宾全机jobdisabled且旧档保留；当日状态入口为[11月9日交付记录](completion/20261109-prod-db-scope/README.md)。下文复杂合并/恢复命令仅保留人工参考，不因服务器可达就停服、改盘或启动业务。
 
 历史Nexus短时维护知情许可已满足，但11月8日用户明确暂不迁移的范围控制当前执行。旧“待授权”记录只作历史，不能反复索取同一许可，也不能借旧许可或硬件恢复自动启动合并。当前拓扑/预算以[plan.json](plan.json)、入口以[12](12-service-access-and-operations.md)、清理事实以[18](18-cleanup-and-consolidation.md)为准。证据采集后的运行状态会变化，硬件故障后必须fresh核查。
 
@@ -45,11 +45,39 @@
 
 入口`http://192.168.19.20:8848/nacos/`。现有admin可管理导入域：finger-cloud-dev `08e7191f-3ccd-411a-be00-56798d237533` 32项、finger-trascan `7bfe03c6-0590-4ff0-8def-e07015016b54` 4项，共36，当前均DEFAULT_GROUP，35yaml/1text。旧finger-test `10719261-2641-590a-b821-c8484ca955ac`、finger-test-empty `23836f2e-9553-5948-84cd-431b2f241bd6`和public配置均0。[applied](completion/20261109-nacos-config-import/applied.json)/[verified](completion/20261109-nacos-config-import/verified.json)为当前证明；20:27旧7项仍保留的[空域创建记录](completion/20261109-test-env/empty-namespace-created.json)仅按当时解释。
 
-应用`finger_test`原role只允许旧finger-test和finger-test-empty，没有grant两导入域；不能把应用账号403当网络故障、改密码或自动提权。未来业务接入另行明确namespace/权限；基础.env/health仍可指旧域保兼容。本期最新用户配置迁移授权覆盖先前只空服务限制，但不含Java启动、源码profile修改或业务数据库迁移。
+应用`finger_test`原role只允许旧finger-test和finger-test-empty，没有grant两导入域；不能把应用账号403当网络故障、改密码或自动提权。未来业务接入另行明确namespace/权限；基础.env/health仍可指旧域保兼容。本期最新用户配置迁移授权覆盖先前只空服务限制，但该次不含Java启动或源码profile修改；随后仅Puyu两库DB迁移另获明确授权，按下节现状理解。
 
 两源域ID/name/group和正文原样，没有端点适配，可能仍含源本地连接参数；保存成功不代表应用可运行。不把这些连接信息、正文/hash或密码贴进文档/终端/Git，凭据仍按[12受保护位置](12-service-access-and-operations.md)管理，本文不列值。
 
 旧7项保护快照保存在guest私有位置；首run删2后遇缓存暂态停手，新run重新保护剩5并清5→0→导36。不要覆盖旧backup或重跑旧manifest“resume”；失败应先只读核DBmetadata与普通GET缓存差异。DELETE读回仅等404/原基线200，不重复DELETE；POST读回404可等、200错正文立即停。所有namespace/账号/role/权限/业务DB/服务保留，缺两域仅元数据create，不通过SQLtruncate或重启凑通过。后续参见[本次导入记录](completion/20261109-nacos-config-import/)。
+
+### Puyu两库已迁入测试MySQL
+
+用户本次明确授权仅本机`puyu_*`实际选定两库迁往VM210/`192.168.19.20:3306`，覆盖之前“不迁业务DB”的限制；按**原库名**新增，不覆盖任何原有同名库、不删除源库：
+
+| 数据库 | 表数 | 导出快照行数 |
+| --- | ---: | ---: |
+| puyu_auth_local | 4 | 178 |
+| puyu_erp_local | 47 | 1113 |
+| 合计 | 51 | 1291 |
+
+源22:41一致性快照导出，源应用未停止、DML可继续；备份DDL锁持有约0.42秒并已释放，1291为导出快照行数，不是源库以后保持不变的计数，也没有持续同步。原名迁入、写前无同名检查及[prepare](completion/20261109-puyu-db-migration/prepared.json)、[apply](completion/20261109-puyu-db-migration/applied.json)、[verify](completion/20261109-puyu-db-migration/verified.json)已原生通过；同版完整redump的DDL/每表INSERT多集指纹与行数一致，51表CHECK TABLE通过。[独立只读后检](completion/20261109-puyu-db-migration/postcheck.json)已逐表核51个COUNT(*)与导出快照匹配，原四容器、Nacos36配置和既有Finger/Nacos表保持。
+
+源库保留，目标原业务/Nacos数据、既有密码/插件/cnf/服务与应用连接没有修改；临时导入账号和client文件已清理。**没有迁移源MySQL系统账号/全局权限，没有随这次DB迁移导入或改写Puyu Nacos配置，也没有启动Java或切应用连接。** 使用目标既有授权账户，Host匹配、原密码和权限继续生效；SSH仍密钥only、用户ub，Docker管理需`sudo docker`。SQL正文、数据摘要和真实凭据只在受控位置，不在普通文档输出。来源：[预检](completion/20261109-puyu-db-migration/preflight.json)、[源导出](completion/20261109-puyu-db-migration/source-export.json)、[快照计数](completion/20261109-puyu-db-migration/source-fingerprint.json)。
+
+### 当前受信LAN访问（替代早前Nacos-only策略）
+
+用户最新将`192.168.21.0/24`列为受信LAN，允许到`192.168.19.0/24`的有效IPv4服务及网关`21.23/19.1`本机入口；GW和PVE桥两层均已confirmed，hostforward仍全0、无NAT，原WG10.66.66/24许可保持。[GW回执](network19/lan-trusted-20261109/gateway-confirmed.json)、[桥回执](network19/lan-trusted-20261109/bridge-confirmed.json)。
+
+23:00[正测](network19/lan-trusted-20261109/LAN-positive-tests.json)记录ub密钥SSH到19.20和21.23成功，TCP test19.20:3306/8848/9848及prod19.11:8848成功，测试机ping2/2。早前[Nacos-only负测](network19/lan-nacos-20261109/LAN-negative-tests.json)的3306/SSH/正式Nacos timeout是旧策略历史，**不能再作为当前LAN仍被阻断的结论**；新规则不保证不存在的端口有服务，ping也不能替代数据库认证或Nacos权限。
+
+### Puyu数据库使用与认证/TLS
+
+连接目标`192.168.19.20:3306`，使用目标原有授权账户和原密码，遵守MySQL用户Host及schema权限；不能把源Mac系统账号/密码当成已一并迁移。SSH继续ub密钥only，Docker管理需`sudo docker`，这是管理通道而非数据库登录。普通文档不记录真实密码、SQL正文或数据指纹。
+
+[TLS/认证只读诊断](completion/20261109-puyu-db-migration/mysql-auth-diagnostic.json)中root ssl_type为空、require_secure_transport=0；本次仅测试客户端连接，没有新增服务端TLS配置/证书，也没有修改密码、认证插件、Host或安全开关。不要把客户端协商差异解释为已经改过服务器安全配置。
+
+这份源快照的DDL及每表单行INSERT多集/行数通过同版完整redump比对、51表CHECK TABLE；不是业务应用上线、持续复制或完整灾备。[独立只读后检](completion/20261109-puyu-db-migration/postcheck.json)已逐表核51个COUNT(*)与导出快照匹配，原四容器、Nacos36配置和既有Finger/Nacos表保持；不重新初始化/跑源码migration或seed来“补齐”，应用连接与Puyu Nacos参数本次没有改。
 
 ### SSH严格连接
 
@@ -294,3 +322,7 @@ OW完整规则按用户要求只留本地，不触碰或上传，也不push其lo
 - Mac外部探针LaunchAgent和自动恢复发送；用户明确不需要，现行和后续不配置，不因本手册存在而重启。
 
 所有复杂变更先形成具体对象、影响、前置、差异、验证与回退，按已满足的授权范围执行；新业务/删除/外部身份或未涵盖风险另行明确。普通文档检查只运行本地`python3 scripts/validate_docs.py`，不代表远程健康或硬件已修复。
+
+## 测试凭据的最新维护约定（11月9日）
+
+VM210三组件按用户指定并再次要求保持的约定同步：MySQL现有root两Host、Redis默认认证、Rabbit指定admin管理身份；原Rabbit管理/应用账号保留。现役guest持久文件与Mac private测试活动来源已同步，实际回执及后检见[凭据交付](completion/20261109-test-credentials/README.md)。这次另获授权的同步发生在数据库快照迁移之后；不改正式/源Mac/Nacos身份，不重跑初始化器覆盖固定值，也不改TLS/插件。真实密码不写普通文档或Git。

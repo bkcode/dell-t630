@@ -110,8 +110,13 @@ def render(plan,inventory,old_ops=False):
     ct state invalid counter drop
     ct state { established, related } counter accept
     ip saddr 192.168.19.1 ip protocol icmp counter accept comment "gateway-diagnostics"''']
+ nacos_lan=[]
  for index,rule in enumerate(wan_rules):
+  # Preserve the already-applied dedicated Nacos line and its position after WG.
+  if rule=={'src':['192.168.21.0/24'],'dst':'192.168.19.20','tcp':[8848,9848]}:
+   nacos_lan.append(rule);continue
   src=rule['src'][0] if len(rule['src'])==1 else '{ '+', '.join(rule['src'])+' }';ports=str(rule['tcp'][0]) if len(rule['tcp'])==1 else '{ '+', '.join(map(str,rule['tcp']))+' }';out.append('    ip saddr '+src+' ip daddr '+rule['dst']+' tcp dport '+ports+' counter accept comment '+q('manager-WAN-to-LAN-'+str(index)))
+ assert len(nacos_lan)<=1,'Duplicate dedicated LAN test-Nacos rule'
  vpn=policy.get('WireGuard_client_access')
  if vpn is not None:
   assert vpn['source']=='10.66.66.0/24' and vpn['no_NAT'] is True
@@ -123,6 +128,14 @@ def render(plan,inventory,old_ops=False):
    assert vpn['destination']=='192.168.19.0/24' and vpn['protocols']=='all' and vpn['gateway_local_addresses']==['192.168.21.23','192.168.19.1']
    # Explicitly authorized trusted VPN zone, only routed frames after all binding guards.
    out.append('    ip saddr 10.66.66.0/24 ip daddr 192.168.19.0/24 counter accept comment "trusted-WireGuard-to-server19"')
+ if nacos_lan:
+  out.append('    ip saddr 192.168.21.0/24 ip daddr 192.168.19.20 tcp dport { 8848, 9848 } counter accept comment "LAN-test-Nacos-only"')
+ trusted_lan=policy.get('LAN_trusted_client_access')
+ if trusted_lan is not None:
+  assert set(trusted_lan)=={'source','destination','protocols','gateway_local_addresses','reason','evidence','no_NAT'}, 'Exact trusted LAN fields required'
+  assert trusted_lan['source']=='192.168.21.0/24' and trusted_lan['destination']=='192.168.19.0/24' and trusted_lan['protocols']=='all' and trusted_lan['gateway_local_addresses']==['192.168.21.23','192.168.19.1'] and trusted_lan['no_NAT'] is True, 'Only confirmed LAN21/server19 noNAT contract allowed'
+  assert isinstance(trusted_lan['reason'],str) and trusted_lan['reason'] and isinstance(trusted_lan['evidence'],str) and trusted_lan['evidence'], 'Trusted LAN authorization provenance required'
+  out.append('    ip saddr 192.168.21.0/24 ip daddr 192.168.19.0/24 counter accept comment "trusted-LAN21-to-server19"')
  if old_ops:out.append('    ip saddr 10.63.30.40 tcp dport 9100 counter accept comment "TEMP-old-Ops-cutover-remove-final"')
  out+=['''    counter drop comment "gateway-ingress-denied"
   }
@@ -158,5 +171,5 @@ def render(plan,inventory,old_ops=False):
  out+=['    counter drop comment "unapproved-egress"','  }','}']
  return '\n'.join(out)+'\n',{'status':'offline-candidate-not-applied','retired_vmids':sorted(retired),'temporary_bootstrap_vmids':sorted(temporary),'service_endpoints':endpoints,'inventory_timestamp':inventory.get('captured_at'),'rows':rows,'warnings':warnings,'peer_tcp_tuple_count':len(peer),'wan_to_lan_rules':wan_rules,'management_sources':management,'CF_legacy_LAN_origin_compatibility_enabled':False,'host_guard_bridges':['vmbr19'],'direct_attachment_required':True,'old_ops_transition_exception':old_ops,'required_before_apply':['Parent-owned nft -c with needed nf_tables_bridge/NFT_BRIDGE_META/NF_CONNTRACK_BRIDGE support; no such validation was run by read-only agent.','Atomic transaction delete/recreate only bridge dell19_acl; rollback table+startup mechanism preserved.','Confirm source/destination interface aliases and meta ibrname/obrname visibility using dedicated test before real data migration.','No blanket inet-forward ACCEPT workaround is needed while bridge-nf flags remain0; preserve/recheck them.','All target NICs must be firewall=0/direct tap-veth before activation; host guard onlyvmbr19. No prospective old-fwbr guard is applied in this stage.','MAC/IP registry refreshed before clone activation; unknown/template clone remains DHCP-only, never automatic prod role.','CF internal origin allowlist is unknown and intentionally not granted; parent must add exact approved origins.','New same-tools arbitrary SSH/other traffic is intentionally not preserved; review any required dependency before cutover.']}
 def main():
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('--plan',type=Path,default=HERE.parent/'migration-plan.json');p.add_argument('--inventory',type=Path,default=HERE/'nic-registry-stage.json');p.add_argument('--output',type=Path,default=HERE/'bridge19-acl-candidate.nft');p.add_argument('--allow-old-ops-during-cutover',action='store_true');a=p.parse_args();rules,notes=render(json.loads(a.plan.read_text()),json.loads(a.inventory.read_text()),a.allow_old_ops_during_cutover);a.output.write_text(rules);a.output.with_suffix('.json').write_text(json.dumps(notes,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'candidate':str(a.output),'applied':False,'nic_identities':len(notes['rows']),'peer_tuple_count':notes['peer_tcp_tuple_count'],'warnings':len(notes['warnings'])}))
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('--plan',type=Path,default=HERE.parent/'migration-plan.json');p.add_argument('--inventory',type=Path,default=HERE/'nic-registry-current.json');p.add_argument('--output',type=Path,default=HERE/'bridge19-acl-candidate.nft');p.add_argument('--allow-old-ops-during-cutover',action='store_true');a=p.parse_args();rules,notes=render(json.loads(a.plan.read_text()),json.loads(a.inventory.read_text()),a.allow_old_ops_during_cutover);a.output.write_text(rules);a.output.with_suffix('.json').write_text(json.dumps(notes,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'candidate':str(a.output),'applied':False,'nic_identities':len(notes['rows']),'peer_tuple_count':notes['peer_tcp_tuple_count'],'warnings':len(notes['warnings'])}))
 if __name__=='__main__':main()

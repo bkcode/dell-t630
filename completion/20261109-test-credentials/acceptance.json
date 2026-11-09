@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-09T23:41:04.461557+08:00",
+  "status": "passed-user-specified-test-credentials",
+  "scope": "VM210 three component requested credentials, online and persistent sources; no service restart",
+  "cases": [
+    {
+      "id": "TESTCRED-AUTH-001",
+      "title": "三组件指定凭据新连接认证",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户指定仅测试210三组件凭据并要求保持，不改正式/源/Nacos身份"
+      ],
+      "steps": [
+        "核原生回执及独立新连接/持久来源/元数据检查"
+      ],
+      "observable_pass_conditions": [
+        "三组件指定凭据新连接认证的实际检查均通过，范围未扩大"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-test-credentials/applied.json",
+          "note": "sanitized native or independent evidence; no password/hash values"
+        },
+        {
+          "path": "completion/20261109-test-credentials/postcheck.json",
+          "note": "sanitized native or independent evidence; no password/hash values"
+        },
+        {
+          "path": "completion/20261109-test-credentials/LAN-MySQL-auth.json",
+          "note": "sanitized native or independent evidence; no password/hash values"
+        }
+      ],
+      "verified_at": "2026-11-09T23:41:04.461557+08:00"
+    },
+    {
+      "id": "TESTCRED-PERSIST-001",
+      "title": "guest原inode及本机活动来源同步",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户指定仅测试210三组件凭据并要求保持，不改正式/源/Nacos身份"
+      ],
+      "steps": [
+        "核原生回执及独立新连接/持久来源/元数据检查"
+      ],
+      "observable_pass_conditions": [
+        "guest原inode及本机活动来源同步的实际检查均通过，范围未扩大"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-test-credentials/postcheck.json",
+          "note": "sanitized native or independent evidence; no password/hash values"
+        },
+        {
+          "path": "completion/20261109-test-credentials/local-mirrors.json",
+          "note": "sanitized native or independent evidence; no password/hash values"
+        }
+      ],
+      "verified_at": "2026-11-09T23:41:04.461557+08:00"
+    },
+    {
+      "id": "TESTCRED-DATA-001",
+      "title": "既有账号与库/配置/进程保持",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户指定仅测试210三组件凭据并要求保持，不改正式/源/Nacos身份"
+      ],
+      "steps": [
+        "核原生回执及独立新连接/持久来源/元数据检查"
+      ],
+      "observable_pass_conditions": [
+        "既有账号与库/配置/进程保持的实际检查均通过，范围未扩大"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-test-credentials/postcheck.json",
+          "note": "sanitized native or independent evidence; no password/hash values"
+        },
+        {
+          "path": "completion/20261109-test-credentials/applied.json",
+          "note": "sanitized native or independent evidence; no password/hash values"
+        }
+      ],
+      "verified_at": "2026-11-09T23:41:04.461557+08:00"
+    },
+    {
+      "id": "TESTCRED-GUARD-001",
+      "title": "精确范围、健康与失败补偿",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户指定仅测试210三组件凭据并要求保持，不改正式/源/Nacos身份"
+      ],
+      "steps": [
+        "核原生回执及独立新连接/持久来源/元数据检查"
+      ],
+      "observable_pass_conditions": [
+        "精确范围、健康与失败补偿的实际检查均通过，范围未扩大"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261109-test-credentials/preflight.json",
+          "note": "sanitized native or independent evidence; no password/hash values"
+        },
+        {
+          "path": "completion/20261109-test-credentials/offline-validation.json",
+          "note": "sanitized native or independent evidence; no password/hash values"
+        },
+        {
+          "path": "completion/20261109-test-credentials/staged.json",
+          "note": "sanitized native or independent evidence; no password/hash values"
+        }
+      ],
+      "verified_at": "2026-11-09T23:41:04.461557+08:00"
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "current_phase_case_count": 4,
+    "current_phase_passed": 4,
+    "statuses": {
+      "passed": 4
+    }
+  },
+  "not_required_or_deferred": [
+    "native restart persistence exercise",
+    "GUI MySQL driver compatibility",
+    "Nacos body endpoint rewriting",
+    "Java startup",
+    "new resource server requested subsequently"
+  ]
+}

@@ -2,7 +2,7 @@
 
 本仓库保存 T630 / Proxmox VE 8.4 的部署方案、基础设施脚本、验收证据和人工操作手册。最后整理日期：**2026-11-09，Asia/Shanghai**。
 
-**2026-11-09继续完成基础搭建，并按用户最新范围仅备正式数据库/Nacos配置，不迁移数据。** 14:24自然重启后的fresh审计确认12来宾运行、3模板停止、15/15UP、EDAC0/RAIDOptl，forward guard文件与启动顺序保持全0。Nexus221继续独立、220保持原standby，Java业务不启，Penpot实际ff提交不更新main，Mac外部探针不需要。当日状态统一见[11月9日交付记录](completion/20261109-prod-db-scope/README.md)；[11月8日恢复](recovery/20261108/README.md)保留历史。
+**2026-11-09继续完成基础搭建，并按用户最新范围仅备正式数据库/Nacos配置；随后另获授权完成选定测试Nacos配置及两份Puyu数据库迁移。** 14:24自然重启后的fresh审计确认12来宾运行、3模板停止、15/15UP、EDAC0/RAIDOptl，forward guard文件与启动顺序保持全0。Nexus221继续独立、220保持原standby，Java业务不启，Penpot实际ff提交不更新main，Mac外部探针不需要。当日状态统一见[11月9日交付记录](completion/20261109-prod-db-scope/README.md)；[11月8日恢复](recovery/20261108/README.md)保留历史。
 
 ## 从这里开始
 
@@ -46,7 +46,7 @@
 | 260 | nas-media | 19.60 | OMV、SMB、Jellyfin 家庭媒体与文件共享 |
 | 270 | ops-service | 19.70 | Prometheus、Grafana、Alertmanager、内部 Lark |
 
-地址前缀为 `192.168.`。PVE 自身管理地址是 `192.168.21.22`，iDRAC 是 `192.168.21.21`。OpenWrt `21.1` 将 `19.0/24` 路由到 `21.23`；PVE 只做管理和二层桥，不做应用端口转发。WireGuard `10.66.66.0/24` 已获准访问服务器网段，应用登录权限继续生效。
+地址前缀为 `192.168.`。PVE 自身管理地址是 `192.168.21.22`，iDRAC 是 `192.168.21.21`。OpenWrt `21.1` 将 `19.0/24` 路由到 `21.23`；PVE 只做管理和二层桥，不做应用端口转发。受信LAN `192.168.21.0/24` 与WireGuard `10.66.66.0/24` 均已获准IPv4访问服务器网段，应用登录权限继续生效。
 
 模板仅保留 Linux `9010`、Docker `9001`、Java 验收 `9011`。9 台来宾和 3 份模板已安装 fish，默认 Bash；CF、Penpot、Ops 和 PVE 宿主排除。NAS 不另做模板。11月9日监控复验15/15UP；Mac外部探针不需要，不再列入待办。
 
@@ -91,3 +91,7 @@ python3 scripts/check_git_safety.py
 17号文档统一定义发布与制品合并后的服务归属。详细技术记录中的旧网段、旧数量与旧审批状态均属于对应历史阶段；新一轮操作必须从当前交接和人工手册进入。
 
 本轮本地整理与检查范围见[文档交付记录](evidence/documentation-closeout-20261107.json)。该记录只证明文档与Git候选检查，不是硬件恢复或远程服务验收。
+
+## 测试数据与访问的后续交付
+
+用户后续精确授权的测试Nacos配置迁移见[36配置交付](completion/20261109-nacos-config-import/README.md)；本机两份Puyu数据库迁入210见[数据库交付](completion/20261109-puyu-db-migration/README.md)，源库保留、没有应用连接切换。受信LAN访问策略见[全服务规则](network19/lan-trusted-20261109/README.md)。测试三组件凭据固定为用户指定约定，实施与核验见[凭据记录](completion/20261109-test-credentials/README.md)；文档和Git不保存真实值。正式服务、自动备份范围、Nexus独立部署与Java停用合同不因这些测试操作改变。
