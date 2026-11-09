@@ -417,5 +417,15 @@
     "phase_case_count": 4,
     "migration_or_business_init_or_Java_allowed": false,
     "existing_data_preserved": true
+  },
+  "LAN_test_Nacos_access_20261109": {
+    "status": "completed-and-Air-user-confirmed",
+    "source": "192.168.21.0/24",
+    "test_destination": "192.168.19.20",
+    "tcp": [
+      8848,
+      9848
+    ],
+    "evidence": "network19/lan-nacos-20261109/README.md"
   }
 }

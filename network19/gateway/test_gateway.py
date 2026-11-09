@@ -32,7 +32,7 @@ class Parser(unittest.TestCase):
  def test_DHCP_static_collision_or_duplicate_rejected(self):
   plan=copy.deepcopy(PLAN);plan['guest_addresses'][0]['new_ip']='192.168.19.200'
   with self.assertRaises(p.Rejected):p.load(plan,*MAC)
-  plan=copy.deepcopy(PLAN);plan['guest_addresses'][1]['new_ip']=plan['guest_addresses'][0]['new_ip']
+  plan=copy.deepcopy(PLAN);next(r for r in plan['guest_addresses'] if r['vmid']==200)['new_ip']=next(r for r in plan['guest_addresses'] if r['vmid']==100)['new_ip']
   with self.assertRaises(p.Rejected):p.load(plan,*MAC)
  def test_DNS_record_injection_rejected(self):
   plan=copy.deepcopy(PLAN);plan['guest_addresses'][0]['name']='cf-tunnel\nserver=attacker'
@@ -152,6 +152,24 @@ class TrustedVPNFullUpgrade(unittest.TestCase):
    with patch.object(m,'STATE',Path(tmp)),patch.object(m,'PENDING',Path(tmp)/'pending'),patch.object(m,'put') as writer,patch.object(m,'run',side_effect=lambda args,*a,**kw:(commands.append(args) or SimpleNamespace(returncode=0,stdout=b''))),patch.object(m,'service_fingerprints',return_value=before):
     result=m.hot_rollback(pending,original);self.assertTrue(result['persistent_service_PIDs_unchanged']);content=next(x.args[1] for x in writer.call_args_list if x.args[0]==Path(tmp)/'hot-rollback.nft').decode();self.assertIn(guarded,content);self.assertNotIn(raw,content)
   self.assertFalse(any(args[0] in ('ip','sysctl') or args[:2] in (['systemctl','stop'],['systemctl','restart']) for args in commands))
+
+class LANTestNacosAccess(unittest.TestCase):
+ def configs(self):
+  folder=HERE.parent/'lan-nacos-20261109'
+  return json.loads((folder/'before.json').read_text())['config'],json.loads((folder/'candidate-config.json').read_text())
+ def test_exact_test_Nacos_append_accepted(self):
+  old,new=self.configs()
+  with patch.object(m,'load_policy',return_value=p):m.validate_hot_delta(old,new)
+  self.assertEqual(new['WAN_to_LAN'][-1],{'src':['192.168.21.0/24'],'dst':['192.168.19.20'],'tcp':[8848,9848]})
+ def test_new_rule_cannot_expand_ports_or_prod_or_other_contract(self):
+  old,new=self.configs()
+  for key,value in [('tcp',[3306,8848,9848]),('dst',['192.168.19.11']),('src',['0.0.0.0/0'])]:
+   bad=copy.deepcopy(new);bad['WAN_to_LAN'][-1][key]=value
+   with patch.object(m,'load_policy',return_value=p):
+    with self.assertRaises((RuntimeError,p.Rejected)):m.validate_hot_delta(old,bad)
+  bad=copy.deepcopy(new);bad['hosts'].pop()
+  with patch.object(m,'load_policy',return_value=p):
+   with self.assertRaises(RuntimeError):m.validate_hot_delta(old,bad)
 
 class FakeKernel:
  def __init__(self):self.values={};self.writes=[];self.filtered=False

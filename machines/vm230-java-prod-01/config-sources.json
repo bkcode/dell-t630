@@ -7,7 +7,7 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "dbd806f3a9cdeabaa3dd9f5f51aab0cd9020cb7fd5196eb60a8c6cedd25343be"
+      "sha256": "65593c1f55f23c503933e20eb388fa98e5a0c292ca017b2e48a4ce0c5c542cfb"
     },
     {
       "path": "19-manual-operations.md",
@@ -25,7 +25,7 @@
       "path": "network19/migration-plan.json",
       "type": "historical-evidence",
       "purpose": "原19网迁移阶段地址/策略说明，含已退役角色；现役角色与地址以plan.json为准，不能重跑迁移器",
-      "sha256": "a638c14a7b152ad48b5254166bdd2ad3c7c69ea723e648bf88bd1ebb38bc1832"
+      "sha256": "b62a6b53450eaacb13ae328348b62d90893dfb8838e986ed3d982cf31b36c86a"
     },
     {
       "path": "cleanup/final-live-check.json",

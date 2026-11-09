@@ -1,0 +1,229 @@
+{
+  "config": {
+    "schema_version": 1,
+    "vmid": 190,
+    "hostname": "network-gateway",
+    "WAN_MAC": "02:63:19:01:90:00",
+    "LAN_MAC": "02:63:19:01:90:01",
+    "management_hosts": [
+      "192.168.21.22",
+      "192.168.21.116"
+    ],
+    "hosts": [
+      {
+        "role": "cf-tunnel",
+        "address": "192.168.19.5"
+      },
+      {
+        "role": "data-prod-db",
+        "address": "192.168.19.10"
+      },
+      {
+        "role": "data-prod-infra",
+        "address": "192.168.19.11"
+      },
+      {
+        "role": "data-test",
+        "address": "192.168.19.20"
+      },
+      {
+        "role": "publish-service",
+        "address": "192.168.19.30"
+      },
+      {
+        "role": "artifact-service",
+        "address": "192.168.19.31"
+      },
+      {
+        "role": "java-prod-01",
+        "address": "192.168.19.40"
+      },
+      {
+        "role": "java-test-01",
+        "address": "192.168.19.45"
+      },
+      {
+        "role": "penpot-service",
+        "address": "192.168.19.50"
+      },
+      {
+        "role": "nas-media",
+        "address": "192.168.19.60"
+      },
+      {
+        "role": "ops-service",
+        "address": "192.168.19.70"
+      }
+    ],
+    "WAN_to_LAN": [
+      {
+        "src": [
+          "192.168.21.0/24"
+        ],
+        "dst": [
+          "192.168.19.50"
+        ],
+        "tcp": [
+          9001
+        ]
+      },
+      {
+        "src": [
+          "192.168.21.0/24"
+        ],
+        "dst": [
+          "192.168.19.31"
+        ],
+        "tcp": [
+          8081
+        ]
+      },
+      {
+        "src": [
+          "192.168.21.0/24"
+        ],
+        "dst": [
+          "192.168.19.60"
+        ],
+        "tcp": [
+          80,
+          445,
+          8096
+        ]
+      },
+      {
+        "src": [
+          "192.168.21.0/24"
+        ],
+        "dst": [
+          "192.168.19.45"
+        ],
+        "tcp": [
+          9999
+        ]
+      },
+      {
+        "src": [
+          "192.168.21.0/24"
+        ],
+        "dst": [
+          "192.168.19.40"
+        ],
+        "tcp": [
+          9999
+        ]
+      },
+      {
+        "src": [
+          "192.168.21.0/24"
+        ],
+        "dst": [
+          "192.168.19.70"
+        ],
+        "tcp": [
+          3000
+        ]
+      },
+      {
+        "src": [
+          "192.168.21.22",
+          "192.168.21.116"
+        ],
+        "dst": [
+          "192.168.19.0/24"
+        ],
+        "tcp": [
+          22,
+          3306,
+          5672,
+          6379,
+          8848,
+          9090,
+          9093,
+          9100,
+          9848,
+          9849,
+          15672
+        ]
+      }
+    ],
+    "public_tcp": [
+      53,
+      80,
+      443
+    ],
+    "public_udp": [
+      53,
+      123
+    ],
+    "CF_compat_tcp": [
+      80,
+      443,
+      8081,
+      8096,
+      9001,
+      9999
+    ],
+    "migration_plan_sha256": "15f3452da05abf57583898910f50e769092695e03dccf22fbbc18a4c44038862",
+    "OW_fake_IP_proxy": {
+      "source": "192.168.19.0/24",
+      "destination": "198.18.0.0/15",
+      "tcp": [
+        53,
+        80,
+        443
+      ],
+      "udp": [
+        53,
+        123
+      ],
+      "icmp": true
+    },
+    "CF_fake_IP_proxy": {
+      "source": "192.168.19.5",
+      "destination": "198.18.0.0/15",
+      "tcp": [
+        7844
+      ],
+      "udp": [
+        7844
+      ]
+    },
+    "WireGuard_client_access": {
+      "source": "10.66.66.0/24",
+      "destination": "192.168.19.0/24",
+      "protocols": "all",
+      "gateway_local_addresses": [
+        "192.168.21.23",
+        "192.168.19.1"
+      ],
+      "no_NAT": true
+    }
+  },
+  "config_file_SHA": "2fac04c37680dd40adb9bb24e877461a5f57a9a9b3a7161daf338d249a40e99b",
+  "code_SHA": {
+    "manage.py": "cc0a50258dbf4abf2621cb7b06b5637413a38462aacd5640ab1ce5a1b9a79074",
+    "policy.py": "bd237ff8c6417306af7cf0a9e3106d0426f5ca6bb54f072984dd9e89638708da"
+  },
+  "pending_exists": false,
+  "services": {
+    "dell-gateway19-dnsmasq.service": {
+      "MainPID": "824",
+      "ExecMainStartTimestamp": "Mon 2026-11-09 06:24:38 UTC",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "systemd-networkd.service": {
+      "MainPID": "636",
+      "ExecMainStartTimestamp": "Mon 2026-11-09 06:24:37 UTC",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "ssh.service": {
+      "MainPID": "712",
+      "ExecMainStartTimestamp": "Mon 2026-11-09 06:24:38 UTC",
+      "ActiveState": "active",
+      "SubState": "running"
+    }
+  }
+}

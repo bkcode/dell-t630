@@ -187,5 +187,16 @@
     "scope": "only production MySQL/Nacos logical backup; all other data excluded",
     "evidence": "completion/20261109-prod-db-scope/first-success-and-timer-enabled.json",
     "old_wholeVM_archives_preserved": true
+  },
+  "LAN_test_Nacos_access": {
+    "source": "192.168.21.0/24",
+    "destination": "192.168.19.20",
+    "tcp": [
+      8848,
+      9848
+    ],
+    "confirmed": true,
+    "evidence": "network19/lan-nacos-20261109/final-gateway.json",
+    "unrelated_admin_or_production_or_DB_ports_opened": false
   }
 }

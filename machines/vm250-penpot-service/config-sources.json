@@ -6,7 +6,7 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "dbd806f3a9cdeabaa3dd9f5f51aab0cd9020cb7fd5196eb60a8c6cedd25343be"
+      "sha256": "65593c1f55f23c503933e20eb388fa98e5a0c292ca017b2e48a4ce0c5c542cfb"
     },
     {
       "path": "11-live-handoff.md",
@@ -18,7 +18,7 @@
       "path": "12-service-access-and-operations.md",
       "type": "current-contract",
       "purpose": "当前19网入口及凭据保管规则。",
-      "sha256": "85235d86be8a34f68d769235958d24dc1502fb0ca670733b363d267c615690be"
+      "sha256": "a8ff3cca5eaded3bf792822085f6e7edcdc883c14f8ecc65b0b2b456213face0"
     },
     {
       "path": "19-manual-operations.md",

@@ -1,0 +1,7 @@
+{
+  "status": "hot-policy-activation-scheduled",
+  "nonce": "b36392e70fb74a89a7ea1440424a2d07",
+  "deadline_utc": "2026-11-09T12:55:25.844663+00:00",
+  "rollback_armed": true,
+  "no_service_or_address_or_sysctl_restart": true
+}

@@ -50,6 +50,12 @@
 
 TCP服务端口为 `3306, 8848, 9848, 6379, 5672, 15672`，仅在指定本机19地址按原配置监听；已批准的bridge ACL和应用认证共同约束访问，不因可达就放宽账号权限。Nacos、Rabbit管理端口不得自动经CF公开。
 
+## 测试Nacos的普通LAN访问
+
+现有入口`http://192.168.19.20:8848/nacos/`及客户端TCP9848已允许`192.168.21.0/24`访问，GW转发与PVE桥两层专属规则均完成独立确认：[网关](../../network19/lan-nacos-20261109/gateway-confirmed.json)、[桥](../../network19/lan-nacos-20261109/bridge-confirmed.json)、[网关独立核查](../../network19/lan-nacos-20261109/gateway-independent-check.json)、[桥独立核查](../../network19/lan-nacos-20261109/bridge-independent-check.json)。仅这两个测试Nacos端口，原管理例外及Nacos登录/namespace权限继续生效；没有放开数据库、SSH、集群9849或正式Nacos，也未重启服务。
+
+Studio21.230 HTTP200/TCP9848成功，同来源test3306/22/9849和prod19.11:8848/9848实际timeout，见[负测](../../network19/lan-nacos-20261109/LAN-negative-tests.json)。[Air反馈](../../network19/lan-nacos-20261109/Air-user-confirmation.json)为用户明确访问成功，但未提供逐项命令输出。ICMP没有随本次规则扩展，ping可能不通，不能作为Nacos可用性判据；分别检查HTTP、9848 TCP和既有认证即可，不重置密码或披露私有凭据。本次无NAT、hostforward保持0、WG原许可不变，不改数据或profile。
+
 ## SSH、Shell与网络
 
 日常按已批准维护范围，用 `ub` 和客户端 `~/.ssh/yang_local_rsa`，严格核对 `dell-vm210` 既有host key；私钥只在客户端，不进入VM配置目录或Git。更换IP不等于重新信任任意主机，不关闭known_hosts校验，不拷贝别台机器host key。

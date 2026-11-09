@@ -1,0 +1,749 @@
+{
+  "persistent_rules": "# OFFLINE CANDIDATE ONLY: parent must nft -c and atomically apply owned table.\n# No host L3 routing/NAT or PVE firewall daemon dependency.\n# Direct tap/veth required. Host INPUT/OUTPUT guard only vmbr19 in this stage.\ntable bridge dell19_acl {\n  set mac_ids {\n    type ifname . ether_addr;\n    elements = { \"fwpr100p0\" . bc:24:11:42:04:c1, \"fwpr190p1\" . 02:63:19:01:90:01, \"fwpr200p0\" . bc:24:11:1c:62:00, \"fwpr201p0\" . bc:24:11:1c:bb:93, \"fwpr210p0\" . bc:24:11:5d:2d:98, \"fwpr220p0\" . bc:24:11:2a:01:ad, \"fwpr221p0\" . bc:24:11:ec:e1:6f, \"fwpr230p0\" . bc:24:11:1c:20:00, \"fwpr240p0\" . bc:24:11:65:41:5a, \"fwpr250p0\" . bc:24:11:78:e9:84, \"fwpr260p0\" . bc:24:11:a7:3b:73, \"fwpr270p0\" . bc:24:11:ce:8c:67, \"fwpr9001p0\" . bc:24:11:7e:96:13, \"fwpr9010p0\" . bc:24:11:e8:c9:67, \"fwpr9011p0\" . bc:24:11:c3:a1:80, \"tap190i1\" . 02:63:19:01:90:01, \"tap200i0\" . bc:24:11:1c:62:00, \"tap201i0\" . bc:24:11:1c:bb:93, \"tap210i0\" . bc:24:11:5d:2d:98, \"tap220i0\" . bc:24:11:2a:01:ad, \"tap221i0\" . bc:24:11:ec:e1:6f, \"tap230i0\" . bc:24:11:1c:20:00, \"tap240i0\" . bc:24:11:65:41:5a, \"tap250i0\" . bc:24:11:78:e9:84, \"tap260i0\" . bc:24:11:a7:3b:73, \"tap270i0\" . bc:24:11:ce:8c:67, \"tap9001i0\" . bc:24:11:7e:96:13, \"tap9010i0\" . bc:24:11:e8:c9:67, \"tap9011i0\" . bc:24:11:c3:a1:80, \"veth100i0\" . bc:24:11:42:04:c1 };\n  }\n\n  set ip_ids {\n    type ifname . ipv4_addr;\n    elements = { \"fwpr100p0\" . 192.168.19.5, \"fwpr190p1\" . 192.168.19.1, \"fwpr200p0\" . 192.168.19.10, \"fwpr201p0\" . 192.168.19.11, \"fwpr210p0\" . 192.168.19.20, \"fwpr220p0\" . 192.168.19.30, \"fwpr221p0\" . 192.168.19.31, \"fwpr230p0\" . 192.168.19.40, \"fwpr240p0\" . 192.168.19.45, \"fwpr250p0\" . 192.168.19.50, \"fwpr260p0\" . 192.168.19.60, \"fwpr270p0\" . 192.168.19.70, \"tap190i1\" . 192.168.19.1, \"tap200i0\" . 192.168.19.10, \"tap201i0\" . 192.168.19.11, \"tap210i0\" . 192.168.19.20, \"tap220i0\" . 192.168.19.30, \"tap221i0\" . 192.168.19.31, \"tap230i0\" . 192.168.19.40, \"tap240i0\" . 192.168.19.45, \"tap250i0\" . 192.168.19.50, \"tap260i0\" . 192.168.19.60, \"tap270i0\" . 192.168.19.70, \"veth100i0\" . 192.168.19.5 };\n  }\n\n  set gateway_ports {\n    type ifname;\n    elements = { \"fwpr190p1\", \"tap190i1\" };\n  }\n\n  set guest_ports {\n    type ifname;\n    elements = { \"fwpr100p0\", \"fwpr200p0\", \"fwpr201p0\", \"fwpr210p0\", \"fwpr220p0\", \"fwpr221p0\", \"fwpr230p0\", \"fwpr240p0\", \"fwpr250p0\", \"fwpr260p0\", \"fwpr270p0\", \"fwpr9001p0\", \"fwpr9010p0\", \"fwpr9011p0\", \"tap200i0\", \"tap201i0\", \"tap210i0\", \"tap220i0\", \"tap221i0\", \"tap230i0\", \"tap240i0\", \"tap250i0\", \"tap260i0\", \"tap270i0\", \"tap9001i0\", \"tap9010i0\", \"tap9011i0\", \"veth100i0\" };\n  }\n\n  set access_bridges {\n    type ifname;\n    elements = { \"vmbr19\" };\n  }\n\n  set peer_tcp {\n    type ipv4_addr . ipv4_addr . inet_service;\n    elements = { 192.168.19.10 . 192.168.19.31 . 8081, 192.168.19.11 . 192.168.19.10 . 3306, 192.168.19.11 . 192.168.19.31 . 8081, 192.168.19.20 . 192.168.19.31 . 8081, 192.168.19.30 . 192.168.19.31 . 8081, 192.168.19.30 . 192.168.19.45 . 22, 192.168.19.40 . 192.168.19.10 . 3306, 192.168.19.40 . 192.168.19.11 . 5672, 192.168.19.40 . 192.168.19.11 . 6379, 192.168.19.40 . 192.168.19.11 . 8848, 192.168.19.40 . 192.168.19.11 . 9848, 192.168.19.40 . 192.168.19.31 . 8081, 192.168.19.45 . 192.168.19.20 . 3306, 192.168.19.45 . 192.168.19.20 . 5672, 192.168.19.45 . 192.168.19.20 . 6379, 192.168.19.45 . 192.168.19.20 . 8848, 192.168.19.45 . 192.168.19.20 . 9848, 192.168.19.45 . 192.168.19.31 . 8081, 192.168.19.50 . 192.168.19.31 . 8081, 192.168.19.70 . 192.168.19.10 . 9100, 192.168.19.70 . 192.168.19.11 . 9100, 192.168.19.70 . 192.168.19.20 . 9100, 192.168.19.70 . 192.168.19.30 . 9100, 192.168.19.70 . 192.168.19.31 . 8081, 192.168.19.70 . 192.168.19.31 . 9100, 192.168.19.70 . 192.168.19.40 . 9100, 192.168.19.70 . 192.168.19.45 . 9100, 192.168.19.70 . 192.168.19.5 . 9100, 192.168.19.70 . 192.168.19.50 . 9100, 192.168.19.70 . 192.168.19.60 . 9100, 192.168.19.70 . 192.168.19.70 . 9100 };\n  }\n\n  set lan_tcp {\n    type ipv4_addr . inet_service;\n  }\n\n  chain host_input {\n    type filter hook input priority -200; policy accept;\n    meta ibrname @access_bridges counter drop comment \"no-host-service-on-server19-or-access-fwbr\"\n  }\n  chain host_output {\n    type filter hook output priority -200; policy accept;\n    meta obrname @access_bridges counter drop comment \"host-client-route-must-use-gateway-WAN\"\n  }\n  chain forward {\n    type filter hook forward priority -200; policy accept;\n    meta ibrname \"vmbr19\" jump server19\n    meta obrname \"vmbr19\" jump server19\n  }\n  chain server19 {\n    ether type { 0x86dd, 0x8100, 0x88a8 } counter drop comment \"no-ipv6-vlan-bypass\"\n    meta iifname . ether saddr != @mac_ids counter drop comment \"unknown-port-or-source-MAC\"\n    ether type arp jump arp_guard\n    ether type ip jump ip_guard\n    counter drop comment \"unapproved-ethertype\"\n  }\n  chain arp_guard {\n    meta iifname . arp saddr ether != @mac_ids counter drop comment \"ARP-SHA-source-binding\"\n    arp operation request arp saddr ip 0.0.0.0 arp daddr ip 192.168.19.0/24 counter accept comment \"address-probe\"\n    meta iifname . arp saddr ip @ip_ids counter accept comment \"ARP-SPA-exact-port-IP\"\n    counter drop comment \"ARP-source-IP-spoof\"\n  }\n  chain ip_guard {\n    meta iifname @guest_ports meta oifname @gateway_ports ip saddr { 0.0.0.0, 192.168.19.0/24 } udp sport 68 udp dport 67 counter accept comment \"MAC-bound-DHCP-client-only\"\n    meta iifname @gateway_ports meta oifname @guest_ports ip saddr 192.168.19.1 udp sport 67 udp dport 68 counter accept comment \"gateway-only-DHCP-server\"\n    meta oifname . ether daddr != @mac_ids counter drop comment \"unicast-destination-MAC-binding\"\n    meta iifname @gateway_ports jump from_gateway\n    meta iifname @guest_ports jump from_guest\n    counter drop comment \"unregistered-direction\"\n  }\n  chain from_gateway {\n    ip saddr 192.168.19.0/24 ip saddr != 192.168.19.1 counter drop comment \"gateway-cannot-spoof-peer19\"\n    meta oifname . ip daddr != @ip_ids counter drop comment \"approved-destination-IP-only\"\n    ct state invalid counter drop\n    ct state { established, related } counter accept\n    ip saddr 192.168.19.1 ip protocol icmp counter accept comment \"gateway-diagnostics\"\n    ip saddr 192.168.21.0/24 ip daddr 192.168.19.50 tcp dport 9001 counter accept comment \"manager-WAN-to-LAN-0\"\n    ip saddr 192.168.21.0/24 ip daddr 192.168.19.31 tcp dport 8081 counter accept comment \"manager-WAN-to-LAN-1\"\n    ip saddr 192.168.21.0/24 ip daddr 192.168.19.60 tcp dport { 80, 445, 8096 } counter accept comment \"manager-WAN-to-LAN-2\"\n    ip saddr 192.168.21.0/24 ip daddr 192.168.19.45 tcp dport 9999 counter accept comment \"manager-WAN-to-LAN-3\"\n    ip saddr 192.168.21.0/24 ip daddr 192.168.19.40 tcp dport 9999 counter accept comment \"manager-WAN-to-LAN-4\"\n    ip saddr 192.168.21.0/24 ip daddr 192.168.19.70 tcp dport 3000 counter accept comment \"manager-WAN-to-LAN-5\"\n    ip saddr { 192.168.21.22, 192.168.21.116 } ip daddr 192.168.19.0/24 tcp dport { 22, 3306, 5672, 6379, 8848, 9090, 9093, 9100, 9848, 9849, 15672 } counter accept comment \"manager-WAN-to-LAN-6\"\n    ip saddr 10.66.66.0/24 ip daddr 192.168.19.0/24 counter accept comment \"trusted-WireGuard-to-server19\"\n    counter drop comment \"gateway-ingress-denied\"\n  }\n  chain from_guest {\n    meta iifname . ip saddr != @ip_ids counter drop comment \"guest-source-IP-binding\"\n    meta oifname @gateway_ports jump to_gateway\n    meta oifname . ip daddr != @ip_ids counter drop comment \"peer-destination-IP-binding\"\n    ct state invalid counter drop\n    ct state { established, related } counter accept\n    ip saddr . ip daddr . tcp dport @peer_tcp counter accept comment \"explicit-role-TCP-matrix\"\n    counter drop comment \"east-west-denied\"\n  }\n  chain to_gateway {\n    ip daddr 192.168.19.0/24 ip daddr != 192.168.19.1 counter drop comment \"no-peer-hairpin-through-gateway\"\n    ct state invalid counter drop\n    ct state { established, related } counter accept\n    ip daddr 192.168.19.1 udp dport 53 counter accept\n    ip daddr 192.168.19.1 tcp dport 53 counter accept\n    ip daddr 192.168.19.1 ip protocol icmp counter accept\n    ip saddr 192.168.19.70 ip daddr 192.168.19.1 tcp dport 9100 counter accept comment \"Ops-gateway-exporter-if-activated\"\n    ip daddr 192.168.21.0/24 counter drop comment \"no-unapproved-server-to-management-LAN-session\"\n    ip daddr 192.168.19.1 counter drop comment \"no-other-gateway-service\"\n    ip daddr { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16 } counter drop comment \"manager-exclude-private-destinations\"\n    tcp dport { 53, 80, 443 } counter accept comment \"manager-public-egress\"\n    udp dport { 53, 123 } counter accept comment \"manager-public-egress\"\n    ip protocol icmp counter accept\n    ip saddr 192.168.19.5 tcp dport { 7844 } counter accept comment \"manager-CF_extra_public\"\n    ip saddr 192.168.19.5 udp dport { 7844 } counter accept comment \"manager-CF_extra_public\"\n    ip saddr 192.168.19.30 tcp dport { 22 } counter accept comment \"manager-publisher_optional_public_ssh\"\n    counter drop comment \"unapproved-egress\"\n  }\n}\n",
+  "persistent_SHA": "72edbc48d8bbe60c7bc6f26fec7c00a8c94132ee80b66b94f0d28fd06f06d9f6",
+  "native_from_gateway": {
+    "nftables": [
+      {
+        "metainfo": {
+          "version": "1.0.6",
+          "release_name": "Lester Gooch #5",
+          "json_schema_version": 1
+        }
+      },
+      {
+        "chain": {
+          "family": "bridge",
+          "table": "dell19_acl",
+          "name": "from_gateway",
+          "handle": 7
+        }
+      },
+      {
+        "rule": {
+          "family": "bridge",
+          "table": "dell19_acl",
+          "chain": "from_gateway",
+          "handle": 38,
+          "comment": "gateway-cannot-spoof-peer19",
+          "expr": [
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "ip",
+                    "field": "saddr"
+                  }
+                },
+                "right": {
+                  "prefix": {
+                    "addr": "192.168.19.0",
+                    "len": 24
+                  }
+                }
+              }
+            },
+            {
+              "match": {
+                "op": "!=",
+                "left": {
+                  "payload": {
+                    "protocol": "ip",
+                    "field": "saddr"
+                  }
+                },
+                "right": "192.168.19.1"
+              }
+            },
+            {
+              "counter": {
+                "packets": 0,
+                "bytes": 0
+              }
+            },
+            {
+              "drop": null
+            }
+          ]
+        }
+      },
+      {
+        "rule": {
+          "family": "bridge",
+          "table": "dell19_acl",
+          "chain": "from_gateway",
+          "handle": 39,
+          "comment": "approved-destination-IP-only",
+          "expr": [
+            {
+              "match": {
+                "op": "!=",
+                "left": {
+                  "concat": [
+                    {
+                      "meta": {
+                        "key": "oifname"
+                      }
+                    },
+                    {
+                      "payload": {
+                        "protocol": "ip",
+                        "field": "daddr"
+                      }
+                    }
+                  ]
+                },
+                "right": "@ip_ids"
+              }
+            },
+            {
+              "counter": {
+                "packets": 0,
+                "bytes": 0
+              }
+            },
+            {
+              "drop": null
+            }
+          ]
+        }
+      },
+      {
+        "rule": {
+          "family": "bridge",
+          "table": "dell19_acl",
+          "chain": "from_gateway",
+          "handle": 40,
+          "expr": [
+            {
+              "match": {
+                "op": "in",
+                "left": {
+                  "ct": {
+                    "key": "state"
+                  }
+                },
+                "right": "invalid"
+              }
+            },
+            {
+              "counter": {
+                "packets": 0,
+                "bytes": 0
+              }
+            },
+            {
+              "drop": null
+            }
+          ]
+        }
+      },
+      {
+        "rule": {
+          "family": "bridge",
+          "table": "dell19_acl",
+          "chain": "from_gateway",
+          "handle": 42,
+          "expr": [
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "ct": {
+                    "key": "state"
+                  }
+                },
+                "right": {
+                  "set": [
+                    "established",
+                    "related"
+                  ]
+                }
+              }
+            },
+            {
+              "counter": {
+                "packets": 70099,
+                "bytes": 118957767
+              }
+            },
+            {
+              "accept": null
+            }
+          ]
+        }
+      },
+      {
+        "rule": {
+          "family": "bridge",
+          "table": "dell19_acl",
+          "chain": "from_gateway",
+          "handle": 43,
+          "comment": "gateway-diagnostics",
+          "expr": [
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "ip",
+                    "field": "saddr"
+                  }
+                },
+                "right": "192.168.19.1"
+              }
+            },
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "ip",
+                    "field": "protocol"
+                  }
+                },
+                "right": "icmp"
+              }
+            },
+            {
+              "counter": {
+                "packets": 0,
+                "bytes": 0
+              }
+            },
+            {
+              "accept": null
+            }
+          ]
+        }
+      },
+      {
+        "rule": {
+          "family": "bridge",
+          "table": "dell19_acl",
+          "chain": "from_gateway",
+          "handle": 44,
+          "comment": "manager-WAN-to-LAN-0",
+          "expr": [
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "ip",
+                    "field": "saddr"
+                  }
+                },
+                "right": {
+                  "prefix": {
+                    "addr": "192.168.21.0",
+                    "len": 24
+                  }
+                }
+              }
+            },
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "ip",
+                    "field": "daddr"
+                  }
+                },
+                "right": "192.168.19.50"
+              }
+            },
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "tcp",
+                    "field": "dport"
+                  }
+                },
+                "right": 9001
+              }
+            },
+            {
+              "counter": {
+                "packets": 5,
+                "bytes": 316
+              }
+            },
+            {
+              "accept": null
+            }
+          ]
+        }
+      },
+      {
+        "rule": {
+          "family": "bridge",
+          "table": "dell19_acl",
+          "chain": "from_gateway",
+          "handle": 45,
+          "comment": "manager-WAN-to-LAN-1",
+          "expr": [
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "ip",
+                    "field": "saddr"
+                  }
+                },
+                "right": {
+                  "prefix": {
+                    "addr": "192.168.21.0",
+                    "len": 24
+                  }
+                }
+              }
+            },
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "ip",
+                    "field": "daddr"
+                  }
+                },
+                "right": "192.168.19.31"
+              }
+            },
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "tcp",
+                    "field": "dport"
+                  }
+                },
+                "right": 8081
+              }
+            },
+            {
+              "counter": {
+                "packets": 2,
+                "bytes": 128
+              }
+            },
+            {
+              "accept": null
+            }
+          ]
+        }
+      },
+      {
+        "rule": {
+          "family": "bridge",
+          "table": "dell19_acl",
+          "chain": "from_gateway",
+          "handle": 47,
+          "comment": "manager-WAN-to-LAN-2",
+          "expr": [
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "ip",
+                    "field": "saddr"
+                  }
+                },
+                "right": {
+                  "prefix": {
+                    "addr": "192.168.21.0",
+                    "len": 24
+                  }
+                }
+              }
+            },
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "ip",
+                    "field": "daddr"
+                  }
+                },
+                "right": "192.168.19.60"
+              }
+            },
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "tcp",
+                    "field": "dport"
+                  }
+                },
+                "right": {
+                  "set": [
+                    80,
+                    445,
+                    8096
+                  ]
+                }
+              }
+            },
+            {
+              "counter": {
+                "packets": 4,
+                "bytes": 256
+              }
+            },
+            {
+              "accept": null
+            }
+          ]
+        }
+      },
+      {
+        "rule": {
+          "family": "bridge",
+          "table": "dell19_acl",
+          "chain": "from_gateway",
+          "handle": 48,
+          "comment": "manager-WAN-to-LAN-3",
+          "expr": [
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "ip",
+                    "field": "saddr"
+                  }
+                },
+                "right": {
+                  "prefix": {
+                    "addr": "192.168.21.0",
+                    "len": 24
+                  }
+                }
+              }
+            },
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "ip",
+                    "field": "daddr"
+                  }
+                },
+                "right": "192.168.19.45"
+              }
+            },
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "tcp",
+                    "field": "dport"
+                  }
+                },
+                "right": 9999
+              }
+            },
+            {
+              "counter": {
+                "packets": 0,
+                "bytes": 0
+              }
+            },
+            {
+              "accept": null
+            }
+          ]
+        }
+      },
+      {
+        "rule": {
+          "family": "bridge",
+          "table": "dell19_acl",
+          "chain": "from_gateway",
+          "handle": 49,
+          "comment": "manager-WAN-to-LAN-4",
+          "expr": [
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "ip",
+                    "field": "saddr"
+                  }
+                },
+                "right": {
+                  "prefix": {
+                    "addr": "192.168.21.0",
+                    "len": 24
+                  }
+                }
+              }
+            },
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "ip",
+                    "field": "daddr"
+                  }
+                },
+                "right": "192.168.19.40"
+              }
+            },
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "tcp",
+                    "field": "dport"
+                  }
+                },
+                "right": 9999
+              }
+            },
+            {
+              "counter": {
+                "packets": 0,
+                "bytes": 0
+              }
+            },
+            {
+              "accept": null
+            }
+          ]
+        }
+      },
+      {
+        "rule": {
+          "family": "bridge",
+          "table": "dell19_acl",
+          "chain": "from_gateway",
+          "handle": 50,
+          "comment": "manager-WAN-to-LAN-5",
+          "expr": [
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "ip",
+                    "field": "saddr"
+                  }
+                },
+                "right": {
+                  "prefix": {
+                    "addr": "192.168.21.0",
+                    "len": 24
+                  }
+                }
+              }
+            },
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "ip",
+                    "field": "daddr"
+                  }
+                },
+                "right": "192.168.19.70"
+              }
+            },
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "tcp",
+                    "field": "dport"
+                  }
+                },
+                "right": 3000
+              }
+            },
+            {
+              "counter": {
+                "packets": 3,
+                "bytes": 188
+              }
+            },
+            {
+              "accept": null
+            }
+          ]
+        }
+      },
+      {
+        "rule": {
+          "family": "bridge",
+          "table": "dell19_acl",
+          "chain": "from_gateway",
+          "handle": 53,
+          "comment": "manager-WAN-to-LAN-6",
+          "expr": [
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "ip",
+                    "field": "saddr"
+                  }
+                },
+                "right": {
+                  "set": [
+                    "192.168.21.22",
+                    "192.168.21.116"
+                  ]
+                }
+              }
+            },
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "ip",
+                    "field": "daddr"
+                  }
+                },
+                "right": {
+                  "prefix": {
+                    "addr": "192.168.19.0",
+                    "len": 24
+                  }
+                }
+              }
+            },
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "tcp",
+                    "field": "dport"
+                  }
+                },
+                "right": {
+                  "set": [
+                    22,
+                    3306,
+                    5672,
+                    6379,
+                    8848,
+                    9090,
+                    9093,
+                    9100,
+                    9848,
+                    9849,
+                    15672
+                  ]
+                }
+              }
+            },
+            {
+              "counter": {
+                "packets": 90,
+                "bytes": 5400
+              }
+            },
+            {
+              "accept": null
+            }
+          ]
+        }
+      },
+      {
+        "rule": {
+          "family": "bridge",
+          "table": "dell19_acl",
+          "chain": "from_gateway",
+          "handle": 54,
+          "comment": "trusted-WireGuard-to-server19",
+          "expr": [
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "ip",
+                    "field": "saddr"
+                  }
+                },
+                "right": {
+                  "prefix": {
+                    "addr": "10.66.66.0",
+                    "len": 24
+                  }
+                }
+              }
+            },
+            {
+              "match": {
+                "op": "==",
+                "left": {
+                  "payload": {
+                    "protocol": "ip",
+                    "field": "daddr"
+                  }
+                },
+                "right": {
+                  "prefix": {
+                    "addr": "192.168.19.0",
+                    "len": 24
+                  }
+                }
+              }
+            },
+            {
+              "counter": {
+                "packets": 0,
+                "bytes": 0
+              }
+            },
+            {
+              "accept": null
+            }
+          ]
+        }
+      },
+      {
+        "rule": {
+          "family": "bridge",
+          "table": "dell19_acl",
+          "chain": "from_gateway",
+          "handle": 55,
+          "comment": "gateway-ingress-denied",
+          "expr": [
+            {
+              "counter": {
+                "packets": 0,
+                "bytes": 0
+              }
+            },
+            {
+              "drop": null
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "apply_script": "#!/usr/bin/python3\nimport subprocess\nfrom pathlib import Path\nassert Path('/etc/pve').exists()\np=Path('/etc/dell-network19/bridge19.nft');assert not p.is_symlink() and p.stat().st_uid==0 and not p.stat().st_mode&0o077\nexists=subprocess.run(['nft','list','table','bridge','dell19_acl'],capture_output=True).returncode==0\nbody=(b'delete table bridge dell19_acl\\n' if exists else b'')+p.read_bytes()\nsubprocess.run(['nft','-c','-f','-'],input=body,check=True,capture_output=True)\nsubprocess.run(['nft','-f','-'],input=body,check=True,capture_output=True)\n"
+}

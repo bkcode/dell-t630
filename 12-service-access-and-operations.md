@@ -7,7 +7,7 @@
 | PVE | https://192.168.21.22:8006/ | 管理SSH22保留 |
 | 虚拟网关190 | WAN192.168.21.23 / LAN192.168.19.1 | 路由、19DNS/DHCP，无NAT |
 | Penpot | http://192.168.19.50:9001/ | Git定制版、3设计/973媒体、11服务 |
-| 测试Nacos | http://192.168.19.20:8848/nacos/ | 同实例新空域finger-test-empty，需登录并显式选namespace；旧域保留 |
+| 测试Nacos | http://192.168.19.20:8848/nacos/ | 21.0/24已仅放行该目标TCP8848/9848；同实例finger-test-empty需登录并显式选namespace，旧域保留 |
 | Nexus | http://192.168.19.31:8081/ | 目前归221；合并目标归220同NIC服务alias，URL不改 |
 | OMV | http://192.168.19.60/ | 家庭NAS管理 |
 | Jellyfin | http://192.168.19.60:8096/ | 媒体库、DirectPlay协议已验 |
@@ -36,6 +36,14 @@ HTTP入口是用户同意的LAN阶段；公网域名/HTTPS/SMTP尚未配置。�
 SSH使用ub和`~/.ssh/yang_local_rsa`，严格已核host key；受控目标见`evidence/implementation/private-guest-access.json`，代码见`scripts/control.py`。该JSON虽名称含private，内容为IP/公钥指纹索引，不包含私钥；实际`private/known_hosts`不进Git，新电脑须先可信交接指纹。PVE root只用于管理/QGA，不复制客户端私钥，不关闭主机密钥检查。模板克隆按[Java模板说明](network19/java-template/README.md)注入独立hostname与地址。
 
 日常启停、故障处理、克隆和备份步骤见[人工操作手册](19-manual-operations.md)，换电脑接手见[Git交接](20-git-and-handoff.md)。
+
+## 测试Nacos的LAN访问来源
+
+2026-11-09新增仅`192.168.21.0/24 → 192.168.19.20 TCP8848/9848`：8848用于控制台/API，9848用于客户端gRPC。此前普通Wi-Fi/LAN来源不在原管理来源例外内，默认规则会阻止访问；本次只增加测试Nacos许可，不扩大到整个19网或其它数据端口。网关190转发规则与PVE `bridge dell19_acl`的专属规则**两层均已原生校验、应用并独立确认**，应用认证仍保留，不凭端口可达跳过登录或namespace选择。
+
+Studio来源21.230已记录HTTP200、TCP9848连接成功；同来源到test19.20的3306/22/9849及prod19.11的8848/9848实际timeout，见[LAN负测](network19/lan-nacos-20261109/LAN-negative-tests.json)。用户Air通过Wi-Fi明确反馈“已经成功”，[确认记录](network19/lan-nacos-20261109/Air-user-confirmation.json)没有逐项HTTP/nc输出，不把这条反馈扩写为Air每个端口或登录用例均已验收。原21.22/21.116管理例外保留，不能把21.230负测泛化成这些原特例也被阻断。
+
+这次没有扩展ICMP许可；ping可能仍无响应，不能据此判断Nacos失败。请分别检查`/nacos/`的HTTP、需要的9848 TCP及既有认证。GW hot更新未重启服务、PID保持；PVE桥只新增1条规则且hostforward全0，WireGuard10.66.66/24原全服务许可和无NAT保持。证据：[网关确认](network19/lan-nacos-20261109/gateway-confirmed.json)、[桥确认](network19/lan-nacos-20261109/bridge-confirmed.json)、[网关独立核查](network19/lan-nacos-20261109/gateway-independent-check.json)、[桥独立核查](network19/lan-nacos-20261109/bridge-independent-check.json)。没有新增公网CF入口，也不把任何密码值或私有凭据文件加入Git。
 
 ## 测试Nacos空namespace已搭好
 

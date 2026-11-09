@@ -12,6 +12,12 @@
 
 本机资料：[配置合同](config.json)、[安全来源索引](config-sources.json)，资源/IP以[plan](../../plan.json)为准：2vCPU、512MiB、32GiB稀疏fullclone；WAN21.23/24 vmbr0、LAN19.1/24 vmbr19，按原MAC识别eth0/eth1。先于其它来宾启动的顺序合同在JSON中，当前不执行start。
 
+## 11月9日测试Nacos的LAN专属转发
+
+本机已hot放行普通LAN `192.168.21.0/24 → 192.168.19.20 TCP8848/9848`，仅测试NacosAPI/控制台与客户端gRPC；原管理来源例外保留。PVE桥另加同范围1条许可，缺任一层都不能把路由可达当服务已放行。[网关确认](../../network19/lan-nacos-20261109/gateway-confirmed.json)/[独立核查](../../network19/lan-nacos-20261109/gateway-independent-check.json)证明hot后服务PID保持、无重启；[桥确认](../../network19/lan-nacos-20261109/bridge-confirmed.json)/[独立核查](../../network19/lan-nacos-20261109/bridge-independent-check.json)证明规则精确、PVE hostforward仍全0。无NAT，原WG10.66.66/24全服务许可不变。
+
+Studio21.230已核HTTP200/nc9848；该来源到test3306/22/9849及prod19.11:8848/9848仍timeout，见[负测](../../network19/lan-nacos-20261109/LAN-negative-tests.json)。[Air用户确认](../../network19/lan-nacos-20261109/Air-user-confirmation.json)只说明Wi-Fi访问成功，没有逐项输出。此次未扩ICMP，ping不能代替目标HTTP/TCP与认证判断；不改OW/DNS、数据或Nacos认证，不新增凭据资料。
+
 ## 路由、VPN与最新DNS
 
 - 专用IPv4路由/防火墙、DNS/DHCP，**无NAT**；默认到OW21.1。PVE21.22只管理/L2，见[PVE](../pve/README.md)。同19东西向不经本机，不能用网关规则代替PVE bridge ACL。

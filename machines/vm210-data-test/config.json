@@ -162,5 +162,15 @@
     "new_accounts_password_resets_or_containers": false,
     "evidence": "completion/20261109-test-env/postcheck.json",
     "test_automatic_backup_added": false
+  },
+  "Nacos_LAN_access": {
+    "source": "192.168.21.0/24",
+    "tcp": [
+      8848,
+      9848
+    ],
+    "two_layers": "VM190 inet and PVE bridge ACL",
+    "Nacos_authentication_required": true,
+    "evidence": "network19/lan-nacos-20261109/README.md"
   }
 }

@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-09T13:07:49.426289+00:00",
+  "status": "test-Nacos-LAN-persistent-gateway-ready",
+  "config_SHA": "8bb52c95fb566640c5492d59c73cadbb213273f2df05cd52c33103308dbeb0bc",
+  "native_policy_SHA": "bd237ff8c6417306af7cf0a9e3106d0426f5ca6bb54f072984dd9e89638708da",
+  "pending": false,
+  "rollback_timer_active": false,
+  "new_rule": {
+    "src": [
+      "192.168.21.0/24"
+    ],
+    "dst": [
+      "192.168.19.20"
+    ],
+    "tcp": [
+      8848,
+      9848
+    ]
+  },
+  "hosts_preserved": 11,
+  "WireGuard_preserved": {
+    "source": "10.66.66.0/24",
+    "destination": "192.168.19.0/24",
+    "protocols": "all",
+    "gateway_local_addresses": [
+      "192.168.21.23",
+      "192.168.19.1"
+    ],
+    "no_NAT": true
+  },
+  "no_NAT": true
+}

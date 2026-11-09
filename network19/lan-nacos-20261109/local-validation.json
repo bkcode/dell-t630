@@ -1,0 +1,14 @@
+{
+  "exact_new_test_Nacos_delta_passed": true,
+  "negative_deltas_rejected": [
+    "extra_db_port",
+    "prod_Nacos",
+    "all_sources",
+    "WG_contract",
+    "DNS_hosts"
+  ],
+  "bridge_added_lines": 1,
+  "bridge_removed_lines": 0,
+  "runtime_hosts_preserved": 11,
+  "server_changes_executed": false
+}

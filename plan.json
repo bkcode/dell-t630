@@ -600,6 +600,20 @@
       "NAS_trusted_source_added": true,
       "remote_MacAir_batch_user_confirmed": true,
       "evidence": "network19/wireguard/full-access-verification.json"
+    },
+    "LAN_test_Nacos_access": {
+      "source": "192.168.21.0/24",
+      "destination": "192.168.19.20",
+      "tcp": [
+        8848,
+        9848
+      ],
+      "gateway_vmid": 190,
+      "PVE_bridge_same_scoped_rule": true,
+      "NAT": false,
+      "production_Nacos_or_DB_or_SSH_opened": false,
+      "Air_user_confirmed": true,
+      "evidence": "network19/lan-nacos-20261109/README.md"
     }
   },
   "temporary_instances": [],

@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-09T21:07:49.750146+08:00",
+  "status": "test-Nacos-LAN-persistent-bridge-ready",
+  "persistent_SHA": "08922334cc9a4ac9dba4cb58f0ebe4ad78c42441f3db032845a993ee0ed41025",
+  "pending": false,
+  "watchdog_active": false,
+  "host_forwarding_all0": true,
+  "tables": [
+    "table bridge dell19_acl"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "client_source_IP_seen_by_PVE": "192.168.21.230",
+  "negative_access_tests": [
+    {
+      "name": "test-db",
+      "destination": "192.168.19.20",
+      "port": 3306,
+      "connected": false,
+      "timed_out": true,
+      "exit": 1
+    },
+    {
+      "name": "test-ssh",
+      "destination": "192.168.19.20",
+      "port": 22,
+      "connected": false,
+      "timed_out": true,
+      "exit": 1
+    },
+    {
+      "name": "test-cluster",
+      "destination": "192.168.19.20",
+      "port": 9849,
+      "connected": false,
+      "timed_out": true,
+      "exit": 1
+    },
+    {
+      "name": "prod-Nacos-ui",
+      "destination": "192.168.19.11",
+      "port": 8848,
+      "connected": false,
+      "timed_out": true,
+      "exit": 1
+    },
+    {
+      "name": "prod-Nacos-grpc",
+      "destination": "192.168.19.11",
+      "port": 9848,
+      "connected": false,
+      "timed_out": true,
+      "exit": 1
+    }
+  ],
+  "production_or_DB_rules_not_opened": true
+}

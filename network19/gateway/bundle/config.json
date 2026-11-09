@@ -14,14 +14,6 @@
       "address": "192.168.19.5"
     },
     {
-      "role": "data-docker-base-tpl",
-      "address": "192.168.19.101"
-    },
-    {
-      "role": "publish-legacy",
-      "address": "192.168.19.104"
-    },
-    {
       "role": "data-prod-db",
       "address": "192.168.19.10"
     },
@@ -46,14 +38,6 @@
       "address": "192.168.19.40"
     },
     {
-      "role": "java-prod-02",
-      "address": "192.168.19.41"
-    },
-    {
-      "role": "java-prod-03",
-      "address": "192.168.19.42"
-    },
-    {
       "role": "java-test-01",
       "address": "192.168.19.45"
     },
@@ -68,34 +52,6 @@
     {
       "role": "ops-service",
       "address": "192.168.19.70"
-    },
-    {
-      "role": "dell-template-inspect",
-      "address": "192.168.19.190"
-    },
-    {
-      "role": "dell-linux-clone-test",
-      "address": "192.168.19.191"
-    },
-    {
-      "role": "dell-docker-clone-test",
-      "address": "192.168.19.192"
-    },
-    {
-      "role": "dell-docker-clone-a",
-      "address": "192.168.19.193"
-    },
-    {
-      "role": "dell-linux-clone-b",
-      "address": "192.168.19.194"
-    },
-    {
-      "role": "dell-docker-clone-b",
-      "address": "192.168.19.195"
-    },
-    {
-      "role": "dell-restore-baseline",
-      "address": "192.168.19.196"
     }
   ],
   "WAN_to_LAN": [
@@ -188,6 +144,18 @@
         9849,
         15672
       ]
+    },
+    {
+      "src": [
+        "192.168.21.0/24"
+      ],
+      "dst": [
+        "192.168.19.20"
+      ],
+      "tcp": [
+        8848,
+        9848
+      ]
     }
   ],
   "public_tcp": [
@@ -207,7 +175,7 @@
     9001,
     9999
   ],
-  "migration_plan_sha256": "23d87494ee533105841c4db4b7f7e14efa4e071c20b032a314fe5eaf9cc0142a",
+  "migration_plan_sha256": "1491f4836699e55f3c267fa681c30508ae15b2b2b5d0da4f38a8a45af7b5f62f",
   "OW_fake_IP_proxy": {
     "source": "192.168.19.0/24",
     "destination": "198.18.0.0/15",

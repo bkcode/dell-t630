@@ -31,6 +31,7 @@ table inet dell_gateway19 {
   iifname "eth0" oifname "eth1" ip saddr { 192.168.21.0/24 } ip daddr { 192.168.19.40 } tcp dport { 9999 } ct state new ct mark set 0x19000001 accept
   iifname "eth0" oifname "eth1" ip saddr { 192.168.21.0/24 } ip daddr { 192.168.19.70 } tcp dport { 3000 } ct state new ct mark set 0x19000001 accept
   iifname "eth0" oifname "eth1" ip saddr { 192.168.21.22, 192.168.21.116 } ip daddr { 192.168.19.0/24 } tcp dport { 22, 3306, 5672, 6379, 8848, 9090, 9093, 9100, 9848, 9849, 15672 } ct state new ct mark set 0x19000001 accept
+  iifname "eth0" oifname "eth1" ip saddr { 192.168.21.0/24 } ip daddr { 192.168.19.20 } tcp dport { 8848, 9848 } ct state new ct mark set 0x19000001 accept
   iifname "eth1" oifname "eth0" ip saddr 192.168.19.5 ip daddr 192.168.21.0/24 tcp dport { 80, 443, 8081, 8096, 9001, 9999 } ct state new ct mark set 0x19000001 accept
   iifname "eth1" oifname "eth0" ip saddr 192.168.19.0/24 ip daddr 198.18.0.0/15 tcp dport { 53, 80, 443 } ct state new ct mark set 0x19000002 accept
   iifname "eth1" oifname "eth0" ip saddr 192.168.19.0/24 ip daddr 198.18.0.0/15 udp dport { 53, 123 } ct state new ct mark set 0x19000002 accept

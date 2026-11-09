@@ -195,6 +195,11 @@ def service_fingerprints():
 
 def validate_hot_delta(old,new):
  p=load_policy();p.validate_config(old);p.validate_config(new)
+ nacos_lan={'src':['192.168.21.0/24'],'dst':['192.168.19.20'],'tcp':[8848,9848]}
+ if nacos_lan not in old['WAN_to_LAN'] and new['WAN_to_LAN']==old['WAN_to_LAN']+[nacos_lan]:
+  omit={'migration_plan_sha256','WAN_to_LAN'}
+  if {k:v for k,v in old.items() if k not in omit}!={k:v for k,v in new.items() if k not in omit}:raise RuntimeError('LAN test Nacos addition may not change any other contract')
+  return
  if new.get('WireGuard_client_access')==p.WG_FULL and old.get('WireGuard_client_access')!=p.WG_FULL:
   if old.get('WireGuard_client_access')!=p.WG_NARROW:raise RuntimeError('full trust hot scope requires currently confirmed exact narrow contract')
   omit={'migration_plan_sha256','WireGuard_client_access'}

@@ -1,8 +1,8 @@
-> 2026-11-08现行状态：基础服务已恢复，host转发启动守卫已补齐；本轮不迁移，不合并Nexus。Mac外部探针不需要。详见[恢复记录](recovery/20261108/README.md)。下文原迁网/历史故障记录保留原时点含义。
+> 2026-11-09现行网络：基础服务恢复、宿主forward守卫跨自然重启保持；新增普通21网到测试Nacos19.20 TCP8848/9848专属许可，其他边界保持。不迁移/合并/启Java，无Mac外部探针；原迁网与历史故障证据按各自时点保留。
 
 # server19 网络交付与当前配置
 
-更新：2026-11-07，Asia/Shanghai。本文描述**最后成功验收的配置**；11月7日曾因UEFI0058暂停，11月8日已恢复基础服务。现场恢复条件见[交接](11-live-handoff.md)，人工操作见[手册](19-manual-operations.md)。
+更新：2026-11-09，Asia/Shanghai。本文区分现行网络许可与历史迁网验收；11月7日UEFI0058是历史故障，基础服务已恢复。现场恢复条件见[交接](11-live-handoff.md)，人工操作见[手册](19-manual-operations.md)。
 
 ## 拓扑与地址所有权
 
@@ -45,6 +45,24 @@ PVE旧vmbr10/20/30/40、10.63地址、宿主应用DNAT及专用NAT/filter表已�
 
 DNS由19.1转OpenWrt21.1，兼容原Fake-IP代理；原公共协议和CF7844例外按已验配置保留，不绕过OW分流。跨子网广播发现不保证，SMB/电视请直接填写NAS地址。
 
+## 普通LAN到测试Nacos：两层专属规则
+
+新增范围严格为`192.168.21.0/24 → 192.168.19.20 TCP {8848,9848}`，让普通LAN/Wi-Fi客户端使用现有测试Nacos控制台/API与客户端gRPC。之前普通客户端不在21.22/21.116管理例外内；这不是Nacos数据、namespace或密码故障，不通过重启服务/改认证来修复。
+
+1. GW190的owned规则允许上述WAN→LAN转发，hot事务后独立核验确认，现役服务PID未变。[网关回执](network19/lan-nacos-20261109/gateway-confirmed.json)、[独立核查](network19/lan-nacos-20261109/gateway-independent-check.json)。
+2. PVE桥的owned表仅新增1条同source/destination/twoports许可，仍先执行原MAC/IP身份与invalid检查；hostforward保持全0，无NAT，未把宿主变成三层网关。[桥回执](network19/lan-nacos-20261109/bridge-confirmed.json)、[精确规则核查](network19/lan-nacos-20261109/bridge-independent-check.json)。
+
+| 来源与路径 | 已观察结果/边界 |
+| --- | --- |
+| Studio 192.168.21.230 → test19.20:8848/9848 | HTTP200、TCP9848成功；保留Nacos认证/namespace权限 |
+| 同Studio → test19.20:3306/22/9849 | 实际timeout，未随NacosLAN许可开放 |
+| 同Studio → prod19.11:8848/9848 | 实际timeout，正式环境未放开 |
+| Air Wi-Fi | 用户明确反馈成功；没有逐项HTTP/nc输出，不能补造更细验收 |
+| 原21.22/21.116管理例外 | 原有管理许可保留，Studio普通来源负测不能覆盖这些特例 |
+| VPN10.66.66/24 | 原全服务合同保持，每peer/32与应用认证不变 |
+
+[LAN负测](network19/lan-nacos-20261109/LAN-negative-tests.json)记录PVE看到的来源21.230；[Air确认](network19/lan-nacos-20261109/Air-user-confirmation.json)单列用户反馈及其证据限制。本次不新增ICMP放行，ping不通不代表HTTP/gRPC不可用；使用目标TCP/HTTP和认证结果分别判定。没有更改OW、DNS、数据、namespace、密码或业务profile，不新增公网入口。凭据只经既有私有渠道，不把具体值或私有凭据文件加入Git。
+
 ## WireGuard 范围
 
 用户明确授权 `10.66.66.0/24` 访问19/24全部有效IPv4服务端口及网关自身入口；账号认证与文件读写权限保留。网关与NAS来源规则已配套，不做SNAT；OpenWrt每peer仍独立/32，客户端AllowedIPs和服务防火墙来源白名单各有作用，不能相互替代。详见[VPN访问](16-wireguard-access.md)。
@@ -70,4 +88,4 @@ DNS由19.1转OpenWrt21.1，兼容原Fake-IP代理；原公共协议和CF7844例�
 | Java模板 | [模板说明](network19/java-template/README.md)、[克隆](network19/java-template/clone-evidence.json) |
 | 整理后的最终部署/监控数量 | [02:35综合验收](cleanup/final-live-check.json) |
 
-当前网络验收历史见[网络验收](network19/audit/network19-acceptance.md)；硬件恢复后必须重新验证，不能重放旧stage/commit来刷新日期。
+原网络验收历史见[网络验收](network19/audit/network19-acceptance.md)，本次LAN-Nacos新增许可以上方独立回执/负测及用户确认为准；后续操作仍需fresh核查，不重放旧stage/commit刷新日期。
