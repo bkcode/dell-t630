@@ -321,3 +321,6 @@ CLI支持prod→main、dev→dev；MCP仅dev，拒绝prod和调用方环境覆�
 项目详情区分source_ready、expected_branch、current_branch和target_branch_available，最后一项仅本地origin引用。列出/预检不fetch；显式sync才取配置分支，真实远端缺dev时失败，不回退main。源码/产物/队列仍在原100GiB构建盘并保UUID启动门禁。更新只Git快进受审查版本，先核clean与无活动任务，不覆盖私有YAML或重生成APIkey，不重跑bootstrap。220原专用发布私钥不得导出，Nexus合并按本次独立回执，备份仍只正式DB/Nacos。
 
 [发布机操作手册](https://github.com/bkcode/deploy-public/blob/main/docs/PUBLISHER.md)、[完整操作说明](https://github.com/bkcode/deploy-public/blob/main/docs/OPERATIONS.md)、[初装验收历史](evidence/deploy-public-publisher-20261110/README.md)。
+
+
+当前FileBrowser已按后续明确授权从现役安装路径移除（不再只是masked停用），专属闲置账号删除，NFS及资源文件保持；旧说明仅阶段历史。详见[移除后NFS使用说明](completion/20261110-filebrowser-remove/README.md)。

@@ -60,3 +60,6 @@ Penpot已从bkcode/penpot main取8a9b961部署定制前端，11容器健康，�
 - [网络](15-network19-delivery.md)、[WireGuard](16-wireguard-access.md)、[模板](03-templates-and-access.md)、[原清理](18-cleanup-and-consolidation.md)、[验收范围](06-acceptance.md)。
 
 旧10.63/DNAT/旧双机221/早期49GAV234主件与13来宾16UP均为对应阶段历史，不能重放为现役配置。旧221逐机资料归档时保留必要历史，不作为第二个31部署入口。完整OpenClash规则只留本地，不推Git。
+
+
+当前FileBrowser已按后续明确授权从现役安装路径移除（不再只是masked停用），专属闲置账号删除，NFS及资源文件保持；旧说明仅阶段历史。详见[移除后NFS使用说明](completion/20261110-filebrowser-remove/README.md)。

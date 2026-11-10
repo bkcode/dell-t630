@@ -38,3 +38,6 @@
 [native验收](../../../completion/20261110-filebrowser/native-acceptance.json)statuspassed/fixture_cleaned；日常delete/override/edit/share/提权403，匿名资源401，NFS/原服务/PID/挂载状态保持。[浏览器](../../../completion/20261110-filebrowser/browser-acceptance.json)只签真实登录、四文件列表、观察到href后的深链PNG渲染；自动点击未导航，不签全部按钮或pointer导航。
 
 首次公开自签证书[tls.crt](../../../completion/20261110-filebrowser/tls.crt)只留历史，当前HTTP无需证书，旧私钥不加载；系统truststore未改。FileBrowser是私有管理页面，Finger上传路径未接、Puyu数据库images未迁出、Java未启，不是Nginx业务图片服务或公开静态域名。
+
+
+当前FileBrowser已按后续明确授权从现役安装路径移除（不再只是masked停用），专属闲置账号删除，NFS及资源文件保持；旧说明仅阶段历史。详见[移除后NFS使用说明](../../../completion/20261110-filebrowser-remove/README.md)。

@@ -7,13 +7,13 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "角色/IP/预算/启动顺序唯一合同，根任务维护。",
-      "sha256": "f3dcc11000ddb2f917cf2d37ec2322aced3b6bb509d2c1a28503a1a1284f75d5"
+      "sha256": "0260d8a0a240faf5519cc84d671aed8be32ae62ad252bd514500521406d0f8a7"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工启停与共享挂载操作；不自动执行。",
-      "sha256": "434598c0ff2108e60ec15dfd90eef0588f2a09bf4e9b7510f903599a32f9c731"
+      "sha256": "712f4396eb343813813b0f37502941e506c11da6ffbbc6b2acc72bd32b01bad9"
     },
     {
       "path": "completion/20261109-resources/usage-manual.md",
@@ -289,7 +289,7 @@
       "path": "completion/20261110-nfs-only/README.md",
       "type": "current-contract",
       "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
-      "sha256": "5b3863e63c43da533da3deacfc59a15d4c33e808c76d7435178dad7096f0aaab"
+      "sha256": "ae532508fc2b1117be927d8f1f79736b83d1fbe8005f5365167ec40733dee6fe"
     },
     {
       "path": "completion/20261110-nfs-only/final-postcheck.json",
@@ -301,7 +301,7 @@
       "path": "completion/20261110-nfs-only/usage-manual.md",
       "type": "current-contract",
       "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
-      "sha256": "363c17f3f999d18f5b42b22c1e063ce2853af41d99f6bb6ad1f3f9df72a66102"
+      "sha256": "b8bae3ccdb61b1ab01206b145d54edca1c20e15e2821d8ab14776d1fffcaca84"
     },
     {
       "path": "completion/20261110-nfs-only/navigation-source-change.json",
@@ -326,6 +326,60 @@
       "type": "current-contract",
       "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
       "sha256": "431092b3a1d3fbb575fdcebd5cf9df45d9451a02b7e596bb217638aa67ee0468"
+    },
+    {
+      "path": "completion/20261110-filebrowser-remove/before.json",
+      "type": "historical-evidence",
+      "purpose": "Explicit FileBrowser live installation removal; shared NFS unchanged, one-time scripts not replayable",
+      "sha256": "b2e85fe228f8809f03a46f6e5150452e3a22cef73c83e0c97055053e3d92cb6f"
+    },
+    {
+      "path": "completion/20261110-filebrowser-remove/clients-postcheck.json",
+      "type": "historical-evidence",
+      "purpose": "Explicit FileBrowser live installation removal; shared NFS unchanged, one-time scripts not replayable",
+      "sha256": "769dfb576d0abc1c1cf115325cd0411d1362617915bbe7eed208e5ea2daae6d8"
+    },
+    {
+      "path": "completion/20261110-filebrowser-remove/audit.py",
+      "type": "historical-evidence",
+      "purpose": "Explicit FileBrowser live installation removal; shared NFS unchanged, one-time scripts not replayable",
+      "sha256": "f11e824e7df5cf01f345f98c15017dea6cd0090a277276e2e3c9d466ef6c1d2e"
+    },
+    {
+      "path": "completion/20261110-filebrowser-remove/removal-result.json",
+      "type": "current-contract",
+      "purpose": "Explicit FileBrowser live installation removal; shared NFS unchanged, one-time scripts not replayable",
+      "sha256": "d52ee7395866f123298817f3957b6ff1364182f3f3c7149f1841cd4eafe4d6e2"
+    },
+    {
+      "path": "completion/20261110-filebrowser-remove/acceptance.json",
+      "type": "current-contract",
+      "purpose": "Explicit FileBrowser live installation removal; shared NFS unchanged, one-time scripts not replayable",
+      "sha256": "e49c5e9ca59a6a142196715bb84b07127ff60710bca5ede9d752bbeaf3dc5674"
+    },
+    {
+      "path": "completion/20261110-filebrowser-remove/remove.py",
+      "type": "historical-evidence",
+      "purpose": "Explicit FileBrowser live installation removal; shared NFS unchanged, one-time scripts not replayable",
+      "sha256": "dcd71840b2432952ddbe3081edcfe8516f56ebdac774f073cd7bfde24ae9c308"
+    },
+    {
+      "path": "completion/20261110-filebrowser-remove/README.md",
+      "type": "current-contract",
+      "purpose": "Explicit FileBrowser live installation removal; shared NFS unchanged, one-time scripts not replayable",
+      "sha256": "b3391240fd1bb2a4bd116ce5e83146da42de05f28c8145d742e669f54ea6058f"
+    },
+    {
+      "path": "completion/20261110-filebrowser-remove/verify-clients.py",
+      "type": "historical-evidence",
+      "purpose": "Explicit FileBrowser live installation removal; shared NFS unchanged, one-time scripts not replayable",
+      "sha256": "e91a8808d10bb012b05f0c34e07a0cad20e0dd0072c58a37d00a4c4f4642d3bf"
+    },
+    {
+      "path": "completion/20261110-filebrowser-remove/final-postcheck.json",
+      "type": "current-contract",
+      "purpose": "Explicit FileBrowser live installation removal; shared NFS unchanged, one-time scripts not replayable",
+      "sha256": "f6b7226fa57a87480d5ef91ae98233e9f94919bce81b30f1dff87bcc4273a5ac"
     }
   ]
 }

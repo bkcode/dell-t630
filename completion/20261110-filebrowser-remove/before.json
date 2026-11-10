@@ -1,0 +1,72 @@
+{
+  "at": "2026-11-10T23:40:28.505571+08:00",
+  "paths": {
+    "/opt/dell/filebrowser": {
+      "exists": true,
+      "symlink": false,
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "same_filesystem_as_root": true
+    },
+    "/etc/dell-filebrowser": {
+      "exists": true,
+      "symlink": false,
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "same_filesystem_as_root": true
+    },
+    "/var/lib/dell-filebrowser": {
+      "exists": true,
+      "symlink": false,
+      "uid": 2000,
+      "gid": 2980,
+      "mode": "0o700",
+      "same_filesystem_as_root": true
+    },
+    "/var/lib/dell-filebrowser-manager": {
+      "exists": true,
+      "symlink": false,
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o700",
+      "same_filesystem_as_root": true
+    }
+  },
+  "units": {
+    "dell-filebrowser.service": {
+      "exists": true,
+      "symlink": true,
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o777",
+      "same_filesystem_as_root": true,
+      "target": "/dev/null"
+    },
+    "dell-filebrowser-firewall.service": {
+      "exists": true,
+      "symlink": true,
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o777",
+      "same_filesystem_as_root": true,
+      "target": "/dev/null"
+    }
+  },
+  "FileBrowser_named_opt_paths": [
+    "/opt/dell/filebrowser"
+  ],
+  "service_account": {
+    "uid": 2000,
+    "gid": 2980,
+    "home": "/var/lib/dell-filebrowser",
+    "shell": "/usr/sbin/nologin"
+  },
+  "resource_entries_owned_by_UID2000": 0,
+  "NFS_guard": {
+    "mount_guard": true,
+    "role": "server"
+  },
+  "secret_or_resource_file_contents_read": false
+}

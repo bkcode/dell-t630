@@ -46,3 +46,6 @@ native单元为`srv-resources.mount`、`dell-resources-firewall.service`与`nfs-
 应用未接入：Finger `file.upload.path=/mnt/resources`是待另审建议，不是已改配置；HTTPdomain/公开图片URL未搭。Puyu images仍在MySQL内经权限接口下载，未随NFS自动迁文件、改Nacos或启Java。客户端findmnt允许systemd-1 autofs＋唯一真实nfs4，检查可使用`-t nfs4`，不应因合法stack误判失败。
 
 [实际启动配置](../../completion/20261109-resources/PVE-startup-configured.json)确认280 onboot=1、order35/up20/down120；初建时onboot0是待验阶段，后已明确启用。资源server先于230/240客户端，完整新13角色主机重启序列未另行重演。
+
+
+当前FileBrowser已按后续明确授权从现役安装路径移除（不再只是masked停用），专属闲置账号删除，NFS及资源文件保持；旧说明仅阶段历史。详见[移除后NFS使用说明](../../completion/20261110-filebrowser-remove/README.md)。

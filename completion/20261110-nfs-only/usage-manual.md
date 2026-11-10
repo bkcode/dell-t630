@@ -68,3 +68,6 @@ FileBrowser旧state仍位于`/var/lib/dell-filebrowser`，原账号/JWT等秘密
 ## 本次实际验证范围
 
 22:49完成FileBrowser停用；22:50新建单次server专属canary，230/240均以finger经真实NFS读回，并检查目录写权限可用，最后精确清理canary；没有client实际写入、没有读取已有业务文件。22:51后检确认NFS原配置SHA保持、5项服务active、FileBrowser指标及8080监听消失。历史双client写入测试见[原NFS验收](../20261109-resources/native-acceptance.json)，不与本次只读测试混记。导航运行部署和VM270最终Prom证明由主AI在统一维护窗口单独补签。
+
+
+当前FileBrowser已按后续明确授权从现役安装路径移除（不再只是masked停用），专属闲置账号删除，NFS及资源文件保持；旧说明仅阶段历史。详见[移除后NFS使用说明](../20261110-filebrowser-remove/README.md)。

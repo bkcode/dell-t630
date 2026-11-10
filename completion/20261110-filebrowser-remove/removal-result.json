@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-10T23:42:03.966482+08:00",
+  "status": "FileBrowser-removed-from-live-installation-NFS-preserved",
+  "live_installation_paths_absent": [
+    "/opt/dell/filebrowser",
+    "/etc/dell-filebrowser",
+    "/var/lib/dell-filebrowser",
+    "/var/lib/dell-filebrowser-manager",
+    "/root/dell-filebrowser-retired-20261110"
+  ],
+  "FileBrowser_units": "not-found/inactive",
+  "unused_UID2000_account_removed": true,
+  "shared_resources_GID2980_preserved": true,
+  "TCP8080_closed": true,
+  "protected_archive_VM280_only": "/root/dell-filebrowser-removed-20261110",
+  "archive_mode": "0700",
+  "archive_manifest_mode": "0600",
+  "NFS_config_exports_versions_input_and_health_bytes_unchanged": true,
+  "NFS_and_other_protected_services_not_restarted": true,
+  "resource_files_removed_or_migrated": false,
+  "secret_contents_read_or_exported": false,
+  "Nexus_operation_performed": false
+}

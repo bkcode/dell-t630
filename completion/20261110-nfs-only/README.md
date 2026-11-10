@@ -16,3 +16,6 @@
 首次只读审计脚本原名inspect.py与Python标准库冲突，退出1但完成了只读回执；没有服务器写，之后本地重命名为audit-nfs.py。用户随后暂停，期间未执行停用；再次明确确认方案后fresh审计到before-resume.json才执行本轮事务。before.json保留暂停前事实，不能当变更证明。
 
 本目录脚本是本轮固定身份/配置的一次性审计及事务资料，不是通用一键卸载器。已有事务目录时停用器拒绝重放；不要因FileBrowser缺失而重新运行历史fresh初始化/安装器。资源仍未纳入自动备份，本轮未修改模板、Nacos/Java、NAS或公网服务。
+
+
+当前FileBrowser已按后续明确授权从现役安装路径移除（不再只是masked停用），专属闲置账号删除，NFS及资源文件保持；旧说明仅阶段历史。详见[移除后NFS使用说明](../20261110-filebrowser-remove/README.md)。

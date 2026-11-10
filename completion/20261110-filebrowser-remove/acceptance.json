@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-10T23:44:15.878196+08:00",
+  "status": "FileBrowser-live-installation-removed-NFS-preserved",
+  "scope": "only FileBrowser removal on VM280; Nexus not operated",
+  "cases": [
+    {
+      "id": "FBREMOVE-APP-001",
+      "title": "现役程序、服务与专属账号移除",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确FileBrowser可以移除；此前NFS-only已运行"
+      ],
+      "steps": [
+        "只处理VM280专属安装路径和闲置账号，原生检查NFS/双客户端保持"
+      ],
+      "observable_pass_conditions": [
+        "4项安装路径不存在、服务not-found/inactive、8080关闭",
+        "闲置UID2000删除，共享GID2980保留"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-filebrowser-remove/removal-result.json",
+          "note": "No credentials or archive payloads"
+        },
+        {
+          "path": "completion/20261110-filebrowser-remove/final-postcheck.json",
+          "note": "No credentials or archive payloads"
+        }
+      ],
+      "verified_at": "2026-11-10T23:44:15.878196+08:00"
+    },
+    {
+      "id": "FBREMOVE-NFS-001",
+      "title": "NFS和共享数据保持",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确FileBrowser可以移除；此前NFS-only已运行"
+      ],
+      "steps": [
+        "只处理VM280专属安装路径和闲置账号，原生检查NFS/双客户端保持"
+      ],
+      "observable_pass_conditions": [
+        "NFS配置/exports/版本/输入/health字节保持，受保护进程无重启",
+        "两个客户端真实NFS挂载守卫通过，无共享文件修改"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-filebrowser-remove/removal-result.json",
+          "note": "No credentials or archive payloads"
+        },
+        {
+          "path": "completion/20261110-filebrowser-remove/clients-postcheck.json",
+          "note": "No credentials or archive payloads"
+        }
+      ],
+      "verified_at": "2026-11-10T23:44:15.878196+08:00"
+    },
+    {
+      "id": "FBREMOVE-PRIVATE-001",
+      "title": "受保护归档与范围隔离",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确FileBrowser可以移除；此前NFS-only已运行"
+      ],
+      "steps": [
+        "只处理VM280专属安装路径和闲置账号，原生检查NFS/双客户端保持"
+      ],
+      "observable_pass_conditions": [
+        "旧配置/状态仅留VM280 root700归档，未导出凭据",
+        "不操作Nexus、未做其迁移或回退"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-filebrowser-remove/removal-result.json",
+          "note": "No credentials or archive payloads"
+        },
+        {
+          "path": "completion/20261110-filebrowser-remove/README.md",
+          "note": "No credentials or archive payloads"
+        }
+      ],
+      "verified_at": "2026-11-10T23:44:15.878196+08:00"
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "current_phase_case_count": 3,
+    "current_phase_passed": 3
+  },
+  "limitations": [
+    "Private archive remains server-local; no restore exercise",
+    "No NFS or VM reboot, no new client authorization",
+    "Previous completed Nexus consolidation remains unchanged; no new Nexus migration or rollback"
+  ]
+}

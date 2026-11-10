@@ -135,3 +135,8 @@
 - 现役12来宾＋3模板＋宿主共16目录、45CPU87GiB；2206CPU8GiB/primary30+alias31，两独立100G卷，管理用220自身host key。NexusURL31:8081保持。旧13来宾/16UP和4CPU4GiB/standby均仅历史。
 - 280仅NFS，FileBrowser两unit已masked/8080无监听、原state/秘密保护留存，5项服务无HTTP。导航已更新13入口release、去FileBrowser并改Nexus描述，HTTP/UI保持；原deploy两文件未提交/推送。不要回放旧FileBrowser安装器恢复网页。
 - 自动备份仍只正式DB/Nacos；冷备仅PVE、不wholebackup220，Java业务不启/旧链fenced，deploy-public原私有设置/APIkey/6main源保持，upstreamdev缺失保护不变。当前维护入口completion/20261110-nexus-merge/usage-manual.md及最终回执。
+
+## 2026-11-10 FileBrowser现役移除
+
+- 用户明确FileBrowser可以移除；VM280程序/配置/状态从现役路径移出、两unit已not-found/inactive、闲置UID2000删除，共享GID2980及NFS原配置/进程/双客户端挂载保持。原资料仅VM280/root/dell-filebrowser-removed-20261110受保护归档；旧retired目录已归入其中，不再当活路径。
+- 用户说Nexus不用迁移后已暂停Nexus后续；此前合并状态已存在，本次不操作或回退Nexus，不能因FileBrowser移除自动恢复221。当前交付completion/20261110-filebrowser-remove/acceptance.json，旧NFS-only停用阶段留历史。
