@@ -82,3 +82,7 @@ Git改造Penpot与常驻worker/import/MCP服务，原3设计为初装基线；Pu
 ## 2026-11-10 Puyu设计导入
 
 VM250 owner工作区新增 **puyu项目 / puyu文件**，包含puyu-mobile、puyu-components、puyu-mobile · 商城三页，共58,240图形、19组件。源为本机rev2821，旧7文件保持，当前11healthy，原代码与默认填入保持；此导入任务当时未部署首次引导源码或迁账号；后续8a部署保持其数据，见上节。详见[导入使用手册](../../evidence/penpot-puyu-import-20261110/usage-manual.md)。这是快照导入，不自动同步，不扩正式DB/Nacos之外的备份。
+
+## 本地Penpot MCP切服务器
+
+Codex私有配置两项MCP已改SSH stdio到VM250，密钥只在服务器；实际新进程返回puyu/组件页，原生11healthy、原设计/密码保持。当前聊天旧连接缓存仍在，需客户端重载MCP或重启Codex，最后一项验收pending；无法通过受限GUI代点重载。见[连接手册](../../evidence/penpot-client-mcp-20261110/usage-manual.md)。Mac原实例仍运行。

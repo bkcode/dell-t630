@@ -1,0 +1,60 @@
+[
+  {
+    "name": "penpot",
+    "server_info": {
+      "name": "dell-penpot-ssh-core",
+      "version": "1.0.0"
+    },
+    "tools": [
+      "execute_code",
+      "high_level_overview",
+      "penpot_api_info",
+      "export_shape"
+    ],
+    "first_tool": "high_level_overview",
+    "context_response": [
+      {
+        "result": {
+          "fileId": "01b580ec-b5e6-8057-8008-ec70da4cd212",
+          "fileName": "puyu",
+          "pageId": "0c6166a2-b4f0-8093-8008-e31e54275406",
+          "pageName": "puyu-components",
+          "pages": [
+            {
+              "id": "f4b51867-9d09-8057-8008-e24258d4de48",
+              "name": "puyu-mobile"
+            },
+            {
+              "id": "0c6166a2-b4f0-8093-8008-e31e54275406",
+              "name": "puyu-components"
+            },
+            {
+              "id": "0c6166a2-b4f0-8093-8008-e3cc46951c20",
+              "name": "puyu-mobile · 商城"
+            }
+          ]
+        },
+        "log": ""
+      }
+    ],
+    "passed": true,
+    "process_exit": 0,
+    "stdout_JSON_only": true,
+    "stderr_bytes_without_content": 96
+  },
+  {
+    "name": "penpot_import",
+    "server_info": {
+      "name": "dell-penpot-ssh-import",
+      "version": "1.0.0"
+    },
+    "tools": [
+      "import_penpot_file",
+      "get_import_status"
+    ],
+    "passed": true,
+    "process_exit": 0,
+    "stdout_JSON_only": true,
+    "stderr_bytes_without_content": 96
+  }
+]

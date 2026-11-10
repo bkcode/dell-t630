@@ -1,0 +1,10 @@
+{
+  "public_relay_installed": true,
+  "files_SHA256": {
+    "launch.py": "f02ba7c7d8f4d13825c2ce713c94e8d32d2aa392c7290b9e34bf65a738e9a322",
+    "relay.mjs": "7f2ebd3592a55015ce09b6c8678b7495e173490e3d6a1563ebaeea5c511eb6f6"
+  },
+  "service_restart": false,
+  "ports_or_firewall_changed": false,
+  "credential_values_read_or_exported_by_installer": false
+}

@@ -106,3 +106,9 @@
 - 当前source main/8a clean、frontend6cbd1f7，其它10镜像保持、11healthy；原生disable-onboarding关闭调研/团队欢迎/自动版本说明，手动建团队保留。新浏览器原预填登录直接dashboard，DOM引导0、欢迎/团队false，Puyu可见；账号/秘密/素材聚合/DB对象数保持，Puyu3页58240图形19组件后检通过。
 - 首次ec候选因umask077使COPY公开文件600不可读而失败；旧ff恢复经原生11healthy证明，启动限频仅reset该unit未删日志/关guard。8a显式COPY0644，v2增加BuildKit UID1001读取门禁，切换成功。失败源码/image/记录与回退恢复点保留；不盲重跑本次一次性脚本、fresh-init或改lock规避检查。
 - 当前验收evidence/penpot-onboarding-20261110/acceptance.json，手册同目录usage-manual.md。只构建selfhost包装，不声称全库2.19升级/全部组件同版重编；本轮数据保护检查不等于全设计像素/交互或完整灾备。备份仍仅正式DB/Nacos，其它VM运行不扩。
+
+## 2026-11-10 本地Penpot MCP服务器连接
+
+- 用户授权两项本地skill MCP切VM250，并指定刚导入Puyu。Mac私有config.toml改SSH stdio，原审批/其他配置保持、备份600；严格现有VM250公钥，原RSA留Mac。服务器MCPkey仅在既有import容器内读取，无token导出或新端口/容器。
+- resident默认Puyu01b文件/组件页0c6166…e31e54275406，仅.env公开file/page ID改动，秘密/team保持，原设计stats/revn保持、11healthy、Git8a镜像合同不变。新进程协议真实通过；当前聊天注册工具仍读Mac9eb旧缓存，需用户重载MCP/重启Codex。GUI工具禁止控制Codex，不绕过、不伪称当前会话已切换。
+- 当前验收evidence/penpot-client-mcp-20261110/acceptance.json为4通过/1待重载；文档手册同目录usage-manual.md。重载后先overview再只读验证fileId01b，成功再签最后项。旧MCP专用验收文件/旧硬编码只作历史，不用旧readFile断言误判新Puyu上下文。Mac原实例保持，不因本次连接配置授权删除数据或停本机源。

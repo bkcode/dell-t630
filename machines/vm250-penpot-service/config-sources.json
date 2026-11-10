@@ -6,7 +6,7 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "e40290977280e6cf3851774f6ea01c7986d48ea207619b7efe245e4eb5763afa"
+      "sha256": "3b93c7877057c33ca7c5909a3a0cc567476774ffac78222fea77da5f92e5e346"
     },
     {
       "path": "11-live-handoff.md",
@@ -18,13 +18,13 @@
       "path": "12-service-access-and-operations.md",
       "type": "current-contract",
       "purpose": "当前19网入口及凭据保管规则。",
-      "sha256": "274c81518e23a1778dea9aa193cadd26b9e8e3a0b4d81b785840b91da140e38c"
+      "sha256": "015f270c9f22bbf2e9a0754a192c4b23786d1cc7fd01eaaf7a64190dcfe4fa5b"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
-      "sha256": "b1cbbf8854f00cf79c617da3e1eeb4c893cc3b19ecee5689adaa2cd0de7079dc"
+      "sha256": "62d6e30a25384d2a53cfbb800963431b3290d63c6de3d3913e4abe024126e372"
     },
     {
       "path": "cleanup/final-live-check.json",
@@ -439,6 +439,84 @@
       "type": "historical-evidence",
       "purpose": "User-authorized VM250 Git-main source/frontend update; first failure recovered; final native flag/browser/11health verified; no credential values or full design export",
       "sha256": "53f38e71a7b2e4e50edf5f4c575e8d9701cdee116471fa90a90db5e635e3919a"
+    },
+    {
+      "path": "infra/penpot/client-mcp/launch.py",
+      "type": "current-contract",
+      "purpose": "Server-only MCP credential SSH stdio connection; fresh-process Puyu verified; current desktop cached connection reload remains pending; no raw config/secrets copied",
+      "sha256": "f02ba7c7d8f4d13825c2ce713c94e8d32d2aa392c7290b9e34bf65a738e9a322"
+    },
+    {
+      "path": "infra/penpot/client-mcp/relay.mjs",
+      "type": "current-contract",
+      "purpose": "Server-only MCP credential SSH stdio connection; fresh-process Puyu verified; current desktop cached connection reload remains pending; no raw config/secrets copied",
+      "sha256": "7f2ebd3592a55015ce09b6c8678b7495e173490e3d6a1563ebaeea5c511eb6f6"
+    },
+    {
+      "path": "infra/penpot/client-mcp/probe.py",
+      "type": "current-contract",
+      "purpose": "Server-only MCP credential SSH stdio connection; fresh-process Puyu verified; current desktop cached connection reload remains pending; no raw config/secrets copied",
+      "sha256": "276a27cec7e36170d3f38026186f0c334f1e05239cf7d2780cb1a544cf2e9e22"
+    },
+    {
+      "path": "infra/penpot/client-mcp/switch-context.py",
+      "type": "current-contract",
+      "purpose": "Server-only MCP credential SSH stdio connection; fresh-process Puyu verified; current desktop cached connection reload remains pending; no raw config/secrets copied",
+      "sha256": "dd022e2d82cf1db38529b6df34f9ced6a22580fd7f1a48b5d003f7fe0c1d6f3b"
+    },
+    {
+      "path": "infra/penpot/client-mcp/switch-local.py",
+      "type": "current-contract",
+      "purpose": "Server-only MCP credential SSH stdio connection; fresh-process Puyu verified; current desktop cached connection reload remains pending; no raw config/secrets copied",
+      "sha256": "fa14de63cdc899e36072e495ba0f810d976d52a8b36d15080fc0ac02d2558386"
+    },
+    {
+      "path": "evidence/penpot-client-mcp-20261110/README.md",
+      "type": "current-contract",
+      "purpose": "Server-only MCP credential SSH stdio connection; fresh-process Puyu verified; current desktop cached connection reload remains pending; no raw config/secrets copied",
+      "sha256": "8368a7709f71ae09c89f5280eefe8ae47bc02b0c91b94064f57be093ad164ac3"
+    },
+    {
+      "path": "evidence/penpot-client-mcp-20261110/usage-manual.md",
+      "type": "current-contract",
+      "purpose": "Server-only MCP credential SSH stdio connection; fresh-process Puyu verified; current desktop cached connection reload remains pending; no raw config/secrets copied",
+      "sha256": "c1c3f545d66bcd87e1e0f7b97d9b44401b8cb741b3e4f88dbe42c61740067cf0"
+    },
+    {
+      "path": "evidence/penpot-client-mcp-20261110/acceptance.json",
+      "type": "historical-evidence",
+      "purpose": "Server-only MCP credential SSH stdio connection; fresh-process Puyu verified; current desktop cached connection reload remains pending; no raw config/secrets copied",
+      "sha256": "47783ece7743fa8fe560cb16d825bece82a71cb5908db1afcb41e9ffb4b78c9c"
+    },
+    {
+      "path": "evidence/penpot-client-mcp-20261110/local-config-applied.json",
+      "type": "historical-evidence",
+      "purpose": "Server-only MCP credential SSH stdio connection; fresh-process Puyu verified; current desktop cached connection reload remains pending; no raw config/secrets copied",
+      "sha256": "11b6696a9894cab2fa0bb018bcb1fb04c2d2be05d4edc8eecf3bb3a2fa492629"
+    },
+    {
+      "path": "evidence/penpot-client-mcp-20261110/configured-client-probe.json",
+      "type": "historical-evidence",
+      "purpose": "Server-only MCP credential SSH stdio connection; fresh-process Puyu verified; current desktop cached connection reload remains pending; no raw config/secrets copied",
+      "sha256": "49a54fca629a525d0191458bfd938f5aa738b226a17a73214156cedff318d342"
+    },
+    {
+      "path": "evidence/penpot-client-mcp-20261110/context-applied.json",
+      "type": "historical-evidence",
+      "purpose": "Server-only MCP credential SSH stdio connection; fresh-process Puyu verified; current desktop cached connection reload remains pending; no raw config/secrets copied",
+      "sha256": "33faf94a946fa942d79f3b8934a14fc0802bc9f117fd1a500e191b4507612e21"
+    },
+    {
+      "path": "evidence/penpot-client-mcp-20261110/final-postcheck.json",
+      "type": "historical-evidence",
+      "purpose": "Server-only MCP credential SSH stdio connection; fresh-process Puyu verified; current desktop cached connection reload remains pending; no raw config/secrets copied",
+      "sha256": "8eb588f76539b8ca0d1551486b2d61b468a581c5ee0b2913b706c08912222bc8"
+    },
+    {
+      "path": "evidence/penpot-client-mcp-20261110/current-session-cache.json",
+      "type": "historical-evidence",
+      "purpose": "Server-only MCP credential SSH stdio connection; fresh-process Puyu verified; current desktop cached connection reload remains pending; no raw config/secrets copied",
+      "sha256": "5de897208e22fc38ac4fe4925ab43e0adab22ba69fed0b766b4a0234203b7426"
     }
   ],
   "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."

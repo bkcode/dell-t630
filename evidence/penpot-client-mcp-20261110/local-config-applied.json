@@ -1,0 +1,32 @@
+{
+  "recorded_at": "2026-11-10T19:23:27.165422+08:00",
+  "config_path": "/Users/yangzhaohui/.codex/config.toml",
+  "config_mode": "0o600",
+  "servers": [
+    {
+      "name": "penpot",
+      "transport": "stdio",
+      "command": "/usr/bin/ssh",
+      "VM250_in_argv": true,
+      "native_HTTP_URL_removed": true,
+      "static_token_headers_removed": true,
+      "startup_timeout_sec": 30,
+      "tool_timeout_sec": null
+    },
+    {
+      "name": "penpot_import",
+      "transport": "stdio",
+      "command": "/usr/bin/ssh",
+      "VM250_in_argv": true,
+      "native_HTTP_URL_removed": true,
+      "static_token_headers_removed": true,
+      "startup_timeout_sec": 20.0,
+      "tool_timeout_sec": 30.0
+    }
+  ],
+  "known_hosts_mode": "0o600",
+  "server_key_exported_to_Mac": false,
+  "other_settings_and_tool_approval_policies_preserved_by_semantic_compare": true,
+  "private_backup_exists": true,
+  "Codex_CLI_parser_accepted_both": true
+}

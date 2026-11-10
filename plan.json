@@ -711,7 +711,7 @@
     "resource_role_evidence": "completion/20261109-resources/Lark-role-installed.json",
     "resource_monitoring_postcheck": "completion/20261110-filebrowser/final-postcheck.json"
   },
-  "delivery_scope_manifest": "evidence/penpot-onboarding-20261110/acceptance.json",
+  "delivery_scope_manifest": "evidence/penpot-client-mcp-20261110/acceptance.json",
   "expected_role_count": 13,
   "network19_migration_manifest": "network19/migration-plan.json",
   "acceptance_templates": [
@@ -1354,5 +1354,25 @@
     "acceptance": "evidence/penpot-onboarding-20261110/acceptance.json",
     "usage_manual": "evidence/penpot-onboarding-20261110/usage-manual.md",
     "WG_external_E2E_this_phase": false
+  },
+  "Penpot_client_MCP_20261110": {
+    "status": "configured-fresh-process-verified-current-chat-reload-pending",
+    "client_config": "~/.codex/config.toml",
+    "MCP_servers": [
+      "penpot",
+      "penpot_import"
+    ],
+    "transport": "SSH stdio through existing VM250 importer SDK; no server token export",
+    "host": "192.168.19.50",
+    "file_id": "01b580ec-b5e6-8057-8008-ec70da4cd212",
+    "file_name": "puyu",
+    "initial_page_id": "0c6166a2-b4f0-8093-8008-e31e54275406",
+    "initial_page_name": "puyu-components",
+    "current_registered_tools_still_cached_local": true,
+    "reload_required": true,
+    "all11_healthy": true,
+    "server_secret_values_changed_or_exported": false,
+    "acceptance": "evidence/penpot-client-mcp-20261110/acceptance.json",
+    "usage_manual": "evidence/penpot-client-mcp-20261110/usage-manual.md"
   }
 }

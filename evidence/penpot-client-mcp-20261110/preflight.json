@@ -1,0 +1,18 @@
+{
+  "working_dir": "/opt/penpot/file-import",
+  "user": "node",
+  "ports": {
+    "4405/tcp": [
+      {
+        "HostIp": "127.0.0.1",
+        "HostPort": "9002"
+      }
+    ]
+  },
+  "SDK_probe_exit": 0,
+  "SDK": {
+    "client_path": "/opt/penpot/file-import/node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@4.6.7/node_modules/@modelcontextprotocol/sdk/dist/cjs/client/index.js",
+    "getInstructions": true,
+    "callToolSignature": "callTool(params: CallToolRequest['params'], resultSchema?: typeof CallToolResultSchema | typeof CompatibilityCallToolResultSchema, options?: RequestOptions): Promise<{\n        [x: string]: unknown;\n        content: ({\n            type: \"text\";\n            text: string;\n            annotations?: {\n                audience?: (\"user\" | \"assistant\")[] | undefined;\n                priority?: number | undefined;\n                lastModified?: string | undefined;\n            } | undefined;\n            _meta?: Record<string, unknown> | undefined;\n        } | {\n            type: \"image\";\n            data: string;\n            mimeType: string;\n            annotations?: {\n                audience?: (\"user\" | \"assistant\")[] | undefined;\n                priority?: number | undefined;\n                lastModified?: string | undefined;\n            } | undefined;\n            _meta?: Record<string, unkno"
+  }
+}

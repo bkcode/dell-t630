@@ -245,5 +245,25 @@
     "browser_Puyu_project_visible": true,
     "browser_test_cookies_and_localStorage_cleared": true,
     "browser_test_session_closed": true
+  },
+  "resident_MCP_client": {
+    "status": "configured-fresh-process-verified-current-chat-reload-pending",
+    "client_config": "~/.codex/config.toml",
+    "MCP_servers": [
+      "penpot",
+      "penpot_import"
+    ],
+    "transport": "SSH stdio through existing VM250 importer SDK; no server token export",
+    "host": "192.168.19.50",
+    "file_id": "01b580ec-b5e6-8057-8008-ec70da4cd212",
+    "file_name": "puyu",
+    "initial_page_id": "0c6166a2-b4f0-8093-8008-e31e54275406",
+    "initial_page_name": "puyu-components",
+    "current_registered_tools_still_cached_local": true,
+    "reload_required": true,
+    "all11_healthy": true,
+    "server_secret_values_changed_or_exported": false,
+    "acceptance": "evidence/penpot-client-mcp-20261110/acceptance.json",
+    "usage_manual": "evidence/penpot-client-mcp-20261110/usage-manual.md"
   }
 }

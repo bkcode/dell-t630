@@ -1,0 +1,8 @@
+{
+  "started": true,
+  "unit": "dell-penpot-client-context-20261110.service",
+  "target_file": "puyu",
+  "initial_page": "puyu-components",
+  "secrets_not_changed_or_exported": true,
+  "worker_SHA256": "dd022e2d82cf1db38529b6df34f9ced6a22580fd7f1a48b5d003f7fe0c1d6f3b"
+}

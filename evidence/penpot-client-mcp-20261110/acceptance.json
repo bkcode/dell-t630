@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-10T19:24:50.482304+08:00",
+  "status": "configured-and-fresh-process-verified-current-client-reload-pending",
+  "scope": "Mac two MCP transports and VM250 resident target; no canvas writes",
+  "cases": [
+    {
+      "id": "CLIENTMCP-CONFIG-001",
+      "title": "本地两项配置精确切换",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户授权本地Penpot skill MCP切服务器，并指定Puyu文件"
+      ],
+      "steps": [
+        "修改私有客户端配置并以新进程真实协议/只读上下文检查；对比当前聊天缓存"
+      ],
+      "observable_pass_conditions": [
+        "只将penpot/penpot_import改SSH stdio，其他设置与原审批策略语义保持",
+        "原完整配置仅私有600备份，严格已有host key，无服务器MCPkey复制"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/penpot-client-mcp-20261110/local-config-applied.json",
+          "note": "Redacted metadata only; no keys, auth headers, private config or designs"
+        }
+      ],
+      "verified_at": "2026-11-10T19:24:50.482304+08:00"
+    },
+    {
+      "id": "CLIENTMCP-RPC-001",
+      "title": "实际新进程协议调用",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户授权本地Penpot skill MCP切服务器，并指定Puyu文件"
+      ],
+      "steps": [
+        "修改私有客户端配置并以新进程真实协议/只读上下文检查；对比当前聊天缓存"
+      ],
+      "observable_pass_conditions": [
+        "两项initialize/tools-list成功，退出0且stdout仅JSON",
+        "core首工具high_level_overview，execute_code只读返回服务器Puyu01b文件及三个页面"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/penpot-client-mcp-20261110/configured-client-probe.json",
+          "note": "Redacted metadata only; no keys, auth headers, private config or designs"
+        }
+      ],
+      "verified_at": "2026-11-10T19:24:50.482304+08:00"
+    },
+    {
+      "id": "CLIENTMCP-CONTEXT-001",
+      "title": "常驻Puyu及数据保持",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户授权本地Penpot skill MCP切服务器，并指定Puyu文件"
+      ],
+      "steps": [
+        "修改私有客户端配置并以新进程真实协议/只读上下文检查；对比当前聊天缓存"
+      ],
+      "observable_pass_conditions": [
+        "用户明确选择Puyu，worker既有身份已可读取，默认轻量组件页",
+        "仅改.env公开file/page UUID，秘密及其余env保持，设计统计和revn保持"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/penpot-client-mcp-20261110/context-applied.json",
+          "note": "Redacted metadata only; no keys, auth headers, private config or designs"
+        }
+      ],
+      "verified_at": "2026-11-10T19:24:50.482304+08:00"
+    },
+    {
+      "id": "CLIENTMCP-RUNTIME-001",
+      "title": "服务健康与资源界限",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户授权本地Penpot skill MCP切服务器，并指定Puyu文件"
+      ],
+      "steps": [
+        "修改私有客户端配置并以新进程真实协议/只读上下文检查；对比当前聊天缓存"
+      ],
+      "observable_pass_conditions": [
+        "11healthy、Git8a和原镜像/资源合同保持；不开端口/不新增容器",
+        "服务器既有SDK在导入器内按需运行；测试EOF退出0，导入器仍在原内存/PID限制内"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/penpot-client-mcp-20261110/final-postcheck.json",
+          "note": "Redacted metadata only; no keys, auth headers, private config or designs"
+        },
+        {
+          "path": "evidence/penpot-client-mcp-20261110/relay-installed.json",
+          "note": "Redacted metadata only; no keys, auth headers, private config or designs"
+        }
+      ],
+      "verified_at": "2026-11-10T19:24:50.482304+08:00"
+    },
+    {
+      "id": "CLIENTMCP-RELOAD-001",
+      "title": "当前桌面会话重载",
+      "status": "pending",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户授权本地Penpot skill MCP切服务器，并指定Puyu文件"
+      ],
+      "steps": [
+        "修改私有客户端配置并以新进程真实协议/只读上下文检查；对比当前聊天缓存"
+      ],
+      "observable_pass_conditions": [
+        "用户重载MCP或重启Codex后，当前注册工具返回服务器01b Puyu文件",
+        "目前注册工具仍返回Mac9eb旧缓存，GUI自动化拒绝控制Codex，未伪称立即生效"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/penpot-client-mcp-20261110/current-session-cache.json",
+          "note": "Redacted metadata only; no keys, auth headers, private config or designs"
+        }
+      ],
+      "verified_at": null
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "current_phase_case_count": 5,
+    "current_phase_passed": 4
+  },
+  "remaining_user_step": "Reload MCP or restart Codex; automatic GUI access to Codex is prohibited"
+}

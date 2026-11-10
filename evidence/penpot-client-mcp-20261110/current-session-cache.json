@@ -1,0 +1,10 @@
+{
+  "recorded_at": "2026-11-10T19:23:27.165422+08:00",
+  "current_registered_tool_readonly_file_id": "9eb8678d-764d-810b-8008-e237712e9048",
+  "fresh_configured_process_readonly_file_id": "01b580ec-b5e6-8057-8008-ec70da4cd212",
+  "current_chat_still_uses_old_cached_connection": true,
+  "client_reload_required": true,
+  "automatic_GUI_reload_available": false,
+  "GUI_blocker": "Computer Use refuses com.openai.codex for safety reasons; no bypass attempted",
+  "manual_next_step": "Reload MCP in client or restart Codex, then repeat readonly high_level_overview/context check"
+}
