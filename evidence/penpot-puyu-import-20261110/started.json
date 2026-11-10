@@ -1,0 +1,9 @@
+{
+  "recorded_at": "2026-11-10T17:04:25.920942+08:00",
+  "unit": "dell-penpot-puyu-import-20261110.service",
+  "launcher_acknowledgement_timed_out_seconds": 20,
+  "actual_started_verified_via_readonly_systemd_and_journal": true,
+  "journal_status": "file-import-inflight",
+  "import_was_not_retried": true,
+  "scope": "new-project-and-new-file-only-no-service-restart"
+}

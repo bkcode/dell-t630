@@ -93,3 +93,9 @@
 - 用户明确拒绝新增UI/记住逻辑，随后明确授权原helper默认填入现有owner账号密码，并允许LAN192.168.21.0/24、WG10.66.66.0/24及本机未登录读取。该精确授权覆盖此前不公开选择；不可扩大至CF或任意Docker来源。秘密仅guest受保护文件，不写Git/普通文档。
 - 原UI已恢复，无checkbox/forget/localStorage保存逻辑；沿用镜像现有helper，不改其代码、不改密码、不迁设计数据。VM250仍Git ff1783e clean/同镜像，11healthy；授权LAN默认值与原继续按钮登录进入dashboard实测通过。非授权Docker来源四种伪造头组合均403；WG仅规则允许，未签本轮异地E2E。
 - 当前交付evidence/penpot-login-prefill-20261110/acceptance.json和usage-manual.md；browser-remember目录仅撤回历史，代码已归档private/deferred而非可部署方案。当前public脚本approved-worker.py是已执行的一次性事务，不盲重跑。后续bkcode/penpot main源码更新仍等用户推两条改造并通知，不因本次运行配置部署而自动拉旧远端。
+
+## 2026-11-10 Puyu设计导入授权与交付
+
+- 用户明确本机Penpot的Puyu设计导入19.50；确认本机“Penpot MCP 验证”rev2821的三页全部为Puyu，仅这一文件官方导出/导入。目标owner默认team新增puyu项目与puyu文件，旧7文件data/版本/名称/项目保持，不删除或覆盖。
+- 新事务/etc/penpot/puyu-import-20261110.json与私有归档独立；不改旧application-id-map、不迁源身份、不PG整库覆盖、不盲重跑import。首次CLI启动回执20秒等待超时但实际unit继续，后台完成且已验证，不得按历史inflight重复导入。
+- 当前验收evidence/penpot-puyu-import-20261110/acceptance.json、手册同目录usage-manual.md。3页/58240图形/19组件统计一致，旧7文件完整data哈希保持，浏览器仅抽查组件/商城详情。此授权不是首次引导源码push：ec6f032仍本地且自动推送审批冲突待明确授权，不因此执行Git部署。自动备份仍仅正式DB/Nacos。

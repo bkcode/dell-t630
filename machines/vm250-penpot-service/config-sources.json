@@ -6,7 +6,7 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "74b4f8252218a0f07feb91d36a9c0fa0b02b351e6d043b9a2a2e1c677aed0c4d"
+      "sha256": "bb22b66a092a143f51aae89cc64c0472eb915ecfc214e50a8196fbd98c53979f"
     },
     {
       "path": "11-live-handoff.md",
@@ -18,13 +18,13 @@
       "path": "12-service-access-and-operations.md",
       "type": "current-contract",
       "purpose": "当前19网入口及凭据保管规则。",
-      "sha256": "ea56c9d739d250d34609e404500f41e79f7afde6cd1e88c957b98311294dd7c9"
+      "sha256": "274c81518e23a1778dea9aa193cadd26b9e8e3a0b4d81b785840b91da140e38c"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
-      "sha256": "6f1724e4da5fb4ed18c86da0713791bcbd38f1c285b8b5e91ea8c7370df1d11f"
+      "sha256": "b1cbbf8854f00cf79c617da3e1eeb4c893cc3b19ecee5689adaa2cd0de7079dc"
     },
     {
       "path": "cleanup/final-live-check.json",
@@ -319,6 +319,66 @@
       "type": "historical-evidence",
       "purpose": "Authorized original-form prefill; private values excluded; bounded proof does not authorize source updates or untested external E2E",
       "sha256": "d536a36bed1ab9b6b450167d674b23a81892a7a2e55914b2283875c426a3b542"
+    },
+    {
+      "path": "infra/penpot/puyu-import/export.py",
+      "type": "current-contract",
+      "purpose": "User-authorized new Puyu design copy; no credentials/archives/whole DB export; previous files preserved; not source-code deployment",
+      "sha256": "56a83467c5c2ef5970aa6a2e62c8caa4407a0613889a1e03dd38aade55ed80e2"
+    },
+    {
+      "path": "infra/penpot/puyu-import/target.py",
+      "type": "current-contract",
+      "purpose": "User-authorized new Puyu design copy; no credentials/archives/whole DB export; previous files preserved; not source-code deployment",
+      "sha256": "cccd35102413ba793f61e74a7967176e0790d85075e6661640b63750dff48f20"
+    },
+    {
+      "path": "evidence/penpot-puyu-import-20261110/README.md",
+      "type": "current-contract",
+      "purpose": "User-authorized new Puyu design copy; no credentials/archives/whole DB export; previous files preserved; not source-code deployment",
+      "sha256": "f675cdf096b8a42dedb5a255f699018f98e069189e8b1f3465eda880a72451f3"
+    },
+    {
+      "path": "evidence/penpot-puyu-import-20261110/usage-manual.md",
+      "type": "current-contract",
+      "purpose": "User-authorized new Puyu design copy; no credentials/archives/whole DB export; previous files preserved; not source-code deployment",
+      "sha256": "6ead580145bcd8e80678166d9034cd635d90fed9528d0a193db238a900e3e6cf"
+    },
+    {
+      "path": "evidence/penpot-puyu-import-20261110/acceptance.json",
+      "type": "historical-evidence",
+      "purpose": "User-authorized new Puyu design copy; no credentials/archives/whole DB export; previous files preserved; not source-code deployment",
+      "sha256": "aa0dc28de7d9bd2cee083570e20b067191801a2e6a86c27c4161c4ebfe88aa16"
+    },
+    {
+      "path": "evidence/penpot-puyu-import-20261110/export-summary.json",
+      "type": "historical-evidence",
+      "purpose": "User-authorized new Puyu design copy; no credentials/archives/whole DB export; previous files preserved; not source-code deployment",
+      "sha256": "a70f85f59558b327c0240ac3b0427e905fc8a68963bbfbeaae9f8e4713222acc"
+    },
+    {
+      "path": "evidence/penpot-puyu-import-20261110/transfer.json",
+      "type": "historical-evidence",
+      "purpose": "User-authorized new Puyu design copy; no credentials/archives/whole DB export; previous files preserved; not source-code deployment",
+      "sha256": "e7c3b2a831dcf387100b17db628496c3ed3500c643dcc064d072c1ab3a874e10"
+    },
+    {
+      "path": "evidence/penpot-puyu-import-20261110/api-result.json",
+      "type": "historical-evidence",
+      "purpose": "User-authorized new Puyu design copy; no credentials/archives/whole DB export; previous files preserved; not source-code deployment",
+      "sha256": "811389a170c8f6ac0254d8c659703a670c319b3eca00a790bf0178bfe50091a8"
+    },
+    {
+      "path": "evidence/penpot-puyu-import-20261110/browser-acceptance.json",
+      "type": "historical-evidence",
+      "purpose": "User-authorized new Puyu design copy; no credentials/archives/whole DB export; previous files preserved; not source-code deployment",
+      "sha256": "c0fc317e6772cededf0d49d9be990f5ea217cb5fccc47ac55e8667fdea869069"
+    },
+    {
+      "path": "evidence/penpot-puyu-import-20261110/final-postcheck.json",
+      "type": "historical-evidence",
+      "purpose": "User-authorized new Puyu design copy; no credentials/archives/whole DB export; previous files preserved; not source-code deployment",
+      "sha256": "25c57d5d65c28eaa51d0cd4607f95925d57e9a857b8297a72defadd20e9b6350"
     }
   ],
   "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."

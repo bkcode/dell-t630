@@ -1,0 +1,70 @@
+{
+  "captured_at": "2026-11-10T17:09:45.472282+08:00",
+  "unit": {
+    "MainPID": "1997683",
+    "NRestarts": "0",
+    "ActiveState": "active"
+  },
+  "containers": [
+    {
+      "name": "/penpot-penpot-frontend-1",
+      "image": "sha256:bd020fb6bddfd77449c26f76ee04ca7b2b50a0ffe8562ebc7b9e294bfcd38b89",
+      "health": "healthy"
+    },
+    {
+      "name": "/penpot-penpot-backend-1",
+      "image": "sha256:c54c38204393018c4009b7161b9ee3a04ccc0daab657b820d5de86a0d3013630",
+      "health": "healthy"
+    },
+    {
+      "name": "/penpot-penpot-exporter-1",
+      "image": "sha256:6173b08e25850cda792cd75261e741649c0febd48326e68e8711ba44b5c9af42",
+      "health": "healthy"
+    },
+    {
+      "name": "/penpot-penpot-admin-console-1",
+      "image": "sha256:29c13326e854fd63e18a7231cb1ca26d60f728692bd1207ded003b94aba79390",
+      "health": "healthy"
+    },
+    {
+      "name": "/penpot-penpot-import-1",
+      "image": "sha256:d4414e3f2e41ac4f5eb4b2c146c05cbc9f9754b179d6b63efa3af95c005b1261",
+      "health": "healthy"
+    },
+    {
+      "name": "/penpot-penpot-worker-1",
+      "image": "sha256:c0bead679c3fe7a4b80d2485f87bdce0e5a6acc26a9c2a001b0e4e3270dadee5",
+      "health": "healthy"
+    },
+    {
+      "name": "/penpot-penpot-mcp-1",
+      "image": "sha256:e95070617f49eacc00f136061d9c6b4bad957319046e9e65e7cee14b9e77577c",
+      "health": "healthy"
+    },
+    {
+      "name": "/penpot-penpot-postgres-1",
+      "image": "sha256:245fc027b7f3755bbd21b4375c2a0ebc7fa5d16c4573da497be9850a823973c8",
+      "health": "healthy"
+    },
+    {
+      "name": "/penpot-penpot-dns-1",
+      "image": "sha256:7ed84fca86579b7bee90ec5c9750457cd9450729d2dd01fb2070f00f6cd7fb14",
+      "health": "healthy"
+    },
+    {
+      "name": "/penpot-penpot-valkey-1",
+      "image": "sha256:ca662989648f173e01fb1a1768e7d84ddcaf8b7de135070b59271b0918104eb3",
+      "health": "healthy"
+    },
+    {
+      "name": "/penpot-penpot-mailpit-1",
+      "image": "sha256:580a202b5088e9c651a8e8b4e461e3213fbd3a3aacaa3d2251892a546a734116",
+      "health": "healthy"
+    }
+  ],
+  "all11_healthy": true,
+  "puyu_journal_status": "verified",
+  "Git_HEAD": "ff1783e7865af7aae571c985f03e057631b7af63",
+  "Git_clean": true,
+  "supervisor_contract_check": true
+}

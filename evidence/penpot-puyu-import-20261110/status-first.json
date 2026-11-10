@@ -1,0 +1,14 @@
+{
+  "captured_at": "2026-11-10T17:03:51.727842+08:00",
+  "unit": {
+    "Result": "success",
+    "ExecMainStatus": "0",
+    "LoadState": "loaded",
+    "ActiveState": "activating",
+    "SubState": "start"
+  },
+  "transaction": {
+    "status": "file-import-inflight",
+    "project_id": "01b580ec-b5e6-8057-8008-ec70d7e5fab0"
+  }
+}

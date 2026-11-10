@@ -1,0 +1,21 @@
+{
+  "recorded_at": "2026-11-10T17:10:42.443309+08:00",
+  "URL": "http://192.168.19.50:9001/#/workspace?team-id=13a31dab-5204-818d-8008-e6fd5e2efc53&file-id=01b580ec-b5e6-8057-8008-ec70da4cd212&page-id=0c6166a2-b4f0-8093-8008-e31e54275406",
+  "authenticated_original_form_login": true,
+  "file_title": "puyu - Penpot",
+  "all_three_page_labels_visible": true,
+  "components_page_visually_reviewed": true,
+  "mall_product_detail_board_visually_reviewed": true,
+  "mall_images_and_layout_visible": true,
+  "internal_error_visible": false,
+  "original_first_page_visual_full_reviewed": false,
+  "canvas_edits_performed": false,
+  "read_only_layer_selection_and_zoom_only": true,
+  "screenshots_retained_only_in_private": true,
+  "test_cookies_and_localStorage_cleared": true,
+  "test_session_closed": true,
+  "limitations": [
+    "Visual review sampled components and mall product detail, not every one of 58240 shapes",
+    "Semantic page/shape/component statistics and all7 original-file hashes are verified separately"
+  ]
+}

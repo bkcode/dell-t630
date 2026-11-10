@@ -386,7 +386,7 @@
     "phase_cases_passed": 9,
     "phase_case_count": 9,
     "guest_postcheck": "completion/20261109/guests-post-backup.json",
-    "latest_followup_manifest": "evidence/penpot-login-prefill-20261110/acceptance.json"
+    "latest_followup_manifest": "evidence/penpot-puyu-import-20261110/acceptance.json"
   },
   "backup_scope_update20261109": {
     "status": "completed-native-verified",
@@ -689,5 +689,30 @@
     "browser_login_verified": true,
     "healthy_containers": 11,
     "WG_offsite_E2E_verified": false
+  },
+  "Penpot_Puyu_design_import_20261110": {
+    "status": "imported-and-verified",
+    "source_file_id": "9eb8678d-764d-810b-8008-e237712e9048",
+    "source_revision_snapshot": 2821,
+    "target_project": "puyu",
+    "target_project_id": "01b580ec-b5e6-8057-8008-ec70d7e5fab0",
+    "target_file_name": "puyu",
+    "target_file_id": "01b580ec-b5e6-8057-8008-ec70da4cd212",
+    "team_id": "13a31dab-5204-818d-8008-e6fd5e2efc53",
+    "pages": [
+      "puyu-mobile",
+      "puyu-components",
+      "puyu-mobile · 商城"
+    ],
+    "shape_count": 58240,
+    "component_count": 19,
+    "protected_existing_files": 7,
+    "existing_files_unchanged": true,
+    "source_retained": true,
+    "code_deployed_or_service_restarted": false,
+    "URL": "http://192.168.19.50:9001/#/workspace?team-id=13a31dab-5204-818d-8008-e6fd5e2efc53&file-id=01b580ec-b5e6-8057-8008-ec70da4cd212&page-id=0c6166a2-b4f0-8093-8008-e31e54275406",
+    "acceptance": "evidence/penpot-puyu-import-20261110/acceptance.json",
+    "usage_manual": "evidence/penpot-puyu-import-20261110/usage-manual.md",
+    "automatic_backup_scope_expanded": false
   }
 }

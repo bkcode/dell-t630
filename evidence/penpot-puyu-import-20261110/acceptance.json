@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-10T17:10:42.443309+08:00",
+  "status": "passed-Puyu-project-import",
+  "scope": "one new project/file on VM250; application export/import only; no code deployment",
+  "cases": [
+    {
+      "id": "PUYU-EXPORT-001",
+      "title": "确认Puyu源与完整导出",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户确认本机Penpot Puyu设计导入19.50；保留源和旧目标文件"
+      ],
+      "steps": [
+        "执行官方应用级导出/导入和限定只读原生/浏览器验收"
+      ],
+      "observable_pass_conditions": [
+        "三个源页面全部属于Puyu，导出前后源数据及版本不变",
+        "117222272字节受保护ZIP完整性匹配，上传和ZIP条目限制足够"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/penpot-puyu-import-20261110/export-summary.json",
+          "note": "No raw designs, archives, passwords or session tokens"
+        },
+        {
+          "path": "evidence/penpot-puyu-import-20261110/limits.json",
+          "note": "No raw designs, archives, passwords or session tokens"
+        },
+        {
+          "path": "evidence/penpot-puyu-import-20261110/transfer.json",
+          "note": "No raw designs, archives, passwords or session tokens"
+        }
+      ],
+      "verified_at": "2026-11-10T17:10:42.443309+08:00"
+    },
+    {
+      "id": "PUYU-IMPORT-001",
+      "title": "新增项目和单文件",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户确认本机Penpot Puyu设计导入19.50；保留源和旧目标文件"
+      ],
+      "steps": [
+        "执行官方应用级导出/导入和限定只读原生/浏览器验收"
+      ],
+      "observable_pass_conditions": [
+        "owner工作区新增puyu项目和一个puyu文件",
+        "独立journal阻止重复导入，未覆盖旧文件或迁移身份"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/penpot-puyu-import-20261110/api-result.json",
+          "note": "No raw designs, archives, passwords or session tokens"
+        },
+        {
+          "path": "evidence/penpot-puyu-import-20261110/started.json",
+          "note": "No raw designs, archives, passwords or session tokens"
+        }
+      ],
+      "verified_at": "2026-11-10T17:10:42.443309+08:00"
+    },
+    {
+      "id": "PUYU-CONTENT-001",
+      "title": "页面图形组件一致",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户确认本机Penpot Puyu设计导入19.50；保留源和旧目标文件"
+      ],
+      "steps": [
+        "执行官方应用级导出/导入和限定只读原生/浏览器验收"
+      ],
+      "observable_pass_conditions": [
+        "3页顺序/对象数一致、58240图形和19组件统计一致",
+        "没有外部库依赖，不冒称全部像素或原型交互验收"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/penpot-puyu-import-20261110/api-result.json",
+          "note": "No raw designs, archives, passwords or session tokens"
+        }
+      ],
+      "verified_at": "2026-11-10T17:10:42.443309+08:00"
+    },
+    {
+      "id": "PUYU-PRESERVE-001",
+      "title": "原设计与运行保持",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户确认本机Penpot Puyu设计导入19.50；保留源和旧目标文件"
+      ],
+      "steps": [
+        "执行官方应用级导出/导入和限定只读原生/浏览器验收"
+      ],
+      "observable_pass_conditions": [
+        "原7文件名称/项目/revn/vern/设计数据SHA一致",
+        "11服务健康、监督器通过、Git ff1783e保持，不启停或源码部署"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/penpot-puyu-import-20261110/api-result.json",
+          "note": "No raw designs, archives, passwords or session tokens"
+        },
+        {
+          "path": "evidence/penpot-puyu-import-20261110/final-postcheck.json",
+          "note": "No raw designs, archives, passwords or session tokens"
+        }
+      ],
+      "verified_at": "2026-11-10T17:10:42.443309+08:00"
+    },
+    {
+      "id": "PUYU-BROWSER-001",
+      "title": "真实工作区只读打开",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户确认本机Penpot Puyu设计导入19.50；保留源和旧目标文件"
+      ],
+      "steps": [
+        "执行官方应用级导出/导入和限定只读原生/浏览器验收"
+      ],
+      "observable_pass_conditions": [
+        "组件页与商城详情画板实际渲染图片布局",
+        "三个页面标签可见、无Internal Error，测试登录态已清理"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/penpot-puyu-import-20261110/browser-acceptance.json",
+          "note": "No raw designs, archives, passwords or session tokens"
+        }
+      ],
+      "verified_at": "2026-11-10T17:10:42.443309+08:00"
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "current_phase_case_count": 5,
+    "current_phase_passed": 5
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "captured_at": "2026-11-10T16:57:06.869319+08:00",
+  "source_file_id": "9eb8678d-764d-810b-8008-e237712e9048",
+  "source_name": "Penpot MCP 验证",
+  "source_revn": 2821,
+  "source_vern": 0,
+  "pages": [
+    "puyu-mobile",
+    "puyu-components",
+    "puyu-mobile · 商城"
+  ],
+  "page_object_counts": {
+    "f4b51867-9d09-8057-8008-e24258d4de48": 56852,
+    "0c6166a2-b4f0-8093-8008-e31e54275406": 435,
+    "0c6166a2-b4f0-8093-8008-e3cc46951c20": 956
+  },
+  "source_stats": {
+    "pageCount": 3,
+    "updatedAt": "2026-11-07T02:50:45.158717Z",
+    "shapeCounts": {
+      "total": 58240,
+      "byType": {
+        "rect": 6787,
+        "frame": 24097,
+        "text": 16226,
+        "path": 6201,
+        "group": 3802,
+        "circle": 1127
+      }
+    },
+    "fileId": "9eb8678d-764d-810b-8008-e237712e9048",
+    "deletedComponentCount": 0,
+    "revn": 2821,
+    "referencedByCount": 0,
+    "typographyCount": 0,
+    "componentCount": 19,
+    "colorCount": 0,
+    "libraryCount": 0
+  },
+  "archive": "puyu.penpot",
+  "archive_bytes": 117222272,
+  "zip_members": 62213,
+  "external_library_edges": 0,
+  "include_libraries": true,
+  "embed_assets": false,
+  "source_unchanged_after_export": true,
+  "target_project_name": "puyu",
+  "target_file_name": "puyu",
+  "archive_retained_only_in_protected_storage": true,
+  "source_credential_or_session_exported": false
+}

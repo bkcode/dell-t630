@@ -4,6 +4,10 @@
 
 **2026-11-09继续完成基础搭建，并按用户最新范围仅备正式数据库/Nacos配置；随后另获授权完成选定测试Nacos配置及两份Puyu数据库迁移。** 14:24自然重启后的fresh审计确认12来宾运行、3模板停止、15/15UP、EDAC0/RAIDOptl，forward guard文件与启动顺序保持全0。Nexus221继续独立、220的Nexus保持standby，另有后续获准的只读导航，Java业务不启，Penpot实际ff提交不更新main，Mac外部探针不需要。当日状态统一见[11月9日交付记录](completion/20261109-prod-db-scope/README.md)；[11月8日恢复](recovery/20261108/README.md)保留历史。
 
+## Puyu设计已导入Penpot
+
+服务器owner工作区已新增 **puyu项目 / puyu文件**，含三个Puyu页面、58,240图形与19组件；原目标7文件和本机源保留。组件/商城详情真实浏览器可打开，11服务健康且没有重启或代码部署。见[使用手册](evidence/penpot-puyu-import-20261110/usage-manual.md)和[五项验收](evidence/penpot-puyu-import-20261110/acceptance.json)。
+
 ## Penpot原登录表单默认填入
 
 当前 **[Penpot](http://192.168.19.50:9001/)** 沿用现有预填脚本，原邮箱与密码输入框默认填入原owner账号，密码保持掩码；点击原“继续”按钮即可登录。没有新增勾选框、按钮或浏览器保存逻辑，密码未修改。此功能已按用户明确授权限制为LAN21/24、WG10.66.66/24及本机；范围内未登录访问者可读取该凭据。实测原表单登录成功、11容器健康，非授权Docker来源伪造请求头仍403。Git ff1783e及镜像保持，源码main更新继续等待用户通知。见[交付与验收](evidence/penpot-login-prefill-20261110/README.md)和[使用手册](evidence/penpot-login-prefill-20261110/usage-manual.md)。新增“记住登录信息”方案已撤回，仅保留历史。

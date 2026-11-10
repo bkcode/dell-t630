@@ -64,3 +64,7 @@ Git改造Penpot与常驻worker/import/MCP服务，保存3活动设计和原素�
 - [network19/services-media/PLAN.md](../../network19/services-media/PLAN.md) · `historical-evidence`：已执行迁网差异与原source文件说明；不重新执行旧stage/commit。
 - [infra/penpot/compose.fresh.yaml](../../infra/penpot/compose.fresh.yaml) · `historical-evidence`：初装结构参考，含旧公开BIND/DoH；不能当作19.50现役完整文件复制部署。
 - [infra/penpot/runtime/logging/README.md](../../infra/penpot/runtime/logging/README.md) · `current-contract`：MCP query-safe日志规则与不削弱认证的限制。
+
+## 2026-11-10 Puyu设计导入
+
+VM250 owner工作区新增 **puyu项目 / puyu文件**，包含puyu-mobile、puyu-components、puyu-mobile · 商城三页，共58,240图形、19组件。源为本机rev2821，旧7文件保持，当前11healthy，原代码与默认填入保持；本次未部署首次引导源码或迁账号。详见[导入使用手册](../../evidence/penpot-puyu-import-20261110/usage-manual.md)。这是快照导入，不自动同步，不扩正式DB/Nacos之外的备份。

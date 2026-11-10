@@ -1,0 +1,12 @@
+{
+  "captured_at": "2026-11-10T17:02:59.020579+08:00",
+  "native_backend_JAR_config_read": true,
+  "ZIP_limit": 500000,
+  "storage_object_limit_bytes": 104857600,
+  "NGINX_and_backend_body_limit_bytes": 367001600,
+  "no_binfile_limit_environment_overrides_found": true,
+  "archive_zip_members": 62213,
+  "archive_bytes": 117222272,
+  "largest_uncompressed_entry_bytes": 549503,
+  "within_limits": true
+}
