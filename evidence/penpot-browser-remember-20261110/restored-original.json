@@ -1,0 +1,12 @@
+{
+  "captured_at": "2026-11-10T16:05:40.660501+08:00",
+  "status": "original-login-UI-restored-11healthy",
+  "new_controls_and_localStorage_logic_removed": true,
+  "original_overlay_and_lock_SHA_restored": true,
+  "Git_ff_clean_and_images_unchanged": true,
+  "containers_healthy": 11,
+  "server_password_endpoint_contains_real_credentials": false,
+  "default_real_account_prefill_enabled": false,
+  "default_prefill_requires_changed_scope_approval": true,
+  "real_password_values_output": false
+}

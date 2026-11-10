@@ -1,0 +1,8 @@
+{
+  "recorded_at": "2026-11-10T16:19:28.889278+08:00",
+  "status": "cancelled-browser-memory-code-excluded-from-Git-delivery",
+  "reason": "User explicitly requested original UI and no added saving logic; original runtime overlay/lock restored before approved existing-defaults configuration",
+  "archived_under_private_deferred": true,
+  "public_UI_source_module_is_not_current_or_shipped": true,
+  "actual_credentials_in_archive": false
+}

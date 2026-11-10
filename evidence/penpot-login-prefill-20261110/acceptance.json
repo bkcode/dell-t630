@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-10T16:22:42.748587+08:00",
+  "status": "passed-approved-original-form-defaults",
+  "scope": "VM250 only: existing helper default fill; original UI; no password change or source update",
+  "cases": [
+    {
+      "id": "PREFILL-AUTH-001",
+      "title": "明确授权原有表单默认填入",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确授权当前精确范围；仅VM250运行变更"
+      ],
+      "steps": [
+        "核对带时间原生回执、限定浏览器交互和当前文档"
+      ],
+      "observable_pass_conditions": [
+        "用户已明确授权LAN21/24、WG10.66/24及本机未登录读取现有owner凭据",
+        "原账号及密码保持不变"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/penpot-login-prefill-20261110/explicit-approval.json",
+          "note": "限定证据，不含真实凭据或响应正文"
+        },
+        {
+          "path": "evidence/penpot-login-prefill-20261110/approved-applied.json",
+          "note": "限定证据，不含真实凭据或响应正文"
+        }
+      ],
+      "verified_at": "2026-11-10T16:22:42.748587+08:00"
+    },
+    {
+      "id": "PREFILL-FORM-001",
+      "title": "原表单默认值及真实登录",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确授权当前精确范围；仅VM250运行变更"
+      ],
+      "steps": [
+        "核对带时间原生回执、限定浏览器交互和当前文档"
+      ],
+      "observable_pass_conditions": [
+        "原邮箱密码字段默认值匹配，密码掩码，原继续按钮可用并登录进入dashboard",
+        "零新增checkbox、remember或forget控件，未启用浏览器保存逻辑"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/penpot-login-prefill-20261110/browser-acceptance.json",
+          "note": "限定证据，不含真实凭据或响应正文"
+        }
+      ],
+      "verified_at": "2026-11-10T16:22:42.748587+08:00"
+    },
+    {
+      "id": "PREFILL-ACL-001",
+      "title": "来源限制和伪造请求头负测",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确授权当前精确范围；仅VM250运行变更"
+      ],
+      "steps": [
+        "核对带时间原生回执、限定浏览器交互和当前文档"
+      ],
+      "observable_pass_conditions": [
+        "授权LAN读取200；未批准Docker源不带头或伪造X-Real-IP/X-Forwarded-For均403",
+        "NGINX仅loopback可信代理头，不放行任意Docker来源"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/penpot-login-prefill-20261110/native-postcheck.json",
+          "note": "限定证据，不含真实凭据或响应正文"
+        },
+        {
+          "path": "evidence/penpot-login-prefill-20261110/browser-acceptance.json",
+          "note": "限定证据，不含真实凭据或响应正文"
+        }
+      ],
+      "verified_at": "2026-11-10T16:22:42.748587+08:00"
+    },
+    {
+      "id": "PREFILL-RUNTIME-001",
+      "title": "现有运行代码及健康状态保持",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确授权当前精确范围；仅VM250运行变更"
+      ],
+      "steps": [
+        "核对带时间原生回执、限定浏览器交互和当前文档"
+      ],
+      "observable_pass_conditions": [
+        "11容器healthy、镜像与锁一致、Git ff1783e且clean",
+        "已移除remember挂载，原身份文件未变，原生supervisor合同通过"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/penpot-login-prefill-20261110/approved-applied.json",
+          "note": "限定证据，不含真实凭据或响应正文"
+        },
+        {
+          "path": "evidence/penpot-login-prefill-20261110/native-postcheck.json",
+          "note": "限定证据，不含真实凭据或响应正文"
+        }
+      ],
+      "verified_at": "2026-11-10T16:22:42.748587+08:00"
+    },
+    {
+      "id": "PREFILL-DOC-001",
+      "title": "文档与撤回历史一致",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确授权当前精确范围；仅VM250运行变更"
+      ],
+      "steps": [
+        "核对带时间原生回执、限定浏览器交互和当前文档"
+      ],
+      "observable_pass_conditions": [
+        "使用手册记录当前授权预填、原UI及受保护凭据来源",
+        "撤回的checkbox方案仅为历史，取消代码不进入Git"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/penpot-login-prefill-20261110/README.md",
+          "note": "限定证据，不含真实凭据或响应正文"
+        },
+        {
+          "path": "evidence/penpot-login-prefill-20261110/usage-manual.md",
+          "note": "限定证据，不含真实凭据或响应正文"
+        },
+        {
+          "path": "evidence/penpot-login-prefill-20261110/../penpot-browser-remember-20261110/restored-original.json",
+          "note": "限定证据，不含真实凭据或响应正文"
+        },
+        {
+          "path": "evidence/penpot-login-prefill-20261110/../penpot-browser-remember-20261110/cancelled-code-archive.json",
+          "note": "限定证据，不含真实凭据或响应正文"
+        }
+      ],
+      "verified_at": "2026-11-10T16:22:42.748587+08:00"
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "current_phase_case_count": 5,
+    "current_phase_passed": 5
+  },
+  "limits": [
+    "WG/Cloudflare external E2E not signed",
+    "No Penpot Git source update or design data migration"
+  ]
+}

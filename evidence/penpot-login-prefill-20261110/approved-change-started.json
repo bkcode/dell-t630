@@ -1,0 +1,12 @@
+{
+  "captured_at": "2026-11-10T16:11:05.195616+08:00",
+  "status": "explicitly-approved-original-prefill-activation-started",
+  "explicit_approval_evidence": "evidence/penpot-login-prefill-20261110/explicit-approval.json",
+  "allowed_unauthenticated_sources": [
+    "192.168.21.0/24",
+    "10.66.66.0/24",
+    "server-self-and-loopback"
+  ],
+  "scope": "originalform/existingprefillscript; configurationonly; noaddedUIorsavinglogic; passwordnotchanged",
+  "unit": "dell-penpot-approved-prefill-change-20261110"
+}

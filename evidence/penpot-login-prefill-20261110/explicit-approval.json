@@ -1,0 +1,12 @@
+{
+  "recorded_at": "2026-11-10T16:06:02.726891+08:00",
+  "status": "user-explicitly-approved-original-form-default-fill",
+  "user_answer": "明确授权上述范围默认填入",
+  "authorized_unauthenticated_prefill_sources": [
+    "192.168.21.0/24",
+    "10.66.66.0/24",
+    "server self192.168.19.50 and loopback"
+  ],
+  "user_informed_password_readable_to_all_allowed_visitors": true,
+  "scope": "existing original prefill script/config only; no added UI or browser saving logic; no password or design data changes"
+}

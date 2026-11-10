@@ -7,13 +7,13 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "角色/IP/预算/启动顺序唯一合同，根任务维护。",
-      "sha256": "ee849e5b748bb9a9e1e509a6db1a24c1b3554627e3c9b66c0ec4b36a288e2432"
+      "sha256": "74b4f8252218a0f07feb91d36a9c0fa0b02b351e6d043b9a2a2e1c677aed0c4d"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工启停与共享挂载操作；不自动执行。",
-      "sha256": "1ef7ba788d0c9ce1649dd53c3382ae307c7a53a63537dc6beb25849b810c0f12"
+      "sha256": "6f1724e4da5fb4ed18c86da0713791bcbd38f1c285b8b5e91ea8c7370df1d11f"
     },
     {
       "path": "completion/20261109-resources/usage-manual.md",

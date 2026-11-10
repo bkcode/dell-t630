@@ -1,0 +1,51 @@
+{
+  "PyYAML_installed": true,
+  "lock_top_keys": [
+    "schema_version",
+    "prepared_at",
+    "status",
+    "guest",
+    "storage",
+    "Git",
+    "package_file_sha256",
+    "services",
+    "PID_sampling_limitation",
+    "supervision_file_sha256",
+    "dns_health"
+  ],
+  "expected_frontend_mounts": [
+    {
+      "source": "/opt/dell/penpot/runtime/logging/templates/nginx-mcp-locations.conf.template",
+      "destination": "/tmp/nginx-mcp-locations.conf.template",
+      "rw": false
+    },
+    {
+      "source": "/opt/dell/penpot/runtime/logging/templates/nginx.conf.template",
+      "destination": "/tmp/nginx.conf.template",
+      "rw": false
+    },
+    {
+      "source": "/srv/penpot/docker/volumes/penpot_penpot_assets/_data",
+      "destination": "/opt/data/assets",
+      "rw": true
+    },
+    {
+      "source": "/opt/dell/penpot/source/frontend/selfhost/login-defaults.example.json",
+      "destination": "/run/secrets/login-defaults",
+      "rw": false
+    },
+    {
+      "source": "/opt/dell/penpot/runtime/health-supervision/frontend-health.sh",
+      "destination": "/opt/dell-health/frontend-health.sh",
+      "rw": false
+    }
+  ],
+  "old_public_SHA": {
+    "/opt/dell/penpot/compose.fresh.yaml": "0e7c4c2106f720ea0e8035c85b645140b582540a127e05085ca4a41003c05aa6",
+    "/opt/dell/penpot/runtime/health-supervision/compose.health-supervision.yaml": "806177bae84d81af31fc42e9f6e4cb06b331e01640e78e975c8d00d9cd90dc18",
+    "/opt/dell/penpot/runtime/health-supervision/deployment-lock.json": "2c6f252611504778810604d89092f4238dd243b633ac1a22cb8b9191e81cb6dc"
+  },
+  "frontend_has_http_realip_module": true,
+  "frontend_secret_stat": "0:0 644",
+  "frontend_secret_stat_exit": 0
+}

@@ -4,6 +4,12 @@
 
 历史Nexus短时维护知情许可已满足，但11月8日用户明确暂不迁移的范围控制当前执行。旧“待授权”记录只作历史，不能反复索取同一许可，也不能借旧许可或硬件恢复自动启动合并。当前拓扑/预算以[plan.json](plan.json)、入口以[12](12-service-access-and-operations.md)、清理事实以[18](18-cleanup-and-consolidation.md)为准。证据采集后的运行状态会变化，硬件故障后必须fresh核查。
 
+## Penpot：原UI默认填入（新明确授权）
+
+用户要求保持原登录UI、不新增逻辑，并[明确授权](evidence/penpot-login-prefill-20261110/explicit-approval.json)让LAN21/24、WG10.66.66/24、VM250自身19.50与loopback的未登录访客可读取原`owner@dell.local`密码并默认填入。原helper/表单结构不改，无新checkbox/forget/localStorage；打开[Penpot](http://192.168.19.50:9001/)、刷新后由原helper填原账号密码，点击原“继续/登录”，不自动提交。CF19.5与其它来源拒绝；这项用户已知授权的密码读取范围不应描述为只保存本人浏览器。
+
+原密码与owner/MCP/设计保持，值仅Mac `private/credentials/penpot-owner-20261110.json`、guest `/etc/penpot/new-identities.json`及guest0600运行JSON，不进文档/Git。此前个人浏览器remember控件/逻辑已[撤回并恢复原UI](evidence/penpot-browser-remember-20261110/restored-original.json)，该目录仅历史。[16:13应用](evidence/penpot-login-prefill-20261110/approved-applied.json)、[16:19原生后检](evidence/penpot-login-prefill-20261110/native-postcheck.json)及[真实LAN浏览器](evidence/penpot-login-prefill-20261110/browser-acceptance.json)已通过：11healthy、四种未授权Docker来源/伪造头均403、原表单账号密码匹配/密码masked，点击原Continue进入已认证dashboard；无新增控件与remember挂载，测试cookies/localStorage已清且session关闭。当前WG/CF端到端未签；core ff1783e clean/镜像保持，不取Git新码，用户push两改造后再更新的独立门禁继续。详见[新证据](evidence/penpot-login-prefill-20261110/README.md)与[使用手册](evidence/penpot-login-prefill-20261110/usage-manual.md)。
+
 ## 免登录服务导航（VM220新增）
 
 当前入口 **[服务导航](http://192.168.19.30:9080/)**，无需账号密码，TLS/登录凭据均不加载。顶部“个人内网 / 服务导航”栏已移除，标题和外侧留白缩紧，保持全宽布局。14个入口可分组、搜索、环境筛选、刷新、复制及新标签页打开；目标由客户端直接访问并使用各自认证，导航不提供SSO或健康探测。自建内网应用默认HTTP；FileBrowser已切HTTP但保留原resources/admin认证，PVE/iDRAC内置HTTPS本轮保留。

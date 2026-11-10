@@ -1,0 +1,8 @@
+{
+  "captured_at": "2026-11-10T15:44:28.122264+08:00",
+  "status": "browser-only-opt-in-form-memory-activation-started",
+  "unit": "dell-penpot-browser-remember-change-20261110",
+  "scope": "publicscript containing no realcredentials; usertypedoptinvalues only in thatbrowser localStorage, never a server shared-default response",
+  "server_default_credentials_endpoint": "404",
+  "shared_password_proposal_activated": false
+}

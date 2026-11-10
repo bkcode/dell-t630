@@ -1,0 +1,62 @@
+{
+  "captured_at": "2026-11-10T14:45:13.853907+08:00",
+  "identity": "penpot-service",
+  "source_HEAD": "ff1783e7865af7aae571c985f03e057631b7af63",
+  "source_clean": true,
+  "service_active": true,
+  "running_count": 11,
+  "frontend_container": "96c4fb2d14c0747697b232b2435dbaf1ba58c25850be1f8e84a2f4acfd6cff49",
+  "frontend_UID_GID": [
+    "1001",
+    "1001"
+  ],
+  "secret_source": "/opt/dell/penpot/source/frontend/selfhost/login-defaults.example.json",
+  "frontend_secrets": [
+    {
+      "source": "login-defaults",
+      "target": "/run/secrets/login-defaults"
+    }
+  ],
+  "frontend_lock_keys": [
+    "container_name",
+    "image_reference_before",
+    "image_id",
+    "architecture",
+    "pids_observed_max",
+    "pids_limit_proposed",
+    "memory_bytes",
+    "nano_cpus",
+    "expected_mounts"
+  ],
+  "frontend_locked_mounts": null,
+  "package_locked_files": [
+    "application/fresh-target.py",
+    "target_guard.py",
+    "compose.fresh.yaml",
+    "compose.fresh.core.yaml",
+    "runtime_logging.py",
+    "runtime/logging/templates/nginx.conf.template",
+    "runtime/logging/templates/nginx-mcp-locations.conf.template"
+  ],
+  "supervision_locked_files": [
+    "supervisor.py",
+    "frontend-health.sh",
+    "ready-health.sh",
+    "node-health.mjs",
+    "dns-health.sh",
+    "dns-health.hosts",
+    "compose.health-supervision.yaml",
+    "20-health-supervision.conf"
+  ],
+  "selected_public_NGINX_directives": [
+    "include /etc/nginx/overrides/main.d/*.conf;",
+    "log_format penpot_upstream '$remote_addr - $remote_user [$time_local] \"$request_method $uri $server_protocol\" '",
+    "include /etc/nginx/overrides/http.d/*.conf;",
+    "include /etc/nginx/overrides/assets.d/*.conf;",
+    "include /etc/nginx/overrides/server.d/*.conf;",
+    "include /etc/nginx/overrides/location.d/*.conf;",
+    "# configuration file /etc/nginx/overrides/server.d/selfhost-login.conf:",
+    "location = /js/selfhost-login.json {"
+  ],
+  "nginx_T_exit": 0
+}

@@ -1,8 +1,14 @@
-> 更新：2026-11-09（Asia/Shanghai）。本轮基础fresh审计已复核；当日实时收尾状态统一见[11月9日交付记录](../../completion/20261109-prod-db-scope/README.md)。本页仅本地同步带时点证据，不执行服务器操作；不迁移数据、不合并Nexus、不启动Java业务、不升级Penpot，不需要Mac外部探针。
+> 更新：2026-11-10（Asia/Shanghai）。个人浏览器记忆方案已撤回；新授权原UI默认填入已通过LAN浏览器与原生验收，核心Git/镜像更新仍等待用户推送；此前基础fresh审计已复核；当日实时收尾状态统一见[11月9日交付记录](../../completion/20261109-prod-db-scope/README.md)。本页仅本地同步带时点证据，不执行服务器操作；不迁移数据、不合并Nexus、不启动Java业务、不升级Penpot核心或镜像，不需要Mac外部探针。
 
 # VM250 · penpot-service
 
 Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/计划与已部署状态分开；不表示本机已clone或已分发key）。
+
+## 原UI默认填入（2026-11-10新明确授权）
+
+用户要求原UI、不新增逻辑，并[明确授权](../../evidence/penpot-login-prefill-20261110/explicit-approval.json)LAN21/24、WG10.66.66/24、VM250 self19.50/loopback的未登录访客可读取原owner密码并默认填入。现役沿用ff原helper与表单，只换原JSON运行secret来源、加一个NGINX来源ACL只读挂载并同步监督lock；CF19.5/其他来源拒绝。不新增checkbox/forget/localStorage、不build/换镜像、不取新码、不重置owner/MCP或改设计。打开原页刷新、点击原“继续/登录”，不自动提交。
+
+此前个人浏览器记忆UI/逻辑已[16:05恢复原样](../../evidence/penpot-browser-remember-20261110/restored-original.json)，11healthy、ff clean及镜像保持；其说明只作已撤回历史。[16:13应用](../../evidence/penpot-login-prefill-20261110/approved-applied.json)、[16:19原生后检](../../evidence/penpot-login-prefill-20261110/native-postcheck.json)与[真实LAN浏览器](../../evidence/penpot-login-prefill-20261110/browser-acceptance.json)已通过：11healthy、镜像match lock、Git ff1783e clean、无remember挂载；四种未授权Docker/伪造头请求403。原表单默认值匹配原owner、密码masked，原Continue可登录dashboard，无新增控件；测试cookies/localStorage清理、session关闭。当前WG/CF端到端未签。原账号密码保留，实际值只在受保护Mac/guest文件及guest0600运行JSON，不入文档/Git。源Git更新仍等用户推两条既有改造的独立门禁，详见[本次证据](../../evidence/penpot-login-prefill-20261110/README.md)与[手册](../../evidence/penpot-login-prefill-20261110/usage-manual.md)。
 
 ## 本轮只读状态与备份归属
 

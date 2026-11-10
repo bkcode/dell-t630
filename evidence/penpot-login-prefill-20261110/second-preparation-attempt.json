@@ -1,0 +1,5 @@
+{
+  "status": "prefill-not-confirmed",
+  "error_type": "RuntimeError",
+  "fixed_code": "fixed-native-operation-failed"
+}

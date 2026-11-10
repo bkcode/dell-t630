@@ -1,0 +1,11 @@
+{
+  "captured_at": "2026-11-10T15:41:32.881635+08:00",
+  "status": "browser-only-candidate-native-parser-passed",
+  "script_SHA256": "4f1b7e68ef02a6bc9e36a30614ba112c354f5d008d05f179e8b0061f2039c78f",
+  "nginx_SHA256": "0dd61ad936e3e596b46384c08537e1738fc76f3889f0adc9bfe6f08ce22c30c4",
+  "overlay_SHA256": "aeee7e486a588a33cac52521f6e85621407250e906ee24a23651d3308637777f",
+  "lock_SHA256": "19c33f0f5839fa7521ada6d9c2fe1a6c9a84ce2781be99f4dc8d61d76f84a115",
+  "server_default_credentials_read_or_published": false,
+  "declined_shared_password_proposal_disabled": true,
+  "Git_or_images_or_current_services_changed": false
+}

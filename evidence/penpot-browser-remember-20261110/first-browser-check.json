@@ -1,0 +1,15 @@
+{
+  "recorded_at": "2026-11-10T15:57:29.796504+08:00",
+  "status": "opt-out-save-block-confirmed-checkbox-style-fix-required",
+  "normal_existing_owner_login_succeeded": true,
+  "checkbox_consented": false,
+  "no_login_record_saved_when_unchecked": true,
+  "initial_checkbox_geometry": {
+    "width": 0,
+    "height": 0,
+    "appearance": "none"
+  },
+  "cause": "Penpot global form styles suppressed unstyled native checkbox; no saving logic or servercredential problem",
+  "correction": "explicit native appearance and16px dimensions on own checkbox only",
+  "password_values_or_private_record_output": false
+}

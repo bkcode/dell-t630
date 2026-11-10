@@ -132,5 +132,47 @@
     "git_usage_mode": "custom-code-imported",
     "direct_runtime_business_git_pull": false,
     "server_Git_key_installation_performed_by_this_task": false
+  },
+  "browser_login_memory": {
+    "status": "withdrawn-original-UI-restored",
+    "runtime_active": false,
+    "restoration_evidence": "evidence/penpot-browser-remember-20261110/restored-original.json",
+    "new_controls_and_localStorage_logic_removed": true
+  },
+  "original_UI_login_prefill": {
+    "status": "delivered-original-UI-default-fill-LAN-browser-and-native-verified",
+    "evidence": "evidence/penpot-login-prefill-20261110/README.md",
+    "usage_manual": "evidence/penpot-login-prefill-20261110/usage-manual.md",
+    "explicit_scope_approval": "evidence/penpot-login-prefill-20261110/explicit-approval.json",
+    "existing_helper_and_form_unchanged": true,
+    "new_UI_or_localStorage_logic": false,
+    "unauthenticated_allowed_visitors_can_read_owner_password": true,
+    "authorized_sources": [
+      "192.168.21.0/24",
+      "10.66.66.0/24",
+      "192.168.19.50",
+      "127.0.0.1",
+      "::1"
+    ],
+    "CF_and_other_sources_denied": true,
+    "response_cache_control": "no-store",
+    "guest_runtime_directory": "/opt/dell/penpot/runtime/login-prefill-approved",
+    "guest_private_secret_file": "/etc/penpot/browser-login-defaults.json",
+    "real_password_or_digest_in_public_documents": false,
+    "server_owner_password_or_MCP_changed": false,
+    "Penpot_core_Git_or_images_updated": false,
+    "source_update_awaiting_user_push_remains_separate": true,
+    "runtime_and_browser_QA_verified": true,
+    "runtime_verification_evidence": "evidence/penpot-login-prefill-20261110/approved-applied.json",
+    "native_final_verification_evidence": "evidence/penpot-login-prefill-20261110/native-postcheck.json",
+    "LAN_browser_verification_evidence": "evidence/penpot-login-prefill-20261110/browser-acceptance.json",
+    "final_native_verified_at": "2026-11-10T16:19:42.989602+08:00",
+    "containers_healthy": 11,
+    "existing_owner_login_via_original_Continue_verified": true,
+    "unauthorized_Docker_no_headers_or_forged_headers_HTTP_status": 403,
+    "browser_test_cookies_and_localStorage_cleared": true,
+    "browser_test_session_closed": true,
+    "current_WG_E2E_verified": false,
+    "current_CF_E2E_verified": false
   }
 }

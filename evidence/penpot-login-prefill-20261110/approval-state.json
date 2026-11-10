@@ -1,0 +1,14 @@
+{
+  "recorded_at": "2026-11-10T15:07:07.485593+08:00",
+  "status": "awaiting-explicit-credential-exposure-scope-approval",
+  "automatic_review_rejected_activation": true,
+  "reason": "persistent unauthenticated owner password disclosure to LAN21/24 andWG10.66.66/24 needs explicit scope approval",
+  "safe_alternative_offered": "personal browser password manager without shared plaintext endpoint",
+  "runtime_readback": {
+    "original_public_configs_unchanged": true,
+    "Penpot_active": true,
+    "apply_receipt_exists": false,
+    "candidate_private_defaults_not_used_by_current_compose": true
+  },
+  "credentials_or_private_hashes_in_public_record": false
+}

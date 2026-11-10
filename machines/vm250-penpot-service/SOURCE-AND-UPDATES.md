@@ -1,4 +1,4 @@
-# Penpot源码与更新：2026-11-10，Asia/Shanghai。用户指定使用`bkcode/penpot`的`main`，本轮只读验证了管理Mac专属Deploy Key与临时独立clone，同时核服务器现役源码/镜像，未更新现役Git远端、代码、构建、程序或设计数据。服务器已恢复，旧硬件暂停记录保留为历史；当前主要更新门禁是远端main尚缺现役两条改造。
+# Penpot源码与更新：2026-11-10，Asia/Shanghai。用户指定使用`bkcode/penpot`的`main`，源码来源审计只读验证了管理Mac专属Deploy Key与临时独立clone，同时核服务器现役源码/镜像；后续个人浏览器记忆功能曾单独增补但已撤回，新授权默认填入仅改runtime配置，未更新Penpot核心Git远端、核心代码或镜像，也未改设计数据。服务器已恢复，旧硬件暂停记录保留为历史；当前主要更新门禁是远端main尚缺现役两条改造。
 
 ## 1. 固定的项目来源
 
@@ -53,7 +53,7 @@ git -c credential.helper= clone --branch main --single-branch   https://github.c
 
 Git负责源码；设计文件、PostgreSQL、素材、账号/MCP身份和部署秘密分别保管，不能靠git pull恢复。已有3设计/原971媒体保护与最后973总资产是历史验收基线，恢复后重新核实，不删除合法新增内容凑数量。
 
-本机资源/网络/数据盘见[config.json](config.json)，服务维护见[README](README.md)、[人工手册](../../19-manual-operations.md)，源码与验收来源见[config-sources.json](config-sources.json)。本轮只更新文档并验证管理Mac专属SSH取码，未配置服务器GitHub认证、未处理PAT缓存、未更新运行程序。
+本机资源/网络/数据盘见[config.json](config.json)，服务维护见[README](README.md)、[人工手册](../../19-manual-operations.md)，源码与验收来源见[config-sources.json](config-sources.json)。此前源码来源审计阶段只更新文档并验证管理Mac专属SSH取码，未配置服务器GitHub认证、未处理PAT缓存、未更新运行程序；其后runtime方案及撤回/新授权见末节，仍未更新Penpot核心或镜像。
 
 ## 6. 本轮实际验证
 
@@ -64,3 +64,11 @@ Git负责源码；设计文件、PostgreSQL、素材、账号/MCP身份和部署
 ## 用户确认的后续部署范围
 
 用户进一步授权仅Penpot机Git取码与部署，其他服务器不做运行变更，逐机文档继续。用户选择保留ff1783e两条改造，先由用户推入bkcode/penpot main并通知后再继续；当前停在版本核对，不配置服务器私钥、不构建或切换现役。见[部署等待状态](../../evidence/git-repositories-20261110/penpot-deployment-state.json)。文档与管理Mac读取验证已完成，不将等待中的部署签为完成。
+
+## 原UI默认填入runtime配置：与fork更新分开
+
+用户后续要求保持原UI、不新增逻辑，[原浏览器记忆方案已撤回](../../evidence/penpot-browser-remember-20261110/README.md)，16:05原overlay/lock恢复、11healthy。用户16:06又[明确授权](../../evidence/penpot-login-prefill-20261110/explicit-approval.json)原账户密码向未登录LAN21/24、WG10.66.66/24、self19.50/loopback访客读取并默认填入。此前自动审批拒绝属缺少此范围授权的历史，不把旧prepared直接重放。
+
+现役只沿用核心ff1783e中既有`frontend/selfhost/login-defaults.js`、原表单和按钮，不改helper/新增UI/保存逻辑，不新增Penpot fork提交。Dell公开源为`infra/penpot/login-prefill/approved-worker.py`、`selfhost-login.conf`；guest runtime为`/opt/dell/penpot/runtime/login-prefill-approved/`，只加一个来源ACL NGINX只读挂载，将既有login-defaults secret源替换为guest私有0600 JSON，并精确同步Compose/overlay/lock。JSON返回no-store，CF19.5与非白名单拒绝，不信任远端转发头。
+
+原owner密码与MCP/设计不变、不build/换11镜像、不Git取新码、不fresh-init/PG迁移。核心main/ff1783e clean/noorigin合同与用户先push两条改造后通知的门禁继续。[16:13应用](../../evidence/penpot-login-prefill-20261110/approved-applied.json)、[16:19原生后检](../../evidence/penpot-login-prefill-20261110/native-postcheck.json)与[真实LAN浏览器](../../evidence/penpot-login-prefill-20261110/browser-acceptance.json)已通过：11healthy/镜像match lock/ff clean、原密码与身份不变，无remember挂载；四种未授权Docker来源及伪造头均403。原表单默认值匹配、密码masked、原Continue进入dashboard，无新增控件；测试cookies/localStorage清理、session关闭。WG/CF端到端未签；[证据](../../evidence/penpot-login-prefill-20261110/README.md)、[手册](../../evidence/penpot-login-prefill-20261110/usage-manual.md)。

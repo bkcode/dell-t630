@@ -1,0 +1,11 @@
+{
+  "captured_at": "2026-11-10T15:46:12.795700+08:00",
+  "status": "browser-local-memory-runtime-11healthy",
+  "containers_healthy": 11,
+  "Git_HEAD": "ff1783e7865af7aae571c985f03e057631b7af63",
+  "Git_clean": true,
+  "images_and_server_credentials_source_unchanged": true,
+  "public_runtime_scripts_contain_real_credentials": false,
+  "browser_checkbox_is_opt_in": true,
+  "LAN_browser_successful_save_reload_and_forget_verification_pending": true
+}

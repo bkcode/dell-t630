@@ -1,0 +1,11 @@
+{
+  "status": "prepared-native-parser-and-exact11-config-passed",
+  "candidate_public_SHA256": {
+    "compose.fresh.yaml": "21051d4e8c4cd468c166aa03cd8f2df7b8793c5df04f75d978b9e064da981b0f",
+    "compose.health-supervision.yaml": "81d6012d6adbed955952dbe8d91e31ab6f8e22211d56f3eebc0f9d30173ee011",
+    "deployment-lock.json": "aa655f14e457fd98bd36076106b19f4a820875a8dd2bcd70e2d19f4d65c18ebb"
+  },
+  "Git_code_or_images_changed": false,
+  "original_owner_login_verified": true,
+  "real_password_output": false
+}

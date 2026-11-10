@@ -1,0 +1,15 @@
+{
+  "captured_at": "2026-11-10T16:13:05.205598+08:00",
+  "status": "prefill-enabled-existing-owner-and-source-ACL-verified",
+  "owner_email": "owner@dell.local",
+  "original_password_and_identity_file_unchanged": true,
+  "prefill_JSON_matches_existing_owner": true,
+  "unapproved_Docker_peer_with_spoofed_headers_status": "403",
+  "containers_healthy": 11,
+  "Git_HEAD": "ff1783e7865af7aae571c985f03e057631b7af63",
+  "Git_clean": true,
+  "image_references_unchanged": true,
+  "native_supervisor_contract_passed": true,
+  "password_values_or_hashes_output": false,
+  "real_client_LAN_browser_verification_pending": true
+}

@@ -87,3 +87,9 @@
 - 用户明确内部服务无需HTTPS。当前导航HTTP19.30:9080(免登录只读无顶栏全宽，source本地d56cae5)、FileBrowserHTTP19.80:8080(原resources/admin认证/权限保留)。PVE/iDRAC内置HTTPS本轮不强改；外部CloudflareTLS不是此内部范围。不得把HTTP等同无认证或自动关闭其它管理安全机制。
 - FileBrowser仅移除configTLSfields、launcherTLS读key、unitTLScredential；JWT/marker/UID2000/GID2980/NFS/state不动，原账号fresh登录与scope完整比对通过。health名filebrowser-http-health，不带ca_file，16targets与6资源服务保持。旧TLS材料/证据保留inactive，不作当前证书要求，不能回放旧HTTPS配置或freshinit重置原账号。
 - 本轮回执evidence/internal-http-20261110，源码Deploy4个本任务commit均本地，原4条用户未发布commit不代push；只同步导航FileBrowser链接HTTP，不启Java/Nexus合并/Penpot更新或改其它VM运行。
+
+## 2026-11-10 Penpot原表单默认填入
+
+- 用户明确拒绝新增UI/记住逻辑，随后明确授权原helper默认填入现有owner账号密码，并允许LAN192.168.21.0/24、WG10.66.66.0/24及本机未登录读取。该精确授权覆盖此前不公开选择；不可扩大至CF或任意Docker来源。秘密仅guest受保护文件，不写Git/普通文档。
+- 原UI已恢复，无checkbox/forget/localStorage保存逻辑；沿用镜像现有helper，不改其代码、不改密码、不迁设计数据。VM250仍Git ff1783e clean/同镜像，11healthy；授权LAN默认值与原继续按钮登录进入dashboard实测通过。非授权Docker来源四种伪造头组合均403；WG仅规则允许，未签本轮异地E2E。
+- 当前交付evidence/penpot-login-prefill-20261110/acceptance.json和usage-manual.md；browser-remember目录仅撤回历史，代码已归档private/deferred而非可部署方案。当前public脚本approved-worker.py是已执行的一次性事务，不盲重跑。后续bkcode/penpot main源码更新仍等用户推两条改造并通知，不因本次运行配置部署而自动拉旧远端。

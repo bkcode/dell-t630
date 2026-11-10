@@ -6,7 +6,7 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "ee849e5b748bb9a9e1e509a6db1a24c1b3554627e3c9b66c0ec4b36a288e2432"
+      "sha256": "74b4f8252218a0f07feb91d36a9c0fa0b02b351e6d043b9a2a2e1c677aed0c4d"
     },
     {
       "path": "11-live-handoff.md",
@@ -18,13 +18,13 @@
       "path": "12-service-access-and-operations.md",
       "type": "current-contract",
       "purpose": "当前19网入口及凭据保管规则。",
-      "sha256": "2f381d1e1ea77ccbb3ec5ce565eb36937daebbe70b0e9f80db4ac2528d2f0224"
+      "sha256": "ea56c9d739d250d34609e404500f41e79f7afde6cd1e88c957b98311294dd7c9"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
-      "sha256": "1ef7ba788d0c9ce1649dd53c3382ae307c7a53a63537dc6beb25849b810c0f12"
+      "sha256": "6f1724e4da5fb4ed18c86da0713791bcbd38f1c285b8b5e91ea8c7370df1d11f"
     },
     {
       "path": "cleanup/final-live-check.json",
@@ -72,13 +72,13 @@
       "path": "machines/vm250-penpot-service/git-source.json",
       "type": "current-contract",
       "purpose": "用户确认的bkcode/penpot main源码与更新合同；不证明远端最新或现场已更新",
-      "sha256": "43d36a6c536e0e3cafe2793f1a3c3f2ad7499ee77b6cf7371a205ac36ac19b98"
+      "sha256": "eaca70fa6d60a77f204240fd248c7a2fb95d8472d1dfbe3925053768fe73953a"
     },
     {
       "path": "machines/vm250-penpot-service/SOURCE-AND-UPDATES.md",
       "type": "current-contract",
       "purpose": "源码获取、固定main、版本保留、构建切换与数据边界",
-      "sha256": "2ff4d9e2ff47307ec6c6c175ef0de2f595546b3a6f1f601f9e0dcb54a0ff1760"
+      "sha256": "2b5da0559bc0ebc71844e0bf97c6cc1d352ebc0c04af0c9cf1f7d197563fcb10"
     },
     {
       "path": "infra/penpot/README.md",
@@ -265,6 +265,60 @@
       "type": "pending-candidate",
       "purpose": "VM250-only source update authorized but awaiting user push of preserved custom commits; no deployment executed",
       "sha256": "9668841a9b79005a516d2f0090eff58e915ef6791c7509258511c57f7045b40a"
+    },
+    {
+      "path": "infra/penpot/login-prefill/approved-worker.py",
+      "type": "current-contract",
+      "purpose": "Authorized original-form prefill; private values excluded; bounded proof does not authorize source updates or untested external E2E",
+      "sha256": "ea6e8a712c0a68f6ec9f31b048dacb3d350601a37f65f1c3933b75d5a434990e"
+    },
+    {
+      "path": "infra/penpot/login-prefill/selfhost-login.conf",
+      "type": "current-contract",
+      "purpose": "Authorized original-form prefill; private values excluded; bounded proof does not authorize source updates or untested external E2E",
+      "sha256": "d88c86636b95a875cee5fd1f5f65df77de4f67be61b94effcdd04dea69510aef"
+    },
+    {
+      "path": "evidence/penpot-login-prefill-20261110/README.md",
+      "type": "current-contract",
+      "purpose": "Authorized original-form prefill; private values excluded; bounded proof does not authorize source updates or untested external E2E",
+      "sha256": "2620bc8eda9df2b61c7ad81a28f2d68be78b4c5d8ba8112c34c87f0a286ca4c5"
+    },
+    {
+      "path": "evidence/penpot-login-prefill-20261110/usage-manual.md",
+      "type": "current-contract",
+      "purpose": "Authorized original-form prefill; private values excluded; bounded proof does not authorize source updates or untested external E2E",
+      "sha256": "d369df6844e72a7f707b3d49f60a22e1b8034d4afa13e3f7366d53c8b6a9a499"
+    },
+    {
+      "path": "evidence/penpot-login-prefill-20261110/acceptance.json",
+      "type": "historical-evidence",
+      "purpose": "Authorized original-form prefill; private values excluded; bounded proof does not authorize source updates or untested external E2E",
+      "sha256": "18fe2b56cbee9aa1c041fd5769376228469bd1f3d488233169aa18de3eacc25b"
+    },
+    {
+      "path": "evidence/penpot-login-prefill-20261110/explicit-approval.json",
+      "type": "historical-evidence",
+      "purpose": "Authorized original-form prefill; private values excluded; bounded proof does not authorize source updates or untested external E2E",
+      "sha256": "83590bbd9b192ad9813c9f82aa7e601f5186b20cfed82db8a80d6c69073da240"
+    },
+    {
+      "path": "evidence/penpot-login-prefill-20261110/approved-applied.json",
+      "type": "historical-evidence",
+      "purpose": "Authorized original-form prefill; private values excluded; bounded proof does not authorize source updates or untested external E2E",
+      "sha256": "db024d920aec8a3e4fbb6c1590f724d367df935701c80e2092415872a8e1cb1b"
+    },
+    {
+      "path": "evidence/penpot-login-prefill-20261110/native-postcheck.json",
+      "type": "historical-evidence",
+      "purpose": "Authorized original-form prefill; private values excluded; bounded proof does not authorize source updates or untested external E2E",
+      "sha256": "217291e236d62e1e85d15ac9dd97ff40b2ba55a7ff32738b500dde8bfa37f348"
+    },
+    {
+      "path": "evidence/penpot-login-prefill-20261110/browser-acceptance.json",
+      "type": "historical-evidence",
+      "purpose": "Authorized original-form prefill; private values excluded; bounded proof does not authorize source updates or untested external E2E",
+      "sha256": "d536a36bed1ab9b6b450167d674b23a81892a7a2e55914b2283875c426a3b542"
     }
   ],
   "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."

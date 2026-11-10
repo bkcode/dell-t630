@@ -1,0 +1,22 @@
+{
+  "recorded_at": "2026-11-10T16:22:42.748587+08:00",
+  "scope": "Actual agent-browser isolated session on authorized LAN; original helper and original login form",
+  "URL": "http://192.168.19.50:9001/",
+  "endpoint_HTTP": 200,
+  "cache_no_store": true,
+  "email_matches_existing_owner": true,
+  "password_matches_existing_owner": true,
+  "password_input_masked": true,
+  "original_continue_enabled": true,
+  "extra_checkboxes": 0,
+  "extra_remember_widgets": 0,
+  "extra_forget_buttons": 0,
+  "local_remember_record_absent": true,
+  "clicked_original_continue": true,
+  "authenticated_dashboard_reached": true,
+  "test_cookies_and_localStorage_cleared": true,
+  "test_browser_session_closed": true,
+  "credential_values_or_response_body_recorded": false,
+  "WG_offsite_client_E2E_tested": false,
+  "Cloudflare_E2E_tested": false
+}
