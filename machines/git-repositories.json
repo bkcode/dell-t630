@@ -78,7 +78,7 @@
       "repository": "bkcode/penpot",
       "web_url": "https://github.com/bkcode/penpot",
       "kind": "custom-application-source",
-      "purpose": "用户指定main；现役保留ff1783e改造，通过历史Git bundle导入，不从远端旧main覆盖",
+      "purpose": "用户指定main；已从公开Git取8a9b961保留37da/ff改造，原生关闭首次引导，仅构建selfhost frontend固定2.18.5base",
       "ssh_url": "git@github.com:bkcode/penpot.git",
       "branch_reference": "main (user required)"
     },
@@ -533,7 +533,7 @@
         "penpot-upstream"
       ],
       "git_usage_mode": "custom-code-imported",
-      "current_state_note": "现役main/ff1783e clean、无origin，11容器healthy；管理Mac专属key及临时clone通过，GitHub main仍9aedbb0缺两条现役改造。先补远端版本再另审部署，不从旧main覆盖。",
+      "current_state_note": "现役main/8a9b961 clean，公开HTTPS origin，11healthy；受控候选取码/构建和浏览器无首次引导均通过，无服务器Git私钥分发；仅frontend新镜像、其他10保持。",
       "direct_runtime_business_git_pull": false,
       "credential_references": [
         {
@@ -548,7 +548,9 @@
       ],
       "verification_evidence": [
         "evidence/git-repositories-20261110/penpot-deploy-key-verification.json",
-        "evidence/git-repositories-20261110/penpot-runtime-readonly.json"
+        "evidence/git-repositories-20261110/penpot-runtime-readonly.json",
+        "evidence/penpot-onboarding-20261110/v2-applied.json",
+        "evidence/penpot-onboarding-20261110/final-postcheck.json"
       ]
     },
     {
@@ -717,5 +719,5 @@
     "other_new_keys_read_tests_this_task": false,
     "keys_installed_on_servers_this_task": false
   },
-  "updated_at": "2026-11-10T14:28:52.439481+08:00"
+  "updated_at": "2026-11-10T17:47:33.723183+08:00"
 }

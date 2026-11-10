@@ -30,9 +30,11 @@ VM220计划读取`bkcode/deploy`和5个Puyu JVM后端，其中common-lib仅构�
 
 VM230/240当前仅运行基础，后续按批准收取构建制品，配置与秘密仍分别管理，不要求两机直接git pull或保存GitHub Deploy Keys。业务部署、运行分支和上线顺序后续单独确认，本表不是Java上线授权。
 
-## 本轮Penpot验证
+## Penpot历史读取与后续上线
 
 [管理Mac只读验证](../evidence/git-repositories-20261110/penpot-deploy-key-verification.json)：重命名后的penpot_ed25519专属key返回bkcode/penpot身份、main临时浅clone成功且目录已清。远端main实际9aedbb011cd803eb615225ca21f7f47cb8c2fa09，本地和[VM250现役](../evidence/git-repositories-20261110/penpot-runtime-readonly.json)为ff1783e7865af7aae571c985f03e057631b7af63，仍缺两条现役改造；不从远端旧版覆盖。服务器source目前无origin；本轮没有复制私钥/开启agent forwarding/配置服务器GitHub认证或更新程序。
+
+后续用户明确授权推送，已[取码部署8a9b961](../evidence/penpot-onboarding-20261110/README.md)，11healthy且新登录无引导。上述9aed/ff/无origin为13:20历史；当前VM250公开HTTPS origin取码，无Git私钥分发。
 
 ## Jellyfin与NAS
 

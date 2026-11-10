@@ -99,3 +99,10 @@
 - 用户明确本机Penpot的Puyu设计导入19.50；确认本机“Penpot MCP 验证”rev2821的三页全部为Puyu，仅这一文件官方导出/导入。目标owner默认team新增puyu项目与puyu文件，旧7文件data/版本/名称/项目保持，不删除或覆盖。
 - 新事务/etc/penpot/puyu-import-20261110.json与私有归档独立；不改旧application-id-map、不迁源身份、不PG整库覆盖、不盲重跑import。首次CLI启动回执20秒等待超时但实际unit继续，后台完成且已验证，不得按历史inflight重复导入。
 - 当前验收evidence/penpot-puyu-import-20261110/acceptance.json、手册同目录usage-manual.md。3页/58240图形/19组件统计一致，旧7文件完整data哈希保持，浏览器仅抽查组件/商城详情。此授权不是首次引导源码push：ec6f032仍本地且自动推送审批冲突待明确授权，不因此执行Git部署。自动备份仍仅正式DB/Nacos。
+
+## 2026-11-10 Penpot原生首次引导关闭上线
+
+- 用户在说明Penpot AGENTS禁止代理push及main变更影响后明确“进行推送”，覆盖本次该早期约定。已非force推ec6f及权限修正8a9b961到bkcode/penpot main，VM250公开HTTPS取固定8a，无Git私钥/token分发。不要再将9aed缺改造或等待用户push作为当前阻塞。
+- 当前source main/8a clean、frontend6cbd1f7，其它10镜像保持、11healthy；原生disable-onboarding关闭调研/团队欢迎/自动版本说明，手动建团队保留。新浏览器原预填登录直接dashboard，DOM引导0、欢迎/团队false，Puyu可见；账号/秘密/素材聚合/DB对象数保持，Puyu3页58240图形19组件后检通过。
+- 首次ec候选因umask077使COPY公开文件600不可读而失败；旧ff恢复经原生11healthy证明，启动限频仅reset该unit未删日志/关guard。8a显式COPY0644，v2增加BuildKit UID1001读取门禁，切换成功。失败源码/image/记录与回退恢复点保留；不盲重跑本次一次性脚本、fresh-init或改lock规避检查。
+- 当前验收evidence/penpot-onboarding-20261110/acceptance.json，手册同目录usage-manual.md。只构建selfhost包装，不声称全库2.19升级/全部组件同版重编；本轮数据保护检查不等于全设计像素/交互或完整灾备。备份仍仅正式DB/Nacos，其它VM运行不扩。

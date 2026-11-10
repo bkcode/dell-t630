@@ -711,7 +711,7 @@
     "resource_role_evidence": "completion/20261109-resources/Lark-role-installed.json",
     "resource_monitoring_postcheck": "completion/20261110-filebrowser/final-postcheck.json"
   },
-  "delivery_scope_manifest": "evidence/penpot-puyu-import-20261110/acceptance.json",
+  "delivery_scope_manifest": "evidence/penpot-onboarding-20261110/acceptance.json",
   "expected_role_count": 13,
   "network19_migration_manifest": "network19/migration-plan.json",
   "acceptance_templates": [
@@ -1328,5 +1328,31 @@
     "acceptance": "evidence/penpot-puyu-import-20261110/acceptance.json",
     "usage_manual": "evidence/penpot-puyu-import-20261110/usage-manual.md",
     "automatic_backup_scope_expanded": false
+  },
+  "Penpot_onboarding_deployment_20261110": {
+    "status": "deployed-and-browser-verified",
+    "repository": "bkcode/penpot",
+    "branch": "main",
+    "Git_HEAD": "8a9b96154d9dd81dcc373155ae30dba094127cc8",
+    "frontend_image": "sha256:6cbd1f7f3b90b77b3dcd4f6a65fa9c117861d2de0781df22bd8bad40f19c61bc",
+    "fixed_official_base": "2.18.5@sha256:d5bec7ab86328a2bce02b331291eab5833dcb56e403428ad07ccd6740be73735",
+    "original_login_custom_commits_preserved": [
+      "37da782",
+      "ff1783e"
+    ],
+    "native_disable_onboarding": true,
+    "manual_team_creation_preserved": true,
+    "welcome_and_first_team_setup_visible": false,
+    "healthy_containers": 11,
+    "other10_image_ids_preserved": true,
+    "private_files_assets_and_DB_object_counts_preserved": true,
+    "Puyu_shape_count": 58240,
+    "Puyu_component_count": 19,
+    "user_push_override_explicit": true,
+    "initial_attempt_failed_and_old_service_restored": true,
+    "unprivileged_image_read_gate_passed": true,
+    "acceptance": "evidence/penpot-onboarding-20261110/acceptance.json",
+    "usage_manual": "evidence/penpot-onboarding-20261110/usage-manual.md",
+    "WG_external_E2E_this_phase": false
   }
 }

@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-10T17:47:33.723183+08:00",
+  "status": "passed-first-login-onboarding-disabled",
+  "scope": "VM250 Git source and selfhost frontend only; fixed base, other10images/privatefiles/data preserved",
+  "cases": [
+    {
+      "id": "ONBOARD-GIT-001",
+      "title": "授权推送及服务端固定取码",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户原定push→pull→deploy，仅VM250；随后明确进行推送覆盖早先neverpush约定"
+      ],
+      "steps": [
+        "固定Git与构建/运行合同核验，首轮失败恢复后v2受控切换，真实新会话验收"
+      ],
+      "observable_pass_conditions": [
+        "用户说明风险后明确进行推送；ec6f及权限修正8a均push main",
+        "VM250从公开GitHub HTTPS取固定8a，保留37da/ff两改造，不分发key/token"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/penpot-onboarding-20261110/push-approved-and-verified.json",
+          "note": "Scoped public proof; no credential values, hashes of secrets, archives or designs"
+        },
+        {
+          "path": "evidence/penpot-onboarding-20261110/v2-prepare-status.json",
+          "note": "Scoped public proof; no credential values, hashes of secrets, archives or designs"
+        }
+      ],
+      "verified_at": "2026-11-10T17:47:33.723183+08:00"
+    },
+    {
+      "id": "ONBOARD-BUILD-001",
+      "title": "原生开关与非root读取",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户原定push→pull→deploy，仅VM250；随后明确进行推送覆盖早先neverpush约定"
+      ],
+      "steps": [
+        "固定Git与构建/运行合同核验，首轮失败恢复后v2受控切换，真实新会话验收"
+      ],
+      "observable_pass_conditions": [
+        "固定官方2.18.5base，仅selfhost4文件差异和frontend新镜像",
+        "explicit0644及UID1001实测公开wrapper/js/css/conf可读；ENTRYPOINT/CMD/AMD64/OCIrevision匹配"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/penpot-onboarding-20261110/v2-prepare-status.json",
+          "note": "Scoped public proof; no credential values, hashes of secrets, archives or designs"
+        }
+      ],
+      "verified_at": "2026-11-10T17:47:33.723183+08:00"
+    },
+    {
+      "id": "ONBOARD-RUNTIME-001",
+      "title": "受控切换、原合同与数据保持",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户原定push→pull→deploy，仅VM250；随后明确进行推送覆盖早先neverpush约定"
+      ],
+      "steps": [
+        "固定Git与构建/运行合同核验，首轮失败恢复后v2受控切换，真实新会话验收"
+      ],
+      "observable_pass_conditions": [
+        "Git8a clean、11healthy与新lock镜像/资源/挂载合同通过，other10imageID保持",
+        "私有文件/资产聚合与数据库对象数保持；Puyu仍3页58240图形19组件，不冒签全设计内容恢复"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/penpot-onboarding-20261110/v2-applied.json",
+          "note": "Scoped public proof; no credential values, hashes of secrets, archives or designs"
+        },
+        {
+          "path": "evidence/penpot-onboarding-20261110/final-postcheck.json",
+          "note": "Scoped public proof; no credential values, hashes of secrets, archives or designs"
+        }
+      ],
+      "verified_at": "2026-11-10T17:47:33.723183+08:00"
+    },
+    {
+      "id": "ONBOARD-UI-001",
+      "title": "真实首次登录无引导",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户原定push→pull→deploy，仅VM250；随后明确进行推送覆盖早先neverpush约定"
+      ],
+      "steps": [
+        "固定Git与构建/运行合同核验，首轮失败恢复后v2受控切换，真实新会话验收"
+      ],
+      "observable_pass_conditions": [
+        "全新会话原预填登录进入dashboard，nativeflags开启disable-onboarding",
+        "欢迎/团队引导false、onboardingDOM0，Puyu可见，测试认证资料清除"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/penpot-onboarding-20261110/browser-acceptance.json",
+          "note": "Scoped public proof; no credential values, hashes of secrets, archives or designs"
+        },
+        {
+          "path": "evidence/penpot-onboarding-20261110/final-postcheck.json",
+          "note": "Scoped public proof; no credential values, hashes of secrets, archives or designs"
+        }
+      ],
+      "verified_at": "2026-11-10T17:47:33.723183+08:00"
+    },
+    {
+      "id": "ONBOARD-RECOVERY-001",
+      "title": "失败历史与恢复透明",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户原定push→pull→deploy，仅VM250；随后明确进行推送覆盖早先neverpush约定"
+      ],
+      "steps": [
+        "固定Git与构建/运行合同核验，首轮失败恢复后v2受控切换，真实新会话验收"
+      ],
+      "observable_pass_conditions": [
+        "首轮ec600权限失败保留，原ff11healthy恢复实证；仅reset单unit失败计数，无删日志/关guard",
+        "v2修正公开COPY0644并增UID1001读检；维护/未来更新不重跑freshinit或历史失败事务"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/penpot-onboarding-20261110/startup-diagnostic-first.json",
+          "note": "Scoped public proof; no credential values, hashes of secrets, archives or designs"
+        },
+        {
+          "path": "evidence/penpot-onboarding-20261110/old-service-restored.json",
+          "note": "Scoped public proof; no credential values, hashes of secrets, archives or designs"
+        },
+        {
+          "path": "evidence/penpot-onboarding-20261110/recovery-rate-limit-reset.json",
+          "note": "Scoped public proof; no credential values, hashes of secrets, archives or designs"
+        },
+        {
+          "path": "evidence/penpot-onboarding-20261110/v2-prepare-status.json",
+          "note": "Scoped public proof; no credential values, hashes of secrets, archives or designs"
+        },
+        {
+          "path": "evidence/penpot-onboarding-20261110/usage-manual.md",
+          "note": "Scoped public proof; no credential values, hashes of secrets, archives or designs"
+        }
+      ],
+      "verified_at": "2026-11-10T17:47:33.723183+08:00"
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "current_phase_case_count": 5,
+    "current_phase_passed": 5
+  }
+}

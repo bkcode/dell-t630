@@ -1,0 +1,79 @@
+{
+  "unit": {
+    "Result": "success",
+    "ExecMainStatus": "0",
+    "LoadState": "not-found",
+    "ActiveState": "inactive",
+    "SubState": "dead"
+  },
+  "output": {
+    "status": "prepared-from-GitHub-no-runtime-switch",
+    "target": "ec6f0322fe02e963bbef3903a31ebe1c99d6f04e",
+    "candidate_source": "/opt/dell/penpot/source-onboarding-ec6f0322fe02",
+    "rollback_source": "/opt/dell/penpot/source-before-onboarding-ec6f0322fe02",
+    "new_frontend": {
+      "id": "sha256:e1335a2a97870efcc16bf33bc068bac30d8d6c2051f772bdb7d5f9b1f10a7e1b",
+      "arch": "amd64",
+      "os": "linux",
+      "entrypoint": [
+        "/bin/bash",
+        "/selfhost-entrypoint.sh"
+      ],
+      "cmd": [
+        "nginx",
+        "-g",
+        "daemon off;"
+      ],
+      "revision": "ec6f0322fe02e963bbef3903a31ebe1c99d6f04e"
+    },
+    "tag": "dell-penpot-frontend:2.18.5-ec6f0322fe02-amd64",
+    "source_changes": [
+      "frontend/selfhost/Dockerfile",
+      "frontend/selfhost/README.md",
+      "frontend/selfhost/entrypoint.sh",
+      "frontend/selfhost/entrypoint.test.mjs"
+    ],
+    "public_SHA256": {
+      "compose.fresh.yaml": "19710affc15a4acb85ae31cd0bf6f9d6eacd44b9dc3bdfc69ee10661468d87dc",
+      "runtime/health-supervision/compose.health-supervision.yaml": "713cf3610ace61ed7b3d77c0d93a9b2f2dca68af445a54e8c13e51225c9da1a4",
+      "runtime/health-supervision/deployment-lock.json": "b4b9e66f3e8f20658b5e56ae1dbd8a46da42f90e443e32e30984c3ad521d6798"
+    },
+    "private_key_or_token_distributed": false,
+    "old11_healthy": true
+  },
+  "prepared": {
+    "status": "prepared-from-GitHub-no-runtime-switch",
+    "target": "ec6f0322fe02e963bbef3903a31ebe1c99d6f04e",
+    "candidate_source": "/opt/dell/penpot/source-onboarding-ec6f0322fe02",
+    "rollback_source": "/opt/dell/penpot/source-before-onboarding-ec6f0322fe02",
+    "new_frontend": {
+      "id": "sha256:e1335a2a97870efcc16bf33bc068bac30d8d6c2051f772bdb7d5f9b1f10a7e1b",
+      "arch": "amd64",
+      "os": "linux",
+      "entrypoint": [
+        "/bin/bash",
+        "/selfhost-entrypoint.sh"
+      ],
+      "cmd": [
+        "nginx",
+        "-g",
+        "daemon off;"
+      ],
+      "revision": "ec6f0322fe02e963bbef3903a31ebe1c99d6f04e"
+    },
+    "tag": "dell-penpot-frontend:2.18.5-ec6f0322fe02-amd64",
+    "source_changes": [
+      "frontend/selfhost/Dockerfile",
+      "frontend/selfhost/README.md",
+      "frontend/selfhost/entrypoint.sh",
+      "frontend/selfhost/entrypoint.test.mjs"
+    ],
+    "public_SHA256": {
+      "compose.fresh.yaml": "19710affc15a4acb85ae31cd0bf6f9d6eacd44b9dc3bdfc69ee10661468d87dc",
+      "runtime/health-supervision/compose.health-supervision.yaml": "713cf3610ace61ed7b3d77c0d93a9b2f2dca68af445a54e8c13e51225c9da1a4",
+      "runtime/health-supervision/deployment-lock.json": "b4b9e66f3e8f20658b5e56ae1dbd8a46da42f90e443e32e30984c3ad521d6798"
+    },
+    "private_key_or_token_distributed": false,
+    "old11_healthy": true
+  }
+}

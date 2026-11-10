@@ -386,7 +386,7 @@
     "phase_cases_passed": 9,
     "phase_case_count": 9,
     "guest_postcheck": "completion/20261109/guests-post-backup.json",
-    "latest_followup_manifest": "evidence/penpot-puyu-import-20261110/acceptance.json"
+    "latest_followup_manifest": "evidence/penpot-onboarding-20261110/acceptance.json"
   },
   "backup_scope_update20261109": {
     "status": "completed-native-verified",
@@ -596,15 +596,19 @@
   },
   "Penpot_source_update_20261110": {
     "recorded_at": "2026-11-10T13:32:03.400526+08:00",
-    "status": "awaiting-user-push-preserve-current-customizations",
+    "status": "completed-by-user-authorized-main-push-and-controlled-deployment",
     "user_scope": "Git pull/build/deploy only VM250; all machine documentation continues; other server runtime unchanged",
     "requested_repository": "bkcode/penpot",
     "branch": "main",
-    "currently_observed_remote": "9aedbb011cd803eb615225ca21f7f47cb8c2fa09",
+    "currently_observed_remote": "8a9b96154d9dd81dcc373155ae30dba094127cc8",
     "preserve_local_and_current_server": "ff1783e7865af7aae571c985f03e057631b7af63",
     "user_selected": "user will push the two existing custom commits to GitHub main and notify assistant before continuing",
-    "server_Git_fetch_build_switch_or_key_distribution_this_task": false,
-    "next_action_after_user_notification": "requery main; verify custom commits included and exact code diff; review and execute VM250-only deployment with existing data/identity and supervisor guards"
+    "server_Git_fetch_build_switch_or_key_distribution_this_task": true,
+    "next_action_after_user_notification": "completed; future updates require new fixed commit review",
+    "currently_deployed": "8a9b96154d9dd81dcc373155ae30dba094127cc8",
+    "Git_private_key_distribution": false,
+    "previous_user_selected_is_historical": true,
+    "acceptance": "evidence/penpot-onboarding-20261110/acceptance.json"
   },
   "service_navigation_20261110": {
     "status": "native-readonly-browser-restart-and-monitoring-verified",
@@ -714,5 +718,31 @@
     "acceptance": "evidence/penpot-puyu-import-20261110/acceptance.json",
     "usage_manual": "evidence/penpot-puyu-import-20261110/usage-manual.md",
     "automatic_backup_scope_expanded": false
+  },
+  "Penpot_onboarding_deployment_20261110": {
+    "status": "deployed-and-browser-verified",
+    "repository": "bkcode/penpot",
+    "branch": "main",
+    "Git_HEAD": "8a9b96154d9dd81dcc373155ae30dba094127cc8",
+    "frontend_image": "sha256:6cbd1f7f3b90b77b3dcd4f6a65fa9c117861d2de0781df22bd8bad40f19c61bc",
+    "fixed_official_base": "2.18.5@sha256:d5bec7ab86328a2bce02b331291eab5833dcb56e403428ad07ccd6740be73735",
+    "original_login_custom_commits_preserved": [
+      "37da782",
+      "ff1783e"
+    ],
+    "native_disable_onboarding": true,
+    "manual_team_creation_preserved": true,
+    "welcome_and_first_team_setup_visible": false,
+    "healthy_containers": 11,
+    "other10_image_ids_preserved": true,
+    "private_files_assets_and_DB_object_counts_preserved": true,
+    "Puyu_shape_count": 58240,
+    "Puyu_component_count": 19,
+    "user_push_override_explicit": true,
+    "initial_attempt_failed_and_old_service_restored": true,
+    "unprivileged_image_read_gate_passed": true,
+    "acceptance": "evidence/penpot-onboarding-20261110/acceptance.json",
+    "usage_manual": "evidence/penpot-onboarding-20261110/usage-manual.md",
+    "WG_external_E2E_this_phase": false
   }
 }

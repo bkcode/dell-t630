@@ -37,7 +37,7 @@
 
 221仍独立19.31/原Nexus卷，220仍4CPU4GiB/主IP19.30、0Nexus容器；6CPU8GiB+31alias只在[目标架构](17-publish-artifact-consolidation.md)中，未应用。发布key只220，CF备份只PVE；不得整机备份220或以清理名义删除源221数据。
 
-230/240各一，仅运行基础，无Java业务进程/自启；publisher仍fenced。Penpot保留实际ff1783e版本，用户指定的bkcode/penpot main是未来更新合同，本轮未取码/构建/升级。
+230/240各一，仅运行基础，无Java业务进程/自启；publisher仍fenced。Penpot已按用户明确授权取bkcode/penpot main/8a9b961，仅新建固定2.18.5基础的selfhost frontend；11healthy、首次引导关闭、原登录/Puyu保持。此前ff/无origin读取仅历史，当前交付见evidence/penpot-onboarding-20261110。
 
 ## 测试Nacos配置迁移已完成
 

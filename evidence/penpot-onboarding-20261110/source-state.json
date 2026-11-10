@@ -1,0 +1,33 @@
+{
+  "captured_at": "2026-11-10T16:44:19.320186+08:00",
+  "status": "deployed-and-fully-scoped-verified",
+  "repository": "bkcode/penpot",
+  "branch": "main",
+  "local_commit": "8a9b96154d9dd81dcc373155ae30dba094127cc8",
+  "observed_remote_main": "8a9b96154d9dd81dcc373155ae30dba094127cc8",
+  "existing_login_custom_commits_preserved": [
+    "37da782",
+    "ff1783e"
+  ],
+  "new_behavior": "native disable-onboarding in selfhost wrapper; firstlogin survey/teamsetup/autoreleasenotes disabled; manualteams preserved",
+  "tests": {
+    "entrypoint_native_node_tests": 4,
+    "passed": 4,
+    "bash_syntax": "passed",
+    "node_syntax": "passed",
+    "commit_message_validation": "passed",
+    "diff_whitespace": "passed"
+  },
+  "push_attempt_accepted": true,
+  "push_or_remote_change_performed": true,
+  "deployment_script": "infra/penpot/source-update/no-onboarding.py",
+  "deployment_script_uploaded_or_executed": true,
+  "server_source_fetched_or_switched": true,
+  "current_server_HEAD": "8a9b96154d9dd81dcc373155ae30dba094127cc8",
+  "current_server_preflight_healthy": 11,
+  "no_private_key_or_token_distribution_needed": "GitHub API confirmed public repo; deployment will fetch HTTPS without credentials",
+  "approval_receipt": "evidence/penpot-onboarding-20261110/push-approved-and-verified.json",
+  "initial_ec6f_attempt_failed_and_old_service_restored": true,
+  "real_browser_verified": true,
+  "historical_initial_automatic_rejection_reason": "Trusted Penpot AGENTS.md forbids agent git push and requires user push; reviewer requires explicit approval after informing user of conflict and remote main change risk"
+}

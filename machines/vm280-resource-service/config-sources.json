@@ -7,7 +7,7 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "角色/IP/预算/启动顺序唯一合同，根任务维护。",
-      "sha256": "bb22b66a092a143f51aae89cc64c0472eb915ecfc214e50a8196fbd98c53979f"
+      "sha256": "e40290977280e6cf3851774f6ea01c7986d48ea207619b7efe245e4eb5763afa"
     },
     {
       "path": "19-manual-operations.md",
@@ -169,13 +169,13 @@
       "path": "machines/git-repositories.json",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "6f9f33ac463c91441efe26ad88b2ee1c21f6ca0270acb09c9daa7f67f64c0799"
+      "sha256": "c57454a82c0bc8edd15ca13437dad0a48ff3c09b2aa8c65ca6695b493e89a200"
     },
     {
       "path": "machines/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "b27b3668337bde07df8750f08db405115e37411a1ae2f730816f7fe8f512c76f"
+      "sha256": "abe3ccf08a07e4960b4d9e2a6b8edf2a7e5090889ff728a3c33a99d46f0a6a74"
     },
     {
       "path": "machines/vm280-resource-service/GIT-REPOSITORIES.md",

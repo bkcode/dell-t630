@@ -2,12 +2,12 @@
 
 更新：2026-11-10，Asia/Shanghai。本文从唯一[Git来源总表](../git-repositories.json)的`/machines/10`派生；机器位置`machines/vm250-penpot-service`，身份与资源仍以[plan.json](../../plan.json)为准。
 
-**这是来源/计划文档，不是已clone、部署、分发Git私钥或重跑初始化的证明。** 本轮本文只本地写入，没有SSH、git clone/fetch/pull/push、构建或服务操作。现役状态、上游参考与后续源码计划分开解释。
+本表记录来源与取用边界；当前受控取码与上线由[实际交付证据](../../evidence/penpot-onboarding-20261110/README.md)证明，不能将它当通用bootstrap或私钥分发授权。
 
 ## 本机结论
 
-- Git使用方式：**历史定制源码导入；未启用直接远端更新**（`custom-code-imported`）。
-- 当前说明：现役main/ff1783e clean、无origin，11容器healthy；管理Mac专属key及临时clone通过，GitHub main仍9aedbb0缺两条现役改造。先补远端版本再另审部署，不从旧main覆盖。
+- Git使用方式：**定制源码；已完成候选目录受控远端取码**（`custom-code-imported`）。
+- 当前说明：现役main/8a9b961 clean，公开HTTPS origin，11healthy；受控候选取码/构建和浏览器无首次引导均通过，无服务器Git私钥分发；仅frontend新镜像、其他10保持。
 - 所有基础设施公开配置由`infra` → [bkcode/dell-t630](https://github.com/bkcode/dell-t630)统一管理；这不表示本机保存了该Git工作树，也不授权自动pull/执行bootstrap。
 
 本机相关配置路径：[infra/penpot](../../infra/penpot)、[infra/penpot/runtime/health-supervision](../../infra/penpot/runtime/health-supervision)。旧执行器仍有具体UUID/角色/授权门禁，不能从这些链接批量重放。
@@ -16,7 +16,7 @@
 
 | ID | 仓库 | 分支/引用语义 | 用途与边界 |
 | --- | --- | --- | --- |
-| `penpot` | [bkcode/penpot](https://github.com/bkcode/penpot) | main (user required) | 用户指定main；现役保留ff1783e改造，通过历史Git bundle导入，不从远端旧main覆盖 |
+| `penpot` | [bkcode/penpot](https://github.com/bkcode/penpot) | main (user required) | 用户指定main；已从公开Git取8a9b961保留37da/ff改造，原生关闭首次引导，仅构建selfhost frontend固定2.18.5base |
 
 ## 共享库依赖来源
 
@@ -30,13 +30,13 @@
 
 官方上游链接用于追踪组件来源，不表示本机从源码编译、已有origin或跟随默认分支；实际版本/镜像digest/包版本以机器合同和对应实现的带时点回执为准。
 
-## 本次Penpot读取验证与现场的差别
+## 13:18–13:20历史读取验证
 
 [管理Mac Deploy Key验证](../../evidence/git-repositories-20261110/penpot-deploy-key-verification.json)证明repository-scoped身份可读取main，并做了**浅历史克隆＋完整工作树**核查；GitHub与临时checkout为`9aedbb011cd803eb615225ca21f7f47cb8c2fa09`。临时目录已移除，没有push、复制私钥、转发agent或服务端部署。它不等于下载了完整Git历史。
 
 [来宾只读现场](../../evidence/git-repositories-20261110/penpot-runtime-readonly.json)13:20观察`/opt/dell/penpot/source`为main/`ff1783e7865af7aae571c985f03e057631b7af63`、clean、remote列表为空、origin字段不存在；11容器running/healthy。unit累计NRestarts=22，不能因为容器RestartCount0就称unit没有重启。此轮未诊断累计重启、未启停服务。
 
-远端main与现役ff不同，不能从克隆验证推断服务器已升级或直接拉取已配置；保留本地两条改造，未来任何更新先核不可丢失的改动、选定immutable commit，再单独获准构建/发布。官方penpot/penpot只是上游，不替代用户bkcode/penpot。
+该历史时点远端main与当时现役ff不同，不能从旧克隆验证推断部署；保留本地两条改造，未来任何更新先核不可丢失的改动、选定immutable commit，再单独获准构建/发布。官方penpot/penpot只是上游，不替代用户bkcode/penpot。
 
 ## 仓库认证元数据（不是服务器已安装证明）
 

@@ -1,16 +1,30 @@
-> 文档状态（2026-11-08）：本页为阶段实施/技术记录，旧网段、角色数和通过结果按原时点解释。基础已恢复；本轮仅补齐与清理，用户暂不迁移/合并，Mac外部探针不需要。当前配置见[访问清单](../../12-service-access-and-operations.md)，范围与恢复证据见[最新交接](../../11-live-handoff.md)；旧初始化器不得重跑。
+# Penpot：Git改造版与应用级迁移
 
-> 当前生产式运行入口（2026-11-06）：使用`dell-penpot.service`及[runtime/health-supervision](runtime/health-supervision/README.md)的notify持续监督、11健康检查/镜像ID锁/PIDs；旧fresh-target只作为初始化bootstrap，不是持续管理入口。真实frontend故障自动恢复和guest重启已验证，原数据/Git/身份保持。
+更新：2026-11-10（Asia/Shanghai）。现役VM250为`bkcode/penpot/main`固定提交8a9b9615、frontend6cbd，去首次引导已通过原生与真实浏览器验收；原UI默认填入及Puyu数据保持。持续运行入口是`dell-penpot.service`及[runtime/health-supervision](runtime/health-supervision/README.md)，不重跑fresh初始化。下方初装bundle/空密码/3设计/ff镜像内容均按历史时点解释，不能覆盖当前配置。
 
-# Penpot：Git 改造版与应用级迁移
+## 首次登录引导已关闭：当前main/8a9b9615
 
-> 当前源码合同：使用 **[bkcode/penpot](https://github.com/bkcode/penpot) 的 main 分支**，固定仓库`git@github.com:bkcode/penpot.git`或`https://github.com/bkcode/penpot.git`。后续直接从该仓库显式取main并锁定审核commit，不跟随默认分支。详见[VM250源码与更新](../../machines/vm250-penpot-service/SOURCE-AND-UPDATES.md)。本页初次迁移的bundle、旧IP及版本数字保留历史意义；11月8日基础服务已恢复，未执行程序更新，PAT自动认证另行处理。
+当前部署提交为`8a9b96154d9dd81dcc373155ae30dba094127cc8`，main工作树clean；frontend为`sha256:6cbd1f7f3b90b77b3dcd4f6a65fa9c117861d2de0781df22bd8bad40f19c61bc`（`dell-penpot-frontend:2.18.5-8a9b96154d9d-amd64`）。只重建固定官方2.18.5 base上的selfhost wrapper，其余10个镜像不变；没有编译完整2.19套件或迁移数据库。Git-owned入口追加官方`disable-onboarding`再exec原官方入口/CMD，关闭首次调研、首次团队设置及自动版本说明，保留手动创建团队与原登录表单/默认填入。
 
-最后验收状态：**VM250 的完整11服务、3个活动设计官方`.penpot`包导出/导入、新身份、素材与结构均已有通过记录；11月8日已复验11服务健康，但本轮未重新验证全部设计内容。** Mac 源保持运行，未改源设计；没有复制旧部署密钥、密码、cookie、session 或 MCP key。
+[17:41应用](../../evidence/penpot-onboarding-20261110/v2-applied.json)确认新source与frontend切换、11healthy、其它10镜像及受保护私有文件/素材/对象计数保持；[17:44真实浏览器](../../evidence/penpot-onboarding-20261110/browser-acceptance.json)从原表单预填登录进入dashboard，`disable-onboarding`为true、引导元素0、欢迎及首次团队设置均未出现、Puyu项目可见、无Internal Error。截图仅private且已人工视觉复核，测试cookies/localStorage已清、session关闭，没有修改profile或设计。
 
-这是当前执行入口。旧准备流程保存在 [HISTORY-preparation.md](HISTORY-preparation.md)，其中源身份复制、PG 全库恢复、旧安全 frontend 归档仅作历史审核，不再作为本次迁移路线。
+[17:46最终后检](../../evidence/penpot-onboarding-20261110/final-postcheck.json)再次确认HEAD/clean、11healthy且镜像match lock、unit active与监督check通过、原生flags启用、Puyu仍3页/58,240图形/19组件；未授权Docker伪造头请求403。应用回执中的browser pending仅是17:41阶段状态，已由随后浏览器证据补齐，不改写历史回执。
 
-## Git 与运行版本
+## 首轮失败与恢复历史
+
+用户在风险说明后明确“进行推送”，[授权/非force推送复核](../../evidence/penpot-onboarding-20261110/push-approved-and-verified.json)记录main由9aed先到ec6f，保留37da/ff两条原登录改造。ec6f首次prepare通过后实际启动失败：[诊断](../../evidence/penpot-onboarding-20261110/startup-diagnostic-first.json)显示umask077产生0600公开文件，Docker COPY保留该权限，penpot UID无法读取wrapper；不能将该候选称为成功上线。
+
+[旧服务恢复实证](../../evidence/penpot-onboarding-20261110/old-service-restored.json)随后确认ff与11healthy，专门rollback receipt缺失如实保留；[失败速率计数复位](../../evidence/penpot-onboarding-20261110/recovery-rate-limit-reset.json)没有删除日志或关闭guard。修复commit8a为四项COPY显式加`--chmod=0644`，[v2准备](../../evidence/penpot-onboarding-20261110/v2-prepare-status.json)增加UID1001对wrapper/JS/CSS/conf的可读检查，通过后才切换。旧ff/9aed证据、首次失败及恢复证据仍保留，不冒称首次部署即成功。
+
+## 当前配置与设计增量
+
+原UI默认填入依据[明确授权及验收](../../evidence/penpot-login-prefill-20261110/README.md)：guest私有0600 JSON通过ACL向LAN21/24、WG10.66.66/24、self19.50/loopback提供原owner账号密码，允许来源未登录可读是用户已知授权；CF/其它拒。原helper/表单保留，remember控件/localStorage逻辑已撤回。此次8a更新保留该secret、ACL、no-store及query-safe日志，当前WG/CF端到端未签。
+
+Puyu项目/文件已另项官方导入，现共8文件、旧7保持，3页/58,240图形/19组件，源Mac保留；[Puyu验收](../../evidence/penpot-puyu-import-20261110/acceptance.json)与[使用手册](../../evidence/penpot-puyu-import-20261110/usage-manual.md)。不将设计导入冒作源码部署，也不将本次源码更新扩大为设计内容/完整恢复验收。
+
+源码合同见[VM250源码与更新](../../machines/vm250-penpot-service/SOURCE-AND-UPDATES.md)，更新过程与旧只读分析见[PLAN](source-update/PLAN.md)。旧准备流程[HISTORY-preparation.md](HISTORY-preparation.md)中的源身份复制、PG全库恢复等不再作执行路线。Nexus不合并、Java不启、Mac外部探针不恢复，正式DB/Nacos之外备份不扩围。
+
+## 初装历史：Git 与运行版本
 
 - 原项目：`/Users/yangzhaohui/work/www/harness/penpot`，origin `git@github.com:bkcode/penpot.git`、branch main。
 - 精确部署 HEAD：`ff1783e7865af7aae571c985f03e057631b7af63`，包含 remote/main `9aedbb011cd803eb615225ca21f7f47cb8c2fa09` 之后的两个本地已提交改造。原 worktree clean；只 fetch 原 origin，没有 pull/checkout/commit/push 或丢弃改造。
@@ -25,7 +39,7 @@
 
 ## 目标与身份
 
-- 当前配置：VM250 `penpot-service` / `192.168.19.50`，LAN入口 `http://192.168.19.50:9001/`；故障后在线状态未复验。旧10.63.30.30与21.22:9001仅属初装阶段，已不作为访问入口。
+- 地址合同：VM250 `penpot-service` / `192.168.19.50`，LAN入口 `http://192.168.19.50:9001/`；11月9日基础与11月10日增量各有独立复验，按上方新证据解释。旧10.63.30.30与21.22:9001仅属初装阶段，已不作为访问入口。
 - 管理登录：ub + 客户端密钥，使用主AI已验证的控制通道；不关闭host key验证。
 - 应用包：`/opt/dell/penpot`；Git源码单独在 `source/`，部署适配不修改tracked源码。
 - 新 owner：`owner@dell.local`；新 worker：`mcp-worker@dell.local`。密码由目标本机随机生成，保存在 `/etc/penpot/new-identities.json`（root/0600），不写普通文档或聊天。

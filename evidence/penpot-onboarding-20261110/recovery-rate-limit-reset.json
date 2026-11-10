@@ -1,0 +1,8 @@
+{
+  "old_source_and_lock_verified": true,
+  "original_supervisor_check_passed": true,
+  "only_service_failure_rate_counter_reset": true,
+  "old_service_start_requested": true,
+  "logs_deleted": false,
+  "security_guards_disabled": false
+}

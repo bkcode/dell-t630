@@ -1,18 +1,32 @@
-> 更新：2026-11-10（Asia/Shanghai）。个人浏览器记忆方案已撤回；新授权原UI默认填入已通过LAN浏览器与原生验收，核心Git/镜像更新仍等待用户推送；此前基础fresh审计已复核；当日实时收尾状态统一见[11月9日交付记录](../../completion/20261109-prod-db-scope/README.md)。本页仅本地同步带时点证据，不执行服务器操作；不迁移数据、不合并Nexus、不启动Java业务、不升级Penpot核心或镜像，不需要Mac外部探针。
+> 更新：2026-11-10（Asia/Shanghai）。VM250已部署bkcode/penpot main/8a9b9615并关闭首次引导；17:41应用、17:44浏览器与17:46最终后检通过，11healthy。原UI默认填入与Puyu8文件保持，首轮失败/恢复历史保留；不合并Nexus、不启动Java、无Mac外部探针。
 
 # VM250 · penpot-service
 
 Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/计划与已部署状态分开；不表示本机已clone或已分发key）。
 
+## 首次登录引导已关闭：当前main/8a9b9615
+
+当前部署提交为`8a9b96154d9dd81dcc373155ae30dba094127cc8`，main工作树clean；frontend为`sha256:6cbd1f7f3b90b77b3dcd4f6a65fa9c117861d2de0781df22bd8bad40f19c61bc`（`dell-penpot-frontend:2.18.5-8a9b96154d9d-amd64`）。只重建固定官方2.18.5 base上的selfhost wrapper，其余10个镜像不变；没有编译完整2.19套件或迁移数据库。Git-owned入口追加官方`disable-onboarding`再exec原官方入口/CMD，关闭首次调研、首次团队设置及自动版本说明，保留手动创建团队与原登录表单/默认填入。
+
+[17:41应用](../../evidence/penpot-onboarding-20261110/v2-applied.json)确认新source与frontend切换、11healthy、其它10镜像及受保护私有文件/素材/对象计数保持；[17:44真实浏览器](../../evidence/penpot-onboarding-20261110/browser-acceptance.json)从原表单预填登录进入dashboard，`disable-onboarding`为true、引导元素0、欢迎及首次团队设置均未出现、Puyu项目可见、无Internal Error。截图仅private且已人工视觉复核，测试cookies/localStorage已清、session关闭，没有修改profile或设计。
+
+[17:46最终后检](../../evidence/penpot-onboarding-20261110/final-postcheck.json)再次确认HEAD/clean、11healthy且镜像match lock、unit active与监督check通过、原生flags启用、Puyu仍3页/58,240图形/19组件；未授权Docker伪造头请求403。应用回执中的browser pending仅是17:41阶段状态，已由随后浏览器证据补齐，不改写历史回执。
+
+## 首轮失败与恢复历史
+
+用户在风险说明后明确“进行推送”，[授权/非force推送复核](../../evidence/penpot-onboarding-20261110/push-approved-and-verified.json)记录main由9aed先到ec6f，保留37da/ff两条原登录改造。ec6f首次prepare通过后实际启动失败：[诊断](../../evidence/penpot-onboarding-20261110/startup-diagnostic-first.json)显示umask077产生0600公开文件，Docker COPY保留该权限，penpot UID无法读取wrapper；不能将该候选称为成功上线。
+
+[旧服务恢复实证](../../evidence/penpot-onboarding-20261110/old-service-restored.json)随后确认ff与11healthy，专门rollback receipt缺失如实保留；[失败速率计数复位](../../evidence/penpot-onboarding-20261110/recovery-rate-limit-reset.json)没有删除日志或关闭guard。修复commit8a为四项COPY显式加`--chmod=0644`，[v2准备](../../evidence/penpot-onboarding-20261110/v2-prepare-status.json)增加UID1001对wrapper/JS/CSS/conf的可读检查，通过后才切换。旧ff/9aed证据、首次失败及恢复证据仍保留，不冒称首次部署即成功。
+
 ## 原UI默认填入（2026-11-10新明确授权）
 
-用户要求原UI、不新增逻辑，并[明确授权](../../evidence/penpot-login-prefill-20261110/explicit-approval.json)LAN21/24、WG10.66.66/24、VM250 self19.50/loopback的未登录访客可读取原owner密码并默认填入。现役沿用ff原helper与表单，只换原JSON运行secret来源、加一个NGINX来源ACL只读挂载并同步监督lock；CF19.5/其他来源拒绝。不新增checkbox/forget/localStorage、不build/换镜像、不取新码、不重置owner/MCP或改设计。打开原页刷新、点击原“继续/登录”，不自动提交。
+用户要求原UI、不新增逻辑，并[明确授权](../../evidence/penpot-login-prefill-20261110/explicit-approval.json)LAN21/24、WG10.66.66/24、VM250 self19.50/loopback的未登录访客可读取原owner密码并默认填入。现役保留原helper与表单；16:13预填任务只换原JSON运行secret来源、加一个NGINX来源ACL只读挂载并同步监督lock；CF19.5/其他来源拒绝。该预填任务未新增checkbox/forget/localStorage、未build/换镜像或取新码，未重置owner/MCP或改设计；后续去引导source/frontend更新见上节。打开原页刷新、点击原“继续/登录”，不自动提交。
 
-此前个人浏览器记忆UI/逻辑已[16:05恢复原样](../../evidence/penpot-browser-remember-20261110/restored-original.json)，11healthy、ff clean及镜像保持；其说明只作已撤回历史。[16:13应用](../../evidence/penpot-login-prefill-20261110/approved-applied.json)、[16:19原生后检](../../evidence/penpot-login-prefill-20261110/native-postcheck.json)与[真实LAN浏览器](../../evidence/penpot-login-prefill-20261110/browser-acceptance.json)已通过：11healthy、镜像match lock、Git ff1783e clean、无remember挂载；四种未授权Docker/伪造头请求403。原表单默认值匹配原owner、密码masked，原Continue可登录dashboard，无新增控件；测试cookies/localStorage清理、session关闭。当前WG/CF端到端未签。原账号密码保留，实际值只在受保护Mac/guest文件及guest0600运行JSON，不入文档/Git。源Git更新仍等用户推两条既有改造的独立门禁，详见[本次证据](../../evidence/penpot-login-prefill-20261110/README.md)与[手册](../../evidence/penpot-login-prefill-20261110/usage-manual.md)。
+此前个人浏览器记忆UI/逻辑已[16:05恢复原样](../../evidence/penpot-browser-remember-20261110/restored-original.json)，11healthy、ff clean及镜像保持；其说明只作已撤回历史。[16:13应用](../../evidence/penpot-login-prefill-20261110/approved-applied.json)、[16:19原生后检](../../evidence/penpot-login-prefill-20261110/native-postcheck.json)与[真实LAN浏览器](../../evidence/penpot-login-prefill-20261110/browser-acceptance.json)已通过：11healthy、镜像match lock、Git ff1783e clean、无remember挂载；四种未授权Docker/伪造头请求403。原表单默认值匹配原owner、密码masked，原Continue可登录dashboard，无新增控件；测试cookies/localStorage清理、session关闭。当前WG/CF端到端未签。原账号密码保留，实际值只在受保护Mac/guest文件及guest0600运行JSON，不入文档/Git。本段的ff/镜像保持是16:13–16:19预填验收时点；去首次引导main/8a当前部署见上节，详见[本次证据](../../evidence/penpot-login-prefill-20261110/README.md)与[手册](../../evidence/penpot-login-prefill-20261110/usage-manual.md)。
 
-## 本轮只读状态与备份归属
+## 11月9日历史审计与当前备份归属
 
-14:43:07媒体工具采样：原数据UUID、11容器running/healthy/RestartCount0，原镜像/容器IDs保持，原健康GET通过，Git仍ff1783e clean；本轮未更新main、不重验设计/素材/MCP内容或SMTP。 证据：[本机分项审计](../../completion/20261109/media-audit.json)。
+2026-11-09 14:43:07媒体工具历史采样：原数据UUID、11容器running/healthy/RestartCount0，原镜像/容器IDs保持，原健康GET通过，Git仍ff1783e clean；本轮未更新main、不重验设计/素材/MCP内容或SMTP。 证据：[本机分项审计](../../completion/20261109/media-audit.json)。
 
 本机VM/OS及应用数据不纳入现行自动备份；不因旧whole-VM名单而重新启用。 现行仅正式DB/Nacos逻辑SQL导出（非VM snapshot），PVE落点`/mnt/pve/store/dell-artifacts/prod-db-backups` root700/600；新未列白名单数据库拒绝告警、需更新。03:30/GFS最近3＋每日7＋每周4，首轮3301B与timer见[新回执](../../completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)，实际监控/收尾统一见[新中央入口](../../completion/20261109-prod-db-scope/README.md)。旧11来宾job已disabled、原19,747,582,801B档与21回退档保留不自动删；仅[该3301B Nacos小档已在VM210临时隔离恢复](../../completion/20261109-prod-db-restore/README.md)，完整业务恢复/RPO/RTO/异机DR未签，不迁移/合并/启Java、无Mac探针。
 
@@ -20,11 +34,11 @@ Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/
 
 ## 源码仓库：bkcode/penpot · main
 
-Git/main/历史bundle与更新边界统一见上方Git来源页。最新[管理Mac读取与临时工作树验证](../../evidence/git-repositories-20261110/penpot-deploy-key-verification.json)并未部署服务器；[13:20来宾只读现场](../../evidence/git-repositories-20261110/penpot-runtime-readonly.json)仍main/ff1783e、clean、无origin，11容器healthy。unit累计NRestarts22按原证据解释，本任务未诊断或启停；不能称远端main已上线或直接取码已配置。
+当前Git取码来源为`https://github.com/bkcode/penpot.git`的main，固定运行提交8a9b9615；使用公开HTTPS，没有向来宾分发Git私钥/Token。原13:18管理Mac读取9aed和13:20来宾ff/clean/noorigin仅为历史来源证明，不能作现行main或origin状态。旧unit累计NRestarts22仍按当时记录保留；17:46现役unit active、NRestarts0为新时点，不抹去历史。详见[源码与更新](SOURCE-AND-UPDATES.md)。
 
 ## 职责与实际合同
 
-Git改造Penpot与常驻worker/import/MCP服务，保存3活动设计和原素材；源Mac/Git保留。
+Git改造Penpot与常驻worker/import/MCP服务，原3设计为初装基线；Puyu独立导入后现有8文件，旧7文件受保护。源Mac/Git保留。
 
 - 实际资源：6 vCPU / 16 GiB；管理/服务地址 `192.168.19.50`，vmbr19、/24、GW/DNS19.1。
 - 数据盘：100 GiB / store；`/srv/penpot`；UUID `ccccda03-bffd-4054-afd3-e0e22f0c607e`。
@@ -41,8 +55,8 @@ Git改造Penpot与常驻worker/import/MCP服务，保存3活动设计和原素�
 
 ## 维护与安全
 
-- 6vCPU/16GiB；原Gitff1783e含两本地提交、目标worktree clean；不擅自升级2.19源码对应的运行依赖。
-- 3设计data/revn/stats与原971媒体已迁，当前已验973包含2官方导出缓存；不能删除额外文件来凑971。
+- 6vCPU/16GiB；当前main/8a9b9615 clean且保留37da/ff改造，仅frontend wrapper更新；不擅自升级2.19源码对应的运行依赖。
+- 初装3设计data/revn/stats与原971媒体已迁，973为当时资产基线；Puyu导入后为8文件，旧7保持，不删除合法新增内容凑历史计数。
 - 原新owner/worker/MCP身份保持，秘密仅guest受控文件；客户端旧Mac connector不会自动指向这里。
 - 停启只用原unit，禁止fresh初始化、旧source.env/key复制或PG整库覆盖现有数据。
 - 11月9日已fresh复核基础状态；新的变更仍须在当前范围内核实，F1本身不代表修复。PVE写/VMID/IP/数据盘归属由root统一，严格SSH/ub管理，不关闭hostkey检查、不复制私钥。
@@ -67,4 +81,4 @@ Git改造Penpot与常驻worker/import/MCP服务，保存3活动设计和原素�
 
 ## 2026-11-10 Puyu设计导入
 
-VM250 owner工作区新增 **puyu项目 / puyu文件**，包含puyu-mobile、puyu-components、puyu-mobile · 商城三页，共58,240图形、19组件。源为本机rev2821，旧7文件保持，当前11healthy，原代码与默认填入保持；本次未部署首次引导源码或迁账号。详见[导入使用手册](../../evidence/penpot-puyu-import-20261110/usage-manual.md)。这是快照导入，不自动同步，不扩正式DB/Nacos之外的备份。
+VM250 owner工作区新增 **puyu项目 / puyu文件**，包含puyu-mobile、puyu-components、puyu-mobile · 商城三页，共58,240图形、19组件。源为本机rev2821，旧7文件保持，当前11healthy，原代码与默认填入保持；此导入任务当时未部署首次引导源码或迁账号；后续8a部署保持其数据，见上节。详见[导入使用手册](../../evidence/penpot-puyu-import-20261110/usage-manual.md)。这是快照导入，不自动同步，不扩正式DB/Nacos之外的备份。

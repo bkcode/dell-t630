@@ -1,0 +1,12 @@
+{
+  "captured_at": "2026-11-10T17:41:55.004497+08:00",
+  "status": "source-and-frontend-switched-exact11-healthy",
+  "Git_HEAD": "8a9b96154d9dd81dcc373155ae30dba094127cc8",
+  "Git_clean": true,
+  "frontend_image": "sha256:6cbd1f7f3b90b77b3dcd4f6a65fa9c117861d2de0781df22bd8bad40f19c61bc",
+  "other10_image_ids_unchanged": true,
+  "original_private_files_assets_counts_unchanged": true,
+  "containers_healthy": 11,
+  "real_browser_verification_pending": true,
+  "private_key_or_token_distributed": false
+}

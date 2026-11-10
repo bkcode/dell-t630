@@ -1,0 +1,65 @@
+{
+  "Penpot_unit": {
+    "MainPID": "2317920",
+    "ActiveState": "activating",
+    "SubState": "start"
+  },
+  "wrapper_worktree_mode": "0o600",
+  "containers": [
+    {
+      "name": "/penpot-penpot-frontend-1",
+      "status": "exited",
+      "health": "unhealthy"
+    },
+    {
+      "name": "/penpot-penpot-backend-1",
+      "status": "exited",
+      "health": "unhealthy"
+    },
+    {
+      "name": "/penpot-penpot-exporter-1",
+      "status": "running",
+      "health": "healthy"
+    },
+    {
+      "name": "/penpot-penpot-admin-console-1",
+      "status": "running",
+      "health": "starting"
+    },
+    {
+      "name": "/penpot-penpot-import-1",
+      "status": "exited",
+      "health": "unhealthy"
+    },
+    {
+      "name": "/penpot-penpot-worker-1",
+      "status": "running",
+      "health": "starting"
+    },
+    {
+      "name": "/penpot-penpot-mcp-1",
+      "status": "exited",
+      "health": "unhealthy"
+    },
+    {
+      "name": "/penpot-penpot-postgres-1",
+      "status": "exited",
+      "health": "unhealthy"
+    },
+    {
+      "name": "/penpot-penpot-dns-1",
+      "status": "exited",
+      "health": "unhealthy"
+    },
+    {
+      "name": "/penpot-penpot-valkey-1",
+      "status": "exited",
+      "health": "unhealthy"
+    },
+    {
+      "name": "/penpot-penpot-mailpit-1",
+      "status": "exited",
+      "health": "unhealthy"
+    }
+  ]
+}

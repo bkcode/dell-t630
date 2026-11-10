@@ -1,4 +1,32 @@
-# Penpot main更新计划：等待用户推送保留改造
+# Penpot main更新：8a9b9615已交付
+
+更新：2026-11-10（Asia/Shanghai）。当前状态：**delivered-8a9b9615-native-and-browser-verified**。本次只处理VM250；用户风险说明后“进行推送”的明确授权已执行，原等待推送门禁解除。新main保留37da/ff改造，原UI默认填入与Puyu数据保持。
+
+## 首次登录引导已关闭：当前main/8a9b9615
+
+当前部署提交为`8a9b96154d9dd81dcc373155ae30dba094127cc8`，main工作树clean；frontend为`sha256:6cbd1f7f3b90b77b3dcd4f6a65fa9c117861d2de0781df22bd8bad40f19c61bc`（`dell-penpot-frontend:2.18.5-8a9b96154d9d-amd64`）。只重建固定官方2.18.5 base上的selfhost wrapper，其余10个镜像不变；没有编译完整2.19套件或迁移数据库。Git-owned入口追加官方`disable-onboarding`再exec原官方入口/CMD，关闭首次调研、首次团队设置及自动版本说明，保留手动创建团队与原登录表单/默认填入。
+
+[17:41应用](../../../evidence/penpot-onboarding-20261110/v2-applied.json)确认新source与frontend切换、11healthy、其它10镜像及受保护私有文件/素材/对象计数保持；[17:44真实浏览器](../../../evidence/penpot-onboarding-20261110/browser-acceptance.json)从原表单预填登录进入dashboard，`disable-onboarding`为true、引导元素0、欢迎及首次团队设置均未出现、Puyu项目可见、无Internal Error。截图仅private且已人工视觉复核，测试cookies/localStorage已清、session关闭，没有修改profile或设计。
+
+[17:46最终后检](../../../evidence/penpot-onboarding-20261110/final-postcheck.json)再次确认HEAD/clean、11healthy且镜像match lock、unit active与监督check通过、原生flags启用、Puyu仍3页/58,240图形/19组件；未授权Docker伪造头请求403。应用回执中的browser pending仅是17:41阶段状态，已由随后浏览器证据补齐，不改写历史回执。
+
+## 首轮失败与恢复历史
+
+用户在风险说明后明确“进行推送”，[授权/非force推送复核](../../../evidence/penpot-onboarding-20261110/push-approved-and-verified.json)记录main由9aed先到ec6f，保留37da/ff两条原登录改造。ec6f首次prepare通过后实际启动失败：[诊断](../../../evidence/penpot-onboarding-20261110/startup-diagnostic-first.json)显示umask077产生0600公开文件，Docker COPY保留该权限，penpot UID无法读取wrapper；不能将该候选称为成功上线。
+
+[旧服务恢复实证](../../../evidence/penpot-onboarding-20261110/old-service-restored.json)随后确认ff与11healthy，专门rollback receipt缺失如实保留；[失败速率计数复位](../../../evidence/penpot-onboarding-20261110/recovery-rate-limit-reset.json)没有删除日志或关闭guard。修复commit8a为四项COPY显式加`--chmod=0644`，[v2准备](../../../evidence/penpot-onboarding-20261110/v2-prepare-status.json)增加UID1001对wrapper/JS/CSS/conf的可读检查，通过后才切换。旧ff/9aed证据、首次失败及恢复证据仍保留，不冒称首次部署即成功。
+
+## 实际变更与维护边界
+
+公开GitHub HTTPS固定取码，无Git私钥/Token分发；新source origin指向指定仓库。只有4个selfhost文件相对旧ff变化；frontend基于`2.18.5@sha256:d5bec7ab86328a2bce02b331291eab5833dcb56e403428ad07ccd6740be73735`构建，保原NGINX CMD，worker/import及其余10镜像复用原ID。正常停止原notify unit后精确切source/Compose/overlay/lock，保source/image/mount/resource/日志守卫。PG/素材卷、账号密码、预填secret及来源ACL不改，不fresh-init、不数据库迁移。
+
+Puyu另项导入后8文件/旧7保护是当前数据基线，原3设计/973资产仅历史；部署过程没有设计写入，浏览器测试也没有profile/设计变更。前述验收只签已观察路径，当前WG/CF端到端和完整内容恢复未签。一次性事务不能在已应用后盲重放，后续更新需以当前8a/6cbd锁与真实19网公开SHA建立新CAS基线，不能复用旧ff硬条件或旧候选。
+
+## 以下保留最初只读分析
+
+以下为13:20后制定的旧等待计划和混合运行来源分析，不是当前执行状态。其“当前main9aed/尚未push/没有产物/先等通知”均限该历史时点；最新8a9b9615交付状态以上文为准。技术约束（不全栈升级、锁与监督不绕过、不fresh-init）继续适用。
+
+# 历史分析：13:20基线与当时等待条件
 
 更新：2026-11-10，Asia/Shanghai。状态：**pending-user-main-update**。用户已选择保留现役两条改造，由用户先推送到`bkcode/penpot`的main，再通知继续。本轮只读分析并新增此文件；没有服务器认证/密钥复制、fetch/clone/pull、build、源码切换、服务操作或nativecheck。17机Git来源文档继续保留，但实际Git取码部署只处理Penpot，其它机器不扩为部署任务。
 

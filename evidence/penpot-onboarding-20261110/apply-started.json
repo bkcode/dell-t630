@@ -1,0 +1,6 @@
+{
+  "started": true,
+  "unit": "dell-penpot-onboarding-apply-20261110.service",
+  "scope": "controlled-supervisor-stop-source-and-frontend-switch-then-original-unit-start",
+  "other10_images_or_private_files_not_changed": true
+}

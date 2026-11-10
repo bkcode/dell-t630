@@ -1,0 +1,18 @@
+{
+  "recorded_at": "2026-11-10T17:44:16.235471+08:00",
+  "URL": "http://192.168.19.50:9001/",
+  "fresh_isolated_browser": true,
+  "original_form_defaults_used_successfully": true,
+  "authenticated_dashboard": true,
+  "disable_onboarding_in_browser": true,
+  "onboarding_element_count": 0,
+  "welcome_modal_visible": false,
+  "first_team_setup_visible": false,
+  "internal_error_visible": false,
+  "Puyu_project_visible": true,
+  "screenshot_visually_reviewed": true,
+  "screenshots_private_only": true,
+  "test_cookies_and_localStorage_cleared": true,
+  "test_session_closed": true,
+  "no_user_profile_or_design_mutation": true
+}

@@ -1,0 +1,7 @@
+{
+  "started": true,
+  "phase": "prepare-only-public-GitHub-fetch-and-fixed-base-build",
+  "worker_SHA256": "1a5cc7b44df9b28c669546f0a0c9ca36e0b4e632b73ec94b37ace766442a59ca",
+  "existing_service_not_stopped": true,
+  "no_credentials_distributed": true
+}

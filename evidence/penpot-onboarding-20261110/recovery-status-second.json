@@ -1,0 +1,15 @@
+{
+  "dell-penpot.service": {
+    "Result": "exit-code",
+    "ExecMainStatus": "1",
+    "ActiveState": "failed",
+    "SubState": "failed"
+  },
+  "dell-penpot-onboarding-apply-20261110.service": {
+    "Result": "success",
+    "ExecMainStatus": "0",
+    "ActiveState": "activating",
+    "SubState": "start"
+  },
+  "Git_HEAD": "ff1783e7865af7aae571c985f03e057631b7af63"
+}

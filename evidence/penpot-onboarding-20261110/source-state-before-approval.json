@@ -1,0 +1,30 @@
+{
+  "captured_at": "2026-11-10T16:44:19.320186+08:00",
+  "status": "local-commit-ready-Git-push-blocked-by-automatic-approval",
+  "repository": "bkcode/penpot",
+  "branch": "main",
+  "local_commit": "ec6f0322fe02e963bbef3903a31ebe1c99d6f04e",
+  "observed_remote_main": "9aedbb011cd803eb615225ca21f7f47cb8c2fa09",
+  "existing_login_custom_commits_preserved": [
+    "37da782",
+    "ff1783e"
+  ],
+  "new_behavior": "native disable-onboarding in selfhost wrapper; firstlogin survey/teamsetup/autoreleasenotes disabled; manualteams preserved",
+  "tests": {
+    "entrypoint_native_node_tests": 4,
+    "passed": 4,
+    "bash_syntax": "passed",
+    "node_syntax": "passed",
+    "commit_message_validation": "passed",
+    "diff_whitespace": "passed"
+  },
+  "push_attempt_accepted": false,
+  "push_or_remote_change_performed": false,
+  "automatic_rejection_reason": "Trusted Penpot AGENTS.md forbids agent git push and requires user push; reviewer requires explicit approval after informing user of conflict and remote main change risk",
+  "deployment_script": "infra/penpot/source-update/no-onboarding.py",
+  "deployment_script_uploaded_or_executed": false,
+  "server_source_fetched_or_switched": false,
+  "current_server_HEAD": "ff1783e7865af7aae571c985f03e057631b7af63",
+  "current_server_preflight_healthy": 11,
+  "no_private_key_or_token_distribution_needed": "GitHub API confirmed public repo; deployment will fetch HTTPS without credentials"
+}

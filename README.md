@@ -4,13 +4,17 @@
 
 **2026-11-09继续完成基础搭建，并按用户最新范围仅备正式数据库/Nacos配置；随后另获授权完成选定测试Nacos配置及两份Puyu数据库迁移。** 14:24自然重启后的fresh审计确认12来宾运行、3模板停止、15/15UP、EDAC0/RAIDOptl，forward guard文件与启动顺序保持全0。Nexus221继续独立、220的Nexus保持standby，另有后续获准的只读导航，Java业务不启，Penpot实际ff提交不更新main，Mac外部探针不需要。当日状态统一见[11月9日交付记录](completion/20261109-prod-db-scope/README.md)；[11月8日恢复](recovery/20261108/README.md)保留历史。
 
+## Penpot首次登录引导已关闭
+
+已推送并部署`bkcode/penpot main/8a9b961`，全新浏览器登录直接进入项目列表，欢迎、调研与团队首次引导不再出现。原账号密码/默认填入和Puyu项目保持，11服务健康；仅frontend新镜像，其他10镜像不变。首轮公开文件权限问题已恢复并修正为0644，增加UID1001镜像读检后成功切换，历史失败完整保留。见[交付](evidence/penpot-onboarding-20261110/README.md)及[使用手册](evidence/penpot-onboarding-20261110/usage-manual.md)。
+
 ## Puyu设计已导入Penpot
 
 服务器owner工作区已新增 **puyu项目 / puyu文件**，含三个Puyu页面、58,240图形与19组件；原目标7文件和本机源保留。组件/商城详情真实浏览器可打开，11服务健康且没有重启或代码部署。见[使用手册](evidence/penpot-puyu-import-20261110/usage-manual.md)和[五项验收](evidence/penpot-puyu-import-20261110/acceptance.json)。
 
 ## Penpot原登录表单默认填入
 
-当前 **[Penpot](http://192.168.19.50:9001/)** 沿用现有预填脚本，原邮箱与密码输入框默认填入原owner账号，密码保持掩码；点击原“继续”按钮即可登录。没有新增勾选框、按钮或浏览器保存逻辑，密码未修改。此功能已按用户明确授权限制为LAN21/24、WG10.66.66/24及本机；范围内未登录访问者可读取该凭据。实测原表单登录成功、11容器健康，非授权Docker来源伪造请求头仍403。Git ff1783e及镜像保持，源码main更新继续等待用户通知。见[交付与验收](evidence/penpot-login-prefill-20261110/README.md)和[使用手册](evidence/penpot-login-prefill-20261110/usage-manual.md)。新增“记住登录信息”方案已撤回，仅保留历史。
+当前 **[Penpot](http://192.168.19.50:9001/)** 沿用现有预填脚本，原邮箱与密码输入框默认填入原owner账号，密码保持掩码；点击原“继续”按钮即可登录。没有新增勾选框、按钮或浏览器保存逻辑，密码未修改。此功能已按用户明确授权限制为LAN21/24、WG10.66.66/24及本机；范围内未登录访问者可读取该凭据。实测原表单登录成功、11容器健康，非授权Docker来源伪造请求头仍403。该预填阶段曾保持Git ff；后续8a源码/前端更新已交付，见上方首次引导关闭记录。见[交付与验收](evidence/penpot-login-prefill-20261110/README.md)和[使用手册](evidence/penpot-login-prefill-20261110/usage-manual.md)。新增“记住登录信息”方案已撤回，仅保留历史。
 
 ## 免登录服务导航（VM220新增）
 
@@ -132,4 +136,4 @@ python3 scripts/check_git_safety.py
 
 ## 每台机器对应Git仓库
 
-新增[完整Git来源总览](machines/GIT-REPOSITORIES.md)及17份逐机`GIT-REPOSITORIES.md`，统一登记配置仓库、现役/候选应用源码、组件上游与取码身份。Penpot专属key临时clone验证已通过，但远端main仍缺现役两条改造；不会据此更新程序。发布机已新增deploy中独立的只读导航模块；原业务构建计划仍为deploy＋5个Puyu后端，running收制品，Jellyfin fork仍待接入。
+新增[完整Git来源总览](machines/GIT-REPOSITORIES.md)及17份逐机`GIT-REPOSITORIES.md`，统一登记配置仓库、现役/候选应用源码、组件上游与取码身份。Penpot专属key历史临时clone验证已通过；后续获明确授权，现已从公开main固定取8a并部署自托管前端，保留既有两条登录改造。发布机已新增deploy中独立的只读导航模块；原业务构建计划仍为deploy＋5个Puyu后端，running收制品，Jellyfin fork仍待接入。

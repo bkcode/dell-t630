@@ -1,0 +1,8 @@
+{
+  "worker_state": "ready",
+  "active_tasks": 0,
+  "import_job_status_counts": {
+    "completed": 1
+  },
+  "idle_before_switch": true
+}

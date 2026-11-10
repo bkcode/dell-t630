@@ -6,13 +6,13 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "bb22b66a092a143f51aae89cc64c0472eb915ecfc214e50a8196fbd98c53979f"
+      "sha256": "e40290977280e6cf3851774f6ea01c7986d48ea207619b7efe245e4eb5763afa"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
       "purpose": "当前基础搭建与历史故障交接；本轮不迁移，旧证据按时点解释。",
-      "sha256": "bc05a5d61aa4e0f7edbe808ce2dc22e862d1df7f0d652017e09e42a2448601ab"
+      "sha256": "a6f5088aeb99027507762439c00f9f816ccce003887d4cd162b1f1c57fd9eda2"
     },
     {
       "path": "12-service-access-and-operations.md",
@@ -72,19 +72,19 @@
       "path": "machines/vm250-penpot-service/git-source.json",
       "type": "current-contract",
       "purpose": "用户确认的bkcode/penpot main源码与更新合同；不证明远端最新或现场已更新",
-      "sha256": "eaca70fa6d60a77f204240fd248c7a2fb95d8472d1dfbe3925053768fe73953a"
+      "sha256": "47382a880acd4ead71131ab820d363fd757bea5756092a52c062e61366fc8cdd"
     },
     {
       "path": "machines/vm250-penpot-service/SOURCE-AND-UPDATES.md",
       "type": "current-contract",
       "purpose": "源码获取、固定main、版本保留、构建切换与数据边界",
-      "sha256": "2b5da0559bc0ebc71844e0bf97c6cc1d352ebc0c04af0c9cf1f7d197563fcb10"
+      "sha256": "8e3708f253cb876a29dba9e95ee19077d8215f44e30af96703a34dc4ea7b870d"
     },
     {
       "path": "infra/penpot/README.md",
       "type": "current-contract",
       "purpose": "Penpot源码主入口；其中初装bundle和旧网配置仍须按历史解释",
-      "sha256": "61c70c3c8ba012b99dd189beb0c2c595265266b1f52fab2b3e089e97fea260e3"
+      "sha256": "74ecdd182f7d23a82372bcceb52184a082dda0ae074d61cf2dbc14a6f91ba294"
     },
     {
       "path": "infra/penpot/git-source-facts.json",
@@ -222,19 +222,19 @@
       "path": "machines/git-repositories.json",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "6f9f33ac463c91441efe26ad88b2ee1c21f6ca0270acb09c9daa7f67f64c0799"
+      "sha256": "c57454a82c0bc8edd15ca13437dad0a48ff3c09b2aa8c65ca6695b493e89a200"
     },
     {
       "path": "machines/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "b27b3668337bde07df8750f08db405115e37411a1ae2f730816f7fe8f512c76f"
+      "sha256": "abe3ccf08a07e4960b4d9e2a6b8edf2a7e5090889ff728a3c33a99d46f0a6a74"
     },
     {
       "path": "machines/vm250-penpot-service/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "b28a63ffc1c02a2a73ef396c46f4cdf9fad2bdb3b13fa0012a8639a8a01d1839"
+      "sha256": "3fff47d1582631df6289efc6df5218f5ea3fc4389356b076bc50fab7c4b9beaf"
     },
     {
       "path": "scripts/validate_git_repositories.py",
@@ -264,7 +264,7 @@
       "path": "infra/penpot/source-update/PLAN.md",
       "type": "pending-candidate",
       "purpose": "VM250-only source update authorized but awaiting user push of preserved custom commits; no deployment executed",
-      "sha256": "9668841a9b79005a516d2f0090eff58e915ef6791c7509258511c57f7045b40a"
+      "sha256": "e2f68ceb75a72a09942fb9f41341bc4a2ea8e49a7a1004cdb451496bb7521e38"
     },
     {
       "path": "infra/penpot/login-prefill/approved-worker.py",
@@ -379,6 +379,66 @@
       "type": "historical-evidence",
       "purpose": "User-authorized new Puyu design copy; no credentials/archives/whole DB export; previous files preserved; not source-code deployment",
       "sha256": "25c57d5d65c28eaa51d0cd4607f95925d57e9a857b8297a72defadd20e9b6350"
+    },
+    {
+      "path": "infra/penpot/source-update/no-onboarding.py",
+      "type": "current-contract",
+      "purpose": "User-authorized VM250 Git-main source/frontend update; first failure recovered; final native flag/browser/11health verified; no credential values or full design export",
+      "sha256": "6b1f790c5586d36745780d9ea2b1e07a5b7a15d938c84bc02cb2b856681e0a4a"
+    },
+    {
+      "path": "evidence/penpot-onboarding-20261110/README.md",
+      "type": "current-contract",
+      "purpose": "User-authorized VM250 Git-main source/frontend update; first failure recovered; final native flag/browser/11health verified; no credential values or full design export",
+      "sha256": "fc57557089c042811bd3d4ebdc8817e3ffddc27cf44f7810f67d0fdc31703b7c"
+    },
+    {
+      "path": "evidence/penpot-onboarding-20261110/usage-manual.md",
+      "type": "current-contract",
+      "purpose": "User-authorized VM250 Git-main source/frontend update; first failure recovered; final native flag/browser/11health verified; no credential values or full design export",
+      "sha256": "92cdcfefe2f085f718a63e5e4d781ed6101cbbdb356e05777667df4cf794d7b6"
+    },
+    {
+      "path": "evidence/penpot-onboarding-20261110/acceptance.json",
+      "type": "historical-evidence",
+      "purpose": "User-authorized VM250 Git-main source/frontend update; first failure recovered; final native flag/browser/11health verified; no credential values or full design export",
+      "sha256": "8669ab0b4da1b3b8fb7bf2151293888be646e60c53a6da0d54b962ef1d97f20b"
+    },
+    {
+      "path": "evidence/penpot-onboarding-20261110/push-approved-and-verified.json",
+      "type": "historical-evidence",
+      "purpose": "User-authorized VM250 Git-main source/frontend update; first failure recovered; final native flag/browser/11health verified; no credential values or full design export",
+      "sha256": "6d87cca47c8b4018e20f9fed99306f346ae34a65a49b497f1327dc2c4e455e41"
+    },
+    {
+      "path": "evidence/penpot-onboarding-20261110/v2-prepare-status.json",
+      "type": "historical-evidence",
+      "purpose": "User-authorized VM250 Git-main source/frontend update; first failure recovered; final native flag/browser/11health verified; no credential values or full design export",
+      "sha256": "991f35492e7b245bc8f39e39352048b5607c1bb87dc987e62d235674f30c178e"
+    },
+    {
+      "path": "evidence/penpot-onboarding-20261110/v2-applied.json",
+      "type": "historical-evidence",
+      "purpose": "User-authorized VM250 Git-main source/frontend update; first failure recovered; final native flag/browser/11health verified; no credential values or full design export",
+      "sha256": "4379ff629cb37ec62ff221ca1668c71d1c568da7eee859f20cc1e48b15f05ddd"
+    },
+    {
+      "path": "evidence/penpot-onboarding-20261110/browser-acceptance.json",
+      "type": "historical-evidence",
+      "purpose": "User-authorized VM250 Git-main source/frontend update; first failure recovered; final native flag/browser/11health verified; no credential values or full design export",
+      "sha256": "5679baac1a33c5e4b7b69c82d0bff189736ef057d387257b68260cf3728d5dd4"
+    },
+    {
+      "path": "evidence/penpot-onboarding-20261110/final-postcheck.json",
+      "type": "historical-evidence",
+      "purpose": "User-authorized VM250 Git-main source/frontend update; first failure recovered; final native flag/browser/11health verified; no credential values or full design export",
+      "sha256": "fb5834ffff23d9a90e4e99cee5016c5b5c07f9327addf6d7f9045a451a53f2ba"
+    },
+    {
+      "path": "evidence/penpot-onboarding-20261110/old-service-restored.json",
+      "type": "historical-evidence",
+      "purpose": "User-authorized VM250 Git-main source/frontend update; first failure recovered; final native flag/browser/11health verified; no credential values or full design export",
+      "sha256": "53f38e71a7b2e4e50edf5f4c575e8d9701cdee116471fa90a90db5e635e3919a"
     }
   ],
   "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."

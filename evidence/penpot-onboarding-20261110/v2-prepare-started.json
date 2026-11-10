@@ -1,0 +1,7 @@
+{
+  "started": true,
+  "unit": "dell-penpot-onboarding-prepare-v2-20261110.service",
+  "worker_SHA256": "6b1f790c5586d36745780d9ea2b1e07a5b7a15d938c84bc02cb2b856681e0a4a",
+  "unprivileged_image_read_gate_added": true,
+  "first_transaction_settled": true
+}
