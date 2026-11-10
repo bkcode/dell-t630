@@ -31,7 +31,8 @@ class FixedConfiguration(unittest.TestCase):
     def test_no_secret_literals_or_admin_password_in_public_config(self):
         value = p.config()
         self.assertEqual(value['auth']['key'], '${DELL_FB_JWT_KEY}')
-        self.assertEqual(value['http']['tlsKey'], '${CREDENTIALS_DIRECTORY}/tls-key')
+        self.assertEqual(value['http'], {'listen': '192.168.19.80', 'port': 8080, 'baseURL': '/',
+                                         'disableWebDAV': True, 'trustProxyHeaders': False})
         self.assertNotIn('adminPassword', p.render()['config.yaml'])
         self.assertEqual(value['auth']['methods']['password']['adminUsername'], 'admin')
         self.assertTrue(p.manifest()['includes_secrets'] is False)
@@ -51,6 +52,8 @@ class FixedConfiguration(unittest.TestCase):
     def test_dangerous_config_mutations_rejected(self):
         mutations = [lambda c: c['http'].update(listen='0.0.0.0'),
                      lambda c: c['http'].update(port=80),
+                     lambda c: c['http'].update(tlsCert='/etc/dell-filebrowser/tls.crt'),
+                     lambda c: c['http'].update(tlsKey='${CREDENTIALS_DIRECTORY}/tls-key'),
                      lambda c: c['http'].update(trustProxyHeaders=True),
                      lambda c: c['http'].update(disableWebDAV=False),
                      lambda c: c['server']['database'].update(path='/srv/resources/app.db'),
@@ -99,8 +102,7 @@ class FixedConfiguration(unittest.TestCase):
 class LaunchContract(unittest.TestCase):
     def setUp(self):
         self.launch = generated('launch.py')
-        self.secrets = {'jwt-key': b'A' * 64, 'admin-password': b'Synthetic-Password-Only-123',
-                        'tls-key': b'SYNTHETIC-ONLY PRIVATE KEY-----NOT-A-REAL-KEY'}
+        self.secrets = {'jwt-key': b'A' * 64, 'admin-password': b'Synthetic-Password-Only-123'}
 
     def test_failure_diagnostic_allows_only_bounded_code_and_class(self):
         self.assertEqual(self.launch.failure_summary(ValueError('invalid-credential-file')), {
@@ -121,7 +123,7 @@ class LaunchContract(unittest.TestCase):
             return self.secrets[name]
         with patch.dict(self.launch.os.environ, {'FILEBROWSER_ADMIN_PASSWORD': 'INHERITED-WRONG', 'FILEBROWSER_PORT': '1234', 'DELL_FB_JWT_KEY': 'WRONG'}):
             env = self.launch.environment(False, reader)
-        self.assertEqual(reads, ['jwt-key', 'tls-key', 'admin-password'])
+        self.assertEqual(reads, ['jwt-key', 'admin-password'])
         self.assertEqual(env['FILEBROWSER_ADMIN_PASSWORD'], self.secrets['admin-password'].decode())
         self.assertEqual(env['DELL_FB_JWT_KEY'], 'A' * 64)
         self.assertNotIn('FILEBROWSER_PORT', env)
@@ -135,7 +137,7 @@ class LaunchContract(unittest.TestCase):
             return self.secrets[name]
         with patch.dict(self.launch.os.environ, {'FILEBROWSER_ADMIN_PASSWORD': 'INHERITED-WRONG'}):
             env = self.launch.environment(True, reader)
-        self.assertEqual(reads, ['jwt-key', 'tls-key'])
+        self.assertEqual(reads, ['jwt-key'])
         self.assertNotIn('FILEBROWSER_ADMIN_PASSWORD', env)
         self.assertNotIn('DELL_FB_ADMIN_PASSWORD', env)
         self.assertEqual(env['FILEBROWSER_DISABLE_AUTOMATIC_BACKUP'], 'true')
@@ -163,10 +165,15 @@ class LaunchContract(unittest.TestCase):
 
     def test_bad_credentials_rejected_without_any_exec(self):
         for name, data in [('jwt-key', b'short'), ('jwt-key', b'A' * 32 + b'"\nconfig:'),
-                           ('admin-password', b'short'), ('admin-password', b'A' * 20 + b'\x00'),
-                           ('tls-key', b'not-a-key')]:
+                           ('admin-password', b'short'), ('admin-password', b'A' * 20 + b'\x00')]:
             secrets = dict(self.secrets); secrets[name] = data
             with self.assertRaises(ValueError): self.launch.environment(False, secrets.__getitem__)
+
+    def test_TLS_credential_name_rejected_before_opening_any_file(self):
+        with patch.object(self.launch.os, 'open') as opened:
+            with self.assertRaisesRegex(ValueError, 'unknown-credential'):
+                self.launch.credential('tls-key')
+            opened.assert_not_called()
 
     def test_exec_argv_is_only_fixed_binary_and_config_and_environment_is_separate(self):
         with patch.object(self.launch.os, 'geteuid', return_value=2000), patch.object(self.launch.os, 'getegid', return_value=2980), patch.object(self.launch.socket, 'gethostname', return_value='resource-service'), patch.object(self.launch.Path, 'exists', return_value=False), patch.object(self.launch, 'trusted_file', side_effect=[self.launch.EXPECTED_CONFIG, b'binary']), patch.object(self.launch.hashlib, 'sha256') as hashfn, patch.object(self.launch, 'bootstrapped', return_value=True), patch.object(self.launch, 'environment', return_value={'DELL_FB_JWT_KEY': 'SYNTHETIC-NOT-AN-ARGV'}), patch.object(self.launch.os, 'execve') as execute:
@@ -298,7 +305,10 @@ class FirewallAndUnit(unittest.TestCase):
         unit = p.render()['dell-filebrowser.service']
         for setting in ['User=filebrowser', 'Group=resources', 'UMask=0002', 'RequiresMountsFor=/srv/resources', 'BindsTo=srv-resources.mount dell-filebrowser-firewall.service', 'ExecStartPre=+/usr/bin/python3 -I -B /opt/dell/resources/guard.py --role server', 'MemoryMax=384M', 'CPUQuota=100%', 'ReadWritePaths=/srv/resources /var/lib/dell-filebrowser', 'ProtectSystem=strict', 'ProtectHome=yes', 'PrivateTmp=yes', 'NoNewPrivileges=yes']:
             self.assertIn(setting, unit)
-        self.assertEqual(unit.count('LoadCredential='), 3)
+        self.assertEqual([line for line in unit.splitlines() if line.startswith('LoadCredential=')], [
+            'LoadCredential=jwt-key:/etc/dell-filebrowser/secrets/jwt-key',
+            'LoadCredential=admin-password:/etc/dell-filebrowser/secrets/admin-password'])
+        self.assertNotIn('tls-key', unit)
         self.assertNotIn('Environment=FILEBROWSER_ADMIN_PASSWORD', unit)
         self.assertNotIn('docker', unit.lower())
         self.assertNotIn('java', unit.lower())

@@ -72,11 +72,11 @@
       "unit": "dell-service-directory.service",
       "firewall_unit": "dell-service-directory-firewall.service",
       "bind": "192.168.19.30:9080",
-      "URL": "https://192.168.19.30:9080/",
+      "URL": "http://192.168.19.30:9080/",
       "source_repository": "bkcode/deploy",
       "source_module": "service-directory",
-      "revision": "63b8c0873936e94f8483c4f1f8747aedb0180d43",
-      "release_path": "/opt/dell/service-directory/releases/63b8c0873936e94f8483c4f1f8747aedb0180d43",
+      "revision": "d56cae553bf95ce0e2c3fe8f258a2f99389aae7c",
+      "release_path": "/opt/dell/service-directory/releases/d56cae553bf95ce0e2c3fe8f258a2f99389aae7c",
       "manifest_path": "/etc/dell-service-directory/manifest.json",
       "UID": 2001,
       "GID": 2001,
@@ -91,17 +91,43 @@
         "192.168.19.30",
         "lo"
       ],
-      "native_acceptance_evidence": "evidence/service-directory-20261110/native-acceptance.json",
-      "delivery_evidence": "evidence/service-directory-20261110/README.md",
-      "verification_status": "native-browser-preview-portal-restart-final-postcheck-passed",
+      "delivery_evidence": "evidence/internal-http-20261110/README.md",
+      "verification_status": "HTTP-full-width-and-FileBrowser-HTTP-link-final-postcheck-passed",
       "runtime_module_deployed": true,
       "source_commit_pushed": false,
       "source_git_state_evidence": "evidence/service-directory-20261110/source-git-state.json",
-      "browser_acceptance_evidence": "evidence/service-directory-20261110/browser-acceptance.json",
-      "restart_evidence": "evidence/service-directory-20261110/service-restart.json",
-      "final_postcheck_evidence": "evidence/service-directory-20261110/final-postcheck.json",
       "pointer_new_window_navigation_verified": false,
-      "linked_service_reachability_verified": false
+      "linked_service_reachability_verified": false,
+      "transport": "HTTP",
+      "TLS_enabled": false,
+      "credentials_loaded": false,
+      "layout": {
+        "topbar_present": false,
+        "full_width": true,
+        "compact_heading_and_outer_spacing": true
+      },
+      "layout_applied_evidence": "evidence/service-directory-http-20261110/layout-applied.json",
+      "http_applied_evidence": "evidence/service-directory-http-20261110/applied.json",
+      "historical_HTTPS_evidence": {
+        "native_acceptance_evidence": "evidence/service-directory-20261110/native-acceptance.json",
+        "browser_acceptance_evidence": "evidence/service-directory-20261110/browser-acceptance.json",
+        "restart_evidence": "evidence/service-directory-20261110/service-restart.json",
+        "final_postcheck_evidence": "evidence/service-directory-20261110/final-postcheck.json"
+      },
+      "historical_TLS_material": "retained-inactive-not-loaded-by-runtime",
+      "browser_acceptance_evidence": "evidence/service-directory-http-20261110/browser.json",
+      "final_postcheck_evidence": "evidence/internal-http-20261110/final-postcheck.json",
+      "HSTS_enabled": false,
+      "runtime_credential_directory_present": false,
+      "runtime_credential_environment_present": false,
+      "task_local_source_commits": [
+        "63b8c0873936e94f8483c4f1f8747aedb0180d43",
+        "c141506ec6a59dd7f123cabc00f099f1cf87d4e1",
+        "ddccc2b98bbb3dfdc9de649443dc3fcdc7b4860f",
+        "d56cae553bf95ce0e2c3fe8f258a2f99389aae7c"
+      ],
+      "navigation_links_applied_evidence": "evidence/internal-http-20261110/navigation-links-applied.json",
+      "historical_layout_revision": "ddccc2b98bbb3dfdc9de649443dc3fcdc7b4860f"
     }
   ],
   "boundaries": {
@@ -168,5 +194,5 @@
     "direct_runtime_business_git_pull": false,
     "server_Git_key_installation_performed_by_this_task": false
   },
-  "service_directory_scope_note": "User authorized only the anonymous read-only navigation module after earlier Penpot-only scope; Puyu source/build plans remain pending, Java remains disabled and publisher fenced. Linux service UID is not an application login account. Source commit exists only on management local main and was not pushed, preserving four prior user commits; exact committed blobs supplied the runtime release."
+  "service_directory_scope_note": "User authorized only the anonymous read-only navigation module after earlier Penpot-only scope; Puyu source/build plans remain pending, Java remains disabled and publisher fenced. Linux service UID is not an application login account. Source commit exists only on management local main and was not pushed, preserving four prior user commits; exact committed blobs supplied the runtime release. User subsequently requested HTTP and compact full-width layout; the ddccc2b layout phase used no TLS or login credentials. Initial HTTPS receipts remain historical only. Current d56 commit only updates FileBrowser link to HTTP; ddccc2b remains the preceding layout phase. Four task commits remain local and unpushed; FileBrowser keeps its own authentication, PVE/iDRAC native HTTPS is retained."
 }

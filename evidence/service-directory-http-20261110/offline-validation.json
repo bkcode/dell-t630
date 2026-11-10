@@ -1,0 +1,9 @@
+{
+  "captured_at": "2026-11-10T14:14:39.877432+08:00",
+  "status": "passed",
+  "source_revision": "ddccc2b98bbb3dfdc9de649443dc3fcdc7b4860f",
+  "backend_tests": 7,
+  "test_command": "python3 -B -m unittest discover -s tests -p test_service_directory.py -v",
+  "scope": "existingGETonly safety plus explicitHTTP/TLS mode combinations; layout verified by actualbrowser",
+  "runtime_source_only_from_git_committed_blobs": true
+}

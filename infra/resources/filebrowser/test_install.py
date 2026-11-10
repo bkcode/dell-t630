@@ -3,6 +3,7 @@
 import contextlib
 import importlib.util
 import json
+import io
 import os
 from pathlib import Path
 import stat
@@ -109,6 +110,54 @@ class InstallationFailures(unittest.TestCase):
                 name, path = line.split('=', 1)[1].split(':', 1)
                 loaded[name] = Path(path)
         self.assertEqual(loaded, i.credential_sources())
+
+    def test_fresh_HTTP_prepare_writes_only_account_and_JWT_secrets_without_openssl(self):
+        with tempfile.TemporaryDirectory() as root, contextlib.ExitStack() as stack:
+            root = Path(root)
+            config, state, manager, code = [root / name for name in ['config', 'state', 'manager', 'code']]
+            binary = code / 'releases/v2.1.4-beta/filebrowser'
+            binary.parent.mkdir(parents=True)
+            binary.write_bytes(b'synthetic binary; integrity is mocked by identity')
+            for name, value in [('CONFIG', config), ('STATE', state), ('MANAGER', manager), ('CODE', code), ('BINARY', binary)]:
+                stack.enter_context(patch.object(i, name, value))
+            for name in ['identity', 'trusted', 'private_preflight']:
+                stack.enter_context(patch.object(i, name))
+            stack.enter_context(patch.object(i.os, 'chown'))
+            stack.enter_context(patch.object(i, 'directory', side_effect=lambda path, *args: path.mkdir(parents=True, exist_ok=True)))
+            stack.enter_context(patch.object(i.pwd, 'getpwnam', side_effect=KeyError))
+            stack.enter_context(patch.object(i.pwd, 'getpwuid', side_effect=KeyError))
+            stack.enter_context(patch.object(i.socket, 'socket'))
+            stack.enter_context(patch.object(i, 'metadata', return_value={'protected': 'unchanged'}))
+            mapping = {name: (root / name, mode) for name, (_, mode) in i.destinations().items()}
+            stack.enter_context(patch.object(i, 'destinations', return_value=mapping))
+            native = stack.enter_context(patch.object(i, 'run', return_value=b''))
+            data = {'admin_password': 'Synthetic_admin_password_only_123456',
+                    'operator_password': 'Synthetic_operator_password_only_1234', 'jwt_key': 'A' * 64}
+            stack.enter_context(patch.object(i.sys, 'stdin', io.StringIO(json.dumps(data))))
+            output = stack.enter_context(contextlib.redirect_stdout(io.StringIO()))
+            i.prepare()
+            self.assertEqual({path.name for path in (config / 'secrets').iterdir()}, {'admin-password', 'jwt-key', 'login.json'})
+            self.assertFalse((config / 'tls.crt').exists())
+            self.assertFalse(any(call.args[0][0] == 'openssl' for call in native.call_args_list))
+            self.assertEqual((config / 'secrets/admin-password').read_text(), data['admin_password'] + '\n')
+            self.assertEqual((config / 'secrets/jwt-key').read_text(), data['jwt_key'] + '\n')
+            login = json.loads((config / 'secrets/login.json').read_text())
+            self.assertEqual(login['URL'], 'http://192.168.19.80:8080/')
+            receipt = json.loads((manager / 'prepared.json').read_text())
+            self.assertEqual(receipt['transport'], 'HTTP')
+            self.assertEqual(receipt['HTTP_policy'], 'production-internal-management-HTTP-user-authorized')
+            self.assertNotIn('certificate_fingerprint', receipt)
+            for value in data.values():
+                self.assertNotIn(value, output.getvalue())
+
+    def test_successful_activation_records_HTTP_and_preserves_protected_services(self):
+        with self.activation() as (manager, calls), contextlib.redirect_stdout(io.StringIO()):
+            i.activate()
+            receipt = json.loads((manager / 'activated.json').read_text())
+            self.assertEqual(receipt['transport'], 'HTTP')
+            self.assertIs(receipt['HTTPS'], False)
+            self.assertIs(receipt['protected_service_identities_unchanged'], True)
+            self.assertFalse(any('nfs-server.service' in cmd for cmd in calls))
 
     def test_duplicate_activation_rejected_without_starting_services(self):
         with self.activation() as (manager, calls):

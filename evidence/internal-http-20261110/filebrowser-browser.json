@@ -1,0 +1,15 @@
+{
+  "captured_at": "2026-11-10T14:30:09.281382+08:00",
+  "status": "HTTP-existing-resources-browser-login-passed",
+  "URL": "http://192.168.19.80:8080/",
+  "daily_username": "resources",
+  "username_password_login_form_visible": true,
+  "old_password_supplied_via_encrypted_vault_stdin": true,
+  "authenticated_resources_page_URL": "http://192.168.19.80:8080/files/resources/",
+  "authenticated_resources_label_visible": true,
+  "password_form_after_login": false,
+  "temporary_auth_profile_cookie_localstorage_cleaned": true,
+  "browser_session_closed": true,
+  "resource_files_read_or_written": false,
+  "real_password_or_token_output": false
+}

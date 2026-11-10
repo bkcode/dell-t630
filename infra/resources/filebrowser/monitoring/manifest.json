@@ -13,13 +13,16 @@
   "service_started": true,
   "candidate_files": {
     "health-services.candidate.json": "755801efe2e42b1298c1f66f71e0b1a9c9b216fbc39fbffa25d90f0d4b223136",
-    "health.candidate.json": "c3015e604d1398ef577afbb1f71def1ce41c373fb6bcb4419c0482ffd89a888b",
+    "health.candidate.json": "55b3193f6d90215d0d4b5d6b820a8c7e066c1a017885e7e2e360206daa557f98",
     "https-check-contract.json": "d1b56d47b87ecd7695e1d71c9827b3a3c0dc32b6443dbea362a4ba573200c229",
     "test_collector_ca.py": "c7fd9095384394ec59fd211d8f539c8e4dced8b92c9c528797dca4641c1bb7bd",
-    "README.md": "8f402ee8264a8eaeaf7e7e116aea5bca181df4e8a2e636ac4d372b82acb05b36"
+    "README.md": "f772c9b09f3448470817dd35f980d2a4492a2e4799e3a96ffe15adce37685dc1",
+    "http-check-contract.json": "bcad1837e92a1dbb7704b883edf74c5224c513ea8ce0bf4317d49bfa6f8c5652"
   },
-  "status": "source-and-native-HTTPS-monitoring-verified",
+  "status": "native-internal-HTTP-health-verified",
   "officialhealthpath": "/health",
-  "native_evidence": "completion/20261110-filebrowser/monitoring-installed.json",
-  "final_postcheck": "completion/20261110-filebrowser/final-postcheck.json"
+  "native_evidence": "evidence/internal-http-20261110/filebrowser-applied.json",
+  "final_postcheck": "evidence/internal-http-20261110/final-postcheck.json",
+  "transport": "HTTP",
+  "current_health_contract": "infra/resources/filebrowser/monitoring/http-check-contract.json"
 }

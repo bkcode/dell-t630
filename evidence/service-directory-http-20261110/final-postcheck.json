@@ -1,0 +1,29 @@
+{
+  "captured_at": "2026-11-10T14:13:57.441212+08:00",
+  "status": "passed",
+  "URL": "http://192.168.19.30:9080/",
+  "portal": {
+    "HTTP200": true,
+    "14entries": true,
+    "self_link_HTTP": true,
+    "no_topbar": true,
+    "writes405": true,
+    "no_HSTS": true,
+    "unit_plain_HTTP": true,
+    "no_credential_directive": true,
+    "no_runtime_credential_environment": true,
+    "runtime_credential_directory_absent": true,
+    "revision": "ddccc2b98bbb3dfdc9de649443dc3fcdc7b4860f",
+    "file_hashes_match": true,
+    "original_services_unchanged": true,
+    "actual_process_environment_output": false
+  },
+  "monitoring": {
+    "targets": 16,
+    "all_UP": true,
+    "navigation_metric_UP": true
+  },
+  "only_navigation_restarted": true,
+  "other_applications_or_firewall_routes_changed": false,
+  "credential_verification_method": "unit directive absent plus runtime credential environment/directory absent; formatted systemctl struct field alone is not proof"
+}

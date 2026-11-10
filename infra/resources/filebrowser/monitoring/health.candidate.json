@@ -12,12 +12,11 @@
   ],
   "http_checks": [
     {
-      "name": "filebrowser-https-health",
-      "url": "https://192.168.19.80:8080/health",
-      "ca_file": "/etc/dell-filebrowser/tls.crt"
+      "name": "filebrowser-http-health",
+      "url": "http://192.168.19.80:8080/health"
     }
   ],
   "candidate_service_units": [],
   "candidate_http_checks": [],
-  "notes": "Candidate only: preserve original five services and add native FileBrowser. Official v214 public GET /health, dedicated public CA with verified IP SAN19.80; native TLS/readiness/metrics still require actual deployment verification. No new Prometheus target or Lark test send."
+  "notes": "Current internal FileBrowser HTTP, original six services/authentication remain; no CA override or new Prometheus target"
 }

@@ -18,7 +18,7 @@
       "repository": "bkcode/deploy",
       "web_url": "https://github.com/bkcode/deploy",
       "kind": "deployment-tool-and-readonly-portal-source",
-      "purpose": "服务导航模块已按本地commit63b8c08部署到220；其他部署工具/Puyu适配仍候选，远端main未更新",
+      "purpose": "服务导航模块按本地d56cae5部署HTTP全宽无顶栏到220；其他发布工具/Puyu适配仍候选，远端main未更新",
       "ssh_url": "git@github.com:bkcode/deploy.git",
       "branch_reference": "main (management local checkout observed)",
       "management_local_reference": "/var/www/finger/finger-master/projects/deploy"
@@ -370,7 +370,7 @@
       "dependency_repository_ids": [],
       "upstream_repository_ids": [],
       "git_usage_mode": "build-source-planned",
-      "current_state_note": "只读服务导航模块已按63b8c08部署；原deploy工具与5Puyu后端仍取码/发布计划，不解除publisherfence、不启动Java。common-lib仅库。源分支4条既有未推送提交未代发布。",
+      "current_state_note": "只读HTTP服务导航已按d56cae5部署，FileBrowser链接HTTP，去顶栏全宽；其他deploy工具/5Puyu后端仍计划，publisherfence和Javaoff保持，原用户4提交不代推。",
       "direct_runtime_business_git_pull": false,
       "credential_references": [
         {
@@ -432,9 +432,9 @@
         {
           "repository_id": "deploy",
           "module": "service-directory",
-          "local_commit": "63b8c0873936e94f8483c4f1f8747aedb0180d43",
+          "local_commit": "d56cae553bf95ce0e2c3fe8f258a2f99389aae7c",
           "GitHub_main_published": false,
-          "evidence": "evidence/service-directory-20261110/installed.json"
+          "evidence": "evidence/internal-http-20261110/navigation-links-applied.json"
         }
       ]
     },
@@ -625,7 +625,7 @@
         "filebrowser-upstream"
       ],
       "git_usage_mode": "native-official-binary",
-      "current_state_note": "原NFS+官方FileBrowser固定v2.1.4-beta二进制，摘要由upstream.lock锁；无用户FileBrowser fork登记，不在来宾git pull跟随latest。管理元数据与共享资源分开。",
+      "current_state_note": "NFS与FileBrowser原认证资源管理保留；管理应用按用户内部策略改HTTP19.80:8080，仍固定2.1.4beta官方binary，无用户fork/Git拉取。",
       "direct_runtime_business_git_pull": false,
       "credential_references": []
     },
@@ -717,5 +717,5 @@
     "other_new_keys_read_tests_this_task": false,
     "keys_installed_on_servers_this_task": false
   },
-  "updated_at": "2026-11-10T13:57:52.022733+08:00"
+  "updated_at": "2026-11-10T14:28:52.439481+08:00"
 }

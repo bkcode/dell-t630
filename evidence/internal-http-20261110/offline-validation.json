@@ -1,0 +1,11 @@
+{
+  "captured_at": "2026-11-10T14:28:52.439481+08:00",
+  "status": "passed",
+  "FileBrowser_renderer_installer_regressions": 40,
+  "HTTP_navigation_regressions": 7,
+  "scope": "offline config/init guards and navigation transport/schema; browser/native proof separate",
+  "FileBrowser_firewall_three_artifacts_unchanged": true,
+  "FileBrowser_only_config_launcher_appunit_render_changes": true,
+  "bootstrap_helper_HTTP_aligned_not_reinitialized": true,
+  "no_secret_material_in_tests_or_output": true
+}

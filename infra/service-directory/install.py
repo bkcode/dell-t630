@@ -43,8 +43,7 @@ def main():
  run(['groupadd','--gid','2001','servicedirectory']);run(['useradd','--uid','2001','--gid','2001','--no-create-home','--no-log-init','--home-dir',str(BASE),'--shell','/usr/sbin/nologin','servicedirectory'])
  mkdir(BASE,0o755);mkdir(BASE/'releases',0o755);release=BASE/'releases'/x['revision'];mkdir(release,0o755);mkdir(release/'web',0o755)
  for name,b in files.items():put(release/name,b,0o644)
- mkdir(CONFIG,0o755);mkdir(CONFIG/'secrets',0o700)
- run(['openssl','req','-x509','-newkey','rsa:3072','-nodes','-sha256','-days','365','-keyout',str(CONFIG/'secrets/tls-key'),'-out',str(CONFIG/'tls.crt'),'-subj','/CN=publish-service.dell.home.arpa','-addext','subjectAltName=IP:192.168.19.30,DNS:publish-service.dell.home.arpa','-addext','basicConstraints=critical,CA:FALSE','-addext','extendedKeyUsage=serverAuth'],40);(CONFIG/'secrets/tls-key').chmod(0o600);(CONFIG/'tls.crt').chmod(0o644)
+ mkdir(CONFIG,0o755)
  nft='''table inet dell_service_directory_input {
  chain input {
   type filter hook input priority -6; policy accept;
@@ -90,8 +89,7 @@ User=servicedirectory
 Group=servicedirectory
 WorkingDirectory=/opt/dell/service-directory
 UMask=0077
-LoadCredential=tls-key:/etc/dell-service-directory/secrets/tls-key
-ExecStart=/usr/bin/python3 -I -B '''+str(release/'server.py')+''' --bind 192.168.19.30 --port 9080 --catalog '''+str(release/'services.json')+''' --cert /etc/dell-service-directory/tls.crt --key %d/tls-key
+ExecStart=/usr/bin/python3 -I -B '''+str(release/'server.py')+''' --bind 192.168.19.30 --port 9080 --catalog '''+str(release/'services.json')+''' --http
 Restart=on-failure
 RestartSec=5
 NoNewPrivileges=yes
@@ -110,7 +108,7 @@ WantedBy=multi-user.target
  try:
   run(['systemctl','enable','--now','dell-service-directory-firewall.service','dell-service-directory.service'],50);require(before==frame(),'protected-publisher-services-changed')
  except Exception:run(['systemctl','disable','--now','dell-service-directory.service']);raise
- out={'at':datetime.datetime.now(ZoneInfo('Asia/Shanghai')).isoformat(),'status':'service-directory-started-native-acceptance-pending','URL':'https://192.168.19.30:9080/','repository':'bkcode/deploy','revision':x['revision'],'service_UID_GID':2001,'initial_web_addresses':14,'anonymous_read_only':True,'application_accounts_or_passwords_created':False,'protected_services_unchanged':True,'Java_or_Nexus_or_Penpot_updated':False,'source_keys_or_secrets_copied_to_release':False,'certificate_fingerprint':run(['openssl','x509','-in',str(CONFIG/'tls.crt'),'-noout','-fingerprint','-sha256']).decode().strip()};print(json.dumps(out))
+ out={'at':datetime.datetime.now(ZoneInfo('Asia/Shanghai')).isoformat(),'status':'service-directory-started-native-acceptance-pending','URL':'http://192.168.19.30:9080/','repository':'bkcode/deploy','revision':x['revision'],'service_UID_GID':2001,'initial_web_addresses':14,'anonymous_read_only':True,'application_accounts_or_passwords_created':False,'protected_services_unchanged':True,'Java_or_Nexus_or_Penpot_updated':False,'source_keys_or_secrets_copied_to_release':False,'TLS_credentials_generated_or_loaded':False};print(json.dumps(out))
 if __name__=='__main__':
  try:main()
  except Exception as e:print(json.dumps({'status':'service-directory-installation-not-confirmed','error_type':type(e).__name__,'failure_code':str(e)if re.fullmatch('[a-zA-Z0-9-]{1,100}',str(e))else'withheld'}));raise SystemExit(1)

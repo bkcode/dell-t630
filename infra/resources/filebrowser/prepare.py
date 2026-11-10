@@ -15,8 +15,6 @@ CREDENTIALS = '/run/credentials/dell-filebrowser.service'
 def config():
     return {
         'http': {'listen': '192.168.19.80', 'port': 8080, 'baseURL': '/',
-                 'tlsCert': '/etc/dell-filebrowser/tls.crt',
-                 'tlsKey': '${CREDENTIALS_DIRECTORY}/tls-key',
                  'disableWebDAV': True, 'trustProxyHeaders': False},
         'server': {
             'database': {'path': STATE + '/database.sqlite'},
@@ -147,7 +145,7 @@ def credential_access(st, fd, directory=False):
 
 
 def credential(name):
-    if name not in ('jwt-key', 'admin-password', 'tls-key'):
+    if name not in ('jwt-key', 'admin-password'):
         raise ValueError('unknown-credential')
     if os.environ.get('CREDENTIALS_DIRECTORY') != str(CREDS):
         raise ValueError('fixed-credentials-directory-required')
@@ -159,7 +157,7 @@ def credential(name):
         fd = os.open(name, os.O_RDONLY | os.O_NOFOLLOW, dir_fd=directory_fd)
         try:
             st = os.fstat(fd)
-            maximum = 65536 if name == 'tls-key' else 4096
+            maximum = 4096
             if (not stat.S_ISREG(st.st_mode) or st.st_nlink != 1
                     or not credential_access(st, fd) or st.st_size < 1 or st.st_size > maximum):
                 raise ValueError('invalid-credential-file')
@@ -178,9 +176,6 @@ def environment(bootstrap_complete, reader):
     jwt = reader('jwt-key').rstrip(b'\\n')
     if not re.fullmatch(rb'[A-Za-z0-9_+=/-]{32,512}', jwt):
         raise ValueError('invalid-JWT-credential-format')
-    tls = reader('tls-key')
-    if b'PRIVATE KEY-----' not in tls or len(tls) > 65536:
-        raise ValueError('invalid-TLS-credential-format')
     env = {'PATH': '/usr/sbin:/usr/bin:/sbin:/bin', 'LANG': 'C.UTF-8',
            'HOME': str(STATE), 'CREDENTIALS_DIRECTORY': str(CREDS),
            'DELL_FB_JWT_KEY': jwt.decode('ascii'), 'FILEBROWSER_DISABLE_AUTOMATIC_BACKUP': 'true'}
@@ -349,7 +344,6 @@ WorkingDirectory=/var/lib/dell-filebrowser
 UMask=0002
 LoadCredential=jwt-key:/etc/dell-filebrowser/secrets/jwt-key
 LoadCredential=admin-password:/etc/dell-filebrowser/secrets/admin-password
-LoadCredential=tls-key:/etc/dell-filebrowser/secrets/tls-key
 ExecStartPre=+/usr/bin/python3 -I -B /opt/dell/resources/guard.py --role server
 ExecStart=/usr/bin/python3 -I -B /opt/dell/filebrowser/launch.py
 Restart=on-failure

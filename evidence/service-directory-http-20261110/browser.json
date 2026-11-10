@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-11-10T14:11:12.028547+08:00",
+  "status": "HTTP-no-topbar-full-width-desktop-mobile-verified",
+  "URL": "http://192.168.19.30:9080/",
+  "desktop": {
+    "viewport": 1920,
+    "workspace_x": 0,
+    "workspace_width": 1920,
+    "document_scrollWidth": 1920,
+    "topbar_count": 0,
+    "entry_rows": 14,
+    "forms": 0
+  },
+  "mobile": {
+    "viewport": 390,
+    "document_scrollWidth": 390,
+    "topbar_count": 0,
+    "entry_rows": 14,
+    "forms": 0
+  },
+  "source_revision": "ddccc2b98bbb3dfdc9de649443dc3fcdc7b4860f",
+  "browser_session_closed": true
+}

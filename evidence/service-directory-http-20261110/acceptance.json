@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-10T14:13:57.441212+08:00",
+  "status": "passed-HTTP-compact-fullwidth-navigation",
+  "scope": "existingVM220 navigation protocol andlayout only; other service protocols and apps untouched",
+  "cases": [
+    {
+      "id": "NAVHTTP-HTTP-001",
+      "title": "普通HTTP与无TLS凭据",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确导航不用HTTPS、移除顶部栏并减少外侧空白"
+      ],
+      "steps": [
+        "核精确Git发布/HTTP原生元数据及1920/390浏览器实际画面"
+      ],
+      "observable_pass_conditions": [
+        "普通HTTP与无TLS凭据的限定检查通过；无门户账号/写操作或其他应用更新"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/service-directory-http-20261110/applied.json",
+          "note": "bounded actual evidence; originalHTTPSrecords preserved separately"
+        },
+        {
+          "path": "evidence/service-directory-http-20261110/final-postcheck.json",
+          "note": "bounded actual evidence; originalHTTPSrecords preserved separately"
+        }
+      ],
+      "verified_at": "2026-11-10T14:13:57.441212+08:00"
+    },
+    {
+      "id": "NAVHTTP-LAYOUT-001",
+      "title": "移除顶部栏与桌面手机全宽布局",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确导航不用HTTPS、移除顶部栏并减少外侧空白"
+      ],
+      "steps": [
+        "核精确Git发布/HTTP原生元数据及1920/390浏览器实际画面"
+      ],
+      "observable_pass_conditions": [
+        "移除顶部栏与桌面手机全宽布局的限定检查通过；无门户账号/写操作或其他应用更新"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/service-directory-http-20261110/layout-applied.json",
+          "note": "bounded actual evidence; originalHTTPSrecords preserved separately"
+        },
+        {
+          "path": "evidence/service-directory-http-20261110/browser.json",
+          "note": "bounded actual evidence; originalHTTPSrecords preserved separately"
+        },
+        {
+          "path": "evidence/service-directory-http-20261110/desktop.png",
+          "note": "bounded actual evidence; originalHTTPSrecords preserved separately"
+        },
+        {
+          "path": "evidence/service-directory-http-20261110/mobile.png",
+          "note": "bounded actual evidence; originalHTTPSrecords preserved separately"
+        }
+      ],
+      "verified_at": "2026-11-10T14:13:57.441212+08:00"
+    },
+    {
+      "id": "NAVHTTP-SCOPE-001",
+      "title": "只读入口功能和原服务保持",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确导航不用HTTPS、移除顶部栏并减少外侧空白"
+      ],
+      "steps": [
+        "核精确Git发布/HTTP原生元数据及1920/390浏览器实际画面"
+      ],
+      "observable_pass_conditions": [
+        "只读入口功能和原服务保持的限定检查通过；无门户账号/写操作或其他应用更新"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/service-directory-http-20261110/final-postcheck.json",
+          "note": "bounded actual evidence; originalHTTPSrecords preserved separately"
+        },
+        {
+          "path": "evidence/service-directory-http-20261110/offline-validation.json",
+          "note": "bounded actual evidence; originalHTTPSrecords preserved separately"
+        }
+      ],
+      "verified_at": "2026-11-10T14:13:57.441212+08:00"
+    },
+    {
+      "id": "NAVHTTP-DOC-001",
+      "title": "当前使用说明与历史区分",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确导航不用HTTPS、移除顶部栏并减少外侧空白"
+      ],
+      "steps": [
+        "核精确Git发布/HTTP原生元数据及1920/390浏览器实际画面"
+      ],
+      "observable_pass_conditions": [
+        "当前使用说明与历史区分的限定检查通过；无门户账号/写操作或其他应用更新"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/service-directory-http-20261110/README.md",
+          "note": "bounded actual evidence; originalHTTPSrecords preserved separately"
+        }
+      ],
+      "verified_at": "2026-11-10T14:13:57.441212+08:00"
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "current_phase_case_count": 4,
+    "current_phase_passed": 4,
+    "statuses": {
+      "passed": 4
+    }
+  }
+}

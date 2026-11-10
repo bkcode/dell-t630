@@ -79,3 +79,11 @@
 - source本地commit63b8c08，运行只打包gitshow该提交5个公开模块文件，不能夹带原deploy/config/MCP/Gitkey。deploy本地main在任务前已有4条未推送用户commit，故没有代push/rebase/amend/force；不能把门户已部署说成源码已推GitHubmain。未来维护先用户确认Git发布范围，再选不可变commit替换release。
 - Linux专用OSuser2001+systemdreadonly，TLSkey仅LoadCredential，不是应用账号。清单在source services.json，修改后经review+新release重启本导航，不重跑fresh安装器覆盖。原publisher/Java/Nexus/Penpot不因此启停；Penpot继续等用户push两改造并通知。监控目标仍16，220本机多1导航unit检查，不外发人工告警/扩备份。
 - 验收evidence/service-directory-20261110/acceptance.json，手册usage-manual.md。浏览器只签匿名列表/search/copy/mobile和外链href/target，自动化new-window动作失去响应未冒签完整跳转；原生GET API14/写405/旧auth404/Host400及原服务身份保持均实测。
+
+- 导航最新合同按用户要求为HTTP19.30:9080，移除顶部栏、全宽/紧凑标题，source本地ddccc2b。旧TLS证书/启动回执仅历史，runtime不加载TLS凭据，不误恢复HTTPS或大留白顶部栏。其它目标服务协议不跟随改变。最新证据evidence/service-directory-http-20261110，实际访问不再需要导航证书。
+
+## 内部自建应用HTTP默认
+
+- 用户明确内部服务无需HTTPS。当前导航HTTP19.30:9080(免登录只读无顶栏全宽，source本地d56cae5)、FileBrowserHTTP19.80:8080(原resources/admin认证/权限保留)。PVE/iDRAC内置HTTPS本轮不强改；外部CloudflareTLS不是此内部范围。不得把HTTP等同无认证或自动关闭其它管理安全机制。
+- FileBrowser仅移除configTLSfields、launcherTLS读key、unitTLScredential；JWT/marker/UID2000/GID2980/NFS/state不动，原账号fresh登录与scope完整比对通过。health名filebrowser-http-health，不带ca_file，16targets与6资源服务保持。旧TLS材料/证据保留inactive，不作当前证书要求，不能回放旧HTTPS配置或freshinit重置原账号。
+- 本轮回执evidence/internal-http-20261110，源码Deploy4个本任务commit均本地，原4条用户未发布commit不代push；只同步导航FileBrowser链接HTTP，不启Java/Nexus合并/Penpot更新或改其它VM运行。

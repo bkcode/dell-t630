@@ -7,13 +7,13 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "角色/IP/预算/启动顺序唯一合同，根任务维护。",
-      "sha256": "366407e7f3e9f7e9d3806db79e3783d21c1a288a46bb77a62e0ae0e8521f441a"
+      "sha256": "ee849e5b748bb9a9e1e509a6db1a24c1b3554627e3c9b66c0ec4b36a288e2432"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工启停与共享挂载操作；不自动执行。",
-      "sha256": "0e309503267d410856e73bd4a8077fe493fa2c02d71679c21b709e59943fb293"
+      "sha256": "1ef7ba788d0c9ce1649dd53c3382ae307c7a53a63537dc6beb25849b810c0f12"
     },
     {
       "path": "completion/20261109-resources/usage-manual.md",
@@ -97,19 +97,19 @@
       "path": "infra/resources/filebrowser/prepare.py",
       "type": "current-contract",
       "purpose": "Authorized private Webmanagement increment; public parameters/nativeproof only, no secrets/file payload",
-      "sha256": "3244d813c5084a622cef72dcce52a5e78e5636d64b1416a22ed820860eaedac1"
+      "sha256": "35ddbfc20b9a717e6a83ed7fa0c889a81e465cc41ba61c4a01c401ef6833af18"
     },
     {
       "path": "infra/resources/filebrowser/install.py",
       "type": "historical-evidence",
       "purpose": "Authorized private Webmanagement increment; public parameters/nativeproof only, no secrets/file payload",
-      "sha256": "0b8c021cbbc13cb0e321525725b7b91f93e356122711a92bc495d086fcbd9e82"
+      "sha256": "2ea30a67e854a90f3015519aec76b25c5920f8084211c1b79c6544538e8469be"
     },
     {
       "path": "infra/resources/filebrowser/bootstrap.py",
       "type": "historical-evidence",
       "purpose": "Authorized private Webmanagement increment; public parameters/nativeproof only, no secrets/file payload",
-      "sha256": "59b6a37574bac74267f0007e64433ff8d5c7006374f5c955746af3b1fc0d7414"
+      "sha256": "c03f54e5d249bdd3e0f39aa335cd2ec887669163c6cca03ad3ea28ee99900d7c"
     },
     {
       "path": "infra/resources/filebrowser/upstream.lock.json",
@@ -127,7 +127,7 @@
       "path": "completion/20261110-filebrowser/usage-manual.md",
       "type": "current-contract",
       "purpose": "Authorized private Webmanagement increment; public parameters/nativeproof only, no secrets/file payload",
-      "sha256": "561778263a8e6dfa11b222ded3f16bddf0a4ddca7a4c8335908b80cfcfeb61f3"
+      "sha256": "201a2b7304c3b24bde8f69177012f5d3839af801aa94c5c16c8a98bdcd3dd98f"
     },
     {
       "path": "completion/20261110-filebrowser/final-postcheck.json",
@@ -169,13 +169,13 @@
       "path": "machines/git-repositories.json",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "cd731e9346216cb5bbdfefc82a310fddf9ed409d25bce6eb6138f9e74c5fde8b"
+      "sha256": "6f9f33ac463c91441efe26ad88b2ee1c21f6ca0270acb09c9daa7f67f64c0799"
     },
     {
       "path": "machines/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "bc3cdff1b6b57bb52b9ce9c7be4bc9c937cd72b8a4eebb4c8d566dd303c4e3e0"
+      "sha256": "b27b3668337bde07df8750f08db405115e37411a1ae2f730816f7fe8f512c76f"
     },
     {
       "path": "machines/vm280-resource-service/GIT-REPOSITORIES.md",
@@ -188,6 +188,48 @@
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
       "sha256": "6738545de49c9a1d868e3d59dffc557052ba6147542485ce0efc2a2023c7b1ef"
+    },
+    {
+      "path": "evidence/internal-http-20261110/acceptance.json",
+      "type": "current-contract",
+      "purpose": "Explicit internal HTTP policy, originalauth/NFSkept and finalnavigationlayout; publicscopedproof only",
+      "sha256": "962350e1c95c6c8900bbe9958e73425d7b3edf1f8f4628de27ce60d75db45ab8"
+    },
+    {
+      "path": "evidence/internal-http-20261110/filebrowser-applied.json",
+      "type": "historical-evidence",
+      "purpose": "Explicit internal HTTP policy, originalauth/NFSkept and finalnavigationlayout; publicscopedproof only",
+      "sha256": "7b8f1e0c49ada13d00d57b1f4af0c1a2c30688db0d12d707d406a8160aac849d"
+    },
+    {
+      "path": "evidence/internal-http-20261110/filebrowser-browser.json",
+      "type": "historical-evidence",
+      "purpose": "Explicit internal HTTP policy, originalauth/NFSkept and finalnavigationlayout; publicscopedproof only",
+      "sha256": "3701734abcc9a976daa937563eff85f8b453ca9468961235d5aa7da64d0d108c"
+    },
+    {
+      "path": "evidence/internal-http-20261110/final-postcheck.json",
+      "type": "historical-evidence",
+      "purpose": "Explicit internal HTTP policy, originalauth/NFSkept and finalnavigationlayout; publicscopedproof only",
+      "sha256": "5cd29ffce58b01b7d814bd8482a37d915dd549e2c1c78242ac9711305ad75d3c"
+    },
+    {
+      "path": "infra/resources/filebrowser/switch-http.py",
+      "type": "current-contract",
+      "purpose": "Explicit internal HTTP policy, originalauth/NFSkept and finalnavigationlayout; publicscopedproof only",
+      "sha256": "282acdf8f7a87a4e09716fca538bd996875b566e6f90d443261c6a8c775ee28a"
+    },
+    {
+      "path": "infra/resources/filebrowser/monitoring/health.candidate.json",
+      "type": "historical-evidence",
+      "purpose": "Explicit internal HTTP policy, originalauth/NFSkept and finalnavigationlayout; publicscopedproof only",
+      "sha256": "55b3193f6d90215d0d4b5d6b820a8c7e066c1a017885e7e2e360206daa557f98"
+    },
+    {
+      "path": "infra/resources/filebrowser/monitoring/http-check-contract.json",
+      "type": "current-contract",
+      "purpose": "Explicit internal HTTP policy, originalauth/NFSkept and finalnavigationlayout; publicscopedproof only",
+      "sha256": "bcad1837e92a1dbb7704b883edf74c5224c513ea8ce0bf4317d49bfa6f8c5652"
     }
   ]
 }

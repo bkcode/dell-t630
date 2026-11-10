@@ -2,7 +2,7 @@
 
 更新：2026-11-10，Asia/Shanghai。本文从唯一[Git来源总表](../git-repositories.json)的`/machines/6`派生；机器位置`machines/vm220-publish-service`，身份与资源仍以[plan.json](../../plan.json)为准。
 
-本页维护总表派生的来源与取码计划，并单列后续获准的导航部署事实。文档编辑本身没有SSH或Git远程操作；导航实际安装以[安装回执](../../evidence/service-directory-20261110/installed.json)和[原生验收](../../evidence/service-directory-20261110/native-acceptance.json)为证。登记仓库不代表整仓库已clone、server Git key已分发或业务已上线。
+本页维护总表派生的来源与取码计划，并单列后续获准的导航部署事实。文档编辑本身没有SSH或Git远程操作；导航最新实际状态以[统一内网HTTP交付](../../evidence/internal-http-20261110/README.md)为证，首次HTTPS回执只作历史。登记仓库不代表整仓库已clone、server Git key已分发或业务已上线。
 
 ## 本机结论
 
@@ -14,13 +14,13 @@
 
 ## 已部署的导航模块：精确例外
 
-用户新增并收窄为无需账号密码、只预览跳转的内网导航。现役仅取 `bkcode/deploy` 的 `service-directory/server.py`、`services.json`、三个Web文件，绑定提交 `63b8c0873936e94f8483c4f1f8747aedb0180d43`；[source-manifest](../../evidence/service-directory-20261110/source-manifest.json)登记每文件SHA256。管理机项目位于 `/Users/yangzhaohui/work/www/finger/finger-master/projects/deploy`，发布机源码路径约定为 `/var/www/finger/finger-master/projects/deploy`；运行release独立位于 `/opt/dell/service-directory/releases/<SHA>/`，并非把整个deploy工作树直接运行或安装所有候选业务。
+用户新增并收窄为无需账号密码、只预览跳转的内网导航。现役仅取 `bkcode/deploy` 的 `service-directory/server.py`、`services.json`、三个Web文件，绑定当前提交 `d56cae553bf95ce0e2c3fe8f258a2f99389aae7c`；[最新导航应用回执](../../evidence/internal-http-20261110/navigation-links-applied.json)登记每文件SHA256。ddccc2b是此前布局阶段。`63b8c08` 的首次HTTPS[source-manifest](../../evidence/service-directory-20261110/source-manifest.json)仅是历史。管理机项目位于 `/Users/yangzhaohui/work/www/finger/finger-master/projects/deploy`，发布机源码路径约定为 `/var/www/finger/finger-master/projects/deploy`；运行release独立位于 `/opt/dell/service-directory/releases/<SHA>/`，并非把整个deploy工作树直接运行或安装所有候选业务。
 
-入口 **[https://192.168.19.30:9080/](https://192.168.19.30:9080/)** 匿名只读，不调用原发布链、不探测URL；未来清单改项目Git后提交新SHA，再部署新release/只重启导航。无应用密码或运行state，也不读取/复制旧deploy配置、MCP jobs、Git或publisher私钥。Linux UID/GID2001仅隔离导航进程，不是应用账号。[手册与验收边界](../../evidence/service-directory-20261110/README.md)。
+入口 **[http://192.168.19.30:9080/](http://192.168.19.30:9080/)** 按用户要求使用HTTP，移除顶部栏并使用全宽紧凑布局；不加载TLS或登录凭据。匿名只读，不调用原发布链、不探测URL；未来清单改项目Git后提交新SHA，再部署新release/只重启导航。无应用密码或运行state，也不读取/复制旧deploy配置、MCP jobs、Git或publisher私钥。Linux UID/GID2001仅隔离导航进程，不是应用账号。[手册与验收边界](../../evidence/service-directory-20261110/README.md)。
 
 [源码Git状态](../../evidence/service-directory-20261110/source-git-state.json)记录：任务前本机main已比观测到的GitHub main `593069eb54a723ee0e63f85b937b9981b39ac1ec` 领先4条用户提交；本次新增自身8文件提交 `63b8c08`（父 `81148e8614ee5c49e6f9e4d1b85aebef8adfb33d`），**已本机提交、未push**，避免顺带发布原4条提交。没有amend/rebase/force。现役五文件确由git show精确提交导出，日后维护只能取已审查明确提交，不能git pull旧main覆盖。Dell配置文档独立交付不代表deploy源码已推到GitHub。
 
-[重启](../../evidence/service-directory-20261110/service-restart.json)、[浏览器](../../evidence/service-directory-20261110/browser-acceptance.json)、[最终后检](../../evidence/service-directory-20261110/final-postcheck.json)已通过本期限定验收；真实pointer跳转与目标站点可达性未签。
+上述源码Git记录与首次[重启/浏览器/后检](../../evidence/service-directory-20261110/README.md)属于63b首次HTTPS阶段。后续仅本机提交HTTP变更 `c141506ec6a59dd7f123cabc00f099f1cf87d4e1` 和全宽布局 `ddccc2b98bbb3dfdc9de649443dc3fcdc7b4860f`，仍未push、未改写4条既有用户提交。随后新增FileBrowser链接HTTP提交 `d56cae553bf95ce0e2c3fe8f258a2f99389aae7c`，共4条任务提交仍未push；运行release现为d56提交的精确五文件；旧TLS证书/私钥只留未启用历史。最新[统一内网HTTP记录](../../evidence/internal-http-20261110/README.md)及[14:28后检](../../evidence/internal-http-20261110/final-postcheck.json)为准，FileBrowser链接HTTP、14条/topbar0/全宽保持且原服务不变；不借旧验收扩大证明新布局或目标站点可达性。
 
 这不证明 `bkcode/deploy` 已适配Puyu部署，更不证明五个后端已上线；Java仍停用、publisher fenced、common-lib仍只是共享库。表中 `build-source-planned` 保留业务取码计划语义，导航release另按本节证据登记。
 

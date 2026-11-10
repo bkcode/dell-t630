@@ -1,0 +1,10 @@
+{
+  "status": "current-internal-HTTP-health",
+  "role": "resource-service",
+  "vmid": 280,
+  "url": "http://192.168.19.80:8080/health",
+  "name": "filebrowser-http-health",
+  "ca_file_used": false,
+  "new_Prometheus_targets": 0,
+  "native_evidence": "evidence/internal-http-20261110/filebrowser-applied.json"
+}

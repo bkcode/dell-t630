@@ -6,7 +6,7 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "366407e7f3e9f7e9d3806db79e3783d21c1a288a46bb77a62e0ae0e8521f441a"
+      "sha256": "ee849e5b748bb9a9e1e509a6db1a24c1b3554627e3c9b66c0ec4b36a288e2432"
     },
     {
       "path": "11-live-handoff.md",
@@ -18,13 +18,13 @@
       "path": "12-service-access-and-operations.md",
       "type": "current-contract",
       "purpose": "当前19网入口及凭据保管规则。",
-      "sha256": "799ac343ae880cac7a70c297b4a321b2ff8019daefee33d0074cb56d9a1af726"
+      "sha256": "2f381d1e1ea77ccbb3ec5ce565eb36937daebbe70b0e9f80db4ac2528d2f0224"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
-      "sha256": "0e309503267d410856e73bd4a8077fe493fa2c02d71679c21b709e59943fb293"
+      "sha256": "1ef7ba788d0c9ce1649dd53c3382ae307c7a53a63537dc6beb25849b810c0f12"
     },
     {
       "path": "cleanup/final-live-check.json",
@@ -198,19 +198,19 @@
       "path": "machines/git-repositories.json",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "cd731e9346216cb5bbdfefc82a310fddf9ed409d25bce6eb6138f9e74c5fde8b"
+      "sha256": "6f9f33ac463c91441efe26ad88b2ee1c21f6ca0270acb09c9daa7f67f64c0799"
     },
     {
       "path": "machines/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "bc3cdff1b6b57bb52b9ce9c7be4bc9c937cd72b8a4eebb4c8d566dd303c4e3e0"
+      "sha256": "b27b3668337bde07df8750f08db405115e37411a1ae2f730816f7fe8f512c76f"
     },
     {
       "path": "machines/vm220-publish-service/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "fcbf6f253549b1a100f34679425acf4274dd4fbea89a5f13e3d26b8f6fade751"
+      "sha256": "c681b97e0a06e80ff1b1677029f2a5fc34653ed16f10f1681b9a17b6bced09c2"
     },
     {
       "path": "scripts/validate_git_repositories.py",
@@ -222,7 +222,7 @@
       "path": "infra/service-directory/install.py",
       "type": "current-contract",
       "purpose": "Authorized anonymous readonly navigation on VM220; Git source module and scoped evidence, no application credentials or business deployment",
-      "sha256": "fd266464f2aafc5d405361e1707c6983f041b931be5b5929de7886bae0cc1c33"
+      "sha256": "6dee7eab679684fc547f3b87cc85eb5f9c0666b20c614ab3ca76ec9c17a51367"
     },
     {
       "path": "infra/service-directory/README.md",
@@ -240,7 +240,7 @@
       "path": "evidence/service-directory-20261110/usage-manual.md",
       "type": "current-contract",
       "purpose": "Authorized anonymous readonly navigation on VM220; Git source module and scoped evidence, no application credentials or business deployment",
-      "sha256": "2e72e00aeb7526415c83cfb76e050c854d95cb865220490846dc822019f81a80"
+      "sha256": "6b154a8e44a939548dd7c9a609baa9a49696011c8ae563b683e68096b5f37467"
     },
     {
       "path": "evidence/service-directory-20261110/source-manifest.json",
@@ -283,6 +283,48 @@
       "type": "historical-evidence",
       "purpose": "Authorized anonymous readonly navigation on VM220; Git source module and scoped evidence, no application credentials or business deployment",
       "sha256": "b8944a6d15df91487f8e9ad0ce7a421010f19ea202048bcddeda01ddb123ce04"
+    },
+    {
+      "path": "evidence/internal-http-20261110/navigation-links-applied.json",
+      "type": "historical-evidence",
+      "purpose": "Explicit internal HTTP policy, originalauth/NFSkept and finalnavigationlayout; publicscopedproof only",
+      "sha256": "537aa954cd0938be6876b22ef5ebc4229818d9c7b32ed10b1e2200da508891c6"
+    },
+    {
+      "path": "evidence/internal-http-20261110/final-postcheck.json",
+      "type": "historical-evidence",
+      "purpose": "Explicit internal HTTP policy, originalauth/NFSkept and finalnavigationlayout; publicscopedproof only",
+      "sha256": "5cd29ffce58b01b7d814bd8482a37d915dd549e2c1c78242ac9711305ad75d3c"
+    },
+    {
+      "path": "evidence/service-directory-http-20261110/acceptance.json",
+      "type": "current-contract",
+      "purpose": "Explicit internal HTTP policy, originalauth/NFSkept and finalnavigationlayout; publicscopedproof only",
+      "sha256": "198df03d5e8c3addbc60ae8984f19ff9a2b68c49fdd73b1ebc41e8281d9c0e55"
+    },
+    {
+      "path": "evidence/service-directory-http-20261110/browser.json",
+      "type": "historical-evidence",
+      "purpose": "Explicit internal HTTP policy, originalauth/NFSkept and finalnavigationlayout; publicscopedproof only",
+      "sha256": "15f95570fceb944fd66302a3fac6a17a55ed8c18d03c4086c9a89edb8bc72705"
+    },
+    {
+      "path": "infra/service-directory/switch-http.py",
+      "type": "current-contract",
+      "purpose": "Explicit internal HTTP policy, originalauth/NFSkept and finalnavigationlayout; publicscopedproof only",
+      "sha256": "4650be8f3dc2e42947d3180cefebda8119e91d606cf1118e8c6f5009657c2851"
+    },
+    {
+      "path": "infra/service-directory/update-readonly-release.py",
+      "type": "historical-evidence",
+      "purpose": "Explicit internal HTTP policy, originalauth/NFSkept and finalnavigationlayout; publicscopedproof only",
+      "sha256": "120a491c3ce7316dab299c461721f8be3430f425fc5d0870cf7e81e6a8e13ad1"
+    },
+    {
+      "path": "infra/service-directory/update-app-http-links.py",
+      "type": "historical-evidence",
+      "purpose": "Explicit internal HTTP policy, originalauth/NFSkept and finalnavigationlayout; publicscopedproof only",
+      "sha256": "9e6199c3f6837990e2e51b92208b2d7526a8487c6f105fe8f3b1575b7820cae6"
     }
   ],
   "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."

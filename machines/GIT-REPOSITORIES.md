@@ -62,3 +62,7 @@ python3 scripts/validate_docs.py --json
 ## 发布机导航模块已部署
 
 220新增服务导航是后续用户明确授权的例外，仅使用bkcode/deploy的service-directory公开模块，当前运行本地提交63b8c08；不是原部署工具/Puyu业务已上线。源码本地main另有4条既有未推送提交，未代为发布整个分支。见[本期导航交付](../evidence/service-directory-20261110/README.md)，其他仓库/机器部署计划保持。
+
+导航后续按用户要求切HTTP并采用紧凑全宽无顶栏，当前本地源码`ddccc2b`；原`63b8c08`为首次HTTPS历史，见[当前导航](../evidence/service-directory-http-20261110/README.md)。未代推原4条用户提交。
+
+内部应用最终按用户要求用HTTP；导航source本地d56cae5同步FileBrowser链接，FileBrowserbinary不变，仅HTTP运行配置更新。原PVE/iDRAC内置HTTPS保留。见[内部HTTP交付](../evidence/internal-http-20261110/README.md)。

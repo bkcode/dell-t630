@@ -81,9 +81,11 @@
     "Mac_external_probe": "not-required-explicit-user-choice",
     "resource_vmid280_registered": true,
     "resource_local_service_checks": 6,
-    "resource_dedicated_CA_HTTPS_health": true,
+    "resource_dedicated_CA_HTTPS_health": false,
     "publisher_navigation_unit_check": true,
-    "publisher_navigation_evidence": "evidence/service-directory-20261110/monitoring-installed.json"
+    "publisher_navigation_evidence": "evidence/service-directory-20261110/monitoring-installed.json",
+    "resource_HTTP_health": true,
+    "latest_internal_HTTP_evidence": "evidence/internal-http-20261110/final-postcheck.json"
   },
   "current_verification_evidence": "completion/20261110-filebrowser/final-postcheck.json",
   "current_verification_scope": "16targets and resource6service/HTTPShealthUP; existingreceiver/Lark unchanged, no test notification",

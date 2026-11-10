@@ -1,3 +1,5 @@
+> 最新内网HTTP策略：FileBrowser健康检查已改为`http://192.168.19.80:8080/health`、名称`filebrowser-http-health`，不带ca_file；账号/NFS及六服务合同保持。见[本轮HTTP交付](../../../../evidence/internal-http-20261110/README.md)。下方专属CA/TLS回归是首次HTTPS阶段的历史支持，不代表当前还要求证书。
+
 > 已由主AI完成实际部署，当前6服务＋专属CA HTTPS健康检查UP，16targets保持；见[安装回执](../../../../completion/20261110-filebrowser/monitoring-installed.json)和[最终后检](../../../../completion/20261110-filebrowser/final-postcheck.json)。下文记录初始候选阶段；旧manifest单独保存在manifest-preparation.json，不能据旧pending描述重放安装或回退当前服务。
 
 # FileBrowser Quantum原生服务：监控候选

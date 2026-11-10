@@ -41,16 +41,15 @@ def public_hashes():
  return result
 
 def credential_sources():
- return {name:CONFIG/'secrets'/name for name in ['jwt-key','admin-password','tls-key']}
+ return {name:CONFIG/'secrets'/name for name in ['jwt-key','admin-password']}
 
 def private_preflight():
  trusted(CONFIG,0o755);trusted(CONFIG/'secrets',0o700);trusted(MANAGER,0o700)
- for name in ['admin-password','jwt-key','tls-key','login.json']:
+ for name in ['admin-password','jwt-key','login.json']:
   path=CONFIG/'secrets'/name;trusted(path,0o600);st=path.stat()
   need(stat.S_ISREG(st.st_mode)and st.st_nlink==1 and 0<st.st_size<=65536,'private-file-invalid')
  for path in [STATE,STATE/'cache']:
   st=path.lstat();need(stat.S_ISDIR(st.st_mode)and not stat.S_ISLNK(st.st_mode)and st.st_uid==2000 and st.st_gid==2980 and stat.S_IMODE(st.st_mode)==0o700,'private-state-invalid')
- trusted(CONFIG/'tls.crt',0o644)
  for path in [CODE,CODE/'releases',BINARY.parent]:trusted(path,0o755)
  for path in [CONFIG,CODE,*CODE.parents]:need(path.stat().st_mode&0o001,'public-parent-not-traversable')
  trusted(BINARY,0o755)
@@ -94,18 +93,13 @@ def prepare():
  BINARY.chmod(0o755)
  credentials=credential_sources()
  fresh(credentials['admin-password'],(data['admin_password']+'\n').encode(),0o600);fresh(credentials['jwt-key'],(data['jwt_key']+'\n').encode(),0o600)
- login={'URL':'https://192.168.19.80:8080/','admin':{'username':'admin','password':data['admin_password']},'operator':{'username':'resources','password':data['operator_password']}}
+ login={'URL':'http://192.168.19.80:8080/','admin':{'username':'admin','password':data['admin_password']},'operator':{'username':'resources','password':data['operator_password']}}
  fresh(CONFIG/'secrets/login.json',(json.dumps(login,indent=2)+'\n').encode(),0o600)
- env=os.umask(0o077)
- try:
-  run(['openssl','req','-x509','-newkey','rsa:3072','-nodes','-sha256','-days','365','-keyout',str(credentials['tls-key']),'-out',str(CONFIG/'tls.crt'),'-subj','/CN=resource-service.dell.home.arpa','-addext','subjectAltName=IP:192.168.19.80,DNS:resource-service.dell.home.arpa','-addext','basicConstraints=critical,CA:FALSE','-addext','extendedKeyUsage=serverAuth'],timeout=40)
- finally:os.umask(env)
- credentials['tls-key'].chmod(0o600);(CONFIG/'tls.crt').chmod(0o644)
  for name,(dest,mode)in mapping.items():fresh(dest,files[name].encode(),mode)
  private_preflight();hashes=public_hashes();need(hashes=={name:hashlib.sha256(value.encode()).hexdigest()for name,value in files.items()},'public-write-readback-mismatch')
  run(['systemctl','daemon-reload']);run(['systemd-analyze','verify','/etc/systemd/system/dell-filebrowser.service','/etc/systemd/system/dell-filebrowser-firewall.service'])
  run(['python3','-I','-B',str(CODE/'firewall.py'),'--check']);need(metadata()==before,'protected-services-changed')
- result={'at':datetime.datetime.now().astimezone().isoformat(),'status':'management-configuration-prepared-not-started','tag':'v2.1.4-beta','service_UID':2000,'shared_GID':2980,'native_no_Docker':True,'shared_files_or_permissions_rewritten':False,'protected_service_identities_unchanged':True,'public_files_sha256':hashes,'certificate_fingerprint':run(['openssl','x509','-in',str(CONFIG/'tls.crt'),'-noout','-fingerprint','-sha256']).decode().strip()};fresh(MANAGER/'prepared.json',(json.dumps(result,indent=2)+'\n').encode(),0o600);print(json.dumps(result))
+ result={'at':datetime.datetime.now().astimezone().isoformat(),'status':'management-configuration-prepared-not-started','tag':'v2.1.4-beta','service_UID':2000,'shared_GID':2980,'native_no_Docker':True,'shared_files_or_permissions_rewritten':False,'protected_service_identities_unchanged':True,'public_files_sha256':hashes,'transport':'HTTP','HTTP_policy':'production-internal-management-HTTP-user-authorized'};fresh(MANAGER/'prepared.json',(json.dumps(result,indent=2)+'\n').encode(),0o600);print(json.dumps(result))
 
 def activate():
  identity();private_preflight()
@@ -116,7 +110,7 @@ def activate():
  try:
   run(['systemctl','enable','--now','dell-filebrowser-firewall.service','dell-filebrowser.service'],timeout=60)
   need(metadata()==before,'protected-services-changed-on-start');need(run(['systemctl','is-active','dell-filebrowser.service']).decode().strip()=='active','management-not-active')
-  result={'at':datetime.datetime.now().astimezone().isoformat(),'status':'management-service-started-authentication-and-upload-acceptance-pending','protected_service_identities_unchanged':True,'port':8080,'HTTPS':True,'NFS_or_client_restarts':False,'Java_or_business_HTTP_started':False}
+  result={'at':datetime.datetime.now().astimezone().isoformat(),'status':'management-service-started-authentication-and-upload-acceptance-pending','protected_service_identities_unchanged':True,'port':8080,'transport':'HTTP','HTTPS':False,'NFS_or_client_restarts':False,'Java_or_business_HTTP_started':False}
   fresh(MANAGER/'activated.json',(json.dumps(result,indent=2)+'\n').encode(),0o600)
  except Exception:
   # Leave the protective firewall in place. Never touch existing NFS or other services.

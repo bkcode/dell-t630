@@ -6,11 +6,11 @@ Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/
 
 ## 2026-11-10新增免登录导航
 
-**[https://192.168.19.30:9080/](https://192.168.19.30:9080/)** 只预览14个Web入口，支持搜索/分组/环境筛选/复制与外链跳转，无账号密码、CRUD或健康探测。各服务认证保持。此项是较早“仅Penpot部署”之后用户明确授权的新例外；只部署 `bkcode/deploy/service-directory` 提交 `63b8c0873936e94f8483c4f1f8747aedb0180d43`，不表示五个Puyu后端已上线或原publisher解冻。
+当前 **[http://192.168.19.30:9080/](http://192.168.19.30:9080/)**，按用户要求取消导航HTTPS，移除“个人内网 / 服务导航”顶部栏、压缩标题/外侧留白并采用全宽布局。只预览14个Web入口，支持搜索/分组/环境筛选/复制与外链跳转，无账号密码、CRUD或健康探测；目标各自认证保持；自建应用默认HTTP，FileBrowser已切HTTP但仍需原账号密码，PVE/iDRAC内置HTTPS本轮保留。只部署 `bkcode/deploy/service-directory` 当前提交 `d56cae553bf95ce0e2c3fe8f258a2f99389aae7c`，不表示五个Puyu后端已上线或publisher解冻。
 
-Python3原生unit `dell-service-directory.service`、OS用户 `servicedirectory` UID/GID2001只读运行；这个Linux进程身份不是页面登录账号。root-owned固定release为 `/opt/dell/service-directory/releases/<SHA>/`，manifest/公开证书在 `/etc/dell-service-directory/`，仅TLS私钥走root-only secret与LoadCredential，无应用状态。专属 `dell-service-directory-firewall.service` 只管理自有nft输入表的9080来源，允许LAN21/24、WG10.66.66/24、本机19.30/lo，不改PVE与路由。
+Python3原生unit `dell-service-directory.service`、OS用户 `servicedirectory` UID/GID2001只读运行；Linux进程身份不是页面登录账号。root-owned固定release为 `/opt/dell/service-directory/releases/d56cae553bf95ce0e2c3fe8f258a2f99389aae7c/`，manifest在 `/etc/dell-service-directory/`。显式 `--http`，不加载TLS或登录凭据，无应用状态。旧证书/私钥仅留未启用历史，不再配置TLS LoadCredential。专属firewall unit只管理自有nft输入表9080来源，允许LAN21/24、WG10.66.66/24、本机19.30/lo，不改PVE或路由。
 
-[原生验收](../../evidence/service-directory-20261110/native-acceptance.json)、[仅导航重启](../../evidence/service-directory-20261110/service-restart.json)、[浏览器预览](../../evidence/service-directory-20261110/browser-acceptance.json)与[最终后检](../../evidence/service-directory-20261110/final-postcheck.json)均通过；重启仅app PID变化，14匿名入口保持，原服务frame不变，13来宾/3模板与16targets全UP、PVE forwarding全0。浏览器验证展示/搜索/复制提示、390px无横向溢出及安全链接属性；真实pointer新窗跳转未签、未请求目标站点。[中央记录](../../evidence/service-directory-20261110/README.md)与[使用手册](../../evidence/service-directory-20261110/usage-manual.md)含公开TLS指纹、清单维护和故障步骤。源码已本机提交未push，因本机main另有4条既有用户提交未自动捎带发布；后续必须审查精确提交，不能git pull旧main覆盖。清单修改先改源码Git并提交，再新release/只重启导航，不调用业务发布链。原4CPU/4GiB、build盘和Nexus standby边界保持。
+最新[统一内网HTTP交付](../../evidence/internal-http-20261110/README.md)、[导航链接应用](../../evidence/internal-http-20261110/navigation-links-applied.json)与[14:28最终后检](../../evidence/internal-http-20261110/final-postcheck.json)通过，FileBrowser链接改HTTP、14条清单/topbar0/fullwidth保持，原服务不变；ddccc2b只保留为此前布局验证阶段。`63b8c08`的[原生/重启/浏览器/TLS验收](../../evidence/service-directory-20261110/README.md)保留为首次历史。[使用手册](../../evidence/service-directory-20261110/usage-manual.md)已改HTTP操作。源码本机提交未push，原4条用户提交未捎带发布；后续取已审查精确提交，不git pull旧main覆盖。清单维护只重启导航，不调用业务发布链。原4CPU/4GiB、build盘和Nexus standby边界保持。
 
 ## 本轮只读状态与备份归属
 

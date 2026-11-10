@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-10T14:28:52.439481+08:00",
+  "status": "passed-internal-applications-HTTP-policy",
+  "scope": "FileBrowser and read-only navigation HTTP only; preserve nativePVE/iDRAC HTTPS, originalaccounts/NFS and nootherappupdate",
+  "cases": [
+    {
+      "id": "INTERNALHTTP-RUNTIME-001",
+      "title": "自建两应用HTTP及内置管理例外",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确内部服务不需要HTTPS；自建应用HTTP、系统内置管理方式本轮不改"
+      ],
+      "steps": [
+        "核固定公开产物CAS、原账号fresh登录/权限比对、限定浏览器及最终只读监控证据"
+      ],
+      "observable_pass_conditions": [
+        "自建两应用HTTP及内置管理例外的限定原生检查通过，无账号重置或业务数据迁移"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/internal-http-20261110/filebrowser-applied.json",
+          "note": "public bounded proof; no passwords/JWT/TLSkey or rawconfiguration output"
+        },
+        {
+          "path": "evidence/internal-http-20261110/navigation-links-applied.json",
+          "note": "public bounded proof; no passwords/JWT/TLSkey or rawconfiguration output"
+        },
+        {
+          "path": "evidence/internal-http-20261110/final-postcheck.json",
+          "note": "public bounded proof; no passwords/JWT/TLSkey or rawconfiguration output"
+        }
+      ],
+      "verified_at": "2026-11-10T14:28:52.439481+08:00"
+    },
+    {
+      "id": "INTERNALHTTP-AUTH-001",
+      "title": "原FileBrowser认证与资源权限保持",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确内部服务不需要HTTPS；自建应用HTTP、系统内置管理方式本轮不改"
+      ],
+      "steps": [
+        "核固定公开产物CAS、原账号fresh登录/权限比对、限定浏览器及最终只读监控证据"
+      ],
+      "observable_pass_conditions": [
+        "原FileBrowser认证与资源权限保持的限定原生检查通过，无账号重置或业务数据迁移"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/internal-http-20261110/filebrowser-applied.json",
+          "note": "public bounded proof; no passwords/JWT/TLSkey or rawconfiguration output"
+        },
+        {
+          "path": "evidence/internal-http-20261110/filebrowser-browser.json",
+          "note": "public bounded proof; no passwords/JWT/TLSkey or rawconfiguration output"
+        }
+      ],
+      "verified_at": "2026-11-10T14:28:52.439481+08:00"
+    },
+    {
+      "id": "INTERNALHTTP-SCOPE-001",
+      "title": "无TLS运行凭据与NFS/监控保持",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确内部服务不需要HTTPS；自建应用HTTP、系统内置管理方式本轮不改"
+      ],
+      "steps": [
+        "核固定公开产物CAS、原账号fresh登录/权限比对、限定浏览器及最终只读监控证据"
+      ],
+      "observable_pass_conditions": [
+        "无TLS运行凭据与NFS/监控保持的限定原生检查通过，无账号重置或业务数据迁移"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/internal-http-20261110/final-postcheck.json",
+          "note": "public bounded proof; no passwords/JWT/TLSkey or rawconfiguration output"
+        },
+        {
+          "path": "evidence/internal-http-20261110/source-review.md",
+          "note": "public bounded proof; no passwords/JWT/TLSkey or rawconfiguration output"
+        }
+      ],
+      "verified_at": "2026-11-10T14:28:52.439481+08:00"
+    },
+    {
+      "id": "INTERNALHTTP-DOC-001",
+      "title": "当前说明与历史证据分离",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确内部服务不需要HTTPS；自建应用HTTP、系统内置管理方式本轮不改"
+      ],
+      "steps": [
+        "核固定公开产物CAS、原账号fresh登录/权限比对、限定浏览器及最终只读监控证据"
+      ],
+      "observable_pass_conditions": [
+        "当前说明与历史证据分离的限定原生检查通过，无账号重置或业务数据迁移"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/internal-http-20261110/README.md",
+          "note": "public bounded proof; no passwords/JWT/TLSkey or rawconfiguration output"
+        }
+      ],
+      "verified_at": "2026-11-10T14:28:52.439481+08:00"
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "current_phase_case_count": 4,
+    "current_phase_passed": 4,
+    "statuses": {
+      "passed": 4
+    }
+  }
+}

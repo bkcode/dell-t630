@@ -213,7 +213,7 @@
       "verification_scope": "historical-completed-stage-not-current-live"
     }
   ],
-  "updated_at": "2026-11-10T13:57:52.022733+08:00",
+  "updated_at": "2026-11-10T14:28:52.439481+08:00",
   "implementation_note": "Original IMP entries describe the prior completed baseline. Latest user scope overrides Java program deployment: five test services are stopped/disabled, publisher fenced, only acceptance template9011 current.",
   "overall_status": "existing-infrastructure-recovered-user-deferred-migration",
   "network19_execution": [
@@ -386,7 +386,7 @@
     "phase_cases_passed": 9,
     "phase_case_count": 9,
     "guest_postcheck": "completion/20261109/guests-post-backup.json",
-    "latest_followup_manifest": "evidence/service-directory-20261110/acceptance.json"
+    "latest_followup_manifest": "evidence/internal-http-20261110/acceptance.json"
   },
   "backup_scope_update20261109": {
     "status": "completed-native-verified",
@@ -524,12 +524,12 @@
     "monitoring_total_UP": 16
   },
   "FileBrowser_management_20261110": {
-    "status": "native-API-NFS-restart-and-monitoring-verified",
+    "status": "HTTP-native-original-account-permission-browser-and-monitoring-verified",
     "project": "gtsteffaniak/filebrowser",
     "tag": "v2.1.4-beta",
     "binary_SHA256": "4af557de16603bdfba2ae87b7807b8654612c542b2deff826eedee72086a5da2",
     "vmid": 280,
-    "URL": "https://192.168.19.80:8080/",
+    "URL": "http://192.168.19.80:8080/",
     "source_path": "/srv/resources",
     "native_systemd": true,
     "Linux_service_user": "filebrowser",
@@ -557,17 +557,21 @@
       "192.168.21.0/24",
       "10.66.66.0/24"
     ],
-    "selfsigned_TLS": true,
+    "selfsigned_TLS": false,
     "system_global_CA_changed": false,
     "Docker_installed": false,
     "business_resource_HTTP_enabled": false,
     "app_Java_or_Nacos_upload_configuration_changed": false,
     "backup_scope_expanded": false,
     "local_service_checks": 6,
-    "verified_HTTPS_health": true,
-    "acceptance": "completion/20261110-filebrowser/acceptance.json",
+    "verified_HTTPS_health": false,
+    "acceptance": "evidence/internal-http-20261110/acceptance.json",
     "usage_manual": "completion/20261110-filebrowser/usage-manual.md",
-    "fixed_version_reason": "officialadvisoryaffectedstable2.0.2;actual2.1stable release404;patched2.1.4beta pinned"
+    "fixed_version_reason": "officialadvisoryaffectedstable2.0.2;actual2.1stable release404;patched2.1.4beta pinned",
+    "transport": "HTTP",
+    "TLS_private_key_loaded": false,
+    "verified_HTTP_health": true,
+    "latest_evidence": "evidence/internal-http-20261110/filebrowser-applied.json"
   },
   "git_repository_documentation_20261110": {
     "catalog": "machines/git-repositories.json",
@@ -605,9 +609,9 @@
   "service_navigation_20261110": {
     "status": "native-readonly-browser-restart-and-monitoring-verified",
     "vmid": 220,
-    "URL": "https://192.168.19.30:9080/",
+    "URL": "http://192.168.19.30:9080/",
     "repository": "bkcode/deploy",
-    "local_commit": "63b8c0873936e94f8483c4f1f8747aedb0180d43",
+    "local_commit": "d56cae553bf95ce0e2c3fe8f258a2f99389aae7c",
     "source_commit_remote_pushed": false,
     "GitHub_main_observed": "593069eb54a723ee0e63f85b937b9981b39ac1ec",
     "preexisting_local_commits_not_auto_pushed": 4,
@@ -628,14 +632,37 @@
       "192.168.21.0/24",
       "10.66.66.0/24"
     ],
-    "runtime_release": "/opt/dell/service-directory/releases/63b8c0873936e94f8483c4f1f8747aedb0180d43",
+    "runtime_release": "/opt/dell/service-directory/releases/d56cae553bf95ce0e2c3fe8f258a2f99389aae7c",
     "source_catalog": "service-directory/services.json",
     "configuration_directory": "/etc/dell-service-directory",
     "service": "dell-service-directory.service",
-    "TLS_selfsigned": true,
+    "TLS_selfsigned": false,
     "backup_scope_expanded": false,
     "Penpot_Java_Nexus_or_other_apps_updated": false,
-    "acceptance": "evidence/service-directory-20261110/acceptance.json",
-    "manual": "evidence/service-directory-20261110/usage-manual.md"
+    "acceptance": "evidence/service-directory-http-20261110/acceptance.json",
+    "manual": "evidence/service-directory-20261110/usage-manual.md",
+    "transport": "HTTP",
+    "TLS_credentials_loaded": false,
+    "layout": {
+      "topbar": false,
+      "full_width": true,
+      "compact_heading": true
+    },
+    "latest_evidence": "evidence/internal-http-20261110/navigation-links-applied.json"
+  },
+  "internal_application_transport": {
+    "default": "HTTP for self-hosted internal application endpoints",
+    "user_explicit_instruction_date": "2026-11-10",
+    "applied_endpoints": [
+      "http://192.168.19.30:9080/",
+      "http://192.168.19.80:8080/"
+    ],
+    "native_management_exceptions_unchanged": [
+      "https://192.168.21.22:8006/",
+      "https://192.168.21.21/"
+    ],
+    "external_Cloudflare_TLS_not_part_of_internal_scope": true,
+    "accounts_permissions_and_internal_source_allowlists_preserved": true,
+    "evidence": "evidence/internal-http-20261110/acceptance.json"
   }
 }

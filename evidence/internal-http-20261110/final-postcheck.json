@@ -1,0 +1,52 @@
+{
+  "captured_at": "2026-11-10T14:28:52.439481+08:00",
+  "status": "passed",
+  "checks": {
+    "FileBrowser.HTTP_health200": true,
+    "FileBrowser.no_TLS_config": true,
+    "FileBrowser.no_TLS_key_LoadCredential": true,
+    "FileBrowser.no_runtime_TLS_key": true,
+    "FileBrowser.JWT_credential_still_loaded": true,
+    "FileBrowser.bootstrap_password_not_injected": true,
+    "FileBrowser.authentication_enabled": true,
+    "FileBrowser.data_path_unchanged": true,
+    "FileBrowser.NFS_active": true,
+    "navigation.HTTP_API14": true,
+    "navigation.navigation_self_HTTP": true,
+    "navigation.FileBrowser_link_HTTP": true,
+    "navigation.PVE_iDRAC_nativeHTTPS_preserved": true,
+    "navigation.no_topbar": true,
+    "navigation.read_only_unit_active": true,
+    "monitoring.16targets_UP": true,
+    "monitoring.FileBrowser_HTTP_metric_UP": true,
+    "monitoring.resource6services_UP": true
+  },
+  "FileBrowser": {
+    "HTTP_health200": true,
+    "no_TLS_config": true,
+    "no_TLS_key_LoadCredential": true,
+    "no_runtime_TLS_key": true,
+    "JWT_credential_still_loaded": true,
+    "bootstrap_password_not_injected": true,
+    "authentication_enabled": true,
+    "data_path_unchanged": true,
+    "NFS_active": true,
+    "secret_values_or_process_environ_output": false
+  },
+  "navigation": {
+    "HTTP_API14": true,
+    "navigation_self_HTTP": true,
+    "FileBrowser_link_HTTP": true,
+    "PVE_iDRAC_nativeHTTPS_preserved": true,
+    "no_topbar": true,
+    "source_commit": "d56cae553bf95ce0e2c3fe8f258a2f99389aae7c",
+    "read_only_unit_active": true
+  },
+  "monitoring": {
+    "16targets_UP": true,
+    "FileBrowser_HTTP_metric_UP": true,
+    "resource6services_UP": true
+  },
+  "other_application_protocols_not_mass_modified": true,
+  "no_account_or_permission_reset": true
+}

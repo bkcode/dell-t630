@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """Initialize only the new manager's daily user; no resource-file writes or secret output."""
 import datetime,json,os,pathlib,re,socket,ssl,urllib.request,urllib.parse,urllib.error
-C=pathlib.Path('/etc/dell-filebrowser');M=pathlib.Path('/var/lib/dell-filebrowser-manager');BASE='https://192.168.19.80:8080';PERMS={'view':True,'download':True,'create':True,'modify':False,'delete':False,'configured':True}
+C=pathlib.Path('/etc/dell-filebrowser');M=pathlib.Path('/var/lib/dell-filebrowser-manager');BASE='http://192.168.19.80:8080';PERMS={'view':True,'download':True,'create':True,'modify':False,'delete':False,'configured':True}
 def need(v,c):
  if not v:raise RuntimeError(c)
 class NoRedirect(urllib.request.HTTPRedirectHandler):
  def redirect_request(self,*a,**k):return None
 class API:
- def __init__(self):self.op=urllib.request.build_opener(urllib.request.ProxyHandler({}),NoRedirect(),urllib.request.HTTPSHandler(context=ssl.create_default_context(cafile=str(C/'tls.crt'))))
+ def __init__(self):self.op=urllib.request.build_opener(urllib.request.ProxyHandler({}),NoRedirect())
  def request(self,method,path,body=None,token=None,password=None):
   need(path.startswith(('/health','/api/auth/login','/api/users','/api/settings')),'fixed-bootstrap-API-path');h={}
   if token:h['Authorization']='Bearer '+token
@@ -24,7 +24,7 @@ class API:
 
 def main():
  os.umask(0o077);need(os.geteuid()==0 and socket.gethostname()=='resource-service','new-manager-root-only');need(not(C/'bootstrap.complete').exists(),'manager-already-initialized-no-reset')
- login=json.loads((C/'secrets/login.json').read_text());api=API();code,b=api.request('GET','/health');need(code==200 and json.loads(b).get('message')=='ok','native-HTTPS-not-ready');admin=api.login(login['admin']['username'],login['admin']['password'])
+ login=json.loads((C/'secrets/login.json').read_text());api=API();code,b=api.request('GET','/health');need(code==200 and json.loads(b).get('message')=='ok','native-HTTP-not-ready');admin=api.login(login['admin']['username'],login['admin']['password'])
  code,b=api.request('GET','/api/users',token=admin);need(code==200,'initial-user-read-failed');users=json.loads(b);need({u['username']for u in users}<={'admin','anonymous'},'existing-unknown-user-refuse')
  data={'username':'resources','password':login['operator']['password'],'loginMethod':'password','permissions':{'admin':False,'api':False,'share':False,'realtime':False},'scopes':[{'name':'resources','scope':'/','permissions':PERMS}]}
  code,_=api.request('POST','/api/users',body={'data':data,'which':[]},token=admin,password=login['admin']['password']);need(code in [200,201],'daily-user-create-failed')
@@ -35,7 +35,7 @@ def main():
  operator_settings,_=api.request('GET','/api/settings',token=operator);need(operator_settings in [401,403],'daily-admin-settings-not-denied')
  marker=C/'bootstrap.complete';fd=os.open(marker,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o644);os.fchmod(fd,0o644)
  with os.fdopen(fd,'w')as f:f.write('initialized-admin-and-restricted-daily-user\n');f.flush();os.fsync(f.fileno())
- out={'at':datetime.datetime.now().astimezone().isoformat(),'status':'daily-user-initialized-and-settings-secret-redaction-passed','daily_username':'resources','maintenance_username':'admin','daily_global_permissions':{k:False for k in ['admin','api','share','realtime']},'daily_source_permissions':PERMS,'source':'resources','scope':'/','HTTPS_chain_and_hostname_verified':True,'fresh_admin_and_daily_login':True,'known_secrets_absent_from_admin_settings_API':True,'daily_admin_settings_denied':operator_settings,'root_owned_initialization_marker_created':True,'resource_files_modified':False,'real_credentials_or_tokens_output':False,'application_restart_acceptance_pending':True};p=M/'bootstrap-result.json';need(not p.exists(),'bootstrap-result-exists');fd=os.open(p,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600)
+ out={'at':datetime.datetime.now().astimezone().isoformat(),'status':'daily-user-initialized-and-settings-secret-redaction-passed','daily_username':'resources','maintenance_username':'admin','daily_global_permissions':{k:False for k in ['admin','api','share','realtime']},'daily_source_permissions':PERMS,'source':'resources','scope':'/','HTTP_internal_health_verified':True,'fresh_admin_and_daily_login':True,'known_secrets_absent_from_admin_settings_API':True,'daily_admin_settings_denied':operator_settings,'root_owned_initialization_marker_created':True,'resource_files_modified':False,'real_credentials_or_tokens_output':False,'application_restart_acceptance_pending':True};p=M/'bootstrap-result.json';need(not p.exists(),'bootstrap-result-exists');fd=os.open(p,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600)
  with os.fdopen(fd,'w')as f:json.dump(out,f,indent=2);f.write('\n')
  print(json.dumps(out))
 if __name__=='__main__':

@@ -1,0 +1,18 @@
+{
+  "captured_at": "2026-11-10T14:26:00.156983+08:00",
+  "status": "internal-HTTP-service-links-verified",
+  "URL": "http://192.168.19.30:9080/",
+  "revision": "d56cae553bf95ce0e2c3fe8f258a2f99389aae7c",
+  "entry_count": 14,
+  "topbar_removed": true,
+  "full_width_layout": true,
+  "protected_services_unchanged": true,
+  "TLS_or_login_credentials_loaded": false,
+  "sourcefiles_sha256": {
+    "server.py": "b3248ff1227e3d29f06e20e3e07e1c74af8a0fe2def42a045a935eb391b2ea70",
+    "services.json": "2d77475408fb7d3d4eed7812750702ce238786dc9a9f13352f64a6790f9205a6",
+    "web/index.html": "ab799b8078c67433a5ba5df8d8264f5b30c311926233ddedf5278b443bafeb00",
+    "web/app.js": "7bce82e498b9134525e44307edfdb18427ba147671a5d4c2ce75bc43a3da6d5c",
+    "web/style.css": "d97a2d5733b8077e86118592d503b735406af91fd2f4da91bf47777c511a8a84"
+  }
+}
