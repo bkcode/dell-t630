@@ -2,6 +2,8 @@
 
 # VM221 · artifact-service
 
+Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/计划与已部署状态分开；不表示本机已clone或已分发key）。
+
 ## 本轮只读状态与备份归属
 
 14:43:07媒体工具采样：仍独立19.31、原Nexus盘UUID，原2容器running/healthy/RestartCount0、镜像与容器IDs保持，原健康GET通过；本轮未重验GAV/EULA/账号内容。未停源、未移盘、不合并或退役。 证据：[本机分项审计](../../completion/20261109/media-audit.json)。

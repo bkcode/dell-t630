@@ -2,6 +2,8 @@
 
 # VM201 · data-prod-infra
 
+Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/计划与已部署状态分开；不表示本机已clone或已分发key）。
+
 ## 本轮只读状态与备份归属
 
 14:42:56–14:43:40分项采样：hostname/19.11/GW与DNS19.1正确，原数据UUID/ext4/rw、监督active、3容器running/healthy/RestartCount0，NTP同步、基础监控正常、failed units空。未重新认证Nacos/Redis/Rabbit或读取namespace/消息/业务数据。 证据：[本机分项审计](../../completion/20261109/core-audit.json)。

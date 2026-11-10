@@ -62,5 +62,25 @@
     "smoke_command": "sudo runuser --user java -- /usr/bin/python3 /usr/local/libexec/dell-java-acceptance/verify.py --smoke"
   },
   "inventory_verified_at": "2026-11-09T14:42:26+08:00",
-  "inventory_evidence": "completion/20261109/pve-audit.json"
+  "inventory_evidence": "completion/20261109/pve-audit.json",
+  "git_repository_mapping": {
+    "catalog": "machines/git-repositories.json",
+    "catalog_machine_pointer": "/machines/16",
+    "machine_path": "machines/tpl9011-java-acceptance",
+    "document_path": "machines/tpl9011-java-acceptance/GIT-REPOSITORIES.md",
+    "source_role": "docs-only",
+    "configuration_repository_id": "infra",
+    "application_repository_ids": [],
+    "dependency_repository_ids": [],
+    "upstream_repository_ids": [
+      "openjdk-upstream"
+    ],
+    "repository_ids": [
+      "infra",
+      "openjdk-upstream"
+    ],
+    "git_usage_mode": "sealed-template-no-business-source",
+    "direct_runtime_business_git_pull": false,
+    "server_Git_key_installation_performed_by_this_task": false
+  }
 }

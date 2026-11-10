@@ -2,6 +2,8 @@
 
 # CT100 cf-tunnel
 
+Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/计划与已部署状态分开；不表示本机已clone或已分发key）。
+
 ## 本轮只读状态与备份归属
 
 15:26:47只读采样：cloudflared本机ready HTTP200、readyConnections=2；本轮不读取token/unit正文，不做公网域名、账户侧origin或外网VPN E2E。CT仍19.5，原身份保留。 证据：[本机分项审计](../../completion/20261109/network-audit.json)。

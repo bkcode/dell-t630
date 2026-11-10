@@ -4,6 +4,34 @@
 
 **2026-11-09继续完成基础搭建与仅正式数据库/Nacos逻辑备份，测试配置迁移及仅Puyu两库到210的DB迁移按用户最新授权完成；正式环境不动。** 新增资源服务前的当日fresh审计为12running/3tpl、15UP，forward guard跨14:24自然重启保持；正式DB首轮3301B/timer已通过、旧whole-VM计划disabled，最终状态统一见[当日交付记录](../completion/20261109-prod-db-scope/README.md)。每机JSON是合同/索引，不是秘密恢复包或实时配置导出；每机状态按各自证据与范围解释。
 
+## 每台机器的Git来源
+
+唯一主表：[git-repositories.json](git-repositories.json)。17个目录均有`GIT-REPOSITORIES.md`，由总表派生；每机`config.json.git_repository_mapping`仅指向总表/本机条目和仓库ID，不是clone/部署或密钥分发证明。代码/配置主仓库统一`bkcode/dell-t630`，官方包/镜像的上游参考与用户计划源码分开。
+
+| 机器 | 唯一逐机入口 | Git取用定位 |
+| --- | --- | --- |
+| PVE pve | [GIT-REPOSITORIES.md](pve/GIT-REPOSITORIES.md) | `configuration-only` |
+| 100 cf-tunnel | [GIT-REPOSITORIES.md](ct100-cf-tunnel/GIT-REPOSITORIES.md) | `configuration-only` |
+| 190 network-gateway | [GIT-REPOSITORIES.md](vm190-network-gateway/GIT-REPOSITORIES.md) | `configuration-only` |
+| 200 data-prod-db | [GIT-REPOSITORIES.md](vm200-data-prod-db/GIT-REPOSITORIES.md) | `configuration-only` |
+| 201 data-prod-infra | [GIT-REPOSITORIES.md](vm201-data-prod-infra/GIT-REPOSITORIES.md) | `configuration-only` |
+| 210 data-test | [GIT-REPOSITORIES.md](vm210-data-test/GIT-REPOSITORIES.md) | `configuration-only` |
+| 220 publish-service | [GIT-REPOSITORIES.md](vm220-publish-service/GIT-REPOSITORIES.md) | `build-source-planned` |
+| 221 artifact-service | [GIT-REPOSITORIES.md](vm221-artifact-service/GIT-REPOSITORIES.md) | `official-artifact-service` |
+| 230 java-prod-01 | [GIT-REPOSITORIES.md](vm230-java-prod-01/GIT-REPOSITORIES.md) | `artifact-consumer-runtime-only` |
+| 240 java-test-01 | [GIT-REPOSITORIES.md](vm240-java-test-01/GIT-REPOSITORIES.md) | `artifact-consumer-runtime-only` |
+| 250 penpot-service | [GIT-REPOSITORIES.md](vm250-penpot-service/GIT-REPOSITORIES.md) | `custom-code-imported` |
+| 260 nas-media | [GIT-REPOSITORIES.md](vm260-nas-media/GIT-REPOSITORIES.md) | `official-runtime-user-fork-planned` |
+| 270 ops-service | [GIT-REPOSITORIES.md](vm270-ops-service/GIT-REPOSITORIES.md) | `official-monitoring-components` |
+| 280 resource-service | [GIT-REPOSITORIES.md](vm280-resource-service/GIT-REPOSITORIES.md) | `native-official-binary` |
+| 9001 tpl-docker-base | [GIT-REPOSITORIES.md](tpl9001-docker-base/GIT-REPOSITORIES.md) | `sealed-template-no-business-source` |
+| 9010 tpl-linux-base | [GIT-REPOSITORIES.md](tpl9010-linux-base/GIT-REPOSITORIES.md) | `sealed-template-no-business-source` |
+| 9011 tpl-java-acceptance | [GIT-REPOSITORIES.md](tpl9011-java-acceptance/GIT-REPOSITORIES.md) | `sealed-template-no-business-source` |
+
+220计划使用`bkcode/deploy`＋五个Puyu后端仓库，shared common-lib仅库；现役受限发布链仍Dell/fenced。230/240只接收经审构建产物，不直接git拉、不放Deploy Key，Java业务不启。250的管理Mac读取/临时clone与服务器历史ff版本分开记录；260的用户Jellyfin服务端fork待迁，不是OMV或当前镜像。280只用官方FileBrowser固定binary，模板不带业务库/Git私钥。
+
+用户报告8个GitHub Deploy Key已配置，管理Mac身份位于`~/.ssh/deploy-keys/bkcode/`；本轮只独立验证Penpot读权限/临时工作树，其余7个未逐一重测，未在服务器安装/分发这些key。文档不含公钥/私钥正文、PAT或密码；不通过push探写权限。仓库URL/来源登记不授权重跑bootstrap、改数据或启业务。
+
 ## 机器入口
 
 | 类型 | 目录 | 地址 / 状态 |

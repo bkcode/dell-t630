@@ -190,5 +190,25 @@
     "future_suggestion": "disabled client prerequisites only; clone actualIP enrollment and explicit activation required"
   },
   "onboot": true,
-  "startup_verification_evidence": "completion/20261109-resources/PVE-startup-configured.json"
+  "startup_verification_evidence": "completion/20261109-resources/PVE-startup-configured.json",
+  "git_repository_mapping": {
+    "catalog": "machines/git-repositories.json",
+    "catalog_machine_pointer": "/machines/13",
+    "machine_path": "machines/vm280-resource-service",
+    "document_path": "machines/vm280-resource-service/GIT-REPOSITORIES.md",
+    "source_role": "docs-only",
+    "configuration_repository_id": "infra",
+    "application_repository_ids": [],
+    "dependency_repository_ids": [],
+    "upstream_repository_ids": [
+      "filebrowser-upstream"
+    ],
+    "repository_ids": [
+      "infra",
+      "filebrowser-upstream"
+    ],
+    "git_usage_mode": "native-official-binary",
+    "direct_runtime_business_git_pull": false,
+    "server_Git_key_installation_performed_by_this_task": false
+  }
 }

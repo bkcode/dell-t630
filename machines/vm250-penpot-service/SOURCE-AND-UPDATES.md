@@ -1,6 +1,4 @@
-# Penpot源码与更新：bkcode/penpot · main
-
-更新：2026-11-07。用户明确指定**使用`bkcode/penpot`仓库的`main`分支**。本页补充VM250的源码、版本和后续更新合同；11月8日基础服务已恢复，实际源码仍为历史ff1783e；本轮用户只检查补齐与清理，不取码、不构建、不部署。PAT保存/自动认证问题按用户要求留待以后处理。
+# Penpot源码与更新：2026-11-10，Asia/Shanghai。用户指定使用`bkcode/penpot`的`main`，本轮只读验证了管理Mac专属Deploy Key与临时独立clone，同时核服务器现役源码/镜像，未更新现役Git远端、代码、构建、程序或设计数据。服务器已恢复，旧硬件暂停记录保留为历史；当前主要更新门禁是远端main尚缺现役两条改造。
 
 ## 1. 固定的项目来源
 
@@ -24,27 +22,27 @@
 ff1783e7865af7aae571c985f03e057631b7af63
 ```
 
-该版本保留了改造前端、登录辅助及Worker/Import/MCP配套。历史采集时，本机源码比当时`origin/main`的`9aedbb0…`多两个已提交改造，并通过受控Git bundle移交；这解释旧证据，不代表当前远端main仍处于该位置。
+该版本保留了改造前端、登录辅助及Worker/Import/MCP配套。首次通过受控Git bundle移交；本轮13:18实际远端读取与临时浅clone再次确认`main=9aedbb011cd803eb615225ca21f7f47cb8c2fa09`，管理本地和13:20现役服务器均为`ff1783e7865af7aae571c985f03e057631b7af63`，远端仍缺两条改造。不得以git pull/reset把现役回退成远端旧状态。
 
-后续更新从`bkcode/penpot`的`main`直接取码，部署前记录选定的完整commit SHA，并确认包含需要保留的改造。若改造只存在于Mac本地提交、尚未进入远端main，先停在版本核对，不用远端旧代码覆盖它，也不擅自向Penpot仓库推送代码。当前远端main最新提交尚未在本轮查询。
+后续更新从`bkcode/penpot`的`main`直接取码，部署前记录选定的完整commit SHA，并确认包含需要保留的改造。若改造只存在于Mac本地提交、尚未进入远端main，先停在版本核对，不用远端旧代码覆盖它，也不擅自向Penpot仓库推送代码。本轮已查询远端main并在临时目录完整checkout（浅历史、单main分支）验证，临时目录已清。没有构建或执行所取源码。
 
 历史证据：[源码事实](../../infra/penpot/git-source-facts.json)、[运行来源](../../infra/penpot/application/git-runtime-provenance.json)。机器可读合同见[git-source.json](git-source.json)。
 
 ## 3. 取码示例与凭据边界
 
-以下仅为将来硬件稳定且明确恢复任务后的示例，**现在不执行**。使用HTTPS的新独立目录应显式指定分支：
+以下是后续取码示例，不是现役更新命令。本轮管理Mac已用专属SSH配置和新临时目录成功clone main并清理；使用HTTPS的新独立目录也应显式指定分支：
 
 ```sh
 git -c credential.helper= clone --branch main --single-branch   https://github.com/bkcode/penpot.git penpot-main-review
 ```
 
-如后续选择SSH只读Deploy Key，则使用同样显式分支的SSH URL；密钥选择、可信host key和凭据保存另行配置。示例不携带Token，不把密码、SSH私钥或.env放到源码、URL、命令参数或Git中。已经存在的生产源码目录不执行这条clone命令，也不直接pull/reset/clean。
+管理Mac现已准备并验证SSH Deploy Key，文件名`penpot_ed25519`/`.pub`位于`~/.ssh/deploy-keys/bkcode/`；独立`ssh_config`使用alias `github-bkcode-penpot`、本机既有SSH-over443传输及严格host key校验。GitHub返回仓库专属身份，ls-remote与临时clone成功；没有写权限探测，read-only属性依照用户GitHub设置管理。服务器没有由本任务安装此私钥，也没有配置Git origin。示例不携带Token，不把密码、SSH私钥或.env放到源码、URL、命令参数或Git中。已经存在的生产源码目录不执行这条clone命令，也不直接pull/reset/clean。
 
 取到main并不自动获得部署许可。已存在源码先检查origin、分支、工作区和当前commit；若有未归档改动、缺失历史改造或不可解释的版本差异，停止更新并处理版本归属。
 
 ## 4. 更新流程与可观察检查点
 
-1. **恢复前置**：用户完成硬件处理并明确恢复后，先核内存、RAID/文件系统、VM250数据盘UUID和原服务状态，保留当前镜像、配置、身份及应用一致性回退点。
+1. **部署前置**：重新核VM250数据盘UUID、原服务、版本与应用一致性回退点；硬件当前已恢复，旧故障记录仍供复发判断。当前只读验证不等于已经授权把缺改造的远端提交部署。
 2. **源码选择**：只从`bkcode/penpot`取main；审阅与已验收版本的差异，锁定可从`origin/main`取得的完整commit。不要修改预期SHA以掩盖缺失改造。
 3. **构建与兼容**：T630使用AMD64，按实际改造的构建上下文及锁定依赖构建，保留前端/Worker/Import改造。当前后端及数据库有独立版本合同，不能因源码中出现较新版本就顺带升级数据库、依赖或数据库schema。
 4. **受控切换**：原11服务由`dell-penpot.service`的notify监督与数据盘挂载门禁管理。仅按审核差异更新程序及适配配置，不重跑fresh-init、不删除volume、不复制旧身份，也不执行PG整库覆盖。
@@ -55,4 +53,14 @@ git -c credential.helper= clone --branch main --single-branch   https://github.c
 
 Git负责源码；设计文件、PostgreSQL、素材、账号/MCP身份和部署秘密分别保管，不能靠git pull恢复。已有3设计/原971媒体保护与最后973总资产是历史验收基线，恢复后重新核实，不删除合法新增内容凑数量。
 
-本机资源/网络/数据盘见[config.json](config.json)，服务维护见[README](README.md)、[人工手册](../../19-manual-operations.md)，源码与验收来源见[config-sources.json](config-sources.json)。本轮只更新文档与配置元数据，既不更新运行程序，也不处理PAT缓存或服务器认证。
+本机资源/网络/数据盘见[config.json](config.json)，服务维护见[README](README.md)、[人工手册](../../19-manual-operations.md)，源码与验收来源见[config-sources.json](config-sources.json)。本轮只更新文档并验证管理Mac专属SSH取码，未配置服务器GitHub认证、未处理PAT缓存、未更新运行程序。
+
+## 6. 本轮实际验证
+
+- [管理Mac Deploy Key和临时clone](../../evidence/git-repositories-20261110/penpot-deploy-key-verification.json)：专属身份/read成功、临时main工作区干净、临时目录已清；未转发agent/复制私钥，不push。
+- [VM250只读现场](../../evidence/git-repositories-20261110/penpot-runtime-readonly.json)：main/ff1783e、clean、remote列表空，11/11容器running/healthy且容器RestartCount0，改造frontend imageID匹配历史。supervisor累计NRestarts=22已透明保留，当前active；本轮没有读取日志或据此扩大故障诊断，不冒称supervisor从未重启。
+- 先由用户将需要的两条改造提交推入bkcode/penpot main，再重新验证目标commit，之后才安排构建/切换。不能修改期望SHA或自动push掩盖差异。Git取码验证与设计数据迁移分别验收。
+
+## 用户确认的后续部署范围
+
+用户进一步授权仅Penpot机Git取码与部署，其他服务器不做运行变更，逐机文档继续。用户选择保留ff1783e两条改造，先由用户推入bkcode/penpot main并通知后再继续；当前停在版本核对，不配置服务器私钥、不构建或切换现役。见[部署等待状态](../../evidence/git-repositories-20261110/penpot-deployment-state.json)。文档与管理Mac读取验证已完成，不将等待中的部署签为完成。

@@ -117,3 +117,7 @@ python3 scripts/check_git_safety.py
 ## 测试数据与访问的后续交付
 
 用户后续精确授权的测试Nacos配置迁移见[36配置交付](completion/20261109-nacos-config-import/README.md)；本机两份Puyu数据库迁入210见[数据库交付](completion/20261109-puyu-db-migration/README.md)，源库保留、没有应用连接切换。受信LAN访问策略见[全服务规则](network19/lan-trusted-20261109/README.md)。测试三组件凭据固定为用户指定约定，实施与核验见[凭据记录](completion/20261109-test-credentials/README.md)；文档和Git不保存真实值。正式服务、自动备份范围、Nexus独立部署与Java停用合同不因这些测试操作改变。
+
+## 每台机器对应Git仓库
+
+新增[完整Git来源总览](machines/GIT-REPOSITORIES.md)及17份逐机`GIT-REPOSITORIES.md`，统一登记配置仓库、现役/候选应用源码、组件上游与取码身份。Penpot专属key临时clone验证已通过，但远端main仍缺现役两条改造；不会据此更新程序。发布机后续取deploy＋5个Puyu后端，running收制品，Jellyfin fork仍待接入。

@@ -2,6 +2,8 @@
 
 # VM220 · publish-service
 
+Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/计划与已部署状态分开；不表示本机已clone或已分发key）。
+
 ## 本轮只读状态与备份归属
 
 14:43:07媒体工具采样：仍4vCPU/4GiB、唯一19.30、原build盘UUID，Docker为空、无active Nexus或31 alias；publisher权限/私钥仅stat、未读取。业务仍fenced，不发布JAR或Nacos，不把合并目标当实际。 证据：[本机分项审计](../../completion/20261109/media-audit.json)。

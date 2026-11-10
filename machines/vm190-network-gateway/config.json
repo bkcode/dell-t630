@@ -198,5 +198,22 @@
     "confirmed": true,
     "evidence": "network19/lan-nacos-20261109/final-gateway.json",
     "unrelated_admin_or_production_or_DB_ports_opened": false
+  },
+  "git_repository_mapping": {
+    "catalog": "machines/git-repositories.json",
+    "catalog_machine_pointer": "/machines/2",
+    "machine_path": "machines/vm190-network-gateway",
+    "document_path": "machines/vm190-network-gateway/GIT-REPOSITORIES.md",
+    "source_role": "docs-only",
+    "configuration_repository_id": "infra",
+    "application_repository_ids": [],
+    "dependency_repository_ids": [],
+    "upstream_repository_ids": [],
+    "repository_ids": [
+      "infra"
+    ],
+    "git_usage_mode": "configuration-only",
+    "direct_runtime_business_git_pull": false,
+    "server_Git_key_installation_performed_by_this_task": false
   }
 }

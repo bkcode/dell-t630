@@ -1190,5 +1190,26 @@
     "acceptance": "completion/20261110-filebrowser/acceptance.json",
     "usage_manual": "completion/20261110-filebrowser/usage-manual.md",
     "fixed_version_reason": "officialadvisoryaffectedstable2.0.2;actual2.1stable release404;patched2.1.4beta pinned"
+  },
+  "git_repository_documentation": {
+    "catalog": "machines/git-repositories.json",
+    "overview": "machines/GIT-REPOSITORIES.md",
+    "machine_documents": 17,
+    "scope": "documentation and managementMac read verification only; no server repo/key install or code deployment",
+    "Penpot_verification": "evidence/git-repositories-20261110/penpot-deploy-key-verification.json",
+    "Penpot_current_runtime_readonly": "evidence/git-repositories-20261110/penpot-runtime-readonly.json",
+    "pending_before_Penpot_source_update": "remote main9aed still lacks local/deployedff customcommits; user push/review newcommit first",
+    "publisher_candidate_user_repositories": [
+      "bkcode/deploy",
+      "bkcode/puyu-auth",
+      "bkcode/puyu-bff-web",
+      "bkcode/puyu-common-lib",
+      "bkcode/puyu-gateway",
+      "bkcode/puyu-service-core"
+    ],
+    "running_source_policy": "built artifacts only, current Java remains off",
+    "new_service_deployed": false,
+    "Penpot_deployment_status": "user will push preservedcustomcommits first; VM250-onlydeploy authorized after notification/versionrecheck",
+    "Penpot_deployment_state_evidence": "evidence/git-repositories-20261110/penpot-deployment-state.json"
   }
 }

@@ -272,6 +272,17 @@ def validate() -> dict:
             stats['machine_directories'] = machine_result['stats']['machine_directories']
         except (OSError, ValueError, KeyError, TypeError) as exc:
             errors.append('Cannot validate machine directories: ' + str(exc))
+    if (ROOT / 'machines/git-repositories.json').is_file():
+        try:
+            spec = importlib.util.spec_from_file_location('dell_git_repository_validator', ROOT / 'scripts/validate_git_repositories.py')
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            git_result = module.validate()
+            errors.extend('Git repository: ' + message for message in git_result['errors'])
+            stats['git_repository_mapping_validation'] = git_result['status']
+            stats['git_machine_documents'] = git_result['stats']['machine_documents']
+        except (OSError, ValueError, KeyError, TypeError) as exc:
+            errors.append('Cannot validate Git repository mapping: ' + str(exc))
     stats.update(local_links_checked=local_links, external_links_listed=len(external_links))
     warnings.append('External URL availability is not tested by this offline validator')
     return {'status': 'passed' if not errors else 'failed', 'scope': 'local-document-validation-only',

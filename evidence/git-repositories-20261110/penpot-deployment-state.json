@@ -1,0 +1,12 @@
+{
+  "recorded_at": "2026-11-10T13:32:03.400526+08:00",
+  "status": "awaiting-user-push-preserve-current-customizations",
+  "user_scope": "Git pull/build/deploy only VM250; all machine documentation continues; other server runtime unchanged",
+  "requested_repository": "bkcode/penpot",
+  "branch": "main",
+  "currently_observed_remote": "9aedbb011cd803eb615225ca21f7f47cb8c2fa09",
+  "preserve_local_and_current_server": "ff1783e7865af7aae571c985f03e057631b7af63",
+  "user_selected": "user will push the two existing custom commits to GitHub main and notify assistant before continuing",
+  "server_Git_fetch_build_switch_or_key_distribution_this_task": false,
+  "next_action_after_user_notification": "requery main; verify custom commits included and exact code diff; review and execute VM250-only deployment with existing data/identity and supervisor guards"
+}

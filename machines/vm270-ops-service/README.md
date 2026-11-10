@@ -2,6 +2,8 @@
 
 # VM270 · ops-service
 
+Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/计划与已部署状态分开；不表示本机已clone或已分发key）。
+
 ## 本轮只读状态与备份归属
 
 本轮fresh采样：原数据UUID、4容器healthy/RestartCount0/noOOM，15/15 targets UP、Prom/AM alerts空、10节点textfile新鲜，Lark unit active。未人工发消息，不能据进程状态签本boot供应商送达。现行备份metadata/三规则已转db-only前缀并热载，原Prom identity/三名/接收对象保持、无testsend；后续看新中央入口。 证据：[本机分项审计](../../completion/20261109/ops-audit.json)。

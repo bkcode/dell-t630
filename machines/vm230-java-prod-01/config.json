@@ -144,5 +144,37 @@
     "client_finger_UID_primary_GID_changed": false,
     "NFS_interoperability_evidence": "completion/20261110-filebrowser/native-acceptance.json",
     "Java_started": false
+  },
+  "git_repository_mapping": {
+    "catalog": "machines/git-repositories.json",
+    "catalog_machine_pointer": "/machines/8",
+    "machine_path": "machines/vm230-java-prod-01",
+    "document_path": "machines/vm230-java-prod-01/GIT-REPOSITORIES.md",
+    "source_role": "docs-only",
+    "configuration_repository_id": "infra",
+    "application_repository_ids": [
+      "puyu-auth",
+      "puyu-bff-web",
+      "puyu-gateway",
+      "puyu-service-core"
+    ],
+    "dependency_repository_ids": [
+      "puyu-common-lib"
+    ],
+    "upstream_repository_ids": [
+      "openjdk-upstream"
+    ],
+    "repository_ids": [
+      "infra",
+      "puyu-auth",
+      "puyu-bff-web",
+      "puyu-gateway",
+      "puyu-service-core",
+      "puyu-common-lib",
+      "openjdk-upstream"
+    ],
+    "git_usage_mode": "artifact-consumer-runtime-only",
+    "direct_runtime_business_git_pull": false,
+    "server_Git_key_installation_performed_by_this_task": false
   }
 }

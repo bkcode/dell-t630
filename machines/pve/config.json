@@ -205,5 +205,25 @@
     "all_interface_forwarding_zero": true,
     "new_host_or_route_write": false,
     "evidence": "completion/20261110-filebrowser/final-postcheck.json"
+  },
+  "git_repository_mapping": {
+    "catalog": "machines/git-repositories.json",
+    "catalog_machine_pointer": "/machines/0",
+    "machine_path": "machines/pve",
+    "document_path": "machines/pve/GIT-REPOSITORIES.md",
+    "source_role": "docs-only",
+    "configuration_repository_id": "infra",
+    "application_repository_ids": [],
+    "dependency_repository_ids": [],
+    "upstream_repository_ids": [
+      "proxmox-upstream"
+    ],
+    "repository_ids": [
+      "infra",
+      "proxmox-upstream"
+    ],
+    "git_usage_mode": "configuration-only",
+    "direct_runtime_business_git_pull": false,
+    "server_Git_key_installation_performed_by_this_task": false
   }
 }

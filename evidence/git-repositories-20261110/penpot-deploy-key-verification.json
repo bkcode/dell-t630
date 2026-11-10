@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-11-10T13:18:09.546150+08:00",
+  "repository": "bkcode/penpot",
+  "branch": "main",
+  "key_basename": "penpot_ed25519",
+  "scope": "managementMac deploy-key read and isolated shallow checkout; no server deployment",
+  "repository_scoped_SSH_identity_verified": true,
+  "GitHub_main_SHA": "9aedbb011cd803eb615225ca21f7f47cb8c2fa09",
+  "temporary_full_worktree_checkout_verified": true,
+  "checkout_SHA": "9aedbb011cd803eb615225ca21f7f47cb8c2fa09",
+  "shallow": true,
+  "selected_source_files_present": {
+    "README.md": true,
+    "AGENTS.md": true,
+    "frontend/selfhost/Dockerfile": true
+  },
+  "management_local_SHA": "ff1783e7865af7aae571c985f03e057631b7af63",
+  "GitHub_main_equals_management_local": false,
+  "temporary_checkout_removed": true,
+  "private_key_copied_or_agent_forwarded": false,
+  "push_performed": false,
+  "server_code_build_or_runtime_modified": false
+}

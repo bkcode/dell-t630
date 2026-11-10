@@ -2,6 +2,8 @@
 
 # VM190 network-gateway
 
+Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/计划与已部署状态分开；不表示本机已clone或已分发key）。
+
 ## 本轮只读状态与备份归属
 
 15:26:47只读采样：WAN21.23/LAN19.1保持，gateway firewall/ready/dnsmasq均active/success、IPv4 forward1；三静态DNS分别19.50/31/30。未新做DORA、外网VPN或公网origin E2E，不修改网关/OW。 证据：[本机分项审计](../../completion/20261109/network-audit.json)。

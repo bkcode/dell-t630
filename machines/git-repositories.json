@@ -1,0 +1,711 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-10T13:21:00.578116+08:00",
+  "scope": "documentation contract only; upstream URLs are references, pending user repositories are not deployed",
+  "infrastructure_repository_id": "infra",
+  "repositories": {
+    "infra": {
+      "id": "infra",
+      "repository": "bkcode/dell-t630",
+      "web_url": "https://github.com/bkcode/dell-t630",
+      "kind": "infrastructure-config",
+      "purpose": "所有机器的公开基础设施脚本、配置合同与运维文档；不代表来宾已clone此仓库",
+      "ssh_url": "git@github.com:bkcode/dell-t630.git",
+      "branch_reference": "main"
+    },
+    "deploy": {
+      "id": "deploy",
+      "repository": "bkcode/deploy",
+      "web_url": "https://github.com/bkcode/deploy",
+      "kind": "deployment-tool-planned",
+      "purpose": "部署工具候选；管理机工作树origin已核对，未证明已在220安装或已适配Puyu发布",
+      "ssh_url": "git@github.com:bkcode/deploy.git",
+      "branch_reference": "main (management local checkout observed)",
+      "management_local_reference": "/var/www/finger/finger-master/projects/deploy"
+    },
+    "puyu-auth": {
+      "id": "puyu-auth",
+      "repository": "bkcode/puyu-auth",
+      "web_url": "https://github.com/bkcode/puyu-auth",
+      "kind": "backend-service-planned",
+      "purpose": "认证业务源码候选",
+      "ssh_url": "git@github.com:bkcode/puyu-auth.git",
+      "branch_reference": "main (management local checkout observed)",
+      "management_local_reference": "/Users/yangzhaohui/work/www/puyuyifang-sass/projects/puyu-auth"
+    },
+    "puyu-bff-web": {
+      "id": "puyu-bff-web",
+      "repository": "bkcode/puyu-bff-web",
+      "web_url": "https://github.com/bkcode/puyu-bff-web",
+      "kind": "backend-service-planned",
+      "purpose": "Web BFF后端源码候选",
+      "ssh_url": "git@github.com:bkcode/puyu-bff-web.git",
+      "branch_reference": "main (management local checkout observed)",
+      "management_local_reference": "/Users/yangzhaohui/work/www/puyuyifang-sass/projects/puyu-bff-web"
+    },
+    "puyu-common-lib": {
+      "id": "puyu-common-lib",
+      "repository": "bkcode/puyu-common-lib",
+      "web_url": "https://github.com/bkcode/puyu-common-lib",
+      "kind": "shared-library",
+      "purpose": "共享库构建输入，不是独立运行服务",
+      "ssh_url": "git@github.com:bkcode/puyu-common-lib.git",
+      "branch_reference": "main (management local checkout observed)",
+      "management_local_reference": "/Users/yangzhaohui/work/www/puyuyifang-sass/projects/puyu-common-lib"
+    },
+    "puyu-gateway": {
+      "id": "puyu-gateway",
+      "repository": "bkcode/puyu-gateway",
+      "web_url": "https://github.com/bkcode/puyu-gateway",
+      "kind": "backend-service-planned",
+      "purpose": "业务网关源码候选",
+      "ssh_url": "git@github.com:bkcode/puyu-gateway.git",
+      "branch_reference": "main (management local checkout observed)",
+      "management_local_reference": "/Users/yangzhaohui/work/www/puyuyifang-sass/projects/puyu-gateway"
+    },
+    "puyu-service-core": {
+      "id": "puyu-service-core",
+      "repository": "bkcode/puyu-service-core",
+      "web_url": "https://github.com/bkcode/puyu-service-core",
+      "kind": "backend-service-planned",
+      "purpose": "核心后端业务源码候选",
+      "ssh_url": "git@github.com:bkcode/puyu-service-core.git",
+      "branch_reference": "main (management local checkout observed)",
+      "management_local_reference": "/Users/yangzhaohui/work/www/puyuyifang-sass/projects/puyu-service-core"
+    },
+    "penpot": {
+      "id": "penpot",
+      "repository": "bkcode/penpot",
+      "web_url": "https://github.com/bkcode/penpot",
+      "kind": "custom-application-source",
+      "purpose": "用户指定main；现役保留ff1783e改造，通过历史Git bundle导入，不从远端旧main覆盖",
+      "ssh_url": "git@github.com:bkcode/penpot.git",
+      "branch_reference": "main (user required)"
+    },
+    "jellyfin": {
+      "id": "jellyfin",
+      "repository": "bkcode/jellyfin",
+      "web_url": "https://github.com/bkcode/jellyfin",
+      "kind": "user-fork-planned",
+      "purpose": "用户fork的Jellyfin服务端，未来NAS自定义源码候选；当前仍官方镜像",
+      "ssh_url": "git@github.com:bkcode/jellyfin.git",
+      "branch_reference": "master (GitHub default observed 2026-11-10; not a deployment selection)",
+      "fork_parent_observed": "jellyfin/jellyfin",
+      "application_type": "server-backend-and-API; not the Android-TV client"
+    },
+    "cloudflared-upstream": {
+      "id": "cloudflared-upstream",
+      "repository": "cloudflare/cloudflared",
+      "web_url": "https://github.com/cloudflare/cloudflared",
+      "kind": "upstream-reference",
+      "purpose": "cloudflared官方源码参考；Cloudflare账号、隧道token不是Git源码"
+    },
+    "mysql-upstream": {
+      "id": "mysql-upstream",
+      "repository": "mysql/mysql-server",
+      "web_url": "https://github.com/mysql/mysql-server",
+      "kind": "upstream-reference",
+      "purpose": "官方MySQL源码参考，现役按固定镜像，不在数据机编译源码"
+    },
+    "nacos-upstream": {
+      "id": "nacos-upstream",
+      "repository": "alibaba/nacos",
+      "web_url": "https://github.com/alibaba/nacos",
+      "kind": "upstream-reference",
+      "purpose": "官方Nacos源码参考；配置正文/数据不随Git迁移"
+    },
+    "redis-upstream": {
+      "id": "redis-upstream",
+      "repository": "redis/redis",
+      "web_url": "https://github.com/redis/redis",
+      "kind": "upstream-reference",
+      "purpose": "官方Redis源码参考；当前镜像版本及许可分别核对"
+    },
+    "rabbitmq-upstream": {
+      "id": "rabbitmq-upstream",
+      "repository": "rabbitmq/rabbitmq-server",
+      "web_url": "https://github.com/rabbitmq/rabbitmq-server",
+      "kind": "upstream-reference",
+      "purpose": "官方RabbitMQ源码参考"
+    },
+    "nexus-upstream": {
+      "id": "nexus-upstream",
+      "repository": "sonatype/nexus-public",
+      "web_url": "https://github.com/sonatype/nexus-public",
+      "kind": "upstream-reference",
+      "purpose": "公开Core源码参考，不等于现用Community Edition完整二进制的全部功能"
+    },
+    "penpot-upstream": {
+      "id": "penpot-upstream",
+      "repository": "penpot/penpot",
+      "web_url": "https://github.com/penpot/penpot",
+      "kind": "upstream-reference",
+      "purpose": "官方Penpot上游；不能替代用户bkcode/penpot的部署来源"
+    },
+    "omv-upstream": {
+      "id": "omv-upstream",
+      "repository": "openmediavault/openmediavault",
+      "web_url": "https://github.com/openmediavault/openmediavault",
+      "kind": "upstream-reference",
+      "purpose": "NAS管理系统源码参考，不是Jellyfin fork"
+    },
+    "jellyfin-upstream": {
+      "id": "jellyfin-upstream",
+      "repository": "jellyfin/jellyfin",
+      "web_url": "https://github.com/jellyfin/jellyfin",
+      "kind": "upstream-reference",
+      "purpose": "现役官方Jellyfin服务端镜像的上游参考"
+    },
+    "grafana-upstream": {
+      "id": "grafana-upstream",
+      "repository": "grafana/grafana",
+      "web_url": "https://github.com/grafana/grafana",
+      "kind": "upstream-reference",
+      "purpose": "Grafana组件上游参考，现役按固定镜像"
+    },
+    "prometheus-upstream": {
+      "id": "prometheus-upstream",
+      "repository": "prometheus/prometheus",
+      "web_url": "https://github.com/prometheus/prometheus",
+      "kind": "upstream-reference",
+      "purpose": "Prometheus组件上游参考"
+    },
+    "alertmanager-upstream": {
+      "id": "alertmanager-upstream",
+      "repository": "prometheus/alertmanager",
+      "web_url": "https://github.com/prometheus/alertmanager",
+      "kind": "upstream-reference",
+      "purpose": "Alertmanager组件上游参考"
+    },
+    "blackbox-upstream": {
+      "id": "blackbox-upstream",
+      "repository": "prometheus/blackbox_exporter",
+      "web_url": "https://github.com/prometheus/blackbox_exporter",
+      "kind": "upstream-reference",
+      "purpose": "Blackbox exporter上游参考"
+    },
+    "node-exporter-upstream": {
+      "id": "node-exporter-upstream",
+      "repository": "prometheus/node_exporter",
+      "web_url": "https://github.com/prometheus/node_exporter",
+      "kind": "upstream-reference",
+      "purpose": "来宾exporter源码参考，实际用发行版包"
+    },
+    "filebrowser-upstream": {
+      "id": "filebrowser-upstream",
+      "repository": "gtsteffaniak/filebrowser",
+      "web_url": "https://github.com/gtsteffaniak/filebrowser",
+      "kind": "upstream-reference",
+      "purpose": "现役官方v2.1.4-beta原生二进制/摘要锁；不是用户fork或源码checkout"
+    },
+    "openjdk-upstream": {
+      "id": "openjdk-upstream",
+      "repository": "openjdk/jdk",
+      "web_url": "https://github.com/openjdk/jdk",
+      "kind": "upstream-reference",
+      "purpose": "OpenJDK上游参考，JDK不是业务应用源码"
+    },
+    "docker-upstream": {
+      "id": "docker-upstream",
+      "repository": "moby/moby",
+      "web_url": "https://github.com/moby/moby",
+      "kind": "upstream-reference",
+      "purpose": "Docker Engine组件源码参考，不表示在模板内取业务代码"
+    },
+    "proxmox-upstream": {
+      "id": "proxmox-upstream",
+      "repository": "Proxmox/pve-manager",
+      "web_url": "https://git.proxmox.com/?p=pve-manager.git",
+      "kind": "upstream-reference",
+      "purpose": "PVE管理组件官方源码参考；宿主实际使用安装的软件包，不从本仓库重编译"
+    }
+  },
+  "machines": [
+    {
+      "path": "machines/pve",
+      "kind": "pve",
+      "vmid": null,
+      "name": "pve",
+      "ip": "192.168.21.22",
+      "configuration_repository": "infra",
+      "configuration_paths": [
+        "network19/audit",
+        "infra/backup/prod-db",
+        "infra/ops"
+      ],
+      "application_repository_ids": [],
+      "dependency_repository_ids": [],
+      "upstream_repository_ids": [
+        "proxmox-upstream"
+      ],
+      "git_usage_mode": "configuration-only",
+      "current_state_note": "PVE只管理/L2；由管理机选定配置经受信SSH应用，不在宿主盲git pull/执行整套bootstrap。",
+      "direct_runtime_business_git_pull": false,
+      "credential_references": []
+    },
+    {
+      "path": "machines/ct100-cf-tunnel",
+      "kind": "lxc",
+      "vmid": 100,
+      "name": "cf-tunnel",
+      "ip": "192.168.19.5",
+      "configuration_repository": "infra",
+      "configuration_paths": [
+        "network19/services-core"
+      ],
+      "application_repository_ids": [],
+      "dependency_repository_ids": [],
+      "upstream_repository_ids": [
+        "cloudflared-upstream"
+      ],
+      "git_usage_mode": "configuration-only",
+      "current_state_note": "现有LXC cloudflared；无用户自定义Git库登记，token留原位/归档仅PVE。",
+      "direct_runtime_business_git_pull": false,
+      "credential_references": []
+    },
+    {
+      "path": "machines/vm190-network-gateway",
+      "kind": "vm",
+      "vmid": 190,
+      "name": "network-gateway",
+      "ip": "192.168.19.1",
+      "configuration_repository": "infra",
+      "configuration_paths": [
+        "network19/gateway",
+        "network19/audit"
+      ],
+      "application_repository_ids": [],
+      "dependency_repository_ids": [],
+      "upstream_repository_ids": [],
+      "git_usage_mode": "configuration-only",
+      "current_state_note": "网关的DNS/DHCP/nft配置来自Dell仓库，系统组件由软件包提供；没有独立业务库。",
+      "direct_runtime_business_git_pull": false,
+      "credential_references": []
+    },
+    {
+      "path": "machines/vm200-data-prod-db",
+      "kind": "vm",
+      "vmid": 200,
+      "name": "data-prod-db",
+      "ip": "192.168.19.10",
+      "configuration_repository": "infra",
+      "configuration_paths": [
+        "infra/data",
+        "infra/backup/prod-db"
+      ],
+      "application_repository_ids": [],
+      "dependency_repository_ids": [],
+      "upstream_repository_ids": [
+        "mysql-upstream"
+      ],
+      "git_usage_mode": "configuration-only",
+      "current_state_note": "正式MySQL镜像与配置，不拉业务源码；数据库与备份数据不是Git仓库。",
+      "direct_runtime_business_git_pull": false,
+      "credential_references": []
+    },
+    {
+      "path": "machines/vm201-data-prod-infra",
+      "kind": "vm",
+      "vmid": 201,
+      "name": "data-prod-infra",
+      "ip": "192.168.19.11",
+      "configuration_repository": "infra",
+      "configuration_paths": [
+        "infra/data"
+      ],
+      "application_repository_ids": [],
+      "dependency_repository_ids": [],
+      "upstream_repository_ids": [
+        "nacos-upstream",
+        "redis-upstream",
+        "rabbitmq-upstream"
+      ],
+      "git_usage_mode": "configuration-only",
+      "current_state_note": "正式基础组件使用固定镜像/配置；Nacos配置正文/服务凭据不纳Git。",
+      "direct_runtime_business_git_pull": false,
+      "credential_references": []
+    },
+    {
+      "path": "machines/vm210-data-test",
+      "kind": "vm",
+      "vmid": 210,
+      "name": "data-test",
+      "ip": "192.168.19.20",
+      "configuration_repository": "infra",
+      "configuration_paths": [
+        "infra/data"
+      ],
+      "application_repository_ids": [],
+      "dependency_repository_ids": [],
+      "upstream_repository_ids": [
+        "mysql-upstream",
+        "nacos-upstream",
+        "redis-upstream",
+        "rabbitmq-upstream"
+      ],
+      "git_usage_mode": "configuration-only",
+      "current_state_note": "测试四组件；导入的Nacos配置/Puyu数据库不代表业务程序已部署或自动关联Git库。",
+      "direct_runtime_business_git_pull": false,
+      "credential_references": []
+    },
+    {
+      "path": "machines/vm220-publish-service",
+      "kind": "vm",
+      "vmid": 220,
+      "name": "publish-service",
+      "ip": "192.168.19.30",
+      "configuration_repository": "infra",
+      "configuration_paths": [
+        "infra/publisher",
+        "infra/java"
+      ],
+      "application_repository_ids": [
+        "deploy",
+        "puyu-auth",
+        "puyu-bff-web",
+        "puyu-common-lib",
+        "puyu-gateway",
+        "puyu-service-core"
+      ],
+      "dependency_repository_ids": [],
+      "upstream_repository_ids": [],
+      "git_usage_mode": "build-source-planned",
+      "current_state_note": "后续发布机的源码取用计划：部署工具deploy+5后端。尚未由本任务clone/配置server keys或证明deploy工具已适配Puyu；现役受限发布链仍来自infra/publisher且fenced，Java业务不启。common-lib只构建/发布库制品。",
+      "direct_runtime_business_git_pull": false,
+      "credential_references": [
+        {
+          "repository_id": "deploy",
+          "key_basename": "deploy_ed25519",
+          "SSH_alias": "github-bkcode-deploy",
+          "prepared_location": "management Mac ~/.ssh/deploy-keys/bkcode/",
+          "permission_policy": "read-only on GitHub; Allow write access unchecked",
+          "repository_read_verification": "GitHub registration/read access not reverified in this documentation task",
+          "server_installation": "not performed or verified by this documentation task"
+        },
+        {
+          "repository_id": "puyu-auth",
+          "key_basename": "puyu-auth_ed25519",
+          "SSH_alias": "github-bkcode-puyu-auth",
+          "prepared_location": "management Mac ~/.ssh/deploy-keys/bkcode/",
+          "permission_policy": "read-only on GitHub; Allow write access unchecked",
+          "repository_read_verification": "GitHub registration/read access not reverified in this documentation task",
+          "server_installation": "not performed or verified by this documentation task"
+        },
+        {
+          "repository_id": "puyu-bff-web",
+          "key_basename": "puyu-bff-web_ed25519",
+          "SSH_alias": "github-bkcode-puyu-bff-web",
+          "prepared_location": "management Mac ~/.ssh/deploy-keys/bkcode/",
+          "permission_policy": "read-only on GitHub; Allow write access unchecked",
+          "repository_read_verification": "GitHub registration/read access not reverified in this documentation task",
+          "server_installation": "not performed or verified by this documentation task"
+        },
+        {
+          "repository_id": "puyu-common-lib",
+          "key_basename": "puyu-common-lib_ed25519",
+          "SSH_alias": "github-bkcode-puyu-common-lib",
+          "prepared_location": "management Mac ~/.ssh/deploy-keys/bkcode/",
+          "permission_policy": "read-only on GitHub; Allow write access unchecked",
+          "repository_read_verification": "GitHub registration/read access not reverified in this documentation task",
+          "server_installation": "not performed or verified by this documentation task"
+        },
+        {
+          "repository_id": "puyu-gateway",
+          "key_basename": "puyu-gateway_ed25519",
+          "SSH_alias": "github-bkcode-puyu-gateway",
+          "prepared_location": "management Mac ~/.ssh/deploy-keys/bkcode/",
+          "permission_policy": "read-only on GitHub; Allow write access unchecked",
+          "repository_read_verification": "GitHub registration/read access not reverified in this documentation task",
+          "server_installation": "not performed or verified by this documentation task"
+        },
+        {
+          "repository_id": "puyu-service-core",
+          "key_basename": "puyu-service-core_ed25519",
+          "SSH_alias": "github-bkcode-puyu-service-core",
+          "prepared_location": "management Mac ~/.ssh/deploy-keys/bkcode/",
+          "permission_policy": "read-only on GitHub; Allow write access unchecked",
+          "repository_read_verification": "GitHub registration/read access not reverified in this documentation task",
+          "server_installation": "not performed or verified by this documentation task"
+        }
+      ]
+    },
+    {
+      "path": "machines/vm221-artifact-service",
+      "kind": "vm",
+      "vmid": 221,
+      "name": "artifact-service",
+      "ip": "192.168.19.31",
+      "configuration_repository": "infra",
+      "configuration_paths": [
+        "infra/nexus"
+      ],
+      "application_repository_ids": [],
+      "dependency_repository_ids": [],
+      "upstream_repository_ids": [
+        "nexus-upstream"
+      ],
+      "git_usage_mode": "official-artifact-service",
+      "current_state_note": "Nexus仍独立221，使用原固定镜像；nexus-public仅Core源码参考，不克隆它替换现役CE，不迁盘或合并。",
+      "direct_runtime_business_git_pull": false,
+      "credential_references": []
+    },
+    {
+      "path": "machines/vm230-java-prod-01",
+      "kind": "vm",
+      "vmid": 230,
+      "name": "java-prod-01",
+      "ip": "192.168.19.40",
+      "configuration_repository": "infra",
+      "configuration_paths": [
+        "infra/java/runtime",
+        "network19/java-template"
+      ],
+      "application_repository_ids": [
+        "puyu-auth",
+        "puyu-bff-web",
+        "puyu-gateway",
+        "puyu-service-core"
+      ],
+      "dependency_repository_ids": [
+        "puyu-common-lib"
+      ],
+      "upstream_repository_ids": [
+        "openjdk-upstream"
+      ],
+      "git_usage_mode": "artifact-consumer-runtime-only",
+      "current_state_note": "仅Java运行基础，当前没有本次Puyu业务程序上线；未来接收220审定构建产物，不要求本机拉源码或放Deploy Key。common-lib为依赖库，不能按独立服务启动；NFS仍同/mnt/resources。",
+      "direct_runtime_business_git_pull": false,
+      "credential_references": []
+    },
+    {
+      "path": "machines/vm240-java-test-01",
+      "kind": "vm",
+      "vmid": 240,
+      "name": "java-test-01",
+      "ip": "192.168.19.45",
+      "configuration_repository": "infra",
+      "configuration_paths": [
+        "infra/java/runtime",
+        "network19/java-template"
+      ],
+      "application_repository_ids": [
+        "puyu-auth",
+        "puyu-bff-web",
+        "puyu-gateway",
+        "puyu-service-core"
+      ],
+      "dependency_repository_ids": [
+        "puyu-common-lib"
+      ],
+      "upstream_repository_ids": [
+        "openjdk-upstream"
+      ],
+      "git_usage_mode": "artifact-consumer-runtime-only",
+      "current_state_note": "仅Java运行基础，当前没有本次Puyu业务程序上线；未来接收220审定构建产物，不要求本机拉源码或放Deploy Key。common-lib为依赖库，不能按独立服务启动；NFS仍同/mnt/resources。",
+      "direct_runtime_business_git_pull": false,
+      "credential_references": []
+    },
+    {
+      "path": "machines/vm250-penpot-service",
+      "kind": "vm",
+      "vmid": 250,
+      "name": "penpot-service",
+      "ip": "192.168.19.50",
+      "configuration_repository": "infra",
+      "configuration_paths": [
+        "infra/penpot",
+        "infra/penpot/runtime/health-supervision"
+      ],
+      "application_repository_ids": [
+        "penpot"
+      ],
+      "dependency_repository_ids": [],
+      "upstream_repository_ids": [
+        "penpot-upstream"
+      ],
+      "git_usage_mode": "custom-code-imported",
+      "current_state_note": "现役main/ff1783e clean、无origin，11容器healthy；管理Mac专属key及临时clone通过，GitHub main仍9aedbb0缺两条现役改造。先补远端版本再另审部署，不从旧main覆盖。",
+      "direct_runtime_business_git_pull": false,
+      "credential_references": [
+        {
+          "repository_id": "penpot",
+          "key_basename": "penpot_ed25519",
+          "SSH_alias": "github-bkcode-penpot",
+          "prepared_location": "management Mac ~/.ssh/deploy-keys/bkcode/",
+          "permission_policy": "read-only on GitHub; Allow write access unchecked",
+          "repository_read_verification": "verified on management Mac for Penpot",
+          "server_installation": "not performed or verified by this documentation task"
+        }
+      ],
+      "verification_evidence": [
+        "evidence/git-repositories-20261110/penpot-deploy-key-verification.json",
+        "evidence/git-repositories-20261110/penpot-runtime-readonly.json"
+      ]
+    },
+    {
+      "path": "machines/vm260-nas-media",
+      "kind": "vm",
+      "vmid": 260,
+      "name": "nas-media",
+      "ip": "192.168.19.60",
+      "configuration_repository": "infra",
+      "configuration_paths": [
+        "infra/nas"
+      ],
+      "application_repository_ids": [
+        "jellyfin"
+      ],
+      "dependency_repository_ids": [],
+      "upstream_repository_ids": [
+        "omv-upstream",
+        "jellyfin-upstream"
+      ],
+      "git_usage_mode": "official-runtime-user-fork-planned",
+      "current_state_note": "OMV/Samba与现役Jellyfin仍按原软件包/官方镜像；用户bkcode/jellyfin是服务端fork，仅密钥准备/上游类型核对，尚未由本任务克隆或替换NAS镜像。电视客户端改造不等于此服务端源码更新。",
+      "direct_runtime_business_git_pull": false,
+      "credential_references": [
+        {
+          "repository_id": "jellyfin",
+          "key_basename": "jellyfin_ed25519",
+          "SSH_alias": "github-bkcode-jellyfin",
+          "prepared_location": "management Mac ~/.ssh/deploy-keys/bkcode/",
+          "permission_policy": "read-only on GitHub; Allow write access unchecked",
+          "repository_read_verification": "GitHub registration/read access not reverified in this documentation task",
+          "server_installation": "not performed or verified by this documentation task"
+        }
+      ]
+    },
+    {
+      "path": "machines/vm270-ops-service",
+      "kind": "vm",
+      "vmid": 270,
+      "name": "ops-service",
+      "ip": "192.168.19.70",
+      "configuration_repository": "infra",
+      "configuration_paths": [
+        "infra/ops"
+      ],
+      "application_repository_ids": [],
+      "dependency_repository_ids": [],
+      "upstream_repository_ids": [
+        "prometheus-upstream",
+        "grafana-upstream",
+        "alertmanager-upstream",
+        "blackbox-upstream",
+        "node-exporter-upstream"
+      ],
+      "git_usage_mode": "official-monitoring-components",
+      "current_state_note": "固定官方组件/镜像+Dell规则/告警桥/采集脚本，无独立用户Ops应用库；不新增SSO/接收人/外部探针。",
+      "direct_runtime_business_git_pull": false,
+      "credential_references": []
+    },
+    {
+      "path": "machines/vm280-resource-service",
+      "kind": "vm",
+      "vmid": 280,
+      "name": "resource-service",
+      "ip": "192.168.19.80",
+      "configuration_repository": "infra",
+      "configuration_paths": [
+        "infra/resources",
+        "infra/resources/filebrowser"
+      ],
+      "application_repository_ids": [],
+      "dependency_repository_ids": [],
+      "upstream_repository_ids": [
+        "filebrowser-upstream"
+      ],
+      "git_usage_mode": "native-official-binary",
+      "current_state_note": "原NFS+官方FileBrowser固定v2.1.4-beta二进制，摘要由upstream.lock锁；无用户FileBrowser fork登记，不在来宾git pull跟随latest。管理元数据与共享资源分开。",
+      "direct_runtime_business_git_pull": false,
+      "credential_references": []
+    },
+    {
+      "path": "machines/tpl9001-docker-base",
+      "kind": "template",
+      "vmid": 9001,
+      "name": "tpl-docker-base",
+      "ip": null,
+      "configuration_repository": "infra",
+      "configuration_paths": [
+        "infra",
+        "cleanup/fish"
+      ],
+      "application_repository_ids": [],
+      "dependency_repository_ids": [],
+      "upstream_repository_ids": [
+        "docker-upstream"
+      ],
+      "git_usage_mode": "sealed-template-no-business-source",
+      "current_state_note": "Docker基础模板；仅引用Dell封版/配置来源，不放业务源码、Git私钥/PAT/数据。",
+      "direct_runtime_business_git_pull": false,
+      "credential_references": []
+    },
+    {
+      "path": "machines/tpl9010-linux-base",
+      "kind": "template",
+      "vmid": 9010,
+      "name": "tpl-linux-base",
+      "ip": null,
+      "configuration_repository": "infra",
+      "configuration_paths": [
+        "infra",
+        "cleanup/fish"
+      ],
+      "application_repository_ids": [],
+      "dependency_repository_ids": [],
+      "upstream_repository_ids": [],
+      "git_usage_mode": "sealed-template-no-business-source",
+      "current_state_note": "Linux基础模板；不放业务源码或仓库私钥。",
+      "direct_runtime_business_git_pull": false,
+      "credential_references": []
+    },
+    {
+      "path": "machines/tpl9011-java-acceptance",
+      "kind": "template",
+      "vmid": 9011,
+      "name": "tpl-java-acceptance",
+      "ip": null,
+      "configuration_repository": "infra",
+      "configuration_paths": [
+        "network19/java-template",
+        "infra/java/runtime",
+        "cleanup/fish"
+      ],
+      "application_repository_ids": [],
+      "dependency_repository_ids": [],
+      "upstream_repository_ids": [
+        "openjdk-upstream"
+      ],
+      "git_usage_mode": "sealed-template-no-business-source",
+      "current_state_note": "唯一Java验收模板；JDK/运行身份/基线，不放业务源码或Git密钥，不预启Java/资源挂载。",
+      "direct_runtime_business_git_pull": false,
+      "credential_references": []
+    }
+  ],
+  "constraints": {
+    "server_runtime_or_keys_modified": false,
+    "private_or_public_key_bodies_included": false,
+    "backend_source_scope_only": [
+      "puyu-auth",
+      "puyu-bff-web",
+      "puyu-common-lib",
+      "puyu-gateway",
+      "puyu-service-core"
+    ],
+    "common_lib_is_runnable_service": false,
+    "runtime_hosts_pull_source_by_default": false,
+    "configured_identity_is_not_proof_of_GitHub_write_permissions": true,
+    "local_checkout_branch_is_not_remote_or_server_deployment_proof": true,
+    "existing_Java_business_remains_disabled": true,
+    "Jellyfin_fork_is_not_current_NAS_runtime": true
+  },
+  "repository_authentication_status": {
+    "user_reports_GitHub_deploy_keys_configured": true,
+    "management_read_verified_repositories": [
+      "penpot"
+    ],
+    "other_new_keys_read_tests_this_task": false,
+    "keys_installed_on_servers_this_task": false
+  }
+}

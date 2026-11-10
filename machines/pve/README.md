@@ -2,6 +2,8 @@
 
 # PVE物理宿主pve
 
+Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/计划与已部署状态分开；不表示本机已clone或已分发key）。
+
 ## 本轮只读状态与备份归属
 
 14:24:03自然重启后的14:42–14:44采样：12来宾running、3模板stopped，EDAC CE/UE0、RAID1/5 Optl/5盘Onln；三个forward guard SHA保持，networking→bridge/ExecStartPost→pve-guests真实顺序成功，双栈all/default/全部接口forward0、无host NAT。用户报告内存处理/诊断通过不等于本轮独立离线诊断。 证据：[本机分项审计](../../completion/20261109/pve-audit.json)。

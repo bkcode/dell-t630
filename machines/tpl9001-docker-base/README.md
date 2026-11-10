@@ -1,5 +1,7 @@
 # 9001 · tpl-docker-base
 
+Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/计划与已部署状态分开；不表示本机已clone或已分发key）。
+
 这是保留模板的配置与文档目录，**不是运行服务器**。最后02:35综合盘点确认模板存在且停止；当前T630因UEFI0058暂停，本次没有连接服务器或新建clone。
 
 | 项目 | 最后登记配置 |

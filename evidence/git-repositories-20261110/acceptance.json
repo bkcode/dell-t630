@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-10T13:27:56.668573+08:00",
+  "status": "passed-documentation-and-bounded-Penpot-read-verification",
+  "scope": "17 per-machine Git ownership documents and managementMac Penpot deploy-key temporary clone; no source deployment or server key installation",
+  "cases": [
+    {
+      "id": "GITDOC-CATALOG-001",
+      "title": "17机来源归属与现役/计划分离",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户要求逐机Git文档、先验证Penpot并授权协同；运行更新不在当前范围"
+      ],
+      "steps": [
+        "核本地主表/逐机映射、独立审阅和已记录的实际只读证据"
+      ],
+      "observable_pass_conditions": [
+        "17机来源归属与现役/计划分离的限定证据通过，未将候选或管理Mac验证冒称服务器部署"
+      ],
+      "evidence": [
+        {
+          "path": "machines/git-repositories.json",
+          "note": "public metadata and bounded read-only evidence only"
+        },
+        {
+          "path": "evidence/git-repositories-20261110/review.json",
+          "note": "public metadata and bounded read-only evidence only"
+        }
+      ],
+      "verified_at": "2026-11-10T13:27:56.668573+08:00"
+    },
+    {
+      "id": "GITDOC-DOCUMENTS-001",
+      "title": "逐机文档和配置映射完整",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户要求逐机Git文档、先验证Penpot并授权协同；运行更新不在当前范围"
+      ],
+      "steps": [
+        "核本地主表/逐机映射、独立审阅和已记录的实际只读证据"
+      ],
+      "observable_pass_conditions": [
+        "逐机文档和配置映射完整的限定证据通过，未将候选或管理Mac验证冒称服务器部署"
+      ],
+      "evidence": [
+        {
+          "path": "machines/GIT-REPOSITORIES.md",
+          "note": "public metadata and bounded read-only evidence only"
+        },
+        {
+          "path": "scripts/validate_git_repositories.py",
+          "note": "public metadata and bounded read-only evidence only"
+        },
+        {
+          "path": "evidence/git-repositories-20261110/review.md",
+          "note": "public metadata and bounded read-only evidence only"
+        }
+      ],
+      "verified_at": "2026-11-10T13:27:56.668573+08:00"
+    },
+    {
+      "id": "GITDOC-PENPOTREAD-001",
+      "title": "管理Mac专属key读取与临时clone",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户要求逐机Git文档、先验证Penpot并授权协同；运行更新不在当前范围"
+      ],
+      "steps": [
+        "核本地主表/逐机映射、独立审阅和已记录的实际只读证据"
+      ],
+      "observable_pass_conditions": [
+        "管理Mac专属key读取与临时clone的限定证据通过，未将候选或管理Mac验证冒称服务器部署"
+      ],
+      "evidence": [
+        {
+          "path": "machines/vm250-penpot-service/SOURCE-AND-UPDATES.md",
+          "note": "public metadata and bounded read-only evidence only"
+        },
+        {
+          "path": "evidence/git-repositories-20261110/penpot-deploy-key-verification.json",
+          "note": "public metadata and bounded read-only evidence only"
+        }
+      ],
+      "verified_at": "2026-11-10T13:27:56.668573+08:00"
+    },
+    {
+      "id": "GITDOC-PROTECT-001",
+      "title": "现役改造保持与无运行变更",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户要求逐机Git文档、先验证Penpot并授权协同；运行更新不在当前范围"
+      ],
+      "steps": [
+        "核本地主表/逐机映射、独立审阅和已记录的实际只读证据"
+      ],
+      "observable_pass_conditions": [
+        "现役改造保持与无运行变更的限定证据通过，未将候选或管理Mac验证冒称服务器部署"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/git-repositories-20261110/penpot-runtime-readonly.json",
+          "note": "public metadata and bounded read-only evidence only"
+        },
+        {
+          "path": "machines/vm250-penpot-service/git-source.json",
+          "note": "public metadata and bounded read-only evidence only"
+        }
+      ],
+      "verified_at": "2026-11-10T13:27:56.668573+08:00"
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "current_phase_case_count": 4,
+    "current_phase_passed": 4,
+    "statuses": {
+      "passed": 4
+    }
+  },
+  "not_performed": [
+    "other7repository authentication checks",
+    "server DeployKey installation or runtime git remote setup",
+    "Penpot code upgrade/build/data migration",
+    "Puyu Java startup or publisher replacement",
+    "Jellyfin clone or fork deployment",
+    "GitHub write-permission probes"
+  ]
+}

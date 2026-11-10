@@ -63,3 +63,12 @@
 - root-owned/etc/dell-filebrowser/bootstrap.complete之后启动不再注入初始admin口令，勿删除marker盲重置密码。systemd运行时root0:0的0550/0440带namedUID2000只读ACL是合法形式，守卫精确核ACL；不得chmod/chown runtimecred来追过。
 - Beta选用原因是官方稳定2.0.2受已公告问题影响且2.1stable release查询404；固定已修复2.1.4-beta，不称稳定版、不自动跟可变tag升级。证书本地自签，首访核公开指纹；无全局trust变更，健康探测专属CA验证链/hostname，不-k。
 - 仅管理界面，不改业务上传参数/Java/Nacos，不公开图片URL、不迁文件、不扩自动备份；原MySQL/Redis/Rabbit密码合同保持。实际验收completion/20261110-filebrowser/acceptance.json，使用手册同目录usage-manual.md；初始化/安装one-shot不得盲重放。浏览器只签真实login/list/观察href的PNG预览，pointer全路径未签，旧失败完整保留。
+
+## 逐机Git来源与DeployKey维护
+
+- `machines/git-repositories.json`为17机Git归属主表，逐机GIT-REPOSITORIES.md/config指针与其保持一致；每次改动运行scripts/validate_git_repositories.py。配置库bkcode/dell-t630与应用库/待接入库/上游参考严格区分。
+- 220候选拉bkcode/deploy＋5个Puyu后端，common-lib仅共享库；230/240当前运行基础、收构建制品，不能因文档登记就启动Java/放Git私钥或替换受限publisher。Jellyfin fork是服务端候选，当前260仍官方镜像，不冒称已部署或为电视客户端。
+- 管理Mac仓库key目录~/.ssh/deploy-keys/bkcode，Penpot旧deploy(.pub)已移成penpot_ed25519(.pub)，bkcode/deploy另用deploy_ed25519。本轮用户报告GitHub已配，实际只验证Penpot仓库SSH身份和临时浅clone；不代表server已配认证、writeflag已测。不得将私钥或公钥正文纳Git。
+- Penpot远端main本轮仍9aedbb0而本地/服务器为ff1783e，先保两条改造，不能自动pull/reset退回远端旧版或自动push本地。VM250本轮只读clean/noorigin/11healthy，supervisor累计重启22如实记历史，不据此签零重启或扩大诊断。
+
+- 最新部署授权仅VM250/Penpot，其他机运行不改、17机文档继续。用户选择先亲自推两条ff1783e改造到main再通知继续；必须等通知并重查远端包含改造，当前不得构建/切换远端9aed旧代码或代替用户push。见evidence/git-repositories-20261110/penpot-deployment-state.json。

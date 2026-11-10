@@ -6,7 +6,7 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "b1a543733cb676e4e7a5ae971e4e38fae5dd3bc68d6011f10b24e1f68680b248"
+      "sha256": "b8615b2fa9f2e3a339711201e4cdb685a1a0162d4e8a38f33cbd3813b38a209a"
     },
     {
       "path": "11-live-handoff.md",
@@ -72,13 +72,13 @@
       "path": "machines/vm250-penpot-service/git-source.json",
       "type": "current-contract",
       "purpose": "用户确认的bkcode/penpot main源码与更新合同；不证明远端最新或现场已更新",
-      "sha256": "825283d192b502c230b2f412273b73629080bd9db942c5563dcfcda6dba83265"
+      "sha256": "43d36a6c536e0e3cafe2793f1a3c3f2ad7499ee77b6cf7371a205ac36ac19b98"
     },
     {
       "path": "machines/vm250-penpot-service/SOURCE-AND-UPDATES.md",
       "type": "current-contract",
       "purpose": "源码获取、固定main、版本保留、构建切换与数据边界",
-      "sha256": "fc890a48bfe4c824364a60d355cf4a183cfc7b59f85cd013a7d26524a796e309"
+      "sha256": "2ff4d9e2ff47307ec6c6c175ef0de2f595546b3a6f1f601f9e0dcb54a0ff1760"
     },
     {
       "path": "infra/penpot/README.md",
@@ -217,6 +217,54 @@
       "type": "historical-evidence",
       "purpose": "Authorized one-snapshot isolated restore proof/source; no production import, fullbusinessRPO/RTO orDR claim",
       "sha256": "ba57c4495ed60fb870d4520d42004856b0cfe8be90b72fc4f2a60e1553b08b9b"
+    },
+    {
+      "path": "machines/git-repositories.json",
+      "type": "current-contract",
+      "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
+      "sha256": "8cc23e47e2faf4dbe481d85e8d5b4a64424c953a5071a62fd4b8fffb11c2818f"
+    },
+    {
+      "path": "machines/GIT-REPOSITORIES.md",
+      "type": "current-contract",
+      "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
+      "sha256": "3738e77d78f04607759fa36bea6cbb1300bed10a3606401c6b5c08435e7e4d3d"
+    },
+    {
+      "path": "machines/vm250-penpot-service/GIT-REPOSITORIES.md",
+      "type": "current-contract",
+      "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
+      "sha256": "b28a63ffc1c02a2a73ef396c46f4cdf9fad2bdb3b13fa0012a8639a8a01d1839"
+    },
+    {
+      "path": "scripts/validate_git_repositories.py",
+      "type": "current-contract",
+      "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
+      "sha256": "6738545de49c9a1d868e3d59dffc557052ba6147542485ce0efc2a2023c7b1ef"
+    },
+    {
+      "path": "evidence/git-repositories-20261110/penpot-deploy-key-verification.json",
+      "type": "historical-evidence",
+      "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
+      "sha256": "9b331927bf6c4a68f02605827204a453073b14e3bed6842ce040ab3b62f08762"
+    },
+    {
+      "path": "evidence/git-repositories-20261110/penpot-runtime-readonly.json",
+      "type": "historical-evidence",
+      "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
+      "sha256": "b9a9fca447b0146752ead7e93ce7aea8b07d791016970efe4c74dc511794af69"
+    },
+    {
+      "path": "evidence/git-repositories-20261110/penpot-deployment-state.json",
+      "type": "historical-evidence",
+      "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
+      "sha256": "b7299bb7dd12158d073f6ba5a6d1fa9964e3296592dbe14b77fe1545925f354c"
+    },
+    {
+      "path": "infra/penpot/source-update/PLAN.md",
+      "type": "pending-candidate",
+      "purpose": "VM250-only source update authorized but awaiting user push of preserved custom commits; no deployment executed",
+      "sha256": "9668841a9b79005a516d2f0090eff58e915ef6791c7509258511c57f7045b40a"
     }
   ],
   "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."

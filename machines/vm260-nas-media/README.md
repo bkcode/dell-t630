@@ -2,6 +2,8 @@
 
 # VM260 · nas-media
 
+Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/计划与已部署状态分开；不表示本机已clone或已分发key）。
+
 ## 本轮只读状态与备份归属
 
 14:43:07媒体工具采样：原2TiB数据UUID/ext4与OMV/SMB/Jellyfin单元、原镜像/容器健康保持，原健康GET通过；本轮未写共享、读媒体内容或播放，不签真实TV/PS/转码。 证据：[本机分项审计](../../completion/20261109/media-audit.json)。

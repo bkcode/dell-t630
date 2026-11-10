@@ -100,5 +100,35 @@
     "evidence": "completion/20261109-prod-db-scope/first-success-and-timer-enabled.json",
     "old_wholeVM_archives_preserved": true,
     "publisher_key_boundary": "private key remains220; never wholeVM backup or key export"
+  },
+  "git_repository_mapping": {
+    "catalog": "machines/git-repositories.json",
+    "catalog_machine_pointer": "/machines/6",
+    "machine_path": "machines/vm220-publish-service",
+    "document_path": "machines/vm220-publish-service/GIT-REPOSITORIES.md",
+    "source_role": "docs-only",
+    "configuration_repository_id": "infra",
+    "application_repository_ids": [
+      "deploy",
+      "puyu-auth",
+      "puyu-bff-web",
+      "puyu-common-lib",
+      "puyu-gateway",
+      "puyu-service-core"
+    ],
+    "dependency_repository_ids": [],
+    "upstream_repository_ids": [],
+    "repository_ids": [
+      "infra",
+      "deploy",
+      "puyu-auth",
+      "puyu-bff-web",
+      "puyu-common-lib",
+      "puyu-gateway",
+      "puyu-service-core"
+    ],
+    "git_usage_mode": "build-source-planned",
+    "direct_runtime_business_git_pull": false,
+    "server_Git_key_installation_performed_by_this_task": false
   }
 }

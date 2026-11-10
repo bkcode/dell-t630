@@ -2,6 +2,8 @@
 
 # VM250 · penpot-service
 
+Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/计划与已部署状态分开；不表示本机已clone或已分发key）。
+
 ## 本轮只读状态与备份归属
 
 14:43:07媒体工具采样：原数据UUID、11容器running/healthy/RestartCount0，原镜像/容器IDs保持，原健康GET通过，Git仍ff1783e clean；本轮未更新main、不重验设计/素材/MCP内容或SMTP。 证据：[本机分项审计](../../completion/20261109/media-audit.json)。
@@ -12,9 +14,7 @@
 
 ## 源码仓库：bkcode/penpot · main
 
-使用 **[bkcode/penpot](https://github.com/bkcode/penpot) 的 `main` 分支**，HTTPS为`https://github.com/bkcode/penpot.git`，SSH为`git@github.com:bkcode/penpot.git`。服务器只读取码；显式指定main，不跟随默认分支或改用官方上游。最后验收commit为`ff1783e7865af7aae571c985f03e057631b7af63`，不代表远端main最新位置。
-
-详细更新与版本保留流程见[源码与更新说明](SOURCE-AND-UPDATES.md)，机器可读合同见[git-source.json](git-source.json)。PAT自动认证后续单独处理，本轮未取码、构建或部署。
+Git/main/历史bundle与更新边界统一见上方Git来源页。最新[管理Mac读取与临时工作树验证](../../evidence/git-repositories-20261110/penpot-deploy-key-verification.json)并未部署服务器；[13:20来宾只读现场](../../evidence/git-repositories-20261110/penpot-runtime-readonly.json)仍main/ff1783e、clean、无origin，11容器healthy。unit累计NRestarts22按原证据解释，本任务未诊断或启停；不能称远端main已上线或直接取码已配置。
 
 ## 职责与实际合同
 

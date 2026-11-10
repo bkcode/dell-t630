@@ -1,5 +1,7 @@
 # VM280 · resource-service
 
+Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/计划与已部署状态分开；不表示本机已clone或已分发key）。
+
 更新：2026-11-10，Asia/Shanghai。此目录是资源服务合同与公开来源索引，不是完整运行配置导出。**VM280及230/240真NFS/guard、非root跨机读写/删除、root_squash/缺挂载负测已通过；仅280约30秒受控重启，fsync canary持久、两client挂载恢复，未重启running。** 现行资源包含NFS与私有FileBrowser管理HTTPS，不含业务图片HTTP、Java启动、旧文件搬迁或自动备份扩围。
 
 ## FileBrowser Quantum管理页面

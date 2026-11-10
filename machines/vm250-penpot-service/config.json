@@ -83,10 +83,18 @@
     "follow_remote_default_branch": false,
     "permission": "read-only",
     "last_verified_deployed_commit": "ff1783e7865af7aae571c985f03e057631b7af63",
-    "current_remote_main_head_verified": false,
+    "current_remote_main_head_verified": true,
     "update_policy": "reviewed immutable commit reachable from origin/main; preserve customizations",
     "contract_path": "machines/vm250-penpot-service/git-source.json",
-    "authentication_setup": "deferred; no PAT/SSH configuration changed"
+    "authentication_setup": "management-Mac repository-specific DeployKey read and temporary shallow fullworktree verified; no serverkey/origin setup by this task",
+    "current_remote_main_commit": "9aedbb011cd803eb615225ca21f7f47cb8c2fa09",
+    "management_DeployKey_read_verified": true,
+    "server_DeployKey_installation_verified": false,
+    "server_origin_present": false,
+    "source_read_verification_evidence": [
+      "evidence/git-repositories-20261110/penpot-deploy-key-verification.json",
+      "evidence/git-repositories-20261110/penpot-runtime-readonly.json"
+    ]
   },
   "current_verification_evidence": "completion/20261109/guests-post-backup.json",
   "current_verification_scope": "current infrastructure setup, no migration or full application restore",
@@ -101,5 +109,28 @@
     "scope": "only production MySQL/Nacos logical backup; all other data excluded",
     "evidence": "completion/20261109-prod-db-scope/first-success-and-timer-enabled.json",
     "old_wholeVM_archives_preserved": true
+  },
+  "git_repository_mapping": {
+    "catalog": "machines/git-repositories.json",
+    "catalog_machine_pointer": "/machines/10",
+    "machine_path": "machines/vm250-penpot-service",
+    "document_path": "machines/vm250-penpot-service/GIT-REPOSITORIES.md",
+    "source_role": "docs-only",
+    "configuration_repository_id": "infra",
+    "application_repository_ids": [
+      "penpot"
+    ],
+    "dependency_repository_ids": [],
+    "upstream_repository_ids": [
+      "penpot-upstream"
+    ],
+    "repository_ids": [
+      "infra",
+      "penpot",
+      "penpot-upstream"
+    ],
+    "git_usage_mode": "custom-code-imported",
+    "direct_runtime_business_git_pull": false,
+    "server_Git_key_installation_performed_by_this_task": false
   }
 }

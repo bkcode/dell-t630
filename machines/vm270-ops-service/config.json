@@ -103,5 +103,33 @@
     "scope": "one3301B nacos_prod snapshot temporarily restored onVM210; no production/testmanagedDB writes",
     "evidence": "completion/20261109-prod-db-restore/native-success.json",
     "RPO_RTO_or_independent_DR_validated": false
+  },
+  "git_repository_mapping": {
+    "catalog": "machines/git-repositories.json",
+    "catalog_machine_pointer": "/machines/12",
+    "machine_path": "machines/vm270-ops-service",
+    "document_path": "machines/vm270-ops-service/GIT-REPOSITORIES.md",
+    "source_role": "docs-only",
+    "configuration_repository_id": "infra",
+    "application_repository_ids": [],
+    "dependency_repository_ids": [],
+    "upstream_repository_ids": [
+      "prometheus-upstream",
+      "grafana-upstream",
+      "alertmanager-upstream",
+      "blackbox-upstream",
+      "node-exporter-upstream"
+    ],
+    "repository_ids": [
+      "infra",
+      "prometheus-upstream",
+      "grafana-upstream",
+      "alertmanager-upstream",
+      "blackbox-upstream",
+      "node-exporter-upstream"
+    ],
+    "git_usage_mode": "official-monitoring-components",
+    "direct_runtime_business_git_pull": false,
+    "server_Git_key_installation_performed_by_this_task": false
   }
 }

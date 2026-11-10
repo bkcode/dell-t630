@@ -2,6 +2,8 @@
 
 # VM210 · data-test
 
+Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/计划与已部署状态分开；不表示本机已clone或已分发key）。
+
 ## 本轮只读状态与备份归属
 
 14:42:56–14:43:40分项采样：hostname/19.20/GW与DNS19.1正确，原数据UUID/ext4/rw、监督active、4容器running/healthy/RestartCount0，NTP同步、基础监控正常、failed units空。测试隔离合同保持，该14:42审计未读现役schema/配置或发消息；后续只把小快照导入独立临时实例，没有导入本机现役测试库。 证据：[本机分项审计](../../completion/20261109/core-audit.json)。

@@ -106,5 +106,30 @@
     "scope": "only production MySQL/Nacos logical backup; all other data excluded",
     "evidence": "completion/20261109-prod-db-scope/first-success-and-timer-enabled.json",
     "old_wholeVM_archives_preserved": true
+  },
+  "git_repository_mapping": {
+    "catalog": "machines/git-repositories.json",
+    "catalog_machine_pointer": "/machines/11",
+    "machine_path": "machines/vm260-nas-media",
+    "document_path": "machines/vm260-nas-media/GIT-REPOSITORIES.md",
+    "source_role": "docs-only",
+    "configuration_repository_id": "infra",
+    "application_repository_ids": [
+      "jellyfin"
+    ],
+    "dependency_repository_ids": [],
+    "upstream_repository_ids": [
+      "omv-upstream",
+      "jellyfin-upstream"
+    ],
+    "repository_ids": [
+      "infra",
+      "jellyfin",
+      "omv-upstream",
+      "jellyfin-upstream"
+    ],
+    "git_usage_mode": "official-runtime-user-fork-planned",
+    "direct_runtime_business_git_pull": false,
+    "server_Git_key_installation_performed_by_this_task": false
   }
 }

@@ -1,0 +1,548 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-11-10T13:28:00.394578+08:00",
+  "status": "passed-documents-and-bounded-Mac-read-evidence",
+  "scope": "Local contract and public evidence review; no remote operations or deployment; key files lstat only",
+  "inputs": [
+    {
+      "path": "machines/git-repositories.json",
+      "sha256": "8cc23e47e2faf4dbe481d85e8d5b4a64424c953a5071a62fd4b8fffb11c2818f"
+    },
+    {
+      "path": "evidence/git-repositories-20261110/penpot-deploy-key-verification.json",
+      "sha256": "9b331927bf6c4a68f02605827204a453073b14e3bed6842ce040ab3b62f08762"
+    },
+    {
+      "path": "evidence/git-repositories-20261110/penpot-runtime-readonly.json",
+      "sha256": "b9a9fca447b0146752ead7e93ce7aea8b07d791016970efe4c74dc511794af69"
+    },
+    {
+      "path": "scripts/validate_git_repositories.py",
+      "sha256": "6738545de49c9a1d868e3d59dffc557052ba6147542485ce0efc2a2023c7b1ef"
+    }
+  ],
+  "counts": {
+    "machines": 17,
+    "physical_hosts": 1,
+    "runtime_guests": 13,
+    "stopped_templates": 3,
+    "repository_records": 27,
+    "infrastructure_repository": 1,
+    "user_application_or_build_source_repositories": 8,
+    "component_upstream_references": 18,
+    "management_key_pairs_metadata_only": 8
+  },
+  "checks": {
+    "exact_machine_ID_name_IP_kind_matches_plan": true,
+    "all_machine_and_configuration_paths_exist": true,
+    "all_repository_references_resolve": true,
+    "configuration_source_is_bkcode_dell_t630_for_all": true,
+    "deploy_is_planned_not_claimed_installed_or_Puyu_adapted": true,
+    "five_backend_sources_only_common_lib_not_service": true,
+    "230_240_artifact_consumers_no_source_pull_or_keys": true,
+    "Java_business_remains_disabled": true,
+    "Penpot_remote_main_and_existing_fork_build_distinguished": true,
+    "Penpot_local_clone_is_not_server_GitHub_access_proof": true,
+    "Jellyfin_fork_not_current_runtime_and_not_TV_client": true,
+    "official_components_references_not_claimed_custom_deployments": true,
+    "templates_and_infrastructure_hosts_have_no_invented_business_repo": true,
+    "all_eight_key_pairs_permissions_metadata_ok": true,
+    "key_material_absent_from_canonical": true,
+    "GitHub_write_access_not_inferred_from_key_or_read_checkout": true
+  },
+  "Penpot_evidence_summary": {
+    "management_verified_main": "9aedbb011cd803eb615225ca21f7f47cb8c2fa09",
+    "server_HEAD": "ff1783e7865af7aae571c985f03e057631b7af63",
+    "server_branch": "main",
+    "server_clean": true,
+    "server_origin_present": false,
+    "server_healthy_containers": 11,
+    "supervisor_cumulative_NRestarts": 22,
+    "server_updated_in_this_review": false,
+    "read_access_does_not_prove_GitHub_write_access_disabled": true
+  },
+  "machine_checks": [
+    {
+      "path": "machines/pve",
+      "vmid": null,
+      "status": "passed",
+      "git_usage_mode": "configuration-only"
+    },
+    {
+      "path": "machines/ct100-cf-tunnel",
+      "vmid": 100,
+      "status": "passed",
+      "git_usage_mode": "configuration-only"
+    },
+    {
+      "path": "machines/vm190-network-gateway",
+      "vmid": 190,
+      "status": "passed",
+      "git_usage_mode": "configuration-only"
+    },
+    {
+      "path": "machines/vm200-data-prod-db",
+      "vmid": 200,
+      "status": "passed",
+      "git_usage_mode": "configuration-only"
+    },
+    {
+      "path": "machines/vm201-data-prod-infra",
+      "vmid": 201,
+      "status": "passed",
+      "git_usage_mode": "configuration-only"
+    },
+    {
+      "path": "machines/vm210-data-test",
+      "vmid": 210,
+      "status": "passed",
+      "git_usage_mode": "configuration-only"
+    },
+    {
+      "path": "machines/vm220-publish-service",
+      "vmid": 220,
+      "status": "passed",
+      "git_usage_mode": "build-source-planned"
+    },
+    {
+      "path": "machines/vm221-artifact-service",
+      "vmid": 221,
+      "status": "passed",
+      "git_usage_mode": "official-artifact-service"
+    },
+    {
+      "path": "machines/vm230-java-prod-01",
+      "vmid": 230,
+      "status": "passed",
+      "git_usage_mode": "artifact-consumer-runtime-only"
+    },
+    {
+      "path": "machines/vm240-java-test-01",
+      "vmid": 240,
+      "status": "passed",
+      "git_usage_mode": "artifact-consumer-runtime-only"
+    },
+    {
+      "path": "machines/vm250-penpot-service",
+      "vmid": 250,
+      "status": "passed",
+      "git_usage_mode": "custom-code-imported"
+    },
+    {
+      "path": "machines/vm260-nas-media",
+      "vmid": 260,
+      "status": "passed",
+      "git_usage_mode": "official-runtime-user-fork-planned"
+    },
+    {
+      "path": "machines/vm270-ops-service",
+      "vmid": 270,
+      "status": "passed",
+      "git_usage_mode": "official-monitoring-components"
+    },
+    {
+      "path": "machines/vm280-resource-service",
+      "vmid": 280,
+      "status": "passed",
+      "git_usage_mode": "native-official-binary"
+    },
+    {
+      "path": "machines/tpl9001-docker-base",
+      "vmid": 9001,
+      "status": "passed",
+      "git_usage_mode": "sealed-template-no-business-source"
+    },
+    {
+      "path": "machines/tpl9010-linux-base",
+      "vmid": 9010,
+      "status": "passed",
+      "git_usage_mode": "sealed-template-no-business-source"
+    },
+    {
+      "path": "machines/tpl9011-java-acceptance",
+      "vmid": 9011,
+      "status": "passed",
+      "git_usage_mode": "sealed-template-no-business-source"
+    }
+  ],
+  "key_file_metadata": [
+    {
+      "key_basename": "deploy_ed25519",
+      "body_read": false,
+      "private_file": {
+        "exists": true,
+        "regular": true,
+        "symlink": false,
+        "mode": "0o600",
+        "owner_is_current_user": true
+      },
+      "public_file": {
+        "exists": true,
+        "regular": true,
+        "symlink": false,
+        "mode": "0o644",
+        "owner_is_current_user": true
+      }
+    },
+    {
+      "key_basename": "jellyfin_ed25519",
+      "body_read": false,
+      "private_file": {
+        "exists": true,
+        "regular": true,
+        "symlink": false,
+        "mode": "0o600",
+        "owner_is_current_user": true
+      },
+      "public_file": {
+        "exists": true,
+        "regular": true,
+        "symlink": false,
+        "mode": "0o644",
+        "owner_is_current_user": true
+      }
+    },
+    {
+      "key_basename": "penpot_ed25519",
+      "body_read": false,
+      "private_file": {
+        "exists": true,
+        "regular": true,
+        "symlink": false,
+        "mode": "0o600",
+        "owner_is_current_user": true
+      },
+      "public_file": {
+        "exists": true,
+        "regular": true,
+        "symlink": false,
+        "mode": "0o644",
+        "owner_is_current_user": true
+      }
+    },
+    {
+      "key_basename": "puyu-auth_ed25519",
+      "body_read": false,
+      "private_file": {
+        "exists": true,
+        "regular": true,
+        "symlink": false,
+        "mode": "0o600",
+        "owner_is_current_user": true
+      },
+      "public_file": {
+        "exists": true,
+        "regular": true,
+        "symlink": false,
+        "mode": "0o644",
+        "owner_is_current_user": true
+      }
+    },
+    {
+      "key_basename": "puyu-bff-web_ed25519",
+      "body_read": false,
+      "private_file": {
+        "exists": true,
+        "regular": true,
+        "symlink": false,
+        "mode": "0o600",
+        "owner_is_current_user": true
+      },
+      "public_file": {
+        "exists": true,
+        "regular": true,
+        "symlink": false,
+        "mode": "0o644",
+        "owner_is_current_user": true
+      }
+    },
+    {
+      "key_basename": "puyu-common-lib_ed25519",
+      "body_read": false,
+      "private_file": {
+        "exists": true,
+        "regular": true,
+        "symlink": false,
+        "mode": "0o600",
+        "owner_is_current_user": true
+      },
+      "public_file": {
+        "exists": true,
+        "regular": true,
+        "symlink": false,
+        "mode": "0o644",
+        "owner_is_current_user": true
+      }
+    },
+    {
+      "key_basename": "puyu-gateway_ed25519",
+      "body_read": false,
+      "private_file": {
+        "exists": true,
+        "regular": true,
+        "symlink": false,
+        "mode": "0o600",
+        "owner_is_current_user": true
+      },
+      "public_file": {
+        "exists": true,
+        "regular": true,
+        "symlink": false,
+        "mode": "0o644",
+        "owner_is_current_user": true
+      }
+    },
+    {
+      "key_basename": "puyu-service-core_ed25519",
+      "body_read": false,
+      "private_file": {
+        "exists": true,
+        "regular": true,
+        "symlink": false,
+        "mode": "0o600",
+        "owner_is_current_user": true
+      },
+      "public_file": {
+        "exists": true,
+        "regular": true,
+        "symlink": false,
+        "mode": "0o644",
+        "owner_is_current_user": true
+      }
+    }
+  ],
+  "per_machine_document_generation": {
+    "status": "passed",
+    "machine_documents": 17,
+    "summary_document": "machines/GIT-REPOSITORIES.md",
+    "summary_and_machine_index_links_exist": true,
+    "items": [
+      {
+        "machine": "machines/pve",
+        "json_pointer": "/machines/0",
+        "config_mapping_exact": true,
+        "README_entry": true,
+        "document_links_exist": true,
+        "repository_IDs_match": true
+      },
+      {
+        "machine": "machines/ct100-cf-tunnel",
+        "json_pointer": "/machines/1",
+        "config_mapping_exact": true,
+        "README_entry": true,
+        "document_links_exist": true,
+        "repository_IDs_match": true
+      },
+      {
+        "machine": "machines/vm190-network-gateway",
+        "json_pointer": "/machines/2",
+        "config_mapping_exact": true,
+        "README_entry": true,
+        "document_links_exist": true,
+        "repository_IDs_match": true
+      },
+      {
+        "machine": "machines/vm200-data-prod-db",
+        "json_pointer": "/machines/3",
+        "config_mapping_exact": true,
+        "README_entry": true,
+        "document_links_exist": true,
+        "repository_IDs_match": true
+      },
+      {
+        "machine": "machines/vm201-data-prod-infra",
+        "json_pointer": "/machines/4",
+        "config_mapping_exact": true,
+        "README_entry": true,
+        "document_links_exist": true,
+        "repository_IDs_match": true
+      },
+      {
+        "machine": "machines/vm210-data-test",
+        "json_pointer": "/machines/5",
+        "config_mapping_exact": true,
+        "README_entry": true,
+        "document_links_exist": true,
+        "repository_IDs_match": true
+      },
+      {
+        "machine": "machines/vm220-publish-service",
+        "json_pointer": "/machines/6",
+        "config_mapping_exact": true,
+        "README_entry": true,
+        "document_links_exist": true,
+        "repository_IDs_match": true
+      },
+      {
+        "machine": "machines/vm221-artifact-service",
+        "json_pointer": "/machines/7",
+        "config_mapping_exact": true,
+        "README_entry": true,
+        "document_links_exist": true,
+        "repository_IDs_match": true
+      },
+      {
+        "machine": "machines/vm230-java-prod-01",
+        "json_pointer": "/machines/8",
+        "config_mapping_exact": true,
+        "README_entry": true,
+        "document_links_exist": true,
+        "repository_IDs_match": true
+      },
+      {
+        "machine": "machines/vm240-java-test-01",
+        "json_pointer": "/machines/9",
+        "config_mapping_exact": true,
+        "README_entry": true,
+        "document_links_exist": true,
+        "repository_IDs_match": true
+      },
+      {
+        "machine": "machines/vm250-penpot-service",
+        "json_pointer": "/machines/10",
+        "config_mapping_exact": true,
+        "README_entry": true,
+        "document_links_exist": true,
+        "repository_IDs_match": true
+      },
+      {
+        "machine": "machines/vm260-nas-media",
+        "json_pointer": "/machines/11",
+        "config_mapping_exact": true,
+        "README_entry": true,
+        "document_links_exist": true,
+        "repository_IDs_match": true
+      },
+      {
+        "machine": "machines/vm270-ops-service",
+        "json_pointer": "/machines/12",
+        "config_mapping_exact": true,
+        "README_entry": true,
+        "document_links_exist": true,
+        "repository_IDs_match": true
+      },
+      {
+        "machine": "machines/vm280-resource-service",
+        "json_pointer": "/machines/13",
+        "config_mapping_exact": true,
+        "README_entry": true,
+        "document_links_exist": true,
+        "repository_IDs_match": true
+      },
+      {
+        "machine": "machines/tpl9001-docker-base",
+        "json_pointer": "/machines/14",
+        "config_mapping_exact": true,
+        "README_entry": true,
+        "document_links_exist": true,
+        "repository_IDs_match": true
+      },
+      {
+        "machine": "machines/tpl9010-linux-base",
+        "json_pointer": "/machines/15",
+        "config_mapping_exact": true,
+        "README_entry": true,
+        "document_links_exist": true,
+        "repository_IDs_match": true
+      },
+      {
+        "machine": "machines/tpl9011-java-acceptance",
+        "json_pointer": "/machines/16",
+        "config_mapping_exact": true,
+        "README_entry": true,
+        "document_links_exist": true,
+        "repository_IDs_match": true
+      }
+    ]
+  },
+  "blockers": [],
+  "limitations": [
+    "Two nonblocking offline-validator omissions are documented; independent actual-field checks cover this delivery.",
+    "Previous offline-validator gaps are closed in frozen6738545d; all12 bounded isolated negative variants rejected."
+  ],
+  "offline_validator_review": {
+    "baseline": "passed",
+    "public_only_isolated_copy": true,
+    "negative_variants": [
+      {
+        "name": "template_business_repo",
+        "rejected": true,
+        "error_count": 2
+      },
+      {
+        "name": "template_credential",
+        "rejected": true,
+        "error_count": 1
+      },
+      {
+        "name": "runtime_direct_source_pull",
+        "rejected": true,
+        "error_count": 2
+      },
+      {
+        "name": "runtime_key_contract",
+        "rejected": true,
+        "error_count": 1
+      },
+      {
+        "name": "common_library_as_service",
+        "rejected": true,
+        "error_count": 2
+      },
+      {
+        "name": "invalid_repository_ref",
+        "rejected": true,
+        "error_count": 2
+      },
+      {
+        "name": "public_key_body_in_descriptor",
+        "rejected": true,
+        "error_count": 1
+      },
+      {
+        "name": "template_direct_runtime_pull_flag_only",
+        "rejected": true,
+        "error_count": 2
+      },
+      {
+        "name": "config_JSON_pointer_drift_only",
+        "rejected": true,
+        "error_count": 1
+      },
+      {
+        "name": "config_document_path_wrong",
+        "rejected": true,
+        "error_count": 1
+      },
+      {
+        "name": "config_usage_mode_wrong",
+        "rejected": true,
+        "error_count": 1
+      },
+      {
+        "name": "config_source_role_wrong",
+        "rejected": true,
+        "error_count": 1
+      }
+    ],
+    "previous_nonblocking_gaps_closed": true,
+    "closed_checks": [
+      "template direct_runtime_business_git_pull must be false",
+      "exact catalog_machine_pointer",
+      "exact document_path",
+      "git_usage_mode consistency",
+      "source_role docs-only"
+    ],
+    "nonblocking_gaps": [],
+    "not_a_secret_scanner": true,
+    "scope": "Offline document/contract and existing bounded Mac-read evidence; not runtime deployment or GitHub write-flag verification"
+  },
+  "repository_authentication_status_reviewed": {
+    "user_reports_GitHub_deploy_keys_configured": true,
+    "management_read_verified_repositories": [
+      "penpot"
+    ],
+    "other_new_keys_read_tests_this_task": false,
+    "keys_installed_on_servers_this_task": false
+  }
+}
