@@ -637,7 +637,7 @@
     "evidence": "evidence/implementation/raid-recovered.json",
     "historical_fault": "slot32:3 access failure; root cause unresolved, monitor"
   },
-  "updated_at": "2026-11-10T23:14:54.198917+08:00",
+  "updated_at": "2026-11-11T00:35:30.210367+08:00",
   "docker_runtime_profile": {
     "driver": "classic-overlay2",
     "reason": "Verified compatibility with source single-platform offline archives; preserves config IDs",
@@ -685,7 +685,7 @@
     "resource_role_evidence": "completion/20261109-resources/Lark-role-installed.json",
     "resource_monitoring_postcheck": "completion/20261110-filebrowser/final-postcheck.json"
   },
-  "delivery_scope_manifest": "completion/20261110-filebrowser-remove/acceptance.json",
+  "delivery_scope_manifest": "completion/20261111-puyu-nexus/acceptance.json",
   "expected_role_count": 12,
   "network19_migration_manifest": "network19/migration-plan.json",
   "acceptance_templates": [
@@ -1390,10 +1390,10 @@
     "usage_manual": "evidence/penpot-client-mcp-20261110/usage-manual.md"
   },
   "deploy_public_publisher_20261110": {
-    "status": "tool-MCP-installed-standard-CLI-modes-verified-dev-upstream-missing",
+    "status": "tool-MCP-Puyu-artifact-config-connected-business-disabled",
     "repository": "bkcode/deploy-public",
     "branch": "main",
-    "Git_HEAD": "213f1f42924f18e0d7b5848c2c1141a6230c1f5a",
+    "Git_HEAD": "2d8f5410bfbc94f409d9f701592c61e39f9653b9",
     "source_path": "/opt/deploy-public",
     "run_user": "ub",
     "private_configuration": "/opt/deploy-public/config.local.yaml",
@@ -1419,7 +1419,7 @@
     ],
     "excluded_project": null,
     "validation_status": "failed_expected_missing_origin_dev",
-    "Linux_tests_passed": 65,
+    "Linux_tests_passed": 75,
     "actual_deployment_enabled": false,
     "business_build_or_Java_start": false,
     "old_publisher_chain_fence_preserved": true,
@@ -1437,14 +1437,73 @@
     "current_branch_readiness": "all six upstream dev refs missing; no backend branch change",
     "standard_modes_evidence_directory": "evidence/deploy-public-modes-20261110",
     "current_validation_job_id": "3294416b9b754af5879ce96fd1c4a79e",
-    "current_tests_timestamp": "2026-11-10T22:29:22.979636+08:00",
+    "current_tests_timestamp": "2026-11-11T00:41:52.567958+08:00",
     "actual_business_dev_ready": false,
     "prod_target_configured": false,
-    "current_verification_evidence": "evidence/deploy-public-modes-20261110/final-postcheck.json",
+    "current_verification_evidence": "completion/20261111-puyu-nexus/connected-postcheck.json",
     "historical_preflight_note": "Initial five-service dev/main metadata preflight succeeded; superseded for new dev/dev readiness",
     "historical_preflight_evidence": "evidence/deploy-public-publisher-20261110/mcp-protocol-and-preflight.json",
-    "MCP_MainPID": "30260",
-    "MCP_NRestarts": 0
+    "MCP_NRestarts": 0,
+    "historical_before_artifacts_20261111": {
+      "status": "tool-MCP-installed-standard-CLI-modes-verified-dev-upstream-missing",
+      "repository": "bkcode/deploy-public",
+      "branch": "main",
+      "Git_HEAD": "213f1f42924f18e0d7b5848c2c1141a6230c1f5a",
+      "source_path": "/opt/deploy-public",
+      "run_user": "ub",
+      "private_configuration": "/opt/deploy-public/config.local.yaml",
+      "private_config_mode": "0600",
+      "MCP_unit": "puyu-deploy-mcp.service",
+      "MCP_bind": "127.0.0.1:18765",
+      "MCP_enabled": true,
+      "MCP_tools": [
+        "list_jobs",
+        "list_services",
+        "run_job",
+        "get_job"
+      ],
+      "MCP_key_exported": false,
+      "managed_data_root": "/srv/dell-build/deploy-public",
+      "backend_sources": [
+        "puyu-common-lib",
+        "puyu-auth",
+        "puyu-gateway",
+        "puyu-bff-admin",
+        "puyu-bff-web",
+        "puyu-service-core"
+      ],
+      "excluded_project": null,
+      "validation_status": "failed_expected_missing_origin_dev",
+      "Linux_tests_passed": 65,
+      "actual_deployment_enabled": false,
+      "business_build_or_Java_start": false,
+      "old_publisher_chain_fence_preserved": true,
+      "old_publisher_private_key_read_or_exported": false,
+      "acceptance": "evidence/deploy-public-modes-20261110/acceptance.json",
+      "operations_manual": "https://github.com/bkcode/deploy-public/blob/main/docs/PUBLISHER.md",
+      "bff_admin_added_after_user_key_registration": true,
+      "historical_validated_service_count": 5,
+      "CLI_environment_branch_map": {
+        "prod": "main",
+        "dev": "dev"
+      },
+      "MCP_environment": "dev",
+      "MCP_prod_allowed": false,
+      "current_branch_readiness": "all six upstream dev refs missing; no backend branch change",
+      "standard_modes_evidence_directory": "evidence/deploy-public-modes-20261110",
+      "current_validation_job_id": "3294416b9b754af5879ce96fd1c4a79e",
+      "current_tests_timestamp": "2026-11-10T22:29:22.979636+08:00",
+      "actual_business_dev_ready": false,
+      "prod_target_configured": false,
+      "current_verification_evidence": "evidence/deploy-public-modes-20261110/final-postcheck.json",
+      "historical_preflight_note": "Initial five-service dev/main metadata preflight succeeded; superseded for new dev/dev readiness",
+      "historical_preflight_evidence": "evidence/deploy-public-publisher-20261110/mcp-protocol-and-preflight.json",
+      "MCP_MainPID": "30260",
+      "MCP_NRestarts": 0
+    },
+    "artifact_configuration_status": "actual-private-YAML-auth-connected",
+    "source_preflight_status_scope": "2026-11-10 historical source branch preflight; not rerun this phase",
+    "historical_MCP_MainPID": "30260"
   },
   "deploy_public_modes_20261110": {
     "status": "standard-CLI-modes-installed-and-guard-behavior-verified-upstream-dev-missing",
@@ -1607,5 +1666,91 @@
     "usage_manual": "completion/20261110-filebrowser-remove/README.md",
     "Nexus_operation_performed": false,
     "clients_postcheck": "completion/20261110-filebrowser-remove/clients-postcheck.json"
+  },
+  "puyu_nexus_preparation_20261111": {
+    "status": "empty-Puyu-repositories-and-private-publisher-YAML-connected-verified",
+    "scope": "Puyu empty Nexus repos and local YAML adapter only; no data migration Go/Java changes business build publish or branch creation",
+    "VMID": 220,
+    "Nexus_URL": "http://192.168.19.31:8081",
+    "repositories": {
+      "release": {
+        "name": "puyu-releases",
+        "version_policy": "RELEASE",
+        "write_policy": "ALLOW_ONCE"
+      },
+      "snapshot": {
+        "name": "puyu-snapshots",
+        "version_policy": "SNAPSHOT",
+        "write_policy": "ALLOW"
+      },
+      "group": {
+        "name": "puyu-public",
+        "members": [
+          "puyu-releases",
+          "puyu-snapshots"
+        ],
+        "old_repos_or_external_proxies": false
+      }
+    },
+    "identities": {
+      "reader": "puyu-reader",
+      "publisher": "puyu-publisher",
+      "publisher_delete_or_admin": false,
+      "cross_workspace_access": false
+    },
+    "empty_after_permission_fixture_cleanup": true,
+    "hosted_components": 0,
+    "hosted_assets": 0,
+    "old_data_migrated_or_old_repositories_reset": false,
+    "Nexus_restarted": false,
+    "project_public_repository_direct_access_unchanged": true,
+    "Nexus_container_network_opened": false,
+    "private_YAML_adapter_status": "applied-offline-config-and-actual-YAML-authentication-verified",
+    "adapter_implementation": "optional artifacts YAML to fixed existing build.bash NEXUS_* child environment; CLI explicit only, no automatic MCP integration",
+    "MCP_deployment_enabled": false,
+    "MCP_environment": "dev",
+    "old_publisher_chain_fenced": true,
+    "Java_or_Go_business_build_or_publish": false,
+    "business_branches_created_or_versions_modified": false,
+    "private_plugin_or_common_library_supplied": false,
+    "release_versions_not_snapshot_compatible": true,
+    "automatic_backup_expanded": false,
+    "evidence": [
+      "completion/20261111-puyu-nexus/provision-result.json",
+      "completion/20261111-puyu-nexus/permissions-result.json",
+      "completion/20261111-puyu-nexus/build-inputs.json",
+      "completion/20261111-puyu-nexus/publisher-applied.json",
+      "completion/20261111-puyu-nexus/connected-postcheck.json"
+    ],
+    "usage_manual": "completion/20261111-puyu-nexus/usage-manual.md",
+    "updated_at": "2026-11-11T00:41:52.567958+08:00",
+    "source_repository": "bkcode/deploy-public",
+    "source_branch": "main",
+    "source_commit": "2d8f5410bfbc94f409d9f701592c61e39f9653b9",
+    "source_main_pushed": true,
+    "Mac_tests_passed": 75,
+    "Mac_test_seconds": 11.992,
+    "fixed_bin_bash_tests_passed": 10,
+    "fixed_bin_bash_test_seconds": 0.995,
+    "Linux_tests_passed": 75,
+    "Linux_test_seconds": 39.161,
+    "server_source_commit": "2d8f5410bfbc94f409d9f701592c61e39f9653b9",
+    "private_YAML_mode": "0600",
+    "private_YAML_owner": "ub",
+    "private_YAML_Git_ignored": true,
+    "MCP_key_and_previous_configuration_preserved": true,
+    "real_adapter_fixed_build_ls_only_verified": true,
+    "Nexus_and_navigation_PID_preserved": true,
+    "manager_verification_evidence": "completion/20261111-puyu-nexus/connected-postcheck.json",
+    "connected": true,
+    "actual_private_YAML_scoped_credentials_authenticated": true,
+    "MCP_authenticated_protocol_passed": true,
+    "MCP_anonymous_HTTP": 401,
+    "MCP_browser_Origin_HTTP": 403,
+    "MCP_new_jobs_submitted": false,
+    "prod_SSH_configured": false,
+    "backend_worktrees_preserved_main_clean": true,
+    "actual_business_build_ready": false,
+    "acceptance": "completion/20261111-puyu-nexus/acceptance.json"
   }
 }

@@ -1,0 +1,51 @@
+{
+  "status": "empty-Puyu-repositories-and-scoped-identities-created",
+  "base_URL": "http://192.168.19.31:8081",
+  "repositories": [
+    "puyu-releases",
+    "puyu-snapshots",
+    "puyu-public"
+  ],
+  "hosted_components": 0,
+  "hosted_assets": 0,
+  "group_members": [
+    "puyu-releases",
+    "puyu-snapshots"
+  ],
+  "roles": [
+    "puyu-artifact-reader",
+    "puyu-artifact-publisher"
+  ],
+  "users": [
+    "puyu-reader",
+    "puyu-publisher"
+  ],
+  "reader_privileges": [
+    "nx-repository-view-maven2-puyu-releases-browse",
+    "nx-repository-view-maven2-puyu-releases-read",
+    "nx-repository-view-maven2-puyu-snapshots-browse",
+    "nx-repository-view-maven2-puyu-snapshots-read",
+    "nx-repository-view-maven2-puyu-public-browse",
+    "nx-repository-view-maven2-puyu-public-read"
+  ],
+  "publisher_privileges": [
+    "nx-repository-view-maven2-puyu-releases-browse",
+    "nx-repository-view-maven2-puyu-releases-read",
+    "nx-repository-view-maven2-puyu-snapshots-browse",
+    "nx-repository-view-maven2-puyu-snapshots-read",
+    "nx-repository-view-maven2-puyu-public-browse",
+    "nx-repository-view-maven2-puyu-public-read",
+    "nx-repository-view-maven2-puyu-releases-add",
+    "nx-repository-view-maven2-puyu-releases-edit",
+    "nx-repository-view-maven2-puyu-snapshots-add",
+    "nx-repository-view-maven2-puyu-snapshots-edit"
+  ],
+  "publisher_delete_or_admin_privileges": false,
+  "existing_repositories_users_roles_settings_and_passwords_unchanged": true,
+  "Nexus_container_identity_and_service_PID_unchanged": true,
+  "Nexus_restarted": false,
+  "old_data_migrated": false,
+  "anonymous_enabled": false,
+  "credential_values_or_private_hashes_output": false,
+  "scoped_secrets_VM220_root600_only": true
+}

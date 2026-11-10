@@ -1,0 +1,16 @@
+{
+  "captured_at": "2026-11-11T00:41:52.567958+08:00",
+  "repository": "bkcode/deploy-public",
+  "branch": "main",
+  "HEAD": "2d8f5410bfbc94f409d9f701592c61e39f9653b9",
+  "main_pushed": true,
+  "server_same_commit": true,
+  "Mac_unit_tests": 75,
+  "Mac_seconds": 11.992,
+  "fixed_bin_bash_artifact_tests": 10,
+  "fixed_bin_bash_seconds": 0.995,
+  "Linux_unit_tests": 75,
+  "Linux_seconds": 39.161,
+  "business_source_changes_or_real_build": false,
+  "private_YAML_or_credentials_committed": false
+}

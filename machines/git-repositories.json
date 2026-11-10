@@ -226,7 +226,7 @@
       "ssh_url": "git@github.com:bkcode/deploy-public.git",
       "kind": "custom-deployment-source",
       "branch_reference": "main; fixed reviewed commit",
-      "purpose": "Puyu local发布器与MCP已安装；CLI prod/main dev/dev，MCP仅dev；全部业务远端dev缺失，真实发布关闭"
+      "purpose": "Puyu local publisher main2d8f541, CLI prod/main dev/dev plus optional scoped artifacts YAML adapter; MCP remainsdev-only, real business deployment disabled"
     },
     "puyu-bff-admin": {
       "id": "puyu-bff-admin",
@@ -394,7 +394,7 @@
         "nexus-upstream"
       ],
       "git_usage_mode": "build-source-configured-business-disabled",
-      "current_state_note": "VM220 deploy-public main/213f1f4 clean，CLI prod/main dev/dev、MCP仅dev/loopback18765，Linux65测试通过。六业务仓库仍main/clean且远端dev全缺；新预检按设计failed，prod覆盖与真实发布拒绝。旧dev/main预检只历史，旧链fenced/Java不启。 Nexus已并入220，primary30+alias31/6CPU8GiB，原镜像/身份/仓库数据保持；221退役。Nexus上游仅Core源码参考，不克隆替换CE发行二进制。",
+      "current_state_note": "2026-11-11 deploy-public main2d8f541, Linux75tests passed; scoped Puyu empty Nexus repositories and private local YAML connected. Existing six backend main worktrees clean, no fetch or branch creation in this phase. Private plugin/common library, snapshot versions and branch preparation remain future requirements; old chain fenced and actual business deploy disabled.",
       "direct_runtime_business_git_pull": false,
       "credential_references": [
         {
@@ -469,6 +469,13 @@
           "local_commit": "d56cae553bf95ce0e2c3fe8f258a2f99389aae7c",
           "GitHub_main_published": false,
           "evidence": "evidence/internal-http-20261110/navigation-links-applied.json"
+        },
+        {
+          "repository_id": "deploy-public",
+          "module": "publisher-config-and-MCP",
+          "local_commit": "2d8f5410bfbc94f409d9f701592c61e39f9653b9",
+          "GitHub_main_published": true,
+          "evidence": "completion/20261111-puyu-nexus/publisher-applied.json"
         }
       ],
       "verification_evidence": [

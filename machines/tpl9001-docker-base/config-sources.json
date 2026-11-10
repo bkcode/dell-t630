@@ -5,7 +5,7 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "0260d8a0a240faf5519cc84d671aed8be32ae62ad252bd514500521406d0f8a7"
+      "sha256": "acc3b0fd399a0f18d818baf31fb2869a43ab19920a4c4a96291a65e2e2024b4f"
     },
     {
       "path": "cleanup/initial-PVE-readonly.json",
@@ -149,13 +149,13 @@
       "path": "machines/git-repositories.json",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "6903a3ac663a12091178185940a5fb59507fcc1255b9c1125d1c9d3899adc770"
+      "sha256": "6b14d2ebd2bb6a39a7faf04d6285cb944245ab9681a9d2faf327c02a19963e8d"
     },
     {
       "path": "machines/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "fe0dcb3e47eae409b60b1650fa7137918cba18be202ca7c8a94b09f983411e6d"
+      "sha256": "5b3690778fdb8920fadf8e76a55c76da3cec49109f125139f45c0adc8984be10"
     },
     {
       "path": "machines/tpl9001-docker-base/GIT-REPOSITORIES.md",

@@ -1,6 +1,6 @@
 # 当前交接与继续工作入口
 
-更新：2026-11-10，Asia/Shanghai。用户已明确恢复Nexus合并并移除独立artifact-service，覆盖11月8日暂缓范围。本次已完成源停服/关机、PVE冷备校验、220正常停机与6CPU8GiB/原盘/alias31移交，目标已启动；最终数据、身份、监控及220受控重启核验通过，221已退役，详见[本次交付](completion/20261110-nexus-merge/README.md)。
+更新：2026-11-11，Asia/Shanghai。用户已明确恢复Nexus合并并移除独立artifact-service，覆盖11月8日暂缓范围。本次已完成源停服/关机、PVE冷备校验、220正常停机与6CPU8GiB/原盘/alias31移交，目标已启动；最终数据、身份、监控及220受控重启核验通过，221已退役，详见[本次交付](completion/20261110-nexus-merge/README.md)。
 
 ## 当前重点
 
@@ -11,10 +11,10 @@ Nexus合并与退役以[本次交付](completion/20261110-nexus-merge/README.md)
 ## 不变的授权边界
 
 - Java230/240只运行基础，不构建/启动业务，旧publisher链fenced。
-- deploy-public main213f已同步，65测试通过；CLI prod/main、dev/dev，MCP dev-only/loopback18765，prod SSH未配置、真实发布disabled。六业务/公共库远端dev全缺，当前仍main，预检按设计拒绝；旧dev/main成功不能当新dev就绪。
+- deploy-public main2d8f541已同步，Mac/Linux75测试通过；Puyu专用空制品仓库和私有artifacts YAML已接入（不迁旧制品），适配器仅CLI显式调用既有build.bash。CLI prod/main、dev/dev，MCP dev-only/loopback18765，prod SSH未配置、真实发布disabled。11月10日远端审计六库缺dev；本轮六工作树仍main/clean，未重新fetch远端、未创建分支，旧缺分支预检保持历史含义；旧dev/main成功不能当新dev就绪。
 - 正式业务schema空，测试仅已精确授权的Nacos36配置与两Puyu库迁入；不持续同步、不自动适配端点或切应用连接，原测试凭据合同保持。
 - Penpotmain8a/11healthy、首次引导关闭，Puyu设计已导入；服务器MCP默认Puyu，Mac通过SSH stdio，无token导出。原owner表单默认值按受信范围明确授权，不能扩到公网。
-- VM280仅NFS，FileBrowser已退休/8080关闭；原state和秘密保留。230/240共用同根/mnt/resources，精确exports、root_squash、UMask0002与挂载守卫保持，不迁资源文件/不启业务图片HTTP。
+- VM280仅NFS，FileBrowser已从现役程序/配置/状态路径移除，服务not-found/8080关闭；原资料仅本机受保护归档。230/240共用同根/mnt/resources，精确exports、root_squash、UMask0002与挂载守卫保持，不迁资源文件/不启业务图片HTTP。
 - 自建应用HTTP；PVE/iDRAC内置HTTPS保留。LAN21/24、WG10.66/24受信访问规则不放宽应用认证，WireGuard peer/32保持。OpenClash完整规则仅本地，不推Git。
 
 ## 备份、硬件与故障处理
@@ -30,3 +30,6 @@ DIMM_B1/UEFI0058为保留历史，用户报告已重插/更换并诊断通过。
 [首页/服务表](README.md) · [当前计划](plan.json) · [任务](tasks.json) · [逐机目录](machines/README.md) · [Git来源](machines/GIT-REPOSITORIES.md) · [架构](02-architecture.md) · [Nexus架构](17-publish-artifact-consolidation.md) · [全局人工手册](19-manual-operations.md) · [本次维护手册](completion/20261110-nexus-merge/usage-manual.md)。
 
 历史证据按原日期解释：[11月8日恢复](recovery/20261108/README.md)、[11月9日备份范围](completion/20261109-prod-db-scope/README.md)、[资源初建](completion/20261109-resources/README.md)、[Penpot更新](evidence/penpot-onboarding-20261110/README.md)、[发布器模式](evidence/deploy-public-modes-20261110/README.md)。旧13来宾/16UP不覆盖合并后数量，旧49GAV234主件不覆盖当前全量基线12repos/7hosted/50components/1347assets。
+
+
+最新Puyu配置阶段见[交付与限制](completion/20261111-puyu-nexus/README.md)：新仓库清理测试后0组件/0资产、两专属身份与实际YAML认证通过；MCP仅dev/真实deploy关，无实际Gradle构建。私有插件/公共库、SNAPSHOT版本及业务分支准备仍是后续前置，不能按配置ready直接开启发布。

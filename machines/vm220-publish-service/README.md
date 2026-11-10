@@ -1,5 +1,13 @@
 # VM220 · publish-service
 
+## 2026-11-11 Puyu空制品仓库与配置对接
+
+已在既有Nexus新增puyu-releases（RELEASE/ALLOW_ONCE）、puyu-snapshots（SNAPSHOT/ALLOW）与puyu-public（仅前两者），以及专用reader/publisher身份。权限fixture正负测通过后已清，当前0components/0assets；原旧库/管理员/账号/EULA/密码不改，Nexus未重启，不复制Finger/imnull制品。
+
+[发布机应用](../../completion/20261111-puyu-nexus/publisher-applied.json)和[连接后检](../../completion/20261111-puyu-nexus/connected-postcheck.json)保存本次实际验证。新group是Puyu内部制品入口，不代理全部公共依赖；项目既有MavenCentral/pluginPortal/JitPack直连保持，Nexus内部网络不放开。两新口令仅VM220受保护600来源，已接入ub600/ignored统一config.local.yaml；artifact_exec.py配置层适配器源码main/2d8f541已推送，Mac75项回归＋固定/bin/bash专项10项通过；发布机已同步同SHA并通过Linux75项回归、离线show/check和固定build.bash ls只列项目，连接后检已通过：真实私有YAML身份认证、MCP协议/匿名401/Origin403与限制保持，未提交新任务；这是配置完成，不是业务构建就绪。它仅CLI显式入口，注入原NEXUS_*环境给固定build.bash，不改build/common/Go/Java、不自动接MCP。
+
+当前主库仍main、dev远端缺失；1.0.0等release版本不能自动发SNAPSHOT，私有gradle-conventions/公共库尚需后续供应。今天不改版本/建分支、不构建或发布业务，MCP仍dev-only/真实deploy关，旧链fenced、原MCPkey不变。[交付状态](../../completion/20261111-puyu-nexus/README.md)、[操作说明](../../completion/20261111-puyu-nexus/usage-manual.md)。
+
 更新：2026-11-10，Asia/Shanghai。用户已明确恢复Nexus合并与独立221退役；目标220已完成内容/身份/网络/监控和受控重启核验，221已移除，见[本次回执](../../completion/20261110-nexus-merge/README.md)。旧4CPU4GiB/唯一30/standby描述仅历史，不作为当前维护入口。
 
 Git来源：[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)；配置合同：[config.json](config.json)，来源元数据：[config-sources.json](config-sources.json)。来源SHA不是完整现场导出，目录不包含秘密或可一键恢复包。
@@ -14,7 +22,7 @@ Git来源：[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)；配置合同：[config.
 
 ## Puyu工具与MCP
 
-/opt/deploy-public来自bkcode/deploy-public main/213f1f4，Linux65测试通过。MCP以ub运行、仅127.0.0.1:18765，服务puyu-deploy-mcp.service；原ignored YAML/APIkey/DeployKeys和buildUUID守卫保持，不导出、重生成或覆盖私有配置。
+/opt/deploy-public来自bkcode/deploy-public main/2d8f541，Linux75测试通过；此前213f/65项仅旧模式阶段记录。MCP以ub运行、仅127.0.0.1:18765，服务puyu-deploy-mcp.service；原ignored YAML/APIkey/DeployKeys和buildUUID守卫保持，不导出、重生成或覆盖私有配置。
 
 CLI prod/main、dev/dev，MCP仅dev、prod覆盖拒绝。六业务/公共库main已克隆且仍main，远程dev均缺，新dev预检failed是预期保护；不自动代建/推分支或fallback main。旧五服务dev/main成功仅历史。prod SSH目标未配置、真实部署关闭，原forced-chainfenced，任何环境不构建/启动Java业务。
 

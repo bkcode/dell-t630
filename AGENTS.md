@@ -140,3 +140,9 @@
 
 - 用户明确FileBrowser可以移除；VM280程序/配置/状态从现役路径移出、两unit已not-found/inactive、闲置UID2000删除，共享GID2980及NFS原配置/进程/双客户端挂载保持。原资料仅VM280/root/dell-filebrowser-removed-20261110受保护归档；旧retired目录已归入其中，不再当活路径。
 - 用户说Nexus不用迁移后已暂停Nexus后续；此前合并状态已存在，本次不操作或回退Nexus，不能因FileBrowser移除自动恢复221。当前交付completion/20261110-filebrowser-remove/acceptance.json，旧NFS-only停用阶段留历史。
+
+## 2026-11-11 Puyu空Nexus与发布机配置
+
+- 用户明确执行前两项：允许在既有Nexus上新建Puyu空releases/snapshots/public与两个最小权限账号、接入发布机私有YAML，不是历史制品迁移或清库许可。root凭据只VM220600，pub YAML ub600 ignored；旧仓库/用户/密码、原MCPkey与配置保持。测试fixture仅新Puyu库、精确清理后0组件/0资产，Nexus/导航无重启。
+- deploy-public main2d8f541已Git拉取、Linux75通过，optional artifacts由同一loader解析，artifact_exec仅给固定既有build.bash注入NEXUS环境。show/check离线，exec需显式参数；本期只真实执行ls元数据、未运行Gradle/业务构建。MCP仍仅dev与四工具/真实deploy关闭，没有自动对接此CLI构建适配器。
+- 新group仅两Puyu库，不含旧imnull或外部proxy，保留项目已有公共源直连，Nexusinternal网络不放开。源码仍main/clean，现release版本不满足snapshot策略且私有插件/公共库尚未供应，不能因配置验收通过就启构建/发布/创建分支。当前交付completion/20261111-puyu-nexus/acceptance.json。

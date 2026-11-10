@@ -1,0 +1,29 @@
+{
+  "status": "permission-tests-passed-and-own-fixtures-cleaned",
+  "results": [
+    {
+      "repository": "puyu-releases",
+      "publisher_upload_HTTP": 201,
+      "reader_and_group_read_bytes_equal": true,
+      "reader_write_HTTP": 403,
+      "publisher_delete_HTTP": 403,
+      "release_redeploy_denied_HTTP": 400
+    },
+    {
+      "repository": "puyu-snapshots",
+      "publisher_upload_HTTP": 201,
+      "reader_and_group_read_bytes_equal": true,
+      "reader_write_HTTP": 403,
+      "publisher_delete_HTTP": 403,
+      "release_redeploy_denied_HTTP": null
+    }
+  ],
+  "empty_hosted_repositories_after_test": true,
+  "components_after_test": 0,
+  "assets_after_test": 0,
+  "cross_workspace_and_admin_access_denied_for_both_users": true,
+  "old_repositories_written": false,
+  "data_migrated": false,
+  "real_Gradle_Java_or_Go_build_or_publish": false,
+  "credential_values_output": false
+}

@@ -1,0 +1,54 @@
+{
+  "managed_source_readonly": {
+    "puyu-service-core": {
+      "literal_versions": [],
+      "private_gradle_conventions_alias_used": true,
+      "source_branch": "main",
+      "clean": true
+    },
+    "puyu-common-lib": {
+      "literal_versions": [
+        "1.0.0"
+      ],
+      "private_gradle_conventions_alias_used": true,
+      "source_branch": "main",
+      "clean": true
+    },
+    "puyu-bff-admin": {
+      "literal_versions": [
+        "1.0.0"
+      ],
+      "private_gradle_conventions_alias_used": true,
+      "source_branch": "main",
+      "clean": true
+    },
+    "puyu-gateway": {
+      "literal_versions": [
+        "0.0.1"
+      ],
+      "private_gradle_conventions_alias_used": true,
+      "source_branch": "main",
+      "clean": true
+    },
+    "puyu-bff-web": {
+      "literal_versions": [
+        "1.0.0"
+      ],
+      "private_gradle_conventions_alias_used": true,
+      "source_branch": "main",
+      "clean": true
+    },
+    "puyu-auth": {
+      "literal_versions": [
+        "1.0.0"
+      ],
+      "private_gradle_conventions_alias_used": true,
+      "source_branch": "main",
+      "clean": true
+    }
+  },
+  "Gradle_or_build_executed": false,
+  "branch_created_or_changed": false,
+  "current_release_versions_cannot_be_published_to_snapshot_policy_without_future_version_preparation": true,
+  "private_gradle_plugin_not_imported_into_new_empty_group": true
+}

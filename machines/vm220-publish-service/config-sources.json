@@ -6,13 +6,13 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "0260d8a0a240faf5519cc84d671aed8be32ae62ad252bd514500521406d0f8a7"
+      "sha256": "acc3b0fd399a0f18d818baf31fb2869a43ab19920a4c4a96291a65e2e2024b4f"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
       "purpose": "当前基础搭建与历史故障交接；本轮不迁移，旧证据按时点解释。",
-      "sha256": "57c0935d9286e427d050aa236446ad24662aa5ea345a4e37b3b71c4c02efdb23"
+      "sha256": "851eca0b765761435611dfff6cc21fc1ebff188e4b2e307126f7020af9c7b156"
     },
     {
       "path": "12-service-access-and-operations.md",
@@ -198,19 +198,19 @@
       "path": "machines/git-repositories.json",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "6903a3ac663a12091178185940a5fb59507fcc1255b9c1125d1c9d3899adc770"
+      "sha256": "6b14d2ebd2bb6a39a7faf04d6285cb944245ab9681a9d2faf327c02a19963e8d"
     },
     {
       "path": "machines/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "fe0dcb3e47eae409b60b1650fa7137918cba18be202ca7c8a94b09f983411e6d"
+      "sha256": "5b3690778fdb8920fadf8e76a55c76da3cec49109f125139f45c0adc8984be10"
     },
     {
       "path": "machines/vm220-publish-service/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "c9c09ed073470ae021cb907c8d51f0d283b5a784101e916197953d037f25fd8f"
+      "sha256": "ba82e759e8e9606282d4caabdf315ee28014d0c07d1a0b14d2dd84fb1fc531bb"
     },
     {
       "path": "scripts/validate_git_repositories.py",
@@ -823,6 +823,102 @@
       "type": "historical-evidence",
       "purpose": "Verified 2026-11-10 Nexus consolidation and NFS-only delivery; one-time workers are not safe replay entry points",
       "sha256": "31a918163f9cc7dbe5d841ed0ee809b4bc09a3461a651880b8d15d6e58894955"
+    },
+    {
+      "path": "completion/20261111-puyu-nexus/before.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 Puyu empty repositories and private publisher config; one-time workers not replay entry points",
+      "sha256": "9a05cd8e43432a76b91adaeaf29e88b5b2c71406195eb074253d44b717627ca4"
+    },
+    {
+      "path": "completion/20261111-puyu-nexus/publisher-applied.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 Puyu empty repositories and private publisher config; one-time workers not replay entry points",
+      "sha256": "cc78039e889e94744a894fd3d3e727e24dd9ca05b4ecb7e475cd8515495942bd"
+    },
+    {
+      "path": "completion/20261111-puyu-nexus/audit-build-inputs.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 Puyu empty repositories and private publisher config; one-time workers not replay entry points",
+      "sha256": "2327204089f8c1520225ba3fcddc3c668158a1129dfbe109b971b06a148c61fe"
+    },
+    {
+      "path": "completion/20261111-puyu-nexus/acceptance.json",
+      "type": "current-contract",
+      "purpose": "2026-11-11 Puyu empty repositories and private publisher config; one-time workers not replay entry points",
+      "sha256": "c5802026659dcc0ffdb76e16224273b3bf8cb46f6c5e0ddf737f9be86a64d24a"
+    },
+    {
+      "path": "completion/20261111-puyu-nexus/build-inputs.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 Puyu empty repositories and private publisher config; one-time workers not replay entry points",
+      "sha256": "f9b1d46e4c8226368555f9eb21977f19f4b9d680d0845e7706dca8080ab9dec5"
+    },
+    {
+      "path": "completion/20261111-puyu-nexus/apply-publisher.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 Puyu empty repositories and private publisher config; one-time workers not replay entry points",
+      "sha256": "bced2e12528658af4f74b052db6aff7e67fe747d9b2bc287445f5911c39ed21e"
+    },
+    {
+      "path": "completion/20261111-puyu-nexus/connected-postcheck.json",
+      "type": "current-contract",
+      "purpose": "2026-11-11 Puyu empty repositories and private publisher config; one-time workers not replay entry points",
+      "sha256": "763327099862ff8a3a78b742cf67a46b9b73a7d946f597c6595081fde3560650"
+    },
+    {
+      "path": "completion/20261111-puyu-nexus/README.md",
+      "type": "current-contract",
+      "purpose": "2026-11-11 Puyu empty repositories and private publisher config; one-time workers not replay entry points",
+      "sha256": "3778d5e5f287e964c627147d3ff34e18a0fcf180a97f21e3805eae0b5c38c5de"
+    },
+    {
+      "path": "completion/20261111-puyu-nexus/source-delivery.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 Puyu empty repositories and private publisher config; one-time workers not replay entry points",
+      "sha256": "57934a4593a8e9f327e0aa3747eaa475b90d7f833e1068ce21c0ff4d4f322485"
+    },
+    {
+      "path": "completion/20261111-puyu-nexus/verify-permissions.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 Puyu empty repositories and private publisher config; one-time workers not replay entry points",
+      "sha256": "851baefe03a231763b357919cc80cb587f766ff8638762eff3f03a1a9aafc7cf"
+    },
+    {
+      "path": "completion/20261111-puyu-nexus/provision.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 Puyu empty repositories and private publisher config; one-time workers not replay entry points",
+      "sha256": "7ec3fbfbacd2c700ea59d94ecf3cbbe38a05e6c5f704764cc5adc13559792d34"
+    },
+    {
+      "path": "completion/20261111-puyu-nexus/usage-manual.md",
+      "type": "current-contract",
+      "purpose": "2026-11-11 Puyu empty repositories and private publisher config; one-time workers not replay entry points",
+      "sha256": "d22dc1aed60d96c5e06d066183fa40a7c50f8202ab8b0471b8eea8a1977c81cd"
+    },
+    {
+      "path": "completion/20261111-puyu-nexus/check-connected.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 Puyu empty repositories and private publisher config; one-time workers not replay entry points",
+      "sha256": "b1a10c081fb51e4f6dff2cacd4fb1cc5f04212e47fd2e8c4819d39843536aa45"
+    },
+    {
+      "path": "completion/20261111-puyu-nexus/audit220.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 Puyu empty repositories and private publisher config; one-time workers not replay entry points",
+      "sha256": "077263a2cfd853509f5f68263caaab2526e97c71e494ee78acc7edebd661b4e4"
+    },
+    {
+      "path": "completion/20261111-puyu-nexus/provision-result.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 Puyu empty repositories and private publisher config; one-time workers not replay entry points",
+      "sha256": "b9d56848e9b1be741cd33a603f62fc95005f1ea0815c0161b7fb0e83812639ca"
+    },
+    {
+      "path": "completion/20261111-puyu-nexus/permissions-result.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 Puyu empty repositories and private publisher config; one-time workers not replay entry points",
+      "sha256": "95417c6d969147adae03a96782a8e65c6f3ba8308bf5cd05b59336f76c178fbb"
     }
   ],
   "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."

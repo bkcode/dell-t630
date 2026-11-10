@@ -63,3 +63,6 @@ Penpot已从bkcode/penpot main取8a9b961部署定制前端，11容器健康，�
 
 
 当前FileBrowser已按后续明确授权从现役安装路径移除（不再只是masked停用），专属闲置账号删除，NFS及资源文件保持；旧说明仅阶段历史。详见[移除后NFS使用说明](completion/20261110-filebrowser-remove/README.md)。
+
+
+2026-11-11已完成[Puyu专用空制品仓库与发布机配置接入](completion/20261111-puyu-nexus/README.md)：新仓库仍0组件/0资产，限定reader/publisher，工具main2d8f541与Mac/Linux75测试通过。没有迁旧制品或改Go/Java业务，实际构建/发布仍关闭；操作见[本次手册](completion/20261111-puyu-nexus/usage-manual.md)。

@@ -25,7 +25,7 @@
 
 ## 发布机、Nexus与running
 
-220从独立bkcode/deploy-public main213f取Puyu发布工具，Linux65测试通过；六业务/公共库已用各自只读DeployKey拉main，bff-admin在后续登记后加入。CLI prod/main、dev/dev，MCP仅dev/loopback18765，六上游dev均缺、工作树main保持，新dev预检按设计拒绝。prod SSH未配置，真实发布关闭、旧forced-chainfenced，Java业务不构建/启动。旧5服务dev/main预检仅初装历史。[模式验收](../evidence/deploy-public-modes-20261110/README.md)。
+220当前从独立bkcode/deploy-public main2d8f541取工具，Linux75测试通过，Puyu空制品仓库与私有YAML/CLI配置适配已验证；MCP仍仅dev且真实deploy关闭。六backend工作树main/clean保持，未在本轮fetch或创建分支。私有插件/公共库、SNAPSHOT版本与业务分支仍待后续准备。此前11月10日main213f/65测试及缺dev预检是历史，见[Puyu空仓库配置验收](../completion/20261111-puyu-nexus/README.md)。
 
 220同时承接Nexus原固定官方镜像/数据/身份，upstream sonatype/nexus-public仅Core源码参考，不是本次从Git重建或升级CE。NexusURL31:8081不变，管理primary30，原Nexus卷与build卷独立。230/240运行基础以后仅收经批准制品，不直接拉源或存DeployKey；common-lib是共享依赖，不独立启动。
 

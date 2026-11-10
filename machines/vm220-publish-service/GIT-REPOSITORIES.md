@@ -1,5 +1,13 @@
 # VM220 · publish-service：Git来源与取用边界
 
+## 2026-11-11 Puyu空制品仓库与配置对接
+
+已在既有Nexus新增puyu-releases（RELEASE/ALLOW_ONCE）、puyu-snapshots（SNAPSHOT/ALLOW）与puyu-public（仅前两者），以及专用reader/publisher身份。权限fixture正负测通过后已清，当前0components/0assets；原旧库/管理员/账号/EULA/密码不改，Nexus未重启，不复制Finger/imnull制品。
+
+[发布机应用](../../completion/20261111-puyu-nexus/publisher-applied.json)和[连接后检](../../completion/20261111-puyu-nexus/connected-postcheck.json)保存本次实际验证。新group是Puyu内部制品入口，不代理全部公共依赖；项目既有MavenCentral/pluginPortal/JitPack直连保持，Nexus内部网络不放开。两新口令仅VM220受保护600来源，已接入ub600/ignored统一config.local.yaml；artifact_exec.py配置层适配器源码main/2d8f541已推送，Mac75项回归＋固定/bin/bash专项10项通过；发布机已同步同SHA并通过Linux75项回归、离线show/check和固定build.bash ls只列项目，连接后检已通过：真实私有YAML身份认证、MCP协议/匿名401/Origin403与限制保持，未提交新任务；这是配置完成，不是业务构建就绪。它仅CLI显式入口，注入原NEXUS_*环境给固定build.bash，不改build/common/Go/Java、不自动接MCP。
+
+当前主库仍main、dev远端缺失；1.0.0等release版本不能自动发SNAPSHOT，私有gradle-conventions/公共库尚需后续供应。今天不改版本/建分支、不构建或发布业务，MCP仍dev-only/真实deploy关，旧链fenced、原MCPkey不变。[交付状态](../../completion/20261111-puyu-nexus/README.md)、[操作说明](../../completion/20261111-puyu-nexus/usage-manual.md)。
+
 更新：2026-11-10，Asia/Shanghai。本文从唯一[Git来源总表](../git-repositories.json)的`/machines/6`派生；机器位置`machines/vm220-publish-service`，身份与资源仍以[plan.json](../../plan.json)为准。
 
 本页维护总表派生的来源与取码计划，并单列后续获准的导航部署事实。文档编辑本身没有SSH或Git远程操作；导航最新实际状态以[统一内网HTTP交付](../../evidence/internal-http-20261110/README.md)为证，首次HTTPS回执只作历史。登记仓库不代表整仓库已clone、server Git key已分发或业务已上线。
@@ -10,7 +18,7 @@
 
 
 - 总表Git使用方式：**源码与发布器已配置、业务发布关闭**（`build-source-configured-business-disabled`）；后续独立授权的导航模块已按固定五文件release部署，见下一节。
-- 当前说明：当前Puyu使用独立deploy-public，本轮main/213f1f4已推送并在VM220 clean，Linux65测试和新探针已核；loopback MCP保持，CLI prod/main dev/dev、MCP仅dev，新预检因缺origin/dev按设计failed。旧5服务dev/main预检仅历史，六后端上游dev缺失、工作树main保持；真实发布关闭、旧链fenced、Java不启。
+- 当前说明：当前Puyu使用独立deploy-public，本轮main/2d8f541已推送并在VM220应用，Linux75测试通过；旧213f/65测试及模式探针仅对应11月10日阶段；loopback MCP保持，CLI prod/main dev/dev、MCP仅dev，新预检因缺origin/dev按设计failed。旧5服务dev/main预检仅历史，六后端上游dev缺失、工作树main保持；真实发布关闭、旧链fenced、Java不启。
 - 所有基础设施公开配置由`infra` → [bkcode/dell-t630](https://github.com/bkcode/dell-t630)统一管理；这不表示本机保存了该Git工作树，也不授权自动pull/执行bootstrap。
 
 本机相关配置路径：[infra/publisher](../../infra/publisher)、[infra/java](../../infra/java)。旧执行器仍有具体UUID/角色/授权门禁，不能从这些链接批量重放。
@@ -32,7 +40,7 @@
 | ID | 仓库 | 分支/引用语义 | 用途与边界 |
 | --- | --- | --- | --- |
 | `deploy` | [bkcode/deploy](https://github.com/bkcode/deploy) | main (management local checkout observed) | 仅service-directory模块精确提交已作为五文件导航release安装；原部署工具/Puyu发布适配仍候选 |
-| `deploy-public` | [bkcode/deploy-public](https://github.com/bkcode/deploy-public) | main / 213f1f4（VM220 clean） | Puyu发布器与MCP已安装，CLI双环境、MCP仅dev，业务dev缺失/真实发布关闭 |
+| `deploy-public` | [bkcode/deploy-public](https://github.com/bkcode/deploy-public) | main / 2d8f541（VM220已同步） | Puyu发布器与MCP已安装，CLI双环境、MCP仅dev，业务dev缺失/真实发布关闭 |
 | `puyu-auth` | [bkcode/puyu-auth](https://github.com/bkcode/puyu-auth) | main (management local checkout observed) | 认证业务源码候选 |
 | `puyu-bff-admin` | [bkcode/puyu-bff-admin](https://github.com/bkcode/puyu-bff-admin) | main (VM220 verified) | 后续登记专属key后已Git克隆，第五服务；不代表业务部署 |
 | `puyu-bff-web` | [bkcode/puyu-bff-web](https://github.com/bkcode/puyu-bff-web) | main (management local checkout observed) | Web BFF后端源码候选 |

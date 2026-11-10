@@ -1,0 +1,75 @@
+{
+  "status": "Puyu-empty-Nexus-and-private-publisher-config-connected",
+  "actual_YAML_scoped_credentials_authenticated": {
+    "reader": {
+      "username": "puyu-reader",
+      "authenticated_HTTP": 404
+    },
+    "publisher": {
+      "username": "puyu-publisher",
+      "authenticated_HTTP": 404
+    }
+  },
+  "artifact_URLs": {
+    "read_url": "http://192.168.19.31:8081/repository/puyu-public/",
+    "publish_urls": {
+      "dev": "http://192.168.19.31:8081/repository/puyu-snapshots/",
+      "prod": "http://192.168.19.31:8081/repository/puyu-releases/"
+    }
+  },
+  "MCP_authenticated_protocol_passed": true,
+  "MCP_anonymous_HTTP": 401,
+  "MCP_browser_Origin_HTTP": 403,
+  "MCP_environment": "dev",
+  "MCP_business_deploy_enabled": false,
+  "MCP_registered_services": [
+    "puyu-auth",
+    "puyu-gateway",
+    "puyu-bff-admin",
+    "puyu-bff-web",
+    "puyu-service-core"
+  ],
+  "MCP_new_jobs_submitted": false,
+  "prod_SSH_configured": false,
+  "new_credentials_printed": false,
+  "existing_Nexus_repositories_users_roles_settings_unchanged": true,
+  "Puyu_hosted_components_and_assets": 0,
+  "Puyu_group_only_own_hosted_members": true,
+  "managed_backend_sources": {
+    "puyu-service-core": {
+      "HEAD": "16c675ef44e35db8e4aa5f6d7668aa32bd2690e7",
+      "branch": "main",
+      "clean": true
+    },
+    "puyu-common-lib": {
+      "HEAD": "12f125d67f9f790b2e84517e5630b636b8b8615e",
+      "branch": "main",
+      "clean": true
+    },
+    "puyu-bff-admin": {
+      "HEAD": "3638b8f5af0592ff6d066dbab6ff4ceec6013422",
+      "branch": "main",
+      "clean": true
+    },
+    "puyu-gateway": {
+      "HEAD": "f0ddf8d68cb23401d909f93cba2ce52319ca142d",
+      "branch": "main",
+      "clean": true
+    },
+    "puyu-bff-web": {
+      "HEAD": "bb7ce440624d08a067bd86ccde5a42e935bbb327",
+      "branch": "main",
+      "clean": true
+    },
+    "puyu-auth": {
+      "HEAD": "94dc74935ec86c7b5e8ac00443ef95796b0c78b5",
+      "branch": "main",
+      "clean": true
+    }
+  },
+  "backend_source_fetch_checkout_or_build": false,
+  "old_data_migrated": false,
+  "Nexus_restarted": false,
+  "new_Java_or_Go_business_started": false,
+  "credentials_exported": false
+}

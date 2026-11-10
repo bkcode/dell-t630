@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-11T00:41:52.567958+08:00",
+  "status": "Puyu-empty-artifact-repositories-and-publisher-configuration-verified",
+  "scope": "Only approved steps1/2; no historical data migration, Go/Java source modification or business build/deploy",
+  "cases": [
+    {
+      "id": "PUYUNX-REPOS-001",
+      "title": "空Puyu仓库与旧实例保护",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户授权Puyu专用空仓库和发布机local YAML配置对接；不迁数据、不改GoJava业务"
+      ],
+      "steps": [
+        "精确新增空仓库与受限账号、原生权限验收、统一配置适配与Git交付、只读连接后检"
+      ],
+      "observable_pass_conditions": [
+        "仅新增releases/snapshots/public，group只含两个新hosted，不含旧区或外部proxy",
+        "旧库/用户/角色/密码/匿名/EULA保持，Nexus未重启，不导入旧制品"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261111-puyu-nexus/provision-result.json",
+          "note": "No credentials, raw private snapshots or old artifact payloads"
+        },
+        {
+          "path": "completion/20261111-puyu-nexus/connected-postcheck.json",
+          "note": "No credentials, raw private snapshots or old artifact payloads"
+        }
+      ],
+      "verified_at": "2026-11-11T00:41:52.567958+08:00"
+    },
+    {
+      "id": "PUYUNX-AUTH-001",
+      "title": "最小权限与测试清理",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户授权Puyu专用空仓库和发布机local YAML配置对接；不迁数据、不改GoJava业务"
+      ],
+      "steps": [
+        "精确新增空仓库与受限账号、原生权限验收、统一配置适配与Git交付、只读连接后检"
+      ],
+      "observable_pass_conditions": [
+        "reader仅own browse/read；publisher own add/edit，无delete/admin/cross-workspace",
+        "上传/聚合读回/403拒绝/RELEASE覆盖400通过，fixture清理后0组件0资产"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261111-puyu-nexus/permissions-result.json",
+          "note": "No credentials, raw private snapshots or old artifact payloads"
+        },
+        {
+          "path": "completion/20261111-puyu-nexus/connected-postcheck.json",
+          "note": "No credentials, raw private snapshots or old artifact payloads"
+        }
+      ],
+      "verified_at": "2026-11-11T00:41:52.567958+08:00"
+    },
+    {
+      "id": "PUYUNX-CONFIG-001",
+      "title": "统一YAML适配与Git工具安装",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户授权Puyu专用空仓库和发布机local YAML配置对接；不迁数据、不改GoJava业务"
+      ],
+      "steps": [
+        "精确新增空仓库与受限账号、原生权限验收、统一配置适配与Git交付、只读连接后检"
+      ],
+      "observable_pass_conditions": [
+        "main/2d8f541本机与VM一致，Mac75/专项10/Linux75通过，未改既有build/common或业务代码",
+        "ub600ignored YAML接入，原MCPkey/全部旧配置保持，固定/bin/bash只调用既有build；show/check离线不泄密"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261111-puyu-nexus/source-delivery.json",
+          "note": "No credentials, raw private snapshots or old artifact payloads"
+        },
+        {
+          "path": "completion/20261111-puyu-nexus/publisher-applied.json",
+          "note": "No credentials, raw private snapshots or old artifact payloads"
+        }
+      ],
+      "verified_at": "2026-11-11T00:41:52.567958+08:00"
+    },
+    {
+      "id": "PUYUNX-RUNTIME-001",
+      "title": "实际凭据连接与边界保持",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户授权Puyu专用空仓库和发布机local YAML配置对接；不迁数据、不改GoJava业务"
+      ],
+      "steps": [
+        "精确新增空仓库与受限账号、原生权限验收、统一配置适配与Git交付、只读连接后检"
+      ],
+      "observable_pass_conditions": [
+        "实际YAML两新身份认证读取空group得到404，MCP原鉴权401/403/dev-only保持，真实deploy关闭且无新任务",
+        "六backend main/clean不变，Nexus/导航PID保持；私有插件/版本/分支后续准备，本期不签业务构建ready"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261111-puyu-nexus/connected-postcheck.json",
+          "note": "No credentials, raw private snapshots or old artifact payloads"
+        },
+        {
+          "path": "completion/20261111-puyu-nexus/build-inputs.json",
+          "note": "No credentials, raw private snapshots or old artifact payloads"
+        },
+        {
+          "path": "completion/20261111-puyu-nexus/publisher-applied.json",
+          "note": "No credentials, raw private snapshots or old artifact payloads"
+        }
+      ],
+      "verified_at": "2026-11-11T00:41:52.567958+08:00"
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "current_phase_case_count": 4,
+    "current_phase_passed": 4
+  },
+  "limitations": [
+    "Empty group is internal Puyu artifacts only; public Maven/PluginPortal/JitPack stay direct, no Nexus outbound expansion",
+    "Private Gradle plugin/common library and snapshot version/source-branch preparation remain future prerequisites",
+    "CLI adapter only, no new MCP tools or automatic deployment-chain integration; real business deploy stays disabled",
+    "No Nexus data migration or old data purge; existing repositories retained"
+  ]
+}

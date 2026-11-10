@@ -1,0 +1,183 @@
+{
+  "repositories": [
+    {
+      "name": "maven-releases",
+      "type": "hosted",
+      "format": "maven2",
+      "online": true,
+      "write_policy": "ALLOW_ONCE",
+      "maven": {
+        "versionPolicy": "RELEASE",
+        "layoutPolicy": "STRICT",
+        "contentDisposition": "INLINE"
+      }
+    },
+    {
+      "name": "maven-snapshots",
+      "type": "hosted",
+      "format": "maven2",
+      "online": true,
+      "write_policy": "ALLOW",
+      "maven": {
+        "versionPolicy": "SNAPSHOT",
+        "layoutPolicy": "STRICT",
+        "contentDisposition": "INLINE"
+      }
+    },
+    {
+      "name": "maven-central",
+      "type": "proxy",
+      "format": "maven2",
+      "online": true
+    },
+    {
+      "name": "maven-public",
+      "type": "group",
+      "format": "maven2",
+      "online": true,
+      "members": [
+        "maven-releases",
+        "maven-snapshots",
+        "maven-central"
+      ]
+    },
+    {
+      "name": "nuget-hosted",
+      "type": "hosted",
+      "format": "nuget"
+    },
+    {
+      "name": "nuget.org-proxy",
+      "type": "proxy",
+      "format": "nuget"
+    },
+    {
+      "name": "nuget-group",
+      "type": "group",
+      "format": "nuget"
+    },
+    {
+      "name": "finger-releases",
+      "type": "hosted",
+      "format": "maven2",
+      "online": true,
+      "write_policy": "ALLOW_ONCE",
+      "maven": {
+        "versionPolicy": "RELEASE",
+        "layoutPolicy": "STRICT",
+        "contentDisposition": "INLINE"
+      }
+    },
+    {
+      "name": "finger-snapshots",
+      "type": "hosted",
+      "format": "maven2",
+      "online": true,
+      "write_policy": "ALLOW",
+      "maven": {
+        "versionPolicy": "SNAPSHOT",
+        "layoutPolicy": "STRICT",
+        "contentDisposition": "INLINE"
+      }
+    },
+    {
+      "name": "dell-acceptance",
+      "type": "hosted",
+      "format": "maven2",
+      "online": true,
+      "write_policy": "ALLOW",
+      "maven": {
+        "versionPolicy": "MIXED",
+        "layoutPolicy": "STRICT",
+        "contentDisposition": "INLINE"
+      }
+    },
+    {
+      "name": "finger-public",
+      "type": "group",
+      "format": "maven2",
+      "online": true,
+      "members": [
+        "finger-releases",
+        "finger-snapshots",
+        "imnull-releases"
+      ]
+    },
+    {
+      "name": "imnull-releases",
+      "type": "hosted",
+      "format": "maven2",
+      "online": true,
+      "write_policy": "ALLOW_ONCE",
+      "maven": {
+        "versionPolicy": "RELEASE",
+        "layoutPolicy": "STRICT",
+        "contentDisposition": "INLINE"
+      }
+    }
+  ],
+  "puyu_users": [],
+  "puyu_roles": [],
+  "anonymous_enabled": false,
+  "EULA_accepted": true,
+  "Nexus_backend_internal": true,
+  "publisher_source_contracts": {
+    "puyu-service-core": {
+      "HEAD": "16c675ef44e35db8e4aa5f6d7668aa32bd2690e7",
+      "uses_NEXUS_URL": true,
+      "uses_NEXUS_USERNAME": true,
+      "uses_NEXUS_PASSWORD": true,
+      "HTTP_read_opt_in": true,
+      "uses_NEXUS_PUBLISH_URL": true,
+      "HTTP_publish_opt_in": true
+    },
+    "puyu-common-lib": {
+      "HEAD": "12f125d67f9f790b2e84517e5630b636b8b8615e",
+      "uses_NEXUS_URL": true,
+      "uses_NEXUS_USERNAME": true,
+      "uses_NEXUS_PASSWORD": true,
+      "HTTP_read_opt_in": true,
+      "uses_NEXUS_PUBLISH_URL": true,
+      "HTTP_publish_opt_in": true
+    },
+    "puyu-bff-admin": {
+      "HEAD": "3638b8f5af0592ff6d066dbab6ff4ceec6013422",
+      "uses_NEXUS_URL": true,
+      "uses_NEXUS_USERNAME": true,
+      "uses_NEXUS_PASSWORD": true,
+      "HTTP_read_opt_in": true,
+      "uses_NEXUS_PUBLISH_URL": false,
+      "HTTP_publish_opt_in": false
+    },
+    "puyu-gateway": {
+      "HEAD": "f0ddf8d68cb23401d909f93cba2ce52319ca142d",
+      "uses_NEXUS_URL": true,
+      "uses_NEXUS_USERNAME": true,
+      "uses_NEXUS_PASSWORD": true,
+      "HTTP_read_opt_in": true,
+      "uses_NEXUS_PUBLISH_URL": false,
+      "HTTP_publish_opt_in": false
+    },
+    "puyu-bff-web": {
+      "HEAD": "bb7ce440624d08a067bd86ccde5a42e935bbb327",
+      "uses_NEXUS_URL": true,
+      "uses_NEXUS_USERNAME": true,
+      "uses_NEXUS_PASSWORD": true,
+      "HTTP_read_opt_in": true,
+      "uses_NEXUS_PUBLISH_URL": false,
+      "HTTP_publish_opt_in": false
+    },
+    "puyu-auth": {
+      "HEAD": "94dc74935ec86c7b5e8ac00443ef95796b0c78b5",
+      "uses_NEXUS_URL": true,
+      "uses_NEXUS_USERNAME": true,
+      "uses_NEXUS_PASSWORD": true,
+      "HTTP_read_opt_in": true,
+      "uses_NEXUS_PUBLISH_URL": false,
+      "HTTP_publish_opt_in": false
+    }
+  },
+  "Nexus_unit": "active",
+  "mutations": false,
+  "credential_values_output": false
+}
