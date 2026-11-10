@@ -226,7 +226,7 @@
       "ssh_url": "git@github.com:bkcode/deploy-public.git",
       "kind": "custom-deployment-source",
       "branch_reference": "main; fixed reviewed commit",
-      "purpose": "Puyu local发布器与MCP，VM220实际Git取码与4服务只读预检通过；业务发布关闭"
+      "purpose": "Puyu local发布器与MCP已安装；CLI prod/main dev/dev，MCP仅dev；全部业务远端dev缺失，真实发布关闭"
     },
     "puyu-bff-admin": {
       "id": "puyu-bff-admin",
@@ -391,7 +391,7 @@
       "dependency_repository_ids": [],
       "upstream_repository_ids": [],
       "git_usage_mode": "build-source-configured-business-disabled",
-      "current_state_note": "VM220实际Git取deploy-public main与六个后端源码（五服务+commonlib），独立MCP loopback18765、五服务只读预检通过；旧导航deploy/d56、旧链fenced、Java不启。",
+      "current_state_note": "VM220 deploy-public main/213f1f4 clean，CLI prod/main dev/dev、MCP仅dev/loopback18765，Linux65测试通过。六业务仓库仍main/clean且远端dev全缺；新预检按设计failed，prod覆盖与真实发布拒绝。旧dev/main预检只历史，旧链fenced/Java不启。",
       "direct_runtime_business_git_pull": false,
       "credential_references": [
         {
@@ -470,7 +470,11 @@
       ],
       "verification_evidence": [
         "evidence/deploy-public-publisher-20261110/final-postcheck.json",
-        "evidence/deploy-public-publisher-20261110/mcp-protocol-and-preflight.json"
+        "evidence/deploy-public-publisher-20261110/mcp-protocol-and-preflight.json",
+        "evidence/deploy-public-modes-20261110/branch-audit-before.json",
+        "evidence/deploy-public-modes-20261110/publisher-update.json",
+        "evidence/deploy-public-modes-20261110/protocol-and-sources.json",
+        "evidence/deploy-public-modes-20261110/final-postcheck.json"
       ]
     },
     {
@@ -754,5 +758,5 @@
     "other_new_keys_read_tests_this_task": false,
     "keys_installed_on_servers_this_task": false
   },
-  "updated_at": "2026-11-10T21:59:17.326378+08:00"
+  "updated_at": "2026-11-10T22:29:22.979636+08:00"
 }

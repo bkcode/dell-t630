@@ -122,3 +122,9 @@
 - 当前交付evidence/deploy-public-publisher-20261110/acceptance.json；源码库docs/PUBLISHER.md与OPERATIONS.md有安装/更新步骤。主机Git取码/本地验证/MCP可用不等于真实业务发布或Nacos健康验收。
 
 - 同轮后续用户新增puyu-bff-admin专属SSHkey并登记DeployKey，已复用对应私有身份克隆其main3638b8f，私有YAML只新增该项目，MCPkey/其它配置保持。MCP重启加载五服务、合并只读预检validated5通过，commonlib仍只是库；先前四服务/暂不处理bffadmin为历史，不据旧摘要覆盖现状。
+
+## 2026-11-10 deploy-public标准双环境
+
+- 用户要求CLI prod→main、dev→dev；MCP仍仅dev，拒绝prod和请求环境覆盖。发布器自身仍从deploy-public/main取码，不随业务分支切换。新源码213f1f4已推并VM同步clean，Linux65tests与实际新探针已核：缺origin/dev预检failed、prod覆盖与真实deploy拒绝。不能将旧dev/main五服务成功当新dev就绪。
+- 本轮VM220只读ls-remote审计六个后端/公共库：main存在、dev全部缺失，工作树仍main。不创建/push/切业务分支，不fallback main；缺本地origin配置分支的预检在build/SSH前拒绝，显式sync才获取。
+- prod目标身份留空、真实deploy关闭、旧链fenced、Java不启；MCPkey/私有路径/测试目标与原Git身份保护保持。模式文档evidence/deploy-public-modes-20261110/README.md；一次性set/apply脚本不盲重跑，不输出私有YAML。

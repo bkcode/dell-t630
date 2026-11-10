@@ -1,0 +1,71 @@
+{
+  "captured_at": "2026-11-10T22:29:22.979636+08:00",
+  "Git_HEAD": "213f1f42924f18e0d7b5848c2c1141a6230c1f5a",
+  "Git_clean": true,
+  "source_owner": "ub",
+  "source_path": "/opt/deploy-public",
+  "backend_sources": {
+    "puyu-common-lib": {
+      "Git_HEAD": "12f125d67f9f790b2e84517e5630b636b8b8615e",
+      "clean": true,
+      "branch": "main",
+      "push_url": "no-push://disabled"
+    },
+    "puyu-auth": {
+      "Git_HEAD": "94dc74935ec86c7b5e8ac00443ef95796b0c78b5",
+      "clean": true,
+      "branch": "main",
+      "push_url": "no-push://disabled"
+    },
+    "puyu-gateway": {
+      "Git_HEAD": "f0ddf8d68cb23401d909f93cba2ce52319ca142d",
+      "clean": true,
+      "branch": "main",
+      "push_url": "no-push://disabled"
+    },
+    "puyu-bff-admin": {
+      "Git_HEAD": "3638b8f5af0592ff6d066dbab6ff4ceec6013422",
+      "clean": true,
+      "branch": "main",
+      "push_url": "no-push://disabled"
+    },
+    "puyu-bff-web": {
+      "Git_HEAD": "bb7ce440624d08a067bd86ccde5a42e935bbb327",
+      "clean": true,
+      "branch": "main",
+      "push_url": "no-push://disabled"
+    },
+    "puyu-service-core": {
+      "Git_HEAD": "16c675ef44e35db8e4aa5f6d7668aa32bd2690e7",
+      "clean": true,
+      "branch": "main",
+      "push_url": "no-push://disabled"
+    }
+  },
+  "excluded_project": null,
+  "private_YAML_mode": "0600",
+  "private_YAML_UID": 1000,
+  "data_root": "/srv/dell-build/deploy-public",
+  "build_disk_UUID": "16dc6067-56ef-4687-a314-edc6421f9ed4",
+  "Linux_tests_count": 65,
+  "Linux_tests_seconds": 32.068,
+  "Linux_tests_passed": true,
+  "MCP_unit": {
+    "MainPID": "30260",
+    "NRestarts": "0",
+    "ActiveState": "active",
+    "SubState": "running"
+  },
+  "MCP_enabled": true,
+  "MCP_bind": "LISTEN 0      2048   127.0.0.1:18765 0.0.0.0:*",
+  "navigation_unchanged": {
+    "MainPID": "18640",
+    "ActiveState": "active"
+  },
+  "build_mount_guard_as_ub_passed": true,
+  "private_config_is_Git_ignored": true,
+  "existing_MCP_key_preserved_and_not_output": true,
+  "real_deployment_enabled": false,
+  "business_build_or_start": false,
+  "old_publisher_private_key_read_or_exported": false
+}

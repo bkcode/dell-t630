@@ -1,0 +1,26 @@
+{
+  "captured_at": "2026-11-10T22:28:19.107567+08:00",
+  "old_HEAD": "f3991ad9c0b7c1e5b6391e6110d9905dffdc25d9",
+  "HEAD": "213f1f42924f18e0d7b5848c2c1141a6230c1f5a",
+  "config_update": {
+    "changed": true,
+    "mode_branch_map": {
+      "prod": "main",
+      "dev": "dev"
+    },
+    "MCP_environment": "dev",
+    "MCP_key_and_other_settings_preserved": true,
+    "dev_targets_preserved": true,
+    "prod_target_configured": false,
+    "deployment_enabled": false,
+    "config_mode": "0o600",
+    "credentials_output": false
+  },
+  "Linux_tests_count": 65,
+  "Linux_tests_seconds": 32.068,
+  "Linux_tests_passed": true,
+  "MCP_active": true,
+  "navigation_PID_unchanged": "18640",
+  "real_backend_commands": false,
+  "credentials_output": false
+}

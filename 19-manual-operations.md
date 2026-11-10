@@ -369,8 +369,10 @@ Codex私有配置两项MCP已改SSH stdio到VM250，密钥只在服务器；实�
 
 ## VM220 Puyu local发布器与MCP
 
-源码`/opt/deploy-public`，GitHub`bkcode/deploy-public main/f3991ad`。服务puyu-deploy-mcp.service以ub运行并自动启动，仅监听127.0.0.1:18765；这是MCP API不是网页，无匿名访问，跨浏览器Origin拒绝。密钥只在VM220统一YAML600，不输出或进Git；客户端连接可用已受信SSH通道，本次没有替换全局Codex MCP连接。
+发布器源码在`/opt/deploy-public`，MCP为ub运行的puyu-deploy-mcp.service，仅127.0.0.1:18765。最新源main/213f1f4已推送并由VM220同步clean，Linux65测试通过；新MCP预检按设计拒绝缺origin/dev，服务active，回执见[模式更新](evidence/deploy-public-modes-20261110/README.md)。密钥只在VM220统一YAML600，不打印或进Git，不替换全局Codex MCP连接。
 
-六个后端仓库main（5服务+commonlib）已取码，bffadmin后续登记key已接入。真实deploy任务关闭，五服务只读预检通过；旧发布链fenced/目标身份deployer@19.45仅作为配置预览，未运行Go/Java业务构建、运行机SSH或发布。源码与产物/队列使用原100GiB构建盘并带挂载UUID门禁，勿用通用unit覆盖现役挂载校验。
+CLI支持prod→main、dev→dev；MCP仅dev，拒绝prod和调用方环境覆盖。六仓库main源码已经准备，工作树仍main，上游dev全部缺失；新dev预检应拒绝缺origin/dev，不能复用初装dev/main成功结果。prod目标`puyu-prod`身份留空时也应拒绝，不复用测试目标deployer@19.45。真实发布任务仍关闭，旧受限链fenced，不创建/推送业务分支、不构建或启动Java。
 
-[发布机安装与更新手册](https://github.com/bkcode/deploy-public/blob/main/docs/PUBLISHER.md)、[逐步操作说明](https://github.com/bkcode/deploy-public/blob/main/docs/OPERATIONS.md)、[安装验收](evidence/deploy-public-publisher-20261110/README.md)。更新只Git快进已审查版本，先核clean与无活动任务；不覆盖私有YAML/重生成APIkey，不重跑freshbootstrap。既有导航PID保持，Nexus仍独立221，备份仍只正式DB/Nacos，220原专用发布私钥不得导出。
+项目详情区分source_ready、expected_branch、current_branch和target_branch_available，最后一项仅本地origin引用。列出/预检不fetch；显式sync才取配置分支，真实远端缺dev时失败，不回退main。源码/产物/队列仍在原100GiB构建盘并保UUID启动门禁。更新只Git快进受审查版本，先核clean与无活动任务，不覆盖私有YAML或重生成APIkey，不重跑bootstrap。220原专用发布私钥不得导出，Nexus不合并、备份仍只正式DB/Nacos。
+
+[发布机操作手册](https://github.com/bkcode/deploy-public/blob/main/docs/PUBLISHER.md)、[完整操作说明](https://github.com/bkcode/deploy-public/blob/main/docs/OPERATIONS.md)、[初装验收历史](evidence/deploy-public-publisher-20261110/README.md)。

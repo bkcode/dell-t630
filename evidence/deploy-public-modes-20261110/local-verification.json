@@ -1,0 +1,14 @@
+{
+  "captured_at": "2026-11-10T22:30:01.991242+08:00",
+  "Git_HEAD": "213f1f42924f18e0d7b5848c2c1141a6230c1f5a",
+  "Mac_tests_count": 65,
+  "Mac_tests_passed": true,
+  "Mac_tests_seconds": 10.956,
+  "Bash_3_2_syntax_passed": true,
+  "config_valid": true,
+  "prod_branch": "main",
+  "dev_branch": "dev",
+  "actual_private_config_ignored": true,
+  "business_repos_changed": false,
+  "credentials_output": false
+}

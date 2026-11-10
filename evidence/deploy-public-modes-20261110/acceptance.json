@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-10T22:30:01.991242+08:00",
+  "status": "cli-modes-configured-and-guards-verified",
+  "scope": "publisher CLI mode mapping and dev-only MCP; actual dev source remains unprepared",
+  "cases": [
+    {
+      "id": "PUBMODES-CONFIG-001",
+      "title": "标准模式与私有配置保留",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户要求CLI prod(main)/dev(dev)，明确MCP继续仅dev；本期不执行真实发布"
+      ],
+      "steps": [
+        "审查配置与测试回归，Git推送拉取，仅重启发布器并验证元数据接口"
+      ],
+      "observable_pass_conditions": [
+        "CLI prod/main dev/dev，MCPdev固定",
+        "MCP原密钥/路径/测试目标保留，正式目标为空，真实部署关闭"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/deploy-public-modes-20261110/publisher-update.json",
+          "note": "Public metadata only; no configuration bodies or credentials"
+        },
+        {
+          "path": "evidence/deploy-public-modes-20261110/protocol-and-sources.json",
+          "note": "Public metadata only; no configuration bodies or credentials"
+        }
+      ],
+      "verified_at": "2026-11-10T22:30:01.991242+08:00"
+    },
+    {
+      "id": "PUBMODES-TEST-001",
+      "title": "Mac与Linux回归",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户要求CLI prod(main)/dev(dev)，明确MCP继续仅dev；本期不执行真实发布"
+      ],
+      "steps": [
+        "审查配置与测试回归，Git推送拉取，仅重启发布器并验证元数据接口"
+      ],
+      "observable_pass_conditions": [
+        "65项测试两端通过；临时fixture验证single-branch分支同步和缺分支不回退"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/deploy-public-modes-20261110/publisher-update.json",
+          "note": "Public metadata only; no configuration bodies or credentials"
+        },
+        {
+          "path": "evidence/deploy-public-modes-20261110/local-verification.json",
+          "note": "Public metadata only; no configuration bodies or credentials"
+        }
+      ],
+      "verified_at": "2026-11-10T22:30:01.991242+08:00"
+    },
+    {
+      "id": "PUBMODES-GUARD-001",
+      "title": "实际dev缺分支按设计停止",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户要求CLI prod(main)/dev(dev)，明确MCP继续仅dev；本期不执行真实发布"
+      ],
+      "steps": [
+        "审查配置与测试回归，Git推送拉取，仅重启发布器并验证元数据接口"
+      ],
+      "observable_pass_conditions": [
+        "六仓库远端审计均缺dev；MCP预检failed且origin/dev not prepared",
+        "拒绝prod请求覆盖和真实部署任务，匿名401/Origin403"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/deploy-public-modes-20261110/branch-audit-before.json",
+          "note": "Public metadata only; no configuration bodies or credentials"
+        },
+        {
+          "path": "evidence/deploy-public-modes-20261110/protocol-and-sources.json",
+          "note": "Public metadata only; no configuration bodies or credentials"
+        }
+      ],
+      "verified_at": "2026-11-10T22:30:01.991242+08:00"
+    },
+    {
+      "id": "PUBMODES-PRESERVE-001",
+      "title": "源码与原服务保持",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户要求CLI prod(main)/dev(dev)，明确MCP继续仅dev；本期不执行真实发布"
+      ],
+      "steps": [
+        "审查配置与测试回归，Git推送拉取，仅重启发布器并验证元数据接口"
+      ],
+      "observable_pass_conditions": [
+        "新发布器Git main已更新；后端六仓库main/clean且HEAD保持",
+        "MCP仅loopback，原导航PID18640保持；没有业务构建或运行机操作"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/deploy-public-modes-20261110/publisher-update.json",
+          "note": "Public metadata only; no configuration bodies or credentials"
+        },
+        {
+          "path": "evidence/deploy-public-modes-20261110/final-postcheck.json",
+          "note": "Public metadata only; no configuration bodies or credentials"
+        }
+      ],
+      "verified_at": "2026-11-10T22:30:01.991242+08:00"
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "current_phase_case_count": 4,
+    "current_phase_passed": 4
+  },
+  "limitations": [
+    "All six upstream backend repositories lack dev; real dev sync/preflight is blocked until upstream branches are prepared",
+    "Production SSH target remains unconfigured; real deployment is disabled",
+    "No real backend source checkout/fetch/build/deploy/start and no automatic business branch creation/push"
+  ]
+}

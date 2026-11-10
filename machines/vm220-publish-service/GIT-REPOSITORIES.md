@@ -6,11 +6,11 @@
 
 ## 本机结论
 
-当前新增[deploy-public实际安装与预检](../../evidence/deploy-public-publisher-20261110/README.md)：源码和7套Git身份已在VM220安装，6个后端仓库main读取通过，只有受管理源码/配置与MCP，不代表业务部署解冻。
+当前新增[deploy-public实际安装与预检](../../evidence/deploy-public-publisher-20261110/README.md)：源码和7套Git身份已在VM220安装，6个后端仓库main读取通过，只有受管理源码/配置与MCP，不代表业务部署解冻。当前CLI prod/main与dev/dev，MCP仅dev；[本轮上游审计](../../evidence/deploy-public-modes-20261110/branch-audit-before.json)证实全部缺dev，工作树仍main。
 
 
-- 总表Git使用方式：**业务构建/部署源码仍为计划**（`build-source-planned`）；后续独立授权的导航模块已按固定五文件release部署，见下一节。
-- 当前说明：当前Puyu使用独立deploy-public：f3991ad clean、loopback MCP、5服务只读预检已通过，后端main源码已拉取；原deploy仅保留Finger/导航来源。业务仍fenced、Java不启，common-lib只是库源码。
+- 总表Git使用方式：**源码与发布器已配置、业务发布关闭**（`build-source-configured-business-disabled`）；后续独立授权的导航模块已按固定五文件release部署，见下一节。
+- 当前说明：当前Puyu使用独立deploy-public，本轮main/213f1f4已推送并在VM220 clean，Linux65测试和新探针已核；loopback MCP保持，CLI prod/main dev/dev、MCP仅dev，新预检因缺origin/dev按设计failed。旧5服务dev/main预检仅历史，六后端上游dev缺失、工作树main保持；真实发布关闭、旧链fenced、Java不启。
 - 所有基础设施公开配置由`infra` → [bkcode/dell-t630](https://github.com/bkcode/dell-t630)统一管理；这不表示本机保存了该Git工作树，也不授权自动pull/执行bootstrap。
 
 本机相关配置路径：[infra/publisher](../../infra/publisher)、[infra/java](../../infra/java)。旧执行器仍有具体UUID/角色/授权门禁，不能从这些链接批量重放。
@@ -32,7 +32,7 @@
 | ID | 仓库 | 分支/引用语义 | 用途与边界 |
 | --- | --- | --- | --- |
 | `deploy` | [bkcode/deploy](https://github.com/bkcode/deploy) | main (management local checkout observed) | 仅service-directory模块精确提交已作为五文件导航release安装；原部署工具/Puyu发布适配仍候选 |
-| `deploy-public` | [bkcode/deploy-public](https://github.com/bkcode/deploy-public) | main / f3991ad | 已Git安装Puyu local发布器与MCP，真实发布关闭 |
+| `deploy-public` | [bkcode/deploy-public](https://github.com/bkcode/deploy-public) | main / 213f1f4（VM220 clean） | Puyu发布器与MCP已安装，CLI双环境、MCP仅dev，业务dev缺失/真实发布关闭 |
 | `puyu-auth` | [bkcode/puyu-auth](https://github.com/bkcode/puyu-auth) | main (management local checkout observed) | 认证业务源码候选 |
 | `puyu-bff-admin` | [bkcode/puyu-bff-admin](https://github.com/bkcode/puyu-bff-admin) | main (VM220 verified) | 后续登记专属key后已Git克隆，第五服务；不代表业务部署 |
 | `puyu-bff-web` | [bkcode/puyu-bff-web](https://github.com/bkcode/puyu-bff-web) | main (management local checkout observed) | Web BFF后端源码候选 |
@@ -52,7 +52,7 @@
 
 ## 构建计划与当前受限发布链
 
-计划取用`bkcode/deploy`＋五个Puyu后端仓库。`puyu-common-lib`是构建/发布的共享库，不能计成一个运行服务；管理机main分支观察不等于远端或220已部署。尚未证明deploy工具已经适配Puyu，不能直接套旧Finger发布命令。
+当前取用独立`bkcode/deploy-public`＋五个Puyu服务及common-lib仓库，原`bkcode/deploy`只保留Finger/导航来源。`puyu-common-lib`是构建/发布的共享库，不能计成一个运行服务；管理机main分支观察不等于远端或220已部署。尚未证明deploy工具已经适配Puyu，不能直接套旧Finger发布命令。
 
 现有220→240受限链仍由Dell `infra/publisher`提供，保持fenced；本次Git来源登记没有activate/rollback，也没有部署或启动Java。新Git Deploy Key与原220专用发布SSH key是两类身份，不能互相替换或将旧私钥复制出去。
 
@@ -80,6 +80,10 @@ GitHub只读Deploy Key应不勾Allow write access；用户报告配置完成不�
 
 ## 当前Git身份和操作边界
 
-7套Git身份仅用于deploy-public及五个Puyu后端的源码读取，ub目录700/文件600，GitHub443复用既有可信host key。每个仓库为独立身份；原`deploy_ed25519`现绑定deploy-public，不能再当作旧Finger deploy凭据。服务器SSH公共配置引用专属alias文件，repo core.sshCommand固定all-repos.conf，pushURL为no-push://disabled。未通过写入探测GitHub权限；Allow write access按用户配置应关闭。原220发布SSH私钥是另一身份，未读/未导出。
+7套Git身份仅用于deploy-public及六个Puyu后端/公共库的源码读取，ub目录700/文件600，GitHub443复用既有可信host key。每个仓库为独立身份；原`deploy_ed25519`现绑定deploy-public，不能再当作旧Finger deploy凭据。服务器SSH公共配置引用专属alias文件，repo core.sshCommand固定all-repos.conf，pushURL为no-push://disabled。未通过写入探测GitHub权限；Allow write access按用户配置应关闭。原220发布SSH私钥是另一身份，未读/未导出。
 
 配置端口、MCPkey、路径/目标均在ignored的统一YAML；关键值不进本文。实际目标deployer@19.45仅预览，旧forced-command程序仍未适配Puyu且fenced。源码拉取和只读校验不授予直接systemd部署权限。详见[发布机操作说明](https://github.com/bkcode/deploy-public/blob/main/docs/PUBLISHER.md)。
+
+## 当前分支就绪边界
+
+CLI dev取dev、prod取main，MCP仅dev。源码工具本身仍main，不随业务环境切分支。本轮6仓库上游main存在/dev缺失、当前工作树main；source_ready只表示目录身份，不等于dev就绪。target_branch_available只查询本地origin引用。缺配置分支的预检在构建/SSH前拒绝，显式sync才fetch；没有dev时不代建、不push、不回退main。prod身份未配置、真实发布关闭。源码更新及实例读回以[本轮模式记录](../../evidence/deploy-public-modes-20261110/README.md)为准。

@@ -6,7 +6,7 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "6b80edfbb1cfcbaf3a04310f22f538f6c015db34373a6dbc4b33e3326ca5d7d2"
+      "sha256": "5dbce0a1e478aa458f5287457c7878a2e80b336b89432f49425b7ed5c707f425"
     },
     {
       "path": "11-live-handoff.md",
@@ -18,13 +18,13 @@
       "path": "12-service-access-and-operations.md",
       "type": "current-contract",
       "purpose": "当前19网入口及凭据保管规则。",
-      "sha256": "7461c22862cc2795b11c7a1e64e978d1ee283316f282e723ced9bcf6b1891e57"
+      "sha256": "9d5cd06484ba3c19e8e9325261b396a9de8618b4b7dcfcb6bdd8b6c08fc44f17"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
-      "sha256": "80ff9869a5bcddf63c6b326f26a6b81fd038d7dfc6a36bd5570f8fa265176920"
+      "sha256": "cb25e728f1aea5f1770c0a25d6450818373483db232fd47f3073bf4a1cf3db8f"
     },
     {
       "path": "cleanup/final-live-check.json",
@@ -198,19 +198,19 @@
       "path": "machines/git-repositories.json",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "1804066538ceb4ad35852f2916fe0bd040465c32325593495a0393a6229076c9"
+      "sha256": "7c6fd2361b4a7a0e94c0f622287e010ebe8fa426e018303a1d42a58e3a06aca5"
     },
     {
       "path": "machines/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "b35e1090939706b7edf6d14dda03894156ee8ed71654ff0a27bd39978877b055"
+      "sha256": "a6b0b627b7ec7a210eab6db0071d43ca5e0c41cddf03e9d7db5da071adceda44"
     },
     {
       "path": "machines/vm220-publish-service/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "8b1a1cbdf10ddbd955702c1315aeb9a2928e85ff25d240175a9b469e22a79db0"
+      "sha256": "8120d9f831844bb3390309bcc873ad330f2bedc2b6d9760baaf46f06f100fa4f"
     },
     {
       "path": "scripts/validate_git_repositories.py",
@@ -409,6 +409,84 @@
       "type": "historical-evidence",
       "purpose": "User followup registered bff-admin dedicated key; source/private catalog added, five-service readonlypreflight passed, realdeploy disabled",
       "sha256": "cc8103809d0f10f040436ddd1d38626992588a6660530a2e55da60ff03af4213"
+    },
+    {
+      "path": "infra/deploy-public/set-standard-modes.py",
+      "type": "current-contract",
+      "purpose": "Standard CLI prod/main dev/dev with dev-only MCP; actual guards verified, upstream dev missing, no business branch mutation/build/deploy or secret export",
+      "sha256": "00f04cb9f48fcb3db7544b49ac85968f39a2864465d01647da89d5808c934915"
+    },
+    {
+      "path": "infra/deploy-public/apply-standard-modes.py",
+      "type": "current-contract",
+      "purpose": "Standard CLI prod/main dev/dev with dev-only MCP; actual guards verified, upstream dev missing, no business branch mutation/build/deploy or secret export",
+      "sha256": "17da6dd9e5b8bb2d04045588af95ef9368fd357f05e7314d70547c587bbbd858"
+    },
+    {
+      "path": "infra/deploy-public/probe-standard-modes.py",
+      "type": "current-contract",
+      "purpose": "Standard CLI prod/main dev/dev with dev-only MCP; actual guards verified, upstream dev missing, no business branch mutation/build/deploy or secret export",
+      "sha256": "95b0f9de0cdee48ed3465a9704b3c9dec8504b63adff3cef27313cae58216cdb"
+    },
+    {
+      "path": "infra/deploy-public/collect-standard-modes.py",
+      "type": "current-contract",
+      "purpose": "Standard CLI prod/main dev/dev with dev-only MCP; actual guards verified, upstream dev missing, no business branch mutation/build/deploy or secret export",
+      "sha256": "f5e9f8ed9983cd2e614600ead3ff0b58e24aff67cae0c798ce9485aef472eaf7"
+    },
+    {
+      "path": "evidence/deploy-public-modes-20261110/Git-delivery.json",
+      "type": "historical-evidence",
+      "purpose": "Standard CLI prod/main dev/dev with dev-only MCP; actual guards verified, upstream dev missing, no business branch mutation/build/deploy or secret export",
+      "sha256": "79709b75c479cc7712891007827bf47638ed750851a682dce2b17d5ee8f1715d"
+    },
+    {
+      "path": "evidence/deploy-public-modes-20261110/README.md",
+      "type": "current-contract",
+      "purpose": "Standard CLI prod/main dev/dev with dev-only MCP; actual guards verified, upstream dev missing, no business branch mutation/build/deploy or secret export",
+      "sha256": "c13c18bab784b1d4db71fefb355a5b95f574fb5309f01951d550ad59ddea898b"
+    },
+    {
+      "path": "evidence/deploy-public-modes-20261110/acceptance.json",
+      "type": "historical-evidence",
+      "purpose": "Standard CLI prod/main dev/dev with dev-only MCP; actual guards verified, upstream dev missing, no business branch mutation/build/deploy or secret export",
+      "sha256": "e51037e416c7f56b25018d0e60121f8a29fc54498122f969763aebcf3f5e5dd3"
+    },
+    {
+      "path": "evidence/deploy-public-modes-20261110/branch-audit-before.json",
+      "type": "historical-evidence",
+      "purpose": "Standard CLI prod/main dev/dev with dev-only MCP; actual guards verified, upstream dev missing, no business branch mutation/build/deploy or secret export",
+      "sha256": "b613f54738f0f23fa116b5238510aa3b5e24f9f057c05dd04a618fc1ce955992"
+    },
+    {
+      "path": "evidence/deploy-public-modes-20261110/final-postcheck.json",
+      "type": "historical-evidence",
+      "purpose": "Standard CLI prod/main dev/dev with dev-only MCP; actual guards verified, upstream dev missing, no business branch mutation/build/deploy or secret export",
+      "sha256": "16326273d9dc343ca2674f31b353d91e7cf61500f52ca125850566d3845e67c8"
+    },
+    {
+      "path": "evidence/deploy-public-modes-20261110/local-verification.json",
+      "type": "historical-evidence",
+      "purpose": "Standard CLI prod/main dev/dev with dev-only MCP; actual guards verified, upstream dev missing, no business branch mutation/build/deploy or secret export",
+      "sha256": "79607f7d818eb87fdc6e1bc9677765edb2200d9be13614c49b9a6dfdac3a4539"
+    },
+    {
+      "path": "evidence/deploy-public-modes-20261110/protocol-and-sources.json",
+      "type": "historical-evidence",
+      "purpose": "Standard CLI prod/main dev/dev with dev-only MCP; actual guards verified, upstream dev missing, no business branch mutation/build/deploy or secret export",
+      "sha256": "1db8a6742108e4702782f9efc5512c4dd3035b03f132488e0b1ba54d8bd38a57"
+    },
+    {
+      "path": "evidence/deploy-public-modes-20261110/publisher-update.json",
+      "type": "historical-evidence",
+      "purpose": "Standard CLI prod/main dev/dev with dev-only MCP; actual guards verified, upstream dev missing, no business branch mutation/build/deploy or secret export",
+      "sha256": "f24cc5d5bca2af7a815298c568656bc98bc75ba7cc3b84033d462d8fc64d2075"
+    },
+    {
+      "path": "evidence/deploy-public-modes-20261110/usage-manual.md",
+      "type": "current-contract",
+      "purpose": "Standard CLI prod/main dev/dev with dev-only MCP; actual guards verified, upstream dev missing, no business branch mutation/build/deploy or secret export",
+      "sha256": "b80f0ab41f7deec6cc21fedc8dee279e494d768c54dd5067bc07ad857b2307ed"
     }
   ],
   "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."

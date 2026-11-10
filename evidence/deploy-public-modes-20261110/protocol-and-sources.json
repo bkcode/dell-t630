@@ -1,0 +1,89 @@
+{
+  "MCP_URL_without_credentials": "http://127.0.0.1:18765/mcp",
+  "anonymous_HTTP": 401,
+  "browser_Origin_HTTP": 403,
+  "environment": "dev",
+  "mode_branch_map": {
+    "prod": "main",
+    "dev": "dev"
+  },
+  "source_details": [
+    {
+      "name": "puyu-auth",
+      "source_ready": true,
+      "expected_branch": "dev",
+      "current_branch": "main",
+      "target_branch_available": false
+    },
+    {
+      "name": "puyu-gateway",
+      "source_ready": true,
+      "expected_branch": "dev",
+      "current_branch": "main",
+      "target_branch_available": false
+    },
+    {
+      "name": "puyu-bff-admin",
+      "source_ready": true,
+      "expected_branch": "dev",
+      "current_branch": "main",
+      "target_branch_available": false
+    },
+    {
+      "name": "puyu-bff-web",
+      "source_ready": true,
+      "expected_branch": "dev",
+      "current_branch": "main",
+      "target_branch_available": false
+    },
+    {
+      "name": "puyu-service-core",
+      "source_ready": true,
+      "expected_branch": "dev",
+      "current_branch": "main",
+      "target_branch_available": false
+    }
+  ],
+  "source_refs_are_cached": true,
+  "prod_target_configured": false,
+  "deploy_enabled": false,
+  "deploy_call_rejected_before_execution": true,
+  "prod_override_rejected": true,
+  "validation_job_id": "3294416b9b754af5879ce96fd1c4a79e",
+  "validation_status": "failed",
+  "expected_failure": "origin/dev not prepared; upstream branch audit reports missing dev",
+  "backend_repos": {
+    "puyu-common-lib": {
+      "HEAD": "12f125d67f9f790b2e84517e5630b636b8b8615e",
+      "branch": "main",
+      "clean": true
+    },
+    "puyu-auth": {
+      "HEAD": "94dc74935ec86c7b5e8ac00443ef95796b0c78b5",
+      "branch": "main",
+      "clean": true
+    },
+    "puyu-gateway": {
+      "HEAD": "f0ddf8d68cb23401d909f93cba2ce52319ca142d",
+      "branch": "main",
+      "clean": true
+    },
+    "puyu-bff-admin": {
+      "HEAD": "3638b8f5af0592ff6d066dbab6ff4ceec6013422",
+      "branch": "main",
+      "clean": true
+    },
+    "puyu-bff-web": {
+      "HEAD": "bb7ce440624d08a067bd86ccde5a42e935bbb327",
+      "branch": "main",
+      "clean": true
+    },
+    "puyu-service-core": {
+      "HEAD": "16c675ef44e35db8e4aa5f6d7668aa32bd2690e7",
+      "branch": "main",
+      "clean": true
+    }
+  },
+  "real_build_deploy_or_Java_start": false,
+  "credentials_output": false
+}

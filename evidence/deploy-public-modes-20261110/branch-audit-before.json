@@ -1,0 +1,50 @@
+[
+  {
+    "name": "puyu-common-lib",
+    "read_exit": 0,
+    "refs": {
+      "refs/heads/main": "12f125d67f9f790b2e84517e5630b636b8b8615e"
+    },
+    "current_branch": "main"
+  },
+  {
+    "name": "puyu-auth",
+    "read_exit": 0,
+    "refs": {
+      "refs/heads/main": "94dc74935ec86c7b5e8ac00443ef95796b0c78b5"
+    },
+    "current_branch": "main"
+  },
+  {
+    "name": "puyu-gateway",
+    "read_exit": 0,
+    "refs": {
+      "refs/heads/main": "f0ddf8d68cb23401d909f93cba2ce52319ca142d"
+    },
+    "current_branch": "main"
+  },
+  {
+    "name": "puyu-bff-admin",
+    "read_exit": 0,
+    "refs": {
+      "refs/heads/main": "3638b8f5af0592ff6d066dbab6ff4ceec6013422"
+    },
+    "current_branch": "main"
+  },
+  {
+    "name": "puyu-bff-web",
+    "read_exit": 0,
+    "refs": {
+      "refs/heads/main": "bb7ce440624d08a067bd86ccde5a42e935bbb327"
+    },
+    "current_branch": "main"
+  },
+  {
+    "name": "puyu-service-core",
+    "read_exit": 0,
+    "refs": {
+      "refs/heads/main": "16c675ef44e35db8e4aa5f6d7668aa32bd2690e7"
+    },
+    "current_branch": "main"
+  }
+]

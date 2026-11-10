@@ -2,13 +2,13 @@
 
 # VM220 · publish-service
 
-## Puyu local发布器与MCP：2026-11-10已安装
+## Puyu local发布器与MCP：CLI双环境已配置，dev上游未就绪
 
-VM220已从`bkcode/deploy-public main`通过专属Git身份拉取到`/opt/deploy-public`，最终`f3991ad` clean；以ub运行`puyu-deploy-mcp.service`，仅127.0.0.1:18765，enabled/active。5后端服务与commonlib源码main已拉取；bff-admin在用户后续新增登记DeployKey后接入。Linux60测试通过，MCP匿名401/Origin403、4工具、5服务只读预检通过；真实发布关闭，旧forced-chain保持fenced，未构建或启动Java。
+VM220发布器`/opt/deploy-public`已通过Git安装，MCP以ub运行、仅127.0.0.1:18765。最新源码main/213f1f4已推送并同步到VM220 clean，Linux65测试通过。标准映射CLI prod/main、dev/dev，MCP仅dev；真实新预检因缺origin/dev failed，prod覆盖/禁用的真实发布请求均拒绝，属于保护行为通过。
 
-真实YAML在VM220 `/opt/deploy-public/config.local.yaml`（ub600/ignored），MCPkey只留服务器。源码/产物/队列在现有100GiB构建盘`/srv/dell-build/deploy-public`专属目录，带UUID启动门禁。初次公开门禁目录权限导致启动失败已纠正为root0755；密钥目录700/文件600不变，日志和修正证据保留。导航PID18640仍保持，不合并Nexus、不修改原publisher私钥/链、不做220整机备份。
+六个后端/公共库的main读取通过且源码已克隆，bff-admin已在后续登记专属key后加入。当前全部业务工作树仍main，本轮只读上游审计显示六仓库均无dev，因此新dev同步/发布不能通过；不代建/推送/切换业务分支。旧五服务预检成功是初始dev/main阶段历史，不是新dev就绪证明。prod目标身份留空，真实发布关闭，旧forced-chainfenced，Java不构建/启动。
 
-[本轮交付与验收](../../evidence/deploy-public-publisher-20261110/README.md)；[源码安装手册](https://github.com/bkcode/deploy-public/blob/main/docs/PUBLISHER.md)。下文旧“尚未clone/待接入Puyu”属于此前阶段，不得据它覆盖当前私有配置或重跑安装。
+私有YAML仍为ub600/ignored、MCPkey和其它设置保持且只在服务器；MCP PID30260/NRestarts0、导航PID18640保持，构建盘UUID门禁通过。Nexus/原发布私钥边界不变。 [本轮映射与审计](../../evidence/deploy-public-modes-20261110/README.md)、[初装历史](../../evidence/deploy-public-publisher-20261110/README.md)、[源码安装手册](https://github.com/bkcode/deploy-public/blob/main/docs/PUBLISHER.md)。不得据历史成功重跑安装或打开真实发布。
 
 
 Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/计划与已部署状态分开；不表示本机已clone或已分发key）。
