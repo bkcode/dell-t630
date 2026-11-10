@@ -4,6 +4,10 @@
 
 **2026-11-09继续完成基础搭建，并按用户最新范围仅备正式数据库/Nacos配置；随后另获授权完成选定测试Nacos配置及两份Puyu数据库迁移。** 14:24自然重启后的fresh审计确认12来宾运行、3模板停止、15/15UP、EDAC0/RAIDOptl，forward guard文件与启动顺序保持全0。Nexus221继续独立、220的Nexus保持standby，另有后续获准的只读导航，Java业务不启，Penpot实际ff提交不更新main，Mac外部探针不需要。当日状态统一见[11月9日交付记录](completion/20261109-prod-db-scope/README.md)；[11月8日恢复](recovery/20261108/README.md)保留历史。
 
+## Puyu local发布器已在VM220搭建
+
+独立`bkcode/deploy-public main/f3991ad`已推送并由VM220 Git取码到`/opt/deploy-public`。MCP以ub在127.0.0.1:18765自动启动，五服务及commonlib源码main就绪，Linux60测试与真实MCP五服务只读预检通过。业务发布保持关闭，bffadmin暂不处理，旧导航/受限发布链/Nexus保持。[本期交付](evidence/deploy-public-publisher-20261110/README.md)、[操作手册](https://github.com/bkcode/deploy-public/blob/main/docs/PUBLISHER.md)。私有YAML、Gitkey、APIkey与任务状态不入Git。
+
 ## Penpot skill MCP服务器连接
 
 本地Codex的penpot/penpot_import已配置为SSH stdio连接VM250，服务器密钥保留原处；实际新进程已读到puyu和组件页，11healthy。**当前聊天仍缓存Mac旧连接，需要重载MCP/重启Codex后生效**；[连接手册与4/5验收](evidence/penpot-client-mcp-20261110/usage-manual.md)如实保留这一项待办。

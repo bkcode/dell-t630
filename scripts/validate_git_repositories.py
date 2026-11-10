@@ -27,7 +27,7 @@ def validate():
   if e['kind']=='template':need(not row.get('application_repository_ids')and not row.get('credential_references')and row.get('direct_runtime_business_git_pull')is False,'template contains business source/key/pull contract')
  for v in [230,240]:
   row=next((x for x in rows if x.get('vmid')==v),{});need(row.get('git_usage_mode')=='artifact-consumer-runtime-only'and row.get('direct_runtime_business_git_pull')is False and not row.get('credential_references'),'runtime must consume artifacts without repository keys');need('puyu-common-lib'in row.get('dependency_repository_ids',[])and'puyu-common-lib'not in row.get('application_repository_ids',[]),'sharedlibrary misclassified as runtime')
- pub=next((x for x in rows if x.get('vmid')==220),{});need(set(pub.get('application_repository_ids',[]))=={'deploy','puyu-auth','puyu-bff-web','puyu-common-lib','puyu-gateway','puyu-service-core'},'publisher backend source scope differs')
+ pub=next((x for x in rows if x.get('vmid')==220),{});need(set(pub.get('application_repository_ids',[]))=={'deploy','deploy-public','puyu-auth','puyu-bff-admin','puyu-bff-web','puyu-common-lib','puyu-gateway','puyu-service-core'},'publisher backend source scope differs')
  need(repositories.get('jellyfin',{}).get('fork_parent_observed')=='jellyfin/jellyfin','Jellyfin server fork identity differs')
  for row in rows:
   for key in row.get('credential_references',[]):

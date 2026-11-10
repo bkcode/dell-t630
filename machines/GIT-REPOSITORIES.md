@@ -26,6 +26,9 @@
 
 ## 发布机与running分工
 
+最新Puyu工具为独立`bkcode/deploy-public`，VM220 a0c7529 clean/MCP127.0.0.1:18765与5服务只读预检已通过。5服务+commonlib源码main已拉取、bffadmin排除；旧deploy只留Finger/导航来源。参见[实际交付](../evidence/deploy-public-publisher-20261110/README.md)。
+
+
 VM220计划读取`bkcode/deploy`和5个Puyu JVM后端，其中common-lib仅构建库。`/var/www/finger/finger-master/projects/deploy`是用户给出的管理机工作树引用，已核origin为bkcode/deploy；不是证明220已有同路径。新部署工具是否支持当前Puyu/受限发布合同尚未验证，不替换现有Dell publisher或解除fence。
 
 VM230/240当前仅运行基础，后续按批准收取构建制品，配置与秘密仍分别管理，不要求两机直接git pull或保存GitHub Deploy Keys。业务部署、运行分支和上线顺序后续单独确认，本表不是Java上线授权。

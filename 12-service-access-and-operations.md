@@ -169,3 +169,11 @@ VM250 owner工作区新增 **puyu项目 / puyu文件**，包含puyu-mobile、puy
 ## 本地Penpot MCP切服务器
 
 Codex私有配置两项MCP已改SSH stdio到VM250，密钥只在服务器；实际新进程返回puyu/组件页，原生11healthy、原设计/密码保持。当前聊天旧连接缓存仍在，需客户端重载MCP或重启Codex，最后一项验收pending；无法通过受限GUI代点重载。见[连接手册](evidence/penpot-client-mcp-20261110/usage-manual.md)。Mac原实例仍运行。
+
+## VM220 Puyu local发布器与MCP
+
+源码`/opt/deploy-public`，GitHub`bkcode/deploy-public main/f3991ad`。服务puyu-deploy-mcp.service以ub运行并自动启动，仅监听127.0.0.1:18765；这是MCP API不是网页，无匿名访问，跨浏览器Origin拒绝。密钥只在VM220统一YAML600，不输出或进Git；客户端连接可用已受信SSH通道，本次没有替换全局Codex MCP连接。
+
+六个后端仓库main（5服务+commonlib）已取码，bffadmin后续登记key已接入。真实deploy任务关闭，五服务只读预检通过；旧发布链fenced/目标身份deployer@19.45仅作为配置预览，未运行Go/Java业务构建、运行机SSH或发布。源码与产物/队列使用原100GiB构建盘并带挂载UUID门禁，勿用通用unit覆盖现役挂载校验。
+
+[发布机安装与更新手册](https://github.com/bkcode/deploy-public/blob/main/docs/PUBLISHER.md)、[逐步操作说明](https://github.com/bkcode/deploy-public/blob/main/docs/OPERATIONS.md)、[安装验收](evidence/deploy-public-publisher-20261110/README.md)。更新只Git快进已审查版本，先核clean与无活动任务；不覆盖私有YAML/重生成APIkey，不重跑freshbootstrap。既有导航PID保持，Nexus仍独立221，备份仍只正式DB/Nacos，220原专用发布私钥不得导出。

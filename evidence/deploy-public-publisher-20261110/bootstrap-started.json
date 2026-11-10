@@ -1,0 +1,6 @@
+{
+  "started": true,
+  "unit": "dell-deploy-public-bootstrap-20261110.service",
+  "installer_SHA256": "c4cccf4c74e6506203ac8a3c17e7393b3a44ff78519f9ec4126286b4309a9568",
+  "scope": "Git source reads, Python environment, private Puyu YAML and loopback MCP; no business compilation/start"
+}

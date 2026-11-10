@@ -1,0 +1,14 @@
+{
+  "source_path": "/opt/deploy-public",
+  "source_owner": "ub",
+  "Git_HEAD": "5be397f1e5a0d07e272bb4d87b7599cf1279d2c4",
+  "Git_origin": "git@github-bkcode-deploy-public:bkcode/deploy-public.git",
+  "transport": "designated-readonly-deploy-key-SSH443-strict-host-key",
+  "build_disk_UUID_verified": true,
+  "mount": {
+    "target": "/srv/dell-build",
+    "uuid": "16dc6067-56ef-4687-a314-edc6421f9ed4",
+    "fstype": "ext4"
+  },
+  "no_business_source_cloned_or_built": true
+}

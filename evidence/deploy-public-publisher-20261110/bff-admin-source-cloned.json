@@ -1,0 +1,11 @@
+{
+  "repository": "bkcode/puyu-bff-admin",
+  "Git_HEAD": "3638b8f5af0592ff6d066dbab6ff4ceec6013422",
+  "source_path": "/srv/dell-build/deploy-public/repos/puyu-bff-admin",
+  "source_clean": true,
+  "designated_identity_installed": true,
+  "private_file_mode": "0600",
+  "server_push_URL_disabled": true,
+  "no_business_build_or_start": true,
+  "credential_values_output": false
+}

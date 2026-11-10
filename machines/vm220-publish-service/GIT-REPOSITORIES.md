@@ -6,8 +6,11 @@
 
 ## 本机结论
 
+当前新增[deploy-public实际安装与预检](../../evidence/deploy-public-publisher-20261110/README.md)：源码和7套Git身份已在VM220安装，6个后端仓库main读取通过，只有受管理源码/配置与MCP，不代表业务部署解冻。
+
+
 - 总表Git使用方式：**业务构建/部署源码仍为计划**（`build-source-planned`）；后续独立授权的导航模块已按固定五文件release部署，见下一节。
-- 当前说明：后续发布机的源码取用计划：部署工具deploy+5后端。尚未由本任务clone/配置server keys或证明deploy工具已适配Puyu；现役受限发布链仍来自infra/publisher且fenced，Java业务不启。common-lib只构建/发布库制品。
+- 当前说明：当前Puyu使用独立deploy-public：f3991ad clean、loopback MCP、5服务只读预检已通过，后端main源码已拉取；原deploy仅保留Finger/导航来源。业务仍fenced、Java不启，common-lib只是库源码。
 - 所有基础设施公开配置由`infra` → [bkcode/dell-t630](https://github.com/bkcode/dell-t630)统一管理；这不表示本机保存了该Git工作树，也不授权自动pull/执行bootstrap。
 
 本机相关配置路径：[infra/publisher](../../infra/publisher)、[infra/java](../../infra/java)。旧执行器仍有具体UUID/角色/授权门禁，不能从这些链接批量重放。
@@ -22,14 +25,16 @@
 
 上述源码Git记录与首次[重启/浏览器/后检](../../evidence/service-directory-20261110/README.md)属于63b首次HTTPS阶段。后续仅本机提交HTTP变更 `c141506ec6a59dd7f123cabc00f099f1cf87d4e1` 和全宽布局 `ddccc2b98bbb3dfdc9de649443dc3fcdc7b4860f`，仍未push、未改写4条既有用户提交。随后新增FileBrowser链接HTTP提交 `d56cae553bf95ce0e2c3fe8f258a2f99389aae7c`，共4条任务提交仍未push；运行release现为d56提交的精确五文件；旧TLS证书/私钥只留未启用历史。最新[统一内网HTTP记录](../../evidence/internal-http-20261110/README.md)及[14:28后检](../../evidence/internal-http-20261110/final-postcheck.json)为准，FileBrowser链接HTTP、14条/topbar0/全宽保持且原服务不变；不借旧验收扩大证明新布局或目标站点可达性。
 
-这不证明 `bkcode/deploy` 已适配Puyu部署，更不证明五个后端已上线；Java仍停用、publisher fenced、common-lib仍只是共享库。表中 `build-source-planned` 保留业务取码计划语义，导航release另按本节证据登记。
+这不证明 `bkcode/deploy` 已适配Puyu部署，更不证明五个后端已上线；Java仍停用、publisher fenced、common-lib仍只是共享库。表中 `build-source-configured-business-disabled` 区分已取源码/MCP搭建与尚未启用业务发布，导航release另按本节证据登记。
 
 ## 用户应用/构建输入仓库
 
 | ID | 仓库 | 分支/引用语义 | 用途与边界 |
 | --- | --- | --- | --- |
 | `deploy` | [bkcode/deploy](https://github.com/bkcode/deploy) | main (management local checkout observed) | 仅service-directory模块精确提交已作为五文件导航release安装；原部署工具/Puyu发布适配仍候选 |
+| `deploy-public` | [bkcode/deploy-public](https://github.com/bkcode/deploy-public) | main / f3991ad | 已Git安装Puyu local发布器与MCP，真实发布关闭 |
 | `puyu-auth` | [bkcode/puyu-auth](https://github.com/bkcode/puyu-auth) | main (management local checkout observed) | 认证业务源码候选 |
+| `puyu-bff-admin` | [bkcode/puyu-bff-admin](https://github.com/bkcode/puyu-bff-admin) | main (VM220 verified) | 后续登记专属key后已Git克隆，第五服务；不代表业务部署 |
 | `puyu-bff-web` | [bkcode/puyu-bff-web](https://github.com/bkcode/puyu-bff-web) | main (management local checkout observed) | Web BFF后端源码候选 |
 | `puyu-common-lib` | [bkcode/puyu-common-lib](https://github.com/bkcode/puyu-common-lib) | main (management local checkout observed) | 共享库构建输入，不是独立运行服务 |
 | `puyu-gateway` | [bkcode/puyu-gateway](https://github.com/bkcode/puyu-gateway) | main (management local checkout observed) | 业务网关源码候选 |
@@ -57,8 +62,9 @@
 
 | 仓库ID | key basename | SSH alias | 读取验证范围 |
 | --- | --- | --- | --- |
-| `deploy` | `deploy_ed25519` | `github-bkcode-deploy` | GitHub registration/read access not reverified in this documentation task |
+| `deploy-public` | `deploy_ed25519`（Mac）/`deploy-public_ed25519`（VM220） | `github-bkcode-deploy-public`（VM220） | 用户已将该GitHub DeployKey改绑新repo；VM220 main读取已实测，服务器pushURL禁用 |
 | `puyu-auth` | `puyu-auth_ed25519` | `github-bkcode-puyu-auth` | GitHub registration/read access not reverified in this documentation task |
+| `puyu-bff-admin` | `puyu-bff-admin_ed25519` | `github-bkcode-puyu-bff-admin` | 新增注册后VM220 main读验证通过，私钥仅私有目录 |
 | `puyu-bff-web` | `puyu-bff-web_ed25519` | `github-bkcode-puyu-bff-web` | GitHub registration/read access not reverified in this documentation task |
 | `puyu-common-lib` | `puyu-common-lib_ed25519` | `github-bkcode-puyu-common-lib` | GitHub registration/read access not reverified in this documentation task |
 | `puyu-gateway` | `puyu-gateway_ed25519` | `github-bkcode-puyu-gateway` | GitHub registration/read access not reverified in this documentation task |
@@ -71,3 +77,9 @@ GitHub只读Deploy Key应不勾Allow write access；用户报告配置完成不�
 新增/修改仓库先由主AI更新[唯一总表](../git-repositories.json)，核对应角色的读权限、不可变版本、构建/发布适配与授权，再同步本页和[机器合同](config.json)的`git_repository_mapping`。源码读取、build、部署、数据库迁移与启动是不同阶段，不因本页列出URL而自动授权。
 
 本文无真实凭据或key正文；公开来源索引只保存元数据，现有秘密与归档边界保持。
+
+## 当前Git身份和操作边界
+
+7套Git身份仅用于deploy-public及五个Puyu后端的源码读取，ub目录700/文件600，GitHub443复用既有可信host key。每个仓库为独立身份；原`deploy_ed25519`现绑定deploy-public，不能再当作旧Finger deploy凭据。服务器SSH公共配置引用专属alias文件，repo core.sshCommand固定all-repos.conf，pushURL为no-push://disabled。未通过写入探测GitHub权限；Allow write access按用户配置应关闭。原220发布SSH私钥是另一身份，未读/未导出。
+
+配置端口、MCPkey、路径/目标均在ignored的统一YAML；关键值不进本文。实际目标deployer@19.45仅预览，旧forced-command程序仍未适配Puyu且fenced。源码拉取和只读校验不授予直接systemd部署权限。详见[发布机操作说明](https://github.com/bkcode/deploy-public/blob/main/docs/PUBLISHER.md)。

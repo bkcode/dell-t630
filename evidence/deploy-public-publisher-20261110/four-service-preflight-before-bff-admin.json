@@ -1,0 +1,32 @@
+{
+  "MCP_URL_without_credentials": "http://127.0.0.1:18765/mcp",
+  "server_info": {
+    "name": "puyu-deploy",
+    "version": "1.26.0"
+  },
+  "tools": [
+    "list_jobs",
+    "list_services",
+    "run_job",
+    "get_job"
+  ],
+  "anonymous_HTTP": 401,
+  "browser_Origin_HTTP": 403,
+  "workspace": "puyu",
+  "environment": "dev",
+  "service_names": [
+    "puyu-auth",
+    "puyu-gateway",
+    "puyu-bff-web",
+    "puyu-service-core"
+  ],
+  "all_service_sources_ready": true,
+  "deploy_enabled": false,
+  "deploy_call_rejected_before_execution": true,
+  "validation_job_id": "a5367b75822a4fd78d8bd710db242303",
+  "validation_status": "succeeded",
+  "validation_error_code": null,
+  "validated_service_count": 4,
+  "real_build_deploy_or_Java_start": false,
+  "credential_values_or_logs_output": false
+}

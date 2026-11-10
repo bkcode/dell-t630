@@ -1,0 +1,53 @@
+{
+  "captured_at": "2026-11-10T21:08:15.289014+08:00",
+  "hostname": "publish-service",
+  "tools": {
+    "git": "/usr/bin/git",
+    "python3": "/usr/bin/python3",
+    "ssh": "/usr/bin/ssh",
+    "ss": "/usr/bin/ss",
+    "systemctl": "/usr/bin/systemctl"
+  },
+  "candidate_paths": {
+    "/opt/deploy-public": {
+      "exists": false,
+      "uid": null
+    },
+    "/opt/dell/publisher": {
+      "exists": true,
+      "uid": 0
+    },
+    "/home/ub/.ssh": {
+      "exists": true,
+      "uid": 1000
+    }
+  },
+  "Python": {
+    "exit": 0,
+    "output": "Python 3.13.5"
+  },
+  "listeners": {
+    "exit": 0,
+    "output": "LISTEN 0      128          0.0.0.0:22   0.0.0.0:*\nLISTEN 0      4096   192.168.19.30:9100 0.0.0.0:*\nLISTEN 0      16     192.168.19.30:9080 0.0.0.0:*\nLISTEN 0      4096         0.0.0.0:5355 0.0.0.0:*\nLISTEN 0      4096   127.0.0.53%lo:53   0.0.0.0:*\nLISTEN 0      4096      127.0.0.54:53   0.0.0.0:*\nLISTEN 0      128             [::]:22      [::]:*\nLISTEN 0      4096            [::]:5355    [::]:*"
+  },
+  "mcp_units": {
+    "exit": 0,
+    "output": ""
+  },
+  "navigation": {
+    "exit": 0,
+    "output": "MainPID=18640\nActiveState=active"
+  },
+  "disk": {
+    "/": 25.6,
+    "/opt": 25.6
+  },
+  "SSH_file_metadata": [
+    {
+      "path": "/home/ub/.ssh/authorized_keys",
+      "mode": "0o600",
+      "uid": 1000,
+      "type": "file"
+    }
+  ]
+}

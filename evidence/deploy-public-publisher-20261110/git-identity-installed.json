@@ -1,0 +1,10 @@
+{
+  "repo": "bkcode/deploy-public",
+  "designated_readonly_DeployKey_installed": true,
+  "identity_path": "/home/ub/.ssh/deploy-keys/bkcode/deploy-public_ed25519",
+  "private_file_mode": "0600",
+  "key_directory_mode": "0700",
+  "trusted_GitHub_host_key_reused_from_verified_Mac": true,
+  "original_publisher_key_read_or_exported": false,
+  "credential_values_output": false
+}

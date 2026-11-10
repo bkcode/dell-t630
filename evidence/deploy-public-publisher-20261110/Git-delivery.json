@@ -1,0 +1,11 @@
+{
+  "repository": "bkcode/deploy-public",
+  "branch": "main",
+  "code_baseline": "5be397f1e5a0d07e272bb4d87b7599cf1279d2c4",
+  "final_HEAD": "f3991ad9c0b7c1e5b6391e6110d9905dffdc25d9",
+  "management_and_VM220_main_match": true,
+  "final_update": "docs-only fast-forward",
+  "original_Finger_repo_unchanged": true,
+  "real_config_keys_logs_business_sources_committed_to_deploy_public": false,
+  "bff_admin_source_added_after_user_key_registration": true
+}

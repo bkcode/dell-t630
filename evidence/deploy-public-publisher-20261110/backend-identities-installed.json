@@ -1,0 +1,14 @@
+{
+  "backend_repo_identities_installed": [
+    "puyu-auth",
+    "puyu-gateway",
+    "puyu-bff-web",
+    "puyu-service-core",
+    "puyu-common-lib"
+  ],
+  "only_designated_Git_credentials_used": true,
+  "private_file_mode": "0600",
+  "original_publisher_private_key_read_or_exported": false,
+  "GitHub_host_verification": "strict-existing-trust",
+  "credential_values_output": false
+}

@@ -1,0 +1,14 @@
+{
+  "progress": {
+    "status": "publisher-bootstrap-not-confirmed",
+    "error_type": "CalledProcessError",
+    "code": "private-details-withheld"
+  },
+  "result": null,
+  "unit": {
+    "Result": "exit-code",
+    "ExecMainStatus": "1",
+    "ActiveState": "failed",
+    "SubState": "failed"
+  }
+}

@@ -6,7 +6,7 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "3b93c7877057c33ca7c5909a3a0cc567476774ffac78222fea77da5f92e5e346"
+      "sha256": "6b80edfbb1cfcbaf3a04310f22f538f6c015db34373a6dbc4b33e3326ca5d7d2"
     },
     {
       "path": "11-live-handoff.md",
@@ -18,13 +18,13 @@
       "path": "12-service-access-and-operations.md",
       "type": "current-contract",
       "purpose": "当前19网入口及凭据保管规则。",
-      "sha256": "015f270c9f22bbf2e9a0754a192c4b23786d1cc7fd01eaaf7a64190dcfe4fa5b"
+      "sha256": "7461c22862cc2795b11c7a1e64e978d1ee283316f282e723ced9bcf6b1891e57"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
-      "sha256": "62d6e30a25384d2a53cfbb800963431b3290d63c6de3d3913e4abe024126e372"
+      "sha256": "80ff9869a5bcddf63c6b326f26a6b81fd038d7dfc6a36bd5570f8fa265176920"
     },
     {
       "path": "cleanup/final-live-check.json",
@@ -198,25 +198,25 @@
       "path": "machines/git-repositories.json",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "c57454a82c0bc8edd15ca13437dad0a48ff3c09b2aa8c65ca6695b493e89a200"
+      "sha256": "1804066538ceb4ad35852f2916fe0bd040465c32325593495a0393a6229076c9"
     },
     {
       "path": "machines/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "abe3ccf08a07e4960b4d9e2a6b8edf2a7e5090889ff728a3c33a99d46f0a6a74"
+      "sha256": "b35e1090939706b7edf6d14dda03894156ee8ed71654ff0a27bd39978877b055"
     },
     {
       "path": "machines/vm220-publish-service/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "c681b97e0a06e80ff1b1677029f2a5fc34653ed16f10f1681b9a17b6bced09c2"
+      "sha256": "8b1a1cbdf10ddbd955702c1315aeb9a2928e85ff25d240175a9b469e22a79db0"
     },
     {
       "path": "scripts/validate_git_repositories.py",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "6738545de49c9a1d868e3d59dffc557052ba6147542485ce0efc2a2023c7b1ef"
+      "sha256": "1c697579f0a3d2f909ff6955b4896d450b94b2f54b321fcd37538e18212341b3"
     },
     {
       "path": "infra/service-directory/install.py",
@@ -325,6 +325,90 @@
       "type": "historical-evidence",
       "purpose": "Explicit internal HTTP policy, originalauth/NFSkept and finalnavigationlayout; publicscopedproof only",
       "sha256": "9e6199c3f6837990e2e51b92208b2d7526a8487c6f105fe8f3b1575b7820cae6"
+    },
+    {
+      "path": "infra/deploy-public/install-git-identity.py",
+      "type": "current-contract",
+      "purpose": "VM220 Puyu Git/tool infrastructure, scoped read-only validation; no real app build/start, private config/key export or publisher unfence",
+      "sha256": "0448045ea3d5df9b121ee7afcfd0c378dc15d63a2ee6afd3286540f3f74c12e0"
+    },
+    {
+      "path": "infra/deploy-public/install-backend-identities.py",
+      "type": "current-contract",
+      "purpose": "VM220 Puyu Git/tool infrastructure, scoped read-only validation; no real app build/start, private config/key export or publisher unfence",
+      "sha256": "94e4d402526490cf647d70c949c4278f91c8d3775d6eebce9b00a8d69497f42e"
+    },
+    {
+      "path": "infra/deploy-public/bootstrap-publisher.py",
+      "type": "current-contract",
+      "purpose": "VM220 Puyu Git/tool infrastructure, scoped read-only validation; no real app build/start, private config/key export or publisher unfence",
+      "sha256": "626622c2bdf3c08bf63710195797b6a271f72232054576da82e4fb95103ed149"
+    },
+    {
+      "path": "infra/deploy-public/probe-publisher.py",
+      "type": "current-contract",
+      "purpose": "VM220 Puyu Git/tool infrastructure, scoped read-only validation; no real app build/start, private config/key export or publisher unfence",
+      "sha256": "dec058d28d6d51eb014f037de0058060ab0d93e4f156418b272917dc82c09097"
+    },
+    {
+      "path": "infra/deploy-public/collect-publisher.py",
+      "type": "current-contract",
+      "purpose": "VM220 Puyu Git/tool infrastructure, scoped read-only validation; no real app build/start, private config/key export or publisher unfence",
+      "sha256": "9b8c1062f809c8e751183de21158bfd223baf6c1be6a49f9728345c5639175ff"
+    },
+    {
+      "path": "evidence/deploy-public-publisher-20261110/README.md",
+      "type": "current-contract",
+      "purpose": "VM220 Puyu Git/tool infrastructure, scoped read-only validation; no real app build/start, private config/key export or publisher unfence",
+      "sha256": "1daa2a3c8d9d1ab07ff0b62599db2519097351ba19cbdf442d754cd500b4bf79"
+    },
+    {
+      "path": "evidence/deploy-public-publisher-20261110/acceptance.json",
+      "type": "historical-evidence",
+      "purpose": "VM220 Puyu Git/tool infrastructure, scoped read-only validation; no real app build/start, private config/key export or publisher unfence",
+      "sha256": "74bcedbde66b60f42afa0929764066450ca9be18810217f544e2b142ca5fa87d"
+    },
+    {
+      "path": "evidence/deploy-public-publisher-20261110/Git-delivery.json",
+      "type": "historical-evidence",
+      "purpose": "VM220 Puyu Git/tool infrastructure, scoped read-only validation; no real app build/start, private config/key export or publisher unfence",
+      "sha256": "76e333fffa350e21626cc5c73f7ab4a3b14349218d5d7f1672243fc7ccedc2d0"
+    },
+    {
+      "path": "evidence/deploy-public-publisher-20261110/mcp-protocol-and-preflight.json",
+      "type": "historical-evidence",
+      "purpose": "VM220 Puyu Git/tool infrastructure, scoped read-only validation; no real app build/start, private config/key export or publisher unfence",
+      "sha256": "7966ed8bdc52b3a79552a6b73d17f3809efb719512e114873a962a41d1e5c691"
+    },
+    {
+      "path": "evidence/deploy-public-publisher-20261110/final-postcheck.json",
+      "type": "historical-evidence",
+      "purpose": "VM220 Puyu Git/tool infrastructure, scoped read-only validation; no real app build/start, private config/key export or publisher unfence",
+      "sha256": "2105e84fc67807afa009b8f7c57108f93e4a46b4c70c388ebdd3b76afae494e2"
+    },
+    {
+      "path": "infra/deploy-public/extend-bff-admin.py",
+      "type": "current-contract",
+      "purpose": "User followup registered bff-admin dedicated key; source/private catalog added, five-service readonlypreflight passed, realdeploy disabled",
+      "sha256": "76f716b61cafbabe44d2bcc1c722448afe7a119a9406ed0d13089e784625ae7e"
+    },
+    {
+      "path": "infra/deploy-public/add-bff-admin-config.py",
+      "type": "current-contract",
+      "purpose": "User followup registered bff-admin dedicated key; source/private catalog added, five-service readonlypreflight passed, realdeploy disabled",
+      "sha256": "ecb76528893800ce0aba54307d5644a4989ff357b936d2053de09a27382c8a29"
+    },
+    {
+      "path": "evidence/deploy-public-publisher-20261110/bff-admin-source-cloned.json",
+      "type": "historical-evidence",
+      "purpose": "User followup registered bff-admin dedicated key; source/private catalog added, five-service readonlypreflight passed, realdeploy disabled",
+      "sha256": "3368dd0f667bd8d636e6c4b8449ba0357a8cf3c949867b1e8b3c0f7b5e0c7e76"
+    },
+    {
+      "path": "evidence/deploy-public-publisher-20261110/bff-admin-config-added.json",
+      "type": "historical-evidence",
+      "purpose": "User followup registered bff-admin dedicated key; source/private catalog added, five-service readonlypreflight passed, realdeploy disabled",
+      "sha256": "cc8103809d0f10f040436ddd1d38626992588a6660530a2e55da60ff03af4213"
     }
   ],
   "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."

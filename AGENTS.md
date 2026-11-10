@@ -112,3 +112,13 @@
 - 用户授权两项本地skill MCP切VM250，并指定刚导入Puyu。Mac私有config.toml改SSH stdio，原审批/其他配置保持、备份600；严格现有VM250公钥，原RSA留Mac。服务器MCPkey仅在既有import容器内读取，无token导出或新端口/容器。
 - resident默认Puyu01b文件/组件页0c6166…e31e54275406，仅.env公开file/page ID改动，秘密/team保持，原设计stats/revn保持、11healthy、Git8a镜像合同不变。新进程协议真实通过；当前聊天注册工具仍读Mac9eb旧缓存，需用户重载MCP/重启Codex。GUI工具禁止控制Codex，不绕过、不伪称当前会话已切换。
 - 当前验收evidence/penpot-client-mcp-20261110/acceptance.json为4通过/1待重载；文档手册同目录usage-manual.md。重载后先overview再只读验证fileId01b，成功再签最后项。旧MCP专用验收文件/旧硬编码只作历史，不用旧readFile断言误判新Puyu上下文。Mac原实例保持，不因本次连接配置授权删除数据或停本机源。
+
+## 2026-11-10 VM220独立Puyu发布器Git安装
+
+- 用户明确deploy-public main提交/push、发布机Git拉取、配置Puyu和补文档；原Finger deploy不动。实际main/a0c7529 clean，/opt/deploy-public，Userub；GitHub指定deploy_ed.pub已改绑newrepo，服务器新名deploy-public_ed私有600。另5个仓库专属只读Git身份按用户先前后端源码用途安装；不读/导出原220发布私钥。服务器repo pushURLdisabled。
+- /srv/dell-build原100GiB UUID16dc保留，新deploy-public子树容纳源码/build/mcp-state。root-owned挂载门禁公开目录初次因umask700失败，纠正755后ub检查通过；不得放宽秘密目录700/文件600或盲重跑已完成bootstrap。
+- puyu-deploy-mcp.service enabled/active、仅127.0.0.1:18765，APIkey只在服务器YAML生成600/ignored。源码5repo main干净、4服务只读preflight成功，Linux60tests通过；puyu-auth初次权限失败经用户加.pub后用原key补拉，bffadmin用户指定暂不处理。
+- 本次没有Go/Java编译/启动或运行机SSH部署；deploy-services关闭并实测拒绝，旧forced-chainfenced且尚未适配Puyu，不能按新工具已安装自动解冻或给deployer扩权。导航PID18640保持，Nexus不合并、备份不扩围，Mac原Finger源码不提交/不改。
+- 当前交付evidence/deploy-public-publisher-20261110/acceptance.json；源码库docs/PUBLISHER.md与OPERATIONS.md有安装/更新步骤。主机Git取码/本地验证/MCP可用不等于真实业务发布或Nacos健康验收。
+
+- 同轮后续用户新增puyu-bff-admin专属SSHkey并登记DeployKey，已复用对应私有身份克隆其main3638b8f，私有YAML只新增该项目，MCPkey/其它配置保持。MCP重启加载五服务、合并只读预检validated5通过，commonlib仍只是库；先前四服务/暂不处理bffadmin为历史，不据旧摘要覆盖现状。

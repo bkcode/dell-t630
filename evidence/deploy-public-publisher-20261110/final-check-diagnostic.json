@@ -1,0 +1,27 @@
+{
+  "puyu-deploy-mcp.service": {
+    "MainPID": "27732",
+    "NRestarts": "1",
+    "ActiveState": "active",
+    "SubState": "running"
+  },
+  "dell-service-directory.service": {
+    "MainPID": "18640",
+    "NRestarts": "0",
+    "ActiveState": "active",
+    "SubState": "running"
+  },
+  "private_config_metadata": {
+    "mode": "0o600",
+    "uid": 1000
+  },
+  "listener": "LISTEN 0      2048   127.0.0.1:18765 0.0.0.0:*",
+  "test_summaries": [
+    [
+      "60",
+      "21.685"
+    ]
+  ],
+  "OK_marker": true,
+  "test_suite_failed_markers": false
+}

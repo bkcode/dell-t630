@@ -711,7 +711,7 @@
     "resource_role_evidence": "completion/20261109-resources/Lark-role-installed.json",
     "resource_monitoring_postcheck": "completion/20261110-filebrowser/final-postcheck.json"
   },
-  "delivery_scope_manifest": "evidence/penpot-client-mcp-20261110/acceptance.json",
+  "delivery_scope_manifest": "evidence/deploy-public-publisher-20261110/acceptance.json",
   "expected_role_count": 13,
   "network19_migration_manifest": "network19/migration-plan.json",
   "acceptance_templates": [
@@ -1374,5 +1374,45 @@
     "server_secret_values_changed_or_exported": false,
     "acceptance": "evidence/penpot-client-mcp-20261110/acceptance.json",
     "usage_manual": "evidence/penpot-client-mcp-20261110/usage-manual.md"
+  },
+  "deploy_public_publisher_20261110": {
+    "status": "Git-main-installed-MCP-and-four-service-readonly-preflight-passed",
+    "repository": "bkcode/deploy-public",
+    "branch": "main",
+    "Git_HEAD": "f3991ad9c0b7c1e5b6391e6110d9905dffdc25d9",
+    "source_path": "/opt/deploy-public",
+    "run_user": "ub",
+    "private_configuration": "/opt/deploy-public/config.local.yaml",
+    "private_config_mode": "0600",
+    "MCP_unit": "puyu-deploy-mcp.service",
+    "MCP_bind": "127.0.0.1:18765",
+    "MCP_enabled": true,
+    "MCP_tools": [
+      "list_jobs",
+      "list_services",
+      "run_job",
+      "get_job"
+    ],
+    "MCP_key_exported": false,
+    "managed_data_root": "/srv/dell-build/deploy-public",
+    "backend_sources": [
+      "puyu-common-lib",
+      "puyu-auth",
+      "puyu-gateway",
+      "puyu-bff-admin",
+      "puyu-bff-web",
+      "puyu-service-core"
+    ],
+    "excluded_project": null,
+    "validation_status": "succeeded",
+    "validated_service_count": 5,
+    "Linux_tests_passed": 60,
+    "actual_deployment_enabled": false,
+    "business_build_or_Java_start": false,
+    "old_publisher_chain_fence_preserved": true,
+    "old_publisher_private_key_read_or_exported": false,
+    "acceptance": "evidence/deploy-public-publisher-20261110/acceptance.json",
+    "operations_manual": "https://github.com/bkcode/deploy-public/blob/main/docs/PUBLISHER.md",
+    "bff_admin_added_after_user_key_registration": true
   }
 }

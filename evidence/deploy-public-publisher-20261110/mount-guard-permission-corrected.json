@@ -1,0 +1,7 @@
+{
+  "public_guard_directory_mode_corrected": "0755",
+  "root_owned_guard_unchanged": true,
+  "mount_guard_as_ub_passed": true,
+  "MCP_started": true,
+  "credentials_or_config_regenerated": false
+}

@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-10T21:59:17.326378+08:00",
+  "status": "publisher-installed-and-readonly-preflight-verified",
+  "scope": "deploy-public infrastructure and Puyu source configuration; business deployment remains disabled",
+  "cases": [
+    {
+      "id": "PUBSETUP-GIT-001",
+      "title": "新仓库main提交推送及发布机取码",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确提交main/push/发布机Git拉取并配置Puyu，补文档；bffadmin初期排除后用户新增登记key，后续已接入"
+      ],
+      "steps": [
+        "使用指定Git身份/固定源码、统一私有YAML、原生服务及仅只读MCP验收"
+      ],
+      "observable_pass_conditions": [
+        "Mac提交推送新deploy-public main，VM220专属DeployKey克隆并快进最终f3991ad",
+        "原Finger源和导航release保持，不将真实配置/凭据/后端源码入发布器Git"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/deploy-public-publisher-20261110/Git-delivery.json",
+          "note": "Redacted evidence only; no secrets/private key hashes/archives or business file contents"
+        },
+        {
+          "path": "evidence/deploy-public-publisher-20261110/source-cloned.json",
+          "note": "Redacted evidence only; no secrets/private key hashes/archives or business file contents"
+        },
+        {
+          "path": "evidence/deploy-public-publisher-20261110/final-Git-pull.json",
+          "note": "Redacted evidence only; no secrets/private key hashes/archives or business file contents"
+        }
+      ],
+      "verified_at": "2026-11-10T21:59:17.326378+08:00"
+    },
+    {
+      "id": "PUBSETUP-SOURCES-001",
+      "title": "Puyu后端只读身份与源码",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确提交main/push/发布机Git拉取并配置Puyu，补文档；bffadmin初期排除后用户新增登记key，后续已接入"
+      ],
+      "steps": [
+        "使用指定Git身份/固定源码、统一私有YAML、原生服务及仅只读MCP验收"
+      ],
+      "observable_pass_conditions": [
+        "6个受管理仓库main/clean，5运行服务+commonlib；bffadmin用户后续登记key后接入",
+        "专属Gitkeys600/目录700、严格GitHub信任、serverpushURLdisabled，不读取导出原220发布私钥"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/deploy-public-publisher-20261110/backend-identities-installed.json",
+          "note": "Redacted evidence only; no secrets/private key hashes/archives or business file contents"
+        },
+        {
+          "path": "evidence/deploy-public-publisher-20261110/auth-source-cloned.json",
+          "note": "Redacted evidence only; no secrets/private key hashes/archives or business file contents"
+        },
+        {
+          "path": "evidence/deploy-public-publisher-20261110/final-postcheck.json",
+          "note": "Redacted evidence only; no secrets/private key hashes/archives or business file contents"
+        },
+        {
+          "path": "evidence/deploy-public-publisher-20261110/bff-admin-source-cloned.json",
+          "note": "followup user key registration then source-read verification"
+        },
+        {
+          "path": "evidence/deploy-public-publisher-20261110/bff-admin-config-added.json",
+          "note": "only privateproject catalog changed; secrets preserved"
+        }
+      ],
+      "verified_at": "2026-11-10T21:59:17.326378+08:00"
+    },
+    {
+      "id": "PUBSETUP-DATA-001",
+      "title": "构建盘和本地统一配置",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确提交main/push/发布机Git拉取并配置Puyu，补文档；bffadmin初期排除后用户新增登记key，后续已接入"
+      ],
+      "steps": [
+        "使用指定Git身份/固定源码、统一私有YAML、原生服务及仅只读MCP验收"
+      ],
+      "observable_pass_conditions": [
+        "100GiB构建盘UUID16dc验证，repos/build/state落新专属子目录",
+        "YAML为ub600且ignored，MCPkey只在服务器生成，公开门禁0755但秘密目录700不变"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/deploy-public-publisher-20261110/build-mount-metadata.json",
+          "note": "Redacted evidence only; no secrets/private key hashes/archives or business file contents"
+        },
+        {
+          "path": "evidence/deploy-public-publisher-20261110/final-postcheck.json",
+          "note": "Redacted evidence only; no secrets/private key hashes/archives or business file contents"
+        },
+        {
+          "path": "evidence/deploy-public-publisher-20261110/mount-guard-permission-corrected.json",
+          "note": "Redacted evidence only; no secrets/private key hashes/archives or business file contents"
+        }
+      ],
+      "verified_at": "2026-11-10T21:59:17.326378+08:00"
+    },
+    {
+      "id": "PUBSETUP-MCP-001",
+      "title": "MCP安装认证与发布关闭",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确提交main/push/发布机Git拉取并配置Puyu，补文档；bffadmin初期排除后用户新增登记key，后续已接入"
+      ],
+      "steps": [
+        "使用指定Git身份/固定源码、统一私有YAML、原生服务及仅只读MCP验收"
+      ],
+      "observable_pass_conditions": [
+        "ub服务自动启动只监听127.0.0.1:18765，4工具可用，匿名401/Origin403",
+        "deploy-services关闭且请求拒绝，无真实构建/业务发布"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/deploy-public-publisher-20261110/mcp-protocol-and-preflight.json",
+          "note": "Redacted evidence only; no secrets/private key hashes/archives or business file contents"
+        },
+        {
+          "path": "evidence/deploy-public-publisher-20261110/final-postcheck.json",
+          "note": "Redacted evidence only; no secrets/private key hashes/archives or business file contents"
+        }
+      ],
+      "verified_at": "2026-11-10T21:59:17.326378+08:00"
+    },
+    {
+      "id": "PUBSETUP-VERIFY-001",
+      "title": "Linux与真实只读预检",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确提交main/push/发布机Git拉取并配置Puyu，补文档；bffadmin初期排除后用户新增登记key，后续已接入"
+      ],
+      "steps": [
+        "使用指定Git身份/固定源码、统一私有YAML、原生服务及仅只读MCP验收"
+      ],
+      "observable_pass_conditions": [
+        "Linux60单元测试通过，MCP五服务预检succeeded/validated5",
+        "源码都就绪，未运行Gradle/Java/Go或SSH运行机操作"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/deploy-public-publisher-20261110/mcp-protocol-and-preflight.json",
+          "note": "Redacted evidence only; no secrets/private key hashes/archives or business file contents"
+        },
+        {
+          "path": "evidence/deploy-public-publisher-20261110/final-postcheck.json",
+          "note": "Redacted evidence only; no secrets/private key hashes/archives or business file contents"
+        }
+      ],
+      "verified_at": "2026-11-10T21:59:17.326378+08:00"
+    },
+    {
+      "id": "PUBSETUP-PRESERVE-001",
+      "title": "原服务和文档收口",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确提交main/push/发布机Git拉取并配置Puyu，补文档；bffadmin初期排除后用户新增登记key，后续已接入"
+      ],
+      "steps": [
+        "使用指定Git身份/固定源码、统一私有YAML、原生服务及仅只读MCP验收"
+      ],
+      "observable_pass_conditions": [
+        "原导航PID18640保持，原受限发布链未改/未解fence，未做整机备份",
+        "源码库与逐机说明同步，初次门禁权限失败/授权修正记录保留"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/deploy-public-publisher-20261110/final-postcheck.json",
+          "note": "Redacted evidence only; no secrets/private key hashes/archives or business file contents"
+        },
+        {
+          "path": "evidence/deploy-public-publisher-20261110/Git-delivery.json",
+          "note": "Redacted evidence only; no secrets/private key hashes/archives or business file contents"
+        },
+        {
+          "path": "evidence/deploy-public-publisher-20261110/README.md",
+          "note": "Redacted evidence only; no secrets/private key hashes/archives or business file contents"
+        }
+      ],
+      "verified_at": "2026-11-10T21:59:17.326378+08:00"
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "current_phase_case_count": 6,
+    "current_phase_passed": 6
+  },
+  "limitations": [
+    "No real Go/Java build/start or runtime SSH deployment",
+    "No client globalMCP connection changes or outside-LAN E2E",
+    "GitHub write-flag not probed; keys used for reads only and server push URLs disabled"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "build_mount": {
+    "mode": "0o755",
+    "uid": 0,
+    "gid": 0,
+    "free_GiB": 97.83
+  },
+  "ub_identity": "uid=1000(ub) gid=1000(ub) groups=1000(ub),27(sudo)",
+  "ub_can_traverse": true
+}

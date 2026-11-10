@@ -9,7 +9,7 @@
     "memory_gib": 4
   },
   "source_of_truth": "plan.json",
-  "last_verified_at": "2026-11-09T16:01:00.600541+08:00",
+  "last_verified_at": "2026-11-10T22:00:12.585195+08:00",
   "current_runtime_verified": true,
   "status": "recovered-infrastructure-verified",
   "verification_note": "Fresh metadata/service audit after natural host reboot; no data migration, Nexus merge or Java business deployment.",
@@ -128,6 +128,17 @@
       ],
       "navigation_links_applied_evidence": "evidence/internal-http-20261110/navigation-links-applied.json",
       "historical_layout_revision": "ddccc2b98bbb3dfdc9de649443dc3fcdc7b4860f"
+    },
+    {
+      "name": "puyu-deploy-mcp",
+      "kind": "native-Python-systemd",
+      "unit": "puyu-deploy-mcp.service",
+      "bind": "127.0.0.1:18765",
+      "source_repository": "bkcode/deploy-public",
+      "revision": "f3991ad9c0b7c1e5b6391e6110d9905dffdc25d9",
+      "run_user": "ub",
+      "real_deployment_enabled": false,
+      "preflight_verified": true
     }
   ],
   "boundaries": {
@@ -173,7 +184,9 @@
     "configuration_repository_id": "infra",
     "application_repository_ids": [
       "deploy",
+      "deploy-public",
       "puyu-auth",
+      "puyu-bff-admin",
       "puyu-bff-web",
       "puyu-common-lib",
       "puyu-gateway",
@@ -184,15 +197,57 @@
     "repository_ids": [
       "infra",
       "deploy",
+      "deploy-public",
       "puyu-auth",
+      "puyu-bff-admin",
       "puyu-bff-web",
       "puyu-common-lib",
       "puyu-gateway",
       "puyu-service-core"
     ],
-    "git_usage_mode": "build-source-planned",
+    "git_usage_mode": "build-source-configured-business-disabled",
     "direct_runtime_business_git_pull": false,
-    "server_Git_key_installation_performed_by_this_task": false
+    "server_Git_key_installation_performed_by_this_task": true
   },
-  "service_directory_scope_note": "User authorized only the anonymous read-only navigation module after earlier Penpot-only scope; Puyu source/build plans remain pending, Java remains disabled and publisher fenced. Linux service UID is not an application login account. Source commit exists only on management local main and was not pushed, preserving four prior user commits; exact committed blobs supplied the runtime release. User subsequently requested HTTP and compact full-width layout; the ddccc2b layout phase used no TLS or login credentials. Initial HTTPS receipts remain historical only. Current d56 commit only updates FileBrowser link to HTTP; ddccc2b remains the preceding layout phase. Four task commits remain local and unpushed; FileBrowser keeps its own authentication, PVE/iDRAC native HTTPS is retained."
+  "service_directory_scope_note": "User authorized only the anonymous read-only navigation module after earlier Penpot-only scope; Puyu source/build plans remain pending, Java remains disabled and publisher fenced. Linux service UID is not an application login account. Source commit exists only on management local main and was not pushed, preserving four prior user commits; exact committed blobs supplied the runtime release. User subsequently requested HTTP and compact full-width layout; the ddccc2b layout phase used no TLS or login credentials. Initial HTTPS receipts remain historical only. Current d56 commit only updates FileBrowser link to HTTP; ddccc2b remains the preceding layout phase. Four task commits remain local and unpushed; FileBrowser keeps its own authentication, PVE/iDRAC native HTTPS is retained.",
+  "deploy_public": {
+    "status": "Git-main-installed-MCP-and-four-service-readonly-preflight-passed",
+    "repository": "bkcode/deploy-public",
+    "branch": "main",
+    "Git_HEAD": "f3991ad9c0b7c1e5b6391e6110d9905dffdc25d9",
+    "source_path": "/opt/deploy-public",
+    "run_user": "ub",
+    "private_configuration": "/opt/deploy-public/config.local.yaml",
+    "private_config_mode": "0600",
+    "MCP_unit": "puyu-deploy-mcp.service",
+    "MCP_bind": "127.0.0.1:18765",
+    "MCP_enabled": true,
+    "MCP_tools": [
+      "list_jobs",
+      "list_services",
+      "run_job",
+      "get_job"
+    ],
+    "MCP_key_exported": false,
+    "managed_data_root": "/srv/dell-build/deploy-public",
+    "backend_sources": [
+      "puyu-common-lib",
+      "puyu-auth",
+      "puyu-gateway",
+      "puyu-bff-admin",
+      "puyu-bff-web",
+      "puyu-service-core"
+    ],
+    "excluded_project": null,
+    "validation_status": "succeeded",
+    "validated_service_count": 5,
+    "Linux_tests_passed": 60,
+    "actual_deployment_enabled": false,
+    "business_build_or_Java_start": false,
+    "old_publisher_chain_fence_preserved": true,
+    "old_publisher_private_key_read_or_exported": false,
+    "acceptance": "evidence/deploy-public-publisher-20261110/acceptance.json",
+    "operations_manual": "https://github.com/bkcode/deploy-public/blob/main/docs/PUBLISHER.md",
+    "bff_admin_added_after_user_key_registration": true
+  }
 }

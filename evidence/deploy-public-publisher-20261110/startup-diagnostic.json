@@ -1,0 +1,45 @@
+{
+  "venv_exists": true,
+  "private_config_exists": true,
+  "unit_file_exists": true,
+  "managed_sources": [
+    {
+      "name": "puyu-service-core",
+      "git_dir_exists": true
+    },
+    {
+      "name": "puyu-common-lib",
+      "git_dir_exists": true
+    },
+    {
+      "name": "puyu-gateway",
+      "git_dir_exists": true
+    },
+    {
+      "name": "puyu-bff-web",
+      "git_dir_exists": true
+    }
+  ],
+  "MCP_unit_control": [
+    "Result=exit-code",
+    "ExecMainStatus=0",
+    "ExecStartPre={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /opt/dell/deploy-public/check-build-mount.py ; ignore_errors=no ; start_time=[Tue 2026-11-10 13:27:57 UTC] ; stop_time=[Tue 2026-11-10 13:27:57 UTC] ; pid=27599 ; code=exited ; status=2 }",
+    "ActiveState=activating",
+    "SubState=auto-restart"
+  ],
+  "diagnostic_markers": {
+    "check-build-mount": true,
+    "AssertionError": false,
+    "PermissionError": false,
+    "Configuration error": false,
+    "ModuleNotFoundError": false,
+    "Address already in use": false,
+    "CalledProcessError": false,
+    "Permission denied": true
+  },
+  "mount_guard_as_ub_exit": 2,
+  "findmnt_as_ub": {
+    "exit": 0,
+    "UUID": "16dc6067-56ef-4687-a314-edc6421f9ed4"
+  }
+}

@@ -18,7 +18,7 @@
       "repository": "bkcode/deploy",
       "web_url": "https://github.com/bkcode/deploy",
       "kind": "deployment-tool-and-readonly-portal-source",
-      "purpose": "服务导航模块按本地d56cae5部署HTTP全宽无顶栏到220；其他发布工具/Puyu适配仍候选，远端main未更新",
+      "purpose": "原Finger发布器与VM220匿名服务导航来源；Puyu独立使用deploy-public，不改原Finger源码",
       "ssh_url": "git@github.com:bkcode/deploy.git",
       "branch_reference": "main (management local checkout observed)",
       "management_local_reference": "/var/www/finger/finger-master/projects/deploy"
@@ -218,6 +218,24 @@
       "web_url": "https://git.proxmox.com/?p=pve-manager.git",
       "kind": "upstream-reference",
       "purpose": "PVE管理组件官方源码参考；宿主实际使用安装的软件包，不从本仓库重编译"
+    },
+    "deploy-public": {
+      "id": "deploy-public",
+      "repository": "bkcode/deploy-public",
+      "web_url": "https://github.com/bkcode/deploy-public",
+      "ssh_url": "git@github.com:bkcode/deploy-public.git",
+      "kind": "custom-deployment-source",
+      "branch_reference": "main; fixed reviewed commit",
+      "purpose": "Puyu local发布器与MCP，VM220实际Git取码与4服务只读预检通过；业务发布关闭"
+    },
+    "puyu-bff-admin": {
+      "id": "puyu-bff-admin",
+      "repository": "bkcode/puyu-bff-admin",
+      "web_url": "https://github.com/bkcode/puyu-bff-admin",
+      "ssh_url": "git@github.com:bkcode/puyu-bff-admin.git",
+      "kind": "backend-application-source",
+      "branch_reference": "main; Git-read verified",
+      "purpose": "用户后续新增注册DeployKey后VM220已克隆main，作为第五运行服务源码；仅只读预检，Java业务未启动"
     }
   },
   "machines": [
@@ -357,11 +375,14 @@
       "configuration_repository": "infra",
       "configuration_paths": [
         "infra/publisher",
-        "infra/java"
+        "infra/java",
+        "infra/deploy-public"
       ],
       "application_repository_ids": [
         "deploy",
+        "deploy-public",
         "puyu-auth",
+        "puyu-bff-admin",
         "puyu-bff-web",
         "puyu-common-lib",
         "puyu-gateway",
@@ -369,18 +390,19 @@
       ],
       "dependency_repository_ids": [],
       "upstream_repository_ids": [],
-      "git_usage_mode": "build-source-planned",
-      "current_state_note": "只读HTTP服务导航已按d56cae5部署，FileBrowser链接HTTP，去顶栏全宽；其他deploy工具/5Puyu后端仍计划，publisherfence和Javaoff保持，原用户4提交不代推。",
+      "git_usage_mode": "build-source-configured-business-disabled",
+      "current_state_note": "VM220实际Git取deploy-public main与六个后端源码（五服务+commonlib），独立MCP loopback18765、五服务只读预检通过；旧导航deploy/d56、旧链fenced、Java不启。",
       "direct_runtime_business_git_pull": false,
       "credential_references": [
         {
-          "repository_id": "deploy",
+          "repository_id": "deploy-public",
           "key_basename": "deploy_ed25519",
           "SSH_alias": "github-bkcode-deploy",
           "prepared_location": "management Mac ~/.ssh/deploy-keys/bkcode/",
           "permission_policy": "read-only on GitHub; Allow write access unchecked",
-          "repository_read_verification": "GitHub registration/read access not reverified in this documentation task",
-          "server_installation": "not performed or verified by this documentation task"
+          "repository_read_verification": "VM220 main Git read verified; no write probe; server pushURLdisabled",
+          "server_installation": "designated key installed ub700-directory/600-file; original220publisher key not read/exported",
+          "server_key_basename": "deploy-public_ed25519"
         },
         {
           "repository_id": "puyu-auth",
@@ -388,8 +410,8 @@
           "SSH_alias": "github-bkcode-puyu-auth",
           "prepared_location": "management Mac ~/.ssh/deploy-keys/bkcode/",
           "permission_policy": "read-only on GitHub; Allow write access unchecked",
-          "repository_read_verification": "GitHub registration/read access not reverified in this documentation task",
-          "server_installation": "not performed or verified by this documentation task"
+          "repository_read_verification": "VM220 main Git read verified; no write probe; server pushURLdisabled",
+          "server_installation": "designated key installed ub700-directory/600-file; original220publisher key not read/exported"
         },
         {
           "repository_id": "puyu-bff-web",
@@ -397,8 +419,8 @@
           "SSH_alias": "github-bkcode-puyu-bff-web",
           "prepared_location": "management Mac ~/.ssh/deploy-keys/bkcode/",
           "permission_policy": "read-only on GitHub; Allow write access unchecked",
-          "repository_read_verification": "GitHub registration/read access not reverified in this documentation task",
-          "server_installation": "not performed or verified by this documentation task"
+          "repository_read_verification": "VM220 main Git read verified; no write probe; server pushURLdisabled",
+          "server_installation": "designated key installed ub700-directory/600-file; original220publisher key not read/exported"
         },
         {
           "repository_id": "puyu-common-lib",
@@ -406,8 +428,8 @@
           "SSH_alias": "github-bkcode-puyu-common-lib",
           "prepared_location": "management Mac ~/.ssh/deploy-keys/bkcode/",
           "permission_policy": "read-only on GitHub; Allow write access unchecked",
-          "repository_read_verification": "GitHub registration/read access not reverified in this documentation task",
-          "server_installation": "not performed or verified by this documentation task"
+          "repository_read_verification": "VM220 main Git read verified; no write probe; server pushURLdisabled",
+          "server_installation": "designated key installed ub700-directory/600-file; original220publisher key not read/exported"
         },
         {
           "repository_id": "puyu-gateway",
@@ -415,8 +437,8 @@
           "SSH_alias": "github-bkcode-puyu-gateway",
           "prepared_location": "management Mac ~/.ssh/deploy-keys/bkcode/",
           "permission_policy": "read-only on GitHub; Allow write access unchecked",
-          "repository_read_verification": "GitHub registration/read access not reverified in this documentation task",
-          "server_installation": "not performed or verified by this documentation task"
+          "repository_read_verification": "VM220 main Git read verified; no write probe; server pushURLdisabled",
+          "server_installation": "designated key installed ub700-directory/600-file; original220publisher key not read/exported"
         },
         {
           "repository_id": "puyu-service-core",
@@ -424,8 +446,17 @@
           "SSH_alias": "github-bkcode-puyu-service-core",
           "prepared_location": "management Mac ~/.ssh/deploy-keys/bkcode/",
           "permission_policy": "read-only on GitHub; Allow write access unchecked",
-          "repository_read_verification": "GitHub registration/read access not reverified in this documentation task",
-          "server_installation": "not performed or verified by this documentation task"
+          "repository_read_verification": "VM220 main Git read verified; no write probe; server pushURLdisabled",
+          "server_installation": "designated key installed ub700-directory/600-file; original220publisher key not read/exported"
+        },
+        {
+          "repository_id": "puyu-bff-admin",
+          "key_basename": "puyu-bff-admin_ed25519",
+          "SSH_alias": "github-bkcode-puyu-bff-admin",
+          "prepared_location": "management Mac ~/.ssh/deploy-keys/bkcode/",
+          "permission_policy": "GitHub DeployKey read-only intended; user registered after generation; no write probe",
+          "repository_read_verification": "VM220 main cloned and clean; server push URL disabled",
+          "server_installation": "designated600 identity installed in ub private700 key directory"
         }
       ],
       "deployed_modules": [
@@ -436,6 +467,10 @@
           "GitHub_main_published": false,
           "evidence": "evidence/internal-http-20261110/navigation-links-applied.json"
         }
+      ],
+      "verification_evidence": [
+        "evidence/deploy-public-publisher-20261110/final-postcheck.json",
+        "evidence/deploy-public-publisher-20261110/mcp-protocol-and-preflight.json"
       ]
     },
     {
@@ -719,5 +754,5 @@
     "other_new_keys_read_tests_this_task": false,
     "keys_installed_on_servers_this_task": false
   },
-  "updated_at": "2026-11-10T17:47:33.723183+08:00"
+  "updated_at": "2026-11-10T21:59:17.326378+08:00"
 }
