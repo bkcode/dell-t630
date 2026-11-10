@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "tests_run": 8,
+  "failures": 0,
+  "errors": 0,
+  "scope": "local pure checks against exact captured runtime bytes; no server operations",
+  "actual_runtime_baseline_used": true,
+  "old220_native_checks_preserved": true,
+  "MCP_unit_added_without_HTTP_auth_probe": true,
+  "Prometheus280_target_preserved": true,
+  "canonical_or_FileBrowser_sources_written": false,
+  "server_connections_or_writes": false
+}

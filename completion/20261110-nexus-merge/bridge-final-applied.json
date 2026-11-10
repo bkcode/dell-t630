@@ -1,0 +1,6 @@
+{
+  "obsolete31_exporter_ACL_removed": true,
+  "Nexus31_8081_and_primary30_9100_kept": true,
+  "PVE_L3_or_NAT_changed": false,
+  "PVE_metrics_fresh_collection": true
+}

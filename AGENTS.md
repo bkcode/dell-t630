@@ -3,13 +3,13 @@
 ## 入口与当前状态
 
 - 本仓库位于 `/Users/yangzhaohui/work/www/harness/dell`，独立 Git 远端为 `git@github.com:bkcode/dell-t630.git`；harness 父目录不是本仓库。
-- 每台机器的配置与文档入口是 `machines/README.md`；保留宿主、13来宾和3模板的离线合同/来源索引，不能把新目录当现场配置导出。机器身份与资源仍由plan约束，新增/修改后运行 `python3 scripts/validate_machines.py`。
+- 每台机器的配置与文档入口是 `machines/README.md`；保留宿主、合并后12来宾和3模板的离线合同/来源索引，不能把新目录当现场配置导出。机器身份与资源仍由plan约束，新增/修改后运行 `python3 scripts/validate_machines.py`。
 - 先读 `README.md`、`11-live-handoff.md`、`19-manual-operations.md`、`plan.json`；资源/IP/角色以 plan 为准，历史证据必须带时间解释。
-- **2026-11-09 用户继续授权完成基础搭建，并选择先搭PVE本机自动备份、独立目的地后续；其后明确仅正式数据库/Nacos配置纳入备份，其他暂排除；不迁移数据。11月8日确认服务器恢复，授权检查补齐基础与清理。用户明确暂不迁移：不执行Nexus合并、数据迁移或源221退役。先只读核验硬件/服务和清理依赖，不把恢复可达当内存已确诊修复。Mac外部探针仍停用，Java业务不部署。**
+- **2026-11-09 用户继续授权完成基础搭建，并选择先搭PVE本机自动备份、独立目的地后续；其后明确仅正式数据库/Nacos配置纳入备份，其他暂排除；不迁移数据。11月8日确认服务器恢复，授权检查补齐基础与清理。11月8日暂缓为历史；11月10日用户明确恢复Nexus合并与源221退役，当前以completion/20261110-nexus-merge回执为准，其他数据迁移不扩围。先只读核验硬件/服务和清理依赖，不把恢复可达当内存已确诊修复。Mac外部探针仍停用，Java业务不部署。**
 - 11月7日iDRAC控制台曾因UEFI0058阻止启动，SEL指向DIMM_B1；11月8日用户确认内存已重新插拔/更换且诊断通过，本轮EDAC计数0与基础服务恢复记录见recovery/20261108。不得把 F1、一次开机或网络恢复当成内存已修复，不清日志掩盖错误，不远程 powercycle，不指导带电插拔。
 - 现行备份验收以completion/20261109-prod-db-scope/acceptance.json及带时间证据为准；此前基础阶段9项仅保留历史；用户最新收窄备份为正式MySQL数据库与Nacos配置；原11实例整机job已disabled，对应专属规则退役，已有归档保留。当前仅VM200/nacos_prod逻辑备份，不备其他来宾/测试/Redis/MQ/NAS/CF/220整机；新增未列白名单的库须拒绝告警。旧11实例整机备份验收只作此前实施历史，不得据旧policy重启整机job。历史基础验收2026-11-08：12运行实例(11VM+1LXC)+3停止模板、15/15targetsUP；原11月7日02:35/02:44记录仅历史。新scope仅基础维护/清理及正式数据库/Nacos逻辑备份，不扩签完整数据恢复/外网E2E。
 - 用户已进一步授权并完成单份Nacos备份隔离恢复：VM210临时无网络MySQL，12表/10条元数据的完整DDL语义及逐列内容/重启校验通过，临时资源已清，源档与timer不变。当前验收completion/20261109-prod-db-restore/acceptance.json；仅此小快照，不扩签正式业务数据/RPO/RTO/独立DR，也不得据此覆盖现役库。
-- Nexus短停合并的历史授权保留，但2026-11-08用户明确暂不迁移，当前不得合并/迁盘/退役221。将来用户明确恢复迁移任务后再fresh核验；本轮补齐与清理不能绕过该边界。
+- 2026-11-10用户已明确恢复Nexus合并与独立221退役，覆盖早前暂缓；源停服/PVE冷备/唯一盘与31交接/目标验证集中在completion/20261110-nexus-merge。最终数据/身份/网络/监控通过后才退役源，不能提前签完成或盲重放旧迁移器。
 
 - 用户此前测试环境范围仅空基础服务；其后已明确授权下述选定Nacos配置迁移，仍不做业务DB初始化/迁移或Java启动。VM210已有四组件，新增finger-test-empty（23836f2e-9553-5948-84cd-431b2f241bd6）为空起点；旧域10719261-2641-590a-b821-c8484ca955ac与7配置/19业务表保留，原health/bundle默认namespace不变。新域测试角色只精确rw授权，不重置账号；当前验收completion/20261109-test-env/acceptance.json。不得据“空”清库或重跑业务bootstrap。
 
@@ -38,7 +38,7 @@
 - 230/240 正式/测试运行基础各1；**不部署或启动Java业务**，测试五服务停用，publisher fenced；唯一Java验收模板9011无业务配置/秘密。
 - 核心模板9010/9001，Java验收9011。旧15对象与临时9040–9045已受保护备份后清理，不重放destroy/stage/commit。备份完整性不等于每个旧实例都已恢复演练。
 - fish 已装10来宾+3模板，默认 Bash 不变；排除100/250/270与PVE宿主，不自动chsh。
-- Nexus 目前仍独立221/19.31；220/19.30仅准备。目标2206CPU8GiB、primary30+alias31、原UUID盘移交，验收后才退221；详情见cleanup/nexus/resume-preflight.md。
+- Nexus当前由220承接：6CPU8GiB、primary30+同NIC alias31、原build与Nexus各100GiB独立UUID卷；221已按本次回执退役。管理SSH固定30/220 host key，31仅服务兼容地址，不能复制221身份或形成双writer。
 - 合并工具非一键幂等；不能重跑prepared stage，部分mount/commit须先按journal核对。不得并启两个31地址/两个数据库写者。
 
 ## 验证与交付
@@ -66,12 +66,12 @@
 
 ## 逐机Git来源与DeployKey维护
 
-- `machines/git-repositories.json`为17机Git归属主表，逐机GIT-REPOSITORIES.md/config指针与其保持一致；每次改动运行scripts/validate_git_repositories.py。配置库bkcode/dell-t630与应用库/待接入库/上游参考严格区分。
+- `machines/git-repositories.json`为合并后16机Git归属主表，逐机GIT-REPOSITORIES.md/config指针与其保持一致；每次改动运行scripts/validate_git_repositories.py。配置库bkcode/dell-t630与应用库/待接入库/上游参考严格区分。
 - 220候选拉bkcode/deploy＋5个Puyu后端，common-lib仅共享库；230/240当前运行基础、收构建制品，不能因文档登记就启动Java/放Git私钥或替换受限publisher。Jellyfin fork是服务端候选，当前260仍官方镜像，不冒称已部署或为电视客户端。
 - 管理Mac仓库key目录~/.ssh/deploy-keys/bkcode，Penpot旧deploy(.pub)已移成penpot_ed25519(.pub)，bkcode/deploy另用deploy_ed25519。本轮用户报告GitHub已配，实际只验证Penpot仓库SSH身份和临时浅clone；不代表server已配认证、writeflag已测。不得将私钥或公钥正文纳Git。
 - Penpot远端main本轮仍9aedbb0而本地/服务器为ff1783e，先保两条改造，不能自动pull/reset退回远端旧版或自动push本地。VM250本轮只读clean/noorigin/11healthy，supervisor累计重启22如实记历史，不据此签零重启或扩大诊断。
 
-- 最新部署授权仅VM250/Penpot，其他机运行不改、17机文档继续。用户选择先亲自推两条ff1783e改造到main再通知继续；必须等通知并重查远端包含改造，当前不得构建/切换远端9aed旧代码或代替用户push。见evidence/git-repositories-20261110/penpot-deployment-state.json。
+- Penpot-only/等待用户推两条ff改造是13:20历史阶段，后续已明确授权并完成8a取码/部署。当前维护以各精确后续授权为准，Nexus已合并并退役221，现役16机文档；旧证据evidence/git-repositories-20261110/penpot-deployment-state.json不可作为当前阻塞。
 
 ## 2026-11-10发布机服务导航例外
 
@@ -118,7 +118,7 @@
 - 用户明确deploy-public main提交/push、发布机Git拉取、配置Puyu和补文档；原Finger deploy不动。实际main/a0c7529 clean，/opt/deploy-public，Userub；GitHub指定deploy_ed.pub已改绑newrepo，服务器新名deploy-public_ed私有600。另5个仓库专属只读Git身份按用户先前后端源码用途安装；不读/导出原220发布私钥。服务器repo pushURLdisabled。
 - /srv/dell-build原100GiB UUID16dc保留，新deploy-public子树容纳源码/build/mcp-state。root-owned挂载门禁公开目录初次因umask700失败，纠正755后ub检查通过；不得放宽秘密目录700/文件600或盲重跑已完成bootstrap。
 - puyu-deploy-mcp.service enabled/active、仅127.0.0.1:18765，APIkey只在服务器YAML生成600/ignored。源码5repo main干净、4服务只读preflight成功，Linux60tests通过；puyu-auth初次权限失败经用户加.pub后用原key补拉，bffadmin用户指定暂不处理。
-- 本次没有Go/Java编译/启动或运行机SSH部署；deploy-services关闭并实测拒绝，旧forced-chainfenced且尚未适配Puyu，不能按新工具已安装自动解冻或给deployer扩权。导航PID18640保持，Nexus不合并、备份不扩围，Mac原Finger源码不提交/不改。
+- 本次没有Go/Java编译/启动或运行机SSH部署；deploy-services关闭并实测拒绝，旧forced-chainfenced且尚未适配Puyu，不能按新工具已安装自动解冻或给deployer扩权。原模式验证时导航PID18640保持仅为重启前历史。Nexus随后按明确恢复授权完成合并，220重启后PID变化正常；备份不扩围，原Finger源码本轮清单两文件未提交/推送。
 - 当前交付evidence/deploy-public-publisher-20261110/acceptance.json；源码库docs/PUBLISHER.md与OPERATIONS.md有安装/更新步骤。主机Git取码/本地验证/MCP可用不等于真实业务发布或Nacos健康验收。
 
 - 同轮后续用户新增puyu-bff-admin专属SSHkey并登记DeployKey，已复用对应私有身份克隆其main3638b8f，私有YAML只新增该项目，MCPkey/其它配置保持。MCP重启加载五服务、合并只读预检validated5通过，commonlib仍只是库；先前四服务/暂不处理bffadmin为历史，不据旧摘要覆盖现状。
@@ -128,3 +128,10 @@
 - 用户要求CLI prod→main、dev→dev；MCP仍仅dev，拒绝prod和请求环境覆盖。发布器自身仍从deploy-public/main取码，不随业务分支切换。新源码213f1f4已推并VM同步clean，Linux65tests与实际新探针已核：缺origin/dev预检failed、prod覆盖与真实deploy拒绝。不能将旧dev/main五服务成功当新dev就绪。
 - 本轮VM220只读ls-remote审计六个后端/公共库：main存在、dev全部缺失，工作树仍main。不创建/push/切业务分支，不fallback main；缺本地origin配置分支的预检在build/SSH前拒绝，显式sync才获取。
 - prod目标身份留空、真实deploy关闭、旧链fenced、Java不启；MCPkey/私有路径/测试目标与原Git身份保护保持。模式文档evidence/deploy-public-modes-20261110/README.md；一次性set/apply脚本不盲重跑，不输出私有YAML。
+
+## 2026-11-10 Nexus合并最终状态与NFS-only
+
+- 本次已完成Nexus原盘/身份/账号/EULA/全1347资产保持、220受控重启、双UUID/双IP/source30/原MCP配置及key保持；15targetsUP、220七项与280五项全UP。221已在最终核验后删除，原OS盘也删，活Nexus盘在220保留，原221只留PVE冷备2,400,054,202字节恢复点；归档machines资料移archive/machines-vm221-artifact-service-20261110，不可重放。
+- 现役12来宾＋3模板＋宿主共16目录、45CPU87GiB；2206CPU8GiB/primary30+alias31，两独立100G卷，管理用220自身host key。NexusURL31:8081保持。旧13来宾/16UP和4CPU4GiB/standby均仅历史。
+- 280仅NFS，FileBrowser两unit已masked/8080无监听、原state/秘密保护留存，5项服务无HTTP。导航已更新13入口release、去FileBrowser并改Nexus描述，HTTP/UI保持；原deploy两文件未提交/推送。不要回放旧FileBrowser安装器恢复网页。
+- 自动备份仍只正式DB/Nacos；冷备仅PVE、不wholebackup220，Java业务不启/旧链fenced，deploy-public原私有设置/APIkey/6main源保持，upstreamdev缺失保护不变。当前维护入口completion/20261110-nexus-merge/usage-manual.md及最终回执。

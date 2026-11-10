@@ -87,3 +87,9 @@ GitHub只读Deploy Key应不勾Allow write access；用户报告配置完成不�
 ## 当前分支就绪边界
 
 CLI dev取dev、prod取main，MCP仅dev。源码工具本身仍main，不随业务环境切分支。本轮6仓库上游main存在/dev缺失、当前工作树main；source_ready只表示目录身份，不等于dev就绪。target_branch_available只查询本地origin引用。缺配置分支的预检在构建/SSH前拒绝，显式sync才fetch；没有dev时不代建、不push、不回退main。prod身份未配置、真实发布关闭。源码更新及实例读回以[本轮模式记录](../../evidence/deploy-public-modes-20261110/README.md)为准。
+
+## Nexus同机归属（2026-11-10）
+
+Nexus已由2206CPU8GiB/primary30＋alias31承接，原镜像/数据/账号/EULA保持，独立221退役。公开配置来源新增infra/nexus；上游sonatype/nexus-public仅Core源码参考，不从该仓库重建/升级现役CE。原Nexus100GiB卷与build100GiB卷独立，制品数据不是Git仓库。
+
+导航本次使用精确公开清单release nfs-nexus-20261110-12f2461e4766，共13入口，移除FileBrowser并改Nexus描述，HTTP/UI保持。原Git源码两文件修改尚未提交推送，旧d56/14入口只是上一阶段；不冒称整份原deploy已发布。部署工具/MCP/原发布私钥与fence保持。[本次回执](../../completion/20261110-nexus-merge/README.md)。

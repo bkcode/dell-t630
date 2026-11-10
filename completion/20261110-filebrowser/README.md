@@ -1,3 +1,5 @@
+> 已退休（2026-11-10）：用户确认仅保留NFS，FileBrowser两unit已inactive/masked、8080无TCP/UDP监听、独立输入表撤除、健康项移除；state/凭据本机受保护保留。当前[NFS-only交付](../20261110-nfs-only/README.md)与[使用手册](../20261110-nfs-only/usage-manual.md)优先。**本页及该目录HTTP/HTTPS、账号/API/重启验收均为退休前历史，不代表网页仍可使用，也不授权重放安装/初始化器。**
+
 # FileBrowser Quantum资源管理页交付
 
 > **最新授权：自建内网应用默认HTTP，PVE/iDRAC内置管理HTTPS保留。** FileBrowser入口改为 **[http://192.168.19.80:8080/](http://192.168.19.80:8080/)**，当前HTTP切换原生验收及14:28最终后检已通过，以[内网HTTP交付](../../evidence/internal-http-20261110/README.md)为最新入口。保留原 `resources` / `admin` 账号、密码、权限、JWT、初始化marker与NFS；只移除本应用TLS，不关闭认证或重跑初始化。旧证书/私钥只留未启用历史，不改系统CA。

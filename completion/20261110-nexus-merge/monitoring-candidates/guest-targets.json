@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-11-06T06:23:46.069219+08:00",
+  "scope": "9 retained runtime exporter registry rows after retiring artifact-service; all other runtime metadata preserved; Prometheus resource280 target remains separately active",
+  "excluded": [
+    "PVE host",
+    "cf-tunnel CT100",
+    "source Mac"
+  ],
+  "roles": [
+    {
+      "role": "data-prod-db",
+      "hostname": "data-prod-db",
+      "vmid": 200,
+      "private_ip": "192.168.19.10",
+      "prefixlen": 24
+    },
+    {
+      "role": "data-prod-infra",
+      "hostname": "data-prod-infra",
+      "vmid": 201,
+      "private_ip": "192.168.19.11",
+      "prefixlen": 24
+    },
+    {
+      "role": "data-test",
+      "hostname": "data-test",
+      "vmid": 210,
+      "private_ip": "192.168.19.20",
+      "prefixlen": 24
+    },
+    {
+      "role": "publish-service",
+      "hostname": "publish-service",
+      "vmid": 220,
+      "private_ip": "192.168.19.30",
+      "prefixlen": 24
+    },
+    {
+      "role": "java-prod-01",
+      "hostname": "java-prod-01",
+      "vmid": 230,
+      "private_ip": "192.168.19.40",
+      "prefixlen": 24
+    },
+    {
+      "role": "java-test-01",
+      "hostname": "java-test-01",
+      "vmid": 240,
+      "private_ip": "192.168.19.45",
+      "prefixlen": 24
+    },
+    {
+      "role": "penpot-service",
+      "hostname": "penpot-service",
+      "vmid": 250,
+      "private_ip": "192.168.19.50",
+      "prefixlen": 24
+    },
+    {
+      "role": "nas-media",
+      "hostname": "nas-media",
+      "vmid": 260,
+      "private_ip": "192.168.19.60",
+      "prefixlen": 24
+    },
+    {
+      "role": "ops-service",
+      "hostname": "ops-service",
+      "vmid": 270,
+      "private_ip": "192.168.19.70",
+      "prefixlen": 24
+    }
+  ],
+  "network_revision": "network19",
+  "topology_revision": "cleanup-Java-only-10-exporters-15-targets"
+}

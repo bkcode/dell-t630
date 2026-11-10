@@ -1,0 +1,294 @@
+[
+  {
+    "at": "2026-11-10T22:47:50.786202+08:00",
+    "vmid": 280,
+    "hostname": "resource-service",
+    "guard": {
+      "mount_guard": true,
+      "role": "server"
+    },
+    "mount": {
+      "filesystems": [
+        {
+          "target": "/srv/resources",
+          "source": "/dev/sdb",
+          "fstype": "ext4",
+          "options": "rw,nosuid,nodev,noexec,relatime",
+          "uuid": "57d8158e-5fcf-4dd2-8cb4-b47b1e54ed7b"
+        }
+      ]
+    },
+    "mutations": false,
+    "credentials_or_file_contents_read": false,
+    "units": {
+      "dell-filebrowser.service": {
+        "MainPID": "13028",
+        "ActiveState": "active",
+        "SubState": "running",
+        "FragmentPath": "/etc/systemd/system/dell-filebrowser.service",
+        "UnitFileState": "enabled",
+        "ActiveEnterTimestampMonotonic": "50852888899"
+      },
+      "dell-filebrowser-firewall.service": {
+        "MainPID": "0",
+        "ActiveState": "active",
+        "SubState": "exited",
+        "FragmentPath": "/etc/systemd/system/dell-filebrowser-firewall.service",
+        "UnitFileState": "enabled",
+        "ActiveEnterTimestampMonotonic": "19796836093"
+      },
+      "nfs-server.service": {
+        "MainPID": "0",
+        "ActiveState": "active",
+        "SubState": "exited",
+        "FragmentPath": "/usr/lib/systemd/system/nfs-server.service",
+        "UnitFileState": "enabled",
+        "ActiveEnterTimestampMonotonic": "14102222"
+      },
+      "nfs-mountd.service": {
+        "MainPID": "683",
+        "ActiveState": "active",
+        "SubState": "running",
+        "FragmentPath": "/usr/lib/systemd/system/nfs-mountd.service",
+        "UnitFileState": "static",
+        "ActiveEnterTimestampMonotonic": "12920884"
+      },
+      "srv-resources.mount": {
+        "ActiveState": "active",
+        "SubState": "mounted",
+        "FragmentPath": "/etc/systemd/system/srv-resources.mount",
+        "UnitFileState": "enabled",
+        "ActiveEnterTimestampMonotonic": "8237654"
+      },
+      "dell-resources-firewall.service": {
+        "MainPID": "0",
+        "ActiveState": "active",
+        "SubState": "exited",
+        "FragmentPath": "/etc/systemd/system/dell-resources-firewall.service",
+        "UnitFileState": "enabled",
+        "ActiveEnterTimestampMonotonic": "13620783"
+      },
+      "ssh.service": {
+        "MainPID": "705",
+        "ActiveState": "active",
+        "SubState": "running",
+        "FragmentPath": "/usr/lib/systemd/system/ssh.service",
+        "UnitFileState": "enabled",
+        "ActiveEnterTimestampMonotonic": "13226682"
+      },
+      "prometheus-node-exporter.service": {
+        "MainPID": "717",
+        "ActiveState": "active",
+        "SubState": "running",
+        "FragmentPath": "/usr/lib/systemd/system/prometheus-node-exporter.service",
+        "UnitFileState": "enabled",
+        "ActiveEnterTimestampMonotonic": "13488258"
+      },
+      "dell-guest-health.service": {
+        "MainPID": "0",
+        "ActiveState": "activating",
+        "SubState": "condition",
+        "FragmentPath": "/etc/systemd/system/dell-guest-health.service",
+        "UnitFileState": "static",
+        "ActiveEnterTimestampMonotonic": "0"
+      }
+    },
+    "health": {
+      "role": "resource-service",
+      "private_ip": "192.168.19.80",
+      "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+      "services": [
+        "ssh.service",
+        "qemu-guest-agent.service",
+        "prometheus-node-exporter.service",
+        "nfs-server.service",
+        "dell-resources-firewall.service",
+        "dell-filebrowser.service"
+      ],
+      "http_checks": [
+        {
+          "name": "filebrowser-http-health",
+          "url": "http://192.168.19.80:8080/health"
+        }
+      ],
+      "candidate_service_units": [],
+      "candidate_http_checks": [],
+      "notes": "Active resource NFS and owned firewall after native UUID/export/version validation; no HTTP/Java or data backup scope."
+    },
+    "exports": "/srv/resources\t192.168.19.40(sync,wdelay,hide,no_subtree_check,fsid=0,mountpoint,sec=sys,rw,secure,root_squash,no_all_squash)\n/srv/resources\t192.168.19.45(sync,wdelay,hide,no_subtree_check,fsid=0,mountpoint,sec=sys,rw,secure,root_squash,no_all_squash)",
+    "NFS_versions": "-3 +4 -4.0 +4.1 -4.2",
+    "public_files": {
+      "/etc/systemd/system/dell-filebrowser.service": {
+        "sha256": "94aec8ba0232171b65b1671b12c4dfa8cc4891c3926a1745cd19d4eb25974ca7",
+        "mode": "0o644"
+      },
+      "/etc/systemd/system/dell-filebrowser-firewall.service": {
+        "sha256": "bd91a8e2c54aabe66177aa269327f4f117a93d06f964f853227bd0636c0ccf84",
+        "mode": "0o644"
+      },
+      "/etc/dell-filebrowser/config.yaml": {
+        "sha256": "7fe50a00dd568632abdc29286812af49322a25958b67c38f4cff625c5a52f5db",
+        "mode": "0o644"
+      },
+      "/etc/dell-filebrowser/input.nft": {
+        "sha256": "ffb0cc6fe833910a95a9bca783ea9db3fdf33a0594556387d64b5c7c19674384",
+        "mode": "0o644"
+      },
+      "/opt/dell/filebrowser/launch.py": {
+        "sha256": "e1c3732ca61545747e70a1b23459902796646f872d4147fe2680813834297d4c",
+        "mode": "0o644"
+      },
+      "/opt/dell/filebrowser/firewall.py": {
+        "sha256": "92c10680c39459ef0a97ce8ec6ded9358fdfbe027789b5103d91a656f871e7d3",
+        "mode": "0o644"
+      },
+      "/etc/exports.d/dell-resources.exports": {
+        "sha256": "7d364633485da8f4d4c521bf91da95b3f772ec681fc45c3cc09fc0c030777f4f",
+        "mode": "0o644"
+      },
+      "/etc/nfs.conf.d/90-dell-resources.conf": {
+        "sha256": "5f0f487e15e2b887bcd000cda92c41826334e9b55ed5127d2721f911a0d5ca1a",
+        "mode": "0o644"
+      },
+      "/etc/dell-resources/input.nft": {
+        "sha256": "e407e8e4f11fdcbc2b496f1a3325f000b048baff37644587db8f02486abcd1f0",
+        "mode": "0o644"
+      }
+    },
+    "filebrowser_units_source": {
+      "/etc/systemd/system/dell-filebrowser.service": "[Unit]\nDescription=Dell FileBrowser Quantum resource administration\nWants=network-online.target\nRequires=srv-resources.mount dell-filebrowser-firewall.service\nAfter=network-online.target srv-resources.mount dell-filebrowser-firewall.service\nBindsTo=srv-resources.mount dell-filebrowser-firewall.service\nRequiresMountsFor=/srv/resources\nStartLimitIntervalSec=300\nStartLimitBurst=3\n\n[Service]\nType=simple\nUser=filebrowser\nGroup=resources\nWorkingDirectory=/var/lib/dell-filebrowser\nUMask=0002\nLoadCredential=jwt-key:/etc/dell-filebrowser/secrets/jwt-key\nLoadCredential=admin-password:/etc/dell-filebrowser/secrets/admin-password\nExecStartPre=+/usr/bin/python3 -I -B /opt/dell/resources/guard.py --role server\nExecStart=/usr/bin/python3 -I -B /opt/dell/filebrowser/launch.py\nRestart=on-failure\nRestartSec=5\nNoNewPrivileges=yes\nProtectSystem=strict\nProtectHome=yes\nPrivateTmp=yes\nReadWritePaths=/srv/resources /var/lib/dell-filebrowser\nCPUQuota=100%\nMemoryMax=384M\nTasksMax=64\nLimitNOFILE=1024\nStandardOutput=journal\nStandardError=journal\n\n[Install]\nWantedBy=multi-user.target\n",
+      "/etc/systemd/system/dell-filebrowser-firewall.service": "[Unit]\nDescription=Dell FileBrowser administration input allowlist\nBefore=dell-filebrowser.service\n\n[Service]\nType=oneshot\nRemainAfterExit=yes\nExecStartPre=/usr/bin/python3 -I -B /opt/dell/filebrowser/firewall.py --check\nExecStart=/usr/bin/python3 -I -B /opt/dell/filebrowser/firewall.py\n# No ExecStop: stopping the application must not remove protective input filtering.\n\n[Install]\nWantedBy=multi-user.target\n"
+    },
+    "web_table": "table inet dell_filebrowser_input {\n\tchain input {\n\t\ttype filter hook input priority filter - 6; policy accept;\n\t\ttcp dport 8080 ct state invalid counter packets 0 bytes 0 drop\n\t\tiifname \"lo\" tcp dport 8080 accept\n\t\tip saddr { 10.66.66.0/24, 192.168.19.80, 192.168.21.0/24 } tcp dport 8080 counter packets 2677 bytes 414216 accept\n\t\ttcp dport 8080 counter packets 0 bytes 0 drop\n\t\tudp dport 8080 counter packets 0 bytes 0 drop\n\t}\n}",
+    "NFS_input_table": "table inet dell_resources_input {\n\tchain input {\n\t\ttype filter hook input priority filter - 5; policy accept;\n\t\tiifname \"lo\" accept\n\t\ttcp dport 2049 ip saddr { 192.168.19.40, 192.168.19.45 } accept\n\t\ttcp dport 2049 drop\n\t\tudp dport 2049 drop\n\t\tmeta l4proto { tcp, udp } th dport { 111, 20048 } drop\n\t}\n}",
+    "state_metadata": {
+      "uid": 2000,
+      "gid": 2980,
+      "mode": "0o700",
+      "device": 2049,
+      "inode": 133687,
+      "size": 4096
+    },
+    "resource_root_metadata": {
+      "uid": 0,
+      "gid": 2980,
+      "mode": "0o2770",
+      "device": 2064,
+      "inode": 2,
+      "size": 4096
+    },
+    "listener_8080": "LISTEN 0      4096   192.168.19.80:8080 0.0.0.0:*"
+  },
+  {
+    "at": "2026-11-10T22:47:50.746672+08:00",
+    "vmid": 230,
+    "hostname": "java-prod-01",
+    "guard": {
+      "mount_guard": true,
+      "role": "client-230"
+    },
+    "mount": {
+      "filesystems": [
+        {
+          "target": "/mnt/resources",
+          "source": "systemd-1",
+          "fstype": "autofs",
+          "options": "rw,relatime,fd=73,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=82641",
+          "uuid": null
+        },
+        {
+          "target": "/mnt/resources",
+          "source": "192.168.19.80:/",
+          "fstype": "nfs4",
+          "options": "rw,nosuid,nodev,noexec,relatime,vers=4.1,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=192.168.19.40,local_lock=none,addr=192.168.19.80",
+          "uuid": null
+        }
+      ]
+    },
+    "mutations": false,
+    "credentials_or_file_contents_read": false,
+    "units": {
+      "mnt-resources.mount": {
+        "ActiveState": "active",
+        "SubState": "mounted",
+        "FragmentPath": "/etc/systemd/system/mnt-resources.mount",
+        "UnitFileState": "static",
+        "ActiveEnterTimestampMonotonic": "35024877151"
+      },
+      "mnt-resources.automount": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "FragmentPath": "/etc/systemd/system/mnt-resources.automount",
+        "UnitFileState": "enabled",
+        "ActiveEnterTimestampMonotonic": "35024792797"
+      }
+    },
+    "runtime_identity": "uid=999(finger) gid=989(finger) groups=989(finger),2980(resources)",
+    "mount_units": {
+      "/etc/systemd/system/mnt-resources.mount": {
+        "sha256": "526f9ae3f6476191d004f4e2f11e5b146c5a46f46341cc7164497679476af30e",
+        "mode": "0o644"
+      },
+      "/etc/systemd/system/mnt-resources.automount": {
+        "sha256": "2d4b051a98afd408464c861fe1333fca04becced51b90f571306d68e2b8c64e0",
+        "mode": "0o644"
+      }
+    }
+  },
+  {
+    "at": "2026-11-10T22:47:50.670403+08:00",
+    "vmid": 240,
+    "hostname": "java-test-01",
+    "guard": {
+      "mount_guard": true,
+      "role": "client-240"
+    },
+    "mount": {
+      "filesystems": [
+        {
+          "target": "/mnt/resources",
+          "source": "systemd-1",
+          "fstype": "autofs",
+          "options": "rw,relatime,fd=66,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=76757",
+          "uuid": null
+        },
+        {
+          "target": "/mnt/resources",
+          "source": "192.168.19.80:/",
+          "fstype": "nfs4",
+          "options": "rw,nosuid,nodev,noexec,relatime,vers=4.1,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=192.168.19.45,local_lock=none,addr=192.168.19.80",
+          "uuid": null
+        }
+      ]
+    },
+    "mutations": false,
+    "credentials_or_file_contents_read": false,
+    "units": {
+      "mnt-resources.mount": {
+        "ActiveState": "active",
+        "SubState": "mounted",
+        "FragmentPath": "/etc/systemd/system/mnt-resources.mount",
+        "UnitFileState": "static",
+        "ActiveEnterTimestampMonotonic": "35006610922"
+      },
+      "mnt-resources.automount": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "FragmentPath": "/etc/systemd/system/mnt-resources.automount",
+        "UnitFileState": "enabled",
+        "ActiveEnterTimestampMonotonic": "35006536987"
+      }
+    },
+    "runtime_identity": "uid=999(finger) gid=989(finger) groups=989(finger),2980(resources)",
+    "mount_units": {
+      "/etc/systemd/system/mnt-resources.mount": {
+        "sha256": "526f9ae3f6476191d004f4e2f11e5b146c5a46f46341cc7164497679476af30e",
+        "mode": "0o644"
+      },
+      "/etc/systemd/system/mnt-resources.automount": {
+        "sha256": "2d4b051a98afd408464c861fe1333fca04becced51b90f571306d68e2b8c64e0",
+        "mode": "0o644"
+      }
+    }
+  }
+]

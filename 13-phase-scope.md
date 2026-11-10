@@ -1,5 +1,8 @@
 # 本期范围与验收边界
 
+> 2026-11-10阶段更新：用户已恢复Nexus合并与独立221退役，当前状态以[本次交付](completion/20261110-nexus-merge/README.md)、[现行架构](17-publish-artifact-consolidation.md)和[当前交接](11-live-handoff.md)为准。下文是此前基础阶段记录，旧“不合并/221独立/standby”、旧数量和版本不再作为当前现场结论，原验收与未签恢复范围按其时间保留。Java业务不启、旧链fenced；禁止重放历史初始化/迁移器。
+
+
 更新：2026-11-09。继续完成基础搭建，用户最新仅备正式数据库/Nacos配置，不迁移数据。当日状态见[11月9日交付记录](completion/20261109-prod-db-scope/README.md)：14:24自然重启后12running/3tpl、15targets UP、EDAC0/RAIDOptl及forward guard跨重启保持已fresh核验；内存现场维护/诊断通过来自用户。现行正式DB/Nacos首轮3301B、timer启用及db-only三规则已通过，旧全机11档/启用仅历史且job现已disabled，未扩签独立物理根因、原全部验收或灾备恢复。
 
 ## 当前范围

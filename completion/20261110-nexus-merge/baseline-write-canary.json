@@ -1,0 +1,12 @@
+{
+  "status": "acceptance-only-write-read-delete-canary-passed",
+  "repository": "dell-acceptance",
+  "upload_and_readback_previously_succeeded": true,
+  "cleanup_HTTP": 204,
+  "after_cleanup_asset_HTTP": 404,
+  "original_component_IDs_preserved": true,
+  "repository_index_visibility_handled_by_bounded_components_listing": true,
+  "business_repositories_written": false,
+  "new_upload_during_cleanup": false,
+  "passwords_changed": false
+}

@@ -1,0 +1,10 @@
+{
+  "status": "navigation-catalog-updated",
+  "release": "/opt/dell/service-directory/releases/nfs-nexus-20261110-12f2461e4766",
+  "services": 13,
+  "FileBrowser_entry_removed": true,
+  "Nexus_description_consolidated": true,
+  "HTTP_and_original_UI_preserved": true,
+  "source_repository_commit_or_push": false,
+  "catalog_public_SHA": "12f2461e4766594ef58f58b596c304adcafc832d2aa93b000f29eadefb585d11"
+}

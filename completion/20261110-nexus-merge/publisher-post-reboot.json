@@ -1,0 +1,74 @@
+{
+  "status": "post-reboot-publisher-Nexus-persistence-and-auth-verified",
+  "VM220_boot_id_changed": true,
+  "mounts": {
+    "/srv/dell-build": "16dc6067-56ef-4687-a314-edc6421f9ed4",
+    "/srv/nexus": "239dc45a-b1f3-408b-a8ef-7afa77b52204"
+  },
+  "physical_IPs": [
+    "192.168.19.30",
+    "192.168.19.31"
+  ],
+  "publisher_egress_source": "192.168.19.30",
+  "services_active_enabled": [
+    "dell-nexus.service",
+    "puyu-deploy-mcp.service",
+    "dell-service-directory.service",
+    "prometheus-node-exporter.service"
+  ],
+  "publisher_config_MCP_key_unit_build_guard_profile_bytes_unchanged": true,
+  "deploy_public_HEAD": "213f1f42924f18e0d7b5848c2c1141a6230c1f5a",
+  "backend_repos": {
+    "puyu-auth": {
+      "HEAD": "94dc74935ec86c7b5e8ac00443ef95796b0c78b5",
+      "branch": "main",
+      "clean": true
+    },
+    "puyu-bff-admin": {
+      "HEAD": "3638b8f5af0592ff6d066dbab6ff4ceec6013422",
+      "branch": "main",
+      "clean": true
+    },
+    "puyu-bff-web": {
+      "HEAD": "bb7ce440624d08a067bd86ccde5a42e935bbb327",
+      "branch": "main",
+      "clean": true
+    },
+    "puyu-common-lib": {
+      "HEAD": "12f125d67f9f790b2e84517e5630b636b8b8615e",
+      "branch": "main",
+      "clean": true
+    },
+    "puyu-gateway": {
+      "HEAD": "f0ddf8d68cb23401d909f93cba2ce52319ca142d",
+      "branch": "main",
+      "clean": true
+    },
+    "puyu-service-core": {
+      "HEAD": "16c675ef44e35db8e4aa5f6d7668aa32bd2690e7",
+      "branch": "main",
+      "clean": true
+    }
+  },
+  "MCP_loopback_only": true,
+  "Nexus_containers": [
+    {
+      "name": "/nexus-nexus-1",
+      "image": "sha256:2ae4fee2eed85f42c982aa2fc16746a8453c7f79faf2a7ea236855ca8652e001",
+      "health": "healthy"
+    },
+    {
+      "name": "/nexus-gateway-1",
+      "image": "sha256:4e5db4761e0ff445f7fd29aad680ad28e8abf7d204895557f145d65535abcc1c",
+      "health": "healthy"
+    }
+  ],
+  "original_reader_publisher_and_group_read_passed": true,
+  "anonymous_asset_HTTP": 401,
+  "EULA_accepted": true,
+  "publisher_not_docker_group_socket_denied": true,
+  "publisher_private_key_contents_read_or_copied": false,
+  "navigation_entries": 13,
+  "FileBrowser_navigation_removed": true,
+  "Java_or_Go_business_deployed": false
+}

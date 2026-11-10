@@ -1,0 +1,8 @@
+{
+  "silence_id": "f7f037f8-fdad-4d2f-82db-ccd050b283f2",
+  "roles": [
+    "publish-service",
+    "artifact-service"
+  ],
+  "ends_at": "2026-11-10T16:47:10.390936+00:00"
+}

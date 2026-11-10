@@ -1,0 +1,7 @@
+{
+  "status": "partial-commit-resumed-after-exact13-file-and-disk-CAS",
+  "native_unit_and_generated_mount_graph_verified": true,
+  "phase": "installed-no-start",
+  "files_reinitialized": false,
+  "credentials_changed": false
+}

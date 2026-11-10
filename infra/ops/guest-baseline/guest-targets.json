@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-11-06T06:23:46.069219+08:00",
-  "scope": "11 assigned Debian13 exporter roles; original10 active, resource280 stopped/pending install and activation; CF100/GW190 use PVE/QGA",
+  "scope": "10 retained assigned Debian13 exporter roles after artifact-service retirement; other role metadata retained; CF100/GW190 use PVE/QGA",
   "excluded": [
     "PVE host",
     "cf-tunnel CT100",
@@ -33,13 +33,6 @@
       "hostname": "publish-service",
       "vmid": 220,
       "private_ip": "192.168.19.30",
-      "prefixlen": 24
-    },
-    {
-      "role": "artifact-service",
-      "hostname": "artifact-service",
-      "vmid": 221,
-      "private_ip": "192.168.19.31",
       "prefixlen": 24
     },
     {

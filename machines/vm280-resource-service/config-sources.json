@@ -7,19 +7,19 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "角色/IP/预算/启动顺序唯一合同，根任务维护。",
-      "sha256": "5dbce0a1e478aa458f5287457c7878a2e80b336b89432f49425b7ed5c707f425"
+      "sha256": "f3dcc11000ddb2f917cf2d37ec2322aced3b6bb509d2c1a28503a1a1284f75d5"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工启停与共享挂载操作；不自动执行。",
-      "sha256": "cb25e728f1aea5f1770c0a25d6450818373483db232fd47f3073bf4a1cf3db8f"
+      "sha256": "434598c0ff2108e60ec15dfd90eef0588f2a09bf4e9b7510f903599a32f9c731"
     },
     {
       "path": "completion/20261109-resources/usage-manual.md",
       "type": "current-contract",
       "purpose": "共享目录日常使用、故障与扩容/新client步骤，实际验收按收据。",
-      "sha256": "47275a9b370a2d4ca7f462f07ef3f3d88089b9a6c81da074ee265ecba1286eb1"
+      "sha256": "a5e458ae409a8e23dc95298f1513aedf178107113f8c85300dc2ce037170a738"
     },
     {
       "path": "infra/resources/policy.example.json",
@@ -127,7 +127,7 @@
       "path": "completion/20261110-filebrowser/usage-manual.md",
       "type": "current-contract",
       "purpose": "Authorized private Webmanagement increment; public parameters/nativeproof only, no secrets/file payload",
-      "sha256": "201a2b7304c3b24bde8f69177012f5d3839af801aa94c5c16c8a98bdcd3dd98f"
+      "sha256": "1b679ce8981a272d967757d7f3ce9d28bf2bccfe4c9bcc85bccedee5f759a63d"
     },
     {
       "path": "completion/20261110-filebrowser/final-postcheck.json",
@@ -169,19 +169,19 @@
       "path": "machines/git-repositories.json",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "7c6fd2361b4a7a0e94c0f622287e010ebe8fa426e018303a1d42a58e3a06aca5"
+      "sha256": "6903a3ac663a12091178185940a5fb59507fcc1255b9c1125d1c9d3899adc770"
     },
     {
       "path": "machines/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "a6b0b627b7ec7a210eab6db0071d43ca5e0c41cddf03e9d7db5da071adceda44"
+      "sha256": "fe0dcb3e47eae409b60b1650fa7137918cba18be202ca7c8a94b09f983411e6d"
     },
     {
       "path": "machines/vm280-resource-service/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "08662e6c2f368db6e038b6c289d906568223c9e8d44cb205253519ae9b64febe"
+      "sha256": "d13b6f2e590eebd9358a71d9f2884852d526de417bc8902d06c971db3f3d425f"
     },
     {
       "path": "scripts/validate_git_repositories.py",
@@ -230,6 +230,102 @@
       "type": "current-contract",
       "purpose": "Explicit internal HTTP policy, originalauth/NFSkept and finalnavigationlayout; publicscopedproof only",
       "sha256": "bcad1837e92a1dbb7704b883edf74c5224c513ea8ce0bf4317d49bfa6f8c5652"
+    },
+    {
+      "path": "completion/20261110-nfs-only/before.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "fe838e9ebd82d50d4f3da6d7e7f70f65f5bb82fb2bb5e1a9ab0dd80c7509a0f1"
+    },
+    {
+      "path": "completion/20261110-nfs-only/metadata-patch.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "d34b0ca301e50b5651eefc1b9c65a956f2cefa45a113479c6eda61e82d2cc20f"
+    },
+    {
+      "path": "completion/20261110-nfs-only/health.nfs-only.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "054b48372cd26f18b54e63b27f0f30f159ecfb6592c901bc7bade4881d3ebcb3"
+    },
+    {
+      "path": "completion/20261110-nfs-only/verify-nfs-only.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "2abd8e121a71121e78ea606c9cf8608bf1d3c9ab0d0e1b0a04c671503c6f0eea"
+    },
+    {
+      "path": "completion/20261110-nfs-only/retire-filebrowser.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "99a1b6ba9192d13e1adf72cec716f67bee52ebe1c806d0ae7814335c7b60a375"
+    },
+    {
+      "path": "completion/20261110-nfs-only/acceptance.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "f0f9a0d4e1bc178026daac5f17fd0a95c1189c620f94d183e01aaf02a25bb19f"
+    },
+    {
+      "path": "completion/20261110-nfs-only/NFS-verification.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "b97dceef3b0b4aef2ec568c788f7ab4f019a36981ddc5115b294b05b01297958"
+    },
+    {
+      "path": "completion/20261110-nfs-only/final-postcheck.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "c83a958dc994758e3a1e7f8085d2d571734e651c359f3dd037fa3aee4e21101c"
+    },
+    {
+      "path": "completion/20261110-nfs-only/run-retirement.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "f2d517d4d19e70e476507449396754aacf0b423687152faa86371c233978c45c"
+    },
+    {
+      "path": "completion/20261110-nfs-only/README.md",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "5b3863e63c43da533da3deacfc59a15d4c33e808c76d7435178dad7096f0aaab"
+    },
+    {
+      "path": "completion/20261110-nfs-only/final-postcheck.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "2ba36c4af1a37c7a709459ce808e14493462e66ce80da6942f63d4371fc19047"
+    },
+    {
+      "path": "completion/20261110-nfs-only/usage-manual.md",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "363c17f3f999d18f5b42b22c1e063ce2853af41d99f6bb6ad1f3f9df72a66102"
+    },
+    {
+      "path": "completion/20261110-nfs-only/navigation-source-change.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "dac9e8bd2cb9f41ea992c02fe22bf49e468477d6fa256a00c58fad9450b2db04"
+    },
+    {
+      "path": "completion/20261110-nfs-only/before-resume.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "f2ff47077e7661f828c672ae97182b849fff4428a772e050db141642945aa0a4"
+    },
+    {
+      "path": "completion/20261110-nfs-only/audit-nfs.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "2ce0ff20e906efedb26bfb88ed34ddb4a7a97685572a6e5d037c74adbbd728cd"
+    },
+    {
+      "path": "completion/20261110-nfs-only/retirement-result.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "431092b3a1d3fbb575fdcebd5cf9df45d9451a02b7e596bb217638aa67ee0468"
     }
   ]
 }

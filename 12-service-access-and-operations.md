@@ -1,6 +1,9 @@
 # 当前访问入口与日常操作
 
-2026-11-10，Asia/Shanghai。**自然重启后基础服务fresh复验；继续基础搭建，仅自动备份正式数据库/Nacos，并按最新授权完成测试Nacos配置原样迁移；最新另授权Puyu两库按原名迁入测试210，正式环境不动。** Nexus仍独立221，Mac外部探针不需要。当日状态见[11月9日交付记录](completion/20261109-prod-db-scope/README.md)，[11月8日恢复](recovery/20261108/README.md)保留历史。应用直接访问真实19地址；PVE21.22只用于宿主管理，原应用DNAT端口已关闭。详见[当前交付](15-network19-delivery.md)与[新网络验收](network19/audit/network19-acceptance.md)。
+> Nexus最新范围（2026-11-10）：用户已明确恢复合并与独立221退役；切换及221退役已完成，最终回执见[本次交付](completion/20261110-nexus-merge/README.md)。旧暂缓措辞与双机启停只留历史，禁止重放旧迁移命令；日常维护按[本次操作手册](completion/20261110-nexus-merge/usage-manual.md)。Java业务不启、旧链fenced、MCP私有设置保持。
+
+
+2026-11-10，Asia/Shanghai。**自然重启后基础服务fresh复验；继续基础搭建，仅自动备份正式数据库/Nacos，并按最新授权完成测试Nacos配置原样迁移；最新另授权Puyu两库按原名迁入测试210，正式环境不动。** Nexus随后已获恢复合并授权，转由220承接，最终验收见本次交付；Mac外部探针不需要。当日状态见[11月9日交付记录](completion/20261109-prod-db-scope/README.md)，[11月8日恢复](recovery/20261108/README.md)保留历史。应用直接访问真实19地址；PVE21.22只用于宿主管理，原应用DNAT端口已关闭。详见[当前交付](15-network19-delivery.md)与[新网络验收](network19/audit/network19-acceptance.md)。
 
 | 服务 | 当前入口 | 范围 |
 | --- | --- | --- |
@@ -10,27 +13,27 @@
 | Penpot | http://192.168.19.50:9001/ | Git定制版、3设计/973媒体、11服务 |
 | 测试Nacos | http://192.168.19.20:8848/nacos/ | 受信LAN21/24可达；cloud-dev32＋trascan4原样保留，账号仍须目标域权限 |
 | 测试MySQL / Puyu两库 | 192.168.19.20:3306；puyu_auth_local / puyu_erp_local | 原名新建迁入51表/1291快照行；既有目标账户Host/密码/权限仍有效 |
-| Nexus | http://192.168.19.31:8081/ | 目前归221；合并目标归220同NIC服务alias，URL不改 |
+| Nexus | http://192.168.19.31:8081/ | 由220同NIC服务alias31承接，URL不改；最终签收见本次回执 |
 | OMV | http://192.168.19.60/ | 家庭NAS管理 |
 | Jellyfin | http://192.168.19.60:8096/ | 媒体库、DirectPlay协议已验 |
 | SMB | `smb://192.168.19.60/media`、`/games`、`/incoming` | writer/reader分离，匿名拒绝；使用固定IP连接 |
 | Grafana | http://192.168.19.70:3000/ | 真实内网入口，无需旧13000隧道 |
 | Prometheus / Alertmanager | 192.168.19.70:9090 / :9093 | 仅批准管理来源，不公开 |
 | Java业务 | **停用** | 测试五服务无进程/自启，正式无业务应用 |
-| 统一资源NFS | `192.168.19.80:/` → 两running `/mnt/resources` | 仅230/240，NFS4.1/TCP2049；与下列管理HTTP用途不同 |
-| FileBrowser管理页 | http://192.168.19.80:8080/ | HTTP切换已验收；原resources/admin认证保持，LAN21/WG10，无公开图片URL |
+| 统一资源NFS | `192.168.19.80:/` → 两running `/mnt/resources` | 仅230/240，NFS4.1/TCP2049；当前唯一资源访问方式 |
+| FileBrowser管理页（已退休） | 无现役入口，8080关闭 | 两unit inactive/masked，state/凭据受保护保留；使用NFS |
 | Java验收模板 | PVE VMID9011 `tpl-java-acceptance` | 唯一验收模板，无应用/业务配置/秘密 |
 
 原HTTP入口是用户同意的LAN阶段；自建内网应用按用户要求默认HTTP，PVE/iDRAC内置管理HTTPS保留，公网域名/其他入口HTTPS/SMTP尚未配置。跨子网的发现广播不作为已验能力，电视/播放器请手动填写19.60。NAS用于文件保存/整理/传输，不承诺主机直接从NAS运行游戏。
 
-合并目标为一台VM220 `publish-service`同时承载发布与Nexus，主IP30+服务alias31；`artifact-service`不再是独立目标VM，见[17合并架构](17-publish-artifact-consolidation.md)。**下表是迁移尚未执行的最后验收归属**：
+合并目标为一台VM220 `publish-service`同时承载发布与Nexus，主IP30+服务alias31；`artifact-service`不再是独立目标VM，见[17合并架构](17-publish-artifact-consolidation.md)。**下表按本次合并合同维护，最终退役以回执为准**：
 
 | VMID | 最后验收角色 | IP |
 | --- | --- | --- |
 | 100 | cf-tunnel CT | 192.168.19.5 |
 | 200 / 201 | 正式MySQL / Redis+Rabbit+Nacos | 192.168.19.10 / .11 |
 | 210 | 测试MySQL+Redis+Rabbit+Nacos | 192.168.19.20 |
-| 220 / 221 | 发布机 / Nexus | 192.168.19.30 / .31 |
+| 220 | 发布机＋Nexus | 192.168.19.30 / 同NIC alias .31 |
 | 230 | 正式JDK运行基础，无业务，仅保留一台 | 192.168.19.40 |
 | 240 | 测试JDK基础，五业务已停用 | 192.168.19.45 |
 | 250 / 260 / 270 | Penpot / NAS / Ops | 192.168.19.50 / .60 / .70 |
@@ -49,21 +52,21 @@ SSH使用ub和`~/.ssh/yang_local_rsa`，严格已核host key；受控目标见`e
 
 ## 免登录服务导航（VM220新增）
 
-当前入口 **[服务导航](http://192.168.19.30:9080/)**，无需账号密码，TLS/登录凭据均不加载。顶部“个人内网 / 服务导航”栏已移除，标题和外侧留白缩紧，保持全宽布局。14个入口可分组、搜索、环境筛选、刷新、复制及新标签页打开；目标由客户端直接访问并使用各自认证，导航不提供SSO或健康探测。自建内网应用默认HTTP；FileBrowser已切HTTP但保留原resources/admin认证，PVE/iDRAC内置HTTPS本轮保留。
+当前入口 **[服务导航](http://192.168.19.30:9080/)**，无需账号密码，TLS/登录凭据均不加载。顶部“个人内网 / 服务导航”栏已移除，标题和外侧留白缩紧，保持全宽布局。此前14个入口可分组、搜索、环境筛选、刷新、复制及新标签页打开；本轮本地清单已移除FileBrowser变为13项，运行切换由本次维护窗口补签；目标由客户端直接访问并使用各自认证，导航不提供SSO或健康探测。自建内网应用默认HTTP；FileBrowser现已退休，仅保留NFS；PVE/iDRAC内置HTTPS保留。
 
-当前 `bkcode/deploy/service-directory/` 提交为 `d56cae553bf95ce0e2c3fe8f258a2f99389aae7c`，最新[统一内网HTTP交付](evidence/internal-http-20261110/README.md)、[导航链接应用](evidence/internal-http-20261110/navigation-links-applied.json)与[14:28最终后检](evidence/internal-http-20261110/final-postcheck.json)通过：导航HTTP14条、自身及FileBrowser链接HTTP、无顶部栏、unit只读active；16targets、资源六服务及FileBrowser HTTP指标UP。`ddccc2b`是[此前全宽布局验证阶段](evidence/service-directory-http-20261110/README.md)，`63b8c08`与旧TLS指纹为[首次HTTPS历史](evidence/service-directory-20261110/README.md)。4条任务源码提交均只在本机未push，原4条用户提交未捎带发布。维护走审查后的精确提交→新release→只重启导航；不调用业务发布链，不启动Java、不合并Nexus、不替用户push或更新Penpot。[使用手册](evidence/service-directory-20261110/usage-manual.md)。
+此前 `bkcode/deploy/service-directory/` 提交为 `d56cae553bf95ce0e2c3fe8f258a2f99389aae7c`，历史[统一内网HTTP交付](evidence/internal-http-20261110/README.md)、[导航链接应用](evidence/internal-http-20261110/navigation-links-applied.json)与[14:28最终后检](evidence/internal-http-20261110/final-postcheck.json)通过：导航HTTP14条、自身及FileBrowser链接HTTP、无顶部栏、unit只读active；16targets、资源六服务及FileBrowser HTTP指标UP。`ddccc2b`是[此前全宽布局验证阶段](evidence/service-directory-http-20261110/README.md)，`63b8c08`与旧TLS指纹为[首次HTTPS历史](evidence/service-directory-20261110/README.md)。4条任务源码提交均只在本机未push，原4条用户提交未捎带发布。维护走审查后的精确提交→新release→只重启导航；不调用业务发布链，不启动Java、不因导航维护操作Nexus、不替用户push或更新Penpot。[使用手册](evidence/service-directory-20261110/usage-manual.md)。
 
-## FileBrowser Quantum管理页面
+## 资源访问：仅NFS，FileBrowser已停用
 
-用户最新要求自建内网应用默认HTTP，PVE/iDRAC内置管理HTTPS保留。FileBrowser当前入口改为 **[http://192.168.19.80:8080/](http://192.168.19.80:8080/)**，仅LAN21/24、WG10.66.66/24及本机；HTTP切换原生验收及14:28最终后检已通过，以[内网HTTP交付](evidence/internal-http-20261110/README.md)为准。只移除本应用TLS，不关闭认证：原日常 `resources` 与维护 `admin` 的密码、权限、固定JWT及初始化marker保持，不改密或重跑init。resources仍view/download/create，delete/edit/override/share/提权拒绝；admin保持完整权限。密码只在原受保护Mac/guest来源，不输出值。
+用户明确确认仅保留NFS。VM280的`dell-filebrowser.service`与`dell-filebrowser-firewall.service`已inactive/masked并取消自启；TCP/UDP8080无监听，专属`inet dell_filebrowser_input`表已撤。原账号/JWT/state与受保护回退材料保留，不提供现役网页登录，也不扩NFS来源或修改密码。
 
-官方native固定v2.1.4-beta、UID2000/GID2980、UMask0002、文件660/目录2770与独立state700保持；初始化成功marker后仍不注入初始口令。[HTTP原生验收](evidence/internal-http-20261110/filebrowser-applied.json)已核两个旧账号用原密码新登录、scope/权限保持、匿名401/日常设置403，NFS/保护PID不变；[14:28最终后检](evidence/internal-http-20261110/final-postcheck.json)确认16targets、资源六服务及HTTP指标UP。[真实HTTP浏览器](evidence/internal-http-20261110/filebrowser-browser.json)已用原resources口令进入资源页并清理测试认证资料，未读写资源文件。新健康项为 `filebrowser-http-health`，去除ca_file；旧TLS证书/私钥及[06:12 HTTPS/API/NFS/浏览器/重启证据](completion/20261110-filebrowser/README.md)留为未启用历史，不作当前HTTP运行证明。当前无需接受证书，系统CA和其它服务协议保持。NFS/PVE/路由、共享目录、正式DB/Nacos备份范围不变，不启Java、不迁文件或接业务图片URL。[当前使用手册](completion/20261110-filebrowser/usage-manual.md)与[服务包](infra/resources/filebrowser/README.md)。
+NFS仍为`192.168.19.80:/`→230/240的`/mnt/resources`；NFS配置、exports、版本、原输入表和服务PID/启动身份保持，健康仅原5项资源服务，已移除FileBrowser service/HTTP检查。本轮两client以finger读回唯一server canary且已清理，未写client或读业务文件。当前[停用/验证](completion/20261110-nfs-only/README.md)、[后检](completion/20261110-nfs-only/final-postcheck.json)及[使用手册](completion/20261110-nfs-only/usage-manual.md)为准；[旧FileBrowser HTTPS](completion/20261110-filebrowser/README.md)和[HTTP交付](evidence/internal-http-20261110/README.md)仅保留历史。导航运行与VM270最终Prometheus证明由本次统一维护窗口补签。
 
 ## 统一资源服务（新增VM280）
 
 用户选择正式/测试共用VM280 `resource-service`（19.80）的同一目录。独立100GiB ext4盘挂`/srv/resources`，系统盘保32GiB；两running 230/240目标挂载均为`/mnt/resources`，240原`/mnt/dell-artifacts`不动。NFSv4.1-only/TCP2049/fsid0，只有19.40/19.45获export与bridge/专属输入许可；root_squash、sync、server根2770/defaultACL、共享resources附属组2980。finger原UID999/GID989保留。
 
-[server启动](completion/20261109-resources/server-installed.json)与[实际盘UUID](completion/20261109-resources/storage-initialized.json)已留证；两客户端真NFS挂载/guard、非root跨机创建/读写/删除、root_squash与240缺挂载根盘写入负测均已通过；仅VM280受控重启约30秒，fsync canary持久、两客户端挂载恢复，未重启两台running。**NFS保留，另加受限FileBrowser管理HTTP（最新HTTP切换已验收）；不提供业务图片URL、不启Java、不迁文件、不扩自动备份。** 资源角色使预算变为13来宾（12VM＋CF LXC）、3模板、45vCPU/87GiB；保守125GiB预算余38GiB。[00:20最终只读后检](completion/20261109-resources/final-postcheck.json)确认13来宾运行、3模板停止、16/16 targets UP、资源5项服务指标UP与PVE全forward0。详见[280机器目录](machines/vm280-resource-service/README.md)与[资源使用手册](completion/20261109-resources/usage-manual.md)。
+[server启动](completion/20261109-resources/server-installed.json)与[实际盘UUID](completion/20261109-resources/storage-initialized.json)已留证；两客户端真NFS挂载/guard、非root跨机创建/读写/删除、root_squash与240缺挂载根盘写入负测均已通过；仅VM280受控重启约30秒，fsync canary持久、两客户端挂载恢复，未重启两台running。**当前仅保留NFS，FileBrowser网页服务已退休/8080关闭；不提供业务图片URL、不启Java、不迁文件、不扩自动备份。** 资源初建时角色使预算变为13来宾（12VM＋CF LXC）、3模板、45vCPU/87GiB；保守125GiB预算余38GiB。历史[00:20最终只读后检](completion/20261109-resources/final-postcheck.json)当时确认13来宾运行、3模板停止、16/16 targets UP、资源5项服务指标UP与PVE全forward0。详见[280机器目录](machines/vm280-resource-service/README.md)与[当前NFS使用手册](completion/20261110-nfs-only/usage-manual.md)。
 
 模板仅能将来预装客户端与disabled挂载候选，clone按真实IP/组/exports/bridge登记后显式激活；**本次没有修改三模板**。
 
@@ -126,7 +129,7 @@ SSH使用ub和`~/.ssh/yang_local_rsa`，严格已核host key；受控目标见`e
 | 数据组件 | Mac `private/data/bundles/<角色>/secrets/` 与各guest受控安装包 |
 | 测试Nacos既有应用账号（仅旧域/空域权限） | 用户名查test-data受保护`.env`的`NACOS_CLIENT_USER`；密码查`private/data/bundles/test-data/secrets/nacos-client-password`，不在文档列值 |
 | Java合成管理员/测试client | Mac `private/java/secrets/`；测试账号FNTEST0001 |
-| Nexus新admin/reader/test publisher | Mac `private/nexus/new-secrets/` 与原221 `/root/dell-nexus-secrets/`；合并验收后由220承接同一身份目录 |
+| Nexus新admin/reader/test publisher | 原受保护Mac来源与220 `/root/dell-nexus-secrets/`；承接同一Nexus身份，不修改密码或导出值 |
 | Penpot新owner | 250 `/etc/penpot/new-identities.json`，owner@dell.local |
 | Penpot新worker/MCP | 250 `/etc/penpot/worker-credentials.json`及ID映射文件 |
 | NAS新账号 | Mac `private/nas/credentials-metadata.json`索引到600文件 |
@@ -149,7 +152,7 @@ Publisher目标19.45、来源限制19.30、公钥/强制命令与最小权限保
 
 正式业务数据未从开发环境导入。**现行自动备份仅VM200正式数据库/Nacos配置。** 当前唯一非系统库`nacos_prod`，12张BASE TABLE全InnoDB；正式业务schema尚未创建，新增库不在显式白名单则拒绝告警并要求更新。首轮逻辑SQL gzip 3,301 bytes通过CRC/传输SHA、DDL锁释放及guest暂存清理，service退出0、timer已enabled，下一次2026-11-10 03:30（Asia/Shanghai）；GFS最近3/每日7/每周4。PVE目的地`/mnt/pve/store/dell-artifacts/prod-db-backups`，目录root700/文件600，不经Mac，见[新首轮与timer](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)、[中央状态](completion/20261109-prod-db-scope/README.md)。
 
-其他数据均不自动备份：VM/OS、测试库、Redis/Rabbit、Nexus、Penpot、NAS、Ops、CF及发布私钥排除。旧11来宾全机jobdisabled、whole-VM规则组退役，原19,747,582,801 bytes全机档和21回退档保留、不自动删除；旧CF档只准PVE。新`dell_prod_db_backup_*`三条db-only规则已原生校验/SIGHUP加载，原Prom身份与既有三告警名/Lark接收对象不变，无testsend，见[规则回执](completion/20261109-prod-db-scope/alerts-installed.json)。仅同机逻辑恢复点，仅下述小档已临时隔离恢复，仍无完整业务恢复/独立灾备或RPO保证；不迁移、不合并Nexus、不启Java、无Mac外部探针。 真实电视/PS/4K/HDR/转码与生产并发仍待实际验收。
+其他数据均不自动备份：VM/OS、测试库、Redis/Rabbit、Nexus、Penpot、NAS、Ops、CF及发布私钥排除。旧11来宾全机jobdisabled、whole-VM规则组退役，原19,747,582,801 bytes全机档和21回退档保留、不自动删除；旧CF档只准PVE。新`dell_prod_db_backup_*`三条db-only规则已原生校验/SIGHUP加载，原Prom身份与既有三告警名/Lark接收对象不变，无testsend，见[规则回执](completion/20261109-prod-db-scope/alerts-installed.json)。仅同机逻辑恢复点，仅下述小档已临时隔离恢复，仍无完整业务恢复/独立灾备或RPO保证；不再迁移其他数据、不启Java、无Mac外部探针。 真实电视/PS/4K/HDR/转码与生产并发仍待实际验收。
 
 
 **仅这份3301B `nacos_prod`小快照已完成VM210临时隔离恢复**：12表10行，活跃`config_info`为空，10行为历史、命名空间及认证/权限元数据。源备份SHA、timer及VM210原4服务保持、临时资源已清理；不扩签业务库、RPO/RTO或异机灾备，见[限定恢复收尾](completion/20261109-prod-db-restore/README.md)。
@@ -176,6 +179,6 @@ Codex私有配置两项MCP已改SSH stdio到VM250，密钥只在服务器；实�
 
 CLI支持prod→main、dev→dev；MCP仅dev，拒绝prod和调用方环境覆盖。六仓库main源码已经准备，工作树仍main，上游dev全部缺失；新dev预检应拒绝缺origin/dev，不能复用初装dev/main成功结果。prod目标`puyu-prod`身份留空时也应拒绝，不复用测试目标deployer@19.45。真实发布任务仍关闭，旧受限链fenced，不创建/推送业务分支、不构建或启动Java。
 
-项目详情区分source_ready、expected_branch、current_branch和target_branch_available，最后一项仅本地origin引用。列出/预检不fetch；显式sync才取配置分支，真实远端缺dev时失败，不回退main。源码/产物/队列仍在原100GiB构建盘并保UUID启动门禁。更新只Git快进受审查版本，先核clean与无活动任务，不覆盖私有YAML或重生成APIkey，不重跑bootstrap。220原专用发布私钥不得导出，Nexus不合并、备份仍只正式DB/Nacos。
+项目详情区分source_ready、expected_branch、current_branch和target_branch_available，最后一项仅本地origin引用。列出/预检不fetch；显式sync才取配置分支，真实远端缺dev时失败，不回退main。源码/产物/队列仍在原100GiB构建盘并保UUID启动门禁。更新只Git快进受审查版本，先核clean与无活动任务，不覆盖私有YAML或重生成APIkey，不重跑bootstrap。220原专用发布私钥不得导出，Nexus合并按本次独立回执，备份仍只正式DB/Nacos。
 
 [发布机操作手册](https://github.com/bkcode/deploy-public/blob/main/docs/PUBLISHER.md)、[完整操作说明](https://github.com/bkcode/deploy-public/blob/main/docs/OPERATIONS.md)、[初装验收历史](evidence/deploy-public-publisher-20261110/README.md)。

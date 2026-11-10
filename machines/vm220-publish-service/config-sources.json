@@ -6,25 +6,25 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "5dbce0a1e478aa458f5287457c7878a2e80b336b89432f49425b7ed5c707f425"
+      "sha256": "f3dcc11000ddb2f917cf2d37ec2322aced3b6bb509d2c1a28503a1a1284f75d5"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
       "purpose": "当前基础搭建与历史故障交接；本轮不迁移，旧证据按时点解释。",
-      "sha256": "a6f5088aeb99027507762439c00f9f816ccce003887d4cd162b1f1c57fd9eda2"
+      "sha256": "57c0935d9286e427d050aa236446ad24662aa5ea345a4e37b3b71c4c02efdb23"
     },
     {
       "path": "12-service-access-and-operations.md",
       "type": "current-contract",
       "purpose": "当前19网入口及凭据保管规则。",
-      "sha256": "9d5cd06484ba3c19e8e9325261b396a9de8618b4b7dcfcb6bdd8b6c08fc44f17"
+      "sha256": "18143ff2dcf793151adbd115fc681d167804c3d309ec92f35242af5da261916b"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
-      "sha256": "cb25e728f1aea5f1770c0a25d6450818373483db232fd47f3073bf4a1cf3db8f"
+      "sha256": "434598c0ff2108e60ec15dfd90eef0588f2a09bf4e9b7510f903599a32f9c731"
     },
     {
       "path": "cleanup/final-live-check.json",
@@ -58,21 +58,21 @@
     },
     {
       "path": "17-publish-artifact-consolidation.md",
-      "type": "pending-candidate",
-      "purpose": "合并目标6CPU8GiB+服务alias31；尚未移交。",
-      "sha256": "c7a96529ec2933d1695bc1157ef71f4b1dd2e083122e8c61d00d799ec1b2d1a6"
+      "type": "current-contract",
+      "purpose": "Current combined publisher/Nexus ownership and boundaries",
+      "sha256": "b5843f9ced08b314f1275d69f55e39402a41b801cb1b60c8ae097ca3625719c9"
     },
     {
       "path": "cleanup/nexus/PLAN.md",
-      "type": "pending-candidate",
-      "purpose": "未来冷备/唯一盘/网络alias/应用切换计划。",
-      "sha256": "20468235681b402bd7ea829ff103d9de547bd2beba94e492824902c77e757642"
+      "type": "historical-evidence",
+      "purpose": "Executed migration preparation/transaction history; never blindly replay",
+      "sha256": "7058185fad7bcdfe2e36b6b66da005cb28f16f1c9d937e4542e33e4117cdc594"
     },
     {
       "path": "cleanup/nexus/target.py",
-      "type": "pending-candidate",
-      "purpose": "后续应用执行器，不能把已有standby阶段当已完成合并。",
-      "sha256": "09b87a31f78dc60af86913d3ec02d11a10bc8206837c3cf2376a142f46736756"
+      "type": "historical-evidence",
+      "purpose": "Executed migration preparation/transaction history; never blindly replay",
+      "sha256": "6031b108778a59a720cf034a939e710fc65198e9c06764fc1330b1bca817ddbd"
     },
     {
       "path": "recovery/20261108/media-tools-audit.json",
@@ -198,19 +198,19 @@
       "path": "machines/git-repositories.json",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "7c6fd2361b4a7a0e94c0f622287e010ebe8fa426e018303a1d42a58e3a06aca5"
+      "sha256": "6903a3ac663a12091178185940a5fb59507fcc1255b9c1125d1c9d3899adc770"
     },
     {
       "path": "machines/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "a6b0b627b7ec7a210eab6db0071d43ca5e0c41cddf03e9d7db5da071adceda44"
+      "sha256": "fe0dcb3e47eae409b60b1650fa7137918cba18be202ca7c8a94b09f983411e6d"
     },
     {
       "path": "machines/vm220-publish-service/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "8120d9f831844bb3390309bcc873ad330f2bedc2b6d9760baaf46f06f100fa4f"
+      "sha256": "c9c09ed073470ae021cb907c8d51f0d283b5a784101e916197953d037f25fd8f"
     },
     {
       "path": "scripts/validate_git_repositories.py",
@@ -487,6 +487,342 @@
       "type": "current-contract",
       "purpose": "Standard CLI prod/main dev/dev with dev-only MCP; actual guards verified, upstream dev missing, no business branch mutation/build/deploy or secret export",
       "sha256": "b80f0ab41f7deec6cc21fedc8dee279e494d768c54dd5067bc07ad857b2307ed"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/coldbackup-started.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "3d20c5bf85647a6c87681d457727d7bfa729e587cd007ccf62cf351677830e19"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/220-prepared-current.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "2605225b91594c5606673c26159ca60517f3803e8edd859a320fcd29441fd65d"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/monitoring-guests-applied.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "69bdb92cc8fe6c19f670f75947fbc5b306b9785314d59aa01fe848f606f780d4"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/pve-before.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "5d7c02deecdba930dfa921941672a3f87746f00f36dd77ff70d61c5c0110a892"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/maintenance-ended.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "c2972b95d8d49e45d84059b7169019908fcb1e91bbce49feff705aad44aab4e7"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/handover-result.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "f33cbf63ab1c55decb08bf9b048699e8062d26113fc20d6f112d7d19fea36e5c"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/coldbackup-state.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "ee9071544eead38598b3e58fee61c6210946678bd18694c1eb65ecf4fc4903f6"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/target-mount.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "641008a1dd75424a2e1215adcb9abb01db2bf2f2fa8624db051d1e6385d5d167"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/monitoring-final.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "0d0e71ffdd3b9fb7feb4520a0d5143caa1e9dbaaa8826a21f90b2d9f15be2d41"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/acceptance.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "be164435f7aa90fcab00706bc4809171efc55642a262ff8042fab1a8bc70831a"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/apply-ops-targets.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "77c09ab335462ee191a3c3da02fc322654295e734aaf271bc75b6e4568d2487f"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/publisher-post-reboot.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "60b2d62bc85b76bc6b586474313d6124feeacf094a185ba55153d4ec68f65f56"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/monitoring-live-files-before.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "921fc71e9f26816ae36dfdefee83364376f79629c624d9ddebcf431bcd01481d"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/ops-targets-applied.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "ef6b3c8200bea308a4bc021c823d5cd5375ea4a4a1a309e97b6a85428b49797c"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/pve-handover.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "4fdc6623507fd3cb5b8e982f41b7597da893540b9bcb264ff0e6ab68568c7e99"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/bridge-final-applied.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "0680c13649ec29c50b0da7c6f38e79e9ec5287c42c909aebbf5c4f3e89a1e0f2"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/bridge-before.nft",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "e50c999bc23ee62c2e0ae6ea98f1ad89cd22bfaec4a5602bfecf959450dfc266"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/source-quiesced.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "a605d6306d046ec3560b24ddca6373176343250ce908728642d826ed06ce71f1"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/verify-publisher.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "60fa65a323357a35380fbd0ada3738f46eb393bd5f80a5a5562db7f69d5dfd40"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/vm221-before.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "4ea478f17e25e19ba79d6dfd0ec0d8ccb3be8dd87c6e2dbb4c14913dcf3aa392"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/apply-monitoring-guest.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "4ec4c1a24853447b9c4b68f8ef30b4c7872b5eeade570addb1baf41b4cddad2d"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/vm270-monitoring-before.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "6569c3cbc359e3343ba3767b8a6eb9bcb15e3c352b1c6419261261df7ffbb95f"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/compare-captured-baseline.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "0538ea686c3845d65172b63924e4265b6f29dc6444eaec2362a6ae64a0f784a3"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/220-alias-staged.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "91852f57ed844b89d5a8371620d76230002c8f937d6a6580c530a48773b46ec9"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/write-canary.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "46b27a324b4219fc97f6e41e9f52ccabc19126c4f4a9df5728c1c6611ff67241"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/reboot220-started.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "f3a1e6991aeeca3d3a9946c3238ac878a53fad76f9b103b02a0cb51a910f1f37"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/README.md",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "4ea4276c695fd562fe3c83bcc9e5b8a9eceb6c86a63e07d89f8ce01ce4c6be8c"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/maintenance-silence.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "0017bc5165ad71665cb75b3be7d7729166df0a7727bf0cc2986f8d3054bc1ff3"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/commit-recovery.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "427c079e72d7b204a772c84f9ceddedf06d16424e1f0734fed265b686ddd1e38"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/final-postcheck.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "838ed4939f6a1e1c921093d8058ebf2ee25f863f34cb46b1fffd0c77a81d1aef"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/prometheus-postcheck.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "ef7d9237eecd9046d41ea10cdf3f1d236a66d828e0945ca8634dbcdf4d3295c3"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/220-network-before.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "dee5f4c7f6622659b563a72979670f0872d57e74e8553b2bf0f564e295653316"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/recover-write-canary.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "0ea2e3c5d9e0de226551e426bebd8dbec4060dc0c39a26eca263a323fa1b5a9c"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/usage-manual.md",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "b0d67c4428dcedc3a1c6322630ad9bbd75b00e198aa99266b214492a643a01ed"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/retire221.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "e996ad09c8009ba0d40fbbefaa5ac2eeb93b34d68c38a0790eeee36a7fe9904e"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/baseline-verify.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "e23ce5cc3aae6d4d08c59c0082857a4d64dc226e867ee03e7a67d06e7bae8ad0"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/update-navigation.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "0ccfc88c7deb9ec7f9108aea628d1b28372734e7d1f459cfaf648e1cde8a431b"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/baseline-compared.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "6df971330857841babda351175b05749571dc0c40b43aba373fe8275bf9918b7"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/standby-current-CAS.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "2cbb235f12de06b7be7f27ee23136f0c8ac14134c527b43e2e48a696e673d207"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/navigation-updated.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "8cbc61345eb952988d4aff9c22c5c2cac0752a1b22e76f2d7aa91706862b6c9f"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/baseline-snapshot.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "5a1fffcaaab043596863109f206cea1dfbec2445b20262f0a12e6b7e6a0f10d5"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/coldbackup221.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "f91544463fa4b35d1f85d63b686f35f2c92be23c7a77a6bc2d49a83eb4b76e19"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/navigation-services.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "12f2461e4766594ef58f58b596c304adcafc832d2aa93b000f29eadefb585d11"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/helper-fix-synced.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "0370ab61238913ef787c038c35f207290eebda32c86759862d14faf00ca79000"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/bridge-after.nft",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "676d549a4a0a10dab3335e77d91f502a7581099251e8876d1b9556d326f2d8a1"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/vm220-before.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "5f75a0fc2fa0032a320623b9a98c9d27d8a48058f5863f3587095a3bbc2a7794"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/retirement-result.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "17a1c8dab6a36b5d18aa787fbb49d675c84eaab6434606a392ec26e7791ad822"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/prepare220.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "89fb2c7124690e1cc3fbc65b64b3d6bb9f9d3db31f7c035c7f314c70f01a04bf"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/instance-baseline.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "33e909d6566e38023941a41e8ad475780228732ac6464ebd792247da42ba1873"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/bridge-final.nft",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "6377da0729e06d79764f5f86459d2146b9e13138e40eeff1f000aeef18edcb40"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/check-standby.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "fbb3baccfa36900ef43eb1985b734442e8d93a9aa96ac91c7addf4026a2a8172"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/vm220-monitoring-before.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "0a60127f3ca05516d6af0c8023e038b3c9c815bd25ac79d2c499c92492c12a41"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/target-start.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "d6cf64269c86094c80e8f6111e3062364830afe22038081a41ed384766ddf1d3"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/baseline-write-canary.json",
+      "type": "historical-evidence",
+      "purpose": "Verified 2026-11-10 Nexus consolidation and NFS-only delivery; one-time workers are not safe replay entry points",
+      "sha256": "8454c33fa6ccfc124d22f7902e77b2b328543ad4633a5f5cf58c06f8c061bd7d"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/baseline-canary-cleanup.json",
+      "type": "historical-evidence",
+      "purpose": "Verified 2026-11-10 Nexus consolidation and NFS-only delivery; one-time workers are not safe replay entry points",
+      "sha256": "9311dae589f9c6bbc9d61e5725062e52999bc7b0d26d942ec398e2e7ea80fc79"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/verify-canary-cleanup.py",
+      "type": "historical-evidence",
+      "purpose": "Verified 2026-11-10 Nexus consolidation and NFS-only delivery; one-time workers are not safe replay entry points",
+      "sha256": "31a918163f9cc7dbe5d841ed0ee809b4bc09a3461a651880b8d15d6e58894955"
     }
   ],
   "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."

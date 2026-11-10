@@ -5,7 +5,7 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "5dbce0a1e478aa458f5287457c7878a2e80b336b89432f49425b7ed5c707f425"
+      "sha256": "f3dcc11000ddb2f917cf2d37ec2322aced3b6bb509d2c1a28503a1a1284f75d5"
     },
     {
       "path": "cleanup/initial-PVE-readonly.json",
@@ -29,13 +29,13 @@
       "path": "03-templates-and-access.md",
       "type": "current-contract",
       "purpose": "模板、访问与克隆职责边界",
-      "sha256": "fd5965b659841a122f11f7dfe895e65e1c54f87bfef9d764749bd878dbfadb73"
+      "sha256": "1f72844a453f122173b2d8a1178894d94049aa75f15e0f366142d494a1e5906a"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
-      "sha256": "cb25e728f1aea5f1770c0a25d6450818373483db232fd47f3073bf4a1cf3db8f"
+      "sha256": "434598c0ff2108e60ec15dfd90eef0588f2a09bf4e9b7510f903599a32f9c731"
     },
     {
       "path": "infra/backup/pve-local/policy.json",
@@ -149,19 +149,19 @@
       "path": "machines/git-repositories.json",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "7c6fd2361b4a7a0e94c0f622287e010ebe8fa426e018303a1d42a58e3a06aca5"
+      "sha256": "6903a3ac663a12091178185940a5fb59507fcc1255b9c1125d1c9d3899adc770"
     },
     {
       "path": "machines/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "a6b0b627b7ec7a210eab6db0071d43ca5e0c41cddf03e9d7db5da071adceda44"
+      "sha256": "fe0dcb3e47eae409b60b1650fa7137918cba18be202ca7c8a94b09f983411e6d"
     },
     {
       "path": "machines/tpl9001-docker-base/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "ff92e748cc5f158dbd1ad7d3806d7b7e8dea6148832a0a521150d060afe8ba73"
+      "sha256": "1416901e8cc7a9345a71a5f7ef014ef61fdc3c1d1698644d8ee6ef56a5a58468"
     },
     {
       "path": "scripts/validate_git_repositories.py",

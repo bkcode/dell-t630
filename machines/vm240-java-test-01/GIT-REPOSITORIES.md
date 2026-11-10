@@ -1,6 +1,6 @@
 # VM240 · java-test-01：Git来源与取用边界
 
-更新：2026-11-10，Asia/Shanghai。本文从唯一[Git来源总表](../git-repositories.json)的`/machines/9`派生；机器位置`machines/vm240-java-test-01`，身份与资源仍以[plan.json](../../plan.json)为准。
+更新：2026-11-10，Asia/Shanghai。本文从唯一[Git来源总表](../git-repositories.json)的`/machines/8`派生；机器位置`machines/vm240-java-test-01`，身份与资源仍以[plan.json](../../plan.json)为准。
 
 **这是来源/计划文档，不是已clone、部署、分发Git私钥或重跑初始化的证明。** 本轮本文只本地写入，没有SSH、git clone/fetch/pull/push、构建或服务操作。现役状态、上游参考与后续源码计划分开解释。
 

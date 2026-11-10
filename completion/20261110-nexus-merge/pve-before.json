@@ -1,0 +1,51 @@
+{
+  "220": {
+    "config": {
+      "cores": "4",
+      "memory": "4096",
+      "name": "publish-service",
+      "net0": "virtio=BC:24:11:2A:01:AD,bridge=vmbr19,firewall=0",
+      "onboot": "1",
+      "scsi0": "store:220/vm-220-disk-0.qcow2,discard=on,iothread=1,size=32G",
+      "scsi1": "store:220/vm-220-disk-1.qcow2,discard=on,iothread=1,size=100G",
+      "scsi2": "store:iso/dell-artifacts-20261106.iso,media=cdrom,size=13183532K",
+      "startup": "order=30,up=15,down=60"
+    },
+    "status": "status: running"
+  },
+  "221": {
+    "config": {
+      "cores": "2",
+      "memory": "4096",
+      "name": "artifact-service",
+      "net0": "virtio=BC:24:11:EC:E1:6F,bridge=vmbr19,firewall=0",
+      "onboot": "1",
+      "scsi0": "store:221/vm-221-disk-0.qcow2,discard=on,iothread=1,size=32G",
+      "scsi1": "store:221/vm-221-disk-1.qcow2,discard=on,iothread=1,size=100G",
+      "scsi2": "store:iso/dell-artifacts-20261106.iso,media=cdrom,size=13183532K",
+      "startup": "order=21,up=90,down=180"
+    },
+    "status": "status: running"
+  },
+  "boot_id": "c2320079-38f6-4c05-bb3f-7502ee3f8f97",
+  "edac": {
+    "/sys/devices/system/edac/mc/mc2/ce_count": "0",
+    "/sys/devices/system/edac/mc/mc2/ce_noinfo_count": "0",
+    "/sys/devices/system/edac/mc/mc2/ue_count": "0",
+    "/sys/devices/system/edac/mc/mc2/ue_noinfo_count": "0",
+    "/sys/devices/system/edac/mc/mc0/ce_count": "0",
+    "/sys/devices/system/edac/mc/mc0/ce_noinfo_count": "0",
+    "/sys/devices/system/edac/mc/mc0/ue_count": "0",
+    "/sys/devices/system/edac/mc/mc0/ue_noinfo_count": "0",
+    "/sys/devices/system/edac/mc/mc3/ce_count": "0",
+    "/sys/devices/system/edac/mc/mc3/ce_noinfo_count": "0",
+    "/sys/devices/system/edac/mc/mc3/ue_count": "0",
+    "/sys/devices/system/edac/mc/mc3/ue_noinfo_count": "0",
+    "/sys/devices/system/edac/mc/mc1/ce_count": "0",
+    "/sys/devices/system/edac/mc/mc1/ce_noinfo_count": "0",
+    "/sys/devices/system/edac/mc/mc1/ue_count": "0",
+    "/sys/devices/system/edac/mc/mc1/ue_noinfo_count": "0"
+  },
+  "storage": "Name                     Type     Status           Total            Used       Available        %\ndell-local-backup         dir     active      7750194656       129377852      7230153484    1.67%\nlocal                     dir     active        98497780        10682628        82765604   10.85%\nlocal-lvm             lvmthin     active       334610432        14020177       320590254    4.19%\nstore                     dir     active      7750194656       129377852      7230153484    1.67%\n",
+  "active-nft-tables": "table bridge dell19_acl\n"
+}

@@ -68,7 +68,7 @@
   "inventory_evidence": "completion/20261109/pve-audit.json",
   "git_repository_mapping": {
     "catalog": "machines/git-repositories.json",
-    "catalog_machine_pointer": "/machines/14",
+    "catalog_machine_pointer": "/machines/13",
     "machine_path": "machines/tpl9001-docker-base",
     "document_path": "machines/tpl9001-docker-base/GIT-REPOSITORIES.md",
     "source_role": "docs-only",

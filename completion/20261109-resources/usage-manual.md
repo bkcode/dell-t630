@@ -1,3 +1,5 @@
+> 当前使用入口（2026-11-10）：资源仅NFS；FileBrowser两unit已退休/masked、8080无监听，旧账号/state受保护保留。请先读[现行NFS操作手册](../20261110-nfs-only/usage-manual.md)与[本轮验证](../20261110-nfs-only/README.md)。**下方管理HTTPS/HTTP与最初验收描述仅是历史；NFS原身份/导出/挂载合同继续保持，不能据本页旧Web段重新启用或初始化FileBrowser。**
+
 # 统一资源目录使用手册
 
 更新：2026-11-10，Asia/Shanghai。用户选择正式/测试共用同一台资源服务器和同一个目录。**VM280 NFS与230/240真挂载、权限/跨机读写已通过；仅280受控重启约30秒与fsync canary持久性通过，两client挂载恢复，未重启running。** 这里只提供人工操作示例，不自动运行任何命令；不启Java、不迁入旧资源文件、不启业务图片HTTP，也不扩展当前正式DB/Nacos自动备份；新增管理HTTPS见下节。

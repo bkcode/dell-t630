@@ -207,7 +207,7 @@
       "sha256": "a6b0b627b7ec7a210eab6db0071d43ca5e0c41cddf03e9d7db5da071adceda44"
     },
     {
-      "path": "machines/vm221-artifact-service/GIT-REPOSITORIES.md",
+      "path": "archive/machines-vm221-artifact-service-20261110/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
       "sha256": "210e6c038709c46d3c95be8905d2a5633109abbb9e80f65bfc7c6001156bec0c"
@@ -219,5 +219,6 @@
       "sha256": "1c697579f0a3d2f909ff6955b4896d450b94b2f54b321fcd37538e18212341b3"
     }
   ],
-  "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."
+  "snapshot_policy": "Retired VM221 historical source index; recorded source hashes belong to pre-archive snapshots and do not claim current source equality; no secrets or backup payloads",
+  "archive_only": true
 }

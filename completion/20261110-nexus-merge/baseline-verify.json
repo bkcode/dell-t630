@@ -1,0 +1,13 @@
+{
+  "status": "GET-only-baseline-verify-passed",
+  "repositories": 12,
+  "hosted_repositories": 7,
+  "components": 50,
+  "assets_read_and_hashed": 1347,
+  "all_asset_bytes_paths_IDs_and_repository_security_equal": true,
+  "only_volatile_field": "hosted.components[].assets[].lastDownloaded",
+  "GET_updated_timestamp_count": 1172,
+  "API_GET_requests": 1390,
+  "repository_writes": false,
+  "private_details_retained_VM_only": true
+}

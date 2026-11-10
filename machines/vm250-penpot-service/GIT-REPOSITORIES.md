@@ -1,6 +1,6 @@
 # VM250 · penpot-service：Git来源与取用边界
 
-更新：2026-11-10，Asia/Shanghai。本文从唯一[Git来源总表](../git-repositories.json)的`/machines/10`派生；机器位置`machines/vm250-penpot-service`，身份与资源仍以[plan.json](../../plan.json)为准。
+更新：2026-11-10，Asia/Shanghai。本文从唯一[Git来源总表](../git-repositories.json)的`/machines/9`派生；机器位置`machines/vm250-penpot-service`，身份与资源仍以[plan.json](../../plan.json)为准。
 
 本表记录来源与取用边界；当前受控取码与上线由[实际交付证据](../../evidence/penpot-onboarding-20261110/README.md)证明，不能将它当通用bootstrap或私钥分发授权。
 

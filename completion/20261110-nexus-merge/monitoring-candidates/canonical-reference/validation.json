@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "tests_run": 7,
+  "failures": 0,
+  "errors": 0,
+  "scope": "local pure-function/source-CAS checks; publisher fixture is synthetic",
+  "other_role_profiles_unchanged": true,
+  "resource280_and_FileBrowser_sources_unchanged": true,
+  "server_connections_or_changes": false,
+  "canonical_source_files_written": false
+}

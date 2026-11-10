@@ -5,27 +5,40 @@
     "vmid": 220,
     "name": "publish-service",
     "ip": "192.168.19.30",
-    "vcpu": 4,
-    "memory_gib": 4
+    "vcpu": 6,
+    "memory_gib": 8
   },
   "source_of_truth": "plan.json",
-  "last_verified_at": "2026-11-10T22:29:22.979636+08:00",
+  "last_verified_at": "2026-11-10T23:14:54.198917+08:00",
   "current_runtime_verified": true,
   "status": "recovered-infrastructure-verified",
-  "verification_note": "Fresh metadata/service audit after natural host reboot; no data migration, Nexus merge or Java business deployment.",
+  "verification_note": "Nexus original data and identities consolidated, network/monitoring and controlled220 reboot verified; Java remains off",
   "network": {
     "bridge": "vmbr19",
     "prefix_length": 24,
     "gateway": "192.168.19.1",
     "DNS": "192.168.19.1",
-    "additional_ips": []
+    "additional_ips": [
+      "192.168.19.31"
+    ]
   },
   "storage": {
     "system_storage": "store",
     "data_storage": "store",
     "data_disk_gib": 100,
     "guest_mountpoint": "/srv/dell-build",
-    "data_filesystem_uuid": "16dc6067-56ef-4687-a314-edc6421f9ed4"
+    "data_filesystem_uuid": "16dc6067-56ef-4687-a314-edc6421f9ed4",
+    "additional_data_volumes": [
+      {
+        "pve_device": "scsi2",
+        "size_gib": 100,
+        "pve_storage": "store",
+        "mountpoint": "/srv/nexus",
+        "filesystem_uuid": "239dc45a-b1f3-408b-a8ef-7afa77b52204",
+        "source_vmid": 221,
+        "original_disk_uniquely_transferred": true
+      }
+    ]
   },
   "startup_order": {
     "vmid": 220,
@@ -40,7 +53,7 @@
       "compose": "5.7.0",
       "storage_driver": "overlay2",
       "live_restore": false,
-      "mode": "installed-preparation-only-no-Nexus-stack"
+      "mode": "active-Nexus-original-immutable-images"
     },
     "fish": {
       "installed_by_this_task": true,
@@ -76,7 +89,7 @@
       "source_repository": "bkcode/deploy",
       "source_module": "service-directory",
       "revision": "d56cae553bf95ce0e2c3fe8f258a2f99389aae7c",
-      "release_path": "/opt/dell/service-directory/releases/d56cae553bf95ce0e2c3fe8f258a2f99389aae7c",
+      "release_path": "/opt/dell/service-directory/releases/nfs-nexus-20261110-12f2461e4766",
       "manifest_path": "/etc/dell-service-directory/manifest.json",
       "UID": 2001,
       "GID": 2001,
@@ -126,8 +139,11 @@
         "ddccc2b98bbb3dfdc9de649443dc3fcdc7b4860f",
         "d56cae553bf95ce0e2c3fe8f258a2f99389aae7c"
       ],
-      "navigation_links_applied_evidence": "evidence/internal-http-20261110/navigation-links-applied.json",
-      "historical_layout_revision": "ddccc2b98bbb3dfdc9de649443dc3fcdc7b4860f"
+      "navigation_links_applied_evidence": "completion/20261110-nexus-merge/navigation-updated.json",
+      "historical_layout_revision": "ddccc2b98bbb3dfdc9de649443dc3fcdc7b4860f",
+      "current_web_addresses": 13,
+      "current_catalog_public_SHA256": "12f2461e4766594ef58f58b596c304adcafc832d2aa93b000f29eadefb585d11",
+      "source_provenance_note": "Original committed code unchanged; latest catalog is authorized local source change not committed/pushed, runtime exact catalog release applied"
     },
     {
       "name": "puyu-deploy-mcp",
@@ -135,10 +151,20 @@
       "unit": "puyu-deploy-mcp.service",
       "bind": "127.0.0.1:18765",
       "source_repository": "bkcode/deploy-public",
-      "revision": "f3991ad9c0b7c1e5b6391e6110d9905dffdc25d9",
+      "revision": "213f1f42924f18e0d7b5848c2c1141a6230c1f5a",
       "run_user": "ub",
       "real_deployment_enabled": false,
       "preflight_verified": true
+    },
+    {
+      "name": "nexus",
+      "kind": "Docker-Compose-systemd",
+      "unit": "dell-nexus.service",
+      "bind": "192.168.19.31:8081",
+      "URL": "http://192.168.19.31:8081/",
+      "data_mountpoint": "/srv/nexus",
+      "source_vmid": 221,
+      "original_data_and_identities_preserved": true
     }
   ],
   "boundaries": {
@@ -149,7 +175,7 @@
     "Docker_on_PVE_host": false
   },
   "target_section": {
-    "status": "user-explicitly-deferred-no-migration-20261108",
+    "status": "applied-and-verified",
     "vcpu": 6,
     "memory_gib": 8,
     "primary_ip": "192.168.19.30",
@@ -158,11 +184,11 @@
     ],
     "Nexus_data_UUID": "239dc45a-b1f3-408b-a8ef-7afa77b52204",
     "reference": "17-publish-artifact-consolidation.md",
-    "executed": false
+    "executed": true
   },
-  "current_verification_evidence": "evidence/deploy-public-modes-20261110/final-postcheck.json",
-  "current_verification_scope": "Publisher CLI prod/main dev/dev mapping, dev-only MCP guards, source preservation; actual upstream dev unavailable, no business deployment",
-  "timestamp_scope": "2026-11-10T22:29:22.979636+08:00 standard mode scoped postcheck; historical sections keep their own dates",
+  "current_verification_evidence": "completion/20261110-nexus-merge/final-postcheck.json",
+  "current_verification_scope": "Nexus content identity original data, dual IP route source, build and Nexus mounts, preserved publisher/nav/MCP private settings, controlled reboot and monitoring",
+  "timestamp_scope": "Nexus consolidation final postcheck; older mode tests and PID values retain their own dates",
   "local_backup": {
     "included_in_fixed_PVE_job": false,
     "included_in_production_logical_backup": false,
@@ -193,7 +219,9 @@
       "puyu-service-core"
     ],
     "dependency_repository_ids": [],
-    "upstream_repository_ids": [],
+    "upstream_repository_ids": [
+      "nexus-upstream"
+    ],
     "repository_ids": [
       "infra",
       "deploy",
@@ -203,7 +231,8 @@
       "puyu-bff-web",
       "puyu-common-lib",
       "puyu-gateway",
-      "puyu-service-core"
+      "puyu-service-core",
+      "nexus-upstream"
     ],
     "git_usage_mode": "build-source-configured-business-disabled",
     "direct_runtime_business_git_pull": false,
@@ -315,5 +344,68 @@
     "final_postcheck": "evidence/deploy-public-modes-20261110/final-postcheck.json",
     "MCP_MainPID": "30260",
     "MCP_NRestarts": 0
+  },
+  "Nexus_consolidation_20261110": {
+    "status": "completed-original-data-and-identity-verified-source221-retired-20261110",
+    "active_vmid": 220,
+    "active_service_IP": "192.168.19.31",
+    "target_vmid": 220,
+    "desired_target_resources": {
+      "vcpu": 6,
+      "memory_gib": 8
+    },
+    "desired_target_primary_IP": "192.168.19.30",
+    "desired_target_service_alias": "192.168.19.31",
+    "target_stack_not_started": false,
+    "approval_evidence": "cleanup/nexus/approval-block.json",
+    "standby_evidence": "cleanup/nexus/preparation-readback.json",
+    "authorization_evidence": "cleanup/nexus/maintenance-authorized.json",
+    "current_source_runtime": "VM221 retired after full target data/identity/network/monitoring and reboot verification",
+    "hardware_gate": "cleanup/hardware/DIMM_B1-incident.json",
+    "source_not_stopped_by_assistant": false,
+    "migration_started": true,
+    "target_hostname": "publish-service",
+    "target_components": [
+      "build-and-restricted-publisher",
+      "Nexus-artifact-repository"
+    ],
+    "target_independent_VM_names": [
+      "publish-service"
+    ],
+    "artifact_service_name_policy": "retire VM221 as an independent server; existing artifact-service DNS may remain a logical Nexus alias on VM220 serviceIP31",
+    "target_inventory": {
+      "instances": 12,
+      "virtual_machines": 11,
+      "lxc": 1,
+      "templates": 3,
+      "configured_vCPU": 45,
+      "configured_memory_GiB": 87,
+      "monitoring_node_targets": 10,
+      "monitoring_total_targets": 15
+    },
+    "architecture_document": "17-publish-artifact-consolidation.md",
+    "target_not_applied_to_roles": false,
+    "current_delivery_directory": "completion/20261110-nexus-merge",
+    "source_cold_backup_PVE_only": true,
+    "source_cold_backup_bytes": 2400054202,
+    "source_retired": true,
+    "source_retirement_evidence": "completion/20261110-nexus-merge/retirement-result.json",
+    "acceptance": "completion/20261110-nexus-merge/acceptance.json",
+    "final_postcheck": "completion/20261110-nexus-merge/final-postcheck.json",
+    "source_machine_archive": "archive/machines-vm221-artifact-service-20261110",
+    "current_components": [
+      "build-and-restricted-publisher-fenced",
+      "Puyu-local-tool-and-dev-only-MCP",
+      "anonymous-readonly-service-navigation",
+      "Nexus-artifact-repository"
+    ],
+    "full_hosted_data_baseline": {
+      "repositories": 12,
+      "hosted_repositories": 7,
+      "components": 50,
+      "assets": 1347,
+      "verification_evidence": "completion/20261110-nexus-merge/baseline-compared.json"
+    },
+    "operations_manual": "completion/20261110-nexus-merge/usage-manual.md"
   }
 }

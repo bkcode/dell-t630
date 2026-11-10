@@ -1,0 +1,145 @@
+{
+  "at": "2026-11-10T14:41:10.597958+00:00",
+  "vmid": 220,
+  "hostname": "publish-service",
+  "OS": {
+    "PRETTY_NAME": "Debian GNU/Linux 13 (trixie)",
+    "VERSION_ID": "13",
+    "ID": "debian"
+  },
+  "arch": "x86_64",
+  "CPU_count": 4,
+  "memory": {
+    "MemTotal": 4112363520,
+    "MemAvailable": 3592560640,
+    "SwapTotal": 0,
+    "SwapFree": 0
+  },
+  "load_average": [
+    0.0078125,
+    0.0283203125,
+    0.00830078125
+  ],
+  "physical_interfaces": [
+    {
+      "name": "eth0",
+      "MAC": "bc:24:11:2a:01:ad",
+      "ipv4": [
+        {
+          "ip": "192.168.19.30",
+          "prefix": 24
+        }
+      ]
+    }
+  ],
+  "root_disk": {
+    "capacity_bytes": 33603391488,
+    "available_bytes": 27413934080
+  },
+  "role_data_mount": {
+    "mounted": true,
+    "filesystems": [
+      {
+        "target": "/srv/dell-build",
+        "source": "/dev/sdb",
+        "fstype": "ext4",
+        "uuid": "16dc6067-56ef-4687-a314-edc6421f9ed4"
+      }
+    ],
+    "capacity_bytes": 105089261568,
+    "available_bytes": 105033801728
+  },
+  "docker_binary": "/usr/bin/docker",
+  "private_key_or_secret_contents_read": false,
+  "mutations": false,
+  "user_groups": {
+    "ub": "uid=1000(ub) gid=1000(ub) groups=1000(ub),27(sudo)",
+    "publisher": "uid=999(publisher) gid=989(publisher) groups=989(publisher)"
+  },
+  "packages": {
+    "docker-ce": "ii  5:29.9.3-1~debian.13~trixie",
+    "docker-ce-cli": "ii  5:29.9.3-1~debian.13~trixie",
+    "containerd.io": "ii  2.4.2-3~debian.13~trixie",
+    "docker-compose-plugin": "ii  5.7.0-1~debian.13~trixie",
+    "openjdk-21-jdk-headless": "ii  21.0.13+9-1~deb13u2"
+  },
+  "units": {
+    "docker.service": {
+      "Type": "notify",
+      "Restart": "always",
+      "MainPID": "755",
+      "BindsTo": "",
+      "RequiresMountsFor": "",
+      "ActiveState": "active",
+      "SubState": "running",
+      "FragmentPath": "/usr/lib/systemd/system/docker.service",
+      "DropInPaths": "",
+      "UnitFileState": "enabled"
+    },
+    "prometheus-node-exporter.service": {
+      "Type": "simple",
+      "Restart": "on-failure",
+      "MainPID": "745",
+      "BindsTo": "",
+      "RequiresMountsFor": "",
+      "ActiveState": "active",
+      "SubState": "running",
+      "FragmentPath": "/usr/lib/systemd/system/prometheus-node-exporter.service",
+      "DropInPaths": "/etc/systemd/system/prometheus-node-exporter.service.d/10-private-only.conf",
+      "UnitFileState": "enabled"
+    },
+    "dell-guest-health.service": {
+      "Type": "oneshot",
+      "Restart": "no",
+      "MainPID": "0",
+      "BindsTo": "",
+      "RequiresMountsFor": "",
+      "ActiveState": "inactive",
+      "SubState": "dead",
+      "FragmentPath": "/etc/systemd/system/dell-guest-health.service",
+      "DropInPaths": "",
+      "UnitFileState": "static"
+    }
+  },
+  "publisher_key_metadata_only": {
+    "exists": true,
+    "uid": 999,
+    "gid": 989,
+    "mode": "0o600",
+    "size_bytes": 419,
+    "symlink": false
+  },
+  "publisher_client": {
+    "exists": true,
+    "uid": 0,
+    "gid": 0,
+    "mode": "0o755",
+    "size_bytes": 4445,
+    "symlink": false,
+    "sha256": "d674598542a73556f31d85d4f5c6bbdd55d66dddb9acb4d84cb7587e4f532969"
+  },
+  "publisher_client_public_literals": {
+    "contains19_45": true,
+    "contains19_31": false,
+    "contains_old10_63": false
+  },
+  "busy_build_process_counts": {
+    "java": 0,
+    "node": 0,
+    "gradle": 0,
+    "pnpm": 0
+  },
+  "nexus_paths_already_exist": {
+    "/opt/dell/nexus": false,
+    "/etc/nexus.env": false,
+    "/srv/nexus": false,
+    "/root/dell-nexus-secrets": false
+  },
+  "docker": {
+    "name": "publish-service",
+    "version": "29.9.3",
+    "driver": "overlay2",
+    "root": "/var/lib/docker",
+    "arch": "x86_64"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "status": "full-hosted-data-and-security-baseline-verified",
+  "repositories": 12,
+  "hosted_repositories": 7,
+  "components": 50,
+  "asset_content_hashes_verified": 1347,
+  "all_asset_bytes_paths_and_IDs_equal": true,
+  "repository_configurations_users_roles_EULA_equal": true,
+  "component_metadata_equal_except_lastDownloaded": true,
+  "GET_updated_lastDownloaded_fields": 1172,
+  "ignored_field_scope": "only hosted.components[].assets[].lastDownloaded operational timestamp",
+  "private_snapshots_preserved_VM_only": true,
+  "repository_writes": false
+}

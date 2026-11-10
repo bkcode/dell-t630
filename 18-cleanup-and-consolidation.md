@@ -1,8 +1,11 @@
 # 实例精简、模板清理与fish：最后验收结果
 
+> 2026-11-10最新覆盖：用户已明确恢复Nexus合并并移除独立artifact-service；当前合并和最终核验已完成，旧“不合并/不退役221”只代表此前阶段。完成后为VM220 6CPU8GiB、primary19.30+Nexus alias19.31，保留原build卷并承接原Nexus100GiB卷；12来宾/3模板、45CPU87GiB、15targets已按最终回执验证。详细状态见[本次交付](completion/20261110-nexus-merge/README.md)。Java业务不启、旧链fenced、私有MCP/APIkey与备份边界保持。
+
+
 更新：2026-11-09（Asia/Shanghai）。继续完成基础搭建并按用户新范围仅备正式数据库/Nacos配置，**明确暂不迁移、不合并Nexus、不退役221**。本次自然重启后fresh核为12running/3tpl、15targets UP；当日状态统一见[11月9日交付记录](completion/20261109-prod-db-scope/README.md)。此前实例/模板清理和fish安装仍为已完成历史，不能扩写为新的迁移已完成。历史Nexus短停许可保留，但不覆盖本轮不迁移的最新范围。
 
-## 当前保留对象
+## 11月9日恢复阶段保留对象（历史快照）
 
 | VMID | 名称 | 地址 | 当前作用 |
 | --- | --- | --- | --- |
@@ -35,7 +38,7 @@
 
 证据：[依赖DAG](cleanup/audit/disk-dependency-dag.json)、[删除复核](cleanup/audit/delete-script-review.md)、[实际删除](cleanup/deleted-candidates.json)、[备份汇总](cleanup/backup-summary.json)、[模板换版](cleanup/fish/core-template-replacement.json)、[QA](cleanup/fish/template-QA-summary.json)、[临时机清理](cleanup/fish/temp-closeout.json)。
 
-## fish范围与使用
+## fish安装历史与使用
 
 已装的9台运行来宾：190、200、201、210、220、221、230、240、260；另外三份保留模板也已更新并验证。CF100、Penpot250、Ops270按要求排除；PVE宿主未安装或修改shell。
 
@@ -45,7 +48,7 @@
 
 证据：[9来宾安装](cleanup/fish/runtime-status.json)、[模板工具](cleanup/fish/TEMPLATE-BUILD.md)、[独立QA汇总](cleanup/fish/template-QA-summary.json)。
 
-## DNS、网络和监控同步
+## 11月7–9日DNS、网络和监控历史
 
 PVE bridge已清理退休/临时身份并重新登记三个模板MAC，保留源MAC/IP绑定、prod/test/home隔离和WireGuard10.66.66/24受信访问；PVE21.22仍只管理/二层，forward0、无NAT。
 
@@ -55,7 +58,7 @@ VM190仅更新DNS静态host-record，删除批准的11条旧记录。11个保留
 
 证据：[DNS](cleanup/network/dns-runtime/summary.json)、[配套监控](cleanup/monitoring/ten-role/execution-status.json)、[最终实机检查](cleanup/final-live-check.json)、[维护解除](cleanup/maintenance-ended.json)。
 
-## 本轮补齐与清理：不迁移数据
+## 11月9日基础补齐历史
 
 [空闲iperf3常驻已stop/disable](completion/20261109/idle-iperf-disabled.json)，关闭5201、软件包保留，不更改网络或重启来宾。原15旧对象/6临时对象及21回退档保留原历史，不重放删除工具。
 
@@ -65,7 +68,7 @@ VM190仅更新DNS静态host-record，删除批准的11条旧记录。11个保留
 
 旧全机11项成功属早前阶段，停计划不删除旧档、不退役VM221；OW规则仅本地保留，不触/不上传。
 
-## Nexus合并：历史准备保留，本轮明确不迁移
+## 早前Nexus准备与暂缓历史（禁止重放）
 
 [17合并架构](17-publish-artifact-consolidation.md)保留未来目标；当前220/221仍是两台独立VM，下方技术步骤本轮不执行。
 
@@ -80,3 +83,9 @@ VM190仅更新DNS静态host-record，删除批准的11条旧记录。11个保留
 具体准备：[Nexus方案](cleanup/nexus/PLAN.md)、[待机读回](cleanup/nexus/preparation-readback.json)、[审批拦截记录](cleanup/nexus/approval-block.json)。
 
 人工步骤仅供将来明确恢复对应任务时参考，见[操作手册](19-manual-operations.md)。当前恢复基础与历史硬件故障分开记录；Java业务不部署，Penpot历史应用不升级。
+
+## 2026-11-10恢复Nexus合并
+
+用户已恢复执行并要求移除独立artifact-service。源停服/冷备/原盘唯一移交及220目标启动已有回执，最终数据/身份/网络/监控和221退役已按[本次交付](completion/20261110-nexus-merge/README.md)签收。220为6CPU8GiB、primary30+alias31，build与Nexus各100GiB；当前12来宾/3模板、45CPU87GiB、15targets（含280）。
+
+源冷备2,400,054,202字节仅PVE、SHA/zstd/VMA已核，不wholebackup220。新鲜Nexus基线12repos/7hosted/50components/1347assets，原49GAV234主件只历史。Java业务不启，旧链fenced，MCP/导航与私有配置保持。旧221机器资料归档后只能查历史，不能重建第二个31所有者。

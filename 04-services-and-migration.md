@@ -1,5 +1,8 @@
 # 服务部署结果、迁移边界与未完成事项
 
+> 2026-11-10阶段更新：用户已恢复Nexus合并与独立221退役，当前状态以[本次交付](completion/20261110-nexus-merge/README.md)、[现行架构](17-publish-artifact-consolidation.md)和[当前交接](11-live-handoff.md)为准。下文是此前基础阶段记录，旧“不合并/221独立/standby”、旧数量和版本不再作为当前现场结论，原验收与未签恢复范围按其时间保留。Java业务不启、旧链fenced；禁止重放历史初始化/迁移器。
+
+
 更新：2026-11-09。**继续补齐现有基础搭建，用户最新仅选择正式数据库/Nacos配置自动备份，不迁移数据。** 本轮14:42–14:44在14:24自然重启后再次观察基础服务健康，forward guard跨重启全0。[正式DB首轮与timer](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)成功，旧whole-VM任务停用，不签恢复或异机灾备。Nexus221保持独立、Java业务不启、Penpot实际ff提交不更新main；Mac外部探针不再需要。没有重做全部应用内容/认证/恢复，整体见[01](01-current-state.md)、[08](08-hardware-findings.md)。
 
 ## 1. 当前实际服务归属与验收层级

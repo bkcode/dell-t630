@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "status": "local-source-candidate-not-installed",
+  "scope": "retire artifact-service exporter role; add same Nexus component to publish-service; no other role or collector change",
+  "files": {
+    "guest-targets.json": {
+      "source": "infra/ops/guest-baseline/guest-targets.json",
+      "before_SHA256": "f632b7ff22cf168a621ff1acda6ddaecf598bb17403b08481f0b5f27b32a8c43",
+      "new_SHA256": "9701107240dc610770c56dc896e77675e10a1ff2e4e11ddb5b7cc6a2edffe1ba",
+      "delta": "remove exact VM221 role row; descriptive scope count becomes10; remaining rows and other metadata unchanged"
+    },
+    "install-guest-baseline.py": {
+      "source": "infra/ops/guest-baseline/install-guest-baseline.py",
+      "before_SHA256": "fb612f39bd68641d2f5b0bdc79da193c2d770f88cbaee3c6a726a6b0ce9acf74",
+      "new_SHA256": "b50ba2199c3c2d9830d72ad5239dd89a3283a0a4809935dc897b331ea9040582",
+      "delta": "five exact byte replacements: enum removal, Nexus profile retarget, Docker role retarget, alias31 local URL"
+    }
+  },
+  "retained_roles": 10,
+  "retired_role": "artifact-service",
+  "publisher_primary": "192.168.19.30",
+  "Nexus_service_alias": "192.168.19.31",
+  "canonical_sources_modified": false,
+  "server_connections_or_changes": false,
+  "resource280_or_FileBrowser_modified": false,
+  "collector_source_SHA256_unchanged": "3c8b51912733c6d7634ca787098c0fe853cfb924ad16058630158c0cdb1b2228",
+  "local_helpers_SHA256": {
+    "merge_publisher_health.py": "354fd89dd4905b38c9abc78b4c3f162f453660e4a8b09f5538c3ea796a479782",
+    "validate_candidates.py": "1ee4e5e03a078f3409cb36443580a803f0157c7cf6fddd1e01cb306cb611f8ed"
+  }
+}

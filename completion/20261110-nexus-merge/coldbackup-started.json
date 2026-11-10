@@ -1,0 +1,8 @@
+{
+  "vmid": 221,
+  "source_status": "stopped",
+  "cold_backup_unit": "dell-nexus-coldbackup-20261110",
+  "archive_destination": "/mnt/pve/store/dell-artifacts/nexus-merge-cold-20261110",
+  "archives_remain_PVE_only": true,
+  "VM220_backup_performed": false
+}

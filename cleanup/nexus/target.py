@@ -103,8 +103,10 @@ def commit(folder):
   private=key.startswith(('secret/','env/')) or key=='package/fresh-instance.json'
   atomic(path,read(folder/'prepared'/key.replace('/','__')),0o600 if private else 0o644)
  run(['/usr/bin/python3','/opt/dell/nexus/manage.py','check','--env-file','/etc/nexus.env'],timeout=90)
- run(['/usr/bin/systemd-analyze','verify','/etc/systemd/system/dell-nexus.service'],timeout=60)
- run(['/usr/bin/systemctl','daemon-reload']);run(['/usr/bin/systemctl','enable','dell-nexus.service'])
+ run(['/usr/bin/systemctl','daemon-reload'])
+ mount_unit=Path('/run/systemd/generator/srv-nexus.mount');assert mount_unit.is_file(),'generated persistent mount unit required'
+ run(['/usr/bin/systemd-analyze','verify','/etc/systemd/system/dell-nexus.service',str(mount_unit)],timeout=60)
+ run(['/usr/bin/systemctl','enable','dell-nexus.service'])
  j['phase']='installed-no-start';save(folder/'relocation.json',j)
 
 

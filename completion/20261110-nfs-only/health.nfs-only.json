@@ -1,0 +1,16 @@
+{
+  "role": "resource-service",
+  "private_ip": "192.168.19.80",
+  "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+  "services": [
+    "ssh.service",
+    "qemu-guest-agent.service",
+    "prometheus-node-exporter.service",
+    "nfs-server.service",
+    "dell-resources-firewall.service"
+  ],
+  "http_checks": [],
+  "candidate_service_units": [],
+  "candidate_http_checks": [],
+  "notes": "Active resource NFS and owned firewall after native UUID/export/version validation; no HTTP/Java or data backup scope."
+}

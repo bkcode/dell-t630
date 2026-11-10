@@ -1,0 +1,87 @@
+{
+  "at": "2026-11-10T22:51:19.861188+08:00",
+  "status": "NFS-only-current-runtime-verified",
+  "vmid": 280,
+  "units": {
+    "dell-filebrowser.service": {
+      "MainPID": "0",
+      "ActiveState": "inactive",
+      "SubState": "dead",
+      "UnitFileState": "masked"
+    },
+    "dell-filebrowser-firewall.service": {
+      "MainPID": "0",
+      "ActiveState": "inactive",
+      "SubState": "dead",
+      "UnitFileState": "masked"
+    },
+    "ssh.service": {
+      "MainPID": "705",
+      "ActiveState": "active",
+      "SubState": "running",
+      "UnitFileState": "enabled"
+    },
+    "qemu-guest-agent.service": {
+      "MainPID": "670",
+      "ActiveState": "active",
+      "SubState": "running",
+      "UnitFileState": "static"
+    },
+    "prometheus-node-exporter.service": {
+      "MainPID": "717",
+      "ActiveState": "active",
+      "SubState": "running",
+      "UnitFileState": "enabled"
+    },
+    "nfs-server.service": {
+      "MainPID": "0",
+      "ActiveState": "active",
+      "SubState": "exited",
+      "UnitFileState": "enabled"
+    },
+    "dell-resources-firewall.service": {
+      "MainPID": "0",
+      "ActiveState": "active",
+      "SubState": "exited",
+      "UnitFileState": "enabled"
+    }
+  },
+  "health": {
+    "role": "resource-service",
+    "private_ip": "192.168.19.80",
+    "textfile_directory": "/var/lib/prometheus/node-exporter-textfile",
+    "services": [
+      "ssh.service",
+      "qemu-guest-agent.service",
+      "prometheus-node-exporter.service",
+      "nfs-server.service",
+      "dell-resources-firewall.service"
+    ],
+    "http_checks": [],
+    "candidate_service_units": [],
+    "candidate_http_checks": [],
+    "notes": "Active resource NFS and owned firewall after native UUID/export/version validation; no HTTP/Java or data backup scope."
+  },
+  "resource_service_metrics_active": 5,
+  "FileBrowser_metrics_absent": true,
+  "TCP_UDP_8080_listeners_absent": true,
+  "FileBrowser_owned_table_absent": true,
+  "NFS_guard": {
+    "mount_guard": true,
+    "role": "server"
+  },
+  "NFS_public_config_SHA256": {
+    "/etc/exports.d/dell-resources.exports": "7d364633485da8f4d4c521bf91da95b3f772ec681fc45c3cc09fc0c030777f4f",
+    "/etc/nfs.conf.d/90-dell-resources.conf": "5f0f487e15e2b887bcd000cda92c41826334e9b55ed5127d2721f911a0d5ca1a",
+    "/etc/dell-resources/input.nft": "e407e8e4f11fdcbc2b496f1a3325f000b048baff37644587db8f02486abcd1f0"
+  },
+  "exports_exact_clients": [
+    "192.168.19.40",
+    "192.168.19.45"
+  ],
+  "root_squash": true,
+  "NFS_versions": "-3 +4 -4.0 +4.1 -4.2",
+  "NFS_or_resource_mutations": false,
+  "credentials_output": false,
+  "NFS_public_config_matches_before": true
+}

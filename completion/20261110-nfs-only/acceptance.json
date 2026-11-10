@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-10T22:54:03.669068+08:00",
+  "status": "VM280-NFS-only-verified-navigation-source-prepared",
+  "scope": "VM280 retirement and NFS checks plus local navigation entry removal; parent handles VM220 runtime and VM270 final Prometheus validation",
+  "cases": [
+    {
+      "id": "NFSONLY-RETIRE-001",
+      "title": "FileBrowser现役停用",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确确认仅保留NFS、停用FileBrowser；子任务仅写280与指定导航本地源码"
+      ],
+      "steps": [
+        "受控停用并保留受保护回退；只读检查原NFS与两client；清理唯一servercanary"
+      ],
+      "observable_pass_conditions": [
+        "两个unit inactive/masked",
+        "TCP/UDP8080无监听，专属输入表撤除，原state/secret保护保留"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-nfs-only/retirement-result.json",
+          "note": "Public metadata only; no secrets or business file bodies"
+        },
+        {
+          "path": "completion/20261110-nfs-only/final-postcheck.json",
+          "note": "Public metadata only; no secrets or business file bodies"
+        }
+      ],
+      "verified_at": "2026-11-10T22:54:03.669068+08:00"
+    },
+    {
+      "id": "NFSONLY-NFS-001",
+      "title": "原NFS及服务保持",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确确认仅保留NFS、停用FileBrowser；子任务仅写280与指定导航本地源码"
+      ],
+      "steps": [
+        "受控停用并保留受保护回退；只读检查原NFS与两client；清理唯一servercanary"
+      ],
+      "observable_pass_conditions": [
+        "NFS配置/exports/版本/输入表与服务身份保持，无NFS或client重启",
+        "只允许230/240精确客户端，原UUID和目录权限保持，5项健康active"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-nfs-only/before-resume.json",
+          "note": "Public metadata only; no secrets or business file bodies"
+        },
+        {
+          "path": "completion/20261110-nfs-only/retirement-result.json",
+          "note": "Public metadata only; no secrets or business file bodies"
+        },
+        {
+          "path": "completion/20261110-nfs-only/final-postcheck.json",
+          "note": "Public metadata only; no secrets or business file bodies"
+        }
+      ],
+      "verified_at": "2026-11-10T22:54:03.669068+08:00"
+    },
+    {
+      "id": "NFSONLY-READ-001",
+      "title": "两个client当前真挂载与非root读回",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确确认仅保留NFS、停用FileBrowser；子任务仅写280与指定导航本地源码"
+      ],
+      "steps": [
+        "受控停用并保留受保护回退；只读检查原NFS与两client；清理唯一servercanary"
+      ],
+      "observable_pass_conditions": [
+        "230/240均真NFSv4.1挂载，finger读回唯一servercanary",
+        "fixture清理，未写client或读取业务文件"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-nfs-only/NFS-verification.json",
+          "note": "Public metadata only; no secrets or business file bodies"
+        }
+      ],
+      "verified_at": "2026-11-10T22:54:03.669068+08:00"
+    },
+    {
+      "id": "NFSONLY-NAVSOURCE-001",
+      "title": "导航源码精确移除",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确确认仅保留NFS、停用FileBrowser；子任务仅写280与指定导航本地源码"
+      ],
+      "steps": [
+        "受控停用并保留受保护回退；只读检查原NFS与两client；清理唯一servercanary"
+      ],
+      "observable_pass_conditions": [
+        "指定FileBrowser入口删除14→13，其他行保持，schema有效",
+        "未提交/push原repo或部署VM220，本项只签本地源码"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-nfs-only/navigation-source-change.json",
+          "note": "Public metadata only; no secrets or business file bodies"
+        }
+      ],
+      "verified_at": "2026-11-10T22:54:03.669068+08:00"
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "current_phase_case_count": 4,
+    "current_phase_passed": 4
+  },
+  "limitations": [
+    "No new client write test; historical two-client write acceptance remains separately dated",
+    "Navigation runtime deployment and global monitoring/catalog reconciliation are parent work, not claimed here",
+    "No new NFS clients, template or business application changes, data migration, automatic backup scope or FileBrowser state deletion"
+  ]
+}

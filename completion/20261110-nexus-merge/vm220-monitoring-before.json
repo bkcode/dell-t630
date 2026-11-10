@@ -1,0 +1,13 @@
+{
+  "files": {
+    "/etc/systemd/system/dell-service-directory.service": {
+      "sha256": "ec8f3f134ee6bdd5094e493ccde0882a5188dc04869211b56787d05b9e3fdb85",
+      "text": "[Unit]\nDescription=Service address directory\nAfter=network-online.target dell-service-directory-firewall.service\nWants=network-online.target\nRequires=dell-service-directory-firewall.service\nStartLimitIntervalSec=120\nStartLimitBurst=3\n[Service]\nType=simple\nUser=servicedirectory\nGroup=servicedirectory\nWorkingDirectory=/opt/dell/service-directory\nUMask=0077\nExecStart=/usr/bin/python3 -I -B /opt/dell/service-directory/releases/d56cae553bf95ce0e2c3fe8f258a2f99389aae7c/server.py --bind 192.168.19.30 --port 9080 --catalog /opt/dell/service-directory/releases/d56cae553bf95ce0e2c3fe8f258a2f99389aae7c/services.json --http\nRestart=on-failure\nRestartSec=5\nNoNewPrivileges=yes\nProtectSystem=strict\nProtectHome=yes\nPrivateTmp=yes\nMemoryMax=128M\nCPUQuota=30%\nTasksMax=32\nLimitNOFILE=256\n[Install]\nWantedBy=multi-user.target\n"
+    },
+    "/etc/dell-guest-monitoring/health.json": {
+      "sha256": "635a55b71b53abf827f9d5280d1028542b0f0ef2a9281fe62c40a94141e59cf9",
+      "text": "{\n  \"role\": \"publish-service\",\n  \"private_ip\": \"192.168.19.30\",\n  \"textfile_directory\": \"/var/lib/prometheus/node-exporter-textfile\",\n  \"services\": [\n    \"ssh.service\",\n    \"qemu-guest-agent.service\",\n    \"prometheus-node-exporter.service\",\n    \"dell-service-directory.service\"\n  ],\n  \"http_checks\": [],\n  \"candidate_service_units\": [],\n  \"candidate_http_checks\": [],\n  \"notes\": \"Candidates are not active. Confirm actual unit/port and copy approved local checks into active lists; no credentials, headers or business-operation paths.\"\n}\n"
+    }
+  },
+  "host": "publish-service"
+}

@@ -2,15 +2,17 @@
 
 Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/计划与已部署状态分开；不表示本机已clone或已分发key）。
 
-更新：2026-11-10，Asia/Shanghai。此目录是资源服务合同与公开来源索引，不是完整运行配置导出。**VM280及230/240真NFS/guard、非root跨机读写/删除、root_squash/缺挂载负测已通过；仅280约30秒受控重启，fsync canary持久、两client挂载恢复，未重启running。** 现行资源包含NFS与私有FileBrowser管理HTTP（最新HTTP切换已验收），不含业务图片HTTP、Java启动、旧文件搬迁或自动备份扩围。
+更新：2026-11-10，Asia/Shanghai。此目录是资源服务合同与公开来源索引，不是完整运行配置导出。**现行资源仅保留NFS；FileBrowser网页服务已按用户确认方案停用并masked，TCP/UDP8080无监听。** 230/240继续共用同一资源根，不拆正式/测试，不启业务图片HTTP、Java或自动备份扩围。
 
-## FileBrowser Quantum管理页面
+## 当前仅NFS，FileBrowser已退休
 
-用户最新要求自建内网应用默认HTTP，PVE/iDRAC内置管理HTTPS保留。FileBrowser当前入口改为 **[http://192.168.19.80:8080/](http://192.168.19.80:8080/)**，仅LAN21/24、WG10.66.66/24及本机；HTTP切换原生验收及14:28最终后检已通过，以[内网HTTP交付](../../evidence/internal-http-20261110/README.md)为准。只移除本应用TLS，不关闭认证：原日常 `resources` 与维护 `admin` 的密码、权限、固定JWT及初始化marker保持，不改密或重跑init。resources仍view/download/create，delete/edit/override/share/提权拒绝；admin保持完整权限。密码只在原受保护Mac/guest来源，不输出值。
+22:49完成受控停用，22:51只读后检通过：`dell-filebrowser.service`与`dell-filebrowser-firewall.service`均inactive/masked、取消自启，原现役unit移至本机受保护回退目录；独立`inet dell_filebrowser_input`表已撤。原NFS配置、exports、版本、输入规则、目录权限和受保护服务PID/启动身份保持，未重启NFS或客户端。健康配置仅保留原5项资源角色服务，FileBrowser unit与`filebrowser-http-health`检查已移除。
 
-官方native固定v2.1.4-beta、UID2000/GID2980、UMask0002、文件660/目录2770与独立state700保持；初始化成功marker后仍不注入初始口令。[HTTP原生回执](../../evidence/internal-http-20261110/filebrowser-applied.json)确认两个旧账号原密码新登录、原scope/权限、匿名401/日常设置403，NFS及保护服务身份保持；[14:28最终后检](../../evidence/internal-http-20261110/final-postcheck.json)确认JWT继续加载、初始化口令不注入、无TLS配置/运行凭据，16targets/资源六服务/HTTP指标UP。[真实HTTP浏览器](../../evidence/internal-http-20261110/filebrowser-browser.json)已用原resources口令进入资源页，测试会话/Cookie/本地存储已清，未读写资源文件。新健康项为 `filebrowser-http-health`，去除ca_file；旧TLS证书/私钥及[06:12 HTTPS/API/NFS/浏览器/重启证据](../../completion/20261110-filebrowser/README.md)留为未启用历史，不作当前HTTP运行证明。当前无需接受证书，系统CA和其它服务协议保持。NFS/PVE/路由、共享目录、正式DB/Nacos备份范围不变，不启Java、不迁文件或接业务图片URL。[当前使用手册](../../completion/20261110-filebrowser/usage-manual.md)与[服务包](../../infra/resources/filebrowser/README.md)。
+原FileBrowser state、账号/JWT等凭据保留原保护路径，不读秘密内容、不重置、不导出；不是可继续登录的网页服务。回退材料仅在280 `/root/dell-filebrowser-retired-20261110` root700/文件600，不能因旧文档或安装器存在而自动解除mask或重跑初始化。[停用回执](../../completion/20261110-nfs-only/retirement-result.json)、[最终后检](../../completion/20261110-nfs-only/final-postcheck.json)与[新NFS操作手册](../../completion/20261110-nfs-only/usage-manual.md)是当前入口。
 
-本机资料：[配置合同](config.json)、[配置来源](config-sources.json)、[用户使用手册](../../completion/20261109-resources/usage-manual.md)。主AI维护[plan](../../plan.json)与PVE创建/地址/网络；本目录不自动运行provision、格式化或部署。
+本轮新建唯一server canary后，两client以finger经真实NFSv4.1只读读回并检查权限，随后精确清理；没有client写入或已有业务文件读取。先前双client写入/root_squash/缺挂载及仅280重启是[原NFS验收](../../completion/20261109-resources/README.md)的独立历史范围。FileBrowser的[首次HTTPS交付](../../completion/20261110-filebrowser/README.md)与[后续HTTP交付](../../evidence/internal-http-20261110/README.md)均仅历史，不作当前服务可用证明。
+
+本机资料：[配置合同](config.json)、[配置来源](config-sources.json)、[当前用户使用手册](../../completion/20261110-nfs-only/usage-manual.md)。主AI维护[plan](../../plan.json)与PVE创建/地址/网络；本目录不自动运行provision、格式化或部署。
 
 | 合同 | 参数 |
 | --- | --- |
@@ -31,13 +33,13 @@ native单元为`srv-resources.mount`、`dell-resources-firewall.service`与`nfs-
 
 两running的finger保持UID999/GID989，仅加resources附属GID2980；不得把server资源组替换成989。客户端hard/automount、真挂载guard和root0555下层用于防止共享失效后写根盘；存在autofs不算NFS已挂好。240原`/mnt/dell-artifacts`保留。任何未来Java挂载依赖另审、另安装，本轮业务不启。
 
-资源文件**未纳入自动备份**，也未迁入旧文件。当前自动任务仅正式VM200/nacos_prod SQL；RAID、同机共享与数据库备份不提供这些文件的恢复保证。Nginx/业务HTTP图片只是未启用候选，不存在已交付的业务图片或上传URL；FileBrowser受认证管理HTTP是另一用途。
+资源文件**未纳入自动备份**，也未迁入旧文件。当前自动任务仅正式VM200/nacos_prod SQL；RAID、同机共享与数据库备份不提供这些文件的恢复保证。Nginx/业务HTTP图片只是未启用候选，不存在已交付的业务图片或上传URL；FileBrowser原管理HTTP已退休，当前没有Web文件入口。
 
 ## 验收与日常入口
 
 [独立native验收](../../completion/20261109-resources/native-acceptance.json)已通过两client真实NFS/guard、finger跨机创建/读写/删除、root_squash、240缺挂载拒写下层与恢复；fixture已清。首轮失败及清理[原记录](../../completion/20261109-resources/native-first-attempt.json)保留；重测提前应用已批准umask0002，未修改服务来追过，不把首轮未捕获的文件mode原因说成已独立证明。
 
-[受控重启](../../completion/20261109-resources/reboot-exercise.json)只操作280，约30秒，bootID改变、fsync共享canary保留且两client恢复；PVE bootID和两running OS保持，未签断电/客户端OS重启。最后[00:20只读后检](../../completion/20261109-resources/final-postcheck.json)status=passed：13来宾运行、3模板停、16/16targetsUP、资源5服务指标UP、UUID/权限正确、fish4.0.2与Bash保持；PVE全部forward0、非client peer2049负测保持拒绝。长期SLO/真实数据恢复仍未签。容量/权限/健康、精确fixture清理、故障恢复和新增running步骤见[使用手册](../../completion/20261109-resources/usage-manual.md)，全机操作见[人工手册](../../19-manual-operations.md)。
+[受控重启](../../completion/20261109-resources/reboot-exercise.json)只操作280，约30秒，bootID改变、fsync共享canary保留且两client恢复；PVE bootID和两running OS保持，未签断电/客户端OS重启。历史[00:20只读后检](../../completion/20261109-resources/final-postcheck.json)status=passed：13来宾运行、3模板停、16/16targetsUP、资源5服务指标UP、UUID/权限正确、fish4.0.2与Bash保持；PVE全部forward0、非client peer2049负测保持拒绝。长期SLO/真实数据恢复仍未签。当前状态与使用步骤见[新NFS手册](../../completion/20261110-nfs-only/usage-manual.md)，原容量/权限/精确fixture与新增running的历史实施细节见[初始手册](../../completion/20261109-resources/usage-manual.md)，全机操作见[人工手册](../../19-manual-operations.md)。
 
 模板未来可预装nfs-common与disabled挂载候选，clone后必须登记真实IP与组并获exports/bridge许可才激活；本次未修改9001/9010/9011模板。
 

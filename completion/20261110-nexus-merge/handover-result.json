@@ -1,0 +1,14 @@
+{
+  "status": "original-Nexus-disk-owned-only-by220-and-220-boot-requested",
+  "VM221_status": "status: stopped",
+  "VM220_status": "status: running",
+  "VM220_cores": "6",
+  "VM220_memory_MiB": "8192",
+  "VM220_build_disk_unchanged": true,
+  "VM220_Nexus_disk": "store:220/vm-220-disk-2.qcow2,discard=on,iothread=1,size=100G",
+  "installer_ISO_detached_not_deleted": true,
+  "source_OS_disk_and_cold_backup_retained": true,
+  "bridge31_source_ownership": "220MAC",
+  "PVE_L3_or_NAT_changed": false,
+  "VM220_backup_performed": false
+}

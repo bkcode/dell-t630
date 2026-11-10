@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-10T22:51:52.910477+08:00",
+  "source_path": "service-directory/services.json",
+  "before_count": 14,
+  "after_count": 13,
+  "removed_entry": {
+    "id": "7009e2be-5847-49c9-a010-000000000011",
+    "name": "FileBrowser 资源管理",
+    "url": "http://192.168.19.80:8080/",
+    "group": "工作工具",
+    "environment": "shared",
+    "description": "业务资源文件的受认证管理界面；共用NFS资源目录。",
+    "enabled": true
+  },
+  "before_SHA256": "2d77475408fb7d3d4eed7812750702ce238786dc9a9f13352f64a6790f9205a6",
+  "after_SHA256": "6234da6f65adb0450fb0f8c5ddb45c2ecb9a3a2ead92cdfef6c5fbbda5022a0a",
+  "other_entries_byte_lines_unchanged": true,
+  "source_repository_commit_or_push_performed": false,
+  "VM220_deployment_performed": false,
+  "catalog_schema_validation": "passed",
+  "validated_service_count": 13
+}

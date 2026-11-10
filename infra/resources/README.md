@@ -1,4 +1,6 @@
-> 最新扩展（2026-11-10）：同VM280已增加受认证FileBrowser HTTPS管理页，见[新交付](../../completion/20261110-filebrowser/README.md)与[管理使用手册](../../completion/20261110-filebrowser/usage-manual.md)。下方NFS阶段的“不启HTTP”指当时尚未部署管理页/仍不公开业务图片入口；NFS合同与旧验收保留，不据旧描述回退新功能。
+> 当前状态（2026-11-10）：资源服务器仅保留NFS；FileBrowser两unit已停用并masked、8080关闭、独立输入表及服务/HTTP健康检查已撤。NFS/共享文件/权限和批准客户端保持，原state/凭据仅受保护保留。当前[交付](../../completion/20261110-nfs-only/README.md)与[使用手册](../../completion/20261110-nfs-only/usage-manual.md)优先；下方原NFS实现与FileBrowser扩展过程按各自时间作为历史，不重放安装器。
+
+> 历史扩展（2026-11-10）：同VM280已增加受认证FileBrowser HTTPS管理页，见[新交付](../../completion/20261110-filebrowser/README.md)与[管理使用手册](../../completion/20261110-filebrowser/usage-manual.md)。下方NFS阶段的“不启HTTP”指当时尚未部署管理页/仍不公开业务图片入口；NFS合同与旧验收保留，不据旧描述回退新功能。
 
 # 统一资源服务工具与实施合同
 

@@ -1,0 +1,56 @@
+{
+  "at": "2026-11-10T22:49:24.570980+08:00",
+  "status": "FileBrowser-retired-NFS-only-verified",
+  "vmid": 280,
+  "retired_units": {
+    "dell-filebrowser.service": {
+      "MainPID": "0",
+      "ActiveState": "inactive",
+      "SubState": "dead",
+      "UnitFileState": "masked"
+    },
+    "dell-filebrowser-firewall.service": {
+      "MainPID": "0",
+      "ActiveState": "inactive",
+      "SubState": "dead",
+      "UnitFileState": "masked"
+    }
+  },
+  "web_TCP_8080_listener_absent": true,
+  "FileBrowser_input_table_absent": true,
+  "NFS_guard_passed": true,
+  "NFS_configs_exports_versions_and_input_unchanged": true,
+  "protected_service_identities_unchanged": true,
+  "NFS_or_client_restarts": false,
+  "health_before_services": [
+    "ssh.service",
+    "qemu-guest-agent.service",
+    "prometheus-node-exporter.service",
+    "nfs-server.service",
+    "dell-resources-firewall.service",
+    "dell-filebrowser.service"
+  ],
+  "health_after_services": [
+    "ssh.service",
+    "qemu-guest-agent.service",
+    "prometheus-node-exporter.service",
+    "nfs-server.service",
+    "dell-resources-firewall.service"
+  ],
+  "health_before_HTTP_checks": [
+    {
+      "name": "filebrowser-http-health",
+      "url": "http://192.168.19.80:8080/health"
+    }
+  ],
+  "health_after_HTTP_checks": [],
+  "current_health_service_count": 5,
+  "current_health_service_metrics_UP": true,
+  "private_state_and_secret_metadata_preserved": true,
+  "resource_root_identity_permissions_preserved": true,
+  "resource_file_or_secret_contents_read_copied_deleted": false,
+  "protected_local_rollback_directory": "/root/dell-filebrowser-retired-20261110",
+  "rollback_directory_mode": "0700",
+  "rollback_files_mode": "0600",
+  "shared_file_data_migration": false
+}

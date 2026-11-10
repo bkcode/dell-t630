@@ -1,5 +1,8 @@
 # Git 与资料交接
 
+> 2026-11-10阶段更新：用户已恢复Nexus合并与独立221退役，当前状态以[本次交付](completion/20261110-nexus-merge/README.md)、[现行架构](17-publish-artifact-consolidation.md)和[当前交接](11-live-handoff.md)为准。下文是此前基础阶段记录，旧“不合并/221独立/standby”、旧数量和版本不再作为当前现场结论，原验收与未签恢复范围按其时间保留。Java业务不启、旧链fenced；禁止重放历史初始化/迁移器。
+
+
 更新：2026-11-09，Asia/Shanghai。本仓库是部署知识与代码仓库；本轮fresh审计基础健康并补齐用户新范围的正式数据库/Nacos逻辑自动备份，不迁移数据。现行正式DB首轮3301B与03:30 timer已有成功回执，旧11来宾job停用、档保留；Git或文档通过不代替恢复演练、独立灾备或Nexus合并。当前状态入口：[当日交付记录](completion/20261109-prod-db-scope/README.md)。
 
 ## 仓库与阅读顺序

@@ -1,0 +1,11 @@
+{
+  "status": "221-SD-and-Lark-role-removed",
+  "node_targets_before": 11,
+  "node_targets_after": 10,
+  "resource280_kept": true,
+  "Prometheus_restarted": false,
+  "notification_receiver_or_secrets_changed": false,
+  "test_notifications_sent": false,
+  "new_SD_public_SHA": "a9830e5d7d2891934acdf85da9d743f16faf72506d7aa3ad42d3627718fd46fe",
+  "new_Lark_bridge_public_SHA": "f07fa1750bd7086107c2985ae4412a972f13f58b566e96fded9b555f2c0622d2"
+}

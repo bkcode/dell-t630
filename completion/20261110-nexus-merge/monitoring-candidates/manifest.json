@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "status": "actual-runtime-based-local-candidates-not-installed",
+  "runtime_capture_sources": [
+    "completion/20261110-nexus-merge/vm270-monitoring-before.json",
+    "completion/20261110-nexus-merge/vm220-monitoring-before.json"
+  ],
+  "files": {
+    "guest-node.json": {
+      "server_path": "/opt/dell/ops/config/prometheus/targets/guest-node.json",
+      "before_SHA256": "9e51cc2cca214e5754ed76c5472686143650f737b05bdf15ce1c312d79a67263",
+      "new_SHA256": "a9830e5d7d2891934acdf85da9d743f16faf72506d7aa3ad42d3627718fd46fe",
+      "captured_host": "ops-service"
+    },
+    "guest-targets.json": {
+      "server_path": "/opt/dell/guest-monitoring/guest-targets.json",
+      "before_SHA256": "280d6d1bac07659d9251d2c022072313977b4da5c4528974d606e481070ef306",
+      "new_SHA256": "598b38877c0c4ae956c56ef8246360c0dbd1f04bbc1d634f7511135e0f8ce7f8",
+      "captured_host": "ops-service"
+    },
+    "install-guest-baseline.py": {
+      "server_path": "/opt/dell/guest-monitoring/install-guest-baseline.py",
+      "before_SHA256": "90e323813218dc1d03063ebb198ad7d4c59700df92b7a5376d12c546f8a47789",
+      "new_SHA256": "88da35d2c20e800139c884d56e1ea323a0db11e918b870b89bdf78aba71b664e",
+      "captured_host": "ops-service"
+    },
+    "publisher-health.json": {
+      "server_path": "/etc/dell-guest-monitoring/health.json",
+      "before_SHA256": "635a55b71b53abf827f9d5280d1028542b0f0ef2a9281fe62c40a94141e59cf9",
+      "new_SHA256": "d52e886b16b400fa07d48a0e8de050d0330a47c202de3a60db46556ffec4b17a",
+      "captured_host": "publish-service"
+    }
+  },
+  "Prometheus_node_targets_before": 11,
+  "Prometheus_node_targets_after": 10,
+  "Ops_targets_preserved": 5,
+  "expected_total_targets_after": 15,
+  "runtime_guest_registry_before": 10,
+  "runtime_guest_registry_after": 9,
+  "runtime_registry_resource280_was_absent_and_is_not_added": true,
+  "resource280_Prometheus_target_preserved": true,
+  "publisher_services_before": 4,
+  "publisher_services_after": 7,
+  "MCP_monitoring": "service unit only, no authenticated HTTP probe",
+  "Nexus_HTTP_URL": "http://192.168.19.31:8081/service/rest/v1/status",
+  "canonical_reference_directory": "canonical-reference",
+  "canonical_source_files_modified": false,
+  "server_connections_or_changes": false,
+  "resource280_FileBrowser_or_NFS_modified_by_candidate": false,
+  "local_helpers_SHA256": {
+    "merge_publisher_health.py": "44aabfe75a57a053d61326665a27542d534f97071538fb591c745daeb139af27",
+    "validate_candidates.py": "bf195ac00697fbbd0c1d36206969d2a35b378654957e566c4dc3467ab3b47d8f"
+  }
+}

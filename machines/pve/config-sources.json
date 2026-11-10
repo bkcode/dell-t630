@@ -6,25 +6,25 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "5dbce0a1e478aa458f5287457c7878a2e80b336b89432f49425b7ed5c707f425"
+      "sha256": "f3dcc11000ddb2f917cf2d37ec2322aced3b6bb509d2c1a28503a1a1284f75d5"
     },
     {
       "path": "AGENTS.md",
       "type": "current-contract",
       "purpose": "当前用户范围、委派和秘密/操作边界。",
-      "sha256": "95ca9860150021cb384c33395ea36d0496bff85b3f7c8ae199c81f87177e5b79"
+      "sha256": "53d6aa51ffc5d30872a5e917e69fa37a92ec87501310cc105f74c8f378a57eee"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
       "purpose": "当前基础搭建与历史故障交接；本轮不迁移，旧证据按时点解释。",
-      "sha256": "a6f5088aeb99027507762439c00f9f816ccce003887d4cd162b1f1c57fd9eda2"
+      "sha256": "57c0935d9286e427d050aa236446ad24662aa5ea345a4e37b3b71c4c02efdb23"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
-      "sha256": "cb25e728f1aea5f1770c0a25d6450818373483db232fd47f3073bf4a1cf3db8f"
+      "sha256": "434598c0ff2108e60ec15dfd90eef0588f2a09bf4e9b7510f903599a32f9c731"
     },
     {
       "path": "cleanup/final-live-check.json",
@@ -291,13 +291,13 @@
       "path": "machines/git-repositories.json",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "7c6fd2361b4a7a0e94c0f622287e010ebe8fa426e018303a1d42a58e3a06aca5"
+      "sha256": "6903a3ac663a12091178185940a5fb59507fcc1255b9c1125d1c9d3899adc770"
     },
     {
       "path": "machines/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "a6b0b627b7ec7a210eab6db0071d43ca5e0c41cddf03e9d7db5da071adceda44"
+      "sha256": "fe0dcb3e47eae409b60b1650fa7137918cba18be202ca7c8a94b09f983411e6d"
     },
     {
       "path": "machines/pve/GIT-REPOSITORIES.md",
@@ -316,6 +316,42 @@
       "type": "historical-evidence",
       "purpose": "Final readonly inventory/monitoring during publisher navigation increment; otherVM configurations unchanged",
       "sha256": "08ad8bea9f380a981eda47a8411dfbd6045cd78c770711f439b4bbaaca705dd0"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/acceptance.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "be164435f7aa90fcab00706bc4809171efc55642a262ff8042fab1a8bc70831a"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/final-postcheck.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "838ed4939f6a1e1c921093d8058ebf2ee25f863f34cb46b1fffd0c77a81d1aef"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/retirement-result.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "17a1c8dab6a36b5d18aa787fbb49d675c84eaab6434606a392ec26e7791ad822"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/monitoring-final.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "0d0e71ffdd3b9fb7feb4520a0d5143caa1e9dbaaa8826a21f90b2d9f15be2d41"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/bridge-final-applied.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "0680c13649ec29c50b0da7c6f38e79e9ec5287c42c909aebbf5c4f3e89a1e0f2"
+    },
+    {
+      "path": "completion/20261110-nexus-merge/publisher-post-reboot.json",
+      "type": "current-contract",
+      "purpose": "2026-11-10 verified Nexus consolidation and NFS-only service contract; one-time scripts are not replay entry points",
+      "sha256": "60b2d62bc85b76bc6b586474313d6124feeacf094a185ba55153d4ec68f65f56"
     }
   ]
 }

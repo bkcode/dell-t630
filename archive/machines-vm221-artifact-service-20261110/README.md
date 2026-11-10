@@ -1,3 +1,5 @@
+> 归档：2026-11-10。VM221已在Nexus完整内容/身份/网络/监控及220重启核验后退役，服务由VM220 primary30+alias31承担。下文仅是原独立实例的历史合同，旧状态/机器索引指针不代表现役；禁止据此重建或启动第二个31所有者。当前入口：[合并交付](../../completion/20261110-nexus-merge/README.md)、[VM220](../../machines/vm220-publish-service/README.md)。
+
 > 更新：2026-11-09（Asia/Shanghai）。本轮基础fresh审计已复核；当日实时收尾状态统一见[11月9日交付记录](../../completion/20261109-prod-db-scope/README.md)。本页仅本地同步带时点证据，不执行服务器操作；不迁移数据、不合并Nexus、不启动Java业务、不升级Penpot，不需要Mac外部探针。
 
 # VM221 · artifact-service

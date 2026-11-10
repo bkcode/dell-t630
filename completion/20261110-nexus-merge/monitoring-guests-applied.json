@@ -1,0 +1,113 @@
+[
+  {
+    "vmid": 200,
+    "hostname": "data-prod-db",
+    "status": "paired-registry-CAS-and-native-collector-passed",
+    "files": [
+      "guest-targets.json",
+      "install-guest-baseline.py"
+    ],
+    "workloads_or_exporter_restarted": false,
+    "NFS_exports_or_workload_settings_changed": false
+  },
+  {
+    "vmid": 201,
+    "hostname": "data-prod-infra",
+    "status": "paired-registry-CAS-and-native-collector-passed",
+    "files": [
+      "guest-targets.json",
+      "install-guest-baseline.py"
+    ],
+    "workloads_or_exporter_restarted": false,
+    "NFS_exports_or_workload_settings_changed": false
+  },
+  {
+    "vmid": 210,
+    "hostname": "data-test",
+    "status": "paired-registry-CAS-and-native-collector-passed",
+    "files": [
+      "guest-targets.json",
+      "install-guest-baseline.py"
+    ],
+    "workloads_or_exporter_restarted": false,
+    "NFS_exports_or_workload_settings_changed": false
+  },
+  {
+    "vmid": 220,
+    "hostname": "publish-service",
+    "status": "paired-registry-CAS-and-native-collector-passed",
+    "files": [
+      "guest-targets.json",
+      "install-guest-baseline.py",
+      "health.json"
+    ],
+    "workloads_or_exporter_restarted": false,
+    "NFS_exports_or_workload_settings_changed": false
+  },
+  {
+    "vmid": 230,
+    "hostname": "java-prod-01",
+    "status": "paired-registry-CAS-and-native-collector-passed",
+    "files": [
+      "guest-targets.json",
+      "install-guest-baseline.py"
+    ],
+    "workloads_or_exporter_restarted": false,
+    "NFS_exports_or_workload_settings_changed": false
+  },
+  {
+    "vmid": 240,
+    "hostname": "java-test-01",
+    "status": "paired-registry-CAS-and-native-collector-passed",
+    "files": [
+      "guest-targets.json",
+      "install-guest-baseline.py"
+    ],
+    "workloads_or_exporter_restarted": false,
+    "NFS_exports_or_workload_settings_changed": false
+  },
+  {
+    "vmid": 250,
+    "hostname": "penpot-service",
+    "status": "paired-registry-CAS-and-native-collector-passed",
+    "files": [
+      "guest-targets.json",
+      "install-guest-baseline.py"
+    ],
+    "workloads_or_exporter_restarted": false,
+    "NFS_exports_or_workload_settings_changed": false
+  },
+  {
+    "vmid": 260,
+    "hostname": "nas-media",
+    "status": "paired-registry-CAS-and-native-collector-passed",
+    "files": [
+      "guest-targets.json",
+      "install-guest-baseline.py"
+    ],
+    "workloads_or_exporter_restarted": false,
+    "NFS_exports_or_workload_settings_changed": false
+  },
+  {
+    "vmid": 270,
+    "hostname": "ops-service",
+    "status": "paired-registry-CAS-and-native-collector-passed",
+    "files": [
+      "guest-targets.json",
+      "install-guest-baseline.py"
+    ],
+    "workloads_or_exporter_restarted": false,
+    "NFS_exports_or_workload_settings_changed": false
+  },
+  {
+    "vmid": 280,
+    "hostname": "resource-service",
+    "status": "paired-registry-CAS-and-native-collector-passed",
+    "files": [
+      "guest-targets.json",
+      "install-guest-baseline.py"
+    ],
+    "workloads_or_exporter_restarted": false,
+    "NFS_exports_or_workload_settings_changed": false
+  }
+]

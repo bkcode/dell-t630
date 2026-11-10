@@ -110,7 +110,7 @@
   },
   "git_repository_mapping": {
     "catalog": "machines/git-repositories.json",
-    "catalog_machine_pointer": "/machines/12",
+    "catalog_machine_pointer": "/machines/11",
     "machine_path": "machines/vm270-ops-service",
     "document_path": "machines/vm270-ops-service/GIT-REPOSITORIES.md",
     "source_role": "docs-only",

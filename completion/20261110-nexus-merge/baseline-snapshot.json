@@ -1,0 +1,14 @@
+{
+  "status": "full-hosted-baseline-snapshot-passed",
+  "repositories": 12,
+  "hosted_repositories": 7,
+  "components": 50,
+  "assets_read_and_hashed": 1347,
+  "users": 4,
+  "roles": 4,
+  "eula_accepted": true,
+  "only_HTTP_method": "GET",
+  "requests": 1390,
+  "baseline_details_retained_only_on_data_disk_root600": true,
+  "credentials_output": false
+}

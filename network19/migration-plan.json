@@ -99,7 +99,11 @@
       "prefix": 24,
       "gateway": "192.168.19.1",
       "bridge": "vmbr19",
-      "kind": "vm"
+      "kind": "vm",
+      "additional_ips": [
+        "192.168.19.31"
+      ],
+      "service_alias_owner": "Nexus31 on publisher220 after verified merge"
     },
     {
       "vmid": 221,
@@ -109,7 +113,8 @@
       "prefix": 24,
       "gateway": "192.168.19.1",
       "bridge": "vmbr19",
-      "kind": "vm"
+      "kind": "vm",
+      "lifecycle": "retired; service IP and disk transferred to220"
     },
     {
       "vmid": 230,
@@ -410,6 +415,7 @@
     104,
     105,
     106,
+    221,
     231,
     232,
     9000,
@@ -437,5 +443,15 @@
       2049
     ],
     "shared_directory": true
-  }
+  },
+  "service_endpoints": {
+    "artifact-service": {
+      "vmid": 220,
+      "ip": "192.168.19.31",
+      "tcp": [
+        8081
+      ]
+    }
+  },
+  "Nexus_merge_evidence": "completion/20261110-nexus-merge/retirement-result.json"
 }

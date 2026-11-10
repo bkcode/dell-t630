@@ -1,0 +1,17 @@
+{
+  "services": [
+    {"id":"7009e2be-5847-49c9-a010-000000000001","name":"服务导航","url":"http://192.168.19.30:9080/","group":"基础管理","environment":"management","description":"浏览内网服务入口，点击后在新窗口打开。","enabled":true},
+    {"id":"7009e2be-5847-49c9-a010-000000000002","name":"Proxmox VE","url":"https://192.168.21.22:8006/","group":"基础管理","environment":"management","description":"T630虚拟机与存储管理；首次访问核对管理证书。","enabled":true},
+    {"id":"7009e2be-5847-49c9-a010-000000000003","name":"OpenWrt 路由器","url":"http://192.168.21.1/","group":"基础管理","environment":"management","description":"主路由、WireGuard与内网静态路由。","enabled":true},
+    {"id":"7009e2be-5847-49c9-a010-000000000004","name":"iDRAC","url":"https://192.168.21.21/","group":"基础管理","environment":"management","description":"物理服务器带外管理；访问时使用独立管理员账号。","enabled":true},
+    {"id":"7009e2be-5847-49c9-a010-000000000005","name":"Penpot","url":"http://192.168.19.50:9001/","group":"工作工具","environment":"shared","description":"当前运行保留改造版；代码更新等待远端main补齐。","enabled":true},
+    {"id":"7009e2be-5847-49c9-a010-000000000006","name":"Nexus 制品仓库","url":"http://192.168.19.31:8081/","group":"开发服务","environment":"shared","description":"已并入发布机VM220，保留原制品仓库访问地址。","enabled":true},
+    {"id":"7009e2be-5847-49c9-a010-000000000007","name":"测试 Nacos","url":"http://192.168.19.20:8848/nacos/","group":"开发服务","environment":"test","description":"测试配置中心；业务应用仍未启动。","enabled":true},
+    {"id":"7009e2be-5847-49c9-a010-000000000008","name":"正式 Nacos","url":"http://192.168.19.11:8848/nacos/","group":"开发服务","environment":"prod","description":"正式基础配置服务；正式业务应用未部署。","enabled":true},
+    {"id":"7009e2be-5847-49c9-a010-000000000009","name":"OMV NAS 管理","url":"http://192.168.19.60/","group":"家庭媒体","environment":"shared","description":"家庭文件共享和媒体存储管理。","enabled":true},
+    {"id":"7009e2be-5847-49c9-a010-000000000010","name":"Jellyfin","url":"http://192.168.19.60:8096/","group":"家庭媒体","environment":"shared","description":"家庭媒体库；当前仍使用官方服务端镜像。","enabled":true},
+    {"id":"7009e2be-5847-49c9-a010-000000000012","name":"Grafana","url":"http://192.168.19.70:3000/","group":"运维监控","environment":"management","description":"服务器与服务监控面板。","enabled":true},
+    {"id":"7009e2be-5847-49c9-a010-000000000013","name":"Prometheus","url":"http://192.168.19.70:9090/","group":"运维监控","environment":"management","description":"指标查询；页面链接不代表此刻健康状态。","enabled":true},
+    {"id":"7009e2be-5847-49c9-a010-000000000014","name":"Alertmanager","url":"http://192.168.19.70:9093/","group":"运维监控","environment":"management","description":"告警聚合与现有内部Lark通知。","enabled":true}
+  ]
+}

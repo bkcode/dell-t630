@@ -109,7 +109,7 @@
   },
   "git_repository_mapping": {
     "catalog": "machines/git-repositories.json",
-    "catalog_machine_pointer": "/machines/11",
+    "catalog_machine_pointer": "/machines/10",
     "machine_path": "machines/vm260-nas-media",
     "document_path": "machines/vm260-nas-media/GIT-REPOSITORIES.md",
     "source_role": "docs-only",

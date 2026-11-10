@@ -1,6 +1,8 @@
+> 归档：2026-11-10。VM221已在Nexus完整内容/身份/网络/监控及220重启核验后退役，服务由VM220 primary30+alias31承担。下文仅是原独立实例的历史合同，旧状态/机器索引指针不代表现役；禁止据此重建或启动第二个31所有者。当前入口：[合并交付](../../completion/20261110-nexus-merge/README.md)、[VM220](../../machines/vm220-publish-service/README.md)。
+
 # VM221 · artifact-service：Git来源与取用边界
 
-更新：2026-11-10，Asia/Shanghai。本文从唯一[Git来源总表](../git-repositories.json)的`/machines/7`派生；机器位置`machines/vm221-artifact-service`，身份与资源仍以[plan.json](../../plan.json)为准。
+更新：2026-11-10，Asia/Shanghai。本文从唯一[Git来源总表](../../machines/git-repositories.json)的`/machines/7`派生；机器位置`archive/machines-vm221-artifact-service-20261110`，身份与资源仍以[plan.json](../../plan.json)为准。
 
 **这是来源/计划文档，不是已clone、部署、分发Git私钥或重跑初始化的证明。** 本轮本文只本地写入，没有SSH、git clone/fetch/pull/push、构建或服务操作。现役状态、上游参考与后续源码计划分开解释。
 
@@ -34,6 +36,6 @@
 
 ## 后续变更入口
 
-新增/修改仓库先由主AI更新[唯一总表](../git-repositories.json)，核对应角色的读权限、不可变版本、构建/发布适配与授权，再同步本页和[机器合同](config.json)的`git_repository_mapping`。源码读取、build、部署、数据库迁移与启动是不同阶段，不因本页列出URL而自动授权。
+新增/修改仓库先由主AI更新[唯一总表](../../machines/git-repositories.json)，核对应角色的读权限、不可变版本、构建/发布适配与授权，再同步本页和[机器合同](config.json)的`git_repository_mapping`。源码读取、build、部署、数据库迁移与启动是不同阶段，不因本页列出URL而自动授权。
 
 本文无真实凭据或key正文；公开来源索引只保存元数据，现有秘密与归档边界保持。

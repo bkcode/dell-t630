@@ -1,94 +1,46 @@
-# publish-service：发布与制品仓库合并架构
+# publish-service：发布与Nexus制品仓库
 
-更新：2026-11-10。本文保留此前选定的**未来合并目标合同**，不是当前执行计划。用户已确认内存重插/更换并诊断通过，服务器已恢复基础服务；本轮明确**暂不迁移、不合并Nexus**。当前VM220发布机与VM221制品仓库继续独立，历史同机目标不覆盖现役角色。
+更新：2026-11-10，Asia/Shanghai。用户已明确恢复执行Nexus合并并移除独立artifact-service，覆盖11月8日暂缓范围。本轮执行记录集中在[合并交付目录](completion/20261110-nexus-merge/README.md)。220数据/身份/网络/监控及受控重启核验通过，源221已退役；最终范围以本次原生回执为准。
 
-当前事实：VM221仍独立19.31，原盘与身份未向220移交；220仍4CPU/4GiB、仅19.30及待机材料。新增资源280前，11月9日fresh核对为12running/3tpl与15UP，相关证据见[当日交付入口](completion/20261109-prod-db-scope/README.md)及[媒体审计](completion/20261109/media-audit.json)。硬件故障与历史维护许可均保留，但当前不执行合并的原因是用户本轮范围明确排除迁移，不能因SSH恢复自动开始。
-
-## 1. 未来合并后的服务结构（本轮不执行）
+## 同机职责与地址
 
 ```text
-VM220：publish-service                         6 vCPU / 8 GiB
-管理、构建与发布主地址：192.168.19.30
-│
-├─ 构建与发布
-│   ├─ Git / JDK / 构建工具
-│   ├─ 构建盘：/srv/dell-build
-│   └─ publisher 受限身份 → Java测试基础19.45
-│      当前业务发布仍冻结，不启动Java业务
-│
-└─ Nexus制品仓库
-    ├─ 同一网卡的服务地址：192.168.19.31:8081
-    ├─ Docker / Compose，由dell-nexus.service监督
-    └─ 独立Nexus数据盘：/srv/nexus，应用数据/srv/nexus/data
-
-VM221：artifact-service → 数据与身份核验通过后退役
+VM220 publish-service · 6 vCPU / 8 GiB
+├─ 192.168.19.30：管理SSH / 服务导航HTTP9080 / node exporter9100
+├─ /opt/deploy-public：Puyu发布工具，MCP仅127.0.0.1:18765
+│  CLI prod→main、dev→dev；MCP仅dev，真实发布关闭
+├─ /srv/dell-build：原100GiB构建卷 UUID16dc6067-56ef-4687-a314-edc6421f9ed4
+└─ 同NIC alias192.168.19.31：Nexus HTTP8081
+   原100GiB卷 /srv/nexus UUID239dc45a-b1f3-408b-a8ef-7afa77b52204
+   Docker Compose，由dell-nexus.service监督
 ```
 
-以下仅说明未来目标：两个IP将属于同一VM220；`.19.31`不是第二台VM、第二个网关或第二个监控节点。保留`.19.31:8081`用于兼容现有Maven/Gradle配置、下载地址和书签，管理SSH继续使用`.19.30`。
+两地址属于同一VM；31是服务兼容入口，不是第二台服务器或网关。既有Maven/Gradle URL、Nexus账号/EULA/仓库身份保留。管理SSH继续使用220自己的host key和primary30；不复制221 host key，不以旧dell-vm221信任别名连接新220。OS/PVE名称均保持publish-service。
 
-## 2. 名称、地址与职责
+Nexus与构建卷分别挂载，禁止把Nexus数据库或blob写进构建盘、容器可写层或根盘。原盘唯一移交，不能让221与220同时挂同一盘读写或同时拥有31。
 
-| 项目 | 合并后的约定 |
-| --- | --- |
-| 虚拟机标识 | VM220，PVE名称与OS hostname均为`publish-service` |
-| 发布职责 | Git拉取、构建、受限传输/发布基础；当前publisher仍fenced |
-| 制品职责 | Nexus仓库、账号权限、组件与元数据，由同一VM内的独立应用栈管理 |
-| 管理/发布来源地址 | `192.168.19.30`，去测试19.45的实际源IP仍须为30 |
-| Nexus服务地址 | 同NIC alias `192.168.19.31`，原HTTP端口8081保持 |
-| `artifact-service`名称 | 仅作原VM221的历史名称及既有服务DNS兼容名称，不再计为独立VM |
-| SSH身份 | 沿用VM220自己的host key；不复制VM221 host key，不用`dell-vm221`信任别名连接新220 |
-| 网关/DNS | 均为`192.168.19.1`，PVE21.22仍不做应用转发 |
+## 当前边界和预算
 
-原`artifact-service`服务DNS若保留，可继续解析到31，但其底层服务所有者变为220。服务URL兼容不代表SSH身份兼容；直接SSH访问31将看到220的公钥，应按真实归属核验。
+最终目标为12个来宾（11VM＋1LXC）、3份停止模板，配置合计45vCPU/87GiB，监控10node＋5Ops＝15targets。220原4CPU4GiB与221原2CPU4GiB合并为6CPU8GiB，总预算不变，不声称额外释放4GiB。停止模板不持续占用声明资源。NFS资源280和其node目标保留。
 
-## 3. 资源、数据和权限边界
+首期构建建议单并发，构建与Nexus竞争同一VM；本次迁移不签并行构建性能或业务SLO。Nexus原镜像ID、应用限制和数据身份保持，不升级或重新初始化，不重建仓库。
 
-用户随后新增统一资源280，相关搭建与实际验收见[资源交付](completion/20261109-resources/README.md)。下表将280计入当前及未来目标，不表示本轮已合并Nexus；新增前的12实例/43CPU/85GiB只作历史。
+原受限发布链保持fenced，Java业务不构建/启动。deploy-public私有YAML、服务器生成MCP key、仓库DeployKey和构建盘UUID守卫必须保持；MCP仍loopback、dev-only、deploy disabled。六个业务/公共库仓库仍main，上游dev全缺，新dev预检应按设计拒绝。旧五服务dev/main成功仅作历史，不作为当前dev就绪证明。
 
-| 项目 | 加入资源280后的配置合同 | 合并目标（资源280保留） |
-| --- | --- | --- |
-| 发布机 | 220，4vCPU / 4GiB | 220，6vCPU / 8GiB |
-| Nexus独立VM | 221，2vCPU / 4GiB | 核验通过后退役 |
-| 全部实例 | 13（12VM+1LXC） | 12（11VM+1LXC） |
-| 模板 | 9001 / 9010 / 9011，共3份 | 保持3份 |
-| 全部CPU/内存配置总额 | 45vCPU / 87GiB | 保持45vCPU / 87GiB |
-| 监控目标预算 | 11node+5Ops=16 | 10node+5Ops=15 |
+## 验证与监控
 
-若将来完成该合并，将减少一个OS实例和管理对象，**不释放原221的4GiB配置额度**；它与原220额度一起分给新220。构建与仓库竞争同一VM资源，首期建议单构建并发；并行构建与仓库负载仍需另验。
+本次源全量基线为12仓库、7hosted、50components、1347assets，GET-only读取；原49GAV/234主件是历史子集，不能覆盖新鲜全量。凭据与私有基线只留受保护服务器文件，不纳普通文档/Git。
 
-构建盘与Nexus数据盘各自独立，不将仓库写进构建缓存或容器可写层。原Nexus100GiB卷、文件系统UUID `239dc45a-b1f3-408b-a8ef-7afa77b52204` 及数据身份保留，原盘只允许一个VM写。发布专用私钥继续只留220，publisher不加入docker组，受限SSH/源IP30与业务发布冻结策略不放宽。
+源221停止后完成PVE冷备，归档2,400,054,202字节，SHA/zstd/VMA验证通过；仅保留PVE。随后正常停220，设6CPU8GiB，先卸载占用scsi2的旧安装ISO配置（不删ISO文件），再唯一转移原Nexus盘至220 scsi2，原build卷不动。Nexus内容/身份/网络/监控、220原有服务与受控重启通过后已执行退役。
 
-现行自动备份仅VM200正式MySQL/Nacos外部元库，当前唯一`nacos_prod`12表、正式业务schema未创建；Nexus221制品数据/系统和其他数据不自动备份。新增未列白名单库直接失败告警、需更新策略。PVE逻辑档落`/mnt/pve/store/dell-artifacts/prod-db-backups` root700/600，首轮3301B、03:30 timer enabled/GFS3-7-4，见[新中央入口](completion/20261109-prod-db-scope/README.md)与[新首轮回执](completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)。
+监控220继续只抓30:9100，删除221物理节点，不能再以31假造第二节点。220原SSH/QGA/exporter/导航4项检查保留，追加Docker/Nexus/MCP为7项；只有Nexus HTTP探测使用本机alias31，认证MCP仅监测unit。实际运行监控文件与canonical源存在历史差异，按fresh逐文件CAS更新，不用旧源整体重装覆盖。候选及本地纯验证见[monitoring-candidates](completion/20261110-nexus-merge/monitoring-candidates/README.md)。
 
-旧11来宾全机方案曾成功，但当前job已disabled、旧规则组退役；19,747,582,801B档与21回退档保留，不自动删除。旧CF档只留PVE、发布key只220。新db-only三规则已[热载](completion/20261109-prod-db-scope/alerts-installed.json)，原Prom identity/三名/接收对象保持、无testsend。本机逻辑备份仅[该3301B Nacos小档已在VM210临时隔离恢复](completion/20261109-prod-db-restore/README.md)，完整业务恢复/RPO/RTO/异机DR未签，也不等于未来Nexus迁移源停服冷备；本轮不迁移/合并/启Java，无Mac探针。
+## 备份、退役与维护
 
-备份仍需应用一致性与明确白名单；不能因为同机合并就对220做包含发布私钥的整机备份/快照导出。独立221源冷备和原OS盘在最终核验前保留，不能删除唯一回退点。
+自动备份仍只覆盖正式MySQL/Nacos白名单库，本次Nexus冷备是单次迁移回退点，不新增自动备份。220原发布私钥只留220，不读取/导出，不对220执行整机备份/快照导出。CF备份仍只PVE。
 
-## 4. 迁移状态与切换验收
+221已在最终核验后从现役roles、机器索引、Git表、启停和监控移除；逐机历史资料已移到archive/machines-vm221-artifact-service-20261110，不能据归档重建第二个31所有者。最终回执确认221配置和原OS盘已删除，活Nexus盘在220保留，受保护冷备是原221剩余恢复点。回退计划不是已验证灾备，不签RPO/RTO或独立DR。
 
-| 阶段 | 状态 |
-| --- | --- |
-| 历史同机方案与短停维护授权 | 已确定且历史许可保留；本轮用户明确不迁移 |
-| 220 Docker/两镜像/私有standby | 已准备；11月9日fresh核仍无active Nexus或31 alias |
-| 内存处理与基础服务恢复 | 用户报告重插/更换并诊断通过；本boot EDAC0/RAIDOptl，持续观察保留 |
-| 源Nexus停服、221关机、冷备校验 | 尚未执行 |
-| 原盘与31地址唯一移交、220应用启动 | 尚未执行 |
-| 数据/身份/网络/监控验收、221退役 | 尚未执行 |
+日常检查与故障处理见[本次操作手册](completion/20261110-nexus-merge/usage-manual.md)、[全局人工手册](19-manual-operations.md)。旧[cleanup计划](cleanup/nexus/PLAN.md)及[resume清单](cleanup/nexus/resume-preflight.md)仅保存过程，禁止重放stage/mount/commit/start或fresh-init。
 
-仅在将来用户明确恢复迁移任务后，切换验收至少包含：
-
-1. 内存、存储与原应用稳定，冻结源Nexus新鲜只读基线；历史49GAV/234主件不能替代当前全量。
-2. 停原unit、正常关机221、对已停止源做PVE受保护冷备并验证，确认仍off；再停220并唯一移交原盘。
-3. 220同NIC持久30+31、发布流量源30、bridge ACL/IPAM/DNS及严格SSH一致，221不再占31或挂原盘写入。
-4. 原Nexus数据SHA、EULA、账号/权限、原URL及匿名拒绝均通过；publisher仍受限，Java业务保持停用。
-5. 监控仅抓220的30:9100一个节点，并在该节点检查Nexus unit/本机31 HTTP；移除221节点后15targets通过（含资源280），再退役221并更新现役清单。
-
-人工命令、检查点和回退步骤统一见[人工手册第7节](19-manual-operations.md)、[恢复清单](cleanup/nexus/resume-preflight.md)与[技术实施计划](cleanup/nexus/PLAN.md)。本文不替代逐项操作门禁，不新增一键迁移入口。
-
-## 5. 文档怎样区分目标与现场
-
-[架构文档](02-architecture.md)以合并后目标说明职责，[当前状态](01-current-state.md)保留最后实机快照。`plan.json`的`roles`仍保存未移交的220/221配置，`Nexus_consolidation`描述本目标；不能只为让文档看起来已合并而提前删除221角色或把31声明为220现役地址。
-
-将来用户明确恢复迁移任务、完成fresh基线与合并验收后，才同步现役roles、IPAM/ACL、监控、启停清单和凭据归属说明。未完成前，文档与Git提交都不代表服务器已变更。
-
-本轮继续基础与仅正式数据库/Nacos逻辑备份，不迁移数据或合并Nexus；Java业务不部署，Penpot保持已验历史ff1783e，不因main文档更新而升级应用。Mac外部探针用户明确不需要，不作为现行或后续待配置能力。OW完整规则只留本地，本轮不触碰或上传。
+最终退役回执确认：VM221配置与原OS盘已删除，活Nexus数据盘在220保持；原221恢复点为仅PVE保留的2,400,054,202字节冷备，不再声称保留源OS盘。见[退役回执](completion/20261110-nexus-merge/retirement-result.json)。

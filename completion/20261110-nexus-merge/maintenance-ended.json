@@ -1,0 +1,6 @@
+{
+  "status": "exact-two-role-maintenance-silence-ended",
+  "affected_active_alert_count": 0,
+  "other_silences_or_notification_config_changed": false,
+  "test_notifications_sent": false
+}

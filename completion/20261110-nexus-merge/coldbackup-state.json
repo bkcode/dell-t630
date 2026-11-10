@@ -1,0 +1,14 @@
+{
+  "vmid": 221,
+  "started_at": "2026-11-10T22:47:59.621422",
+  "status": "verified",
+  "data_exported_from_PVE": false,
+  "archive": "/mnt/pve/store/dell-artifacts/nexus-merge-cold-20261110/vzdump-qemu-221-2026_11_10-22_48_01.vma.zst",
+  "finished_at": "2026-11-10T22:51:23.172176",
+  "bytes": 2400054202,
+  "zstd_test": true,
+  "VMA_full_verify": true,
+  "archive_mode": "0o600",
+  "directory_mode": "0o700",
+  "source_still_stopped": true
+}

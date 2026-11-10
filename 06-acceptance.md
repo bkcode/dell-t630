@@ -1,4 +1,7 @@
 > 2026-11-08恢复更新：用户确认内存已重新插拔/更换且诊断通过；本boot EDAC CE/UE0、RAIDOptl、12实例运行/3模板、15targets UP及6入口HTTP200已有分范围运行证据。UEFI0058/B1事故与11/07 02:35完整验收、02:44:29最后PVE操作保留为历史；不把本次基础恢复当完整硬件/应用重验。
+
+> 2026-11-10阶段更新：用户已恢复Nexus合并与独立221退役，当前状态以[本次交付](completion/20261110-nexus-merge/README.md)、[现行架构](17-publish-artifact-consolidation.md)和[当前交接](11-live-handoff.md)为准。下文是此前基础阶段记录，旧“不合并/221独立/standby”、旧数量和版本不再作为当前现场结论，原验收与未签恢复范围按其时间保留。Java业务不启、旧链fenced；禁止重放历史初始化/迁移器。
+
 > 本轮只补齐既有基础服务并核多余项，用户明确不迁移Nexus；Mac外部探针明确不需要，从现行/后续任务移除。见[11/08证据](recovery/20261108/host-network-postcheck.json)及[当前验收](cleanup/acceptance.json)。
 
 # 验收标准与执行记录规范

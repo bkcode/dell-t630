@@ -10,10 +10,10 @@
   },
   "source_of_truth": "plan.json",
   "source_role_pointer": "/roles/12",
-  "last_verified_at": "2026-11-10T14:28:52.439481+08:00",
+  "last_verified_at": "2026-11-10T22:51:19.861188+08:00",
   "current_runtime_verified": true,
   "status": "recovered-infrastructure-verified",
-  "purpose": "正式/测试运行基础共用同一NFS目录，另有受限FileBrowser HTTP管理（最新HTTP切换已验收）；不拆环境、不启Java或业务图片服务、不迁旧文件。",
+  "purpose": "正式/测试运行基础共用同一NFS目录；FileBrowser已停用并masked、8080关闭，仅保留受保护历史state/凭据，不启Java或业务图片HTTP。",
   "network": {
     "ip": "192.168.19.80",
     "prefixlen": 24,
@@ -28,12 +28,13 @@
     ],
     "NFS_TCP_port": 2049,
     "NFS_version": "4.1",
-    "HTTP_enabled": true,
+    "HTTP_enabled": false,
     "boundary": "Exact exports + owned guest input guard + PVE bridge MAC/IP/peer rules; host forward0/noNAT retained",
     "public_image_HTTP_enabled": false,
-    "management_HTTP_port": 8080,
+    "management_HTTP_port": null,
     "management_TLS_enabled": false,
-    "HTTP_transition_status": "passed"
+    "HTTP_transition_status": "retired-NFS-only",
+    "retired_management_HTTP_port": 8080
   },
   "storage": {
     "system_storage": "store",
@@ -85,81 +86,99 @@
     "client_remote_source": "192.168.19.80:/",
     "client_local_mountpoint": "/mnt/resources",
     "Java_started": false,
-    "HTTP_enabled": true,
+    "HTTP_enabled": false,
     "Docker_service": false,
     "client_mount_and_nonroot_fixture": "passed",
     "server_reboot_persistence": "passed-only-VM280",
     "native_acceptance_evidence": "completion/20261109-resources/native-acceptance.json",
     "reboot_evidence": "completion/20261109-resources/reboot-exercise.json",
-    "HTTP_scope": "private authenticated native FileBrowser HTTP administration, verified; no public image/business upload endpoint",
+    "HTTP_scope": "No active resource Web management or public image HTTP; NFS only",
     "filebrowser": {
-      "product": "FileBrowser Quantum",
-      "version": "v2.1.4-beta",
-      "release_not_claimed_stable": true,
-      "deployment": "native-systemd",
+      "status": "retired-inactive-masked-NFS-only",
+      "active": false,
       "unit": "dell-filebrowser.service",
       "firewall_unit": "dell-filebrowser-firewall.service",
-      "url": "http://192.168.19.80:8080/",
-      "allowed_sources": [
-        "192.168.21.0/24",
-        "10.66.66.0/24",
-        "local self/loopback"
-      ],
-      "uid": 2000,
-      "primary_gid": 2980,
-      "UMask": "0002",
-      "new_file_mode": "0660",
-      "new_directory_mode": "2770",
+      "units_masked": true,
+      "url": null,
+      "historical_url": "http://192.168.19.80:8080/",
+      "TCP_UDP_8080_listener": false,
+      "owned_input_table_present": false,
       "state_directory": "/var/lib/dell-filebrowser",
+      "state_and_original_credentials_retained": true,
       "state_directory_mode": "0700",
-      "metadata_cache_in_shared_directory": false,
-      "daily_username": "resources",
-      "maintenance_username": "admin",
-      "daily_capabilities": [
-        "view",
-        "download",
-        "create"
-      ],
-      "daily_denied": [
-        "delete",
-        "edit",
-        "overwrite",
-        "share",
-        "privilege-escalation"
-      ],
-      "maintenance_admin_full_privilege": true,
-      "system_trust_store_changed": false,
-      "initialization_marker": "/etc/dell-filebrowser/bootstrap.complete",
-      "automatic_metadata_backup": false,
-      "browser_pointer_navigation_signed_off": false,
-      "fixture_cleaned": true,
-      "app_restart_and_account_persistence": "passed-HTTP-transition-only-filebrowser-restart",
-      "VM_or_clients_rebooted_for_FileBrowser": false,
-      "status": "HTTP-original-credentials-auth-permissions-browser-login-NFS-and-final-health-passed",
-      "transport": "HTTP",
-      "TLS_enabled": false,
-      "TLS_key_credential_loaded": false,
-      "authentication_enabled": true,
-      "historical_TLS": {
-        "public_tls_certificate": "completion/20261110-filebrowser/tls.crt",
-        "tls_sha256_fingerprint": "2B:E1:76:FF:A3:10:4B:2C:46:7C:58:23:D9:6C:FB:C2:65:BE:D6:EA:CD:4F:A4:A3:42:56:A5:0E:AB:4F:09:A3",
-        "active": false
-      },
-      "historical_HTTPS_evidence": {
-        "native_acceptance": "completion/20261110-filebrowser/native-acceptance.json",
-        "browser_acceptance": "completion/20261110-filebrowser/browser-acceptance.json",
-        "restart_evidence": "completion/20261110-filebrowser/service-restart.json",
-        "final_postcheck": "completion/20261110-filebrowser/final-postcheck.json"
-      },
-      "http_transition_evidence": "evidence/internal-http-20261110/filebrowser-applied.json",
-      "existing_login_passwords_JWT_permissions_preservation_required": true,
-      "existing_identity_permission_preservation_verification": "passed-two-original-password-fresh-logins",
-      "http_final_postcheck": "evidence/internal-http-20261110/final-postcheck.json",
-      "existing_login_passwords_JWT_permissions_preserved": true,
-      "anonymous_resource_status": 401,
-      "daily_admin_settings_status": 403,
-      "http_browser_acceptance": "evidence/internal-http-20261110/filebrowser-browser.json",
-      "http_browser_scope": "original resources password login and authenticated resource page only; no resource file reads/writes"
+      "private_rollback_directory": "/root/dell-filebrowser-retired-20261110",
+      "private_rollback_directory_mode": "0700",
+      "resource_files_deleted_or_migrated": false,
+      "retirement_evidence": "completion/20261110-nfs-only/retirement-result.json",
+      "last_active_contract_historical": {
+        "product": "FileBrowser Quantum",
+        "version": "v2.1.4-beta",
+        "release_not_claimed_stable": true,
+        "deployment": "native-systemd",
+        "unit": "dell-filebrowser.service",
+        "firewall_unit": "dell-filebrowser-firewall.service",
+        "url": "http://192.168.19.80:8080/",
+        "allowed_sources": [
+          "192.168.21.0/24",
+          "10.66.66.0/24",
+          "local self/loopback"
+        ],
+        "uid": 2000,
+        "primary_gid": 2980,
+        "UMask": "0002",
+        "new_file_mode": "0660",
+        "new_directory_mode": "2770",
+        "state_directory": "/var/lib/dell-filebrowser",
+        "state_directory_mode": "0700",
+        "metadata_cache_in_shared_directory": false,
+        "daily_username": "resources",
+        "maintenance_username": "admin",
+        "daily_capabilities": [
+          "view",
+          "download",
+          "create"
+        ],
+        "daily_denied": [
+          "delete",
+          "edit",
+          "overwrite",
+          "share",
+          "privilege-escalation"
+        ],
+        "maintenance_admin_full_privilege": true,
+        "system_trust_store_changed": false,
+        "initialization_marker": "/etc/dell-filebrowser/bootstrap.complete",
+        "automatic_metadata_backup": false,
+        "browser_pointer_navigation_signed_off": false,
+        "fixture_cleaned": true,
+        "app_restart_and_account_persistence": "passed-HTTP-transition-only-filebrowser-restart",
+        "VM_or_clients_rebooted_for_FileBrowser": false,
+        "status": "HTTP-original-credentials-auth-permissions-browser-login-NFS-and-final-health-passed",
+        "transport": "HTTP",
+        "TLS_enabled": false,
+        "TLS_key_credential_loaded": false,
+        "authentication_enabled": true,
+        "historical_TLS": {
+          "public_tls_certificate": "completion/20261110-filebrowser/tls.crt",
+          "tls_sha256_fingerprint": "2B:E1:76:FF:A3:10:4B:2C:46:7C:58:23:D9:6C:FB:C2:65:BE:D6:EA:CD:4F:A4:A3:42:56:A5:0E:AB:4F:09:A3",
+          "active": false
+        },
+        "historical_HTTPS_evidence": {
+          "native_acceptance": "completion/20261110-filebrowser/native-acceptance.json",
+          "browser_acceptance": "completion/20261110-filebrowser/browser-acceptance.json",
+          "restart_evidence": "completion/20261110-filebrowser/service-restart.json",
+          "final_postcheck": "completion/20261110-filebrowser/final-postcheck.json"
+        },
+        "http_transition_evidence": "evidence/internal-http-20261110/filebrowser-applied.json",
+        "existing_login_passwords_JWT_permissions_preservation_required": true,
+        "existing_identity_permission_preservation_verification": "passed-two-original-password-fresh-logins",
+        "http_final_postcheck": "evidence/internal-http-20261110/final-postcheck.json",
+        "existing_login_passwords_JWT_permissions_preserved": true,
+        "anonymous_resource_status": 401,
+        "daily_admin_settings_status": 403,
+        "http_browser_acceptance": "evidence/internal-http-20261110/filebrowser-browser.json",
+        "http_browser_scope": "original resources password login and authenticated resource page only; no resource file reads/writes"
+      }
     }
   },
   "permissions": {
@@ -173,23 +192,38 @@
   },
   "monitoring": {
     "exporter_endpoint": "192.168.19.80:9100",
-    "verified_scrape": true,
-    "active_target_count": 16,
-    "all_targets_UP": true,
-    "resource_service_metrics_UP": 6,
-    "evidence": "evidence/internal-http-20261110/final-postcheck.json",
-    "filebrowser_local_services": 6,
-    "filebrowser_install_evidence": "completion/20261110-filebrowser/monitoring-installed.json",
-    "historical_HTTPS_evidence": {
-      "filebrowser_HTTPS_check_installed": true,
-      "filebrowser_final_Prometheus_proof": "passed16targets/6services/HTTPShealth",
-      "verified_FileBrowser_HTTPS_health": true
-    },
-    "filebrowser_HTTP_health_name": "filebrowser-http-health",
-    "filebrowser_HTTP_transition_verified": true,
-    "filebrowser_HTTP_ca_file": null,
-    "filebrowser_final_Prometheus_proof": "passed16targets/6services/HTTPhealth",
-    "filebrowser_HTTP_evidence": "evidence/internal-http-20261110/final-postcheck.json"
+    "resource_service_metrics_UP": 5,
+    "local_services": [
+      "ssh.service",
+      "qemu-guest-agent.service",
+      "prometheus-node-exporter.service",
+      "nfs-server.service",
+      "dell-resources-firewall.service"
+    ],
+    "HTTP_checks": [],
+    "FileBrowser_service_and_HTTP_metrics_present": false,
+    "evidence": "completion/20261110-nfs-only/final-postcheck.json",
+    "global_Prometheus_postcheck": "parent-maintenance-window-pending",
+    "historical_FileBrowser_monitoring": {
+      "exporter_endpoint": "192.168.19.80:9100",
+      "verified_scrape": true,
+      "active_target_count": 16,
+      "all_targets_UP": true,
+      "resource_service_metrics_UP": 6,
+      "evidence": "evidence/internal-http-20261110/final-postcheck.json",
+      "filebrowser_local_services": 6,
+      "filebrowser_install_evidence": "completion/20261110-filebrowser/monitoring-installed.json",
+      "historical_HTTPS_evidence": {
+        "filebrowser_HTTPS_check_installed": true,
+        "filebrowser_final_Prometheus_proof": "passed16targets/6services/HTTPShealth",
+        "verified_FileBrowser_HTTPS_health": true
+      },
+      "filebrowser_HTTP_health_name": "filebrowser-http-health",
+      "filebrowser_HTTP_transition_verified": true,
+      "filebrowser_HTTP_ca_file": null,
+      "filebrowser_final_Prometheus_proof": "passed16targets/6services/HTTPhealth",
+      "filebrowser_HTTP_evidence": "evidence/internal-http-20261110/final-postcheck.json"
+    }
   },
   "dependencies": [
     {
@@ -198,12 +232,12 @@
     },
     {
       "target_vmid": 270,
-      "purpose": "active resource node/service monitoring via existing Ops;16totalUP"
+      "purpose": "existing Ops scrapes resource exporter; current five local NFS role checks, FileBrowser checks retired"
     }
   ],
-  "current_verification_evidence": "evidence/internal-http-20261110/final-postcheck.json",
-  "current_verification_scope": "Authenticated FileBrowser HTTP with original accounts/passwords/scope/permissions/JWT/marker/UID/GID/state unchanged; NFS/protected identities unchanged;16targets/6resourceservices/HTTPmetric UP; no business integration or restore",
-  "verification_note": "HTTP-only transition passed with original-password fresh logins; only three public runtime files changed and FileBrowser restarted. No NFS, VM or client restart; no application authentication reset.",
+  "current_verification_evidence": "completion/20261110-nfs-only/final-postcheck.json",
+  "current_verification_scope": "NFS-only resource service, original export/config/mount guards and five service metrics; FileBrowser inactive/masked, no TCP/UDP8080 or dedicated table; two clients read one owned server canary, no client writes or service restarts",
+  "verification_note": "User confirmed NFS-only plan after explicit pause; fresh audit, controlled FileBrowser retirement, true NFS read checks and cleanup passed. Global Prometheus/navigation deployment handled separately by manager.",
   "local_backup": {
     "included_in_production_logical_backup": false,
     "whole_VM_backup": false,
@@ -220,21 +254,18 @@
   "startup_verification_evidence": "completion/20261109-resources/PVE-startup-configured.json",
   "git_repository_mapping": {
     "catalog": "machines/git-repositories.json",
-    "catalog_machine_pointer": "/machines/13",
+    "catalog_machine_pointer": "/machines/12",
     "machine_path": "machines/vm280-resource-service",
     "document_path": "machines/vm280-resource-service/GIT-REPOSITORIES.md",
     "source_role": "docs-only",
     "configuration_repository_id": "infra",
     "application_repository_ids": [],
     "dependency_repository_ids": [],
-    "upstream_repository_ids": [
-      "filebrowser-upstream"
-    ],
+    "upstream_repository_ids": [],
     "repository_ids": [
-      "infra",
-      "filebrowser-upstream"
+      "infra"
     ],
-    "git_usage_mode": "native-official-binary",
+    "git_usage_mode": "native-os-packages",
     "direct_runtime_business_git_pull": false,
     "server_Git_key_installation_performed_by_this_task": false
   }

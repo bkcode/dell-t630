@@ -1,0 +1,13 @@
+{
+  "status": "former-artifact-service-VM221-removed",
+  "vmid": 221,
+  "PVE_VM221_record_absent": true,
+  "Nexus_live_data_disk_on220_preserved": true,
+  "publisher220_running": true,
+  "source_OS_disk_removed_after_full_data_auth_reboot_monitoring_verification": true,
+  "cold_backup_PVE_only_retained": true,
+  "cold_backup_bytes": 2400054202,
+  "cold_backup_mode": "0600",
+  "automatic_backup_scope_changed": false,
+  "other_VMs_removed": false
+}

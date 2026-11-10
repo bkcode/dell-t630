@@ -1,0 +1,15 @@
+{
+  "status": "current-targets-and-Nexus-NFS-health-verified",
+  "targets": 15,
+  "all_targets_up": true,
+  "retired221_target_absent": true,
+  "node_target_count": 10,
+  "ops_target_count": 5,
+  "resource280_service_checks": 5,
+  "resource280_all_up": true,
+  "FileBrowser_health_metrics_absent": true,
+  "publisher_service_checks": 7,
+  "publisher_all_up": true,
+  "Nexus_HTTP_up": true,
+  "test_notifications_sent": false
+}

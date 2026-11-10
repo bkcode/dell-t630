@@ -1,0 +1,9 @@
+{
+  "publisher_checkpoint_VM_only_root600": true,
+  "MCP_no_active_jobs": true,
+  "Docker_no_containers": true,
+  "Nexus_helper_CAS_updated": true,
+  "new_public_helper_sha256": "09b87a31f78dc60af86913d3ec02d11a10bc8206837c3cf2376a142f46736756",
+  "publisher_private_key_read_or_copied": false,
+  "private_config_or_hashes_output": false
+}

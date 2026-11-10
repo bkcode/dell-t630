@@ -1,5 +1,8 @@
 # 模板、克隆身份与访问合同
 
+> 2026-11-10阶段更新：用户已恢复Nexus合并与独立221退役，当前状态以[本次交付](completion/20261110-nexus-merge/README.md)、[现行架构](17-publish-artifact-consolidation.md)和[当前交接](11-live-handoff.md)为准。下文是此前基础阶段记录，旧“不合并/221独立/standby”、旧数量和版本不再作为当前现场结论，原验收与未签恢复范围按其时间保留。Java业务不启、旧链fenced；禁止重放历史初始化/迁移器。
+
+
 更新：2026-11-09。**继续完成基础搭建与正式数据库/Nacos配置自动备份，不迁移数据、不新建克隆或重做现役身份。** [本轮PVE审计](completion/20261109/pve-audit.json)确认14:24自然重启后12来宾自启合同与3停止模板保持；[核心审计](completion/20261109/core-audit.json)再次核严格SSH、fish/Bash和无Java业务。未重新制作/QA模板；UEFI0058是历史事故，用户确认诊断通过与当前计数观察分开记录。状态见[01](01-current-state.md)。
 
 ## 1. 最终保留三模板

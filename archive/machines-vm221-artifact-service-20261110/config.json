@@ -10,9 +10,9 @@
   },
   "source_of_truth": "plan.json",
   "last_verified_at": "2026-11-09T16:01:00.600541+08:00",
-  "current_runtime_verified": true,
-  "status": "recovered-infrastructure-verified",
-  "verification_note": "Fresh metadata/service audit after natural host reboot; no data migration, Nexus merge or Java business deployment.",
+  "current_runtime_verified": false,
+  "status": "retired-Nexus-consolidated-into220",
+  "verification_note": "Historical pre-merge snapshot; VM221 retired. Not an active role or deployment entrypoint.",
   "network": {
     "bridge": "vmbr19",
     "prefix_length": 24,
@@ -79,7 +79,7 @@
     "executed": false
   },
   "lifecycle": "pending-retirement",
-  "current_verification_evidence": "completion/20261109/guests-post-backup.json",
+  "current_verification_evidence": "completion/20261110-nexus-merge/final-postcheck.json",
   "current_verification_scope": "current infrastructure setup, no migration or full application restore",
   "timestamp_scope": "2026-11-09 scoped audit; individual commands retain actual timestamps",
   "local_backup": {
@@ -95,9 +95,9 @@
   },
   "git_repository_mapping": {
     "catalog": "machines/git-repositories.json",
-    "catalog_machine_pointer": "/machines/7",
-    "machine_path": "machines/vm221-artifact-service",
-    "document_path": "machines/vm221-artifact-service/GIT-REPOSITORIES.md",
+    "catalog_machine_pointer": null,
+    "machine_path": "archive/machines-vm221-artifact-service-20261110",
+    "document_path": "archive/machines-vm221-artifact-service-20261110/GIT-REPOSITORIES.md",
     "source_role": "docs-only",
     "configuration_repository_id": "infra",
     "application_repository_ids": [],
@@ -111,6 +111,12 @@
     ],
     "git_usage_mode": "official-artifact-service",
     "direct_runtime_business_git_pull": false,
-    "server_Git_key_installation_performed_by_this_task": false
-  }
+    "server_Git_key_installation_performed_by_this_task": false,
+    "historical_catalog_machine_pointer": "/machines/7"
+  },
+  "retirement_evidence": "completion/20261110-nexus-merge/retirement-result.json",
+  "archive_only": true,
+  "source_OS_disk_retained": false,
+  "source_VM_deleted": true,
+  "recovery_point": "PVE-only protected cold VMA archive; source OS disk deleted; live data disk now exclusivelyVM220"
 }

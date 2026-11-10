@@ -1,79 +1,42 @@
-> 更新：2026-11-10（Asia/Shanghai）。本轮基础fresh审计已复核；当日实时收尾状态统一见[11月9日交付记录](../../completion/20261109-prod-db-scope/README.md)。11月10日用户新增授权的免登录导航已部署，详见下方；其余不迁移数据、不合并Nexus、不启动Java业务、不升级Penpot，不需要Mac外部探针。
-
 # VM220 · publish-service
 
-## Puyu local发布器与MCP：CLI双环境已配置，dev上游未就绪
+更新：2026-11-10，Asia/Shanghai。用户已明确恢复Nexus合并与独立221退役；目标220已完成内容/身份/网络/监控和受控重启核验，221已移除，见[本次回执](../../completion/20261110-nexus-merge/README.md)。旧4CPU4GiB/唯一30/standby描述仅历史，不作为当前维护入口。
 
-VM220发布器`/opt/deploy-public`已通过Git安装，MCP以ub运行、仅127.0.0.1:18765。最新源码main/213f1f4已推送并同步到VM220 clean，Linux65测试通过。标准映射CLI prod/main、dev/dev，MCP仅dev；真实新预检因缺origin/dev failed，prod覆盖/禁用的真实发布请求均拒绝，属于保护行为通过。
+Git来源：[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)；配置合同：[config.json](config.json)，来源元数据：[config-sources.json](config-sources.json)。来源SHA不是完整现场导出，目录不包含秘密或可一键恢复包。
 
-六个后端/公共库的main读取通过且源码已克隆，bff-admin已在后续登记专属key后加入。当前全部业务工作树仍main，本轮只读上游审计显示六仓库均无dev，因此新dev同步/发布不能通过；不代建/推送/切换业务分支。旧五服务预检成功是初始dev/main阶段历史，不是新dev就绪证明。prod目标身份留空，真实发布关闭，旧forced-chainfenced，Java不构建/启动。
+## 资源与两套职责
 
-私有YAML仍为ub600/ignored、MCPkey和其它设置保持且只在服务器；MCP PID30260/NRestarts0、导航PID18640保持，构建盘UUID门禁通过。Nexus/原发布私钥边界不变。 [本轮映射与审计](../../evidence/deploy-public-modes-20261110/README.md)、[初装历史](../../evidence/deploy-public-publisher-20261110/README.md)、[源码安装手册](https://github.com/bkcode/deploy-public/blob/main/docs/PUBLISHER.md)。不得据历史成功重跑安装或打开真实发布。
+- 6vCPU/8GiB，primary192.168.19.30；同NIC service alias192.168.19.31，vmbr19/24，GW/DNS19.1。OS/PVE名称publish-service，管理仍用220自己的host key，不沿用旧dell-vm221别名。
+- 原build卷100GiB/store，/srv/dell-build，UUID16dc6067-56ef-4687-a314-edc6421f9ed4。
+- 原Nexus卷100GiB/store唯一移入scsi2，/srv/nexus，UUID239dc45a-b1f3-408b-a8ef-7afa77b52204。旧scsi2安装ISO只卸CDROM配置、文件保留；不format、不双挂RW、不递归chown树。
+- Nexus HTTP19.31:8081，原账号/权限/EULA/仓库内容保持。Docker Engine29.9.3/Compose5.7.0/classic-overlay2角色合同，原两镜像ID不升级。
+- 服务导航HTTP19.30:9080，匿名只读、无顶部栏/全宽，不承担SSO/部署/目标健康检查；本次清单13项，FileBrowser移除、Nexus描述归220。PVE/iDRAC内置HTTPS不强改。
 
+## Puyu工具与MCP
 
-Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/计划与已部署状态分开；不表示本机已clone或已分发key）。
+/opt/deploy-public来自bkcode/deploy-public main/213f1f4，Linux65测试通过。MCP以ub运行、仅127.0.0.1:18765，服务puyu-deploy-mcp.service；原ignored YAML/APIkey/DeployKeys和buildUUID守卫保持，不导出、重生成或覆盖私有配置。
 
-## 2026-11-10新增免登录导航
+CLI prod/main、dev/dev，MCP仅dev、prod覆盖拒绝。六业务/公共库main已克隆且仍main，远程dev均缺，新dev预检failed是预期保护；不自动代建/推分支或fallback main。旧五服务dev/main成功仅历史。prod SSH目标未配置、真实部署关闭，原forced-chainfenced，任何环境不构建/启动Java业务。
 
-当前 **[http://192.168.19.30:9080/](http://192.168.19.30:9080/)**，按用户要求取消导航HTTPS，移除“个人内网 / 服务导航”顶部栏、压缩标题/外侧留白并采用全宽布局。只预览14个Web入口，支持搜索/分组/环境筛选/复制与外链跳转，无账号密码、CRUD或健康探测；目标各自认证保持；自建应用默认HTTP，FileBrowser已切HTTP但仍需原账号密码，PVE/iDRAC内置HTTPS本轮保留。只部署 `bkcode/deploy/service-directory` 当前提交 `d56cae553bf95ce0e2c3fe8f258a2f99389aae7c`，不表示五个Puyu后端已上线或publisher解冻。
+[MCP/模式证据](../../evidence/deploy-public-modes-20261110/README.md)、[工具操作说明](https://github.com/bkcode/deploy-public/blob/main/docs/PUBLISHER.md)。合并前MCP PID30260与导航18640是历史进程号，VM重启后不可据此要求PID相同；应核unit/命令/配置保持与新回执。
 
-Python3原生unit `dell-service-directory.service`、OS用户 `servicedirectory` UID/GID2001只读运行；Linux进程身份不是页面登录账号。root-owned固定release为 `/opt/dell/service-directory/releases/d56cae553bf95ce0e2c3fe8f258a2f99389aae7c/`，manifest在 `/etc/dell-service-directory/`。显式 `--http`，不加载TLS或登录凭据，无应用状态。旧证书/私钥仅留未启用历史，不再配置TLS LoadCredential。专属firewall unit只管理自有nft输入表9080来源，允许LAN21/24、WG10.66.66/24、本机19.30/lo，不改PVE或路由。
+## 服务与监控
 
-最新[统一内网HTTP交付](../../evidence/internal-http-20261110/README.md)、[导航链接应用](../../evidence/internal-http-20261110/navigation-links-applied.json)与[14:28最终后检](../../evidence/internal-http-20261110/final-postcheck.json)通过，FileBrowser链接改HTTP、14条清单/topbar0/fullwidth保持，原服务不变；ddccc2b只保留为此前布局验证阶段。`63b8c08`的[原生/重启/浏览器/TLS验收](../../evidence/service-directory-20261110/README.md)保留为首次历史。[使用手册](../../evidence/service-directory-20261110/usage-manual.md)已改HTTP操作。源码本机提交未push，原4条用户提交未捎带发布；后续取已审查精确提交，不git pull旧main覆盖。清单维护只重启导航，不调用业务发布链。原4CPU/4GiB、build盘和Nexus standby边界保持。
+- dell-nexus.service：Docker Compose、/srv/nexus真实UUID守卫和挂载依赖。
+- docker.service，原Nexus两个容器健康必须独立核实；不将publisher加入docker组。
+- puyu-deploy-mcp.service：原生Python、ub/loopback、APIkey认证、部署关闭。
+- dell-service-directory.service与专属firewall.service：原生Python/UID2001，只读导航；本次只更换公开清单release，移除FileBrowser入口并将Nexus描述归220，HTTP/UI保持。
+- prometheus-node-exporter.service：只绑定19.30:9100；dell-guest-health.timer采集。
+- /usr/local/bin/dell-publish：manual-only/fenced，不真实发布。
 
-## 本轮只读状态与备份归属
+220原SSH/QGA/exporter/导航4个健康检查保留，加Docker/Nexus/MCP共7个；只有Nexus HTTP探测本机alias31，MCP认证接口不作为HTTP健康项。31不另建node，移221后总10node+5Ops=15（含资源280），最终15UP见本次回执。
 
-14:43:07媒体工具采样：仍4vCPU/4GiB、唯一19.30、原build盘UUID，Docker为空、无active Nexus或31 alias；publisher权限/私钥仅stat、未读取。业务仍fenced，不发布JAR或Nacos，不把合并目标当实际。 证据：[本机分项审计](../../completion/20261109/media-audit.json)。
+## 备份、维护和限制
 
-本机全部数据及发布私钥均不纳入自动备份，发布私钥继续只留220；不能wholebackup/snapshot220。 现行仅正式DB/Nacos逻辑SQL导出（非VM snapshot），PVE落点`/mnt/pve/store/dell-artifacts/prod-db-backups` root700/600；新未列白名单数据库拒绝告警、需更新。03:30/GFS最近3＋每日7＋每周4，首轮3301B与timer见[新回执](../../completion/20261109-prod-db-scope/first-success-and-timer-enabled.json)，实际监控/收尾统一见[新中央入口](../../completion/20261109-prod-db-scope/README.md)。旧11来宾job已disabled、原19,747,582,801B档与21回退档保留不自动删；仅[该3301B Nacos小档已在VM210临时隔离恢复](../../completion/20261109-prod-db-restore/README.md)，完整业务恢复/RPO/RTO/异机DR未签，不迁移/合并/启Java、无Mac探针。
+本机不纳自动备份，发布私钥只220，禁止读取/复制/导出或wholebackup/snapshot220。单次原221迁移冷备2,400,054,202字节仅PVE root保护保存，SHA/zstd/VMA通过，不导出Mac、不自动删除。自动备份仍只正式MySQL/Nacos，不纳Nexus或构建缓存。
 
-本目录是每机公开合同与来源索引，**不提供秘密或可直接重放的完整部署包**。source of truth为[plan.json](../../plan.json)；11月7日02:35为历史综合基线、UEFI0058为历史事故；用户确认内存处理/诊断通过，11月9日按本页新证据fresh复核，未重验全部应用内容。
+迁移脚本不是幂等安装器，禁止重放旧stage/mount/commit/start或fresh-init。partial安装应先看journal与manifest，不能删路径绕guard。日常检查与故障处理见[本次操作手册](../../completion/20261110-nexus-merge/usage-manual.md)、[全局人工手册](../../19-manual-operations.md)、[访问入口](../../12-service-access-and-operations.md)。回退未演练，独立DR/RPO/RTO与并发构建性能未签。
 
-## 职责与实际合同
+原始准备记录仍保留：[Docker准备](../../cleanup/nexus/docker220-prepare-result.json)、[standby读回](../../cleanup/nexus/preparation-readback.json)、[原媒体审计](../../completion/20261109/media-audit.json)；它们不是当前无Nexus/无alias31的证明。[17架构](../../17-publish-artifact-consolidation.md)定义当前责任。
 
-构建/受限发布工具链和匿名只读服务导航，publisher→测试基础19.45；当前业务发布fenced，不启动Java业务。
-
-- 实际资源：4 vCPU / 4 GiB；管理/服务地址 `192.168.19.30`，vmbr19、/24、GW/DNS19.1。
-- 数据盘：100 GiB / store；`/srv/dell-build`；UUID `16dc6067-56ef-4687-a314-edc6421f9ed4`。
-- 启停登记：order30、up15s/down60s；延时不代替健康。
-- Docker：Engine29.9.3 / Compose5.7.0，该角色driver `overlay2`。这是角色specific已验配置，不能拿其它角色/模板profile盲套。
-
-## unit / Compose与依赖
-
-- `dell-service-directory.service` 与 `dell-service-directory-firewall.service`（原生Python3，只读导航）。
-- `/usr/local/bin/dell-publish`。
-- `prometheus-node-exporter.service`。
-- `dell-guest-health.timer`。
-
-- 原构建盘UUID和受限client profile；target19.45/source19.30与forced-command规则。
-- Docker仅为空runtime/原两镜像缓存，不含正在运行的Nexus容器；不将publisher加入docker组。
-
-## 维护与安全
-
-- 不运行stage/activate/rollback业务发布；baseline_migrated=false继续冻结。
-- 只stat发布私钥元数据；不读取、复制、导出它，不wholebackup或snapshot220夹带它。
-- 当前4vCPU/4GiB且只有19.30；已完成11月8日基础复验。
-- 11月9日已fresh复核基础状态；新的变更仍须在当前范围内核实，F1本身不代表修复。PVE写/VMID/IP/数据盘归属由root统一，严格SSH/ub管理，不关闭hostkey检查、不复制私钥。
-- 目录不含任何.env、secrets、Webhook或key；只引用公开合同和历史证据。CF备份只PVE、发布私钥只220，不能wholebackup220或把private打包提交Git。
-- 日常流程见[人工操作手册](../../19-manual-operations.md)与[访问入口](../../12-service-access-and-operations.md)；只读[本机config.json](config.json)与[config-sources.json](config-sources.json)核对，不盲重跑初始化器。
-
-## 合并目标，仅候选
-
-实际仍是4CPU/4GiB、primary19.30、无31 alias、无active Nexus。未来目标为6CPU/8GiB、primary30+服务alias31及原Nexus盘；见[17目标合同](../../17-publish-artifact-consolidation.md)。私有standby存在不等于已合并，当前用户明确不迁移，不能mount/commit/start。
-
-## 配置来源与限制
-
-本目录没有configs快照。某些仓库infra准备文件仍含旧10.63地址或旧默认值，索引已标historical-evidence，不能视作现役完整配置。只有path存在和SHA可复核，不等于当前guest文件逐字相等；源文件与guest的逐字一致性未由索引SHA证明，后续维护仍须fresh核。pending-candidate仅未来方案，不能冒作active。
-
-- [plan.json](../../plan.json) · `current-contract`：当前资源/地址/数据卷合同唯一来源；基础运行状态已在11月9日分项复验；不代表全部应用数据/认证通过。
-- [11-live-handoff.md](../../11-live-handoff.md) · `current-contract`：当前不迁移范围、11月9日证据入口及历史UEFI0058时间线。
-- [12-service-access-and-operations.md](../../12-service-access-and-operations.md) · `current-contract`：当前19网入口及凭据保管规则。
-- [19-manual-operations.md](../../19-manual-operations.md) · `current-contract`：人工启停、硬件门禁、克隆、备份与受控恢复。
-- [cleanup/final-live-check.json](../../cleanup/final-live-check.json) · `historical-evidence`：2026-11-07 02:35综合验收快照，不代表当前在线。
-- [infra/publisher/README.md](../../infra/publisher/README.md) · `current-contract`：发布受限权限合同；实际安装以deployed和已读回SHA为准。
-- [cleanup/nexus/docker220-prepare-result.json](../../cleanup/nexus/docker220-prepare-result.json) · `historical-evidence`：220经典Docker软件准备成功，0containers/无Nexus/无alias31。
-- [cleanup/nexus/preparation-readback.json](../../cleanup/nexus/preparation-readback.json) · `historical-evidence`：实际public文件SHA、standby模式布尔、发布key仅stat。
-- [network19/services-core/publisher220-key-hostalias-final-readback.json](../../network19/services-core/publisher220-key-hostalias-final-readback.json) · `historical-evidence`：19.30来源/19.45目标及受信key合同迁网读回，不是业务发布许可。
-- [17-publish-artifact-consolidation.md](../../17-publish-artifact-consolidation.md) · `pending-candidate`：合并目标6CPU8GiB+服务alias31；尚未移交。
-- [cleanup/nexus/PLAN.md](../../cleanup/nexus/PLAN.md) · `pending-candidate`：未来冷备/唯一盘/网络alias/应用切换计划。
-- [cleanup/nexus/target.py](../../cleanup/nexus/target.py) · `pending-candidate`：后续应用执行器，不能把已有standby阶段当已完成合并。
+最终退役回执确认：VM221配置与原OS盘已删除，活Nexus数据盘在220保持；原221恢复点为仅PVE保留的2,400,054,202字节冷备，不再声称保留源OS盘。见[退役回执](../../completion/20261110-nexus-merge/retirement-result.json)。

@@ -1,3 +1,5 @@
+> 本手册已转历史（2026-11-10）：FileBrowser已停用并masked、8080关闭，现仅NFS。请使用[现行NFS操作手册](../20261110-nfs-only/usage-manual.md)。原state/凭据仅本机受保护保留；以下页面入口、登录、升级、恢复命令都是退休前人工资料，不作为当前日常操作，不自动解除mask或重置账号。
+
 # FileBrowser Quantum资源管理页使用手册
 
 更新：2026-11-10，Asia/Shanghai。用户最新要求自建内网应用默认HTTP，PVE/iDRAC内置管理HTTPS保留。本页FileBrowser入口为 **[http://192.168.19.80:8080/](http://192.168.19.80:8080/)**，HTTP切换原生验收及14:28最终后检已通过；最新状态看[内网HTTP交付](../../evidence/internal-http-20261110/README.md)。原 `resources` / `admin` 登录密码和权限保持，JWT、初始化完成marker、UID2000/GID2980、state700及NFS不变。不关闭认证、不改密、不重跑初始化。

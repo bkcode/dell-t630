@@ -1,0 +1,62 @@
+{
+  "at": "2026-11-10T22:50:22.534301+08:00",
+  "status": "current-NFS-mount-and-cross-client-read-verified",
+  "server_canary": {
+    "owned_canary_created": true,
+    "owner_UID": 999,
+    "group_GID": 2980,
+    "directory_mode": "2770",
+    "file_mode": "0660"
+  },
+  "clients": [
+    {
+      "vmid": 230,
+      "guard": {
+        "mount_guard": true,
+        "role": "client-230"
+      },
+      "real_NFS_mount": {
+        "target": "/mnt/resources",
+        "source": "192.168.19.80:/",
+        "fstype": "nfs4",
+        "options": "rw,nosuid,nodev,noexec,relatime,vers=4.1,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=192.168.19.40,local_lock=none,addr=192.168.19.80"
+      },
+      "finger_read_server_canary": true,
+      "canary_UID": 999,
+      "canary_GID": 2980,
+      "canary_mode": "0660",
+      "write_permission_check_only": true,
+      "client_file_writes": false,
+      "client_services_restarted": false
+    },
+    {
+      "vmid": 240,
+      "guard": {
+        "mount_guard": true,
+        "role": "client-240"
+      },
+      "real_NFS_mount": {
+        "target": "/mnt/resources",
+        "source": "192.168.19.80:/",
+        "fstype": "nfs4",
+        "options": "rw,nosuid,nodev,noexec,relatime,vers=4.1,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=192.168.19.45,local_lock=none,addr=192.168.19.80"
+      },
+      "finger_read_server_canary": true,
+      "canary_UID": 999,
+      "canary_GID": 2980,
+      "canary_mode": "0660",
+      "write_permission_check_only": true,
+      "client_file_writes": false,
+      "client_services_restarted": false
+    }
+  ],
+  "cleanup": {
+    "owned_canary_cleaned": true
+  },
+  "server_business_or_existing_files_read_modified": false,
+  "client_file_writes": false,
+  "NFS_or_client_service_restarts": false,
+  "actual_client_write_test_performed": false,
+  "historical_cross_client_write_acceptance": "completion/20261109-resources/native-acceptance.json",
+  "scope": "new owned server canary read by both real mounted NFS clients as finger; no client writes, no business file reads"
+}

@@ -147,7 +147,7 @@
   },
   "git_repository_mapping": {
     "catalog": "machines/git-repositories.json",
-    "catalog_machine_pointer": "/machines/8",
+    "catalog_machine_pointer": "/machines/7",
     "machine_path": "machines/vm230-java-prod-01",
     "document_path": "machines/vm230-java-prod-01/GIT-REPOSITORIES.md",
     "source_role": "docs-only",

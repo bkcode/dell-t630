@@ -1,0 +1,109 @@
+{
+  "captured_at": "2026-11-10T23:19:09.130913+08:00",
+  "status": "Nexus-consolidated-VM221-removed-NFS-only-verified",
+  "PVE": {
+    "guests": [
+      {
+        "vmid": 100,
+        "name": "cf-tunnel",
+        "status": "running"
+      },
+      {
+        "vmid": 190,
+        "name": "network-gateway",
+        "status": "running"
+      },
+      {
+        "vmid": 200,
+        "name": "data-prod-db",
+        "status": "running"
+      },
+      {
+        "vmid": 201,
+        "name": "data-prod-infra",
+        "status": "running"
+      },
+      {
+        "vmid": 210,
+        "name": "data-test",
+        "status": "running"
+      },
+      {
+        "vmid": 220,
+        "name": "publish-service",
+        "status": "running"
+      },
+      {
+        "vmid": 230,
+        "name": "java-prod-01",
+        "status": "running"
+      },
+      {
+        "vmid": 240,
+        "name": "java-test-01",
+        "status": "running"
+      },
+      {
+        "vmid": 250,
+        "name": "penpot-service",
+        "status": "running"
+      },
+      {
+        "vmid": 260,
+        "name": "nas-media",
+        "status": "running"
+      },
+      {
+        "vmid": 270,
+        "name": "ops-service",
+        "status": "running"
+      },
+      {
+        "vmid": 280,
+        "name": "resource-service",
+        "status": "running"
+      }
+    ],
+    "guest_count": 12,
+    "template_count": 3,
+    "all_guests_running": true,
+    "VM221_absent": true,
+    "EDAC_counters_read": 16,
+    "all_current_boot_EDAC_zero": true,
+    "PVE_L3_forwarding_zero_and_no_inet_NAT": true,
+    "PVE_boot_id": "c2320079-38f6-4c05-bb3f-7502ee3f8f97"
+  },
+  "VM220_strict_QGA_SSH_identity_verified": {
+    "vmid": 220,
+    "ip": "192.168.19.30",
+    "host_key_alias": "dell-vm220",
+    "host_key_fingerprint": "SHA256:2PFQYC3uPSg/sMihWZZ7R1vgkKKozJbTwTjf6VNWwG4",
+    "trust_source": "PVE QGA over known SSH host"
+  },
+  "LAN_direct_checks": [
+    {
+      "URL": "http://192.168.19.31:8081/",
+      "HTTP": 200
+    },
+    {
+      "URL": "http://192.168.19.30:9080/",
+      "HTTP": 200
+    },
+    {
+      "URL": "http://192.168.19.80:8080/",
+      "unreachable": true,
+      "curl_exit": 7
+    }
+  ],
+  "post_reboot_publisher": "completion/20261110-nexus-merge/publisher-post-reboot.json",
+  "full_Nexus_data_verification": "completion/20261110-nexus-merge/baseline-verify.json",
+  "monitoring": "completion/20261110-nexus-merge/monitoring-final.json",
+  "NFS": "completion/20261110-nfs-only/final-postcheck.json",
+  "navigation": "completion/20261110-nexus-merge/navigation-updated.json",
+  "private_values_or_archive_payloads_exported": false,
+  "Java_or_Go_business_deployed": false,
+  "automatic_backup_scope_expanded": false,
+  "acceptance_only_write_read_cleanup": "completion/20261110-nexus-merge/baseline-write-canary.json",
+  "acceptance_repository_original_assets_restored": "completion/20261110-nexus-merge/baseline-canary-cleanup.json",
+  "maintenance_ended": "completion/20261110-nexus-merge/maintenance-ended.json"
+}

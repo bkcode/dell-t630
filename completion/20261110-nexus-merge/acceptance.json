@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-10T23:25:47.368256+08:00",
+  "status": "Nexus-consolidated-artifact-VM-removed-and-NFS-only-verified",
+  "scope": "VM220 Nexus same-instance consolidation and VM221 retirement; VM280 FileBrowser retired with NFS preserved",
+  "cases": [
+    {
+      "id": "MERGE-BACKUP-001",
+      "title": "一致冷备与恢复点保护",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确要求合并Nexus并移除artifact-service；随后确认仅保留NFS停用FileBrowser"
+      ],
+      "steps": [
+        "固定身份/原盘/私有配置保护下切换，原生服务与全量内容验证，逐项留脱敏证据"
+      ],
+      "observable_pass_conditions": [
+        "源Nexus正常停写、221关闭后PVE冷备",
+        "2,400,054,202B归档SHA/zstd/VMA完整验证，目录700/文件600，仅PVE；不备220"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-nexus-merge/source-quiesced.json",
+          "note": "Public facts only; credentials/private snapshots/backup archives remain server-local"
+        },
+        {
+          "path": "completion/20261110-nexus-merge/coldbackup-state.json",
+          "note": "Public facts only; credentials/private snapshots/backup archives remain server-local"
+        }
+      ],
+      "verified_at": "2026-11-10T23:20:51.695295+08:00"
+    },
+    {
+      "id": "MERGE-OWNERSHIP-001",
+      "title": "唯一盘与网络身份移交",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确要求合并Nexus并移除artifact-service；随后确认仅保留NFS停用FileBrowser"
+      ],
+      "steps": [
+        "固定身份/原盘/私有配置保护下切换，原生服务与全量内容验证，逐项留脱敏证据"
+      ],
+      "observable_pass_conditions": [
+        "原Nexus100GiB UUID盘仅220持有，原build盘保持；2206CPU8GiB、30主IP+31alias",
+        "bridge只改变31归属并移除旧exporter许可，PVE不做L3/NAT"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-nexus-merge/handover-result.json",
+          "note": "Public facts only; credentials/private snapshots/backup archives remain server-local"
+        },
+        {
+          "path": "completion/20261110-nexus-merge/bridge-final-applied.json",
+          "note": "Public facts only; credentials/private snapshots/backup archives remain server-local"
+        },
+        {
+          "path": "completion/20261110-nexus-merge/publisher-post-reboot.json",
+          "note": "Public facts only; credentials/private snapshots/backup archives remain server-local"
+        }
+      ],
+      "verified_at": "2026-11-10T23:20:51.695295+08:00"
+    },
+    {
+      "id": "MERGE-DATA-001",
+      "title": "全量数据与身份权限持久性",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确要求合并Nexus并移除artifact-service；随后确认仅保留NFS停用FileBrowser"
+      ],
+      "steps": [
+        "固定身份/原盘/私有配置保护下切换，原生服务与全量内容验证，逐项留脱敏证据"
+      ],
+      "observable_pass_conditions": [
+        "重启后12repos/7hosted/50components/1347资产字节路径ID一致",
+        "用户角色/EULA/仓库配置保持，仅GET更新访问时间单列；原reader/publisher/group读取与匿名401通过"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-nexus-merge/baseline-verify.json",
+          "note": "Public facts only; credentials/private snapshots/backup archives remain server-local"
+        },
+        {
+          "path": "completion/20261110-nexus-merge/baseline-compared.json",
+          "note": "Public facts only; credentials/private snapshots/backup archives remain server-local"
+        },
+        {
+          "path": "completion/20261110-nexus-merge/publisher-post-reboot.json",
+          "note": "Public facts only; credentials/private snapshots/backup archives remain server-local"
+        }
+      ],
+      "verified_at": "2026-11-10T23:20:51.695295+08:00"
+    },
+    {
+      "id": "MERGE-PUBLISHER-001",
+      "title": "发布机能力保持",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确要求合并Nexus并移除artifact-service；随后确认仅保留NFS停用FileBrowser"
+      ],
+      "steps": [
+        "固定身份/原盘/私有配置保护下切换，原生服务与全量内容验证，逐项留脱敏证据"
+      ],
+      "observable_pass_conditions": [
+        "原config/MCPkey/unit/buildguard/profile字节保持，源码213f与六仓库main/clean保持",
+        "MCPloopback、原发布用户非docker组且socket拒绝；不读/拷发布私钥，不启JavaGo业务"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-nexus-merge/220-prepared-current.json",
+          "note": "Public facts only; credentials/private snapshots/backup archives remain server-local"
+        },
+        {
+          "path": "completion/20261110-nexus-merge/publisher-post-reboot.json",
+          "note": "Public facts only; credentials/private snapshots/backup archives remain server-local"
+        }
+      ],
+      "verified_at": "2026-11-10T23:20:51.695295+08:00"
+    },
+    {
+      "id": "MERGE-RETIRE-001",
+      "title": "退役与当前监控",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确要求合并Nexus并移除artifact-service；随后确认仅保留NFS停用FileBrowser"
+      ],
+      "steps": [
+        "固定身份/原盘/私有配置保护下切换，原生服务与全量内容验证，逐项留脱敏证据"
+      ],
+      "observable_pass_conditions": [
+        "VM221配置与原OS盘在数据/重启/权限/监控验证后删除，220活盘和冷档保持",
+        "当前12来宾+3模板、15UP、220七项/280五项全1；本次维护静默解除"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-nexus-merge/retirement-result.json",
+          "note": "Public facts only; credentials/private snapshots/backup archives remain server-local"
+        },
+        {
+          "path": "completion/20261110-nexus-merge/final-postcheck.json",
+          "note": "Public facts only; credentials/private snapshots/backup archives remain server-local"
+        },
+        {
+          "path": "completion/20261110-nexus-merge/monitoring-final.json",
+          "note": "Public facts only; credentials/private snapshots/backup archives remain server-local"
+        },
+        {
+          "path": "completion/20261110-nexus-merge/maintenance-ended.json",
+          "note": "Public facts only; credentials/private snapshots/backup archives remain server-local"
+        }
+      ],
+      "verified_at": "2026-11-10T23:20:51.695295+08:00"
+    },
+    {
+      "id": "MERGE-NFS-001",
+      "title": "仅保留NFS与客户端访问",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确要求合并Nexus并移除artifact-service；随后确认仅保留NFS停用FileBrowser"
+      ],
+      "steps": [
+        "固定身份/原盘/私有配置保护下切换，原生服务与全量内容验证，逐项留脱敏证据"
+      ],
+      "observable_pass_conditions": [
+        "FileBrowser两unit inactive/masked、8080关闭、专用输入表和FB指标已撤",
+        "资源文件、原NFS导出/权限/进程保持；230/240真实NFS挂载和受限用户canary读回通过"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-nfs-only/retirement-result.json",
+          "note": "Public facts only; credentials/private snapshots/backup archives remain server-local"
+        },
+        {
+          "path": "completion/20261110-nfs-only/NFS-verification.json",
+          "note": "Public facts only; credentials/private snapshots/backup archives remain server-local"
+        },
+        {
+          "path": "completion/20261110-nfs-only/final-postcheck.json",
+          "note": "Public facts only; credentials/private snapshots/backup archives remain server-local"
+        },
+        {
+          "path": "completion/20261110-nexus-merge/monitoring-final.json",
+          "note": "Public facts only; credentials/private snapshots/backup archives remain server-local"
+        }
+      ],
+      "verified_at": "2026-11-10T23:20:51.695295+08:00"
+    },
+    {
+      "id": "MERGE-NAV-001",
+      "title": "导航与局域网入口",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确要求合并Nexus并移除artifact-service；随后确认仅保留NFS停用FileBrowser"
+      ],
+      "steps": [
+        "固定身份/原盘/私有配置保护下切换，原生服务与全量内容验证，逐项留脱敏证据"
+      ],
+      "observable_pass_conditions": [
+        "原UI/HTTP不变，清单14→13移除FileBrowser并说明Nexus并入220",
+        "局域网Nexus31和导航30返回200，资源8080拒绝连接"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-nexus-merge/navigation-updated.json",
+          "note": "Public facts only; credentials/private snapshots/backup archives remain server-local"
+        },
+        {
+          "path": "completion/20261110-nexus-merge/final-postcheck.json",
+          "note": "Public facts only; credentials/private snapshots/backup archives remain server-local"
+        }
+      ],
+      "verified_at": "2026-11-10T23:20:51.695295+08:00"
+    },
+    {
+      "id": "MERGE-WRITE-001",
+      "title": "专用验收仓库写入读回与精确清理",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "仅本次新随机坐标、现有专用dell-acceptance，原组件/资产基线保持"
+      ],
+      "steps": [
+        "上传微小POM并读回字节，按唯一GAV及资产路径清理新组件，核对原组件与资产ID集合"
+      ],
+      "observable_pass_conditions": [
+        "写入/读回通过，删除204后GET404，原组件和2资产集合恢复",
+        "业务仓库无上传或删除，账号密码不变"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261110-nexus-merge/baseline-write-canary.json",
+          "note": "No credentials or payload contents"
+        },
+        {
+          "path": "completion/20261110-nexus-merge/baseline-canary-cleanup.json",
+          "note": "Original asset ID set preserved"
+        }
+      ],
+      "verified_at": "2026-11-10T23:25:47.368256+08:00"
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "current_phase_case_count": 8,
+    "current_phase_passed": 8
+  },
+  "limitations": [
+    "No physical T630 reboot or cold-backup restore exercise; no RPO/RTO or independent disaster recovery claim",
+    "No Java/Go business deployment or backend branch creation; actual deployment remains disabled",
+    "Automatic backups still only production MySQL/Nacos; Nexus backup is one manual pre-migration PVE-local cold archive",
+    "WireGuard policy preserved; this phase LAN checks do not sign a new external VPN end-to-end test"
+  ]
+}

@@ -1,5 +1,8 @@
 # 交付与恢复报告
 
+> 2026-11-10阶段更新：用户已恢复Nexus合并与独立221退役，当前状态以[本次交付](completion/20261110-nexus-merge/README.md)、[现行架构](17-publish-artifact-consolidation.md)和[当前交接](11-live-handoff.md)为准。下文是此前基础阶段记录，旧“不合并/221独立/standby”、旧数量和版本不再作为当前现场结论，原验收与未签恢复范围按其时间保留。Java业务不启、旧链fenced；禁止重放历史初始化/迁移器。
+
+
 更新：2026-11-09（Asia/Shanghai）。用户此前确认内存已重新插拔/更换且诊断通过；本次14:24自然重启后fresh核EDAC0、RAIDOptl、12running/3tpl与15targets UP。既有基础服务完成分范围核查，**不再把11/07的POST停机状态当当前现场**；完整物理根因、独立离线诊断与长期稳定性未因此自动签收。
 
 本轮用户要求继续完成基础搭建，并最新仅选择正式数据库/Nacos配置自动备份，明确**不迁移数据、不合并Nexus**。当日状态入口：[completion/20261109-prod-db-scope/README.md](completion/20261109-prod-db-scope/README.md)。Mac外部探针明确不需要，保持停用，移出当前与后续待办。

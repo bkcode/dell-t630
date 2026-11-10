@@ -1,8 +1,8 @@
 # 每台服务器的Git来源
 
-更新：2026-11-10，Asia/Shanghai。机器可读唯一映射为[git-repositories.json](git-repositories.json)，17份逐机文档从此表解释。所有机器的公开配置来源统一为[bkcode/dell-t630](https://github.com/bkcode/dell-t630)，不代表每台机器都需要clone或自动运行该仓库。
+更新：2026-11-10，Asia/Shanghai。唯一机器可读主表[git-repositories.json](git-repositories.json)覆盖16个现役目录，逐机文档/config指针与当前索引一致。Nexus并入220后，221只保留[历史归档](../archive/machines-vm221-artifact-service-20261110/README.md)，不再是独立现役Git条目。
 
-**当前已部署、未来计划与上游参考分别登记。** 本轮只做文档和只读取码验证，未把代码、密钥或业务应用安装到任何服务器。
+配置仓库统一[bkcode/dell-t630](https://github.com/bkcode/dell-t630)。应用源码、官方上游参考、已部署与候选分开记录；源码归属不授权Java启动或自动替换镜像。
 
 | 机器 | 应用/构建源码 | 配置目录 | 当前用法 |
 | --- | --- | --- | --- |
@@ -12,49 +12,34 @@
 | [data-prod-db](vm200-data-prod-db/GIT-REPOSITORIES.md) | 无独立用户业务库 | `infra/data`, `infra/backup/prod-db` | configuration-only |
 | [data-prod-infra](vm201-data-prod-infra/GIT-REPOSITORIES.md) | 无独立用户业务库 | `infra/data` | configuration-only |
 | [data-test](vm210-data-test/GIT-REPOSITORIES.md) | 无独立用户业务库 | `infra/data` | configuration-only |
-| [publish-service](vm220-publish-service/GIT-REPOSITORIES.md) | [bkcode/deploy](https://github.com/bkcode/deploy), [bkcode/puyu-auth](https://github.com/bkcode/puyu-auth), [bkcode/puyu-bff-web](https://github.com/bkcode/puyu-bff-web), [bkcode/puyu-common-lib](https://github.com/bkcode/puyu-common-lib), [bkcode/puyu-gateway](https://github.com/bkcode/puyu-gateway), [bkcode/puyu-service-core](https://github.com/bkcode/puyu-service-core) | `infra/publisher`, `infra/java` | build-source-planned |
-| [artifact-service](vm221-artifact-service/GIT-REPOSITORIES.md) | 无独立用户业务库 | `infra/nexus` | official-artifact-service |
-| [java-prod-01](vm230-java-prod-01/GIT-REPOSITORIES.md) | [bkcode/puyu-auth](https://github.com/bkcode/puyu-auth), [bkcode/puyu-bff-web](https://github.com/bkcode/puyu-bff-web), [bkcode/puyu-gateway](https://github.com/bkcode/puyu-gateway), [bkcode/puyu-service-core](https://github.com/bkcode/puyu-service-core) | `infra/java/runtime`, `network19/java-template` | artifact-consumer-runtime-only |
-| [java-test-01](vm240-java-test-01/GIT-REPOSITORIES.md) | [bkcode/puyu-auth](https://github.com/bkcode/puyu-auth), [bkcode/puyu-bff-web](https://github.com/bkcode/puyu-bff-web), [bkcode/puyu-gateway](https://github.com/bkcode/puyu-gateway), [bkcode/puyu-service-core](https://github.com/bkcode/puyu-service-core) | `infra/java/runtime`, `network19/java-template` | artifact-consumer-runtime-only |
-| [penpot-service](vm250-penpot-service/GIT-REPOSITORIES.md) | [bkcode/penpot](https://github.com/bkcode/penpot) | `infra/penpot`, `infra/penpot/runtime/health-supervision` | custom-code-imported |
-| [nas-media](vm260-nas-media/GIT-REPOSITORIES.md) | [bkcode/jellyfin](https://github.com/bkcode/jellyfin) | `infra/nas` | official-runtime-user-fork-planned |
+| [publish-service](vm220-publish-service/GIT-REPOSITORIES.md) | `bkcode/deploy`, `bkcode/deploy-public`, `bkcode/puyu-auth`, `bkcode/puyu-bff-admin`, `bkcode/puyu-bff-web`, `bkcode/puyu-common-lib`, `bkcode/puyu-gateway`, `bkcode/puyu-service-core` | `infra/publisher`, `infra/java`, `infra/deploy-public`, `infra/nexus` | build-source-configured-business-disabled |
+| [java-prod-01](vm230-java-prod-01/GIT-REPOSITORIES.md) | `bkcode/puyu-auth`, `bkcode/puyu-bff-web`, `bkcode/puyu-gateway`, `bkcode/puyu-service-core` | `infra/java/runtime`, `network19/java-template` | artifact-consumer-runtime-only |
+| [java-test-01](vm240-java-test-01/GIT-REPOSITORIES.md) | `bkcode/puyu-auth`, `bkcode/puyu-bff-web`, `bkcode/puyu-gateway`, `bkcode/puyu-service-core` | `infra/java/runtime`, `network19/java-template` | artifact-consumer-runtime-only |
+| [penpot-service](vm250-penpot-service/GIT-REPOSITORIES.md) | `bkcode/penpot` | `infra/penpot`, `infra/penpot/runtime/health-supervision` | custom-code-imported |
+| [nas-media](vm260-nas-media/GIT-REPOSITORIES.md) | `bkcode/jellyfin` | `infra/nas` | official-runtime-user-fork-planned |
 | [ops-service](vm270-ops-service/GIT-REPOSITORIES.md) | 无独立用户业务库 | `infra/ops` | official-monitoring-components |
-| [resource-service](vm280-resource-service/GIT-REPOSITORIES.md) | 无独立用户业务库 | `infra/resources`, `infra/resources/filebrowser` | native-official-binary |
+| [resource-service](vm280-resource-service/GIT-REPOSITORIES.md) | 无独立用户业务库 | `infra/resources` | native-os-packages |
 | [tpl-docker-base](tpl9001-docker-base/GIT-REPOSITORIES.md) | 无独立用户业务库 | `infra`, `cleanup/fish` | sealed-template-no-business-source |
 | [tpl-linux-base](tpl9010-linux-base/GIT-REPOSITORIES.md) | 无独立用户业务库 | `infra`, `cleanup/fish` | sealed-template-no-business-source |
 | [tpl-java-acceptance](tpl9011-java-acceptance/GIT-REPOSITORIES.md) | 无独立用户业务库 | `network19/java-template`, `infra/java/runtime`, `cleanup/fish` | sealed-template-no-business-source |
 
-## 发布机与running分工
+## 发布机、Nexus与running
 
-最新Puyu工具为独立`bkcode/deploy-public`，本轮源main/213f1f4已推送，CLI映射prod/main与dev/dev，MCP仍dev-only。VM220已有五服务加commonlib的main源码，bff-admin已接入；六个上游均缺dev、工作树仍main，旧dev/main五服务预检仅历史，真实发布关闭。参见[本轮模式与审计](../evidence/deploy-public-modes-20261110/README.md)及[初装历史](../evidence/deploy-public-publisher-20261110/README.md)。
+220从独立bkcode/deploy-public main213f取Puyu发布工具，Linux65测试通过；六业务/公共库已用各自只读DeployKey拉main，bff-admin在后续登记后加入。CLI prod/main、dev/dev，MCP仅dev/loopback18765，六上游dev均缺、工作树main保持，新dev预检按设计拒绝。prod SSH未配置，真实发布关闭、旧forced-chainfenced，Java业务不构建/启动。旧5服务dev/main预检仅初装历史。[模式验收](../evidence/deploy-public-modes-20261110/README.md)。
 
+220同时承接Nexus原固定官方镜像/数据/身份，upstream sonatype/nexus-public仅Core源码参考，不是本次从Git重建或升级CE。NexusURL31:8081不变，管理primary30，原Nexus卷与build卷独立。230/240运行基础以后仅收经批准制品，不直接拉源或存DeployKey；common-lib是共享依赖，不独立启动。
 
-VM220计划读取`bkcode/deploy`和5个Puyu JVM后端，其中common-lib仅构建库。`/var/www/finger/finger-master/projects/deploy`是用户给出的管理机工作树引用，已核origin为bkcode/deploy；不是证明220已有同路径。新部署工具是否支持当前Puyu/受限发布合同尚未验证，不替换现有Dell publisher或解除fence。
+导航来自原bkcode/deploy/service-directory公开模块；当前只替换清单为13入口，移除FileBrowser并改Nexus归属，UI/HTTP不变。原源码工作树两文件修改由专属任务管理，尚未提交推送，本次不捎带旧main用户提交或声称导航源码已上GitHub。[清单回执](../completion/20261110-nexus-merge/navigation-updated.json)。
 
-VM230/240当前仅运行基础，后续按批准收取构建制品，配置与秘密仍分别管理，不要求两机直接git pull或保存GitHub Deploy Keys。业务部署、运行分支和上线顺序后续单独确认，本表不是Java上线授权。
+## 其他源码与历史
 
-## Penpot历史读取与后续上线
+Penpot现役bkcode/penpot main8a9b961，公开HTTPS取固定提交、11healthy、原登录改造与设计保持；初次9aed/ff/无origin仅旧阶段，不再等待用户push。NAS仍官方Jellyfin，bkcode/jellyfin是服务端候选，不代表电视客户端或服务端fork已上线。资源280当前仅原生NFS系统包/infra/resources，FileBrowser upstream和binary只留退休历史，不是现役应用。
 
-[管理Mac只读验证](../evidence/git-repositories-20261110/penpot-deploy-key-verification.json)：重命名后的penpot_ed25519专属key返回bkcode/penpot身份、main临时浅clone成功且目录已清。远端main实际9aedbb011cd803eb615225ca21f7f47cb8c2fa09，本地和[VM250现役](../evidence/git-repositories-20261110/penpot-runtime-readonly.json)为ff1783e7865af7aae571c985f03e057631b7af63，仍缺两条现役改造；不从远端旧版覆盖。服务器source目前无origin；本轮没有复制私钥/开启agent forwarding/配置服务器GitHub认证或更新程序。
+DeployKey以仓库精确隔离，服务器权限600/目录700，pushURLdisabled；不实际push探测只读权限。clone成功证明读取，不等于服务器身份具有写权限。密钥正文、PAT、真实凭据、私有YAML与业务数据不进Git。原发布私钥只220，不wholebackup220，不重生成MCPkey。
 
-后续用户明确授权推送，已[取码部署8a9b961](../evidence/penpot-onboarding-20261110/README.md)，11healthy且新登录无引导。上述9aed/ff/无origin为13:20历史；当前VM250公开HTTPS origin取码，无Git私钥分发。
+## 更新和验证
 
-## Jellyfin与NAS
-
-`bkcode/jellyfin`经GitHub公开API核为`jellyfin/jellyfin`服务端fork，默认分支观察为master；只是候选，不是本轮选定部署分支。VM260当前仍官方Jellyfin镜像与OMV/Samba；OMV来源另列上游，电视端改造需要对应客户端仓库。不要把新建Jellyfin key或本表记成NAS已替换自定义程序。
-
-## Deploy Keys与更新流程
-
-管理Mac的8仓库专用密钥在`~/.ssh/deploy-keys/bkcode/`，私钥600、目录700；独立`ssh_config`按alias精确选择单key，公钥添加清单`PUBLIC_KEYS.md`只留该受控目录。每份机文档只记需要的文件名/alias，不含任何密钥正文。用户表示GitHub已配置完成；本期只实际验证Penpot读取，其余key与服务器安装状态不由此推定。只读属性按仓库Deploy keys设置，不以成功clone证明禁止push，更不以实际push测试。
-
-1. 先核对应仓库、目标分支、选定commit包含所需本地改造。
-2. 发布机/构建机只读取码，锁定提交；应用不同组件和AMD64依赖按各自合同构建。
-3. 运行机收构建产物，保秘密/配置/数据与Git分离。
-4. 明确更新窗口后才切换，验登录/原数据/服务/监控，回退程序不等于回退数据库。
-
-不整体git pull/reset/clean覆盖现役，不重跑初始化器/格式化器，不把业务数据、用户上传、Penpot数据库/素材、Nexus制品库或NAS媒体放入源码仓库。模板不含业务源码、Deploy Key/PAT或客户数据。
-
-## 验证
+维护先核仓库/分支/已审查提交、clean工作树和无活动任务；只快进工具已审查版本，保留私有配置和挂载守卫，不重跑bootstrap或整体reset/clean。应用数据/SQL和Git回滚不是同一件事。[发布工具手册](https://github.com/bkcode/deploy-public/blob/main/docs/PUBLISHER.md)、[Nexus手册](../completion/20261110-nexus-merge/usage-manual.md)。
 
 ```sh
 python3 scripts/validate_git_repositories.py
@@ -62,12 +47,4 @@ python3 scripts/validate_machines.py
 python3 scripts/validate_docs.py --json
 ```
 
-仓库URL的上游条目主要从本地现有组件合同/用户指定来源整理，属于源码参考而非本轮全部联网验证；许可/发行包差异以对应项目实际版本为准。独立审查见[review](../evidence/git-repositories-20261110/review.md)。
-
-## 发布机导航模块已部署
-
-220新增服务导航是后续用户明确授权的例外，仅使用bkcode/deploy的service-directory公开模块，当前运行本地提交63b8c08；不是原部署工具/Puyu业务已上线。源码本地main另有4条既有未推送提交，未代为发布整个分支。见[本期导航交付](../evidence/service-directory-20261110/README.md)，其他仓库/机器部署计划保持。
-
-导航后续按用户要求切HTTP并采用紧凑全宽无顶栏，当前本地源码`ddccc2b`；原`63b8c08`为首次HTTPS历史，见[当前导航](../evidence/service-directory-http-20261110/README.md)。未代推原4条用户提交。
-
-内部应用最终按用户要求用HTTP；导航source本地d56cae5同步FileBrowser链接，FileBrowserbinary不变，仅HTTP运行配置更新。原PVE/iDRAC内置HTTPS保留。见[内部HTTP交付](../evidence/internal-http-20261110/README.md)。
+以上仅离线合同验证，不代替服务器原生数据/身份/健康/恢复验收。文件来源SHA需随本次公开变更刷新，不能降低validator门槛。

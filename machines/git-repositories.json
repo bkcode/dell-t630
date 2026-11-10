@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "generated_at": "2026-11-10T13:21:00.578116+08:00",
-  "scope": "documentation contract only; upstream URLs are references, pending user repositories are not deployed",
+  "scope": "16 retained machine contracts after Nexus221 retirement; official Nexus upstream inherited by220; retired FileBrowser reference retained as history",
   "infrastructure_repository_id": "infra",
   "repositories": {
     "infra": {
@@ -376,7 +376,8 @@
       "configuration_paths": [
         "infra/publisher",
         "infra/java",
-        "infra/deploy-public"
+        "infra/deploy-public",
+        "infra/nexus"
       ],
       "application_repository_ids": [
         "deploy",
@@ -389,9 +390,11 @@
         "puyu-service-core"
       ],
       "dependency_repository_ids": [],
-      "upstream_repository_ids": [],
+      "upstream_repository_ids": [
+        "nexus-upstream"
+      ],
       "git_usage_mode": "build-source-configured-business-disabled",
-      "current_state_note": "VM220 deploy-public main/213f1f4 clean，CLI prod/main dev/dev、MCP仅dev/loopback18765，Linux65测试通过。六业务仓库仍main/clean且远端dev全缺；新预检按设计failed，prod覆盖与真实发布拒绝。旧dev/main预检只历史，旧链fenced/Java不启。",
+      "current_state_note": "VM220 deploy-public main/213f1f4 clean，CLI prod/main dev/dev、MCP仅dev/loopback18765，Linux65测试通过。六业务仓库仍main/clean且远端dev全缺；新预检按设计failed，prod覆盖与真实发布拒绝。旧dev/main预检只历史，旧链fenced/Java不启。 Nexus已并入220，primary30+alias31/6CPU8GiB，原镜像/身份/仓库数据保持；221退役。Nexus上游仅Core源码参考，不克隆替换CE发行二进制。",
       "direct_runtime_business_git_pull": false,
       "credential_references": [
         {
@@ -474,28 +477,10 @@
         "evidence/deploy-public-modes-20261110/branch-audit-before.json",
         "evidence/deploy-public-modes-20261110/publisher-update.json",
         "evidence/deploy-public-modes-20261110/protocol-and-sources.json",
-        "evidence/deploy-public-modes-20261110/final-postcheck.json"
+        "evidence/deploy-public-modes-20261110/final-postcheck.json",
+        "completion/20261110-nexus-merge/final-postcheck.json",
+        "completion/20261110-nexus-merge/baseline-compared.json"
       ]
-    },
-    {
-      "path": "machines/vm221-artifact-service",
-      "kind": "vm",
-      "vmid": 221,
-      "name": "artifact-service",
-      "ip": "192.168.19.31",
-      "configuration_repository": "infra",
-      "configuration_paths": [
-        "infra/nexus"
-      ],
-      "application_repository_ids": [],
-      "dependency_repository_ids": [],
-      "upstream_repository_ids": [
-        "nexus-upstream"
-      ],
-      "git_usage_mode": "official-artifact-service",
-      "current_state_note": "Nexus仍独立221，使用原固定镜像；nexus-public仅Core源码参考，不克隆它替换现役CE，不迁盘或合并。",
-      "direct_runtime_business_git_pull": false,
-      "credential_references": []
     },
     {
       "path": "machines/vm230-java-prod-01",
@@ -657,18 +642,21 @@
       "ip": "192.168.19.80",
       "configuration_repository": "infra",
       "configuration_paths": [
-        "infra/resources",
-        "infra/resources/filebrowser"
+        "infra/resources"
       ],
       "application_repository_ids": [],
       "dependency_repository_ids": [],
-      "upstream_repository_ids": [
+      "upstream_repository_ids": [],
+      "git_usage_mode": "native-os-packages",
+      "current_state_note": "NFS-only原生系统包与infra/resources配置；FileBrowser已退休/masked、8080关闭，固定binary来源仅历史，不再作为现役Git应用。",
+      "direct_runtime_business_git_pull": false,
+      "credential_references": [],
+      "historical_upstream_repository_ids": [
         "filebrowser-upstream"
       ],
-      "git_usage_mode": "native-official-binary",
-      "current_state_note": "NFS与FileBrowser原认证资源管理保留；管理应用按用户内部策略改HTTP19.80:8080，仍固定2.1.4beta官方binary，无用户fork/Git拉取。",
-      "direct_runtime_business_git_pull": false,
-      "credential_references": []
+      "historical_configuration_paths": [
+        "infra/resources/filebrowser"
+      ]
     },
     {
       "path": "machines/tpl9001-docker-base",
@@ -758,5 +746,13 @@
     "other_new_keys_read_tests_this_task": false,
     "keys_installed_on_servers_this_task": false
   },
-  "updated_at": "2026-11-10T22:29:22.979636+08:00"
+  "updated_at": "2026-11-10T23:14:54.198917+08:00",
+  "retired_machine_archives": [
+    {
+      "vmid": 221,
+      "path": "archive/machines-vm221-artifact-service-20261110",
+      "retired_into_vmid": 220,
+      "retirement_evidence": "completion/20261110-nexus-merge/retirement-result.json"
+    }
+  ]
 }
