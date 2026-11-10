@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-10T13:50:47.420571+08:00",
+  "status": "service-directory-started-native-acceptance-pending",
+  "URL": "https://192.168.19.30:9080/",
+  "repository": "bkcode/deploy",
+  "revision": "63b8c0873936e94f8483c4f1f8747aedb0180d43",
+  "service_UID_GID": 2001,
+  "initial_web_addresses": 14,
+  "anonymous_read_only": true,
+  "application_accounts_or_passwords_created": false,
+  "protected_services_unchanged": true,
+  "Java_or_Nexus_or_Penpot_updated": false,
+  "source_keys_or_secrets_copied_to_release": false,
+  "certificate_fingerprint": "sha256 Fingerprint=7B:CF:87:90:17:E9:6B:D7:09:E9:86:A0:74:C7:01:B4:AA:93:12:10:97:77:D8:2B:51:55:3C:2E:81:EB:25:FC"
+}

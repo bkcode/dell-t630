@@ -4,6 +4,12 @@
 
 历史Nexus短时维护知情许可已满足，但11月8日用户明确暂不迁移的范围控制当前执行。旧“待授权”记录只作历史，不能反复索取同一许可，也不能借旧许可或硬件恢复自动启动合并。当前拓扑/预算以[plan.json](plan.json)、入口以[12](12-service-access-and-operations.md)、清理事实以[18](18-cleanup-and-consolidation.md)为准。证据采集后的运行状态会变化，硬件故障后必须fresh核查。
 
+## 免登录服务导航（VM220新增）
+
+新增 **[服务导航](https://192.168.19.30:9080/)**，无需账号密码，只预览14个HTTP/HTTPS入口，支持分组、搜索、环境筛选、清除筛选、刷新、复制和新标签页跳转。目标由客户端直接访问并继续使用各自认证；不提供SSO或健康探测。首次核对[公开证书](evidence/service-directory-20261110/tls.crt)及[使用手册](evidence/service-directory-20261110/usage-manual.md)中的SHA256指纹，LAN21/24、WG10.66.66/24及本机可达。
+
+这是用户后续明确授权的发布机导航增量：`bkcode/deploy` 仅 `service-directory/` 模块提交 `63b8c0873936e94f8483c4f1f8747aedb0180d43` 已原生启动，专用OS用户UID/GID2001只读运行，无应用账号密码、CRUD、数据库或JSON运行状态。[原生验收](evidence/service-directory-20261110/native-acceptance.json)、[仅导航重启](evidence/service-directory-20261110/service-restart.json)、[浏览器预览](evidence/service-directory-20261110/browser-acceptance.json)及[最终后检](evidence/service-directory-20261110/final-postcheck.json)已通过：14匿名入口保持，13来宾/3模板、16targets全UP、PVE forwarding全0。浏览器签展示/搜索/复制提示/390px布局及href安全属性，真实pointer新窗跳转未签、未探测目标服务；[中央记录](evidence/service-directory-20261110/README.md)含具体边界与源码已本机提交但未push的说明。清单更新走项目Git→新release→只重启导航；不调用原发布链，不改PVE/路由，不启动Java、不合并Nexus、不替用户push或更新Penpot。
+
 ## FileBrowser Quantum管理页面
 
 新增私有管理入口 **https://192.168.19.80:8080/**，仅LAN21/24、WG10.66/24及本机；日常`resources`可浏览/下载/新建上传，delete/edit/override/share/提权直接API已验403；维护`admin`有完整权限，不把日常限制说成它也绝对不能删除。密码只在Mac `dell/private/credentials/filebrowser-management-20261110.json`与guest root `/etc/dell-filebrowser/secrets/login.json`保管，不在文档输出值。首次核[tls.crt](completion/20261110-filebrowser/tls.crt)的SHA256指纹后接受/导入；无公网域名、无系统truststore变更。
@@ -49,7 +55,7 @@
 | CF CT100 | 192.168.19.5 | 原隧道与身份保持 |
 | 正式数据200/201 | 19.10 / 19.11 | MySQL / Redis、RabbitMQ、Nacos |
 | 测试数据210 | 192.168.19.20 | 独立MySQL、Redis、RabbitMQ、Nacos |
-| 发布机220 | 192.168.19.30 | 发布仍fenced，私钥只能留此VM |
+| 发布机220 | https://192.168.19.30:9080/ | 免登录只读导航；业务发布仍fenced，私钥只能留此VM |
 | 现役Nexus221 | http://192.168.19.31:8081/ | **尚未合并**，220只有待机材料 |
 | Java基础230/240 | 19.40 / 19.45 | 正式/测试各1；没有Java业务进程或自启 |
 | Penpot250 | http://192.168.19.50:9001/ | 11服务；目标独立身份 |
@@ -155,6 +161,7 @@ findmnt --json --mountpoint <该角色挂载点> --output TARGET,SOURCE,FSTYPE,U
 | 200 | dell-data-prod-db.service | /srv/dell-data |
 | 201 | dell-data-prod-infra.service | /srv/dell-data |
 | 210 | dell-data-test-data.service | /srv/dell-data |
+| 220导航 | dell-service-directory.service；dell-service-directory-firewall.service | 固定release位于/opt/dell/service-directory，不是业务发布链 |
 | 221（当前） | dell-nexus.service | /srv/nexus，UUID239dc45a-b1f3-408b-a8ef-7afa77b52204 |
 | 250 | dell-penpot.service，Type=notify | /srv/penpot，UUIDccccda03-bffd-4054-afd3-e0e22f0c607e |
 | 260 | dell-nas-jellyfin.service；OMV/SMB由OMV管理 | /srv/dev-disk-by-uuid-5b19837c-128c-498a-b79d-563db810c34a |

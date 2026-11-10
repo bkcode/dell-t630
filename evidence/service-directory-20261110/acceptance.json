@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-10T13:57:52.022733+08:00",
+  "status": "passed-anonymous-readonly-service-navigation",
+  "scope": "new read-only service navigation on VM220 only; no accounts/CRUD/source deployment to other apps",
+  "cases": [
+    {
+      "id": "SERVICE-NAV-SOURCE-001",
+      "title": "精确提交与只读源码范围",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确在deploy项目/发布机新增页面，随后收窄为无需账号密码、仅预览跳转"
+      ],
+      "steps": [
+        "核精确提交的公开文件、独立原生只读检查、限定浏览器和新app重启证据"
+      ],
+      "observable_pass_conditions": [
+        "精确提交与只读源码范围的限定实际验收通过；无门户密码或业务启停能力"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/service-directory-20261110/source-manifest.json",
+          "note": "bounded public evidence, no actual secrets or deployment configuration bodies"
+        },
+        {
+          "path": "evidence/service-directory-20261110/source-review.md",
+          "note": "bounded public evidence, no actual secrets or deployment configuration bodies"
+        },
+        {
+          "path": "evidence/service-directory-20261110/source-git-state.json",
+          "note": "bounded public evidence, no actual secrets or deployment configuration bodies"
+        }
+      ],
+      "verified_at": "2026-11-10T13:57:52.022733+08:00"
+    },
+    {
+      "id": "SERVICE-NAV-ANON-001",
+      "title": "免登录14入口与无写入接口",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确在deploy项目/发布机新增页面，随后收窄为无需账号密码、仅预览跳转"
+      ],
+      "steps": [
+        "核精确提交的公开文件、独立原生只读检查、限定浏览器和新app重启证据"
+      ],
+      "observable_pass_conditions": [
+        "免登录14入口与无写入接口的限定实际验收通过；无门户密码或业务启停能力"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/service-directory-20261110/native-acceptance.json",
+          "note": "bounded public evidence, no actual secrets or deployment configuration bodies"
+        },
+        {
+          "path": "evidence/service-directory-20261110/native-acceptance.md",
+          "note": "bounded public evidence, no actual secrets or deployment configuration bodies"
+        }
+      ],
+      "verified_at": "2026-11-10T13:57:52.022733+08:00"
+    },
+    {
+      "id": "SERVICE-NAV-BROWSER-001",
+      "title": "匿名预览搜索复制及移动布局",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确在deploy项目/发布机新增页面，随后收窄为无需账号密码、仅预览跳转"
+      ],
+      "steps": [
+        "核精确提交的公开文件、独立原生只读检查、限定浏览器和新app重启证据"
+      ],
+      "observable_pass_conditions": [
+        "匿名预览搜索复制及移动布局的限定实际验收通过；无门户密码或业务启停能力"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/service-directory-20261110/browser-acceptance.json",
+          "note": "bounded public evidence, no actual secrets or deployment configuration bodies"
+        },
+        {
+          "path": "evidence/service-directory-20261110/desktop.png",
+          "note": "bounded public evidence, no actual secrets or deployment configuration bodies"
+        },
+        {
+          "path": "evidence/service-directory-20261110/mobile.png",
+          "note": "bounded public evidence, no actual secrets or deployment configuration bodies"
+        }
+      ],
+      "verified_at": "2026-11-10T13:57:52.022733+08:00"
+    },
+    {
+      "id": "SERVICE-NAV-ISOLATION-001",
+      "title": "发布机专用服务与网络隔离",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确在deploy项目/发布机新增页面，随后收窄为无需账号密码、仅预览跳转"
+      ],
+      "steps": [
+        "核精确提交的公开文件、独立原生只读检查、限定浏览器和新app重启证据"
+      ],
+      "observable_pass_conditions": [
+        "发布机专用服务与网络隔离的限定实际验收通过；无门户密码或业务启停能力"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/service-directory-20261110/preflight.json",
+          "note": "bounded public evidence, no actual secrets or deployment configuration bodies"
+        },
+        {
+          "path": "evidence/service-directory-20261110/installed.json",
+          "note": "bounded public evidence, no actual secrets or deployment configuration bodies"
+        },
+        {
+          "path": "evidence/service-directory-20261110/native-acceptance.json",
+          "note": "bounded public evidence, no actual secrets or deployment configuration bodies"
+        }
+      ],
+      "verified_at": "2026-11-10T13:57:52.022733+08:00"
+    },
+    {
+      "id": "SERVICE-NAV-RESTART-001",
+      "title": "只重启新导航与清单保持",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确在deploy项目/发布机新增页面，随后收窄为无需账号密码、仅预览跳转"
+      ],
+      "steps": [
+        "核精确提交的公开文件、独立原生只读检查、限定浏览器和新app重启证据"
+      ],
+      "observable_pass_conditions": [
+        "只重启新导航与清单保持的限定实际验收通过；无门户密码或业务启停能力"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/service-directory-20261110/service-restart.json",
+          "note": "bounded public evidence, no actual secrets or deployment configuration bodies"
+        },
+        {
+          "path": "evidence/service-directory-20261110/native-acceptance.json",
+          "note": "bounded public evidence, no actual secrets or deployment configuration bodies"
+        }
+      ],
+      "verified_at": "2026-11-10T13:57:52.022733+08:00"
+    },
+    {
+      "id": "SERVICE-NAV-OPS-001",
+      "title": "原基础设施与监控保持",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确在deploy项目/发布机新增页面，随后收窄为无需账号密码、仅预览跳转"
+      ],
+      "steps": [
+        "核精确提交的公开文件、独立原生只读检查、限定浏览器和新app重启证据"
+      ],
+      "observable_pass_conditions": [
+        "原基础设施与监控保持的限定实际验收通过；无门户密码或业务启停能力"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/service-directory-20261110/monitoring-installed.json",
+          "note": "bounded public evidence, no actual secrets or deployment configuration bodies"
+        },
+        {
+          "path": "evidence/service-directory-20261110/final-postcheck.json",
+          "note": "bounded public evidence, no actual secrets or deployment configuration bodies"
+        }
+      ],
+      "verified_at": "2026-11-10T13:57:52.022733+08:00"
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "current_phase_case_count": 6,
+    "current_phase_passed": 6,
+    "statuses": {
+      "passed": 6
+    }
+  },
+  "limitations": [
+    "browser new-window pointer action not signed off after automation lostresponse; linkhref/target/rel verified",
+    "not testing each linked target service reachability or credentials",
+    "WireGuard currentclientE2E not reverified; sourcepolicy inspected and unapproved19peer negative",
+    "source featurecommit local; remote main has4preexistinglocal commits not auto-pushed",
+    "noJava/Nexusmerge/Penpotsourceupdate/data migration/backup expansion"
+  ]
+}

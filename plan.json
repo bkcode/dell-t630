@@ -663,7 +663,7 @@
     "evidence": "evidence/implementation/raid-recovered.json",
     "historical_fault": "slot32:3 access failure; root cause unresolved, monitor"
   },
-  "updated_at": "2026-11-10T06:12:08.767369+08:00",
+  "updated_at": "2026-11-10T13:57:52.022733+08:00",
   "docker_runtime_profile": {
     "driver": "classic-overlay2",
     "reason": "Verified compatibility with source single-platform offline archives; preserves config IDs",
@@ -711,7 +711,7 @@
     "resource_role_evidence": "completion/20261109-resources/Lark-role-installed.json",
     "resource_monitoring_postcheck": "completion/20261110-filebrowser/final-postcheck.json"
   },
-  "delivery_scope_manifest": "completion/20261110-filebrowser/acceptance.json",
+  "delivery_scope_manifest": "evidence/service-directory-20261110/acceptance.json",
   "expected_role_count": 13,
   "network19_migration_manifest": "network19/migration-plan.json",
   "acceptance_templates": [
@@ -849,12 +849,12 @@
     }
   },
   "operational_state": {
-    "as_of": "2026-11-10T06:12:08.767369+08:00",
-    "status": "infrastructure-running-with-authenticated-resource-management",
-    "live_state": "13guests running/3templates stopped/16targetsUP; resource NFS+authenticated management HTTPS verified; DB-only backup unchanged",
-    "last_successful_live_acceptance": "2026-11-10T06:12:08.767369+08:00",
+    "as_of": "2026-11-10T13:57:52.022733+08:00",
+    "status": "infrastructure-running-with-readonly-service-navigation",
+    "live_state": "13runningguests/3stoppedtemplates/16targetsUP; publisher4localservicechecks inclnavigation; noportalaccounts/CRUD/state",
+    "last_successful_live_acceptance": "2026-11-10T13:57:52.022733+08:00",
     "last_successful_PVE_operation": "2026-11-10T00:20:38.241841+08:00",
-    "last_operation": "existingVM280 authenticatedFileBrowser native HTTPS+API/NFS scope, app-onlyrestart and6services/HTTPShealth verified; no newVM/Java/businessHTTP/backup expansion",
+    "last_operation": "new anonymous readonly service navigation onpublisher220; GET-only14entries/nativeapprestart/16targetsUP verified; nootherappdeployment",
     "runtime_counts_are_last_verified_not_live": false,
     "resume_requires": "not applicable to infrastructure checks; migration explicitly deferred by user",
     "user_scope_now": "infrastructure plus explicitly selected test config/DB migration and fixed credentials; unified resource NFS for both running; no Nexus merge/Java/Macprobe",
@@ -863,7 +863,7 @@
     "hardware_diagnostics": "user reports reseated/replaced and diagnostics passed; current bootEDACce/ue0 independently observed",
     "hardware_evidence": "completion/20261109/pve-audit.json",
     "recovery_manifest": "recovery/20261108/README.md",
-    "current_completion_manifest": "completion/20261110-filebrowser/acceptance.json",
+    "current_completion_manifest": "evidence/service-directory-20261110/acceptance.json",
     "current_backup_scope_manifest": "completion/20261109-prod-db-scope/acceptance.json",
     "previous_recorded_PVE_operation": "2026-11-09T18:42:53+08:00",
     "last_PVE_operation_kind": "manager capture time of read-only final PVE inventory/forwarding verification; not power operation",
@@ -1211,5 +1211,41 @@
     "new_service_deployed": false,
     "Penpot_deployment_status": "user will push preservedcustomcommits first; VM250-onlydeploy authorized after notification/versionrecheck",
     "Penpot_deployment_state_evidence": "evidence/git-repositories-20261110/penpot-deployment-state.json"
+  },
+  "service_navigation_20261110": {
+    "status": "native-readonly-browser-restart-and-monitoring-verified",
+    "vmid": 220,
+    "URL": "https://192.168.19.30:9080/",
+    "repository": "bkcode/deploy",
+    "local_commit": "63b8c0873936e94f8483c4f1f8747aedb0180d43",
+    "source_commit_remote_pushed": false,
+    "GitHub_main_observed": "593069eb54a723ee0e63f85b937b9981b39ac1ec",
+    "preexisting_local_commits_not_auto_pushed": 4,
+    "anonymous_read_only": true,
+    "application_accounts_passwords_or_writable_state": false,
+    "OS_service_user": "servicedirectory",
+    "OS_uid_gid": 2001,
+    "initial_web_entry_count": 14,
+    "features": [
+      "group",
+      "search",
+      "environment-filter",
+      "copy-address",
+      "open-link"
+    ],
+    "no_server_side_target_health_probes": true,
+    "allowed_client_networks": [
+      "192.168.21.0/24",
+      "10.66.66.0/24"
+    ],
+    "runtime_release": "/opt/dell/service-directory/releases/63b8c0873936e94f8483c4f1f8747aedb0180d43",
+    "source_catalog": "service-directory/services.json",
+    "configuration_directory": "/etc/dell-service-directory",
+    "service": "dell-service-directory.service",
+    "TLS_selfsigned": true,
+    "backup_scope_expanded": false,
+    "Penpot_Java_Nexus_or_other_apps_updated": false,
+    "acceptance": "evidence/service-directory-20261110/acceptance.json",
+    "manual": "evidence/service-directory-20261110/usage-manual.md"
   }
 }

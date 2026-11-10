@@ -3,7 +3,7 @@
   "source_of_truth": "plan.json",
   "configuration_scope": "Offline public contracts and source manifests; not a live export or complete backup",
   "current_runtime_verified": true,
-  "last_verified_inventory_at": "2026-11-10T06:12:08.767369+08:00",
+  "last_verified_inventory_at": "2026-11-10T13:57:52.022733+08:00",
   "counts": {
     "PVE_hosts": 1,
     "retained_guest_instances": 13,
@@ -148,5 +148,5 @@
       "lifecycle": "sealed-template-last-verified"
     }
   ],
-  "current_verification_evidence": "completion/20261110-filebrowser/final-postcheck.json"
+  "current_verification_evidence": "evidence/service-directory-20261110/final-postcheck.json"
 }

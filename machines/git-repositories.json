@@ -17,8 +17,8 @@
       "id": "deploy",
       "repository": "bkcode/deploy",
       "web_url": "https://github.com/bkcode/deploy",
-      "kind": "deployment-tool-planned",
-      "purpose": "部署工具候选；管理机工作树origin已核对，未证明已在220安装或已适配Puyu发布",
+      "kind": "deployment-tool-and-readonly-portal-source",
+      "purpose": "服务导航模块已按本地commit63b8c08部署到220；其他部署工具/Puyu适配仍候选，远端main未更新",
       "ssh_url": "git@github.com:bkcode/deploy.git",
       "branch_reference": "main (management local checkout observed)",
       "management_local_reference": "/var/www/finger/finger-master/projects/deploy"
@@ -370,7 +370,7 @@
       "dependency_repository_ids": [],
       "upstream_repository_ids": [],
       "git_usage_mode": "build-source-planned",
-      "current_state_note": "后续发布机的源码取用计划：部署工具deploy+5后端。尚未由本任务clone/配置server keys或证明deploy工具已适配Puyu；现役受限发布链仍来自infra/publisher且fenced，Java业务不启。common-lib只构建/发布库制品。",
+      "current_state_note": "只读服务导航模块已按63b8c08部署；原deploy工具与5Puyu后端仍取码/发布计划，不解除publisherfence、不启动Java。common-lib仅库。源分支4条既有未推送提交未代发布。",
       "direct_runtime_business_git_pull": false,
       "credential_references": [
         {
@@ -426,6 +426,15 @@
           "permission_policy": "read-only on GitHub; Allow write access unchecked",
           "repository_read_verification": "GitHub registration/read access not reverified in this documentation task",
           "server_installation": "not performed or verified by this documentation task"
+        }
+      ],
+      "deployed_modules": [
+        {
+          "repository_id": "deploy",
+          "module": "service-directory",
+          "local_commit": "63b8c0873936e94f8483c4f1f8747aedb0180d43",
+          "GitHub_main_published": false,
+          "evidence": "evidence/service-directory-20261110/installed.json"
         }
       ]
     },
@@ -707,5 +716,6 @@
     ],
     "other_new_keys_read_tests_this_task": false,
     "keys_installed_on_servers_this_task": false
-  }
+  },
+  "updated_at": "2026-11-10T13:57:52.022733+08:00"
 }

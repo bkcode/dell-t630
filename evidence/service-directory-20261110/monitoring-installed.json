@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-10T13:55:02.431176+08:00",
+  "status": "existing-publisher-node-health-extended",
+  "old_service_checks": 3,
+  "new_service_checks": 4,
+  "portal_managed_unit_active_metric": true,
+  "other_health_fields_unchanged": true,
+  "exporter_or_other_service_restarted": false,
+  "new_Prometheus_target": false,
+  "artificial_alert_sent": false
+}

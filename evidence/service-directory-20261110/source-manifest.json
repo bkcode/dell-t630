@@ -1,0 +1,14 @@
+{
+  "repository": "bkcode/deploy",
+  "revision": "63b8c0873936e94f8483c4f1f8747aedb0180d43",
+  "files": {
+    "server.py": "bc6136fc70b1bdfb46ce372556d49206b7ae2642f0ecb81211bf6a1c26fc05db",
+    "services.json": "75da2126ec648a4f6c364846b26480833552d358080cb0e031da7771afad8a8f",
+    "web/index.html": "a270c400d10ba1279246f4063242eff0bf11c1b1fb3a96da89af5af7d3bcb111",
+    "web/app.js": "7bce82e498b9134525e44307edfdb18427ba147671a5d4c2ce75bc43a3da6d5c",
+    "web/style.css": "abb5cf0c46be2c1dca14ea9f2f775a503b2ff0d428f587a3519d4fb408301d80"
+  },
+  "source": "git show exact committed blobs; not working-tree copy",
+  "anonymous_read_only": true,
+  "contains_application_password_or_state": false
+}

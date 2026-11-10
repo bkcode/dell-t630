@@ -65,6 +65,43 @@
       "name": "local-health",
       "kind": "systemd-timer",
       "unit": "dell-guest-health.timer"
+    },
+    {
+      "name": "service-directory",
+      "kind": "native-python3-systemd",
+      "unit": "dell-service-directory.service",
+      "firewall_unit": "dell-service-directory-firewall.service",
+      "bind": "192.168.19.30:9080",
+      "URL": "https://192.168.19.30:9080/",
+      "source_repository": "bkcode/deploy",
+      "source_module": "service-directory",
+      "revision": "63b8c0873936e94f8483c4f1f8747aedb0180d43",
+      "release_path": "/opt/dell/service-directory/releases/63b8c0873936e94f8483c4f1f8747aedb0180d43",
+      "manifest_path": "/etc/dell-service-directory/manifest.json",
+      "UID": 2001,
+      "GID": 2001,
+      "initial_web_addresses": 14,
+      "anonymous_read_only": true,
+      "application_accounts_or_passwords": false,
+      "application_state_or_database": false,
+      "URL_health_probing": false,
+      "allowed_sources": [
+        "192.168.21.0/24",
+        "10.66.66.0/24",
+        "192.168.19.30",
+        "lo"
+      ],
+      "native_acceptance_evidence": "evidence/service-directory-20261110/native-acceptance.json",
+      "delivery_evidence": "evidence/service-directory-20261110/README.md",
+      "verification_status": "native-browser-preview-portal-restart-final-postcheck-passed",
+      "runtime_module_deployed": true,
+      "source_commit_pushed": false,
+      "source_git_state_evidence": "evidence/service-directory-20261110/source-git-state.json",
+      "browser_acceptance_evidence": "evidence/service-directory-20261110/browser-acceptance.json",
+      "restart_evidence": "evidence/service-directory-20261110/service-restart.json",
+      "final_postcheck_evidence": "evidence/service-directory-20261110/final-postcheck.json",
+      "pointer_new_window_navigation_verified": false,
+      "linked_service_reachability_verified": false
     }
   ],
   "boundaries": {
@@ -130,5 +167,6 @@
     "git_usage_mode": "build-source-planned",
     "direct_runtime_business_git_pull": false,
     "server_Git_key_installation_performed_by_this_task": false
-  }
+  },
+  "service_directory_scope_note": "User authorized only the anonymous read-only navigation module after earlier Penpot-only scope; Puyu source/build plans remain pending, Java remains disabled and publisher fenced. Linux service UID is not an application login account. Source commit exists only on management local main and was not pushed, preserving four prior user commits; exact committed blobs supplied the runtime release."
 }

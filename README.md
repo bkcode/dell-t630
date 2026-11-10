@@ -2,7 +2,13 @@
 
 本仓库保存 T630 / Proxmox VE 8.4 的部署方案、基础设施脚本、验收证据和人工操作手册。最后整理日期：**2026-11-10，Asia/Shanghai**。
 
-**2026-11-09继续完成基础搭建，并按用户最新范围仅备正式数据库/Nacos配置；随后另获授权完成选定测试Nacos配置及两份Puyu数据库迁移。** 14:24自然重启后的fresh审计确认12来宾运行、3模板停止、15/15UP、EDAC0/RAIDOptl，forward guard文件与启动顺序保持全0。Nexus221继续独立、220保持原standby，Java业务不启，Penpot实际ff提交不更新main，Mac外部探针不需要。当日状态统一见[11月9日交付记录](completion/20261109-prod-db-scope/README.md)；[11月8日恢复](recovery/20261108/README.md)保留历史。
+**2026-11-09继续完成基础搭建，并按用户最新范围仅备正式数据库/Nacos配置；随后另获授权完成选定测试Nacos配置及两份Puyu数据库迁移。** 14:24自然重启后的fresh审计确认12来宾运行、3模板停止、15/15UP、EDAC0/RAIDOptl，forward guard文件与启动顺序保持全0。Nexus221继续独立、220的Nexus保持standby，另有后续获准的只读导航，Java业务不启，Penpot实际ff提交不更新main，Mac外部探针不需要。当日状态统一见[11月9日交付记录](completion/20261109-prod-db-scope/README.md)；[11月8日恢复](recovery/20261108/README.md)保留历史。
+
+## 免登录服务导航（VM220新增）
+
+新增 **[服务导航](https://192.168.19.30:9080/)**，无需账号密码，只预览14个HTTP/HTTPS入口，支持分组、搜索、环境筛选、清除筛选、刷新、复制和新标签页跳转。目标由客户端直接访问并继续使用各自认证；不提供SSO或健康探测。首次核对[公开证书](evidence/service-directory-20261110/tls.crt)及[使用手册](evidence/service-directory-20261110/usage-manual.md)中的SHA256指纹，LAN21/24、WG10.66.66/24及本机可达。
+
+这是用户后续明确授权的发布机导航增量：`bkcode/deploy` 仅 `service-directory/` 模块提交 `63b8c0873936e94f8483c4f1f8747aedb0180d43` 已原生启动，专用OS用户UID/GID2001只读运行，无应用账号密码、CRUD、数据库或JSON运行状态。[原生验收](evidence/service-directory-20261110/native-acceptance.json)、[仅导航重启](evidence/service-directory-20261110/service-restart.json)、[浏览器预览](evidence/service-directory-20261110/browser-acceptance.json)及[最终后检](evidence/service-directory-20261110/final-postcheck.json)已通过：14匿名入口保持，13来宾/3模板、16targets全UP、PVE forwarding全0。浏览器签展示/搜索/复制提示/390px布局及href安全属性，真实pointer新窗跳转未签、未探测目标服务；[中央记录](evidence/service-directory-20261110/README.md)含具体边界与源码已本机提交但未push的说明。清单更新走项目Git→新release→只重启导航；不调用原发布链，不改PVE/路由，不启动Java、不合并Nexus、不替用户push或更新Penpot。
 
 ## FileBrowser Quantum管理页面
 
@@ -59,7 +65,7 @@
 | 200 | data-prod-db | 19.10 | 正式 MySQL，保持空业务数据 |
 | 201 | data-prod-infra | 19.11 | 正式 Redis、RabbitMQ、Nacos |
 | 210 | data-test | 19.20 | 独立测试数据组件 |
-| 220 | publish-service | 19.30 | 发布基础；已准备接收 Nexus，业务发布冻结 |
+| 220 | publish-service | 19.30 | 发布基础＋免登录服务导航9080；Nexus待合并，业务发布冻结 |
 | 221 | artifact-service | 19.31 | Nexus 制品库；尚未合并 |
 | 230 | java-prod-01 | 19.40 | 正式 Java 运行基础，无业务程序 |
 | 240 | java-test-01 | 19.45 | 测试 Java 运行基础，五业务已停用 |
@@ -120,4 +126,4 @@ python3 scripts/check_git_safety.py
 
 ## 每台机器对应Git仓库
 
-新增[完整Git来源总览](machines/GIT-REPOSITORIES.md)及17份逐机`GIT-REPOSITORIES.md`，统一登记配置仓库、现役/候选应用源码、组件上游与取码身份。Penpot专属key临时clone验证已通过，但远端main仍缺现役两条改造；不会据此更新程序。发布机后续取deploy＋5个Puyu后端，running收制品，Jellyfin fork仍待接入。
+新增[完整Git来源总览](machines/GIT-REPOSITORIES.md)及17份逐机`GIT-REPOSITORIES.md`，统一登记配置仓库、现役/候选应用源码、组件上游与取码身份。Penpot专属key临时clone验证已通过，但远端main仍缺现役两条改造；不会据此更新程序。发布机已新增deploy中独立的只读导航模块；原业务构建计划仍为deploy＋5个Puyu后端，running收制品，Jellyfin fork仍待接入。

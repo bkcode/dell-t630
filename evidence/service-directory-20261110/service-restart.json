@@ -1,0 +1,12 @@
+{
+  "captured_at": "2026-11-10T13:56:31.025657+08:00",
+  "status": "portal-only-restart-and-readonly-catalog-persistence-passed",
+  "portal_PID_changed": true,
+  "14entries_anonymous_after_restart": true,
+  "catalog_bytes_unchanged": true,
+  "owned_firewall_existing_table_atomic_reapply_passed": true,
+  "firewall_reapply_did_not_restart_app": true,
+  "protected_publisher_services_frames_unchanged": true,
+  "VM_Penpot_Nexus_Java_or_other_services_restarted": false,
+  "application_accounts_passwords_or_state_created": false
+}

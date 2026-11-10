@@ -1,0 +1,15 @@
+{
+  "captured_at": "2026-11-10T13:59:25.852385+08:00",
+  "repository": "bkcode/deploy",
+  "local_branch": "main",
+  "feature_commit": "63b8c0873936e94f8483c4f1f8747aedb0180d43",
+  "feature_parent": "81148e8614ee5c49e6f9e4d1b85aebef8adfb33d",
+  "GitHub_main_observed": "593069eb54a723ee0e63f85b937b9981b39ac1ec",
+  "preexisting_local_commits_ahead_before_this_task": 4,
+  "preexisting_worktree_changes_before_task": false,
+  "task_source_files": 8,
+  "source_commit_pushed_by_task": false,
+  "reason_not_pushed": "Pushing local main would also publish four pre-existing user commits; not inferred from navigation-page request. Source task commit and runtime committed blobs are verified locally.",
+  "existing_user_commits_amended_rebased_or_remote_history_changed": false,
+  "runtime_source_exported_via": "git show exact committed blobs, five runtime files only"
+}

@@ -1,0 +1,77 @@
+{
+  "captured_at": "2026-11-10T13:37:00.717880+08:00",
+  "read_only": true,
+  "hostname": "publish-service",
+  "IPv4": [
+    {
+      "ifindex": 2,
+      "ifname": "eth0",
+      "flags": [
+        "BROADCAST",
+        "MULTICAST",
+        "UP",
+        "LOWER_UP"
+      ],
+      "mtu": 1500,
+      "qdisc": "fq_codel",
+      "operstate": "UP",
+      "group": "default",
+      "txqlen": 1000,
+      "altnames": [
+        "enp0s18",
+        "enxbc24112a01ad"
+      ],
+      "addr_info": [
+        {
+          "family": "inet",
+          "local": "192.168.19.30",
+          "prefixlen": 24,
+          "broadcast": "192.168.19.255",
+          "scope": "global",
+          "label": "eth0",
+          "valid_life_time": 4294967295,
+          "preferred_life_time": 4294967295
+        }
+      ]
+    },
+    {
+      "ifindex": 3,
+      "ifname": "docker0",
+      "flags": [
+        "NO-CARRIER",
+        "BROADCAST",
+        "MULTICAST",
+        "UP"
+      ],
+      "mtu": 1500,
+      "qdisc": "noqueue",
+      "operstate": "DOWN",
+      "group": "default",
+      "addr_info": [
+        {
+          "family": "inet",
+          "local": "172.17.0.1",
+          "prefixlen": 16,
+          "broadcast": "172.17.255.255",
+          "scope": "global",
+          "label": "docker0",
+          "valid_life_time": 4294967295,
+          "preferred_life_time": 4294967295
+        }
+      ]
+    }
+  ],
+  "Python": "Python 3.13.5",
+  "ports_in_use": {
+    "9080": false,
+    "8443": false,
+    "8080": false
+  },
+  "source_exists": false,
+  "state_exists": false,
+  "UID2001_available": true,
+  "service_name_available": true,
+  "fence_files": [],
+  "mount": "{\n   \"filesystems\": [\n      {\n         \"target\": \"/srv/dell-build\",\n         \"fstype\": \"ext4\",\n         \"uuid\": \"16dc6067-56ef-4687-a314-edc6421f9ed4\"\n      }\n   ]\n}\n",
+  "Java_process_count": 0
+}

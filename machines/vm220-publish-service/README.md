@@ -1,8 +1,16 @@
-> 更新：2026-11-09（Asia/Shanghai）。本轮基础fresh审计已复核；当日实时收尾状态统一见[11月9日交付记录](../../completion/20261109-prod-db-scope/README.md)。本页仅本地同步带时点证据，不执行服务器操作；不迁移数据、不合并Nexus、不启动Java业务、不升级Penpot，不需要Mac外部探针。
+> 更新：2026-11-10（Asia/Shanghai）。本轮基础fresh审计已复核；当日实时收尾状态统一见[11月9日交付记录](../../completion/20261109-prod-db-scope/README.md)。11月10日用户新增授权的免登录导航已部署，详见下方；其余不迁移数据、不合并Nexus、不启动Java业务、不升级Penpot，不需要Mac外部探针。
 
 # VM220 · publish-service
 
 Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/计划与已部署状态分开；不表示本机已clone或已分发key）。
+
+## 2026-11-10新增免登录导航
+
+**[https://192.168.19.30:9080/](https://192.168.19.30:9080/)** 只预览14个Web入口，支持搜索/分组/环境筛选/复制与外链跳转，无账号密码、CRUD或健康探测。各服务认证保持。此项是较早“仅Penpot部署”之后用户明确授权的新例外；只部署 `bkcode/deploy/service-directory` 提交 `63b8c0873936e94f8483c4f1f8747aedb0180d43`，不表示五个Puyu后端已上线或原publisher解冻。
+
+Python3原生unit `dell-service-directory.service`、OS用户 `servicedirectory` UID/GID2001只读运行；这个Linux进程身份不是页面登录账号。root-owned固定release为 `/opt/dell/service-directory/releases/<SHA>/`，manifest/公开证书在 `/etc/dell-service-directory/`，仅TLS私钥走root-only secret与LoadCredential，无应用状态。专属 `dell-service-directory-firewall.service` 只管理自有nft输入表的9080来源，允许LAN21/24、WG10.66.66/24、本机19.30/lo，不改PVE与路由。
+
+[原生验收](../../evidence/service-directory-20261110/native-acceptance.json)、[仅导航重启](../../evidence/service-directory-20261110/service-restart.json)、[浏览器预览](../../evidence/service-directory-20261110/browser-acceptance.json)与[最终后检](../../evidence/service-directory-20261110/final-postcheck.json)均通过；重启仅app PID变化，14匿名入口保持，原服务frame不变，13来宾/3模板与16targets全UP、PVE forwarding全0。浏览器验证展示/搜索/复制提示、390px无横向溢出及安全链接属性；真实pointer新窗跳转未签、未请求目标站点。[中央记录](../../evidence/service-directory-20261110/README.md)与[使用手册](../../evidence/service-directory-20261110/usage-manual.md)含公开TLS指纹、清单维护和故障步骤。源码已本机提交未push，因本机main另有4条既有用户提交未自动捎带发布；后续必须审查精确提交，不能git pull旧main覆盖。清单修改先改源码Git并提交，再新release/只重启导航，不调用业务发布链。原4CPU/4GiB、build盘和Nexus standby边界保持。
 
 ## 本轮只读状态与备份归属
 
@@ -14,7 +22,7 @@ Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/
 
 ## 职责与实际合同
 
-构建/受限发布工具链，publisher→测试基础19.45；当前业务发布fenced，不启动Java业务。
+构建/受限发布工具链和匿名只读服务导航，publisher→测试基础19.45；当前业务发布fenced，不启动Java业务。
 
 - 实际资源：4 vCPU / 4 GiB；管理/服务地址 `192.168.19.30`，vmbr19、/24、GW/DNS19.1。
 - 数据盘：100 GiB / store；`/srv/dell-build`；UUID `16dc6067-56ef-4687-a314-edc6421f9ed4`。
@@ -23,6 +31,7 @@ Git来源唯一入口：**[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)**（来源/
 
 ## unit / Compose与依赖
 
+- `dell-service-directory.service` 与 `dell-service-directory-firewall.service`（原生Python3，只读导航）。
 - `/usr/local/bin/dell-publish`。
 - `prometheus-node-exporter.service`。
 - `dell-guest-health.timer`。

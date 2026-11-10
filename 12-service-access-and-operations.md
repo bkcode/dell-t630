@@ -4,6 +4,7 @@
 
 | 服务 | 当前入口 | 范围 |
 | --- | --- | --- |
+| 服务导航 | https://192.168.19.30:9080/ | 免登录只读入口；自签TLS，LAN21/WG10；各目标独立认证 |
 | PVE | https://192.168.21.22:8006/ | 管理SSH22保留 |
 | 虚拟网关190 | WAN192.168.21.23 / LAN192.168.19.1 | 路由、19DNS/DHCP，无NAT |
 | Penpot | http://192.168.19.50:9001/ | Git定制版、3设计/973媒体、11服务 |
@@ -20,7 +21,7 @@
 | FileBrowser管理页 | https://192.168.19.80:8080/ | 日常resources、维护admin；自签TLS，LAN21/WG10；无公开图片URL |
 | Java验收模板 | PVE VMID9011 `tpl-java-acceptance` | 唯一验收模板，无应用/业务配置/秘密 |
 
-原HTTP入口是用户同意的LAN阶段；新增FileBrowser使用自签HTTPS，公网域名/其他入口HTTPS/SMTP尚未配置。跨子网的发现广播不作为已验能力，电视/播放器请手动填写19.60。NAS用于文件保存/整理/传输，不承诺主机直接从NAS运行游戏。
+原HTTP入口是用户同意的LAN阶段；新增服务导航与FileBrowser使用自签HTTPS，公网域名/其他入口HTTPS/SMTP尚未配置。跨子网的发现广播不作为已验能力，电视/播放器请手动填写19.60。NAS用于文件保存/整理/传输，不承诺主机直接从NAS运行游戏。
 
 合并目标为一台VM220 `publish-service`同时承载发布与Nexus，主IP30+服务alias31；`artifact-service`不再是独立目标VM，见[17合并架构](17-publish-artifact-consolidation.md)。**下表是迁移尚未执行的最后验收归属**：
 
@@ -39,6 +40,12 @@
 SSH使用ub和`~/.ssh/yang_local_rsa`，严格已核host key；受控目标见`evidence/implementation/private-guest-access.json`，代码见`scripts/control.py`。该JSON虽名称含private，内容为IP/公钥指纹索引，不包含私钥；实际`private/known_hosts`不进Git，新电脑须先可信交接指纹。PVE root只用于管理/QGA，不复制客户端私钥，不关闭主机密钥检查。模板克隆按[Java模板说明](network19/java-template/README.md)注入独立hostname与地址。
 
 日常启停、故障处理、克隆和备份步骤见[人工操作手册](19-manual-operations.md)，换电脑接手见[Git交接](20-git-and-handoff.md)。
+
+## 免登录服务导航（VM220新增）
+
+新增 **[服务导航](https://192.168.19.30:9080/)**，无需账号密码，只预览14个HTTP/HTTPS入口，支持分组、搜索、环境筛选、清除筛选、刷新、复制和新标签页跳转。目标由客户端直接访问并继续使用各自认证；不提供SSO或健康探测。首次核对[公开证书](evidence/service-directory-20261110/tls.crt)及[使用手册](evidence/service-directory-20261110/usage-manual.md)中的SHA256指纹，LAN21/24、WG10.66.66/24及本机可达。
+
+这是用户后续明确授权的发布机导航增量：`bkcode/deploy` 仅 `service-directory/` 模块提交 `63b8c0873936e94f8483c4f1f8747aedb0180d43` 已原生启动，专用OS用户UID/GID2001只读运行，无应用账号密码、CRUD、数据库或JSON运行状态。[原生验收](evidence/service-directory-20261110/native-acceptance.json)、[仅导航重启](evidence/service-directory-20261110/service-restart.json)、[浏览器预览](evidence/service-directory-20261110/browser-acceptance.json)及[最终后检](evidence/service-directory-20261110/final-postcheck.json)已通过：14匿名入口保持，13来宾/3模板、16targets全UP、PVE forwarding全0。浏览器签展示/搜索/复制提示/390px布局及href安全属性，真实pointer新窗跳转未签、未探测目标服务；[中央记录](evidence/service-directory-20261110/README.md)含具体边界与源码已本机提交但未push的说明。清单更新走项目Git→新release→只重启导航；不调用原发布链，不改PVE/路由，不启动Java、不合并Nexus、不替用户push或更新Penpot。
 
 ## FileBrowser Quantum管理页面
 

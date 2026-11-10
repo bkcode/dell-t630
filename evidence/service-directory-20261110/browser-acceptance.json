@@ -1,0 +1,26 @@
+{
+  "captured_at": "2026-11-10T13:59:25.852385+08:00",
+  "status": "anonymous-render-search-copy-responsive-preview-passed",
+  "tool": "agent-browser isolated sessions",
+  "initial_entry_count": 14,
+  "login_forms_dialogs_password_inputs": 0,
+  "native_search_Penpot_visible_rows": 1,
+  "copy_public_address_toast": "已复制",
+  "all_external_links_blank_noopener_noreferrer": true,
+  "mobile_viewport_width": 390,
+  "mobile_document_scrollWidth": 390,
+  "browser_resource_origins": [
+    "https://192.168.19.30:9080"
+  ],
+  "linked_services_probed_or_logged_in": false,
+  "system_global_CA_changed": false,
+  "browser_selfsigned_prompt_ignored_for_test_only": true,
+  "separate_Mac_curl_dedicated_CA_verification": "HTTP200",
+  "new_window_click_automation": "not signed off; automation lost response and browser was relaunched, all href/target attributes verified",
+  "screenshots": [
+    "evidence/service-directory-20261110/desktop.png",
+    "evidence/service-directory-20261110/mobile.png"
+  ],
+  "browser_test_sessions_closed": true,
+  "server_or_catalog_mutations": false
+}

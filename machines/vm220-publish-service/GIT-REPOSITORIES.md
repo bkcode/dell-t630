@@ -2,21 +2,33 @@
 
 更新：2026-11-10，Asia/Shanghai。本文从唯一[Git来源总表](../git-repositories.json)的`/machines/6`派生；机器位置`machines/vm220-publish-service`，身份与资源仍以[plan.json](../../plan.json)为准。
 
-**这是来源/计划文档，不是已clone、部署、分发Git私钥或重跑初始化的证明。** 本轮本文只本地写入，没有SSH、git clone/fetch/pull/push、构建或服务操作。现役状态、上游参考与后续源码计划分开解释。
+本页维护总表派生的来源与取码计划，并单列后续获准的导航部署事实。文档编辑本身没有SSH或Git远程操作；导航实际安装以[安装回执](../../evidence/service-directory-20261110/installed.json)和[原生验收](../../evidence/service-directory-20261110/native-acceptance.json)为证。登记仓库不代表整仓库已clone、server Git key已分发或业务已上线。
 
 ## 本机结论
 
-- Git使用方式：**构建/部署源码计划，尚未在本机落地**（`build-source-planned`）。
+- 总表Git使用方式：**业务构建/部署源码仍为计划**（`build-source-planned`）；后续独立授权的导航模块已按固定五文件release部署，见下一节。
 - 当前说明：后续发布机的源码取用计划：部署工具deploy+5后端。尚未由本任务clone/配置server keys或证明deploy工具已适配Puyu；现役受限发布链仍来自infra/publisher且fenced，Java业务不启。common-lib只构建/发布库制品。
 - 所有基础设施公开配置由`infra` → [bkcode/dell-t630](https://github.com/bkcode/dell-t630)统一管理；这不表示本机保存了该Git工作树，也不授权自动pull/执行bootstrap。
 
 本机相关配置路径：[infra/publisher](../../infra/publisher)、[infra/java](../../infra/java)。旧执行器仍有具体UUID/角色/授权门禁，不能从这些链接批量重放。
 
+## 已部署的导航模块：精确例外
+
+用户新增并收窄为无需账号密码、只预览跳转的内网导航。现役仅取 `bkcode/deploy` 的 `service-directory/server.py`、`services.json`、三个Web文件，绑定提交 `63b8c0873936e94f8483c4f1f8747aedb0180d43`；[source-manifest](../../evidence/service-directory-20261110/source-manifest.json)登记每文件SHA256。管理机项目位于 `/Users/yangzhaohui/work/www/finger/finger-master/projects/deploy`，发布机源码路径约定为 `/var/www/finger/finger-master/projects/deploy`；运行release独立位于 `/opt/dell/service-directory/releases/<SHA>/`，并非把整个deploy工作树直接运行或安装所有候选业务。
+
+入口 **[https://192.168.19.30:9080/](https://192.168.19.30:9080/)** 匿名只读，不调用原发布链、不探测URL；未来清单改项目Git后提交新SHA，再部署新release/只重启导航。无应用密码或运行state，也不读取/复制旧deploy配置、MCP jobs、Git或publisher私钥。Linux UID/GID2001仅隔离导航进程，不是应用账号。[手册与验收边界](../../evidence/service-directory-20261110/README.md)。
+
+[源码Git状态](../../evidence/service-directory-20261110/source-git-state.json)记录：任务前本机main已比观测到的GitHub main `593069eb54a723ee0e63f85b937b9981b39ac1ec` 领先4条用户提交；本次新增自身8文件提交 `63b8c08`（父 `81148e8614ee5c49e6f9e4d1b85aebef8adfb33d`），**已本机提交、未push**，避免顺带发布原4条提交。没有amend/rebase/force。现役五文件确由git show精确提交导出，日后维护只能取已审查明确提交，不能git pull旧main覆盖。Dell配置文档独立交付不代表deploy源码已推到GitHub。
+
+[重启](../../evidence/service-directory-20261110/service-restart.json)、[浏览器](../../evidence/service-directory-20261110/browser-acceptance.json)、[最终后检](../../evidence/service-directory-20261110/final-postcheck.json)已通过本期限定验收；真实pointer跳转与目标站点可达性未签。
+
+这不证明 `bkcode/deploy` 已适配Puyu部署，更不证明五个后端已上线；Java仍停用、publisher fenced、common-lib仍只是共享库。表中 `build-source-planned` 保留业务取码计划语义，导航release另按本节证据登记。
+
 ## 用户应用/构建输入仓库
 
 | ID | 仓库 | 分支/引用语义 | 用途与边界 |
 | --- | --- | --- | --- |
-| `deploy` | [bkcode/deploy](https://github.com/bkcode/deploy) | main (management local checkout observed) | 部署工具候选；管理机工作树origin已核对，未证明已在220安装或已适配Puyu发布 |
+| `deploy` | [bkcode/deploy](https://github.com/bkcode/deploy) | main (management local checkout observed) | 仅service-directory模块精确提交已作为五文件导航release安装；原部署工具/Puyu发布适配仍候选 |
 | `puyu-auth` | [bkcode/puyu-auth](https://github.com/bkcode/puyu-auth) | main (management local checkout observed) | 认证业务源码候选 |
 | `puyu-bff-web` | [bkcode/puyu-bff-web](https://github.com/bkcode/puyu-bff-web) | main (management local checkout observed) | Web BFF后端源码候选 |
 | `puyu-common-lib` | [bkcode/puyu-common-lib](https://github.com/bkcode/puyu-common-lib) | main (management local checkout observed) | 共享库构建输入，不是独立运行服务 |

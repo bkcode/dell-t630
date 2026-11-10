@@ -58,3 +58,7 @@ python3 scripts/validate_docs.py --json
 ```
 
 仓库URL的上游条目主要从本地现有组件合同/用户指定来源整理，属于源码参考而非本轮全部联网验证；许可/发行包差异以对应项目实际版本为准。独立审查见[review](../evidence/git-repositories-20261110/review.md)。
+
+## 发布机导航模块已部署
+
+220新增服务导航是后续用户明确授权的例外，仅使用bkcode/deploy的service-directory公开模块，当前运行本地提交63b8c08；不是原部署工具/Puyu业务已上线。源码本地main另有4条既有未推送提交，未代为发布整个分支。见[本期导航交付](../evidence/service-directory-20261110/README.md)，其他仓库/机器部署计划保持。

@@ -72,3 +72,10 @@
 - Penpot远端main本轮仍9aedbb0而本地/服务器为ff1783e，先保两条改造，不能自动pull/reset退回远端旧版或自动push本地。VM250本轮只读clean/noorigin/11healthy，supervisor累计重启22如实记历史，不据此签零重启或扩大诊断。
 
 - 最新部署授权仅VM250/Penpot，其他机运行不改、17机文档继续。用户选择先亲自推两条ff1783e改造到main再通知继续；必须等通知并重查远端包含改造，当前不得构建/切换远端9aed旧代码或代替用户push。见evidence/git-repositories-20261110/penpot-deployment-state.json。
+
+## 2026-11-10发布机服务导航例外
+
+- 用户另明确授权在220发布机使用bkcode/deploy新增服务导航页，随后明确无需账号密码、只预览跳转。现HTTPS19.30:9080、LAN21/24/WG10.66/24/本机，无登录/CRUD/可写JSON状态、无target健康探测，只分组/search/envfilter/copy/链接。此精确新授权不是其他服务器Git部署或解除Javafence。
+- source本地commit63b8c08，运行只打包gitshow该提交5个公开模块文件，不能夹带原deploy/config/MCP/Gitkey。deploy本地main在任务前已有4条未推送用户commit，故没有代push/rebase/amend/force；不能把门户已部署说成源码已推GitHubmain。未来维护先用户确认Git发布范围，再选不可变commit替换release。
+- Linux专用OSuser2001+systemdreadonly，TLSkey仅LoadCredential，不是应用账号。清单在source services.json，修改后经review+新release重启本导航，不重跑fresh安装器覆盖。原publisher/Java/Nexus/Penpot不因此启停；Penpot继续等用户push两改造并通知。监控目标仍16，220本机多1导航unit检查，不外发人工告警/扩备份。
+- 验收evidence/service-directory-20261110/acceptance.json，手册usage-manual.md。浏览器只签匿名列表/search/copy/mobile和外链href/target，自动化new-window动作失去响应未冒签完整跳转；原生GET API14/写405/旧auth404/Host400及原服务身份保持均实测。
