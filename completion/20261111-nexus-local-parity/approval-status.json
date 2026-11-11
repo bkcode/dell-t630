@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-11T09:29:36.220366+08:00",
+  "status": "safe-user-choice-applied-no-repository-or-artifact-deletion",
+  "local_instance_mutations_performed": false,
+  "rejected_action": "repository layout changes with deletion of seven extra repositories and role permission updates",
+  "reason": "same-as-local request did not explicitly authorize permanent deletion of shared repositories; potential other-project and rollback impact",
+  "source_of_reviewable_plan": "completion/20261111-nexus-local-parity/reviewed-target.json",
+  "awaiting_choice": [
+    "align configuration and keep extra repositories",
+    "explicitly authorize exact seven-repository cleanup with local protection of known synthetic fixture and preservation of all imnull business assets"
+  ],
+  "credential_values_output": false,
+  "choice_at": "2026-11-11T10:01:55.651113+08:00",
+  "user_choice": "only-align-configuration-keep-seven-extra-repositories",
+  "delete_authorized": false,
+  "approved_plan": "completion/20261111-nexus-local-parity/approved-safe-target.json",
+  "supersedes": "historical reviewed-target.json removal proposal must not be executed",
+  "server_mutations_performed_before_explicit_user_choice": false,
+  "approved_configuration_changes_applied": true,
+  "repository_or_artifact_deletion_performed": false,
+  "final_evidence": "completion/20261111-nexus-local-parity/connected-postcheck.json"
+}

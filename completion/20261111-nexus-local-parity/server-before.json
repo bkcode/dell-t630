@@ -1,0 +1,318 @@
+{
+  "at": "2026-11-11T09:18:45.330388+08:00",
+  "repositories": [
+    {
+      "name": "maven-releases",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": false,
+        "writePolicy": "ALLOW_ONCE"
+      },
+      "maven": {
+        "versionPolicy": "RELEASE",
+        "layoutPolicy": "STRICT",
+        "contentDisposition": "INLINE"
+      },
+      "format": "maven2",
+      "type": "hosted",
+      "components": 0,
+      "assets": 0,
+      "coordinates": []
+    },
+    {
+      "name": "maven-snapshots",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": false,
+        "writePolicy": "ALLOW"
+      },
+      "maven": {
+        "versionPolicy": "SNAPSHOT",
+        "layoutPolicy": "STRICT",
+        "contentDisposition": "INLINE"
+      },
+      "format": "maven2",
+      "type": "hosted",
+      "components": 0,
+      "assets": 0,
+      "coordinates": []
+    },
+    {
+      "name": "maven-central",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": false,
+        "writePolicy": "ALLOW"
+      },
+      "maven": {
+        "versionPolicy": "RELEASE",
+        "layoutPolicy": "PERMISSIVE",
+        "contentDisposition": "INLINE"
+      },
+      "proxy": {
+        "remoteUrl": "https://repo1.maven.org/maven2/",
+        "contentMaxAge": -1,
+        "metadataMaxAge": 1440
+      },
+      "negativeCache": {
+        "enabled": true,
+        "timeToLive": 1440
+      },
+      "format": "maven2",
+      "type": "proxy",
+      "httpClient": {
+        "blocked": false,
+        "autoBlock": false,
+        "connection": {
+          "retries": null,
+          "userAgentSuffix": null,
+          "timeout": null,
+          "enableCircularRedirects": false,
+          "enableCookies": false,
+          "useTrustStore": false
+        }
+      }
+    },
+    {
+      "name": "maven-public",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": false
+      },
+      "group": {
+        "memberNames": [
+          "maven-releases",
+          "maven-snapshots",
+          "maven-central"
+        ]
+      },
+      "format": "maven2",
+      "type": "group"
+    },
+    {
+      "name": "nuget-hosted",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": true,
+        "writePolicy": "ALLOW"
+      },
+      "format": "nuget",
+      "type": "hosted",
+      "components": 0,
+      "assets": 0,
+      "coordinates": []
+    },
+    {
+      "name": "nuget.org-proxy",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": true,
+        "writePolicy": "ALLOW"
+      },
+      "proxy": {
+        "remoteUrl": "https://api.nuget.org/v3/index.json",
+        "contentMaxAge": 1440,
+        "metadataMaxAge": 1440
+      },
+      "negativeCache": {
+        "enabled": true,
+        "timeToLive": 1440
+      },
+      "nugetProxy": {
+        "queryCacheItemMaxAge": 3600,
+        "nugetVersion": "V3"
+      },
+      "format": "nuget",
+      "type": "proxy",
+      "httpClient": {
+        "blocked": false,
+        "autoBlock": false,
+        "connection": {
+          "retries": null,
+          "userAgentSuffix": null,
+          "timeout": null,
+          "enableCircularRedirects": false,
+          "enableCookies": false,
+          "useTrustStore": false
+        }
+      }
+    },
+    {
+      "name": "nuget-group",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": true
+      },
+      "group": {
+        "memberNames": [
+          "nuget-hosted",
+          "nuget.org-proxy"
+        ]
+      },
+      "format": "nuget",
+      "type": "group"
+    },
+    {
+      "name": "finger-releases",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": true,
+        "writePolicy": "ALLOW_ONCE"
+      },
+      "maven": {
+        "versionPolicy": "RELEASE",
+        "layoutPolicy": "STRICT",
+        "contentDisposition": "INLINE"
+      },
+      "format": "maven2",
+      "type": "hosted",
+      "components": 0,
+      "assets": 0,
+      "coordinates": []
+    },
+    {
+      "name": "finger-snapshots",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": true,
+        "writePolicy": "ALLOW"
+      },
+      "maven": {
+        "versionPolicy": "SNAPSHOT",
+        "layoutPolicy": "STRICT",
+        "contentDisposition": "INLINE"
+      },
+      "format": "maven2",
+      "type": "hosted",
+      "components": 0,
+      "assets": 0,
+      "coordinates": []
+    },
+    {
+      "name": "dell-acceptance",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": true,
+        "writePolicy": "ALLOW"
+      },
+      "maven": {
+        "versionPolicy": "MIXED",
+        "layoutPolicy": "STRICT",
+        "contentDisposition": "INLINE"
+      },
+      "format": "maven2",
+      "type": "hosted",
+      "components": 1,
+      "assets": 2,
+      "coordinates": [
+        {
+          "group": "com.dell.acceptance",
+          "name": "repo-persistence",
+          "version": "20261106041801"
+        }
+      ]
+    },
+    {
+      "name": "finger-public",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": true
+      },
+      "group": {
+        "memberNames": [
+          "finger-releases",
+          "finger-snapshots",
+          "imnull-releases"
+        ]
+      },
+      "format": "maven2",
+      "type": "group"
+    },
+    {
+      "name": "imnull-releases",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": true,
+        "writePolicy": "ALLOW_ONCE"
+      },
+      "maven": {
+        "versionPolicy": "RELEASE",
+        "layoutPolicy": "STRICT",
+        "contentDisposition": "INLINE"
+      },
+      "format": "maven2",
+      "type": "hosted",
+      "components": 49,
+      "assets": 1345,
+      "coordinates": "not-exported-business-coordinate-list"
+    },
+    {
+      "name": "puyu-releases",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": true,
+        "writePolicy": "ALLOW_ONCE"
+      },
+      "maven": {
+        "versionPolicy": "RELEASE",
+        "layoutPolicy": "STRICT",
+        "contentDisposition": "INLINE"
+      },
+      "format": "maven2",
+      "type": "hosted",
+      "components": 0,
+      "assets": 0,
+      "coordinates": []
+    },
+    {
+      "name": "puyu-snapshots",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": true,
+        "writePolicy": "ALLOW"
+      },
+      "maven": {
+        "versionPolicy": "SNAPSHOT",
+        "layoutPolicy": "STRICT",
+        "contentDisposition": "INLINE"
+      },
+      "format": "maven2",
+      "type": "hosted",
+      "components": 0,
+      "assets": 0,
+      "coordinates": []
+    },
+    {
+      "name": "puyu-public",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": true
+      },
+      "group": {
+        "memberNames": [
+          "puyu-releases",
+          "puyu-snapshots"
+        ]
+      },
+      "format": "maven2",
+      "type": "group"
+    }
+  ],
+  "repository_mutations": false,
+  "payload_or_credentials_exported": false
+}

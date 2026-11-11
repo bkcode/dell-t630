@@ -1,0 +1,60 @@
+{
+  "at": "2026-11-11T09:13:05.327791+08:00",
+  "local_instance": "127.0.0.1:8081",
+  "repositories": [
+    {
+      "name": "maven-releases",
+      "format": "maven2",
+      "type": "hosted",
+      "configuration_HTTP": 403
+    },
+    {
+      "name": "maven-snapshots",
+      "format": "maven2",
+      "type": "hosted",
+      "configuration_HTTP": 403
+    },
+    {
+      "name": "maven-central",
+      "format": "maven2",
+      "type": "proxy",
+      "configuration_HTTP": 403
+    },
+    {
+      "name": "maven-public",
+      "format": "maven2",
+      "type": "group",
+      "configuration_HTTP": 403
+    },
+    {
+      "name": "nuget-hosted",
+      "format": "nuget",
+      "type": "hosted"
+    },
+    {
+      "name": "nuget.org-proxy",
+      "format": "nuget",
+      "type": "proxy"
+    },
+    {
+      "name": "nuget-group",
+      "format": "nuget",
+      "type": "group"
+    },
+    {
+      "name": "imnull-releases",
+      "format": "maven2",
+      "type": "hosted",
+      "configuration_HTTP": 403
+    },
+    {
+      "name": "imnull-snapshots",
+      "format": "maven2",
+      "type": "hosted",
+      "configuration_HTTP": 403
+    }
+  ],
+  "local_instance_mutations": false,
+  "artifact_data_exported": false,
+  "credentials_output": false
+}

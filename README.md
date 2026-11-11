@@ -66,3 +66,6 @@ Penpot已从bkcode/penpot main取8a9b961部署定制前端，11容器健康，�
 
 
 2026-11-11已完成[Puyu专用空制品仓库与发布机配置接入](completion/20261111-puyu-nexus/README.md)：新仓库仍0组件/0资产，限定reader/publisher，工具main2d8f541与Mac/Linux75测试通过。没有迁旧制品或改Go/Java业务，实际构建/发布仍关闭；操作见[本次手册](completion/20261111-puyu-nexus/usage-manual.md)。
+
+
+2026-11-11最新[Nexus本机配置对齐](completion/20261111-nexus-local-parity/README.md)已按用户安全选择完成：共有9库定义对齐，额外7保留，服务器16库；发布机mainbba3542/Linux75通过，读取maven-public、dev/prod发布imnull-*，原密码/MCPkey保持。原50组件/1347资产保留、DELETE0、不迁数据不启业务，代理cache miss未签验。先前独立Puyu映射仅旧阶段，不覆盖本次实际映射。

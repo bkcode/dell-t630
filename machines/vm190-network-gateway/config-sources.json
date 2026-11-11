@@ -6,19 +6,19 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "acc3b0fd399a0f18d818baf31fb2869a43ab19920a4c4a96291a65e2e2024b4f"
+      "sha256": "2f31eec2bb562ec5968f87a7138d17163f59c78dbb34dbc4e4d1519491d4cc15"
     },
     {
       "path": "AGENTS.md",
       "type": "current-contract",
       "purpose": "当前用户范围、委派和秘密/操作边界。",
-      "sha256": "d16fab04186bee34e0e7dae53c0675292d7f9842a94d8a93acb1aa4d24e5ae23"
+      "sha256": "4f3df5a7f9036773706b0a812a3451d5c93683e9669a4e3bdf30f10aa000c804"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
       "purpose": "当前基础搭建与历史故障交接；本轮不迁移，旧证据按时点解释。",
-      "sha256": "851eca0b765761435611dfff6cc21fc1ebff188e4b2e307126f7020af9c7b156"
+      "sha256": "86ba18810e7cfc6ca732392a0be652d6cd40e6e63a169bad9ff9d4cea848e7fb"
     },
     {
       "path": "19-manual-operations.md",
@@ -246,13 +246,13 @@
       "path": "machines/git-repositories.json",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "6b14d2ebd2bb6a39a7faf04d6285cb944245ab9681a9d2faf327c02a19963e8d"
+      "sha256": "b1f3ec42327fc2781000b58e54515d2fd55bc47b99161b164e9e6b48a10e4bc3"
     },
     {
       "path": "machines/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "5b3690778fdb8920fadf8e76a55c76da3cec49109f125139f45c0adc8984be10"
+      "sha256": "2b2d621cb8334f9a545456c82581a5b5f16e3788f01e54ac1bb4f59757a3fcf9"
     },
     {
       "path": "machines/vm190-network-gateway/GIT-REPOSITORIES.md",

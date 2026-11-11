@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-11T10:27:13.801350+08:00",
+  "status": "local-reference-configuration-aligned-seven-extra-repositories-and-all-artifacts-kept",
+  "scope": "Only shared repository configuration and publisher mapping alignment; no deletion, migration or business build",
+  "cases": [
+    {
+      "id": "LOCALNX-REFERENCE-001",
+      "title": "本机只读参考与共有配置对齐",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确选择仅对齐配置、保留额外7库，不删除任何仓库或制品；imnull-release按本机ALLOW"
+      ],
+      "steps": [
+        "只读参考，明确禁止DELETE的配置更新，Git拉取与私有YAML映射更新，原生读取和权限保持检查"
+      ],
+      "observable_pass_conditions": [
+        "仅GET本机9库配置；本机凭据和制品未复制、服务未修改",
+        "新增imnull-snapshots，maven-public5成员顺序与imnull-releaseALLOW按本机；默认maven-releaseALLOW_ONCE保持"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261111-nexus-local-parity/local-repository-configs.json",
+          "note": "No credentials, private inventories or artifact payloads"
+        },
+        {
+          "path": "completion/20261111-nexus-local-parity/configuration-applied.json",
+          "note": "No credentials, private inventories or artifact payloads"
+        },
+        {
+          "path": "completion/20261111-nexus-local-parity/connected-postcheck.json",
+          "note": "No credentials, private inventories or artifact payloads"
+        }
+      ],
+      "verified_at": "2026-11-11T10:27:13.801350+08:00"
+    },
+    {
+      "id": "LOCALNX-PRESERVE-001",
+      "title": "用户安全选择与零删除",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确选择仅对齐配置、保留额外7库，不删除任何仓库或制品；imnull-release按本机ALLOW"
+      ],
+      "steps": [
+        "只读参考，明确禁止DELETE的配置更新，Git拉取与私有YAML映射更新，原生读取和权限保持检查"
+      ],
+      "observable_pass_conditions": [
+        "原额外7库全保留，服务器16库；原50组件/1347资产ID路径校验保持",
+        "执行器禁止DELETE，账号密码和其他角色保持；只追加标准Maven权限，无delete/admin"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261111-nexus-local-parity/approval-status.json",
+          "note": "No credentials, private inventories or artifact payloads"
+        },
+        {
+          "path": "completion/20261111-nexus-local-parity/approved-safe-target.json",
+          "note": "No credentials, private inventories or artifact payloads"
+        },
+        {
+          "path": "completion/20261111-nexus-local-parity/configuration-applied.json",
+          "note": "No credentials, private inventories or artifact payloads"
+        }
+      ],
+      "verified_at": "2026-11-11T10:27:13.801350+08:00"
+    },
+    {
+      "id": "LOCALNX-PUBLISHER-001",
+      "title": "发布机统一配置和Git同步",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确选择仅对齐配置、保留额外7库，不删除任何仓库或制品；imnull-release按本机ALLOW"
+      ],
+      "steps": [
+        "只读参考，明确禁止DELETE的配置更新，Git拉取与私有YAML映射更新，原生读取和权限保持检查"
+      ],
+      "observable_pass_conditions": [
+        "main/bba3542已推/服务器同SHA，Mac75及Linux75通过；通用执行实现未变",
+        "私有YAML仅改读取/发布仓库名，旧凭据/MCPkey/目标/路径保持，只有MCP短重载"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261111-nexus-local-parity/source-delivery.json",
+          "note": "No credentials, private inventories or artifact payloads"
+        },
+        {
+          "path": "completion/20261111-nexus-local-parity/publisher-applied.json",
+          "note": "No credentials, private inventories or artifact payloads"
+        }
+      ],
+      "verified_at": "2026-11-11T10:27:13.801350+08:00"
+    },
+    {
+      "id": "LOCALNX-CONNECTED-001",
+      "title": "真实读取与边界保持",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户明确选择仅对齐配置、保留额外7库，不删除任何仓库或制品；imnull-release按本机ALLOW"
+      ],
+      "steps": [
+        "只读参考，明确禁止DELETE的配置更新，Git拉取与私有YAML映射更新，原生读取和权限保持检查"
+      ],
+      "observable_pass_conditions": [
+        "实际YAML两身份经maven-public读取既有imnull资产200且字节一致",
+        "MCP401/403/dev-only/deploy关闭保持；无新任务、构建、上传、数据迁移或网络放开"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261111-nexus-local-parity/connected-postcheck.json",
+          "note": "No credentials, private inventories or artifact payloads"
+        }
+      ],
+      "verified_at": "2026-11-11T10:27:13.801350+08:00"
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "current_phase_case_count": 4,
+    "current_phase_passed": 4
+  },
+  "limitations": [
+    "Server intentionally has16 repositories, including seven retained extras; local reference has9",
+    "Nexus outbound isolation unchanged; uncached external proxy downloads not tested",
+    "No business Gradle/Java/Go build, source branch preparation or deployment; no new artifact write test against populated business repos",
+    "Original Puyu permissions retained; only scoped standard Maven access appended, no delete/admin"
+  ]
+}

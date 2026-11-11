@@ -48,3 +48,6 @@ python3 scripts/validate_docs.py --json
 ```
 
 以上仅离线合同验证，不代替服务器原生数据/身份/健康/恢复验收。文件来源SHA需随本次公开变更刷新，不能降低validator门槛。
+
+
+2026-11-11最新[Nexus本机配置对齐](../completion/20261111-nexus-local-parity/README.md)已按用户安全选择完成：共有9库定义对齐，额外7保留，服务器16库；发布机mainbba3542/Linux75通过，读取maven-public、dev/prod发布imnull-*，原密码/MCPkey保持。原50组件/1347资产保留、DELETE0、不迁数据不启业务，代理cache miss未签验。先前独立Puyu映射仅旧阶段，不覆盖本次实际映射。

@@ -1,0 +1,192 @@
+{
+  "at": "2026-11-11T09:15:51.473091+08:00",
+  "local_instance": "127.0.0.1:8081",
+  "repositories": [
+    {
+      "name": "maven-releases",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": false,
+        "writePolicy": "ALLOW_ONCE"
+      },
+      "maven": {
+        "versionPolicy": "RELEASE",
+        "layoutPolicy": "STRICT",
+        "contentDisposition": "INLINE"
+      },
+      "format": "maven2",
+      "type": "hosted"
+    },
+    {
+      "name": "maven-snapshots",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": false,
+        "writePolicy": "ALLOW"
+      },
+      "maven": {
+        "versionPolicy": "SNAPSHOT",
+        "layoutPolicy": "STRICT",
+        "contentDisposition": "INLINE"
+      },
+      "format": "maven2",
+      "type": "hosted"
+    },
+    {
+      "name": "maven-central",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": false,
+        "writePolicy": "ALLOW"
+      },
+      "maven": {
+        "versionPolicy": "RELEASE",
+        "layoutPolicy": "PERMISSIVE",
+        "contentDisposition": "INLINE"
+      },
+      "negativeCache": {
+        "enabled": true,
+        "timeToLive": 1440
+      },
+      "format": "maven2",
+      "type": "proxy",
+      "proxy": {
+        "remoteUrl": "https://repo1.maven.org/maven2/",
+        "contentMaxAge": -1,
+        "metadataMaxAge": 1440
+      },
+      "httpClient": {
+        "blocked": false,
+        "autoBlock": false,
+        "connection": {
+          "retries": null,
+          "userAgentSuffix": null,
+          "timeout": null,
+          "enableCircularRedirects": false,
+          "enableCookies": false,
+          "useTrustStore": false
+        }
+      }
+    },
+    {
+      "name": "maven-public",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": false
+      },
+      "group": {
+        "memberNames": [
+          "imnull-snapshots",
+          "imnull-releases",
+          "maven-releases",
+          "maven-snapshots",
+          "maven-central"
+        ]
+      },
+      "format": "maven2",
+      "type": "group"
+    },
+    {
+      "name": "nuget-hosted",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": true,
+        "writePolicy": "ALLOW"
+      },
+      "format": "nuget",
+      "type": "hosted"
+    },
+    {
+      "name": "nuget.org-proxy",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": true,
+        "writePolicy": "ALLOW"
+      },
+      "negativeCache": {
+        "enabled": true,
+        "timeToLive": 1440
+      },
+      "nugetProxy": {
+        "queryCacheItemMaxAge": 3600,
+        "nugetVersion": "V3"
+      },
+      "format": "nuget",
+      "type": "proxy",
+      "proxy": {
+        "remoteUrl": "https://api.nuget.org/v3/index.json",
+        "contentMaxAge": 1440,
+        "metadataMaxAge": 1440
+      },
+      "httpClient": {
+        "blocked": false,
+        "autoBlock": false,
+        "connection": {
+          "retries": null,
+          "userAgentSuffix": null,
+          "timeout": null,
+          "enableCircularRedirects": false,
+          "enableCookies": false,
+          "useTrustStore": false
+        }
+      }
+    },
+    {
+      "name": "nuget-group",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": true
+      },
+      "group": {
+        "memberNames": [
+          "nuget-hosted",
+          "nuget.org-proxy"
+        ]
+      },
+      "format": "nuget",
+      "type": "group"
+    },
+    {
+      "name": "imnull-releases",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": true,
+        "writePolicy": "ALLOW"
+      },
+      "maven": {
+        "versionPolicy": "RELEASE",
+        "layoutPolicy": "STRICT",
+        "contentDisposition": "INLINE"
+      },
+      "format": "maven2",
+      "type": "hosted"
+    },
+    {
+      "name": "imnull-snapshots",
+      "online": true,
+      "storage": {
+        "blobStoreName": "default",
+        "strictContentTypeValidation": true,
+        "writePolicy": "ALLOW"
+      },
+      "maven": {
+        "versionPolicy": "SNAPSHOT",
+        "layoutPolicy": "STRICT",
+        "contentDisposition": "INLINE"
+      },
+      "format": "maven2",
+      "type": "hosted"
+    }
+  ],
+  "local_username_or_password_exported": false,
+  "repository_or_artifact_mutations": false,
+  "artifact_data_exported": false
+}

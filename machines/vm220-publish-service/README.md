@@ -1,6 +1,12 @@
 # VM220 · publish-service
 
-## 2026-11-11 Puyu空制品仓库与配置对接
+## 2026-11-11 Nexus本机配置对齐（保留额外仓库）
+
+用户已选择只对齐本机配置、保留服务器额外7库，禁止删除任何仓库/制品。目标读取maven-public、dev写imnull-snapshots/prod写imnull-releases；新group有序包含imnull-snapshots、imnull-releases、maven-releases、maven-snapshots、maven-central。imnull-releases按本机设ALLOW，默认maven-releases仍ALLOW_ONCE；缺imnull-snapshots时只新增，服务器15→16库，Puyu3/Finger3/dell-acceptance全部保留，原50components/1347assets需保持。
+
+原puyu-reader/puyu-publisher账号密码和原Puyu权限保留，只增标准6Maven读取及publisher对imnull2 add/edit；无delete/admin，不改其它角色。Nexus隔离网络不放开，无数据迁移/清库/业务构建，MCP仍dev-only/deploy关，原key/paths/SSH不改。example/test/docs默认值已推main/bba3542且发布机同步，Mac75项通过，Linux75项37.158秒通过；YAML仅改三个库名、密码/MCPkey/其余设置保持。[配置应用](../../completion/20261111-nexus-local-parity/configuration-applied.json)确认原50/1347和额外7库保持、DELETE调用0；[实际YAML连接后检](../../completion/20261111-nexus-local-parity/connected-postcheck.json)已通过，两身份经maven-public取现有imnull资产均200/原字节一致，9参考定义语义相等、16库和旧50/1347保持；MCP协议/401/403及dev-only/deploy关保持，无新job。[当前方案](../../completion/20261111-nexus-local-parity/README.md)、[操作说明](../../completion/20261111-nexus-local-parity/usage-manual.md)。此前Puyu专属group配置为上一阶段历史，不据此覆盖本次新映射，也不删除仍保留的Puyu仓库。
+
+## 2026-11-11早期Puyu空仓库接入（历史映射）
 
 已在既有Nexus新增puyu-releases（RELEASE/ALLOW_ONCE）、puyu-snapshots（SNAPSHOT/ALLOW）与puyu-public（仅前两者），以及专用reader/publisher身份。权限fixture正负测通过后已清，当前0components/0assets；原旧库/管理员/账号/EULA/密码不改，Nexus未重启，不复制Finger/imnull制品。
 
@@ -22,7 +28,7 @@ Git来源：[GIT-REPOSITORIES.md](GIT-REPOSITORIES.md)；配置合同：[config.
 
 ## Puyu工具与MCP
 
-/opt/deploy-public来自bkcode/deploy-public main/2d8f541，Linux75测试通过；此前213f/65项仅旧模式阶段记录。MCP以ub运行、仅127.0.0.1:18765，服务puyu-deploy-mcp.service；原ignored YAML/APIkey/DeployKeys和buildUUID守卫保持，不导出、重生成或覆盖私有配置。
+/opt/deploy-public来自bkcode/deploy-public main/bba3542，Linux75测试通过（37.158秒）；此前2d8/75项是Puyu初接入，213f/65项是旧模式阶段记录。MCP以ub运行、仅127.0.0.1:18765，服务puyu-deploy-mcp.service；原ignored YAML/APIkey/DeployKeys和buildUUID守卫保持，不导出、重生成或覆盖私有配置。
 
 CLI prod/main、dev/dev，MCP仅dev、prod覆盖拒绝。六业务/公共库main已克隆且仍main，远程dev均缺，新dev预检failed是预期保护；不自动代建/推分支或fallback main。旧五服务dev/main成功仅历史。prod SSH目标未配置、真实部署关闭，原forced-chainfenced，任何环境不构建/启动Java业务。
 

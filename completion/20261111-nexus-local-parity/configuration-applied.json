@@ -1,0 +1,61 @@
+{
+  "at": "2026-11-11T10:08:06.659482+08:00",
+  "status": "local-configuration-aligned-all-extra-repositories-and-assets-retained",
+  "server_repository_count": 16,
+  "local_reference_repository_count": 9,
+  "all_repository_names": [
+    "dell-acceptance",
+    "finger-public",
+    "finger-releases",
+    "finger-snapshots",
+    "imnull-releases",
+    "imnull-snapshots",
+    "maven-central",
+    "maven-public",
+    "maven-releases",
+    "maven-snapshots",
+    "nuget-group",
+    "nuget-hosted",
+    "nuget.org-proxy",
+    "puyu-public",
+    "puyu-releases",
+    "puyu-snapshots"
+  ],
+  "extra_seven_retained": [
+    "dell-acceptance",
+    "finger-public",
+    "finger-releases",
+    "finger-snapshots",
+    "puyu-public",
+    "puyu-releases",
+    "puyu-snapshots"
+  ],
+  "created_missing_repository": [
+    "imnull-snapshots"
+  ],
+  "updated_repositories": [
+    "maven-public",
+    "imnull-releases"
+  ],
+  "maven_public_members": [
+    "imnull-snapshots",
+    "imnull-releases",
+    "maven-releases",
+    "maven-snapshots",
+    "maven-central"
+  ],
+  "imnull_releases_writePolicy": "ALLOW",
+  "maven_releases_writePolicy": "ALLOW_ONCE",
+  "existing_components_preserved": 50,
+  "existing_assets_ID_paths_checksums_preserved": 1347,
+  "repository_or_artifact_DELETE_calls": 0,
+  "all_existing_account_passwords_unchanged": true,
+  "original_Puyu_permissions_preserved_and_scoped_standard_Maven_permissions_appended": true,
+  "other_roles_unchanged": true,
+  "no_delete_or_admin_privileges_granted": true,
+  "Nexus_and_navigation_PIDs_and_containers_unchanged": true,
+  "Nexus_network_change": false,
+  "historical_data_imported": false,
+  "local_credentials_exported": false,
+  "credential_values_or_private_hashes_output": false
+}

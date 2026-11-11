@@ -1,0 +1,50 @@
+{
+  "status": "local-nine-configurations-aligned-seven-extra-kept-publisher-connected",
+  "server_repository_count": 16,
+  "local_reference_configuration_count": 9,
+  "retained_extra_seven": [
+    "puyu-releases",
+    "puyu-snapshots",
+    "puyu-public",
+    "finger-releases",
+    "finger-snapshots",
+    "finger-public",
+    "dell-acceptance"
+  ],
+  "existing_components_preserved": 50,
+  "existing_asset_ID_paths_checksums_preserved": 1347,
+  "all_old_repositories_and_artifacts_preserved": true,
+  "actual_private_YAML_group_credentials": {
+    "reader": {
+      "username": "puyu-reader",
+      "group_read_HTTP": 200,
+      "existing_asset_bytes_equal": true
+    },
+    "publisher": {
+      "username": "puyu-publisher",
+      "group_read_HTTP": 200,
+      "existing_asset_bytes_equal": true
+    }
+  },
+  "artifact_URLs": {
+    "read_url": "http://192.168.19.31:8081/repository/maven-public/",
+    "publish_urls": {
+      "dev": "http://192.168.19.31:8081/repository/imnull-snapshots/",
+      "prod": "http://192.168.19.31:8081/repository/imnull-releases/"
+    }
+  },
+  "MCP_authenticated_protocol_passed": true,
+  "MCP_anonymous_HTTP": 401,
+  "MCP_browser_Origin_HTTP": 403,
+  "MCP_environment": "dev",
+  "business_deploy_enabled": false,
+  "no_new_MCP_jobs_submitted": true,
+  "proxy_cache_miss_or_external_download_tested": false,
+  "credential_values_output": false,
+  "accounts_passwords_and_legacy_roles_preserved": true,
+  "repository_or_artifact_delete_performed": false,
+  "old_data_imported_or_republished": false,
+  "Nexus_network_changed": false,
+  "real_Gradle_Java_Go_build_or_business_deploy_executed": false,
+  "local_credentials_or_private_payloads_exported": false
+}

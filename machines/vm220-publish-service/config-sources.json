@@ -6,13 +6,13 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "acc3b0fd399a0f18d818baf31fb2869a43ab19920a4c4a96291a65e2e2024b4f"
+      "sha256": "2f31eec2bb562ec5968f87a7138d17163f59c78dbb34dbc4e4d1519491d4cc15"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
       "purpose": "当前基础搭建与历史故障交接；本轮不迁移，旧证据按时点解释。",
-      "sha256": "851eca0b765761435611dfff6cc21fc1ebff188e4b2e307126f7020af9c7b156"
+      "sha256": "86ba18810e7cfc6ca732392a0be652d6cd40e6e63a169bad9ff9d4cea848e7fb"
     },
     {
       "path": "12-service-access-and-operations.md",
@@ -198,19 +198,19 @@
       "path": "machines/git-repositories.json",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "6b14d2ebd2bb6a39a7faf04d6285cb944245ab9681a9d2faf327c02a19963e8d"
+      "sha256": "b1f3ec42327fc2781000b58e54515d2fd55bc47b99161b164e9e6b48a10e4bc3"
     },
     {
       "path": "machines/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "5b3690778fdb8920fadf8e76a55c76da3cec49109f125139f45c0adc8984be10"
+      "sha256": "2b2d621cb8334f9a545456c82581a5b5f16e3788f01e54ac1bb4f59757a3fcf9"
     },
     {
       "path": "machines/vm220-publish-service/GIT-REPOSITORIES.md",
       "type": "current-contract",
       "purpose": "Git repository ownership/documentation and bounded read verification; not automatic deployment or secret source",
-      "sha256": "ba82e759e8e9606282d4caabdf315ee28014d0c07d1a0b14d2dd84fb1fc531bb"
+      "sha256": "aefaf77cfce909b8a30e6a63d70d0bff5dd5ed13326b78aca2304f7f8e22b506"
     },
     {
       "path": "scripts/validate_git_repositories.py",
@@ -919,6 +919,132 @@
       "type": "historical-evidence",
       "purpose": "2026-11-11 Puyu empty repositories and private publisher config; one-time workers not replay entry points",
       "sha256": "95417c6d969147adae03a96782a8e65c6f3ba8308bf5cd05b59336f76c178fbb"
+    },
+    {
+      "path": "completion/20261111-nexus-local-parity/publisher-applied.json",
+      "type": "historical-evidence",
+      "purpose": "Explicit safe configuration parity with all extra repositories and data retained; old removal proposal rejected and not executable authorization",
+      "sha256": "a65c350ff251547fc841f224f84416f9eebe659b93448834ce00b52d493e5383"
+    },
+    {
+      "path": "completion/20261111-nexus-local-parity/update-publisher.py",
+      "type": "historical-evidence",
+      "purpose": "Explicit safe configuration parity with all extra repositories and data retained; old removal proposal rejected and not executable authorization",
+      "sha256": "41f60a26633587da5d6d53cbff45a10cbd149b35315b44f7ecc046267b908df9"
+    },
+    {
+      "path": "completion/20261111-nexus-local-parity/audit-local.py",
+      "type": "historical-evidence",
+      "purpose": "Explicit safe configuration parity with all extra repositories and data retained; old removal proposal rejected and not executable authorization",
+      "sha256": "9b594f326c8a355b33ace6ec4dfd3afc115f43dab4df0971b068e69be38311e7"
+    },
+    {
+      "path": "completion/20261111-nexus-local-parity/server-before.json",
+      "type": "historical-evidence",
+      "purpose": "Explicit safe configuration parity with all extra repositories and data retained; old removal proposal rejected and not executable authorization",
+      "sha256": "13e5b164bd9fdfb452abd76662cea67c3caba92e5ebf9381ebd268780233f245"
+    },
+    {
+      "path": "completion/20261111-nexus-local-parity/acceptance.json",
+      "type": "current-contract",
+      "purpose": "Explicit safe configuration parity with all extra repositories and data retained; old removal proposal rejected and not executable authorization",
+      "sha256": "336ce0e277d2fc0185ca300768212066b65575645a8f5d059bb16c0051147703"
+    },
+    {
+      "path": "completion/20261111-nexus-local-parity/align-config-keep-all.py",
+      "type": "historical-evidence",
+      "purpose": "Explicit safe configuration parity with all extra repositories and data retained; old removal proposal rejected and not executable authorization",
+      "sha256": "32bba46229d29e3f6bc4c8643f76a2af0fb82d1e9bac24bab971fdfb72bd1991"
+    },
+    {
+      "path": "completion/20261111-nexus-local-parity/local-repositories.json",
+      "type": "historical-evidence",
+      "purpose": "Explicit safe configuration parity with all extra repositories and data retained; old removal proposal rejected and not executable authorization",
+      "sha256": "b852b46d28ba784d815e3e0bc38ce152d77d16d47ae80ba818dab6f322e73dd8"
+    },
+    {
+      "path": "completion/20261111-nexus-local-parity/connected-postcheck.json",
+      "type": "current-contract",
+      "purpose": "Explicit safe configuration parity with all extra repositories and data retained; old removal proposal rejected and not executable authorization",
+      "sha256": "0272fc007d08fab7f3e206cfc464906528df9137c831b06cfbc50a161d12f0e4"
+    },
+    {
+      "path": "completion/20261111-nexus-local-parity/approved-safe-target.json",
+      "type": "current-contract",
+      "purpose": "Explicit safe configuration parity with all extra repositories and data retained; old removal proposal rejected and not executable authorization",
+      "sha256": "a6c850344cbdb57ec2dfcd02b8cca5d83e3f40baf35f3ac168492af8a3134bc9"
+    },
+    {
+      "path": "completion/20261111-nexus-local-parity/approval-status.json",
+      "type": "historical-evidence",
+      "purpose": "Explicit safe configuration parity with all extra repositories and data retained; old removal proposal rejected and not executable authorization",
+      "sha256": "dc850488eca8a49fb57c9a70fbd5cc70f517b345fe481645b44210c00a3b6d20"
+    },
+    {
+      "path": "completion/20261111-nexus-local-parity/README.md",
+      "type": "current-contract",
+      "purpose": "Explicit safe configuration parity with all extra repositories and data retained; old removal proposal rejected and not executable authorization",
+      "sha256": "3b7bab7b4ac075edf93bbfd8e349524ef7be8959cf9d198ce41290538ff236b6"
+    },
+    {
+      "path": "completion/20261111-nexus-local-parity/reviewed-target.json",
+      "type": "historical-evidence",
+      "purpose": "Explicit safe configuration parity with all extra repositories and data retained; old removal proposal rejected and not executable authorization",
+      "sha256": "2b4917851e7ea68d3ae1c9fc8a0d0a05322ced46d878f829bb0f8bf63508664d"
+    },
+    {
+      "path": "completion/20261111-nexus-local-parity/source-delivery.json",
+      "type": "historical-evidence",
+      "purpose": "Explicit safe configuration parity with all extra repositories and data retained; old removal proposal rejected and not executable authorization",
+      "sha256": "3881d91409e015ef75ba38257c79ae0f3ee10f076b67e0cca2f346a22e495d2a"
+    },
+    {
+      "path": "completion/20261111-nexus-local-parity/local-repository-configs.json",
+      "type": "historical-evidence",
+      "purpose": "Explicit safe configuration parity with all extra repositories and data retained; old removal proposal rejected and not executable authorization",
+      "sha256": "d0049ef79edacd643f5dab7b5bc659a75c74c14493d078802b8addf7beb3087f"
+    },
+    {
+      "path": "completion/20261111-nexus-local-parity/diagnose-config-shape.py",
+      "type": "historical-evidence",
+      "purpose": "Explicit safe configuration parity with all extra repositories and data retained; old removal proposal rejected and not executable authorization",
+      "sha256": "282e0377a72e846ddf091f8449f7b6b7c2a31fe6d27847302abe7e4e713b6d33"
+    },
+    {
+      "path": "completion/20261111-nexus-local-parity/usage-manual.md",
+      "type": "current-contract",
+      "purpose": "Explicit safe configuration parity with all extra repositories and data retained; old removal proposal rejected and not executable authorization",
+      "sha256": "629db77a81082c144d00050fe0c62b6d748c8fc63372c679424d51db1a241565"
+    },
+    {
+      "path": "completion/20261111-nexus-local-parity/check-connected.py",
+      "type": "historical-evidence",
+      "purpose": "Explicit safe configuration parity with all extra repositories and data retained; old removal proposal rejected and not executable authorization",
+      "sha256": "b390de1dd8adb20311d9d273895d69d94f1419d5ed69f221c9a283214811d481"
+    },
+    {
+      "path": "completion/20261111-nexus-local-parity/audit-server.py",
+      "type": "historical-evidence",
+      "purpose": "Explicit safe configuration parity with all extra repositories and data retained; old removal proposal rejected and not executable authorization",
+      "sha256": "8214932ba6fd984e5a93e9011ee7bc8684b1582a86f0737cf957fd161cb64add"
+    },
+    {
+      "path": "completion/20261111-nexus-local-parity/configuration-applied.json",
+      "type": "historical-evidence",
+      "purpose": "Explicit safe configuration parity with all extra repositories and data retained; old removal proposal rejected and not executable authorization",
+      "sha256": "580ff4734c0e83727591164ed231cbe1036d778f5bcb08ce57bcaca290dac78b"
+    },
+    {
+      "path": "completion/20261111-nexus-local-parity/read-local-config.py",
+      "type": "historical-evidence",
+      "purpose": "Explicit safe configuration parity with all extra repositories and data retained; old removal proposal rejected and not executable authorization",
+      "sha256": "9d16983e11c6b7d038c2bcaf92ec3107d3549085ff69897a09a6c6a191d21432"
+    },
+    {
+      "path": "completion/20261111-nexus-local-parity/shape-differences.json",
+      "type": "historical-evidence",
+      "purpose": "Explicit safe configuration parity with all extra repositories and data retained; old removal proposal rejected and not executable authorization",
+      "sha256": "f98bfac9a3c6288b81b5f0b40013618242b254f63a91256a12134342d3aa46d7"
     }
   ],
   "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."

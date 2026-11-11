@@ -1,0 +1,61 @@
+{
+  "differences": [
+    {
+      "repository": "maven-central",
+      "different_fields": [
+        "httpClient"
+      ],
+      "local_httpClient_keys": [
+        "autoBlock",
+        "blocked",
+        "connection"
+      ],
+      "server_httpClient_keys": [
+        "authentication",
+        "autoBlock",
+        "blocked",
+        "connection"
+      ],
+      "server_authentication_configured": false
+    },
+    {
+      "repository": "maven-public",
+      "different_fields": [
+        "group"
+      ],
+      "local_httpClient_keys": [],
+      "server_httpClient_keys": [],
+      "server_authentication_configured": false
+    },
+    {
+      "repository": "nuget.org-proxy",
+      "different_fields": [
+        "httpClient"
+      ],
+      "local_httpClient_keys": [
+        "autoBlock",
+        "blocked",
+        "connection"
+      ],
+      "server_httpClient_keys": [
+        "authentication",
+        "autoBlock",
+        "blocked",
+        "connection"
+      ],
+      "server_authentication_configured": false
+    },
+    {
+      "repository": "imnull-releases",
+      "different_fields": [
+        "storage"
+      ],
+      "local_httpClient_keys": [],
+      "server_httpClient_keys": [],
+      "server_authentication_configured": false
+    }
+  ],
+  "server_write_performed": false,
+  "transaction_directory_exists": false,
+  "credential_values_output": false
+}

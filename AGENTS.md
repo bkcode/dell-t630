@@ -146,3 +146,9 @@
 - 用户明确执行前两项：允许在既有Nexus上新建Puyu空releases/snapshots/public与两个最小权限账号、接入发布机私有YAML，不是历史制品迁移或清库许可。root凭据只VM220600，pub YAML ub600 ignored；旧仓库/用户/密码、原MCPkey与配置保持。测试fixture仅新Puyu库、精确清理后0组件/0资产，Nexus/导航无重启。
 - deploy-public main2d8f541已Git拉取、Linux75通过，optional artifacts由同一loader解析，artifact_exec仅给固定既有build.bash注入NEXUS环境。show/check离线，exec需显式参数；本期只真实执行ls元数据、未运行Gradle/业务构建。MCP仍仅dev与四工具/真实deploy关闭，没有自动对接此CLI构建适配器。
 - 新group仅两Puyu库，不含旧imnull或外部proxy，保留项目已有公共源直连，Nexusinternal网络不放开。源码仍main/clean，现release版本不满足snapshot策略且私有插件/公共库尚未供应，不能因配置验收通过就启构建/发布/创建分支。当前交付completion/20261111-puyu-nexus/acceptance.json。
+
+## 2026-11-11 Nexus参考本机：保留额外库
+
+- 用户明确选择仅对齐共有仓库配置/权限/发布机地址，保留额外7库，不删除任何仓库或制品。现server16库含本机参考9和保留7，旧50组件/1347资产ID路径checksum保持，DELETE调用0；旧含删除候选仅被拒历史，不得重放。
+- 读取maven-public（成员顺序imnull-snapshots/imnull-releases/maven-releases/maven-snapshots/maven-central），dev/prod发布imnull-snapshots/imnull-releases。imnull-release按本机ALLOW可覆盖，默认maven-release仍ALLOW_ONCE。仅新增缺失imnull-snapshots并热更新2配置，原Puyu权限保留追加标准Maven权限，不给delete/admin；密码/其他roles/旧库均保持。
+- deploy-public mainbba3542已推并VMgitpull，Mac75/Linux75通过，私有YAML仅改3库名，原MCPkey/所有其它值保持；两实际身份经group读旧imnull资产200字节一致。MCP仍仅dev/deploy关/无新job。无实际Gradle/Java/Go构建、制品重发或网络放开；未签uncached外部proxy下载。当前交付completion/20261111-nexus-local-parity/acceptance.json。

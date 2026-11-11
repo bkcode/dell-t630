@@ -226,7 +226,7 @@
       "ssh_url": "git@github.com:bkcode/deploy-public.git",
       "kind": "custom-deployment-source",
       "branch_reference": "main; fixed reviewed commit",
-      "purpose": "Puyu local publisher main2d8f541, CLI prod/main dev/dev plus optional scoped artifacts YAML adapter; MCP remainsdev-only, real business deployment disabled"
+      "purpose": "Puyu local publisher mainbba3542, local-matching maven-public/imnull-* artifact mapping, MCPdev-only and business deployment disabled"
     },
     "puyu-bff-admin": {
       "id": "puyu-bff-admin",
@@ -394,7 +394,7 @@
         "nexus-upstream"
       ],
       "git_usage_mode": "build-source-configured-business-disabled",
-      "current_state_note": "2026-11-11 deploy-public main2d8f541, Linux75tests passed; scoped Puyu empty Nexus repositories and private local YAML connected. Existing six backend main worktrees clean, no fetch or branch creation in this phase. Private plugin/common library, snapshot versions and branch preparation remain future requirements; old chain fenced and actual business deploy disabled.",
+      "current_state_note": "2026-11-11 mainbba3542 Linux75tests; actual private YAML usesmaven-public/imnull-snapshots/imnull-releases like local, server extra seven retained (16total), all old artifacts preserved; zeroDELETE/data migration/businessbuild, MCPdev-only/loopback/deploydisabled.",
       "direct_runtime_business_git_pull": false,
       "credential_references": [
         {
@@ -473,9 +473,9 @@
         {
           "repository_id": "deploy-public",
           "module": "publisher-config-and-MCP",
-          "local_commit": "2d8f5410bfbc94f409d9f701592c61e39f9653b9",
+          "local_commit": "bba3542d5f28adc0377a6ef8745bf9aa17423544",
           "GitHub_main_published": true,
-          "evidence": "completion/20261111-puyu-nexus/publisher-applied.json"
+          "evidence": "completion/20261111-nexus-local-parity/publisher-applied.json"
         }
       ],
       "verification_evidence": [

@@ -1,0 +1,73 @@
+{
+  "status": "publisher-local-repository-mapping-updated",
+  "old_source_HEAD": "2d8f5410bfbc94f409d9f701592c61e39f9653b9",
+  "source_HEAD": "bba3542d5f28adc0377a6ef8745bf9aa17423544",
+  "Linux_tests": 75,
+  "Linux_tests_seconds": 37.158,
+  "Linux_tests_passed": true,
+  "configuration_update": {
+    "private_repository_mapping": {
+      "read_url": "http://192.168.19.31:8081/repository/maven-public/",
+      "publish_urls": {
+        "dev": "http://192.168.19.31:8081/repository/imnull-snapshots/",
+        "prod": "http://192.168.19.31:8081/repository/imnull-releases/"
+      }
+    },
+    "only_read_and_publish_repository_names_changed": true,
+    "passwords_MCP_key_and_all_other_configuration_preserved": true,
+    "private_YAML_owner": "ub",
+    "private_YAML_mode": "0600",
+    "private_YAML_ignored": true,
+    "offline_adapter": {
+      "show": {
+        "configured": true,
+        "network_checked": false,
+        "base_url": "http://192.168.19.31:8081",
+        "read_url": "http://192.168.19.31:8081/repository/maven-public/",
+        "publish_urls": {
+          "dev": "http://192.168.19.31:8081/repository/imnull-snapshots/",
+          "prod": "http://192.168.19.31:8081/repository/imnull-releases/"
+        },
+        "credentials": {
+          "reader": {
+            "username": "puyu-reader",
+            "password_configured": true
+          },
+          "publisher": {
+            "username": "puyu-publisher",
+            "password_configured": true
+          }
+        }
+      },
+      "check": {
+        "status": "configuration-ready",
+        "configured": true,
+        "network_checked": false,
+        "base_url": "http://192.168.19.31:8081",
+        "read_url": "http://192.168.19.31:8081/repository/maven-public/",
+        "publish_urls": {
+          "dev": "http://192.168.19.31:8081/repository/imnull-snapshots/",
+          "prod": "http://192.168.19.31:8081/repository/imnull-releases/"
+        },
+        "credentials": {
+          "reader": {
+            "username": "puyu-reader",
+            "password_configured": true
+          },
+          "publisher": {
+            "username": "puyu-publisher",
+            "password_configured": true
+          }
+        }
+      }
+    },
+    "fixed_build_script_ls_only_passed": true,
+    "Gradle_or_Java_Go_build_or_publish_executed": false,
+    "credential_values_output": false
+  },
+  "MCP_active_loopback_only": true,
+  "MCP_only_dev_and_business_deploy_disabled": true,
+  "Nexus_and_navigation_service_PIDs_preserved": true,
+  "repository_or_artifact_delete_performed": false,
+  "historical_data_imported": false
+}

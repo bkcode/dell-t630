@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-11T10:27:13.801350+08:00",
+  "repository": "bkcode/deploy-public",
+  "branch": "main",
+  "HEAD": "bba3542d5f28adc0377a6ef8745bf9aa17423544",
+  "main_pushed": true,
+  "server_same_HEAD": true,
+  "Mac_unit_tests": 75,
+  "Mac_seconds": 12.566,
+  "Linux_unit_tests": 75,
+  "Linux_seconds": 37.158,
+  "loader_adapter_build_common_and_MCP_implementation_changed": false,
+  "business_source_changed_or_built": false,
+  "private_configuration_or_credentials_committed": false
+}

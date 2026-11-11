@@ -33,3 +33,6 @@ DIMM_B1/UEFI0058为保留历史，用户报告已重插/更换并诊断通过。
 
 
 最新Puyu配置阶段见[交付与限制](completion/20261111-puyu-nexus/README.md)：新仓库清理测试后0组件/0资产、两专属身份与实际YAML认证通过；MCP仅dev/真实deploy关，无实际Gradle构建。私有插件/公共库、SNAPSHOT版本及业务分支准备仍是后续前置，不能按配置ready直接开启发布。
+
+
+2026-11-11最新[Nexus本机配置对齐](completion/20261111-nexus-local-parity/README.md)已按用户安全选择完成：共有9库定义对齐，额外7保留，服务器16库；发布机mainbba3542/Linux75通过，读取maven-public、dev/prod发布imnull-*，原密码/MCPkey保持。原50组件/1347资产保留、DELETE0、不迁数据不启业务，代理cache miss未签验。先前独立Puyu映射仅旧阶段，不覆盖本次实际映射。
