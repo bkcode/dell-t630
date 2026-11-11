@@ -1,0 +1,8 @@
+{
+  "status": "optional-Init-template-native-compatibility-fixed-start-requested",
+  "native_safe_index_missing_and_true_proved": true,
+  "full_native_scan_eleven_succeeded": true,
+  "only_scan_template_and_its_lock_hash_changed": true,
+  "new_supervisor_public_SHA256": "5100430505f0447b6b2dfbaf50dfa6ef172793b657e4b387026a51129894fc3a",
+  "reset_failure_state_only_for_this_unit_logs_retained": true
+}

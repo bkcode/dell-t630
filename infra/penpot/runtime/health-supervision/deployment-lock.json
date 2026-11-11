@@ -5,7 +5,7 @@
   "guest": {
     "vmid": 250,
     "hostname": "penpot-service",
-    "ip": "10.63.30.30",
+    "ip": "192.168.19.50",
     "arch": "amd64"
   },
   "storage": {
@@ -15,18 +15,19 @@
   },
   "Git": {
     "path": "/opt/dell/penpot/source",
-    "HEAD": "ff1783e7865af7aae571c985f03e057631b7af63",
+    "HEAD": "8a9b96154d9dd81dcc373155ae30dba094127cc8",
     "dirty_required": false,
     "no_update_or_source_mutation": true
   },
   "package_file_sha256": {
     "application/fresh-target.py": "2f7233d2af2eb25022da8d7195bf6822bfec1f8ef25f997cd5bc511eaa3cb59b",
     "target_guard.py": "5d138cde0f0457ed0691d8fdcf0bbdea9495fc0c9af05d317d92953da07894cb",
-    "compose.fresh.yaml": "9aca0e47e83508c517e1299f33afcfb435da70ab4c1a45ed8fbe8deb96d28db9",
+    "compose.fresh.yaml": "ad6274652a3cc7269baec2d113bbf2663cf0663dbe74480db9dcf0756c3d4c0a",
     "compose.fresh.core.yaml": "6aa80e84dcb3f6317d06eceef781023b4ad6d24a551ed1dc5f1ce20148ce2f02",
     "runtime_logging.py": "ca755afec7fe8c2ede626b529952b5ef7a4876f8e96985600fb284e53eff826a",
     "runtime/logging/templates/nginx.conf.template": "ac2d6f88f2e246cf9bfc7a61c13393d1587777ad1fc3e8043f9ff98af095ae25",
-    "runtime/logging/templates/nginx-mcp-locations.conf.template": "8066954ca94052183584405a4b5a27ac6302ee327e29702cfab099995162ed82"
+    "runtime/logging/templates/nginx-mcp-locations.conf.template": "8066954ca94052183584405a4b5a27ac6302ee327e29702cfab099995162ed82",
+    "runtime/login-prefill-approved/selfhost-login.conf": "d88c86636b95a875cee5fd1f5f65df77de4f67be61b94effcdd04dea69510aef"
   },
   "services": {
     "penpot-import": {
@@ -70,8 +71,8 @@
     },
     "penpot-frontend": {
       "container_name": "penpot-penpot-frontend-1",
-      "image_reference_before": "dell-penpot-frontend:2.18.5-ff1783e-amd64",
-      "image_id": "sha256:bd020fb6bddfd77449c26f76ee04ca7b2b50a0ffe8562ebc7b9e294bfcd38b89",
+      "image_reference_before": "dell-penpot-frontend:2.18.5-8a9b96154d9d-amd64",
+      "image_id": "sha256:6cbd1f7f3b90b77b3dcd4f6a65fa9c117861d2de0781df22bd8bad40f19c61bc",
       "architecture": "amd64",
       "pids_observed_max": 8,
       "pids_limit_proposed": 128,
@@ -94,13 +95,18 @@
           "rw": true
         },
         {
-          "source": "/opt/dell/penpot/source/frontend/selfhost/login-defaults.example.json",
+          "source": "/etc/penpot/browser-login-defaults.json",
           "destination": "/run/secrets/login-defaults",
           "rw": false
         },
         {
           "source": "/opt/dell/penpot/runtime/health-supervision/frontend-health.sh",
           "destination": "/opt/dell-health/frontend-health.sh",
+          "rw": false
+        },
+        {
+          "source": "/opt/dell/penpot/runtime/login-prefill-approved/selfhost-login.conf",
+          "destination": "/etc/nginx/overrides/server.d/selfhost-login.conf",
           "rw": false
         }
       ]
@@ -181,7 +187,8 @@
           "destination": "/opt/dell-health/dns-health.sh",
           "rw": false
         }
-      ]
+      ],
+      "require_init": true
     },
     "penpot-valkey": {
       "container_name": "penpot-penpot-valkey-1",
@@ -242,13 +249,13 @@
   },
   "PID_sampling_limitation": "six short read-only samples; observed current maximum, not production peak or capacity guarantee",
   "supervision_file_sha256": {
-    "supervisor.py": "d9152f24693ffb7352abd887e61475f60b0d8c4921ee93787c956278a703a289",
+    "supervisor.py": "5100430505f0447b6b2dfbaf50dfa6ef172793b657e4b387026a51129894fc3a",
     "frontend-health.sh": "ceeb1b591193a3b051cb59187456f2713181ee8b1b5cf1ca232893f89541233c",
     "ready-health.sh": "38ec8030909cae73c5d55382860a5a442996c20af75f475154d7925c0528ca31",
-    "node-health.mjs": "ae4a6a9784dc5bd70da893a0cb39c86cbd5981b869f5755573beaf32fa590114",
+    "node-health.mjs": "dfe79a0724058d77fadb2eb4778ef056d597a41fd396012d2b5ecc582cb64d79",
     "dns-health.sh": "adf4f98c4f8a51045e45a65a1fe8a7e938c1dead8fd025ae865aee7db6433b83",
     "dns-health.hosts": "62cbbe447e6d52e9b4fe5d075e4ce2e63a9ada31edbed6092d0e723aebce203a",
-    "compose.health-supervision.yaml": "806177bae84d81af31fc42e9f6e4cb06b331e01640e78e975c8d00d9cd90dc18",
+    "compose.health-supervision.yaml": "829cc14309edaa5fadeecf882b4199e9cd032bcfc6395a66b8245d3df6676f73",
     "20-health-supervision.conf": "370bdfa9e057c72c08569c8794979a4debbbb3155ee52b8d98d4dbe13da5400d"
   },
   "dns_health": {

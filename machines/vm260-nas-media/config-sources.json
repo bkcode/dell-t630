@@ -6,25 +6,25 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "2f31eec2bb562ec5968f87a7138d17163f59c78dbb34dbc4e4d1519491d4cc15"
+      "sha256": "c8eda16d3a1116740ee0bcf8ae292d52632f75926c3f97b4a2d03cc8ccb5d831"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
       "purpose": "当前基础搭建与历史故障交接；本轮不迁移，旧证据按时点解释。",
-      "sha256": "86ba18810e7cfc6ca732392a0be652d6cd40e6e63a169bad9ff9d4cea848e7fb"
+      "sha256": "2ac6d3757f3bb9cbdb0824a304f1daf6b0568bb486ab19fd24c7671c2d03db51"
     },
     {
       "path": "12-service-access-and-operations.md",
       "type": "current-contract",
       "purpose": "当前19网入口及凭据保管规则。",
-      "sha256": "39ec210b1ecd2edd9c216964b2d5079a23d895cc05393c3bdf338855a2679cbf"
+      "sha256": "7a218b5dd55edf2ce9a366268d54731cd66a09ac355ca2180e2dccbfad619402"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
-      "sha256": "712f4396eb343813813b0f37502941e506c11da6ffbbc6b2acc72bd32b01bad9"
+      "sha256": "149c9b6d3242aa252f7532cef064a6ab0d4c08bdebe001a86dd218c6cb264066"
     },
     {
       "path": "cleanup/final-live-check.json",

@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-11T15:39:19.149539+08:00",
+  "status": "idle-guards-and-server-local-protection-snapshot-passed",
+  "worker_active_tasks": 0,
+  "import_job_status_counts": {
+    "completed": 1
+  },
+  "running_healthy_containers": 11,
+  "design_table_row_counts": {
+    "file": 8,
+    "file_data_fragment": 0
+  },
+  "media_files": 1661,
+  "Git_HEAD": "8a9b96154d9dd81dcc373155ae30dba094127cc8",
+  "Git_clean": true,
+  "NRestarts_before": "20",
+  "private_data_hashes_config_and_credentials_retained_only_on_VM250": true,
+  "planned_change": "DNS Init true plus strict runtime guard and bounded secret-free failure ledger",
+  "images_designs_credentials_and_other_resources_to_change": false
+}

@@ -7,10 +7,10 @@ export function validAdminRedirect(status, raw) {
         const position = fragment.indexOf('?');
         const route = position < 0 ? fragment : fragment.slice(0, position);
         const parameters = new URLSearchParams(position < 0 ? '' : fragment.slice(position + 1));
-        return status === 307 && location.origin === 'http://192.168.21.22:9001' &&
+        return status === 307 && location.origin === 'http://192.168.19.50:9001' &&
             location.pathname === '/' && location.search === '' && route === '/auth/login' &&
             [...parameters.keys()].length === 1 && parameters.get('callback-url') ===
-            'http://192.168.21.22:9001/admin-console/';
+            'http://192.168.19.50:9001/admin-console/';
     } catch { return false; }
 }
 export function validMcpResult(status, data) {

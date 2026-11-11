@@ -8,6 +8,7 @@ def fixture():
  for name in s.EXPECTED:
   lock['services'][name]={'image_id':'sha256:expected','pids_limit_proposed':128,'memory_bytes':256*1024**2,'nano_cpus':10**9,'expected_mounts':[],'container_name':'penpot-'+name+'-1'}
   frame[name]={'image':'sha256:expected','pids':128,'memory':256*1024**2,'nano_cpus':10**9,'restart':'no','mounts':[],'running':True,'status':'running','oom':False,'health':'healthy'}
+ lock['services']['penpot-dns']['require_init']=True;frame['penpot-dns']['init']=True
  return lock,frame
 class ContractTests(unittest.TestCase):
  def test_full_eleven_healthy(self):
@@ -73,7 +74,7 @@ class LifecycleTests(unittest.TestCase):
    nonlocal ticks
    ticks+=1
    if scenario=='stop-during-start' or (scenario=='wait-until-full' and ticks==2):s.SHUTDOWN=True
-  with patch.dict(os.environ,{'INVOCATION_ID':'unit-test','DELL_MOUNT_GATED':'1','NOTIFY_SOCKET':'synthetic-only'}),patch.object(s,'SHUTDOWN',False),patch.object(s,'guest_guard'),patch.object(s,'storage_guard'),patch.object(s,'verify_files_and_images'),patch.object(s,'check_config'),patch.object(s,'state'),patch.object(s,'run'),patch.object(s,'scan',side_effect=scan),patch.object(s,'wait_tick',side_effect=wait),patch.object(s,'notify',side_effect=lambda _:events.append('READY')),patch.object(s,'stop_group',return_value=True) as stop:
+  with patch.dict(os.environ,{'INVOCATION_ID':'unit-test','DELL_MOUNT_GATED':'1','NOTIFY_SOCKET':'synthetic-only'}),patch.object(s,'SHUTDOWN',False),patch.object(s,'guest_guard'),patch.object(s,'storage_guard'),patch.object(s,'verify_files_and_images'),patch.object(s,'check_config'),patch.object(s,'state'),patch.object(s,'record_failure'),patch.object(s,'run'),patch.object(s,'scan',side_effect=scan),patch.object(s,'wait_tick',side_effect=wait),patch.object(s,'notify',side_effect=lambda _:events.append('READY')),patch.object(s,'stop_group',return_value=True) as stop:
    code=s.supervise(lock);self.assertEqual(stop.call_count,1)
   return code,events
  def test_READY_only_after_full_set_and_clean_shutdown(self):

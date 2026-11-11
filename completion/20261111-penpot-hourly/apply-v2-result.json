@@ -1,0 +1,16 @@
+{
+  "status": "DNS-init-and-strict-supervision-failure-evidence-applied",
+  "DNS_only_container_recreated": true,
+  "other_ten_container_IDs_preserved": true,
+  "all_eleven_running_healthy": true,
+  "DNS_Init": true,
+  "DNS_PID_limit": 128,
+  "images_users_commands_mounts_networks_caps_readonly_resources_restart_policies_preserved": true,
+  "Git_HEAD": "8a9b96154d9dd81dcc373155ae30dba094127cc8",
+  "Git_clean": true,
+  "identity_credentials_and_base_systemd_unit_preserved": true,
+  "supervisor_public_SHA256": "5100430505f0447b6b2dfbaf50dfa6ef172793b657e4b387026a51129894fc3a",
+  "new_NRestarts_baseline": "0",
+  "no_pulls_builds_design_writes_volume_deletes_or_data_migration": true,
+  "private_snapshot_retained_VM250_only": true
+}

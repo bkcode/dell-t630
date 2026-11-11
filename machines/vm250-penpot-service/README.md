@@ -1,3 +1,5 @@
+> 最新更新：2026-11-11（Asia/Shanghai）。DNS原Init=false使BusyBox健康探针孤儿成为僵尸，14:31首先DNS unhealthy后原3bad策略停全11。现仅DNS加init:true与严格lock/runtime门禁，最终supervisor51004305已部署，只recreateDNS/其它10ID保持；38离线测试、原生amd64原探针140次0→0僵尸、PID端点8/128/max0与原8file/1661media保护后检均通过。第一次optionalInit点模板native失败被guard阻断，已回退恢复11healthy，补safeindex后成功；不是误报。70分钟只读观察已通过4200秒/119采样，全11healthy/0僵尸/NRestarts0保持，PID范围8–14/128，首尾8；有限窗口不签长期SLO。[修复记录](../../completion/20261111-penpot-hourly/README.md)、[操作说明](../../completion/20261111-penpot-hourly/usage-manual.md)。
+
 > 更新：2026-11-10（Asia/Shanghai）。VM250已部署bkcode/penpot main/8a9b9615并关闭首次引导；17:41应用、17:44浏览器与17:46最终后检通过，11healthy。原UI默认填入与Puyu8文件保持，首轮失败/恢复历史保留；不合并Nexus、不启动Java、无Mac外部探针。
 
 # VM250 · penpot-service

@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-11T17:32:09.006285+08:00",
+  "status": "Penpot-hourly-warning-root-cause-fixed-and-full-phase-verified",
+  "root_cause": "completion/20261111-penpot-hourly/root-cause.json",
+  "runtime_protection": "completion/20261111-penpot-hourly/postcheck-result.json",
+  "actual_native_probe_stress": "completion/20261111-penpot-hourly/native-burst.json",
+  "natural_stability": "completion/20261111-penpot-hourly/stability-result.json",
+  "final_monitoring": "completion/20261111-penpot-hourly/final-monitoring.json",
+  "LAN": "completion/20261111-penpot-hourly/final-LAN.json",
+  "running_healthy_services": 11,
+  "original_design_files_preserved": 8,
+  "media_files_preserved": 1661,
+  "source_Git_HEAD": "8a9b96154d9dd81dcc373155ae30dba094127cc8",
+  "source_Git_clean": true,
+  "design_or_credential_or_other_application_changes": false,
+  "PID_limit": 128,
+  "PID_range_under_native_stability": [
+    8,
+    14
+  ],
+  "no_zombie_growth_or_new_automatic_restart": true,
+  "offline_test_evidence": "completion/20261111-penpot-hourly/offline-checks.json",
+  "original_failure_and_first_candidate_rollback_records_retained": true,
+  "private_data_identity_hashes_or_rendered_secret_configs_exported": false
+}

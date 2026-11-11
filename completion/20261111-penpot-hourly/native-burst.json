@@ -1,0 +1,85 @@
+{
+  "at": "2026-11-11T16:16:16.606677+08:00",
+  "status": "native-original-DNS-health-140-runs-zero-zombie-growth",
+  "original_health_runs_passed": 140,
+  "elapsed_seconds": 188.35,
+  "before": {
+    "zombie_children": 0,
+    "PID_count": 8,
+    "PID_max": 128,
+    "PID_events": "max 0",
+    "health": "healthy"
+  },
+  "after": {
+    "zombie_children": 0,
+    "PID_count": 8,
+    "PID_max": 128,
+    "PID_events": "max 0",
+    "health": "healthy"
+  },
+  "checkpoints": [
+    {
+      "probe_runs": 20,
+      "zombie_children": 0,
+      "PID_count": 8,
+      "PID_max": 128,
+      "PID_events": "max 0",
+      "health": "healthy"
+    },
+    {
+      "probe_runs": 40,
+      "zombie_children": 0,
+      "PID_count": 8,
+      "PID_max": 128,
+      "PID_events": "max 0",
+      "health": "healthy"
+    },
+    {
+      "probe_runs": 60,
+      "zombie_children": 0,
+      "PID_count": 8,
+      "PID_max": 128,
+      "PID_events": "max 0",
+      "health": "healthy"
+    },
+    {
+      "probe_runs": 80,
+      "zombie_children": 0,
+      "PID_count": 8,
+      "PID_max": 128,
+      "PID_events": "max 0",
+      "health": "healthy"
+    },
+    {
+      "probe_runs": 100,
+      "zombie_children": 0,
+      "PID_count": 9,
+      "PID_max": 128,
+      "PID_events": "max 0",
+      "health": "healthy"
+    },
+    {
+      "probe_runs": 120,
+      "zombie_children": 0,
+      "PID_count": 8,
+      "PID_max": 128,
+      "PID_events": "max 0",
+      "health": "healthy"
+    },
+    {
+      "probe_runs": 140,
+      "zombie_children": 0,
+      "PID_count": 8,
+      "PID_max": 128,
+      "PID_events": "max 0",
+      "health": "healthy"
+    }
+  ],
+  "NRestarts_unchanged": true,
+  "NRestarts_baseline": "0",
+  "health_interval_or_threshold_or_PIDlimit_changed": false,
+  "DNS_image_ID": "sha256:7ed84fca86579b7bee90ec5c9750457cd9450729d2dd01fb2070f00f6cd7fb14",
+  "architecture": "amd64",
+  "public_upstream_or_design_data_requested": false,
+  "full_seventy_minute_observation_claimed": false
+}

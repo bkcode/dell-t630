@@ -1,0 +1,6 @@
+{
+  "status": "bounded-seventy-minute-readonly-observation-started",
+  "unit": "dell-penpot-postfix-observe-20261111",
+  "required_seconds": 4200,
+  "Penpot_or_data_mutations": false
+}

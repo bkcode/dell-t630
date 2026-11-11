@@ -1,0 +1,7 @@
+{
+  "status": "metadata-only-observer-started",
+  "unit": "dell-penpot-hourly-observe-20261111",
+  "lifetime_seconds": 4500,
+  "Penpot_restarted_or_configuration_changed": false,
+  "diagnostic_directory_root700": true
+}

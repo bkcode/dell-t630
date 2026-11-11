@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-11T17:30:25.422200+08:00",
+  "status": "matching-offline-regressions-passed",
+  "candidate_guard_lifecycle_DNS_init_and_failure_ledger_tests": 38,
+  "canonical_original_guard_assertions_with_new_DNS_fixture": 14,
+  "node_protocol_and_redirect_tests": 8,
+  "historical_network_patch_tests_with_frozen_original_fixture": 18,
+  "commands": [
+    "python3 -m unittest discover -s completion/20261111-penpot-hourly/tests -v",
+    "python3 -m unittest discover -s infra/penpot/runtime/health-supervision -p test_supervisor.py -v",
+    "node --test infra/penpot/runtime/health-supervision/node-health.test.mjs",
+    "python3 -m unittest network19.services-media.test_media"
+  ],
+  "actual_server_or_Go_Java_builds_executed_by_these_offline_tests": false,
+  "historical_fixture_bytes_equal_original_saved_snapshot": 4
+}

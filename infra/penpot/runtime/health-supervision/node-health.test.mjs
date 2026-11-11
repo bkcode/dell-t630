@@ -1,14 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { validAdminRedirect, validMcpResult, probe } from './node-health.mjs';
-const good = 'http://192.168.21.22:9001/#/auth/login?callback-url=http%3A%2F%2F192.168.21.22%3A9001%2Fadmin-console%2F';
+const good = 'http://192.168.19.50:9001/#/auth/login?callback-url=http%3A%2F%2F192.168.19.50%3A9001%2Fadmin-console%2F';
 const result = { jsonrpc: '2.0', id: 'dell-health-readonly', result: {
     protocolVersion: '2024-11-05', serverInfo: { name: 'fixture-server', version: 'fixture-only' },
 } };
 test('exact observed admin redirect accepted', () => assert.equal(validAdminRedirect(307, good), true));
 test('404 and arbitrary redirects rejected', () => {
     assert.equal(validAdminRedirect(404, good), false);
-    assert.equal(validAdminRedirect(307, good.replace('192.168.21.22:9001', 'evil.invalid')), false);
+    assert.equal(validAdminRedirect(307, good.replace('192.168.19.50:9001', 'evil.invalid')), false);
     assert.equal(validAdminRedirect(307, '/login'), false);
 });
 test('wrong callback, extra query, duplicate callback rejected', () => {

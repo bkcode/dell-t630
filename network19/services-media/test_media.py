@@ -15,11 +15,16 @@ ROOT=HERE.parents[1]
 
 def pen_fixture():
  base='/opt/dell/penpot/';src=ROOT/'infra/penpot';here=base+'runtime/health-supervision/'
- lock=json.loads((src/'runtime/health-supervision/deployment-lock.json').read_text())
+ historical=HERE/'fixtures/penpot-pre-network'
+ # Frozen migration input from before the network19 patch.  These public files
+ # are test fixtures only and must never be replayed onto the current server.
+ lock=json.loads((historical/'deployment-lock.json').read_text())
  paths={base+'assignment.json',base+'compose.fresh.yaml',base+'application/target-api.py',here+'supervisor.py',here+'node-health.mjs'}
  for group,prefix in [('package_file_sha256',base),('supervision_file_sha256',here)]:
   paths|={prefix+x for x in lock[group]}
  files={x:(src/x.removeprefix(base)).read_bytes() for x in paths}
+ for name in ('supervisor.py','node-health.mjs','compose.health-supervision.yaml'):
+  files[here+name]=(historical/name).read_bytes()
  # Synthetic consistent lock exercises transformations; not a claim about guest state.
  for group,prefix in [('package_file_sha256',base),('supervision_file_sha256',here)]:
   for rel in lock[group]:lock[group][rel]=p.sha(files[prefix+rel])

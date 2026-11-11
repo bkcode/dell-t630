@@ -637,7 +637,7 @@
     "evidence": "evidence/implementation/raid-recovered.json",
     "historical_fault": "slot32:3 access failure; root cause unresolved, monitor"
   },
-  "updated_at": "2026-11-11T10:21:28.882997+08:00",
+  "updated_at": "2026-11-11T17:30:27.616693+08:00",
   "docker_runtime_profile": {
     "driver": "classic-overlay2",
     "reason": "Verified compatibility with source single-platform offline archives; preserves config IDs",
@@ -685,7 +685,7 @@
     "resource_role_evidence": "completion/20261109-resources/Lark-role-installed.json",
     "resource_monitoring_postcheck": "completion/20261110-filebrowser/final-postcheck.json"
   },
-  "delivery_scope_manifest": "completion/20261111-nexus-local-parity/acceptance.json",
+  "delivery_scope_manifest": "completion/20261111-penpot-hourly/acceptance.json",
   "expected_role_count": 12,
   "network19_migration_manifest": "network19/migration-plan.json",
   "acceptance_templates": [
@@ -1973,5 +1973,114 @@
     "private_configuration_previous_values_preserved": true,
     "acceptance": "completion/20261111-nexus-local-parity/acceptance.json",
     "latest_evidence": "completion/20261111-nexus-local-parity/connected-postcheck.json"
+  },
+  "penpot_dns_reaping_fix20261111": {
+    "status": "deployed-native140-and-seventy-minute-stability-verified-root-cause-closed",
+    "vmid": 250,
+    "observed_failure_chain": "DNS first unhealthy at14:31 then existing three-consecutive-bad policy stopped all eleven",
+    "root_cause": "BusyBox timeout watchdog orphans adopted by dnsproxyPID1 without init reaping accumulate as zombies toward pids.max128",
+    "observed_zombie_children": 84,
+    "original_dnsproxy_threads": 7,
+    "DNS_Init_required": true,
+    "DNS_PID_limit": 128,
+    "health_interval_threshold_timeout_or_resources_relaxed": false,
+    "supervisor_public_SHA256": "5100430505f0447b6b2dfbaf50dfa6ef172793b657e4b387026a51129894fc3a",
+    "optional_Init_scan": "safe index lookup; missing/null rejected for DNS policy, scan itself must not fail on omitted key",
+    "first_candidate_native_scan_failure": {
+      "reason": "optional Init dot lookup missing-field native template incompatibility",
+      "guard_rejected_as_designed": true,
+      "baseline_fdd_restored_and_eleven_healthy": true,
+      "logs_retained": true,
+      "not_a_false_alarm": true
+    },
+    "only_DNS_recreated": true,
+    "other_ten_container_IDs_preserved": true,
+    "all_eleven_healthy": true,
+    "Git_HEAD": "8a9b96154d9dd81dcc373155ae30dba094127cc8",
+    "Git_clean": true,
+    "design_file_rows_preserved": 8,
+    "media_paths_and_full_hashes_preserved": 1661,
+    "all_identity_credentials_env_and_base_unit_bytes_preserved": true,
+    "offline_tests_passed": 38,
+    "original_assertion_methods_unchanged": 14,
+    "new_diagnostic_AST_DNS_tests": 24,
+    "native_amd64_original_probe_runs": 140,
+    "native_burst_elapsed_seconds": 188.35,
+    "native_zombies_before_after": [
+      0,
+      0
+    ],
+    "native_endpoint_PID_count": 8,
+    "native_PID_max": 128,
+    "native_max_events": 0,
+    "NRestarts_baseline": 0,
+    "NRestarts_unchanged_in_native_burst": true,
+    "monitoring_targets_UP": 15,
+    "Penpot_role_active_alerts": 0,
+    "own_maintenance_silence_ended": true,
+    "other_rules_receivers_silences_unchanged": true,
+    "test_notifications_sent": false,
+    "failure_ledger": {
+      "directory": "/var/lib/dell-penpot-supervision",
+      "owner_UID": 0,
+      "directory_mode": "0700",
+      "file_mode": "0600",
+      "files": 3,
+      "bytes_per_file": 65536,
+      "bytes_per_record": 8192,
+      "extra_Docker_scan_on_failure": false,
+      "frame_scope": "last normally observed frame with UTC observation time; may be older than failure"
+    },
+    "seventy_minute_stability": {
+      "status": "passed",
+      "required_seconds": 4200,
+      "elapsed_seconds": 4200,
+      "samples": 119,
+      "all_eleven_healthy": true,
+      "all_DNS_zombies_zero": true,
+      "PID_min": 8,
+      "PID_max_observed": 14,
+      "configured_PID_limit": 128,
+      "PID_first_last": [
+        8,
+        8
+      ],
+      "NRestarts_baseline": 0,
+      "NRestarts_unchanged": true,
+      "failures": null,
+      "observer_mutations": false,
+      "monitor_unit_active_after_completion": false,
+      "evidence": "completion/20261111-penpot-hourly/stability-result.json"
+    },
+    "design_writes_data_migration_credential_changes": false,
+    "automatic_backup_expanded": false,
+    "evidence": [
+      "completion/20261111-penpot-hourly/preflight.json",
+      "completion/20261111-penpot-hourly/dns-reaping-ab.json",
+      "completion/20261111-penpot-hourly/candidate/offline-verification.json",
+      "completion/20261111-penpot-hourly/template-compatibility-fix.json",
+      "completion/20261111-penpot-hourly/apply-v2-result.json",
+      "completion/20261111-penpot-hourly/postcheck-result.json",
+      "completion/20261111-penpot-hourly/native-burst.json",
+      "completion/20261111-penpot-hourly/monitoring-restored.json",
+      "completion/20261111-penpot-hourly/stability-result.json",
+      "completion/20261111-penpot-hourly/final-monitoring.json",
+      "completion/20261111-penpot-hourly/final-LAN.json",
+      "completion/20261111-penpot-hourly/offline-checks.json"
+    ],
+    "usage_manual": "completion/20261111-penpot-hourly/usage-manual.md",
+    "updated_at": "2026-11-11T17:30:27.616693+08:00",
+    "final_LAN_HTTP": 200,
+    "final_monitoring_targets_UP": 15,
+    "final_Penpot_alerts": 0,
+    "final_offline_regressions": {
+      "candidate_tests": 38,
+      "original_guard_assertions": 14,
+      "node_protocol_redirect_tests": 8,
+      "historical_network_patch_tests": 18,
+      "historical_fixtures_byte_preserved": 4,
+      "evidence": "completion/20261111-penpot-hourly/offline-checks.json",
+      "original14_not_counted_as_new_tests": true
+    }
   }
 }

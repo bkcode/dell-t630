@@ -1,0 +1,36 @@
+{
+  "verified_at": "2026-11-11T15:27:37.052437+08:00",
+  "status": "offline-candidate-with-DNS-init-policy-tests-passed-not-installed",
+  "baseline_SHA256": "fdd384bf5470890eb1802cc2eacb49bcc0c0d96013cfe57b257c5021af3b0448",
+  "candidate_SHA256": "4aeadb7af39ef450ee5cdc940a9d9d2fce1a8be1a2c7b753d46bedca72cdced6",
+  "tests_passed": 37,
+  "original_assertion_methods_unchanged": 14,
+  "original_fixture_adaptation": "DNS init true and require_init true only",
+  "new_diagnostic_AST_and_DNS_tests": 23,
+  "new_fixed_deployment_policy": {
+    "service": "penpot-dns",
+    "lock_require_init": true,
+    "runtime_init_exact_true": true,
+    "failure_code": "DNS-init-reaper-required",
+    "other_services_new_init_constraint": false
+  },
+  "production_sink": {
+    "directory": "/var/lib/dell-penpot-supervision",
+    "UID": 0,
+    "directory_mode": "0700",
+    "file_mode": "0600",
+    "file_count_limit": 3,
+    "bytes_per_file_limit": 65536,
+    "record_bytes_limit": 8192
+  },
+  "existing_health_thresholds_timeouts_PIDlimits_restart_and_stop_unchanged": true,
+  "no_additional_Docker_scan_in_failure_path": true,
+  "load_lock_and_validate_frame_AST_equal_after_removing_only_two_exact_DNS_ifs": true,
+  "remaining_guard_monitor_stop_main_AST_unchanged": true,
+  "server_Git_credentials_design_or_canonical_code_writes": false,
+  "limitations": [
+    "Requires parent compose DNS init:true and lock marker in the approved maintenance workflow; candidate not installed",
+    "Diagnostic frame is the last normally observed frame with UTC capture time",
+    "Only temporary-directory fixtures; no actual Docker or systemd test by this agent"
+  ]
+}

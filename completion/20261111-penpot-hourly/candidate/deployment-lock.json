@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "prepared_at": "2026-11-06T04:55:25.078338+00:00",
+  "status": "prepared-not-installed",
+  "guest": {
+    "vmid": 250,
+    "hostname": "penpot-service",
+    "ip": "192.168.19.50",
+    "arch": "amd64"
+  },
+  "storage": {
+    "mountpoint": "/srv/penpot",
+    "filesystem_uuid": "ccccda03-bffd-4054-afd3-e0e22f0c607e",
+    "docker_root_dir": "/srv/penpot/docker"
+  },
+  "Git": {
+    "path": "/opt/dell/penpot/source",
+    "HEAD": "8a9b96154d9dd81dcc373155ae30dba094127cc8",
+    "dirty_required": false,
+    "no_update_or_source_mutation": true
+  },
+  "package_file_sha256": {
+    "application/fresh-target.py": "2f7233d2af2eb25022da8d7195bf6822bfec1f8ef25f997cd5bc511eaa3cb59b",
+    "target_guard.py": "5d138cde0f0457ed0691d8fdcf0bbdea9495fc0c9af05d317d92953da07894cb",
+    "compose.fresh.yaml": "ad6274652a3cc7269baec2d113bbf2663cf0663dbe74480db9dcf0756c3d4c0a",
+    "compose.fresh.core.yaml": "6aa80e84dcb3f6317d06eceef781023b4ad6d24a551ed1dc5f1ce20148ce2f02",
+    "runtime_logging.py": "ca755afec7fe8c2ede626b529952b5ef7a4876f8e96985600fb284e53eff826a",
+    "runtime/logging/templates/nginx.conf.template": "ac2d6f88f2e246cf9bfc7a61c13393d1587777ad1fc3e8043f9ff98af095ae25",
+    "runtime/logging/templates/nginx-mcp-locations.conf.template": "8066954ca94052183584405a4b5a27ac6302ee327e29702cfab099995162ed82",
+    "runtime/login-prefill-approved/selfhost-login.conf": "d88c86636b95a875cee5fd1f5f65df77de4f67be61b94effcdd04dea69510aef"
+  },
+  "services": {
+    "penpot-import": {
+      "container_name": "penpot-penpot-import-1",
+      "image_reference_before": "dell-penpot-import:2.18.5-amd64",
+      "image_id": "sha256:d4414e3f2e41ac4f5eb4b2c146c05cbc9f9754b179d6b63efa3af95c005b1261",
+      "architecture": "amd64",
+      "pids_observed_max": 18,
+      "pids_limit_proposed": 512,
+      "memory_bytes": 1073741824,
+      "nano_cpus": 1000000000,
+      "expected_mounts": [
+        {
+          "source": "/srv/penpot/docker/volumes/penpot_penpot_import_jobs/_data",
+          "destination": "/data/jobs",
+          "rw": true
+        },
+        {
+          "source": "/etc/penpot/worker-credentials.uid1000.json",
+          "destination": "/run/secrets/worker-credentials",
+          "rw": false
+        }
+      ]
+    },
+    "penpot-worker": {
+      "container_name": "penpot-penpot-worker-1",
+      "image_reference_before": "dell-penpot-worker:2.18.5-amd64",
+      "image_id": "sha256:c0bead679c3fe7a4b80d2485f87bdce0e5a6acc26a9c2a001b0e4e3270dadee5",
+      "architecture": "amd64",
+      "pids_observed_max": 74,
+      "pids_limit_proposed": 1024,
+      "memory_bytes": 4294967296,
+      "nano_cpus": 2000000000,
+      "expected_mounts": [
+        {
+          "source": "/etc/penpot/worker-credentials.uid1001.json",
+          "destination": "/run/secrets/worker-credentials",
+          "rw": false
+        }
+      ]
+    },
+    "penpot-frontend": {
+      "container_name": "penpot-penpot-frontend-1",
+      "image_reference_before": "dell-penpot-frontend:2.18.5-8a9b96154d9d-amd64",
+      "image_id": "sha256:6cbd1f7f3b90b77b3dcd4f6a65fa9c117861d2de0781df22bd8bad40f19c61bc",
+      "architecture": "amd64",
+      "pids_observed_max": 8,
+      "pids_limit_proposed": 128,
+      "memory_bytes": 268435456,
+      "nano_cpus": 1000000000,
+      "expected_mounts": [
+        {
+          "source": "/opt/dell/penpot/runtime/logging/templates/nginx-mcp-locations.conf.template",
+          "destination": "/tmp/nginx-mcp-locations.conf.template",
+          "rw": false
+        },
+        {
+          "source": "/opt/dell/penpot/runtime/logging/templates/nginx.conf.template",
+          "destination": "/tmp/nginx.conf.template",
+          "rw": false
+        },
+        {
+          "source": "/srv/penpot/docker/volumes/penpot_penpot_assets/_data",
+          "destination": "/opt/data/assets",
+          "rw": true
+        },
+        {
+          "source": "/etc/penpot/browser-login-defaults.json",
+          "destination": "/run/secrets/login-defaults",
+          "rw": false
+        },
+        {
+          "source": "/opt/dell/penpot/runtime/health-supervision/frontend-health.sh",
+          "destination": "/opt/dell-health/frontend-health.sh",
+          "rw": false
+        },
+        {
+          "source": "/opt/dell/penpot/runtime/login-prefill-approved/selfhost-login.conf",
+          "destination": "/etc/nginx/overrides/server.d/selfhost-login.conf",
+          "rw": false
+        }
+      ]
+    },
+    "penpot-backend": {
+      "container_name": "penpot-penpot-backend-1",
+      "image_reference_before": "penpotapp/backend@sha256:3d3d1eeb5a488efd31ec22038374eb6b52dccc21532047c2e508a18193f3e71f",
+      "image_id": "sha256:c54c38204393018c4009b7161b9ee3a04ccc0daab657b820d5de86a0d3013630",
+      "architecture": "amd64",
+      "pids_observed_max": 51,
+      "pids_limit_proposed": 512,
+      "memory_bytes": 3221225472,
+      "nano_cpus": 2000000000,
+      "expected_mounts": [
+        {
+          "source": "/srv/penpot/docker/volumes/penpot_penpot_assets/_data",
+          "destination": "/opt/data/assets",
+          "rw": true
+        },
+        {
+          "source": "/opt/dell/penpot/runtime/health-supervision/ready-health.sh",
+          "destination": "/opt/dell-health/ready-health.sh",
+          "rw": false
+        }
+      ]
+    },
+    "penpot-admin-console": {
+      "container_name": "penpot-penpot-admin-console-1",
+      "image_reference_before": "penpotapp/admin-console@sha256:679bada92344ad5ebd1ee68b5067d63592383a050e3e5da63d106b259e1b0ac9",
+      "image_id": "sha256:29c13326e854fd63e18a7231cb1ca26d60f728692bd1207ded003b94aba79390",
+      "architecture": "amd64",
+      "pids_observed_max": 19,
+      "pids_limit_proposed": 256,
+      "memory_bytes": 536870912,
+      "nano_cpus": 1000000000,
+      "expected_mounts": [
+        {
+          "source": "/opt/dell/penpot/runtime/health-supervision/node-health.mjs",
+          "destination": "/opt/dell-health/node-health.mjs",
+          "rw": false
+        }
+      ]
+    },
+    "penpot-exporter": {
+      "container_name": "penpot-penpot-exporter-1",
+      "image_reference_before": "penpotapp/exporter@sha256:48b66f774d338f0ed25d58c6d42f9f107a99170f67bf75ce76361d3dc9e6e27b",
+      "image_id": "sha256:6173b08e25850cda792cd75261e741649c0febd48326e68e8711ba44b5c9af42",
+      "architecture": "amd64",
+      "pids_observed_max": 11,
+      "pids_limit_proposed": 256,
+      "memory_bytes": 1610612736,
+      "nano_cpus": 2000000000,
+      "expected_mounts": [
+        {
+          "source": "/opt/dell/penpot/runtime/health-supervision/ready-health.sh",
+          "destination": "/opt/dell-health/ready-health.sh",
+          "rw": false
+        }
+      ]
+    },
+    "penpot-dns": {
+      "container_name": "penpot-penpot-dns-1",
+      "image_reference_before": "adguard/dnsproxy@sha256:29a27f0a695fa0ae97c56e61343bb7fb820b555e7069b87562a0d5b6fabaea6f",
+      "image_id": "sha256:7ed84fca86579b7bee90ec5c9750457cd9450729d2dd01fb2070f00f6cd7fb14",
+      "architecture": "amd64",
+      "pids_observed_max": 7,
+      "pids_limit_proposed": 128,
+      "memory_bytes": 134217728,
+      "nano_cpus": 500000000,
+      "expected_mounts": [
+        {
+          "source": "/opt/dell/penpot/runtime/health-supervision/dns-health.hosts",
+          "destination": "/run/dell-health/hosts",
+          "rw": false
+        },
+        {
+          "source": "/opt/dell/penpot/runtime/health-supervision/dns-health.sh",
+          "destination": "/opt/dell-health/dns-health.sh",
+          "rw": false
+        }
+      ],
+      "require_init": true
+    },
+    "penpot-valkey": {
+      "container_name": "penpot-penpot-valkey-1",
+      "image_reference_before": "valkey/valkey@sha256:757b7e559b14512bcc252949b13b717385d9381ed42e6b325982d03f4a5c8e8e",
+      "image_id": "sha256:ca662989648f173e01fb1a1768e7d84ddcaf8b7de135070b59271b0918104eb3",
+      "architecture": "amd64",
+      "pids_observed_max": 13,
+      "pids_limit_proposed": 128,
+      "memory_bytes": 201326592,
+      "nano_cpus": 500000000,
+      "expected_mounts": []
+    },
+    "penpot-mcp": {
+      "container_name": "penpot-penpot-mcp-1",
+      "image_reference_before": "penpotapp/mcp@sha256:6b39db0ca73d0a50a8afa264676d8ab9f455e87d426cff276d31b2a84a0447c5",
+      "image_id": "sha256:e95070617f49eacc00f136061d9c6b4bad957319046e9e65e7cee14b9e77577c",
+      "architecture": "amd64",
+      "pids_observed_max": 12,
+      "pids_limit_proposed": 256,
+      "memory_bytes": 536870912,
+      "nano_cpus": 1000000000,
+      "expected_mounts": [
+        {
+          "source": "/opt/dell/penpot/runtime/health-supervision/node-health.mjs",
+          "destination": "/opt/dell-health/node-health.mjs",
+          "rw": false
+        }
+      ]
+    },
+    "penpot-postgres": {
+      "container_name": "penpot-penpot-postgres-1",
+      "image_reference_before": "postgres@sha256:7da5d534f1ffcdb2f69efa6e466a7a29ff89eefd611c7b50c4d69aa77fd4a822",
+      "image_id": "sha256:245fc027b7f3755bbd21b4375c2a0ebc7fa5d16c4573da497be9850a823973c8",
+      "architecture": "amd64",
+      "pids_observed_max": 66,
+      "pids_limit_proposed": 512,
+      "memory_bytes": 805306368,
+      "nano_cpus": 1000000000,
+      "expected_mounts": [
+        {
+          "source": "/srv/penpot/docker/volumes/penpot_penpot_postgres_v15/_data",
+          "destination": "/var/lib/postgresql/data",
+          "rw": true
+        }
+      ]
+    },
+    "penpot-mailpit": {
+      "container_name": "penpot-penpot-mailpit-1",
+      "image_reference_before": "axllent/mailpit@sha256:18156f9ee243aa339170ac33d09d6d5a80b10d9e06b265f90f223a777a8f4b73",
+      "image_id": "sha256:580a202b5088e9c651a8e8b4e461e3213fbd3a3aacaa3d2251892a546a734116",
+      "architecture": "amd64",
+      "pids_observed_max": 8,
+      "pids_limit_proposed": 128,
+      "memory_bytes": 134217728,
+      "nano_cpus": 500000000,
+      "expected_mounts": []
+    }
+  },
+  "PID_sampling_limitation": "six short read-only samples; observed current maximum, not production peak or capacity guarantee",
+  "supervision_file_sha256": {
+    "supervisor.py": "5100430505f0447b6b2dfbaf50dfa6ef172793b657e4b387026a51129894fc3a",
+    "frontend-health.sh": "ceeb1b591193a3b051cb59187456f2713181ee8b1b5cf1ca232893f89541233c",
+    "ready-health.sh": "38ec8030909cae73c5d55382860a5a442996c20af75f475154d7925c0528ca31",
+    "node-health.mjs": "dfe79a0724058d77fadb2eb4778ef056d597a41fd396012d2b5ecc582cb64d79",
+    "dns-health.sh": "adf4f98c4f8a51045e45a65a1fe8a7e938c1dead8fd025ae865aee7db6433b83",
+    "dns-health.hosts": "62cbbe447e6d52e9b4fe5d075e4ce2e63a9ada31edbed6092d0e723aebce203a",
+    "compose.health-supervision.yaml": "829cc14309edaa5fadeecf882b4199e9cd032bcfc6395a66b8245d3df6676f73",
+    "20-health-supervision.conf": "370bdfa9e057c72c08569c8794979a4debbbb3155ee52b8d98d4dbe13da5400d"
+  },
+  "dns_health": {
+    "mode": "local-static-record-only",
+    "record": "dell-penpot-health.invalid",
+    "expected_A": "192.0.2.53",
+    "public_upstream_resolution_is_not_a_restart_gate": true
+  }
+}

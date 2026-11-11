@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-11T17:28:01.816960+08:00",
+  "status": "seventy-minute-native-stability-passed",
+  "elapsed_seconds": 4200.0,
+  "required_seconds": 4200,
+  "sample_count": 119,
+  "all_samples_eleven_healthy": true,
+  "all_samples_DNS_zombies_zero": true,
+  "DNS_PID_min": 8,
+  "DNS_PID_max_observed": 14,
+  "DNS_configured_PID_limit": 128,
+  "NRestarts_baseline": "0",
+  "NRestarts_unchanged": true,
+  "first_sample": {
+    "at": "2026-11-11T16:16:56.429000+08:00",
+    "all_eleven_healthy": true,
+    "DNS_zombies": 0,
+    "DNS_pids": 8,
+    "NRestarts": "0"
+  },
+  "last_sample": {
+    "at": "2026-11-11T17:26:38.129080+08:00",
+    "all_eleven_healthy": true,
+    "DNS_zombies": 0,
+    "DNS_pids": 8,
+    "NRestarts": "0"
+  },
+  "failures": null,
+  "workload_data_credentials_or_alert_rules_mutated_by_observer": false,
+  "monitor_unit_active": false,
+  "private_design_or_identity_hashes_output": false
+}

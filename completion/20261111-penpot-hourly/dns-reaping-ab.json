@@ -1,0 +1,48 @@
+{
+  "at": "2026-11-11T15:32:53.250741+08:00",
+  "status": "same-image-original-probe-zombie-leak-reproduced-and-init-reaping-verified",
+  "local_image_ID": "sha256:00d31b9fc97c28510895f64a5139e16d93df5eaa2c2f9a776eacea7a3125abaa",
+  "local_architecture": "arm64",
+  "version": "v0.86.0",
+  "cases": [
+    {
+      "init_enabled": false,
+      "completed_original_probe_runs": 12,
+      "before": {
+        "zombies": 1,
+        "process_rows": 3
+      },
+      "after": {
+        "zombies": 13,
+        "process_rows": 15
+      },
+      "wrong_name_rejected": true,
+      "network_none": true,
+      "ports_published": false,
+      "readonly": true,
+      "UID": "65532:65532",
+      "pids_limit": 32
+    },
+    {
+      "init_enabled": true,
+      "completed_original_probe_runs": 140,
+      "before": {
+        "zombies": 0,
+        "process_rows": 3
+      },
+      "after": {
+        "zombies": 0,
+        "process_rows": 3
+      },
+      "wrong_name_rejected": true,
+      "network_none": true,
+      "ports_published": false,
+      "readonly": true,
+      "UID": "65532:65532",
+      "pids_limit": 32
+    }
+  ],
+  "local_or_server_production_containers_touched": false,
+  "public_upstream_or_data_volume_used": false,
+  "temporary_containers_and_directory_removed": true
+}

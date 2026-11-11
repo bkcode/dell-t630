@@ -1,0 +1,8 @@
+{
+  "status": "Penpot-current-metrics-restored-and-own-maintenance-silence-ended",
+  "all_15_targets_UP": true,
+  "managed_unit_and_Penpot_HTTP_and_collector_UP": true,
+  "Penpot_active_alert_count": 0,
+  "other_silences_rules_receivers_changed": false,
+  "test_notifications_sent": false
+}

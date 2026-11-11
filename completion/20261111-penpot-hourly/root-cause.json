@@ -1,0 +1,82 @@
+{
+  "status": "root-cause-proven-DNS-timeout-orphans-exhaust-PID-budget",
+  "first_offender": "penpot-dns",
+  "observed_cycle": [
+    {
+      "at": "2026-11-11T14:31:03.766934+08:00",
+      "first_bad_service": "penpot-dns",
+      "health": "unhealthy",
+      "failing_streak": 3,
+      "running": true,
+      "OOM": false
+    },
+    {
+      "at": "2026-11-11T14:31:04.864342+08:00",
+      "state": {
+        "phase": "degraded",
+        "time_utc": "2026-11-11T06:31:03Z",
+        "ready": false,
+        "consecutive_bad": 1
+      }
+    },
+    {
+      "at": "2026-11-11T14:31:09.464981+08:00",
+      "state": {
+        "phase": "degraded",
+        "time_utc": "2026-11-11T06:31:08Z",
+        "ready": false,
+        "consecutive_bad": 2
+      }
+    },
+    {
+      "at": "2026-11-11T14:31:19.062653+08:00",
+      "state": {
+        "phase": "failed",
+        "time_utc": "2026-11-11T06:31:14Z",
+        "ready": false,
+        "error_category": "Failure",
+        "reason": "consecutive-health-failure"
+      }
+    },
+    {
+      "at": "2026-11-11T14:31:47.765031+08:00",
+      "state": {
+        "phase": "failed-stopped",
+        "time_utc": "2026-11-11T06:31:45Z",
+        "ready": false,
+        "group_stopped": true,
+        "error_category": "Failure",
+        "reason": "consecutive-health-failure"
+      }
+    },
+    {
+      "at": "2026-11-11T14:32:20.765522+08:00",
+      "state": {
+        "phase": "starting",
+        "time_utc": "2026-11-11T06:32:19Z",
+        "ready": false
+      }
+    }
+  ],
+  "DNS_main_thread_count": 7,
+  "adopted_zombie_types": [
+    {
+      "state": "Z",
+      "name": "busybox",
+      "count": 84
+    }
+  ],
+  "init_before": false,
+  "health_interval_seconds": 30,
+  "PID_limit_before_and_after": 128,
+  "mechanism": "original BusyBox timeout health probe creates orphan watchdog; non-reaping dnsproxy PID1 retains one zombie per probe, eventually cannot create health processes",
+  "approximate_probe_budget_minutes": 60.5,
+  "hosts_cache_or_worker_expiry_not_the_trigger": true,
+  "isolated_AB_evidence": "completion/20261111-penpot-hourly/dns-reaping-ab.json",
+  "native_postfix_140_probes": "completion/20261111-penpot-hourly/native-burst.json",
+  "upstream_reference_links": [
+    "https://docs.docker.com/reference/compose-file/services/#init",
+    "https://git.busybox.net/busybox/tree/coreutils/timeout.c?h=1_37_0"
+  ],
+  "private_logs_commands_credentials_design_content_or_hashes_output": false
+}

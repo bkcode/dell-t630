@@ -10,7 +10,7 @@
 | 服务导航 | http://192.168.19.30:9080/ | 免登录只读HTTP/全宽布局，LAN21/WG10；各目标独立认证 |
 | PVE | https://192.168.21.22:8006/ | 管理SSH22保留 |
 | 虚拟网关190 | WAN192.168.21.23 / LAN192.168.19.1 | 路由、19DNS/DHCP，无NAT |
-| Penpot | http://192.168.19.50:9001/ | Git定制版、3设计/973媒体、11服务 |
+| Penpot | http://192.168.19.50:9001/ | Git8a定制版，当前8file/1661媒体保护已验；11服务，DNSinit修复后70分钟4200秒/119采样已验 |
 | 测试Nacos | http://192.168.19.20:8848/nacos/ | 受信LAN21/24可达；cloud-dev32＋trascan4原样保留，账号仍须目标域权限 |
 | 测试MySQL / Puyu两库 | 192.168.19.20:3306；puyu_auth_local / puyu_erp_local | 原名新建迁入51表/1291快照行；既有目标账户Host/密码/权限仍有效 |
 | Nexus | http://192.168.19.31:8081/ | 由220同NIC服务alias31承接，URL不改；最终签收见本次回执 |
@@ -43,6 +43,12 @@
 SSH使用ub和`~/.ssh/yang_local_rsa`，严格已核host key；受控目标见`evidence/implementation/private-guest-access.json`，代码见`scripts/control.py`。该JSON虽名称含private，内容为IP/公钥指纹索引，不包含私钥；实际`private/known_hosts`不进Git，新电脑须先可信交接指纹。PVE root只用于管理/QGA，不复制客户端私钥，不关闭主机密钥检查。模板克隆按[Java模板说明](network19/java-template/README.md)注入独立hostname与地址。
 
 日常启停、故障处理、克隆和备份步骤见[人工操作手册](19-manual-operations.md)，换电脑接手见[Git交接](20-git-and-handoff.md)。
+
+## Penpot DNS周期故障：修复与70分钟观察通过
+
+14:31只读证据先见DNS unhealthy，连续3bad后原监督策略停11；原DNS无init回收BusyBox timeout孤儿，积累84僵尸并接近PID128上限。本次只DNSinit:true＋lock/runtime严格门禁、安全可选Init扫描与boundedroot600诊断ledger，原镜像/阈值/资源/密码/设计不改。第一候选native字段模板失败被guard拒绝并回退恢复11healthy，第二版safeindex修正后成功，不将失败称误报。
+
+[38项测试](completion/20261111-penpot-hourly/candidate/offline-verification.json)、[原生140探针](completion/20261111-penpot-hourly/native-burst.json)与[8file/1661媒体保护](completion/20261111-penpot-hourly/postcheck-result.json)通过，只DNSrecreate/其余10ID保持、15PromtargetsUP。70分钟只读观察已完成4200秒/119采样，全11healthy/0僵尸/NRestarts0保持，PID范围8–14/128首尾8；日常检查/故障留证见[本次手册](completion/20261111-penpot-hourly/usage-manual.md)。Git8a/clean、原UI/身份/凭据/MCP保持，不重放apply/fresh-init，不放宽健康/PID或删除日志。
 
 ## Penpot：原UI默认填入（新明确授权）
 

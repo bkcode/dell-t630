@@ -6,25 +6,25 @@
       "path": "plan.json",
       "type": "current-contract",
       "purpose": "资源/IP/角色唯一合同；当前基础运行核验以本轮带时间证据为准，不代表全量内容恢复。",
-      "sha256": "2f31eec2bb562ec5968f87a7138d17163f59c78dbb34dbc4e4d1519491d4cc15"
+      "sha256": "c8eda16d3a1116740ee0bcf8ae292d52632f75926c3f97b4a2d03cc8ccb5d831"
     },
     {
       "path": "11-live-handoff.md",
       "type": "current-contract",
       "purpose": "当前基础搭建与历史故障交接；本轮不迁移，旧证据按时点解释。",
-      "sha256": "86ba18810e7cfc6ca732392a0be652d6cd40e6e63a169bad9ff9d4cea848e7fb"
+      "sha256": "2ac6d3757f3bb9cbdb0824a304f1daf6b0568bb486ab19fd24c7671c2d03db51"
     },
     {
       "path": "12-service-access-and-operations.md",
       "type": "current-contract",
       "purpose": "当前19网入口及凭据保管规则。",
-      "sha256": "39ec210b1ecd2edd9c216964b2d5079a23d895cc05393c3bdf338855a2679cbf"
+      "sha256": "7a218b5dd55edf2ce9a366268d54731cd66a09ac355ca2180e2dccbfad619402"
     },
     {
       "path": "19-manual-operations.md",
       "type": "current-contract",
       "purpose": "人工运维、备份与恢复流程；只在明确授权和对应门禁满足时执行。",
-      "sha256": "712f4396eb343813813b0f37502941e506c11da6ffbbc6b2acc72bd32b01bad9"
+      "sha256": "149c9b6d3242aa252f7532cef064a6ab0d4c08bdebe001a86dd218c6cb264066"
     },
     {
       "path": "cleanup/final-live-check.json",
@@ -42,7 +42,7 @@
       "path": "infra/penpot/runtime/health-supervision/README.md",
       "type": "current-contract",
       "purpose": "notify持续监督、11健康、镜像ID和受控恢复边界。",
-      "sha256": "d4cf790dfccadbd48ec5d0f1960145f87a47f9534a1241bde61a060ba7b72f59"
+      "sha256": "8f55660a5353e231dd8207a7297a9675314e4c7f31ffeb001bde3cd4a211fce4"
     },
     {
       "path": "infra/penpot/runtime/health-supervision/evidence/final-runtime-contract.json",
@@ -517,6 +517,300 @@
       "type": "historical-evidence",
       "purpose": "Server-only MCP credential SSH stdio connection; fresh-process Puyu verified; current desktop cached connection reload remains pending; no raw config/secrets copied",
       "sha256": "5de897208e22fc38ac4fe4925ab43e0adab22ba69fed0b766b4a0234203b7426"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/observer-started.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "6c89a225757992e585f550bb8b2045485cd35a1811648e55ba0760414319dca9"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/native-probe-burst.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "1a3ea2955374217ff725217cfb692e409dddee735f63635a919dc335f6f9afa0"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/postcheck.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "c513e1fce7dbd95af2d7c72ed142cce3e70491017b6f1c12af0d901212924e41"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/sample-commands.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "dcb20c262c10ab2cb0294e507084a37d618c13b9ea3e35fcba6bf8ada5668228"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/acceptance.json",
+      "type": "current-contract",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "2908f2cc9f2fd6d8ad1f8af8a27fbbe467598b41d70a03f723a1ba9500d15591"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/monitoring-restored.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "8521db12b3f485ee3370eb37b6963431537c6b2a02d518782bfa5b9ae1e82e07"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/apply-v2-result.json",
+      "type": "current-contract",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "0364229063a442e6a4228c7d7a8933fa867a04a8420010747352b1c510bf1d09"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/root-cause.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "04aaeceed9a5a2f17169ba49fe020f46004f3e498b7acc6dd5799dd2f76c4d2d"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/dns-reaping-ab.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "e1fdd0c9728d9a6097a8ad8fa62b8819822012f675c20fd96e0df07107a6ee80"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/postcheck-result.json",
+      "type": "current-contract",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "6f1f292995f27e81a1efa462dbdd13f1fcbbf763c0ead4918d61a883810ff9e0"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/README.md",
+      "type": "current-contract",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "327e27197b23b0cfe2f740fa4bb0a8d118359d27386fbabc405c459e0da5a7cd"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/maintenance-silence.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "e632c68c0cdc4a7383e049b6b971b35a5a2fb6488bef70b2048d4848a4518286"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/stability-started.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "a670833a3fa8e4bf79ba4b6d4fb4292f065e9d3d49263ee0b4625e1c7adb09de"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/observe.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "87f428903bde4465f16da9a05f9325989dc4b5fda277f659c99221fb1c8a32b0"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/native-burst.json",
+      "type": "current-contract",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "b29012087403a6eef5445f6554ec8200c8c835f24b6a323af5e1739511ed0bbe"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/usage-manual.md",
+      "type": "current-contract",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "80b92b1f9fb0f2602c6c2a9c787eb3aa48877a8d366099b3d98cb6d21df7e892"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/validation.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "b20b20223464da3cfde149576adbe6cccfadc60b3ee52ed07c5fc74426a23167"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/template-compatibility-fix.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "fe919958cf3dfcbcb89630ada46793b20036745887f92bb2bbdb07165fc37f3f"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/candidate-payload.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "fd2f7aac4bd36f28254d5e1b94030eb91a0f895b075fdec81c311739a8028cad"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/validate-install-start.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "1f92817c0821c70127b76de73927a64d71c629acc7adaa400595d6ced58fc749"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/test-dns-reaping.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "58cef6145bea2d887caec8fbbe33b48a926a276b5dd0f12aeed9d0c031d6733f"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/candidate-payload-v2.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "a18544470042a5e0b3145375709774e60fa51c117f33472be7b40010fbb9ed19"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/preflight.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "9086bd508083764ce3b4d8318cebbe82ba7979f938dbe961f1a407a29e4780fe"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/apply-v2.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "3b524e0edd68574a215aafba651deeedde0c02b18c74a91bbd127878d8a0d62d"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/apply.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "0488573c2df6c05a799d1bb9ba7090fd12465e04464fff65cbfc01ca6d96567d"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/preflight.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "3ba8f13a695c7bc29fd1a659b4706b7401ab6ca352afc4d67ec9cd798d589e5d"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/monitor-stability.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "0789523344c38baaa0718eb73ff7ce9e23dfdf174ce2eac777d23c1d451f928f"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/candidate/offline-verification-before-safe-init.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "aa6864e0e5288a4017e0302d4f62007162e1914c5fb346e348c634cf0d9fd29e"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/candidate/failure_codes.txt",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "1c787e219a4bd8d38a2e552c6fab281e3c7e69bfe89f3f99d91516bbb54946f8"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/candidate/supervisor.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "5100430505f0447b6b2dfbaf50dfa6ef172793b657e4b387026a51129894fc3a"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/candidate/offline-verification.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "b18bd349241762d1333e728b027af8084af08f09790393ec596bbb7debd9c774"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/candidate/compose.health-supervision.yaml",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "829cc14309edaa5fadeecf882b4199e9cd032bcfc6395a66b8245d3df6676f73"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/candidate/node-health.mjs",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "dfe79a0724058d77fadb2eb4778ef056d597a41fd396012d2b5ecc582cb64d79"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/candidate/README.md",
+      "type": "current-contract",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "ca10679d7937250c7b42cf837aea10fe7ff0803fef1bd6cebd97988c9daeff88"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/candidate/offline-verification-before-dns-init.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "fb9f872568e250fad14ba26b083da6156d7cb5f4823ff4776c29e636b6185c75"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/candidate/deployment-lock.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "7bc6d3a9d9a325ce7994c9ca7221c7eff35af49c57053cd33e43edede46dcdbb"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/tests/test_failure_evidence.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "21b99f048cdc5920e71a37997f9454510a56b30992973b7fac148cb265c6f2f4"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/tests/test_original_contracts.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "493aecf054a21ea057afeeff97695c6f2cb06a5f3f196d6b77f5ca49172d3ebf"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/baseline/supervisor.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "fdd384bf5470890eb1802cc2eacb49bcc0c0d96013cfe57b257c5021af3b0448"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/baseline/historical-prepared-deployment-lock.json",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "4df67e36624d30bd5ac4d48d752a5f2b07b9e8ad864adda88713fb2c7f1d0d29"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/baseline/historical-prepared-node-health.mjs",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "ae4a6a9784dc5bd70da893a0cb39c86cbd5981b869f5755573beaf32fa590114"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/baseline/historical-prepared-compose.health-supervision.yaml",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "806177bae84d81af31fc42e9f6e4cb06b331e01640e78e975c8d00d9cd90dc18"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/baseline/historical-prepared-supervisor.py",
+      "type": "historical-evidence",
+      "purpose": "2026-11-11 proven DNS PID leak fix with strict guards; historical experiments and one-time scripts never replay without fresh review",
+      "sha256": "d9152f24693ffb7352abd887e61475f60b0d8c4921ee93787c956278a703a289"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/offline-checks.json",
+      "type": "historical-evidence",
+      "purpose": "Completed Penpot DNS PID reaping fix; private integrity snapshot retained only on server; historical/one-time tools not replay entrypoints",
+      "sha256": "f65e5e08755a6adacbd02a67737af8610057a85d79fb103b38e850ec4a2fa3d6"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/final-monitoring.json",
+      "type": "historical-evidence",
+      "purpose": "Completed Penpot DNS PID reaping fix; private integrity snapshot retained only on server; historical/one-time tools not replay entrypoints",
+      "sha256": "1a2a734a35943a96e8c72e4f7a71b19cc7cca78fa0d9785dce3c84125c7b2cb1"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/final-postcheck.json",
+      "type": "current-contract",
+      "purpose": "Completed Penpot DNS PID reaping fix; private integrity snapshot retained only on server; historical/one-time tools not replay entrypoints",
+      "sha256": "456b3c5f79646003023de34579113ec1156d9b74b7b3d5b14f3f6aa5a5de3591"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/collect-stability.py",
+      "type": "historical-evidence",
+      "purpose": "Completed Penpot DNS PID reaping fix; private integrity snapshot retained only on server; historical/one-time tools not replay entrypoints",
+      "sha256": "f4556ddde206cf5c60bdbdd0fdb2d607b7de316a3bbf2ce0ac5ddb2136fc2663"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/final-LAN.json",
+      "type": "historical-evidence",
+      "purpose": "Completed Penpot DNS PID reaping fix; private integrity snapshot retained only on server; historical/one-time tools not replay entrypoints",
+      "sha256": "61f915d4410110884b88539ce41c22ab68866618000063dacf5e43f1ba1fb5ff"
+    },
+    {
+      "path": "completion/20261111-penpot-hourly/stability-result.json",
+      "type": "current-contract",
+      "purpose": "Completed Penpot DNS PID reaping fix; private integrity snapshot retained only on server; historical/one-time tools not replay entrypoints",
+      "sha256": "23aeff858f0843f3ebab9e6f8badfb4b3eab7fe10f5ee31626536db194af8ef2"
     }
   ],
   "snapshot_policy": "Only indexes; no configuration files, env, secrets, Webhook or keys copied."

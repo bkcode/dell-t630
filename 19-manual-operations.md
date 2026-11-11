@@ -7,6 +7,12 @@
 
 历史Nexus短时维护许可及11月8日暂缓均保留；11月10日用户明确恢复执行，当前以本次合并回执为准，不重复索取已满足许可。当前拓扑/预算以[plan.json](plan.json)、入口以[12](12-service-access-and-operations.md)、清理事实以[18](18-cleanup-and-consolidation.md)为准。证据采集后的运行状态会变化，硬件故障后必须fresh核查。
 
+## Penpot DNS周期故障：修复与70分钟观察通过
+
+14:31只读证据先见DNS unhealthy，连续3bad后原监督策略停11；原DNS无init回收BusyBox timeout孤儿，积累84僵尸并接近PID128上限。本次只DNSinit:true＋lock/runtime严格门禁、安全可选Init扫描与boundedroot600诊断ledger，原镜像/阈值/资源/密码/设计不改。第一候选native字段模板失败被guard拒绝并回退恢复11healthy，第二版safeindex修正后成功，不将失败称误报。
+
+[38项测试](completion/20261111-penpot-hourly/candidate/offline-verification.json)、[原生140探针](completion/20261111-penpot-hourly/native-burst.json)与[8file/1661媒体保护](completion/20261111-penpot-hourly/postcheck-result.json)通过，只DNSrecreate/其余10ID保持、15PromtargetsUP。70分钟只读观察已完成4200秒/119采样，全11healthy/0僵尸/NRestarts0保持，PID范围8–14/128首尾8；日常检查/故障留证见[本次手册](completion/20261111-penpot-hourly/usage-manual.md)。Git8a/clean、原UI/身份/凭据/MCP保持，不重放apply/fresh-init，不放宽健康/PID或删除日志。
+
 ## Penpot：原UI默认填入（新明确授权）
 
 用户要求保持原登录UI、不新增逻辑，并[明确授权](evidence/penpot-login-prefill-20261110/explicit-approval.json)让LAN21/24、WG10.66.66/24、VM250自身19.50与loopback的未登录访客可读取原`owner@dell.local`密码并默认填入。原helper/表单结构不改，无新checkbox/forget/localStorage；打开[Penpot](http://192.168.19.50:9001/)、刷新后由原helper填原账号密码，点击原“继续/登录”，不自动提交。CF19.5与其它来源拒绝；这项用户已知授权的密码读取范围不应描述为只保存本人浏览器。

@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-11T16:11:43.618926+08:00",
+  "status": "fixed-init-runtime-guards-and-all-design-media-identity-protection-verified",
+  "running_healthy_services": 11,
+  "design_table_rows_preserved": {
+    "file": 8,
+    "file_data_fragment": 0
+  },
+  "all_design_row_hashes_equal": true,
+  "media_file_paths_and_every_byte_SHA_equal": true,
+  "media_files": 1661,
+  "all_original_identity_credentials_env_bytes_preserved": true,
+  "Git_HEAD": "8a9b96154d9dd81dcc373155ae30dba094127cc8",
+  "Git_clean": true,
+  "DNS_only_recreated": true,
+  "other_ten_container_IDs_preserved": true,
+  "all_images_users_caps_mounts_networks_readonly_CPU_memory_PIDlimits_restart_policy_preserved": true,
+  "DNS_Init": true,
+  "DNS_PID1": "docker-init",
+  "DNS_current_zombies": 0,
+  "DNS_cgroup_PID_counters": {
+    "pids.current": "8",
+    "pids.max": "128",
+    "pids.events": "max 0"
+  },
+  "NRestarts": "0",
+  "supervisor_public_SHA": "5100430505f0447b6b2dfbaf50dfa6ef172793b657e4b387026a51129894fc3a",
+  "base_unit_bytes_preserved": true,
+  "worker_ready": true,
+  "worker_active_tasks": 0,
+  "design_writes_or_data_migration": false,
+  "private_content_and_hashes_exported": false
+}

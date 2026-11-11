@@ -1,0 +1,152 @@
+services:
+  penpot-import:
+    pids_limit: 512
+    image: sha256:d4414e3f2e41ac4f5eb4b2c146c05cbc9f9754b179d6b63efa3af95c005b1261
+  penpot-worker:
+    pids_limit: 1024
+    image: sha256:c0bead679c3fe7a4b80d2485f87bdce0e5a6acc26a9c2a001b0e4e3270dadee5
+  penpot-frontend:
+    pids_limit: 128
+    image: sha256:6cbd1f7f3b90b77b3dcd4f6a65fa9c117861d2de0781df22bd8bad40f19c61bc
+    volumes:
+    - type: bind
+      source: /opt/dell/penpot/runtime/login-prefill-approved/selfhost-login.conf
+      target: /etc/nginx/overrides/server.d/selfhost-login.conf
+      read_only: true
+      bind:
+        create_host_path: false
+    - type: bind
+      source: ./runtime/health-supervision/frontend-health.sh
+      target: /opt/dell-health/frontend-health.sh
+      read_only: true
+      bind:
+        create_host_path: false
+    healthcheck:
+      test:
+      - CMD
+      - /usr/bin/timeout
+      - '4'
+      - /bin/bash
+      - /opt/dell-health/frontend-health.sh
+      interval: 30s
+      timeout: 6s
+      retries: 3
+      start_period: 60s
+  penpot-backend:
+    pids_limit: 512
+    volumes:
+    - type: bind
+      source: ./runtime/health-supervision/ready-health.sh
+      target: /opt/dell-health/ready-health.sh
+      read_only: true
+      bind:
+        create_host_path: false
+    healthcheck:
+      test:
+      - CMD
+      - /bin/sh
+      - /opt/dell-health/ready-health.sh
+      - backend
+      interval: 30s
+      timeout: 6s
+      retries: 3
+      start_period: 180s
+  penpot-admin-console:
+    pids_limit: 256
+    volumes:
+    - type: bind
+      source: ./runtime/health-supervision/node-health.mjs
+      target: /opt/dell-health/node-health.mjs
+      read_only: true
+      bind:
+        create_host_path: false
+    healthcheck:
+      test:
+      - CMD
+      - node
+      - /opt/dell-health/node-health.mjs
+      - admin-console
+      interval: 30s
+      timeout: 6s
+      retries: 3
+      start_period: 60s
+  penpot-exporter:
+    pids_limit: 256
+    volumes:
+    - type: bind
+      source: ./runtime/health-supervision/ready-health.sh
+      target: /opt/dell-health/ready-health.sh
+      read_only: true
+      bind:
+        create_host_path: false
+    healthcheck:
+      test:
+      - CMD
+      - /bin/sh
+      - /opt/dell-health/ready-health.sh
+      - exporter
+      interval: 30s
+      timeout: 6s
+      retries: 3
+      start_period: 60s
+  penpot-dns:
+    init: true
+    pids_limit: 128
+    healthcheck:
+      test:
+      - CMD
+      - /bin/busybox
+      - sh
+      - /opt/dell-health/dns-health.sh
+      interval: 30s
+      timeout: 7s
+      retries: 3
+      start_period: 30s
+    command:
+    - --listen=0.0.0.0
+    - --port=53
+    - --upstream=https://1.1.1.1/dns-query
+    - --upstream=https://1.0.0.1/dns-query
+    - --cache
+    - --cache-max-ttl=300
+    - --timeout=8s
+    - --hosts-file-enabled
+    - --hosts-files=/run/dell-health/hosts
+    volumes:
+    - type: bind
+      source: ./runtime/health-supervision/dns-health.hosts
+      target: /run/dell-health/hosts
+      read_only: true
+      bind:
+        create_host_path: false
+    - type: bind
+      source: ./runtime/health-supervision/dns-health.sh
+      target: /opt/dell-health/dns-health.sh
+      read_only: true
+      bind:
+        create_host_path: false
+  penpot-valkey:
+    pids_limit: 128
+  penpot-mcp:
+    pids_limit: 256
+    volumes:
+    - type: bind
+      source: ./runtime/health-supervision/node-health.mjs
+      target: /opt/dell-health/node-health.mjs
+      read_only: true
+      bind:
+        create_host_path: false
+    healthcheck:
+      test:
+      - CMD
+      - node
+      - /opt/dell-health/node-health.mjs
+      - mcp
+      interval: 30s
+      timeout: 12s
+      retries: 3
+      start_period: 180s
+  penpot-postgres:
+    pids_limit: 512
+  penpot-mailpit:
+    pids_limit: 128

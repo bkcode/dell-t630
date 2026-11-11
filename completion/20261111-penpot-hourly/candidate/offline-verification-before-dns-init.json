@@ -1,0 +1,28 @@
+{
+  "verified_at": "2026-11-11T14:31:35.366395+08:00",
+  "status": "offline-candidate-tests-passed-not-installed",
+  "baseline_SHA256": "fdd384bf5470890eb1802cc2eacb49bcc0c0d96013cfe57b257c5021af3b0448",
+  "candidate_SHA256": "ecc7019d5a94cb497799c9a337a49512dc79cb4edb1e4cfff435a464e83806c6",
+  "tests_passed": 33,
+  "original_assertion_methods_unchanged": 14,
+  "new_diagnostic_and_AST_tests": 19,
+  "production_sink": {
+    "directory": "/var/lib/dell-penpot-supervision",
+    "UID": 0,
+    "directory_mode": "0700",
+    "file_mode": "0600",
+    "file_count_limit": 3,
+    "bytes_per_file_limit": 65536,
+    "record_bytes_limit": 8192
+  },
+  "no_health_predicate_threshold_restart_policy_changes": true,
+  "no_additional_Docker_scan_in_failure_path": true,
+  "original_guard_monitor_stop_main_AST_unchanged": true,
+  "server_Git_credentials_design_or_canonical_code_writes": false,
+  "limitations": [
+    "Diagnostic evidence only; hourly root cause remains unknown",
+    "Uses the last normally observed frame and records its UTC capture time; a failing scan can leave an older frame",
+    "Filesystem bytes are bounded; synchronous I/O does not bound arbitrary filesystem stalls",
+    "Only temporary-directory fixtures were written; production root ownership is represented by the fixed UID0 default and tested with patched fixture owner"
+  ]
+}

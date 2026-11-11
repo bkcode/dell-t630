@@ -13,7 +13,7 @@ Nexus合并与退役以[本次交付](completion/20261110-nexus-merge/README.md)
 - Java230/240只运行基础，不构建/启动业务，旧publisher链fenced。
 - deploy-public main2d8f541已同步，Mac/Linux75测试通过；Puyu专用空制品仓库和私有artifacts YAML已接入（不迁旧制品），适配器仅CLI显式调用既有build.bash。CLI prod/main、dev/dev，MCP dev-only/loopback18765，prod SSH未配置、真实发布disabled。11月10日远端审计六库缺dev；本轮六工作树仍main/clean，未重新fetch远端、未创建分支，旧缺分支预检保持历史含义；旧dev/main成功不能当新dev就绪。
 - 正式业务schema空，测试仅已精确授权的Nacos36配置与两Puyu库迁入；不持续同步、不自动适配端点或切应用连接，原测试凭据合同保持。
-- Penpotmain8a/11healthy、首次引导关闭，Puyu设计已导入；服务器MCP默认Puyu，Mac通过SSH stdio，无token导出。原owner表单默认值按受信范围明确授权，不能扩到公网。
+- PenpotDNS回收修复已上线：DNSinit:true/严格门禁，38测试＋原生140次0僵尸/数据保护通过，70分钟观察4200秒/119采样已通过，见[本次修复](completion/20261111-penpot-hourly/README.md)。Penpotmain8a/11healthy、首次引导关闭，Puyu设计已导入；服务器MCP默认Puyu，Mac通过SSH stdio，无token导出。原owner表单默认值按受信范围明确授权，不能扩到公网。
 - VM280仅NFS，FileBrowser已从现役程序/配置/状态路径移除，服务not-found/8080关闭；原资料仅本机受保护归档。230/240共用同根/mnt/resources，精确exports、root_squash、UMask0002与挂载守卫保持，不迁资源文件/不启业务图片HTTP。
 - 自建应用HTTP；PVE/iDRAC内置HTTPS保留。LAN21/24、WG10.66/24受信访问规则不放宽应用认证，WireGuard peer/32保持。OpenClash完整规则仅本地，不推Git。
 

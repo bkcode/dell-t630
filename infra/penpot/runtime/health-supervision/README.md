@@ -1,3 +1,5 @@
+> 当前修复（2026-11-11）：DNS已启用init，保留PID128/原探针/原阈值；RootCause为BusyBox timeout孤儿watchdog成为zombie并耗尽PID，不是hosts TTL。源码/公开lock/overlay与服务器510043配置同步，下文旧10.63/ff178是最初阶段历史不可重放。38离线+隔离A/B及native140探针通过，70分钟自然观察以新交付实时结果为准。当前维护说明见[DNS修复手册](../../../../completion/20261111-penpot-hourly/usage-manual.md)。
+
 > 文档状态（2026-11-08）：本页为阶段实施/技术记录，旧网段、角色数和通过结果按原时点解释。基础已恢复；本轮仅补齐与清理，用户暂不迁移/合并，Mac外部探针不需要。当前配置见[访问清单](../../../../12-service-access-and-operations.md)，范围与恢复证据见[最新交接](../../../../11-live-handoff.md)；旧初始化器不得重跑。
 
 # Penpot250 持续健康监督

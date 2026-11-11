@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-11T16:39:34.998632+08:00",
+  "offline_candidate_tests": 38,
+  "canonical_guard_tests": 14,
+  "node_protocol_tests": 8,
+  "local_AB": {
+    "no_init_probes": 12,
+    "init_probes": 140
+  },
+  "native_amd64_probes": 140,
+  "private_hashes_or_credentials_exported": false,
+  "natural_seventy_minutes_status": "passed",
+  "historical_network_migration_fixture_tests": 18,
+  "historical_network_fixture_bytes_preserved": 4,
+  "actual_elapsed_seconds": 4200,
+  "samples": 119,
+  "DNS_zombie_growth": false,
+  "all_eleven_always_healthy": true,
+  "NRestarts_increase": false,
+  "DNS_PID_observed_range": [
+    8,
+    14
+  ]
+}

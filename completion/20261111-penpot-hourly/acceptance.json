@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-11T17:32:09.006285+08:00",
+  "status": "Penpot-DNS-init-root-cause-fixed-and-seventy-minute-native-stability-verified",
+  "scope": "VM250 DNS orphan-process reaping fix and bounded failure diagnostics; no design/source/identity/data migration or other application changes",
+  "cases": [
+    {
+      "id": "PENDNS-CAUSE-001",
+      "title": "自然周期首故障与僵尸根因",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户要求继续定位和修复Penpot周期性服务故障；保持设计/身份/现役应用合同"
+      ],
+      "steps": [
+        "只读捕获首故障与PID根因、隔离对比、受控停启精确修复、数据/接口/稳定性验收"
+      ],
+      "observable_pass_conditions": [
+        "DNS唯一先unhealthy，连续3次bad导致监督器全组停止，未把Worker启动依赖错误当首因",
+        "dnsproxy PID1不回收BusyBoxtimeout orphan，84zombie/7threads与PID128/30s探针周期吻合"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261111-penpot-hourly/root-cause.json",
+          "note": "Public operational facts only; private data/identity hashes and rendered secrets remain VM250"
+        },
+        {
+          "path": "completion/20261111-penpot-hourly/baseline/supervisor.py",
+          "note": "Public operational facts only; private data/identity hashes and rendered secrets remain VM250"
+        }
+      ],
+      "verified_at": "2026-11-11T16:39:34.998632+08:00"
+    },
+    {
+      "id": "PENDNS-AB-001",
+      "title": "同版隔离对照与无泄漏",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户要求继续定位和修复Penpot周期性服务故障；保持设计/身份/现役应用合同"
+      ],
+      "steps": [
+        "只读捕获首故障与PID根因、隔离对比、受控停启精确修复、数据/接口/稳定性验收"
+      ],
+      "observable_pass_conditions": [
+        "initfalse12探针zombie1→13；inittrue140探针0→0",
+        "networknone/readonly/无生产卷或公开上游，错名失败，临时资源清理"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261111-penpot-hourly/dns-reaping-ab.json",
+          "note": "Public operational facts only; private data/identity hashes and rendered secrets remain VM250"
+        }
+      ],
+      "verified_at": "2026-11-11T16:39:34.998632+08:00"
+    },
+    {
+      "id": "PENDNS-APPLY-001",
+      "title": "精确修复与原生兼容/回退",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户要求继续定位和修复Penpot周期性服务故障；保持设计/身份/现役应用合同"
+      ],
+      "steps": [
+        "只读捕获首故障与PID根因、隔离对比、受控停启精确修复、数据/接口/稳定性验收"
+      ],
+      "observable_pass_conditions": [
+        "只DNS inittrue并重建，其他10IDs保持，镜像/资源/PID128/探针/阈值/网络保持",
+        "首次候选被原生模板兼容检查阻断、原配置回退恢复；safeindex510/原生scan修正后受控成功"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261111-penpot-hourly/apply-v2-result.json",
+          "note": "Public operational facts only; private data/identity hashes and rendered secrets remain VM250"
+        },
+        {
+          "path": "completion/20261111-penpot-hourly/template-compatibility-fix.json",
+          "note": "Public operational facts only; private data/identity hashes and rendered secrets remain VM250"
+        },
+        {
+          "path": "completion/20261111-penpot-hourly/postcheck-result.json",
+          "note": "Public operational facts only; private data/identity hashes and rendered secrets remain VM250"
+        },
+        {
+          "path": "completion/20261111-penpot-hourly/candidate/offline-verification.json",
+          "note": "Public operational facts only; private data/identity hashes and rendered secrets remain VM250"
+        }
+      ],
+      "verified_at": "2026-11-11T16:39:34.998632+08:00"
+    },
+    {
+      "id": "PENDNS-DATA-001",
+      "title": "设计媒体身份保护",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户要求继续定位和修复Penpot周期性服务故障；保持设计/身份/现役应用合同"
+      ],
+      "steps": [
+        "只读捕获首故障与PID根因、隔离对比、受控停启精确修复、数据/接口/稳定性验收"
+      ],
+      "observable_pass_conditions": [
+        "8份设计行哈希、1661媒体路径及全SHA保持，身份/env/原unit字节和源码8a clean保持",
+        "MCP无任务和导入完成后维护；无source设计写、凭据旋转或数据迁移"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261111-penpot-hourly/preflight.json",
+          "note": "Public operational facts only; private data/identity hashes and rendered secrets remain VM250"
+        },
+        {
+          "path": "completion/20261111-penpot-hourly/postcheck-result.json",
+          "note": "Public operational facts only; private data/identity hashes and rendered secrets remain VM250"
+        }
+      ],
+      "verified_at": "2026-11-11T16:39:34.998632+08:00"
+    },
+    {
+      "id": "PENDNS-PROBE-001",
+      "title": "真实amd64原探针140次与PID稳定",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户要求继续定位和修复Penpot周期性服务故障；保持设计/身份/现役应用合同"
+      ],
+      "steps": [
+        "只读捕获首故障与PID根因、隔离对比、受控停启精确修复、数据/接口/稳定性验收"
+      ],
+      "observable_pass_conditions": [
+        "140次原固定DNS探针通过，zombie0，pids约8/上限128/maxevents0",
+        "NRestarts不增加，未放宽健康/资源阈值"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261111-penpot-hourly/native-burst.json",
+          "note": "Public operational facts only; private data/identity hashes and rendered secrets remain VM250"
+        }
+      ],
+      "verified_at": "2026-11-11T16:39:34.998632+08:00"
+    },
+    {
+      "id": "PENDNS-OPS-001",
+      "title": "监控恢复与维护静默结束",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户要求继续定位和修复Penpot周期性服务故障；保持设计/身份/现役应用合同"
+      ],
+      "steps": [
+        "只读捕获首故障与PID根因、隔离对比、受控停启精确修复、数据/接口/稳定性验收"
+      ],
+      "observable_pass_conditions": [
+        "15/15targetsUP，Penpotunit/HTTP/collector全1、role活动告警0",
+        "仅结束自己维护silence，接收方/规则保持，无testsend"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261111-penpot-hourly/monitoring-restored.json",
+          "note": "Public operational facts only; private data/identity hashes and rendered secrets remain VM250"
+        },
+        {
+          "path": "completion/20261111-penpot-hourly/maintenance-silence.json",
+          "note": "Public operational facts only; private data/identity hashes and rendered secrets remain VM250"
+        }
+      ],
+      "verified_at": "2026-11-11T16:39:34.998632+08:00"
+    },
+    {
+      "id": "PENDNS-LONG-001",
+      "title": "70分钟自然稳定窗口",
+      "status": "passed",
+      "required_for_phase": true,
+      "preconditions": [
+        "用户要求继续定位和修复Penpot周期性服务故障；保持设计/身份/现役应用合同"
+      ],
+      "steps": [
+        "只读捕获首故障与PID根因、隔离对比、受控停启精确修复、数据/接口/稳定性验收"
+      ],
+      "observable_pass_conditions": [
+        "持续实际4200秒，全部11healthy、DNS僵尸0、同DNSID/NRestarts不增",
+        "只读monitor自动结束，未把加速140次冒充真实70分钟"
+      ],
+      "evidence": [
+        {
+          "path": "completion/20261111-penpot-hourly/stability-started.json",
+          "note": "Public operational facts only; private data/identity hashes and rendered secrets remain VM250"
+        },
+        {
+          "path": "completion/20261111-penpot-hourly/stability-result.json",
+          "note": "4200s actual native elapsed,119samples; all11healthy,zerozombie,NRestarts unchanged"
+        }
+      ],
+      "verified_at": "2026-11-11T17:32:09.006285+08:00"
+    }
+  ],
+  "summary": {
+    "total": 7,
+    "current_phase_case_count": 7,
+    "current_phase_passed": 7
+  },
+  "limitations": [
+    "No physical host/VM reboot exercise, restore or RPO/RTO claim",
+    "Local A/B ARM64 fixed version plus actual server AMD64 probe validation; no image rebuild/pull",
+    "No frontend design data changes, file splits or target-file switch"
+  ]
+}
